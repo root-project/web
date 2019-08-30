@@ -1,12 +1,16 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: "Download"
+    url: https://root.cern.ch/downloading-root
+  - title: "News"
+    url: https://root.cern.ch/news
+  - title: "Documentation"
+    url: https://root.cern.ch/documentation
+  - title: "Support"
+    url: https://root.cern.ch/support
+  - title: "About"
+    url: https://root.cern.ch/about-root
+  - title: "Development"
+    url: https://root.cern.ch/development 
+  - title: "Contribute"
+    url: https://root.cern.ch/collaborate-with-us
