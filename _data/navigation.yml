@@ -1,7 +1,7 @@
 # main links
 main:
   - title: "Download"
-    url: https://root.cern.ch/downloading-root
+    url: Download
     description: "All you need to install ROOT"
   - title: "News"
     url: https://root.cern.ch/news
