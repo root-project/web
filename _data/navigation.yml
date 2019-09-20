@@ -1,17 +1,17 @@
 # main links
 main:
+  - title: "Get Started"
+    url: Get_Started
+  - title: "Blog"
+    url: https://root-forum.cern.ch/
+  - title: "Tutorials"
+    url: Tutorials
+  - title: "Manual"
+    url: Manual
+  - title: "Reference"
+    url: Reference
+  - title: "Resources"
+    url: Resources
   - title: "Download"
     url: Download
     description: "All you need to install ROOT"
-  - title: "News"
-    url: https://root.cern.ch/news
-  - title: "Documentation"
-    url: https://root.cern.ch/documentation
-  - title: "Support"
-    url: https://root.cern.ch/support
-  - title: "About"
-    url: https://root.cern.ch/about-root
-  - title: "Development"
-    url: https://root.cern.ch/development 
-  - title: "Contribute"
-    url: https://root.cern.ch/collaborate-with-us
