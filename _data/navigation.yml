@@ -2,7 +2,7 @@
 main:
   - title: "Get Started"
     url: Get_Started
-  - title: "Blog"
+  - title: "Forum"
     url: https://root-forum.cern.ch/
   - title: "Tutorials"
     url: Tutorials
