@@ -1,17 +1,13 @@
 # main links
 main:
+  - title: "Download"
+    url: Download
+    description: "All you need to install ROOT"
   - title: "Get Started"
     url: Get_Started
   - title: "Forum"
     url: https://root-forum.cern.ch/
-  - title: "Tutorials"
-    url: Tutorials
   - title: "Manual"
     url: Manual
-  - title: "Reference"
-    url: Reference
   - title: "Resources"
     url: Resources
-  - title: "Download"
-    url: Download
-    description: "All you need to install ROOT"
