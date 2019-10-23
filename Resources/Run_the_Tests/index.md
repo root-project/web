@@ -2,6 +2,7 @@
 title: Running the ROOT battery of tests
 layout: single
 toc: true
+toc_sticky: true
 sidebar:
   nav: "resources"
 ---

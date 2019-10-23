@@ -2,6 +2,7 @@
 title: Formatting Comments for Doxygen
 layout: single
 toc: true
+toc_sticky: true
 sidebar:
   nav: "resources"
 ---

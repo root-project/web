@@ -4,6 +4,7 @@ layout: single
 sidebar:
   nav: "resources"
 toc: true
+toc_sticky: true
 ---
 
 Using Github with ssh keys is preferred, as it's much easier to use. Here is how to set it up:

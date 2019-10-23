@@ -2,6 +2,7 @@
 title: ROOTBinder Checklist
 layout: single
 toc: true
+toc_sticky: true
 sidebar:
   nav: "resources"
 ---

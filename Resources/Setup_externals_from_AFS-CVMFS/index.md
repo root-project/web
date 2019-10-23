@@ -1,8 +1,8 @@
 ---
 title: How to setup ROOT externals from AFS/CVMFS
-
 layout: single
 toc: true
+toc_sticky: true
 sidebar:
   nav: "resources"
 ---

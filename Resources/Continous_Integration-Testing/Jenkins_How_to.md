@@ -2,6 +2,7 @@
 title: How to use the ROOT Jenkins
 layout: single
 toc: true
+toc_sticky: true
 sidebar:
   nav: "resources"
 ---

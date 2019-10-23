@@ -2,6 +2,7 @@
 title: ROOT 7
 layout: single
 toc: true
+toc_sticky: true
 sidebar:
   nav: "resources"
 ---

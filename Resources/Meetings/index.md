@@ -2,6 +2,7 @@
 title: Meetings
 layout: single
 toc: true
+toc_sticky: true
 sidebar:
   nav: "resources"
 ---

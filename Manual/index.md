@@ -4,6 +4,7 @@ layout: single
 sidebar:
   nav: "manual"
 toc: true
+toc_sticky: true
 ---
 
 ## Introduction
