@@ -1,6 +1,8 @@
 ---
 title: ROOT Manual
 layout: single
+sidebar:
+  nav: "manual"
 toc: true
 ---
 

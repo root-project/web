@@ -11,3 +11,23 @@ main:
     url: Manual
   - title: "Resources"
     url: Resources
+
+manual:
+  - title: Histograms
+    url: https://root.cern/doc/master/group__Hist.html
+    children:
+      - title: "Wikipedia"
+        url: https://en.wikipedia.org/wiki/Histogram
+
+  - title: Graphics
+    url: https://root.cern/doc/master/group__Graphics.html
+    children:
+      - title: "Wikipedia"
+        url: https://en.wikipedia.org/wiki/Graphics
+
+  - title: Extras
+    children:
+      - title: "Reference"
+        url: https://root.cern/doc/master/
+      - title: "Tutorials"
+        url: https://root.cern/doc/master/group__Tutorials.html
