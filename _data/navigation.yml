@@ -28,6 +28,65 @@ manual:
   - title: Extras
     children:
       - title: "Reference"
-        url: https://root.cern/doc/master/
+        url: Reference
       - title: "Tutorials"
         url: https://root.cern/doc/master/group__Tutorials.html
+        
+resources:
+   - title: Program of Work
+     url: Resources/Program_Of_Work
+   - title: Code Owners
+     url: Resources/Code_Owners
+   - title: Release Checklist
+     url: Resources/Release_Checklist
+   - title: Coding Conventions
+     url: Resources/Coding_Conventions
+   - title: Shifter's Instructions
+     url: Resources/Shifters_Instructions
+   - title: Git Primer
+     url: Resources/Git_Primer
+     children:
+      - title: "Creating a Pull Request"
+        url: Resources/Git_Primer/Creating_PR
+      - title: "GitHub ssh key"
+        url: Resources/Git_Primer/GitHub_ssh_key
+      - title: "Git Tips and Trick"
+        url: Resources/Git_Primer/Git_Tips_and_Tricks
+      - title: "Git How Tos"
+        url: Resources/Git_Primer/Git_How_Tos
+      - title: "NoSY Worlflow"
+        url: Resources/Git_Primer/NoSY_Workflow
+   - title: Browse Sources
+     url: https://github.com/root-project/root
+   - title: Meetings
+     url: Resources/Meetings
+   - title: ROOT 7
+     url: Resources/ROOT7
+   - title: Run the Tests
+     url: Resources/Run_the_Tests
+   - title: Setup externals from AFS/CVMFS
+     url: Resources/Setup_externals_from_AFS-CVMFS
+   - title: Continous Integration / Testing
+     children:
+      - title: Jenkins Service
+        url: https://epsft-jenkins.cern.ch/view/ROOT/
+      - title: Jenkins How To
+        url: Resources/Continous_Integration-Testing/Jenkins_How_to
+      - title: CDash
+        url: http://cdash.cern.ch/index.php?project=ROOT
+      - title: Coverity
+        url: https://coverity.cern.ch/login/login.htm
+      - title: GitHub
+        url: https://github.com/root-project/root
+      - title: GitWeb
+        url: https://root.cern.ch/gitweb/?p=root.git;a=summary
+      - title: Jira
+        url: https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page
+      - title: ROOTBinder Checklist
+        url: Resources/Continous_Integration-Testing/ROOTBinder_Checklist
+   - title: Doxygen
+     url: Resources/Doxygen
+   - title: Benchmarks
+     url: https://rootbnch-grafana-test.cern.ch
+   - title: ROOT Logos
+     url: https://root.cern.ch/img/logos/ROOT_Logo/

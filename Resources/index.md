@@ -1,8 +1,9 @@
 ---
 title: Resources
 layout: single
+sidebar:
+  nav: "resources"
 ---
 
-Overview page with links to whatever...
-
-... (other stuff)
+The links in this section are intended for the ROOT developers and for people who want 
+to contribute to the ROOT system.
