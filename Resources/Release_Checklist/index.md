@@ -22,7 +22,7 @@ sidebar:
       - if before 6.04: change PROJECT_NUMBER in `documentation/doxygen/Doxyfile`
       - Run from the build directory `$ make version`
   7. Tag main ROOT repository
-      - `$ git tag -a vX-YY-ZZ`
+      - `git tag -a vX-YY-ZZ`
   8. Update the release notes in `README/ReleaseNotes/vXXX/index.md` again
       - edit `README/ReleaseNotes/vXXX/index.md`; possibly copying from `README/ReleaseNotes/empty.md` if this is not a patch release
       - `git commit README/ReleaseNotes/vXXX/index.md`
@@ -30,12 +30,12 @@ sidebar:
       - edit build/version_number (odd patch number)
       - make version, check in
   10. Push to github
-      - `$ git push origin vX-YY-00-patches`
-      - `$ git push origin vX-YY-ZZ`
+      - `git push origin vX-YY-00-patches`
+      - `git push origin vX-YY-ZZ`
   11. Tag ROOTTEST repository
   12. Make source tar file and copy to ftp area on root.cern.ch
       - Run from the build directory `$ make distsrc` _[not on a MacOS machine](http://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-on-os-x-give-errors-when-unt)_
-      - `$ scp ../root_vX.YY.ZZ.source.tar.gz sftnight@root:/home/www/root/download`
+      - `scp ../root_vX.YY.ZZ.source.tar.gz sftnight@root:/home/www/root/download`
   13. Produce binary tarfiles
       - start the procedure [root-release-6.12](https://epsft-jenkins.cern.ch/view/ROOT/job/root-release-6.12/) (or whichever branch) in Jenkins
       - tarfiles and other artifacts are copied to final destination
