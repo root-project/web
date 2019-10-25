@@ -13,14 +13,14 @@ header:
       <td align="center" style="border:0px">
          <img src="{{'/assets/images/start.png' | relative_url}}">
          <a href="{{ "getting_started" | relative_url }}">
-         <br><b>Getting Started</b>
+         <br><b>Get Started</b>
          </a>
       </td>
       <td style="border:0px" width="15%"></td>
       <td align="center" style="border:0px">
          <img src="{{'/assets/images/doc.png' | relative_url}}">
          <a href="https://root.cern/doc/master/index.html">
-         <br><b>Reference Guide</b>
+         <br><b>Reference</b>
          </a>
       </td>
       <td style="border:0px" width="15%"></td>
@@ -38,11 +38,34 @@ A modular scientific software toolkit. It provides all the functionalities
 needed to deal with big data processing, statistical analysis, visualisation and
 storage. It is mainly written in C++ but integrated with other languages such as Python and R.
 
-<h2> Under the Spotlight </h2>
+<table style="border:0px">
+   <tr>
+		<td style="border:0px" width="50%">
+         <h2> Under the Spotlight </h2>
+		</td>
+		<td style="border:0px" width="50%">
+         <h2> Other News </h2>
+		</td>
+   </tr>
+   <tr>
+      <td style="border:0px" width="50%">
 
-{% for post in site.posts %}
-   {% if forloop.index <= 3 %}
-	<h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-	<p>{{ post.excerpt }}</p>
-	{% endif %}
-{% endfor %}
+			{% for post in site.posts %}
+				{% if forloop.index <= 3 %}
+				<h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+				<p>{{ post.excerpt }}</p>
+				{% endif %}
+			{% endfor %}
+
+      </td>
+      <td style="border:0px" width="50%">
+
+			{% for post in site.posts %}
+				{% if forloop.index >= 4 and forloop.index <=8 %}
+				<h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+				{% endif %}
+			{% endfor %}
+
+      </td>
+   </tr>
+</table>
