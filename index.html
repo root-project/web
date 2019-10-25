@@ -33,7 +33,16 @@ header:
    </tr>
 </table>
 
-<h1> ROOT is ... </h1> 
+<h1> ROOT is ... </h1>
 A modular scientific software toolkit. It provides all the functionalities
 needed to deal with big data processing, statistical analysis, visualisation and
 storage. It is mainly written in C++ but integrated with other languages such as Python and R.
+
+<h2> Under the Spotlight </h2>
+
+{% for post in site.posts %}
+   {% if forloop.index <= 3 %}
+	<h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+	<p>{{ post.excerpt }}</p>
+	{% endif %}
+{% endfor %}
