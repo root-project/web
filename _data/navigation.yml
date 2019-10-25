@@ -1,4 +1,6 @@
 # main links
+
+
 main:
   - title: "Download"
     url: Download
@@ -11,6 +13,9 @@ main:
     url: Manual
   - title: "Resources"
     url: Resources
+  - title: "News"
+    url: News
+
 
 manual:
   - title: Histograms
@@ -18,20 +23,19 @@ manual:
     children:
       - title: "Wikipedia"
         url: https://en.wikipedia.org/wiki/Histogram
-
   - title: Graphics
     url: https://root.cern/doc/master/group__Graphics.html
     children:
       - title: "Wikipedia"
         url: https://en.wikipedia.org/wiki/Graphics
-
   - title: Extras
     children:
       - title: "Reference"
         url: Reference
       - title: "Tutorials"
         url: https://root.cern/doc/master/group__Tutorials.html
-        
+
+
 resources:
    - title: Program of Work
      url: Resources/Program_Of_Work
@@ -90,3 +94,8 @@ resources:
      url: https://rootbnch-grafana-test.cern.ch
    - title: ROOT Logos
      url: https://root.cern.ch/img/logos/ROOT_Logo/
+
+
+download:
+   - title: All Releases
+     url: https://root.cern.ch/releases
