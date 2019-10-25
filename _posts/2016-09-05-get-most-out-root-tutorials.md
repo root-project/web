@@ -1,6 +1,6 @@
 ---
 title:  "Get the most out of the ROOT tutorials!"
-layout: posts
+layout: archive
 author:
 ---
 

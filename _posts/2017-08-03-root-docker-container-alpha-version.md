@@ -1,6 +1,6 @@
 ---
 title:  "The ROOT Docker container (alpha version)"
-layout: posts
+layout: archive
 author:
 ---
 

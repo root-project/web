@@ -1,6 +1,6 @@
 ---
 title:  "Better argument parsing"
-layout: posts
+layout: archive
 author: Axel Naumann
 ---
 

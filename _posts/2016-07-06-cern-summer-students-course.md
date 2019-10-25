@@ -1,6 +1,6 @@
 ---
 title:  "CERN Summer Students' Course"
-layout: posts
+layout: archive
 author:
 ---
 

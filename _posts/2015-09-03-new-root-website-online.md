@@ -1,6 +1,6 @@
 ---
 title:  "The New ROOT Website is Online!"
-layout: posts
+layout: archive
 author:
 ---
 

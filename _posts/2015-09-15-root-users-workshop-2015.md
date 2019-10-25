@@ -1,6 +1,6 @@
 ---
 title:  "ROOT Users' Workshop 2015"
-layout: posts
+layout: archive
 author:
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "Wanted: Storage of HEP data via key/value storage solutions"
-layout: posts
+layout: archive
 author: Danilo Piparo
 ---
 

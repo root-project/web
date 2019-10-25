@@ -1,6 +1,6 @@
 ---
 title:  "More tests, more benchmarks!"
-layout: posts
+layout: archive
 author: Axel Naumann
 ---
 ROOT relies on testing, including performance testing - and we need to improve both.

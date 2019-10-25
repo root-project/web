@@ -1,6 +1,6 @@
 ---
 title:  "ROOT has its Jupyter Kernel!"
-layout: posts
+layout: archive
 author:
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "ROOT Tutorial for Summer Students"
-layout: posts
+layout: archive
 author:
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "Commandline tools for ROOT files inspection, modification and automated plotting"
-layout: posts
+layout: archive
 author: Danilo Piparo
 ---
 

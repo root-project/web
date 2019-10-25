@@ -1,6 +1,6 @@
 ---
 title:  "Wanted: A tool to 'warn' user of inefficient (for I/O) construct in data model"
-layout: posts
+layout: archive
 author: Danilo Piparo
 ---
 

@@ -1,6 +1,6 @@
 ---
 title:  "Development release 6.09/02 is out!"
-layout: posts
+layout: archive
 author:
 ---
 

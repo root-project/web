@@ -1,6 +1,6 @@
 ---
 title:  "Full Totem Analysis based on RDataFrame and distributed on a big Spark cluster with PyRDF!"
-layout: posts
+layout: archive
 author:
 ---
 

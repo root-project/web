@@ -1,6 +1,6 @@
 ---
 title:  "Transform GNU-makefile tests to CMake"
-layout: posts
+layout: archive
 author: Axel Naumann
 ---
 

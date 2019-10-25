@@ -1,6 +1,6 @@
 ---
 title:  "Try the new ROOTbooks on Binder (beta)"
-layout: posts
+layout: archive
 author:
 ---
 
