@@ -49,4 +49,15 @@ The following recent versions are available for download:
 
 ### Latest ROOT Releases
 
+
+  - **PRO** [Release 6.18/04 - 2019-09-11]({{ '/Download/All_Releases/release-61804' | relative_url }})
+  - **OLD** [Release 6.16/00 - 2019-01-23]({{ '/Download/All_Releases/release-61600' | relative_url }})
+
+
 ### Version 6
+
+  -  [Release 6.18/04 - 2019-09-11]({{ '/Download/All_Releases/release-61804' | relative_url }})
+  -  [Release 6.18/02 - 2019-08-23]({{ '/Download/All_Releases/release-61802' | relative_url }})
+  -  [Release 6.18/00 - 2019-06-25]({{ '/Download/All_Releases/release-61800' | relative_url }})
+  -  [Release 6.16/00 - 2019-01-23]({{ '/Download/All_Releases/release-61600' | relative_url }})
+  -  [Release 6.14/06 - 2018-11-05]({{ '/Download/All_Releases/release-61406' | relative_url }})
