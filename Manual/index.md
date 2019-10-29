@@ -16,4 +16,3 @@ We do not use the word “guide” anymore on the new website.
 
 ### [Tutorials]({{ site.baseurl }}/Tutorials)
 
-### [Reference]({{ site.baseurl }}/Reference)
