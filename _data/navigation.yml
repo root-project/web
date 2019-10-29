@@ -31,7 +31,7 @@ manual:
   - title: Extras
     children:
       - title: "Reference"
-        url: Reference
+        url: https://root.cern/doc/master/
       - title: "Tutorials"
         url: https://root.cern/doc/master/group__Tutorials.html
 
