@@ -25,28 +25,10 @@ manual:
         url: Manual/getting_started_with_root/starting_and_quitting_root_sessions
       - title: Using the interactive C++ interpreter
         url: Manual/getting_started_with_root/using_the_interactive_c++_interpreter_cling
-      - title: Simple commands
-        url: Manual/getting_started_with_root/simple_commands
-      - title: Multi-line commands
-        url: Manual/getting_started_with_root/multiline_commands
       - title: ROOT macros
         url: Manual/getting_started_with_root/root_macros
-      - title: Creating a ROOT macro
-        url: Manual/getting_started_with_root/creating_a_root_macro
-      - title: Executing a ROOT macro
-        url: Manual/getting_started_with_root/executing_a_root_macro
-      - title: Executing a ROOT macro from a ROOT macro
-        url: Manual/getting_started_with_root/executing_a_root_macro_from_a_root_macro
-      - title: Executing a ROOT macro from the invocation of ROOT
-        url: Manual/getting_started_with_root/executing_a_root_macro_from_the_invocation_of_root
-      - title: Compiling a ROOT macro with ACLiC into libraries
-        url: Manual/getting_started_with_root/compiling_a_root_macro_with_aclic_into_libraries
-      - title: Developing portable ROOT macros
-        url: Manual/getting_started_with_root/developing_portable_root_macros
       - title: ROOT tutorials
         url: Manual/getting_started_with_root/root_tutorials
-      - title: Regular expressions
-        url: Manual/getting_started_with_root/regular_expressions
       - title: Using Cling commands to control ROOT
         url: Manual/getting_started_with_root/using_cling_commands_to_control_root
   - title: Histograms
