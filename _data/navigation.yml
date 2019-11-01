@@ -20,17 +20,6 @@ main:
 manual:
   - title: Getting started with ROOT
     url: Manual/getting_started_with_root
-    children:
-      - title: Starting and quitting a ROOT session
-        url: Manual/getting_started_with_root/starting_and_quitting_root_sessions
-      - title: Using the interactive C++ interpreter
-        url: Manual/getting_started_with_root/using_the_interactive_c++_interpreter_cling
-      - title: ROOT macros
-        url: Manual/getting_started_with_root/root_macros
-      - title: ROOT tutorials
-        url: Manual/getting_started_with_root/root_tutorials
-      - title: Using Cling commands to control ROOT
-        url: Manual/getting_started_with_root/using_cling_commands_to_control_root
   - title: Histograms
     url: https://root.cern/doc/master/group__Hist.html
   - title: Graphics
