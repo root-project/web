@@ -7,27 +7,11 @@ toc: true
 toc_sticky: true
 ---
 
+> **Note**
+>
+> Before using ROOT, it must be installed successfully and all environment variables must be set.
+> → See [Installation Guide]({{ '/Resources/Building_ROOT' | relative_url }}).
 
-Before using ROOT, it must be installed successfully and all environment variables must be set.
-→ See [Installation Guide]({{ '/Resources/Building_ROOT' | relative_url }}).
-
-You can start and quit a ROOT session on the system prompt,
- → see [Starting and quitting a ROOT session](starting_and_quitting_root_sessions).
-
-ROOT provides an interactive C++ interpreter Cling, where you can execute simple or
-multi-line commands,
-→ see [Using the interactive C++ interpreter Cling](using_the_interactive_c++_interpreter_cling).
-
-A ROOT macro can consist of simple or multi-line commands, but also of arbitrarily complex
-class and function definitions. You can create, compile and execute ROOT macros,
-→ see [ROOT macros](root_macros).
-
-When you install ROOT, a tutorials directory is copied that contains a lot of tutorials.
-A ROOT tutorial is a ROOT macro that demonstrates ROOT specific features,
-→ see [ROOT tutorials](root_tutorials).
-
-With Cling commands you can control ROOT,
-→ see [Using Cling commands to control ROOT](using_cling_commands_to_control_root).
 
 **Starting ROOT**
 
@@ -68,16 +52,16 @@ Exits after processing the command line macro files.
 `-l`  
 Does not show the splash screen.
 
-`-x `
+`-x`  
 Exit on exception.
 
 `dir`  
 If dir is a valid directory, change to it (cd) before executing ROOT.
 
-`-? `  
+`-?`  
 Print usage.
 
-`-h `  
+`-h`  
 Print usage.
 
 `--help`  
@@ -92,9 +76,11 @@ Run ROOT with memory usage monitoring.
 **Quitting ROOT**
 
 Type at the ROOT prompt:  
-`.q`
+```
+.q
+```
 
-##Using the interactive C++ interpreter Cling
+## Using the interactive C++ interpreter Cling
 
 ROOT uses the interactive C++ interpreter Cling that is built on top of the
 **L**ow **L**evel **V**irtual **M**achine ([LLVM](https://llvm.org/)) and the [Clang libraries](https://clang.llvm.org/).  
@@ -104,7 +90,7 @@ Cling provides command line prompt and a just-in-time (JIT) compiler for compila
 >
 > When using the interactive interpreter Cling, unlike to pure C++ language, no semicolon (;) is required at the end of the line.
 
-###Simple commands
+### Simple commands
 
 You can use ROOT to execute simple commands on the ROOT prompt.
 Every command typed at the ROOT prompt is stored in the `.root_hist` file in your home directory.
@@ -137,7 +123,7 @@ Calling a function from a ROOT class like [TMath](https://root.cern/doc/master/n
 You can use ROOT to execute multi-line commands on the ROOT prompt.
 
 1.  Type at the ROOT prompt:  
-   ` {`  
+   	`{`  
     to begin a multi-line command.
 
 2.  Type one command per line.
@@ -161,7 +147,7 @@ You can use ROOT to execute multi-line commands on the ROOT prompt.
    i = 1, j = 1
    i = 2, j = 3
 ```
-###ROOT macros <a name="root_macros"></a>
+### ROOT macros
 
 A ROOT macro contains pure C++ code, which additionally can contain ROOT classes and other
 ROOT objects (→ see *ROOT classes*). A ROOT macro can consist of simple or multi-line commands,
@@ -172,7 +158,7 @@ ROOT provides a lot of tutorials that are available as ROOT macros
 
 You can save a ROOT macro in a file and execute it at the ROOT prompt or the system prompt.
 
-####Creating a ROOT macro
+#### Creating a ROOT macro
 
 The name of the ROOT macro and the file name (without file extension) in which the macro
 is saved must match.
@@ -193,7 +179,7 @@ is saved must match.
 
 3.  Save the file ROOT macro, using the macro name as file name: **MacroName**.C
 
-####Executing a ROOT macro
+#### Executing a ROOT macro
 
 You can execute a ROOT macro:
 
@@ -238,7 +224,7 @@ Call the interpreter [TROOT::ProcessLine()](https://root.cern/doc/master/classTR
 This contains the error as defined in enum `TInterpreter::EErrorCode` with `TInterpreter::kSuccess`
 as being the value for a successful execution.
 
-** Example **
+**Example**
 
 The example `$ROOTSYS/tutorials/tree/cernstaff.C` calls a macro to build a ROOT file, if it does not exist.
 
@@ -272,7 +258,7 @@ using the compiler and the compiler options that were used to compile the ROOT e
 You do not have to write a Makefile remembering the correct compiler options, and you do not
 have to exit ROOT.
 
-** Building a shared library **
+**Building a shared library**
 
 Before you can compile your interpreted macro, you need to add the include statements for
 the classes used in the macro. Only then you can build and load a shared library containing
@@ -288,22 +274,21 @@ The `+` option generates a shared library. The name of the shared library is the
 where the dot before the extension is replaced by an underscore and the shared library
 extension is added.
 
-** Example **
+**Example**
  
 On most platforms, `hsimple.cxx` will generate `hsimple_cxx.so`.
 
 The `+` command rebuilds the library only if the ROOT macro or any of the files it includes
 are newer than the library.
 
-
 When checking the timestamp, ACLiC generates a dependency file, which name is the same as
 the library name, just replacing the 'so' extension by the extension '`d`'.
 
-** Example **
+**Example**
 
 On most platforms, `hsimple.cxx ` will generate `hsimple_cxx.d`.
 
-** Setting the include path **
+**Setting the include path**
 
 The `$ROOTSYS/include` directory is automatically appended to the include path.
 
@@ -342,7 +327,7 @@ For adding a shared library, you can load it before you compile the ROOT macros,
    gSystem->Load("mydir/mylib");
 ```
 
-** Generating dictionaries **
+**Generating dictionaries**
 
 You can define what is added to the dictionary generated by ACLiC.
 
@@ -354,7 +339,7 @@ Add the following line and the end of the ROOT macro:
       #endif
 ```
 
-** Compiling a ROOT macro **
+**Compiling a ROOT macro**
 
 You can compile a ROOT macro with:
 
@@ -421,7 +406,7 @@ the compiler and `rootcling`, but will be invisible to the interpreter.
 
 Use `!defined(__CLING__)` to bracket code that should be seen only by the compiler and not by Cling nor `rootcling`.
 
-** Example ***
+**Example**
 
 Hiding the declaration and initialization of the array `gArray `from both Cling and `rootcling`:
 
@@ -465,7 +450,7 @@ You can include following types of headers in the interpreted and compiled mode:
 Hiding header files from `rootcling` that are necessary for the compiler but optional for
 the interpreter can lead to a fatal error.
 
-** Example **
+**Example**
 
 ```
    #ifndef __CLING__
@@ -532,7 +517,7 @@ When you install ROOT, a tutorials directory is created, containing all ROOT tut
 >
 > You need write permissions to the `tutorials` directory to execute the tutorials.
 
-** Starting with hsimple.C**
+**Starting with hsimple.C**
 
 It is recommended to start with the `hsimple.C` macro first. It creates a `hsimple.root`
 file, which is used by many other macros.
@@ -543,7 +528,7 @@ To execute the `hsimple.C` macro at the ROOT prompt, type:
 root[0] .x hsimple.C
 ```
 
-** Executing demos with demos.C**
+**Executing demos with demos.C**
 
 There are a lot of demos available in the `demos.C` macro.
 
@@ -559,7 +544,7 @@ A window is displayed. Here you can try out different demos.
 
 To check the source code of a ROOT macro, open it in your favorite text editor.
 
-**Example **
+**Example**
 
 `graph.C` tutorial from `$ROOTSYS/tutorials/graphs`
 
@@ -646,7 +631,7 @@ form feed
 `n`  
 new line
 
-`r`
+`r`  
 carriage return
 
 `s`  
