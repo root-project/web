@@ -44,7 +44,7 @@ Every time you change the data members of a class, increase its `ClassVersionID`
 Set `ClassVersionID` >= 1.  
 Set `ClassVersionID` = 0 in case you do not need object I/O.
 
-_**Example**__
+_**Example**_
 
 In the `TLine.h` file:
 
@@ -52,7 +52,7 @@ In the `TLine.h` file:
 ClassDef(TLine,1);
 ```
 
-###Calling the ClassImp macro
+### Calling the ClassImp macro
 
 Call the `ClassImp` macro to give your class Run Time Type Identification (RTTI) and full I/O capabilities. In addition, you can generate properly documentation for your class using [THtml](https://root.cern/doc/master/classTHtml.html).
 
@@ -68,7 +68,7 @@ In the `Tline.cxx` file:
 
 		ClassImp(TLine)
 
-###Constructors
+### Constructors
 
 ROOT requires for every class to have one of the following constructors:
 
@@ -80,7 +80,8 @@ ROOT requires for every class to have one of the following constructors:
 
 The default constructor or I/O constructor is called whenever an object is being read from a ROOT database.
 
-_Example for a class__
+_**Example for a class**_
+
 ```
 #include "TObject.h"
 
@@ -127,93 +128,98 @@ In the first step, a `TEvent` and a `TTrack` class is defined. Next an event obj
 In the second step, the `TEvent `and the `TTrack `call are implemented. After that you can use `rootcling` to generate the directory. This generates the `eventdict.cxx` file.
 
 **The TEvent.h header**
-
-		#ifndef __TEvent__
-		#define __TEvent__
-		#include "TObject.h"
-		class TCollection;
-		class TTrack;
+```
+#ifndef __TEvent__
+#define __TEvent__
+#include "TObject.h"
+class TCollection;
+class TTrack;
 		
-		class TEvent : public TObject {
-		private:
-			Int_t fId; // Event sequential id
-			Float_t fTotalMom; // Total momentum
-			TCollection *fTracks; // Collection of tracks
-		public:
-			TEvent() { fId = 0; fTracks = 0; }
-			TEvent(Int_t id);
-			~TEvent();
-			void AddTrack(TTrack *t);
-			Int_t GetId() const { return fId; }
-			Int_t GetNoTracks() const;
-			void Print(Option_t *opt="");
-			Float_t TotalMomentum();
-			ClassDef(TEvent,1); //Simple event class
-		};
+class TEvent : public TObject {
+private:
+	Int_t fId; // Event sequential id
+	Float_t fTotalMom; // Total momentum
+	TCollection *fTracks; // Collection of tracks
+public:
+	TEvent() { fId = 0; fTracks = 0; }
+	TEvent(Int_t id);
+	~TEvent();
+	void AddTrack(TTrack *t);
+	Int_t GetId() const { return fId; }
+	Int_t GetNoTracks() const;
+	void Print(Option_t *opt="");
+	Float_t TotalMomentum();
+	ClassDef(TEvent,1); //Simple event class
+};
+```
 
 **The TTrack.h header**
-
-		#ifndef __TTrack __
-		#define __TTrack__
-		#include "TObject.h"
+```
+#ifndef __TTrack __
+#define __TTrack__
+#include "TObject.h"
 		
-		class TEvent;
-		class TTrack : public TObject {
-		private:
-			Int_t fId; //Track sequential id
-			TEvent *fEvent; //tvent to which track belongs
-			Float_t fPx; //x part of track momentum
-			Float_t fPy; //y part of track momentum
-			Float_t fPz; //z part of track momentum
-		public:
-			TTrack() { fId = 0; fEvent = 0; fPx = fPy = fPz = 0; }
-			TTrack(Int_t id, Event *ev, Float_t px,Float_t py,Float_t pz);
-			Float_t Momentum() const;
-			TEvent *GetEvent() const { return fEvent; }
-			void Print(Option_t *opt="");
-			ClassDef (TTrack,1); //Simple track class
-		};
+class TEvent;
+class TTrack : public TObject {
+private:
+	Int_t fId; //Track sequential id
+	TEvent *fEvent; //tvent to which track belongs
+	Float_t fPx; //x part of track momentum
+	Float_t fPy; //y part of track momentum
+	Float_t fPz; //z part of track momentum
+public:
+	TTrack() { fId = 0; fEvent = 0; fPx = fPy = fPz = 0; }
+	TTrack(Int_t id, Event *ev, Float_t px,Float_t py,Float_t pz);
+	Float_t Momentum() const;
+	TEvent *GetEvent() const { return fEvent; }
+	void Print(Option_t *opt="");
+	ClassDef (TTrack,1); //Simple track class
+};
+```
 		
 **Implementation of TEvent and TTrack class**
+```	
+TEvent.cxx:
+#include <iostream.h>
+#include "TOrdCollection.h"
+#include "TEvent.h"
+#include "TTrack.h"
+ClassImp(TEvent)
+...
 		
-		TEvent.cxx:
-		#include <iostream.h\>
-		#include "TOrdCollection.h"
-		#include "TEvent.h"
-		#include "TTrack.h"
-		ClassImp(TEvent)
-		...
-		
-		TTrack.cxx:
-		#include <iostream.h>
-		#include "TMath.h"
-		#include "Track.h"
-		#include "Event.h"
-		ClassImp(TTrack)
-		...
+TTrack.cxx:
+#include <iostream.h>
+#include "TMath.h"
+#include "Track.h"
+#include "Event.h"
+ClassImp(TTrack)
+...
+```
 
 **Using rootcling to generate the dictionaries**
-
-		rootcling eventdict.cxx -c TEvent.h TTrack.h
+```
+rootcling eventdict.cxx -c TEvent.h TTrack.h
+```
 
 **eventdict.cxx - the generated dictionary**
-
-		void TEvent::Streamer(TBuffer &R__b) {
-		// Stream an object of class TEvent.
-		if (R__b.IsReading()) {
-		Version_t R__v = R__b.ReadVersion();
-		TObject::(R__b);
-		R__b >> fId;
-		R__b >> fTotalMom;
-		R__b >> fTracks;
-		} else {
-		R__b.WriteVersion(TEvent::IsA());
-		TObject::Streamer(R__b);
-		R__b << fId;
-		R__b << fTotalMom;
-		R__b << fTracks;
-		}
-		}
+```
+void TEvent::Streamer(TBuffer &R__b) {
+// Stream an object of class TEvent.
+if (R__b.IsReading()) {
+Version_t R__v = R__b.ReadVersion();
+TObject::(R__b);
+R__b >> fId;
+R__b >> fTotalMom;
+R__b >> fTracks;
+} else {
+R__b.WriteVersion(TEvent::IsA());
+TObject::Streamer(R__b);
+R__b << fId;
+R__b << fTotalMom;
+R__b << fTracks;
+}
+}
+```
 
 `Streamer()` is used to stream an object to/from a [TBuffer](https://root.cern/doc/master/classTBuffer.html). The `TBuffer` class overloads `operator<<() `and `operator>>() `for all basic types and for pointers to objects. These operators write and read from the buffer and take care of any needed byte swapping to make the buffer machine independent. During writing, the `TBuffer` keeps track of the objects that have been written and multiple references to the same object are replaced by an index. In addition, the class information of the object is stored.
 
