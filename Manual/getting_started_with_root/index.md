@@ -12,6 +12,7 @@ toc_sticky: true
 > Before using ROOT, it must be installed successfully and all environment variables must be set.
 > → See [Installation Guide]({{ '/Resources/Building_ROOT' | relative_url }}).
 
+## Starting and quitting a ROOT session
 
 **Starting ROOT**
 
@@ -667,3 +668,35 @@ Regular expression and wildcards can be easily used in methods like:
 The method finds the first occurrence of the regular expression in the string and returns its position.
 
 
+## Using Cling commands to control ROOT
+
+You can pass commands directly to ROOT by placing a dot before the command.
+
+1.  Type at the ROOT prompt: 
+```
+   .<command>
+``` 
+
+`.q`   
+Quit ROOT.
+
+`.?`  
+Provides a list of all commands.
+
+`.!<OS_command>`  
+Access the shell of the operating system. For example .!ls or .!pwd.
+
+`.x <file_name>`  
+Execute a macro.
+
+`.L <file_name>`  
+Load a macro or library.
+
+`.L <file_name>+`  
+Compile a macro.
+
+`.help`  
+Provides a list of all commands.
+
+`.class`  
+List the available ROOT classes.
