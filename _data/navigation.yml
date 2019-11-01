@@ -22,6 +22,8 @@ manual:
     url: Manual/getting_started_with_root
   - title: ROOT classes, data types and global variables
     url: Manual/root_classes_data_types_and_global_variables
+  - title: Adding a class to ROOT
+    url: Manual/adding_a_class_to_root
   - title: Histograms
     url: https://root.cern/doc/master/group__Hist.html
   - title: Graphics
