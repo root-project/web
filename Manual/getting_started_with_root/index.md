@@ -14,11 +14,12 @@ toc_sticky: true
 
 ## Starting and quitting a ROOT session
 
-**Starting ROOT**
+### Starting ROOT
 
 You start ROOT at the system prompt.
 
 Type at the system prompt:
+
 ```
 $ root
 ```
@@ -37,46 +38,46 @@ The ROOT prompt is displayed.
 root [0]
 ```
 
-**Starting ROOT with command line options**
+### Starting ROOT with command line options
 
 You can start ROOT with the following command line options:
 
-`-b`  
+`-b`
 ROOT session runs in batch mode, without graphics display. This mode is useful in case you do not want to set the DISPLAY.
 
-`-n`  
+`-n`
 Does not execute the logon script and logoff script as specified in .rootrc.
 
-`-q`  
+`-q`
 Exits after processing the command line macro files.
 
-`-l`  
+`-l`
 Does not show the splash screen.
 
-`-x`  
+`-x`
 Exit on exception.
 
-`dir`  
+`dir`
 If dir is a valid directory, change to it (cd) before executing ROOT.
 
-`-?`  
+`-?`
 Print usage.
 
-`-h`  
+`-h`
 Print usage.
 
-`--help`  
+`--help`
 Print usage.
 
-`-config`  
+`-config`
 Print ./configure options.
 
-`-memstat`  
+`-memstat`
 Run ROOT with memory usage monitoring.
 
-**Quitting ROOT**
+### Quitting ROOT
 
-Type at the ROOT prompt:  
+Type at the ROOT prompt:
 ```
 .q
 ```
@@ -84,12 +85,13 @@ Type at the ROOT prompt:
 ## Using the interactive C++ interpreter Cling
 
 ROOT uses the interactive C++ interpreter Cling that is built on top of the
-**L**ow **L**evel **V**irtual **M**achine ([LLVM](https://llvm.org/)) and the [Clang libraries](https://clang.llvm.org/).  
+**L**ow **L**evel **V**irtual **M**achine ([LLVM](https://llvm.org/)) and the [Clang libraries](https://clang.llvm.org/).
 Cling provides command line prompt and a just-in-time (JIT) compiler for compilation.
 
 > **Note**
 >
-> When using the interactive interpreter Cling, unlike to pure C++ language, no semicolon (;) is required at the end of the line.
+> When using the interactive interpreter Cling, unlike to pure C++ language, no semicolon
+> (`;`) is required at the end of the line.
 
 ### Simple commands
 
@@ -123,17 +125,17 @@ Calling a function from a ROOT class like [TMath](https://root.cern/doc/master/n
 
 You can use ROOT to execute multi-line commands on the ROOT prompt.
 
-1.  Type at the ROOT prompt:  
-   	`{`  
+1.  Type at the ROOT prompt:
+   	`{`
     to begin a multi-line command.
 
 2.  Type one command per line.
 
-3.  Type:  
-    `}`  
+3.  Type:
+    `}`
     to end the multi-line command.
 
-**Example**
+_**Example**_
 
 ```
    root [0] {
@@ -148,7 +150,8 @@ You can use ROOT to execute multi-line commands on the ROOT prompt.
    i = 1, j = 1
    i = 2, j = 3
 ```
-### ROOT macros
+
+## ROOT macros
 
 A ROOT macro contains pure C++ code, which additionally can contain ROOT classes and other
 ROOT objects (→ see *ROOT classes*). A ROOT macro can consist of simple or multi-line commands,
@@ -159,7 +162,7 @@ ROOT provides a lot of tutorials that are available as ROOT macros
 
 You can save a ROOT macro in a file and execute it at the ROOT prompt or the system prompt.
 
-#### Creating a ROOT macro
+### Creating a ROOT macro
 
 The name of the ROOT macro and the file name (without file extension) in which the macro
 is saved must match.
@@ -180,7 +183,7 @@ is saved must match.
 
 3.  Save the file ROOT macro, using the macro name as file name: **MacroName**.C
 
-#### Executing a ROOT macro
+### Executing a ROOT macro
 
 You can execute a ROOT macro:
 
@@ -188,22 +191,19 @@ You can execute a ROOT macro:
   - at the ROOT prompt,
   - by loading it to a ROOT session.
 
-1.  To execute a ROOT macro at the system prompt, type:
+1. To execute a ROOT macro at the system prompt, type:
 
    ```
    root MacroName.C
    ```
-   
--- or --
 
-1.  To execute a ROOT macro at the ROOT prompt, type:
+2. To execute a ROOT macro at the ROOT prompt, type:
 
    ```
    .x MacroName.C`
    ```
--- or --
 
-1.  To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
+3. To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
 
    ```
    .L MacroName.C
@@ -214,7 +214,7 @@ You can execute a ROOT macro:
 >
 > You can load multiple ROOT macros, as each ROOT macro has a unique name in the ROOT name space.
 
-#### Executing a ROOT macro from a ROOT macro
+### Executing a ROOT macro from a ROOT macro
 
 You can execute a RROT macro conditionally inside another ROOT macro.
 
@@ -225,7 +225,7 @@ Call the interpreter [TROOT::ProcessLine()](https://root.cern/doc/master/classTR
 This contains the error as defined in enum `TInterpreter::EErrorCode` with `TInterpreter::kSuccess`
 as being the value for a successful execution.
 
-**Example**
+_**Example**_
 
 The example `$ROOTSYS/tutorials/tree/cernstaff.C` calls a macro to build a ROOT file, if it does not exist.
 
@@ -235,11 +235,11 @@ The example `$ROOTSYS/tutorials/tree/cernstaff.C` calls a macro to build a ROOT 
       gROOT->ProcessLine(".x cernbuild.C");
    }
 ```
-#### Executing a ROOT macro from the invocation of ROOT
+### Executing a ROOT macro from the invocation of ROOT
 
 You can pass a macro to ROOT in its invocation.
 
-**Example**
+_**Example**_
 
 ```
    $ root -l -b 'myCode.C("some String", 12)'
@@ -247,7 +247,7 @@ You can pass a macro to ROOT in its invocation.
 
 The exact kind of quoting depends on the used shell. This example works for bash-like shells.
 
-#### Compiling a ROOT macro with ACLiC into libraries
+### Compiling a ROOT macro with ACLiC into libraries
 
 You can compile, link and dynamically load a macro using the C++ compiler and linker.
 
@@ -259,7 +259,7 @@ using the compiler and the compiler options that were used to compile the ROOT e
 You do not have to write a Makefile remembering the correct compiler options, and you do not
 have to exit ROOT.
 
-**Building a shared library**
+#### Building a shared library
 
 Before you can compile your interpreted macro, you need to add the include statements for
 the classes used in the macro. Only then you can build and load a shared library containing
@@ -275,8 +275,8 @@ The `+` option generates a shared library. The name of the shared library is the
 where the dot before the extension is replaced by an underscore and the shared library
 extension is added.
 
-**Example**
- 
+_**Example**_
+
 On most platforms, `hsimple.cxx` will generate `hsimple_cxx.so`.
 
 The `+` command rebuilds the library only if the ROOT macro or any of the files it includes
@@ -285,11 +285,11 @@ are newer than the library.
 When checking the timestamp, ACLiC generates a dependency file, which name is the same as
 the library name, just replacing the 'so' extension by the extension '`d`'.
 
-**Example**
+_**Example**_
 
 On most platforms, `hsimple.cxx ` will generate `hsimple_cxx.d`.
 
-**Setting the include path**
+#### Setting the include path
 
 The `$ROOTSYS/include` directory is automatically appended to the include path.
 
@@ -328,7 +328,7 @@ For adding a shared library, you can load it before you compile the ROOT macros,
    gSystem->Load("mydir/mylib");
 ```
 
-**Generating dictionaries**
+#### Generating dictionaries
 
 You can define what is added to the dictionary generated by ACLiC.
 
@@ -340,7 +340,7 @@ Add the following line and the end of the ROOT macro:
       #endif
 ```
 
-**Compiling a ROOT macro**
+#### Compiling a ROOT macro
 
 You can compile a ROOT macro with:
 
@@ -387,7 +387,7 @@ ROOT macro files with one of following extensions: `.h`, `.hh`, `.hpp`, `.hxx`,`
 This means that, by default, you cannot combine ROOT macros from different files into one
 library by using `#include` statements; you will need to compile each ROOT macro separately.
 
-#### Developing portable ROOT macros
+### Developing portable ROOT macros
 
 Portable ROOT macros run both with the Cling interpreter and ACLiC (*Compiling Your Code*).
 
@@ -407,7 +407,7 @@ the compiler and `rootcling`, but will be invisible to the interpreter.
 
 Use `!defined(__CLING__)` to bracket code that should be seen only by the compiler and not by Cling nor `rootcling`.
 
-**Example**
+_**Example**_
 
 Hiding the declaration and initialization of the array `gArray `from both Cling and `rootcling`:
 
@@ -436,7 +436,7 @@ between the `#if`'s, since the definition is not visible.
 `gArray` will be visible to `rootcling`, but still not visible to Cling. If you use ACLiC,
 `gArray` will be available at the command line.
 
-**Included header files**
+#### Included header files
 
 It is recommended to write ROOT macros with the needed include statements, even a few header
 files are not handled correctly by Cling.
@@ -451,7 +451,7 @@ You can include following types of headers in the interpreted and compiled mode:
 Hiding header files from `rootcling` that are necessary for the compiler but optional for
 the interpreter can lead to a fatal error.
 
-**Example**
+_**Example**_
 
 ```
    #ifndef __CLING__
@@ -518,7 +518,7 @@ When you install ROOT, a tutorials directory is created, containing all ROOT tut
 >
 > You need write permissions to the `tutorials` directory to execute the tutorials.
 
-**Starting with hsimple.C**
+#### Starting with hsimple.C
 
 It is recommended to start with the `hsimple.C` macro first. It creates a `hsimple.root`
 file, which is used by many other macros.
@@ -529,7 +529,7 @@ To execute the `hsimple.C` macro at the ROOT prompt, type:
 root[0] .x hsimple.C
 ```
 
-**Executing demos with demos.C**
+#### Executing demos with demos.C
 
 There are a lot of demos available in the `demos.C` macro.
 
@@ -541,11 +541,11 @@ root[0] .x demos.C
 
 A window is displayed. Here you can try out different demos.
 
-**Source code of ROOT tutorials**
+#### Source code of ROOT tutorials
 
 To check the source code of a ROOT macro, open it in your favorite text editor.
 
-**Example**
+_**Example**_
 
 `graph.C` tutorial from `$ROOTSYS/tutorials/graphs`
 
@@ -579,83 +579,83 @@ To check the source code of a ROOT macro, open it in your favorite text editor.
    }
 ```
 
-### Regular expressions
+## Regular expressions
 
 You can use the following meta-characters in regular expressions:
 
-`ˆ`  
+`ˆ`
 start-of-line anchor
 
-`$`  
+`$`
 end-of-line anchor
 
-`.`  
+`.`
 matches any character
 
-`[`  
+`[`
 start a character class
 
-`]`  
+`]`
 end a character class
 
-`ˆ`  
+`ˆ`
 negates character class if first character
 
-`*`  
+`*`
 Kleene closure (matches 0 or more)
 
-`+`  
+`+`
 Positive closure (1 or more)
 
-`?`  
+`?`
 Optional closure (0 or 1)
 
 When using wildcards, the regular expression is assumed to be preceded by a `ˆ `(BOL) and terminated by `$` (EOL).
 
 All `*` (closures) are assumed to be preceded by a `.` , i.e. any character, except slash `/`. Its special treatment allows the easy matching of pathnames.
 
-**Example**
+_**Example**_
 
 `*.root` will match `aap.root`, but not `pipo/aap.root`
 
 The escape characters are:
 
-`\`  
+`\`
 backslash
 
-`b`  
+`b`
 backspace
 
-`f`  
+`f`
 form feed
 
-`n`  
+`n`
 new line
 
-`r`  
+`r`
 carriage return
 
-`s`  
+`s`
 space
 
-`t`  
+`t`
 tab
 
-`e`  
+`e`
 ASCII ESC character ('033')
 
-`DDD`  
+`DDD`
 number formed of 1-3 octal digits
 
-`xDD`  
+`xDD`
 number formed of 1-2 hex digits
 
-`ˆC`  
+`ˆC`
 C = any letter. Control code
 
 You can use the [TRegexp](https://root.cern/doc/master/classTRegexp.html) class to create a regular expression from an input string. If wildcard is true then the input string contains a wildcard expression.
 
-**Example**
+_**Example**_
 
 ```
    TRegexp(const char *re, Bool_t wildcard)
@@ -672,31 +672,31 @@ The method finds the first occurrence of the regular expression in the string an
 
 You can pass commands directly to ROOT by placing a dot before the command.
 
-1.  Type at the ROOT prompt: 
+1.  Type at the ROOT prompt:
 ```
    .<command>
-``` 
+```
 
-`.q`   
+`.q`
 Quit ROOT.
 
-`.?`  
+`.?`
 Provides a list of all commands.
 
-`.!<OS_command>`  
+`.!<OS_command>`
 Access the shell of the operating system. For example .!ls or .!pwd.
 
-`.x <file_name>`  
+`.x <file_name>`
 Execute a macro.
 
-`.L <file_name>`  
+`.L <file_name>`
 Load a macro or library.
 
-`.L <file_name>+`  
+`.L <file_name>+`
 Compile a macro.
 
-`.help`  
+`.help`
 Provides a list of all commands.
 
-`.class`  
+`.class`
 List the available ROOT classes.
