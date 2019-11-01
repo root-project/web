@@ -155,7 +155,7 @@ ROOT objects (→ see *ROOT classes*). A ROOT macro can consist of simple or mul
 but also of arbitrarily complex class and function definitions.
 
 ROOT provides a lot of tutorials that are available as ROOT macros
-(→ see [ROOT tutorials](root-tutorials))
+(→ see [ROOT tutorials](#root-tutorials))
 
 You can save a ROOT macro in a file and execute it at the ROOT prompt or the system prompt.
 
@@ -239,7 +239,7 @@ The example `$ROOTSYS/tutorials/tree/cernstaff.C` calls a macro to build a ROOT 
 
 You can pass a macro to ROOT in its invocation.
 
-** Example **
+**Example**
 
 ```
    $ root -l -b 'myCode.C("some String", 12)'
