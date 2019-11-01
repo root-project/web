@@ -155,7 +155,7 @@ ROOT objects (→ see *ROOT classes*). A ROOT macro can consist of simple or mul
 but also of arbitrarily complex class and function definitions.
 
 ROOT provides a lot of tutorials that are available as ROOT macros
-(→ see [ROOT tutorials]({{ '/Manual/getting_started_with_root/root_tutorials' | relative_url }}))
+(→ see [ROOT tutorials](root-tutorials))
 
 You can save a ROOT macro in a file and execute it at the ROOT prompt or the system prompt.
 
