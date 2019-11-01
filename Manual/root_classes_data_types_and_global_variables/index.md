@@ -1,5 +1,5 @@
 ---
-title: ROOT: classes, data types and global variables
+title: ROOT classes, data types and global variables
 layout: single
 sidebar:
   nav: "manual"
@@ -209,11 +209,11 @@ This returns a pointer to a [TObject](https://root.cern/doc/master/classTObject.
 
 ### gDirectory
 
-gDirectory is a pointer to the current directory.
+ `gDirectory` is a pointer to the current directory.
 
 ### gPad
 
-`gPad `points to an active pad on which a graphic object is drawn.
+`gPad` points to an active pad on which a graphic object is drawn.
 
 _**Example**_
 
@@ -225,7 +225,7 @@ gPad->SetFillColor(38)
 
 ### gRandom
 
-gRandom is a pointer to the current random number generator. By default, it points to a [TRandom3](https://root.cern/doc/master/classTRandom3.html) object.
+`gRandom` is a pointer to the current random number generator. By default, it points to a [TRandom3](https://root.cern/doc/master/classTRandom3.html) object.
 The following basic random distributions are provided:
 
 -   `Rndm()` or `Uniform(min,max)`
