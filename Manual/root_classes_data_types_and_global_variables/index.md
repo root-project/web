@@ -140,7 +140,7 @@ root[1] f1.Draw()
 ```	
 A canvas s displayed.
 
-(to be added)
+<img src="{{'/assets/images/sinus-canvas.png' | relative_url}}">
 *Figure: Canvas.*
 
 ### TROOT - entry point to ROOT
