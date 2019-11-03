@@ -13,22 +13,22 @@ To prevent memory leaks and multiple attempts to delete an object, you need to k
 The following cases are possible:
 
 -   ownership by current directory (`gDirectory`).  
-	→ See *Ownership by current directory (gDirectory)*
+	→ See [Ownership by current directory (gDirectory)](#ownership-by-current-directory-gdirectory)
 
 -   ownership by the master [TROOT](https://root.cern/doc/master/classTROOT.html) object (`gROOT`)  
-→ See *Ownership by the TROOT master object (gROOT)*
+→ See [Ownership by the TROOT master object (gROOT)](#ownership-by-the-troot-master-object-groot)
 
 -   ownership by other objects  
-→ See *Ownership by other objects*
+→ See [Ownership by other objects](#ownership-by-other-objects)
 
 -   ownership by the user  
-→ See *Ownership by the user*
+→ See [Ownership by the user](#ownership-by-the-user)
 
 ## Ownership by current directory (gDirectory)
 
 When a [histogram](https://root.cern/doc/master/group__Hist.html), a [tree](https://root.cern/doc/master/group__tree.html) or an [event list](https://root.cern/doc/master/classTEventList.html) is created, it is added by default to the list of objects in the current directory (`gDirectory`).
 
-You can get the list of objects in the current directory and retrieve a pointer to a specific object with the GetList method.
+You can get the list of objects in the current directory and retrieve a pointer to a specific object with the `GetList()` method.
 
 _**Example**_
 
@@ -44,7 +44,7 @@ _**Example**_
 Changing the directory of a histogram (same applies to trees and event lists):
 
 ```
-h-\>SetDirectory(newDir);
+h->SetDirectory(newDir);
 ```
 
 You can remove a histogram from a directory by using `SetDirectory(0)`. Once a histogram is removed from the directory, it will not be deleted when the directory is closed. You have to delete the histogram once you have finished with it.
@@ -71,12 +71,12 @@ The [TROOT]([TROOT](https://root.cern/doc/master/classTROOT.html)) master object
 
 Accessing the collection contents
 
-You can access the content with the gROOT-\>GetListOf method.
+You can access the content with the `gROOT->GetListOf` method.
 
 _**Example**_
 
 ```
-gROOT-\>GetListOfCanvases
+gROOT->GetListOfCanvases
 ```
 
 ## Ownership by other objects
@@ -86,7 +86,7 @@ When an object creates another, the creating object is the owner of the created 
 _**Example**_
 
 ```
-myHisto-\>Fit(\"gaus\")
+myHisto->Fit("gaus")
 ```
 
 The call of `Fit()` copies the global [TF1](https://root.cern/doc/master/classTF1.html) Gaussian function and attaches the copy to the histogram. When the histogram is deleted, the copy is deleted too.
@@ -99,17 +99,17 @@ The user owns all objects not described in one of the above cases.
 
 [TObject](https://root.cern/doc/master/classTObject.html) has two bits that influence how an object is managed (in `TObject::fBits)`:
 
--   `kCanDelete`, see → *kCanDelete*
+-   `kCanDelete`, see → [kCanDelete](#kcandelete)
 
--   `kMustCleanup`, see → *kMustCleanup*
+-   `kMustCleanup`, see → [kMustCleanup](#kmustcleanup)
 
 #### Setting the bits
 
 Use:
 
 ```
-MyObject-\>SetBit(kCanDelete)
-MyObject-\>SetBit(kMustCleanup)
+MyObject->SetBit(kCanDelete)
+MyObject->SetBit(kMustCleanup)
 ```
 
 #### Resetting the bits
@@ -134,13 +134,13 @@ The `kCanDelete` bit setting is displayed with [TObject::ls()](https://root.cern
 
 **Collections**
 
-The `gROOT `collections (see → *Ownership by the TROOT master object (gROOT)*) own their members and will delete them regardless of the kCanDelete bit.
+The `gROOT `collections (see → [Ownership by the TROOT master object (gROOT)](#ownership-by-the-troot-master-object-groot)) own their members and will delete them regardless of the `kCanDelete` bit.
 
 In all other collections, when the collection `Clear()` method is called (i.e. [TList::Clear()](https://root.cern/doc/master/classTList.html#af4d5429298af281bdc7fe62b123f5385), members with the `kCanDelete` bit set, are deleted and removed from the collection.
 
 If the `kCanDelete` bit is not set, the object is only removed from the collection but not deleted.
 
-If the collection `Delete()` method (i.e. [TList::Delete()](https://root.cern/doc/master/classTList.html#abfc59852231e4c8050b581e890d05c36) is called, all objects in the collection are deleted without considering the kCanDelete bit.
+If the collection `Delete()` method (i.e. [TList::Delete()](https://root.cern/doc/master/classTList.html#abfc59852231e4c8050b581e890d05c36) is called, all objects in the collection are deleted without considering the `kCanDelete` bit.
 
 > **Note**
 > 
@@ -150,7 +150,8 @@ If you specify `MyCollection->SetOwner`,the collection owns the objects and dele
 Otherwise, you need to delete all member objects in the collection and delete the collection object itself:
 
 
-```MyCollection-\>Delete();
+```
+MyCollection->Delete();
 
 delete MyCollection;
 ```
@@ -189,16 +190,16 @@ _**Example**_
 ```
 //Create two lists:
 
-TList *myList1, *myList2;
+	TList *myList1, *myList2;
 
 //Add both lists to clean ups:
 
-gROOT->GetListOfCleanUps()->Add(myList1);
-gROOT->GetListOfCleanUps()->Add(myList2);
+	gROOT->GetListOfCleanUps()->Add(myList1);
+	gROOT->GetListOfCleanUps()->Add(myList2);
 
 //Assuming myObject is in myList1 and myList2, when calling:
 
-delete myObject;
+	delete myObject;
 
 // The object is deleted from both lists.
 ```
