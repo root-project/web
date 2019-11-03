@@ -19,11 +19,11 @@ written in C++ but integrated with other languages such as Python and R.
 
   - [Adding a class to ROOT]({{ '/Manual/adding_a_class_to_root' | relative_url }})
 
-  - [ROOT_collections]({{ '/Manual/root_collections' | relative_url }})
+  - [ROOT collections]({{ '/Manual/root_collections' | relative_url }})
 
   - [Object ownership]({{ '/Manual/object_ownership' | relative_url }})
 
-  - Storing ROOT objects
+  - [Storing ROOT objects]({{ '/Manual/storing_root_objects' | relative_url }})
 
   - Trees
 
@@ -35,8 +35,8 @@ written in C++ but integrated with other languages such as Python and R.
 
   - ROOT Installation Guide
 
-  - ROOT Reference Guide
+  - [ROOT Reference Guide](https://root.cern/doc/master/)
 
-  - ROOT Tutorials
+  - [ROOT Tutorials](https://root.cern/doc/master/group__Tutorials.html)
 
-  - ROOT Forum
+  - [ROOT Forum](https://root-forum.cern.ch/)
