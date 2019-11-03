@@ -15,34 +15,34 @@ ROOT has a set of global ROOT variables that apply to a ROOT session, → see [G
 
 The following naming conventions apply to ROOT objects:
 
--   Classes begin with `T`
+-   Classes begin with `T`  
     Examples: [TLine](https://root.cern/doc/master/classTLine.html), [TTree](https://root.cern/doc/master/classTTree.html)
 
--   Non-class types end with `_t`
+-   Non-class types end with `_t`  
     Example: [Int_t](https://root.cern/doc/master/RtypesCore_8h.html#a3885b911a54b47a4e61671f45dd45d0b)
 
--   Data members begin with `f`
+-   Data members begin with `f`  
     Example: `fTree`
 
--   Member functions begin with a capital letter.
+-   Member functions begin with a capital letter.  
     Example: `Loop()`
 
--   Constants begin with `k`
+-   Constants begin with `k`  
     Examples: `kInitialSize`, `kRed`
 
--   Global variables begin with `g` followed by a capital letter.
+-   Global variables begin with `g` followed by a capital letter.  
     Example: `gEnv`
 
--   Static data members begin with `fg`
+-   Static data members begin with `fg`  
     Example: `fgTokenClient`
 
--   Enumeration types begin with `E`
+-   Enumeration types begin with `E`  
     Example: `EColorLevel`
 
--   Locals and parameters begin with a lower case
+-   Locals and parameters begin with a lower case  
     Example: `nbytes  `
 
--   Getters and setters begin with Get and Set
+-   Getters and setters begin with Get and Set  
     Examples: `SetLast()`, `GetFirst()`
 
 ## ROOT classes
@@ -77,7 +77,7 @@ Refer to the [ROOT Reference Guide](https://root.cern/doc/master/index.html) for
 
 The ROOT core classes consist of:
 
--   **ROOT base classes**
+-   **ROOT base classes**  
    The ROOT base classes provide the core of the system.
    They are available to all other ROOT classes.  
    The ROOT base class [TObject](https://root.cern/doc/master/classTObject.html) is the mother of all ROOT objects, → see [TObject - the ROOT base class](#tobject---the-root-base-class).
@@ -126,7 +126,6 @@ You can draw an object on a canvas with:
 object.Draw()
 ```
 
-
 _**Example**_
 
 A one-dimensional sine function shall be drawn.
@@ -165,7 +164,7 @@ To ensure the size of your variables, use these predefined data types in ROOT:
 
 -   `Int_t`: Signed integer 4 bytes.
 
--  `UInt_t`: Unsigned integer 4 bytes.
+-   `UInt_t`: Unsigned integer 4 bytes.
 
 -   `Long64_t`: Portable signed long integer 8 bytes.
 
