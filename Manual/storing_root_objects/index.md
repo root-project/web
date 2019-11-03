@@ -69,7 +69,7 @@ The ROOT file is saved by default in the current working directory.
 
 To view the contents of a ROOT file, you need to open it.
 
-1.  Create a [TBrowser] object:
+1.  Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
 
 ```
 root[0] TFile f("demo.root")
@@ -78,12 +78,12 @@ root[1] TBrowser browser;
 
 The ROOT Object Browser is displayed.
 
-<img src="{{'/assets/images/root_object_browser.png' | relative_url}}">
+<img src="{{'/assets/images/root_object_browser.png' | relative_url}}">  
 *Figure: ROOT Object Browser*
 
 2.  Click the ROOT file and the content of the ROOT file.
 
-<img src="{{'/assets/images/root_object_browser_content.png' | relative_url}}">
+<img src="{{'/assets/images/root_object_browser_content.png' | relative_url}}">  
 *Figure: ROOT Object Browser displaying the content of a ROOT file.*
 
 > **Note**
@@ -111,33 +111,33 @@ _**Example**_
 ```
 root[] f.Map()
 
-20191010/122600 	At:100 	N=114 	TFile
-20191010/122600 	At:214 	N=429 	TH1F 			CX = 2.31
-20191010/122600 	At:643 	N=424 	TH1F 			CX = 2.33
-20191010/122600 	At:1067 N=426 	TH1F 			CX = 2.32
-20191010/122600 	At:1493 N=425 	TH1F 			CX = 2.33
-20191010/122600 	At:1918 N=429 	TH1F 			CX = 2.31
-20191010/122600 	At:2347 N=424 	TH1F 			CX = 2.33
-20191010/122600 	At:2771 N=418 	TH1F 			CX = 2.37
-20191010/122600 	At:3189 N=428 	TH1F 			CX = 2.31
-20191010/122600 	At:3617 N=422 	TH1F 			CX = 2.34
-20191010/122600 	At:4039 N=421 	TH1F 			CX = 2.35
-20191010/122600 	At:4460 N=431 	TH1F 			CX = 2.30
-20191010/122600 	At:4891 N=424 	TH1F 			CX = 2.34
-20191010/122600 	At:5315 N=430 	TH1F 			CX = 2.31
-20191010/122600 	At:5745 N=426 	TH1F 			CX = 2.33
-20191010/122600 	At:6171 N=425 	TH1F 			CX = 2.34
-20191010/122600 	At:6596 N=3055 	StreamerInfo	CX = 3.08
-20191010/122600 	At:9651 N=732 	KeysList
-20191010/122600 	At:10383 N=53 	FreeSegments
-20191010/122600 	At:10436 N=1 	END
+20191010/122600 	At:100 		N=114 	TFile
+20191010/122600 	At:214 		N=429 	TH1F			CX = 2.31
+20191010/122600 	At:643 		N=424 	TH1F			CX = 2.33
+20191010/122600 	At:1067 	N=426 	TH1F			CX = 2.32
+20191010/122600 	At:1493 	N=425 	TH1F 			CX = 2.33
+20191010/122600 	At:1918 	N=429 	TH1F			CX = 2.31
+20191010/122600 	At:2347 	N=424 	TH1F			CX = 2.33
+20191010/122600 	At:2771 	N=418 	TH1F			CX = 2.37
+20191010/122600 	At:3189 	N=428 	TH1F			CX = 2.31
+20191010/122600 	At:3617 	N=422 	TH1F			CX = 2.34
+20191010/122600 	At:4039 	N=421 	TH1F			CX = 2.35
+20191010/122600 	At:4460 	N=431 	TH1F			CX = 2.30
+20191010/122600 	At:4891 	N=424 	TH1F			CX = 2.34
+20191010/122600 	At:5315 	N=430 	TH1F			CX = 2.31
+20191010/122600 	At:5745 	N=426 	TH1F			CX = 2.33
+20191010/122600 	At:6171 	N=425 	TH1F			CX = 2.34
+20191010/122600 	At:6596 	N=3055 	StreamerInfo	CX = 3.08
+20191010/122600 	At:9651		N=732 	KeysList
+20191010/122600 	At:10383 	N=53 	FreeSegments
+20191010/122600 	At:10436 	N=1 	END
 ```
 
 ## Logical contents of a ROOT file
 
 ROOT provides not only sequential access to the content of a ROOT file, but also random or direct access.
 
-[TFile]((https://root.cern/doc/master/classTFile.html) ) keeps a list of [TKey](https://root.cern/doc/master/classTKey.html)s, which is an index to the objects in the ROOT file.
+[TFile]((https://root.cern/doc/master/classTFile.html) keeps a list of [TKey](https://root.cern/doc/master/classTKey.html)s, which is an index to the objects in the ROOT file.
 
 The `TKey` class describes the record headers of objects in the ROOT file. With the `GetListOfKeys()` method you get the list of keys.
 
@@ -184,7 +184,7 @@ Keys are available in a [TList](https://root.cern/doc/master/classTList.html) of
 
 _**Example**_
 
-The `TKeys` of the `demo.root` (see example → [Creating a ROOT file](#creating_a_root_file) file are iterated.
+The `TKeys` of the `demo.root` (see example → [Creating a ROOT file](#creating-a-root-file) file are iterated.
 
 ```
 {
@@ -192,7 +192,7 @@ TFile f("demo.root");
 TIter next(f.GetListOfKeys());
 TKey *key;
 while ((key=(TKey*)next())) {
-	printf("key: %s points to an object of class: %s at %dn", key-\>GetName(),
+	printf("key: %s points to an object of class: %s at %dn", key->GetName(),
 	key->GetClassName(),key->GetSeekKey());
 	}
 }
