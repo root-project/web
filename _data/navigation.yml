@@ -30,8 +30,6 @@ manual:
     url: Manual/object_ownershp
   - title: Further information
     children:
-      - title: "ROOT Installation Guide"
-        url: [Installation Guide]({{ '/Resources/Building_ROOT' | relative_url }}) 
       - title: "ROOT Reference Guide"
         url: https://root.cern/doc/master/
       - title: "ROOT Tutorials"
