@@ -27,7 +27,7 @@ manual:
   - title: ROOT collections
     url: Manual/root_collections
   - title: Object ownership
-    url: Manual/object_ownershp
+    url: Manual/object_ownership
   - title: Further information
     children:
       - title: "ROOT Reference Guide"
