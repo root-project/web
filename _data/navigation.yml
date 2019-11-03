@@ -24,16 +24,20 @@ manual:
     url: Manual/root_classes_data_types_and_global_variables
   - title: Adding a class to ROOT
     url: Manual/adding_a_class_to_root
-  - title: Histograms
-    url: https://root.cern/doc/master/group__Hist.html
-  - title: Graphics
-    url: https://root.cern/doc/master/group__Graphics.html
-  - title: Extras
+  - title: ROOT collections
+    url: Manual/root_collections
+  - title: Object ownership
+    url: Manual/object_ownershp
+  - title: Further information
     children:
-      - title: "Reference"
+      - title: "ROOT Installation Guide"
+        url: [Installation Guide]({{ '/Resources/Building_ROOT' | relative_url }}) 
+      - title: "ROOT Reference Guide"
         url: https://root.cern/doc/master/
-      - title: "Tutorials"
+      - title: "ROOT Tutorials"
         url: https://root.cern/doc/master/group__Tutorials.html
+      - title: "ROOT Forum"
+        url: https://root-forum.cern.ch/
 
 
 resources:
