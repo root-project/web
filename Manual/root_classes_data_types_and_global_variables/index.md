@@ -7,11 +7,11 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT is modular scientific software toolkit and provides numerous ROOT classes for big data processing, statistical analysis, visualization and storage, → see *ROOT classes*.
+ROOT is modular scientific software toolkit and provides numerous ROOT classes for big data processing, statistical analysis, visualization and storage, → see [ROOT classes]('root-classes").
 
-ROOT uses predefined and machine independent data types to ensure the size of variables, → see *Machine independent data types*.
+ROOT uses predefined and machine independent data types to ensure the size of variables, → see [Machine independent data types](#machine-independent-data-types).
 
-ROOT has a set of global ROOT variables that apply to a ROOT session, → see *Global ROOT variables.*
+ROOT has a set of global ROOT variables that apply to a ROOT session, → see [Global ROOT variables](#global-root-variables).
 
 The following naming conventions apply to ROOT objects:
 
@@ -47,7 +47,7 @@ The following naming conventions apply to ROOT objects:
 
 ## ROOT classes
 
-In addition to the ROOT core classes (→ see *ROOT core classes*), there are ROOT classes available for the following topics:
+In addition to the ROOT core classes (→ see [ROOT core classes](="#root-core-classes"), there are ROOT classes available for the following topics:
 
 -   Geometry
 
@@ -79,11 +79,11 @@ The ROOT core classes consist of:
 
 -   **ROOT base classes**
    The ROOT base classes provide the core of the system.
-   They are available to all other ROOT classes.
-   The ROOT base class [TObject](https://root.cern/doc/master/classTObject.html) is the mother of all ROOT objects, → see *TObject -- the ROOT base class*.
+   They are available to all other ROOT classes.  
+   The ROOT base class [TObject](https://root.cern/doc/master/classTObject.html) is the mother of all ROOT objects, → see [TObject - the ROOT base class](#tobject---the-root-base-class).
 
--   **Containers**
-   Containers correspond to collections. A collection is a group of related objects that provide a flexible alternative to arrays, lists and trees. → See *ROOT collections.*
+-   **Containers**  
+   Containers correspond to collections. A collection is a group of related objects that provide a flexible alternative to arrays, lists and trees. → See [ROOT collections]({{ '/Manual/root_collections' | relative_url }}).
 
 ### TObject - the ROOT base class
 
@@ -145,7 +145,7 @@ A canvas is displayed.
 
 ### TROOT - entry point to ROOT
 
-The [TROOT](https://root.cern/doc/master/classTROOT.html) object is the entry point to the ROOT system. The single instance of `TROOT` is accessible via the global variable `gROOT` (→ see *gROOT*). Using the `gROOT` variable, you have access to basically every object created in a ROOT based program. The `TROOT` object is a container of several lists pointing to the main ROOT objects.
+The [TROOT](https://root.cern/doc/master/classTROOT.html) object is the entry point to the ROOT system. The single instance of `TROOT` is accessible via the global variable `gROOT` (→ see [gROOT](#groot)). Using the `gROOT` variable, you have access to basically every object created in a ROOT based program. The `TROOT` object is a container of several lists pointing to the main ROOT objects.
 
 ## Machine independent data types
 
