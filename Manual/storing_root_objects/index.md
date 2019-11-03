@@ -55,7 +55,6 @@ This example creates 15 histograms, fills each histogram with 1000 entries from 
 // Open a ROOT file and write the array to the ROOT file.
 
 	TFile f("demo.root","recreate");
-	
 	Hlist.Write();
 
 //Closing the ROOT file.
@@ -75,6 +74,7 @@ To view the contents of a ROOT file, you need to open it.
 ```
 root[0] TFile f("demo.root")
 root[1] TBrowser browser;
+```
 
 The ROOT Object Browser is displayed.
 
@@ -175,6 +175,7 @@ _**Example**_
 ```
 root[] TH1F *h9 = (TH1F*)f.Get("h9");
 ```
+
 The `Get()` method finds the `TKey` object with name **h9.**
 
 ### Iterating over objects
