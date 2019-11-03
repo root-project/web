@@ -42,37 +42,37 @@ root [0]
 
 You can start ROOT with the following command line options:
 
-`-b`
+`-b`  
 ROOT session runs in batch mode, without graphics display. This mode is useful in case you do not want to set the DISPLAY.
 
-`-n`
+`-n`  
 Does not execute the logon script and logoff script as specified in .rootrc.
 
-`-q`
+`-q`  
 Exits after processing the command line macro files.
 
-`-l`
+`-l`  
 Does not show the splash screen.
 
-`-x`
+`-x`  
 Exit on exception.
 
-`dir`
+`dir`  
 If dir is a valid directory, change to it (cd) before executing ROOT.
 
-`-?`
+`-?`  
 Print usage.
 
-`-h`
+`-h`  
 Print usage.
 
-`--help`
+`--help`  
 Print usage.
 
-`-config`
+`-config`  
 Print ./configure options.
 
-`-memstat`
+`-memstat`  
 Run ROOT with memory usage monitoring.
 
 ### Quitting ROOT
@@ -98,7 +98,7 @@ Cling provides command line prompt and a just-in-time (JIT) compiler for compila
 You can use ROOT to execute simple commands on the ROOT prompt.
 Every command typed at the ROOT prompt is stored in the `.root_hist` file in your home directory.
 
-**Examples**
+_**Examples**_
 
 Simple operations:
 ```
@@ -125,15 +125,12 @@ Calling a function from a ROOT class like [TMath](https://root.cern/doc/master/n
 
 You can use ROOT to execute multi-line commands on the ROOT prompt.
 
-1.  Type at the ROOT prompt:
-   	`{`
-    to begin a multi-line command.
+1.  To begin a multi-line command, type at the ROOT prompt: `{`
 
 2.  Type one command per line.
 
-3.  Type:
-    `}`
-    to end the multi-line command.
+3.  To end the multi-line command, type:`}`
+
 
 _**Example**_
 
@@ -154,7 +151,7 @@ _**Example**_
 ## ROOT macros
 
 A ROOT macro contains pure C++ code, which additionally can contain ROOT classes and other
-ROOT objects (→ see *ROOT classes*). A ROOT macro can consist of simple or multi-line commands,
+ROOT objects (→ see [ROOT classes, data types and global variables]({{ '/Manual/root_classes_data_types_and_global_variables' | relative_url }})). A ROOT macro can consist of simple or multi-line commands,
 but also of arbitrarily complex class and function definitions.
 
 ROOT provides a lot of tutorials that are available as ROOT macros
@@ -196,14 +193,18 @@ You can execute a ROOT macro:
    ```
    root MacroName.C
    ```
+ 
+--or--
 
-2. To execute a ROOT macro at the ROOT prompt, type:
+1. To execute a ROOT macro at the ROOT prompt, type:
 
    ```
    .x MacroName.C`
    ```
+ 
+ -- or --
 
-3. To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
+1. To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
 
    ```
    .L MacroName.C
@@ -472,7 +473,7 @@ subTree object from the Cling command line will cause a fatal error.
 
 In general, it is recommended to let `rootcling` see as many header files as possible.
 
-### ROOT tutorials
+## ROOT tutorials
 
 A ROOT tutorial is a ROOT macro that demonstrates ROOT specific features.
 
@@ -518,7 +519,7 @@ When you install ROOT, a tutorials directory is created, containing all ROOT tut
 >
 > You need write permissions to the `tutorials` directory to execute the tutorials.
 
-#### Starting with hsimple.C
+### Starting with hsimple.C
 
 It is recommended to start with the `hsimple.C` macro first. It creates a `hsimple.root`
 file, which is used by many other macros.
@@ -529,7 +530,7 @@ To execute the `hsimple.C` macro at the ROOT prompt, type:
 root[0] .x hsimple.C
 ```
 
-#### Executing demos with demos.C
+### Executing demos with demos.C
 
 There are a lot of demos available in the `demos.C` macro.
 
@@ -541,7 +542,7 @@ root[0] .x demos.C
 
 A window is displayed. Here you can try out different demos.
 
-#### Source code of ROOT tutorials
+### Source code of ROOT tutorials
 
 To check the source code of a ROOT macro, open it in your favorite text editor.
 
@@ -620,38 +621,27 @@ _**Example**_
 
 The escape characters are:
 
-`\`
-backslash
+`\`: Backslash.
 
-`b`
-backspace
+`b`: Backspace.
 
-`f`
-form feed
+`f`: Form feed.
 
-`n`
-new line
+`n`: New line.
 
-`r`
-carriage return
+`r`: Carriage return.
 
-`s`
-space
+`s`: Space.
 
-`t`
-tab
+`t`: Tab.
 
-`e`
-ASCII ESC character ('033')
+`e`: ASCII ESC character ('033')
 
-`DDD`
-number formed of 1-3 octal digits
+`DDD`: number formed of 1-3 octal digits
 
-`xDD`
-number formed of 1-2 hex digits
+`xDD`: number formed of 1-2 hex digits
 
-`ˆC`
-C = any letter. Control code
+`ˆC`: C = any letter. Control code
 
 You can use the [TRegexp](https://root.cern/doc/master/classTRegexp.html) class to create a regular expression from an input string. If wildcard is true then the input string contains a wildcard expression.
 
@@ -677,26 +667,18 @@ You can pass commands directly to ROOT by placing a dot before the command.
    .<command>
 ```
 
-`.q`
-Quit ROOT.
+`.q`: Quit ROOT.
 
-`.?`
-Provides a list of all commands.
+`.?`: Provides a list of all commands.
 
-`.!<OS_command>`
-Access the shell of the operating system. For example .!ls or .!pwd.
+`.!<OS_command>`: Access the shell of the operating system. For example `.!ls` or `.!pwd`.
 
-`.x <file_name>`
-Execute a macro.
+`.x <file_name>`: Executes a macro.
 
-`.L <file_name>`
-Load a macro or library.
+`.L <file_name>`: Loads a macro or library.
 
-`.L <file_name>+`
-Compile a macro.
+`.L <file_name>+`: Compiles a macro.
 
-`.help`
-Provides a list of all commands.
+`.help`: Provides a list of all commands.
 
-`.class`
-List the available ROOT classes.
+`.class`: Lists the available ROOT classes.
