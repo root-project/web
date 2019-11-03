@@ -28,6 +28,8 @@ manual:
     url: Manual/root_collections
   - title: Object ownership
     url: Manual/object_ownership
+  - title: Storing ROOT objects
+    url: Manual/storing_root_objects
   - title: Further information
     children:
       - title: "ROOT Reference Guide"
