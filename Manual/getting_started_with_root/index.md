@@ -42,37 +42,37 @@ root [0]
 
 You can start ROOT with the following command line options:
 
-`-b`
+`-b` <br>
 ROOT session runs in batch mode, without graphics display. This mode is useful in case you do not want to set the DISPLAY.
 
-`-n`
+`-n` <br>
 Does not execute the logon script and logoff script as specified in .rootrc.
 
-`-q`
+`-q` <br>
 Exits after processing the command line macro files.
 
-`-l`
+`-l` <br>
 Does not show the splash screen.
 
-`-x`
+`-x` <br>
 Exit on exception.
 
-`dir`
+`dir` <br>
 If dir is a valid directory, change to it (cd) before executing ROOT.
 
-`-?`
+`-?` <br>
 Print usage.
 
-`-h`
+`-h` <br>
 Print usage.
 
-`--help`
+`--help` <br>
 Print usage.
 
-`-config`
+`-config` <br>
 Print ./configure options.
 
-`-memstat`
+`-memstat` <br>
 Run ROOT with memory usage monitoring.
 
 ### Quitting ROOT

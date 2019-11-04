@@ -15,34 +15,35 @@ ROOT has a set of global ROOT variables that apply to a ROOT session, → see [G
 
 The following naming conventions apply to ROOT objects:
 
--   Classes begin with `T`
+-   Classes begin with `T` <br>
+
     Examples: [TLine](https://root.cern/doc/master/classTLine.html), [TTree](https://root.cern/doc/master/classTTree.html)
 
--   Non-class types end with `_t`
+-   Non-class types end with `_t` <br>
     Example: [Int_t](https://root.cern/doc/master/RtypesCore_8h.html#a3885b911a54b47a4e61671f45dd45d0b)
 
--   Data members begin with `f`
+-   Data members begin with `f` <br>
     Example: `fTree`
 
--   Member functions begin with a capital letter.
+-   Member functions begin with a capital letter. <br>
     Example: `Loop()`
 
--   Constants begin with `k`
+-   Constants begin with `k` <br>
     Examples: `kInitialSize`, `kRed`
 
--   Global variables begin with `g` followed by a capital letter.
+-   Global variables begin with `g` followed by a capital letter. <br>
     Example: `gEnv`
 
--   Static data members begin with `fg`
+-   Static data members begin with `fg` <br>
     Example: `fgTokenClient`
 
--   Enumeration types begin with `E`
+-   Enumeration types begin with `E` <br>
     Example: `EColorLevel`
 
--   Locals and parameters begin with a lower case
+-   Locals and parameters begin with a lower case <br>
     Example: `nbytes  `
 
--   Getters and setters begin with Get and Set
+-   Getters and setters begin with Get and Set <br>
     Examples: `SetLast()`, `GetFirst()`
 
 ## ROOT classes
@@ -77,12 +78,12 @@ Refer to the [ROOT Reference Guide](https://root.cern/doc/master/index.html) for
 
 The ROOT core classes consist of:
 
--   **ROOT base classes**
+-   **ROOT base classes** <br>
    The ROOT base classes provide the core of the system.
-   They are available to all other ROOT classes.
+   They are available to all other ROOT classes. <br>
    The ROOT base class [TObject](https://root.cern/doc/master/classTObject.html) is the mother of all ROOT objects, → see [TObject - the ROOT base class](#tobject---the-root-base-class).
 
--   **Containers**
+-   **Containers** <br>
    Containers correspond to collections. A collection is a group of related objects that provide a flexible alternative to arrays, lists and trees. → See [ROOT collections]({{ '/Manual/root_collections' | relative_url }}).
 
 ### TObject - the ROOT base class
@@ -139,7 +140,7 @@ root[1] f1.Draw()
 ```
 A canvas is displayed.
 
-<img src="{{'/assets/images/canvas.png' | relative_url}}">
+<img src="{{'/assets/images/canvas.png' | relative_url}}"> <br>
 *Figure: Canvas.*
 
 ### TROOT - entry point to ROOT
