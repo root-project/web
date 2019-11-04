@@ -662,7 +662,7 @@ The method finds the first occurrence of the regular expression in the string an
 
 You can pass commands directly to ROOT by placing a dot before the command.
 
-1.  Type at the ROOT prompt:
+   Type at the ROOT prompt:
 ```
    .<command>
 ```
