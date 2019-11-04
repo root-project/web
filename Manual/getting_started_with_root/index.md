@@ -42,37 +42,37 @@ root [0]
 
 You can start ROOT with the following command line options:
 
-`-b`  
+`-b`
 ROOT session runs in batch mode, without graphics display. This mode is useful in case you do not want to set the DISPLAY.
 
-`-n`  
+`-n`
 Does not execute the logon script and logoff script as specified in .rootrc.
 
-`-q`  
+`-q`
 Exits after processing the command line macro files.
 
-`-l`  
+`-l`
 Does not show the splash screen.
 
-`-x`  
+`-x`
 Exit on exception.
 
-`dir`  
+`dir`
 If dir is a valid directory, change to it (cd) before executing ROOT.
 
-`-?`  
+`-?`
 Print usage.
 
-`-h`  
+`-h`
 Print usage.
 
-`--help`  
+`--help`
 Print usage.
 
-`-config`  
+`-config`
 Print ./configure options.
 
-`-memstat`  
+`-memstat`
 Run ROOT with memory usage monitoring.
 
 ### Quitting ROOT
@@ -193,7 +193,7 @@ You can execute a ROOT macro:
    ```
    root MacroName.C
    ```
- 
+
 --or--
 
 1. To execute a ROOT macro at the ROOT prompt, type:
@@ -201,7 +201,7 @@ You can execute a ROOT macro:
    ```
    .x MacroName.C`
    ```
- 
+
  -- or --
 
 1. To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
@@ -489,7 +489,7 @@ There are tutorials for the following topics, among others:
   - OpenGL
   - Graphics
   - Graphs
-  - GUI
+  - Graphical User Interface (GUI)
   - Histograms
   - HTTP interface
   - Images (using TImage class)

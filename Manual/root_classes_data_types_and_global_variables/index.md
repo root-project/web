@@ -15,34 +15,34 @@ ROOT has a set of global ROOT variables that apply to a ROOT session, → see [G
 
 The following naming conventions apply to ROOT objects:
 
--   Classes begin with `T`  
+-   Classes begin with `T`
     Examples: [TLine](https://root.cern/doc/master/classTLine.html), [TTree](https://root.cern/doc/master/classTTree.html)
 
--   Non-class types end with `_t`  
+-   Non-class types end with `_t`
     Example: [Int_t](https://root.cern/doc/master/RtypesCore_8h.html#a3885b911a54b47a4e61671f45dd45d0b)
 
--   Data members begin with `f`  
+-   Data members begin with `f`
     Example: `fTree`
 
--   Member functions begin with a capital letter.  
+-   Member functions begin with a capital letter.
     Example: `Loop()`
 
--   Constants begin with `k`  
+-   Constants begin with `k`
     Examples: `kInitialSize`, `kRed`
 
--   Global variables begin with `g` followed by a capital letter.  
+-   Global variables begin with `g` followed by a capital letter.
     Example: `gEnv`
 
--   Static data members begin with `fg`  
+-   Static data members begin with `fg`
     Example: `fgTokenClient`
 
--   Enumeration types begin with `E`  
+-   Enumeration types begin with `E`
     Example: `EColorLevel`
 
--   Locals and parameters begin with a lower case  
+-   Locals and parameters begin with a lower case
     Example: `nbytes  `
 
--   Getters and setters begin with Get and Set  
+-   Getters and setters begin with Get and Set
     Examples: `SetLast()`, `GetFirst()`
 
 ## ROOT classes
@@ -77,12 +77,12 @@ Refer to the [ROOT Reference Guide](https://root.cern/doc/master/index.html) for
 
 The ROOT core classes consist of:
 
--   **ROOT base classes**  
+-   **ROOT base classes**
    The ROOT base classes provide the core of the system.
-   They are available to all other ROOT classes.  
+   They are available to all other ROOT classes.
    The ROOT base class [TObject](https://root.cern/doc/master/classTObject.html) is the mother of all ROOT objects, → see [TObject - the ROOT base class](#tobject---the-root-base-class).
 
--   **Containers**  
+-   **Containers**
    Containers correspond to collections. A collection is a group of related objects that provide a flexible alternative to arrays, lists and trees. → See [ROOT collections]({{ '/Manual/root_collections' | relative_url }}).
 
 ### TObject - the ROOT base class
@@ -113,12 +113,12 @@ The `TObject` class provides default behavior and protocol for all objects in th
 
 -   Object browsing (`Browse()`, `IsFolder()`)
 
-The virtual method `Draw()` is the entry point for the Graphical User Interface (GUI) of ROOT.
+The virtual method `Draw()` is the entry point for the Graphics endering of ROOT objects.
 
-#### Graphical User Interface (GUI)
+#### Graphics rendering
 
 The [TObject](https://root.cern/doc/master/classTObject.html) class has the virtual method `Draw()` by which objects can be "drawn".
-The basic whiteboard on which an object is drawn is called a canvas that provides the GUI. A canvas is defined by the [TCanvas](https://root.cern/doc/master/classTCanvas.html) calls.
+The basic whiteboard on which an object is drawn is called a canvas. A canvas is defined by the [TCanvas](https://root.cern/doc/master/classTCanvas.html) class.
 
 You can draw an object on a canvas with:
 
@@ -139,7 +139,7 @@ root[1] f1.Draw()
 ```
 A canvas is displayed.
 
-<img src="{{'/assets/images/canvas.png' | relative_url}}">  
+<img src="{{'/assets/images/canvas.png' | relative_url}}">
 *Figure: Canvas.*
 
 ### TROOT - entry point to ROOT
