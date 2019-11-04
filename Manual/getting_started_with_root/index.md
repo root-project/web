@@ -194,17 +194,17 @@ You can execute a ROOT macro:
    root MacroName.C
    ```
 
---or--
+   --or--
 
-1. To execute a ROOT macro at the ROOT prompt, type:
+2. To execute a ROOT macro at the ROOT prompt, type:
 
    ```
    .x MacroName.C`
    ```
 
- -- or --
+   -- or --
 
-1. To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
+3. To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
 
    ```
    .L MacroName.C
