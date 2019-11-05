@@ -30,6 +30,8 @@ manual:
     url: Manual/object_ownership
   - title: Storing ROOT objects
     url: Manual/storing_root_objects
+  - title: Trees
+    url: Manual/trees
   - title: Further information
     children:
       - title: "ROOT Reference Guide"
