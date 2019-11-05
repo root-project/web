@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT provides the [TTree](https://root.cern/doc/master/classTTree.html) and the [TNtuple](https://root.cern/doc/master/classTNtuple.html) class to store large quantities of same-class objects. They are optimized to reduce disk space and enhance access speed. 
+ROOT provides the [TTree](https://root.cern/doc/master/classTTree.html) and the [TNtuple](https://root.cern/doc/master/classTNtuple.html) class to store large quantities of same-class objects. They are optimized to reduce disk space and enhance access speed.
 
 A tree consists of a list of independent columns, called branches. The [TBranch](https://root.cern/doc/master/classTBranch.html) class represents a branch. A branch can contain all kind of data, such as objects or arrays in addition to all the simple types.
 
@@ -15,14 +15,14 @@ A `TNtuple` is a `TTree` that is limited to only contains floating-point numbers
 
 
 > **Tutorials**
-> 
+>
 > Tree tutorials are available at → [https://root.cern/doc/master/group__tutorial__tree.html](https://root.cern/doc/master/group__tutorial__tree.html)
 
 ## Tree classes
 
 ROOT provides the following classes for trees and branches, among others:
 
-- [TTree](https://root.cern/doc/master/classTTree.html) 
+- [TTree](https://root.cern/doc/master/classTTree.html)
 
 - [TNtuple](https://root.cern/doc/master/classTNtuple.html)
 
@@ -34,7 +34,7 @@ ROOT provides the following classes for trees and branches, among others:
 ## Working with trees
 
 
-### Creating a tree 
+### Creating a tree
 
 - Use the [TTree](https://root.cern/doc/master/classTTree.html) constructor to create a tree.
 
@@ -54,12 +54,12 @@ _**Example**_
 
 `TTree folder_tree("MyFolderTree","/MyFolder");`
 
-`MyFolder` is the top folder. `/` indicates the [TTree](https://root.cern/doc/master/classTTree.html) constructor that a folder is being used.  
+`MyFolder` is the top folder. `/` indicates the [TTree](https://root.cern/doc/master/classTTree.html) constructor that a folder is being used.
 You can fill the tree by placing the data into the folder structure and then calling the [TTree::Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067) method.
 
 ### Example: Building a tree from an ASCII file
 
-The tutorial `$ROOTSYS/tutorials/tree/cernbuild.C `provides an example how to build a [TTree](https://root.cern/doc/master/classTTree.html) from an ASCII file.  
+The tutorial `$ROOTSYS/tutorials/tree/cernbuild.C `provides an example how to build a [TTree](https://root.cern/doc/master/classTTree.html) from an ASCII file.
 The input file is `cernstaff.dat` that contains statistics about the staff at CERN.
 
 The ROOT macro `cernbuild.C` creates a root file (`cernstaff.root`) and prints the tree with [TTree:Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094).
@@ -102,38 +102,37 @@ _**Example**_
 Scanning the `cernstaff.root` file (see → *Building a tree from an ASCII file*).
 
 ```
-	root[] TFile f("cernstaff.root")
-	root[] T->Scan("Cost:Age:Children")
+   root[] TFile f("cernstaff.root")
+   root[] T->Scan("Cost:Age:Children")
 
-	************************************************
-	* 	Row * 	Cost * 		Age * 	Children *
-	************************************************
-
-	* 	0 * 	11975 * 	58 * 	0 *
-	* 	1 * 	10228 * 	63 * 	0 *
-	* 	2 * 	10730 * 	56 * 	2 *
-	* 	3 * 	9311 * 		61 * 	0 *
-	* 	4 * 	9966 * 		52 * 	2 *
-	* 	5 * 	7599 * 		60 * 	0 *
-	* 	6 * 	9868 * 		53 * 	1 *
-	* 	7 * 	8012 * 		60 * 	1 *
-	* 	8 * 	8813 * 		51 * 	0 *
-	* 	9 * 	7850 * 		56 * 	1 *
-	* 	10 * 	7599 * 		51 * 	0 *
-	* 	11 * 	9315 * 		54 * 	2 *
-	* 	12 * 	7599 * 		54 * 	0 *
-	* 	13 * 	7892 * 		46 * 	0 *
-	* 	14 * 	7850 * 		54 * 	1 *
-	* 	15 * 	7599 * 		57 * 	0 *
-	* 	16 * 	8137 * 		55 * 	0 *
-	* 	17 * 	7850 * 		55 * 	1 *
-	* 	18 * 	7294 * 		57 * 	1 *
-	* 	19 * 	8101 * 		51 * 	2 *
-	* 	20 * 	5720 * 		54 * 	0 *
-	* 	21 * 	15832 * 	57 * 	1 *
-	* 	22 * 	12226 * 	63 * 	1 *
-	* 	23 * 	13135 * 	56 * 	0 *
-	* 	24 * 	9617 * 		49 * 	0 *
+   ************************************************
+   *    Row *    Cost *       Age *    Children   *
+   ************************************************
+   *     0 *    11975 *        58 *             0 *
+   *     1 *    10228 *        63 *             0 *
+   *     2 *    10730 *        56 *             2 *
+   *     3 *     9311 *        61 *             0 *
+   *     4 *     9966 *        52 *             2 *
+   *     5 *     7599 *        60 *             0 *
+   *     6 *     9868 *        53 *             1 *
+   *     7 *     8012 *        60 *             1 *
+   *     8 *     8813 *        51 *             0 *
+   *     9 *     7850 *        56 *             1 *
+   *    10 *     7599 *        51 *             0 *
+   *    11 *     9315 *        54 *             2 *
+   *    12 *     7599 *        54 *             0 *
+   *    13 *     7892 *        46 *             0 *
+   *    14 *     7850 *        54 *             1 *
+   *    15 *     7599 *        57 *             0 *
+   *    16 *     8137 *        55 *             0 *
+   *    17 *     7850 *        55 *             1 *
+   *    18 *     7294 *        57 *             1 *
+   *    19 *     8101 *        51 *             2 *
+   *    20 *     5720 *        54 *             0 *
+   *    21 *    15832 *        57 *             1 *
+   *    22 *    12226 *        63 *             1 *
+   *    23 *    13135 *        56 *             0 *
+   *    24 *     9617 *        49 *             0 *
 ```
 
 ## Tree Viewer
@@ -147,8 +146,8 @@ _**Example**_
 Open the tree viewer for the `cernstaff.root` file (see → *Building a tree from an ASCII file*).
 
 ```
-	root[] TFile f("cernstaff.root")
-	root[] T->startViewer()
+   root[] TFile f("cernstaff.root")
+   root[] T->startViewer()
 ```
 
 <img src="{{'/Manual/trees/tree_viewer.png' | relative_url}}"><br>
@@ -161,33 +160,33 @@ You can organize columns, i.e. branches, of a tree with the [TBranch](https://ro
 The branch type differs by what is stored in it. A branch can hold the following data:
 
 - an entire object,
-- a list of simple variables, 
+- a list of simple variables,
 - contents of a folder,
 - contents of a [TList]([TList](https://root.cern/doc/master/classTList.html)),
 - an array of objects.
 
-If two variables are independent and the variables will not be used together, place them on separate branches.  
+If two variables are independent and the variables will not be used together, place them on separate branches.
 If the variables are related, such as the coordinates of a point, create one branch with both coordinates on it.
 
 ### Adding a branch
 
 - Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a) method to add a [TBranch]([TBranch](https://root.cern/doc/master/classTBranch.html)) to a tree:
 
-	`auto branch = tree.Branch(branchname, address, leaflist, bufsize)`
+   `auto branch = tree.Branch(branchname, address, leaflist, bufsize)`
 
-`address` is the address of the first item of a structure.  
-`leaflist` is the concatenation of all the variable names and types separated by a colon character. The variable name and the variable type are separated by a slash (/). The variable type must be 1 character.  
+`address` is the address of the first item of a structure.
+`leaflist` is the concatenation of all the variable names and types separated by a colon character. The variable name and the variable type are separated by a slash (/). The variable type must be 1 character.
 For more information on adding a branch to tree, see → [TTree](https://root.cern/doc/master/classTTree.html).
 
 > **Note**
-> 
+>
 > Do *not* use the `TBranch` constructor to add a branch to a tree.
 
 ### Adding a branch with a folder
 
 - Use the following syntax to add a branch with a folder:
 
-	`tree->Branch("/aFolder");`
+   `tree->Branch("/aFolder");`
 
 This creates one branch for each element in the folder. The method returns the total number of branches created.
 
@@ -197,7 +196,7 @@ A `STLcollection` is a address of a pointer to `std::vector`, `std::list`, `std:
 
 - Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a) method to add a `STLcollection`:
 
-	`auto branch = tree.Branch( branchname, STLcollection, buffsize, splitlevel);`
+   `auto branch = tree.Branch( branchname, STLcollection, buffsize, splitlevel);`
 
 If the `splitlevel` is a value bigger than 100 [TTree::kSplitCollectionOfPointers](https://root.cern/doc/master/classTTree.html#a6d07819a66bb97bafd460adfad555114ae3b257c9ade74c1a53383d800c0a708c) then the `STLcollection` will be written in split mode.
 
@@ -210,7 +209,7 @@ If a dynamic structures changes with each entry, you have to redefine the branch
 ```
 MyClass object;
 auto branch = tree.Branch(branchname, &object, bufsize, splitlevel)
-```	
+```
 
 `&object` must be the address of a valid object. The object must not be destroyed (i.e. be deleted) until the [TTree]([TTree](https://root.cern/doc/master/classTTree.html)) is deleted or [TTree::ResetBranchAddress](https://root.cern/doc/master/classTTree.html#a181eb19c03433781fde2fa94443710dc) is called.
 
@@ -219,31 +218,31 @@ For the `splitlevel` the following values are available:
 `splitlevel=0`<br>
 The object is serialized in the branch buffer.
 
-`splitlevel=1 (default)`<br> 
+`splitlevel=1 (default)`<br>
 This branch will automatically be split into sub-branches, with one sub-branch for each data member or object of the object itself. In case the object member is a [TClonesArray](https://root.cern/doc/master/classTClonesArray.html), it is processed as a [TObject+](https://root.cern/doc/master/classTObject.html), but only one branch.
 
 `splitlevel=2`<br>
 This branch will automatically be split into sub-branches, with one sub-branch for each data member or object of the object itself. In case the object member is a [TClonesArray](https://root.cern/doc/master/classTClonesArray.html), it is processed as a [TObject*](https://root.cern/doc/master/classTObject.html), but only one branch.
 
 ### Adding a branch to an existing tree
-You can add a branch to an existing tree.  
+You can add a branch to an existing tree.
 
 _**Example**_
 
-If one variable in the tree was computed with a certain algorithm, you may want to try another algorithm and compare the results. To do this, you cann add a new branch, fill it, and save the tree. 
+If one variable in the tree was computed with a certain algorithm, you may want to try another algorithm and compare the results. To do this, you cann add a new branch, fill it, and save the tree.
 
 ```
 void tree3AddBranch() {
-	  TFile f("tree3.root", "update");
-	  Float_t new_v;
-	  auto t3 = f->Get<TTree>("t3");
-	  auto newBranch = t3->Branch("new_v", &new_v, "new_v/F");
-	  Long64_t nentries = t3->GetEntries(); // read the number of entries in the t3
-	  for (Long64_t i = 0; i < nentries; i++) {
-	      new_v = gRandom->Gaus(0, 1);
-	      newBranch->Fill();
-	  }
-	  t3->Write("", TObject::kOverwrite); // save only the new version of the tree
+   TFile f("tree3.root", "update");
+   Float_t new_v;
+   auto t3 = f->Get<TTree>("t3");
+   auto newBranch = t3->Branch("new_v", &new_v, "new_v/F");
+   Long64_t nentries = t3->GetEntries(); // read the number of entries in the t3
+   for (Long64_t i = 0; i < nentries; i++) {
+      new_v = gRandom->Gaus(0, 1);
+      newBranch->Fill();
+   }
+   t3->Write("", TObject::kOverwrite); // save only the new version of the tree
 }
 ```
 
@@ -274,9 +273,9 @@ Open the `cernstaff.root` file (see → *Building a tree from an ASCII file*) an
 ```
 root [0] TFile f("cernstaff.root")
 root [1] f.ls()
-TFile**		cernstaff.root
-TFile*		cernstaff.root
-KEY: TTree	T;1	CERN 1988 staff data
+TFile**      cernstaff.root
+ TFile*      cernstaff.root
+  KEY: TTree   T;1   CERN 1988 staff data
 ```
 
 The `cernstaff.root` file contains the [TTree](https://root.cern/doc/master/classTTree.html) `T`. A pointer is created to the tree.
@@ -285,7 +284,7 @@ The `cernstaff.root` file contains the [TTree](https://root.cern/doc/master/clas
 root [2] TTree *MyTree = T
 ```
 
-To show the different `Draw()` options, a canvas with four sub-pads is created. 
+To show the different `Draw()` options, a canvas with four sub-pads is created.
 
 ```
 root [3] TCanvas *myCanvas = new TCanvas()
@@ -297,7 +296,7 @@ The first pad with is activated with [TCanvas::cd](https://root.cern/doc/master/
 ```
 root [5] myCanvas->cd(1)
 ```
-	
+
 The `Cost` variable is drawn. [TTree::Draw](https://root.cern/doc/master/classTCanvas.html#a2309e37a6471e07f9dad3e5af1fe5561) automatically creates a histogram. The style of the histogram is inherited from the [TTree](https://root.cern/doc/master/classTTree.html) attributes.
 
 ```
@@ -335,7 +334,7 @@ Next, the fouth pad is activated and the histogram is drawn with the dra option 
 root [11] myCanvas->cd(3)
 root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","surf2")
 ```
-	
+
 <img src="{{'/Manual/trees/tree-draw-4.png' | relative_url}}"><br>
 *Figure: The variable `Cost` and `Age` with a selection and a draw option drawn in a histogram.*
 
@@ -353,7 +352,7 @@ With the [TTree::MakeSlelector()](https://root.cern/doc/master/classTTree.html#a
 
 A chain is a collection of ROOT files containing [TTree](https://root.cern/doc/master/classTTree.html) objects. A chain is created via the [TChain](https://root.cern/doc/master/classTChain.html) object.
 
-_**Example**_ 
+_**Example**_
 
 There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each file contains a tree `T`. A chain is created with [TChain::Add()](https://root.cern/doc/master/classTChain.html#a9510cc7fc76ff28c30e6775bd9085d6e).
 
