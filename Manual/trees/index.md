@@ -64,8 +64,61 @@ The input file is `cernstaff.dat` that contains statistics about the staff at CE
 
 The ROOT macro `cernbuild.C` creates a root file (`cernstaff.root`) and prints the tree with [TTree:Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094).
 
-<img src="{{'/Manual/trees/printed-tree.png' | relative_url}}"><br>
-*Figure: Printed tree.*
+```
+root [0] .x cernbuild.C
+******************************************************************************
+*Tree    :T         : CERN 1988 staff data                                   *
+*Entries :     3354 : Total =          176339 bytes  File  Size =      15005 *
+*        :          : Tree compression factor =   2.74                       *
+******************************************************************************
+*Br    0 :Category  : Category/I                                             *
+*Entries :     3354 : Total  Size=      14073 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    1 :Flag      : Flag/i                                                 *
+*Entries :     3354 : Total  Size=      14049 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    2 :Age       : Age/I                                                  *
+*Entries :     3354 : Total  Size=      14043 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    3 :Service   : Service/I                                              *
+*Entries :     3354 : Total  Size=      14067 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    4 :Children  : Children/I                                             *
+*Entries :     3354 : Total  Size=      14073 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    5 :Grade     : Grade/I                                                *
+*Entries :     3354 : Total  Size=      14055 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    6 :Step      : Step/I                                                 *
+*Entries :     3354 : Total  Size=      14049 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    7 :Hrweek    : Hrweek/I                                               *
+*Entries :     3354 : Total  Size=      14061 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    8 :Cost      : Cost/I                                                 *
+*Entries :     3354 : Total  Size=      14049 bytes  One basket in memory    *
+*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
+*............................................................................*
+*Br    9 :Division  : Division/C                                             *
+*Entries :     3354 : Total  Size=      25326 bytes  File Size  =       8325 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   2.49     *
+*............................................................................*
+*Br   10 :Nation    : Nation/C                                               *
+*Entries :     3354 : Total  Size=      24209 bytes  File Size  =       6680 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   3.05     *
+*............................................................................*
+(TFile *) nullptr
+root [1]
+```
+
 
 ### Showing an entry of a tree
 
