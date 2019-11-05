@@ -76,21 +76,21 @@ _**Example**_
 Showing an entry from the `cernstaff.root` file (see → *Building a tree from an ASCII file*).
 
 ```
-	root[] TFile f("cernstaff.root")
-	root[] T->Show(42)
+root[] TFile f("cernstaff.root")
+root[] T->Show(42)
 
-	======\> EVENT:42
-	Category = 301
-	Flag = 13
-	Age = 56
-	Service = 31
-	Children = 0
-	Grade = 9
-	Step = 8
-	Hrweek = 40
-	Cost = 8645
-	Division = EP
-	Nation = CH
+======\> EVENT:42
+Category = 301
+Flag = 13
+Age = 56
+Service = 31
+Children = 0
+Grade = 9
+Step = 8
+Hrweek = 40
+Cost = 8645
+Division = EP
+Nation = CH
 ```
 
 ### Scanning trees
@@ -145,6 +145,7 @@ With the tree viewer you can examine a tree in a GUI.
 _**Example**_
 
 Open the tree viewer for the `cernstaff.root` file (see → *Building a tree from an ASCII file*).
+
 ```
 	root[] TFile f("cernstaff.root")
 	root[] T->startViewer()
@@ -205,6 +206,7 @@ If a dynamic structures changes with each entry, you have to redefine the branch
 ### Adding a branch of objects
 
 - Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a) method to add objects to a tree:
+
 ```
 MyClass object;
 auto branch = tree.Branch(branchname, &object, bufsize, splitlevel)
@@ -231,18 +233,18 @@ _**Example**_
 If one variable in the tree was computed with a certain algorithm, you may want to try another algorithm and compare the results. To do this, you cann add a new branch, fill it, and save the tree. 
 
 ```
-	void tree3AddBranch() {
-	    TFile f("tree3.root", "update");
-	    Float_t new_v;
-	    auto t3 = f->Get<TTree>("t3");
-	    auto newBranch = t3->Branch("new_v", &new_v, "new_v/F");
-	    Long64_t nentries = t3->GetEntries(); // read the number of entries in the t3
-	    for (Long64_t i = 0; i < nentries; i++) {
-	        new_v = gRandom->Gaus(0, 1);
-	        newBranch->Fill();
-	    }
-	    t3->Write("", TObject::kOverwrite); // save only the new version of the tree
-	}
+void tree3AddBranch() {
+	  TFile f("tree3.root", "update");
+	  Float_t new_v;
+	  auto t3 = f->Get<TTree>("t3");
+	  auto newBranch = t3->Branch("new_v", &new_v, "new_v/F");
+	  Long64_t nentries = t3->GetEntries(); // read the number of entries in the t3
+	  for (Long64_t i = 0; i < nentries; i++) {
+	      new_v = gRandom->Gaus(0, 1);
+	      newBranch->Fill();
+	  }
+	  t3->Write("", TObject::kOverwrite); // save only the new version of the tree
+}
 ```
 
 `kOverwrite` in the `Write()` method causes the tree to be overwritten.
@@ -269,54 +271,70 @@ _**Example**_
 
 Open the `cernstaff.root` file (see → *Building a tree from an ASCII file*) and lists its content.
 
-	root [0] TFile f("cernstaff.root")
-	root [1] f.ls()
-	TFile**		cernstaff.root
-	TFile*		cernstaff.root
-	KEY: TTree	T;1	CERN 1988 staff data
+```
+root [0] TFile f("cernstaff.root")
+root [1] f.ls()
+TFile**		cernstaff.root
+TFile*		cernstaff.root
+KEY: TTree	T;1	CERN 1988 staff data
+```
 
 The `cernstaff.root` file contains the [TTree](https://root.cern/doc/master/classTTree.html) `T`. A pointer is created to the tree.
 
-	root [2] TTree *MyTree = T
-	
+```
+root [2] TTree *MyTree = T
+```
+
 To show the different `Draw()` options, a canvas with four sub-pads is created. 
-	
-	root [3] TCanvas *myCanvas = new TCanvas()
-	root [4] myCanvas->Divide(2,2)
-	
+
+```
+root [3] TCanvas *myCanvas = new TCanvas()
+root [4] myCanvas->Divide(2,2)
+```
+
 The first pad with is activated with [TCanvas::cd](https://root.cern/doc/master/classTCanvas.html#ad996aa7bc34186944363b48963de4de5).
-	
-	root [5] myCanvas->cd(1)
+
+```
+root [5] myCanvas->cd(1)
+```
 	
 The `Cost` variable is drawn. [TTree::Draw](https://root.cern/doc/master/classTCanvas.html#a2309e37a6471e07f9dad3e5af1fe5561) automatically creates a histogram. The style of the histogram is inherited from the [TTree](https://root.cern/doc/master/classTTree.html) attributes.
-	
-	root [9] MyTree->Draw("Cost")
-	
+
+```
+root [9] MyTree->Draw("Cost")
+```
+
 <img src="{{'/Manual/trees/tree-draw-1.png' | relative_url}}"><br>
 *Figure: The variable `Cost` drawn in a histogram.*
 
 Next, the second pad is activated and scatter plot is drawn. Two dimensions (here `Cost` and `Age`) are separated by a colon ("x:y").<br>
 In general, this parameter is a string that containsup to three expressions, one for each dimension, separated by a colon (“e1:e2:e3”).
-	
-	root [10] myCanvas->cd(2)
-	root [11] MyTree->Draw("Cost:Age")
-	
+
+```
+root [10] myCanvas->cd(2)
+root [11] MyTree->Draw("Cost:Age")
+```
+
 <img src="{{'/Manual/trees/tree-draw-2.png' | relative_url}}"><br>
 *Figure: The variable `Cost` and `Age` drawn in a histogram.*
 
 Next, the third pad is activated and a selection is added. `Cost` versus `Age` for the entries where the nation is equal to `“CH”` is drawn.<br>
 You can use any C++ operator. The value of the selection is used as a weight when filling the histogram. If the expression includes only Boolean operations the result is 0 (histogramm is not filled) or 1 ((histogramm is filled).
 
-	root [11] myCanvas->cd(3)
-	root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
-	
+```
+root [11] myCanvas->cd(3)
+root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
+```
+
 <img src="{{'/Manual/trees/tree-draw-3.png' | relative_url}}"><br>
 *Figure: The variable `Cost` and `Age` with a selection drawn in a histogram.*
 
 Next, the fouth pad is activated and the histogram is drawn with the dra option `surf2`. Refer to the [THistPainter](https://root.cern/doc/master/classTHistPainter.html) class for possible draw options.
 
-	root [11] myCanvas->cd(3)
-	root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","surf2")
+```
+root [11] myCanvas->cd(3)
+root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","surf2")
+```
 	
 <img src="{{'/Manual/trees/tree-draw-4.png' | relative_url}}"><br>
 *Figure: The variable `Cost` and `Age` with a selection and a draw option drawn in a histogram.*
@@ -339,9 +357,11 @@ _**Example**_
 
 There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each file contains a tree `T`. A chain is created with [TChain::Add()](https://root.cern/doc/master/classTChain.html#a9510cc7fc76ff28c30e6775bd9085d6e).
 
-	TChain chain("T");
-	chain.Add("file1.root");
-	chain.Add("file2.root");
-	chain.Add("file3.root");
-	
+```
+TChain chain("T");
+chain.Add("file1.root");
+chain.Add("file2.root");
+chain.Add("file3.root");
+```
+
 The name of the [TChain](https://root.cern/doc/master/classTChain.html) is the same as the name of the tree.
