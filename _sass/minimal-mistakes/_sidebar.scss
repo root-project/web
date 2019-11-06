@@ -33,7 +33,7 @@
       /* calculate height of nav list
          viewport height - nav height - masthead x-padding
       */
-      height: calc(100vh - #{$nav-height} - 2em);
+      height: calc(100vh - #{$nav-height} - 200px);
     }
   }
 
