@@ -28,6 +28,7 @@
     }
 
     &.sticky {
+      top: 70px;
       overflow-y: auto;
       /* calculate height of nav list
          viewport height - nav height - masthead x-padding
@@ -63,7 +64,7 @@
 
   img {
     width: 100%;
-    
+
     &.emoji {
       width: 20px;
       height: 20px;
@@ -87,7 +88,7 @@
       @include clearfix();
       position: -webkit-sticky;
       position: sticky;
-      top: 2em;
+      top: 70px;
       float: right;
     }
   }
