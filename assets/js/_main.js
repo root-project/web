@@ -92,7 +92,7 @@ $(document).ready(function() {
       events: true // if true, emit custom events
     });
   }
-  
+
   // add lightbox class to all image links
   $(
     "a[href$='.jpg'],a[href$='.jpeg'],a[href$='.JPG'],a[href$='.png'],a[href$='.gif']"
@@ -132,4 +132,13 @@ $(document).ready(function() {
     closeOnContentClick: true,
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
+
+  var title = $(document).find("title").text().split("-")[0].trim();
+  $(".nav__items li a").each(function () {
+    if ($(this)[0].innerText.trim() === title) {
+      $(this).parent().css('background', '#d6d6d6');
+//      $(this).parent().css('padding-left', '5px');
+   }
+})
+
 });
