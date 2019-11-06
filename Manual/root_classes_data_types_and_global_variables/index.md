@@ -141,6 +141,12 @@ root[1] f1.Draw()
 A canvas is displayed.
 
 <img src="{{'/Manual/root_classes_data_types_and_global_variables/canvas.png' | relative_url}}"> <br>
+
+<center><div id="c1" style="width:500px; height:350px"></div></center>
+<script src="https://root.cern/js/dev/scripts/JSRootCore.js" type="text/javascript"></script>
+<script type='text/javascript'> JSROOT.OpenFile("./canvas.root", function(file) {
+file.ReadObject("c1", function(obj) {JSROOT.draw("c1", obj, "");});});</script>
+
 *Figure: Canvas.*
 
 ### TROOT - entry point to ROOT
