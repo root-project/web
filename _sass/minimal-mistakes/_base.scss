@@ -58,6 +58,14 @@ h6 {
   font-size: $type-size-6;
 }
 
+h1::before, h2::before, h3::before, h4::before {
+  content:"";
+  display:block;
+  height: 65px;
+  margin: -65px 0 0;
+}
+
+
 small,
 .small {
   font-size: $type-size-6;
@@ -355,3 +363,4 @@ input[type="submit"],
   -webkit-transition: $global-transition;
   transition: $global-transition;
 }
+
