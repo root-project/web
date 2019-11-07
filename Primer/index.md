@@ -556,7 +556,7 @@ parameters you have set.
 
 <figure>
 <a name="f25"></a>
-<img src="{{'/Primer/ROOTPanel_FitPanel.png' | relative_url}}">
+<img src="{{'/Primer/ROOTPanel_FitPanel.png' | relative_url}}" style="width:50%">
 <figcaption>Figure 2.5: Fit Panel.</figcaption>
 </figure>
 
@@ -1223,8 +1223,8 @@ sometimes optically better to show plots in specific canvas sizes.
 
 <figure>
 <a name="f42"></a>
-<img src="{{'/Primer/polar_graph.png' | relative_url}}">
-<figcaption>Figure 4.2: </figcaption>
+<img src="{{'/Primer/polar_graph.png' | relative_url}}" style="width:75%">
+<figcaption>Figure 4.2: The graph of a fan obtained with ROOT.</figcaption>
 </figure>
 
 
@@ -1451,7 +1451,7 @@ Which gives you the following plot (Figure [5.1](#f51)):
 
 <figure>
 <a name="f51"></a>
-<img src="{{'/Primer/poisson.png' | relative_url}}">
+<img src="{{'/Primer/poisson.png' | relative_url}}" style="width:75%">
 <figcaption>Figure 5.1: The result of a counting (pseudo) experiment. Only bins corresponding
 to integer values are filled given the discrete nature of the poissonian
 distribution.</figcaption>
