@@ -40,7 +40,8 @@ manual:
         url: https://root.cern/doc/master/group__Tutorials.html
       - title: "ROOT Forum"
         url: https://root-forum.cern.ch/
-
+      - title: "ROOT Primer"
+        url: Primer/
 
 resources:
    - title: Program of Work
