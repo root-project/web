@@ -33,10 +33,10 @@ written in C++ but integrated with other languages such as Python and R.
 
 ## Further Information
 
-  - ROOT Installation Guide
-
   - [ROOT Reference Guide](https://root.cern/doc/master/)
 
   - [ROOT Tutorials](https://root.cern/doc/master/group__Tutorials.html)
 
   - [ROOT Forum](https://root-forum.cern.ch/)
+
+  - [ROOT Primer]({{ '/Primer/' | relative_url }})
