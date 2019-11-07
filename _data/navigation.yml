@@ -97,7 +97,7 @@ resources:
         url: https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page
       - title: ROOTBinder Checklist
         url: Resources/Continous_Integration-Testing/ROOTBinder_Checklist
-   - title: Doxygen
+   - title: Doxygen in ROOT
      url: Resources/Doxygen
    - title: Benchmarks
      url: https://rootbnch-grafana-test.cern.ch
