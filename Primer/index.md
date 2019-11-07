@@ -276,7 +276,7 @@ playing with the parameters and plot the function again. The class `TF1`
 has a large number of very useful methods, including integration and
 differentiation. To make full use of this and other ROOT classes, visit
 the documentation on the Internet under
-<http://root.cern.ch/drupal/content/reference-guide>. Formulae in ROOT
+<https://root.cern/doc/master/>. Formulae in ROOT
 are evaluated using the class `TFormula`, so also look up the relevant
 class documentation for examples, implemented functions and syntax.
 
@@ -663,14 +663,14 @@ already implicitly introduced (for example in the section
 [Configure ROOT at start-up](#configure-root-at-start-up)).
 The most important among them are presented in the following:
 
--   **[gROOT](http://root.cern.ch/root/htmldoc/TROOT.html)**: the `gROOT`
+-   **[gROOT](https://root.cern/doc/master/classTROOT.html)**: the `gROOT`
     variable is the entry point to the ROOT system. Technically it is an
     instance of the `TROOT` class. Using the `gROOT` pointer one has
     access to basically every object created in a ROOT based program.
     The `TROOT` object is essentially a container of several lists
     pointing to the main `ROOT` objects.
 
--   **[gStyle](http://root.cern.ch/root/htmldoc/TStyle.html)**: By default
+-   **[gStyle](https://root.cern/doc/master/classTStyle.html)**: By default
     ROOT creates a default style that can be accessed via the `gStyle`
     pointer. This class includes functions to set some of the following
     object attributes.
@@ -686,11 +686,11 @@ The most important among them are presented in the following:
     -   Histogram Statistics and Titles
     -   etc ...
 
--   **[gSystem](http://root.cern.ch/root/htmldoc/TSystem.html)**: An
+-   **[gSystem](https://root.cern/doc/master/classTSystem.html)**: An
     instance of a base class defining a generic interface to the
     underlying Operating System, in our case `TUnixSystem`.
 
--   **[gInterpreter](http://root.cern.ch/htmldoc/html/TInterpreter.html)**: The
+-   **[gInterpreter](https://root.cern/doc/master/classTInterpreter.html)**: The
     entry point for the ROOT interpreter. Technically an abstraction level
     over a singleton instance of `TCling`.
 
@@ -963,11 +963,11 @@ reader.</figcaption>
 We have seen that to specify a colour, some identifiers like kWhite,
 kRed or kBlue can be specified for markers, lines, arrows etc. The
 complete summary of colours is represented by the ROOT "[colour
-wheel](http://root.cern.ch/root/htmldoc/TColor.html#C02)". To know more
+wheel](https://root.cern/doc/master/classTColor.html#C02)". To know more
 about the full story, refer to the online documentation of `TColor`.
 
 ROOT provides several [graphics
-markers](http://root.cern.ch/root/htmldoc/TAttMarker.html#M2) types. Select
+markers](https://root.cern/doc/master/classTAttMarker.html#M2) types. Select
 the most suited symbols for your plot among dots, triangles, crosses or
 stars. An alternative set of names for the markers is available.
 
@@ -977,7 +977,7 @@ The macro line *55* shows how to define an arrow and draw it. The class
 representing arrows is `TArrow`, which inherits from `TLine`. The
 constructors of lines and arrows always contain the coordinates of the
 endpoints. Arrows also foresee parameters to [specify
-their](http://root.cern.ch/root/htmldoc/TArrow.html) shapes. Do not
+their](https://root.cern/doc/master/classTArrow.html) shapes. Do not
 underestimate the role of lines and arrows in your plots. Since each
 plot should contain a message, it is convenient to stress it with
 additional graphics primitives.
@@ -989,13 +989,13 @@ A possibility to add text in your plot is provided by the `TLatex`
 class. The objects of this class are constructed with the coordinates of
 the bottom-left corner of the text and a string which contains the text
 itself. The real twist is that ordinary
-[Latex mathematical symbols](http://root.cern.ch/root/htmldoc/TLatex.html#L5)
+[Latex mathematical symbols](https://root.cern/doc/master/classTLatex.html#L5)
 are automatically interpreted, you just need to replace the "\\" by a "\#".
 
 If
-["\\" is used as control character](http://root.cern.ch/root/htmldoc/TLatex.html#L14)
+["\\" is used as control character](https://root.cern/doc/master/classTLatex.html#L14)
 , then the
-[TMathText interface](http://root.cern.ch/root/htmldoc/TMathText.html)
+[TMathText interface](https://root.cern/doc/master/classTMathText.html)
 is invoked. It provides the plain TeX syntax and allow to access character's
 set like Russian and Japanese.
 
@@ -1098,6 +1098,7 @@ and execute the program with
 {% highlight C++ %}
 > ./ExampleMacro_GUI
 {% endhighlight %}
+
 
 # Graphs
 
@@ -2801,9 +2802,9 @@ This is the end of our guided tour for beginners through ROOT. There is
 still a lot coming to mind to be said, but by now you are experienced
 enough to use the ROOT documentation, most importantly the **[ROOT home
 page](http://root.cern.ch)** and the **[ROOT reference
-guide](http://root.cern.ch/drupal/content/reference-guide)** with the
+guide](https://root.cern/doc/master/)** with the
 documentation of all ROOT classes, or the **[ROOT users
-guide](http://root.cern.ch/drupal/content/users-guide)**.
+guide](https://root.cern.ch/guides/users-guide)**.
 
 A very useful way for you to continue exploring ROOT is to study the
 examples in the sub-directory `tutorials/` of any ROOT installation.
