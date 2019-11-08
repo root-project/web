@@ -1,0 +1,15 @@
+{% assign w = {{include.width}}  %}
+{% assign h = {{include.height}} %}
+{% assign f = {{include.file}}   %}
+{% assign c = {{include.canvas}} %}
+
+<center>
+<div id="{{c}}" style="width:{{w}}px; height:{{h}}px">
+</div>
+</center>
+
+<script src="https://root.cern/js/dev/scripts/JSRootCore.js" type="text/javascript"></script>
+<script type='text/javascript'> JSROOT.OpenFile("{{f}}", function(file) {
+file.ReadObject("{{c}}", function(obj) {JSROOT.draw("{{c}}", obj, "");});});</script>
+
+*{{include.caption}}*
