@@ -203,8 +203,10 @@ Open the tree viewer for the `cernstaff.root` file (see → *Building a tree fro
    root[] T->startViewer()
 ```
 
-<img src="{{'/Manual/trees/tree_viewer.png' | relative_url}}"><br>
-*Figure: Tree Viewer.*
+{% include figure_image
+img="tree_viewer.png"
+caption="Tree Viewer."
+%}
 
 ## Branches
 
@@ -284,7 +286,7 @@ _**Example**_
 
 If one variable in the tree was computed with a certain algorithm, you may want to try another algorithm and compare the results. To do this, you cann add a new branch, fill it, and save the tree.
 
-```
+{% highlight C++ %}
 void tree3AddBranch() {
    TFile f("tree3.root", "update");
    Float_t new_v;
@@ -297,7 +299,7 @@ void tree3AddBranch() {
    }
    t3->Write("", TObject::kOverwrite); // save only the new version of the tree
 }
-```
+{% endhighlight %}
 
 `kOverwrite` in the `Write()` method causes the tree to be overwritten.
 
@@ -356,8 +358,10 @@ The `Cost` variable is drawn. [TTree::Draw](https://root.cern/doc/master/classTC
 root [9] MyTree->Draw("Cost")
 ```
 
-<img src="{{'/Manual/trees/tree-draw-1.png' | relative_url}}"><br>
-*Figure: The variable `Cost` drawn in a histogram.*
+{% include figure_image
+img="tree-draw-1.png"
+caption="The variable `Cost` drawn in a histogram."
+%}
 
 Next, the second pad is activated and scatter plot is drawn. Two dimensions (here `Cost` and `Age`) are separated by a colon ("x:y").<br>
 In general, this parameter is a string that containsup to three expressions, one for each dimension, separated by a colon (“e1:e2:e3”).
@@ -367,8 +371,10 @@ root [10] myCanvas->cd(2)
 root [11] MyTree->Draw("Cost:Age")
 ```
 
-<img src="{{'/Manual/trees/tree-draw-2.png' | relative_url}}"><br>
-*Figure: The variable `Cost` and `Age` drawn in a histogram.*
+{% include figure_image
+img="tree-draw-2.png"
+caption="The variable `Cost` and `Age` drawn in a histogram."
+%}
 
 Next, the third pad is activated and a selection is added. `Cost` versus `Age` for the entries where the nation is equal to `“CH”` is drawn.<br>
 You can use any C++ operator. The value of the selection is used as a weight when filling the histogram. If the expression includes only Boolean operations the result is 0 (histogramm is not filled) or 1 ((histogramm is filled).
@@ -378,8 +384,10 @@ root [11] myCanvas->cd(3)
 root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
 ```
 
-<img src="{{'/Manual/trees/tree-draw-3.png' | relative_url}}"><br>
-*Figure: The variable `Cost` and `Age` with a selection drawn in a histogram.*
+{% include figure_image
+img="tree-draw-3.png"
+caption="The variable `Cost` and `Age` with a selection drawn in a histogram."
+%}
 
 Next, the fouth pad is activated and the histogram is drawn with the dra option `surf2`. Refer to the [THistPainter](https://root.cern/doc/master/classTHistPainter.html) class for possible draw options.
 
@@ -388,8 +396,10 @@ root [11] myCanvas->cd(4)
 root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","surf2")
 ```
 
-<img src="{{'/Manual/trees/tree-draw-4.png' | relative_url}}"><br>
-*Figure: The variable `Cost` and `Age` with a selection and a draw option drawn in a histogram.*
+{% include figure_image
+img="tree-draw-4.png"
+caption="The variable `Cost` and `Age` with a selection and a draw option drawn in a histogram."
+%}
 
 ### Using TTree::MakeClass()
 
