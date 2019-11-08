@@ -4,8 +4,14 @@
 {% assign c  = {{include.canvas}} %}
 {% assign id =  f | append: c | replace: ".root","" %}
 
+{% capture ws %}{{ w | size }}{% endcapture %}
+{% if ws == "0" %} {% assign w  = "100%"  %} {% endif %}
+
+{% capture hs %}{{ h | size }}{% endcapture %}
+{% if hs == "0" %} {% assign h  = "350px"  %} {% endif %}
+
 <center>
-<div id="{{id}}" style="width:{{w}}px; height:{{h}}px">
+<div id="{{id}}" style="width:{{w}}; height:{{h}}">
 </div>
 </center>
 

@@ -140,8 +140,9 @@ root[1] f1.Draw()
 ```
 A canvas is displayed.
 
-{% include jsroot.html file="canvas.root" canvas="c1" width=500 height=350
-caption="Figure: Canvas"
+{% include jsroot.html
+   file="canvas.root" canvas="c1" width="500px" height="350px"
+   caption="Figure: Canvas"
 %}
 
 
