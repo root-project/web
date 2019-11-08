@@ -142,7 +142,7 @@ A canvas is displayed.
 
 {% include jsroot.html
    file="canvas.root" canvas="c1" width="500px" height="350px"
-   caption="Figure: Canvas"
+   caption="Canvas"
 %}
 
 
