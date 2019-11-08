@@ -55,12 +55,10 @@ available, and a data analysis tool should provide easy access to more
 than one of them. Means to quantify the level of agreement between
 measurements and model must also be available.
 
-
-<figure>
-<a name="f11"></a>
-<img src="{{'/Primer/examplefit.png' | relative_url}}">
-<figcaption>Figure 1.1: Measured data points with error bars and fitted quadratic function.</figcaption>
-</figure>
+{% include figure_image sect=1 fig=1
+img="examplefit.png"
+caption="Measured data points with error bars and fitted quadratic function."
+%}
 
 
 Quite often, the data volume to be analyzed is large - think of
@@ -342,11 +340,10 @@ void slits() {
 {% endhighlight %}
 
 
-<figure>
-<a name="f21"></a>
-<img src="{{'/Primer/TF1_DoubleSlit.png' | relative_url}}">
-<figcaption>Figure 2.1: Output of slits.C with parameters 0.2 and 2.</figcaption>
-</figure>
+{% include figure_image sect=2 fig=1
+img="TF1_DoubleSlit.png"
+caption="Output of slits.C with parameters 0.2 and 2."
+%}
 
 
 The example first asks for user input, namely the ratio of slit width
@@ -434,11 +431,10 @@ root [1] gr.Draw("AP");
 
 You should see the output shown in Figure [2.2](#f22).
 
-<figure>
-<a name="f22"></a>
-<img src="{{'/Primer/TGraphErrors_Example.png' | relative_url}}">
-<figcaption>Figure 2.2: Visualisation of data points with errors using the class TGraphErrors.</figcaption>
-</figure>
+{% include figure_image sect=2 fig=2
+img="TGraphErrors_Example.png"
+caption="Visualisation of data points with errors using the class TGraphErrors."
+%}
 
 
 Make sure the file `ExampleData.txt` is available in the directory from
@@ -482,12 +478,11 @@ in this case, and set its parameters. In line *3* a histogram is
 instantiated, with a name, a title, a certain number of bins (100 of
 them, equidistant, equally sized) in the range from 0 to 5.
 
-<figure>
-<a name="f23"></a>
-<img src="{{'/Primer/TH1F_Example.png' | relative_url}}">
-<figcaption>Figure 2.3: Visualisation of a histogram filled with exponentially distributed,
-random numbers.</figcaption>
-</figure>
+{% include figure_image sect=2 fig=3
+img="TH1F_Example.png"
+caption="Visualisation of a histogram filled with exponentially distributed,
+random numbers."
+%}
 
 
 We use yet another new feature of ROOT to fill this histogram with data,
@@ -538,11 +533,10 @@ access to the members of the various classes, and you can even modify
 them, e.g. change colour and size of the axis ticks or labels, the
 function lines, marker types and so on. Try it!
 
-<figure>
-<a name="f24"></a>
-<img src="{{'/Primer/ROOTPanel_SetParameters.png' | relative_url}}">
-<figcaption>Figure 2.4: Interactive ROOT panel for setting function parameters.</figcaption>
-</figure>
+{% include figure_image sect=2 fig=4
+img="ROOTPanel_SetParameters.png"
+caption="Interactive ROOT panel for setting function parameters."
+%}
 
 
 You will probably like the following: in the output produced by the
@@ -554,11 +548,10 @@ two and then three or more slits, just as you like. When clicking on
 "Apply", the function plot is updated to reflect the actual value of the
 parameters you have set.
 
-<figure>
-<a name="f25"></a>
-<img src="{{'/Primer/ROOTPanel_FitPanel.png' | relative_url}}" style="width:50%">
-<figcaption>Figure 2.5: Fit Panel.</figcaption>
-</figure>
+{% include figure_image sect=2 fig=5
+img="ROOTPanel_FitPanel.png"
+caption="Fit Panel."
+%}
 
 
 Another very useful interactive tool is the `FitPanel`, available for the
@@ -945,15 +938,14 @@ Let's comment it in detail:
 Let's give a look to the obtained plot in Figure [3.1](#f31). Beautiful
 outcome for such a small bunch of lines, isn't it ?
 
-<figure>
-<a name="f31"></a>
-<img src="{{'/Primer/graf_with_law.png' | relative_url}}">
-<figcaption>Figure 3.1: Your first plot with data points, a fit of an analytical function, a
+{% include figure_image sect=3 fig=1
+img="graf_with_law.png"
+caption="Your first plot with data points, a fit of an analytical function, a
 legend and some additional information in the form of graphics
 primitives and text. A well formatted plot, clear for the reader is
 crucial to communicate the relevance of your results to the
-reader.</figcaption>
-</figure>
+reader."
+%}
 
 
 ## Summary of Visual effects
@@ -1147,9 +1139,8 @@ data points.
 10  53  5.43
 {% endhighlight %}
 
-<figure>
-<img src="{{'/Primer/graph_with_expectation.png' | relative_url}}">
-</figure>
+img="graph_with_expectation.png"
+%}
 
 {% highlight C++ %}
 // Reads the points from a file and produces a simple graph.
@@ -1221,11 +1212,10 @@ void macro3(){
 A new element was added on line 4, the size of the canvas: it is
 sometimes optically better to show plots in specific canvas sizes.
 
-<figure>
-<a name="f42"></a>
-<img src="{{'/Primer/polar_graph.png' | relative_url}}" style="width:75%">
-<figcaption>Figure 4.2: The graph of a fan obtained with ROOT.</figcaption>
-</figure>
+{% include figure_image sect=4 fig=2
+img="polar_graph.png"
+caption="The graph of a fan obtained with ROOT."
+%}
 
 
 ## 2D Graphs
@@ -1328,12 +1318,11 @@ Let's go through the code, step by step to understand what is going on:
     two sub-pads and access them. It is very handy to show multiple
     plots in the same window or image.
 
-<figure>
-<a name="f43"></a>
-<img src="{{'/Primer/fitted2dFunction.png' | relative_url}}">
-<figcaption>Figure 4.3: A dataset fitted with a bidimensional function visualised as a colored
-surface.</figcaption>
-</figure>
+{% include figure_image sect=4 fig=3
+img="fitted2dFunction.png"
+caption="A dataset fitted with a bidimensional function visualised as a colored
+surface."
+%}
 
 
 ## Multiple graphs
@@ -1388,11 +1377,10 @@ void multigraph(){
 - Line *30-32*: draw the multigraph. The axis limits are computed automatically
   to make sure all the graphs' points will be in range.
 
-<figure>
-<a name="f44"></a>
-<img src="{{'/Primer/multigraph.png' | relative_url}}">
-<figcaption>Figure 4.4: A set of graphs grouped in a multigraph.</figcaption>
-</figure>
+{% include figure_image sect=4 fig=4
+img="multigraph.png"
+caption="A set of graphs grouped in a multigraph."
+%}
 
 
 [^3] https://root.cern.ch/drupal/content/rainbow-color-map
@@ -1449,13 +1437,12 @@ void macro5(){
 
 Which gives you the following plot (Figure [5.1](#f51)):
 
-<figure>
-<a name="f51"></a>
-<img src="{{'/Primer/poisson.png' | relative_url}}" style="width:75%">
-<figcaption>Figure 5.1: The result of a counting (pseudo) experiment. Only bins corresponding
+{% include figure_image sect=5 fig=1
+img="poisson.png"
+caption="The result of a counting (pseudo) experiment. Only bins corresponding
 to integer values are filled given the discrete nature of the poissonian
-distribution.</figcaption>
-</figure>
+distribution."
+%}
 
 
 Using histograms is rather simple. The main differences with respect to
@@ -1546,18 +1533,16 @@ void macro6(){
 
 The plots that you will obtain are shown in Figures [5.2](#f52) and [5.3](#f53).
 
-<figure>
-<a name="f52"></a>
-<img src="{{'/Primer/histo_sum.png' | relative_url}}">
-<figcaption>Figure 5.2: The sum of two histograms.</figcaption>
-</figure>
+{% include figure_image sect=5 fig=2
+img="histo_sum.png"
+caption="The sum of two histograms."
+%}
 
 
-<figure>
-<a name="f53"></a>
-<img src="{{'/Primer/histo_ratio.png' | relative_url}}">
-<figcaption>Figure 5.3: The ratio of two histograms.</figcaption>
-</figure>
+{% include figure_image sect=5 fig=3
+img="histo_ratio.png"
+caption="The ratio of two histograms."
+%}
 
 
 Some lines now need a bit of clarification:
@@ -1625,20 +1610,18 @@ Two kinds of plots are provided within the code, the first one
 containing three-dimensional representations (Figure [5.4](#f54)) and the second one
 projections and profiles (Figure [5.5](#f55)) of the bi-dimensional histogram.
 
-<figure>
-<a name="f54"></a>
-<img src="{{'/Primer/th2f.png' | relative_url}}">
-<figcaption>Figure 5.4: Different ways of representing bi-dimensional
-histograms.</figcaption>
-</figure>
+{% include figure_image sect=5 fig=4
+img="th2f.png"
+caption="Different ways of representing bi-dimensional
+histograms."
+%}
 
 
-<figure>
-<a name="f55"></a>
-<img src="{{'/Primer/proj_and_prof.png' | relative_url}}">
-<figcaption>Figure 5.5: The projections and profiles of bi-dimensional
-histograms.</figcaption>
-</figure>
+{% include figure_image sect=5 fig=5
+img="proj_and_prof.png"
+caption="The projections and profiles of bi-dimensional
+histograms."
+%}
 
 
 When a projection is performed along the x (y) direction, for every bin
@@ -1696,11 +1679,10 @@ void hstack(){
 
 - Line *23*: draws the stack as a lego plot. The colour distinguish the two histograms [5.6](#f56).
 
-<figure>
-<a name="f56"></a>
-<img src="{{'/Primer/hstack.png' | relative_url}}">
-<figcaption>Figure 5.6: Two 2D histograms stack on top of each other.</figcaption>
-</figure>
+{% include figure_image sect=5 fig=6
+img="hstack.png"
+caption="Two 2D histograms stack on top of each other."
+%}
 
 
 [^4]: To optimise the memory usage you might go for one byte (TH1C), short (TH1S), integer (TH1I) or double-precision (TH1D) bin-content.
@@ -1846,13 +1828,12 @@ Some step by step explanation is at this point necessary:
 -   Lines *54-end*: Plot the pseudo-data, the fitted function and the
     signal and background components at the best-fit values.
 
-<figure>
-<a name="f61"></a>
-<img src="{{'/Primer/functions.png' | relative_url}}">
-<figcaption>Figure 6.1: Fit of pseudo data: a signal shape over a background trend. This plot
-is another example of how making a plot "self-explanatory" can help you
-better displaying your results.</figcaption>
-</figure>
+{% include figure_image sect=6 fig=1
+img="functions.png"
+caption="Fit of pseudo data: a signal shape over a background trend. This plot
+is another example of how making a plot self-explanatory can help you
+better displaying your results."
+%}
 
 
 ## Toy Monte Carlo Experiments
