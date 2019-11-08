@@ -384,7 +384,7 @@ root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
 Next, the fouth pad is activated and the histogram is drawn with the dra option `surf2`. Refer to the [THistPainter](https://root.cern/doc/master/classTHistPainter.html) class for possible draw options.
 
 ```
-root [11] myCanvas->cd(3)
+root [11] myCanvas->cd(4)
 root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","surf2")
 ```
 
