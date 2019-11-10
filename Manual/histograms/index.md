@@ -73,7 +73,7 @@ The following histogram classes are available in ROOT, among others:
 
 All histogram types support fixed or variable bin sizes. 2-D histograms may have fixed size bins along X and variable size bins along Y or vice-versa.
 
-####Conventions
+#### Conventions
 
 For all histogram types: `nbins`, `xlow`, `xup`:
 
@@ -205,8 +205,10 @@ TH1F h1("h1","Histogram from a Gaussian",100,-3,3)
 h1.FillRandom("gaus",10000)
 h1.Draw()
 ```
-
-*Figure: Histogram drawn with Draw().*
+{% include figure_image
+img="histo.png"
+caption="Histogram drawn with Draw()."
+%}
 
 #### Drawing options
 
@@ -258,12 +260,17 @@ h1.FillRandom(\"gaus\",10000)
 h1.Draw("LEGO")
 ```
 
-*Figure: Histogram drawn with Draw("LEGO").*
+{% include figure_image
+img="histo-lego.png"
+caption="Histogram drawn with Draw("LEGO")."
+%}
 
 `h1.Draw("LEGO" "POL")`
 
-
-*Figure: Histogram drawn with Draw("LEGO" "POL").*
+{% include figure_image
+img="histo-lego-pol.png"
+caption="Histogram drawn with Draw("LEGO" "POL")."
+%}
 
 **Drawing options for 1-D histogram classes**
 
