@@ -256,20 +256,20 @@ _**Example**_
 
 ```
 TH1F h1("h1","Histogram from a Gaussian",100,-3,3)
-h1.FillRandom(\"gaus\",10000)
+h1.FillRandom("gaus",10000)
 h1.Draw("LEGO")
 ```
 
 {% include figure_image
 img="histo-lego.png"
-caption="Histogram drawn with Draw("LEGO")."
+caption="Histogram drawn with Draw(\"LEGO\")."
 %}
 
 `h1.Draw("LEGO" "POL")`
 
 {% include figure_image
 img="histo-lego-pol.png"
-caption="Histogram drawn with Draw("LEGO" "POL")."
+caption="Histogram drawn with Draw(\"LEGO\" \"POL\")."
 %}
 
 **Drawing options for 1-D histogram classes**
