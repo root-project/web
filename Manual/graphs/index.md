@@ -74,8 +74,10 @@ TGraph *gr1 = new TGraph (n, x, y);
 gr1->Draw();
 ```
 
-
-*Figure: Graph drawn with `Draw()`.*
+{% include figure_image
+img="graph.png"
+caption="Graph drawn with Draw()."
+%}
 
 #### Drawing options
 
@@ -117,6 +119,9 @@ gr1->Draw(*);
 
 ```
 
-*Figure: Graph drawn with Draw(`*`)*.
+{% include figure_image
+img="graph-star.png"
+caption="Graph drawn with Draw(`*`)."
+%}
 
 ## Fitting graphs
