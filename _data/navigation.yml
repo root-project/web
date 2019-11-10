@@ -18,7 +18,7 @@ main:
 
 
 manual:
-  - title: ROOT MANUAL
+  - title: ROOT MANUAL - Basics
   - title: Getting started with ROOT
     url: Manual/getting_started_with_root
   - title: ROOT classes, data types and global variables
@@ -31,6 +31,13 @@ manual:
     url: Manual/object_ownership
   - title: Storing ROOT objects
     url: Manual/storing_root_objects
+  - title: ROOT MANUAL - Functional parts
+  - title: Graphics
+    url: Manual/graphics
+  - title: Histograms
+    url: Manual/histograms
+  - title: Graphs
+    url: Manual/graphs
   - title: Trees
     url: Manual/trees
   - title: Further information
