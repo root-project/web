@@ -18,6 +18,7 @@ main:
 
 
 manual:
+  - title: ROOT MANUAL
   - title: Getting started with ROOT
     url: Manual/getting_started_with_root
   - title: ROOT classes, data types and global variables
