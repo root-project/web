@@ -50,9 +50,9 @@ f1.Draw()
 ```
 A canvas is displayed.
 
-<center><div id="c1" style="width:500px; height:350px"></div></center>
-<script src="https://root.cern/js/dev/scripts/JSRootCore.js" type="text/javascript"></script>
-<script type='text/javascript'> JSROOT.OpenFile("./graphics_canvas.root", function(file) {
-file.ReadObject("c1", function(obj) {JSROOT.draw("c1", obj, "");});});</script>
-
 *Figure: Canvas (right-click on the image to interact with the object).*
+
+{% include figure_jsroot
+   file="graphics_canvas.root" canvas="c1" width="500px" height="350px"
+   caption="Canvas (right-click on the image to interact with the object)."
+%}
