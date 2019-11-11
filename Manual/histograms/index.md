@@ -10,7 +10,7 @@ toc_sticky: true
 Advanced organizer ...
 
 > **Tutorials**
-> 
+>
 > Histogram tutorials are available at → [https://root.cern/doc/master/group__tutorial__hist.html](https://root.cern/doc/master/group__tutorial__hist.html)
 
 ## Histogram classes
@@ -130,15 +130,15 @@ _**Example**_
 _**Examples**_
 ```
 h1->Fill(x);
-	
+
 h1->Fill(x,w); // with weight
-	
+
 h2->Fill(x,y);
-	
+
 h2->Fill(x,y,w);
-	
+
 h3->Fill(x,y,z);
-	
+
 h3->Fill(x,y,z,w);
 ```
 
@@ -213,7 +213,7 @@ caption="Histogram drawn with Draw()."
 #### Drawing options
 
 > **Note**
-> 
+>
 > The drawing options are not case sensitive.
 
 **Drawing options for all histogram classes**
@@ -250,7 +250,7 @@ For detailed information on the drawing options for all histogram classes, refer
 
 `SURF4`: Draws a surface plot using Gouraud shading.
 
-`SURF5`: Same as S`URF3` but only the colored contour is drawn. Used with option `CYL`, `SPH` or `PSR`, it allows to draw colored contours on a sphere, a cylinder or in a pseudo rapidly space. In Cartesian or polar coordinates, option SURF3 is used.
+`SURF5`: Same as `SURF3` but only the colored contour is drawn. Used with option `CYL`, `SPH` or `PSR`, it allows to draw colored contours on a sphere, a cylinder or in a pseudo rapidly space. In Cartesian or polar coordinates, option SURF3 is used.
 
 _**Example**_
 
