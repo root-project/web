@@ -30,38 +30,38 @@ _**Example**_
 
 This example creates 15 histograms, fills each histogram with 1000 entries from a Gaussian distribution, and writes them to a ROOT file.
 
-```
+{% highlight C++ %}
 {
-	char name[10], title[20];
+   char name[10], title[20];
 
 // Create an array of histograms.
 
-	TObjArray Hlist(0);
+   TObjArray Hlist(0);
 
 // Create a pointer to a histogram.
 
-	TH1F* h;
+   TH1F* h;
 
 // Make and fill 15 histograms and add them to the object array.
 
-	for (Int_t i = 0; i < 15; i++) {
-		sprintf(name,"h%d",i);
-		sprintf(title,"histo nr:%d",i);
-		h = new TH1F(name,title,100,-4,4);
-		Hlist.Add(h);
-		h->FillRandom("gaus",1000);
-		}
+   for (Int_t i = 0; i < 15; i++) {
+      sprintf(name,"h%d",i);
+      sprintf(title,"histo nr:%d",i);
+      h = new TH1F(name,title,100,-4,4);
+      Hlist.Add(h);
+      h->FillRandom("gaus",1000);
+   }
 
 // Open a ROOT file and write the array to the ROOT file.
 
-	TFile f("demo.root","recreate");
-	Hlist.Write();
+   TFile f("demo.root","recreate");
+   Hlist.Write();
 
 //Closing the ROOT file.
 
-	f.Close();
+   f.Close();
 }
-```
+{% endhighlight %}
 
 The ROOT file is saved by default in the current working directory.
 
@@ -69,35 +69,41 @@ The ROOT file is saved by default in the current working directory.
 
 To view the contents of a ROOT file, you need to open it.
 
-1.  Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
+1. Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
 
-```
-root[0] TFile f("demo.root")
-root[1] TBrowser browser;
-```
+   ```
+   root[0] TFile f("demo.root")
+   root[1] TBrowser browser;
+   ```
 
-The ROOT Object Browser is displayed.
+   The ROOT Object Browser is displayed.
 
-<img src="{{'/assets/images/root_object_browser.png' | relative_url}}">  
-*Figure: ROOT Object Browser*
+   {% include figure_image
+   img="root_object_browser.png"
+   caption="ROOT Object Browser."
+   %}
 
-2.  Click the ROOT file and the content of the ROOT file.
 
-<img src="{{'/assets/images/root_object_browser_content.png' | relative_url}}">  
-*Figure: ROOT Object Browser displaying the content of a ROOT file.*
+2. Click the ROOT file and the content of the ROOT file.
+
+   {% include figure_image
+   img="root_object_browser_content.png"
+   caption="ROOT Object Browser displaying the content of a ROOT file."
+   %}
+
 
 > **Note**
 >
 > You can check if the file is correctly opened by:
 >
 > ```
->	TFile f("demo.root");
->	if (f.IsZombie()) {
->	cout << "Error opening file" << endl;
->	exit(-1);
->	} else {
->	...
->	}
+>   TFile f("demo.root");
+>   if (f.IsZombie()) {
+>   cout << "Error opening file" << endl;
+>   exit(-1);
+>   } else {
+>   ...
+>   }
 > ```
 
 ### Viewing the physical layout of a ROOT file
@@ -111,26 +117,26 @@ _**Example**_
 ```
 root[] f.Map()
 
-20191010/122600 	At:100 		N=114 	TFile
-20191010/122600 	At:214 		N=429 	TH1F			CX = 2.31
-20191010/122600 	At:643 		N=424 	TH1F			CX = 2.33
-20191010/122600 	At:1067 	N=426 	TH1F			CX = 2.32
-20191010/122600 	At:1493 	N=425 	TH1F 			CX = 2.33
-20191010/122600 	At:1918 	N=429 	TH1F			CX = 2.31
-20191010/122600 	At:2347 	N=424 	TH1F			CX = 2.33
-20191010/122600 	At:2771 	N=418 	TH1F			CX = 2.37
-20191010/122600 	At:3189 	N=428 	TH1F			CX = 2.31
-20191010/122600 	At:3617 	N=422 	TH1F			CX = 2.34
-20191010/122600 	At:4039 	N=421 	TH1F			CX = 2.35
-20191010/122600 	At:4460 	N=431 	TH1F			CX = 2.30
-20191010/122600 	At:4891 	N=424 	TH1F			CX = 2.34
-20191010/122600 	At:5315 	N=430 	TH1F			CX = 2.31
-20191010/122600 	At:5745 	N=426 	TH1F			CX = 2.33
-20191010/122600 	At:6171 	N=425 	TH1F			CX = 2.34
-20191010/122600 	At:6596 	N=3055 	StreamerInfo	CX = 3.08
-20191010/122600 	At:9651		N=732 	KeysList
-20191010/122600 	At:10383 	N=53 	FreeSegments
-20191010/122600 	At:10436 	N=1 	END
+20191010/122600    At:100     N=114    TFile
+20191010/122600    At:214     N=429    TH1F           CX = 2.31
+20191010/122600    At:643     N=424    TH1F           CX = 2.33
+20191010/122600    At:1067    N=426    TH1F           CX = 2.32
+20191010/122600    At:1493    N=425    TH1F           CX = 2.33
+20191010/122600    At:1918    N=429    TH1F           CX = 2.31
+20191010/122600    At:2347    N=424    TH1F           CX = 2.33
+20191010/122600    At:2771    N=418    TH1F           CX = 2.37
+20191010/122600    At:3189    N=428    TH1F           CX = 2.31
+20191010/122600    At:3617    N=422    TH1F           CX = 2.34
+20191010/122600    At:4039    N=421    TH1F           CX = 2.35
+20191010/122600    At:4460    N=431    TH1F           CX = 2.30
+20191010/122600    At:4891    N=424    TH1F           CX = 2.34
+20191010/122600    At:5315    N=430    TH1F           CX = 2.31
+20191010/122600    At:5745    N=426    TH1F           CX = 2.33
+20191010/122600    At:6171    N=425    TH1F           CX = 2.34
+20191010/122600    At:6596    N=3055   StreamerInfo   CX = 3.08
+20191010/122600    At:9651    N=732    KeysList
+20191010/122600    At:10383   N=53     FreeSegments
+20191010/122600    At:10436   N=1      END
 ```
 
 ## Logical contents of a ROOT file
@@ -148,22 +154,21 @@ Get the list of keys from the demo.root file and print them.
 root[0] TFile f("demo.root")
 root[1] f.GetListOfKeys()->Print()
 
-TKey Name = h0, 	Title = histo 	nr:0, 	Cycle = 1
-TKey Name = h1, 	Title = histo 	nr:1, 	Cycle = 1
-TKey Name = h2, 	Title = histo 	nr:2, 	Cycle = 1
-TKey Name = h3, 	Title = histo 	nr:3, 	Cycle = 1
-TKey Name = h4, 	Title = histo 	nr:4, 	Cycle = 1
-TKey Name = h5, 	Title = histo 	nr:5, 	Cycle = 1
-TKey Name = h6, 	Title = histo 	nr:6, 	Cycle = 1
-TKey Name = h7, 	Title = histo 	nr:7, 	Cycle = 1
-TKey Name = h8, 	Title = histo 	nr:8, 	Cycle = 1
-TKey Name = h9, 	Title = histo 	nr:9, 	Cycle = 1
-TKey Name = h10, 	Title = histo 	nr:10, 	Cycle = 1
-TKey Name = h11, 	Title = histo 	nr:11, 	Cycle = 1
-TKey Name = h12, 	Title = histo 	nr:12, 	Cycle = 1
-TKey Name = h13, 	Title = histo 	nr:13, 	Cycle = 1
-TKey Name = h14, 	Title = histo 	nr:14, 	Cycle = 1
-root[] TH1F *h9 = (TH1F*)f.Get("h9");
+TKey Name = h0,     Title = histo    nr:0,     Cycle = 1
+TKey Name = h1,     Title = histo    nr:1,     Cycle = 1
+TKey Name = h2,     Title = histo    nr:2,     Cycle = 1
+TKey Name = h3,     Title = histo    nr:3,     Cycle = 1
+TKey Name = h4,     Title = histo    nr:4,     Cycle = 1
+TKey Name = h5,     Title = histo    nr:5,     Cycle = 1
+TKey Name = h6,     Title = histo    nr:6,     Cycle = 1
+TKey Name = h7,     Title = histo    nr:7,     Cycle = 1
+TKey Name = h8,     Title = histo    nr:8,     Cycle = 1
+TKey Name = h9,     Title = histo    nr:9,     Cycle = 1
+TKey Name = h10,    Title = histo    nr:10,    Cycle = 1
+TKey Name = h11,    Title = histo    nr:11,    Cycle = 1
+TKey Name = h12,    Title = histo    nr:12,    Cycle = 1
+TKey Name = h13,    Title = histo    nr:13,    Cycle = 1
+TKey Name = h14,    Title = histo    nr:14,    Cycle = 1
 ```
 
 ### Finding TKey objects
@@ -186,17 +191,18 @@ _**Example**_
 
 The `TKeys` of the `demo.root` (see example → [Creating a ROOT file](#creating-a-root-file) file are iterated.
 
-```
+{% highlight C++ %}
 {
-TFile f("demo.root");
-TIter next(f.GetListOfKeys());
-TKey *key;
-while ((key=(TKey*)next())) {
-	printf("key: %s points to an object of class: %s at %dn", key->GetName(),
-	key->GetClassName(),key->GetSeekKey());
-	}
+   TFile f("demo.root");
+   TIter next(f.GetListOfKeys());
+   TKey *key;
+   while ((key=(TKey*)next())) {
+      printf("key: %s points to an object of class: %s at %dn", key->GetName(),
+      key->GetClassName(),key->GetSeekKey());
+   }
 }
-```
+{% endhighlight %}
+
 The output is of the `iterate.C` ROOT macro is:
 
 ```
@@ -237,12 +243,12 @@ root[] TFile *f3 = TFile::Open("http://root.cern.ch/files/hsimple.root")
 
 root[] f3.ls()
 
-TDavixFile** http://root.cern.ch/files/hsimple.root
-TDavixFile* http://root.cern.ch/files/hsimple.root
-KEY: TH1F hpx;1 This is the px distribution
-KEY: TH2F hpxpy;1 py vs px
-KEY: TProfile hprof;1 Profile of pz versus px
-KEY: TNtuple ntuple;1 Demo ntuple
+TDavixFile**    http://root.cern.ch/files/hsimple.root
+ TDavixFile*    http://root.cern.ch/files/hsimple.root
+  KEY: TH1F     hpx;1 This is the px distribution
+  KEY: TH2F     hpxpy;1 py vs px
+  KEY: TProfile hprof;1 Profile of pz versus px
+  KEY: TNtuple  ntuple;1 Demo ntuple
 
 root[] hpx.Draw()
 ```
