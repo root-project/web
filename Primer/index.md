@@ -239,7 +239,7 @@ root [4] distribution(generator)
 Impressive isn't it?
 
 ## ROOT as function plotter
-Using one of ROOT's powerful classes, here `TF1` [^2], will allow us to
+Using one of ROOT's powerful classes, here `TF1` [^1], will allow us to
 display a function of one variable, *x*. Try the following:
 
 {% highlight C++ %}
@@ -450,7 +450,7 @@ The argument of the method `Draw("AP")` is important here. Behind the scenes,
 it tells the `TGraphPainter` class to show the axes and to plot markers at the
 *x* and *y* positions of the specified data points. Note that this simple
 example relies on the default settings of ROOT, concerning the size of
-the canvas holding the plot, the marker type and the line colours and
+the canvas holding the plot, the marker type and the line colors and
 thickness used and so on. In a well-written, complete example, all this
 would need to be specified explicitly in order to obtain nice and well
 readable results. A full chapter on graphs will explain many
@@ -530,7 +530,7 @@ which plot you are investigating, menus for the ROOT classes `TF1`,
 `TGraphErrors` or `TH1F` will show up when a right-click is performed on
 the respective graphical representations. The menu items allow direct
 access to the members of the various classes, and you can even modify
-them, e.g. change colour and size of the axis ticks or labels, the
+them, e.g. change color and size of the axis ticks or labels, the
 function lines, marker types and so on. Try it!
 
 {% include figure_image sect=2 fig=4
@@ -692,7 +692,7 @@ features of ROOT.
 
 ***Please move on to become an expert!***
 
-[^2]: All ROOT classes' names start with the letter T. A notable exception is
+[^1]: All ROOT classes' names start with the letter T. A notable exception is
 RooFit. In this context all classes' names are of the form Roo*.
 # ROOT Macros
 
@@ -881,7 +881,7 @@ Let's comment it in detail:
     axes, separated by a ";".
 
 -   Line *28-30*:  These three lines are rather intuitive right ? To understand
-    better the enumerators for colours and styles see the reference for
+    better the enumerators for colors and styles see the reference for
     the `TColor` and `TMarker` classes.
 
 -   Line *33*: the canvas object that will host the drawn objects. The
@@ -950,11 +950,11 @@ reader."
 
 ## Summary of Visual effects
 
-***Colours and Graph Markers***
+***Colors and Graph Markers***
 
-We have seen that to specify a colour, some identifiers like kWhite,
+We have seen that to specify a color, some identifiers like kWhite,
 kRed or kBlue can be specified for markers, lines, arrows etc. The
-complete summary of colours is represented by the ROOT "[colour
+complete summary of colors is represented by the ROOT "[color
 wheel](https://root.cern/doc/master/classTColor.html#C02)". To know more
 about the full story, refer to the online documentation of `TColor`.
 
@@ -1176,7 +1176,7 @@ int macro2(){
 In addition to the inspection of the plot, you can check the actual
 contents of the graph with the `TGraph::Print()` method at any time,
 obtaining a printout of the coordinates of data points on screen. The
-macro also shows us how to print a coloured band around a graph instead
+macro also shows us how to print a colored band around a graph instead
 of error bars, quite useful for example to represent the errors of a
 theoretical prediction.
 
@@ -1286,10 +1286,9 @@ void macro4(){
 
 Let's go through the code, step by step to understand what is going on:
 
--   Line *3*: This sets the palette colour code to a much nicer one than
-    the default. Comment this line to give it a try.
-    [This article](https://root.cern.ch/drupal/content/rainbow-color-map)
-    gives more details about colour map choice.
+-   Line *3*: This sets the palette color code to a much nicer one than
+    the default. Comment this line to give it a try. The color map choice
+    must be carefully chosen [^2].
 
 -   Line *7*: The instance of the random generator. You can then draw
     out of this instance random numbers distributed according to
@@ -1307,12 +1306,12 @@ Let's go through the code, step by step to understand what is going on:
     calling of the `Fit()` method.
 
 -   Line *34*: The *Surf1* option draws the `TF2` objects (but also
-    bi-dimensional histograms) as coloured surfaces with a wire-frame on
+    bi-dimensional histograms) as colored surfaces with a wire-frame on
     three-dimensional canvases. See Figure [4.3](#f43).
 
 -   Line *35-40*: Retrieve the axis pointer and define the axis titles.
 
--   Line *41*: Draw the cloud of points on top of the coloured surface.
+-   Line *41*: Draw the cloud of points on top of the colored surface.
 
 -   Line *43-49*: Here you learn how to create a canvas, partition it in
     two sub-pads and access them. It is very handy to show multiple
@@ -1383,7 +1382,8 @@ caption="A set of graphs grouped in a multigraph."
 %}
 
 
-[^3] https://root.cern.ch/drupal/content/rainbow-color-map
+[^2]: [This article](https://root.cern.ch/drupal/content/rainbow-color-map) gives more details about color map choice.
+
 # Histograms
 
 Histograms play a fundamental role in any type of physics analysis, not
@@ -1391,7 +1391,7 @@ only to visualise measurements but being a powerful form of data
 reduction. ROOT offers many classes that represent histograms, all
 inheriting from the `TH1` class. We will focus in this chapter on uni-
 and bi- dimensional histograms the bin contents of which are represented by
-floating point numbers [^4], the `TH1F` and `TH2F` classes respectively.
+floating point numbers [^3], the `TH1F` and `TH2F` classes respectively.
 
 ## Your First Histogram
 
@@ -1677,7 +1677,7 @@ void hstack(){
 
 - Lines *20-21*: add the histograms in the stack.
 
-- Line *23*: draws the stack as a lego plot. The colour distinguish the two histograms [5.6](#f56).
+- Line *23*: draws the stack as a lego plot. The color distinguish the two histograms [5.6](#f56).
 
 {% include figure_image sect=5 fig=6
 img="hstack.png"
@@ -1685,7 +1685,7 @@ caption="Two 2D histograms stack on top of each other."
 %}
 
 
-[^4]: To optimise the memory usage you might go for one byte (TH1C), short (TH1S), integer (TH1I) or double-precision (TH1D) bin-content.
+[^3]: To optimise the memory usage you might go for one byte (TH1C), short (TH1S), integer (TH1I) or double-precision (TH1D) bin-content.
 # Functions and Parameter Estimation
 
 After going through the previous chapters, you already know how to use
@@ -1705,7 +1705,7 @@ representing one possible version of the true experiment. If the
 simulation only deals with the final distributions observed in data, and
 does not perform a full simulation of the underlying physics and the
 experimental apparatus, the name "Toy Monte Carlo" is frequently used
-[^5]. Since the true values of all parameters are known in the
+[^4]. Since the true values of all parameters are known in the
 pseudo-data, the differences between the parameter estimates from the
 analysis procedure w.r.t. the true values can be determined, and it is
 also possible to check that the analysis procedure provides correct
@@ -1953,7 +1953,7 @@ The answers to these questions are well beyond the scope of this guide.
 Basically all books about statistical methods provide a complete
 treatment of the aforementioned topics.
 
-[^5]: "Monte Carlo" simulation means that random numbers play a role here
+[^4]: "Monte Carlo" simulation means that random numbers play a role here
 which is as crucial as in games of pure chance in the Casino of Monte Carlo.
 # File I/O and Parallel Analysis
 
@@ -2346,7 +2346,7 @@ in order to improve performance.
 
 The code in `MySelector.C`, shown in the listing below, books some
 histograms in `SlaveBegin()` and adds them to the instance `fOutput`,
-which is of the class `TList` [^6]. The final processing in
+which is of the class `TList` [^5]. The final processing in
 `Terminate()` allows to access histograms and store, display or save
 them as pictures. This is shown in the example via the `TList`
 `fOutput`. See the commented listing below for more details; most of the
@@ -2572,7 +2572,8 @@ minutes.
     write the meta data tree in a bulk to a file at the end of your job
     instead of writing both trees interleaved.
 
-[^6]: The usage of `fOutput` is not really needed for this simple example, but it allows re-usage of the exact code in parallel processing with `PROOF` (see next section).
+[^5]: The usage of `fOutput` is not really needed for this simple example, but it allows re-usage of the exact code in parallel processing with `PROOF` (see next section).
+
 # ROOT in Python
 
 ROOT offers the possibility to interface to Python via a set of bindings called
