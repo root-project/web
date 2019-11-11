@@ -5,10 +5,10 @@
 {% capture sect_size %}{{ sect | size }}{% endcapture %}
 
 {% if sect_size == "0" %}
-<img src="{{img}}"><br>
-*Figure: {{include.caption}}*
+   <img src="{{img}}"><br>
+   *Figure: {{include.caption}}*
 {% else %}
-<a name="f{{sect}}{{fig}}"></a>
-<img src="{{img}}"><br>
-*Figure {{sect}}.{{fig}}: {{include.caption}}*
+   <a name="f{{sect}}{{fig}}"></a>
+   <img src="{{img}}"><br>
+   *Figure {{sect}}.{{fig}}: {{include.caption}}*
 {% endif %}
