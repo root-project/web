@@ -54,5 +54,6 @@ A canvas is displayed.
 
 {% include figure_jsroot
    file="graphics_canvas.root" canvas="c1" width="500px" height="350px"
-   caption="Canvas (right-click on the image to interact with the object)."
+   caption="Canvas (point the bottom left light blue square or right-click
+   on the image to interact with the object)."
 %}
