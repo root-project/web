@@ -3,7 +3,7 @@ title: The Rainbow Color Map
 layout: single
 toc: true
 toc_sticky: true
-author: Bernice Rogowitz, Olivier Couet
+author: Olivier Couet
 ---
 
 

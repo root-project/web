@@ -1,0 +1,107 @@
+# /_data/authors.yml
+
+Axel Naumann:
+  name        : "Axel Naumann"
+  bio         : "Starting off as a physicist, Axel studied physics and math in Muenster,
+                 Germany. In 2000, he got a Ph.D. position for high energy physics in
+                 Nijmegen, The Netherlands. They sent him to Fermilab at Chicago, where he
+                 worked with the DØ experiment - which also meant writing software from PCI
+                 drivers to data analysis code. During that time he got involved with ROOT,
+                 converting from a user to a developer. He contributed to whatever he
+                 needed, e.g. the statistics part, the documentation engine, and porting it
+                 to cygwin. After a position with the Fermilab Computing Division in 2005
+                 he ended up at CERN in the ROOT development team. Axel is leading the ROOT
+                 project since 2017."
+  avatar      : "/assets/images/AN.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Axel.Naumann@cern.ch"
+
+
+Bertrand Bellenot:
+  name        : "Bertrand Bellenot"
+  bio         : "Bertrand was primary working in Aluminum industry as process engineer,
+                 developing software for data acquisition, data analysis, statistical
+                 process control (SPC) and for X-Ray spectrometry. He has been involved in
+                 ROOT development since 2001 by porting ROOT to Windows. Bertrand is a
+                 member of the ROOT development team at CERN since August 2005. He's
+                 currently working on GUI (Graphical User Interface), core (mainly Windows
+                 support), and JavaScript Root (JSROOT)."
+  avatar      : "/assets/images/BB.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Bertrand.Bellenot@cern.ch"
+
+
+Enric Tejedor:
+  name        : "Enric Tejedor"
+  bio         : "Enric Tejedor received his Ph.D. from the Technical University of Catalonia
+                 (UPC, Spain) in 2013. He conducted his doctorate research as a member of
+                 the Grid Computing and Clusters group of the Barcelona Supercomputing
+                 Center, where his researched focused on parallel programming models for
+                 distributed infrastructures and where he participated in several EU
+                 research projects. As part of his Ph.D., he also carried out two
+                 nternships at the IBM T.J. Watson Research Center (NY, USA).  In 2015 he
+                 joined the CERN EP-SFT group as a senior fellow and later became a staff
+                 member. He is currently working on ROOT parallelization, the ROOT Python
+                 bindings and the SWAN service. He is also one of the administrators of the
+                 Google Summer of Code student program (GSoC) at CERN-HEP Software Foundation."
+  avatar      : "/assets/images/ET.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Enric.Tejedor.Saavedra@cern.ch"
+
+
+Lorenzo Moneta:
+  name        : "Lorenzo Moneta"
+  bio         : "Lorenzo started working in 1989 as an experimental physicist for the ALEPH
+                 experiment working for data analysis and software event reconstruction. He
+                 graduated in Pisa in 1990 and he received his Ph.D. in particle physics in
+                 1994 at the University of Florence. Afterwards, since 1997, he was working
+                 for data analysis of the CDF experiments and online software for the ATLAS
+                 experiment. In 2002 he joined the physics application software group of
+                 CERN, and since 2005 he joined the ROOT team with the responsibility of
+                 the Math work package, which provides development and support for the ROOT
+                 mathematical and statistical libraries."
+  avatar      : "/assets/images/LM.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Lorenzo.Moneta@cern.ch"
+
+Olivier Couet:
+  name        : "Olivier Couet"
+  bio         : "Olivier Couet received a Physic's Master from the  Strasbourg University
+                 and a Master’s Degree in Engineering from the Ecole Nationale Supérieure
+                 de Physique de Strasbourg (ENSPS) on work in computer graphics and image
+                 processing in 1985. He then performed his Ph.D work (in Computer Graphics)
+                 at the Laboratoire D'Annecy le Vieux de Physique des Particules (LAPP)
+                 on the PAW project. He has been employed by CERN since 1988. He was one
+                 of the main authors of the PAW system, more precisely its graphical
+                 components (HIGZ and HPLOT). HIGZ has been the standard graphics package
+                 in High Energy Physics for years and is still being used. He was
+                 responsible for the PAW system from 1995 until he joined the ROOT team
+                 in 2002 and took responsibility of the graphics work package."
+  avatar      : "/assets/images/OC.png"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Olivier.Couet@cern.ch"
+
+Philippe Canal:
+  name        : "Philippe Canal"
+  bio         : "Philippe Canal has been working in the FNAL Computing Division since 1995.
+                 Philippe graduated from Ecole Centrale Paris and has a Master in Computer
+                 Science from Northwestern University. Philippe is responsible for the
+                 development of the I/O sub-system and the Tree query mechanism and oversee
+                 the overall architecture of ROOT.  Philippe coordinates the support for
+                 ROOT for all FNAL experiments."
+  avatar      : "/assets/images/PC.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "pcanal@fnal.gov"
+
