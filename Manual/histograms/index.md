@@ -205,9 +205,9 @@ TH1F h1("h1","Histogram from a Gaussian",100,-3,3)
 h1.FillRandom("gaus",10000)
 h1.Draw()
 ```
-{% include figure_image
-img="histo.png"
-caption="Histogram drawn with Draw()."
+{% include figure_jsroot
+   file="histo.root" canvas="c1" width="500px" height="350px"
+   caption="Histogram drawn with Draw()."
 %}
 
 #### Drawing options
