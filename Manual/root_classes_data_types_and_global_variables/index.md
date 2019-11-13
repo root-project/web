@@ -114,36 +114,7 @@ The `TObject` class provides default behavior and protocol for all objects in th
 
 -   Object browsing (`Browse()`, `IsFolder()`)
 
-The virtual method `Draw()` is the entry point for the Graphics endering of ROOT objects.
-
-#### Graphics rendering
-
-The [TObject](https://root.cern/doc/master/classTObject.html) class has the virtual method `Draw()` by which objects can be "drawn".
-The basic whiteboard on which an object is drawn is called a canvas. A canvas is defined by the [TCanvas](https://root.cern/doc/master/classTCanvas.html) class.
-
-You can draw an object on a canvas with:
-
-```
-object.Draw()
-```
-
-_**Example**_
-
-A one-dimensional sine function shall be drawn.
-
-Use the [TF1](https://root.cern/doc/master/classTF1.html) class to create an object that is a one-dimensional function defined between a lower and upper limit.
-
-On the ROOT prompt, type:
-```
-root[0] TF1 f1("func1","sin(x)",0,10)
-root[1] f1.Draw()
-```
-A canvas is displayed.
-
-{% include figure_jsroot
-   file="canvas.root" canvas="c1" width="500px" height="350px"
-   caption="Canvas"
-%}
+The virtual method `Draw()` is the entry point for the graphics rendering of ROOT objects, → see [ROOT collections]({{ '/Manual/graphics' | relative_url }}).
 
 
 ### TROOT - entry point to ROOT
@@ -218,13 +189,6 @@ This returns a pointer to a [TObject](https://root.cern/doc/master/classTObject.
 
 `gPad` points to an active pad on which a graphic object is drawn.
 
-_**Example**_
-
-You want to change the fill color of the active pad to blue, but you do not know the name of the active pad, you can use `gPad`.
-
-```
-gPad->SetFillColor(38)
-```
 
 ### gRandom
 
