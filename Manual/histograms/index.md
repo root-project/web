@@ -275,7 +275,7 @@ _**Example**_
 %}
 
 {% highlight C++ %}
-   h1.Draw("LEGO POL");
+   h2.Draw("LEGO1 POL");
 {% endhighlight %}
 
 {% include figure_image

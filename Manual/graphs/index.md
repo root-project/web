@@ -38,13 +38,14 @@ Advanced organizer ...
 
 ### Creating a graph
 
-- Use a graph constructor to create a graph object.
+Use a graph constructor to create a graph object.
 
 _**Example**_
 
 Arrays of coordinates are defined and then graph with the [TGraph](https://root.cern/doc/master/classTGraph.html) constructor is created.<br>
 The coordinates can be arrays of doubles or floats.
-```
+
+{% highlight C++ %}
 Int_t n = 20;
 Double_t x[n], y[n];
 for (Int_t i=0; i<n; i++) {
@@ -52,10 +53,9 @@ for (Int_t i=0; i<n; i++) {
    y[i] = 10*sin(x[i]+0.2);
 }
 TGraph *gr1 = new TGraph (n, x, y);
-```
+{% endhighlight %}
 
-Drawing a graph
----------------
+### Drawing a graph
 
 - Use the `Draw()` method to draw a graph.
 
@@ -63,26 +63,27 @@ The [TGraphPainter](https://root.cern/doc/master/classTGraph.html) class impleme
 
 _**Example**_
 
-```
-Int_t n = 20;
-Double_t x[n], y[n];
-for (Int_t i=0; i<n; i++) {
-   x[i] = i*0.1;
-   y[i] = 10*sin(x[i]+0.2);
-}
-TGraph *gr1 = new TGraph (n, x, y);
-gr1->Draw();
-```
+{% highlight C++ %}
+   const int n = 20;
+   Double_t x[n], y[n];
+   for (Int_t i=0; i<n; i++) {
+      x[i] = i*0.1;
+      y[i] = 10*sin(x[i]+0.2);
+   }
+   auto *gr1 = new TGraph (n, x, y);
+   gr1->Draw();
+{% endhighlight %}
 
-{% include figure_image
-img="graph.png"
-caption="Graph drawn with Draw()."
+{% include figure_jsroot
+   file="graph.root" canvas="c1" width="500px" height="350px"
+   caption="Graph drawn with Draw()."
 %}
+
 
 #### Drawing options
 
 > **Note**
-> 
+>
 > The drawing options are not case sensitive.
 
 For detailed information on the drawing options for graph classes, refer to [TGraphPainter](https://root.cern/doc/master/classTGraph.html).
@@ -107,21 +108,20 @@ For detailed information on the drawing options for graph classes, refer to [TGr
 
 _**Example**_
 
-```
-Int_t n = 20;
-Double_t x[n], y[n];
-for (Int_t i=0; i<n; i++) {
-   x[i] = i*0.1;
-   y[i] = 10*sin(x[i]+0.2);
-}
-TGraph *gr1 = new TGraph (n, x, y);
-gr1->Draw(*);
+{% highlight C++ %}
+   const int n = 20;
+   Double_t x[n], y[n];
+   for (Int_t i=0; i<n; i++) {
+      x[i] = i*0.1;
+      y[i] = 10*sin(x[i]+0.2);
+   }
+   auto *gr1 = new TGraph (n, x, y);
+   gr1->Draw("A*");
+{% endhighlight %}
 
-```
-
-{% include figure_image
-img="graph-star.png"
-caption="Graph drawn with Draw(`*`)."
+{% include figure_jsroot
+   file="graph-star.root" canvas="c1" width="500px" height="350px"
+   caption="Graph drawn with Draw(\"A\*\")."
 %}
 
 ## Fitting graphs
