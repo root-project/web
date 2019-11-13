@@ -20,7 +20,7 @@ the signature of the Higgs Boson, which was predicted to have a mass between 125
 is the distribution of electron volts across the particle sensor.
 
 
-<img src="{{'/assets/images/RCM01_0.jpg' | relative_url}}"><br>
+<img src="{{'/assets/images/RCM01.jpg' | relative_url}}"><br>
 
 <b>Figure 1</b>
 This figure shows four different representations of the candidate Higgs-Boson data.
