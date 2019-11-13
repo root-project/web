@@ -27,47 +27,47 @@ The following histogram classes are available in ROOT, among others:
 
 ### 1-D histograms
 
-[TH1C](https://root.cern/doc/master/classTH1C.html): One byte per channel. Maximum bin content = 127.
+  - [TH1C](https://root.cern/doc/master/classTH1C.html): One byte per channel. Maximum bin content = 127.
 
-[TH1S](https://root.cern/doc/master/classTH1S.html): One short per channel. Maximum bin content = 32767.
+  - [TH1S](https://root.cern/doc/master/classTH1S.html): One short per channel. Maximum bin content = 32767.
 
-[TH1I](https://root.cern/doc/master/classTH1I.html): One int per channel. Maximum bin content = 2147483647.
+  - [TH1I](https://root.cern/doc/master/classTH1I.html): One int per channel. Maximum bin content = 2147483647.
 
-[TH1F](https://root.cern/doc/master/classTH1F.html): One float per channel. Maximum precision 7 digits.
+  - [TH1F](https://root.cern/doc/master/classTH1F.html): One float per channel. Maximum precision 7 digits.
 
-[TH1D](https://root.cern/doc/master/classTH1D.html): One double per channel. Maximum precision 14 digits.
+  - [TH1D](https://root.cern/doc/master/classTH1D.html): One double per channel. Maximum precision 14 digits.
 
 ### 2-D histograms
 
-[TH2C](https://root.cern/doc/master/classTH2C.html): One byte per channel. Maximum bin content = 127.
+  - [TH2C](https://root.cern/doc/master/classTH2C.html): One byte per channel. Maximum bin content = 127.
 
-[TH2S](https://root.cern/doc/master/classTH2S.html): One short per channel. Maximum bin content = 32767.
+  - [TH2S](https://root.cern/doc/master/classTH2S.html): One short per channel. Maximum bin content = 32767.
 
-[TH2I](https://root.cern/doc/master/classTH2I.html): One int per channel. Maximum bin content = 2147483647.
+  - [TH2I](https://root.cern/doc/master/classTH2I.html): One int per channel. Maximum bin content = 2147483647.
 
-[TH2F](https://root.cern/doc/master/classTH2F.html): One float per channel. Maximum precision 7 digits.
+  - [TH2F](https://root.cern/doc/master/classTH2F.html): One float per channel. Maximum precision 7 digits.
 
-[TH2D](https://root.cern/doc/master/classTH2D.html): One double per channel. Maximum precision 14 digits.
+  - [TH2D](https://root.cern/doc/master/classTH2D.html): One double per channel. Maximum precision 14 digits.
 
 ### 3-D histograms
 
-[TH3C](https://root.cern/doc/master/classTH3C.html): One byte per channel. Maximum bin content = 127.
+  - [TH3C](https://root.cern/doc/master/classTH3C.html): One byte per channel. Maximum bin content = 127.
 
-[TH3S](https://root.cern/doc/master/classTH3S.html): One short per channel. Maximum bin content = 32767.
+  - [TH3S](https://root.cern/doc/master/classTH3S.html): One short per channel. Maximum bin content = 32767.
 
-[TH3I](https://root.cern/doc/master/classTH3I.html): One int per channel. Maximum bin content = 2147483647.
+  - [TH3I](https://root.cern/doc/master/classTH3I.html): One int per channel. Maximum bin content = 2147483647.
 
-[TH3F](https://root.cern/doc/master/classTH3F.html): One float per channel. Maximum precision 7 digits.
+  - [TH3F](https://root.cern/doc/master/classTH3F.html): One float per channel. Maximum precision 7 digits.
 
-[TH3D](https://root.cern/doc/master/classTH3D.html): One double per channel. Maximum precision 14 digits.
+  - [TH3D](https://root.cern/doc/master/classTH3D.html): One double per channel. Maximum precision 14 digits.
 
 ### Profile histograms
 
-[TProfile](https://root.cern/doc/master/classTProfile.html): Profile histogram to display the mean value of Y and its error for each bin in X.
+  - [TProfile](https://root.cern/doc/master/classTProfile.html): Profile histogram to display the mean value of Y and its error for each bin in X.
 
-[TProfile2D](https://root.cern/doc/master/classTProfile2D.html): Profile2D histograms are used to display the mean value of Z and its RMS for each cell in X,Y.
+  - [TProfile2D](https://root.cern/doc/master/classTProfile2D.html): Profile2D histograms are used to display the mean value of Z and its RMS for each cell in X,Y.
 
-[TProfile3D](https://root.cern/doc/master/classTProfile3D.html): Profile3D histograms are used to display the mean value of T and its RMS for each cell in X,Y,Z.
+  - [TProfile3D](https://root.cern/doc/master/classTProfile3D.html): Profile3D histograms are used to display the mean value of T and its RMS for each cell in X,Y,Z.
 
 ### Bin numbering
 
@@ -110,11 +110,13 @@ Advanced organizer ...
 _**Examples**_
 
 In the following examples, histograms are created for the classes [TH1I](https://root.cern/doc/master/classTH1I.html), [TH2F](https://root.cern/doc/master/classTH2F.html), [TH3D](https://root.cern/doc/master/classTH3D.html):
-```
-TH1* h1 = new TH1I("h1", "h1 title", 100, 0.0, 4.0);
-TH2* h2 = new TH2F("h2", "h2 title", 40, 0.0, 2.0, 30, -1.5, 3.5);
-TH3* h3 = new TH3D("h3", "h3 title";
-```
+
+{% highlight C++ %}
+   TH1* h1 = new TH1I("h1", "h1 title", 100, 0.0, 4.0);
+   TH2* h2 = new TH2F("h2", "h2 title", 40, 0.0, 2.0, 30, -1.5, 3.5);
+   TH3* h3 = new TH3D("h3", "h3 title";
+{% endhighlight %}
+
 -- or ­--
 
 - Clone/copy an existing histogram with the `Clone()` method.
@@ -128,19 +130,20 @@ _**Example**_
 - Fill a histogram with the [TH1::Fill()](https://root.cern/doc/master/classTH1.html#a77e71290a82517d317ea8d05e96b6c4a) method.
 
 _**Examples**_
-```
-h1->Fill(x);
 
-h1->Fill(x,w); // with weight
+{% highlight C++ %}
+   h1->Fill(x);
 
-h2->Fill(x,y);
+   h1->Fill(x,w); // with weight
 
-h2->Fill(x,y,w);
+   h2->Fill(x,y);
 
-h3->Fill(x,y,z);
+   h2->Fill(x,y,w);
 
-h3->Fill(x,y,z,w);
-```
+   h3->Fill(x,y,z);
+
+   h3->Fill(x,y,z,w);
+{% endhighlight %}
 
 The `Fill()` method computes the bin number corresponding to the given x, y or z argument and increments this bin by the given weight.<br>
 The `Fill()` method returns the bin number for 1-D histograms or *global bin* number for 2-D and 3-D histograms.
@@ -155,10 +158,10 @@ _**Example**_
 
 A histogram is randomly filled 10 000 times with a default Gaussian distribution of mean 0 and sigma 1.
 
-```
-TH1F h1("h1","Histogram from a Gaussian",100,-3,3)
-h1.FillRandom("gaus",10000)
-```
+{% highlight C++ %}
+   TH1F h1("h1","Histogram from a Gaussian",100,-3,3);
+   h1.FillRandom("gaus",10000);
+{% endhighlight %}
 
 Use the [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232) method to get a random number distributed according the contents of a histogram.
 
@@ -190,21 +193,22 @@ Multiplying two histograms and put the result in the third one:
 
 ### Drawing a histogram
 
-- Use the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da) method to draw a histogram.
+  - Use the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da) method to draw a histogram.
 
-It creates a [THistPainter](https://root.cern/doc/master/classTHistPainter.html) object that specializes the drawing of the histogram. The `THistPainter` class is separated from the histogram, so that the histogram does not contain the graphics overhead.
+    It creates a [THistPainter](https://root.cern/doc/master/classTHistPainter.html) object that specializes the drawing of the histogram. The `THistPainter` class is separated from the histogram, so that the histogram does not contain the graphics overhead.
 
-Use the [TH1::DrawCopy()](https://root.cern/doc/master/classTH1.html#aa19b24b96284284d677cd73f00d29d79) method to create a copy of the histogram when drawing it.
+  - Use the [TH1::DrawCopy()](https://root.cern/doc/master/classTH1.html#aa19b24b96284284d677cd73f00d29d79) method to create a copy of the histogram when drawing it.
 
-Use the [TH1::DrawNormalized()](https://root.cern/doc/master/classTH1.html#a46394b325a71d59fe0009172079b4a62) method to draw a normalized copy of a histogram.
+  - Use the [TH1::DrawNormalized()](https://root.cern/doc/master/classTH1.html#a46394b325a71d59fe0009172079b4a62) method to draw a normalized copy of a histogram.
 
 _**Example**_
 
-```
-TH1F h1("h1","Histogram from a Gaussian",100,-3,3)
-h1.FillRandom("gaus",10000)
-h1.Draw()
-```
+{% highlight C++ %}
+   TH1F h1("h1","Histogram from a Gaussian",100,-3,3);
+   h1.FillRandom("gaus",10000);
+   h1.Draw();
+{% endhighlight %}
+
 {% include figure_jsroot
    file="histo.root" canvas="c1" width="500px" height="350px"
    caption="Histogram drawn with Draw()."
@@ -218,7 +222,8 @@ h1.Draw()
 
 **Drawing options for all histogram classes**
 
-For detailed information on the drawing options for all histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html).
+For detailed information on the drawing options for all histogram classes, refer to
+[THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01a).
 
 `AXIS`: Draws only the axis.
 
@@ -254,27 +259,34 @@ For detailed information on the drawing options for all histogram classes, refer
 
 _**Example**_
 
-```
-TH1F h1("h1","Histogram from a Gaussian",100,-3,3)
-h1.FillRandom("gaus",10000)
-h1.Draw("LEGO")
-```
+{% highlight C++ %}
+   TH2F h2("h2","Histogram filled with random numbers",40,-4,4,40,-20,20);
+   float px, py;
+   for (int i = 0; i < 25000; i++) {
+      gRandom->Rannor(px,py);
+      h2.Fill(px,5*py);
+   }
+   h2.Draw("LEGO1");
+{% endhighlight %}
 
 {% include figure_image
-img="histo-lego.png"
-caption="Histogram drawn with Draw(\"LEGO\")."
+   img="histo-lego.png"
+   caption="Histogram drawn with Draw(\"LEGO1\")."
 %}
 
-`h1.Draw("LEGO" "POL")`
+{% highlight C++ %}
+   h1.Draw("LEGO POL");
+{% endhighlight %}
 
 {% include figure_image
-img="histo-lego-pol.png"
-caption="Histogram drawn with Draw(\"LEGO\" \"POL\")."
+   img="histo-lego-pol.png"
+   caption="Histogram drawn with Draw(\"LEGO1 POL\")."
 %}
 
 **Drawing options for 1-D histogram classes**
 
-For detailed information on the drawing options for 1-D histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html).
+For detailed information on the drawing options for 1-D histogram classes, refer to
+[THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01b).
 
 `AH`: Draws the histogram, but not the axis labels and tick marks.
 
