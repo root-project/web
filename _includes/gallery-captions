@@ -54,6 +54,9 @@
       {% assign i = 0 %}
     {% endif %}
   {% endfor %}
+  {% if i!=0 %}
+    </tr>
+  {% endif %}
 </table>
 
   {% if include.caption %}
