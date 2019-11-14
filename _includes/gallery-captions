@@ -43,7 +43,7 @@
       </a>
     <em>
       {% assign words = img.url | split: '/' %}
-      {{ words | last | remove: ".png" | replace: '_', ' ' }}
+      {{ words | last | remove: ".png" | remove: ".gif" | "replace: '_', ' ' }}
     </em>
     </td>
     {% if i==2 %}

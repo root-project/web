@@ -45,6 +45,28 @@ gallery2:
   - url: /Gallery/Detectors/STAR_detector.png
   - url: /Gallery/Detectors/Tesla_detector.png
   - url: /Gallery/Detectors/WA91_detector.png
+gallery3:
+  - url: /Gallery/Data_Analysis_and_Visualization/Astro_Physics_example_1.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Astro_Physics_example_2.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Astro_Physics_example_3.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Astro_Physics_example_4.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Astro_Physics_example_5.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/CMS_physics_simulation_at_HIP18_Discovery_reach.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Coloured_scatter_plot.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Cross-sections_vs._centre-of-mass_energy_for_proton-proton_interactions.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/EMB_M_Wheel.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/EM_response_profile.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Example_of_fit.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Exclusion_graphs.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Galaxy_view_1.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Galaxy_view_2.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/HCAL_vs_ECAL.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/High_quality_plot.png
+  - url: /Gallery/Data_Analysis_and_Visualization/Mercury_at_14.149_MHz.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Minuit_fit_result_on_the_Graph2DErrors_points.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Simple_tree_analysis.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Sun_view.gif
+  - url: /Gallery/Data_Analysis_and_Visualization/Z-scaling_of_Direct_Photon_Productions_in_pp_Collisions_at_RHIC_Energies.gif
 ---
 
 ## Higgs Plots
@@ -61,6 +83,8 @@ This gallery shows some detector's geometries produced using ROOT.
 {% include gallery-captions id="gallery2" caption="" %}
 
 ## Data Analysis and Visualization
+
+{% include gallery-captions id="gallery3" caption="" %}
 
 ## Advanced GUI
 
