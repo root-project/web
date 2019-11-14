@@ -67,6 +67,61 @@ gallery3:
   - url: /Gallery/Data_Analysis_and_Visualization/Simple_tree_analysis.gif
   - url: /Gallery/Data_Analysis_and_Visualization/Sun_view.gif
   - url: /Gallery/Data_Analysis_and_Visualization/Z-scaling_of_Direct_Photon_Productions_in_pp_Collisions_at_RHIC_Energies.gif
+gallery4:
+  - url: /Gallery/Advanced_GUI/An_event_display_based_on_ROOT_GUI.png
+  - url: /Gallery/Advanced_GUI/GUI_tools_to_build_applications.png
+  - url: /Gallery/Advanced_GUI/ROOT_object_browser.png
+  - url: /Gallery/Advanced_GUI/TBrowser_as_a_code_editor.png
+  - url: /Gallery/Advanced_GUI/TBrowser_to_draw_histograms.png
+gallery5:
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/2D_histogram_rendered_with_boxes.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/3D_histogram_drawn_with_option_BOX.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/A_Compilation_of_the_main_Tools_and_Packages_used_in_HENP_offline_software_between_1970_and_2010.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/A_simple_graph.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/All_kind_of_axis.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/All_kind_of_boxes.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Application_Domains.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Arrows_drawing.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Basic_3D_shapes.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Born_equation_produced_with_TLatex.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Candle_plots.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Coloured_scatter_plot.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Directory_architecture.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Drawing_option-_TEXT.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Ellipse_drawing.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Error_bars_plot.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Example_of_contours_plot.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Example_of_formulae_produced_with_TLatex.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Example_of_pie_chart_drawing.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Examples_of_polar_graphs.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Feynman_diagrams.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Graph_with_asymmetric_errors.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Graph_with_bent_error_bars.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Histograms_with_alphanumeric_labels.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Implicit_functions.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Iso_surface_to_drawn_3D_histogram.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/List_of_greek_symbols.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Markers'_styles.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Multi-Graph_drawing.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/My_first_ROOT_interactive_session.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Parallel_coordinates.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Parametric_surfaces_1.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Parametric_surfaces_2.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Parametric_surfaces_3.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Parametric_surfaces_4.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Parametric_surfaces_5.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Polygons'_fill_styles.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Ratio_of_energy_in_Xtals_for_data.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Simple_graph.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Sky_maps_or_exposure_maps.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Surfaces_plots.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/TLatex_Math_symbols.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Test_of_random_numbers.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/The_color_wheel.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/The_elementary_particles.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/The_tree_data_structure.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Time_on_axis.gif
+  - url: /Gallery/Visualisation_techniques_and_basics_graphics/Two_legos_plots_combined.gif
 ---
 
 ## Higgs Plots
@@ -88,7 +143,11 @@ This gallery shows some detector's geometries produced using ROOT.
 
 ## Advanced GUI
 
+{% include gallery-captions id="gallery4" caption="" %}
+
 ## Visualisation techniques and basic graphics
 
 This gallery shows the basic graphics tools and some of the visualisation techniques ROOT provides.
+
+{% include gallery-captions id="gallery5" caption="" %}
 
