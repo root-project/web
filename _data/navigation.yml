@@ -20,7 +20,7 @@ main:
 manual:
   - title: ROOT MANUAL - Basics
     children:
-  	  - title: Getting started with ROOT
+      - title: Getting started with ROOT
         url: Manual/getting_started_with_root
       - title: ROOT classes, data types and global variables 
         url: Manual/root_classes_data_types_and_global_variables
