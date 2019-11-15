@@ -5,13 +5,14 @@ sidebar:
   nav: "manual"
 toc: true
 toc_sticky: true
+toc_label: ROOT Manual
 ---
 
 ROOT is an object-oriented framework that provides all the functionalities needed to deal
 with big data processing, statistical analysis, visualization and storage. It is mainly
 written in C++ but integrated with other languages such as Python and R.
 
-## ROOT MANUAL - Basics
+## Basics
 
   - [Getting started with ROOT]({{ '/Manual/getting_started_with_root' | relative_url }})
 
@@ -26,7 +27,7 @@ written in C++ but integrated with other languages such as Python and R.
   - [Storing ROOT objects]({{ '/Manual/storing_root_objects' | relative_url }})
 
 
-## ROOT MANUAL - Functional parts
+## Functional parts
 
   - [Graphics]({{ '/Manual/graphics' | relative_url }})
 
