@@ -35,9 +35,9 @@ Therefore, your class should inherit from [TObject](https://root.cern/doc/master
 
 Add the following line to your class header file, to integrate your class to ROOT:
 
-```
+{% highlight C++ %}
 ClassDef(ClassName,ClassVersionID)
-```
+{% endhighlight %}
 
 The `ClassVersionID` is used by the ROOT I/O system. It is written on the output stream and during reading You can check this `ClassVersionID` during reading and take appropriate action depending on the value of ClassVersionID.
 Every time you change the data members of a class, increase its `ClassVersionID` by 1.
@@ -48,9 +48,9 @@ _**Example**_
 
 In the `TLine.h` file:
 
-```
+{% highlight C++ %}
 ClassDef(TLine,1);
-```
+{% endhighlight %}
 
 ### Calling the ClassImp macro
 
@@ -58,17 +58,17 @@ Call the `ClassImp` macro to give your class Run Time Type Identification (RTTI)
 
 Add the following line to your class header file:
 
-```
+{% highlight C++ %}
 ClassImp(ClassName);
-```
+{% endhighlight %}
 
 _**Example**_
 
 In the `Tline.cxx` file:
 
-```
+{% highlight C++ %}
 ClassImp(TLine)
-```
+{% endhighlight %}
 
 ### Constructors
 
@@ -84,7 +84,7 @@ The default constructor or I/O constructor is called whenever an object is being
 
 _**Example for a class**_
 
-```
+{% highlight C++ %}
 #include "TObject.h"
 
 // Define the ABC class and make it inherit from TObject. Then the ABC class can also be written to a ROOT file.
@@ -102,7 +102,7 @@ ClassDef (ABC,1)
 #if !defined(__CLING__)
 ClassImp(ABC);
 #endif
-```
+{% endhighlight %}
 
 
 ## Adding a class with a shared library
@@ -130,7 +130,7 @@ In the first step, a `TEvent` and a `TTrack` class is defined. Next an event obj
 In the second step, the `TEvent `and the `TTrack `call are implemented. After that you can use `rootcling` to generate the directory. This generates the `eventdict.cxx` file.
 
 **The TEvent.h header**
-```
+{% highlight C++ %}
 #ifndef __TEvent__
 #define __TEvent__
 #include "TObject.h"
@@ -153,10 +153,10 @@ public:
    Float_t TotalMomentum();
    ClassDef(TEvent,1); //Simple event class
 };
-```
+{% endhighlight %}
 
 **The TTrack.h header**
-```
+{% highlight C++ %}
 #ifndef __TTrack __
 #define __TTrack__
 #include "TObject.h"
@@ -177,10 +177,10 @@ public:
    void Print(Option_t *opt="");
    ClassDef (TTrack,1); //Simple track class
 };
-```
+{% endhighlight %}
 
 **Implementation of TEvent and TTrack class**
-```
+{% highlight C++ %}
 TEvent.cxx:
 #include <iostream.h>
 #include "TOrdCollection.h"
@@ -196,15 +196,15 @@ TTrack.cxx:
 #include "Event.h"
 ClassImp(TTrack)
 ...
-```
+{% endhighlight %}
 
 **Using rootcling to generate the dictionaries**
-```
+{% highlight C++ %}
 rootcling eventdict.cxx -c TEvent.h TTrack.h
-```
+{% endhighlight %}
 
 **eventdict.cxx - the generated dictionary**
-```
+{% highlight C++ %}
 void TEvent::Streamer(TBuffer &R__b) {
    // Stream an object of class TEvent.
    if (R__b.IsReading()) {
@@ -221,7 +221,7 @@ void TEvent::Streamer(TBuffer &R__b) {
       R__b << fTracks;
    }
 }
-```
+{% endhighlight %}
 
 `Streamer()` is used to stream an object to/from a [TBuffer](https://root.cern/doc/master/classTBuffer.html). The `TBuffer` class overloads `operator<<() `and `operator>>() `for all basic types and for pointers to objects. These operators write and read from the buffer and take care of any needed byte swapping to make the buffer machine independent. During writing, the `TBuffer` keeps track of the objects that have been written and multiple references to the same object are replaced by an index. In addition, the class information of the object is stored.
 
