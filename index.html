@@ -41,33 +41,38 @@ needed to deal with big data processing, statistical analysis, visualisation and
 storage.
 It is mainly written in C++ but integrated with other languages such as Python and R.
 
-<table style="border:0px">
-   <tr>
-      <td style="border:0px" width="50%">
-         <h2> Under the Spotlight </h2>
-      </td>
-      <td style="border:0px" width="50%">
-         <h2> Other News </h2>
-      </td>
-   </tr>
-   <tr>
-      <td style="border:0px" width="50%">
+<a href="About"> More ...</a>
 
+<br><br>
+
+<table style="border:0px" bgcolor="#EBEBEB">
+   <tr>
+      <td style="border:0px" width="50%" rowspan="2">
+         <h2> Under the Spotlight </h2>
+         <i>
          {% for post in site.posts %}
             {% if forloop.index <= 3 %}
                <h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
                <p>{{ post.excerpt }}</p>
             {% endif %}
          {% endfor %}
-
+         </i>
       </td>
       <td style="border:0px" width="50%">
-
+         <h2> Other News </h2>
+         <i>
          {% for post in site.posts %}
             {% if forloop.index >= 4 and forloop.index <=8 %}
                <h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
             {% endif %}
          {% endfor %}
+         </i>
+      </td>
+   </tr>
+   <tr>
+      <td style="border:0px" width="50%">
+
+         <h2> Latest Releases </h2>
 
       </td>
    </tr>

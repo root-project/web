@@ -22,7 +22,7 @@ manual:
     children:
       - title: Getting started with ROOT
         url: Manual/getting_started_with_root
-      - title: ROOT classes, data types and global variables 
+      - title: ROOT classes, data types and global variables
         url: Manual/root_classes_data_types_and_global_variables
       - title: Adding a class to ROOT
         url: Manual/adding_a_class_to_root
@@ -118,3 +118,20 @@ resources:
 download:
    - title: All Releases
      url: Download/All_Releases
+
+about:
+   - title: About ROOT
+     url: About
+     children:
+      - title: Save data
+        url: About/Save_Data
+      - title: Access data
+        url: About/Access_Data
+      - title: Mine data
+        url: About/Mine_Data
+      - title: Publish Results
+        url: About/Publish_Results
+      - title: Interactive or Built Applications
+        url: About/Interactive_or_Built_Applications
+      - title: Integration with other languages
+        url: About/Integration_with_other_languages
