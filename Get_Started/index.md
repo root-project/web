@@ -1,11 +1,23 @@
 ---
 title: Get Started
 layout: single
+sidebar:
+  nav: "start"
 ---
 
-Remains always the first entry in the main menu. No overview page. Directly starting with the content.
+On behalf of the developers, contributors and user community: <strong>welcome to ROOT!</strong>
 
-More a less a short installation guide, so the user comes quickly to in ROOT prompt.
-Only one page, no overview, directly starting (as the title already suggests it).
+The [ROOT beginners' guide (aka "Primer")]({{ '/Primer' | relative_url }}) 
+is certainly the first document to read to master the power of ROOT.
+After this introduction, 
+[these slides (and video!)](https://indico.cern.ch/event/395198) offer a different, more direct approach to the ROOT fundamental 
+concepts as well as some hands-on exercise. In order to integrate the information present 
+in the aforementioned sources, [these resources](Courses) 
+are definitively useful. Once the fundamental concepts have been acquired, a rich set of 
+code examples can be found [here](Code_Examples).
+
+Remember, you can always resort to the 
+[ROOT Forum](https://root-forum.cern.ch)
+to find out if someone already solved the problem you are facing or to get help!
 
 

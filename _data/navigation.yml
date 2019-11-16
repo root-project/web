@@ -135,3 +135,12 @@ about:
         url: About/Interactive_or_Built_Applications
       - title: Integration with other languages
         url: About/Integration_with_other_languages
+        
+start:
+   - title: Get Started
+     url: Get_Started
+     children:
+      - title: Courses
+        url: Get_Started/Courses
+      - title: Code Examples
+        url: Get_Started/Code_Examples
