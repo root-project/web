@@ -9,21 +9,21 @@ toc_sticky: true
 
 The ROOT Mathematical libraries consist of the following components:
 
-- MathCore library
+- [MathCore library](#mathcore-library)
 
-- MathMore library
+- [MathMore library](#mathmore-library)
 
-- Linear algebra package
+- [Linear algebra package](#linear-algebra-package)
 
-- SMatrix
+- [SMatrix](#smatrix)
 
-- TMinuit
+- [TMinuit](#tminuit)
 
-- Minuit2 Library
+- [Minuit2 Library](#minuit2-library)
 
-- Vectors
+- [Vectors](#vectors)
 
-- UNU.RAN
+- [UNU.RAN](#unuran")
 
 
 ## MathCore library
@@ -133,7 +133,7 @@ The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides 
 
 > **Note**
 >
-> For generating non-uniform random numbers, the UNU.RAN package (see → *UNU.RAN*) is available.
+> For generating non-uniform random numbers, the UNU.RAN package (see → [UNU.RAN](#unuran")) is available.
 
 #### Seeding the random number generators
 
@@ -371,7 +371,7 @@ The matrix/vector operations are classified according to BLAS (Basic Linear Alge
   </tbody>
 </table>
 
-### Arithmetic operations between matrices and real numbers
+#### Arithmetic operations between matrices and real numbers
 
 <table width="100%" border="0">
   <tbody>
