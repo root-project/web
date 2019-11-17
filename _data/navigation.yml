@@ -42,6 +42,8 @@ manual:
         url: Manual/graphs
       - title: Trees
         url: Manual/trees
+      - title: Mathematical libraries
+        url: Manual/math
   - title: Further information
     children:
       - title: "ROOT Reference Guide"
