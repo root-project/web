@@ -188,7 +188,7 @@ You can execute a ROOT macro:
   - at the ROOT prompt,
   - by loading it to a ROOT session.
 
-1. To execute a ROOT macro at the system prompt, type:
+- To execute a ROOT macro at the system prompt, type:
 
    ```
    root MacroName.C
@@ -196,7 +196,7 @@ You can execute a ROOT macro:
 
    --or--
 
-2. To execute a ROOT macro at the ROOT prompt, type:
+- To execute a ROOT macro at the ROOT prompt, type:
 
    ```
    .x MacroName.C`
@@ -204,7 +204,7 @@ You can execute a ROOT macro:
 
    -- or --
 
-3. To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
+- To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
 
    ```
    .L MacroName.C
