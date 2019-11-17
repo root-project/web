@@ -23,7 +23,7 @@ The ROOT Mathematical libraries consist of the following components:
 
 - [Vectors](#vectors)
 
-- [UNU.RAN](#unuran")
+- [UNU.RAN](#unuran)
 
 
 ## MathCore library
@@ -133,7 +133,7 @@ The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides 
 
 > **Note**
 >
-> For generating non-uniform random numbers, the UNU.RAN package (see → [UNU.RAN](#unuran")) is available.
+> For generating non-uniform random numbers, the UNU.RAN package (see → [UNU.RAN](#unuran)) is available.
 
 #### Seeding the random number generators
 
