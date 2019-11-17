@@ -568,7 +568,7 @@ With the following matrix view classes, you can access matrix elements:
 - `TMatrixDDiag`
 - `TMatrixDSub`
 
-### Matrix view operators
+#### Matrix view operators
 
 For the matrix view classes `TMatrixDRow`, `TMatrixDColumn` and `TMatrixDDiag`, the necessary assignment operators are available to interact with the vector class `TVectorD`.<br>The sub matrix view classes `TMatrixDSub` has links to the matrix classes `TMatrixD` and `TMatrixDSym.`
 
@@ -604,7 +604,7 @@ The next table summarizes how to access the individual matrix elements in the ma
   </tbody>
 </table>
 
-### Matrix decompositions
+#### Matrix decompositions
 
 There are the following classes available, to assist you in matrix decompositions:
 
