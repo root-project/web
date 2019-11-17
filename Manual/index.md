@@ -36,6 +36,8 @@ written in C++ but integrated with other languages such as Python and R.
   - [Graphs]({{ '/Manual/graphs' | relative_url }})
 
   - [Trees]({{ '/Manual/trees' | relative_url }})
+  
+  - [Mathematical libraries]({{ '/Manual/math' | relative_url }})
 
 ## Further Information
 
