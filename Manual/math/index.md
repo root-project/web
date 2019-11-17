@@ -275,7 +275,7 @@ Use one of the following constructors to create a matrix:
 - `TMatrixDSym(Int_t nrows)`
 - `TMatrixDSym(Int_t row_lwb,Int_t row_upb)`
 - `TMatrixDSym(Int_t nrows,const Double_t *data,Option_t *option="")`
-- `TMatrixDSym(Int_t row_lwb,Int_t row_upb,const Double_t *data, Option_t *opt="")`
+- `TMatrixDSym(Int_t row_lwb,Int_t row_upb, const Double_t *data, Option_t *opt="")`
 - `TMatrixDSparse(Int_t nrows,Int_t ncols)`- `TMatrixDSparse(Int_t row_lwb,Int_t row_upb,Int_t col_lwb, Int_t col_upb)`- `TMatrixDSparse(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros,Int_t *row,Int_t *col,Double_t *data)`
 
 Use one of the following methods to fill a matrix:
@@ -290,7 +290,7 @@ Only available for sparse matrices. The three arrays should each contain `nr` en
 - `Use()`<br>
 Allows inserting another matrix or data array without actually copying the data.<br> The following list shows the application of the `Use()` method: 
 	* `Use(TMatrixD &a)`
-	* `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Double_t *d ata)`
+	* `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Double_t *data)`
 	* `Use(Int_t nrows,Int_t ncols,Double_t *data)`
 	* `Use(TMatrixDSym &a)`
 	* `Use(Int_t nrows,Double_t *data)`
@@ -356,7 +356,7 @@ The matrix/vector operations are classified according to BLAS (Basic Linear Alge
             <tr>
       <td>Matrix multiplication</td>
       <td>C=A*B<br>A*=B<br>C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD::kTransposeMult,B)<br>TMatrixD(A, TMatrixD::kMultTranspose,B)</td>
-      <td>overwrites A<br>&nbsp;<br>&nbsp;<br>constructor of A.B<br>constructor of A<sup>T</sup/> .B<br>constructor of A.B<sup>T</sup></td>
+      <td>overwrites A<br>&nbsp;<br>&nbsp;<br>constructor of A.B<br>constructor of A<sup>T</sup> .B<br>constructor of A.B<sup>T</sup></td>
     </tr>
       <tr>
       <td>Element wise multiplication</td>
