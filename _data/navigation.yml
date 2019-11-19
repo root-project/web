@@ -10,7 +10,7 @@ main:
   - title: "Forum"
     url: https://root-forum.cern.ch/
   - title: "Manual"
-    url: Manual
+    url: manual
   - title: "Resources"
     url: Resources
   - title: "News"
@@ -21,29 +21,29 @@ manual:
   - title: ROOT MANUAL - Basics
     children:
       - title: Getting started with ROOT
-        url: Manual/getting_started_with_root
+        url: manual/getting_started_with_root
       - title: ROOT classes, data types and global variables
-        url: Manual/root_classes_data_types_and_global_variables
+        url: manual/root_classes_data_types_and_global_variables
       - title: Adding a class to ROOT
-        url: Manual/adding_a_class_to_root
+        url: manual/adding_a_class_to_root
       - title: ROOT collections
-        url: Manual/root_collections
+        url: manual/root_collections
       - title: Object ownership
-        url: Manual/object_ownership
+        url: manual/object_ownership
       - title: Storing ROOT objects
-        url: Manual/storing_root_objects
+        url: manual/storing_root_objects
   - title: ROOT MANUAL - Functional parts
     children:
       - title: Graphics
-        url: Manual/graphics
+        url: manual/graphics
       - title: Histograms
-        url: Manual/histograms
+        url: manual/histograms
       - title: Graphs
-        url: Manual/graphs
+        url: manual/graphs
       - title: Trees
-        url: Manual/trees
+        url: manual/trees
       - title: Mathematical libraries
-        url: Manual/math
+        url: manual/math
   - title: Further information
     children:
       - title: "ROOT Reference Guide"
