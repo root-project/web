@@ -123,20 +123,20 @@ download:
 
 about:
    - title: About ROOT
-     url: About
+     url: about
      children:
       - title: Save data
-        url: About/Save_Data
+        url: about/save_data
       - title: Access data
-        url: About/Access_Data
+        url: about/access_data
       - title: Mine data
-        url: About/Mine_Data
+        url: about/mine_data
       - title: Publish Results
-        url: About/Publish_Results
+        url: about/publish_results
       - title: Interactive or Built Applications
-        url: About/Interactive_or_Built_Applications
+        url: about/interactive_or_built_applications
       - title: Integration with other languages
-        url: About/Integration_with_other_languages
+        url: about/integration_with_other_languages
 
 start:
    - title: Get Started
