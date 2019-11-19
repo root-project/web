@@ -1,0 +1,6 @@
+---
+layout: posts
+title: News
+---
+
+
