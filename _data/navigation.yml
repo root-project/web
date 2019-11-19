@@ -53,7 +53,7 @@ manual:
       - title: "ROOT Forum"
         url: https://root-forum.cern.ch/
       - title: "ROOT Primer"
-        url: Primer/
+        url: primer/
 
 resources:
    - title: Program of Work
@@ -137,7 +137,7 @@ about:
         url: About/Interactive_or_Built_Applications
       - title: Integration with other languages
         url: About/Integration_with_other_languages
-        
+
 start:
    - title: Get Started
      url: Get_Started

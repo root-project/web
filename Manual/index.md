@@ -36,7 +36,7 @@ written in C++ but integrated with other languages such as Python and R.
   - [Graphs]({{ '/Manual/graphs' | relative_url }})
 
   - [Trees]({{ '/Manual/trees' | relative_url }})
-  
+
   - [Mathematical libraries]({{ '/Manual/math' | relative_url }})
 
 ## Further Information
@@ -47,4 +47,4 @@ written in C++ but integrated with other languages such as Python and R.
 
   - [ROOT Forum](https://root-forum.cern.ch/)
 
-  - [ROOT Primer]({{ '/Primer/' | relative_url }})
+  - [ROOT Primer]({{ '/primer/' | relative_url }})
