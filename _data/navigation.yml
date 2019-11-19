@@ -6,7 +6,7 @@ main:
     url: Download
     description: "All you need to install ROOT"
   - title: "Get Started"
-    url: Get_Started
+    url: get_started
   - title: "Forum"
     url: https://root-forum.cern.ch/
   - title: "Manual"
@@ -140,9 +140,9 @@ about:
 
 start:
    - title: Get Started
-     url: Get_Started
+     url: get_started
      children:
       - title: Courses
-        url: Get_Started/Courses
+        url: get_started/courses
       - title: Code Examples
-        url: Get_Started/Code_Examples
+        url: get_started/code_examples
