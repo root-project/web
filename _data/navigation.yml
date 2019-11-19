@@ -3,7 +3,7 @@
 
 main:
   - title: "Download"
-    url: Download
+    url: download
     description: "All you need to install ROOT"
   - title: "Get Started"
     url: get_started
@@ -48,7 +48,7 @@ manual:
     children:
       - title: "ROOT Reference Guide"
         url: https://root.cern/doc/master/
-      - title: "ROOT Tutorials"
+      - title: "ROOT manual"
         url: https://root.cern/doc/master/group__Tutorials.html
       - title: "ROOT Forum"
         url: https://root-forum.cern.ch/
@@ -119,7 +119,7 @@ resources:
 
 download:
    - title: All Releases
-     url: Download/All_Releases
+     url: download/all_releases
 
 about:
    - title: About ROOT
