@@ -12,14 +12,14 @@ platforms to be able to configure and to build basic ROOT. If more advanced ROO
 are required look at the  `cmake` or `./configure` output and add the desired third
 party packages before configuring again.
 
-- [Fedora family](#fedora)
-- [Ubuntu family](#ubuntu)
-- [OpenSUSE family](#opensuse)
-- [Mac OS X family](#macosx)
+- [Fedora family](#fedora-18-19-and-20-scientific-linux-5-6-centos-6-7)
+- [Ubuntu family](#ubuntu-10-12--14-and-16)
+- [OpenSUSE family](#opensuse-10-11)
+- [Mac OS X family](#macos-x)
 - [Windows family](#windows)
-- [AIX family](#aix)
+- [AIX family](#aix-5-6-and-7)
 
-## <a name=fedora></a>Fedora 18, 19 and 20; Scientific Linux 5, 6; CentOS 6, 7
+## Fedora 18, 19 and 20; Scientific Linux 5, 6; CentOS 6, 7
 
 *   **git:** for /usr/bin/git
 *   **make:** for /usr/bin/make
@@ -55,7 +55,7 @@ Most common optional packages:
 *   **gsl-static:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a. On Fedora 16 use **gsl-devel**.
 *   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 
-Use "<tt>yum install</tt> _package_" or use the graphical "Add/Remove Software" program.
+Use `yum install _package_` or use the graphical "Add/Remove Software" program.
 
 Required packages:
 ~~~
@@ -73,7 +73,7 @@ avahi-compat-libdns_sd-devel libldap-dev python-devel \
 libxml2-devel gsl-static
 ~~~
 
-## <a name=ubuntu></a>Ubuntu 10, 12 , 14 and 16
+## Ubuntu 10, 12 , 14 and 16
 
 *   **git:** for /usr/bin/git
 *   **dpkg-dev**  for dpkg-architecture (needed by configure to locate system libraries starting from 11)
@@ -131,7 +131,7 @@ libldap2-dev python-dev libxml2-dev libkrb5-dev \
 libgsl0-dev libqt4-dev
 ~~~
 
-## <a name=opensuse></a>openSUSE 10, 11
+## OpenSUSE 10, 11
 
 *   **git:** for /usr/bin/git
 *   **bash:** for /bin/bash
@@ -188,7 +188,7 @@ libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel \
 python-devel libxml2-devel krb5-devel gsl-devel libqt4-devel
 ~~~
 
-## <a name=macosx></a>MacOS X
+## MacOS X
 
 *   **Xcode developer package:** for make, g++, gcc, ld, etc.  Xcode is found on the MacOS X installation DVD or in the Mac App store.
     install command line tools through the XCode preferences and/or running in a terminal  `xcode-select --install`
@@ -208,7 +208,7 @@ Alternatively ROOT can be installed directly from [MacPort](http://www.macports.
 If you are using Windows make sure you've installed Microsoft Visual C++ (e.g. the [no-cost edition](http://www.microsoft.com/express/vc/)) plus CMake. The CMake build will work directly **without the need** to install [cygwin](http://cygwin.com) as it was required previously before the adaption of CMake.
 **Note:** for the moment native Windows support for ROOT6 versions is not available.
 
-## <a name=aix></a>AIX 5, 6 and 7
+## AIX 5, 6 and 7
 
 *   **git:** for /usr/bin/git
 *   **bash:** for /usr/bin/bash
