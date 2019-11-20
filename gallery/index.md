@@ -131,7 +131,7 @@ discovery was [announced at CERN](https://home.cern/science/physics/higgs-boson)
 
 {% include gallery-captions id="gallery1" caption="" %}
 
-## detectors
+## Detectors
 
 This gallery shows some detector's geometries produced using ROOT.
 
