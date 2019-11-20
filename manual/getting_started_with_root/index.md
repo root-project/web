@@ -10,7 +10,7 @@ toc_sticky: true
 > **Note**
 >
 > Before using ROOT, it must be installed successfully and all environment variables must be set.
-> → See [Installation Guide]({{ '/Resources/Building_ROOT' | relative_url }}).
+> → See [Installation Guide]({{ '/resources/building_root' | relative_url }}).
 
 ## Starting and quitting a ROOT session
 

@@ -12,7 +12,7 @@ main:
   - title: "Manual"
     url: manual
   - title: "Resources"
-    url: Resources
+    url: resources
   - title: "News"
     url: news
 
@@ -57,46 +57,46 @@ manual:
 
 resources:
    - title: Program of Work
-     url: Resources/Program_Of_Work
+     url: resources/program_of_work
    - title: Building ROOT
-     url: Resources/Building_ROOT
+     url: resources/building_root
    - title: Code Owners
-     url: Resources/Code_Owners
+     url: resources/code_owners
    - title: Release Checklist
-     url: Resources/Release_Checklist
+     url: resources/release_checklist
    - title: Coding Conventions
-     url: Resources/Coding_Conventions
+     url: resources/coding_conventions
    - title: Shifter's Instructions
-     url: Resources/Shifters_Instructions
+     url: resources/shifters_instructions
    - title: Git Primer
-     url: Resources/Git_Primer
+     url: resources/git_primer
      children:
       - title: "Creating a Pull Request"
-        url: Resources/Git_Primer/Creating_PR
+        url: resources/git_primer/creating_pr
       - title: "GitHub ssh key"
-        url: Resources/Git_Primer/GitHub_ssh_key
+        url: resources/git_primer/github_ssh_key
       - title: "Git Tips and Trick"
-        url: Resources/Git_Primer/Git_Tips_and_Tricks
+        url: resources/git_primer/git_tips_and_tricks
       - title: "Git How Tos"
-        url: Resources/Git_Primer/Git_How_Tos
+        url: resources/git_primer/git_how_tos
       - title: "NoSY Worlflow"
-        url: Resources/Git_Primer/NoSY_Workflow
+        url: resources/git_primer/nosy_workflow
    - title: Browse Sources
      url: https://github.com/root-project/root
    - title: Meetings
-     url: Resources/Meetings
+     url: resources/meetings
    - title: ROOT 7
-     url: Resources/ROOT7
+     url: resources/root7
    - title: Run the Tests
-     url: Resources/Run_the_Tests
+     url: resources/run_the_tests
    - title: Setup externals from AFS/CVMFS
-     url: Resources/Setup_externals_from_AFS-CVMFS
+     url: resources/setup_externals_from_afs-cvmfs
    - title: Continous Integration / Testing
      children:
       - title: Jenkins Service
         url: https://epsft-jenkins.cern.ch/view/ROOT/
       - title: Jenkins How To
-        url: Resources/Continous_Integration-Testing/Jenkins_How_to
+        url: resources/continous_integration-testing/jenkins_how_to
       - title: CDash
         url: http://cdash.cern.ch/index.php?project=ROOT
       - title: Coverity
@@ -108,9 +108,9 @@ resources:
       - title: Jira
         url: https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page
       - title: ROOTBinder Checklist
-        url: Resources/Continous_Integration-Testing/ROOTBinder_Checklist
+        url: resources/continous_integration-testing/rootbinder_checklist
    - title: Doxygen in ROOT
-     url: Resources/Doxygen
+     url: resources/doxygen
    - title: Benchmarks
      url: https://rootbnch-grafana-test.cern.ch
    - title: ROOT Logos
