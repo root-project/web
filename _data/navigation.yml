@@ -120,6 +120,8 @@ resources:
 download:
    - title: All Releases
      url: download/all_releases
+   - title: Building ROOT
+     url: resources/building_root
 
 about:
    - title: About ROOT
