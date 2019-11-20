@@ -203,7 +203,7 @@ Most common optional packages:
 Alternatively ROOT can be installed directly from [MacPort](http://www.macports.org) with the command:
 "<tt>sudo port install root</tt>"
 
-## <a name=windows></a>Windows
+## Windows
 
 If you are using Windows make sure you've installed Microsoft Visual C++ (e.g. the [no-cost edition](http://www.microsoft.com/express/vc/)) plus CMake. The CMake build will work directly **without the need** to install [cygwin](http://cygwin.com) as it was required previously before the adaption of CMake.
 **Note:** for the moment native Windows support for ROOT6 versions is not available.
