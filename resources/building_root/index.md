@@ -8,18 +8,33 @@ toc_sticky: true
 ---
 
 ## Introduction
-ROOT uses the [CMake](http://www.cmake.org/) cross-platform build-generator tool as a primary build system. CMake does not build the project, it generates the files needed by your build tool (GNU make, Ninja,  Visual Studio, etc) for building ROOT. The classic build with configure/make is is still available but it will not be evolving with the new features of ROOT. The instructions can be found [here](/node/2073).
 
-If you are really anxious about getting a functional ROOT build, go to the [Quick Start](#quick-start)  section. If you are a CMake novice, start on [Basic](#basic) CMake usage and then go back to the [Quick Start](#quick-start) once you know what you are doing. The [Options](#options) and [Variables](#variables) section is a reference for customizing your build. If you already have experience with CMake, this is the recommended starting point.
+ROOT uses the [CMake](http://www.cmake.org/) cross-platform build-generator tool as a
+primary build system. CMake does not build the project, it generates the files needed by
+your build tool (GNU make, Ninja,  Visual Studio, etc) for building ROOT. The classic
+build with configure/make is is still available but it will not be evolving with the
+new features of ROOT. The instructions can be found [here](build_root_old_method).
+
+If you are really anxious about getting a functional ROOT build, go to the
+[Quick Start](#quick-start)  section. If you are a CMake novice, start on
+[Basic](#basic-cmake-usage) CMake usage and then go back to the
+[Quick Start](#quick-start) once you know what you are doing. The
+[Options](#build-options) and [Variables](#variables) section
+is a reference for customizing your build. If you already have experience with CMake,
+this is the recommended starting point.
 
 ## Preparation
-Check the [prerequisites](/node/2110) and [supported platforms](/supported-platforms) for the list of packages needed for your setup before starting the build.
+Check the [prerequisites](build_prerequisites) and
+[supported platforms](supported_platforms) for the list of packages needed for your
+setup before starting the build.
 
 ## Quick Start
 
-The following are the basic instructions for UNIX systems. We use here the command-line, non-interactive CMake interface.
+The following are the basic instructions for UNIX systems. We use here the command-line,
+non-interactive CMake interface.
 
-1. Download and unpack the ROOT's sources from the download area or using directly the Git repository. Follow the [instructions for getting the ROOT sources](node/2998)
+1. Download and unpack the ROOT's sources from the download area or using directly the
+   Git repository. Follow the [instructions for getting the ROOT sources](get_root_sources)
 2. Open a shell. Your development tools must be reachable from this shell through the PATH environment variable.
 3. Create a directory for containing the build. It is not supported to build ROOT on the source directory. cd to this directory:
 
@@ -218,14 +233,14 @@ Here are some of the CMake variables that are used often, along with a brief exp
 | CMAKE_INSTALL_ELISPDIR | PATH | Install destination for lisp files (DATAROOTDIR/emacs/site-lisp) |
 | CMAKE_INSTALL_CMAKEDIR | PATH | Install destination for cmake modules (DATAROOTDIR/cmake) |
 
-###Additional Variables
+### Additional Variables
 A number of additional variables to control the way ROOT is built.
 
 | Variable | Type | Explanation |
 |----------|-------|---------------|
 | LLVM_BUILD_TYPE | STRING | Build type for the bundled LLVM. It is used to set the CMAKE_BUILD_TYPE for the /interpreter/ subdirectory |
 
-###External Libraries
+### External Libraries
 
 ROOT requires a number of external libraries that the CMake system needs to locate. The list of externals depends on the build options that have been enabled. CMake will look for these third party products at a number of standard places in your system but the user can influence the search by setting some environment variables before invoking the CMake command or by setting package specific CMake variables to their exact location.
 

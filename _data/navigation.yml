@@ -60,6 +60,15 @@ resources:
      url: resources/program_of_work
    - title: Building ROOT
      url: resources/building_root
+     children:
+      - title: Build Prerequisites
+        url: resources/building_root/build_prerequisites
+      - title: Get ROOT Sources
+        url: resources/building_root/get_root_sources
+      - title: Supported Platforms
+        url: resources/building_root/supported_platforms
+      - title: Build ROOT Old Method
+        url: resources/building_root/build_root_old_method
    - title: Code Owners
      url: resources/code_owners
    - title: Release Checklist
