@@ -15,7 +15,16 @@
             {% assign nav_url = nav.url | relative_url %}
           {% endif %}
 
-          <a href="{{ nav_url }}"><span class="nav__sub-title">{{ nav.title }}</span></a>
+          {% assign n = nav.url | replace: '/', '' %}
+          {% assign p = page.url | replace: '/', '' %}
+
+          {% if n == p %}
+            {% assign active = "background-color:#d6d6d6;" %}
+          {% else %}
+            {% assign active = "" %}
+          {% endif %}
+
+          <a href="{{ nav_url }}"><span class="nav__sub-title" style="{{active}};">{{ nav.title }}</span></a>
         {% else %}
           <span class="nav__sub-title">{{ nav.title }}</span>
         {% endif %}
@@ -30,14 +39,18 @@
               {% assign child_url = child.url | relative_url %}
             {% endif %}
 
+            {% assign c = child.url | replace: '/', '' %}
+            {% assign p = page.url | replace: '/', '' %}
+
             {% comment %} set "active" class on current page {% endcomment %}
-            {% if child.url == page.url %}
-              {% assign active = "active" %}
+            {% if c == p %}
+              {% assign active = "background-color:#d6d6d6" %}
             {% else %}
               {% assign active = "" %}
             {% endif %}
 
-            <li><a href="{{ child_url }}" class="{{ active }}">{{ child.title }}</a></li>
+            <li> <span class="nav__sub-sub-title" style="{{active}}"><a href="{{ child_url }}">{{ child.title }}</a></li></span>
+
           {% endfor %}
         </ul>
         {% endif %}
