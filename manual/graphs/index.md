@@ -75,7 +75,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="gr1.root" object="Graph" width="500px" height="350px"
+   file="graphs.root" object="gr1" width="500px" height="350px"
    caption="Graph drawn with Draw()."
 %}
 
@@ -120,7 +120,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="gr2.root" object="Graph" width="500px" height="350px"
+   file="graphs.root" object="gr2" width="500px" height="350px"
    caption="Graph drawn with Draw(\"AL\*\")."
 %}
 

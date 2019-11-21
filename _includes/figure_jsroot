@@ -2,7 +2,7 @@
 {% assign h  = {{include.height}} %}
 {% assign f  = {{include.file}}   %}
 {% assign o  = {{include.object}} %}
-{% assign id =  f | append: c | replace: ".root","" %}
+{% assign id =  f | append: o | replace: ".root","" %}
 
 {% capture ws %}{{ w | size }}{% endcapture %}
 {% if ws == "0" %} {% assign w  = "100%"  %} {% endif %}
