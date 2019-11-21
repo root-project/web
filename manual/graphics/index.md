@@ -39,9 +39,9 @@ When an object is drawn, you can interact with it.
 
 - Use the Draw() method to draw an object.
 
-```
+{% highlight C++ %}
 object.Draw()
-```
+{% endhighlight %}
 
 _**Example**_
 
@@ -76,9 +76,9 @@ _**Example**_
 
 If you want to change the fill color of the active pad to blue, but you do not know the name of the active pad, you can use `gPad`.
 
-```
+{% highlight C++ %}
 gPad->SetFillColor(38)
-```
+{% endhighlight %}
 
 ### Accessing an object in an active pad
 
@@ -86,10 +86,10 @@ gPad->SetFillColor(38)
 
 _**Example**_
 
-```
+{% highlight C++ %}
 root[] obj = gPad->GetPrimitive("myobjectname")
 (class TObject*)0x1063cba8
-```
+{% endhighlight %}
 
 A pointer to the object `myobjectname` is returned and put into the `obj` variable.<br>
 The type of the returned pointer is a `TObject*` that has a name.
@@ -109,11 +109,11 @@ Second, a point to the list of objects owned by the pad is needed.<br>
 Then you can remove the object from the list, i.e. pad.<br>
 The object disappears as soon as the pas is updated.
 
-```
+{% highlight C++ %}
 root[1] obj = gPad->GetPrimitive("myobjectname")
 root[2] li = gPad->GetListOfPrimitives()
 root[3] li->Remove(obj)
-```
+{% endhighlight %}
 
 ### Updating a pad
 
@@ -130,12 +130,12 @@ You can set the “bit-modified” by using the `Modified()` method.
 
 _**Example**_
 
-```
+{% highlight C++ %}
 // The pad has changed.
 root[] pad1->Modified()
 // Recursively updating all modified pads:
 root[] c1->Update()
-```
+{% endhighlight %}
 
 A subsequent call to [TCanvas::Update()](https://root.cern/doc/master/classTCanvas.html#a83bb3270c4e4cd4250730d5586ceebd6) scans the list of sub-pads and repaints the pads.
 
@@ -156,15 +156,16 @@ _**Example**_
 
 A sub-pad is to be built into the active pad (pointed by `gPad`). First, the sub-pad is build the the TPad [TPad](https://root.cern.ch/doc/master/classTPad.html) constructor.
 
-```
+{% highlight C++ %}
 root[] spad1 = new TPad("spad1","The first subpad",.1,.1,.5,.5)
-```
+{% endhighlight %}
+
 The NDC (Normalized Coordinate System) coordinates are specified for the lower left point `(0.1, 0.1)` and for the upper right point `(0.5, 0.5)`.<br>
 Then the sub-pad is drawn.
 
-```
+{% highlight C++ %}
 root[] spad1->Draw()
-```
+{% endhighlight %}
 
 For building more sub-pads, repeat this procedure as many times as necessary.
 
