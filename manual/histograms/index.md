@@ -210,7 +210,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="histo.root" canvas="c1" width="500px" height="350px"
+   file="h1.root" object="h1" width="500px" height="350px"
    caption="Histogram drawn with Draw()."
 %}
 

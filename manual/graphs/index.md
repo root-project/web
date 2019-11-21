@@ -75,7 +75,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="graph.root" canvas="c1" width="500px" height="350px"
+   file="gr1.root" object="Graph" width="500px" height="350px"
    caption="Graph drawn with Draw()."
 %}
 
@@ -116,12 +116,12 @@ _**Example**_
       y[i] = 10*sin(x[i]+0.2);
    }
    auto *gr1 = new TGraph (n, x, y);
-   gr1->Draw("A*");
+   gr1->Draw("AL*");
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="graph-star.root" canvas="c1" width="500px" height="350px"
-   caption="Graph drawn with Draw(\"A\*\")."
+   file="gr2.root" object="Graph" width="500px" height="350px"
+   caption="Graph drawn with Draw(\"AL\*\")."
 %}
 
 ## Fitting graphs

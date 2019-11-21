@@ -49,15 +49,15 @@ A one-dimensional sine function shall be drawn.
 
 Use the [TF1](https://root.cern/doc/master/classTF1.html) class to create an object that is a one-dimensional function defined between a lower and upper limit.
 
-```
+{% highlight C++ %}
 TF1 f1("func1","sin(x)",0,10)
 f1.Draw()
-```
-A canvas is displayed.
+{% endhighlight %}
 
+The function is displayed in a canvas.
 
 {% include figure_jsroot
-   file="graphics_canvas.root" canvas="c1" width="500px" height="350px"
+   file="tf1.root" object="func1" width="500px" height="350px"
    caption="Canvas (point the bottom left light blue square or right-click
    on the image to interact with the object)."
 %}
