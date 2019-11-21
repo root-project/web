@@ -358,9 +358,9 @@ The `Cost` variable is drawn. [TTree::Draw](https://root.cern/doc/master/classTC
 root [9] MyTree->Draw("Cost")
 {% endhighlight %}
 
-{% include figure_image
-img="tree-draw-1.png"
-caption="The variable `Cost` drawn in a histogram."
+{% include figure_jsroot
+   file="trees.root" object="c1" width="500px" height="350px"
+   caption="The variable `Cost` drawn in a histogram."
 %}
 
 Next, the second pad is activated and scatter plot is drawn. Two dimensions (here `Cost` and `Age`) are separated by a colon ("x:y").<br>
@@ -371,9 +371,9 @@ root [10] myCanvas->cd(2)
 root [11] MyTree->Draw("Cost:Age")
 {% endhighlight %}
 
-{% include figure_image
-img="tree-draw-2.png"
-caption="The variable `Cost` and `Age` drawn in a histogram."
+{% include figure_jsroot
+   file="trees.root" object="c2" width="500px" height="350px"
+   caption="The variable `Cost` and `Age` drawn in a histogram."
 %}
 
 Next, the third pad is activated and a selection is added. `Cost` versus `Age` for the entries where the nation is equal to `“CH”` is drawn.<br>
@@ -384,21 +384,21 @@ root [11] myCanvas->cd(3)
 root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
 {% endhighlight %}
 
-{% include figure_image
-img="tree-draw-3.png"
-caption="The variable `Cost` and `Age` with a selection drawn in a histogram."
+{% include figure_jsroot
+   file="trees.root" object="c3" width="500px" height="350px"
+   caption="The variable `Cost` and `Age` with a selection drawn in a histogram."
 %}
 
 Next, the fouth pad is activated and the histogram is drawn with the dra option `surf2`. Refer to the [THistPainter](https://root.cern/doc/master/classTHistPainter.html) class for possible draw options.
 
 {% highlight C++ %}
 root [11] myCanvas->cd(4)
-root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","surf2")
+root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","colz")
 {% endhighlight %}
 
-{% include figure_image
-img="tree-draw-4.png"
-caption="The variable `Cost` and `Age` with a selection and a draw option drawn in a histogram."
+{% include figure_jsroot
+   file="trees.root" object="c4" width="500px" height="350px"
+   caption="The variable `Cost` and `Age` with a selection and a draw option drawn in a histogram."
 %}
 
 ### Using TTree::MakeClass()
