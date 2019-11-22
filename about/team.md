@@ -26,7 +26,7 @@ for data acquisition, data analysis, statistical process control (SPC) and for X
 spectrometry. He has been involved in ROOT development since 2001 by porting ROOT to
 Windows. Bertrand is a member of the ROOT development team at CERN since August 2005.
 He's currently working on GUI (Graphical User Interface), core (mainly Windows support),
-and JavaScript Root (JSROOT).<br><br>
+and JavaScript Root (JSROOT).<br><br><br>
 
 
 #### [Danilo Piparo](https://phonebook.cern.ch/phonebook/#search/?query=Danilo+Piparo)
@@ -137,7 +137,7 @@ University, where he also received his Ph.D. in Physics and Mathematics in 1999.
 software for data acquisition and online analysis for different experiments. From 2004
 starts contributing to different ROOT components like I/O with XML, SQL, JSON,
 THttpServer, JavaScript ROOT. Currently is responsible for the development of new
-web-based GUIs in ROOT like RCanvas, REve, RFitPanel and many others.
+web-based GUIs in ROOT like RCanvas, REve, RFitPanel and many others.<br><br>
 
 #### [Stephan Hageboeck](https://phonebook.cern.ch/phonebook/#search/?query=Stephan+Hageboeck)
 <img src="{{'/assets/images/SH.jpg' | relative_url}}" width="30%" style="padding: 0 15px; float: left;">
@@ -146,7 +146,7 @@ Germany. He worked in ATLAS to improve the sensitivity in the search for
 Higgs --> bb decays. His main focus was on analysis frameworks, machine learning,
 systematic uncertainties and statistical models. He joined the ROOT team in 2018 to
 support and improve RooFit. He further looks into math and statistics, as well as into
-questions regarding performance and programming model.
+questions regarding performance and programming model.<br><br><br>
 
 #### [Vassil Vassilev](https://phonebook.cern.ch/phonebook/#search/?query=Vassil+Vassilev)
 <img src="{{'/assets/images/VV.jpg' | relative_url}}" width="30%" style="padding: 0 15px; float: left;">
