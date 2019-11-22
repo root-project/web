@@ -134,6 +134,12 @@ download:
    - title: Building ROOT
      url: resources/building_root
 
+news:
+   - title: News
+     url: news
+   - title: Workshops
+     url: news/workshops
+
 about:
    - title: About ROOT
      url: about
