@@ -1,14 +1,22 @@
-{% assign img   = {{include.img}}  %}
-{% assign sect  = {{include.sect}}  %}
-{% assign fig   = {{include.fig}} %}
+{% assign img     = {{include.img}}  %}
+{% assign sect    = {{include.sect}}  %}
+{% assign fig     = {{include.fig}} %}
+{% assign caption = {{include.caption}} %}
 
 {% capture sect_size %}{{ sect | size }}{% endcapture %}
 
+{% if sect_size != "0" %}
+   <a name="f{{sect}}{{fig}}"></a>
+{% endif %}
+
+<img src="{{img}}"><br>
+
+{% capture caption_size %}{{ caption | size }}{% endcapture %}
+
+{% if caption_size != "0" %}
 {% if sect_size == "0" %}
-   <img src="{{img}}"><br>
    *Figure: {{include.caption}}*
 {% else %}
-   <a name="f{{sect}}{{fig}}"></a>
-   <img src="{{img}}"><br>
    *Figure {{sect}}.{{fig}}: {{include.caption}}*
+{% endif %}
 {% endif %}
