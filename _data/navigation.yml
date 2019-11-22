@@ -162,6 +162,9 @@ about:
      url: about/licence
    - title: Project Founders
      url: about/project_founders
+   - title: Team
+     url: about/team
+
 start:
    - title: Get Started
      url: get_started
