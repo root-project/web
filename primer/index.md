@@ -340,8 +340,8 @@ void slits() {
 {% endhighlight %}
 
 
-{% include figure_image sect=2 fig=1
-img="TF1_DoubleSlit.png"
+{% include figure_jsroot sect=2 fig=1
+file="canvases.root" object="TF1_DoubleSlit"
 caption="Output of slits.C with parameters 0.2 and 2."
 %}
 
@@ -431,8 +431,8 @@ root [1] gr.Draw("AP");
 
 You should see the output shown in Figure [2.2](#f22).
 
-{% include figure_image sect=2 fig=2
-img="TGraphErrors_Example.png"
+{% include figure_jsroot sect=2 fig=2
+file="canvases.root" object="TGraphErrors_Example"
 caption="Visualisation of data points with errors using the class TGraphErrors."
 %}
 
@@ -479,7 +479,7 @@ instantiated, with a name, a title, a certain number of bins (100 of
 them, equidistant, equally sized) in the range from 0 to 5.
 
 {% include figure_image sect=2 fig=3
-img="TH1F_Example.png"
+file="canvases.root" object="TH1F_Example.png"
 caption="Visualisation of a histogram filled with exponentially distributed,
 random numbers."
 %}
@@ -938,15 +938,14 @@ Let's comment it in detail:
 Let's give a look to the obtained plot in Figure [3.1](#f31). Beautiful
 outcome for such a small bunch of lines, isn't it ?
 
-{% include figure_image sect=3 fig=1
-img="graf_with_law.png"
+{% include figure_jsroot sect=3 fig=1
+file="canvases.root" object="graf_with_law"
 caption="Your first plot with data points, a fit of an analytical function, a
 legend and some additional information in the form of graphics
 primitives and text. A well formatted plot, clear for the reader is
 crucial to communicate the relevance of your results to the
 reader."
 %}
-
 
 ## Summary of Visual effects
 
@@ -1217,7 +1216,6 @@ img="polar_graph.png"
 caption="The graph of a fan obtained with ROOT."
 %}
 
-
 ## 2D Graphs
 
 Under specific circumstances, it might be useful to plot some quantities
@@ -1376,11 +1374,10 @@ void multigraph(){
 - Line *30-32*: draw the multigraph. The axis limits are computed automatically
   to make sure all the graphs' points will be in range.
 
-{% include figure_image sect=4 fig=4
-img="multigraph.png"
+{% include figure_jsroot sect=4 fig=4
+file="canvases.root" object="multigraph"
 caption="A set of graphs grouped in a multigraph."
 %}
-
 
 [^2]: [This article](https://root.cern.ch/drupal/content/rainbow-color-map) gives more details about color map choice.
 
@@ -1437,8 +1434,8 @@ void macro5(){
 
 Which gives you the following plot (Figure [5.1](#f51)):
 
-{% include figure_image sect=5 fig=1
-img="poisson.png"
+{% include figure_jsroot sect=5 fig=1
+file="canvases.root" object="poisson"
 caption="The result of a counting (pseudo) experiment. Only bins corresponding
 to integer values are filled given the discrete nature of the poissonian
 distribution."
@@ -1533,14 +1530,14 @@ void macro6(){
 
 The plots that you will obtain are shown in Figures [5.2](#f52) and [5.3](#f53).
 
-{% include figure_image sect=5 fig=2
-img="histo_sum.png"
+{% include figure_jsroot sect=5 fig=2
+file="canvases.root" object="histo_sum"
 caption="The sum of two histograms."
 %}
 
 
-{% include figure_image sect=5 fig=3
-img="histo_ratio.png"
+{% include figure_jsroot sect=5 fig=3
+file="canvases.root" object="histo_ratio"
 caption="The ratio of two histograms."
 %}
 
@@ -1834,7 +1831,6 @@ caption="Fit of pseudo data: a signal shape over a background trend. This plot
 is another example of how making a plot self-explanatory can help you
 better displaying your results."
 %}
-
 
 ## Toy Monte Carlo Experiments
 
