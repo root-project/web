@@ -1211,8 +1211,8 @@ void macro3(){
 A new element was added on line 4, the size of the canvas: it is
 sometimes optically better to show plots in specific canvas sizes.
 
-{% include figure_image sect=4 fig=2
-img="polar_graph.png"
+{% include figure_jsroot sect=4 fig=2 width="350px"
+file="canvases.root" object="polar_graph"
 caption="The graph of a fan obtained with ROOT."
 %}
 
