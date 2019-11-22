@@ -35,8 +35,9 @@ feature you heard about. It helps us _tremendously_ to get feedback from you on 
 please try them out and report back to us!
 
 ## Using binaries
-After unpacking / installing the binary, and before using ROOT you should use a special script distributed with ROOT:
-`source <pathname>/root/bin/thisroot.sh` (there are versions for [t]csh and fish, too.)
+After unpacking / installing the binary, and before using ROOT you should use a special
+script distributed with ROOT:<br>
+`source <pathname>/root/bin/thisroot.sh` (there are versions for [t]csh and fish, too.)<br>
 where `<pathname>` is the location where you unpacked the ROOT distribution.
 Typically add these lines to your `.profile` or `.login` files.
 

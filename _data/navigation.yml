@@ -129,6 +129,8 @@ resources:
 download:
    - title: All Releases
      url: download/all_releases
+   - title: Nightlies
+     url: download/nightlies
    - title: Building ROOT
      url: resources/building_root
 
