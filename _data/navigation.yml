@@ -164,6 +164,8 @@ about:
      url: about/project_founders
    - title: Team
      url: about/team
+   - title: Previous Developers
+     url: about/previous_developers
 
 start:
    - title: Get Started
