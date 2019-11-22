@@ -48,7 +48,7 @@ manual:
     children:
       - title: "ROOT Reference Guide"
         url: https://root.cern/doc/master/
-      - title: "ROOT manual"
+      - title: "ROOT Tutorials"
         url: https://root.cern/doc/master/group__Tutorials.html
       - title: "ROOT Forum"
         url: https://root-forum.cern.ch/
