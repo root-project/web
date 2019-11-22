@@ -1,8 +1,14 @@
-{% assign w  = {{include.width}}  %}
-{% assign h  = {{include.height}} %}
-{% assign f  = {{include.file}}   %}
-{% assign o  = {{include.object}} %}
+{% assign w       = {{include.width}}  %}
+{% assign h       = {{include.height}} %}
+{% assign f       = {{include.file}}   %}
+{% assign o       = {{include.object}} %}
+{% assign sect    = {{include.sect}}  %}
+{% assign fig     = {{include.fig}} %}
+{% assign caption = {{include.caption}} %}
+
 {% assign id =  f | append: o | replace: ".root","" %}
+
+{% capture sect_size %}{{ sect | size }}{% endcapture %}
 
 {% capture ws %}{{ w | size }}{% endcapture %}
 {% if ws == "0" %} {% assign w  = "100%"  %} {% endif %}
@@ -15,8 +21,20 @@
 </div>
 </center>
 
+{% if sect_size != "0" %}
+   <a name="f{{sect}}{{fig}}"></a>
+{% endif %}
+
 <script src="https://root.cern/js/dev/scripts/JSRootCore.js" type="text/javascript"></script>
 <script type='text/javascript'> JSROOT.OpenFile("{{f}}", function(file) {
 file.ReadObject("{{o}}", function(obj) {JSROOT.draw("{{id}}", obj, "");});});</script>
 
-*Figure: {{include.caption}}*
+{% capture caption_size %}{{ caption | size }}{% endcapture %}
+
+{% if caption_size != "0" %}
+{% if sect_size == "0" %}
+   *Figure: {{caption}}*
+{% else %}
+   *Figure {{sect}}.{{fig}}: {{caption}}*
+{% endif %}
+{% endif %}
