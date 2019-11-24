@@ -168,6 +168,6 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="error-bars.root" object="gr" width="500px" height="350px"
+   file="error-bars.root" object="egr" width="500px" height="350px"
    caption="A graph with error bars."
 %}
