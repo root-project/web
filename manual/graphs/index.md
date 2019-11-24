@@ -6,7 +6,7 @@ sidebar:
 toc: true
 toc_sticky: true
 ---
-Advanced organizer ...
+A graph is a graphics object made of two arrays `X` and `Y`, holding the `x`,`y` coordinates of n points.
 
 > **Tutorials**
 >
@@ -26,7 +26,7 @@ The following graph classes are available in ROOT, among others:
 
 [TGraphQQ](https://root.cern/doc/master/classTGraphQQ.html): Draws quantile-quantile plots.
 
-[TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html)
+[TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html): A collection of `TGraph` (or derived) objects. 
 
 [TGraph2D](https://root.cern/doc/master/classTGraph2D.html): Graph made of three arrays X, Y and Z with the same number of points each.
 
@@ -136,18 +136,19 @@ A [TGraphErrors](https://root.cern/doc/master/classTGraphErrors.html) is a [TGra
 
 The [TGraphPainter](https://root.cern/doc/master/classTGraph.html) class implements all drawing options for graphs with error bars.
 
-`TGraphErrors` uses 4 parameters: X, Y (as in TGraph), X-errors, and Y-errors (the size of the errors in the x
-and y direction).
+`TGraphErrors` uses 4 parameters: X, Y (as in `TGraph`), X-errors, and Y-errors (the size of the errors in the x and y direction).
 
 _**Example**_
 
 {% highlight C++ %}
 {
-   c1 = new TCanvas("c1","A Simple Graph with error bars",200,10,700,500);
+   TCanvas *c1 = new TCanvas("c1","A Simple Graph with error bars",200,10,700,500);
+
    c1->SetGrid();
+   c1->GetFrame()->SetBorderSize(12);
    
 // Creating the coordinate arrays:
-   Int_t n = 10;
+   const Int_t n = 10;
    Float_t x[n] = {-.22,.05,.25,.35,.5,.61,.7,.85,.89,.95};
    Float_t y[n] = {1,2.9,5.6,7.4,9,9.6,8.7,6.3,4.5,1};
 
@@ -156,12 +157,17 @@ _**Example**_
    Float_t ey[n] = {.8,.7,.6,.5,.4,.4,.5,.6,.7,.8};
 
 // Create the TGraphErrors and draw it.
-   gr = new TGraphErrors(n,x,y,ex,ey);
+   TGraphErrors *gr = new TGraphErrors(n,x,y,ex,ey);
    gr->SetTitle("TGraphErrors Example");
    gr->SetMarkerColor(4);
    gr->SetMarkerStyle(21);
    gr->Draw("ALP");
-  c1->Update();
+
+   c1->Update();
 }
 {% endhighlight %}
 
+{% include figure_jsroot
+   file="error-bars.root" object="gr" width="500px" height="350px"
+   caption="A graph with error bars."
+%}
