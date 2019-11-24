@@ -172,7 +172,7 @@ _**Example**_
    caption="Graph with error bars."
 %}
 
-### TMulitGraph ###
+## TMulitGraph ##
 
 A [TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html) is a collection of TGraph (or derived) objects. 
 
@@ -208,6 +208,10 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_image
-   img="mulitgraph.png"
+   img="multigraph.png"
    caption="A multigraph."
 %}
+
+## TGraph2D ##
+
+A [TGraph2D](https://root.cern/doc/master/classTGraph2D.html) graph is a graphics object that is made of three arrays X, Y and Z with the same number of points each.
