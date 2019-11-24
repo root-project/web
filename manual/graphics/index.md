@@ -62,9 +62,9 @@ The function is displayed in a canvas.
    on the image to interact with the object)."
 %}
 
-#### Using the User Interface for objects
+#### Using the Graphics Editor for objects
 
-ROOT provides an User Interface for setting attributes of graphical objects interactively.
+You can edit an existing object in a canvas by right-clicking the object or by using the Graphics Editor.
 
 - Click **View** and then select **Editor**.
 
@@ -73,7 +73,7 @@ ROOT provides an User Interface for setting attributes of graphical objects inte
    caption="Editor for setting attributes interactively."
 %}
 
-There is a toolbar that you can use, for example, to draw objects.
+You can draw and edit basic primitives starting from an empty canvas or on top of a picture. There is a toolbar that you can use to draw objects.
 
 - Click **View** and then select **Toolbar**.
 
@@ -81,6 +81,19 @@ There is a toolbar that you can use, for example, to draw objects.
    img="toolbar.png"
    caption="Toolbar providing more options."
 %}
+
+You can create the following graphics objects:
+
+- Arc of circle
+- Arrow
+- Diamond
+- Ellipse
+- Pad
+- PaveLabel
+- PaveText or PavesText
+- PolyLine
+- Text string
+
 
 ## Canvas and pad
 
