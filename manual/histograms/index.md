@@ -391,7 +391,7 @@ By default, 3-D histograms are drawn as scatter plots.
 
 Profile histograms are used to display the mean value of Y and its error for each bin in X.
 
-When you fill a profile histogram with [TProfile.Fill(x,y)](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125):
+When you fill a profile histogram with [TProfile.Fill()](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125):
 
 - `H[j]` contains for each bin `j` the sum of the `y` values for this bin.
 
@@ -401,14 +401,15 @@ When you fill a profile histogram with [TProfile.Fill(x,y)](https://root.cern/do
 
 The following formulae show the cumulated contents (capital letters) and the values displayed by the printing or plotting routines (small letters) of the elements for bin `J`. 
 
-`E[j] = sum Y**2`
-`L[j] = number of entries in bin J`
-`H[j] = sum Y`
-`h[j] = H[j] / L[j]`
-`s[j] = sqrt[E[j] / L[j] - h[j]**2]`
-`e[j] = s[j] / sqrt[L[j]]`
+`E[j] = sum Y**2`<br>
+`L[j] = number of entries in bin J`<br>
+`H[j] = sum Y`<br>
+`h[j] = H[j] / L[j]`<br>
+`s[j] = sqrt[E[j] / L[j] - h[j]**2]`<br>
+`e[j] = s[j] / sqrt[L[j]]`<br>
 
-The displayed bin content for bin `J` of a TProfile is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d). The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a). In case the option `s is used (in the constructor or by calling [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725)) the displayed error is `s(J)`.
+The displayed bin content for bin `J` of a TProfile is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d). 
+The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a). In case the option `s is used (in the constructor or by calling [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725) the displayed error is `s(J)`.
 
 In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
 
@@ -473,7 +474,7 @@ You can create the `TF1` fitting function as follows:
 
 **Creating a TF1 fitting function with a TFormula expression**
 
-_**Example_**
+_**Example**_
 
 A `myfit` function is created with 3 parameters in the range between 0 and 2.
 
