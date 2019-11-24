@@ -408,8 +408,9 @@ The following formulae show the cumulated contents (capital letters) and the val
 `s[j] = sqrt[E[j] / L[j] - h[j]**2]`<br>
 `e[j] = s[j] / sqrt[L[j]]`<br>
 
-The displayed bin content for bin `J` of a TProfile is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d). 
-The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a). In case the option `s is used (in the constructor or by calling [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725) the displayed error is `s(J)`.
+The displayed bin content for bin `J` of a [TProfile](https://root.cern/doc/master/classTProfile.html) is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d). 
+The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a). 
+In case the option `s` is used (in the constructor or by calling  [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725)) the displayed error is `s(J)`.
 
 In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
 
