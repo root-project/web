@@ -147,12 +147,12 @@ _**Example**_
    c1->SetGrid();
    c1->GetFrame()->SetBorderSize(12);
    
-// Creating the coordinate arrays:
+// Create the coordinate arrays:
    const Int_t n = 10;
    Float_t x[n] = {-.22,.05,.25,.35,.5,.61,.7,.85,.89,.95};
    Float_t y[n] = {1,2.9,5.6,7.4,9,9.6,8.7,6.3,4.5,1};
 
-//Creating the error arrays:
+// Create the error arrays:
    Float_t ex[n] = {.05,.1,.07,.07,.04,.05,.06,.07,.08,.05};
    Float_t ey[n] = {.8,.7,.6,.5,.4,.4,.5,.6,.7,.8};
 
@@ -169,5 +169,45 @@ _**Example**_
 
 {% include figure_image
    img="error-bars.png"
-   caption="Graph with error bars"
+   caption="Graph with error bars."
+%}
+
+### TMulitGraph ###
+
+A [TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html) is a collection of TGraph (or derived) objects. 
+
+- Use [TMultiGraph::Add()](https://root.cern/doc/master/classTMultiGraph.html#a2e3c69dd70582da81cf1e32414cc5e2d) to add a new graph to the list.
+
+The `TMultiGraph` owns the objects in the list. The drawing and fitting options are the same as for [TGraph](https://root.cern/doc/master/classTGraph.html).
+
+_**Example**_
+
+{% highlight C++ %}
+
+// Create the points:
+   const Int_t n = 10;
+   Double_t x[n] = {-.22,.05,.25,.35,.5,.61,.7,.85,.89,.95};
+   Double_t y[n] = {1,2.9,5.6,7.4,9,9.6,8.7,6.3,4.5,1};
+   Double_t x2[n] = {-.12,.15,.35,.45,.6,.71,.8,.95,.99,1.05};
+   Double_t y2[n] = {1,2.9,5.6,7.4,9,9.6,8.7,6.3,4.5,1};
+   
+// Create the width of errors in x and y direction:
+   Double_t ex[n] = {.05,.1,.07,.07,.04,.05,.06,.07,.08,.05};
+   Double_t ey[n] = {.8,.7,.6,.5,.4,.4,.5,.6,.7,.8};
+
+// Create two graphs:
+   TGraph *gr1 = new TGraph(n,x2,y2);
+   TGraphErrors *gr2 = new TGraphErrors(n,x,y,ex,ey);
+
+// Create a TMultiGraph and draw it:
+   TMultiGraph *mg = new TMultiGraph();
+   mg->Add(gr1);
+   mg->Add(gr2);
+   mg->Draw("ALP");
+ }
+{% endhighlight %}
+
+{% include figure_image
+   img="mulitgraph.png"
+   caption="A multigraph."
 %}
