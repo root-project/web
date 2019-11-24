@@ -10,7 +10,7 @@ toc_label: ROOT Manual
 
 ROOT is an object-oriented framework that provides all the functionalities needed to deal
 with big data processing, statistical analysis, visualization and storage. It is mainly
-written in C++ but integrated with other languages such as Python and R. test
+written in C++ but integrated with other languages such as Python and R.
 
 ## Basics
 
