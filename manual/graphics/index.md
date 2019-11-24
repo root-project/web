@@ -62,6 +62,26 @@ The function is displayed in a canvas.
    on the image to interact with the object)."
 %}
 
+#### Using the User Interface for objects
+
+ROOT provides an User Interface for setting attributes of graphical objects interactively.
+
+- Click **View** and then select **Editor**.
+
+{% include figure_image
+   img="editor.png"
+   caption="Editor for setting attributes interactively."
+%}
+
+There is a toolbar that you can use, for example, to draw objects.
+
+- Click **View** and then select **Toolbar**.
+
+{% include figure_image
+   img="toolbar.png"
+   caption="Toolbar providing more options."
+%}
+
 ## Canvas and pad
 
 A canvas ([TCanvas](https://root.cern/doc/master/classTCanvas.html)) is a graphical entity that contains graphical objects that are called pads ([TPad](https://root.cern.ch/doc/master/classTPad.html)). A pad is a graphical container that contains other graphical objects like histograms and arrows. It also can contain other pads, called sub-pads. When an object is drawn, it is always in the so-called active pad.
