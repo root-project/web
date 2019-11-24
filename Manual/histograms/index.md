@@ -133,15 +133,10 @@ _**Examples**_
 
 {% highlight C++ %}
    h1->Fill(x);
-
    h1->Fill(x,w); // with weight
-
    h2->Fill(x,y);
-
    h2->Fill(x,y,w);
-
    h3->Fill(x,y,z);
-
    h3->Fill(x,y,z,w);
 {% endhighlight %}
 
@@ -398,4 +393,127 @@ to be added
 
 ### Fitting histograms
 
-to be added
+#### Fitting 1-D histograms with pre-defined functions
+
+- Use the [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method to fit a 1-D histogram with a pre-defined function. The name of the pre-definded function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
+
+_**Example**_
+
+A histogram object `hist` is fit with a gaussian:
+
+{% highlight C++ %}
+   root[] hist.Fit("gaus");
+{% endhighlight %}
+
+The following pre-defined functions are available:
+
+- `gaus`: Gaussian function with 3 parameters: `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)`
+
+- `expo`: Exponential function with 2 parameters: `f(x) = exp(p0+p1*x)`
+
+- `polN`: Polynomial of degree `N`, where `N` is a number between 0 and 9: `f(x) = p0 + p1*x + p2*x2 +...`
+
+- `chebyshevN`: Chebyshev polynomial of degree `N`, where `N` is a number between 0 and 9: `f(x) = p0 + p1*x + p2*(2*x2-1) +...`
+
+- `landau`: Landau function with mean and sigma. This function has been adapted from the `CERNLIB` routine `G110 denlan` (see [TMath::Landau](https://root.cern/doc/master/namespaceTMath.html#a656690875991a17d35e8a514f37f35d9)).
+
+- `gausn`: Normalized form of the gaussian function with 3 parameters `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)/(p2*sqrt(2PI))`
+
+
+#### Fitting a 1-D histogram with user-defined functions
+
+First you create a [TF1](https://root.cern/doc/master/classTF1.html) object, then use the name of the `TF1` fitting function in the [Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method.
+
+You can create the `TF1` fitting function as follows:
+
+- from an existing expressions defined in [TFormula](https://root.cern/doc/master/classTFormula.html),
+
+- defining your own function.
+
+**Creating a TF1 fitting function with a TFormula expression**
+
+_**Example_**
+
+A `myfit` function is created with 3 parameters in the range between 0 and 2.
+
+{% highlight C++ %}
+   myfit->SetParName(0,"c0");
+   myfit->SetParName(1,"c1");
+   myfit->SetParName(2,"slope");
+   myfit->SetParameter(0, 1);
+   myfit->SetParameter(1, 0.05);
+   myfit->SetParameter(2, 0.2);
+{% endhighlight %}
+
+Then you can use the function for fitting.
+
+{% highlight C++ %}
+   hist->Fit("myfit");
+{% endhighlight %}
+
+**Creating a user TF1 fitting function**
+
+A `TF1` fitting function must have two parameters:
+
+- `Double_t *v`: Pointer to the variable array. This array must be a 1-D array with `v[0] = x` in case of a 1-dim histogram, `v[0] =x`, `v[1] = y` for a 2-D histogram, etc.
+
+- `Double_t *par`: Pointer to the parameter array. par will contain the current values of parameters when it is called by the `FCN` function.
+
+_**Example**_
+
+An 1-D histogram is fit with a user-defined function.<br>
+See also the `fitexample.C` tutorial.
+
+{% highlight C++ %}
+   // Define a function with 3 parameters
+   Double_t fitf(Double_t *x,Double_t *par) {
+      Double_t arg = 0;
+      if (par[2]!=0) arg = (x[0] - par[1])/par[2];
+      Double_t fitval = par[0]*TMath::Exp(-0.5*arg*arg);
+      return fitval;
+    }
+{% endhighlight %}
+
+Now the `fitf` function is used to fit a histogram.
+
+{% highlight C++ %}
+   void fitexample() {
+   // Open a ROOT file and get a histogram.
+   TFile *f = new TFile("hsimple.root");
+   
+   TH1F *hpx = (TH1F*)f->Get("hpx");
+
+   // Create a TF1 object using the fitf function.
+   // The last three parameters specify the number of parameters for the function.
+   TF1 *func = new TF1("fit",fitf,-3,3,3);
+
+   // Set the parameters to the mean and RMS of the histogram.
+   func->SetParameters(500,hpx->GetMean(),hpx->GetRMS());
+
+   //Giving the parameters names.
+   func->SetParNames ("Constant","Mean_value","Sigma");
+
+   // Call TH1::Fit with the name of the TF1 object.
+   hpx->Fit("fit");
+   }
+ {% endhighlight %}
+
+#### Accessing the fitted function parameters and results
+
+- Use the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c) method to access the fitted function parameters.
+
+_**Examples**_
+
+{% highlight C++ %}
+   root[] TF1 *fit = hist->GetFunction(function_name);
+   root[] Double_t chi2 = fit->GetChisquare();
+   
+// Value of the first parameter:
+   root[] Double_t p1 = fit->GetParameter(0);
+
+// Error of the first parameter:
+   root[] Double_t e1 = fit->GetParError(0);
+ {% endhighlight %}
+
+
+
