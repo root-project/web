@@ -139,7 +139,7 @@ The [TGraphPainter](https://root.cern/doc/master/classTGraph.html) class impleme
 `TGraphErrors` uses 4 parameters: X, Y (as in TGraph), X-errors, and Y-errors (the size of the errors in the x
 and y direction).
 
-_**Example_**
+_**Example**_
 
 {% highlight C++ %}
 {
@@ -165,4 +165,3 @@ _**Example_**
 }
 {% endhighlight %}
 
-### GUI for graphs
