@@ -167,7 +167,7 @@ _**Example**_
 }
 {% endhighlight %}
 
-{% include figure_jsroot
-   file="error-bars.root" object="egr" width="500px" height="350px"
-   caption="A graph with error bars."
+{% include figure_image
+   img="error-bars.png"
+   caption="Graph with error bars"
 %}
