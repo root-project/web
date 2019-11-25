@@ -1,5 +1,53 @@
 # /_data/authors.yml
 
+
+René Brun:
+  name        : "René Brun"
+  bio         : "René, a lifetime developer of ROOT. He joined CERN in 1973. While working
+                 with C. Rubbia at the ISR he developped the HBOOK package still in use
+                 today. In 1975 he followed Rubbia in the NA4 deep inelastic muon
+                 scattering experiment at the SPS where he was in charge of the simulation
+                 and reconstruction software and where GEANT1 and GEANT2 were created. In
+                 1981, he joined OPAL at LEP, creating the GEANT3 detector simulation
+                 system, also pioneering the introduction of the first workstations like
+                 Apollos in Europe. In 1984 he coordinated the development of the PAW
+                 (Physics Analysis Workstation) data analysis system. Until 1994 he was
+                 in charge of the Application Software group in the computing division. In
+                 1995, at a time when the majority of software gurus had decided to follow
+                 a dead-end line, he created the ROOT system while working for the NA49
+                 heavy ion experiment at the SPS. Rene has led the ROOT project from
+                 1995-2010."
+  tag         : "founder"
+  avatar      : "/assets/images/RB.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Rene.Brun@cern.ch"
+
+Fons Rademakers:
+  name        : "Fons Rademakers"
+  bio         : "Fons received his Ph.D. in particle physics from the Univ. of Amsterdam
+                in 1991 for his work on event displays and data analysis for the DELPHI
+                experiment at CERN's LEP collider. Since then he has worked at CERN and
+                been involved in designing and developing data analysis programs. In 1991
+                he joined the PAW project where he developed the column wise-ntuples (a
+                column-oriented storage system) and PIAF, a parallel data analysis system.
+                In 1995, while working as Linux evangelist for Hewlett-Packard at CERN, he
+                started with Rene Brun the ROOT project and has been involved in all
+                aspects of the system since then. In 2001 Fons joined the ALICE
+                collaboration and has worked as software architect on the initial version
+                of the AliRoot framework. In recent years his special attention has gone
+                to high performance parallel computing using PROOF. Fons took over from
+                Rene Brun as ROOT project leader in 2011 and has led the project till
+                2014, culminating in the release of ROOT 6."
+  tag         : "founder"
+  avatar      : "/assets/images/FR.png"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Fons.Rademakers@cern.ch"
+
+
 Axel Naumann:
   name        : "Axel Naumann"
   bio         : "Starting off as a physicist, Axel studied physics and math in Muenster,
@@ -12,6 +60,7 @@ Axel Naumann:
                  to cygwin. After a position with the Fermilab Computing Division in 2005
                  he ended up at CERN in the ROOT development team. Axel is leading the ROOT
                  project since 2017."
+  tag         : "team"
   avatar      : "/assets/images/AN.jpg"
   links:
     - label: "Email"
@@ -28,12 +77,28 @@ Bertrand Bellenot:
                  member of the ROOT development team at CERN since August 2005. He's
                  currently working on GUI (Graphical User Interface), core (mainly Windows
                  support), and JavaScript Root (JSROOT)."
+  tag         : "team"
   avatar      : "/assets/images/BB.jpg"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Bertrand.Bellenot@cern.ch"
 
+Danilo Piparo:
+  name        : "Danilo Piparo"
+  bio         : "Danilo is a particle Physicist and scientific software enthusiast. He
+                 obtained his Ph.D at the Karlsruhe Institute of Technology, Germany. He
+                 joined CERN as member of the CMS collaboration, to then move to the SFT
+                 group in 2012. He is a member of the ROOT team since 2013 and contributed
+                 to many of its areas: I/O, reflection, math and statistics. He is mainly
+                 involved in the aspects of ROOT which are relative to parallelism,
+                 performance and programming model."
+  tag         : "team"
+  avatar      : "/assets/images/DP.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Danilo.Piparo@cern.ch"
 
 Enric Tejedor:
   name        : "Enric Tejedor"
@@ -48,12 +113,71 @@ Enric Tejedor:
                  member. He is currently working on ROOT parallelization, the ROOT Python
                  bindings and the SWAN service. He is also one of the administrators of the
                  Google Summer of Code student program (GSoC) at CERN-HEP Software Foundation."
+  tag         : "team"
   avatar      : "/assets/images/ET.jpg"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Enric.Tejedor.Saavedra@cern.ch"
 
+Enrico Guiraud:
+  name        : "Enrico Guiraud"
+  bio         : "Enrico is a physicist turned computer scientist. His first experience at
+                 CERN was as Openlab summer student in 2015, experience during which he
+                 worked on multi-process analysis interfaces for ROOT. In 2016, he
+                 graduated cum laude from the Department of Physics of the University of
+                 Milan. His master's degree focused on statistical physics and
+                 computational methods for physics. In 2016, he joined the ROOT team as a
+                 computer science doctoral student, funded by the Wolfgang Gentner
+                 Scholarships programme. His most relevant contributions to ROOT have
+                 been in the areas of data analysis performance and programming model."
+  tag         : "team"
+  avatar      : "/assets/images/EG.png"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: ""
+
+Guilherme Amadio:
+  name        : "Guilherme Amadio"
+  bio         : "Guilherme has always been at the interface between physics and computer
+                 science. He started his undergraduate studies in computer science at the
+                 University of São Paulo (USP) campus in São Carlos in 2000, but later
+                 moved to the São Paulo campus for the course of molecular sciences, a
+                 special interdisciplinary program of the university aimed at preparing
+                 students for scientific research. In 2004, he moved to Japan for his
+                 master degree in nuclear physics at the University of Tokyo, where he
+                 studied the elastic and inelastic scattering of ⁷Be+p. He then moved on
+                 to obtain his PhD in aerospace engineering from the University of
+                 Illinois at Urbana-Champaign, USA. Guilherme then worked for two years
+                 at São Paulo State University (UNESP) in collaboration with CERN and
+                 Fermilab before joining the ROOT Team in April of 2017. His
+                 responsibilities in ROOT include working on the build system, performance
+                 analysis and optimization, and support for SIMD vectorization."
+  tag         : "team"
+  avatar      : "/assets/images/GA.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: ""
+
+Jakob Blomer:
+  name        : "Jakob Blomer"
+  bio         : "Jakob joined CERN for the first time as a summer student in 2007. He
+                 graduated from the University of Karlsruhe and obtained a PhD in computer
+                 science from the Technical University of Munich. Jakob works on
+                 distributed systems and storage software. He created the CernVM File
+                 System, which he evolves ever since. Jakob has been a Marie Curie fellow
+                 and a visiting scholar at the RAMCloud research group at Stanford
+                 University. In the ROOT team, Jakob works on the columnar data storage
+                 for event data, searching for ever faster and more robust ways to read
+                 and write hierarchically nested ntuples."
+  tag         : "team"
+  avatar      : "/assets/images/JB.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: ""
 
 Lorenzo Moneta:
   name        : "Lorenzo Moneta"
@@ -66,11 +190,32 @@ Lorenzo Moneta:
                  CERN, and since 2005 he joined the ROOT team with the responsibility of
                  the Math work package, which provides development and support for the ROOT
                  mathematical and statistical libraries."
+  tag         : "team"
   avatar      : "/assets/images/LM.jpg"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Lorenzo.Moneta@cern.ch"
+
+Oksana Shadura:
+  name        : "Oksana Shadura"
+  bio         : "Currently, I am employed as a software developer from the University of
+                 Nebraska-Lincoln (CMS), based at CERN and working as a core developer in
+                 the ROOT framework. My area of research is a various improvement for ROOT
+                 I/O, particularly ROOT compression algorithms. Another area of
+                 investigation is work on improved ROOT modularity for the build system. I
+                 was involved in support of C++ modules in ROOT and performance
+                 benchmarking of ROOT. I did my doctoral studies in Simulation group at
+                 CERN, working in GeantV project (EP-SFT, CERN). Previous work experience
+                 was a long term work in Ukrainian Grid Initiative on various positions,
+                 including responsibilities on grid sites management and experiment
+                 support, administration, and security management."
+  tag         : "team"
+  avatar      : "/assets/images/OS.png"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Oksana.Shadura@cern.ch"
 
 Olivier Couet:
   name        : "Olivier Couet"
@@ -85,6 +230,7 @@ Olivier Couet:
                  in High Energy Physics for years and is still being used. He was
                  responsible for the PAW system from 1995 until he joined the ROOT team
                  in 2002 and took responsibility of the graphics work package."
+  tag         : "team"
   avatar      : "/assets/images/OC.png"
   links:
     - label: "Email"
@@ -99,9 +245,219 @@ Philippe Canal:
                  development of the I/O sub-system and the Tree query mechanism and oversee
                  the overall architecture of ROOT.  Philippe coordinates the support for
                  ROOT for all FNAL experiments."
+  tag         : "team"
   avatar      : "/assets/images/PC.jpg"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "pcanal@fnal.gov"
+
+Sergey Linev:
+  name        : "Sergey Linev"
+  bio         : "Sergey Linev was graduated from the Nuclear Physics Department of
+                 Belorussian State University, where he also received his Ph.D. in
+                 Physics and Mathematics in 1999. Since 2002 Sergey working in
+                 GSI - heavy-ion research center in Darmstadt, Germany, developing
+                 software for data acquisition and online analysis for different
+                 experiments. From 2004 starts contributing to different ROOT components
+                 like I/O with XML, SQL, JSON, THttpServer, JavaScript ROOT. Currently is
+                 responsible for the development of new web-based GUIs in ROOT like
+                 RCanvas, REve, RFitPanel and many others."
+  tag         : "team"
+  avatar      : "/assets/images/SL.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "S.Linev@gsi.de"
+
+Stephan Hageboeck:
+  name        : "Stephan Hageboeck"
+  bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the university of Bonn in
+Germany. He worked in ATLAS to improve the sensitivity in the search for
+Higgs --> bb decays. His main focus was on analysis frameworks, machine learning,
+systematic uncertainties and statistical models. He joined the ROOT team in 2018 to
+support and improve RooFit. He further looks into math and statistics, as well as into
+questions regarding performance and programming model."
+  tag         : "team"
+  avatar      : "/assets/images/SH.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Stephan.Hageboeck@cern.ch"
+
+Vassil Vassilev:
+  name        : "Vassil Vassilev"
+  bio         : "Vassil graduated from the University of Plovdiv Paisii Hilendarski,
+                 Bulgaria. He received a MSc in Software Technologies and a PhD in
+                 Computer Science with specialization in programming languages and visual
+                 programming. He joined the ROOT team in 2010, authoring Cling - the
+                 interactive, LLVM-based C++ interpreter. He was one of the core engineers
+                 involved in ROOT6. Vassil is responsible for the implementation and
+                 adoption of clang's C++ modules (PCMs) in ROOT. He also helps with
+                 interpreter and reflection related activities in the ROOT project. He
+                 works on the CMS interests in the ROOT collaboration including
+                 development, trouble shooting, and any other activities as may be
+                 required. From January, 2017, Vassil is employed by Princeton University
+                 and part of the Princeton Intel Parallel Computing Center (IPCC) project,
+                 which focuses on code modernization in ROOT."
+  tag         : "team"
+  avatar      : "/assets/images/VV.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "Vasil.Georgiev.Vasilev@cern.ch"
+
+Andrei Gheata:
+  name        : "Andrei Gheata"
+  bio         : "Andrei works since 2001 in the offline group of the ALICE experiment.
+                 He is an experimental nuclear physicist who worked before ALICE on data
+                 analysis for heavy-ion experiments in emulsions. In 2000 he started
+                 collaborating with the ROOT project and implemented the TreeViewer
+                 interface. Andrei is the main developer of the ROOT geometry package. He
+                 integrated the geometry in the Virtual Monte Carlo framework by
+                 developing interfaces for the GEANT3, GEANT4 and FLUKA particle
+                 transport engines."
+  tag         : "previous"
+
+Anna Kreshuk:
+  name        : "Anna Kreshuk"
+  bio         : "Anna was a project associate and contributed to different parts of ROOT,
+                 most notably to the fitting machinery, the interface to FFTW, numerous
+                 math-related functions, TEntryList container and PROOF GUI."
+  tag         : "previous"
+
+David Gonzalez Maline:
+  name        : "David Gonzalez Maline"
+  bio         : "David has been working on improving the performance and correctness of
+                 various mathematical algorithms as well as on integrating AI methods for
+                 data analysis inside the framework. He has also worked on extending and
+                 improving the FitPanel interface."
+  tag         : "previous"
+
+Diego Marcos Segura:
+  name        : "Diego Marcos Segura"
+  bio         : "Diego worked as technical student on CINT dictionary optimizations."
+  tag         : "previous"
+
+Eddy Offermann:
+  name        : "Eddy Offermann"
+  bio         : "Eddy joined the ROOT team during a sabbatical to work on making the ROOT
+  matrix package the fastest and most versatile in the industry."
+  tag         : "previous"
+
+Ilka Antcheva:
+  name        : "Ilka Antcheva"
+  bio         : "Ilka has been working from 2002 to 2008 in the ROOT team. She was
+                 responsible for the GUI system and designed many high level user
+                 interfaces and widgets, like found in many modern graphics applications:
+                 ROOT graphics editor (GED) and various object editors, Fit Panel, Style
+                 manager, a tool for automatic C++ code generation of any widget and the
+                 capability for widgets to save themselves. In addition Ilka took care of
+                 the ROOT Users Guide and contributed the chapter ‘Writing a Graphical
+                 User Interface’."
+  tag         : "previous"
+
+Gerardo Ganis:
+  name        : "Gerardo Ganis"
+  bio         : "Gerri was a team member for more than ten years; among many other
+                 contributions he was in charge of PROOF for many years."
+  tag         : "previous"
+
+Jan Iwaszkiewicz:
+  name        : "Jan Iwaszkiewicz"
+  bio         : "Jan was working in the context of a Ph.D. on scheduling and load-
+                 balancing of distributed processing in the Parallel ROOT Facility
+                 (PROOF)."
+  tag         : "previous"
+
+Leandro Franco:
+  name        : "Leandro Franco"
+  bio         : "Leo worked a Marie-Curie fellow in the ROOT team from 2005-2008. He
+                 worked on a number of widely different topics, from parallel sockets,
+                 I/O read-ahead, CINT dictionary, etc."
+  tag         : "previous"
+
+Maarten Ballintijn:
+  name        : "Maarten Ballintijn"
+  bio         : "Maarten's initial dab into ROOT was porting it to Linux in 1995. Later
+                 he worked on the PROOF system, bringing into production for the RHIC
+                 experiments in Brookhaven."
+  tag         : "previous"
+
+Marek Biskup:
+  name        : "Marek Biskup"
+  bio         : "Marek worked as technical student on various aspects of PROOF, notably
+                 integrating the TChain::Draw() command into PROOF."
+  tag         : "previous"
+
+Masaharu Goto:
+  name        : "Masaharu Goto"
+  bio         : "Masa is the father of CINT. Without the indefatigable support by Masa we
+                 would never have succeeded with the tight integration of CINT in ROOT.
+                 Masa is now managing a large division in Agilent and cannot spend as
+                 much time on CINT as he would like."
+  tag         : "previous"
+
+Matevž Tadel:
+  name        : "Matevž Tadel"
+  bio         : "Matevž Tadel is the main developer of 3D graphics and event-visualization
+                 packages. He holds a Ph.D. in experimental high-energy physics, obtained
+                 in 2001 for his work on electron reconstruction in the ATLAS experiment.
+                 Before joining the ROOT team in 2005, he worked on Gled - an advanced
+                 ROOT-based system for distributed computing and dynamic visualisation."
+  tag         : "previous"
+
+Nenad Buncic:
+  name        : "Nenad Buncic"
+  bio         : "Nenad was one of the first people joining the initial ROOT team in 1996.
+                 He developed the first version of the HTML documentation system (THtml)
+                 and worked on the first version of the 3D graphics system. Nenad left
+                 in 1997."
+  tag         : "previous"
+
+Paul Russo:
+  name        : "Paul Russo"
+  bio         : "Paul joined the ROOT team at Fermilab in 2005 and has been focusing on
+                 support and developing CINT."
+  tag         : "previous"
+
+Pere Mato:
+  name        : "Pere Mato"
+  bio         : "Pere Mato was the project leader from 2014 to 2017. He was the driving
+                 force behind ROOT's migration to CMake and has contributed to PyROOT."
+  tag         : "previous"
+
+Richard Maunder:
+  name        : "Richard Maunder"
+  bio         : "Richard worked as project associate on the 3D graphics OpenGL based
+                 system."
+  tag         : "previous"
+
+Susan Panacek:
+  name        : "Susan Panacek"
+  bio         : "Susan wrote the first ROOT User's Guide and developed a number of ROOT
+                 tutorials."
+  tag         : "previous"
+
+Timur Pocheptsov:
+  name        : "Timur Pocheptsov"
+  bio         : "Timur worked as a project associate on many different aspects of ROOT,
+                 but mostly on the OpenGL accelerated 3D graphics and the native macOS
+                 Cocoa based GUI. Timur also ported ROOT to the iPad. He continues to
+                 maintain the OpenGL and Cocoa code till this day."
+  tag         : "previous"
+
+Valeri Fine:
+  name        : "Valeri Fine"
+  bio         : "Valeri was a member of the ROOT team from 1998-2000. He made the initial
+                 port to Windows. Currently he is the maintainer of the ROOT-Qt interface."
+  tag         : "previous"
+
+Valeri Onuchin:
+  name        : "Valeri Onuchin"
+  bio         : "Valeri worked as a project associate on many different aspects of ROOT,
+                 but mostly in the GUI and graphics area. He did develop the signal/slot
+                 functionality and the GUI builder. He also developed the Carrot ROOT
+                 enabled web server."
+  tag         : "previous"
 

@@ -1,5 +1,4 @@
-# main links
-
+# main links => top menu bar
 
 main:
   - title: "Download"
@@ -16,6 +15,7 @@ main:
   - title: "News"
     url: news
 
+# side bar menus
 
 manual:
   - title: ROOT MANUAL - Basics
@@ -124,7 +124,6 @@ resources:
      url: https://rootbnch-grafana-test.cern.ch
    - title: ROOT Logos
      url: https://root.cern.ch/img/logos/ROOT_Logo/
-
 
 download:
    - title: All Releases
