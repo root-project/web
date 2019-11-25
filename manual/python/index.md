@@ -1,5 +1,5 @@
 ---
-title: Python interface
+title: Python interface PyROOT
 layout: single
 sidebar:
   nav: "manual"
