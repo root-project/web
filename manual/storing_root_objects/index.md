@@ -143,7 +143,7 @@ root[] f.Map()
 
 ROOT provides not only sequential access to the content of a ROOT file, but also random or direct access.
 
-[TFile]((https://root.cern/doc/master/classTFile.html) keeps a list of [TKey](https://root.cern/doc/master/classTKey.html)s, which is an index to the objects in the ROOT file.
+[TFile](https://root.cern/doc/master/classTFile.html) keeps a list of [TKey](https://root.cern/doc/master/classTKey.html)s, which is an index to the objects in the ROOT file.
 
 The `TKey` class describes the record headers of objects in the ROOT file. With the `GetListOfKeys()` method you get the list of keys.
 
