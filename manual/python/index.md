@@ -10,15 +10,15 @@ toc_sticky: true
 ROOT provides an interface to Python, which is enabled via a set of bindings called PyROOT.<br>
 PyROOT is enabled by default in ROOT.
 
-For using PyROOT a Python version > 2.2 is required.<br>
-The top level Python module `ROOT.py` is located in $ROOTSYS/lib. The ROOT.py module imports the `libPyROOT.so` ROOT extension module and performs an initialization similar to ROOT.
+For using PyROOT, a Python version > 2.2 is required.<br>
+The top level Python module `ROOT.py` is located in `$ROOTSYS/lib`. The `ROOT.py` module imports the `libPyROOT.so` ROOT extension module and performs an initialization similar to ROOT.
 
 
 > **Tutorials**
 >
 > PyROOT tutorials are available at → [https://root.cern/doc/master/group__tutorial__pyroot.html](https://root.cern/doc/master/group__tutorial__pyroot.html)
 
-## Running PyROOT from Python interpreter
+## Running PyROOT from the Python interpreter
 
 Ensure that the Python command is executed where the `libPyROOT.so` ROOT extension module is located. This is the main entry point for any Python script using the ROOT classes.
 
@@ -43,7 +43,7 @@ fun1.Draw()
 
 
 
-## Running Python from ROOT/Cling interpreter
+## Running Python from the ROOT/Cling interpreter
 
 In ROOT can run any Python command via the [TPython](https://root.cern/doc/master/classTPython.html) class.
  
