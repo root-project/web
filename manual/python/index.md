@@ -28,7 +28,7 @@ PyROOT scripts work as a usual Python scripts. You just need to import ROOT:
 import ROOT
 ```
 
-_**Example_**
+_**Example**_
 
 ```
 from ROOT import TCanvas, TF1
@@ -45,7 +45,7 @@ fun1.Draw()
 
 ## Running Python from ROOT/Cling interpreter
 
- In ROOT can run any Python command.
+In ROOT can run any Python command via the [TPython](https://root.cern/doc/master/classTPython.html) class.
  
  _**Example**_
 
