@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Project Founders
+title: Team
 sidebar:
   nav: "about"
 toc: true
