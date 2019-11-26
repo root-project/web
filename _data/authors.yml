@@ -63,6 +63,7 @@ Axel Naumann:
                  to cygwin. After a position with the Fermilab Computing Division in 2005
                  he ended up at CERN in the ROOT development team. Axel is leading the ROOT
                  project since 2017."
+  short_bio   : "Axel is leading the ROOT project since 2017."
   tag         : "team"
   avatar      : "/assets/images/AN.jpg"
   affiliation : "CERN"
@@ -99,6 +100,8 @@ Danilo Piparo:
                  to many of its areas: I/O, reflection, math and statistics. He is mainly
                  involved in the aspects of ROOT which are relative to parallelism,
                  performance and programming model."
+  short_bio   : "Danilo, He is mainly involved in the aspects of ROOT which are relative
+                 to parallelism, performance and programming model."
   tag         : "team"
   avatar      : "/assets/images/DP.jpg"
   affiliation : "CERN"
@@ -121,6 +124,8 @@ Enric Tejedor:
                  member. He is currently working on ROOT parallelization, the ROOT Python
                  bindings and the SWAN service. He is also one of the administrators of the
                  Google Summer of Code student program (GSoC) at CERN-HEP Software Foundation."
+  short_bio   : "Enric is currently working on ROOT parallelization, the ROOT Python
+                 bindings and the SWAN service."
   tag         : "team"
   avatar      : "/assets/images/ET.jpg"
   affiliation : "CERN"
@@ -141,6 +146,8 @@ Enrico Guiraud:
                  computer science doctoral student, funded by the Wolfgang Gentner
                  Scholarships programme. His most relevant contributions to ROOT have
                  been in the areas of data analysis performance and programming model."
+  short_bio   : "Enrico's most relevant contributions to ROOT have been in the areas of
+                 data analysis performance and programming model."
   tag         : "team"
   avatar      : "/assets/images/EG.png"
   affiliation : "CERN"
@@ -206,6 +213,7 @@ Lorenzo Moneta:
                  CERN, and since 2005 he joined the ROOT team with the responsibility of
                  the Math work package, which provides development and support for the ROOT
                  mathematical and statistical libraries."
+  short_bio   : "Lorenzo is responsible of the Math work package."
   tag         : "team"
   avatar      : "/assets/images/LM.jpg"
   affiliation : "CERN"
@@ -250,6 +258,7 @@ Olivier Couet:
                  in High Energy Physics for years and is still being used. He was
                  responsible for the PAW system from 1995 until he joined the ROOT team
                  in 2002 and took responsibility of the graphics work package."
+  short_bio   : "Olivier is responsible of the ROOT's graphics work package."
   tag         : "team"
   avatar      : "/assets/images/OC.png"
   affiliation : "CERN"

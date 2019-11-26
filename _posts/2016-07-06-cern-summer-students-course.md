@@ -1,7 +1,7 @@
 ---
 title:  "CERN Summer Students' Course"
 layout: archive
-author:
+author: Enric Tejedor
 ---
 
 The [CERN Summer Student](https://home.cern/students-educators/summer-student-programme)

@@ -1,7 +1,7 @@
 ---
 title:  "ROOT has its Jupyter Kernel!"
 layout: archive
-author:
+author: Enric Tejedor
 ---
 
 ROOT has its Jupyter kernel! More information [here](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages).

@@ -1,7 +1,7 @@
 ---
 title:  "RDataFrame session at CHEP 2018"
 layout: archive
-author:
+author: Enrico Guiraud
 ---
 
 Join the CHEP 2018 BOF to discuss bout the Future of ROOT Based Analysis: sign up

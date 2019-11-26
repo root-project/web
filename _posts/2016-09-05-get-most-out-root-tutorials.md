@@ -1,7 +1,7 @@
 ---
 title:  "Get the most out of the ROOT tutorials!"
 layout: archive
-author:
+author: Danilo Piparo
 ---
 
 All [ROOT tutorials](https://root.cern.ch/doc/master/group__Tutorials.html) are now available
