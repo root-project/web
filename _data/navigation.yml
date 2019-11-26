@@ -44,7 +44,7 @@ manual:
         url: manual/trees
       - title: Mathematical libraries
         url: manual/math
-       - title: Vectors
+      - title: Vectors
         url: manual/vectors
       - title: Python interface PyROOT
         url: manual/python
