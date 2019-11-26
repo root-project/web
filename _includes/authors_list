@@ -1,0 +1,15 @@
+{% assign tag     = {{include.tag}}  %}
+
+<ul style="list-style-type:none">
+{% for author in site.data.authors %}
+{% if author[1].tag == {{tag}} %}
+<li>
+<h4 id="{{ author[1].name }}"> {{ author[1].name }} </h4>
+{% if author[1].avatar %}
+<p><img src="{{author[1].avatar | relative_url}}" width="30%" style="padding: 0 15px; float: left;"></p>
+{% endif %}
+{{author[1].bio}}
+</li>
+{% endif %}
+{% endfor %}
+</ul>
