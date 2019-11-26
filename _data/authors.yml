@@ -20,10 +20,7 @@ René Brun:
   tag         : "founder"
   avatar      : "/assets/images/RB.jpg"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Rene.Brun@cern.ch"
+  email       : "Rene.Brun@cern.ch"
 
 
 Fons Rademakers:
@@ -45,10 +42,7 @@ Fons Rademakers:
   tag         : "founder"
   avatar      : "/assets/images/FR.png"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Fons.Rademakers@cern.ch"
+  email       : "Fons.Rademakers@cern.ch"
 
 
 Axel Naumann:
@@ -67,10 +61,7 @@ Axel Naumann:
   tag         : "team"
   avatar      : "/assets/images/AN.jpg"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Axel.Naumann@cern.ch"
+  email       : "Axel.Naumann@cern.ch"
 
 
 Bertrand Bellenot:
@@ -85,10 +76,7 @@ Bertrand Bellenot:
   tag         : "team"
   avatar      : "/assets/images/BB.jpg"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Bertrand.Bellenot@cern.ch"
+  email       : "Bertrand.Bellenot@cern.ch"
 
 
 Danilo Piparo:
@@ -105,10 +93,7 @@ Danilo Piparo:
   tag         : "team"
   avatar      : "/assets/images/DP.jpg"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Danilo.Piparo@cern.ch"
+  email       : "Danilo.Piparo@cern.ch"
 
 
 Enric Tejedor:
@@ -129,10 +114,7 @@ Enric Tejedor:
   tag         : "team"
   avatar      : "/assets/images/ET.jpg"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Enric.Tejedor.Saavedra@cern.ch"
+  email       : "Enric.Tejedor.Saavedra@cern.ch"
 
 
 Enrico Guiraud:
@@ -151,10 +133,7 @@ Enrico Guiraud:
   tag         : "team"
   avatar      : "/assets/images/EG.png"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: ""
+  email       : ""
 
 
 Guilherme Amadio:
@@ -176,10 +155,7 @@ Guilherme Amadio:
   tag         : "team"
   avatar      : "/assets/images/GA.jpg"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: ""
+  email       : ""
 
 
 Jakob Blomer:
@@ -196,10 +172,7 @@ Jakob Blomer:
   tag         : "team"
   avatar      : "/assets/images/JB.jpg"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: ""
+  email       : ""
 
 
 Lorenzo Moneta:
@@ -217,10 +190,7 @@ Lorenzo Moneta:
   tag         : "team"
   avatar      : "/assets/images/LM.jpg"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Lorenzo.Moneta@cern.ch"
+  email       : "Lorenzo.Moneta@cern.ch"
 
 
 Oksana Shadura:
@@ -239,10 +209,7 @@ Oksana Shadura:
   tag         : "team"
   avatar      : "/assets/images/OS.png"
   affiliation : "Nebraska-Lincoln"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Oksana.Shadura@cern.ch"
+  email       : "Oksana.Shadura@cern.ch"
 
 
 Olivier Couet:
@@ -262,10 +229,7 @@ Olivier Couet:
   tag         : "team"
   avatar      : "/assets/images/OC.png"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Olivier.Couet@cern.ch"
+  email       : "Olivier.Couet@cern.ch"
 
 
 Philippe Canal:
@@ -279,10 +243,7 @@ Philippe Canal:
   tag         : "team"
   avatar      : "/assets/images/PC.jpg"
   affiliation : "Fermilab"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "pcanal@fnal.gov"
+  email       : "pcanal@fnal.gov"
 
 
 Sergey Linev:
@@ -299,10 +260,7 @@ Sergey Linev:
   tag         : "team"
   avatar      : "/assets/images/SL.jpg"
   affiliation : "GSI"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "S.Linev@gsi.de"
+  email       : "S.Linev@gsi.de"
 
 
 Stephan Hageboeck:
@@ -316,10 +274,7 @@ questions regarding performance and programming model."
   tag         : "team"
   avatar      : "/assets/images/SH.jpg"
   affiliation : "CERN"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Stephan.Hageboeck@cern.ch"
+  email       : "Stephan.Hageboeck@cern.ch"
 
 
 Vassil Vassilev:
@@ -340,10 +295,7 @@ Vassil Vassilev:
   tag         : "team"
   avatar      : "/assets/images/VV.jpg"
   affiliation : "Princeton"
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "Vasil.Georgiev.Vasilev@cern.ch"
+  email       : "Vasil.Georgiev.Vasilev@cern.ch"
 
 
 Andrei Gheata:
