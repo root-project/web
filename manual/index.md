@@ -12,6 +12,7 @@ ROOT is an object-oriented framework that provides all the functionalities neede
 with big data processing, statistical analysis, visualization and storage. It is mainly
 written in C++ but integrated with other languages such as Python and R.
 
+
 ## Basics
 
   - [Getting started with ROOT]({{ '/manual/getting_started_with_root' | relative_url }})
@@ -38,6 +39,8 @@ written in C++ but integrated with other languages such as Python and R.
   - [Trees]({{ '/manual/trees' | relative_url }})
 
   - [Mathematical libraries]({{ '/manual/math' | relative_url }})
+  
+  - [Vectors]({{ '/manual/vectors' | relative_url }})
 
 ## Further Information
 
