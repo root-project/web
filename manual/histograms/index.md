@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-Advanced organizer ...
+Histograms play a fundamental role in any kind of physical analysis. Histograms not only serve to visualize measurements, but also represent a powerful form of data reduction. ROOT supports histograms up to three dimensions.
 
 > **Tutorials**
 >
