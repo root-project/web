@@ -19,10 +19,12 @@ René Brun:
                  1995-2010."
   tag         : "founder"
   avatar      : "/assets/images/RB.jpg"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Rene.Brun@cern.ch"
+
 
 Fons Rademakers:
   name        : "Fons Rademakers"
@@ -42,6 +44,7 @@ Fons Rademakers:
                 2014, culminating in the release of ROOT 6."
   tag         : "founder"
   avatar      : "/assets/images/FR.png"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -62,6 +65,7 @@ Axel Naumann:
                  project since 2017."
   tag         : "team"
   avatar      : "/assets/images/AN.jpg"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -79,10 +83,12 @@ Bertrand Bellenot:
                  support), and JavaScript Root (JSROOT)."
   tag         : "team"
   avatar      : "/assets/images/BB.jpg"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Bertrand.Bellenot@cern.ch"
+
 
 Danilo Piparo:
   name        : "Danilo Piparo"
@@ -95,10 +101,12 @@ Danilo Piparo:
                  performance and programming model."
   tag         : "team"
   avatar      : "/assets/images/DP.jpg"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Danilo.Piparo@cern.ch"
+
 
 Enric Tejedor:
   name        : "Enric Tejedor"
@@ -115,10 +123,12 @@ Enric Tejedor:
                  Google Summer of Code student program (GSoC) at CERN-HEP Software Foundation."
   tag         : "team"
   avatar      : "/assets/images/ET.jpg"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Enric.Tejedor.Saavedra@cern.ch"
+
 
 Enrico Guiraud:
   name        : "Enrico Guiraud"
@@ -133,10 +143,12 @@ Enrico Guiraud:
                  been in the areas of data analysis performance and programming model."
   tag         : "team"
   avatar      : "/assets/images/EG.png"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: ""
+
 
 Guilherme Amadio:
   name        : "Guilherme Amadio"
@@ -156,10 +168,12 @@ Guilherme Amadio:
                  analysis and optimization, and support for SIMD vectorization."
   tag         : "team"
   avatar      : "/assets/images/GA.jpg"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: ""
+
 
 Jakob Blomer:
   name        : "Jakob Blomer"
@@ -174,10 +188,12 @@ Jakob Blomer:
                  and write hierarchically nested ntuples."
   tag         : "team"
   avatar      : "/assets/images/JB.jpg"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: ""
+
 
 Lorenzo Moneta:
   name        : "Lorenzo Moneta"
@@ -192,10 +208,12 @@ Lorenzo Moneta:
                  mathematical and statistical libraries."
   tag         : "team"
   avatar      : "/assets/images/LM.jpg"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Lorenzo.Moneta@cern.ch"
+
 
 Oksana Shadura:
   name        : "Oksana Shadura"
@@ -212,10 +230,12 @@ Oksana Shadura:
                  support, administration, and security management."
   tag         : "team"
   avatar      : "/assets/images/OS.png"
+  affiliation : "Nebraska-Lincoln"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Oksana.Shadura@cern.ch"
+
 
 Olivier Couet:
   name        : "Olivier Couet"
@@ -232,10 +252,12 @@ Olivier Couet:
                  in 2002 and took responsibility of the graphics work package."
   tag         : "team"
   avatar      : "/assets/images/OC.png"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Olivier.Couet@cern.ch"
+
 
 Philippe Canal:
   name        : "Philippe Canal"
@@ -247,10 +269,12 @@ Philippe Canal:
                  ROOT for all FNAL experiments."
   tag         : "team"
   avatar      : "/assets/images/PC.jpg"
+  affiliation : "Fermilab"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "pcanal@fnal.gov"
+
 
 Sergey Linev:
   name        : "Sergey Linev"
@@ -265,10 +289,12 @@ Sergey Linev:
                  RCanvas, REve, RFitPanel and many others."
   tag         : "team"
   avatar      : "/assets/images/SL.jpg"
+  affiliation : "GSI"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "S.Linev@gsi.de"
+
 
 Stephan Hageboeck:
   name        : "Stephan Hageboeck"
@@ -280,10 +306,12 @@ support and improve RooFit. He further looks into math and statistics, as well a
 questions regarding performance and programming model."
   tag         : "team"
   avatar      : "/assets/images/SH.jpg"
+  affiliation : "CERN"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Stephan.Hageboeck@cern.ch"
+
 
 Vassil Vassilev:
   name        : "Vassil Vassilev"
@@ -302,10 +330,12 @@ Vassil Vassilev:
                  which focuses on code modernization in ROOT."
   tag         : "team"
   avatar      : "/assets/images/VV.jpg"
+  affiliation : "Princeton"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "Vasil.Georgiev.Vasilev@cern.ch"
+
 
 Andrei Gheata:
   name        : "Andrei Gheata"
@@ -318,6 +348,8 @@ Andrei Gheata:
                  developing interfaces for the GEANT3, GEANT4 and FLUKA particle
                  transport engines."
   tag         : "previous"
+  affiliation : "CERN"
+
 
 Anna Kreshuk:
   name        : "Anna Kreshuk"
@@ -325,6 +357,7 @@ Anna Kreshuk:
                  most notably to the fitting machinery, the interface to FFTW, numerous
                  math-related functions, TEntryList container and PROOF GUI."
   tag         : "previous"
+
 
 David Gonzalez Maline:
   name        : "David Gonzalez Maline"
@@ -334,16 +367,19 @@ David Gonzalez Maline:
                  improving the FitPanel interface."
   tag         : "previous"
 
+
 Diego Marcos Segura:
   name        : "Diego Marcos Segura"
   bio         : "Diego worked as technical student on CINT dictionary optimizations."
   tag         : "previous"
+
 
 Eddy Offermann:
   name        : "Eddy Offermann"
   bio         : "Eddy joined the ROOT team during a sabbatical to work on making the ROOT
   matrix package the fastest and most versatile in the industry."
   tag         : "previous"
+
 
 Ilka Antcheva:
   name        : "Ilka Antcheva"
@@ -357,11 +393,14 @@ Ilka Antcheva:
                  User Interface’."
   tag         : "previous"
 
+
 Gerardo Ganis:
   name        : "Gerardo Ganis"
   bio         : "Gerri was a team member for more than ten years; among many other
                  contributions he was in charge of PROOF for many years."
   tag         : "previous"
+  affiliation : "CERN"
+
 
 Jan Iwaszkiewicz:
   name        : "Jan Iwaszkiewicz"
@@ -370,12 +409,14 @@ Jan Iwaszkiewicz:
                  (PROOF)."
   tag         : "previous"
 
+
 Leandro Franco:
   name        : "Leandro Franco"
   bio         : "Leo worked a Marie-Curie fellow in the ROOT team from 2005-2008. He
                  worked on a number of widely different topics, from parallel sockets,
                  I/O read-ahead, CINT dictionary, etc."
   tag         : "previous"
+
 
 Maarten Ballintijn:
   name        : "Maarten Ballintijn"
@@ -384,11 +425,13 @@ Maarten Ballintijn:
                  experiments in Brookhaven."
   tag         : "previous"
 
+
 Marek Biskup:
   name        : "Marek Biskup"
   bio         : "Marek worked as technical student on various aspects of PROOF, notably
                  integrating the TChain::Draw() command into PROOF."
   tag         : "previous"
+
 
 Masaharu Goto:
   name        : "Masaharu Goto"
@@ -398,6 +441,7 @@ Masaharu Goto:
                  much time on CINT as he would like."
   tag         : "previous"
 
+
 Matevž Tadel:
   name        : "Matevž Tadel"
   bio         : "Matevž Tadel is the main developer of 3D graphics and event-visualization
@@ -406,6 +450,8 @@ Matevž Tadel:
                  Before joining the ROOT team in 2005, he worked on Gled - an advanced
                  ROOT-based system for distributed computing and dynamic visualisation."
   tag         : "previous"
+  affiliation : "UCSD"
+
 
 Nenad Buncic:
   name        : "Nenad Buncic"
@@ -415,17 +461,21 @@ Nenad Buncic:
                  in 1997."
   tag         : "previous"
 
+
 Paul Russo:
   name        : "Paul Russo"
   bio         : "Paul joined the ROOT team at Fermilab in 2005 and has been focusing on
                  support and developing CINT."
   tag         : "previous"
 
+
 Pere Mato:
   name        : "Pere Mato"
   bio         : "Pere Mato was the project leader from 2014 to 2017. He was the driving
                  force behind ROOT's migration to CMake and has contributed to PyROOT."
   tag         : "previous"
+  affiliation : "CERN"
+
 
 Richard Maunder:
   name        : "Richard Maunder"
@@ -433,11 +483,13 @@ Richard Maunder:
                  system."
   tag         : "previous"
 
+
 Susan Panacek:
   name        : "Susan Panacek"
   bio         : "Susan wrote the first ROOT User's Guide and developed a number of ROOT
                  tutorials."
   tag         : "previous"
+
 
 Timur Pocheptsov:
   name        : "Timur Pocheptsov"
@@ -447,11 +499,13 @@ Timur Pocheptsov:
                  maintain the OpenGL and Cocoa code till this day."
   tag         : "previous"
 
+
 Valeri Fine:
   name        : "Valeri Fine"
   bio         : "Valeri was a member of the ROOT team from 1998-2000. He made the initial
                  port to Windows. Currently he is the maintainer of the ROOT-Qt interface."
   tag         : "previous"
+
 
 Valeri Onuchin:
   name        : "Valeri Onuchin"
