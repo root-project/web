@@ -21,7 +21,7 @@ The ROOT Mathematical libraries consist of the following components:
 
 - [Minuit2 Library](#minuit2-library)
 
-- [Vectors](#vectors)
+- [Vectors]({{ '/manual/vectors' | relative_url }})
 
 - [UNU.RAN](#unuran)
 
@@ -633,28 +633,6 @@ The Minuit minimization package was originally written in Fortran by Fred James 
 
 The [Minuit2](https://root.cern/doc/master/group__Minuit.html) library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm, which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James. 
 
-
-## Vectors
-
-Advanced organizer ...
-
-### Physics vectors
-
-#### Physics vector classes
-
-The following physics vector classes are available in ROOT, among others:
-
-[TVector2](https://root.cern/doc/master/classTVector2.html): A general three vector class that can be used for the description of different vectors in 32.
-
-[TVector3](https://root.cern/doc/master/classTVector3.html): A general three vector class that can be used for the description of different vectors in 3D.
-
-[TRotation](https://root.cern/doc/master/classTRotation.html): Describes a rotation of objects of the TVector3 class.
-
-`TLorentz` (legacy)
-
-### Generic Vector for 2, 3 and 4 dimensions
-
-Refer to https://root.cern/doc/master/Vector.html ... more to be added.
 
 ## UNU.RAN
 
