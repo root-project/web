@@ -1,6 +1,9 @@
 ---
+layout: releases
 title: Release 6.18/04 - 2019-09-11
-layout: single
+version: 6.18/04
+date: 2019-09-11
+
 toc: true
 toc_sticky: true
 sidebar:

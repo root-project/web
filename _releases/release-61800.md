@@ -1,6 +1,9 @@
 ---
+layout: releases
 title: Release 6.18/00 - 2019-06-25
-layout: single
+version: 6.18/00
+date: 2019-06-25
+
 toc: true
 toc_sticky: true
 sidebar:

@@ -1,6 +1,9 @@
 ---
+layout: releases
 title: Release 5.34/38 - 2018-03-12
-layout: single
+version: 5.34/38
+date: 2018-03-12
+
 toc: true
 toc_sticky: true
 sidebar:

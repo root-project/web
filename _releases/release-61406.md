@@ -1,6 +1,9 @@
 ---
+layout: releases
 title: Release 6.14/06 - 2018-11-05
-layout: single
+version: 6.14/06
+date: 2018-11-05
+
 toc: true
 toc_sticky: true
 sidebar:

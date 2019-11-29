@@ -1,6 +1,9 @@
 ---
+layout: releases
 title: Release 6.16/00 - 2019-01-23
-layout: single
+version: 6.16/00
+date: 2019-01-23
+
 toc: true
 toc_sticky: true
 sidebar:
