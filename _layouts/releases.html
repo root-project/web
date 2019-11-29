@@ -5,7 +5,10 @@ layout: single
 {{ content }}
 
 
-{% if page.state %}
+{% if page.state == "pro" %}
 State: <a href="{{ '/download/all_releases/pro' | relative_url }}"> {{ page.state | capitalize }}</a>
+{% endif %}
+{% if page.state == "old" %}
+State: <a href="{{ '/download/all_releases/old' | relative_url }}"> {{ page.state | capitalize }}</a>
 {% endif %}
 
