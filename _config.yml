@@ -292,3 +292,9 @@ defaults:
       comments: true
       share: true
       related: true
+
+# Collections
+collections:
+  releases:
+    output: true
+
