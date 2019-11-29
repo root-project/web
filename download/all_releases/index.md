@@ -7,18 +7,28 @@ sidebar:
   nav: "download"
 ---
 
-  - **PRO** [Release 6.18/04 - 2019-09-11]({{ '/download/all_releases/release-61804' | relative_url }})
-  - **OLD** [Release 6.16/00 - 2019-01-23]({{ '/download/all_releases/release-61600' | relative_url }})
-
 {% assign sorted = site.releases | reverse %}
+
+<ul>
+{% for release in sorted %}
+{% if release.state == "pro" %}
+<li> <b>PRO</b> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
+{% endif %}
+{% if release.state == "old" %}
+<li> <b>OLD</b> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
+{% endif %}
+{% endfor %}
+</ul>
 
 ### Version 6
 
 <ul>
 {% for release in sorted %}
 {% assign v = release.version | slice: 0 %}
+{% if release.state != "pro" and release.state != "old" %}
 {% if  v == '6' %}
 <li> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
+{% endif %}
 {% endif %}
 {% endfor %}
 </ul>

@@ -3,6 +3,7 @@ layout: releases
 title: Release 6.18/04 - 2019-09-11
 version: 6.18/04
 date: 2019-09-11
+state: pro
 
 toc: true
 toc_sticky: true
