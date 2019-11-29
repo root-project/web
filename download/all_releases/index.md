@@ -9,7 +9,7 @@ sidebar:
 
 {% assign sorted = site.releases | reverse %}
 
-<ul>
+<ul style="list-style-type:none">
 {% for release in sorted %}
 {% if release.state == "pro" %}
 <li> <b>PRO</b> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
@@ -22,7 +22,7 @@ sidebar:
 
 ### Version 6
 
-<ul>
+<ul style="list-style-type:none">
 {% for release in sorted %}
 {% assign v = release.version | slice: 0 %}
 {% if release.state != "pro" and release.state != "old" %}
@@ -35,7 +35,7 @@ sidebar:
 
 ### Version 5
 
-<ul>
+<ul style="list-style-type:none">
 {% for release in sorted %}
 {% assign v = release.version | slice: 0 %}
 {% if  v == '5' %}
