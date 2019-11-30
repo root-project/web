@@ -62,7 +62,7 @@ You can fill the tree by placing the data into the folder structure and then cal
 The tutorial `$ROOTSYS/tutorials/tree/cernbuild.C `provides an example how to build a [TTree](https://root.cern/doc/master/classTTree.html) from an ASCII file.
 The input file is `cernstaff.dat` that contains statistics about the staff at CERN.
 
-The ROOT macro `cernbuild.C` creates a root file (`cernstaff.root`) and prints the tree with [TTree:Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094).
+The ROOT macro `cernbuild.C` creates a root file (`cernstaff.root`) and prints the tree `T` with [TTree::Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094).
 
 {% highlight C++ %}
 root [0] .x cernbuild.C
@@ -126,7 +126,7 @@ root [1]
 
 _**Example**_
 
-Showing an entry from the `cernstaff.root` file (see → *Building a tree from an ASCII file*).
+Showing an entry from the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)).
 
 {% highlight C++ %}
 root[] TFile f("cernstaff.root")
@@ -152,7 +152,7 @@ Nation = CH
 
 _**Example**_
 
-Scanning the `cernstaff.root` file (see → *Building a tree from an ASCII file*).
+Scanning the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)).
 
 {% highlight C++ %}
    root[] TFile f("cernstaff.root")
@@ -188,19 +188,23 @@ Scanning the `cernstaff.root` file (see → *Building a tree from an ASCII file*
    *    24 *     9617 *        49 *             0 *
 {% endhighlight %}
 
+### Filling a tree
+- Use the [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067) method to fill a [TTree](https://root.cern/doc/master/classTTree.html) instance.
+A loop on all defined branches (see → [Branches(#branches)] is executed.
+
 ## Tree Viewer
 
-With the tree viewer you can examine a tree in a GUI.
+With the Tree Viewer you can examine a tree in a GUI.
 
-- To start the tree viewer, open a root file and start the tree viewer with `startViewer()`.
+- Use the [TTreeViewer](https://root.cern/doc/master/classTTreeViewer.html) class to open the ROOT file, containing a tree, in the Tree Viewer.
 
 _**Example**_
 
-Open the tree viewer for the `cernstaff.root` file (see → *Building a tree from an ASCII file*).
+Open the Tree Viewer for the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)), which contains a tree `T`.
 
 {% highlight C++ %}
    root[] TFile f("cernstaff.root")
-   root[] T->startViewer()
+   root[] new TTreeViewer("T");
 {% endhighlight %}
 
 {% include figure_image
@@ -251,7 +255,7 @@ A `STLcollection` is a address of a pointer to `std::vector`, `std::list`, `std:
 
 - Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a) method to add a `STLcollection`:
 
-   `auto branch = tree.Branch( branchname, STLcollection, buffsize, splitlevel);`
+   `auto branch = tree.Branch(branchname, STLcollection, buffsize, splitlevel);`
 
 If the `splitlevel` is a value bigger than 100 [TTree::kSplitCollectionOfPointers](https://root.cern/doc/master/classTTree.html#a6d07819a66bb97bafd460adfad555114ae3b257c9ade74c1a53383d800c0a708c) then the `STLcollection` will be written in split mode.
 
@@ -303,9 +307,6 @@ void tree3AddBranch() {
 
 `kOverwrite` in the `Write()` method causes the tree to be overwritten.
 
-### Filling a tree
-- Use the [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067) method to fill a [TTree](https://root.cern/doc/master/classTTree.html) instance.
-A loop on all defined branches is executed.
 
 ## Using trees for data analysis
 
@@ -323,7 +324,7 @@ With the [TTree::Draw()](https://root.cern/doc/master/classTTree.html#ac4016b174
 
 _**Example**_
 
-Open the `cernstaff.root` file (see → *Building a tree from an ASCII file*) and lists its content.
+Open the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)) and lists its content.
 
 {% highlight C++ %}
 root [0] TFile f("cernstaff.root")
@@ -389,7 +390,7 @@ root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
    caption="The variable `Cost` and `Age` with a selection drawn in a histogram."
 %}
 
-Next, the fouth pad is activated and the histogram is drawn with the dra option `surf2`. Refer to the [THistPainter](https://root.cern/doc/master/classTHistPainter.html) class for possible draw options.
+Next, the fourth pad is activated and the histogram is drawn with the draw option `surf2`. Refer to the [THistPainter](https://root.cern/doc/master/classTHistPainter.html) class for possible draw options.
 
 {% highlight C++ %}
 root [11] myCanvas->cd(4)
@@ -427,3 +428,36 @@ chain.Add("file3.root");
 {% endhighlight %}
 
 The name of the [TChain](https://root.cern/doc/master/classTChain.html) is the same as the name of the tree.
+
+## Reading TTrees, TChains and TNtuples
+
+The [TTreeReader](https://root.cern/doc/master/classTTreeReader.html) class provides a simple, robust and fast interface to read values from ROOT columnar data sets such as [TTree](https://root.cern/doc/master/classTTree.html), [TChain](https://root.cern/doc/master/classTChain.html) or [TNtuple](https://root.cern/doc/master/classTNtuple.html).
+
+_**Example**_
+
+{% highlight C++ %}
+A simple example using a TTreeReader.
+
+   // Create a histogram for the values we read.
+   auto myHist = new TH1F("h1","ntuple",100,-4,4);
+
+   // Open the file containing the tree.
+   auto myFile = TFile::Open("hsimple.root");
+
+   // Create a TTreeReader for the tree, for instance by passing theTTree's name and the TDirectory / TFile it is in.
+   TTreeReader myReader("ntuple", myFile);
+
+   // The branch "px" contains floats; access them as myPx.
+   TTreeReaderValue<Float_t> myPx(myReader, "px");
+   // The branch "py" contains floats, too; access those as myPy.
+   TTreeReaderValue<Float_t> myPy(myReader, "py");
+
+   // Loop over all entries of the TTree or TChain.
+   while (myReader.Next()) {
+      // Just access the data as if myPx and myPy were iterators (note the '*'in front of them):
+      myHist->Fill(*myPx + *myPy);
+   }
+
+   myHist->Draw();
+ {% endhighlight %}
+   

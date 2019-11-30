@@ -7,8 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-
-You can write instances of classes into a ROOT file, i.e. you can make the created objects "persistent". (more intro text needed here)
+ You can write instances of classes into a ROOT file, this is, you can make the created objects "persistent".
 
 ## Physical layout of a ROOT file
 

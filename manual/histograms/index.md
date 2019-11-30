@@ -114,7 +114,7 @@ In the following examples, histograms are created for the classes [TH1I](https:/
 {% highlight C++ %}
    TH1* h1 = new TH1I("h1", "h1 title", 100, 0.0, 4.0);
    TH2* h2 = new TH2F("h2", "h2 title", 40, 0.0, 2.0, 30, -1.5, 3.5);
-   TH3* h3 = new TH3D("h3", "h3 title";
+   TH3* h3 = new TH3D("h3", "h3 title");
 {% endhighlight %}
 
 -- or ­--
