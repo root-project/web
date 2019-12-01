@@ -7,19 +7,11 @@ toc: true
 toc_sticky: true
 ---
 
- You can write instances of classes into a ROOT file, this is, you can make the created objects "persistent".
+ ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the RROT file back, the object is reconstructed in memory.
+ 
+## ROOT files
 
-## Physical layout of a ROOT file
-
-A ROOT file is like a UNIX file directory. It can contain directories and objects organized in unlimited number of levels. A ROOT file is stored in machine independent format (ASCII, IEEE floating point, Big Endian byte ordering).
-
-The following sections describes how to
-
--   create a ROOT file
-
--   open and view a ROOT file
-
--   view the physical layout of a ROOT file
+A ROOT file, this is a [TFile](https://root.cern/doc/master/classTFile.html) object, is like a UNIX file directory. It can contain directories and objects organized in unlimited number of levels. A ROOT file is stored in machine independent format (ASCII, IEEE floating point, Big Endian byte ordering).
 
 ### Creating a ROOT file
 
@@ -63,6 +55,25 @@ This example creates 15 histograms, fills each histogram with 1000 entries from 
 {% endhighlight %}
 
 The ROOT file is saved by default in the current working directory.
+
+### File system operations
+
+A [TFile](https://root.cern/doc/master/classTFile.html), this is ROOT file, behaves like UNIX file system. Therefore, you can perform the usual operations for a file system.
+
+_**Example**_
+
+{% highlight C++ %}
+
+// Create/open a ROOT file. 
+   TFile* f = TFile::Open("file.root", "NEW");
+
+//Creating a directory.
+   f->mkdir("dir");
+	
+//Changing a directory.
+   f->cd("dir");
+
+{% endhighlight %}
 
 ### Opening and viewing a ROOT file
 
