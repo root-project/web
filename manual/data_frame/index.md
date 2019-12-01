@@ -1,5 +1,5 @@
 ---
-title: Data Frame
+title: Data frames
 layout: single
 sidebar:
   nav: "manual"
