@@ -387,56 +387,9 @@ By default, 3-D histograms are drawn as scatter plots.
 
 `A`: Suppresses the axis.
 
-### Profile histograms
+## Fitting histograms
 
-Profile histograms are used to display the mean value of Y and its error for each bin in X.
-
-When you fill a profile histogram with [TProfile.Fill()](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125):
-
-- `H[j]` contains for each bin `j` the sum of the `y` values for this bin.
-
-- `L[j]` contains the number of entries in the bin `j`.
-
-- `e[j]` or `s[j]` will be the resulting error depending on the selected option.
-
-The following formulae show the cumulated contents (capital letters) and the values displayed by the printing or plotting routines (small letters) of the elements for bin `J`. 
-
-`E[j] = sum Y**2`<br>
-`L[j] = number of entries in bin J`<br>
-`H[j] = sum Y`<br>
-`h[j] = H[j] / L[j]`<br>
-`s[j] = sqrt[E[j] / L[j] - h[j]**2]`<br>
-`e[j] = s[j] / sqrt[L[j]]`<br>
-
-The displayed bin content for bin `J` of a [TProfile](https://root.cern/doc/master/classTProfile.html) is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d). 
-The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a). 
-In case the option `s` is used (in the constructor or by calling  [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725)) the displayed error is `s(J)`.
-
-In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
-
-_**Example**_
-{% highlight C++ %}
-{
-  auto c1 = new TCanvas("c1","Profile histogram example",200,10,700,500);
-  auto hprof  = new TProfile("hprof","Profile of pz versus px",100,-4,4,0,20);
-  Float_t px, py, pz;
-  for ( Int_t i=0; i<25000; i++) {
-    gRandom->Rannor(px,py);
-    pz = px*px + py*py;
-    hprof->Fill(px,pz,1);
-  }
-  hprof->Draw();
-}
-{% endhighlight %}
-
-{% include figure_jsroot
-   file="profile_1.root" object="hprof" width="500px" height="350px"
-   caption="A profile histogram example."
-%}
-
-### Fitting histograms
-
-#### Fitting 1-D histograms with pre-defined functions
+### Fitting 1-D histograms with pre-defined functions
 
 - Use the [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method to fit a 1-D histogram with a pre-defined function. The name of the pre-definded function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
 
@@ -458,12 +411,12 @@ The following pre-defined functions are available:
 
 - `chebyshevN`: Chebyshev polynomial of degree `N`, where `N` is a number between 0 and 9: `f(x) = p0 + p1*x + p2*(2*x2-1) +...`
 
-- `landau`: Landau function with mean and sigma. This function has been adapted from the `CERNLIB` routine `G110 denlan` (see [TMath::Landau](https://root.cern/doc/master/namespaceTMath.html#a656690875991a17d35e8a514f37f35d9)).
+- `landau`: Landau function with mean and sigma. This function has been adapted from the `CERNLIB` routine `G110 denlan` (see → [TMath::Landau](https://root.cern/doc/master/namespaceTMath.html#a656690875991a17d35e8a514f37f35d9)).
 
 - `gausn`: Normalized form of the gaussian function with 3 parameters `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)/(p2*sqrt(2PI))`
 
 
-#### Fitting a 1-D histogram with user-defined functions
+### Fitting a 1-D histogram with user-defined functions
 
 First you create a [TF1](https://root.cern/doc/master/classTF1.html) object, then use the name of the `TF1` fitting function in the [Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method.
 
@@ -541,7 +494,7 @@ Now the `fitf` function is used to fit a histogram.
    }
  {% endhighlight %}
 
-#### Accessing the fitted function parameters and results
+### Accessing the fitted function parameters and results
 
 - Use the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c) method to access the fitted function parameters.
 
@@ -557,6 +510,54 @@ _**Examples**_
 // Error of the first parameter:
    root[] Double_t e1 = fit->GetParError(0);
  {% endhighlight %}
+
+
+## Profile histograms
+
+Profile histograms are used to display the mean value of Y and its error for each bin in X.
+
+When you fill a profile histogram with [TProfile.Fill()](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125):
+
+- `H[j]` contains for each bin `j` the sum of the `y` values for this bin.
+
+- `L[j]` contains the number of entries in the bin `j`.
+
+- `e[j]` or `s[j]` will be the resulting error depending on the selected option.
+
+The following formulae show the cumulated contents (capital letters) and the values displayed by the printing or plotting routines (small letters) of the elements for bin `J`. 
+
+`E[j] = sum Y**2`<br>
+`L[j] = number of entries in bin J`<br>
+`H[j] = sum Y`<br>
+`h[j] = H[j] / L[j]`<br>
+`s[j] = sqrt[E[j] / L[j] - h[j]**2]`<br>
+`e[j] = s[j] / sqrt[L[j]]`<br>
+
+The displayed bin content for bin `J` of a [TProfile](https://root.cern/doc/master/classTProfile.html) is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d). 
+The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a). 
+In case the option `s` is used (in the constructor or by calling  [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725)) the displayed error is `s(J)`.
+
+In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
+
+_**Example**_
+{% highlight C++ %}
+{
+  auto c1 = new TCanvas("c1","Profile histogram example",200,10,700,500);
+  auto hprof  = new TProfile("hprof","Profile of pz versus px",100,-4,4,0,20);
+  Float_t px, py, pz;
+  for ( Int_t i=0; i<25000; i++) {
+    gRandom->Rannor(px,py);
+    pz = px*px + py*py;
+    hprof->Fill(px,pz,1);
+  }
+  hprof->Draw();
+}
+{% endhighlight %}
+
+{% include figure_jsroot
+   file="profile_1.root" object="hprof" width="500px" height="350px"
+   caption="A profile histogram example."
+%}
 
 
 

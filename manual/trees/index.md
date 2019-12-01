@@ -435,7 +435,7 @@ The [TTreeReader](https://root.cern/doc/master/classTTreeReader.html) class prov
 
 _**Example**_
 
-A simple example using a TTreeReader.
+A simple example using a `TTreeReader`.
 
 {% highlight C++ %}
 // Create a histogram for the values we read.

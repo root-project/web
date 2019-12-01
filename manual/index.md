@@ -12,7 +12,7 @@ ROOT is an object-oriented framework that provides all the functionalities neede
 with big data processing, statistical analysis, visualization and storage in high-energy physics. It is mainly
 written in C++ but integrated with other languages such as Python and R.
 
-> C++ 
+> **C++**
 > 
 > The usage of ROOT requires in-depth knowledge of C++. For detailed information on C++, refer to C++ language references such as [C++ Language Reference](https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=vs-2019).
 > 
@@ -41,6 +41,8 @@ written in C++ but integrated with other languages such as Python and R.
   - [Graphs]({{ '/manual/graphs' | relative_url }})
 
   - [Trees]({{ '/manual/trees' | relative_url }})
+  
+  - [Data frames]({{ '/manual/data_frame' | relative_url }})
 
   - [Mathematical libraries]({{ '/manual/math' | relative_url }})
   
