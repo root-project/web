@@ -12,7 +12,7 @@ ROOT offers with [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFra
 >
 > Data frame tutorials are available at → [https://root.cern.ch/doc/master/group__tutorial__dataframe.html](https://root.cern.ch/doc/master/group__tutorial__dataframe.html)
 
-The following is a brief introduction to ROOT data frames. For detailed information, see → [https://root.cern/doc/master/classROOT_1_1RDataFrame.html](https://root.cern/doc/master/classROOT_1_1RDataFrame.html).
+The following is a brief introduction to ROOT data frames. For detailed information on ROOT data frames, see → [https://root.cern/doc/master/classROOT_1_1RDataFrame.html](https://root.cern/doc/master/classROOT_1_1RDataFrame.html).
 
 ## Data analysis with RDataFrame
 
@@ -20,13 +20,13 @@ Usually a ROOT data analysis is a sequence of operations to be performed on data
 
 In detail, `RDataFrame` supports the following workflow for data analysis:
 
-1. Creating a data frame object (using `RDataFrame`'s constructor) by specifying the data set.
+1. Creating a data frame object (using [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html)'s constructor) by specifying the data set.
 
 2. Applying a series of transformations to the data by:
 
-	- [Applying filters](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations). This "cuts" the rows of the data set.
+	- [applying filters](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations). This "cuts" the rows of the data set.
 	
-	- [Creating custom columns](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations). Custom columns can, for example, contain the results of a computation.
+	- [creating custom columns](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations). Custom columns can, for example, contain the results of a computation.
 
 3. [Applying actions on the transformed data](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#actions). Actions (instant or lazy) or are used to produce a result out of the data.
 
@@ -39,9 +39,7 @@ In detail, `RDataFrame` supports the following workflow for data analysis:
 
 This enables ROOT's implicit multi-threading for all objects and methods that provide an internal parallelization mechanism. 
 
-The following objects and methods automatically take advantage of multi-threading:
-
-- [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html): Runs internally the event-loop by parallelizing over clusters of entries.
+In addition to [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html), the following objects and methods also automatically take advantage of multi-threading:
 
 - [TTree::GetEntry](https://root.cern/doc/master/classTTree.html#a9fc48df5560fce1a2d63ecd1ac5b40cb): Reads multiple branches in parallel.
  
