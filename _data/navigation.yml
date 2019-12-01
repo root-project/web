@@ -43,7 +43,7 @@ manual:
       - title: Trees
         url: manual/trees
       - title: Data frames
-        url: manual/data_frames
+        url: manual/data_frame
       - title: Mathematical libraries
         url: manual/math
       - title: Vectors
