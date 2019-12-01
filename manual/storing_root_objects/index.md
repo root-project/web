@@ -122,17 +122,17 @@ To view the contents of a ROOT file, you need to open it.
 
 - Use the `GetObject()` method to retrieve objects from a ROOT file.
 
-_**Example_**
+_**Example**_
 
-From the ROOT file `hsimple.root` (see → [Getting started with ROOT]({{ '/manual/getting_started_with_root#starting-with-hsimplec' | relative_url }}), the histogram `hpx;1` is retrieved.
+From the ROOT file `hsimple.root` (see → [Getting started with ROOT]({{ '/manual/getting_started_with_root#starting-with-hsimplec' | relative_url }})), the histogram `hpx;1` is retrieved.
 
 {% highlight C++ %}
-   TFile f("hsimple.root")
-   TH1F *hpx
-   f.GetObject("hpx;1",hpx)
+   TFile f("hsimple.root");
+   TH1F *hpx;
+   f.GetObject("hpx;1",hpx);
 
 //The retrieved histogram is drawn.
-   hpx->Draw()
+   hpx->Draw();
 {% endhighlight %}
 
 In detail, the following happens when executing `GetObject()`:
