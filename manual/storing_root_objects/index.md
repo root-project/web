@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
- ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the RROT file back, the object is reconstructed in memory.
+ ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the ROOT file back, the object is reconstructed in memory.
  
 ## ROOT files
 
@@ -75,6 +75,7 @@ _**Example**_
 
 {% endhighlight %}
 
+
 ### Opening and viewing a ROOT file
 
 To view the contents of a ROOT file, you need to open it.
@@ -115,6 +116,59 @@ To view the contents of a ROOT file, you need to open it.
 >   ...
 >   }
 > ```
+
+
+### Retrieving objects from a ROOT file
+
+- Use the `GetObject()` method to retrieve objects from a ROOT file.
+
+_**Example_**
+
+From the ROOT file `hsimple.root` (see → [Getting started with ROOT]({{ '/manual/getting_started_with_root#starting-with-hsimplec' | relative_url }}), the histogram `hpx;1` is retrieved.
+
+{% highlight C++ %}
+   TFile f("hsimple.root")
+   TH1F *hpx
+   f.GetObject("hpx;1",hpx)
+
+//The retrieved histogram is drawn.
+   hpx->Draw()
+{% endhighlight %}
+
+In detail, the following happens when executing `GetObject()`:
+
+- The key with name `hpx;1` is found in the list of keys.
+
+- A [TBuffer](https://root.cern/doc/master/classTBuffer.html) object is created.
+
+- The buffer is read from the ROOT file.
+
+- An empty object is created by calling the default constructor for the class referenced in [TKey](https://root.cern/doc/master/classTKey.html).
+    
+- The [Streamer()](https://root.cern/doc/master/classTClass.html#ac1c95f1787550ebc5367590aedacbd67) method is called for this new object.
+
+In case there is an object with multiple cycles, you can pick a particular cycle with a name like `hpx;` (for example `hpx;2`).
+
+ You can also directly access the keys, for example when the names of the objects contained in the ROOT file are not known or when a long series of objects needs to be read sequentially. 
+ 
+ _**Example**_
+ 
+This example illustrates how to loop over all keys of a ROOT file.
+
+{% highlight C++ %}
+for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
+    auto key = dynamic_cast<TKey*>(keyAsObj);
+    std::cout << "Key name: " << key->GetName() << " Type: " << key->GetClassName() << std::endl;
+}
+{% endhighlight %}
+
+
+> **Crash while reading and writing the ROOT file**
+> 
+> If ROOT is not properly terminated, the file directory may not be written at the end of the ROOT file.
+> Next time this ROOT file is used, ROOT will automatically detect this abnormal termination and will recover the directory by scanning sequentially the list of keys in the ROOT file.
+> If the ROOT file has been opened in UPDATE mode, the recovered directory will be automatically written to the ROOT file. This automatic recovery procedure is possible because of redundant information written to the ROOT file.<br>
+> In case you write large [TTree](https://root.cern/doc/master/classTTree.html)s (see →[Trees]({{ '/manual/trees' | relative_url }})), you may have large buffers in memory. In case of a job crash, you may loose a lot of data. Therefore, it recommended to use the auto save method [TTree::AutoSave](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8).
 
 ### Viewing the physical layout of a ROOT file
 

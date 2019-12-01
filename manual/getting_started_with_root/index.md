@@ -521,8 +521,10 @@ When you install ROOT, a tutorials directory is created, containing all ROOT tut
 
 ### Starting with hsimple.C
 
-It is recommended to start with the `hsimple.C` macro first. It creates a `hsimple.root`
-file, which is used by many other macros.
+It is recommended to start with the `hsimple.C` macro first. It creates the ROOT file `hsimple.root`, which is used by many other macros.
+`hsimple.root` contains four histograms `hpx`, `hpx;1`, `hpxpy;1`` and ``hprof;1`.
+
+For detailed information on ROOT files, see → [Storing ROOT objects]({{ '/manual/storing_root_objects' | relative_url }}).
 
 To execute the `hsimple.C` macro at the ROOT prompt, type:
 
