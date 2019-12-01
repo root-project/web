@@ -16,7 +16,7 @@ The following is a brief introduction to ROOT data frames. For detailed informat
 
 ## Data analysis with RDataFrame
 
-Usually a ROOT data analysis is a sequence of operations to be performed on data sets. [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html) provides the necessary methods to perform most common operations required by ROOT analysis.
+Usually a ROOT data analysis is a sequence of operations to be performed on data sets. [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html) provides the necessary methods to perform most common operations required by a ROOT analysis.
 
 In detail, `RDataFrame` supports the following workflow for data analysis:
 
@@ -35,7 +35,7 @@ In detail, `RDataFrame` supports the following workflow for data analysis:
 
 [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html) can perform multi-threaded event loops to speed up the execution of its actions. 
 
-- Use the [ROOT::EnableImplicitMT()]https://root.cern/doc/master/namespaceROOT.html#a06f2b8b216b615e5abbc872c9feff40f method **before** constructing a `RDataFrame` object.
+- Use the [ROOT::EnableImplicitMT()]https://root.cern/doc/master/namespaceROOT.html#a06f2b8b216b615e5abbc872c9feff40f) method **before** constructing a `RDataFrame` object.
 
 This enables ROOT's implicit multi-threading for all objects and methods that provide an internal parallelization mechanism. 
 

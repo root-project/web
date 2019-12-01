@@ -42,6 +42,8 @@ manual:
         url: manual/graphs
       - title: Trees
         url: manual/trees
+      - title: Data frames
+        url: manual/data_frames
       - title: Mathematical libraries
         url: manual/math
       - title: Vectors
