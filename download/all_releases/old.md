@@ -12,7 +12,7 @@ Older releases
 <ul style="list-style-type:none">
 {% for release in sorted %}
 {% if release.state == "old" %}
-<li> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
+<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
 {% assign version = release.version %}
 {% endif %}
 {% endfor %}

@@ -12,10 +12,10 @@ sidebar:
 <ul style="list-style-type:none">
 {% for release in sorted %}
 {% if release.state == "pro" %}
-<li> <b>PRO</b> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
+<li> <b>PRO</b> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
 {% endif %}
 {% if release.state == "old" %}
-<li> <b>OLD</b> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
+<li> <b>OLD</b> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
 {% endif %}
 {% endfor %}
 </ul>
@@ -27,7 +27,7 @@ sidebar:
 {% assign v = release.version | slice: 0 %}
 {% if release.state != "pro" and release.state != "old" %}
 {% if  v == '6' %}
-<li> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
+<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
 {% endif %}
 {% endif %}
 {% endfor %}
@@ -39,7 +39,7 @@ sidebar:
 {% for release in sorted %}
 {% assign v = release.version | slice: 0 %}
 {% if  v == '5' %}
-<li> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
+<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
 {% endif %}
 {% endfor %}
 </ul>
