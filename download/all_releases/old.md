@@ -7,16 +7,7 @@ sidebar:
 
 Older releases
 
-{% assign sorted = site.releases | reverse %}
-
-<ul style="list-style-type:none">
-{% for release in sorted %}
-{% if release.state == "old" %}
-<li> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
-{% assign version = release.version %}
-{% endif %}
-{% endfor %}
-</ul>
+{% include releases_list state="old" %}
 
 ### Release Notes
 

@@ -53,8 +53,8 @@ It is mainly written in C++ but integrated with other languages such as Python a
          <h1> Under the Spotlight </h1>
          <i>
          {% for post in site.posts limit:3 %}
-				<h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-				<p>{{ post.excerpt }}</p>
+            <h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <p>{{ post.excerpt }}</p>
          {% endfor %}
          </i>
       </td>
@@ -72,12 +72,8 @@ It is mainly written in C++ but integrated with other languages such as Python a
    <tr>
       <td style="border:0px" width="50%" bgcolor="#CBCBCB">
          <h1> Latest Releases </h1>
-         {% assign sorted = site.releases | reverse %}
-			<ul>
-			{% for release in sorted limit:4 %}
-			<li> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
-			{% endfor %}
-			</ul>
+         {% include releases_list number=4 %}
+         </ul>
          <ul>
       </td>
    </tr>

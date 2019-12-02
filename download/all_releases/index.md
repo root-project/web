@@ -7,42 +7,18 @@ sidebar:
   nav: "download"
 ---
 
-{% assign sorted = site.releases | reverse %}
 
-<ul style="list-style-type:none">
-{% for release in sorted %}
-{% if release.state == "pro" %}
-<li> <b>PRO</b> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
-{% endif %}
-{% if release.state == "old" %}
-<li> <b>OLD</b> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
-{% endif %}
-{% endfor %}
-</ul>
+{% include releases_list state="pro" label="PRO" %}
+{% include releases_list state="old" label="OLD" %}
 
 ### Version 6
 
-<ul style="list-style-type:none">
-{% for release in sorted %}
-{% assign v = release.version | slice: 0 %}
-{% if release.state != "pro" and release.state != "old" %}
-{% if  v == '6' %}
-<li> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
-{% endif %}
-{% endif %}
-{% endfor %}
-</ul>
+{% include releases_list version="6" %}
 
 ### Version 5
 
-<ul style="list-style-type:none">
-{% for release in sorted %}
-{% assign v = release.version | slice: 0 %}
-{% if  v == '5' %}
-<li> <a href="{{ release.url | relative_url }}"> {{ release.title}} </a></li>
-{% endif %}
-{% endfor %}
-</ul>
+{% include releases_list version="5" %}
+
 
 Release notes can be found on the respective release page; release notes for old releases
 can be found [here]({{ '/download/all_releases/old_release_notes' | relative_url }}).
