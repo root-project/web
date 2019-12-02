@@ -307,11 +307,8 @@ The `+` command rebuilds the library only if the ROOT macro or any of the files 
 are newer than the library.
 
 When checking the timestamp, ACLiC generates a dependency file, which name is the same as
-the library name, just replacing the 'so' extension by the extension '`d`'.
+the library name, just replacing the `so` extension by the extension `d`.
 
-_**Example**_
-
-On most platforms, `hsimple.cxx` will generate `hsimple_cxx.d`.
 
 To compile a ROOT macro with default optimizations, type:
 
@@ -337,7 +334,7 @@ A dictionary ("reflection database") contains information about the types and fu
 
 With a dictionary you can call functions inside libraries. They are also needed to write a class into a ROOT file.
 
-A dictionary consists of a source file, which contains the type information needed by cling and ROOT's I/O subsystem. This source file needs to be generated from the library's headers and then compiled, linked and loaded. Only then does Cling and ROOT know what is inside a library.
+A dictionary consists of a source file, which contains the type information needed by Cling and ROOT's I/O subsystem. This source file needs to be generated from the library's headers and then compiled, linked and loaded. Only then does Cling and ROOT know what is inside a library.
 
 There are two ways to generate a dictionary:
 
@@ -345,7 +342,7 @@ There are two ways to generate a dictionary:
 
 - using `rootcling`
 
-** Using ACLiC to generate dictionaries** 
+**Using ACLiC to generate dictionaries** 
 
 With a given header file `MyHeader.h`, ACliC automatically generates a dictionary:
 
@@ -353,7 +350,7 @@ With a given header file `MyHeader.h`, ACliC automatically generates a dictionar
       root[] .L MyHeader.h+
 ```
 
-** Using rootcling to generate dictionaries**
+**Using rootcling to generate dictionaries**
 
 You can manually create a dictionary by using `rootcling`: 
 
