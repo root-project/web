@@ -7,16 +7,7 @@ sidebar:
 
 Releases with this term are in Production.
 
-{% assign sorted = site.releases | reverse %}
-
-<ul style="list-style-type:none">
-{% for release in sorted %}
-{% if release.state == "pro" %}
-<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
-{% assign version = release.version %}
-{% endif %}
-{% endfor %}
-</ul>
+{% include releases_list state="pro" %}
 
 ### Release Notes
 
