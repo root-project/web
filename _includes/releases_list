@@ -1,0 +1,43 @@
+{% assign number  = {{include.number}}  %}
+{% assign version = {{include.version}}  %}
+{% assign state   = {{include.state}}  %}
+{% assign label   = {{include.label}}  %}
+
+{% assign sorted = site.releases | reverse %}
+
+<ul style="list-style-type:none">
+
+{% if number %}
+{% for release in sorted limit:{{number}} %}
+<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
+{% endfor %}
+{% endif %}
+
+{% if version %}
+{% for release in sorted %}
+{% assign v = release.version | slice: 0 %}
+{% if release.state != "pro" and release.state != "old" %}
+{% if  v == {{version}} %}
+<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
+{% endif %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if state == "pro" %}
+{% for release in sorted %}
+{% if release.state == "pro" %}
+<li> <b>{{ label }}</b> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if state == "old" %}
+{% for release in sorted %}
+{% if release.state == "old" %}
+<li> <b>{{ label }}</b> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
+{% endif %}
+{% endfor %}
+{% endif %}
+
+</ul>
