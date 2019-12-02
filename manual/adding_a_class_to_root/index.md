@@ -23,7 +23,6 @@ The definition of a class requires the following steps:
 
   - Providing a constructor.
 
-The steps are explained in the following sections, followed by an example.
 
 ### Inheriting from TObject
 

@@ -677,7 +677,7 @@ To execute the `demos.C` macro at the ROOT prompt, type:
 root[0] .x demos.C
 ```
 
-A window is displayed. Here you can try out different demos.
+A window is displayed. Here you can try out the different demos.
 
 ### Source code of ROOT tutorials
 
