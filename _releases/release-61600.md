@@ -1,8 +1,7 @@
 ---
 layout: releases
-title: Release 6.16/00 - 2019-01-23
 version: 6.16/00
-date: 2019-01-23
+release_date: 2019-01-23
 state: old
 
 toc: true

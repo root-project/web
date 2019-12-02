@@ -1,8 +1,7 @@
 ---
 layout: releases
-title: Release 6.18/02 - 2019-08-23
 version: 6.18/02
-date: 2019-08-23
+release_date: 2019-08-23
 
 toc: true
 toc_sticky: true
