@@ -5,7 +5,7 @@
 
 {% assign sorted = site.releases | reverse %}
 
-<ul style="list-style-type:none">
+<ul class="multi-column" style="list-style-type:none">
 
 {% if number %}
 {% for release in sorted limit:{{number}} %}
