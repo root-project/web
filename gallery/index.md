@@ -85,6 +85,7 @@ gallery5:
   - url: /gallery/visualisation_techniques_and_basics_graphics/Basic_3D_shapes.gif
   - url: /gallery/visualisation_techniques_and_basics_graphics/Born_equation_produced_with_TLatex.gif
   - url: /gallery/visualisation_techniques_and_basics_graphics/Candle_plots.gif
+    title: Candle plots allow to produce multidimensional plots via the TTree::Draw method with option PARA.
   - url: /gallery/visualisation_techniques_and_basics_graphics/Coloured_scatter_plot.gif
   - url: /gallery/visualisation_techniques_and_basics_graphics/Directory_architecture.gif
   - url: /gallery/visualisation_techniques_and_basics_graphics/Drawing_option-_TEXT.gif
