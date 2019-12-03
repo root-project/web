@@ -41,7 +41,7 @@ The following naming conventions apply to ROOT objects:
     Example: `EColorLevel`
 
 -   Locals and parameters begin with a lower case <br>
-    Example: `nbytes  `
+    Example: `nbytes`
 
 -   Getters and setters begin with Get and Set <br>
     Examples: `SetLast()`, `GetFirst()`
@@ -120,6 +120,31 @@ The virtual method `Draw()` is the entry point for the graphics rendering of ROO
 ### TROOT - entry point to ROOT
 
 The [TROOT](https://root.cern/doc/master/classTROOT.html) object is the entry point to the ROOT system. The single instance of `TROOT` is accessible via the global variable `gROOT` (→ see [gROOT](#groot)). Using the `gROOT` variable, you have access to basically every object created in a ROOT based program. The `TROOT` object is a container of several lists pointing to the main ROOT objects.
+
+
+## Understanding ROOT's class structure
+
+ROOT provides a set of tools to help you understand the existing class structure, the data structure in memory, and the structure of files.
+
+- [TFile::ls](https://root.cern/doc/master/classTFile.html#a0b6ce84d5fecb4d34fc4fa38824320c2): Lists objects in a file or directory.
+	- `list->ls()`: Lists objects in a collection pointed by list.
+	- `list->Dump()`: Dumps all objects in a collection pointed by list.
+
+- [TFile::Map](https://root.cern/doc/master/classTFile.html#aa096e9759947ec077bbdba0663d3a223): Lists the contents of a file sequentially. One line is printed for every record written to the file with the following information:
+	- Date/Time when the object was written.
+	- Position of the object (starting byte number).
+	- Number of bytes occupied by the object.
+	- Object class name.
+	- Compression factor (if the file is compressed).
+	
+- [TClass::Draw](https://root.cern/doc/master/classTClass.html#ac11f715e58e6d0c360f4c80577a5484a): Draws the detailed class inheritance structure. All ROOT classes are documented with their associated inheritance tree. This tree can be generated interactively with `object->DrawClass()` or by selecting `DrawClass` item when right-clicking an object in a canvas.
+    
+- [TObject::Inspect](https://root.cern/doc/master/classTObject.html#a09f1614be7c5b3c35770529cc151449d) Dumps the contents of this object in a graphics canvas. A table is displayed where, for each data member, its name, current value and its title are given. If a data member is a pointer to another object, one can click on the pointer and, in turn, inspect the pointed object,etc.
+
+- [TObject::Dump](https://root.cern/doc/master/classTObject.html#a2a79fcd627629cb2b19d54bf6a6935db): Same as `TObject::Inspect`, except that the output is on stdout. An object dump can be written to a file.
+
+- ROOT object browser ([TBrowser](https://root.cern/doc/master/classTBrowser.html)): Allows you to browse collections, such as the list of classes, geometries, files and [TTrees](https://root.cern/doc/master/classTTree.html).
+
 
 ## Machine independent data types
 

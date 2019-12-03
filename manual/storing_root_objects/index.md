@@ -13,10 +13,89 @@ toc_sticky: true
 
 A ROOT file, this is a [TFile](https://root.cern/doc/master/classTFile.html) object, is like a UNIX file directory. It can contain directories and objects organized in unlimited number of levels. A ROOT file is stored in machine independent format (ASCII, IEEE floating point, Big Endian byte ordering).
 
-### Creating a ROOT file
+### Creating and accessing a ROOT file
 
-For creating a ROOT file, call the [TFile](https://root.cern/doc/master/classTFile.html) constructor. A ROOT file uses the `.root` extension.
+**Creating a ROOT file**
 
+- Use the [TFile](https://root.cern/doc/master/classTFile.html) constructor for creating a ROOT file. A ROOT file uses the `.root` extension.
+
+   ```
+   TFile *MyFile = new TFile("Event.root","OPTIONS");
+   ```
+
+The following options are available:
+
+- `CREATE`: Creates the ROOT files.
+
+- `NEW`: Same as `CREATE`.
+
+- `RECREATE`: Replaces the ROOT file.
+
+- `UPDATE`: Updates the ROOT file.
+
+- `READ`: Open an existing RROT file for reading.
+
+Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been created it becomes the default file for all I/O. This default is held in the global variable `gFile` (see → [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})), which can be updated at any time to change the default.
+
+   ```
+   gFile = MyFile;
+   ```
+
+**Checking whether a ROOT file is open**
+
+- Use [TFile::IsOpen()](https://root.cern/doc/master/classTFile.html#a67dedbe56cfe4792cff78df129718c11) to check whether the ROOT file was successfully opened.
+
+> **Note**
+>
+> You can also check whether the ROOT file is correctly opened by:
+>
+> ```
+>   TFile f("demo.root");
+>   if (f.IsZombie()) {
+>   cout << "Error opening file" << endl;
+>   exit(-1);
+>   } else {
+>   ...
+>   }
+> ```
+
+**Closing a ROOT file**
+
+- Use [TFile::Close()](https://root.cern/doc/master/classTFile.html#ae312f07848b4b30679409e5e785991a6) to close a ROOT file:
+
+   ```
+   MyFile->Close();
+   ```
+
+ROOT will automatically close any ROOT files still open when the session ends.
+
+- Use `delete` to delte the [TFile](https://root.cern/doc/master/classTFile.html) object.
+
+   ```
+   delete MyFile;
+   ```
+
+### Writing ROOT files
+
+To write objects to a ROOT file, it must be open.
+
+- Use [TFile::Write()](https://root.cern/doc/master/classTFile.html#adc21e8868cd0938691cf794b4b20096b) to write objects into the ROOT file.
+
+ _**Example**_
+ 
+ A copy of `MyObject` is written to the current directory of the current ROOT file with the named key `MyObject_1`:
+ 
+   ```
+   MyObject->Write("MyObject_1");
+   ```
+
+If `MyObject` does not inherit from [TClass](https://root.cern/doc/master/classTClass.html), you can use
+
+   ```
+   gDirectory->WriteObject(MyObject,"MyObject_1");
+   ```
+
+   
 _**Example**_
 
 This example creates 15 histograms, fills each histogram with 1000 entries from a Gaussian distribution, and writes them to a ROOT file.
@@ -45,7 +124,7 @@ This example creates 15 histograms, fills each histogram with 1000 entries from 
 
 // Open a ROOT file and write the array to the ROOT file.
 
-   TFile f("demo.root","recreate");
+   TFile f("demo.root","RECREATE");
    Hlist.Write();
 
 //Closing the ROOT file.
@@ -67,18 +146,18 @@ _**Example**_
 // Create/open a ROOT file. 
    TFile* f = TFile::Open("file.root", "NEW");
 
-//Creating a directory.
+// Creating a directory.
    f->mkdir("dir");
 	
-//Changing a directory.
+// Changing a directory.
    f->cd("dir");
 
 {% endhighlight %}
 
 
-### Opening and viewing a ROOT file
+### Viewing the contents of a ROOT file
 
-To view the contents of a ROOT file, you need to open it.
+With a [TBrowser](https://root.cern/doc/master/classTBrowser.html) you can brose all ROOT abjects.
 
 1. Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
 
@@ -102,20 +181,6 @@ To view the contents of a ROOT file, you need to open it.
    caption="ROOT Object Browser displaying the content of a ROOT file."
    %}
 
-
-> **Note**
->
-> You can check if the file is correctly opened by:
->
-> ```
->   TFile f("demo.root");
->   if (f.IsZombie()) {
->   cout << "Error opening file" << endl;
->   exit(-1);
->   } else {
->   ...
->   }
-> ```
 
 
 ### Retrieving objects from a ROOT file
@@ -169,6 +234,14 @@ for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
 > Next time this ROOT file is used, ROOT will automatically detect this abnormal termination and will recover the directory by scanning sequentially the list of keys in the ROOT file.
 > If the ROOT file has been opened in UPDATE mode, the recovered directory will be automatically written to the ROOT file. This automatic recovery procedure is possible because of redundant information written to the ROOT file.<br>
 > In case you write large [TTree](https://root.cern/doc/master/classTTree.html)s (see →[Trees]({{ '/manual/trees' | relative_url }})), you may have large buffers in memory. In case of a job crash, you may loose a lot of data. Therefore, it recommended to use the auto save method [TTree::AutoSave](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8).
+
+### Merging ROOT files
+
+- Use the `hadd` utility in `$ROOTSYS/bin/hadd`, to merge ROOT files:
+
+```
+hadd result.root file1.root file2.root ... filen.root
+```
 
 ### Viewing the physical layout of a ROOT file
 
