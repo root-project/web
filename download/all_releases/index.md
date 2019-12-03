@@ -19,6 +19,13 @@ sidebar:
 
 {% include releases_list version="5" %}
 
+### Version 4
+
+{% include releases_list version="4" %}
+
+### Version 3
+
+{% include releases_list version="3" %}
 
 Release notes can be found on the respective release page; release notes for old releases
 can be found [here]({{ '/download/all_releases/old_release_notes' | relative_url }}).
