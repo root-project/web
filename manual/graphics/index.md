@@ -102,6 +102,8 @@ graphical objects with their constructor and draws them with their `Draw()` meth
 
 ### Lines, arrows and polylines
 
+#### Lines
+
 - Use the [TLine](https://root.cern.ch/doc/master/classTLine.html) constructor to create a line.
 
 {% highlight C++ %}
@@ -117,6 +119,7 @@ root[] l = new TLine(0.2,0.2,0.8,0.3)
 root[] l->Draw()
 {% endhighlight %}
 
+#### Arrows
 
 - Use the [TArrow](https://root.cern.ch/doc/master/classTArrow.html) constructor to create an arrow.
 
@@ -160,7 +163,40 @@ _**Example**_
    ar5->Draw();
 {% endhighlight %}
 
+{% include figure_image
+   img="arrows.png"
+   caption="Examples of various arrow formats."
+%}
 
+#### Polylines
+
+A polyline is a set of joint segments. It is defined by a set of N points in a 2D-space.
+
+- Use the [TPolyLine](https://root.cern.ch/doc/master/classTPolyLine.html) constructor to create a polyline.
+
+{% highlight C++ %}
+TPolyLine(Int_t n,Double_t* x,Double_t* y,Option_t* option)
+{% endhighlight %}
+
+`n` is the number of points, and `x` and `y` are arrays of `n` elements with the coordinates of the points.
+
+_**Example**_
+
+{% highlight C++ %}
+   Double_t x[5] = {.3,.7,.6,.24,.2};
+   Double_t y[5] = {.6,.1,.9,.8,.7};
+   TPolyLine *pline = new TPolyLine(5,x,y);
+   pline->SetFillColor(42);
+   pline->SetLineColor(13);
+   pline->SetLineWidth(3);
+   pline->Draw("f");
+   pline->Draw();
+{% endhighlight %}
+
+{% include figure_image
+   img="polyline.png"
+   caption="Examples for a polyline."
+%}
 ## Axis
 
 Axis are automatically built in by various high level objects such as histograms or graphs. [TAxis](https://root.cern.ch/doc/master/classTAxis.html) manages the axis and is referenced by [TH1](https://root.cern.ch/doc/master/classTH1.html) and [TGraph](https://root.cern.ch/doc/master/classTGraph.html). To make a graphical representation of an histogram axis, [TAxis](https://root.cern.ch/doc/master/classTAxis.html) references the [TGaxis](https://root.cern.ch/doc/master/classTGaxis.html) class.
