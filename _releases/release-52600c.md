@@ -36,13 +36,6 @@ sidebar:
 | Windows Visual Studio 90 | [root_v5.26.00c.win32.vc90.tar.gz](https://root.cern.ch/download/root_v5.26.00c.win32.vc90.tar.gz) |  53M |
 
 
-
-
-## Example for setting up ROOT from CVMFS
-~~~
-. ('', '')
-~~~
-
 ## Git
 The entire ROOT source can be obtained from our public Git repository:
 

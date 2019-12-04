@@ -54,13 +54,6 @@ sidebar:
 | win32gcc | [root_v5.22.00.win32gcc.tar.gz](https://root.cern.ch/download/root_v5.22.00.win32gcc.tar.gz) |  49M |
 
 
-
-
-## Example for setting up ROOT from CVMFS
-~~~
-. ('', '')
-~~~
-
 ## Git
 The entire ROOT source can be obtained from our public Git repository:
 
