@@ -206,7 +206,7 @@ for time:
 The other characters are output as is. For example to have a format like dd/mm/yyyy, use:
 
 {% highlight C++ %}
-~~~ .cpp h->GetXaxis()->SetTimeFormat("%d\/%m\/%Y"); ~~~
+~~~ .cpp h->GetXaxis()->SetTimeFormat("%d/%m/%Y"); ~~~
 {% endhighlight %}
 
 #### Time offset
@@ -244,12 +244,56 @@ _**Example**_
 
 {% highlight C++ %}
 histo->GetXaxis()->SetTimeFormat("%d\/%m\/%y%F2000-02-28 13:00:01");
-{% endhighlight %}
+{% highlight C++ %}
     
 Notice that this date format is the same used by the `TDateString` function AsSQLString. If needed, this function can be used to translate a time in seconds into a character string which can be appended after `%F`. If the time format is not specified (before `%F`), the automatic one will be used.
 
 If a time axis has no specified time offset, the global time offset will be stored in the axis data structure.
 
+_**Example**_
+{% highlight C++ %}
+
+gStyle->SetTitleH(0.08);
+TDatime da(2003,02,28,12,00,00);
+gStyle->SetTimeOffset(da.Convert());
+
+auto ct = new TCanvas("ct","Time on axis",0,0,600,600);
+ct->Divide(1,3);
+
+auto ht1 = new TH1F("ht1","ht1",30000,0.,200000.);
+auto ht2 = new TH1F("ht2","ht2",30000,0.,200000.);
+auto ht3 = new TH1F("ht3","ht3",30000,0.,200000.);
+for (Int_t i=1;i<30000;i++) {
+   auto noise = gRandom->Gaus(0,120);
+   ht1->SetBinContent(i,noise);
+   ht2->SetBinContent(i,noise*noise);
+   ht3->SetBinContent(i,noise*noise*noise);
+}
+
+ct->cd(1);
+ht1->GetXaxis()->SetLabelSize(0.06);
+ht1->GetXaxis()->SetTimeDisplay(1);
+ht1->GetXaxis()->SetTimeFormat("%d/%m/%y%F2000-02-28 13:00:01");
+ht1->Draw();
+
+ct->cd(2);
+ht2->GetXaxis()->SetLabelSize(0.06);
+ht2->GetXaxis()->SetTimeDisplay(1);
+ht2->GetXaxis()->SetTimeFormat("%d/%m/%y");
+ht2->Draw();
+
+ct->cd(3);
+ht3->GetXaxis()->SetLabelSize(0.06);
+TDatime dh(2019,12,4,15,00,00);
+ht3->GetXaxis()->SetTimeDisplay(1);
+ht3->GetXaxis()->SetTimeOffset(dh.Convert());
+ht3->Draw();
+{% highlight C++ %}
+
+{% include figure_image
+   img="time-axis.png"
+   caption="Time axis."
+%}
 
 ## Canvas and pad
 
