@@ -1,7 +1,7 @@
 ---
 layout: releases
-version: 5.28/00f - 2011-08-08
-release_date:
+version: 5.28/00f
+release_date: 2011-08-08
 state:
 
 toc: true

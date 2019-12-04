@@ -1,6 +1,6 @@
 ---
 layout: releases
-version: 5.34/08 -
+version: 5.34/08
 release_date: 2013-05-31
 state:
 
