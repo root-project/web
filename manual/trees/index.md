@@ -412,13 +412,13 @@ With the [TTree::MakeClass()](https://root.cern/doc/master/classTTree.html#ac4ce
 With the [TTree::MakeSlelector()](https://root.cern/doc/master/classTTree.html#abe2c6509820373c42a88f343434cbcb4) class, you can generate a skeleton selector class designed to loop over a tree.
 
 
-## Chains
+## Using Chains
 
-A chain is a collection of ROOT files containing [TTree](https://root.cern/doc/master/classTTree.html) objects. A chain is created via the [TChain](https://root.cern/doc/master/classTChain.html) object.
+A chain is a list of ROOT files containing [TTree](https://root.cern/doc/master/classTTree.html) objects. A chain is created via the [TChain](https://root.cern/doc/master/classTChain.html) object. 
 
 _**Example**_
 
-There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each file contains a tree `T`. A chain is created with [TChain::Add()](https://root.cern/doc/master/classTChain.html#a9510cc7fc76ff28c30e6775bd9085d6e).
+There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each file contains a tree `T`. The chain is created with [TChain::Add()](https://root.cern/doc/master/classTChain.html#a9510cc7fc76ff28c30e6775bd9085d6e).
 
 {% highlight C++ %}
 TChain chain("T");
@@ -428,6 +428,47 @@ chain.Add("file3.root");
 {% endhighlight %}
 
 The name of the [TChain](https://root.cern/doc/master/classTChain.html) is the same as the name of the tree.
+
+The [TChain](https://root.cern/doc/master/classTChain.html) class is derived from the [TTree](https://root.cern/doc/master/classTTree.html) class. 
+
+_**Example**_
+
+To generate an histogram corresponding to the attribute `x` in tree `T` by processing sequentially the three files of this chain, you can write:
+
+```
+   chain.Draw("x");
+
+```
+
+The next example illustrates how to set the address of an object to be read and how to loop on all events of all files of the chain.
+
+{% highlight C++ %}
+TH1F* hnseg(nullptr);
+void processChain(){
+// Create the a chain out of three ROOT files.
+   TChain chain("T");
+   chain.Add("file1.root");
+   chain.Add("file2.root");
+   chain.Add("file3.root");
+
+// Create an histogram
+   hnseg = new TH1F("hnseg","Number of segments for selected tracks",4096,0,8192);
+
+// Specify the address where to read the event object.
+// In the program writing the ROOT files, the event was stored in a branch called "event".
+   Event *event = new Event();
+// The object must be created before setting the branch address.
+   chain.SetBranchAddress("event", &event);
+
+// Start main loop on all events.
+//In case you want to read only a few branches, use TChain::SetBranchStatus to activate/deactivate a branch.
+   Int_t nevent = chain.GetEntries();
+   for (Int_t i=0;i<nevent;i++) {
+      chain.GetEvent(i);              //read complete accepted event in memory
+      hnseg->Fill(event->GetNseg());  //Fill histogram with number of segments
+   }
+{% endhighlight %}
+
 
 ## Reading TTrees, TChains and TNtuples
 
