@@ -414,7 +414,7 @@ With the [TTree::MakeSlelector()](https://root.cern/doc/master/classTTree.html#a
 
 ## Using Chains
 
-A chain is a list of ROOT files containing [TTree](https://root.cern/doc/master/classTTree.html) objects. A chain is created via the [TChain](https://root.cern/doc/master/classTChain.html) object. 
+A chain is a list of ROOT files containing [TTree](https://root.cern/doc/master/classTTree.html) objects. A chain is created via the [TChain](https://root.cern/doc/master/classTChain.html) object.
 
 _**Example**_
 
@@ -429,16 +429,15 @@ chain.Add("file3.root");
 
 The name of the [TChain](https://root.cern/doc/master/classTChain.html) is the same as the name of the tree.
 
-The [TChain](https://root.cern/doc/master/classTChain.html) class is derived from the [TTree](https://root.cern/doc/master/classTTree.html) class. 
+The [TChain](https://root.cern/doc/master/classTChain.html) class is derived from the [TTree](https://root.cern/doc/master/classTTree.html) class.
 
 _**Example**_
 
 To generate an histogram corresponding to the attribute `x` in tree `T` by processing sequentially the three files of this chain, you can write:
 
-```
+{% highlight C++ %}
    chain.Draw("x");
-
-```
+{% endhighlight %}
 
 The next example illustrates how to set the address of an object to be read and how to loop on all events of all files of the chain.
 
@@ -501,4 +500,3 @@ A simple example using a `TTreeReader`.
    }
    myHist->Draw();
  {% endhighlight %}
-   
