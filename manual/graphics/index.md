@@ -100,9 +100,8 @@ You can create the following graphical objects:
 The following sections introduce some of the graphical objects that ROOT provides. Usually, one defines these
 graphical objects with their constructor and draws them with their `Draw()` method.
 
-### Lines, arrows and polylines
 
-#### Lines
+### Lines
 
 - Use the [TLine](https://root.cern.ch/doc/master/classTLine.html) constructor to create a line.
 
@@ -119,7 +118,7 @@ root[] l = new TLine(0.2,0.2,0.8,0.3)
 root[] l->Draw()
 {% endhighlight %}
 
-#### Arrows
+### Arrows
 
 - Use the [TArrow](https://root.cern.ch/doc/master/classTArrow.html) constructor to create an arrow.
 
@@ -168,7 +167,7 @@ _**Example**_
    caption="Examples of various arrow formats."
 %}
 
-#### Polylines
+### Polylines
 
 A polyline is a set of joint segments. It is defined by a set of N points in a 2D-space.
 
