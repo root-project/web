@@ -100,6 +100,67 @@ You can create the following graphical objects:
 The following sections introduce some of the graphical objects that ROOT provides. Usually, one defines these
 graphical objects with their constructor and draws them with their `Draw()` method.
 
+### Lines, arrows and polylines
+
+- Use the [TLine](https://root.cern.ch/doc/master/classTLine.html) constructor to create a line.
+
+{% highlight C++ %}
+TLine(Double_t x1,Double_t y1,Double_t x2,Double_t y2)
+{% endhighlight %}
+
+`x1`, `y1`, `x2`, `y2` are the coordinates of the first and the second point.
+
+_**Example**_
+
+{% highlight C++ %}
+root[] l = new TLine(0.2,0.2,0.8,0.3)
+root[] l->Draw()
+{% endhighlight %}
+
+
+- Use the [TArrow](https://root.cern.ch/doc/master/classTArrow.html) constructor to create an arrow.
+
+{% highlight C++ %}
+TArrow(Double_t x1, Double_t y1, Double_t x2, Double_t y2, Float_t arrowsize, Option_t *option)
+{% endhighlight %}
+
+The arrow is defined between points `x1,y1` and `x2,y2`. `option` defines the direction of the arrow like `>`, `<`, `<>`, `><`, etc.
+
+_**Example**_
+
+{% highlight C++ %}
+   TCanvas *c1 = new TCanvas("c1");
+   c1->Range(0,0,1,1);
+   
+   TArrow *ar1 = new TArrow(0.1,0.1,0.1,0.7);
+   ar1->Draw();
+
+   TArrow *ar2 = new TArrow(0.2,0.1,0.2,0.7,0.05,"|>");
+   ar2->SetAngle(40);
+   ar2->SetLineWidth(2);
+   ar2->Draw();
+   
+   TArrow *ar3 = new TArrow(0.3,0.1,0.3,0.7,0.05,"<|>");
+   ar3->SetAngle(40);
+   ar3->SetLineWidth(2);
+   ar3->Draw();
+   
+   TArrow *ar4 = new TArrow(0.46,0.7,0.82,0.42,0.07,"|>");
+   ar4->SetAngle(60);
+   ar4->SetLineWidth(2);
+   ar4->SetFillColor(2);
+   ar4->Draw();
+   
+   TArrow *ar5 = new TArrow(0.4,0.25,0.95,0.25,0.15,"<|>");
+   ar5->SetAngle(60);
+   ar5->SetLineWidth(4);
+   ar5->SetLineColor(4);
+   ar5->SetFillStyle(3008);
+   ar5->SetFillColor(2);
+   ar5->Draw();
+{% endhighlight %}
+
+
 ## Axis
 
 Axis are automatically built in by various high level objects such as histograms or graphs. [TAxis](https://root.cern.ch/doc/master/classTAxis.html) manages the axis and is referenced by [TH1](https://root.cern.ch/doc/master/classTH1.html) and [TGraph](https://root.cern.ch/doc/master/classTGraph.html). To make a graphical representation of an histogram axis, [TAxis](https://root.cern.ch/doc/master/classTAxis.html) references the [TGaxis](https://root.cern.ch/doc/master/classTGaxis.html) class.
@@ -158,11 +219,11 @@ axis->SetTitleSize(Float_t size = 0.02)
 
 `ndiv` = `N1` + 100*`N2` + 10000*`N3`<br>
    with:<br>
-   `N1` = Number of first division.
-   `N2` = Number of secondary divisions.
-   `N3` = Number of tertiary divisions.
-`optim` = `kTRUE (default)`: The divisions’ number will be optimized around the specified value.
-`optim` = `kFALSE`, or n < 0: The axis will be forced to use exactly n divisions.
+   `N1` = Number of first division.<br>
+   `N2` = Number of secondary divisions.<br>
+   `N3` = Number of tertiary divisions.<br>
+`optim` = `kTRUE (default)`: The divisions’ number will be optimized around the specified value.<br>
+`optim` = `kFALSE`, or n < 0: The axis will be forced to use exactly n divisions.<br>
 
 ### Setting time units for axis
 
@@ -187,21 +248,21 @@ For a time axis, you can set the
 The Time format defines the format of the labels along the time axis. It can be changed using the `TAxis::SetTimeFormat()` method. The time format used if from the C function `strftime()`. 
 It is a string containing the following formatting characters,
 
-for date:
-`%a`: abbreviated weekday name
-`%b`: abbreviated month name
-`%d`: day of the month (01-31)
-`%m`: month (01-12)
-´%y´: year without century
-´%Y´: year with century
+for date:<br>
+`%a`: abbreviated weekday name<br>
+`%b`: abbreviated month name<br>
+`%d`: day of the month (01-31)<br>
+`%m`: month (01-12)<br>
+´%y´: year without century<br>
+´%Y´: year with century<br>
 
 for time:
-`%H`: hour (24-hour clock)
-`%I`: hour (12-hour clock)
-`%p`: local equivalent of AM or PM
-`%M`: minute (00-59)
-`%S`: seconds (00-61)
-`%%`: %
+`%H`: hour (24-hour clock)<br>
+`%I`: hour (12-hour clock)<br>
+`%p`: local equivalent of AM or PM<br>
+`%M`: minute (00-59)<br>
+`%S`: seconds (00-61)<br>
+`%%`: %<br>
 
 The other characters are output as is. For example to have a format like dd/mm/yyyy, use:
 
@@ -212,9 +273,9 @@ The other characters are output as is. For example to have a format like dd/mm/y
 #### Time offset
 
 The time is a time in seconds in the UNIX standard UTC format (this is an universal time, not the local time), defining the starting date of an histogram axis. This date should be greater than 01/01/95 and is given in seconds.
-<br> There are the following ways to define the time offset:
+<br> There are the three ways to define the time offset:
 
-**Setting the global default time offset.**
+- **Setting the global default time offset.**
 
 _**Example**_
 
@@ -227,7 +288,7 @@ Notice the usage of `TDateTime` to translate an explicit date into the time in s
 
 If no time offset is defined for a particular axis, the default time offset will be used. 
 
-**Setting a time offset to a particular axis.**
+- **Setting a time offset to a particular axis.**
 
 _**Example**_
 
@@ -236,9 +297,9 @@ _**Example**_
    h->GetXaxis()->SetTimeOffset(dh.Convert()); 
 {% endhighlight %}
 
-**Using `SetTimeFormat` together with the time format**
+- **Using `SetTimeFormat` together with the time format**
 
-The time offset can be specified using the control character %F after the normal time format. %F is followed by the date in the format: yyyy-mm-dd hh:mm:ss.
+The time offset can be specified using the control character `%F` after the normal time format. `%F` is followed by the date in the format: yyyy-mm-dd hh:mm:ss.
 
 _**Example**_
 
@@ -302,7 +363,7 @@ A canvas ([TCanvas](https://root.cern/doc/master/classTCanvas.html)) is a graphi
 
 ### Accessing the active pad
 
-- Use the global variable `gPad`, to access the active pad.
+- Use the global variable `gPad` to access the active pad.
 
 For more information on global variables, → see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables' | relative_url }})
 
