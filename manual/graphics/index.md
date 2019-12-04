@@ -82,7 +82,7 @@ You can draw and edit basic primitives starting from an empty canvas or on top o
    caption="Toolbar providing more options."
 %}
 
-You can create the following graphics objects:
+You can create the following graphical objects:
 
 - Arc of circle
 - Arrow
@@ -93,6 +93,162 @@ You can create the following graphics objects:
 - PaveText or PavesText
 - PolyLine
 - Text string
+
+
+## Graphical objects
+
+The following sections introduce some of the graphical objects that ROOT provides. Usually, one defines these
+graphical objects with their constructor and draws them with their `Draw()` method.
+
+## Axis
+
+Axis are automatically built in by various high level objects such as histograms or graphs. [TAxis](https://root.cern.ch/doc/master/classTAxis.html) manages the axis and is referenced by [TH1](https://root.cern.ch/doc/master/classTH1.html) and [TGraph](https://root.cern.ch/doc/master/classTGraph.html). To make a graphical representation of an histogram axis, [TAxis](https://root.cern.ch/doc/master/classTAxis.html) references the [TGaxis](https://root.cern.ch/doc/master/classTGaxis.html) class.
+
+- Use the `GetXaxis()`, `GetYaxis()` or `GetZaxis()` methods to get the axis for an histogram or graph.
+
+_**Example**_
+
+{% highlight C++ %}
+TAxis *axis = histo->GetXaxis()
+{% endhighlight %}
+
+### Setting the axis title
+
+- Use the `SetTitle()` method to set the tile of an axis.
+
+_**Example**_
+
+{% highlight C++ %}
+axis->SetTitle("My axis title");
+{% endhighlight %}
+
+If the axis is embedded into a histogram or a graph, you first have to extract the axis object.
+
+_**Example**_
+
+{% highlight C++ %}
+histo->GetXaxis()->SetTitle("My axis title")
+{% endhighlight %}
+
+### Setting axis options and characteristics
+
+The available axis options are listed in the following example.
+
+_**Example**_
+
+{% highlight C++ %}
+TAxis *axis = histo->GetXaxis();
+axis->SetAxisColor(Color_t color = 1);
+axis->SetLabelColor(Color_t color = 1);
+axis->SetLabelFont(Style_t font = 62);
+axis->SetLabelOffset(Float_t offset = 0.005);
+axis->SetLabelSize(Float_t size = 0.04);
+axis->SetNdivisions(Int_t n = 510, Bool_t optim = kTRUE);
+axis->SetNoExponent(Bool_t noExponent = kTRUE);
+axis->SetTickLength(Float_t length = 0.03);
+axis->SetTitleOffset(Float_t offset = 1);
+axis->SetTitleSize(Float_t size = 0.02)
+{% endhighlight %}
+
+### Setting the number of divisions
+
+- Use the `TAxis::SetNdivisions(ndiv,optim)` method to set the number of divisions for an axis. 
+
+`ndiv` and `optim` are defined as follows:
+
+`ndiv` = `N1` + 100*`N2` + 10000*`N3`<br>
+   with:<br>
+   `N1` = Number of first division.
+   `N2` = Number of secondary divisions.
+   `N3` = Number of tertiary divisions.
+`optim` = `kTRUE (default)`: The divisions’ number will be optimized around the specified value.
+`optim` = `kFALSE`, or n < 0: The axis will be forced to use exactly n divisions.
+
+### Setting time units for axis
+
+- Use the `SetTimeDisplay()` method to set an axis as a time axis.
+
+_**Example**_
+
+For a histogram `histo`, the x-axis is set as time axis.
+
+{% highlight C++ %}
+histo->GetXaxis()->SetTimeDisplay(1);
+{% endhighlight %}
+
+For a time axis, you can set the
+
+- time format
+
+- time offset
+
+#### Time formats
+
+The Time format defines the format of the labels along the time axis. It can be changed using the `TAxis::SetTimeFormat()` method. The time format used if from the C function `strftime()`. 
+It is a string containing the following formatting characters,
+
+for date:
+`%a`: abbreviated weekday name
+`%b`: abbreviated month name
+`%d`: day of the month (01-31)
+`%m`: month (01-12)
+´%y´: year without century
+´%Y´: year with century
+
+for time:
+`%H`: hour (24-hour clock)
+`%I`: hour (12-hour clock)
+`%p`: local equivalent of AM or PM
+`%M`: minute (00-59)
+`%S`: seconds (00-61)
+`%%`: %
+
+The other characters are output as is. For example to have a format like dd/mm/yyyy, use:
+
+{% highlight C++ %}
+~~~ .cpp h->GetXaxis()->SetTimeFormat("%d\/%m\/%Y"); ~~~
+{% endhighlight %}
+
+#### Time offset
+
+The time is a time in seconds in the UNIX standard UTC format (this is an universal time, not the local time), defining the starting date of an histogram axis. This date should be greater than 01/01/95 and is given in seconds.
+<br> There are the following ways to define the time offset:
+
+**Setting the global default time offset.**
+
+_**Example**_
+
+{% highlight C++ %}
+   TDatime da(2003,02,28,12,00,00);
+   gStyle->SetTimeOffset(da.Convert());
+{% endhighlight %}
+
+Notice the usage of `TDateTime` to translate an explicit date into the time in seconds required by `SetTimeFormat`.
+
+If no time offset is defined for a particular axis, the default time offset will be used. 
+
+**Setting a time offset to a particular axis.**
+
+_**Example**_
+
+{% highlight C++ %}
+   TDatime dh(2001,09,23,15,00,00);
+   h->GetXaxis()->SetTimeOffset(dh.Convert()); 
+{% endhighlight %}
+
+**Using `SetTimeFormat` together with the time format**
+
+The time offset can be specified using the control character %F after the normal time format. %F is followed by the date in the format: yyyy-mm-dd hh:mm:ss.
+
+_**Example**_
+
+{% highlight C++ %}
+histo->GetXaxis()->SetTimeFormat("%d\/%m\/%y%F2000-02-28 13:00:01");
+{% endhighlight %}
+    
+Notice that this date format is the same used by the `TDateString` function AsSQLString. If needed, this function can be used to translate a time in seconds into a character string which can be appended after `%F`. If the time format is not specified (before `%F`), the automatic one will be used.
+
+If a time axis has no specified time offset, the global time offset will be stored in the axis data structure.
 
 
 ## Canvas and pad

@@ -416,7 +416,7 @@ The following pre-defined functions are available:
 - `gausn`: Normalized form of the gaussian function with 3 parameters `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)/(p2*sqrt(2PI))`
 
 
-### Fitting a 1-D histogram with user-defined functions
+### Fitting 1-D histograms with user-defined functions
 
 First you create a [TF1](https://root.cern/doc/master/classTF1.html) object, then use the name of the `TF1` fitting function in the [Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method.
 
