@@ -244,15 +244,16 @@ _**Example**_
 
 {% highlight C++ %}
 histo->GetXaxis()->SetTimeFormat("%d\/%m\/%y%F2000-02-28 13:00:01");
-{% highlight C++ %}
+{% endhighlight %}
+
     
 Notice that this date format is the same used by the `TDateString` function AsSQLString. If needed, this function can be used to translate a time in seconds into a character string which can be appended after `%F`. If the time format is not specified (before `%F`), the automatic one will be used.
 
 If a time axis has no specified time offset, the global time offset will be stored in the axis data structure.
 
 _**Example**_
-{% highlight C++ %}
 
+{% highlight C++ %}
 gStyle->SetTitleH(0.08);
 TDatime da(2003,02,28,12,00,00);
 gStyle->SetTimeOffset(da.Convert());
@@ -288,7 +289,7 @@ TDatime dh(2019,12,4,15,00,00);
 ht3->GetXaxis()->SetTimeDisplay(1);
 ht3->GetXaxis()->SetTimeOffset(dh.Convert());
 ht3->Draw();
-{% highlight C++ %}
+{% endhighlight %}
 
 {% include figure_image
    img="time-axis.png"
