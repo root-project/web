@@ -13,6 +13,10 @@ PyROOT is enabled by default in ROOT.
 For using PyROOT, a Python version > 2.2 is required.<br>
 The top level Python module `ROOT.py` is located in `$ROOTSYS/lib`. The `ROOT.py` module imports the `libPyROOT.so` ROOT extension module and performs an initialization similar to ROOT.
 
+> **Python**
+> 
+> The usage of Python with ROOT requires working knowledge of Python. For detailed information on Python, refer to Python language references such as [Python Language Reference](https://docs.python.org/3/reference/).
+
 
 > **Tutorials**
 >
@@ -40,7 +44,6 @@ fun1 = TF1( 'fun1', 'abs(sin(x)/x)', 0, 10 )
 c1.SetGrid()
 fun1.Draw()
 ```
-
 
 
 ## Running Python from the ROOT/Cling interpreter
