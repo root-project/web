@@ -13,9 +13,7 @@ toc_sticky: true
 
 A ROOT file, this is a [TFile](https://root.cern/doc/master/classTFile.html) object, is like a UNIX file directory. It can contain directories and objects organized in unlimited number of levels. A ROOT file is stored in machine independent format (ASCII, IEEE floating point, Big Endian byte ordering).
 
-### Creating and accessing a ROOT file
-
-**Creating a ROOT file**
+### Creating a ROOT file
 
 - Use the [TFile](https://root.cern/doc/master/classTFile.html) constructor for creating a ROOT file. A ROOT file uses the `.root` extension.
 
@@ -41,7 +39,7 @@ Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been cre
    gFile = MyFile;
 ```
 
-**Checking whether a ROOT file is open**
+### Checking whether a ROOT file is open
 
 - Use [TFile::IsOpen()](https://root.cern/doc/master/classTFile.html#a67dedbe56cfe4792cff78df129718c11) to check whether the ROOT file was successfully opened.
 
@@ -58,22 +56,6 @@ Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been cre
 >   ...
 >   }
 > ```
-
-**Closing a ROOT file**
-
-- Use [TFile::Close()](https://root.cern/doc/master/classTFile.html#ae312f07848b4b30679409e5e785991a6) to close a ROOT file:
-
-```
-   MyFile->Close();
-```
-
-ROOT will automatically close any ROOT files still open when the session ends.
-
-- Use `delete` to delte the [TFile](https://root.cern/doc/master/classTFile.html) object.
-
-```
-   delete MyFile;
-```
 
 ### Writing ROOT files
 
@@ -94,7 +76,6 @@ If `MyObject` does not inherit from [TClass](https://root.cern/doc/master/classT
 ```
    gDirectory->WriteObject(MyObject,"MyObject_1");
 ```
-
    
 _**Example**_
 
@@ -130,72 +111,23 @@ This example creates 15 histograms, fills each histogram with 1000 entries from 
 
 The ROOT file is saved by default in the current working directory.
 
-### File system operations
 
-A [TFile](https://root.cern/doc/master/classTFile.html), this is ROOT file, behaves like UNIX file system. Therefore, you can perform the usual operations for a file system.
+### Closing a ROOT file
 
-_**Example**_
-
-{% highlight C++ %}
-
-// Create/open a ROOT file. 
-   TFile* f = TFile::Open("file.root", "NEW");
-
-// Creating a directory.
-   f->mkdir("dir");
-	
-// Changing a directory.
-   f->cd("dir");
-
-{% endhighlight %}
-
-## ROOT command line tools
-
-With the ROOT command line tools you can quickly inspect and modify the contents of ROOT files.<br>
-There are ROOT command line tools for:
-- simple file operations,
-- automating common operations performed on ROOT classes.
-
-**File operations**
-
-- `rootls`: Lists the content of a ROOT file.
-- `rootcp`: Copies objects stored in a ROOT file to another ROOT file.
-- `rootrm`: Deletes objects contained in a ROOT file.
-- `rootmv`: Moves objects stored in a ROOT file to another ROOT file.
-- `rootmkdir`: Creates a "directory" inside a ROOT file.
-
-**Operations on ROOT classes**
-
-- `rootbrowse`: Opens a [TBrowser6(https://root.cern/doc/master/classTBrowser.html) directly on the content of a ROOT file.
-- `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another RROT file.
-- `rootprint`: Plot objects in an image ROOT file.
-
-Use the `-h` option to get more information on the available options for specific ROOT command line tool.
-
-### Viewing the contents of a ROOT file
-
-With a [TBrowser](https://root.cern/doc/master/classTBrowser.html) you can brose all ROOT abjects.
-
-1. Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
+- Use [TFile::Close()](https://root.cern/doc/master/classTFile.html#ae312f07848b4b30679409e5e785991a6) to close a ROOT file:
 
 ```
-   root[0] TFile f("demo.root")
-   root[1] TBrowser browser
+   MyFile->Close();
 ```
 
-The ROOT Object Browser is displayed.
+ROOT will automatically close any ROOT files still open when the session ends.
 
-   {% include figure_image
-   img="root_object_browser.png"
-   caption="ROOT Object Browser."
-   %}
+- Use `delete` to delte the [TFile](https://root.cern/doc/master/classTFile.html) object.
 
-2. Click the ROOT file and the content of the ROOT file.
+```
+   delete MyFile;
+```
 
-   {% include figure_image
-   img="root_object_browser_content.png"
-   caption="ROOT Object Browser displaying the content of a ROOT file."
-   %}
 
 ### Retrieving objects from a ROOT file
 
@@ -257,6 +189,75 @@ for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
 hadd result.root file1.root file2.root ... filen.root
 ```
 
+### File system operations
+
+A [TFile](https://root.cern/doc/master/classTFile.html), this is ROOT file, behaves like UNIX file system. Therefore, you can perform the usual operations for a file system.
+
+_**Example**_
+
+{% highlight C++ %}
+
+// Create/open a ROOT file. 
+   TFile* f = TFile::Open("file.root", "NEW");
+
+// Creating a directory.
+   f->mkdir("dir");
+	
+// Changing a directory.
+   f->cd("dir");
+
+{% endhighlight %}
+
+
+## ROOT command line tools
+
+With the ROOT command line tools you can quickly inspect and modify the contents of ROOT files.<br>
+There are ROOT command line tools for:
+- simple file operations,
+- automating common operations performed on ROOT classes.
+
+**File operations**
+
+- `rootls`: Lists the content of a ROOT file.
+- `rootcp`: Copies objects stored in a ROOT file to another ROOT file.
+- `rootrm`: Deletes objects contained in a ROOT file.
+- `rootmv`: Moves objects stored in a ROOT file to another ROOT file.
+- `rootmkdir`: Creates a "directory" inside a ROOT file.
+
+**Operations on ROOT classes**
+
+- `rootbrowse`: Opens a [TBrowser6(https://root.cern/doc/master/classTBrowser.html) directly on the content of a ROOT file.
+- `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another RROT file.
+- `rootprint`: Plot objects in an image ROOT file.
+
+Use the `-h` option to get more information on the available options for specific ROOT command line tool.
+
+
+## Viewing the contents of a ROOT file
+
+With a [TBrowser](https://root.cern/doc/master/classTBrowser.html) you can browse all ROOT abjects.
+
+1. Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
+
+```
+   root[0] TFile f("demo.root")
+   root[1] TBrowser browser
+```
+
+The ROOT Object Browser is displayed.
+
+   {% include figure_image
+   img="root_object_browser.png"
+   caption="ROOT Object Browser."
+   %}
+
+2. Click the ROOT file and the content of the ROOT file.
+
+   {% include figure_image
+   img="root_object_browser_content.png"
+   caption="ROOT Object Browser displaying the content of a ROOT file."
+   %}
+
 ### Viewing the physical layout of a ROOT file
 
 1.  Call the [TFile::Map()](https://root.cern/doc/master/classTFile.html#a5568f2f0a4a678ffaf769d0bf210610f) method to view the physical layout of a ROOT file.
@@ -289,6 +290,7 @@ root[] f.Map()
 20191010/122600    At:10383   N=53     FreeSegments
 20191010/122600    At:10436   N=1      END
 ```
+
 
 ## Logical contents of a ROOT file
 
