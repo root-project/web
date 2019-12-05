@@ -14,8 +14,13 @@ yet in release quality.
 
   - [Directory](https://root.cern/download/nightly/?C=N;O=D) with nightly binaries for various platforms
   - CVMFS:
-    - Source the relevant setup scripts, such as <br>
-      `source /cvmfs/sft.cern.ch/lcg/nightlies/dev3/<DAY>/lcgenv/*/<PLATFORM+Compiler>/lcgenv-env.sh` <br>
-      `source /cvmfs/sft.cern.ch/lcg/nightlies/dev3/<DAY>/ROOT/HEAD/<PLATFORM+Compiler>/bin/thisroot.sh`
-    - OR: Gentoo prefix (platform independent):<br>
-      Execute `/cvmfs/sft.cern.ch/lcg/contrib/gentoo/linux/x86_64/startprefix`
+<br>
+Source the relevant setup scripts, such as:
+```
+source /cvmfs/sft.cern.ch/lcg/nightlies/dev3/<DAY>/lcgenv/*/<PLATFORM+Compiler>/lcgenv-env.sh
+source /cvmfs/sft.cern.ch/lcg/nightlies/dev3/<DAY>/ROOT/HEAD/<PLATFORM+Compiler>/bin/thisroot.sh
+```
+Or, Gentoo prefix (platform independent), execute:
+```
+/cvmfs/sft.cern.ch/lcg/contrib/gentoo/linux/x86_64/startprefix`
+```
