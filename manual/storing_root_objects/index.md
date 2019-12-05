@@ -211,7 +211,7 @@ _**Example**_
 
 ## ROOT command line tools
 
-With the ROOT command line tools you can quickly inspect and modify the contents of ROOT files.<br>
+With the ROOT command line tools you can quickly inspect and modify the contents of ROOT files.
 There are ROOT command line tools for:
 - simple file operations,
 - automating common operations performed on ROOT classes.
@@ -230,7 +230,7 @@ There are ROOT command line tools for:
 - `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another RROT file.
 - `rootprint`: Plot objects in an image ROOT file.
 
-Use the `-h` option to get more information on the available options for specific ROOT command line tool.
+Use the `-h` option to get more information on the available options for the specific ROOT command line tool.
 
 
 ## Viewing the contents of a ROOT file
