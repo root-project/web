@@ -29,7 +29,7 @@ instabilities. However, by trying out the _development_ version you can help us 
 much more quickly to a stable version that can then become the new _production_ version.
 
 ## Nightlies
-You can [download nightly snapshots of ROOT](https://root.cern.ch/nightlies). That's useful
+You can [download nightly snapshots of ROOT]({{ '/download/nightlies' | relative_url }}). That's useful
 to check whether a bug fix actually fixes an issue you reported, or to see the newest
 feature you heard about. It helps us _tremendously_ to get feedback from you on nightlies:
 please try them out and report back to us!
@@ -50,15 +50,9 @@ The following recent versions are available for download:
 
 ### Latest ROOT Releases
 
-
-  - **PRO** [Release 6.18/04 - 2019-09-11]({{ '/download/all_releases/release-61804' | relative_url }})
-  - **OLD** [Release 6.16/00 - 2019-01-23]({{ '/download/all_releases/release-61600' | relative_url }})
-
+{% include releases_list state="pro" label="PRO" %}
+{% include releases_list state="old" label="OLD" %}
 
 ### Version 6
 
-  -  [Release 6.18/04 - 2019-09-11]({{ '/download/all_releases/release-61804' | relative_url }})
-  -  [Release 6.18/02 - 2019-08-23]({{ '/download/all_releases/release-61802' | relative_url }})
-  -  [Release 6.18/00 - 2019-06-25]({{ '/download/all_releases/release-61800' | relative_url }})
-  -  [Release 6.16/00 - 2019-01-23]({{ '/download/all_releases/release-61600' | relative_url }})
-  -  [Release 6.14/06 - 2018-11-05]({{ '/download/all_releases/release-61406' | relative_url }})
+{% include releases_list number=4 %}
