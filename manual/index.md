@@ -29,7 +29,7 @@ written in C++ but integrated with other languages such as Python and R.
 
   - [Object ownership]({{ '/manual/object_ownership' | relative_url }})
 
-  - [Storing ROOT objects]({{ '/manual/storing_root_objects' | relative_url }})
+  - [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})
 
 
 ## Functional parts
