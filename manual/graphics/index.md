@@ -57,7 +57,7 @@ f1.Draw()
 The function is displayed in a canvas.
 
 {% include figure_jsroot
-   file="tf1.root" object="func1" width="500px" height="350px"
+   file="graphics.root" object="func1" width="500px" height="350px"
    caption="Canvas (point the bottom left light blue square or right-click
    on the image to interact with the object)."
 %}
@@ -133,7 +133,7 @@ _**Example**_
 {% highlight C++ %}
    TCanvas *c1 = new TCanvas("c1");
    c1->Range(0,0,1,1);
-   
+
    TArrow *ar1 = new TArrow(0.1,0.1,0.1,0.7);
    ar1->Draw();
 
@@ -141,18 +141,18 @@ _**Example**_
    ar2->SetAngle(40);
    ar2->SetLineWidth(2);
    ar2->Draw();
-   
+
    TArrow *ar3 = new TArrow(0.3,0.1,0.3,0.7,0.05,"<|>");
    ar3->SetAngle(40);
    ar3->SetLineWidth(2);
    ar3->Draw();
-   
+
    TArrow *ar4 = new TArrow(0.46,0.7,0.82,0.42,0.07,"|>");
    ar4->SetAngle(60);
    ar4->SetLineWidth(2);
    ar4->SetFillColor(2);
    ar4->Draw();
-   
+
    TArrow *ar5 = new TArrow(0.4,0.25,0.95,0.25,0.15,"<|>");
    ar5->SetAngle(60);
    ar5->SetLineWidth(4);
@@ -162,8 +162,8 @@ _**Example**_
    ar5->Draw();
 {% endhighlight %}
 
-{% include figure_image
-   img="arrows.png"
+{% include figure_jsroot
+   file="graphics.root" object="arrows" width="500px" height="350px"
    caption="Examples of various arrow formats."
 %}
 
@@ -248,7 +248,7 @@ axis->SetTitleSize(Float_t size = 0.02)
 
 ### Setting the number of divisions
 
-- Use the `TAxis::SetNdivisions(ndiv,optim)` method to set the number of divisions for an axis. 
+- Use the `TAxis::SetNdivisions(ndiv,optim)` method to set the number of divisions for an axis.
 
 `ndiv` and `optim` are defined as follows:
 
@@ -280,7 +280,7 @@ For a time axis, you can set the
 
 #### Time formats
 
-The Time format defines the format of the labels along the time axis. It can be changed using the `TAxis::SetTimeFormat()` method. The time format used if from the C function `strftime()`. 
+The Time format defines the format of the labels along the time axis. It can be changed using the `TAxis::SetTimeFormat()` method. The time format used if from the C function `strftime()`.
 It is a string containing the following formatting characters,
 
 for date:<br>
@@ -321,7 +321,7 @@ _**Example**_
 
 Notice the usage of `TDateTime` to translate an explicit date into the time in seconds required by `SetTimeFormat`.
 
-If no time offset is defined for a particular axis, the default time offset will be used. 
+If no time offset is defined for a particular axis, the default time offset will be used.
 
 - **Setting a time offset to a particular axis.**
 
@@ -329,7 +329,7 @@ _**Example**_
 
 {% highlight C++ %}
    TDatime dh(2001,09,23,15,00,00);
-   h->GetXaxis()->SetTimeOffset(dh.Convert()); 
+   h->GetXaxis()->SetTimeOffset(dh.Convert());
 {% endhighlight %}
 
 - **Using `SetTimeFormat` together with the time format**
@@ -342,7 +342,7 @@ _**Example**_
 histo->GetXaxis()->SetTimeFormat("%d\/%m\/%y%F2000-02-28 13:00:01");
 {% endhighlight %}
 
-    
+
 Notice that this date format is the same used by the `TDateString` function AsSQLString. If needed, this function can be used to translate a time in seconds into a character string which can be appended after `%F`. If the time format is not specified (before `%F`), the automatic one will be used.
 
 If a time axis has no specified time offset, the global time offset will be stored in the axis data structure.
@@ -387,8 +387,8 @@ ht3->GetXaxis()->SetTimeOffset(dh.Convert());
 ht3->Draw();
 {% endhighlight %}
 
-{% include figure_image
-   img="time-axis.png"
+{% include figure_jsroot
+   file="graphics.root" object="ct" width="600px" height="600px"
    caption="Time axis."
 %}
 
