@@ -29,8 +29,6 @@ ROOT provides the following classes for graphics, among others:
 
 ### Working with graphics
 
-....
-
 #### Drawing objects
 
 The [TObject](https://root.cern/doc/master/classTObject.html) class has the virtual method `Draw()` by which objects can be "drawn".
@@ -194,7 +192,7 @@ _**Example**_
 
 {% include figure_image
    img="polyline.png"
-   caption="Examples for a polyline."
+   caption="Example for a polyline."
 %}
 ## Axis
 
