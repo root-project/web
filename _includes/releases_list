@@ -2,16 +2,21 @@
 {% assign version = {{include.version}}  %}
 {% assign state   = {{include.state}}  %}
 {% assign label   = {{include.label}}  %}
+{% assign single  = {{include.single_column}}  %}
 
 {% assign sorted = site.releases | reverse %}
 
 <font face = "Monaco" size = "2">
 
+{% if single %}
+<ul style="list-style-type:none">
+{% else %}
 <ul class="multi-column" style="list-style-type:none">
+{% endif %}
 
 {% if number %}
 {% for release in sorted limit:{{number}} %}
-<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
+<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date | date_to_string}} </a></li>
 {% endfor %}
 {% endif %}
 
@@ -20,7 +25,7 @@
 {% assign v = release.version | slice: 0 %}
 {% if release.state != "pro" and release.state != "old" %}
 {% if  v == {{version}} %}
-<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
+<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date | date_to_string}} </a></li>
 {% endif %}
 {% endif %}
 {% endfor %}
@@ -29,7 +34,7 @@
 {% if state == "pro" %}
 {% for release in sorted %}
 {% if release.state == "pro" %}
-<li> <b style="background-color: #264d85; color: white;">{{ label }}</b> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
+<li> <b style="background-color: #264d85; color: white;">{{ label }}</b> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date | date_to_string}} </a></li>
 {% endif %}
 {% endfor %}
 {% endif %}
@@ -37,7 +42,7 @@
 {% if state == "old" %}
 {% for release in sorted %}
 {% if release.state == "old" %}
-<li> <b style="background-color: #264d85; color: white;">{{ label }}</b> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date}} </a></li>
+<li> <b style="background-color: #264d85; color: white;">{{ label }}</b> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date | date_to_string}} </a></li>
 {% endif %}
 {% endfor %}
 {% endif %}
