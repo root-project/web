@@ -2,7 +2,7 @@
 title: Coding Conventions
 layout: single
 sidebar:
-  nav: "resources"
+  nav: "contribute"
 toc: true
 toc_sticky: true
 ---
@@ -12,7 +12,7 @@ toc_sticky: true
 For naming conventions we follow the [Taligent](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_63.html#HEADING77) rules. They have written a very large body of C++ and their rules seem well thought out. No need to invent something new. The only addition/change we made is to append an `_t` to `typedef`s and simple `struct`s, e.g.:
 
 ```
-typedef int Int_t ; struct Simple_t { ..... } ; 
+typedef int Int_t ; struct Simple_t { ..... } ;
 ```
 
 Addherence to the rules is mandatory.  After a while one really gets used to the fact that all class fields start with an `f` followed by a capitalized word, `fEnergy`, or that `TStreamerInfo` is a class. If the convention is sporadically violated debugging becomes a nightmare. The usage of a standard begin letter or token for the different types also makes it easy to parse and search the code using simple tools.
@@ -120,7 +120,7 @@ if (x == y) {
 } else if (x > y) {
    ...
 } else {
-   ... 
+   ...
 }
 ```
 
@@ -239,40 +239,40 @@ UseTab:          Never
 If you don't have access to ClangFormat, [astyle](http://astyle.sourceforge.net/) can be useful. Starting from a code like this:
 
 ```
-int aap ( int inp ) { 
-   if ( inp > 0 ) { 
-      return 0 ; 
-      int a = 1 ; 
-      if ( inp == 0 && a == 1 ) { 
-         printf ( >"this is a very long line that is not yet ending" , a, inp, a, inp, a , inp ) ; 
-        a + = inp ; return a ; 
-     } 
-   } else { 
-      return 1 ; 
-   }   
-   if ( inp == 0 ) 
-      return - 1 ; 
-      return 1 ; 
+int aap ( int inp ) {
+   if ( inp > 0 ) {
+      return 0 ;
+      int a = 1 ;
+      if ( inp == 0 && a == 1 ) {
+         printf ( >"this is a very long line that is not yet ending" , a, inp, a, inp, a , inp ) ;
+        a + = inp ; return a ;
+     }
+   } else {
+      return 1 ;
+   }
+   if ( inp == 0 )
+      return - 1 ;
+      return 1 ;
    }
 ```
 
 You will find back like this:
 ```
 int aap (int inp) {
-   if (inp > 0) { 
-      return 0 ; 
-      int a = 1 ; 
-      if (inp == 0 && a == 1) { 
-         printf ("this is a very long line that is not yet ending" , a, inp, a, inp, a, inp ) ; 
-         a + = inp ; return a ; 
-      } 
-   } 
-   else { 
-      return 1 ; 
-   }   
-   if (inp == 0) 
-      return - 1 ; 
-   return 1 ; 
+   if (inp > 0) {
+      return 0 ;
+      int a = 1 ;
+      if (inp == 0 && a == 1) {
+         printf ("this is a very long line that is not yet ending" , a, inp, a, inp, a, inp ) ;
+         a + = inp ; return a ;
+      }
+   }
+   else {
+      return 1 ;
+   }
+   if (inp == 0)
+      return - 1 ;
+   return 1 ;
 }
 ```
 
