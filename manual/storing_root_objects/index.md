@@ -8,7 +8,7 @@ toc_sticky: true
 ---
 
  ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the ROOT file back, the object is reconstructed in memory.
- 
+
 ## Working with ROOT files
 
 A ROOT file, this is a [TFile](https://root.cern/doc/master/classTFile.html) object, is like a UNIX file directory. It can contain directories and objects organized in unlimited number of levels. A ROOT file is stored in machine independent format (ASCII, IEEE floating point, Big Endian byte ordering).
@@ -64,9 +64,9 @@ To write objects to a ROOT file, it must be open.
 - Use [TFile::Write()](https://root.cern/doc/master/classTFile.html#adc21e8868cd0938691cf794b4b20096b) to write objects into the ROOT file.
 
  _**Example**_
- 
+
  A copy of `MyObject` is written to the current directory of the current ROOT file with the named key `MyObject_1`:
- 
+
 ```
    MyObject->Write("MyObject_1");
 ```
@@ -76,7 +76,7 @@ If `MyObject` does not inherit from [TClass](https://root.cern/doc/master/classT
 ```
    gDirectory->WriteObject(MyObject,"MyObject_1");
 ```
-   
+
 _**Example**_
 
 This example creates 15 histograms, fills each histogram with 1000 entries from a Gaussian distribution, and writes them to a ROOT file.
@@ -155,15 +155,15 @@ In detail, the following happens when executing `GetObject()`:
 - The buffer is read from the ROOT file.
 
 - An empty object is created by calling the default constructor for the class referenced in [TKey](https://root.cern/doc/master/classTKey.html).
-    
+
 - The [Streamer()](https://root.cern/doc/master/classTClass.html#ac1c95f1787550ebc5367590aedacbd67) method is called for this new object.
 
 In case there is an object with multiple cycles, you can pick a particular cycle with a name like `hpx;` (for example `hpx;2`).
 
- You can also directly access the keys, for example when the names of the objects contained in the ROOT file are not known or when a long series of objects needs to be read sequentially. 
- 
+ You can also directly access the keys, for example when the names of the objects contained in the ROOT file are not known or when a long series of objects needs to be read sequentially.
+
  _**Example**_
- 
+
 This example illustrates how to loop over all keys of a ROOT file.
 
 {% highlight C++ %}
@@ -175,7 +175,7 @@ for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
 
 
 > **Crash while reading and writing the ROOT file**
-> 
+>
 > If ROOT is not properly terminated, the file directory may not be written at the end of the ROOT file.
 > Next time this ROOT file is used, ROOT will automatically detect this abnormal termination and will recover the directory by scanning sequentially the list of keys in the ROOT file.
 > If the ROOT file has been opened in UPDATE mode, the recovered directory will be automatically written to the ROOT file. This automatic recovery procedure is possible because of redundant information written to the ROOT file.<br>
@@ -197,12 +197,12 @@ _**Example**_
 
 {% highlight C++ %}
 
-// Create/open a ROOT file. 
+// Create/open a ROOT file.
    TFile* f = TFile::Open("file.root", "NEW");
 
 // Creating a directory.
    f->mkdir("dir");
-	
+
 // Changing a directory.
    f->cd("dir");
 
@@ -226,8 +226,8 @@ There are ROOT command line tools for:
 
 **Operations on ROOT classes**
 
-- `rootbrowse`: Opens a [TBrowser6(https://root.cern/doc/master/classTBrowser.html) directly on the content of a ROOT file.
-- `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another RROT file.
+- `rootbrowse`: Opens a [TBrowser](https://root.cern/doc/master/classTBrowser.html) directly on the content of a ROOT file.
+- `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another ROOT file.
 - `rootprint`: Plot objects in an image ROOT file.
 
 Use the `-h` option to get more information on the available options for the specific ROOT command line tool.
