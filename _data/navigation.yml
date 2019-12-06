@@ -14,6 +14,8 @@ main:
     url: resources
   - title: "News"
     url: news
+  - title: "Contribute"
+    url: contribute
 
 # side bar menus
 
@@ -53,7 +55,7 @@ manual:
   - title: Further information
     children:
       - title: "ROOT Reference Guide"
-        url: https://root.cern/doc/master/
+        url: reference
       - title: "ROOT Tutorials"
         url: https://root.cern/doc/master/group__Tutorials.html
       - title: "ROOT Forum"
@@ -78,8 +80,6 @@ resources:
    - title: Code Owners
      url: resources/code_owners
    - title: Release Checklist
-     url: resources/release_checklist
-   - title: Coding Conventions
      url: resources/coding_conventions
    - title: Shifter's Instructions
      url: resources/shifters_instructions
@@ -146,6 +146,14 @@ news:
      url: news/workshops
    - title: Publications
      url: news/publications
+
+contribute:
+   - title: Contribute
+     url: contribute
+   - title: Contributors
+     url: contribute/contributors
+   - title: Coding Conventions
+     url: contribute/coding_conventions
 
 about:
    - title: About ROOT
