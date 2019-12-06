@@ -297,4 +297,5 @@ defaults:
 collections:
   releases:
     output: true
-
+  ideas:
+    output: true
