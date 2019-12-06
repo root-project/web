@@ -8,8 +8,8 @@ sidebar:
 ---
 
 
-{% include releases_list state="pro" label="PRO" %}
-{% include releases_list state="old" label="OLD" %}
+{% include releases_list state="pro" label="PRO" single_column="yes" %}
+{% include releases_list state="old" label="OLD" single_column="yes" %}
 
 ### Version 6
 
