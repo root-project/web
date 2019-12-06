@@ -207,29 +207,27 @@ _**Example**_
 {% highlight C++ %}
    TCanvas *c42 = new TCanvas("c42");
    c42->Range(0,0,1,1);
-   
+
    TEllipse *el1 = new TEllipse(0.25,0.25,.1,.2);
    el1->Draw();
-   
+
    TEllipse *el2 = new TEllipse(0.25,0.6,.2,.1);
    el2->SetFillColor(13);
    el2->SetFillStyle(3008);
    el2->Draw();
-   
+
    TEllipse *el3 = new TEllipse(0.75,0.6,.2,.1,45,315);
    el3->SetFillColor(26);
    el3->SetFillStyle(1001);
    el3->SetLineColor(4);
    el3->Draw();
-   
+
    TEllipse *el4 = new TEllipse(0.75,0.25,.2,.15,45,315,62);
    el4->SetFillColor(56);
    el4->SetFillStyle(1001);
    el4->SetLineColor(4);
    el4->SetLineWidth(6);
    el4->Draw();
-   
-   return c42;
 {% endhighlight %}
 
 {% include figure_image
@@ -237,25 +235,26 @@ _**Example**_
    caption="Examples for a ellipses."
 %}
 
+
 ### Rectangles
 
 - Use the [TBox](https://root.cern/doc/master/classTBox.html) constructor to create a rectangle/box.
 
-A [TWbox6(https://root.cern/doc/master/classTWbox.html) is a rectangle ([TBox](https://root.cern/doc/master/classTBox.html) ) with a border size and a border mode.<br>
+A [TWbox](https://root.cern/doc/master/classTWbox.html) is a rectangle ([TBox](https://root.cern/doc/master/classTBox.html) ) with a border size and a border mode.<br>
 The bottom left coordinates `x1`, `y1` and the top right coordinates `x2`, `y2` define a box.
 
 _**Example**_
 
 {% highlight C++ %}
-// A Tbox:
+// A TBox:
    tb = new TBox(0.2,0.2,0.8,0.3)
    tb->SetFillColor(5)
    tb->Draw()
-   
+
 // A TWbox:
    TWbox *twb = new TWbox(.1,.1,.9,.9,kRed+2,5,1);
    twb->Draw();
-   
+
 {% endhighlight %}
 
 ## Axis
