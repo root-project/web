@@ -297,7 +297,7 @@ Both classes directly inherit from [TPolyLine](https://root.cern.ch/doc/master/c
 
 _**Example**_
 
-Refer to the $ROOTSYS/tutorials/graphics/feynman.C tutorial for creating a Feynman diagram.
+Refer to the `$ROOTSYS/tutorials/graphics/feynman.C` tutorial for creating a Feynman diagram.
 
 {% include figure_image
    img="feynman.png"
@@ -319,7 +319,7 @@ There are the following classes for changing the attributes of graphical objects
 ### Creating and modifying a style
 
 When objects are created, their default attributes (taken from [TAttFill](https://root.cern/doc/master/classTAttFill.html), [TAttLine](https://root.cern/doc/master/classTAttLine.html), [TAttMarker](https://root.cern/doc/master/classTAttMarker.html), [TAttText](https://root.cern/doc/master/classTAttText.html))
-are taken from the current style. The current style is an object of the [TStyle](https://root.cern/doc/master/classTStyle.html) class and can be referenced via the global variable `gStyle` (→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }}).
+are taken from the current style. The current style is an object of the [TStyle](https://root.cern/doc/master/classTStyle.html) class and can be referenced via the global variable `gStyle` (→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})).
 
 ROOT provides two styles:
 
@@ -380,7 +380,7 @@ auto style = gROOT->GetStyle(style_name);
 {% highlight C++ %}
 TStyle *st1 = new TStyle("st1","my style");
    st1->Set....
-   st1->cd();  This becomes now the current style-
+   st1->cd();  This becomes now the current style.
 {% endhighlight %}
 
 #### Getting the attributes of the current style
