@@ -52,7 +52,7 @@ It is mainly written in C++ but integrated with other languages such as Python a
       <td style="border:0px" width="50%" rowspan="2">
          <h1> Under the Spotlight </h1>
          {% for post in site.posts limit:3 %}
-            <font face = "Monaco" size = "2">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b>
+            <font face = "Monaco">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b>
             <p>{{ post.excerpt }}</p>
          {% endfor %}
       </td>
@@ -60,7 +60,7 @@ It is mainly written in C++ but integrated with other languages such as Python a
          <h1> Other News </h1>
          {% for post in site.posts %}
             {% if forloop.index >= 4 and forloop.index <=8 %}
-               <font face = "Monaco" size = "2">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b><br>
+               <font face = "Monaco">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b><br>
             {% endif %}
          {% endfor %}
       </td>
