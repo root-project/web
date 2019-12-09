@@ -325,7 +325,7 @@ Now a unit matrix in sparse format is created.
 	unit2.SetMatrixArray(data.GetArray());
 {% endhighlight %}
 
-### Inverting matrices
+### Inverting a matrix
 
 - Use the `Invert(Double_t &det=0)` function to invert a matrix:
 
