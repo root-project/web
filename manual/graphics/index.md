@@ -701,6 +701,6 @@ For building more sub-pads, repeat this procedure as many times as necessary.
 
 ### Copying a canvas
 
-- Use the [TCanvas::DrawClonePad](TCanvas::DrawClonePad) method to make a copy of the canvas.
+- Use the [TCanvas::DrawClonePad](https://root.cern/doc/master/classTCanvas.html#afcb8727555c9c2be024eb307fd3d295a) method to make a copy of the canvas.
 
 You can also use the [TObject:DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9) method, to draw a clone of this object in the current selected pad.
