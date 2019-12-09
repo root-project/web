@@ -11,9 +11,9 @@ toc_sticky: true
 
 For naming conventions we follow the [Taligent](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_63.html#HEADING77) rules. They have written a very large body of C++ and their rules seem well thought out. No need to invent something new. The only addition/change we made is to append an `_t` to `typedef`s and simple `struct`s, e.g.:
 
-```
+{% highlight C++ %}
 typedef int Int_t ; struct Simple_t { ..... } ;
-```
+{% endhighlight %}
 
 Addherence to the rules is mandatory.  After a while one really gets used to the fact that all class fields start with an `f` followed by a capitalized word, `fEnergy`, or that `TStreamerInfo` is a class. If the convention is sporadically violated debugging becomes a nightmare. The usage of a standard begin letter or token for the different types also makes it easy to parse and search the code using simple tools.
 
@@ -45,9 +45,9 @@ ROOT chose Doxygen for its code documentation: please refer to [this how-to](htt
 
 Each source file, header or implementation file starts with a module identification line and an author line, e.g.:
 
-```
+{% highlight C++ %}
 / @(#)root/net / Author: Fons Rademakers 18/12/96
-```
+{% endhighlight %}
 
 Where in the module identification line the file package is described by `root/package`, in this case the `net` package.
 
@@ -80,9 +80,9 @@ Each implementation file has the following layout:
 
 For a typical example see [TObject.cxx](http://root.cern.ch/root/htmldoc/src/TObject.cxx.html).
 Note the mandatory method separator line:
-```
+{% highlight C++ %}
 ////////////////////////////////////////
-```
+{% endhighlight %}
 exactly 80 characters long.
 
 ## Preferred Coding Style
@@ -93,28 +93,28 @@ To be able to keep as much code as possible in the visible part of the editor of
 
 ### Placing Braces and Spaces
 The other issue that always comes up in C/C++ styling is the placement of braces and spaces. Unlike the indent size, there are few technical reasons to choose one placement strategy over the other, but the preferred way, as shown to us by the prophets Kernighan and Ritchie, is to put the opening brace last on the line, and put the closing brace first, thus:
-```
+{% highlight C++ %}
 if (x is true) {
    we do y
 }
-```
+{% endhighlight %}
 
 However, there is one special case, namely functions: they have the opening brace at the beginning of the next line, thus:
-```
+{% highlight C++ %}
 int function (int x)
 {
    body of function
 }
-```
+{% endhighlight %}
 Functions are special (you can't nest them in C/C++).
 Note that the closing brace is empty on a line of its own, **except** in the cases where it is followed by a continuation of the same statement, ie a `while` in a `do`-statement or an `else` in an `if`-statement, like this:
-```
+{% highlight C++ %}
 do {
    body of do - loop
 } while ( condition ) ;
-```
+{% endhighlight %}
 and
-```
+{% highlight C++ %}
 if (x == y) {
    ...
 } else if (x > y) {
@@ -122,20 +122,20 @@ if (x == y) {
 } else {
    ...
 }
-```
+{% endhighlight %}
 
 Note that this brace-placement also minimizes the number of empty (or almost empty) lines, without any loss of readability. Thus, as the supply of new-lines on your screen is not a renewable resource (think 25-line terminal screens here), you have more empty lines to put comments on.
 
 Notice also in the above examples the usage of spaces around keywords, operators and parenthesis/braces. Avoid the following free styles:
-```
+{% highlight C++ %}
 if (x == y) {
-```
+{% endhighlight %}
 
 or any derivative thereof.
 
 ## ClangFormat
 ClangFormat is a Clang tool which allows you to format your code. This is the configuration file for it:
-```
+{% highlight C++ %}
 ---
 Language:        Cpp
 # BasedOnStyle:  LLVM
@@ -233,12 +233,12 @@ Standard:        Cpp11
 TabWidth:        3
 UseTab:          Never
 ...
-```
+{% endhighlight %}
 
 ## Astyle
 If you don't have access to ClangFormat, [astyle](http://astyle.sourceforge.net/) can be useful. Starting from a code like this:
 
-```
+{% highlight C++ %}
 int aap ( int inp ) {
    if ( inp > 0 ) {
       return 0 ;
@@ -254,10 +254,10 @@ int aap ( int inp ) {
       return - 1 ;
       return 1 ;
    }
-```
+{% endhighlight %}
 
 You will find back like this:
-```
+{% highlight C++ %}
 int aap (int inp) {
    if (inp > 0) {
       return 0 ;
@@ -274,11 +274,11 @@ int aap (int inp) {
       return - 1 ;
    return 1 ;
 }
-```
+{% endhighlight %}
 
  Get at least version 2.0 and use the following `~/.astylerc`:
 
-```
+{% highlight C++ %}
 # ROOT code formatting style
 # Note that the brackets=linux option is not available starting from astyle 2.04
 #brackets=linux
@@ -295,7 +295,7 @@ convert-tabs
 pad-header
 pad-oper
 unpad-paren
-```
+{% endhighlight %}
 
 ## Where to go from here
 For the rest read the [Taligent Guide](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_1.html) and use common sense.
