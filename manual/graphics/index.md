@@ -257,6 +257,65 @@ _**Example**_
 
 {% endhighlight %}
 
+### Markers
+
+- Use the [TMarker](https://root.cern/doc/master/classTMarker.html) constructor to create a marker.
+
+```
+   TMarker(Double_t x,Double_t y,Int_t marker)
+```
+
+The parameters `x` and `y` are the marker coordinates and `marker` is the marker type.
+
+
+- Use the [TPolyMarker](https://root.cern/doc/master/classTPolyMarker.html) to create an array on N points in a 2D space.
+
+At each point `x[i]`, `y[i]` a marker is drawn.
+
+- Use the [TAttMarker](https://root.cern/doc/master/classTAttMarker.html) class to change the attributes color, style and size of a marker.
+
+_**Example**_
+
+- Use the `TAttMarker::SetMarkerSize(size)` method to set the `size` of a marker.
+
+
+### Curly lines and arcs 
+
+Curly lines and the curly arcs are special kinds of lines that are used to draw Feynman diagrams. 
+
+- Use the [TCurlyLine](https://root.cern/doc/master/classTCurlyLine.html) and the [TCurlyArc](https://root.cern/doc/master/classTCurlyArc.html) constructors to create curly lines and arcs for Feynman diagrams.
+
+{% highlight C++ %}
+
+TCurlyLine(Double_t x1, Double_t y1, Double_t x2, Double_t y2, Double_t wavelength, Double_t amplitude)
+
+TCurlyArc(Double_t x1, Double_t y1, Double_t rad, Double_t phimin, Double_t phimax, Double_t wavelength, Double_t amplitude)
+
+{% endhighlight %}
+
+Both classes directly inherit from [TPolyLine](https://root.cern.ch/doc/master/classTPolyLine.html).
+
+_**Example**_
+
+Refer to the $ROOTSYS/tutorials/graphics/feynman.C tutorial for creating a Feynman diagram.
+
+{% include figure_image
+   img="feynman.png"
+   caption="Feynman diagram."
+%}
+
+## Graphical objects attributes
+
+There are the following classes for changing the attributes of graphical objects:
+
+- [TAttFill](https://root.cern/doc/master/classTAttFill.html): Used for filling an area with color and a style.
+
+- [TAttLine](https://root.cern/doc/master/classTAttLine.html): Used for setting the color, width and style of a line.
+
+- [TAttMarker](https://root.cern/doc/master/classTAttMarker.html): Used for setting the styles for a marker.
+
+- [TAttText](https://root.cern/doc/master/classTAttText.html): Used for setting text attributes like alignment, color, size, font etc.
+
 ## Axis
 
 Axis are automatically built in by various high level objects such as histograms or graphs. [TAxis](https://root.cern.ch/doc/master/classTAxis.html) manages the axis and is referenced by [TH1](https://root.cern.ch/doc/master/classTH1.html) and [TGraph](https://root.cern.ch/doc/master/classTGraph.html). To make a graphical representation of an histogram axis, [TAxis](https://root.cern.ch/doc/master/classTAxis.html) references the [TGaxis](https://root.cern.ch/doc/master/classTGaxis.html) class.
@@ -569,4 +628,3 @@ For building more sub-pads, repeat this procedure as many times as necessary.
 - Use the [TCanvas::DrawClonePad](TCanvas::DrawClonePad) method to make a copy of the canvas.
 
 You can also use the [TObject:DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9) method, to draw a clone of this object in the current selected pad.
-
