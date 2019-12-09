@@ -6,7 +6,7 @@
 
 {% assign sorted = site.releases | reverse %}
 
-<font face = "Monaco" size = "2">
+<font face = "Monaco">
 
 {% if single %}
 <ul style="list-style-type:none">
