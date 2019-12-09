@@ -366,7 +366,7 @@ auto style = gROOT->GetStyle(style_name);
 {% endhighlight %}
 
 > Note 
-
+>
 > When an object is created, its attributes are taken from the current style. For example, you may have created an histogram in a previous session and saved it in a ROOT file. Meanwhile, if you have changed the style, the histogram will be drawn with the old attributes. 
 > You can force the current style attributes to be set when you read an object from a file by:
 >
