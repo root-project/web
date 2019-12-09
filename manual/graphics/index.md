@@ -304,7 +304,7 @@ Refer to the $ROOTSYS/tutorials/graphics/feynman.C tutorial for creating a Feynm
    caption="Feynman diagram."
 %}
 
-## Graphical objects attributes
+## Graphical objects attributes and styles
 
 There are the following classes for changing the attributes of graphical objects:
 
@@ -315,6 +315,82 @@ There are the following classes for changing the attributes of graphical objects
 - [TAttMarker](https://root.cern/doc/master/classTAttMarker.html): Used for setting the styles for a marker.
 
 - [TAttText](https://root.cern/doc/master/classTAttText.html): Used for setting text attributes like alignment, color, size, font etc.
+
+### Creating and modifying a style
+
+When objects are created, their default attributes (taken from [TAttFill](https://root.cern/doc/master/classTAttFill.html), [TAttLine](https://root.cern/doc/master/classTAttLine.html), [TAttMarker](https://root.cern/doc/master/classTAttMarker.html), [TAttText](https://root.cern/doc/master/classTAttText.html))
+are taken from the current style. The current style is an object of the [TStyle](https://root.cern/doc/master/classTStyle.html) class and can be referenced via the global variable `gStyle` (→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }}).
+
+ROOT provides two styles:
+
+- `Default`
+
+- `Plain`
+
+**Creating the `Default` style**
+
+The `Default` style is created by:
+
+{% highlight C++ %}
+auto default = new TStyle("Default","Default Style");
+{% endhighlight %}
+
+**Creating the `Plain` style**
+
+The `Plain` style is useful if you, for example, are working on a monochrome display.
+
+{% highlight C++ %}
+auto plain  = new TStyle("Plain","Plain Style (no colors/fill areas)");
+
+   plain->SetCanvasBorderMode(0);
+   plain->SetPadBorderMode(0);
+   plain->SetPadColor(0);
+   plain->SetCanvasColor(0);
+   plain->SetTitleColor(0);
+   plain->SetStatColor(0);
+   
+{% endhighlight %}
+
+#### Setting the current style
+
+- Use the `SetStyle()` method, to set the current style.
+
+{% highlight C++ %}
+gROOT->SetStyle(style_name); 
+{% endhighlight %}
+
+You can get a pointer to an existing style with:
+
+{% highlight C++ %}
+auto style = gROOT->GetStyle(style_name);
+{% endhighlight %}
+
+> Note 
+
+> When an object is created, its attributes are taken from the current style. For example, you may have created an histogram in a previous session and saved it in a ROOT file. Meanwhile, if you have changed the style, the histogram will be drawn with the old attributes. 
+> You can force the current style attributes to be set when you read an object from a file by:
+>
+> `gROOT->ForceStyle();`
+
+
+#### Creating additional styles
+
+- Use the [TStyle](https://root.cern/doc/master/classTStyle.html) constructor to create additional styles.
+
+{% highlight C++ %}
+TStyle *st1 = new TStyle("st1","my style");
+   st1->Set....
+   st1->cd();  This becomes now the current style-
+{% endhighlight %}
+
+#### Getting the attributes of the current style
+
+You can force objects (in a canvas or pad) to get the attributes of the current style.
+
+{% highlight C++ %}
+canvas->UseCurrentStyle();
+{% endhighlight %}
+
 
 ## Axis
 

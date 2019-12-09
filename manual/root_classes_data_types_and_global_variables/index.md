@@ -206,6 +206,10 @@ This returns a pointer to a [TObject](https://root.cern/doc/master/classTObject.
 
 `gFile` is the pointer to the current opened file in a ROOT session.
 
+### gStyle
+
+`gStyle` holds the current style, which is the global object of class [TStyle](https://root.cern/doc/master/classTStyle.html) .
+
 ### gDirectory
 
  `gDirectory` is a pointer to the current directory.
