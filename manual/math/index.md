@@ -325,6 +325,89 @@ Now a unit matrix in sparse format is created.
 	unit2.SetMatrixArray(data.GetArray());
 {% endhighlight %}
 
+### Inverting matrices
+
+- Use the `Invert(Double_t &det=0)` function to invert a matrix:
+
+{% highlight C++ %}
+   TMatrixD a(...);
+   a.Invert();
+{% endhighlight %}
+
+-- or --
+
+- Use the appropriate constructor to invert a matrix:
+
+{% highlight C++ %}
+   TMatrixD b(kInvert,a);
+{% endhighlight %}
+
+Both methods are available for general and symmetric matrices.
+
+For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &det=0)` function is available. Here the Cramer algorithm will be applied which is faster but less accurate.
+
+#### Using decomposition classes for inverting
+
+You can also use the following decomposition for inverting a matrix:
+
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Matrix type</th>
+      <th scope="col">Comment</th>
+    </tr>
+    <tr>
+      <td>[TDecompLU](https://root.cern.ch/doc/master/classTDecompLU.html)</td>
+      <td>General</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>[TDecompQRH](https://root.cern.ch/doc/master/classTDecompQRH.html)</td>
+      <td>General</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>[TDecompSVD](https://root.cern.ch/doc/master/classTDecompSVD.html)</td>
+      <td>General</td>
+      <td>Can manipulate singular matrix.</td>
+    </tr>
+    <tr>
+      <td>[TDecompBK](https://root.cern.ch/doc/master/classTDecompBK.html)</td>
+      <td>symmetric</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>[TDecompChol](https://root.cern.ch/doc/master/classTDecompChol.html)</td>
+      <td>Symmetric</td>
+      <td>Matrix should also be positive definite.</td>
+    </tr>
+    <tr>
+      <td>[TDecompSparse](https://root.cern.ch/doc/master/classTDecompSparse.html)</td>
+      <td>Sparse</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+If the required matrix type is general, you also can handle symmetric matrices.
+
+_**Example**_
+
+This example show how to check whether the matrix is singular before attempting to invert it.
+
+{% highlight C++ %}
+   TDecompLU lu(a);
+   TMatrixD b;
+   if (!lu.Decompose()) {
+      cout << "Decomposition failed, matrix singular ?" << endl;
+      cout << "condition number = " << = a.GetCondition() << endl;
+   } else {
+      lu.Invert(b);
+   }
+{% endhighlight %}
+
+
 ### Matrix operators and methods
 
 The matrix/vector operations are classified according to BLAS (Basic Linear Algebra Subroutines) levels.
