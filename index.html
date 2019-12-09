@@ -51,22 +51,18 @@ It is mainly written in C++ but integrated with other languages such as Python a
    <tr>
       <td style="border:0px" width="50%" rowspan="2">
          <h1> Under the Spotlight </h1>
-         <i>
          {% for post in site.posts limit:3 %}
-            <h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+            <font face = "Monaco" size = "2">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b>
             <p>{{ post.excerpt }}</p>
          {% endfor %}
-         </i>
       </td>
       <td style="border:0px" width="50%" bgcolor="#DBDBDB">
          <h1> Other News </h1>
-         <i>
          {% for post in site.posts %}
             {% if forloop.index >= 4 and forloop.index <=8 %}
-               <h3> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+               <font face = "Monaco" size = "2">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b><br>
             {% endif %}
          {% endfor %}
-         </i>
       </td>
    </tr>
    <tr>
