@@ -344,11 +344,11 @@ Now a unit matrix in sparse format is created.
 
 Both methods are available for general and symmetric matrices.
 
-For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &det=0)` function is available. Here the Cramer algorithm will be applied which is faster but less accurate.
+For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &det=0)` function is available. Here the Cramer algorithm will be applied, which is faster but less accurate.
 
 #### Using decomposition classes for inverting
 
-You can also use the following decomposition for inverting a matrix:
+You can also use the following decomposition classes ((see → [Matrix decompositions](#matrix-decompositions")) for inverting a matrix:
 
 <table width="100%" border="0">
   <tbody>
@@ -358,32 +358,32 @@ You can also use the following decomposition for inverting a matrix:
       <th scope="col">Comment</th>
     </tr>
     <tr>
-      <td>[TDecompLU](https://root.cern.ch/doc/master/classTDecompLU.html)</td>
+      <td>`TDecompLU`</td>
       <td>General</td>
       <td></td>
     </tr>
     <tr>
-      <td>[TDecompQRH](https://root.cern.ch/doc/master/classTDecompQRH.html)</td>
+      <td>`TDecompQRH`</td>
       <td>General</td>
       <td></td>
     </tr>
     <tr>
-      <td>[TDecompSVD](https://root.cern.ch/doc/master/classTDecompSVD.html)</td>
+      <td>`TDecompSVD`</td>
       <td>General</td>
       <td>Can manipulate singular matrix.</td>
     </tr>
     <tr>
-      <td>[TDecompBK](https://root.cern.ch/doc/master/classTDecompBK.html)</td>
+      <td>`TDecompBK`</td>
       <td>symmetric</td>
       <td></td>
     </tr>
     <tr>
-      <td>[TDecompChol](https://root.cern.ch/doc/master/classTDecompChol.html)</td>
+      <td>`TDecompChol`</td>
       <td>Symmetric</td>
       <td>Matrix should also be positive definite.</td>
     </tr>
     <tr>
-      <td>[TDecompSparse](https://root.cern.ch/doc/master/classTDecompSparse.html)</td>
+      <td>`TDecompSparse`</td>
       <td>Sparse</td>
       <td></td>
     </tr>
@@ -394,7 +394,7 @@ If the required matrix type is general, you also can handle symmetric matrices.
 
 _**Example**_
 
-This example show how to check whether the matrix is singular before attempting to invert it.
+This example shows how to check whether the matrix is singular before attempting to invert it.
 
 {% highlight C++ %}
    TDecompLU lu(a);
@@ -689,12 +689,13 @@ The next table summarizes how to access the individual matrix elements in the ma
 
 #### Matrix decompositions
 
-There are the following classes available, to assist you in matrix decompositions:
+There are the following classes available for matrix decompositions:
 
-- `TDecompLU`
-- `TDecompBK`- `TDecompChol`
-- `TDecompQRH`
-- `TDecompSVD`
+- [TDecompLU](https://root.cern/doc/master/classTDecompLU.html): Decomposes a general `n x n` matrix `A` into `P A = L U`.
+- [TDecompBK](https://root.cern/doc/master/classTDecompBK.html): The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`. - [TDecompChol](https://root.cern/doc/master/classTDecompChol.html): The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
+- [TDecompQRH](https://root.cern/doc/master/classTDecompQRH.html): QR decomposition class. 
+- [TDecompSVD](https://root.cern/doc/master/classTDecompSVD.html): Single value decomposition class.
+- [TDecompSparse](https://root.cern.ch/doc/master/classTDecompSparse.html): Sparse symmetric decomposition class.
 
 ### Matrix Eigen analysis
 
