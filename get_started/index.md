@@ -7,7 +7,7 @@ sidebar:
 
 On behalf of the developers, contributors and user community: <strong>welcome to ROOT!</strong>
 
-The [ROOT beginners' guide (aka "Primer")]({{ '/Primer' | relative_url }})
+The [ROOT beginners' guide (aka "Primer")]({{ '/primer' | relative_url }})
 is certainly the first document to read to master the power of ROOT.
 After this introduction,
 [these slides (and video!)](https://indico.cern.ch/event/395198) offer a different, more direct approach to the ROOT fundamental
