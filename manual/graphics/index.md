@@ -484,10 +484,10 @@ for date:<br>
 `%b`: abbreviated month name<br>
 `%d`: day of the month (01-31)<br>
 `%m`: month (01-12)<br>
-´%y´: year without century<br>
-´%Y´: year with century<br>
+`%y`: year without century<br>
+`%Y`: year with century<br>
 
-for time:
+for time:<br>
 `%H`: hour (24-hour clock)<br>
 `%I`: hour (12-hour clock)<br>
 `%p`: local equivalent of AM or PM<br>
@@ -495,7 +495,7 @@ for time:
 `%S`: seconds (00-61)<br>
 `%%`: %<br>
 
-The other characters are output as is. For example to have a format like dd/mm/yyyy, use:
+The other characters are output as is. For example to have a format like `dd/mm/yyyy`. use:
 
 {% highlight C++ %}
 ~~~ .cpp h->GetXaxis()->SetTimeFormat("%d/%m/%Y"); ~~~
