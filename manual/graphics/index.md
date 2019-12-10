@@ -279,9 +279,9 @@ _**Example**_
 - Use the `TAttMarker::SetMarkerSize(size)` method to set the `size` of a marker.
 
 
-### Curly lines and arcs 
+### Curly lines and arcs
 
-Curly lines and the curly arcs are special kinds of lines that are used to draw Feynman diagrams. 
+Curly lines and the curly arcs are special kinds of lines that are used to draw Feynman diagrams.
 
 - Use the [TCurlyLine](https://root.cern/doc/master/classTCurlyLine.html) and the [TCurlyArc](https://root.cern/doc/master/classTCurlyArc.html) constructors to create curly lines and arcs for Feynman diagrams.
 
@@ -299,8 +299,8 @@ _**Example**_
 
 Refer to the `$ROOTSYS/tutorials/graphics/feynman.C` tutorial for creating a Feynman diagram.
 
-{% include figure_image
-   img="feynman.png"
+{% include figure_jsroot
+   file="graphics.root" object="feynman"
    caption="Feynman diagram."
 %}
 
@@ -348,7 +348,7 @@ auto plain  = new TStyle("Plain","Plain Style (no colors/fill areas)");
    plain->SetCanvasColor(0);
    plain->SetTitleColor(0);
    plain->SetStatColor(0);
-   
+
 {% endhighlight %}
 
 #### Setting the current style
@@ -356,7 +356,7 @@ auto plain  = new TStyle("Plain","Plain Style (no colors/fill areas)");
 - Use the `SetStyle()` method, to set the current style.
 
 {% highlight C++ %}
-gROOT->SetStyle(style_name); 
+gROOT->SetStyle(style_name);
 {% endhighlight %}
 
 You can get a pointer to an existing style with:
@@ -365,9 +365,9 @@ You can get a pointer to an existing style with:
 auto style = gROOT->GetStyle(style_name);
 {% endhighlight %}
 
-> Note 
+> Note
 >
-> When an object is created, its attributes are taken from the current style. For example, you may have created an histogram in a previous session and saved it in a ROOT file. Meanwhile, if you have changed the style, the histogram will be drawn with the old attributes. 
+> When an object is created, its attributes are taken from the current style. For example, you may have created an histogram in a previous session and saved it in a ROOT file. Meanwhile, if you have changed the style, the histogram will be drawn with the old attributes.
 > You can force the current style attributes to be set when you read an object from a file by:
 >
 > `gROOT->ForceStyle();`
