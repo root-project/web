@@ -249,11 +249,11 @@ The exact kind of quoting depends on the used shell. This example works for bash
    $ root -l -b 'myCode.C("some String", 12)'
 ```
 
-### Compiling ROOT macros with ACLiC 
+### Compiling ROOT macros with ACLiC
 
 You can use ACLiC (*Compiling Your Code*) to compile your code and build a dictionary and a shared library from your ROOT macro. ACliC is implemented in [TSystem::CompileMacro()](https://root.cern.ch/doc/master/classTSystem.html).
 
-When using ACliC, ROOT checks what library really needs to be build and calls your system's C++ compiler, linker and dictionary generator. Then ROOT loads a native shared library. 
+When using ACliC, ROOT checks what library really needs to be build and calls your system's C++ compiler, linker and dictionary generator. Then ROOT loads a native shared library.
 
 ACLiC executes the following steps:
 
@@ -342,7 +342,7 @@ There are two ways to generate a dictionary:
 
 - using `rootcling`
 
-**Using ACLiC to generate dictionaries** 
+**Using ACLiC to generate dictionaries**
 
 With a given header file `MyHeader.h`, ACliC automatically generates a dictionary:
 
@@ -352,7 +352,7 @@ With a given header file `MyHeader.h`, ACliC automatically generates a dictionar
 
 **Using rootcling to generate dictionaries**
 
-You can manually create a dictionary by using `rootcling`: 
+You can manually create a dictionary by using `rootcling`:
 
 ```
       rootcling -f DictOutput.cxx -c OPTIONS Header1.h Header2.h ... Linkdef.h
@@ -363,7 +363,7 @@ You can manually create a dictionary by using `rootcling`:
 - `OPTIONS` are:
 
 	- `Isomething`: Adding an include path, so that `rootcling` can find the files included in `Header1.h`, `Header2.h`, etc.
-    
+
     - `DSOMETHING`: Define a preprocessor macro, which is sometimes needed to parse the header files.
 
 - `Header1.h Header2.h...`: The headers files.
@@ -644,8 +644,9 @@ There are tutorials for the following topics, among others:
   - XML
   - and many more
 
-When you install ROOT, a tutorials directory is created, containing all ROOT tutorials listed on
-[https://root.cern/doc/master/group__Tutorials.html](https://root.cern/doc/master/group__Tutorials.html).
+When you install ROOT, a tutorials directory is created, containing all ROOT tutorials
+listed on
+[reference guide tutorial page](https://root.cern/doc/master/group__Tutorials.html).
 
 > **Note**
 >
