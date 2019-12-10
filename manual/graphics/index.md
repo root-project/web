@@ -650,7 +650,7 @@ The “bit-modified” is automatically set by:
 
 - finishing the execution of a script,
 
-- Adding or modifying primitives, for example the name and title of an object.
+- adding or modifying primitives, for example the name and title of an object.
 
 You can set the “bit-modified” by using the `Modified()` method.
 
@@ -659,6 +659,7 @@ _**Example**_
 {% highlight C++ %}
 // The pad has changed.
 root[] pad1->Modified()
+
 // Recursively updating all modified pads:
 root[] c1->Update()
 {% endhighlight %}
