@@ -7,9 +7,14 @@ toc: true
 toc_sticky: true
 ---
 
-The basic whiteboard on which an object is drawn is called in ROOT a canvas (class [TCanvas](https://root.cern/doc/master/classTCanvas.html)). A canvas is an area mapped to a window directly under the control of the display manager.<br>
+The basic whiteboard on which an object is drawn is called in ROOT a canvas
+(class {% include ref class="TCanvas" %}). A canvas is an area mapped to a window directly
+under the control of the display manager.<br>
 
-A canvas contains one or more independent graphical areas: the pads (class [TPad](https://root.cern.ch/doc/master/classTPad.html)). A pad is graphical entity that contains graphical objects. A pad can contain other pads (unlimited pad hierarchy). A pad is a linked list of primitives of any type (graphs, histograms, shapes, tracks, etc.).
+A canvas contains one or more independent graphical areas: the pads
+(class {% include ref class="TPad" %}). A pad is graphical entity that contains graphical
+objects. A pad can contain other pads (unlimited pad hierarchy). A pad is a linked list of
+primitives of any type (graphs, histograms, shapes, tracks, etc.).
 
 Adding an element to a pad is done by the `Draw()` method of each class.
 
@@ -23,16 +28,18 @@ Painting a pad is done by the `Paint()` method of each object in the list of pri
 
 ROOT provides the following classes for graphics, among others:
 
-- [TCanvas](https://root.cern/doc/master/classTCanvas.html)
+- {% include ref class="TCanvas" %}
 
-- [TPad](https://root.cern.ch/doc/master/classTPad.html)
+- {% include ref class="TPad" %}
 
 ### Working with graphics
 
 #### Drawing objects
 
-The [TObject](https://root.cern/doc/master/classTObject.html) class has the virtual method `Draw()` by which objects can be "drawn".
-The object is "drawn" on a canvas ([TCanvas](https://root.cern/doc/master/classTCanvas.html) class) that contain one or more pads ([TPad](https://root.cern.ch/doc/master/classTPad.html) class).
+The {% include ref class="TObject" %} class has the virtual method
+`Draw()` by which objects can be "drawn".
+The object is "drawn" on a canvas ({% include ref class="TCanvas" %} class) that contain
+one or more pads ({% include ref class="TPad" %} class).
 When an object is drawn, you can interact with it.
 
 - Use the Draw() method to draw an object.
@@ -45,7 +52,8 @@ _**Example**_
 
 A one-dimensional sine function shall be drawn.
 
-Use the [TF1](https://root.cern/doc/master/classTF1.html) class to create an object that is a one-dimensional function defined between a lower and upper limit.
+Use the {% include ref class="TF1" %} class to create an object that is a one-dimensional
+function defined between a lower and upper limit.
 
 {% highlight C++ %}
 TF1 f1("func1","sin(x)",0,10)
@@ -101,7 +109,7 @@ graphical objects with their constructor and draws them with their `Draw()` meth
 
 ### Lines
 
-- Use the [TLine](https://root.cern.ch/doc/master/classTLine.html) constructor to create a line.
+- Use the {% include ref class="TLine" %} constructor to create a line.
 
 {% highlight C++ %}
 TLine(Double_t x1,Double_t y1,Double_t x2,Double_t y2)
@@ -118,7 +126,8 @@ root[] l->Draw()
 
 ### Arrows
 
-- Use the [TArrow](https://root.cern.ch/doc/master/classTArrow.html) constructor to create an arrow.
+- Use the {% include ref class="TArrow" %} constructor to create an arrow.
+
 
 {% highlight C++ %}
 TArrow(Double_t x1, Double_t y1, Double_t x2, Double_t y2, Float_t arrowsize, Option_t *option)
@@ -169,7 +178,7 @@ _**Example**_
 
 A polyline is a set of joint segments. It is defined by a set of N points in a 2D-space.
 
-- Use the [TPolyLine](https://root.cern.ch/doc/master/classTPolyLine.html) constructor to create a polyline.
+- Use the {% include ref class="TPolyLine" %} constructor to create a polyline.
 
 {% highlight C++ %}
 TPolyLine(Int_t n,Double_t* x,Double_t* y,Option_t* option)
@@ -197,7 +206,7 @@ _**Example**_
 
 ### Ellipses
 
-- Use the [TEllipse](https://root.cern/doc/master/classTEllipse.html) constructor to create an ellipse.
+- Use the {% include ref class="TEllipse" %} constructor to create an ellipse.
 
 You can truncate and rotate an ellipse. An ellipse is defined by its center (`x1`,`y1`) and two radii `r1` and `r2`. A minimum and
 maximum angle may be specified (`phimin`, `phimax`). The ellipse may be rotated with an angle `theta` (all in degrees).
@@ -238,9 +247,10 @@ _**Example**_
 
 ### Rectangles
 
-- Use the [TBox](https://root.cern/doc/master/classTBox.html) constructor to create a rectangle/box.
+- Use the {% include ref class="TBox" %} constructor to create a rectangle/box.
 
-A [TWbox](https://root.cern/doc/master/classTWbox.html) is a rectangle ([TBox](https://root.cern/doc/master/classTBox.html) ) with a border size and a border mode.<br>
+A {% include ref class="TWbox" %} is a rectangle
+({% include ref class="TBox" %}) with a border size and a border mode.<br>
 The bottom left coordinates `x1`, `y1` and the top right coordinates `x2`, `y2` define a box.
 
 _**Example**_
@@ -259,7 +269,7 @@ _**Example**_
 
 ### Markers
 
-- Use the [TMarker](https://root.cern/doc/master/classTMarker.html) constructor to create a marker.
+- Use the {% include ref class="TMarker" %} constructor to create a marker.
 
 ```
    TMarker(Double_t x,Double_t y,Int_t marker)
@@ -268,11 +278,11 @@ _**Example**_
 The parameters `x` and `y` are the marker coordinates and `marker` is the marker type.
 
 
-- Use the [TPolyMarker](https://root.cern/doc/master/classTPolyMarker.html) to create an array on N points in a 2D space.
+- Use the {% include ref class="TPolyMarker" %} to create an array on N points in a 2D space.
 
 At each point `x[i]`, `y[i]` a marker is drawn.
 
-- Use the [TAttMarker](https://root.cern/doc/master/classTAttMarker.html) class to change the attributes color, style and size of a marker.
+- Use the {% include ref class="TAttMarker" %} class to change the attributes color, style and size of a marker.
 
 _**Example**_
 
@@ -283,7 +293,7 @@ _**Example**_
 
 Curly lines and the curly arcs are special kinds of lines that are used to draw Feynman diagrams.
 
-- Use the [TCurlyLine](https://root.cern/doc/master/classTCurlyLine.html) and the [TCurlyArc](https://root.cern/doc/master/classTCurlyArc.html) constructors to create curly lines and arcs for Feynman diagrams.
+- Use the {% include ref class="TCurlyLine" %} and the {% include ref class="TCurlyArc" %} constructors to create curly lines and arcs for Feynman diagrams.
 
 {% highlight C++ %}
 
@@ -293,7 +303,7 @@ TCurlyArc(Double_t x1, Double_t y1, Double_t rad, Double_t phimin, Double_t phim
 
 {% endhighlight %}
 
-Both classes directly inherit from [TPolyLine](https://root.cern.ch/doc/master/classTPolyLine.html).
+Both classes directly inherit from {% include ref class="TPolyLine" %}.
 
 _**Example**_
 
@@ -308,18 +318,22 @@ Refer to the `$ROOTSYS/tutorials/graphics/feynman.C` tutorial for creating a Fey
 
 There are the following classes for changing the attributes of graphical objects:
 
-- [TAttFill](https://root.cern/doc/master/classTAttFill.html): Used for filling an area with color and a style.
+- {% include ref class="TAttFill" %}: Used for filling an area with color and a style.
 
-- [TAttLine](https://root.cern/doc/master/classTAttLine.html): Used for setting the color, width and style of a line.
+- {% include ref class="TAttLine" %}: Used for setting the color, width and style of a line.
 
-- [TAttMarker](https://root.cern/doc/master/classTAttMarker.html): Used for setting the styles for a marker.
+- {% include ref class="TAttMarker" %}: Used for setting the styles for a marker.
 
-- [TAttText](https://root.cern/doc/master/classTAttText.html): Used for setting text attributes like alignment, color, size, font etc.
+- {% include ref class="TAttText" %}: Used for setting text attributes like alignment, color, size, font etc.
 
 ### Creating and modifying a style
 
-When objects are created, their default attributes (taken from [TAttFill](https://root.cern/doc/master/classTAttFill.html), [TAttLine](https://root.cern/doc/master/classTAttLine.html), [TAttMarker](https://root.cern/doc/master/classTAttMarker.html), [TAttText](https://root.cern/doc/master/classTAttText.html))
-are taken from the current style. The current style is an object of the [TStyle](https://root.cern/doc/master/classTStyle.html) class and can be referenced via the global variable `gStyle` (→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})).
+When objects are created, their default attributes (taken from {% include ref class="TAttFill" %},
+{% include ref class="TAttLine" %}, {% include ref class="TAttMarker" %},
+{% include ref class="TAttText" %})
+are taken from the current style. The current style is an object of the
+{% include ref class="TStyle" %} class and can be referenced via the global variable `gStyle`
+(→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})).
 
 ROOT provides two styles:
 
@@ -375,7 +389,7 @@ auto style = gROOT->GetStyle(style_name);
 
 #### Creating additional styles
 
-- Use the [TStyle](https://root.cern/doc/master/classTStyle.html) constructor to create additional styles.
+- Use the {% include ref class="TStyle" %} constructor to create additional styles.
 
 {% highlight C++ %}
 TStyle *st1 = new TStyle("st1","my style");
@@ -394,7 +408,10 @@ canvas->UseCurrentStyle();
 
 ## Axis
 
-Axis are automatically built in by various high level objects such as histograms or graphs. [TAxis](https://root.cern.ch/doc/master/classTAxis.html) manages the axis and is referenced by [TH1](https://root.cern.ch/doc/master/classTH1.html) and [TGraph](https://root.cern.ch/doc/master/classTGraph.html). To make a graphical representation of an histogram axis, [TAxis](https://root.cern.ch/doc/master/classTAxis.html) references the [TGaxis](https://root.cern.ch/doc/master/classTGaxis.html) class.
+Axis are automatically built in by various high level objects such as histograms or graphs.
+{% include ref class="TAxis" %} manages the axis and is referenced by {% include ref class="TH1" %} and {% include ref class="TGraph" %}.
+To make a graphical representation of an histogram axis, {% include ref class="TAxis" %} references
+the {% include ref class="TGaxis" %} class.
 
 - Use the `GetXaxis()`, `GetYaxis()` or `GetZaxis()` methods to get the axis for an histogram or graph.
 
@@ -590,7 +607,8 @@ ht3->Draw();
 
 ## Canvas and pad
 
-A canvas ([TCanvas](https://root.cern/doc/master/classTCanvas.html)) is a graphical entity that contains graphical objects that are called pads ([TPad](https://root.cern.ch/doc/master/classTPad.html)). A pad is a graphical container that contains other graphical objects like histograms and arrows. It also can contain other pads, called sub-pads. When an object is drawn, it is always in the so-called active pad.
+A canvas ({% include ref class="TCanvas" %}) is a graphical entity that contains graphical objects that are called
+pads ({% include ref class="TPad" %}). A pad is a graphical container that contains other graphical objects like histograms and arrows. It also can contain other pads, called sub-pads. When an object is drawn, it is always in the so-called active pad.
 
 ### Accessing the active pad
 
@@ -668,7 +686,9 @@ A subsequent call to [TCanvas::Update()](https://root.cern/doc/master/classTCanv
 
 ### Dividing a pad into sub-pads
 
-To draw multiple objects on a canvas ([TCanvas](https://root.cern/doc/master/classTCanvas.html)), you can divide pad ([TPad](https://root.cern.ch/doc/master/classTPad.html)) into sub-pads.<br>
+To draw multiple objects on a
+canvas ({% include ref class="TCanvas" %}), you can divide
+pad ({% include ref class="TPad" %}) into sub-pads.<br>
 There are two ways to divide a pad into sub-pads:
 
 - building pad objects and draw them into a parent pad,
@@ -681,7 +701,8 @@ To build sub-pads in a pad, you must indicate the size and the position of the s
 
 _**Example**_
 
-A sub-pad is to be built into the active pad (pointed by `gPad`). First, the sub-pad is build the the TPad [TPad](https://root.cern.ch/doc/master/classTPad.html) constructor.
+A sub-pad is to be built into the active pad (pointed by `gPad`). First, the sub-pad is
+build the {% include ref class="TPad" %} constructor.
 
 {% highlight C++ %}
 root[] spad1 = new TPad("spad1","The first subpad",.1,.1,.5,.5)
