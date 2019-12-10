@@ -50,14 +50,14 @@ It is mainly written in C++ but integrated with other languages such as Python a
 <table style="border:0px" bgcolor="#f3fff8">
    <tr>
       <td style="border:0px" width="50%" rowspan="2">
-         <p style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#c4f1d8; padding: 1em;"><b><font size="+1">Under the Spotlight</font></b></p>
+         <h1><p style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#c4f1d8; padding: 0.5em;">Under the Spotlight</p></h1>
          {% for post in site.posts limit:3 %}
             <font face = "Monaco">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b>
             <p>{{ post.excerpt }}</p>
          {% endfor %}
       </td>
       <td style="border:0px" width="50%" bgcolor="#f3f9ff">
-         <p style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#c3d7ee; padding: 1em;"><b><font size="+1">Other News</font></b></p>
+         <h1><p style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#c3d7ee; padding: 0.5em;">Other News</p></h1>
          {% for post in site.posts %}
             {% if forloop.index >= 4 and forloop.index <=8 %}
                <font face = "Monaco">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b><br>
@@ -67,7 +67,7 @@ It is mainly written in C++ but integrated with other languages such as Python a
    </tr>
    <tr>
       <td style="border:0px" width="50%" bgcolor="#fef1f9">
-         <p style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#eec1d5; padding: 1em;"><b><font size="+1">Latest Releases</font></b></p>
+         <h1><p style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#eec1d5; padding: 0.5em;">Latest Releases</p></h1>
          {% include releases_list number=4 single_column="yes" %}
          <b><a href="{{'/download/all_releases' | relative_url}}"> More ...</a></b>
       </td>
