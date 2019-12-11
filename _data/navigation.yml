@@ -62,6 +62,8 @@ manual:
         url: https://root-forum.cern.ch/
       - title: "ROOT Primer"
         url: primer/
+      - title: "Topical Manuals"
+        url: topical/
 
 resources:
    - title: Program of Work
