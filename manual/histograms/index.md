@@ -101,7 +101,6 @@ You can re-bin a histogram via the [TH1::Rebin()](https://root.cern/doc/master/c
 
 ## Working with histograms
 
-Advanced organizer ...
 
 ### Creating and copying a histogram
 
@@ -389,6 +388,10 @@ By default, 3-D histograms are drawn as scatter plots.
 
 ## Fitting histograms
 
+> **Tutorials**
+>
+> Fitting tutorials are available at → [https://root.cern/doc/master/group__tutorial__fit.html](https://root.cern/doc/master/group__tutorial__fit.html)
+
 ### Fitting 1-D histograms with pre-defined functions
 
 - Use the [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method to fit a 1-D histogram with a pre-defined function. The name of the pre-definded function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
@@ -512,6 +515,75 @@ _**Examples**_
  {% endhighlight %}
 
 
+### Configuring the fit
+
+#### Fixing and setting parameter bounds
+
+For pre-defined functions like `poln`, `exp`, `gaus`, and `landau`, the parameter initial values are set automatically.
+
+For not pre-defined functions, the fit parameters must be initialized before invoking the `Fit()` method.
+
+- Use the [TF1::SetParLimits()](https://root.cern/doc/master/group__tutorial__fit.html) function to set the bounds for one parameter.
+
+{% highlight C++ %}
+   func->SetParLimits(0,-1,1);
+{% endhighlight %}
+
+When the lower and upper limits are equal, the parameter is fixed.
+
+_**Example**_
+
+The parameter is fixed 4 at 10.
+
+{% highlight C++ %}
+   func->SetParameter(4,10);
+   func->SetParLimits(4,10,10);
+{% endhighlight %}
+
+- Use the [TF1::FixParameter()](https://root.cern/doc/master/classTF1.html#ae8869189ca9a2affe690fe26dcaa6c8c) function to fix a parameter to 0.
+
+_**Example**_
+
+{% highlight C++ %}
+   func->SetParameter(4,0);
+   func->FixParameter(4,0);
+{% endhighlight %}
+
+You do not need to set the limits for all parameters.
+
+_**Example**_
+
+There is function with 6 parameters. Then there is setup possible like the following: Parameters 0 to 2 can vary freely, parameter 3 has boundaries [-10, 4] with initial the value -1.5, and parameter 4 is fixed to 0.
+
+{% highlight C++ %}
+		func->SetParameters(0,3.1,1.e-6,-1.5,0,100);
+		func->SetParLimits(3,-10,4);
+		func->FixParameter(4,0);
+{% highlight C++ %}
+
+#### Fitting subranges
+
+By default, [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) fits the function on the defined histogram range. You can specify the `R` option in the second
+parameter of `TH1::Fit` to restrict the fit to the range specified in the TF1 constructor. 
+
+_**Example**_
+
+The fit will be limited to -3 to 3, the range specified in the TF1 constructor:
+
+{% highlight C++ %}
+   root[] TF1 *f1 = new TF1("f1","[0]*x*sin([1]*x)",-3,3);
+   root[] hist->Fit("f1","R");
+{% highlight C++ %}
+
+You can also specify a range in the call to `TH1::Fit()`.
+
+{% highlight C++ %}
+root[] hist->Fit("f1","","",-2,2)
+{% highlight C++ %}
+
+See also the ROOT macros `$ROOTSYS/tutorials/fit/myfit.C` and `multifit.C` for more detailed examples.
+
+ 
 ## Profile histograms
 
 Profile histograms are used to display the mean value of Y and its error for each bin in X.
