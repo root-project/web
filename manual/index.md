@@ -39,16 +39,26 @@ written in C++ but integrated with other languages such as Python and R.
   - [Histograms]({{ '/manual/histograms' | relative_url }})
 
   - [Graphs]({{ '/manual/graphs' | relative_url }})
+  
+  - [Geometry]({{ '/manual/geometry' | relative_url }})
 
   - [Trees]({{ '/manual/trees' | relative_url }})
   
   - [Data frames]({{ '/manual/data_frame' | relative_url }})
+  
+  - [RooFit]({{ '/manual/roofit' | relative_url }})
+  
+  - [TMVA]({{ '/manual/tmva' | relative_url }})
 
   - [Mathematical libraries]({{ '/manual/math' | relative_url }})
   
   - [Vectors]({{ '/manual/vectors' | relative_url }})
   
   - [Python interface PyROOT]({{ '/manual/python' | relative_url }})
+  
+  - [R interface]({{ '/manual/r' | relative_url }})
+  
+  - [Threads]({{ '/manual/threads' | relative_url }})
 
 ## Further Information
 
