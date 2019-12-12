@@ -54,16 +54,16 @@ manual:
         url: manual/python
   - title: Further information
     children:
-      - title: "ROOT Reference Guide"
+      - title: "Reference Guide"
         url: reference
-      - title: "ROOT Tutorials"
+      - title: "Tutorials"
         url: https://root.cern/doc/master/group__Tutorials.html
-      - title: "ROOT Forum"
-        url: https://root-forum.cern.ch/
-      - title: "ROOT Primer"
+      - title: "Primer"
         url: primer/
       - title: "Topical Manuals"
         url: topical/
+      - title: "Forum"
+        url: https://root-forum.cern.ch/
 
 resources:
    - title: Program of Work
