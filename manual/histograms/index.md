@@ -600,7 +600,7 @@ Given is a histogram following a gaussian distribution.
 You also can select `Tools` and then click `Fit Panel`.
 
 {% include figure_image
-   img="content-menu_fitpanel.png"
+   img="context-menu_fitpanel.png"
    caption="FitPanel in the context menu."
 %}
 
