@@ -111,3 +111,5 @@ TMVA is a toolkit for Multivariate Data Analysis.
   - [Documentation on the GitHub repository](https://github.com/root-project/root/blob/master/documentation/tmva/UsersGuide/TMVAUsersGuide.pdf) (Updated version for ROOT 6).
 
 ## VMC
+
+[The VMC documentation](https://vmc-project.github.io)
