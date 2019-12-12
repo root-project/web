@@ -596,7 +596,7 @@ Given is a histogram following a gaussian distribution.
     h1->Draw();
 {% endhighlight %}
 
-1. Right-click on the object and then click `FitPanel`.<br>
+- Right-click on the object and then click `FitPanel`.<br>
 You also can select `Tools` and then click `Fit Panel`.
 
 {% include figure_image
@@ -614,13 +614,15 @@ The Fit Panel is displayed.
 In the `Fit Function` section you can select the function used for fitting.<br>
 The following types of functions are listed here:
 
-- Pre-defined dunctions that will depend on the dimensionality of the data.
+- Pre-defined functions that will depend on the dimensionality of the data.
 
 - Functions present in `gDirectory`. These functions were already created by the user through a ROOT macro.
 
 - Previously used functions. Functions that fitted the current data previously, if the data is able to store such functions.
 
-2. Click `Set Parameters...` to set the parameters of the selected function.
+Select the fitting function.
+
+- Click `Set Parameters...` to set the parameters of the selected function.
 
 The `Set Parameters of...` dialog window is displayed.
 
@@ -629,14 +631,14 @@ The `Set Parameters of...` dialog window is displayed.
    caption="Set Parameters of... dialog window."
 %}
 
-3. Set the parameters of the fit function.
+- Set the parameters of the fit function.
 
-4. In the `General` tab, select the general options for fitting.<br>
+- In the `General` tab, select the general options for fitting.<br>
 This includes the method that will be used, as well as what fit options will be used with it and the draw options. You can also constrain the range of the function used for the fitting.
 
-5. In the `Minimization` tab, select the minimization algorithm for fitting.
+- In the `Minimization` tab, select the minimization algorithm for fitting.
 
-6. Click `Fit`.
+- Click `Fit`.
 
 {% include figure_image
    img="fitting.png"
