@@ -555,9 +555,9 @@ _**Example**_
 There is function with 6 parameters. Then there is a setup possible like the following: parameters 0 to 2 can vary freely, parameter 3 has boundaries [-10, 4] with the initial value -1.5, and parameter 4 is fixed to 0.
 
 {% highlight C++ %}
-		func->SetParameters(0,3.1,1.e-6,-1.5,0,100);
-		func->SetParLimits(3,-10,4);
-		func->FixParameter(4,0);
+   func->SetParameters(0,3.1,1.e-6,-1.5,0,100);
+   func->SetParLimits(3,-10,4);
+   func->FixParameter(4,0);
 {% endhighlight %}
 
 #### Fitting subranges
@@ -611,7 +611,7 @@ The Fit Panel is displayed.
    caption="Fit Panel."
 %}
 
-In the `Fit Function` section you can select the function used for fitting.<br>
+In the `Fit Function` section you can select the function that should be used for fitting.<br>
 The following types of functions are listed here:
 
 - Pre-defined functions that will depend on the dimensionality of the data.
@@ -620,7 +620,7 @@ The following types of functions are listed here:
 
 - Previously used functions. Functions that fitted the current data previously, if the data is able to store such functions.
 
-Select the fitting function.
+Select a fitting function.
 
 - Click `Set Parameters...` to set the parameters of the selected function.
 
@@ -647,7 +647,7 @@ This includes the method that will be used, as well as what fit options will be 
 
 ## Profile histograms
 
-Profile histograms are used to display the mean value of Y and its error for each bin in X.
+Profile histograms are used to display the mean value of `Y` and its error for each bin in `X`.
 
 When you fill a profile histogram with [TProfile.Fill()](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125):
 
