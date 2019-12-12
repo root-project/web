@@ -522,7 +522,7 @@ For pre-defined functions like `poln`, `exp`, `gaus`, and `landau`, the paramete
 
 For not pre-defined functions, the fit parameters must be initialized before invoking the `Fit()` method.
 
-- Use the [TF1::SetParLimits()](https://root.cern/doc/master/group__tutorial__fit.html) function to set the bounds for one parameter.
+- Use the [TF1::SetParLimits()](https://root.cern/doc/master/group__tutorial__fit.html) method to set the bounds for one parameter.
 
 {% highlight C++ %}
    func->SetParLimits(0,-1,1);
@@ -539,7 +539,7 @@ The parameter is fixed 4 at 10.
    func->SetParLimits(4,10,10);
 {% endhighlight %}
 
-- Use the [TF1::FixParameter()](https://root.cern/doc/master/classTF1.html#ae8869189ca9a2affe690fe26dcaa6c8c) function to fix a parameter to 0.
+- Use the [TF1::FixParameter()](https://root.cern/doc/master/classTF1.html#ae8869189ca9a2affe690fe26dcaa6c8c) method to fix a parameter to 0.
 
 _**Example**_
 
@@ -552,7 +552,7 @@ You do not need to set the limits for all parameters.
 
 _**Example**_
 
-There is function with 6 parameters. Then there is setup possible like the following: Parameters 0 to 2 can vary freely, parameter 3 has boundaries [-10, 4] with initial the value -1.5, and parameter 4 is fixed to 0.
+There is function with 6 parameters. Then there is a setup possible like the following: parameters 0 to 2 can vary freely, parameter 3 has boundaries [-10, 4] with the initial value -1.5, and parameter 4 is fixed to 0.
 
 {% highlight C++ %}
 		func->SetParameters(0,3.1,1.e-6,-1.5,0,100);
@@ -563,11 +563,11 @@ There is function with 6 parameters. Then there is setup possible like the follo
 #### Fitting subranges
 
 By default, [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) fits the function on the defined histogram range. You can specify the `R` option in the second
-parameter of `TH1::Fit` to restrict the fit to the range specified in the TF1 constructor. 
+parameter of `TH1::Fit()` to restrict the fit to the range specified in the [TF1](https://root.cern/doc/master/classTF1.html) constructor. 
 
 _**Example**_
 
-The fit will be limited to -3 to 3, the range specified in the TF1 constructor:
+The fit will be limited to -3 to 3, the range specified in the `TF1` constructor:
 
 {% highlight C++ %}
    root[] TF1 *f1 = new TF1("f1","[0]*x*sin([1]*x)",-3,3);
@@ -631,7 +631,7 @@ The `Set Parameters of...` dialog window is displayed.
    caption="Set Parameters of... dialog window."
 %}
 
-- Set the parameters of the fit function.
+- Set the parameters for the fit function.
 
 - In the `General` tab, select the general options for fitting.<br>
 This includes the method that will be used, as well as what fit options will be used with it and the draw options. You can also constrain the range of the function used for the fitting.
