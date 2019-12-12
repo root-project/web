@@ -51,9 +51,11 @@ non-interactive CMake interface.
     The --build option tells cmake to invoke the underlying build tool (make, ninja, xcodebuild, msbuild, etc).
     The underlying build tool can also be invoked directly of course, but the` cmake --build` command is more portable.
     On unix systems (with make or ninja) you can speedup the build with `cmake --build . --  -jN` where N is the number of available cores.
-6. Setup the environment to run
+6. Setup the environment to run.
 
         $ source /path/to/install-or-build/dir/bin/thisroot.sh
+
+   It is recommended to put this command into the `.profile` or `.login` file in order to have the environment variables  properly defined at each login.
 7. Start ROOT interactive application
 
         $ root
