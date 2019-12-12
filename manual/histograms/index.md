@@ -559,7 +559,7 @@ There is function with 6 parameters. Then there is setup possible like the follo
 		func->SetParameters(0,3.1,1.e-6,-1.5,0,100);
 		func->SetParLimits(3,-10,4);
 		func->FixParameter(4,0);
-{% highlight C++ %}
+{% endhighlight %}
 
 #### Fitting subranges
 
@@ -573,13 +573,13 @@ The fit will be limited to -3 to 3, the range specified in the TF1 constructor:
 {% highlight C++ %}
    root[] TF1 *f1 = new TF1("f1","[0]*x*sin([1]*x)",-3,3);
    root[] hist->Fit("f1","R");
-{% highlight C++ %}
+{% endhighlight %}
 
 You can also specify a range in the call to `TH1::Fit()`.
 
 {% highlight C++ %}
-root[] hist->Fit("f1","","",-2,2)
-{% highlight C++ %}
+   root[] hist->Fit("f1","","",-2,2)
+{% endhighlight %}
 
 See also the ROOT macros `$ROOTSYS/tutorials/fit/myfit.C` and `multifit.C` for more detailed examples.
 
