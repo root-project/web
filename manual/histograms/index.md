@@ -514,7 +514,6 @@ _**Examples**_
    root[] Double_t e1 = fit->GetParError(0);
  {% endhighlight %}
 
-
 ### Configuring the fit
 
 #### Fixing and setting parameter bounds
@@ -583,7 +582,67 @@ You can also specify a range in the call to `TH1::Fit()`.
 
 See also the ROOT macros `$ROOTSYS/tutorials/fit/myfit.C` and `multifit.C` for more detailed examples.
 
+### Using the Fit Panel 
  
+The following section describes how to use the Fit Panel using an example.
+
+Given is a histogram following a gaussian distribution.
+
+{% highlight C++ %}
+    TH1F *h1 = new TH1F("h1", "h1", 200, -5,5);
+    TF1 *f1 = new TF1("f1", "[2]*TMath::Gaus(x,[0],[1])");
+    f1->SetParameters(1,1,1);
+    h1->FillRandom("f1");
+    h1->Draw();
+{% endhighlight %}
+
+1. Right-click on the object and then click `FitPanel`.<br>
+You also can select `Tools` and then click `Fit Panel`.
+
+{% include figure_image
+   img="content-menu_fitpanel.png"
+   caption="FitPanel in the context menu.")."
+%}
+
+The Fit Panel is displayed.
+
+{% include figure_image
+   img="fitpanel.png"
+   caption="Fit Panel")."
+%}
+
+In the `Fit Function` section you can select the function used for fitting.<br>
+The following types of functions are listed here:
+
+- Pre-defined dunctions that will depend on the dimensionality of the data.
+
+- Functions present in `gDirectory`. These functions were already created by the user through a ROOT macro.
+
+- Previously used functions. Functions that fitted the current data previously, if the data is able to store such functions.
+
+2. Click `Set Parameters...` to set the parameters of the selected function.
+
+The `Set Parameters of...` dialog window is displayed.
+
+{% include figure_image
+   img="set-parameters.png"
+   caption="Set Parameters of... dialog window.")."
+%}
+
+3. Set the parameters of the fit function.
+
+4. In the `General` tab, select the general options for fitting.<br>
+This includes the method that will be used, as well as what fit options will be used with it and the draw options. You can also constrain the range of the function used for the fitting.
+
+5. In the `Minimization` tab, select the minimization algorithm for fitting.
+
+6. Click `Fit`.
+
+{% include figure_image
+   img="fitting.png"
+   caption="A fitted histogram.")."
+%}
+
 ## Profile histograms
 
 Profile histograms are used to display the mean value of Y and its error for each bin in X.
