@@ -601,14 +601,14 @@ You also can select `Tools` and then click `Fit Panel`.
 
 {% include figure_image
    img="content-menu_fitpanel.png"
-   caption="FitPanel in the context menu.")."
+   caption="FitPanel in the context menu."
 %}
 
 The Fit Panel is displayed.
 
 {% include figure_image
    img="fitpanel.png"
-   caption="Fit Panel")."
+   caption="Fit Panel."
 %}
 
 In the `Fit Function` section you can select the function used for fitting.<br>
@@ -626,7 +626,7 @@ The `Set Parameters of...` dialog window is displayed.
 
 {% include figure_image
    img="set-parameters.png"
-   caption="Set Parameters of... dialog window.")."
+   caption="Set Parameters of... dialog window."
 %}
 
 3. Set the parameters of the fit function.
@@ -640,7 +640,7 @@ This includes the method that will be used, as well as what fit options will be 
 
 {% include figure_image
    img="fitting.png"
-   caption="A fitted histogram.")."
+   caption="A fitted histogram."
 %}
 
 ## Profile histograms
