@@ -42,16 +42,26 @@ manual:
         url: manual/histograms
       - title: Graphs
         url: manual/graphs
+      - title: Geometry
+        url: manual/geometry
       - title: Trees
         url: manual/trees
       - title: Data frames
         url: manual/data_frame
+      - title: RooFit
+        url: manual/roofit
+      - title: TMVA
+        url: manual/tmva
       - title: Mathematical libraries
         url: manual/math
       - title: Vectors
         url: manual/vectors
       - title: Python interface PyROOT
         url: manual/python
+      - title: R interface
+        url: manual/r
+      - title: Threads
+        url: manual/threads
   - title: Further information
     children:
       - title: "Reference Guide"
