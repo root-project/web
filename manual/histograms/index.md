@@ -470,7 +470,7 @@ See also the `fitexample.C` tutorial.
       if (par[2]!=0) arg = (x[0] - par[1])/par[2];
       Double_t fitval = par[0]*TMath::Exp(-0.5*arg*arg);
       return fitval;
-    }
+   }
 {% endhighlight %}
 
 Now the `fitf` function is used to fit a histogram.
@@ -495,7 +495,7 @@ Now the `fitf` function is used to fit a histogram.
    // Call TH1::Fit with the name of the TF1 object.
    hpx->Fit("fit");
    }
- {% endhighlight %}
+{% endhighlight %}
 
 ### Accessing the fitted function parameters and results
 
@@ -512,7 +512,7 @@ _**Examples**_
 
 // Error of the first parameter:
    root[] Double_t e1 = fit->GetParError(0);
- {% endhighlight %}
+{% endhighlight %}
 
 ### Configuring the fit
 
@@ -555,9 +555,9 @@ _**Example**_
 There is function with 6 parameters. Then there is a setup possible like the following: parameters 0 to 2 can vary freely, parameter 3 has boundaries [-10, 4] with the initial value -1.5, and parameter 4 is fixed to 0.
 
 {% highlight C++ %}
-		func->SetParameters(0,3.1,1.e-6,-1.5,0,100);
-		func->SetParLimits(3,-10,4);
-		func->FixParameter(4,0);
+   func->SetParameters(0,3.1,1.e-6,-1.5,0,100);
+   func->SetParLimits(3,-10,4);
+   func->FixParameter(4,0);
 {% endhighlight %}
 
 #### Fitting subranges
@@ -589,11 +589,11 @@ The following section describes how to use the Fit Panel using an example.
 Given is a histogram following a gaussian distribution.
 
 {% highlight C++ %}
-    TH1F *h1 = new TH1F("h1", "h1", 200, -5,5);
-    TF1 *f1 = new TF1("f1", "[2]*TMath::Gaus(x,[0],[1])");
-    f1->SetParameters(1,1,1);
-    h1->FillRandom("f1");
-    h1->Draw();
+   TH1F *h1 = new TH1F("h1", "h1", 200, -5,5);
+   TF1 *f1 = new TF1("f1", "[2]*TMath::Gaus(x,[0],[1])");
+   f1->SetParameters(1,1,1);
+   h1->FillRandom("f1");
+   h1->Draw();
 {% endhighlight %}
 
 - Right-click on the object and then click `FitPanel`.<br>
@@ -673,6 +673,7 @@ In case the option `s` is used (in the constructor or by calling  [TProfile::Bui
 In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
 
 _**Example**_
+
 {% highlight C++ %}
 {
   auto c1 = new TCanvas("c1","Profile histogram example",200,10,700,500);
