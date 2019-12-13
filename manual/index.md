@@ -9,13 +9,14 @@ toc_label: ROOT Manual
 ---
 
 ROOT is an object-oriented framework that provides all the functionalities needed to deal
-with big data processing, statistical analysis, visualization and storage in high-energy physics. It is mainly
-written in C++ but integrated with other languages such as Python and R.
+with big data processing, statistical analysis, visualization and storage in high-energy
+physics. It is mainly written in C++ but integrated with other languages such as Python
+and R.
 
 > **C++**
-> 
+>
 > The usage of ROOT requires in-depth knowledge of C++. For detailed information on C++, refer to C++ language references such as [C++ Language Reference](https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=vs-2019).
-> 
+>
 
 ## Basics
 
@@ -39,33 +40,36 @@ written in C++ but integrated with other languages such as Python and R.
   - [Histograms]({{ '/manual/histograms' | relative_url }})
 
   - [Graphs]({{ '/manual/graphs' | relative_url }})
-  
+
   - [Geometry]({{ '/manual/geometry' | relative_url }})
 
   - [Trees]({{ '/manual/trees' | relative_url }})
-  
+
   - [Data frames]({{ '/manual/data_frame' | relative_url }})
-  
+
   - [RooFit]({{ '/manual/roofit' | relative_url }})
-  
+
   - [TMVA]({{ '/manual/tmva' | relative_url }})
 
   - [Mathematical libraries]({{ '/manual/math' | relative_url }})
-  
+
   - [Vectors]({{ '/manual/vectors' | relative_url }})
-  
+
   - [Python interface PyROOT]({{ '/manual/python' | relative_url }})
-  
+
   - [R interface]({{ '/manual/r' | relative_url }})
-  
+
   - [Threads]({{ '/manual/threads' | relative_url }})
 
 ## Further Information
 
-  - [ROOT Reference Guide](https://root.cern/doc/master/)
+  - [Reference Guide](https://root.cern/doc/master/)
 
-  - [ROOT Tutorials](https://root.cern/doc/master/group__Tutorials.html)
+  - [Tutorials](https://root.cern/doc/master/group__Tutorials.html)
 
-  - [ROOT Forum](https://root-forum.cern.ch/)
+  - [Primer]({{ '/primer/' | relative_url }})
 
-  - [ROOT Primer]({{ '/Primer/' | relative_url }})
+  - [Topical Manuals]({{ '/topical/' | relative_url }})
+
+  - [Forum](https://root-forum.cern.ch/)
+
