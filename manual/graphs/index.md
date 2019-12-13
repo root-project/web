@@ -26,7 +26,7 @@ The following graph classes are available in ROOT, among others:
 
 [TGraphQQ](https://root.cern/doc/master/classTGraphQQ.html): Draws quantile-quantile plots.
 
-[TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html): A collection of `TGraph` (or derived) objects. 
+[TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html): A collection of `TGraph` (or derived) objects.
 
 [TGraph2D](https://root.cern/doc/master/classTGraph2D.html): Graph made of three arrays X, Y and Z with the same number of points each.
 
@@ -146,7 +146,7 @@ _**Example**_
 
    c1->SetGrid();
    c1->GetFrame()->SetBorderSize(12);
-   
+
 // Create the coordinate arrays:
    const Int_t n = 10;
    Float_t x[n] = {-.22,.05,.25,.35,.5,.61,.7,.85,.89,.95};
@@ -167,14 +167,14 @@ _**Example**_
 }
 {% endhighlight %}
 
-{% include figure_image
-   img="error-bars.png"
+{% include figure_jsroot
+   file="graphs.root" object="ge" width="500px" height="350px"
    caption="Graph with error bars."
 %}
 
 ## TMulitGraph ##
 
-A [TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html) is a collection of TGraph (or derived) objects. 
+A [TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html) is a collection of TGraph (or derived) objects.
 
 - Use [TMultiGraph::Add()](https://root.cern/doc/master/classTMultiGraph.html#a2e3c69dd70582da81cf1e32414cc5e2d) to add a new graph to the list.
 
@@ -183,14 +183,14 @@ The `TMultiGraph` owns the objects in the list. The drawing and fitting options 
 _**Example**_
 
 {% highlight C++ %}
-
+{
 // Create the points:
    const Int_t n = 10;
    Double_t x[n] = {-.22,.05,.25,.35,.5,.61,.7,.85,.89,.95};
    Double_t y[n] = {1,2.9,5.6,7.4,9,9.6,8.7,6.3,4.5,1};
    Double_t x2[n] = {-.12,.15,.35,.45,.6,.71,.8,.95,.99,1.05};
    Double_t y2[n] = {1,2.9,5.6,7.4,9,9.6,8.7,6.3,4.5,1};
-   
+
 // Create the width of errors in x and y direction:
    Double_t ex[n] = {.05,.1,.07,.07,.04,.05,.06,.07,.08,.05};
    Double_t ey[n] = {.8,.7,.6,.5,.4,.4,.5,.6,.7,.8};
@@ -207,9 +207,9 @@ _**Example**_
  }
 {% endhighlight %}
 
-{% include figure_image
-   img="multigraph.png"
-   caption="A multigraph."
+{% include figure_jsroot
+   file="graphs.root" object="mg" width="500px" height="350px"
+   caption="Graph with error bars."
 %}
 
 ## TGraph2D ##
