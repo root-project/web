@@ -16,21 +16,24 @@ A graph is a graphics object made of two arrays `X` and `Y`, holding the `x`,`y`
 
 The following graph classes are available in ROOT, among others:
 
-[TGraph](https://root.cern/doc/master/classTGraph.html): A graph.
 
-[TGraphErrors](https://root.cern/doc/master/classTGraphErrors.html): A graph with error bars.
+{% include ref class="TGraph" %}: A graph.
 
-[TGraphAsymmErrors](https://root.cern/doc/master/classTGraphAsymmErrors.html)
+{% include ref class="TGraphErrors" %}: A graph with error bars.
 
-[TGraphPolar](https://root.cern/doc/master/classTGraphPolar.html): A polar graph including error bars.
+{% include ref class="TGraphAsymmErrors" %}: A `TGraph` with asymmetric error bars.
 
-[TGraphQQ](https://root.cern/doc/master/classTGraphQQ.html): Draws quantile-quantile plots.
+{% include ref class="TGraphBentErrors" %}: A `TGraph` with bent, asymmetric error bars.
 
-[TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html): A collection of `TGraph` (or derived) objects.
+{% include ref class="TGraphPolar" %}: A polar graph including error bars.
 
-[TGraph2D](https://root.cern/doc/master/classTGraph2D.html): Graph made of three arrays X, Y and Z with the same number of points each.
+{% include ref class="TGraphQQ" %}: Draws quantile-quantile plots.
 
-[TGraph2DErrors](https:/root.cern/doc/master/classTGraph2DErrors.html): A `TGraph2D` with error bars.
+{% include ref class="TMultiGraph" %}: A collection of `TGraph` (or derived) objects.
+
+{% include ref class="TGraph2D" %}: Graph made of three arrays X, Y and Z with the same number of points each.
+
+{% include ref class="TGraph2DErrors" %}: A `TGraph2D` with error bars.
 
 ## Working with graphs
 
@@ -42,7 +45,7 @@ Use a graph constructor to create a graph object.
 
 _**Example**_
 
-Arrays of coordinates are defined and then graph with the [TGraph](https://root.cern/doc/master/classTGraph.html) constructor is created.<br>
+Arrays of coordinates are defined and then graph with the {% include ref class="TGraph" %} constructor is created.<br>
 The coordinates can be arrays of doubles or floats.
 
 {% highlight C++ %}
@@ -59,7 +62,7 @@ TGraph *gr1 = new TGraph (n, x, y);
 
 - Use the `Draw()` method to draw a graph.
 
-The [TGraphPainter](https://root.cern/doc/master/classTGraph.html) class implements all drawing options.
+The {% include ref class="TGraphPainter" %} class implements all drawing options.
 
 _**Example**_
 
@@ -86,7 +89,7 @@ _**Example**_
 >
 > The drawing options are not case sensitive.
 
-For detailed information on the drawing options for graph classes, refer to [TGraphPainter](https://root.cern/doc/master/classTGraph.html).
+For detailed information on the drawing options for graph classes, refer to {% include ref class="TGraphPainter" %}.
 
 `L`: A simple poly-line between every point is drawn.
 
@@ -132,9 +135,9 @@ For more information on the `Fit()` method, see *Fitting histograms*.
 
 ## Graphs with error bars
 
-A [TGraphErrors](https://root.cern/doc/master/classTGraphErrors.html) is a [TGraph](https://root.cern/doc/master/classTGraph.html) with error bars.
+A {% include ref class="TGraphErrors" %} is a [TGraph](https://root.cern/doc/master/classTGraph.html) with error bars.
 
-The [TGraphPainter](https://root.cern/doc/master/classTGraph.html) class implements all drawing options for graphs with error bars.
+The {% include ref class="TGraphPainter" %} class implements all drawing options for graphs with error bars.
 
 `TGraphErrors` uses 4 parameters: X, Y (as in `TGraph`), X-errors, and Y-errors (the size of the errors in the x and y direction).
 
@@ -172,13 +175,13 @@ _**Example**_
    caption="Graph with error bars."
 %}
 
-## TMulitGraph ##
+## TMultiGraph ##
 
-A [TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html) is a collection of TGraph (or derived) objects.
+A {% include ref class="TMultiGraph" %} is a collection of TGraph (or derived) objects.
 
 - Use [TMultiGraph::Add()](https://root.cern/doc/master/classTMultiGraph.html#a2e3c69dd70582da81cf1e32414cc5e2d) to add a new graph to the list.
 
-The `TMultiGraph` owns the objects in the list. The drawing and fitting options are the same as for [TGraph](https://root.cern/doc/master/classTGraph.html).
+The `TMultiGraph` owns the objects in the list. The drawing and fitting options are the same as for {% include ref class="TGraph" %}.
 
 _**Example**_
 
