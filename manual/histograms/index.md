@@ -204,7 +204,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="h1.root" object="h1" width="500px" height="350px"
+   file="histograms.root" object="h1" width="500px" height="350px"
    caption="Histogram drawn with Draw()."
 %}
 
@@ -470,7 +470,7 @@ See also the `fitexample.C` tutorial.
       if (par[2]!=0) arg = (x[0] - par[1])/par[2];
       Double_t fitval = par[0]*TMath::Exp(-0.5*arg*arg);
       return fitval;
-    }
+   }
 {% endhighlight %}
 
 Now the `fitf` function is used to fit a histogram.
@@ -479,7 +479,7 @@ Now the `fitf` function is used to fit a histogram.
    void fitexample() {
    // Open a ROOT file and get a histogram.
    TFile *f = new TFile("hsimple.root");
-   
+
    TH1F *hpx = (TH1F*)f->Get("hpx");
 
    // Create a TF1 object using the fitf function.
@@ -495,7 +495,7 @@ Now the `fitf` function is used to fit a histogram.
    // Call TH1::Fit with the name of the TF1 object.
    hpx->Fit("fit");
    }
- {% endhighlight %}
+{% endhighlight %}
 
 ### Accessing the fitted function parameters and results
 
@@ -506,13 +506,13 @@ _**Examples**_
 {% highlight C++ %}
    root[] TF1 *fit = hist->GetFunction(function_name);
    root[] Double_t chi2 = fit->GetChisquare();
-   
+
 // Value of the first parameter:
    root[] Double_t p1 = fit->GetParameter(0);
 
 // Error of the first parameter:
    root[] Double_t e1 = fit->GetParError(0);
- {% endhighlight %}
+{% endhighlight %}
 
 ### Configuring the fit
 
@@ -563,7 +563,7 @@ There is function with 6 parameters. Then there is a setup possible like the fol
 #### Fitting subranges
 
 By default, [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) fits the function on the defined histogram range. You can specify the `R` option in the second
-parameter of `TH1::Fit()` to restrict the fit to the range specified in the [TF1](https://root.cern/doc/master/classTF1.html) constructor. 
+parameter of `TH1::Fit()` to restrict the fit to the range specified in the [TF1](https://root.cern/doc/master/classTF1.html) constructor.
 
 _**Example**_
 
@@ -582,18 +582,18 @@ You can also specify a range in the call to `TH1::Fit()`.
 
 See also the ROOT macros `$ROOTSYS/tutorials/fit/myfit.C` and `multifit.C` for more detailed examples.
 
-### Using the Fit Panel 
- 
+### Using the Fit Panel
+
 The following section describes how to use the Fit Panel using an example.
 
 Given is a histogram following a gaussian distribution.
 
 {% highlight C++ %}
-    TH1F *h1 = new TH1F("h1", "h1", 200, -5,5);
-    TF1 *f1 = new TF1("f1", "[2]*TMath::Gaus(x,[0],[1])");
-    f1->SetParameters(1,1,1);
-    h1->FillRandom("f1");
-    h1->Draw();
+   TH1F *h1 = new TH1F("h1", "h1", 200, -5,5);
+   TF1 *f1 = new TF1("f1", "[2]*TMath::Gaus(x,[0],[1])");
+   f1->SetParameters(1,1,1);
+   h1->FillRandom("f1");
+   h1->Draw();
 {% endhighlight %}
 
 - Right-click on the object and then click `FitPanel`.<br>
@@ -640,8 +640,8 @@ This includes the method that will be used, as well as what fit options will be 
 
 - Click `Fit`.
 
-{% include figure_image
-   img="fitting.png"
+{% include figure_jsroot
+   file="histograms.root" object="fitted" width="500px" height="350px"
    caption="A fitted histogram."
 %}
 
@@ -657,7 +657,7 @@ When you fill a profile histogram with [TProfile.Fill()](https://root.cern/doc/m
 
 - `e[j]` or `s[j]` will be the resulting error depending on the selected option.
 
-The following formulae show the cumulated contents (capital letters) and the values displayed by the printing or plotting routines (small letters) of the elements for bin `J`. 
+The following formulae show the cumulated contents (capital letters) and the values displayed by the printing or plotting routines (small letters) of the elements for bin `J`.
 
 `E[j] = sum Y**2`<br>
 `L[j] = number of entries in bin J`<br>
@@ -666,13 +666,14 @@ The following formulae show the cumulated contents (capital letters) and the val
 `s[j] = sqrt[E[j] / L[j] - h[j]**2]`<br>
 `e[j] = s[j] / sqrt[L[j]]`<br>
 
-The displayed bin content for bin `J` of a [TProfile](https://root.cern/doc/master/classTProfile.html) is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d). 
-The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a). 
+The displayed bin content for bin `J` of a [TProfile](https://root.cern/doc/master/classTProfile.html) is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d).
+The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a).
 In case the option `s` is used (in the constructor or by calling  [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725)) the displayed error is `s(J)`.
 
 In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
 
 _**Example**_
+
 {% highlight C++ %}
 {
   auto c1 = new TCanvas("c1","Profile histogram example",200,10,700,500);
@@ -688,12 +689,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="profile_1.root" object="hprof" width="500px" height="350px"
+   file="histograms.root" object="hprof" width="500px" height="350px"
    caption="A profile histogram example."
 %}
-
-
-
-
-
 
