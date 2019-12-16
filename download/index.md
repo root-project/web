@@ -11,7 +11,41 @@ sidebar:
 We are developing ROOT according to the principle of _Release early and release
 often_. However, since a very large portion of the user base requires a stable
 product we generally keep at least three versions of the system available for
-download. The _development_, _production_ and _old_ versions.
+download. The _development_, _production_ and _old_ versions. The _development_ version
+can be build from sources.
+
+## Download and install ROOT
+
+### Latest ROOT Releases
+
+The following recent versions are available for download:
+
+{% include releases_list state="pro" label="PRO" single_column="yes" %}
+{% include releases_list state="old" label="OLD" single_column="yes" %}
+
+**[More ...]({{'/download/all_releases' | relative_url}})**
+
+### Building from sources
+
+  1. Clone the repository:
+```
+$ git clone https://github.com/root-project/root.git
+```
+  2. Make a directory for building
+```
+$ mkdir build
+$ cd build
+```
+  3. Run cmake and make
+```
+$ cmake ../root
+$ make -j8
+```
+  4. Setup and run ROOT
+```
+$ source bin/thisroot.sh
+$ root
+```
 
 ## Production release
 This is a version we feel comfortable with to exposing to a large audience for serious work.
@@ -44,15 +78,4 @@ Typically add these lines to your `.profile` or `.login` files.
 ## Docker (Experimental)
 We also provide ROOT in Docker containers, for more information see [Docker Hub](https://hub.docker.com/r/rootproject/root-ubuntu16/).
 
-## Recent versions
 
-The following recent versions are available for download:
-
-### Latest ROOT Releases
-
-{% include releases_list state="pro" label="PRO" single_column="yes" %}
-{% include releases_list state="old" label="OLD" single_column="yes" %}
-
-### Version 6
-
-{% include releases_list number=4 single_column="yes" %}
