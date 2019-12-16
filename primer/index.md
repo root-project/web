@@ -1379,7 +1379,7 @@ file="canvases.root" object="multigraph"
 caption="A set of graphs grouped in a multigraph."
 %}
 
-[^2]: [This article](https://root.cern.ch/drupal/content/rainbow-color-map) gives more details about color map choice.
+[^2]: [This article]({{ 'rainbow_colormap' | relative_url}}) gives more details about color map choice.
 
 # Histograms
 
@@ -2781,8 +2781,7 @@ still a lot coming to mind to be said, but by now you are experienced
 enough to use the ROOT documentation, most importantly the **[ROOT home
 page](http://root.cern.ch)** and the **[ROOT reference
 guide](https://root.cern/doc/master/)** with the
-documentation of all ROOT classes, or the **[ROOT users
-guide](https://root.cern.ch/guides/users-guide)**.
+documentation of all ROOT classes.
 
 A very useful way for you to continue exploring ROOT is to study the
 examples in the sub-directory `tutorials/` of any ROOT installation.
