@@ -57,12 +57,13 @@ _**Example**_
 `MyFolder` is the top folder. `/` indicates the [TTree](https://root.cern/doc/master/classTTree.html) constructor that a folder is being used.
 You can fill the tree by placing the data into the folder structure and then calling the [TTree::Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067) method.
 
+
 ### Example: Building a tree from an ASCII file
 
 The tutorial `$ROOTSYS/tutorials/tree/cernbuild.C `provides an example how to build a [TTree](https://root.cern/doc/master/classTTree.html) from an ASCII file.
 The input file is `cernstaff.dat` that contains statistics about the staff at CERN.
 
-The ROOT macro `cernbuild.C` creates a root file (`cernstaff.root`) and prints the tree `T` with [TTree::Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094).
+The ROOT macro `cernbuild.C` creates a root file (`cernstaff.root`) and prints the tree `T` and its branches with [TTree::Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094).
 
 {% highlight C++ %}
 root [0] .x cernbuild.C
@@ -119,10 +120,26 @@ root [0] .x cernbuild.C
 root [1]
 {% endhighlight %}
 
+### Filling a tree
+- Use the [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067) method to fill a [TTree](https://root.cern/doc/master/classTTree.html) instance.
+A loop on all defined branches (see → [Branches(#branches)] is executed.
+
+
+### Writing a tree
+
+- Use the [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f) method to write the tree and the histograms.
+
+The `TTree::Write()` method is needed to write the ROOT file header.
+
+When writing a [TTree](https://root.cern/doc/master/classTTree.html)  to a ROOT file and if the ROOT file size reaches the value stored in the [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9), the current
+ROOT file is closed and a new ROOT file is created. If the original ROOT file is named `myfile.root`, the subsequent ROOT files are named
+`myfile_1.root`, `myfile_2.root`, etc.
+
 
 ### Showing an entry of a tree
 
 - Use the [TTree::Show()](https://root.cern/doc/master/classTTree.html) method to access one entry of a tree.
+
 
 _**Example**_
 
@@ -188,9 +205,6 @@ Scanning the `cernstaff.root` file (see → [Building a tree from an ASCII file]
    *    24 *     9617 *        49 *             0 *
 {% endhighlight %}
 
-### Filling a tree
-- Use the [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067) method to fill a [TTree](https://root.cern/doc/master/classTTree.html) instance.
-A loop on all defined branches (see → [Branches(#branches)] is executed.
 
 ## Tree Viewer
 
@@ -204,13 +218,42 @@ Open the Tree Viewer for the `cernstaff.root` file (see → [Building a tree fro
 
 {% highlight C++ %}
    root[] TFile f("cernstaff.root")
-   root[] new TTreeViewer("T");
+   root[] new TTreeViewer("T")
 {% endhighlight %}
 
 {% include figure_image
 img="tree_viewer.png"
 caption="Tree Viewer."
 %}
+
+### Drawing correlating variables in a scatterplot
+
+You can show the correlation between variables, listed in the [TTreeViewer](https://root.cern/doc/master/classTTreeViewer.html), by drawing a scatterplot.
+
+- Select a variable in the [TTreeViewer](https://root.cern/doc/master/classTTreeViewer.html) and drag it to the `X:-empty-` entry. 
+- Select a second variable and drag it to the `Y:-empty-` entry.
+
+{% include figure_image
+img="variables_for_scatterplot.png"
+caption="Variables Age and Cost selected for the scatterplot."
+%}
+
+- Click `Scatterplot`
+
+{% include figure_image
+img="scatterplot-icon.png"
+caption="Scatterplot icon."
+%}
+
+The scatterplot is drawn.
+
+{% include figure_image
+img="scatterplot.png"
+caption="Scatterplot of the variables Age and Cost."
+%}
+
+Note, that not each (x,y) point on a scatterplot represents two values in your n−tuple. In fact, the scatterplot is a grid and each square in
+the grid is randomly populated with a density of dots that’s proportional to the number of values in that grid.
 
 ## Branches
 
