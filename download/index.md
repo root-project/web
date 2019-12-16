@@ -12,7 +12,7 @@ We are developing ROOT according to the principle of _Release early and release
 often_. However, since a very large portion of the user base requires a stable
 product we generally keep at least three versions of the system available for
 download. The _development_, _production_ and _old_ versions. The _development_ version
-can be build from sources.
+can be build from GitHub sources.
 
 ## Download and install ROOT
 
@@ -25,7 +25,7 @@ The following recent versions are available for download:
 
 **[More ...]({{'/download/all_releases' | relative_url}})**
 
-### Building from sources
+### Building from GitHub sources
 
   1. Clone the repository:
 ```
