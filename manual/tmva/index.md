@@ -7,7 +7,10 @@ toc: true
 toc_sticky: true
 ---
 
-The Toolkit for Multivariate Data Analysis with ROOT (TMVA) provides a machine learning environment for the processing and evaluation of multivariate classification, both binary and multi-class, and regression techniques targeting applications in high-energy physics. The package includes:
+The Toolkit for Multivariate Data Analysis with ROOT (TMVA) provides a machine learning
+environment for the processing and evaluation of multivariate classification, both binary
+and multi-class, and regression techniques targeting applications in high-energy physics.
+The package includes:
 
 - Neural networks
 - Deep networks

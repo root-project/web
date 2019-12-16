@@ -1,1 +1,1 @@
-{% assign class = {{include.class}}  %}[{{class}}](https://root.cern.ch/doc/master/class{{class}}.html)
+<a href="https://root.cern/doc/master/class{{include.class}}.html">{{include.class}}</a>
