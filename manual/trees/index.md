@@ -230,7 +230,7 @@ caption="Tree Viewer."
 
 You can show the correlation between variables, listed in the [TTreeViewer](https://root.cern/doc/master/classTTreeViewer.html), by drawing a scatterplot.
 
-- Select a variable in the [TTreeViewer](https://root.cern/doc/master/classTTreeViewer.html) and drag it to the `X:-empty-` entry. 
+- Select a variable in the [TTreeViewer](https://root.cern/doc/master/classTTreeViewer.html) and drag it to the `X:-empty-` entry.
 - Select a second variable and drag it to the `Y:-empty-` entry.
 
 {% include figure_image
@@ -247,9 +247,9 @@ caption="Scatterplot icon."
 
 The scatterplot is drawn.
 
-{% include figure_image
-img="scatterplot.png"
-caption="Scatterplot of the variables Age and Cost."
+{% include figure_jsroot
+   file="trees.root" object="CostAge" width="500px" height="350px"
+   caption="Scatterplot of the variables Age and Cost."
 %}
 
 Note, that not each (x,y) point on a scatterplot represents two values in your n−tuple. In fact, the scatterplot is a grid and each square in
