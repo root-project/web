@@ -28,8 +28,25 @@ The ROOT Mathematical libraries consist of the following components:
 
 ## MathCore library
 
-The [MathCore](https://root.cern/doc/master/MathCorePage.html) is a self-consistent minimal set of tools required for the basic numerical computing. <br>
-It provides major mathematical functions for:
+The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides a collection of functions and C++ classes for HEP numerical computing. <br>
+The `MathCore` is a self-consistent minimal set of tools required for the basic numerical computing. More advanced mathematical functionalities is provided by the [MathMore library](#mathmore-library). 
+The following is included in the `MathCore` library:
+
+- [Special mathematical functions](https://root.cern/doc/master/group__SpecFunc.html): Functions like the gamma, beta and error function that are used in HEP.
+
+- [Statistical functions](https://root.cern/doc/master/group__StatFunc.html): Mathematical functions used in statistics, such as the probability density functions and the cumulative distributions functions for continuous and discrete distributions.
+
+- [Function classes and interfaces](https://root.cern/doc/master/group__CppFunctions.html): Interfaces (abstract classes) and base classes, including helper classes to wrap free (static) and non-static member functions.
+
+- Numerical algorithms: User classes with (in some cases) basic implementations for:
+	- [Numerical Integration](https://root.cern/doc/master/group__Integration.html)
+	- [Numerical Differentiation] (https://root.cern/doc/master/group__Deriv.html)
+	- [One-dimensional Root-Finding] (https://root.cern/doc/master/group__RootFinders.html)
+	- [One-dimensional minimization](https://root.cern/doc/master/group__Min1D.html) and [multi-dimensional minimization](https://root.cern/doc/master/group__MultiMin.html)
+	
+- [Fitting and parameter estimation](https://root.cern/doc/master/group__Fit.html): Classes for fitting and parameter estimation from a given data set.
+	
+In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html) library contains the following ROOT classes that were originally part of *libCore*:
 
 - the namespaces for [TMath](https://root.cern/doc/master/namespaceTMath.html) and [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html).
 
@@ -37,7 +54,9 @@ It provides major mathematical functions for:
 
 - class for complex numbers, [TComplex](https://root.cern/doc/master/classTComplex.html)
 
-- common interfaces for function evaluation and numerical algorithms.
+- other classes like 
+	- [TKDTree](https://root.cern/doc/master/classTKDTree.html): Class implementing a kd-tree.
+	- [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html): Class for testing the for goodness of fit tests.
 
 
 ### TMath
