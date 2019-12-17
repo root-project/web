@@ -738,7 +738,7 @@ There the following fit configurations:
 - Setting eventual parameter bounds.
 - Setting the minimizer library and the particular algorithm to use.
 - Setting different minimization options (print level, tolerance, max iterations, etc. . . ).
-- Setting the type of parameter errors to compute (parabolic error, minor errors, re-normalize errors using fitted chi2 values)
+- Setting the type of parameter errors to compute (parabolic error, minor errors, re-normalize errors using fitted chi2 values).
 
 _**Example**_
 
