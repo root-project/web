@@ -8,6 +8,7 @@ sidebar:
 The Reference Guide is available for all major ROOT releases, and for the current
 [HEAD of the git master](https://root.cern/doc/master/):
 
+| ROOT Version           | HTML link                                                | Download link                                         |
 |------------------------|----------------------------------------------------------|------------------------------------------------------ |
 | HEAD of the git master | [browse](https://root.cern/doc/master/)                  |                                                       |
 | **6.18**               | [browse](https://root.cern/doc/v618/)                    | [download](https://root.cern/download/html618.tar.gz) |
@@ -30,3 +31,4 @@ Additionally, the source code is accessible via:
 
 *   [Browsing the Git repository using gitweb](https://root.cern/gitweb?p=root.git;a=summary)
 *   [Github](https://github.com/root-mirror/root)
+
