@@ -645,6 +645,113 @@ This includes the method that will be used, as well as what fit options will be 
    caption="A fitted histogram."
 %}
 
+### Using ROOT::Fit classes
+
+[ROOT::Fit](https://root.cern/doc/master/namespaceROOT_1_1Fit.html) is the namespace for fitting classes (regression analysis). The fitting classes are part of the [MathCore library]({{ '/manual/math#mathcore-library' | relative_url }}).<br>
+The defined classes can be classified in the following groups:
+
+- [Fit method classes](https://root.cern/doc/master/group__FitMethodFunc.html): Classes describing fit method functions like:
+	- [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html): Class for binned fits using the least square methods. 
+	- [ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html): Class for evaluating the log likelihood for binned Poisson likelihood fits.
+	- [ROOT::Fit::LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html): Calls for likelihood fits.
+	
+- [Fit data classes](https://root.cern/doc/master/group__FitData.html): Classes for describing the input data for fitting. These classes are, among others, [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html) for describing bin data sets
+ (data points containing both coordinates and a corresponding value/weight with optionally an error on the value or the coordinate) and the [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html) for un-binned data sets.
+ 
+- [User fitting classes](https://root.cern/doc/master/group__FitMain.html): Classes for fitting a given data set. 
+ 
+#### Creating the input data
+
+There are two types of input data:
+- Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html)): They are used for least square (chi-square) fits of histograms or [TGraph](https://root.cern/doc/master/classTGraph.html) objects 
+- Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html)): They are used for fitting vectors of data points, for example from a [TTree](https://root.cern/doc/master/classTTree.html).
+
+**Using binned data**
+
+- Use the [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html) class for binned data.
+
+_**Example**_
+
+There is histogram, represented as a [TH1](https://root.cern/doc/master/classTH1.html) type object. Now a `ROOT:Fit::BinData` object is created and filled.
+
+{% highlight C++ %}
+   ROOT::Fit::DataOptions opt;
+   opt.fIntegral = true;
+   ROOT::Fit::BinData data(opt);
+
+// Fill the bin data by using the histogram:
+   TH1 * h1 = (TH1*) gDirectory->Get("myHistogram");
+   ROOT::Fit::FillData(data, h1);
+{% endhighlight %}
+
+By using [ROOT::Fit::DataOptions](https://root.cern/doc/master/structROOT_1_1Fit_1_1DataOptions.html) you can specify the data range and some fitting options.
+
+**Using un-binned data**
+
+- Use the [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html) class for un-binned data.
+
+For creating un-binned data sets, there are two possibilities:
+1. Copy the data inside a `ROOT::Fit::UnBinData` object.<br>
+Create an empty `ROOT::Fit::UnBinData` object, iterate on the data and add the data point one by one. An input `ROOT::Fit::DataRange` object is passed in order to copy
+the data according to the given range. 
+2. Use `ROOT::Fit::UnBinData` as a wrapper to an external data storage.<br> 
+In this case the `ROOT::Fit::UnBinData` object is created from an iterator or pointers to the data and the data are not copied inside.
+The data cannot be selected according to a specified range. All the data points will be included in the fit.
+
+`ROOT::Fit::UnBinData` supports also weighted data. In addition to the data points (coordinates), which
+can be of arbitrary `k` dimensions, the class can be constructed from a vector of weights.
+
+_**Example_**
+
+Data are taken from a histogram (TH1 object).
+
+{% highlight C++ %}
+   double * buffer = histogram->GetBuffer();
+
+// Number of entry is first entry in the buffer
+   int n = buffer[0];
+
+// When creating the data object, it is important to create it with the size of the data.
+   ROOT::Fit::UnBinData data(n);
+   for (int i = 0; i < n; ++i)
+      data.add(buffer[2*i+1]);
+{% endhighlight %}
+
+#### Creating a fit model
+
+The model function needs to be expressed as function of some unknown parameters. The fitting will find the best
+parameter value to describe the observed data.
+
+YOu can use the [TF1](https://root.cern/doc/master/classTF1.html) class, the parametric function class to describe the model function. 
+However the `ROOT::Fit::Fitter` class, to be independent of the ROOT Histogram library, takes as input a more general
+parametric function object, the interface (abstract) class `ROOT::Math::IParametricFunctionMultiDim`, which describes a generic one or multi-dimensional function with parameters.
+
+#### Configuring the fit
+
+Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html) (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html) class) for configuring the fit.
+
+There the following fir configurations:
+
+- Setting the initial values of the parameters.
+- Setting the parameter step sizes.
+- Setting eventual parameter bounds.
+- Setting the minimizer library and the particular algorithm to use.
+- Setting different minimization options (print level, tolerance, max iterations, etc. . . ).
+- Setting the type of parameter errors to compute (parabolic error, minor errors, re-normalize errors using fitted chi2 values)
+
+_**Example**_
+
+Setting the lower/upper bounds for the first parameter and a lower bound for the second parameter:
+
+{% highlight C++ %}
+   fitter.SetFunction( fitFunction, false);
+   fitter.Config().ParSettings(0).SetLimits(0,1.E6);
+   fitter.Config().ParSettings(2).SetLowerLimit(0);
+{% endhighlight %}
+
+
+####
+
 ## Profile histograms
 
 Profile histograms are used to display the mean value of `Y` and its error for each bin in `X`.
