@@ -701,7 +701,7 @@ The data cannot be selected according to a specified range. All the data points 
 `ROOT::Fit::UnBinData` supports also weighted data. In addition to the data points (coordinates), which
 can be of arbitrary `k` dimensions, the class can be constructed from a vector of weights.
 
-_**Example_**
+_**Example**_
 
 Data are taken from a histogram (TH1 object).
 
@@ -749,8 +749,6 @@ Setting the lower/upper bounds for the first parameter and a lower bound for the
    fitter.Config().ParSettings(2).SetLowerLimit(0);
 {% endhighlight %}
 
-
-####
 
 ## Profile histograms
 
