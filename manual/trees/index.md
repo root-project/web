@@ -234,7 +234,7 @@ You can show the correlation between variables, listed in the [TTreeViewer](http
 - Select a second variable and drag it to the `Y:-empty-` entry.
 
 {% include figure_image
-img="variables_for_scatterplot.png"
+img="variables_for_scatterplot_small.png"
 caption="Variables Age and Cost selected for the scatterplot."
 %}
 
