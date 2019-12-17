@@ -655,15 +655,15 @@ The defined classes can be classified in the following groups:
 	- [ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html): Class for evaluating the log likelihood for binned Poisson likelihood fits.
 	- [ROOT::Fit::LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html): Calls for likelihood fits.
 	
-- [Fit data classes](https://root.cern/doc/master/group__FitData.html): Classes for describing the input data for fitting. These classes are, among others, [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html) for describing bin data sets
- (data points containing both coordinates and a corresponding value/weight with optionally an error on the value or the coordinate) and the [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html) for un-binned data sets.
+- [Fit data classes](https://root.cern/doc/master/group__FitData.html): Classes for describing the input data for fitting. These classes are, among others, [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html), for binned data sets
+ (data points containing both coordinates and a corresponding value/weight with optionally an error on the value or the coordinate), and [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html), for un-binned data sets.
  
 - [User fitting classes](https://root.cern/doc/master/group__FitMain.html): Classes for fitting a given data set. 
  
 #### Creating the input data
 
 There are two types of input data:
-- Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html)): They are used for least square (chi-square) fits of histograms or [TGraph](https://root.cern/doc/master/classTGraph.html) objects 
+- Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html)): They are used for least square (chi-square) fits of histograms or [TGraph](https://root.cern/doc/master/classTGraph.html) objects.
 - Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html)): They are used for fitting vectors of data points, for example from a [TTree](https://root.cern/doc/master/classTTree.html).
 
 **Using binned data**
@@ -722,15 +722,16 @@ Data are taken from a histogram (TH1 object).
 The model function needs to be expressed as function of some unknown parameters. The fitting will find the best
 parameter value to describe the observed data.
 
-YOu can use the [TF1](https://root.cern/doc/master/classTF1.html) class, the parametric function class to describe the model function. 
-However the `ROOT::Fit::Fitter` class, to be independent of the ROOT Histogram library, takes as input a more general
-parametric function object, the interface (abstract) class `ROOT::Math::IParametricFunctionMultiDim`, which describes a generic one or multi-dimensional function with parameters.
+You can for example use the [TF1](https://root.cern/doc/master/classTF1.html) class, the parametric function class to describe the model function. 
+But the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html) class takes as input a more general parametric function object, the abstract interface class [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a). It describes a generic one-dimensional or multi-dimensional function with parameters.
+This interface extends the abstract [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9) class with methods to set/retrieve parameter values and to evaluate the function
+given the independent vector of values X and vector of parameters P.
 
 #### Configuring the fit
 
 Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html) (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html) class) for configuring the fit.
 
-There the following fir configurations:
+There the following fit configurations:
 
 - Setting the initial values of the parameters.
 - Setting the parameter step sizes.
@@ -749,6 +750,28 @@ Setting the lower/upper bounds for the first parameter and a lower bound for the
    fitter.Config().ParSettings(2).SetLowerLimit(0);
 {% endhighlight %}
 
+#### Performing the fit
+
+Depending on the available input data and the selected function for fitting, you can use one of the methods of the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html) class to perform the fit.
+
+The following pre-defined fitting methods are available:
+
+- Least-square fit: [Fitter::LeastSquare(const BinData &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a44dc06cfe20c1036657e78d939b34593) or [Fitter::Fit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#ae6b7c345d4e0b62ebec1a9d08afd233c).
+Both methods should be used when the binned data values follow a Gaussian distribution. These fit methods are implemented using the class [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html#af0040f12bc304dd9610daec9d0dfed70).
+
+- Binned likelihood fit: [Fitter::LikelihoodFit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a61a145587e2b65e90e4f05d3df2d6004). This method should be used when the binned data values follow a Poisson or a multinomial distribution. The Poisson case
+(extended fit) is the default and in this case the function normalization is also fit to the data. This method is implemented by the ROOT::Fit:::PoissonLikelihoodFCN class
+
+- Un-Binned likelihood fit: [Fitter::LikelihoodFit(const UnBindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a980281c2d7ecfbf94fe584fc3da1a566). By default the fit is not extended, this is the normalization is not fitted to the data. This
+method is implemented using the [LogLikelihoodFCN]8https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html) class.
+
+- Linear fit: A linear fit can be selected, if the model function is linear in the parameters.
+
+#### Fit result
+
+The result of the fit is contained in the [ROOT::Fit::Result](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#acb09076a64e460e493dcc74fa7b36668) object.
+
+You can print the result of the fit with the [FitResult::Print](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html#a879917fed14db36f8d63fb0170d68d1d) method.
 
 ## Profile histograms
 
