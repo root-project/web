@@ -40,8 +40,8 @@ The following is included in the `MathCore` library:
 
 - Numerical algorithms: User classes with (in some cases) basic implementations for:
 	- [Numerical Integration](https://root.cern/doc/master/group__Integration.html)
-	- [Numerical Differentiation] (https://root.cern/doc/master/group__Deriv.html)
-	- [One-dimensional Root-Finding] (https://root.cern/doc/master/group__RootFinders.html)
+	- [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html)
+	- [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html)
 	- [One-dimensional minimization](https://root.cern/doc/master/group__Min1D.html) and [multi-dimensional minimization](https://root.cern/doc/master/group__MultiMin.html)
 	
 - [Fitting and parameter estimation](https://root.cern/doc/master/group__Fit.html): Classes for fitting and parameter estimation from a given data set.
@@ -54,7 +54,7 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html) libr
 
 - class for complex numbers, [TComplex](https://root.cern/doc/master/classTComplex.html)
 
-- other classes like 
+- other classes like:
 	- [TKDTree](https://root.cern/doc/master/classTKDTree.html): Class implementing a kd-tree.
 	- [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html): Class for testing the for goodness of fit tests.
 
