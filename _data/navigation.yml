@@ -92,7 +92,7 @@ resources:
    - title: Code Owners
      url: resources/code_owners
    - title: Release Checklist
-     url: resources/coding_conventions
+     url: resources/release_checklist
    - title: Shifter's Instructions
      url: resources/shifters_instructions
    - title: Git Primer
