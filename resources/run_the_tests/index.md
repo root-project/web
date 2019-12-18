@@ -11,7 +11,7 @@ Running all ROOT tests on at least a platform before sending a PR or before push
 The ROOT continuous integration infrastructure allows to automatically check the PR also on a battery of platform, for example including macos and linux boxes.
 In order to be able to run all tests, the simple steps below need to be followed
 
-## Prepare your development area and build ROOT
+## Prepare your development area and build ROOT  
 
 ```
 mkdir RootDevelopment
