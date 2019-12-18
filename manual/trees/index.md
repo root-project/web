@@ -421,7 +421,7 @@ root [11] MyTree->Draw("Cost:Age")
 %}
 
 Next, the third pad is activated and a selection is added. `Cost` versus `Age` for the entries where the nation is equal to `“CH”` is drawn.<br>
-You can use any C++ operator. The value of the selection is used as a weight when filling the histogram. If the expression includes only Boolean operations the result is 0 (histogramm is not filled) or 1 ((histogramm is filled).
+You can use any C++ operator. The value of the selection is used as a weight when filling the histogram. If the expression includes only Boolean operations the result is 0 (histogram is not filled) or 1 ((histogram is filled).
 
 {% highlight C++ %}
 root [11] myCanvas->cd(3)
