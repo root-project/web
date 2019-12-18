@@ -6,4 +6,4 @@ sidebar:
 ---
 
 The links in this section are intended for the ROOT developers and for people who want 
-to contribute to the ROOT system.
+to [contribute]({{'contribute' | relative_url}}) to the ROOT system.
