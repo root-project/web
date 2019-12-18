@@ -16,12 +16,14 @@ This is the first bug-fix release for the v6.14 release series. It fixes a coupl
 The release notes for this release can be found [here](https://root.cern.ch/doc/v614/release-notes.html#release-6.1402).
 
 ## Source distribution
+
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | source | [root_v6.14.02.source.tar.gz](https://root.cern.ch/download/root_v6.14.02.source.tar.gz) | 155M |
 
 
 ## Binary distributions
+
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | CentOS Cern 7 gcc4.8 | [root_v6.14.02.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.14.02.Linux-centos7-x86_64-gcc4.8.tar.gz) | 140M |
