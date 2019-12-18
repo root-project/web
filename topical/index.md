@@ -112,4 +112,7 @@ TMVA is a toolkit for Multivariate Data Analysis.
 
 ## VMC
 
+Virtual Monte Carlo (VMC) defines an abstract layer between a detector simulation user code 
+(MC application) and the Monte Carlo transport code (MC).
+
 [The VMC documentation](https://vmc-project.github.io)
