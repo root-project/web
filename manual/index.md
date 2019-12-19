@@ -8,15 +8,37 @@ toc_sticky: true
 toc_label: ROOT Manual
 ---
 
-The ROOT Manual provides detailed information about the use and applications of ROOT, the object-oriented framework that provides all the functionalities needed to deal with big data processing, statistical analysis, visualization and storage in high-energy physics. 
+<center><b>
+<p style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#eec1d5; padding: 0.5em;">UNDER CONSTRUCTION</p>
+</b></center>
 
-In the first part **ROOT MANUAL - Basics**, the central building blocks and concepts of ROOT are presented and explained.
+<div style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#c4f1d8; padding: 0.5em;">
 
-In the second part **ROOT MANUAL - Functional parts**, the numerous application areas and special topics of ROOT are dealt with. Here you will receive in-depth information about the extensive possibilities of data analysis with ROOT.
+The ROOT Manual provides detailed information about the use and applications of ROOT, the
+object-oriented framework that provides all the functionalities needed to deal with big
+data processing, statistical analysis, visualization and storage in high-energy physics.
+
+<br><br>
+
+In the first part <b>ROOT MANUAL - Basics</b>, the central building blocks and concepts of
+ROOT are presented and explained.
+
+<br><br>
+
+In the second part <b>ROOT MANUAL - Functional parts</b>, the numerous application areas
+and special topics of ROOT are dealt with. Here you will receive in-depth information
+about the extensive possibilities of data analysis with ROOT.
+
+<br><br>
 
 Both parts contain a lot of, often interactive, examples.
 
-The ROOT Manual refers to numerous information, especially for ROOT classes, from the [ROOT Reference Guide](https://root.cern/doc/master/). The ROOT Reference Guide is the primary source of information for all ROOT classes.
+<br><br>
+
+The ROOT Manual refers to numerous information, especially for ROOT classes, from the
+<a href="https://root.cern/doc/master/">ROOT Reference Guide</a>. The ROOT Reference Guide
+is the primary source of information for all ROOT classes.
+</div>
 
 
 > **C++**
