@@ -429,7 +429,7 @@ For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &
 
 #### Using decomposition classes for inverting
 
-You can also use the following decomposition classes ((see → [Matrix decompositions](#matrix-decompositions")) for inverting a matrix:
+You can also use the following decomposition classes (see → [Matrix decompositions](#matrix-decompositions")) for inverting a matrix:
 
 <table width="100%" border="0">
   <tbody>
@@ -439,32 +439,32 @@ You can also use the following decomposition classes ((see → [Matrix decomposi
       <th scope="col">Comment</th>
     </tr>
     <tr>
-      <td>`TDecompLU`</td>
+      <td>TDecompLU</td>
       <td>General</td>
       <td></td>
     </tr>
     <tr>
-      <td>`TDecompQRH`</td>
+      <td>TDecompQRH</td>
       <td>General</td>
       <td></td>
     </tr>
     <tr>
-      <td>`TDecompSVD`</td>
+      <td>TDecompSVD</td>
       <td>General</td>
       <td>Can manipulate singular matrix.</td>
     </tr>
     <tr>
-      <td>`TDecompBK`</td>
+      <td>TDecompBK</td>
       <td>symmetric</td>
       <td></td>
     </tr>
     <tr>
-      <td>`TDecompChol`</td>
+      <td>TDecompChol</td>
       <td>Symmetric</td>
       <td>Matrix should also be positive definite.</td>
     </tr>
     <tr>
-      <td>`TDecompSparse`</td>
+      <td>TDecompSparse</td>
       <td>Sparse</td>
       <td></td>
     </tr>
