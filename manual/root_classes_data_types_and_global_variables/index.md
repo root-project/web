@@ -108,7 +108,7 @@ The `TObject` class provides default behavior and protocol for all objects in th
 
 -   Printing (`Print()`)
 
--   Drawing (`Draw()`, `Paint()`, E`xecuteEvent()`)
+-   Drawing (`Draw()`, `Paint()`, `ExecuteEvent()`)
 
 -   Bit handling (`SetBit()`, `TestBit()`)
 
