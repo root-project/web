@@ -89,7 +89,7 @@ In the namespace [TMath](https://root.cern/doc/master/namespaceTMath.html), a co
 - velocity of light
 - gravitational constant (G)
 - standard acceleration of gravity (g)
-- Plank’s contant
+- Plank’s constant
 - Boltzmann’s and Steffan-Boltzmann’s constants
 - Avogadro’s number
 - universal gas constant
@@ -102,7 +102,11 @@ In the namespace [TMath](https://root.cern/doc/master/namespaceTMath.html), a co
 
 [TMath](https://root.cern/doc/master/namespaceTMath.html) Math provides functions that process arrays for calculation:
 
-- mean- median- geometrical mean- sample standard deviation (RMS)- the kth smallest element
+- mean
+- median
+- geometrical mean
+- sample standard deviation (RMS)
+- the kth smallest element
 
 _**Example**_
 
@@ -129,7 +133,8 @@ _**Example**_
 In the namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html), a set of function interfaces to define the basic behaviour of a mathematical function is provided:
 
 - **One-dimensional function interfaces**<br>
-Used for numerical algorithms operating only on one-dimensional functions. The cannot applied tomulti-dimensional functions.
+Used for numerical algorithms operating only on one-dimensional functions. The cannot applied to
+multi-dimensional functions.
 
 - **Multi-dimensional function interfaces**<br>
 Used for numerical algorithms operating on multi-dimensional functions.
@@ -250,14 +255,18 @@ ROOT provides the following matrix classes, among others:
 
 #### Matrix properties
 
-A matrix has five properties, which are all set in the constructor:- `precision` <br>If the `precision` is float (i.e. single precision), use the `TMatrixF` class family. If the precision is double, use the `TMatrixD` class family.
+A matrix has five properties, which are all set in the constructor:
+
+- `precision` <br>
+If the `precision` is float (i.e. single precision), use the `TMatrixF` class family. If the precision is double, use the `TMatrixD` class family.
 
 - `type`<br>
 Possible values are: `general` (`TMatrixD`), `symmetric` (`TMatrixDSym`) or `sparse` (`TMatrixDSparse`).
 
-- `size`
-<br>Number of rows and columns.
-- `index`<br>
+- `size`<br>
+Number of rows and columns.
+
+- `index`<br>
 Range start of row and column index. By default these start at 0.
 
 - `sparse map`<br>
@@ -266,22 +275,54 @@ Only relevant for a sparse matrix. It indicates where elements are unequal 0.
 #### Accessing matrix properties
 
 Use one of the following methods to access the information about the relevant matrix property:
-- `Int_t GetRowLwb()`<br>Row lower-bound index.
-- `Int_t GetRowUpb()`<br>Row upper-bound index.
-- `Int_t GetNrows():`<br>Number of rows.
-- `Int_t GetColLwb()`<br>Column lower-bound index.
-- `Int_t GetColUpb()`<br>Column upper-bound index.
-- `Int_t GetNcols()`<br>Number of columns.
-- `Int_t GetNoElements()`<br>Number of elements, for a dense matrix this equals: `fNrows x fNcols`.
-- `Double_t GetTol()`<br>Tolerance number that is used in decomposition operations.
-- `Int_t *GetRowIndexArray()`<br>For sparse matrices, access to the row index of `fNrows+1` entries.
-- `Int_t *GetColIndexArray()`<br>For sparse matrices, access to the column index of `fNelems` entries.
+
+- `Int_t GetRowLwb()`<br>Row lower-bound index.
+
+- `Int_t GetRowUpb()`<br>Row upper-bound index.
+
+- `Int_t GetNrows():`<br>Number of rows.
+
+- `Int_t GetColLwb()`<br>Column lower-bound index.
+
+- `Int_t GetColUpb()`<br>Column upper-bound index.
+
+- `Int_t GetNcols()`<br>Number of columns.
+
+- `Int_t GetNoElements()`<br>Number of elements, for a dense matrix this equals: `fNrows x fNcols`.
+
+- `Double_t GetTol()`<br>Tolerance number that is used in decomposition operations.
+
+- `Int_t *GetRowIndexArray()`<br>For sparse matrices, access to the row index of `fNrows+1` entries.
+
+- `Int_t *GetColIndexArray()`<br>For sparse matrices, access to the column index of `fNelems` entries.
 
 #### Setting matrix properties
 
 Use one of the following methods to set a matrix property:
 
-- `SetTol (Double_t tol)`<br>Set the tolerance number.- `ResizeTo (Int_t nrows,Int_t ncols, Int_t nr_nonzeros=-1)`<br>Change matrix shape to `nrows x ncols`. Index will start at 0.- `ResizeTo(Int_t row_lwb,Int_t row_upb, Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros=-1)`<br>Change matrix shape to `row_lwb:row_upb x col_lwb:col_upb`.- `SetRowIndexArray (Int_t *data)`<br>For sparse matrices, set the row index. The array data should contain at least `fNrows+1` entries column lower-bound index.- `SetColIndexArray (Int_t *data)`<br>For sparse matrices, set the column index. The array data should contain at least `fNelems` entries.- `SetSparseIndex (Int_t nelems new)`<br>Allocate memory for a sparse map of `nelems_new` elements and copy (if exists) at most `nelems_new`  matrix elements over to the new structure.- `SetSparseIndex (const TMatrixDBase &a)`<br>Copy the sparse map from matrix `a`.- `SetSparseIndexAB (const TMatrixDSparse &a, const TMatrixDSparse &b)`<br>Set the sparse map to the same map of matrix `a` and `b`.
+- `SetTol (Double_t tol)`<br>
+Set the tolerance number.
+
+- `ResizeTo (Int_t nrows,Int_t ncols, Int_t nr_nonzeros=-1)`<br>
+Change matrix shape to `nrows x ncols`. Index will start at 0.
+
+- `ResizeTo(Int_t row_lwb,Int_t row_upb, Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros=-1)`<br>
+Change matrix shape to `row_lwb:row_upb x col_lwb:col_upb`.
+
+- `SetRowIndexArray (Int_t *data)`<br>
+For sparse matrices, set the row index. The array data should contain at least `fNrows+1` entries column lower-bound index.
+
+- `SetColIndexArray (Int_t *data)`<br>
+For sparse matrices, set the column index. The array data should contain at least `fNelems` entries.
+
+- `SetSparseIndex (Int_t nelems new)`<br>
+Allocate memory for a sparse map of `nelems_new` elements and copy (if exists) at most `nelems_new`  matrix elements over to the new structure.
+
+- `SetSparseIndex (const TMatrixDBase &a)`<br>
+Copy the sparse map from matrix `a`.
+
+- `SetSparseIndexAB (const TMatrixDSparse &a, const TMatrixDSparse &b)`<br>
+Set the sparse map to the same map of matrix `a` and `b`.
 
 ### Creating and filling a matrix
 
@@ -295,7 +336,9 @@ Use one of the following constructors to create a matrix:
 - `TMatrixDSym(Int_t row_lwb,Int_t row_upb)`
 - `TMatrixDSym(Int_t nrows,const Double_t *data,Option_t *option="")`
 - `TMatrixDSym(Int_t row_lwb,Int_t row_upb, const Double_t *data, Option_t *opt="")`
-- `TMatrixDSparse(Int_t nrows,Int_t ncols)`- `TMatrixDSparse(Int_t row_lwb,Int_t row_upb,Int_t col_lwb, Int_t col_upb)`- `TMatrixDSparse(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros,Int_t *row,Int_t *col,Double_t *data)`
+- `TMatrixDSparse(Int_t nrows,Int_t ncols)`
+- `TMatrixDSparse(Int_t row_lwb,Int_t row_upb,Int_t col_lwb, Int_t col_upb)`
+- `TMatrixDSparse(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros,Int_t *row,Int_t *col,Double_t *data)`
 
 Use one of the following methods to fill a matrix:
 
@@ -304,44 +347,63 @@ Copies array data. If `option="F"`, the array fills the matrix column-wise else 
 
 - `SetMatrixArray(Int_t nr,Int_t *irow,Int_t *icol,Double_t *data)`<br>
 Only available for sparse matrices. The three arrays should each contain `nr` entries with row index, column index and data entry. Only the entries with non-zero data value are inserted.
-- `operator()`, `operator[]`<br>These operators provide the easiest way to fill a matrix but are in particular for a sparse matrix expensive. If no entry for slot (`i`,`j`) is found in the sparse index table it will be entered, which involves some memory management. Therefore, before invoking this method in a loop set the index table first through a call to the `SetSparseIndex()` method.- `SetSub(Int_t row_lwb,Int_t col_lwb,const TMatrixDBase &source)`<br>The matrix to be inserted at position (`row_lwb`,`col_lwb`) can be both, dense or sparse.
+
+- `operator()`, `operator[]`<br>
+These operators provide the easiest way to fill a matrix but are in particular for a sparse matrix expensive. If no entry for slot (`i`,`j`) is found in the sparse index table it will be entered, which involves some memory management. Therefore, before invoking this method in a loop set the index table first through a call to the `SetSparseIndex()` method.
+
+- `SetSub(Int_t row_lwb,Int_t col_lwb,const TMatrixDBase &source)`<br>
+The matrix to be inserted at position (`row_lwb`,`col_lwb`) can be both, dense or sparse.
 
 - `Use()`<br>
-Allows inserting another matrix or data array without actually copying the data.<br> The following list shows the application of the `Use()` method: 
-	* `Use(TMatrixD &a)`
-	* `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Double_t *data)`
-	* `Use(Int_t nrows,Int_t ncols,Double_t *data)`
-	* `Use(TMatrixDSym &a)`
-	* `Use(Int_t nrows,Double_t *data)`
-	* `Use(Int_t row_lwb,Int_t row_upb,Double_t *data)`
-	* `Use(TMatrixDSparse &a)`
-	* `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Int_t nr_no nzeros, Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
-	* `Use(Int_t nrows,Int_t ncols,Int_t nr_nonzeros,Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
+Allows inserting another matrix or data array without actually copying the data.<br> 
+The following list shows the application of the `Use()` method: 
+ `Use(TMatrixD &a)`<br>
+`Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Double_t *data)`<br>
+`Use(Int_t nrows,Int_t ncols,Double_t *data)`<br>
+ `Use(TMatrixDSym &a)`<br>
+`Use(Int_t nrows,Double_t *data)`<br>
+`Use(Int_t row_lwb,Int_t row_upb,Double_t *data)`<br>
+`Use(TMatrixDSparse &a)`<br>
+ `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Int_t nr_no nzeros, Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`<br>
+ `Use(Int_t nrows,Int_t ncols,Int_t nr_nonzeros,Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
 
 _**Example**_
 
 A Hilbert matrix is created by copying an array.
-{% highlight C++ %}	TMatrixD h(5,5);
-	TArrayD data(25);	for (Int_t = 0; i < 25; i++) {
-		const Int_t ir = i/5;
-		const Int_t ic = i%5;
-		data[i] = 1./(ir+ic);	}	h.SetMatrixArray(data.GetArray());{% endhighlight %}
-We also can assign the data array to the matrix without actually copying it.
-
-{% highlight C++ %}	TMatrixD h; h.Use(5,5,data.GetArray());
-	h.Invert();
+{% highlight C++ %}
+   TMatrixD h(5,5);
+   TArrayD data(25);
+   for (Int_t = 0; i < 25; i++) {
+      const Int_t ir = i/5;
+      const Int_t ic = i%5;
+      data[i] = 1./(ir+ic);
+   }
+   h.SetMatrixArray(data.GetArray());
 {% endhighlight %}
-The array data now contains the inverted matrix.<br>
+
+We also can assign the data array to the matrix without actually copying it.
+
+{% highlight C++ %}
+   TMatrixD h; h.Use(5,5,data.GetArray());
+   h.Invert();
+{% endhighlight %}
+
+The array data now contains the inverted matrix.
+
 Now a unit matrix in sparse format is created.
 
-{% highlight C++ %}	TMatrixDSparse unit1(5,5);	
-	TArrayI row(5),col(5);	for (Int_t i = 0; i < 5; i++) row[i] = col[i] = i;	TArrayD data(5); data.Reset(1.);	unit1.SetMatrixArray(5,row.GetArray(),col.GetArray(),data.GetArray());
-
-	TMatrixDSparse unit2(5,5);
-	unit2.SetSparseIndex(5);
-	unit2.SetRowIndexArray(row.GetArray());
-	unit2.SetColIndexArray(col.GetArray());
-	unit2.SetMatrixArray(data.GetArray());
+{% highlight C++ %}
+   TMatrixDSparse unit1(5,5);	
+   TArrayI row(5),col(5);
+   for (Int_t i = 0; i < 5; i++) row[i] = col[i] = i;
+   TArrayD data(5); data.Reset(1.);
+   unit1.SetMatrixArray(5,row.GetArray(),col.GetArray(),data.GetArray());
+   
+   TMatrixDSparse unit2(5,5);
+   unit2.SetSparseIndex(5);
+   unit2.SetRowIndexArray(row.GetArray());
+   unit2.SetColIndexArray(col.GetArray());
+   unit2.SetMatrixArray(data.GetArray());
 {% endhighlight %}
 
 ### Inverting a matrix
@@ -447,17 +509,22 @@ The matrix/vector operations are classified according to BLAS (Basic Linear Alge
     </tr>
     <tr>
       <td>Wise sum</td>
-      <td>A+=B<br>Add (A,alpha,B)<br>TMatrixD(A,TMatrixD::kPlus,B)</td>
+      <td>A+=B<br>Add (A,alpha,B)
+<br>TMatrixD(A,TMatrixD::kPlus,B)</td>
       <td>A = A + &alpha; B constructor</td>
     </tr>
         <tr>
       <td>Element wise substraction</td>
-      <td>C=A-B A-=B<br>TMatrixD(A,TMatrixD::kMinus,B)</td>
-      <td>overwrites A<br>constructor</td>
+      <td>C=A-B A-=B<br>
+TMatrixD(A,TMatrixD::kMinus,B)</td>
+      <td>overwrites A<br>
+constructor</td>
     </tr>
             <tr>
       <td>Matrix multiplication</td>
-      <td>C=A*B<br>A*=B<br>C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD::kTransposeMult,B)<br>TMatrixD(A, TMatrixD::kMultTranspose,B)</td>
+      <td>C=A*B<br>
+A*=B<br>
+C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD::kTransposeMult,B)<br>TMatrixD(A, TMatrixD::kMultTranspose,B)</td>
       <td>overwrites A<br>&nbsp;<br>&nbsp;<br>constructor of A.B<br>constructor of A<sup>T</sup> .B<br>constructor of A.B<sup>T</sup></td>
     </tr>
       <tr>
@@ -566,7 +633,7 @@ The matrix/vector operations are classified according to BLAS (Basic Linear Alge
     <tr>
       <th scope="col">Format</th>
       <th scope="col">Output</th>
-      <th scope="col">Descriptio</th>
+      <th scope="col">Description</th>
     </tr>
     <tr>
       <td>A == r</td>
@@ -616,7 +683,7 @@ The matrix/vector operations are classified according to BLAS (Basic Linear Alge
         <tr>
       <td>A.ColNorm()</td>
       <td>Double_t</td>
-      <td>norm induced by the 1 vector norm,</td>
+      <td>norm induced by the 1 vector norm</td>
     </tr>
         <tr>
       <td>A.Norm1()</td>
@@ -711,7 +778,8 @@ The next table summarizes how to access the individual matrix elements in the ma
 There are the following classes available for matrix decompositions:
 
 - [TDecompLU](https://root.cern/doc/master/classTDecompLU.html): Decomposes a general `n x n` matrix `A` into `P A = L U`.
-- [TDecompBK](https://root.cern/doc/master/classTDecompBK.html): The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`. - [TDecompChol](https://root.cern/doc/master/classTDecompChol.html): The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
+- [TDecompBK](https://root.cern/doc/master/classTDecompBK.html): The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`. 
+- [TDecompChol](https://root.cern/doc/master/classTDecompChol.html): The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
 - [TDecompQRH](https://root.cern/doc/master/classTDecompQRH.html): QR decomposition class. 
 - [TDecompSVD](https://root.cern/doc/master/classTDecompSVD.html): Single value decomposition class.
 - [TDecompSparse](https://root.cern.ch/doc/master/classTDecompSparse.html): Sparse symmetric decomposition class.
