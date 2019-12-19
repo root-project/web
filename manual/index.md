@@ -8,10 +8,16 @@ toc_sticky: true
 toc_label: ROOT Manual
 ---
 
-ROOT is an object-oriented framework that provides all the functionalities needed to deal
-with big data processing, statistical analysis, visualization and storage in high-energy
-physics. It is mainly written in C++ but integrated with other languages such as Python
-and R.
+The ROOT Manual provides detailed information about the use and applications of ROOT, the object-oriented framework that provides all the functionalities needed to deal with big data processing, statistical analysis, visualization and storage in high-energy physics. 
+
+In the first part "ROOT MANUAL - Basics" the central building blocks and concepts of ROOT are presented and explained.
+
+In the second part "ROOT MANUAL - Functional parts" the numerous application areas and special topics of ROOT are dealt with. Here you will receive in-depth information about the extensive possibilities of data analysis with ROOT.
+
+Both parts contain a lot of, often interactive, examples.
+
+The ROOT Manual refers to numerous information, especially for ROOT classes, from the [ROOT Reference Guide](https://root.cern/doc/master/). The ROOT Reference Guide is the primary source of information for all ROOT classes.
+
 
 > **C++**
 >
