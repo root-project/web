@@ -13,9 +13,11 @@ ROOT uses predefined and machine independent data types to ensure the size of va
 
 ROOT has a set of global ROOT variables that apply to a ROOT session, → see [Global ROOT variables](#global-root-variables).
 
+**Naming conventions**
+
 The following naming conventions apply to ROOT objects:
 
--   Classes begin with `T` <br>
+-   ROOT classes begin with `T` <br>
 
     Examples: [TLine](https://root.cern/doc/master/classTLine.html), [TTree](https://root.cern/doc/master/classTTree.html)
 
@@ -48,7 +50,7 @@ The following naming conventions apply to ROOT objects:
 
 ## ROOT classes
 
-In addition to the ROOT core classes (→ see [ROOT core classes](="#root-core-classes"), there are ROOT classes available for the following topics:
+In addition to the ROOT core classes (→ see [ROOT core classes](="#root-core-classes")), there are ROOT classes available for the following topics:
 
 -   Geometry
 
@@ -64,7 +66,7 @@ In addition to the ROOT core classes (→ see [ROOT core classes](="#root-core-c
 
 -   Monte Carlo
 
--   Parallel analysis
+-   TMVA
 
 -   Multi variate analysis
 
@@ -72,7 +74,9 @@ In addition to the ROOT core classes (→ see [ROOT core classes](="#root-core-c
 
 -   and many more
 
-Refer to the [ROOT Reference Guide](https://root.cern/doc/master/index.html) for a complete list of all available ROOT classes.
+> **ROOT Reference Guide**
+>
+> The [ROOT Reference Guide](https://root.cern/doc/master/index.html) provides a complete list of all available ROOT classes and their documentation. It is the central source of information for all ROOT classes.
 
 ## ROOT core classes
 
@@ -84,7 +88,7 @@ The ROOT core classes consist of:
    The ROOT base class [TObject](https://root.cern/doc/master/classTObject.html) is the mother of all ROOT objects, → see [TObject - the ROOT base class](#tobject---the-root-base-class).
 
 -   **Containers** <br>
-   Containers correspond to collections. A collection is a group of related objects that provide a flexible alternative to arrays, lists and trees. → See [ROOT collections]({{ '/manual/root_collections' | relative_url }}).
+   Containers correspond to collections. A collection is a group of related objects that provide a flexible alternative to arrays, lists and trees, → see [ROOT collections]({{ '/manual/root_collections' | relative_url }}).
 
 ### TObject - the ROOT base class
 
@@ -92,7 +96,7 @@ In ROOT, almost all ROOT classes inherit from the common ROOT base class [TObjec
 
 The `TObject` class provides default behavior and protocol for all objects in the ROOT system.
 
-`TObject` provides protocol, i.e. (abstract) member functions, for:
+`TObject` provides protocol, this is (abstract) member functions, for:
 
 -   Object I/O (`Read()`, `Write()`)
 

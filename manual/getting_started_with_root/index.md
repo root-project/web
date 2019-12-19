@@ -64,7 +64,7 @@ Does not show the splash screen.
 Exit on exception.
 
 `dir` <br>
-If dir is a valid directory, change to it (cd) before executing ROOT.
+If `dir` is a valid directory, change to it (cd) before executing ROOT.
 
 `-?` <br>
 Print usage.
@@ -76,7 +76,7 @@ Print usage.
 Print usage.
 
 `-config` <br>
-Print ./configure options.
+Print `./configure` options.
 
 `-memstat` <br>
 Run ROOT with memory usage monitoring.
@@ -161,8 +161,7 @@ A ROOT macro contains pure C++ code, which additionally can contain ROOT classes
 ROOT objects (→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables' | relative_url }})). A ROOT macro can consist of simple or multi-line commands,
 but also of arbitrarily complex class and function definitions.
 
-ROOT provides a lot of tutorials that are available as ROOT macros
-(→ see [ROOT tutorials](#root-tutorials))
+ROOT provides a lot of tutorials that are available as ROOT macros (→ see [ROOT tutorials](#root-tutorials)).
 
 You can save a ROOT macro in a file and execute it at the ROOT prompt or the system prompt.
 
@@ -226,7 +225,7 @@ You can execute a ROOT macro:
 
 You can execute a RROT macro conditionally inside another ROOT macro.
 
-Call the interpreter [TROOT::ProcessLine()](https://root.cern/doc/master/classTROOT.html#a32fc66033a13d1415e0ad523994dd0e5).
+- Call the interpreter [TROOT::ProcessLine()](https://root.cern/doc/master/classTROOT.html#a32fc66033a13d1415e0ad523994dd0e5).
 
 `ProcessLine()` takes a parameter, which is a pointer to an int or to a
 `TInterpreter::EErrorCode` to let you access the interpreter error code after an attempt to interpret.
@@ -235,7 +234,7 @@ as being the value for a successful execution.
 
 _**Example**_
 
-The example `$ROOTSYS/tutorials/tree/cernstaff.C` calls a macro to build a ROOT file, if it does not exist.
+The example `$ROOTSYS/tutorials/tree/cernstaff.C` calls a ROOT macro to build a ROOT file, if it does not exist.
 
 ```
    void cernstaff() {
@@ -263,12 +262,11 @@ When using ACliC, ROOT checks what library really needs to be build and calls yo
 
 ACLiC executes the following steps:
 
-  1. Calling `rootcling` to create a dictionary.
+1. Calling `rootcling` to create a dictionary.
 
-  2. Calling the the system's C++ compiler to build the shared library.
+2. Calling the the system's C++ compiler to build the shared library.
 
-  3. If there are errors, it calls the C++ compiler to build a dummy executable to clearly
-     report the unresolved symbols.
+3. If there are errors, it calls the C++ compiler to build a dummy executable to clearly report the unresolved symbols.
 
 ACLiC adds the classes and functions declared in included files with the same name as the
 ROOT macro files with one of following extensions: `.h`, `.hh`, `.hpp`, `.hxx`,` .hPP`, `.hXX`.
@@ -374,7 +372,7 @@ You can manually create a dictionary by using `rootcling`:
 
 - `Header1.h Header2.h...`: The headers files.
 
-- `Linkdef.h`: Tells `rootcling`. which classes should be added to the dictionary.
+- `Linkdef.h`: Tells `rootcling`, which classes should be added to the dictionary.
 
 > **Note**
 >
@@ -536,9 +534,9 @@ Therefore, it recommended not to use the Cling extensions and program around the
 If it is not possible to program around the Cling limitations, use the C preprocessor symbols
 defined for Cling and `rootcling`:
 
-  - `__CLING__` is defined for both ROOT and `rootcling`.
+- `__CLING__` is defined for both ROOT and `rootcling`.
 
-  - `__ROOTCLING__` (and `__MAKECINT__` for backward compatibility) is only defined in rootcling.
+- `__ROOTCLING__` (and `__MAKECINT__` for backward compatibility) is only defined in rootcling.
 
 Use `!defined(__CLING__) || defined(__ROOTCLING__)` to bracket code that needs to be seen by
 the compiler and `rootcling`, but will be invisible to the interpreter.
@@ -549,7 +547,7 @@ Use `!defined(__CLING__)` to bracket code that should be seen only by the compil
 
 _**Example**_
 
-Hiding the declaration and initialization of the array `gArray `from both Cling and `rootcling`:
+Hiding the declaration and initialization of the array `gArray` from both Cling and `rootcling`:
 
 ```
    #if !defined(__CLING__)
@@ -577,18 +575,15 @@ between the `#if`'s, since the definition is not visible.
 
 #### Included header files
 
-It is recommended to write ROOT macros with all the needed include statements. Only a few header
-files are not handled correctly by Cling.
+It is recommended to write ROOT macros with all the needed include statements. Only a few header files are not handled correctly by Cling.
 
 You can include following types of headers in the interpreted and compiled mode:
 
-  - The subset of standard C/C++ headers defined in `$ROOTSYS/Cling/include`.
+- The subset of standard C/C++ headers defined in `$ROOTSYS/Cling/include`.
 
-  - Headers of classes defined in a previously loaded library (including ROOT own library). The
-  defined class must have a name known to ROOT (i.e. a class with a `ClassDef`).
+- Headers of classes defined in a previously loaded library (including ROOT own library). The defined class must have a name known to ROOT (this is a class with a `ClassDef`).
 
-Hiding header files from `rootcling` that are necessary for the compiler but optional for
-the interpreter can lead to a fatal error.
+Hiding header files from `rootcling` that are necessary for the compiler but optional for the interpreter can lead to a fatal error.
 
 _**Example**_
 
@@ -624,7 +619,6 @@ There are tutorials for the following topics, among others:
   - FITS files interface
   - FOAM (multi-dimensional general-purpose Monte Carlo event generator)
   - Geometry
-  - OpenGL
   - Graphics
   - Graphs
   - Graphical User Interface (GUI)
@@ -636,7 +630,6 @@ There are tutorials for the following topics, among others:
   - Monte Carlo simulations
   - Multicore (multithreading and multiprocessing)
   - Physics
-  - PROFF
   - PyRoot
   - Quadratic programming package
   - R
@@ -645,14 +638,11 @@ There are tutorials for the following topics, among others:
   - SQL
   - Trees
   - UNURAN
-  - ROOT 7
   - Vectors
   - XML
   - and many more
 
-When you install ROOT, a tutorials directory is created, containing all ROOT tutorials
-listed on
-[reference guide tutorial page](https://root.cern/doc/master/group__Tutorials.html).
+When you install ROOT, a tutorials directory is created, containing all ROOT tutorials listed on [reference guide tutorial page](https://root.cern/doc/master/group__Tutorials.html).
 
 > **Note**
 >
@@ -741,11 +731,11 @@ You can use the following meta-characters in regular expressions:
 
 `+`: Positive closure (1 or more).
 
-`?`: Optional closure (0 or 1)-
+`?`: Optional closure (0 or 1).
 
 When using wildcards, the regular expression is assumed to be preceded by a `ˆ` (BOL) and terminated by `$` (EOL).
 
-All `*` (closures) are assumed to be preceded by a `.` , i.e. any character, except slash `/`. Its special treatment allows the easy matching of pathnames.
+All `*` (closures) are assumed to be preceded by a `.` , this is any character, except slash `/`. Its special treatment allows the easy matching of pathnames.
 
 _**Example**_
 
@@ -767,15 +757,15 @@ The escape characters are:
 
 `t`: Tab.
 
-`e`: ASCII ESC character ('033')
+`e`: ASCII ESC character ('033').
 
-`DDD`: number formed of 1-3 octal digits
+`DDD`: number formed of 1-3 octal digits.
 
-`xDD`: number formed of 1-2 hex digits
+`xDD`: number formed of 1-2 hex digits.
 
-`ˆC`: C = any letter. Control code
+`ˆC`: C = any letter. Control code.
 
-You can use the [TRegexp](https://root.cern/doc/master/classTRegexp.html) class to create a regular expression from an input string. If wildcard is true then the input string contains a wildcard expression.
+You can use the [TRegexp](https://root.cern/doc/master/classTRegexp.html) class to create a regular expression from an input string. If the wildcard is true, then the input string contains a wildcard expression.
 
 _**Example**_
 

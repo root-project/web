@@ -28,7 +28,7 @@ The ROOT Mathematical libraries consist of the following components:
 
 ## MathCore library
 
-The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides a collection of functions and C++ classes for HEP numerical computing. <br>
+The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides a collection of functions, C++ classes and ROOT classes for HEP numerical computing. <br>
 The `MathCore` is a self-consistent minimal set of tools required for the basic numerical computing. More advanced mathematical functionalities is provided by the [MathMore library](#mathmore-library). 
 The following is included in the `MathCore` library:
 
@@ -38,25 +38,25 @@ The following is included in the `MathCore` library:
 
 - [Function classes and interfaces](https://root.cern/doc/master/group__CppFunctions.html): Interfaces (abstract classes) and base classes, including helper classes to wrap free (static) and non-static member functions.
 
-- Numerical algorithms: User classes with (in some cases) basic implementations for:
+- Numerical algorithms: User classes with basic implementations for:
 	- [Numerical Integration](https://root.cern/doc/master/group__Integration.html)
 	- [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html)
 	- [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html)
 	- [One-dimensional minimization](https://root.cern/doc/master/group__Min1D.html) and [multi-dimensional minimization](https://root.cern/doc/master/group__MultiMin.html)
 	
-- [Fitting and parameter estimation](https://root.cern/doc/master/group__Fit.html): Classes for fitting and parameter estimation from a given data set.
+- [Fitting and parameter estimation](https://root.cern/doc/master/group__Fit.html): ROOT classes for fitting and parameter estimation from a given data set.
 	
 In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html) library contains the following ROOT classes that were originally part of *libCore*:
 
 - the namespaces for [TMath](https://root.cern/doc/master/namespaceTMath.html) and [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html).
 
-- classes for random number generators, [TRandom](https://root.cern/doc/master/classTRandom.html) etc.
+- ROOT classes for random number generators, [TRandom](https://root.cern/doc/master/classTRandom.html) etc.
 
-- class for complex numbers, [TComplex](https://root.cern/doc/master/classTComplex.html)
+- ROOT class for complex numbers, [TComplex](https://root.cern/doc/master/classTComplex.html)
 
-- other classes like:
-	- [TKDTree](https://root.cern/doc/master/classTKDTree.html): Class implementing a kd-tree.
-	- [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html): Class for testing the for goodness of fit tests.
+- other ROOT classes like:
+	- [TKDTree](https://root.cern/doc/master/classTKDTree.html): ROOT class implementing a kd-tree.
+	- [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html): ROOT class for testing the for goodness of fit tests.
 
 
 ### TMath
@@ -67,13 +67,13 @@ In the namespace [TMath](https://root.cern/doc/master/namespaceTMath.html), a co
 
 - trigonometric and elementary mathematical functions
 
-- functions to work with arrays and collections (e.g., functions to find min and max of arrays)
+- functions to work with arrays and collections (e.g., functions to find the minimum and maximum of arrays)
 
 - statistic functions to work on array of data (e.g., mean and RMS of arrays)
 
 - algorithms for binary search/hashing sorting
 
-- special mathematical functions like ´Bessel´, ´Erf´, ´Gamma´, etc.;
+- special mathematical functions like `Bessel`, `Erf`, `Gamma`, etc.;
 
 - statistical functions, like common probability and cumulative (quantile) distributions
 
@@ -730,7 +730,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
 
 ### Matrix views
 
-With the following matrix view classes, you can access matrix elements:
+With the following matrix view classes, you can access the matrix elements:
 
 - `TMatrixDRow`
 - `TMatrixDColumn`
@@ -826,12 +826,12 @@ _**Example**_
 {% highlight C++ %}
 TUnuran unr;
 // Initialize UNU.RAN to generate normal random numbers using an "arou" method.
-	unr.Init("normal()","method=arou");
-	...
+   unr.Init("normal()","method=arou");
+   ...
 	
 // Sample distributions N times (generate N random numbers).
-	for (int i = 0; i<N; ++i)
-	double x = unr.Sample();
+   for (int i = 0; i<N; ++i)
+   double x = unr.Sample();
 	
 {% endhighlight %}
 
@@ -844,15 +844,15 @@ _**Example**_
 
 {% highlight C++ %}
 // 1D case: create a distribution from two TF1 object, pointers pdfFunc.
-	TUnuranContDist dist(pdfFunc);
+   TUnuranContDist dist(pdfFunc);
 	
 // Initialize UNU.RAN passing the distribution and a string.
 // Define the method.
-	unr.Init(dist, "method=hinv");
+   unr.Init(dist, "method=hinv");
 	
 // Sample distribution N times (generate N random numbers).
-	for (int i = 0; i < N; ++i)
-	double x = unr.Sample();
+   for (int i = 0; i < N; ++i)
+   double x = unr.Sample();
 	
 {% endhighlight %}
 
@@ -864,15 +864,15 @@ _**Example**_
 
 {% highlight C++ %}
 // Multi- dimensional case from TF1 (TF2 or TF3) objects.
-	TUnuranMultiContDist dist(pdfFuncMulti);
+   TUnuranMultiContDist dist(pdfFuncMulti);
 
 // The recommended method for multi-dimensional function is "hitro".
-	unr.Init(dist,"method=hitro");
+   unr.Init(dist,"method=hitro");
 	
 // Sample distribution N times (generate N random numbers).
-	double x[NDIM];
-	for (int i = 0; i<N; ++i)
-	unr.SampleMulti(x);
+   double x[NDIM];
+   for (int i = 0; i<N; ++i)
+   unr.SampleMulti(x);
 	
 {% endhighlight %}
 
@@ -884,15 +884,15 @@ _**Example**_
 
 {% highlight C++ %}
 // Create distribution from a vector of probabilities.
-	double pv[NSize] = {0.1,0.2,...};
-	TUnuranDiscrDist dist(pv,pv+NSize);
+   double pv[NSize] = {0.1,0.2,...};
+   TUnuranDiscrDist dist(pv,pv+NSize);
 	
 // The recommended method for discrete distribution is "dgt".
-	unr.Init(dist, "method=dgt");
+   unr.Init(dist, "method=dgt");
 	
 // Sample N times (generate N random numbers).
-	for (int i = 0; i < N; ++i)
-	int k = unr.SampleDiscr();
+   for (int i = 0; i < N; ++i)
+   int k = unr.SampleDiscr();
 {% endhighlight %}
 
 ### Using TUnuranEmpDist an empirical distribution
@@ -904,10 +904,10 @@ _**Example**_
 {% highlight C++ %}
 // Create distribution from a set of data.
 // vdata is an std::vector containing the data.
-	TUnuranEmpDist dist(vdata.begin(),vdata.end());
-	unr.Init(dist);
+   TUnuranEmpDist dist(vdata.begin(),vdata.end());
+   unr.Init(dist);
 	
 // Sample N times (generate N random numbers).
-	for (int i = 0; i<N; ++i)
-	double x = unr.Sample();
+   for (int i = 0; i<N; ++i)
+   double x = unr.Sample();
 {% endhighlight %}
