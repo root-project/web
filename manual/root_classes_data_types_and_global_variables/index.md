@@ -18,7 +18,6 @@ ROOT has a set of global ROOT variables that apply to a ROOT session, → see [G
 The following naming conventions apply to ROOT objects:
 
 -   ROOT classes begin with `T` <br>
-
     Examples: [TLine](https://root.cern/doc/master/classTLine.html), [TTree](https://root.cern/doc/master/classTTree.html)
 
 -   Non-class types end with `_t` <br>
