@@ -67,9 +67,9 @@ In the namespace [TMath](https://root.cern/doc/master/namespaceTMath.html), a co
 
 - trigonometric and elementary mathematical functions
 
-- functions to work with arrays and collections (e.g. functions to find min and max of arrays)
+- functions to work with arrays and collections (e.g., functions to find min and max of arrays)
 
-- statistic functions to work on array of data (e.g. mean and RMS of arrays)
+- statistic functions to work on array of data (e.g., mean and RMS of arrays)
 
 - algorithms for binary search/hashing sorting
 
