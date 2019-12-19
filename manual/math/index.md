@@ -1,5 +1,5 @@
 ---
-title: Mathematical libraries 
+title: Mathematical libraries
 layout: single
 sidebar:
   nav: "manual"
@@ -29,7 +29,7 @@ The ROOT Mathematical libraries consist of the following components:
 ## MathCore library
 
 The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides a collection of functions, C++ classes and ROOT classes for HEP numerical computing. <br>
-The `MathCore` is a self-consistent minimal set of tools required for the basic numerical computing. More advanced mathematical functionalities is provided by the [MathMore library](#mathmore-library). 
+The `MathCore` is a self-consistent minimal set of tools required for the basic numerical computing. More advanced mathematical functionalities is provided by the [MathMore library](#mathmore-library).
 The following is included in the `MathCore` library:
 
 - [Special mathematical functions](https://root.cern/doc/master/group__SpecFunc.html): Functions like the gamma, beta and error function that are used in HEP.
@@ -39,13 +39,13 @@ The following is included in the `MathCore` library:
 - [Function classes and interfaces](https://root.cern/doc/master/group__CppFunctions.html): Interfaces (abstract classes) and base classes, including helper classes to wrap free (static) and non-static member functions.
 
 - Numerical algorithms: User classes with basic implementations for:
-	- [Numerical Integration](https://root.cern/doc/master/group__Integration.html)
-	- [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html)
-	- [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html)
-	- [One-dimensional minimization](https://root.cern/doc/master/group__Min1D.html) and [multi-dimensional minimization](https://root.cern/doc/master/group__MultiMin.html)
-	
+   - [Numerical Integration](https://root.cern/doc/master/group__Integration.html)
+   - [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html)
+   - [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html)
+   - [One-dimensional minimization](https://root.cern/doc/master/group__Min1D.html) and [multi-dimensional minimization](https://root.cern/doc/master/group__MultiMin.html)
+
 - [Fitting and parameter estimation](https://root.cern/doc/master/group__Fit.html): ROOT classes for fitting and parameter estimation from a given data set.
-	
+
 In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html) library contains the following ROOT classes that were originally part of *libCore*:
 
 - the namespaces for [TMath](https://root.cern/doc/master/namespaceTMath.html) and [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html).
@@ -55,8 +55,8 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html) libr
 - ROOT class for complex numbers, [TComplex](https://root.cern/doc/master/classTComplex.html)
 
 - other ROOT classes like:
-	- [TKDTree](https://root.cern/doc/master/classTKDTree.html): ROOT class implementing a kd-tree.
-	- [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html): ROOT class for testing the for goodness of fit tests.
+   - [TKDTree](https://root.cern/doc/master/classTKDTree.html): ROOT class implementing a kd-tree.
+   - [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html): ROOT class for testing the for goodness of fit tests.
 
 
 ### TMath
@@ -111,21 +111,21 @@ In the namespace [TMath](https://root.cern/doc/master/namespaceTMath.html), a co
 _**Example**_
 
 {% highlight C++ %}
-	// Size of the array.
-	const int n = 100;
-	
-	// Vector v with random values.
-	vector<double> v(n);
-	std::generate(v.begin(), v.end(), rand);
-	
-	// Weight vector w.
-	vector<double> w(n);
-	std::fill(w.begin(), w.end, 1);
-	double mean;
-	
-	// Calculate the mean of the vector
-	// with iterators.
-	mean = TMath::Mean(v.begin(), v.end());
+   // Size of the array.
+   const int n = 100;
+
+   // Vector v with random values.
+   vector<double> v(n);
+   std::generate(v.begin(), v.end(), rand);
+
+   // Weight vector w.
+   vector<double> w(n);
+   std::fill(w.begin(), w.end, 1);
+   double mean;
+
+   // Calculate the mean of the vector
+   // with iterators.
+   mean = TMath::Mean(v.begin(), v.end());
 {% endhighlight %}
 
 ### ROOT:Math
@@ -141,7 +141,7 @@ Used for numerical algorithms operating on multi-dimensional functions.
 
 - **Parametric function interfaces**<br>
 Used for fitting after evaluating multi-dimensional functions.
- 
+
 
 ### Random numbers
 
@@ -174,25 +174,25 @@ For [TRandom](https://root.cern/doc/master/classTRandom.html) the seed is genera
 _**Example**_
 
 {% highlight C++ %}
-	// Use the default seed (same random numbers will be generated each time).
-	// Generate a number in interval ]0,1] (0 is excluded).
-	TRandom3 r;
-	r.Rndm();
-	double x[100];
-	
-	// Generate an array of random numbers in ]0,1].
-	r.RndmArray(100,x);
-	
-	// Construct with a user-defined seed.
-	TRandom3 rdm(111);
-	
-	// Use 0: a unique seed will be automatically generated using TUUID.
-	TRandom1 r1(0);
-	TRandom2 r2(0);
-	TRandom3 r3(0);
-	
-	// Seed generated using machine clock (different every second).
-	TRandom r0(0);
+   // Use the default seed (same random numbers will be generated each time).
+   // Generate a number in interval ]0,1] (0 is excluded).
+   TRandom3 r;
+   r.Rndm();
+   double x[100];
+
+   // Generate an array of random numbers in ]0,1].
+   r.RndmArray(100,x);
+
+   // Construct with a user-defined seed.
+   TRandom3 rdm(111);
+
+   // Use 0: a unique seed will be automatically generated using TUUID.
+   TRandom1 r1(0);
+   TRandom2 r2(0);
+   TRandom3 r3(0);
+
+   // Seed generated using machine clock (different every second).
+   TRandom r0(0);
 {% endhighlight %}
 
 ### Complex numbers
@@ -206,18 +206,18 @@ The [MathMore](https://root.cern/doc/master/MathMorePage.html) library provides 
 The The [MathMore](https://root.cern/doc/master/MathMorePage.html) library includes classes and functions for:
 
 - [Special functions](https://root.cern/doc/master/group__SpecFunc.html)<br>
-Containing all the major functions such as Bessel functions, Legendre polynomial, etc. 
+Containing all the major functions such as Bessel functions, Legendre polynomial, etc.
 
 - [Statistical functions](https://root.cern/doc/master/group__StatFunc.html)<br>
 Contains mathematical functions used in statistics such as probability density functions, cumulative distributions functions and their inverse (quantiles).
 
 - Numerical algorithms:
-	- [Numerical Integration](https://root.cern/doc/master/group__Integration.html)
-	- [Numerical Monte Carlo Integration classes](https://root.cern/doc/master/group__MCIntegration.html)
-	- [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html)
-	- [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html)
-	- [One-dimensional Minimization](https://root.cern/doc/master/group__Min1D.html)
-	- [Multi-dimensional Minimization](https://root.cern/doc/master/group__MultiMin.html)
+   - [Numerical Integration](https://root.cern/doc/master/group__Integration.html)
+   - [Numerical Monte Carlo Integration classes](https://root.cern/doc/master/group__MCIntegration.html)
+   - [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html)
+   - [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html)
+   - [One-dimensional Minimization](https://root.cern/doc/master/group__Min1D.html)
+   - [Multi-dimensional Minimization](https://root.cern/doc/master/group__MultiMin.html)
 
 - [Interpolation Classes](https://root.cern/doc/master/group__Interpolation.html)
 
@@ -239,7 +239,7 @@ ROOT provides the following matrix classes, among others:
 
 - `TMatrixF`
 
-- `TMatrixFSym` 
+- `TMatrixFSym`
 
 - `TVectorF`
 
@@ -355,17 +355,17 @@ These operators provide the easiest way to fill a matrix but are in particular f
 The matrix to be inserted at position (`row_lwb`,`col_lwb`) can be both, dense or sparse.
 
 - `Use()`<br>
-Allows inserting another matrix or data array without actually copying the data.<br> 
+Allows inserting another matrix or data array without actually copying the data.<br>
 The following list shows the application of the `Use()` method:
-	- `Use(TMatrixD &a)`
-	- `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Double_t *data)`
-	- `Use(Int_t nrows,Int_t ncols,Double_t *data)`
-	- `Use(TMatrixDSym &a)`
-	- `Use(Int_t nrows,Double_t *data)`
-	- `Use(Int_t row_lwb,Int_t row_upb,Double_t *data)`
-	- `Use(TMatrixDSparse &a)`
-	- `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Int_t nr_no nzeros, Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
-	- `Use(Int_t nrows,Int_t ncols,Int_t nr_nonzeros,Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
+   - `Use(TMatrixD &a)`
+   - `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Double_t *data)`
+   - `Use(Int_t nrows,Int_t ncols,Double_t *data)`
+   - `Use(TMatrixDSym &a)`
+   - `Use(Int_t nrows,Double_t *data)`
+   - `Use(Int_t row_lwb,Int_t row_upb,Double_t *data)`
+   - `Use(TMatrixDSparse &a)`
+   - `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Int_t nr_no nzeros, Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
+   - `Use(Int_t nrows,Int_t ncols,Int_t nr_nonzeros,Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
 
 _**Example**_
 
@@ -393,12 +393,12 @@ The array data now contains the inverted matrix.
 Now a unit matrix in sparse format is created.
 
 {% highlight C++ %}
-   TMatrixDSparse unit1(5,5);	
+   TMatrixDSparse unit1(5,5);
    TArrayI row(5),col(5);
    for (Int_t i = 0; i < 5; i++) row[i] = col[i] = i;
    TArrayD data(5); data.Reset(1.);
    unit1.SetMatrixArray(5,row.GetArray(),col.GetArray(),data.GetArray());
-   
+
    TMatrixDSparse unit2(5,5);
    unit2.SetSparseIndex(5);
    unit2.SetRowIndexArray(row.GetArray());
@@ -778,9 +778,9 @@ The next table summarizes how to access the individual matrix elements in the ma
 There are the following classes available for matrix decompositions:
 
 - [TDecompLU](https://root.cern/doc/master/classTDecompLU.html): Decomposes a general `n x n` matrix `A` into `P A = L U`.
-- [TDecompBK](https://root.cern/doc/master/classTDecompBK.html): The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`. 
+- [TDecompBK](https://root.cern/doc/master/classTDecompBK.html): The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`.
 - [TDecompChol](https://root.cern/doc/master/classTDecompChol.html): The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
-- [TDecompQRH](https://root.cern/doc/master/classTDecompQRH.html): QR decomposition class. 
+- [TDecompQRH](https://root.cern/doc/master/classTDecompQRH.html): QR decomposition class.
 - [TDecompSVD](https://root.cern/doc/master/classTDecompSVD.html): Single value decomposition class.
 - [TDecompSparse](https://root.cern.ch/doc/master/classTDecompSparse.html): Sparse symmetric decomposition class.
 
@@ -796,13 +796,13 @@ The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html) has been de
 
 ## TMinuit
 
-The Minuit minimization package was originally written in Fortran by Fred James and part of PACKLIB (patch D506). It has been converted to a C++ class, [TMinuit](https://root.cern/doc/master/classTMinuit.html), by R.Brun. 
+The Minuit minimization package was originally written in Fortran by Fred James and part of PACKLIB (patch D506). It has been converted to a C++ class, [TMinuit](https://root.cern/doc/master/classTMinuit.html), by R.Brun.
 
 
 ## Minuit2 Library
 
 
-The [Minuit2](https://root.cern/doc/master/group__Minuit.html) library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm, which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James. 
+The [Minuit2](https://root.cern/doc/master/group__Minuit.html) library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm, which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
 
 
 ## UNU.RAN
@@ -814,7 +814,7 @@ UNU.RAN is an ANSI C library licensed under GPL.
 The [TUnuran](https://root.cern/doc/master/classTUnuran.html) class is used to interface the UNURAN package.
 
 > **Tutorials**
-> 
+>
 > UNU:RAN tutorials are available at → [https://root.cern/doc/master/group__tutorial__unuran.html](https://root.cern/doc/master/group__tutorial__unuran.html)
 
 ### Initializing TUnuran with string API
@@ -828,11 +828,11 @@ TUnuran unr;
 // Initialize UNU.RAN to generate normal random numbers using an "arou" method.
    unr.Init("normal()","method=arou");
    ...
-	
+
 // Sample distributions N times (generate N random numbers).
    for (int i = 0; i<N; ++i)
    double x = unr.Sample();
-	
+
 {% endhighlight %}
 
 ### Using TUnuranContDist for a one-dimensional distribution
@@ -845,15 +845,15 @@ _**Example**_
 {% highlight C++ %}
 // 1D case: create a distribution from two TF1 object, pointers pdfFunc.
    TUnuranContDist dist(pdfFunc);
-	
+
 // Initialize UNU.RAN passing the distribution and a string.
 // Define the method.
    unr.Init(dist, "method=hinv");
-	
+
 // Sample distribution N times (generate N random numbers).
    for (int i = 0; i < N; ++i)
    double x = unr.Sample();
-	
+
 {% endhighlight %}
 
 ### Using TUnuranMultiContDist for a multi-dimensional distribution
@@ -868,12 +868,12 @@ _**Example**_
 
 // The recommended method for multi-dimensional function is "hitro".
    unr.Init(dist,"method=hitro");
-	
+
 // Sample distribution N times (generate N random numbers).
    double x[NDIM];
    for (int i = 0; i<N; ++i)
    unr.SampleMulti(x);
-	
+
 {% endhighlight %}
 
 ### Using TUnuranDiscrDist for a discrete one-dimensional distribution
@@ -886,10 +886,10 @@ _**Example**_
 // Create distribution from a vector of probabilities.
    double pv[NSize] = {0.1,0.2,...};
    TUnuranDiscrDist dist(pv,pv+NSize);
-	
+
 // The recommended method for discrete distribution is "dgt".
    unr.Init(dist, "method=dgt");
-	
+
 // Sample N times (generate N random numbers).
    for (int i = 0; i < N; ++i)
    int k = unr.SampleDiscr();
@@ -906,7 +906,7 @@ _**Example**_
 // vdata is an std::vector containing the data.
    TUnuranEmpDist dist(vdata.begin(),vdata.end());
    unr.Init(dist);
-	
+
 // Sample N times (generate N random numbers).
    for (int i = 0; i<N; ++i)
    double x = unr.Sample();
