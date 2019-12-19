@@ -7,6 +7,7 @@ sidebar:
   nav: "download"
 ---
 
+> [**Alternative prototype page**]({{'getting_root' | relative_url}})
 
 We are developing ROOT according to the principle of _Release early and release
 often_. However, since a very large portion of the user base requires a stable
