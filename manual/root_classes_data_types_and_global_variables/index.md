@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT is modular scientific software toolkit and provides numerous ROOT classes for big data processing, statistical analysis, visualization and storage, → see [ROOT classes]('root-classes").
+ROOT is modular scientific software toolkit and provides numerous ROOT classes for big data processing, statistical analysis, visualization and storage, → see [ROOT core classes](#root-core-classes).
 
 ROOT uses predefined and machine independent data types to ensure the size of variables, → see [Machine independent data types](#machine-independent-data-types).
 
