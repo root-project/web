@@ -356,16 +356,16 @@ The matrix to be inserted at position (`row_lwb`,`col_lwb`) can be both, dense o
 
 - `Use()`<br>
 Allows inserting another matrix or data array without actually copying the data.<br> 
-The following list shows the application of the `Use()` method: 
- `Use(TMatrixD &a)`<br>
-`Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Double_t *data)`<br>
-`Use(Int_t nrows,Int_t ncols,Double_t *data)`<br>
- `Use(TMatrixDSym &a)`<br>
-`Use(Int_t nrows,Double_t *data)`<br>
-`Use(Int_t row_lwb,Int_t row_upb,Double_t *data)`<br>
-`Use(TMatrixDSparse &a)`<br>
- `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Int_t nr_no nzeros, Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`<br>
- `Use(Int_t nrows,Int_t ncols,Int_t nr_nonzeros,Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
+The following list shows the application of the `Use()` method:
+	- `Use(TMatrixD &a)`
+	- `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Double_t *data)`
+	- `Use(Int_t nrows,Int_t ncols,Double_t *data)`
+	- `Use(TMatrixDSym &a)`
+	- `Use(Int_t nrows,Double_t *data)`
+	- `Use(Int_t row_lwb,Int_t row_upb,Double_t *data)`
+	- `Use(TMatrixDSparse &a)`
+	- `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Int_t nr_no nzeros, Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
+	- `Use(Int_t nrows,Int_t ncols,Int_t nr_nonzeros,Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
 
 _**Example**_
 
