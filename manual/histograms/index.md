@@ -760,7 +760,8 @@ The following pre-defined fitting methods are available:
 Both methods should be used when the binned data values follow a Gaussian distribution. These fit methods are implemented using the class [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html#af0040f12bc304dd9610daec9d0dfed70).
 
 - Binned likelihood fit: [Fitter::LikelihoodFit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a61a145587e2b65e90e4f05d3df2d6004). This method should be used when the binned data values follow a Poisson or a multinomial distribution. The Poisson case
-(extended fit) is the default and in this case the function normalization is also fit to the data. This method is implemented by the ROOT::Fit:::PoissonLikelihoodFCN class
+(extended fit) is the default and in this case the function normalization is also fit to the data. This method is implemented by the
+[ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html) class
 
 - Un-Binned likelihood fit: [Fitter::LikelihoodFit(const UnBindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a980281c2d7ecfbf94fe584fc3da1a566). By default the fit is not extended, this is the normalization is not fitted to the data. This
 method is implemented using the [LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html) class.
