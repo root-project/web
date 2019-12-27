@@ -30,12 +30,12 @@ The package includes:
 
 > **Topical Manuals**
 >
-> For TMVA Topical Manuals available at [Topical Manuals - TMVA]({{ '/topical/#tmva' | relative_url }}).<br>
+> For TMVA, Topical Manuals are available at [Topical Manuals - TMVA]({{ '/topical/#tmva' | relative_url }}).<br>
 > They contain in-depth information about TMVA.
 
 ## Using TMVA
 
-The ROOT tutorials for TMVA available in `$ROOTSYS/tutorials/tmva` provide example jobs for the training phase and the application of the training results in a classification or regression analysis using the TMVA Reader. 
+The ROOT tutorials for TMVA, available in `$ROOTSYS/tutorials/tmva`, provide example jobs for the training phase and the application of the training results in a classification or regression analysis using the TMVA Reader. 
 
 **Training examples**
 
@@ -43,7 +43,7 @@ The ROOT tutorials for TMVA available in `$ROOTSYS/tutorials/tmva` provide examp
 
 - `TMVAMulticlass.C`: Provides an example for the training and testing of a TMVA multi-class classification.
 
-- `TMVARegression.C`: provides examples for the training and testing of TMVA classifiers.
+- `TMVARegression.C`: Provides examples for the training and testing of TMVA classifiers.
 
 **Application examples**
 
