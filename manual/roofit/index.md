@@ -41,7 +41,7 @@ RooFit introduces a granular structure in its mapping of mathematical data model
     </tr>
     <tr>
       <td>Variable</td>
-      <td>[RooRealVar](https://root.cern/doc/master/classRooRealVar.html)</td>
+      <td>RooRealVar</td>
     </tr>
     <tr>
       <td>Function</td>
@@ -65,4 +65,125 @@ RooFit introduces a granular structure in its mapping of mathematical data model
     </tr>
   </tbody>
 </table>
+
+_**Example**_
+
+A Gaussian probability density function (PDF) consists typically of four objects:
+- three objects representing the observable, the mean and the sigma parameters,
+- one object representing a Gaussian probability density function.
+
+{% highlight C++ %}
+// Observable with lower and upper bound:
+RooRealVar mes("mes","m_{ES} (GeV)",5.20,5.30);
+
+// Parameters with starting value, lower bound, upper bound:
+RooRealVar sigmean("sigmean","B^{#pm} mass",5.28,5.20,5.30);
+RooRealVar sigwidth("sigwidth","B^{#pm} width",0.0027,0.001,1.);
+
+// Build a Gaussian PDF:
+RooGaussian signal("signal","signal PDF",mes,sigmean,sigwidth);
+{% endhighlight %}
+
+Model building operations such as addition, multiplication, integration are represented by separate operator objects and make the modeling language scale well to models of arbitrary complexity.
+
+## Examples
+
+### Signal and background model
+
+Taking a Gaussian probability density function, the following example constructs a one-dimensional probability density function with a Gaussian signal component and a `ARGUS` phase space background component.
+
+{% highlight C++ %}
+#include "RooRealVar.h"
+#include "RooConstVar.h"
+#include "RooGaussian.h"
+#include "RooArgusBG.h"
+#include "RooAddPdf.h"
+#include "RooDataSet.h"
+#include "RooPlot.h"
+
+using namespace RooFit;
+
+void runArgusModel() {
+   // Observable:
+   RooRealVar mes("mes","m_{ES} (GeV)",5.20,5.30);
+
+   // Parameters:
+   RooRealVar sigmean("sigmean","B^{#pm} mass",5.28,5.20,5.30);
+   RooRealVar sigwidth("sigwidth","B^{#pm} width",0.0027,0.001,1.);
+
+   // Build a Gaussian PDF:
+   RooGaussian signalModel("signal","signal PDF",mes,sigmean,sigwidth);
+
+   // Build Argus background PDF:
+   RooRealVar argpar("argpar","argus shape parameter",-20.0,-100.,-1.);
+   RooArgusBG background("background","Argus PDF",mes,RooConst(5.291),argpar);
+
+   // Construct a signal adn background PDF:
+   RooRealVar nsig("nsig","#signal events",200,0.,10000);
+   RooRealVar nbkg("nbkg","#background events",800,0.,10000);
+   RooAddPdf model("model","g+a",RooArgList(signalModel,background),RooArgList(nsig,nbkg));
+
+   // The PDF is used to generate an un-binned toy data set, then the PDF is fit to that data set using an un-binned maximum likelihood fit.
+   // Then the data are visualized with the PDF overlaid.
+
+   // Generate a toy MC sample from composite PDF:
+   RooDataSet *data = model.generate(mes, 2000);
+
+   // Perform extended ML fit of composite PDF to toy data:
+   model.fitTo(*data);
+
+   // Plot toy data and composite PDF overlaid:
+   RooPlot* mesframe = mes.frame();
+   data->plotOn(mesframe);
+   model.plotOn(mesframe);
+   model.plotOn(mesframe, Components(background), LineStyle(ELineStyle::kDashed));
+
+   mesframe->Draw();
+}
+{% endhighlight %}
+
+{% include figure_image
+   img="roofit-plot-1.png"
+   caption="Roofit plot."
+%}
+
+It is also possible to organize all individual components of the RooFit PDF (the variables, component PDFs and combined PDF) in a container class the `myWorkspace` that has an associated factory tool to create trees of RooFit objects of arbitrary complexity using a construction language.
+
+{% highlight C++ %}
+{
+   using namespace RooFit;
+
+   RooWorkspace w("myWorkspace", true);
+   w.factory("Gaussian::gauss(mes[5.20,5.30],mean[5.28,5.2,5.3],width[0.0027,0.001,1])");
+   w.factory("ArgusBG::argus(mes,5.291,argpar[-20,-100,-1])");
+   w.factory("SUM::sum(nsig[200,0,10000]*gauss,nbkg[800,0,10000]*argus)");
+
+   // Retrieve pointers to variables and pdfs for later use
+   auto sum = w.pdf("sum"); // Returns as RooAbsPdf*
+   auto mes = w.var("mes"); // Returns as RooRealVar*
+
+   // --- Generate a toyMC sample from composite PDF ---
+   RooDataSet *data = sum->generate(*mes, 2000);
+
+   // --- Perform extended ML fit of composite PDF to toy data ---
+   sum->fitTo(*data);
+
+   // --- Plot toy data and composite PDF overlaid ---
+   auto mesframe = mes->frame();
+   data->plotOn(mesframe);
+   sum->plotOn(mesframe);
+   sum->plotOn(mesframe, Components(*w.pdf("argus")), LineStyle(kDashed));
+
+   mesframe->Draw();
+}
+{% endhighlight %}
+
+After executing the ROOT macro, the objects defined in the workspace are also available in a namespace with the same name as the workspace if the second argument of the workspace constructor is set to `true`.
+That is, typing `myWorkspace::sum` at the root prompt yields:
+
+{% highlight C++ %}
+root [2] myWorkspace::sum  
+(RooAddPdf &) RooAddPdf::sum[ nsig * gauss + nbkg * argus ] = 0.369501
+{% endhighlight %}
+
 
