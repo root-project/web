@@ -257,4 +257,10 @@ gRandom = new TRandom2(0); //seed=0
 
 `gEnv` contains all the environment settings for the current session and is of type [TEnv](https://root.cern/doc/master/classTEnv.html).
 
-`gEnv` is set by reading the contents of the `.rootrc `file (or `$ROOTSYS/etc/system.rootrc`) at the beginning of ta ROOT session.
+`gEnv` is set by reading the contents of the `.rootrc `file (or `$ROOTSYS/etc/system.rootrc`) at the beginning of a ROOT session.
+
+### gGeoManager
+
+`gGeoManager` is used to access the geometry manager class created with [TGeoManager](https://root.cern/doc/master/group__Geometry__classes.html).
+
+
