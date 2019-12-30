@@ -53,7 +53,7 @@ In the next step, a volume ([TGeoVolume](https://root.cern/doc/master/classTGeoV
    TGeoMedium *med = new TGeoMedium("Vacuum",1,mat);
 {% endhighlight %}
 
-In the next step the volume gets a shape. Boxes and tubes are the most recommended shapes. Note that the world volume (the volume containing all other volumes) can have shape.
+In the next step the volume gets a shape. Boxes and tubes are the most recommended shapes. Note that the world volume (the volume containing all other volumes) can have any shape.
 
 For example, you can make your volume having a box shape. The default units are in centimeters.
 
@@ -61,7 +61,7 @@ For example, you can make your volume having a box shape. The default units are 
    TGeoVolume *top=gGeoManager->MakeBox("Top",med,10.,10.,10.);
 {% endhighlight %}
 
-Now the volume is set as our world volume. Do this before *before* closing the geometry.
+Now the volume is set as our world volume. Do this *before* closing the geometry.
 
 {% highlight C++ %}
    gGeoManager->SetTopVolume(top);
