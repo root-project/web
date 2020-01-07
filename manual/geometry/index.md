@@ -23,12 +23,12 @@ The main geometry class in ROOT is [TGeoManager](https://root.cern/doc/master/gr
 
 The basic bricks for building-up a geometrical model are called "volumes". These represent the un-positioned pieces of the geometry. The relationship between the pieces, this is volumes, is not defined by neighbors, but by "containment". Volumes are put one inside another to create an in-depth hierarchy.
 
-There are the following general rules for building a valid geometry: 
+There are the following general rules for building a valid geometry:
 - Volumes needs media and shapes in order to be created.
 - Both, container and containee volumes must be created before linking them together, and a relative transformation matrix must be provided.
 - All branches must have an upper link point. Otherwise they will not be considered as part of the geometry.
-- Visibility or tracking properties of volumes can be provided both at build time or after geometry is closed. 
-- Global visualization settings (see [TGeoPainter](https://root.cern/doc/master/classTGeoPainter.html)) should not be provided at build time, otherwise the drawing package will be loaded. 
+- Visibility or tracking properties of volumes can be provided both at build time or after geometry is closed.
+- Global visualization settings (see [TGeoPainter](https://root.cern/doc/master/classTGeoPainter.html)) should not be provided at build time, otherwise the drawing package will be loaded.
 
 There are the following specific rules for building a valid geometry:
 - Positioned daughters should not extrude their mother or intersect with sisters unless this is specified (see [TGeoVolume::AddNodeOverlap()](https://root.cern/doc/master/classTGeoVolume.html#ab60894a89de3c3722d5906d55d964f44)).
@@ -81,8 +81,9 @@ With `Draw()` you can draw the simple geometry, for example:
    top->Draw();
 {% endhighlight %}
 
-{% include figure_image
-   img="simple-geometry.png"
+<br>
+
+{% include figure_jsroot
+   file="geometry.root" object="cube" width="500px" height="500px"
    caption="A simple geometry."
 %}
-
