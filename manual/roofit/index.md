@@ -21,12 +21,12 @@ ROOT provides with the RooFit library a toolkit for modeling the expected distri
 
 ## Mathematical model
 
-The core functionality of RooFit is to enable the modeling of ‘event data’ distributions, where each event is a discrete occurrence in time, and has one or more measured observables associated with it. 
+The core functionality of RooFit is to enable the modeling of ‘event data’ distributions, where each event is a discrete occurrence in time, and has one or more measured observables associated with it.
 Experiments of this nature result in data sets obeying Poisson (or binomial) statistics.
 
 The natural modeling language for such distributions are probability density functions (probability density function = PDF) `F(x;p)` that describe the probability density of the distribution of the observables `x` in terms of function in parameter `p`.
-The defining properties of probability density functions, unit normalization with respect to all observables and positive definiteness, also provide important benefits for the design of a structured modeling language: PDFs are easily added with intuitive interpretation of fraction coefficients. 
-They allow construction of higher dimensional PDFs out of lower dimensional building block with an intuitive language to introduce and describe correlations between observables. 
+The defining properties of probability density functions, unit normalization with respect to all observables and positive definiteness, also provide important benefits for the design of a structured modeling language: PDFs are easily added with intuitive interpretation of fraction coefficients.
+They allow construction of higher dimensional PDFs out of lower dimensional building block with an intuitive language to introduce and describe correlations between observables.
 And they also allow the universal implementation of toy Monte Carlo sampling techniques, and are of course an prerequisite for the use of (un-binned) maximum likelihood parameter estimation technique.
 
 ## Design
@@ -142,8 +142,8 @@ void runArgusModel() {
 }
 {% endhighlight %}
 
-{% include figure_image
-   img="roofit-plot-1.png"
+{% include figure_jsroot
+   file="roofit.root" object="mesframe" width="600px" height="400px"
    caption="Roofit plot."
 %}
 
@@ -182,8 +182,7 @@ After executing the ROOT macro, the objects defined in the workspace are also av
 That is, typing `myWorkspace::sum` at the root prompt yields:
 
 {% highlight C++ %}
-root [2] myWorkspace::sum  
+root [2] myWorkspace::sum
 (RooAddPdf &) RooAddPdf::sum[ nsig * gauss + nbkg * argus ] = 0.369501
 {% endhighlight %}
-
 
