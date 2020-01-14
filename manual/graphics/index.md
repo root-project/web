@@ -73,7 +73,7 @@ The function is displayed in a canvas.
 Right-click on the function to display the context menu.
 
 {% include figure_image
-   img="contect-menu.png"
+   img="context-menu.png"
    caption="Context menu for manipulating objects."
 %}
 
