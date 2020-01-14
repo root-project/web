@@ -77,7 +77,7 @@ Right-click on the function to display the context menu.
    caption="Context menu for manipulating objects."
 %}
 
-Here you can change many properties of the object. For example you can change the range by clicking `SetRange`.
+Here you can change many properties of the object like title, name, range, line and fill attributes etc. For example, you can change the range by clicking `SetRange`.
 
 {% include figure_image
    img="set-range.png"
