@@ -59,6 +59,37 @@ The following GenVector classes and class templates are available, among others:
 
 - [BoostZ](https://root.cern/doc/master/classROOT_1_1Math_1_1BoostZ.html) Class representing a Lorentz Boost along the Z axis, by beta. 
 
+### Coordinate systems
+
+The vector classes are based on a generic type of coordinate system, expressed as a template parameter of the class. The following classes exist to describe the various coordinates systems:
+
+#### 2D coordinate system
+
+- [ROOT::Math::Cartesian2D](https://root.cern/doc/master/classROOT_1_1Math_1_1Cartesian2D.html): 2D cartesian coordinate system (`x`, `y` coordinates).
+
+- [ROOT::Math::Polar2D](https://root.cern/doc/master/classROOT_1_1Math_1_1Polar2D.html): A polar 2D coordinate system based on `r` and `phi`. `phi` is restricted to the range (-PI,PI).
+
+#### 3D coordinate systems
+
+- [ROOT::Math::Cartesian3D](https://root.cern/doc/master/classROOT_1_1Math_1_1Cartesian3D.html): 3D cartesian coordinate system (`x`, `y`, `z` coordinates).
+
+- [ROOT::Math::Polar3D](https://root.cern/doc/master/classROOT_1_1Math_1_1Polar3D.html): 3D polar coordinate system (`r`, `theta`, `phi` coordinates).
+
+- [ROOT::Math::Cylindrical3D](https://root.cern/doc/master/classROOT_1_1Math_1_1Cylindrical3D.html): Cylindrical coordinate system based on `rho`, `z` and `phi`. 
+
+- [ROOT::Math::CylindricalEta3D6](https://root.cern/doc/master/classROOT_1_1Math_1_1CylindricalEta3D.html): Cylindrical coordinate system based on `eta` (pseudorapidity) instead of `z`.
+
+#### 4D coordinate systems
+
+- [ROOT::Math::PxPyPzE4D](https://root.cern/doc/master/classROOT_1_1Math_1_1PxPyPzE4D.html): 4D cartesian coordinate system (`x`, `y`, `z`, `t` coordinates) or momentum-energy vectors stored as (`Px`, `Py`, `Pz`, `E`). 
+
+- [ROOT::Math::PxPyPzM4D](https://root.cern/doc/master/classROOT_1_1Math_1_1PxPyPzM4D.html): 4D coordinate system or momentum-energy vectors stored as (`Px`, `Py`, `Pz`, `M`).
+
+- [ROOT::Math::PtEtaPhiE4D](https://root.cern/doc/master/classROOT_1_1Math_1_1PtEtaPhiE4D.html): 4D cylindrical coordinate system using `Pt`, `Phi`, `Eta` and `E` (or `rho`, `phi`, `eta`, `T`). The metric used is (-,-,-,+). 
+
+- [ROOT::Math::PtEtaPhiM4D](https://root.cern/doc/master/classROOT_1_1Math_1_1PtEtaPhiM4D.html): 4D cylindrical coordinate system using `Pt`, `Phi`, `Eta` and `M` (mass). The metric used is (-,-,-,+). 
+
+
 
 ## Physics vectors
 
@@ -66,15 +97,15 @@ The following GenVector classes and class templates are available, among others:
 
 The following physics vector classes are available in ROOT:
 
-- [TVector2](https://root.cern/doc/master/classTVector2.html): A general three vector class that can be used for the description of different vectors in 32.
+- [TVector2](https://root.cern/doc/master/classTVector2.html): A general three vector class that can be used for the description of different vectors in 2D.
 
 - [TVector3](https://root.cern/doc/master/classTVector3.html): A general three vector class that can be used for the description of different vectors in 3D.
 
-- [TRotation](https://root.cern/doc/master/classTRotation.html): Describes a rotation of objects of the ´TVector3´ class.
+- [TRotation](https://root.cern/doc/master/classTRotation.html): Describes a rotation of objects of the `TVector3` class.
 
 - [TLorentzVector](https://root.cern/doc/master/classTLorentzVector.html): A general four-vector class, which can be used either for the description of position and time (x,y,z,t) or momentum and energy (px,py,pz,E) (legacy).
 
-- [TLorentzRotation](https://root.cern/doc/master/classTLorentzRotation.html): Describes Lorentz transformations including Lorentz boosts and rotations .
+- [TLorentzRotation](https://root.cern/doc/master/classTLorentzRotation.html): Describes Lorentz transformations including Lorentz boosts and rotations.
 
 
 
