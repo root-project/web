@@ -68,6 +68,29 @@ The function is displayed in a canvas.
    on the image to interact with the object)."
 %}
 
+#### Using the context menu for manipulating objects
+
+Right-click on the function to display the context menu.
+
+{% include figure_image
+   img="contect-menu.png"
+   caption="Context menu for manipulating objects."
+%}
+
+Here you can change many properties of the object. For example you can change the range by clicking `SetRange`.
+
+{% include figure_image
+   img="set-range.png"
+   caption="SetRange dialog window."
+%}
+
+Select a range, for example 5, 25.
+
+{% include figure_image
+   img="new-range.png"
+   caption="Range 5, 25 for sin(x)."
+%}
+
 #### Using the Graphics Editor for objects
 
 You can edit an existing object in a canvas by right-clicking the object or by using the Graphics Editor.
