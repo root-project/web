@@ -2,14 +2,29 @@
 {% assign sect    = {{include.sect}}  %}
 {% assign fig     = {{include.fig}} %}
 {% assign caption = {{include.caption}} %}
+{% assign style   = {{include.style}} %}
+
+{% assign id =  img | replace: ".","" | replace: " ","" %}
 
 {% capture sect_size %}{{ sect | size }}{% endcapture %}
+
+{% capture fig_size %}{{ fig | size }}{% endcapture %}
+
+{% if {{img}} contains "/" %}
+  {% assign image = {{{{img}} | relative_url}} %}
+{% else %}
+  {% assign image = {{img}} %}
+{% endif %}
 
 {% if sect_size != "0" %}
    <a name="f{{sect}}{{fig}}"></a>
 {% endif %}
 
-<img src="{{img}}"><br>
+<script src="{{ '/assets/js/ImageZoom.js' | relative_url }}" type="text/javascript"></script>
+<div id="{{id}}" style="{{style}}"></div>
+<script>
+    drawImage("{{image}}", '{{id}}');
+</script>
 
 {% capture caption_size %}{{ caption | size }}{% endcapture %}
 
@@ -17,6 +32,10 @@
 {% if sect_size == "0" %}
    *Figure: {{include.caption}}*
 {% else %}
+{% if fig_size == "0" %}
+   *Figure {{sect}}: {{include.caption}}*
+{% else %}
    *Figure {{sect}}.{{fig}}: {{include.caption}}*
+{% endif %}
 {% endif %}
 {% endif %}
