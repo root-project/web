@@ -238,7 +238,7 @@ Use the `-h` option to get more information on the available options for the spe
 
 With a [TBrowser](https://root.cern/doc/master/classTBrowser.html) you can browse all ROOT abjects.
 
-1. Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
+- Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
 
 {% highlight C++ %}
    root[0] TFile f("demo.root")
@@ -252,7 +252,7 @@ The ROOT Object Browser is displayed.
    caption="ROOT Object Browser."
    %}
 
-2. Click the ROOT file and the content of the ROOT file.
+- Click the ROOT file and the content of the ROOT file.
 
    {% include figure_image
    img="root_object_browser_content.png"
