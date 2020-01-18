@@ -240,10 +240,10 @@ With a [TBrowser](https://root.cern/doc/master/classTBrowser.html) you can brows
 
 1. Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
 
-```
+{% highlight C++ %}
    root[0] TFile f("demo.root")
    root[1] TBrowser browser
-```
+{% endhighlight %}
 
 The ROOT Object Browser is displayed.
 
@@ -258,6 +258,8 @@ The ROOT Object Browser is displayed.
    img="root_object_browser_content.png"
    caption="ROOT Object Browser displaying the content of a ROOT file."
    %}
+
+Graphical objects are displayed in the `Canvas_1` tab. Files that end with `.C` or `.root` are displayed in the `Editor 1` tab.
 
 ### Viewing the physical layout of a ROOT file
 
