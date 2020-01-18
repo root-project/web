@@ -208,6 +208,19 @@ _**Example**_
    caption="Histogram drawn with Draw()."
 %}
 
+#### Getting the bin width
+
+- Use [GetBinWidth()](https://root.cern/doc/master/classTH1.html#ad69a5fa0002361fd77f37990a29d1aa3) to get the bin width of a histogram.
+
+{% highlight C++ %}
+   TH1F h1("h1","Histogram from a Gaussian",100,-3,3);
+   h1.FillRandom("gaus",10000);
+   h1.Draw();
+   h1.GetBinWidth(0)
+   
+   (double) 0.060000000
+{% endhighlight %}
+
 #### Drawing options
 
 > **Note**
@@ -385,6 +398,47 @@ By default, 3-D histograms are drawn as scatter plots.
 `BB`: Suppresses the back-box.
 
 `A`: Suppresses the axis.
+
+#### Drawing a histogram with error bars
+
+You can draw a histogram with error bars.
+
+_**Example**_
+
+{% highlight C++ %}
+   TH1F h1("h1","Histogram from a Gaussian",100,-3,3);
+   h1.FillRandom("gaus",10000);
+   h1.Draw();
+{% endhighlight %}
+
+A canvas with the histogram is displayed.
+
+1. Click `View`, and then click `Editor`.
+
+2. Click on the histogram.
+
+In the `Style` tab, you can select the error bars to displayed for the histogram.
+
+{% include figure_image
+   img="histogram-error-select.png"
+   caption="Selection of error bars for a histogram."
+%}
+
+3. Select `Simple`.
+
+The size of the error bars is equal to the square root of the number of events in the histogram.
+
+{% include figure_image
+   img="histogram-error-bars.png"
+   caption="Error bars for a histogram."
+%}
+
+Instead of using the `Editor`, you also can simply draw the error bars by:
+
+{% highlight C++ %}
+   h1.Draw("e");
+{% endhighlight %}
+
 
 ## Fitting histograms
 
