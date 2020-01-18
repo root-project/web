@@ -42,8 +42,6 @@ manual:
         url: manual/histograms
       - title: Graphs
         url: manual/graphs
-      - title: Geometry
-        url: manual/geometry
       - title: Trees
         url: manual/trees
       - title: Data frames
@@ -56,12 +54,10 @@ manual:
         url: manual/math
       - title: Vectors
         url: manual/vectors
+      - title: Geometry
+        url: manual/geometry
       - title: Python interface PyROOT
         url: manual/python
-      - title: R interface
-        url: manual/r
-      - title: Threads
-        url: manual/threads
   - title: Further information
     children:
       - title: "Reference Guide"
