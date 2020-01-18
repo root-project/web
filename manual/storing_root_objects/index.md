@@ -23,7 +23,7 @@ A ROOT file, this is a [TFile](https://root.cern/doc/master/classTFile.html) obj
 
 The following options are available:
 
-- `CREATE`: Creates the ROOT files.
+- `CREATE`: Creates a ROOT file.
 
 - `NEW`: Same as `CREATE`.
 
@@ -31,7 +31,7 @@ The following options are available:
 
 - `UPDATE`: Updates the ROOT file.
 
-- `READ`: Open an existing ROOT file for reading.
+- `READ`: Opens an existing ROOT file for reading.
 
 Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been created it becomes the default file for all I/O. This default is held in the global variable `gFile` (see → [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})), which can be updated at any time to change the default.
 
@@ -47,7 +47,7 @@ Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been cre
 >
 > You can also check whether the ROOT file is correctly opened by:
 >
-> ```
+> {% highlight C++ %}
 >   TFile f("demo.root");
 >   if (f.IsZombie()) {
 >   cout << "Error opening file" << endl;
@@ -55,11 +55,12 @@ Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been cre
 >   } else {
 >   ...
 >   }
-> ```
+> {% endhighlight %}
+
 
 ### Writing ROOT files
 
-To write objects to a ROOT file, it must be open.
+To write objects to a ROOT file, they must be open.
 
 - Use [TFile::Write()](https://root.cern/doc/master/classTFile.html#adc21e8868cd0938691cf794b4b20096b) to write objects into the ROOT file.
 
@@ -122,7 +123,7 @@ The ROOT file is saved by default in the current working directory.
 
 ROOT will automatically close any ROOT files still open when the session ends.
 
-- Use `delete` to delte the [TFile](https://root.cern/doc/master/classTFile.html) object.
+- Use `delete` to delete the [TFile](https://root.cern/doc/master/classTFile.html) object.
 
 ```
    delete MyFile;

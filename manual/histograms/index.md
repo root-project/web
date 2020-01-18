@@ -399,7 +399,7 @@ By default, 3-D histograms are drawn as scatter plots.
 
 `A`: Suppresses the axis.
 
-#### Drawing a histogram with error bars
+### Drawing a histogram with error bars
 
 You can draw a histogram with error bars.
 
@@ -413,9 +413,9 @@ _**Example**_
 
 A canvas with the histogram is displayed.
 
-1. Click `View`, and then click `Editor`.
+- Click `View`, and then click `Editor`.
 
-2. Click on the histogram.
+- Click on the histogram.
 
 In the `Style` tab, you can select the error bars to displayed for the histogram.
 
@@ -424,7 +424,7 @@ In the `Style` tab, you can select the error bars to displayed for the histogram
    caption="Selection of error bars for a histogram."
 %}
 
-3. Select `Simple`.
+- Select `Simple`.
 
 The size of the error bars is equal to the square root of the number of events in the histogram.
 
