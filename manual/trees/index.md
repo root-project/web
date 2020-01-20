@@ -632,12 +632,13 @@ Potential     Current     Temperature     Pressure
 ### Writing arbitrary N-tuples
 
 You can write N-tuples of arbitrary type by using the [TBranch](https://root.cern/doc/master/classTBranch.html) class. This is especially important as
-[::Fill()](https://root.cern/doc/master/classTNtuple.html#a7fd062e6a5cc4e4af50b9096b73feaa0) accepts only floats.
+[TNtuple::Fill()](https://root.cern/doc/master/classTNtuple.html#a7fd062e6a5cc4e4af50b9096b73feaa0) accepts only floats.
 
 _**Example**_
 
-the same N-tuple as before is created, but the branches are booked directly. The `Fill()` function then fills the current values of the connected variables to the tree.
+The same N-tuple as before is created, but the branches are booked directly. The `Fill()` function then fills the current values of the connected variables to the tree.
 
+{% highlight C++ %}
 void write_ntuple_to_file_advanced(const std::string& outputFileName="ntuple.root",unsigned int numDataPoints=1000000)
 {
    TFile ofile(outputFileName.c_str(),"RECREATE");
@@ -666,7 +667,7 @@ void write_ntuple_to_file_advanced(const std::string& outputFileName="ntuple.roo
    cond_data.Write();
    ofile.Close();
 }
-
+{% endhighlight %}
 
 ## Reading TTrees, TChains and TNtuples
 
