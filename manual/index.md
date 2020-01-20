@@ -45,7 +45,7 @@ Tutorials are available for all parts of the ROOT Manual at → <a href="https:/
 
 <br><br>
 <b>Topical Manuals</b><br>
-Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics, see → <a href="/topical">Topical Manuals</a>.
+Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics, see → <a href="/web/topical">Topical Manuals</a>.
 
 </div>
 
