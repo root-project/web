@@ -41,11 +41,11 @@ is the primary source of information for all ROOT classes.
 
 <br><br>
 <b>Tutorials</b><br>
-Tutorials are available for all parts of the ROOT Manual at → [https://root.cern/doc/master/group__Tutorials.html](https://root.cern/doc/master/group__Tutorials.html).
+Tutorials are available for all parts of the ROOT Manual at → <a href="https://root.cern/doc/master/group__Tutorials.html">https://root.cern/doc/master/group__Tutorials.html</a>.
 
 <br><br>
 <b>Topical Manuals</b><br>
-Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics, see → [Topical Manuals]({{ '/topical/' | relative_url }}).
+Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics, see → <a href="/topical">Topical Manuals</a>.
 
 </div>
 
