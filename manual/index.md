@@ -34,17 +34,17 @@ about the extensive possibilities of data analysis with ROOT.
 Both parts contain a lot of, often interactive, examples.
 
 <br><br>
-**ROOT Reference Guide**<br>
+<b>ROOT Reference Guide</b><br>
 The ROOT Manual refers to numerous information, especially for ROOT classes, from the
 <a href="https://root.cern/doc/master/">ROOT Reference Guide</a>. The ROOT Reference Guide
 is the primary source of information for all ROOT classes.
 
 <br><br>
-**Tutorials**<br>
+<b>Tutorials</b><br>
 Tutorials are available for all parts of the ROOT Manual at → [https://root.cern/doc/master/group__Tutorials.html](https://root.cern/doc/master/group__Tutorials.html).
 
 <br><br>
-**Topical Manuals**<br>
+<b>Topical Manuals</b><br>
 Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics, see → [Topical Manuals]({{ '/topical/' | relative_url }}).
 
 </div>
