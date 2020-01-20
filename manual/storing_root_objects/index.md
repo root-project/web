@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
- ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the ROOT file back, the object is reconstructed in memory.
+ ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the ROOT file back, the object is reconstructed in the memory.
 
 ## Working with ROOT files
 
@@ -33,7 +33,7 @@ The following options are available:
 
 - `READ`: Opens an existing ROOT file for reading.
 
-Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been created it becomes the default file for all I/O. This default is held in the global variable `gFile` (see → [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})), which can be updated at any time to change the default.
+Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been created, it becomes the default file for all I/O. This default is held in the global variable `gFile` (see → [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})), which can be updated at any time to change the default.
 
 ```
    gFile = MyFile;

@@ -22,13 +22,13 @@ A `TNtuple` is a `TTree` that is limited to only contains floating-point numbers
 
 ROOT provides the following classes for trees and branches, among others:
 
-- [TTree](https://root.cern/doc/master/classTTree.html)
+- [TTree](https://root.cern/doc/master/classTTree.html): Represents a columnar data set. Any C++ type can be stored in its columns.
 
-- [TNtuple](https://root.cern/doc/master/classTNtuple.html)
+- [TNtuple](https://root.cern/doc/master/classTNtuple.html): A simple `TTree` restricted to a list of float variables only. 
 
-- [TBranch](https://root.cern/doc/master/classTBranch.html)
+- [TBranch](https://root.cern/doc/master/classTBranch.html): Organizes columns, i.e. branches, of a `TTree`.
 
-- [TChain](https://root.cern/doc/master/classTChain.html)
+- [TChain](https://root.cern/doc/master/classTChain.html): A list of ROOT files containing `TTree` objects.
 
 
 ## Working with trees
@@ -464,10 +464,10 @@ _**Example**_
 There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each file contains a tree `T`. The chain is created with [TChain::Add()](https://root.cern/doc/master/classTChain.html#a9510cc7fc76ff28c30e6775bd9085d6e).
 
 {% highlight C++ %}
-TChain chain("T");
-chain.Add("file1.root");
-chain.Add("file2.root");
-chain.Add("file3.root");
+   TChain chain("T");
+   chain.Add("file1.root");
+   chain.Add("file2.root");
+   chain.Add("file3.root");
 {% endhighlight %}
 
 The name of the [TChain](https://root.cern/doc/master/classTChain.html) is the same as the name of the tree.
@@ -511,6 +511,162 @@ void processChain(){
    }
 {% endhighlight %}
 
+## N-tuples
+
+An N-tuple ([TNtuple](https://root.cern/doc/master/classTNtuple.html)) is a simple [TTree](https://root.cern/doc/master/classTTree.html) restricted to a list of float variables only. 
+
+### Writing simple N-tuples
+
+In the following example, three independent variables (voltage, pressure and temperature) and one variable (current) which depends on the others according to very simple law, and an additional Gaussian smearing, are written to a ROOT file.
+
+_**Example**_
+
+{% highlight C++ %}
+void write_ntuple_to_file(){
+   TFile ofile("ntuple.root","CREATE");
+
+// Initialise the TNtuple
+   TNtuple cond_data("cond_data","Example N-Tuple","Potential:Current:Temperature:Pressure");
+
+// Fill it randomly to fake the acquired data
+   TRandom3 rndm;
+   float pot,cur,temp,pres;
+   for (int i=0;i<10000;++i){
+// Get voltage.
+      pot=rndm.Uniform(0.,10.);
+// Get temperature.
+      temp=rndm.Uniform(250.,350.);
+// Get pressure.
+      pres=rndm.Uniform(0.5,1.5);
+// Current.
+      cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.)); 
+
+// Add some random smearing (measurement errors)
+// 1% error on voltage.
+      pot*=rndm.Gaus(1.,0.01);
+// 0.3 absolute error on temperature.
+      temp+=rndm.Gaus(0.,0.3);
+// 1% error on pressure.
+      pres*=rndm.Gaus(1.,0.02);
+// 1% error on current.
+      cur*=rndm.Gaus(1.,0.01); 
+
+// Write to an N-tuple.
+      cond_data.Fill(pot,cur,temp,pres);
+   }
+// Save the N-tuple and close the ROOT file.
+cond_data.Write();
+}
+{% endhighlight %}
+
+In the ROOT Object Browser you can find the columns of your n-tuple written as leafs. Clicking on one of the leafs obtains the histogram of the appropriate variable.
+
+{% highlight C++ %}
+   TFile f("ntuple.root")
+   TBrowser b
+{% endhighlight %}
+
+{% include figure_image
+img="root-object-browser-potential.png"
+caption="N-tuple in the ROOT Object Browser."
+%}
+
+Use the following commands at the system prompt or in the ROOT shell to draw a simple correlation plot:
+
+{% highlight C++ %}
+[] root ntuple.root
+> cond_data->Draw("Current:Potential")
+{% endhighlight %}
+
+{% include figure_image
+img="current-potential.png"
+caption="Current/Potential correlation plot."
+%}
+
+### Reading N-tuples
+
+The following example shows how to read the data from a ROOT N-tuple.
+
+_**Example**_
+
+{% highlight C++ %}
+void read_ntuple_from_file(){
+
+// Open a ROOT file, save the N-tuple and close the ROOT file.
+
+   TFile in_file("ntuple.root");
+   TNtuple* my_tuple;in_file.GetObject("cond_data",my_tuple);
+   float pot,cur,temp,pres;
+   float* row_content;
+   cout << "Potential\tCurrent\tTemperature\tPressure\n";
+   for (int irow=0;irow<my_tuple->GetEntries();++irow){
+      my_tuple->GetEntry(irow);
+      row_content = my_tuple->GetArgs();
+      pot = row_content[0];
+      cur = row_content[1];
+      temp = row_content[2];
+      pres = row_content[3];
+      cout << pot << "\t" << cur << "\t" << temp << "\t" << pres << endl;
+   }
+}
+{% endhighlight %}
+
+{% highlight C++ %}
+.x read_ntuple_from_file.C
+Potential     Current     Temperature     Pressure
+10.0756       1.19547     266.282         0.795519
+5.37825       0.484204    324.413         1.23512
+3.86672       0.449388    271.75          0.724136
+8.90976       0.825837    316.434         0.981151
+7.38798       0.681633    313.64          1.26236
+2.07977       0.229839    279.348         0.597366
+1.40566       0.148727    289.691         1.18724
+7.5371        0.778955    286.499         0.657541
+3.32501       0.427904    259.546         0.926214
+3.70217       0.312457    333.17          0.643932
+6.12199       0.591663    306.463         0.974056
+4.30285       0.416644    309.89          1.18534
+...           ...         ...             ...
+{% endhighlight %}
+
+### Writing arbitrary N-tuples
+
+You can write N-tuples of arbitrary type by using the [TBranch](https://root.cern/doc/master/classTBranch.html) class. This is especially important as
+[::Fill()](https://root.cern/doc/master/classTNtuple.html#a7fd062e6a5cc4e4af50b9096b73feaa0) accepts only floats.
+
+_**Example**_
+
+the same N-tuple as before is created, but the branches are booked directly. The `Fill()` function then fills the current values of the connected variables to the tree.
+
+void write_ntuple_to_file_advanced(const std::string& outputFileName="ntuple.root",unsigned int numDataPoints=1000000)
+{
+   TFile ofile(outputFileName.c_str(),"RECREATE");
+
+// Initialize the TNtuple.
+   TTree cond_data("cond_data", "Example N-tuple");
+
+// Define the variables and book them for the N-tuple.
+   float pot,cur,temp,pres;
+   cond_data.Branch("Potential", &pot, "Potential/F");
+   cond_data.Branch("Current", &cur, "Current/F");
+   cond_data.Branch("Temperature", &temp, "Temperature/F");
+   cond_data.Branch("Pressure", &pres, "Pressure/F");
+   for (int i=0;i<numDataPoints;++i){
+   
+// Fill it randomly to fake the acquired data.
+      pot=gRandom->Uniform(0.,10.)*gRandom->Gaus(1.,0.01);
+      temp=gRandom->Uniform(250.,350.)+gRandom->Gaus(0.,0.3);
+      pres=gRandom->Uniform(0.5,1.5)*gRandom->Gaus(1.,0.02);
+      cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.))*
+      gRandom->Gaus(1.,0.01);
+// Write to the N-tuple.
+      cond_data.Fill();
+      }
+// Save the N-tuple and close the ROOT file.
+   cond_data.Write();
+   ofile.Close();
+}
+
 
 ## Reading TTrees, TChains and TNtuples
 
@@ -521,7 +677,7 @@ _**Example**_
 A simple example using a `TTreeReader`.
 
 {% highlight C++ %}
-// Create a histogram for the values we read.
+// Create a histogram.
    auto myHist = new TH1F("h1","ntuple",100,-4,4);
 
 // Open the file containing the tree.
