@@ -14,8 +14,7 @@ A ROOT collection is a group of related objects. In general, it easier to manage
 
 ROOT collections are polymorphic containers that hold pointers to [TObject](https://root.cern/doc/master/classTObject.html):
 
--   ROOT collections can only hold objects that inherit from `TObject`.
-   To store an object in a ROOT collection, it must be a descendent of `TObject`.
+-   ROOT collections can only hold objects that inherit from `TObject`. To store an object in a ROOT collection, it must be a descendent of `TObject`.
 
 -   ROOT collections return pointers to `TObject` that have to be cast back to the correct subclass.
 
@@ -39,26 +38,19 @@ They are abstract base classes and it is not possible to create objects from the
 
 The `TCollection `class provides the basic protocol (i.e. the minimum set of member functions) that all collection classes have to implement. These include:
 
-[Add()](https://root.cern/doc/master/classTCollection.html#ab3e434ef802177de135ab480ae932fe8)
-Adds another object to the ROOT collection.
+[Add()](https://root.cern/doc/master/classTCollection.html#ab3e434ef802177de135ab480ae932fe8): Adds another object to the ROOT collection.
 
-[GetSize()](https://root.cern/doc/master/classTCollection.html#af0ca154693eeb1e9d9a0ff3a8d43e466)
-Returns the number of objects in the ROOT collection.
+[GetSize()](https://root.cern/doc/master/classTCollection.html#af0ca154693eeb1e9d9a0ff3a8d43e466): Returns the number of objects in the ROOT collection.
 
-[Clear()](https://root.cern/doc/master/classTCollection.html#a6ca7fcb184cd27b4467737b1fb407f39)
-Clears out the ROOT collection, but does not delete the removed objects.
+[Clear()](https://root.cern/doc/master/classTCollection.html#a6ca7fcb184cd27b4467737b1fb407f39): Clears out the ROOT collection, but does not delete the removed objects.
 
-[Delete()](https://root.cern/doc/master/classTCollection.html#a9f4c9aac590630d208a69585a00048f9)
-Clears out the ROOT collection and deletes the removed objects. This should only be used if the ROOT collection owns its objects (which is usually not the case).
+[Delete()](https://root.cern/doc/master/classTCollection.html#a9f4c9aac590630d208a69585a00048f9): Clears out the ROOT collection and deletes the removed objects. This should only be used if the ROOT collection owns its objects (which is usually not the case).
 
-[FindObject()](https://root.cern/doc/master/classTCollection.html#a183913b7766d7f8a4e87d55e64a538d5)
-Finds an object given either its name or address.
+[FindObject()](https://root.cern/doc/master/classTCollection.html#a183913b7766d7f8a4e87d55e64a538d5): Finds an object given either its name or address.
 
-[MakeIterator()](https://root.cern/doc/master/classTCollection.html#a1a2b122d40c8248317773351979b1cd8)
-Returns an iterator associated with the ROOT collection.
+[MakeIterator()](https://root.cern/doc/master/classTCollection.html#a1a2b122d40c8248317773351979b1cd8): Returns an iterator associated with the ROOT collection.
 
-[Remove()](https://root.cern/doc/master/classTCollection.html#abc692cd675c668e8a1e491d36b181f05)
-Removes an object from the ROOT collection.
+[Remove()](https://root.cern/doc/master/classTCollection.html#abc692cd675c668e8a1e491d36b181f05): Removes an object from the ROOT collection.
 
 ## Types of ROOT collections
 
@@ -75,7 +67,7 @@ Refer to [TCollection](https://root.cern/doc/master/classTCollection.html) for t
 
 ### Ordered ROOT collections
 
-ROOT collections that are externally ordered are called sequences. They maintain the internal elements according to the order in which they were added. Ordered collections all derive from the abstract [TSeqCollection] base class.
+ROOT collections that are externally ordered are called sequences. They maintain the internal elements according to the order in which they were added. Ordered collections all derive from the abstract [TSeqCollection](https://root.cern/doc/master/classTSeqCollection.html) base class.
 
 The following ordered ROOT collections are available:
 
@@ -146,4 +138,12 @@ The following unordered ROOT collections are available:
 
 ## Changing the behavior of objects in ROOT collections
 
-text be added here...
+By overriding the following [TObject](https://root.cern/doc/master/classTObject.html) member functions, you can change the behavior of objects in ROOT collections:
+
+- [IsEqual()](https://root.cern/doc/master/classTObject.html#a1a1c984d4cf6d7d73b8483bf9dc5ee47): Used by the [FindObject()](https://root.cern/doc/master/classTCollection.html#a183913b7766d7f8a4e87d55e64a538d5) collection method. By default, `IsEqual()` compares the two object pointers.
+
+- [Compare()](https://root.cern/doc/master/classTCollection.html#ac8f95e057382ad14a37a8b45f2ded510): Returns -1, 0 or 1 depending if the object is smaller, equal or larger than the other object. By default, a TObject has not a valid `Compare()` method.
+
+- [IsSortable()](https://root.cern/doc/master/classTCollection.html#a3e9adc8b21de67ae3149bf2cc8f6c67d): Returns `true` if the class is sort able (i.e. if it has a valid `Compare()` method). By default, a `TObject` is not sort able.
+
+- [Hash()](https://root.cern/doc/master/classTCollection.html#a880dfd3426f3946d2e383ad10af71c25): Returns a hash value. It needs to be implemented if an object has to be stored in a collection using a hashing technique, like [THashTable](https://root.cern/doc/master/classTHashTable.html), [THashList](https://root.cern/doc/master/classTHashList.html) and [TMap](https://root.cern/doc/master/classTMap.html). By default, `Hash()` returns the address of the object.
