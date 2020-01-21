@@ -41,7 +41,7 @@ Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been cre
 
 **Current directory**
 
-When you create a `TFile` object, it becomes the current directory. Therefore, the last RROT file to be opened is always the current directory.<br>
+When you create a `TFile` object, it becomes the current directory. Therefore, the last ROOT file to be opened is always the current directory.<br>
 Check the current directory as follows:
 
 {% highlight C++ %}
