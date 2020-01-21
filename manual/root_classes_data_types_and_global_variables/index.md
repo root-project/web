@@ -207,7 +207,7 @@ This returns a pointer to a [TObject](https://root.cern/doc/master/classTObject.
 
 ### gFile
 
-`gFile` is the pointer to the current opened file in a ROOT session.
+`gFile` is the pointer to the current opened ROOT file in a ROOT session.
 
 ### gStyle
 

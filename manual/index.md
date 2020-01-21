@@ -44,7 +44,7 @@ is the primary source of information for all ROOT classes.
 Tutorials are available for all parts of the ROOT Manual at → <a href="https://root.cern/doc/master/group__Tutorials.html">https://root.cern/doc/master/group__Tutorials.html</a>.
 
 <br><br>
-<b>Topical Manuals</b><br>
+<b>Topical manuals</b><br>
 Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics, see → <a href="/web/topical">Topical Manuals</a>.
 
 </div>

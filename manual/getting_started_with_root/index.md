@@ -861,7 +861,7 @@ You can pass commands directly to ROOT by placing a dot before the command.
    .<command>
 ```
 
-`.q`: Quit ROOT.
+`.q`: Quits ROOT.
 
 `.?`: Provides a list of all commands.
 
@@ -883,4 +883,8 @@ You can pass commands directly to ROOT by placing a dot before the command.
 
 `.files`: Shows all loaded files.
 
-`.include`: Shows include paths.
+`.include`: Shows the include paths.
+
+`.I path`: Adds an include path.
+
+`.printAST`: Shows the abstract syntax tree after each processed entity.

@@ -17,9 +17,9 @@ A ROOT file, this is a [TFile](https://root.cern/doc/master/classTFile.html) obj
 
 - Use the [TFile](https://root.cern/doc/master/classTFile.html) constructor for creating a ROOT file. A ROOT file uses the `.root` extension.
 
-```
+{% highlight C++ %}
    TFile *MyFile = new TFile("Event.root","OPTIONS");
-```
+{% endhighlight %}
 
 The following options are available:
 
@@ -35,9 +35,31 @@ The following options are available:
 
 Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been created, it becomes the default file for all I/O. This default is held in the global variable `gFile` (see → [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})), which can be updated at any time to change the default.
 
-```
+{% highlight C++ %}
    gFile = MyFile;
-```
+{% endhighlight %}
+
+**Current directory**
+
+When you create a `TFile` object, it becomes the current directory. Therefore, the last RROT file to be opened is always the current directory.<br>
+Check the current directory as follows:
+
+{% highlight C++ %}
+   gDirectory->pwd()
+   
+   Rint:/
+{% endhighlight %}
+
+In this case the current directory is the ROOT session (`Rint`).
+
+When you create a `TFile` object, the ROOT file becomes the current directory.
+
+{% highlight C++ %}
+   TFile f1("my.root");
+   gDirectory->pwd()
+
+   my.root:/
+{% endhighlight %}
 
 ### Checking whether a ROOT file is open
 
@@ -46,17 +68,16 @@ Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been cre
 > **Note**
 >
 > You can also check whether the ROOT file is correctly opened by:
->
-> {% highlight C++ %}
->   TFile f("demo.root");
->   if (f.IsZombie()) {
->   cout << "Error opening file" << endl;
->   exit(-1);
->   } else {
->   ...
->   }
-> {% endhighlight %}
 
+{% highlight C++ %}
+   TFile f("demo.root");
+   if (f.IsZombie()) {
+      cout << "Error opening file" << endl;
+      exit(-1);
+      } else {
+      ...
+   }
+{% endhighlight %}
 
 ### Writing ROOT files
 
@@ -68,15 +89,15 @@ To write objects to a ROOT file, they must be open.
 
  A copy of `MyObject` is written to the current directory of the current ROOT file with the named key `MyObject_1`:
 
-```
+{% highlight C++ %}
    MyObject->Write("MyObject_1");
-```
+{% endhighlight %}
 
 If `MyObject` does not inherit from [TClass](https://root.cern/doc/master/classTClass.html), you can use
 
-```
+{% highlight C++ %}
    gDirectory->WriteObject(MyObject,"MyObject_1");
-```
+{% endhighlight %}
 
 _**Example**_
 
@@ -112,27 +133,25 @@ This example creates 15 histograms, fills each histogram with 1000 entries from 
 
 The ROOT file is saved by default in the current working directory.
 
-
 ### Closing a ROOT file
 
 - Use [TFile::Close()](https://root.cern/doc/master/classTFile.html#ae312f07848b4b30679409e5e785991a6) to close a ROOT file:
 
-```
+{% highlight C++ %}
    MyFile->Close();
-```
+{% endhighlight %}
 
 ROOT will automatically close any ROOT files still open when the session ends.
 
 - Use `delete` to delete the [TFile](https://root.cern/doc/master/classTFile.html) object.
 
-```
+{% highlight C++ %}
    delete MyFile;
-```
-
+{% endhighlight %}
 
 ### Retrieving objects from a ROOT file
 
-- Use the `GetObject()` method to retrieve objects from a ROOT file.
+- Use the `GetObject()` method to retrieve the objects from a ROOT file.
 
 _**Example**_
 
@@ -186,9 +205,9 @@ for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
 
 - Use the `hadd` utility in `$ROOTSYS/bin/hadd`, to merge ROOT files:
 
-```
-hadd result.root file1.root file2.root ... filen.root
-```
+{% highlight C++ %}
+   hadd result.root file1.root file2.root ... filen.root
+{% endhighlight %}
 
 ### File system operations
 
@@ -206,6 +225,9 @@ _**Example**_
 
 // Changing a directory.
    f->cd("dir");
+   
+// Listing the contents of a ROOT file.
+   f->ls();
 
 {% endhighlight %}
 
