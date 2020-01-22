@@ -8,6 +8,11 @@ toc_sticky: true
 ---
 A graph is a graphics object made of two arrays `X` and `Y`, holding the `x`,`y` coordinates of n points.
 
+**Un-bin data**
+
+A graph or chart is a plot of categorical variables, this is un-bin data.
+A histogram is used for continuous data, where the bins represent ranges of data (bin data), see → [Histograms]({{ '/manual/histograms' | relative_url }}).
+
 > **Tutorials**
 >
 > Graph tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphs.html](https://root.cern/doc/master/group__tutorial__graphs.html)
@@ -37,7 +42,7 @@ The following graph classes are available in ROOT, among others:
 
 ## Working with graphs
 
-Advanced organizer ...
+ROOT supports the general case with non-equidistant points, and the special case with equidistant points.
 
 ### Creating a graph
 

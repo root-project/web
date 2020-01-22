@@ -9,6 +9,11 @@ toc_sticky: true
 
 Histograms play a fundamental role in any kind of physical analysis. Histograms not only serve to visualize measurements, but also represent a powerful form of data reduction. ROOT supports histograms up to three dimensions.
 
+**Bin data**
+
+A histogram is used for continuous data, where the bins represent ranges of data. ROOT supports constant or variable bin widths.<br>
+A graph or chart is a plot of categorical variables, this is un-bin data, see → [Graphs]({{ '/manual/graphs' | relative_url }}).
+
 > **Tutorials**
 >
 > Histogram tutorials are available at → [https://root.cern/doc/master/group__tutorial__hist.html](https://root.cern/doc/master/group__tutorial__hist.html)

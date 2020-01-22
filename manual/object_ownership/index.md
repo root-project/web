@@ -7,22 +7,22 @@ toc: true
 toc_sticky: true
 ---
 
-An object has the ownership of another object if it has permission to delete it.  
+An object has the ownership of another object if it has the permission to delete it.  
 To prevent memory leaks and multiple attempts to delete an object, you need to know which objects are owned by ROOT and which are owned by you.
 
 The following cases are possible:
 
--   ownership by current directory (`gDirectory`).  
-	→ See [Ownership by current directory (gDirectory)](#ownership-by-current-directory-gdirectory)
+- Qwnership by current directory (`gDirectory`).<br>
+→ See [Ownership by current directory (gDirectory)](#ownership-by-current-directory-gdirectory).
 
--   ownership by the master [TROOT](https://root.cern/doc/master/classTROOT.html) object (`gROOT`)  
-→ See [Ownership by the TROOT master object (gROOT)](#ownership-by-the-troot-master-object-groot)
+- Ownership by the master [TROOT](https://root.cern/doc/master/classTROOT.html) object (`gROOT`).<br>
+→ See [Ownership by the TROOT master object (gROOT)](#ownership-by-the-troot-master-object-groot).
 
--   ownership by other objects  
-→ See [Ownership by other objects](#ownership-by-other-objects)
+- Ownership by other objects.<br>
+→ See [Ownership by other objects](#ownership-by-other-objects).
 
--   ownership by the user  
-→ See [Ownership by the user](#ownership-by-the-user)
+- Ownership by the user.
+→ See [Ownership by the user](#ownership-by-the-user).
 
 ## Ownership by current directory (gDirectory)
 
@@ -33,9 +33,10 @@ You can get the list of objects in the current directory and retrieve a pointer 
 _**Example**_
 
 Retrieving a histogram:
-```
-TH1F *h = (TH1F*)gDirectory->GetList()->FindObject("myHist"); 
-```
+
+{% highlight C++ %}
+   TH1F *h = (TH1F*)gDirectory->GetList()->FindObject("myHist"); 
+{% endhighlight %}
 
 You can change the directory of a histogram, tree, or event list with the `SetDirectory()` method.
 
@@ -43,9 +44,9 @@ _**Example**_
 
 Changing the directory of a histogram (same applies to trees and event lists):
 
-```
-h->SetDirectory(newDir);
-```
+{% highlight C++ %}
+   h->SetDirectory(newDir);
+{% endhighlight %}
 
 You can remove a histogram from a directory by using `SetDirectory(0)`. Once a histogram is removed from the directory, it will not be deleted when the directory is closed. You have to delete the histogram once you have finished with it.
 
@@ -55,9 +56,10 @@ _**Example**_
 
 Changing the default that adds the histogram to the current directory:
 
-```
-TH1::AddDirectory(kFALSE);
-```
+{% highlight C++ %}
+   TH1::AddDirectory(kFALSE);
+{% endhighlight %}
+
 Not all histograms created here after are added to the current directory. In this case, you own all histogram objects and you will need to delete them and clean up the references. You can still set the directory of a histogram by calling `SetDirectory()` once it has been created.
 
 > **Note**
@@ -69,15 +71,15 @@ Not all histograms created here after are added to the current directory. In thi
 
 The [TROOT]([TROOT](https://root.cern/doc/master/classTROOT.html)) master object (`gROOT`) has several collections of objects. Objects that are members of these collections are owned by `gROOT`.
 
-Accessing the collection contents
+**Accessing the collection contents**
 
 You can access the content with the `gROOT->GetListOf` method.
 
 _**Example**_
 
-```
-gROOT->GetListOfCanvases
-```
+{% highlight C++ %}
+   gROOT->GetListOfCanvases
+{% endhighlight %}
 
 ## Ownership by other objects
 
@@ -85,9 +87,9 @@ When an object creates another, the creating object is the owner of the created 
 
 _**Example**_
 
-```
-myHisto->Fit("gaus")
-```
+{% highlight C++ %}
+   myHisto->Fit("gaus")
+{% endhighlight %}
 
 The call of `Fit()` copies the global [TF1](https://root.cern/doc/master/classTF1.html) Gaussian function and attaches the copy to the histogram. When the histogram is deleted, the copy is deleted too.
 
@@ -107,26 +109,26 @@ The user owns all objects not described in one of the above cases.
 
 Use:
 
-```
-MyObject->SetBit(kCanDelete)
-MyObject->SetBit(kMustCleanup)
-```
+{% highlight C++ %}
+   MyObject->SetBit(kCanDelete)
+   MyObject->SetBit(kMustCleanup)
+{% endhighlight %}
 
 #### Resetting the bits
 
 Use:
 
-```
-TObject::ResetBit
-```
+{% highlight C++ %}
+   TObject::ResetBit()
+{% endhighlight %}
 
 #### Testing the bits
 
 Use:
 
-```
-TObject::TestBit
-```
+{% highlight C++ %}
+   TObject::TestBit()
+{% endhighlight %}
 
 #### kCanDelete
 
@@ -150,11 +152,11 @@ If you specify `MyCollection->SetOwner`,the collection owns the objects and dele
 Otherwise, you need to delete all member objects in the collection and delete the collection object itself:
 
 
-```
-MyCollection->Delete();
+{% highlight C++ %}
+   MyCollection->Delete();
 
-delete MyCollection;
-```
+   delete MyCollection;
+{% endhighlight %}
 
 > **Note**
 > 
@@ -187,7 +189,7 @@ The user can add their own collection to the collection of clean ups, to take ad
 
 _**Example**_
 
-```
+{% highlight C++ %}
 //Create two lists:
 
 	TList *myList1, *myList2;
@@ -202,4 +204,4 @@ _**Example**_
 	delete myObject;
 
 // The object is deleted from both lists.
-```
+{% endhighlight %}

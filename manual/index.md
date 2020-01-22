@@ -77,8 +77,8 @@ Topical manuals are available for some functional parts of ROOT. They contain in
   - [Histograms]({{ '/manual/histograms' | relative_url }})
 
   - [Graphs]({{ '/manual/graphs' | relative_url }})
-
-  - [Geometry]({{ '/manual/geometry' | relative_url }})
+  
+  - [Vectors]({{ '/manual/vectors' | relative_url }})
 
   - [Trees]({{ '/manual/trees' | relative_url }})
 
@@ -89,8 +89,6 @@ Topical manuals are available for some functional parts of ROOT. They contain in
   - [TMVA]({{ '/manual/tmva' | relative_url }})
 
   - [Mathematical libraries]({{ '/manual/math' | relative_url }})
-
-  - [Vectors]({{ '/manual/vectors' | relative_url }})
 
   - [Python interface PyROOT]({{ '/manual/python' | relative_url }})
 
@@ -104,6 +102,8 @@ Topical manuals are available for some functional parts of ROOT. They contain in
   - [Primer]({{ '/primer/' | relative_url }})
 
   - [Topical Manuals]({{ '/topical/' | relative_url }})
+  
+  - [Geometry]({{ '/manual/geometry' | relative_url }})
 
   - [Forum](https://root-forum.cern.ch/)
 
