@@ -24,7 +24,7 @@ ROOT collections can grow in size as required. ROOT collections themselves are d
 
 **ROOT collections do not own the objects they hold**
 
-ROOT collections do not own the objects they hold because the same object could be a member of more than one ROOT collection. Object ownership is important when it comes to deleting objects (see → *Object ownership*). If nobody owns the object it could end up as wasted memory (i.e. a memory leak) when no longer needed. If a ROOT collection is deleted, its objects are not. You must delete the objects of a ROOT collection manually.
+ROOT collections do not own the objects they hold because the same object could be a member of more than one ROOT collection. Object ownership is important when it comes to deleting objects (see → [Object ownership]({{ '/manual/object_ownership' | relative_url }})). If nobody owns the object it could end up as wasted memory (this is a memory leak) when no longer needed. If a ROOT collection is deleted, its objects are not. You must delete the objects of a ROOT collection manually.
 
 ## Fundamental ROOT classes
 
@@ -38,19 +38,19 @@ They are abstract base classes and it is not possible to create objects from the
 
 The `TCollection `class provides the basic protocol (i.e. the minimum set of member functions) that all collection classes have to implement. These include:
 
-[Add()](https://root.cern/doc/master/classTCollection.html#ab3e434ef802177de135ab480ae932fe8): Adds another object to the ROOT collection.
+- [Add()](https://root.cern/doc/master/classTCollection.html#ab3e434ef802177de135ab480ae932fe8): Adds another object to the ROOT collection.
 
-[GetSize()](https://root.cern/doc/master/classTCollection.html#af0ca154693eeb1e9d9a0ff3a8d43e466): Returns the number of objects in the ROOT collection.
+- [GetSize()](https://root.cern/doc/master/classTCollection.html#af0ca154693eeb1e9d9a0ff3a8d43e466): Returns the number of objects in the ROOT collection.
 
-[Clear()](https://root.cern/doc/master/classTCollection.html#a6ca7fcb184cd27b4467737b1fb407f39): Clears out the ROOT collection, but does not delete the removed objects.
+- [Clear()](https://root.cern/doc/master/classTCollection.html#a6ca7fcb184cd27b4467737b1fb407f39): Clears out the ROOT collection, but does not delete the removed objects.
 
-[Delete()](https://root.cern/doc/master/classTCollection.html#a9f4c9aac590630d208a69585a00048f9): Clears out the ROOT collection and deletes the removed objects. This should only be used if the ROOT collection owns its objects (which is usually not the case).
+- [Delete()](https://root.cern/doc/master/classTCollection.html#a9f4c9aac590630d208a69585a00048f9): Clears out the ROOT collection and deletes the removed objects. This should only be used if the ROOT collection owns its objects (which is usually not the case).
 
-[FindObject()](https://root.cern/doc/master/classTCollection.html#a183913b7766d7f8a4e87d55e64a538d5): Finds an object given either its name or address.
+- [FindObject()](https://root.cern/doc/master/classTCollection.html#a183913b7766d7f8a4e87d55e64a538d5): Finds an object given either its name or address.
 
-[MakeIterator()](https://root.cern/doc/master/classTCollection.html#a1a2b122d40c8248317773351979b1cd8): Returns an iterator associated with the ROOT collection.
+- [MakeIterator()](https://root.cern/doc/master/classTCollection.html#a1a2b122d40c8248317773351979b1cd8): Returns an iterator associated with the ROOT collection.
 
-[Remove()](https://root.cern/doc/master/classTCollection.html#abc692cd675c668e8a1e491d36b181f05): Removes an object from the ROOT collection.
+- [Remove()](https://root.cern/doc/master/classTCollection.html#abc692cd675c668e8a1e491d36b181f05): Removes an object from the ROOT collection.
 
 ## Types of ROOT collections
 
