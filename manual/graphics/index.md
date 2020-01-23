@@ -71,6 +71,7 @@ The function is displayed in a canvas.
 #### Drawing objects with special characters in its name
 
 In general, avoid using objects that containing special character like `\`, `/`, `#` etc. in the objects names. Also object names starting with a number might be not accessible from the ROOT command line. 
+`/` is the separator for the directory level in a ROOT file therefore an object having a `/` in its name cannot be accessed from the command line.
 
 Nevertheless, some objects may be named in this way and saved in a ROOT file. The following macro shows how to access such an object in a ROOT file.
 
