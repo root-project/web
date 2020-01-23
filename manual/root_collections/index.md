@@ -12,7 +12,7 @@ A ROOT collection is a group of related objects. In general, it easier to manage
 
 ## General characteristics
 
-ROOT collections are polymorphic containers that hold pointers to [TObject](https://root.cern/doc/master/classTObject.html):
+ROOT collections are polymorphic containers that hold pointers to {% include ref class="TObject" %}:
 
 -   ROOT collections can only hold objects that inherit from `TObject`. To store an object in a ROOT collection, it must be a descendent of `TObject`.
 
@@ -30,9 +30,9 @@ ROOT collections do not own the objects they hold because the same object could 
 
 All ROOT collections are based on the following fundamental ROOT classes:
 
--   [TCollection](https://root.cern/doc/master/classTCollection.html)
+-   {% include ref class="TCollection" %}: Collection abstract base class that describes the base protocol all collection classes have to implement. 
 
--   [TIterator](https://root.cern/doc/master/classTIterator.html)
+-   {% include ref class="TIterator" %}: Iterator abstract base class. 
 
 They are abstract base classes and it is not possible to create objects from them. They are used as base classes for other ROOT classes.
 
@@ -62,8 +62,8 @@ ROOT provides the following basic types of ROOT collections:
 
 -   unordered
 
-All primary collection classes derive from the abstract [TCollection](https://root.cern/doc/master/classTCollection.html) base class.
-Refer to [TCollection](https://root.cern/doc/master/classTCollection.html) for the inheritance hierarchy for the primary collection classes.
+All primary collection classes derive from the abstract {% include ref class="TCollection" %} base class.
+Refer to {% include ref class="TCollection" %} for the inheritance hierarchy for the primary collection classes.
 
 ### Ordered ROOT collections
 
@@ -71,22 +71,22 @@ ROOT collections that are externally ordered are called sequences. They maintain
 
 The following ordered ROOT collections are available:
 
--   [TList](https://root.cern/doc/master/classTList.html)
+-   {% include ref class="TList" %}: A doubly linked list. 
 
--   [THashList](https://root.cern/doc/master/classTHashList.html)
+-   {% include ref class="THashList" %}: Implements a hybrid collection class consisting of a hash table and a list to store {% include ref class="TObject" %}s. 
 
--   [TOrdCollection](https://root.cern/doc/master/classTOrdCollection.html)
+-   {% include ref class="TOrdCollection" %}: Ordered collection. 
 
--   [TObjArray](https://root.cern/doc/master/classTObjArray.html)
+-   {% include ref class="TObjArray" %}: An array of {% include ref class="TObject" %}s. 
 
--   [TClonesArray](https://root.cern/doc/master/classTClonesArray.html)
+-   {% include ref class="TClonesArray" %}: An array of clone (identical) objects. 
 
-The [TOrdCollection](https://root.cern/doc/master/classTOrdCollection.html), [TObjArray](https://root.cern/doc/master/classTObjArray.html) and [TClonesArray](https://root.cern/doc/master/classTClonesArray.html) can be sorted using their `Sort() `function. For this, the stored objects must provide a comparison function by overriding `TObject::Compare() `and also must enable sorting by overriding `TObject::IsSortable()` to return true.
+{% include ref class="TOrdCollection" %}, {% include ref class="TObjArray" %} and {% include ref class="TClonesArray" %} can be sorted using their `Sort()` function. For this, the stored objects must provide a comparison function by overriding [TObject::Compare()](https://root.cern/doc/master/classTObject.html#ad17c24b70c3614e78c9a75e771a86bb6) and also must enable sorting by overriding [TObject::IsSortable()](https://root.cern/doc/master/classTObject.html#a5caba8a470082257914b99ddf54c3084) to return `true`.
 
 #### TList collection
 
-A [TList](https://root.cern/doc/master/classTList.html) is a doubly linked list.
-Before being inserted into the list, the object pointer is wrapped in a [TObjLink](https://root.cern/doc/master/classTObjLink.html) object that contains, besides the object pointer, a previous and next pointer.
+A {% include ref class="TList" %} is a doubly linked list.
+Before being inserted into the list, the object pointer is wrapped in a {% include ref class="TObjLink" %} object that contains, besides the object pointer, a previous and next pointer.
 
 Objects are added by using:
 
@@ -98,7 +98,7 @@ Objects are added by using:
 
 #### TObjArray Collection
 
-A [TObjArray](https://root.cern/doc/master/classTObjArray.html) is a collection that supports traditional array semantics via the overloading of `operator[]`.
+A {% include ref class="TObjArray" %} is a collection that supports traditional array semantics via the overloading of `operator[]`.
 
 The array expands automatically when objects are added. At creation time, one specifies the default array size (default = 16) and lower bound (default = 0).
 
@@ -110,10 +110,10 @@ If the stored objects are sortable the array can be sorted using `Sort()`. Once 
 
 #### TClonesArray
 
-A [TClonesArray](https://root.cern/doc/master/classTClonesArray.html) is an array of identical (clone) objects. The class is specially designed for repetitive data analysis tasks, where in a loop many times the same objects, are created and deleted.
-The memory for the objects stored in the array is allocated only once in the lifetime. All objects must be of the same class. For the rest this class has the same properties as a [TObjArray](https://root.cern/doc/master/classTObjArray.html).
+A {% include ref class="TClonesArray" %} is an array of identical (clone) objects. The class is specially designed for repetitive data analysis tasks, where in a loop many times the same objects, are created and deleted.
+The memory for the objects stored in the array is allocated only once in the lifetime. All objects must be of the same class. For the rest this class has the same properties as a {% include ref class="TObjArray" %}.
 
-The only supported way to add objects to [TClonesArray](https://root.cern/doc/master/classTClonesArray.html) is via the `new()` method.
+The only supported way to add objects to {% include ref class="TClonesArray" %} is via the `new()` method.
 
 ### Sorted ROOT collections
 
@@ -121,9 +121,9 @@ Sorted ROOT collections are ordered by an internal sorting mechanism. The stored
 
 The following sorted ROOT collections are available:
 
--   [TSortedList](https://root.cern/doc/master/classTSortedList.html)
+-   {% include ref class="TSortedList" %}: A sorted doubly linked list. 
 
--   [TBtree](https://root.cern/doc/master/classTBtree.html)
+-   {% include ref class="TBtree" %}: B-tree class. 
 
 ### Unordered ROOT collections
 
@@ -132,13 +132,13 @@ If you iterate over an unordered ROOT collection, you are not likely to retrieve
 
 The following unordered ROOT collections are available:
 
--   [THashTable](https://root.cern/doc/master/classTHashTable.html)
+-   {% include ref class="THashTable" %}: Implements a hash table to store {% include ref class="TObject" %}s. 
 
--   [TMap](https://root.cern/doc/master/classTMap.html)
+-   {% include ref class="TMap" %}: Implements an associative array of (key,value) pairs using a T{% include ref class="THashTable" %} for efficient retrieval.
 
 ## Changing the behavior of objects in ROOT collections
 
-By overriding the following [TObject](https://root.cern/doc/master/classTObject.html) member functions, you can change the behavior of objects in ROOT collections:
+By overriding the following {% include ref class="TObject" %} member functions, you can change the behavior of objects in ROOT collections:
 
 - [IsEqual()](https://root.cern/doc/master/classTObject.html#a1a1c984d4cf6d7d73b8483bf9dc5ee47): Used by the [FindObject()](https://root.cern/doc/master/classTCollection.html#a183913b7766d7f8a4e87d55e64a538d5) collection method. By default, `IsEqual()` compares the two object pointers.
 
