@@ -42,10 +42,10 @@ The object is "drawn" on a canvas ({% include ref class="TCanvas" %} class) that
 one or more pads ({% include ref class="TPad" %} class).
 When an object is drawn, you can interact with it.
 
-- Use the Draw() method to draw an object.
+- Use the `Draw()` method to draw an object.
 
 {% highlight C++ %}
-object.Draw()
+   object.Draw()
 {% endhighlight %}
 
 _**Example**_
@@ -56,8 +56,8 @@ Use the {% include ref class="TF1" %} class to create an object that is a one-di
 function defined between a lower and upper limit.
 
 {% highlight C++ %}
-TF1 f1("func1","sin(x)",0,10)
-f1.Draw()
+   TF1 f1("func1","sin(x)",0,10)
+   f1.Draw()
 {% endhighlight %}
 
 The function is displayed in a canvas.
@@ -67,6 +67,55 @@ The function is displayed in a canvas.
    caption="Canvas (point the bottom left light blue square or right-click
    on the image to interact with the object)."
 %}
+
+#### Drawing objects with special characters in its name
+
+In general, avoid using objects that containing special character like "\", "/", "#" etc. in the objects names. Also object names starting with a number might be not accessible from the ROOT command line. 
+
+Nevertheless, some objects may be named in this way and saved in a ROOT file. The following macro shows how to access such an object in a ROOT file.
+
+{% highlight C++ %}
+#include "Riostream.h"
+#include "TFile.h"
+#include "TList.h"
+#include "TKey.h"
+
+void draw_object(const char *file_name = "myfile.root", const char *obj_name = "name")
+{
+// Open the ROOT file.
+   TFile *file = TFile::Open(file_name);
+   if (!file || file->IsZombie()) {
+      std::cout << "Cannot open " << file_name << "! Aborting..." << std::endl;
+      return;
+   }
+
+// Get the list of keys.
+   TList *list = (TList *)file->GetListOfKeys();
+   if (!list) {
+      std::cout << "Cannot get the list of TKeys! Aborting..." << std::endl;
+      return;
+   }
+
+// try to find the proper key by its object name.
+   TKey *key = (TKey *)list->FindObject(obj_name);
+   if (!key) {
+      std::cout << "Cannot find a TKey named" << obj_name << "! Aborting..." << std::endl;
+      return;
+   }
+   
+// Read the object itself.
+   TObject *obj = ((TKey *)key)->ReadObj();
+   if (!obj) {
+      std::cout << "Cannot read the object named " << obj_name << "! Aborting..." << std::endl;
+      return;
+   }
+
+// Draw the object.
+   obj->Draw();
+}
+
+{% endhighlight %}
+
 
 #### Using the context menu for manipulating objects
 
@@ -135,7 +184,7 @@ graphical objects with their constructor and draws them with their `Draw()` meth
 - Use the {% include ref class="TLine" %} constructor to create a line.
 
 {% highlight C++ %}
-TLine(Double_t x1,Double_t y1,Double_t x2,Double_t y2)
+   TLine(Double_t x1,Double_t y1,Double_t x2,Double_t y2)
 {% endhighlight %}
 
 `x1`, `y1`, `x2`, `y2` are the coordinates of the first and the second point.
@@ -143,17 +192,16 @@ TLine(Double_t x1,Double_t y1,Double_t x2,Double_t y2)
 _**Example**_
 
 {% highlight C++ %}
-root[] l = new TLine(0.2,0.2,0.8,0.3)
-root[] l->Draw()
+   root[] l = new TLine(0.2,0.2,0.8,0.3)
+   root[] l->Draw()
 {% endhighlight %}
 
 ### Arrows
 
 - Use the {% include ref class="TArrow" %} constructor to create an arrow.
 
-
 {% highlight C++ %}
-TArrow(Double_t x1, Double_t y1, Double_t x2, Double_t y2, Float_t arrowsize, Option_t *option)
+   TArrow(Double_t x1, Double_t y1, Double_t x2, Double_t y2, Float_t arrowsize, Option_t *option)
 {% endhighlight %}
 
 The arrow is defined between points `x1,y1` and `x2,y2`. `option` defines the direction of the arrow like `>`, `<`, `<>`, `><`, etc.
@@ -204,7 +252,7 @@ A polyline is a set of joint segments. It is defined by a set of N points in a 2
 - Use the {% include ref class="TPolyLine" %} constructor to create a polyline.
 
 {% highlight C++ %}
-TPolyLine(Int_t n,Double_t* x,Double_t* y,Option_t* option)
+   TPolyLine(Int_t n,Double_t* x,Double_t* y,Option_t* option)
 {% endhighlight %}
 
 `n` is the number of points, and `x` and `y` are arrays of `n` elements with the coordinates of the points.
@@ -294,9 +342,9 @@ _**Example**_
 
 - Use the {% include ref class="TMarker" %} constructor to create a marker.
 
-```
+{% highlight C++ %}
    TMarker(Double_t x,Double_t y,Int_t marker)
-```
+{% endhighlight %}
 
 The parameters `x` and `y` are the marker coordinates and `marker` is the marker type.
 
@@ -320,9 +368,9 @@ Curly lines and the curly arcs are special kinds of lines that are used to draw 
 
 {% highlight C++ %}
 
-TCurlyLine(Double_t x1, Double_t y1, Double_t x2, Double_t y2, Double_t wavelength, Double_t amplitude)
+   TCurlyLine(Double_t x1, Double_t y1, Double_t x2, Double_t y2, Double_t wavelength, Double_t amplitude)
 
-TCurlyArc(Double_t x1, Double_t y1, Double_t rad, Double_t phimin, Double_t phimax, Double_t wavelength, Double_t amplitude)
+   TCurlyArc(Double_t x1, Double_t y1, Double_t rad, Double_t phimin, Double_t phimax, Double_t wavelength, Double_t amplitude)
 
 {% endhighlight %}
 
@@ -369,7 +417,7 @@ ROOT provides two styles:
 The `Default` style is created by:
 
 {% highlight C++ %}
-auto default = new TStyle("Default","Default Style");
+   auto default = new TStyle("Default","Default Style");
 {% endhighlight %}
 
 **Creating the `Plain` style**
@@ -393,13 +441,13 @@ auto plain  = new TStyle("Plain","Plain Style (no colors/fill areas)");
 - Use the `SetStyle()` method, to set the current style.
 
 {% highlight C++ %}
-gROOT->SetStyle(style_name);
+   gROOT->SetStyle(style_name);
 {% endhighlight %}
 
 You can get a pointer to an existing style with:
 
 {% highlight C++ %}
-auto style = gROOT->GetStyle(style_name);
+   auto style = gROOT->GetStyle(style_name);
 {% endhighlight %}
 
 > **Note**
@@ -425,7 +473,7 @@ TStyle *st1 = new TStyle("st1","my style");
 You can force objects (in a canvas or pad) to get the attributes of the current style.
 
 {% highlight C++ %}
-canvas->UseCurrentStyle();
+   canvas->UseCurrentStyle();
 {% endhighlight %}
 
 
@@ -451,7 +499,7 @@ TAxis *axis = histo->GetXaxis()
 _**Example**_
 
 {% highlight C++ %}
-axis->SetTitle("My axis title");
+   axis->SetTitle("My axis title");
 {% endhighlight %}
 
 If the axis is embedded into a histogram or a graph, you first have to extract the axis object.
@@ -459,7 +507,7 @@ If the axis is embedded into a histogram or a graph, you first have to extract t
 _**Example**_
 
 {% highlight C++ %}
-histo->GetXaxis()->SetTitle("My axis title")
+   histo->GetXaxis()->SetTitle("My axis title")
 {% endhighlight %}
 
 ### Setting axis options and characteristics
@@ -505,7 +553,7 @@ _**Example**_
 For a histogram `histo`, the x-axis is set as time axis.
 
 {% highlight C++ %}
-histo->GetXaxis()->SetTimeDisplay(1);
+   histo->GetXaxis()->SetTimeDisplay(1);
 {% endhighlight %}
 
 For a time axis, you can set the
