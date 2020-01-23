@@ -301,7 +301,7 @@ folder, and the consumer class retrieves a reference to the folder. The consumer
 ### Creating a folder hierarchy
 
 To create a folder hierarchy, you add a top folder of your hierarchy to //root. Then you add a folder to an existing
-folder with the [TFolder::AddFolder](https://root.cern/doc/master/classTFolder.html#a2d3c9ab44d8b660d5c3c42693f745d00) method. The `AddFolder()` method takes two parameters: the name and title of the folder to be added. It returns a pointer of the newly created folder.
+folder with the [TFolder::AddFolder()](https://root.cern/doc/master/classTFolder.html#a2d3c9ab44d8b660d5c3c42693f745d00) method. The `AddFolder()` method takes two parameters: the name and title of the folder to be added. It returns a pointer of the newly created folder.
 
 The following example creates a folder hierarchy shown in the ROOT Object Browser.
 
@@ -342,7 +342,7 @@ _**Example**_
 
 ### Reading data from a folder
 
-- Use the [TROOT::FindObjectAny](https://root.cern/doc/master/classTROOT.html#a9c9964aaea5c7cf333483240aa48b46f) method to search for a folder or an object in a folder. 
+- Use the [TROOT::FindObjectAny()](https://root.cern/doc/master/classTROOT.html#a9c9964aaea5c7cf333483240aa48b46f) method to search for a folder or an object in a folder. 
 
 The `FindObjectAny()` method analyzes the string passed as its argument and searches in the hierarchy until it finds an object or folder matching the name. 
 
