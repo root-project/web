@@ -30,6 +30,8 @@ The following graph classes are available in ROOT, among others:
 
 {% include ref class="TGraphBentErrors" %}: A `TGraph` with bent, asymmetric error bars.
 
+{% include ref class="TGraphMultiErrors" %}: A `TGraph` with asymmetric error bars and multiple y error dimensions.
+
 {% include ref class="TGraphPolar" %}: A polar graph including error bars.
 
 {% include ref class="TGraphQQ" %}: Draws quantile-quantile plots.
