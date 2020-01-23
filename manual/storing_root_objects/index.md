@@ -11,11 +11,11 @@ toc_sticky: true
 
 ## Working with ROOT files
 
-A ROOT file, this is a [TFile](https://root.cern/doc/master/classTFile.html) object, is like a UNIX file directory. It can contain directories and objects organized in unlimited number of levels. A ROOT file is stored in machine independent format (ASCII, IEEE floating point, Big Endian byte ordering).
+A ROOT file, this is a {% include ref class="TFile" %} object, is like a UNIX file directory. It can contain directories and objects organized in unlimited number of levels. A ROOT file is stored in machine independent format (ASCII, IEEE floating point, Big Endian byte ordering).
 
 ### Creating a ROOT file
 
-- Use the [TFile](https://root.cern/doc/master/classTFile.html) constructor for creating a ROOT file. A ROOT file uses the `.root` extension.
+- Use the {% include ref class="TFile" %} constructor for creating a ROOT file. A ROOT file uses the `.root` extension.
 
 {% highlight C++ %}
    TFile *MyFile = new TFile("Event.root","OPTIONS");
@@ -33,7 +33,7 @@ The following options are available:
 
 - `READ`: Opens an existing ROOT file for reading.
 
-Once a [TFile](https://root.cern/doc/master/classTFile.html) object has been created, it becomes the default file for all I/O. This default is held in the global variable `gFile` (see → [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})), which can be updated at any time to change the default.
+Once a {% include ref class="TFile" %} object has been created, it becomes the default file for all I/O. This default is held in the global variable `gFile` (see → [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})), which can be updated at any time to change the default.
 
 {% highlight C++ %}
    gFile = MyFile;
@@ -93,7 +93,7 @@ To write objects to a ROOT file, they must be open.
    MyObject->Write("MyObject_1");
 {% endhighlight %}
 
-If `MyObject` does not inherit from [TClass](https://root.cern/doc/master/classTClass.html), you can use
+If `MyObject` does not inherit from {% include ref class="TClass" %}, you can use
 
 {% highlight C++ %}
    gDirectory->WriteObject(MyObject,"MyObject_1");
@@ -143,7 +143,7 @@ The ROOT file is saved by default in the current working directory.
 
 ROOT will automatically close any ROOT files still open when the session ends.
 
-- Use `delete` to delete the [TFile](https://root.cern/doc/master/classTFile.html) object.
+- Use `delete` to delete the {% include ref class="TFile" %} object.
 
 {% highlight C++ %}
    delete MyFile;
@@ -170,7 +170,7 @@ In detail, the following happens when executing `GetObject()`:
 
 - The key with name `hpx;1` is found in the list of keys.
 
-- A [TBuffer](https://root.cern/doc/master/classTBuffer.html) object is created.
+- A {% include ref class="TBuffer" %}object is created.
 
 - The buffer is read from the ROOT file.
 
@@ -199,7 +199,7 @@ for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
 > If ROOT is not properly terminated, the file directory may not be written at the end of the ROOT file.
 > Next time this ROOT file is used, ROOT will automatically detect this abnormal termination and will recover the directory by scanning sequentially the list of keys in the ROOT file.
 > If the ROOT file has been opened in UPDATE mode, the recovered directory will be automatically written to the ROOT file. This automatic recovery procedure is possible because of redundant information written to the ROOT file.<br>
-> In case you write large [TTree](https://root.cern/doc/master/classTTree.html)s (see →[Trees]({{ '/manual/trees' | relative_url }})), you may have large buffers in memory. In case of a job crash, you may loose a lot of data. Therefore, it recommended to use the auto save method [TTree::AutoSave](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8).
+> In case you write large {% include ref class="TTree" %}s (see →[Trees]({{ '/manual/trees' | relative_url }})), you may have large buffers in memory. In case of a job crash, you may loose a lot of data. Therefore, it recommended to use the auto save method [TTree::AutoSave](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8).
 
 ### Merging ROOT files
 
@@ -211,7 +211,7 @@ for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
 
 ### File system operations
 
-A [TFile](https://root.cern/doc/master/classTFile.html), this is ROOT file, behaves like UNIX file system. Therefore, you can perform the usual operations for a file system.
+A {% include ref class="TFile" %}, this is ROOT file, behaves like UNIX file system. Therefore, you can perform the usual operations for a file system.
 
 _**Example**_
 
@@ -249,18 +249,18 @@ There are ROOT command line tools for:
 
 **Operations on ROOT classes**
 
-- `rootbrowse`: Opens a [TBrowser](https://root.cern/doc/master/classTBrowser.html) directly on the content of a ROOT file.
+- `rootbrowse`: Opens a {% include ref class="TBrowser" %} directly on the content of a ROOT file.
 - `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another ROOT file.
 - `rootprint`: Plot objects in an image ROOT file.
 
 Use the `-h` option to get more information on the available options for the specific ROOT command line tool.
 
 
-## Viewing the contents of a ROOT file
+## ROOT Object Browser
 
-With a [TBrowser](https://root.cern/doc/master/classTBrowser.html) you can browse all ROOT abjects.
+With a {% include ref class="TBrwoser" %}, this is the ROOT Object Browser, you can browse all ROOT objects within a ROOT file.
 
-- Create a [TBrowser](https://root.cern/doc/master/classTBrowser.html) object:
+- Create a {% include ref class="TBrowser" %} object:
 
 {% highlight C++ %}
    root[0] TFile f("demo.root")
@@ -283,15 +283,101 @@ The ROOT Object Browser is displayed.
 
 Graphical objects are displayed in the `Canvas_1` tab. Files that end with `.C` or `.root` are displayed in the `Editor 1` tab.
 
-### Viewing the physical layout of a ROOT file
+### Using folders
 
-1.  Call the [TFile::Map()](https://root.cern/doc/master/classTFile.html#a5568f2f0a4a678ffaf769d0bf210610f) method to view the physical layout of a ROOT file.
+A {% include ref class="TFolder" %} is a collection of objects visible and expandable in the ROOT Object Browser. Folders have a name and a
+title. They are identified in the folder hierarchy by an “UNIX-like” naming convention. New folders can be added and removed to/from a folder.
+
+The base of all folders is the `//root` folder. It is visible at the top of the left panel in the ROOT Object Browser. 
+
+   {% include figure_image
+   img="root-folder.png"
+   caption="root folder in the ROOT Object Browser."
+   %}
+
+With folders you can reduce class dependencies and improve modularity. Each set of data has a producer class and one or many consumer classes. When using folders, the producer class places a pointer to the data into a
+folder, and the consumer class retrieves a reference to the folder. The consumer can access the objects in a folder by specifying the path name of the folder.
+
+### Creating a folder hierarchy
+
+To create a folder hierarchy, you add a top folder of your hierarchy to //root. Then you add a folder to an existing
+folder with the [TFolder::AddFolder](https://root.cern/doc/master/classTFolder.html#a2d3c9ab44d8b660d5c3c42693f745d00) method. The `AddFolder()` method takes two parameters: the name and title of the folder to be added. It returns a pointer of the newly created folder.
+
+The following example creates a folder hierarchy shown in the ROOT Object Browser.
+
+_**Example**_
+
+{% highlight C++ %}
+{
+// Add the top folder of my hierarchy to //root.
+   TFolder *aliroot=gROOT->GetRootFolder()->AddFolder("aliroot","aliroot top level folders");
+
+// Add the hierarchy to the list of browsables
+   gROOT->GetListOfBrowsables()->Add(aliroot,"aliroot");
+   
+// Create and add the constants folder.
+   TFolder *constants=aliroot->AddFolder("Constants","Detector constants");
+
+// Create and add the pdg folder to pdg.
+   TFolder *pdg = constants->AddFolder("DatabasePDG","PDG database");
+
+// Create and add the run folder.
+   TFolder *run = aliroot->AddFolder("Run","Run dependent folders");
+
+// Create and add the configuration folder to run.
+   TFolder *configuration = run->AddFolder("Configuration","Run configuration");
+
+// Create and add the run_mc folder.
+   TFolder *run_mc = aliroot->AddFolder("RunMC","MonteCarlo run dependent folders");
+
+// Create and add the configuration_mc folder to run_mc 
+   TFolder *configuration_mc = run_mc->AddFolder("Configuration","MonteCarlo run configuration");
+}
+{% endhighlight %}
+
+   {% include figure_image
+   img="folder-hierarchy.png"
+   caption="Folder hierarchy in the ROOT Object Browser."
+   %}
+
+### Reading data from a folder
+
+- Use the [TROOT::FindObjectAny](https://root.cern/doc/master/classTROOT.html#a9c9964aaea5c7cf333483240aa48b46f) method to search for a folder or an object in a folder. 
+
+The `FindObjectAny()` method analyzes the string passed as its argument and searches in the hierarchy until it finds an object or folder matching the name. 
+
+With `FindObjectAny()` you can give the full path name, or the name of the folder. If only the name of the folder is given, it will return the first instance of that name. 
+
+A string-based search is time consuming. If the retrieved object is used frequently or inside a loop, save a pointer to the object as a class data member. 
+
+By default, a folder does not own the object it contains. You can overwrite that with [TFolder::SetOwner()](https://root.cern/doc/master/classTFolder.html#aa9fb0db2a0692067380be4bb82bf0a8a). Once
+the folder is the owner of its contents, the contents are deleted when the folder is deleted.
+
+_**Example**_ 
+
+If a file `myFile.root` is added to the list of files, you can retrieve a pointer to the corresponding {% include ref class="TFile" %} object with the following statements:
+
+{% highlight C++ %}
+   TFile *myFile = (TFile*)gROOT->FindObjectAny("/ROOTFiles/myFile.root");
+
+//or...
+
+   TFile *myFile = (TFile*)gROOT->FindObjectAny("myFile.root");
+
+{% endhighlight %}
+
+
+## Viewing the contents of a ROOT file
+
+### Physical layout of a ROOT file
+
+- Call the [TFile::Map()](https://root.cern/doc/master/classTFile.html#a5568f2f0a4a678ffaf769d0bf210610f) method to view the physical layout of a ROOT file.
 
 The output prints the date/time, the start record address, the number of bytes in the record, the class name of the record and the compression factor.
 
 _**Example**_
 
-```
+{% highlight C++ %}
 root[] f.Map()
 
 20191010/122600    At:100     N=114    TFile
@@ -314,21 +400,21 @@ root[] f.Map()
 20191010/122600    At:9651    N=732    KeysList
 20191010/122600    At:10383   N=53     FreeSegments
 20191010/122600    At:10436   N=1      END
-```
+{% endhighlight %}
 
-
-## Logical contents of a ROOT file
+### Logical contents of a ROOT file
 
 ROOT provides not only sequential access to the content of a ROOT file, but also random or direct access.
 
-[TFile](https://root.cern/doc/master/classTFile.html) keeps a list of [TKey](https://root.cern/doc/master/classTKey.html)s, which is an index to the objects in the ROOT file.
+{% include ref class="TFile" %} keeps a list of {% include ref class="TKey" %}s, which is an index to the objects in the ROOT file.
 
 The `TKey` class describes the record headers of objects in the ROOT file. With the `GetListOfKeys()` method you get the list of keys.
 
 _**Example**_
 
 Get the list of keys from the demo.root file and print them.
-```
+
+{% highlight C++ %}
 root[0] TFile f("demo.root")
 root[1] f.GetListOfKeys()->Print()
 
@@ -347,23 +433,23 @@ TKey Name = h11,    Title = histo    nr:11,    Cycle = 1
 TKey Name = h12,    Title = histo    nr:12,    Cycle = 1
 TKey Name = h13,    Title = histo    nr:13,    Cycle = 1
 TKey Name = h14,    Title = histo    nr:14,    Cycle = 1
-```
+{% endhighlight %}
 
-### Finding TKey objects
+#### Finding TKey objects
 
 With the `TFile::Get()` method, you can find [TKey](https://root.cern/doc/master/classTKey.html) objects.
 
 _**Example**_
 
-```
-root[] TH1F *h9 = (TH1F*)f.Get("h9");
-```
+{% highlight C++ %}
+   root[] TH1F *h9 = (TH1F*)f.Get("h9");
+{% endhighlight %}
 
-The `Get()` method finds the `TKey` object with name **h9.**
+The `Get()` method finds the `TKey` object with name **h9**.
 
-### Iterating over objects
+#### Iterating over objects
 
-Keys are available in a [TList](https://root.cern/doc/master/classTList.html) of [TKey](https://root.cern/doc/master/classTKey.html)s. Therefore, you can iterate over the list of keys.
+Keys are available in a {% include ref class="TList" %} of {% include ref class="TKey" %}s. Therefore, you can iterate over the list of keys.
 
 _**Example**_
 
@@ -383,7 +469,7 @@ The `TKeys` of the `demo.root` (see example → [Creating a ROOT file](#creating
 
 The output is of the `iterate.C` ROOT macro is:
 
-```
+{% highlight C++ %}
 root[] .x iterate.C
 
 key: h0 points to an object of class: TH1F at 150
@@ -400,7 +486,7 @@ key: h10 points to an object of class: TH1F at 3639
 key: h11 points to an object of class: TH1F at 3986
 key: h12 points to an object of class: TH1F at 4339
 key: h13 points to an object of class: TH1F at 4694
-```
+{% endhighlight %}
 
 ## Remotely accessing a ROOT file
 
