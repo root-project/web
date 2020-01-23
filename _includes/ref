@@ -1,1 +1,1 @@
-<a href="https://root.cern/doc/master/class{{include.class}}.html">{{include.class}}</a>
+<a href="https://root.cern/doc/master/class{{include.class}}.html" target="_blank">{{include.class}}</a>
