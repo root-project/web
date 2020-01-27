@@ -146,7 +146,7 @@ ROOT provides a set of tools to help you understand the existing class structure
 
 - [TObject::Dump](https://root.cern/doc/master/classTObject.html#a2a79fcd627629cb2b19d54bf6a6935db): Same as `TObject::Inspect`, except that the output is on stdout. An object dump can be written to a file.
 
-- ROOT Object Browser ({% include ref class="TBrowser" %}): Allows you to browse collections, such as the list of classes, geometries, files and {% include ref class="TTree" %}. → See also [ROOT Object Browser]({{ '/manual/storing_root_objects/#root-object-browser' | relative_url }})
+- ROOT Object Browser ({% include ref class="TBrowser" %}): Allows you to browse collections, such as the list of classes, geometries, files and {% include ref class="TTree" %}. → See also [ROOT Object Browser]({{ '/manual/storing_root_objects/#root-object-browser' | relative_url }}).
 
 
 ## Machine independent data types
@@ -190,7 +190,7 @@ ROOT has a set of global ROOT variables that apply to a ROOT session.
 Via the global `gROOT` variable, a single instance of {% include ref class="TROOT" %} is accessible. The global gROOT variable holds the information relative to the current session.
 
 By using the global `gROOT` variable, you get the access to every object created in a ROOT program. The `TROOT` object has several lists pointing to the main ROOT objects. During a ROOT session, the global `gROOT` variable keeps a series of collections to manage these objects.
-They can be accessed via the `gROOT::GetListOf...` methods.
+They can be accessed via the `gROOT::GetListOf()...` methods.
 
 The `gROOT::GetListOf...` methods return a {% include ref class="TSeqCollection" %}, meaning a collection of objects. They can be used to do list operations such as finding an object, traversing a list and calling a method for each of the members.
 See {% include ref class="TCollection" %} for the full set of methods supported for a ROOT collection.
