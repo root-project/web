@@ -13,7 +13,7 @@ You can extend ROOT with your own classes. When defining a class, it inherits fr
 
 The definition of a class requires the following steps:
 
-  - Inheriting from [TObject](https://root.cern/doc/master/classTObject.html).
+  - Inheriting from {% include ref class="TObject" %}.
 
   - Integrating the class to ROOT.
 
@@ -24,16 +24,16 @@ The definition of a class requires the following steps:
 
 ### Inheriting from TObject
 
-The [TObject](https://root.cern/doc/master/classTObject.html) class provides the default behaviour and protocols for the objects in the ROOT system. The [TObject](https://root.cern/doc/master/classTObject.html) class is the primary interface to classes providing object I/O (writing the class into a ROOT file), error handling, inspection, introspection, and drawing.
+The {% include ref class="TObject" %} class provides the default behaviour and protocols for the objects in the ROOT system. The {% include ref class="TObject" %} class is the primary interface to classes providing object I/O (writing the class into a ROOT file), error handling, inspection, introspection, and drawing.
 
-Therefore, your class should inherit from [TObject](https://root.cern/doc/master/classTObject.html).
+Therefore, your class should inherit from {% include ref class="TObject" %}.
 
 ### Integrating the class to ROOT
 
 Add the following line to your class header file, to integrate your class to ROOT:
 
 {% highlight C++ %}
-ClassDef(ClassName,ClassVersionID)
+   ClassDef(ClassName,ClassVersionID)
 {% endhighlight %}
 
 The `ClassVersionID` is used by the ROOT I/O system. It is written on the output stream and during reading. You can check this `ClassVersionID` during reading and take appropriate action depending on the value of `ClassVersionID`.
@@ -46,7 +46,7 @@ _**Example**_
 In the `TLine.h` file:
 
 {% highlight C++ %}
-ClassDef(TLine,1);
+   ClassDef(TLine,1);
 {% endhighlight %}
 
 ### Calling the ClassImp macro
@@ -56,7 +56,7 @@ Call the `ClassImp` macro to give your class Run Time Type Identification (RTTI)
 Add the following line to your class header file:
 
 {% highlight C++ %}
-ClassImp(ClassName);
+   ClassImp(ClassName);
 {% endhighlight %}
 
 _**Example**_
@@ -64,7 +64,7 @@ _**Example**_
 In the `Tline.cxx` file:
 
 {% highlight C++ %}
-ClassImp(TLine)
+   ClassImp(TLine)
 {% endhighlight %}
 
 ### Constructors
@@ -85,19 +85,19 @@ _**Example for a class**_
 #include "TObject.h"
 
 // Define the ABC class and make it inherit from TObject. Then the ABC class can also be written to a ROOT file.
-class ABC: public TObject {
-public:
-Float_t a, b, c, p;
-ABC() : a(0), b(0), c(0), p(0){};
+   class ABC: public TObject {
+   public:
+   Float_t a, b, c, p;
+   ABC() : a(0), b(0), c(0), p(0){};
 
 //Integrating the ABC class to ROOT.
-ClassDef (ABC,1)
+   ClassDef (ABC,1)
 };
 
 // Call the ClassImp macro to give the ABC class RTTI and full I/O capabilities.
 
 #if !defined(__CLING__)
-ClassImp(ABC);
+    ClassImp(ABC);
 #endif
 {% endhighlight %}
 
