@@ -11,7 +11,7 @@ sidebar:
 
 We are developing ROOT according to the principle of _release early and release
 often_. However, since a very large portion of the user base requires a stable
-product we generally provide at least three versions for **download**:
+product we generally provide at least **three versions for download**:
 - _production_
 - _old_
 - _development_
@@ -19,7 +19,7 @@ product we generally provide at least three versions for **download**:
 
 > **ROOT Installation Guide**
 > 
-> For installing ROOT after you have downloaded it, refer to the [ROOT Installation Guide]({{ '/resources/building_root' | relative_url }}).
+> For information on installing ROOT after you have downloaded it, refer to the [ROOT Installation Guide]({{ '/resources/building_root' | relative_url }}).
 
 ## Downloading the latest ROOT production release
 
