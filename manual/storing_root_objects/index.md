@@ -174,7 +174,7 @@ In detail, the following happens when executing `GetObject()`:
 
 - The buffer is read from the ROOT file.
 
-- An empty object is created by calling the default constructor for the class referenced in [TKey](https://root.cern/doc/master/classTKey.html).
+- An empty object is created by calling the default constructor for the class referenced in {% include ref class="TKey" %}.
 
 - The [Streamer()](https://root.cern/doc/master/classTClass.html#ac1c95f1787550ebc5367590aedacbd67) method is called for this new object.
 
@@ -199,7 +199,7 @@ for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
 > If ROOT is not properly terminated, the file directory may not be written at the end of the ROOT file.
 > Next time this ROOT file is used, ROOT will automatically detect this abnormal termination and will recover the directory by scanning sequentially the list of keys in the ROOT file.
 > If the ROOT file has been opened in UPDATE mode, the recovered directory will be automatically written to the ROOT file. This automatic recovery procedure is possible because of redundant information written to the ROOT file.<br>
-> In case you write large {% include ref class="TTree" %}s (see →[Trees]({{ '/manual/trees' | relative_url }})), you may have large buffers in memory. In case of a job crash, you may loose a lot of data. Therefore, it recommended to use the auto save method [TTree::AutoSave](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8).
+> In case you write large {% include ref class="TTree" %}s (see also → [Trees]({{ '/manual/trees' | relative_url }})), you may have large buffers in memory. In case of a job crash, you may loose a lot of data. Therefore, it recommended to use the auto save method [TTree::AutoSave](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8).
 
 ### Merging ROOT files
 
@@ -258,7 +258,7 @@ Use the `-h` option to get more information on the available options for the spe
 
 ## ROOT Object Browser
 
-With a {% include ref class="TBrwoser" %}, this is the ROOT Object Browser, you can browse all ROOT objects within a ROOT file.
+With a {% include ref class="TBrowser" %}, this is the ROOT Object Browser, you can browse all ROOT objects within a ROOT file.
 
 - Create a {% include ref class="TBrowser" %} object:
 
