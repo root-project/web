@@ -69,7 +69,7 @@ After unpacking/installing the binary and before using ROOT, use the following s
 
 `<pathname>` is the location where you unpacked the ROOT distribution.<br>
 Add these lines to your `.profile` or `.login` files.<br>
-There are versions for [t]csh and fish, too.).
+There are versions for `[t]csh` and `fish`, too.
 
 
 ## Development release
