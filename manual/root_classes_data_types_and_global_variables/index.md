@@ -18,7 +18,7 @@ ROOT has a set of global ROOT variables that apply to a ROOT session, → see [G
 The following naming conventions apply to ROOT objects:
 
 -   ROOT classes begin with `T` <br>
-    Examples: [TLine](https://root.cern/doc/master/classTLine.html), [TTree](https://root.cern/doc/master/classTTree.html)
+    Examples: {% include ref class="TLine" %}, {% include ref class="TTree" %}
 
 -   Non-class types end with `_t` <br>
     Example: [Int_t](https://root.cern/doc/master/RtypesCore_8h.html#a3885b911a54b47a4e61671f45dd45d0b)
@@ -84,14 +84,14 @@ The ROOT core classes consist of:
 -   **ROOT base classes** <br>
    The ROOT base classes provide the core of the system.
    They are available to all other ROOT classes. <br>
-   The ROOT base class [TObject](https://root.cern/doc/master/classTObject.html) is the mother of all ROOT objects, → see [TObject - the ROOT base class](#tobject---the-root-base-class).
+   The ROOT base class {% include ref class="TObject" %} is the mother of all ROOT objects, → see [TObject - the ROOT base class](#tobject---the-root-base-class).
 
 -   **Containers** <br>
    Containers correspond to collections. A collection is a group of related objects that provide a flexible alternative to arrays, lists and trees, → see [ROOT collections]({{ '/manual/root_collections' | relative_url }}).
 
 ### TObject - the ROOT base class
 
-In ROOT, almost all ROOT classes inherit from the common ROOT base class [TObject](https://root.cern/doc/master/classTObject.html).
+In ROOT, almost all ROOT classes inherit from the common ROOT base class {% include ref class="TObject" %}.
 
 The `TObject` class provides default behavior and protocol for all objects in the ROOT system.
 
@@ -122,7 +122,7 @@ The virtual method `Draw()` is the entry point for the graphics rendering of ROO
 
 ### TROOT - entry point to ROOT
 
-The [TROOT](https://root.cern/doc/master/classTROOT.html) object is the entry point to the ROOT system. The single instance of `TROOT` is accessible via the global variable `gROOT` (→ see [gROOT](#groot)). Using the `gROOT` variable, you have access to basically every object created in a ROOT based program. The `TROOT` object is a container of several lists pointing to the main ROOT objects.
+The {% include ref class="TROOT" %} object is the entry point to the ROOT system. The single instance of `TROOT` is accessible via the global variable `gROOT` (→ see [gROOT](#groot)). Using the `gROOT` variable, you have access to basically every object created in a ROOT based program. The `TROOT` object is a container of several lists pointing to the main ROOT objects.
 
 
 ## Understanding ROOT's class structure
@@ -146,7 +146,7 @@ ROOT provides a set of tools to help you understand the existing class structure
 
 - [TObject::Dump](https://root.cern/doc/master/classTObject.html#a2a79fcd627629cb2b19d54bf6a6935db): Same as `TObject::Inspect`, except that the output is on stdout. An object dump can be written to a file.
 
-- ROOT object browser ([TBrowser](https://root.cern/doc/master/classTBrowser.html)): Allows you to browse collections, such as the list of classes, geometries, files and [TTrees](https://root.cern/doc/master/classTTree.html).
+- ROOT Object Browser ({% include ref class="TBrowser" %}): Allows you to browse collections, such as the list of classes, geometries, files and {% include ref class="TTree" %}. → See also [ROOT Object Browser]({{ '/manual/storing_root_objects/#root-object-browser' | relative_url }})
 
 
 ## Machine independent data types
@@ -187,23 +187,23 @@ ROOT has a set of global ROOT variables that apply to a ROOT session.
 
 ### gROOT
 
-Via the global `gROOT` variable, a single instance of [TROOT](https://root.cern/doc/master/classTROOT.html) is accessible. The global gROOT variable holds the information relative to the current session.
+Via the global `gROOT` variable, a single instance of {% include ref class="TROOT" %} is accessible. The global gROOT variable holds the information relative to the current session.
 
 By using the global `gROOT` variable, you get the access to every object created in a ROOT program. The `TROOT` object has several lists pointing to the main ROOT objects. During a ROOT session, the global `gROOT` variable keeps a series of collections to manage these objects.
 They can be accessed via the `gROOT::GetListOf...` methods.
 
-The `gROOT::GetListOf...` methods return a [TSeqCollection](https://root.cern/doc/master/classTSeqCollection.html), meaning a collection of objects. They can be used to do list operations such as finding an object, traversing a list and calling a method for each of the members.
-See [TCollection](https://root.cern/doc/master/classTCollection.html) for the full set of methods supported for a collection.
+The `gROOT::GetListOf...` methods return a {% include ref class="TSeqCollection" %}, meaning a collection of objects. They can be used to do list operations such as finding an object, traversing a list and calling a method for each of the members.
+See {% include ref class="TCollection" %} for the full set of methods supported for a ROOT collection.
 
 _**Example**_
 
 For finding a canvas called `c1`, you can use:
 
-```
-gROOT->GetListOfCanvases()->FindObject("c1")
-```
+{% highlight C++ %}
+   gROOT->GetListOfCanvases()->FindObject("c1")
+{% endhighlight %}
 
-This returns a pointer to a [TObject](https://root.cern/doc/master/classTObject.html). Before you can use it as a canvas, you need to cast it to a [TCanvas*](https://root.cern/doc/master/classTCanvas.html).
+This returns a pointer to a {% include ref class="TObject" %}. Before you can use it as a canvas, you need to cast it to a {% include ref class="TCanvas" %}.
 
 ### gFile
 
@@ -211,7 +211,7 @@ This returns a pointer to a [TObject](https://root.cern/doc/master/classTObject.
 
 ### gStyle
 
-`gStyle` holds the current style, which is the global object of class [TStyle](https://root.cern/doc/master/classTStyle.html) .
+`gStyle` holds the current style, which is the global object of class {% include ref class="TStyle" %}.
 
 ### gDirectory
 
@@ -224,7 +224,7 @@ This returns a pointer to a [TObject](https://root.cern/doc/master/classTObject.
 
 ### gRandom
 
-`gRandom` is a pointer to the current random number generator. By default, it points to a [TRandom3](https://root.cern/doc/master/classTRandom3.html) object.
+`gRandom` is a pointer to the current random number generator. By default, it points to a {% include ref class="TRandom3" %} object.
 The following basic random distributions are provided:
 
 -   `Rndm()` or `Uniform(min,max)`
@@ -245,22 +245,22 @@ You can customize your ROOT session by replacing the random number generator. Yo
 
 _**Example**_
 
-```
-delete gRandom;
-gRandom = new TRandom2(0); //seed=0
-```
+{% highlight C++ %}
+   delete gRandom;
+   gRandom = new TRandom2(0); //seed=0
+{% endhighlight %}
 
 
-[TRandom2](https://root.cern/doc/master/classTRandom2.html) is another generator that uses only three words for its state.
+{% include ref class="TRandom2" %} is another generator that uses only three words for its state.
 
 ### gEnv
 
-`gEnv` contains all the environment settings for the current session and is of type [TEnv](https://root.cern/doc/master/classTEnv.html).
+`gEnv` contains all the environment settings for the current session and is of type {% include ref class="TEnv" %}.
 
-`gEnv` is set by reading the contents of the `.rootrc `file (or `$ROOTSYS/etc/system.rootrc`) at the beginning of a ROOT session.
+`gEnv` is set by reading the contents of the `.rootrc` file (or `$ROOTSYS/etc/system.rootrc`) at the beginning of a ROOT session.
 
 ### gGeoManager
 
-`gGeoManager` is used to access the geometry manager class created with [TGeoManager](https://root.cern/doc/master/group__Geometry__classes.html).
+`gGeoManager` is used to access the geometry manager class created with {% include ref class="TGeoManager" %}.
 
 
