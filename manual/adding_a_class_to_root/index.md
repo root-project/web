@@ -94,7 +94,7 @@ _**Example for a class**_
    ClassDef (ABC,1)
 };
 
-// Call the ClassImp macro to give the ABC class RTTI and full I/O capabilities.
+// Call the ClassImp() macro to give the ABC class RTTI and full I/O capabilities.
 
 #if !defined(__CLING__)
     ClassImp(ABC);
