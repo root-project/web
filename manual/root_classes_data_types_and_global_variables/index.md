@@ -117,7 +117,7 @@ The `TObject` class provides default behavior and protocol for all objects in th
 
 -   Object browsing (`Browse()`, `IsFolder()`)
 
-The virtual method `Draw()` is the entry point for the graphics rendering of ROOT objects, → see [ROOT collections]({{ '/manual/graphics' | relative_url }}).
+The virtual method `Draw()` is the entry point for the graphics rendering of ROOT objects, → see [Graphics]({{ '/manual/graphics' | relative_url }}).
 
 #### Introspection, reflection and run time type identification (RTTI)
 
