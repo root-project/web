@@ -202,7 +202,7 @@ The [TObject::GetObjectInfo()](https://root.cern/doc/master/classTObject.html#a9
 then shown in the status bar. There is a default implementation in {% include ref class="TObject" %}, but it is typically overridden for classes
 that can report peculiarities for different cursor positions (for example the bin contents in a {% include ref class="TH1" %}).
 
-#### Bit Masks and Unique ID
+#### Bit masks and unique ID
 A {% include ref class="TObject" %} descendent inherits two data members:
 - `fBits` 
 - `fUniqueID`
