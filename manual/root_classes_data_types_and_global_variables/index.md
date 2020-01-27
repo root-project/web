@@ -137,7 +137,7 @@ If the class is a descendent of {% include ref class="TCObject" %}, you can chec
 ROOT and Cling rely on reflection and the class dictionary to identify the type of a variable at run time. With the
 {% include ref class="TObject" %} inheritance are some methods available that use introspection to help you see the data in the object or class. 
 
-_**Ecxample_**
+_**Example**_
 {% highlight C++ %}
 // Lists all data members and their current values.
    obj->Dump(); 
@@ -156,6 +156,7 @@ objects of different classes in the same Root collection and execute the method 
 ROOT collection. 
 
 _**Example**_
+
 The list of graphics primitives are in a ROOT collection called {% include ref class="TList" %}. When the canvas is
 drawn, the `Paint()` method is executed on the entire ROOT collection. Each member may be a different class, and if the `Paint()`
 method is not implemented, [TObject::Paint()](https://root.cern/doc/master/classTObject.html#adb30f2d116033afa49028b43e05a7d8e) will be executed.
@@ -179,7 +180,7 @@ was drawn on the canvas. This is especially relevant with histograms and graphs.
 Two useful methods are [TObject::Clone()](https://root.cern/doc/master/classTObject.html#a4696036d44dcbe28970a13b8f4e5d6b2) and [TObject::DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9). The `Clone()` method takes a snapshot of the object with the `Streamer`
 and creates a new object. The `DrawClone()` method does the same thing and in addition draws the clone.
 
-### Browse()
+#### Browse()
 The [TObject::Browse()](https://root.cern/doc/master/classTObject.html#a257256699b369476a49bb17b9c1a76f4) method is called if the object is browse-able and is to be displayed in the ROOT Object Browser. 
 
 _**Example**_
@@ -211,14 +212,29 @@ hierarchies.
 
 {% highlight C++ %}
    enum EObjBits {
-   kCanDelete = BIT(0), // If can be deleted.
-   kMustCleanup = BIT(3), // If destructor must call RecursiveRemove().
-   kObjInCanvas = BIT(3), // For backward compatibility only.
-   kIsReferenced = BIT(4), // If referenced by TRef or TRefArray.
-   kHasUUID = BIT(5), // If has a TUUID, fUniqueID=UUIDNumber. 
-   kCannotPick = BIT(6), // If cannot be picked in a pad.
-   kNoContextMenu = BIT(8), // If does not want a context menu.
-   kInvalidObject = BIT(13) // Object yctor succeeded but the object should not be used.
+// If can be deleted.
+   kCanDelete = BIT(0), 
+   
+// If destructor must call RecursiveRemove().   
+   kMustCleanup = BIT(3),
+
+// For backward compatibility only. 
+   kObjInCanvas = BIT(3), 
+   
+// If referenced by TRef or TRefArray.
+   kIsReferenced = BIT(4),
+   
+// If has a TUUID, fUniqueID=UUIDNumber. 
+   kHasUUID = BIT(5), 
+   
+// If cannot be picked in a pad.
+   kCannotPick = BIT(6),
+
+// If does not want a context menu.
+   kNoContextMenu = BIT(8), 
+ 
+// Object actor succeeded but the object should not be used.
+   kInvalidObject = BIT(13) 
 };
 {% endhighlight %}
 
