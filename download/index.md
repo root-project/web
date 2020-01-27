@@ -9,17 +9,17 @@ sidebar:
 
 > [**Alternative prototype page**]({{'getting_root' | relative_url}})
 
-We are developing ROOT according to the principle of _Release early and release
+We are developing ROOT according to the principle of _release early and release
 often_. However, since a very large portion of the user base requires a stable
-product we generally keep at least three versions of the system available for
-download:
-- _production_ version
-- _development_ versions
-- _old_ versions
+product we generally provide at least three versions for **download**:
+- _production_
+- _old_
+- _development_
 
-> ROOT Installation Uide
+
+> **ROOT Installation Guide**
 > 
-> For installing ROOT, refer to the [Installation Guide]({{ '/resources/building_root' | relative_url }}).
+> For installing ROOT after you have downloaded it, refer to the [ROOT Installation Guide]({{ '/resources/building_root' | relative_url }}).
 
 ## Downloading the latest ROOT production release
 
@@ -37,23 +37,24 @@ The following latest _production_ and _old_ version are available for download:
 
 ### Building ROOT from GitHub sources
 
-  1. Clone the repository:
+- Clone the repository.
 {% highlight C++ %}
    $ git clone https://github.com/root-project/root.git
 {% endhighlight %}
 
-  2. Make a directory for building
+- Make a directory for building.
 {% highlight C++ %}
    $ mkdir build
    $ cd build
 {% endhighlight %}
 
-  3. Run cmake and make
+- Run cmake and make.
 {% highlight C++ %}
    $ cmake ../root
    $ make -j8
 {% endhighlight %}
-  4. Setup and run ROOT
+
+.Setup and run ROOT.
 {% highlight C++ %}
    $ source bin/thisroot.sh
    $ root
@@ -67,7 +68,7 @@ After unpacking/installing the binary and before using ROOT, use the following s
 {% endhighlight %}
 
 `<pathname>` is the location where you unpacked the ROOT distribution.<br>
-Add these lines to your `.profile` or `.login` files.
+Add these lines to your `.profile` or `.login` files.<br>
 There are versions for [t]csh and fish, too.).
 
 
