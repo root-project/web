@@ -21,7 +21,7 @@ The following cases are possible:
 - Ownership by other objects.<br>
 → See [Ownership by other objects](#ownership-by-other-objects).
 
-- Ownership by the user.
+- Ownership by the user.<br>
 → See [Ownership by the user](#ownership-by-the-user).
 
 ## Ownership by current directory (gDirectory)
@@ -69,7 +69,7 @@ Not all histograms created here after are added to the current directory. In thi
 ## Ownership by the TROOT master object (gROOT)
 
 
-The [TROOT]([TROOT](https://root.cern/doc/master/classTROOT.html)) master object (`gROOT`) has several collections of objects. Objects that are members of these collections are owned by `gROOT`.
+The {% include ref class="TROOT" %} master object (`gROOT`) has several collections of objects. Objects that are members of these collections are owned by `gROOT`.
 
 **Accessing the collection contents**
 
@@ -91,7 +91,7 @@ _**Example**_
    myHisto->Fit("gaus")
 {% endhighlight %}
 
-The call of `Fit()` copies the global [TF1](https://root.cern/doc/master/classTF1.html) Gaussian function and attaches the copy to the histogram. When the histogram is deleted, the copy is deleted too.
+The call of `Fit()` copies the global {% include ref class="TF1" %} Gaussian function and attaches the copy to the histogram. When the histogram is deleted, the copy is deleted too.
 
 ## Ownership by the user
 
@@ -99,7 +99,7 @@ The user owns all objects not described in one of the above cases.
 
 ### Managing objects
 
-[TObject](https://root.cern/doc/master/classTObject.html) has two bits that influence how an object is managed (in `TObject::fBits)`:
+{% include ref class="TObject" %} has two bits that influence how an object is managed (in `TObject::fBits()`:
 
 -   `kCanDelete`, see → [kCanDelete](#kcandelete)
 
@@ -134,11 +134,11 @@ Use:
 
 The `kCanDelete` bit setting is displayed with [TObject::ls()](https://root.cern/doc/master/classTObject.html#ae1bc003ff9a558b3b3a60a14f16f1ae5). The last number is either 1 or 0 and is the `kCanDelete` bit.
 
-**Collections**
+**Csollections**
 
 The `gROOT `collections (see → [Ownership by the TROOT master object (gROOT)](#ownership-by-the-troot-master-object-groot)) own their members and will delete them regardless of the `kCanDelete` bit.
 
-In all other collections, when the collection `Clear()` method is called (i.e. [TList::Clear()](https://root.cern/doc/master/classTList.html#af4d5429298af281bdc7fe62b123f5385), members with the `kCanDelete` bit set, are deleted and removed from the collection.
+In all other collections, when the collection `Clear()` method is called (this is, [TList::Clear()](https://root.cern/doc/master/classTList.html#af4d5429298af281bdc7fe62b123f5385), members with the `kCanDelete` bit set, are deleted and removed from the collection.
 
 If the `kCanDelete` bit is not set, the object is only removed from the collection but not deleted.
 
@@ -164,7 +164,7 @@ Otherwise, you need to delete all member objects in the collection and delete th
 
 _**Example**_
 
-You must manage all graphic primitives. If you want [TCanvas]((https://root.cern/doc/master/classTCanvas.html)) to delete the graphic primitives you created, you have to set the kCanDelete bit.
+You must manage all graphic primitives. If you want {% include ref class="TCanvas" %} to delete the graphic primitives you created, you have to set the `kCanDelete` bit.
 
 #### kMustCleanup
 
@@ -181,7 +181,7 @@ The kMustCleanup bit is set:
 
 -   When creating an inspector canvas with [TInspectCanvas::Inspector](https://root.cern/doc/master/classTInspectCanvas.html#a190ce0c893347c696abbb8ae00f80348).
 
--   When creating a [TCanvas]((https://root.cern/doc/master/classTCanvas.html)).
+-   When creating a {% include ref class="TCanvas %}.
 
 -   When painting a frame for a pad, the frame's `kMustCleanup` is set in [TPad::PaintPadFrame](https://root.cern/doc/master/classTPad.html#a11670f9166d33c0fde75b972badfeefe).
 
@@ -194,7 +194,7 @@ _**Example**_
 
 	TList *myList1, *myList2;
 
-//Add both lists to clean ups:
+//Add both lists to clean up:
 
 	gROOT->GetListOfCleanUps()->Add(myList1);
 	gROOT->GetListOfCleanUps()->Add(myList2);

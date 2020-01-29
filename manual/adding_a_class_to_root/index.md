@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-You can extend ROOT with your own classes. When defining a class, it inherits from [TObject](https://root.cern/doc/master/classTObject.html).
+You can extend ROOT with your own classes. When defining a class, it inherits from {% include ref class="TObject" %}.
 
 ## Defining a class
 
