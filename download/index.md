@@ -37,6 +37,9 @@ The following latest _production_ and _old_ version are available for download:
 
 ### Building ROOT from GitHub sources
 
+Here is a brief summary of how to build ROOT.<br>
+For detailed information, → see [Building ROOT]({{ '/resources/building_root' | relative_url }}).
+
 - Clone the repository.
 {% highlight C++ %}
    $ git clone https://github.com/root-project/root.git
