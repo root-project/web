@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-An object has the ownership of another object if it has the permission to delete it.  
+An object has the ownership of another object if it has the permission to delete it.
 To prevent memory leaks and multiple attempts to delete an object, you need to know which objects are owned by ROOT and which are owned by you.
 
 The following cases are possible:
@@ -35,7 +35,7 @@ _**Example**_
 Retrieving a histogram:
 
 {% highlight C++ %}
-   TH1F *h = (TH1F*)gDirectory->GetList()->FindObject("myHist"); 
+   TH1F *h = (TH1F*)gDirectory->GetList()->FindObject("myHist");
 {% endhighlight %}
 
 You can change the directory of a histogram, tree, or event list with the `SetDirectory()` method.
@@ -63,7 +63,7 @@ Changing the default that adds the histogram to the current directory:
 Not all histograms created here after are added to the current directory. In this case, you own all histogram objects and you will need to delete them and clean up the references. You can still set the directory of a histogram by calling `SetDirectory()` once it has been created.
 
 > **Note**
-> 
+>
 > When a file goes out of scope or is closed all objects on its object list are deleted.
 
 ## Ownership by the TROOT master object (gROOT)
@@ -145,10 +145,10 @@ If the `kCanDelete` bit is not set, the object is only removed from the collecti
 If the collection `Delete()` method (i.e. [TList::Delete()](https://root.cern/doc/master/classTList.html#abfc59852231e4c8050b581e890d05c36) is called, all objects in the collection are deleted without considering the `kCanDelete` bit.
 
 > **Note**
-> 
+>
 > Deleting the collection, does not delete the members of the collection.
 
-If you specify `MyCollection->SetOwner`,the collection owns the objects and deleting `MyCollection` will delete all its members.  
+If you specify `MyCollection->SetOwner`,the collection owns the objects and deleting `MyCollection` will delete all its members.
 Otherwise, you need to delete all member objects in the collection and delete the collection object itself:
 
 
@@ -159,7 +159,7 @@ Otherwise, you need to delete all member objects in the collection and delete th
 {% endhighlight %}
 
 > **Note**
-> 
+>
 > `kCanDelete` is automatically set by the `DrawCopy()` method and the user can set it for any object.
 
 _**Example**_
@@ -168,7 +168,7 @@ You must manage all graphic primitives. If you want {% include ref class="TCanva
 
 #### kMustCleanup
 
-When the `kMustCleanup` bit is set, the object destructor will remove the object and its references from all collections in the cleanup collection (`gROOT::fCleanups`).  
+When the `kMustCleanup` bit is set, the object destructor will remove the object and its references from all collections in the cleanup collection (`gROOT::fCleanups`).
 An object can be in several collections. If the `kMustCleanup `bit is set, it will be removed from the collections when the destructor of the object is called.
 
 The kMustCleanup bit is set:
@@ -181,7 +181,7 @@ The kMustCleanup bit is set:
 
 -   When creating an inspector canvas with [TInspectCanvas::Inspector](https://root.cern/doc/master/classTInspectCanvas.html#a190ce0c893347c696abbb8ae00f80348).
 
--   When creating a {% include ref class="TCanvas %}.
+-   When creating a {% include ref class="TCanvas" %}.
 
 -   When painting a frame for a pad, the frame's `kMustCleanup` is set in [TPad::PaintPadFrame](https://root.cern/doc/master/classTPad.html#a11670f9166d33c0fde75b972badfeefe).
 
