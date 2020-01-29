@@ -24,7 +24,7 @@ ROOT supports the following histogram types:
 
 -   Histograms up to three dimensions (1-D, 2-D, 3-D).
 
--   Profile histograms, which are used to display the mean value of `X` and its standard deviation for each bin in `X`.
+-   Profile histograms, which are used to display the mean value of Y and its standard deviation for each bin in X.
 
 All histogram classes are derived from the [TH1](https://root.cern/doc/master/classTH1.html) base class.
 
