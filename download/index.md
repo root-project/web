@@ -38,7 +38,7 @@ The following latest _production_ and _old_ version are available for download:
 ### Building ROOT from GitHub sources
 
 Here is a brief summary of how to build ROOT.<br>
-
+For detailed information, → see [Building ROOT]({{ '/resources/building_root' | relative_url }}).
 
 - Clone the repository.
 {% highlight C++ %}
@@ -64,7 +64,7 @@ Here is a brief summary of how to build ROOT.<br>
 {% endhighlight %}
 
 ### Using binaries
-After unpacking/installing the binary and before using ROOT, use the following script distributed with ROOT:
+After unpacking/installing the binaries and before using ROOT, use the following script distributed with ROOT:
 
 {% highlight C++ %}
    source <pathname>/root/bin/thisroot.sh
