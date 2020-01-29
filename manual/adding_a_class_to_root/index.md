@@ -21,7 +21,6 @@ The definition of a class requires the following steps:
 
   - Providing a constructor.
 
-
 ### Inheriting from TObject
 
 The {% include ref class="TObject" %} class provides the default behaviour and protocols for the objects in the ROOT system. The {% include ref class="TObject" %} class is the primary interface to classes providing object I/O (writing the class into a ROOT file), error handling, inspection, introspection, and drawing.
@@ -51,7 +50,7 @@ In the `TLine.h` file:
 
 ### Calling the ClassImp macro
 
-Call the `ClassImp` macro to give your class Run Time Type Identification (RTTI) and full I/O capabilities. In addition, you can generate properly documentation for your class using [THtml](https://root.cern/doc/master/classTHtml.html).
+Call the `ClassImp` macro to give your class run time type identification (RTTI) and full I/O capabilities. In addition, you can generate properly documentation for your class using [THtml](https://root.cern/doc/master/classTHtml.html).
 
 Add the following line to your class header file:
 
