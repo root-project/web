@@ -50,7 +50,7 @@ In the `TLine.h` file:
 
 ### Calling the ClassImp macro
 
-Call the `ClassImp` macro to give your class run time type identification (RTTI) and full I/O capabilities. In addition, you can generate properly documentation for your class using [THtml](https://root.cern/doc/master/classTHtml.html).
+Call the `ClassImp` macro to give your class run time type identification (RTTI) and full I/O capabilities. In addition, you can generate properly documentation for your class using {% include ref class="THTMl" %}.
 
 Add the following line to your class header file:
 
