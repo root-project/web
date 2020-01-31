@@ -42,13 +42,12 @@ The following latest _production_ and _old_ version are available for download:
 {% include releases_list state="old" label="OLD" single_column="yes" %}
 
 
-
 ### Development release
 Use this to get access to the latest and greatest, but as a side effect there might be some
 instabilities. However, by trying out the _development_ version you can help us converge
 much more quickly to a stable version that can then become the new _production_ version.
 
-The _development_ version can be build from GitHub sources.
+The _development_ version can be build from GitHub sources, see → [ROOT sources]({{'/download/building_root/get_root_sources' | relative_url}}).
 
 ### Release candidate
 A release candidate is a preview of the next _production_ release. It allows users to
@@ -62,9 +61,13 @@ feature you heard about. It helps us _tremendously_ to get feedback from you on 
 ### Docker (Experimental)
 We also provide ROOT in Docker containers. For more information, see → [Docker Hub](https://hub.docker.com/r/rootproject/root-ubuntu16/).
 
-### Building ROOT
+## Building ROOT
+
+**Building ROOT with CMake**
 
 ROOT uses the CMake cross-platform build-generator tool as a primary build system, see → [Building ROOT with CMake]({{'/download/building_root' | relative_url}}).
+
+**Building ROOT with make (old method)**
 
 The classic build with `configure/make` is is still available but it will not be evolving with the new features of ROOT, see → [Building ROOT with make]({{'/download/building_root/build_root_old_method' | relative_url}}).
 
