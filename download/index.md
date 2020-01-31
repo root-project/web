@@ -1,13 +1,11 @@
 ---
-title: Downloading ROOT
+title: Downloading and installing ROOT
 layout: single
 toc: true
 toc_sticky: true
 sidebar:
   nav: "download"
 ---
-
-> [**Alternative prototype page**]({{'getting_root' | relative_url}})
 
 We are developing ROOT according to the principle of _release early and release
 often_. However, since a very large portion of the user base requires a stable
