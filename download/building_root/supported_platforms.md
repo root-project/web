@@ -1,8 +1,8 @@
 ---
-title: Supported Platforms
+title: Supported platforms
 layout: single
 sidebar:
-  nav: "resources"
+  nav: "download"
 toc: true
 toc_sticky: true
 ---

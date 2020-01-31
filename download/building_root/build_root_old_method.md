@@ -1,13 +1,13 @@
 ---
-title: Build ROOT Old Method
+title: Building ROOT with make (old method)
 layout: single
 sidebar:
-  nav: "resources"
+  nav: "download"
 toc: true
 toc_sticky: true
 ---
 
-## Getting the Source
+## Getting the source
 
 ROOT's source can be downloaded for each of the releases and unpacked with
 

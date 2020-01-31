@@ -1,8 +1,8 @@
 ---
-title: Building ROOT
+title: Building ROOT with CMake
 layout: single
 sidebar:
-  nav: "resources"
+  nav: "download"
 toc: true
 toc_sticky: true
 ---

@@ -1,8 +1,8 @@
 ---
-title: Build Prerequisites
+title: Prerequisites
 layout: single
 sidebar:
-  nav: "resources"
+  nav: "download"
 toc: true
 toc_sticky: true
 ---

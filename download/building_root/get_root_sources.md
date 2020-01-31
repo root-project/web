@@ -1,8 +1,8 @@
 ---
-title: Get ROOT Sources
+title: Getting ROOT sources
 layout: single
 sidebar:
-  nav: "resources"
+  nav: "download"
 toc: true
 toc_sticky: true
 ---
@@ -29,7 +29,7 @@ The entire ROOT source can be obtained from our public Git repository:
 $ git clone http://github.com/root-project/root.git
 ~~~
 
-A specific tag can be obtained using:
+A specific tag can be obtained by using:
 
 ~~~
 $ cd root
