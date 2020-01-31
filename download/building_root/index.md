@@ -28,7 +28,7 @@ Check the [prerequisites](build_prerequisites) and
 [supported platforms](supported_platforms) for the list of packages needed for your
 setup before starting the build.
 
-## Quick Start
+## Quick start
 
 The following are the basic instructions for UNIX systems. We use here the command-line,
 non-interactive CMake interface.
@@ -74,7 +74,7 @@ It is possible to set a different install prefix at installation time by invokin
 
         $ cmake -DCMAKE_INSTALL_PREFIX=/tmp/root -P cmake_install.cmake
 
-## Build Options
+## Build options
 Each build option is a boolean variable that can be turned ON or OFF. The current value is recorded in the CMake cache (CMakeCache.txt file on the build directory) and therefore it is not needed to be specified on the cmake command each time. Please note that some of the options might be turned OFF automatically for some platforms or if the required external library or component can not be satisfied. The user can view and edit the full list of options using the `ccmake` utility or `cmake-gui` for Windows. Note that some of the options are not yet implemented.
 
 The user can set any CMake variable or option that controls the build process from the cmake command line. The command using the option `-D <var>:<type>=<value>` creates an entry in the CMake cache. This is the list of the ROOT specific CMake options:
@@ -185,11 +185,9 @@ The user can set any CMake variable or option that controls the build process fr
 
 
 
-
-
 * The default value for these options are platform dependent.
 
-## CMake Generators
+## CMake generators
 CMake can generate, in addition to standard makefiles, specific proejcts for various integrated development environments (IDEs) such as Xcode, Eclipse, Visual Studio, etc.. The available generators depend on the platform for which cmake have been build. To see the list of available generators do `cmake --help` .
 
 ### Ninja
@@ -204,7 +202,7 @@ Generate the Microsoft Visual Studio soultion with `cmake -G "Visual Studio 10" 
 ## Variables
 This is list of useful ROOT and general CMake variables that can control the build process:
 
-### CMake Standard variables
+### CMake standard variables
 Here are some of the CMake variables that are used often, along with a brief explanation and ROOT-specific notes. For full documentation, check the CMake docs or execute `cmake --help-variable VARIABLE_NAME`.
 
 | Variable | Type | Explanation |
@@ -235,14 +233,14 @@ Here are some of the CMake variables that are used often, along with a brief exp
 | CMAKE_INSTALL_ELISPDIR | PATH | Install destination for lisp files (DATAROOTDIR/emacs/site-lisp) |
 | CMAKE_INSTALL_CMAKEDIR | PATH | Install destination for cmake modules (DATAROOTDIR/cmake) |
 
-### Additional Variables
+### Additional variables
 A number of additional variables to control the way ROOT is built.
 
 | Variable | Type | Explanation |
 |----------|-------|---------------|
 | LLVM_BUILD_TYPE | STRING | Build type for the bundled LLVM. It is used to set the CMAKE_BUILD_TYPE for the /interpreter/ subdirectory |
 
-### External Libraries
+### External libraries
 
 ROOT requires a number of external libraries that the CMake system needs to locate. The list of externals depends on the build options that have been enabled. CMake will look for these third party products at a number of standard places in your system but the user can influence the search by setting some environment variables before invoking the CMake command or by setting package specific CMake variables to their exact location.
 
@@ -303,7 +301,7 @@ The actual cached values used by CMake for the exact location of libraries and i
 |        | PYTHON_LIBRARY |  PATH | Full path to  Python  library |
 | XROOTD | XROOTD_ROOT_DIR | PATH | Directory where to find XROOTD |
 
-## Basic CMake Usage
+## Basic CMake usage
 This section explains basic aspects of CMake which you may need in your day-to-day usage.
 
 CMake comes with extensive documentation, in the form of html files, and as online help accessible via the cmake executable itself. Execute cmake --help for further help options.

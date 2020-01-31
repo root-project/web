@@ -9,59 +9,56 @@ toc_sticky: true
 
 ## Getting the source
 
-ROOT's source can be downloaded for each of the releases and unpacked with
+You can download ROOT's source for each of the releases and unpacked with:
 
 {% highlight sh linenos %}
-gzip -dc root_<version>.source.tar.gz | tar -xf -
+   gzip -dc root_<version>.source.tar.gz | tar -xf -
 {% endhighlight %}
 
-Alternatively one can obtain ROOT's source from Git.
+Alternatively, you can obtain the ROOT source from Git.
 
 ### Git
 
 Unlike many other projects, ROOT's master branch is expected to always work. It is a
-snapshot of the current development; we appreciate feedback and people (you!) using it.
+snapshot of the current development. We appreciate feedback and people (you!) using it.
 The main advantages of using the trunk are:
 
-  - you get the most recent features
-  - you can easily benefit from bug fixes should you find one
-  - to fix or extend ROOT you can change ROOT's sources yourself and send the changes
-    (git diff) as feedback
+  - You get the most recent features.
+  - You can easily benefit from bug fixes should you find one.
+  - To fix or extend ROOT you can change ROOT's sources yourself and send the changes
+    (git diff) as feedback.
 
-The entire ROOT source can be obtained from our public
-[Git]({{'/resources/git_primer' | relative_url}}) repository:
-
-{% highlight sh linenos %}
-git clone http://root.cern.ch/git/root.git
-{% endhighlight %}
-
-A specific tag can be obtained using:
+You can obtain the entire ROOT source from our public repository:<br>
+[Git]({{'/resources/git_primer' | relative_url}})
 
 {% highlight sh linenos %}
-cd root
-git tag -l
-git checkout -b v5-34-08 v5-34-08
+   git clone http://root.cern.ch/git/root.git
+{% endhighlight %}
+
+A specific tag can be obtained by using:
+
+{% highlight sh linenos %}
+  cd root
+  git tag -l
+  git checkout -b v5-34-08 v5-34-08
 {% endhighlight %}
 
 
-## Getting Ready to Build
+## Getting ready to build
 
-To successfully build ROOT a number of prerequisite packages must be installed. Check
-the [prerequisites page]({{'/resources/building_root/build_prerequisites' | relative_url}})
+To successfully build ROOT, you have to install number of prerequisite packages. Check
+the [prerequisites page]({{'/download/building_root/build_prerequisites' | relative_url}})
 for the list of packages needed for your platform.
 
 You may want to compile features into ROOT, which depends on third party libraries. Make
-sure you meet all demands for additional features before trying to enable them
-(see below).
-
-Otherwise, before proceeding, read the rest below.
+sure you meet all demands for additional features before trying to enable them.
 
 ## Two build methods
 
-ROOT can be built either using the classic `./configure;make` method or using
+ROOT can be built either using the classic `./configure;make` method or by using
 [CMake](http://www.cmake.org/). The advantage of the first method is that it works
 out-of-the box on all Unix like machines, while on Windows it requires the cygwin
-environment to be installed. The advantages of cmake are that is works on all
+environment to be installed. The advantages of CMake are that is works on all
 platforms and makes/builds projects for the native IDE's (like Visual Studio on
 Windows, or Xcode on OSX).
 
@@ -70,16 +67,19 @@ ROOT using CMake, or read below on using the `./configure;make` method.
 
 ## Choosing the installation method
 
-There are two main methods of installing ROOT from source: location independent and
-location dependent. The former is advised for a personal installation of ROOT, while
-the later for a system wide installation. Both ways are described below.
+There are two main methods of installing ROOT from source:
+- location independent,
+- location dependent. 
+
+The location independent method is advised for a personal installation of ROOT, while
+the location dependent method is for a system wide installation. Both methods are described below.
 
 ### Location independent installation
 
 You want to install in a generic directory, depending solely on environment variables
 `PATH` and `LD_LIBRARY_PATH`.
 
-  - Get the sources of the latest ROOT (see above)
+  - Get the sources of the latest ROOT, see → [ROOT sources]({{'/download/building_root/get_root_sources' | relative_url}}).
   - Type the build commands:
 {% highlight sh linenos %}
 cd root
@@ -105,7 +105,7 @@ On MacOS X >= 10.5 this is the preferred installation method, as ROOT is build w
 option that allows the library path to be derived from the location of the executable.
 This make the MacOS X built fully relocatable and independent of (DY)`LD_LIBRARY_PATH`.
 
-To get rid of the intermediary build products do:
+To get rid of the intermediary build products do:<br>
 `make clean` (and don't do: `make install`, which is a NOOP).
 
 ### Fixed location installation
@@ -142,7 +142,7 @@ root
 {% endhighlight %}
 
 
-## Installation Location
+## Installation location
 
 By default, the system will be installed location independent. In that case the whole
 package will live under the directory it was built in. This directory can be moved
@@ -334,7 +334,7 @@ To build the MySQL interface library you need to have libmysqlclient.so installe
 most Linux system this library comes with the mysql-devel package. For more see
 [http://www.mysql.com](http://www.mysql.com).
 
-### Pythia Event Generators
+### Pythia event generators
 
 To build the event generator interfaces for Pythia6, you first have to get the pythia
 libraries. You can import Pythia6 and the makefiles to build the Pythia6 shared library
@@ -422,9 +422,7 @@ before doing configure.<br />
 On Windows machines it recommended to not install graphviz but to download
 the pre-installed version from [http://www.graphviz.org/](http://www.graphviz.org/).
 The ROOT configure command remains the same.
-
-
-
+ d
 ### Bonjour/Zeroconf
 
 To get support of Bonjour/Zeroconf you must install the appropiate libraries for you
