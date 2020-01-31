@@ -83,7 +83,7 @@ much more quickly to a stable version that can then become the new _production_ 
 The _development_ version can be build from GitHub sources.
 
 ## Release candidate
-A release candidate is a preview of the next __production_ release. It allows users to
+A release candidate is a preview of the next _production_ release. It allows users to
 make their code ready for the new _production_ release, and to provide early feedback.
 
 ## Nightlies
