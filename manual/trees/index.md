@@ -41,7 +41,7 @@ ROOT provides the following classes for trees and branches, among others:
 _**Example**_
 
 {% highlight C++ %}
-TTree t("MyTree","Example Tree");
+   TTree t("MyTree","Example Tree");
 {% endhighlight %}
 
 It creates a tree with the title `Example Tree`.

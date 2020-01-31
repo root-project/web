@@ -59,21 +59,21 @@ Use `yum install _package_` or use the graphical "Add/Remove Software" program.
 
 **Required packages**
 
-{% highlight C++ %}
+```
    sudo yum install git cmake gcc-c++ gcc binutils \
    libX11-devel libXpm-devel libXft-devel libXext-devel
-{% endhighlight %}
+```
 
 
 **Optional packages**
 
-{% highlight C++ %}
+```
    sudo yum install gcc-gfortran openssl-devel pcre-devel \
    mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
    fftw-devel cfitsio-devel graphviz-devel \
    avahi-compat-libdns_sd-devel libldap-dev python-devel \
    libxml2-devel gsl-static
-{% endhighlight %}
+```
 
 ## Ubuntu 10, 12 , 14 and 16
 
@@ -117,21 +117,21 @@ Use `sudo apt-get install _package_` or use the graphical "Synaptic Package Mana
 
 **Required packages**
 
-{% highlight C++ %}
+```
    sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
    libxft-dev libxext-dev
-{% endhighlight %}
+```
 
 **Optional packages**
 
-{% highlight C++ %}
+```
    sudo apt-get install gfortran libssl-dev libpcre3-dev \
    xlibmesa-glu-dev libglew1.5-dev libftgl-dev \
    libmysqlclient-dev libfftw3-dev libcfitsio-dev \
    graphviz-dev libavahi-compat-libdnssd-dev \
    libldap2-dev python-dev libxml2-dev libkrb5-dev \
    libgsl0-dev libqt4-dev
-{% endhighlight %}
+```
 
 ## OpenSUSE 10, 11
 
@@ -174,21 +174,21 @@ Use `sudo zypper install _package_` or use the graphical "Software / Package Man
 
 **Required packages**
 
-{% highlight C++ %}
+```
    sudo zypper install git bash cmake gcc-c++ gcc binutils \
    xorg-x11-libX11-devel xorg-x11-libXpm-devel xorg-x11-devel \
    xorg-x11-proto-devel xorg-x11-libXext-devel
-{% endhighlight %}
+```
 
 **Optional packages**
 
-{% highlight C++ %}
+```
    sudo zypper install gcc-fortran libopenssl-devel \
    pcre-devel Mesa glew-devel pkg-config libmysqlclient-devel \
    fftw3-devel libcfitsio-devel graphviz-devel \
    libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel \
    python-devel libxml2-devel krb5-devel gsl-devel libqt4-devel
-{% endhighlight %}
+```
 
 ## MacOS X
 
@@ -208,7 +208,7 @@ Alternatively ROOT can be installed directly from [MacPort](http://www.macports.
 ## Windows
 
 If you are using Windows make sure you've installed Microsoft Visual C++ (e.g. the [no-cost edition](http://www.microsoft.com/express/vc/)) plus CMake. The CMake build will work directly **without the need** to install [cygwin](http://cygwin.com) as it was required previously before the adaption of CMake.
-**Note:** for the moment native Windows support for ROOT6 versions is not available.
+**Note:** For the moment native Windows support for ROOT6 versions is not available.
 
 ## AIX 5, 6 and 7
 
