@@ -137,6 +137,8 @@ download:
         url: download/nightlies
       - title: ROOT sources
         url: download/building_root/get_root_sources
+  - title: Using binaries
+    url: downlaod/using_binaries
   - title: Building ROOT
     children:
       - title: Supported platforms
