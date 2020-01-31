@@ -141,7 +141,7 @@ download:
   - title: Using binaries
     url: download/using_binaries
   - title: Building ROOT
-    url: download/building_root/building_root
+    url: download/building
     children:
       - title: Supported platforms
         url: download/building_root/supported_platforms
