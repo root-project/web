@@ -7,9 +7,9 @@ toc: true
 toc_sticky: true
 ---
 
-The page lists the prerequisite packages that need to be installed on the different
-platforms to be able to configure and to build basic ROOT. If more advanced ROOT plugins
-are required look at the  `cmake` or `./configure` output and add the desired third
+Here are the prerequisite packages listed that need to be installed on the different
+platforms to be able to configure and to build basic ROOT.
+<br>If more advanced ROOT plugins are required look at the  `cmake` or `./configure` output and add the desired third
 party packages before configuring again.
 
 - [Fedora family](#fedora-18-19-and-20-scientific-linux-5-6-centos-6-7)
@@ -34,7 +34,7 @@ party packages before configuring again.
 *   **python:**  (ROOT6 requires version >= 2.7)
 *   **redhat-lsb-core:**   needed by some tests (tutorials) using lsb_release and some CDash scripts
 
-Most common optional packages:
+### Most common optional packages
 
 *   **gcc-gfortran:** for /usr/bin/gfortran
 *   **openssl-devel:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
@@ -57,21 +57,23 @@ Most common optional packages:
 
 Use `yum install _package_` or use the graphical "Add/Remove Software" program.
 
-Required packages:
-~~~
-sudo yum install git cmake gcc-c++ gcc binutils \
-libX11-devel libXpm-devel libXft-devel libXext-devel
-~~~
+**Required packages**
 
-Optional packages:
+{% highlight C++ %}
+   sudo yum install git cmake gcc-c++ gcc binutils \
+   libX11-devel libXpm-devel libXft-devel libXext-devel
+{% endhighlight %}
 
-~~~
-sudo yum install gcc-gfortran openssl-devel pcre-devel \
-mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
-fftw-devel cfitsio-devel graphviz-devel \
-avahi-compat-libdns_sd-devel libldap-dev python-devel \
-libxml2-devel gsl-static
-~~~
+
+**Optional packages**
+
+{% highlight C++ %}
+   sudo yum install gcc-gfortran openssl-devel pcre-devel \
+   mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
+   fftw-devel cfitsio-devel graphviz-devel \
+   avahi-compat-libdns_sd-devel libldap-dev python-devel \
+   libxml2-devel gsl-static
+{% endhighlight %}
 
 ## Ubuntu 10, 12 , 14 and 16
 
@@ -89,7 +91,7 @@ libxml2-devel gsl-static
 *   **libjpeg:** jpeg library
 *   **python:** (ROOT6 requires version >= 2.7)
 
-Most common optional packages:
+### Most common optional packages
 
 *   **gfortran:** for /usr/bin/gfortran
 *   **openssl-dev** or **libssl-dev:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
@@ -113,23 +115,23 @@ Most common optional packages:
 
 Use `sudo apt-get install _package_` or use the graphical "Synaptic Package Manager" program.
 
-Required packages:
+**Required packages**
 
-~~~
-sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
-libxft-dev libxext-dev
-~~~
+{% highlight C++ %}
+   sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
+   libxft-dev libxext-dev
+{% endhighlight %}
 
-Optional packages:
+**Optional packages**
 
-~~~
-sudo apt-get install gfortran libssl-dev libpcre3-dev \
-xlibmesa-glu-dev libglew1.5-dev libftgl-dev \
-libmysqlclient-dev libfftw3-dev libcfitsio-dev \
-graphviz-dev libavahi-compat-libdnssd-dev \
-libldap2-dev python-dev libxml2-dev libkrb5-dev \
-libgsl0-dev libqt4-dev
-~~~
+{% highlight C++ %}
+   sudo apt-get install gfortran libssl-dev libpcre3-dev \
+   xlibmesa-glu-dev libglew1.5-dev libftgl-dev \
+   libmysqlclient-dev libfftw3-dev libcfitsio-dev \
+   graphviz-dev libavahi-compat-libdnssd-dev \
+   libldap2-dev python-dev libxml2-dev libkrb5-dev \
+   libgsl0-dev libqt4-dev
+{% endhighlight %}
 
 ## OpenSUSE 10, 11
 
@@ -145,7 +147,7 @@ libgsl0-dev libqt4-dev
 *   **xorg-x11-proto-devel:** for /usr/include/X11/extensions/shape.h
 *   **xorg-x11-libXext-devel:** for /usr/lib[64]/libXext.so
 
-Most common optional packages:
+### Most common optional packages
 
 *   **gcc-fortran:** for /usr/bin/gfortran
 *   **libopenssl-devel:** for /usr/include/openssl/pem.h and /usr/lib[64]/libssl.so and /usr/lib[64]/libcrypto.so
@@ -170,23 +172,23 @@ Most common optional packages:
 
 Use `sudo zypper install _package_` or use the graphical "Software / Package Manager" in the "YaST2 Control Center" utility.
 
-Required packages:
+**Required packages**
 
-~~~
-sudo zypper install git bash cmake gcc-c++ gcc binutils \
-xorg-x11-libX11-devel xorg-x11-libXpm-devel xorg-x11-devel \
-xorg-x11-proto-devel xorg-x11-libXext-devel
-~~~
+{% highlight C++ %}
+   sudo zypper install git bash cmake gcc-c++ gcc binutils \
+   xorg-x11-libX11-devel xorg-x11-libXpm-devel xorg-x11-devel \
+   xorg-x11-proto-devel xorg-x11-libXext-devel
+{% endhighlight %}
 
-Optional packages:
+**Optional packages**
 
-~~~
-sudo zypper install gcc-fortran libopenssl-devel \
-pcre-devel Mesa glew-devel pkg-config libmysqlclient-devel \
-fftw3-devel libcfitsio-devel graphviz-devel \
-libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel \
-python-devel libxml2-devel krb5-devel gsl-devel libqt4-devel
-~~~
+{% highlight C++ %}
+   sudo zypper install gcc-fortran libopenssl-devel \
+   pcre-devel Mesa glew-devel pkg-config libmysqlclient-devel \
+   fftw3-devel libcfitsio-devel graphviz-devel \
+   libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel \
+   python-devel libxml2-devel krb5-devel gsl-devel libqt4-devel
+{% endhighlight %}
 
 ## MacOS X
 
@@ -195,7 +197,7 @@ python-devel libxml2-devel krb5-devel gsl-devel libqt4-devel
 *   **[Xquartz](http://xquartz.macosforge.org/):** for the X11 server (not needed in case the version with Cocoa native backend is build)
 *   Other dependencies can be installed from [MacPorts](http://www.macports.org/)
 
-Most common optional packages:
+### Most common optional packages
 
 *   **gcc 4.x from [MacPorts](http://www.macports.org):** for /opt/local/bin/gfortran
     or alternatively use this [gfortran.dmg](http://r.research.att.com/tools/)

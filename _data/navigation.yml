@@ -139,10 +139,10 @@ download:
         url: download/building_root/get_root_sources
   - title: Building ROOT
     children:
-      - title: Prerequisites
-        url: download/building_root/build_prerequisites
       - title: Supported platforms
         url: download/building_root/supported_platforms
+       - title: Prerequisites
+        url: download/building_root/build_prerequisites
       - title: Build ROOT with CMake    
         url: downlaod/building_root
       - title: Build ROOT with make
