@@ -143,9 +143,9 @@ download:
         url: download/building_root/supported_platforms
       - title: Prerequisites
         url: download/building_root/build_prerequisites
-      - title: Build ROOT with CMake    
+      - title: Building ROOT with CMake    
         url: downlaod/building_root
-      - title: Build ROOT with make
+      - title: Building ROOT with make
         url: download/building_root/build_root_old_method
         
 news:
