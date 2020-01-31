@@ -141,7 +141,7 @@ download:
     children:
       - title: Supported platforms
         url: download/building_root/supported_platforms
-       - title: Prerequisites
+      - title: Prerequisites
         url: download/building_root/build_prerequisites
       - title: Build ROOT with CMake    
         url: downlaod/building_root
