@@ -1,8 +1,8 @@
 # main links => top menu bar
 
 main:
-  - title: "Install"
-    url: install
+  - title: "Download"
+    url: download
     description: "All you need to download and install ROOT"
   - title: "Get Started"
     url: get_started
@@ -128,7 +128,7 @@ resources:
    - title: ROOT Logos
      url: https://root.cern.ch/img/logos/ROOT_Logo/
 
-install:
+download:
   - title: Download (binaries and sources)
     children:
       - title: All releases
@@ -136,17 +136,17 @@ install:
       - title: Nightlies
         url: download/nightlies
       - title: ROOT sources
-        url: resources/building_root/get_root_sources
+        url: download/building_root/get_root_sources
   - title: Building ROOT
     children:
       - title: Prerequisites
-        url: resources/building_root/build_prerequisites
+        url: download/building_root/build_prerequisites
       - title: Supported platforms
-        url: resources/building_root/supported_platforms
+        url: download/building_root/supported_platforms
       - title: Build ROOT with CMake    
-        url: resources/building_root
+        url: downlaod/building_root
       - title: Build ROOT with make
-        url: resources/building_root/build_root_old_method
+        url: download/building_root/build_root_old_method
         
 news:
    - title: News
