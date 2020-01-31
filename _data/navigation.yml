@@ -1,9 +1,9 @@
 # main links => top menu bar
 
 main:
-  - title: "Download"
-    url: download
-    description: "All you need to install ROOT"
+  - title: "Install"
+    url: install
+    description: "All you need to download and install ROOT"
   - title: "Get Started"
     url: get_started
   - title: "Forum"
@@ -74,17 +74,6 @@ manual:
 resources:
    - title: Program of Work
      url: resources/program_of_work
-   - title: Building ROOT
-     url: resources/building_root
-     children:
-      - title: Build Prerequisites
-        url: resources/building_root/build_prerequisites
-      - title: Get ROOT Sources
-        url: resources/building_root/get_root_sources
-      - title: Supported Platforms
-        url: resources/building_root/supported_platforms
-      - title: Build ROOT Old Method
-        url: resources/building_root/build_root_old_method
    - title: Code Owners
      url: resources/code_owners
    - title: Release Checklist
@@ -139,14 +128,26 @@ resources:
    - title: ROOT Logos
      url: https://root.cern.ch/img/logos/ROOT_Logo/
 
-download:
-   - title: All Releases
-     url: download/all_releases
-   - title: Nightlies
-     url: download/nightlies
-   - title: Building ROOT
-     url: resources/building_root
-
+install:
+  - title: Download (binaries and sources)
+    children:
+      - title: All releases
+        url: download/all_releases
+      - title: Nightlies
+        url: download/nightlies
+      - title: ROOT sources
+        url: resources/building_root/get_root_sources
+  - title: Building ROOT
+    children:
+      - title: Prerequisites
+        url: resources/building_root/build_prerequisites
+      - title: Supported platforms
+        url: resources/building_root/supported_platforms
+      - title: Build ROOT with CMake    
+        url: resources/building_root
+      - title: Build ROOT with make
+        url: resources/building_root/build_root_old_method
+        
 news:
    - title: News
      url: news
