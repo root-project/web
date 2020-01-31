@@ -144,7 +144,7 @@ download:
       - title: Prerequisites
         url: download/building_root/build_prerequisites
       - title: Building ROOT with CMake    
-        url: downlaod/building_root
+        url: download/building_root
       - title: Building ROOT with make
         url: download/building_root/build_root_old_method
         
