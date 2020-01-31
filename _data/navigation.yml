@@ -141,13 +141,13 @@ download:
   - title: Using binaries
     url: download/using_binaries
   - title: Building ROOT
-    url: download/building_root/supported_platforms
+    url: download/building_root/building_root
     children:
       - title: Supported platforms
         url: download/building_root/supported_platforms
       - title: Prerequisites
         url: download/building_root/build_prerequisites
-      - title: Building ROOT with CMake    
+      - title: Building ROOT with CMake
         url: download/building_root
       - title: Building ROOT with make
         url: download/building_root/build_root_old_method

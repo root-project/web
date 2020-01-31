@@ -46,5 +46,5 @@ The compiler needs to support -std=c++11 to be able to build version 6.
 - **win64gcc** for Win64 with cygwin/gcc with gcc >= 4.8
 
 The words in bold are the architecture names used by the `./configure` script. The
-default architecture for a platform is auto-detected by cmake and ./configure, but
+default architecture for a platform is auto-detected by cmake and `./configure`, but
 alternative architectures can be specified using one of the above architecture names.
