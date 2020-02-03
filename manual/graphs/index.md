@@ -8,10 +8,10 @@ toc_sticky: true
 ---
 A graph is an object made of two arrays `X` and `Y`, holding the `x`,`y` coordinates of n points.
 
-**Un-bin data**
+**Un-binned data**
 
-A graph or chart is a set of categorical variables, this is un-bin data.<br>
-A histogram is used for continuous data, where the bins represent ranges of data (bin data), see → [Histograms]({{ '/manual/histograms' | relative_url }}).
+A graph or chart is a set of categorical variables, this is un-binned data.<br>
+A histogram is used for continuous data, where the bins represent ranges of data (binned data), see → [Histograms]({{ '/manual/histograms' | relative_url }}).
 
 > **Tutorials**
 >
