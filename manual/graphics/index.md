@@ -7,6 +7,9 @@ toc: true
 toc_sticky: true
 ---
 
+ROOT provides powerful graphics capabilities for displaying and interacting with graphical object like plots, histograms, 2D and 3D
+graphical objects, etc. Here the basic functions and principles are presented, which can be applied to graphs (→ see [Graphs]({{ '/manual/graphs' | relative_url }}) ) and histograms (→ see [Histograms]({{ '/manual/histograms' | relative_url }}) ).
+
 The basic whiteboard on which an object is drawn is called in ROOT a canvas
 (class {% include ref class="TCanvas" %}). A canvas is an area mapped to a window directly
 under the control of the display manager.<br>
@@ -476,6 +479,87 @@ You can force objects (in a canvas or pad) to get the attributes of the current 
 {% highlight C++ %}
    canvas->UseCurrentStyle();
 {% endhighlight %}
+
+## Legends
+
+- Use the {% include ref class="TLegend" %} class to add a legend to graph.
+
+A {% include ref class="TLegend" %} is a panel with several entries ({% include ref class="TLegendEntry" %} class).
+
+A legend is defined with default coordinates, border size and option. The legend coordinates (NDC) in the current pad are `x1`, `y1`, `x2`, `y2`. The default text attributes for the legend are:
+- Alignment = 12 left adjusted and vertically centered
+- Angle = 0 (degrees)
+- Color = 1 (black)
+- Size = calculate when number of entries is known
+- Font = helvetica-medium-r-normal scalable font = 42, and bold = 62 for title
+
+The title is a regular entry and supports {% include ref class="TLatex" %}. The default is no title (header = 0).
+
+- Use the [AddEntry()](https://root.cern/doc/master/classTLegend.html#a0fa2f13a4fea32bf9e1558a7b8df2d24) method to a add a new entry to a legend.
+
+The parameters are:
+- `*objis` a pointer to an object having a marker, a line, or a fill attributes (a histogram, or a graph).
+- `label` is the label to be associated to the object.
+- `option`:
+	- "`L`": Draws a line associated with line attributes of `obj`, if `obj` inherits from {% include ref class="TAttLine" %}.
+	- "`P`": Draw a poly-marker associated with marker attributes of `obj`, if `obj` inherits {% include ref class="TAttMarker" %}.
+	- "`F`": Draws a box with fill associated with fill attributes of `obj`, if `obj` inherits {% include ref class="TAttFill" %}.
+	
+_**Example**_
+
+The following legend contains a histogram, a function and a graph. The histogram is put in the legend using its reference pointer whereas the graph and the function are added using their names. Because {% include ref class="TGraph" %} constructors do not have the {% include ref class="TGraph" %} name as parameter, the graph name should be specified using the `SetName()` method.
+
+{% highlight C++ %}
+{
+   auto c1 = new TCanvas("c1","c1",600,500);
+   gStyle->SetOptStat(0);
+   
+// Histogram:
+   auto h1 = new TH1F("h1","TLegend Example",200,-10,10);
+   h1->FillRandom("gaus",30000);
+   h1->SetFillColor(kGreen);
+   h1->SetFillStyle(3003);
+   h1->Draw();
+
+// Function:
+   auto f1=new TF1("f1","1000*TMath::Abs(sin(x)/x)",-10,10);
+   f1->SetLineColor(kBlue);
+   f1->SetLineWidth(4);
+   f1->Draw("same");
+   const Int_t n = 20;
+   Double_t x[n], y[n], ex[n], ey[n];
+   for (Int_t i=0;i<n;i++) {
+      x[i]  = i*0.1;
+      y[i]  = 1000*sin(x[i]+0.2);
+      x[i]  = 17.8*x[i]-8.9;
+      ex[i] = 1.0;
+      ey[i] = 10.*i;
+   }
+ 
+ // Graph:
+   auto gr = new TGraphErrors(n,x,y,ex,ey);
+   gr->SetName("gr");
+   gr->SetLineColor(kRed);
+   gr->SetLineWidth(2);
+   gr->SetMarkerStyle(21);
+   gr->SetMarkerSize(1.3);
+   gr->SetMarkerColor(7);
+   gr->Draw("P");
+
+// Creating a legend.
+   auto legend = new TLegend(0.1,0.7,0.48,0.9);
+   legend->SetHeader("The Legend Title","C"); // option "C" allows to center the header
+   legend->AddEntry(h1,"Histogram filled with random numbers","f");
+   legend->AddEntry("f1","Function abs(#frac{sin(x)}{x})","l");
+   legend->AddEntry("gr","Graph with error bars","lep");
+   legend->Draw();
+}
+{% endhighlight %}
+
+{% include figure_image
+   img="legend.png"
+   caption="Legend containing a histogram, a function and a graph."
+%}
 
 
 ## Axis
