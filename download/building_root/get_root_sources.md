@@ -7,7 +7,9 @@ toc: true
 toc_sticky: true
 ---
 
-To obtain the ROOT sources you can either download a specific version from the [download page](/node/102) or access the Git repository directly. You can also [browse the repository](https://root.cern.ch/gitweb?p=root.git) directly.
+To obtain the ROOT sources you can either download a specific version from the
+[download page](/node/102) or access the Git repository directly. You can also
+[browse the repository](https://github.com/root-project/root) directly.
 
 ## Sources from released versions
 ROOT's sources can be downloaded for each of the releases and unpacked with
