@@ -7,25 +7,6 @@ sidebar:
   nav: "download"
 ---
 
-ROOT 6 is tested and supported on the following platforms:
-
-**Binaries**
-- CentOS Cern 7
-- Linux fedora 29 / 20
-- Ubuntu 14 / 16 / 18
-- OSX 10.13 / 10.14
-- Windows (with Visual Studio 2019)
-
-**Sources for building ROOT**
-
-- freebsd7 for FreeBSD 7.x with gcc >= 4.8
-- linux for i386, Linux with gcc >= 4.8
-- linuxx8664gcc for x86-64. Linux with gcc >= 4.8
-- macosx for MacOS X >= 10.8 with clang
-- openbsd for OpenBSD >= 5.x with gcc >= 4.8
-
-See → [All releases]({{'/download/all_releases' | relative_url}}).
-
 
 ## Download a package
 
@@ -41,6 +22,7 @@ The following latest _production_ and _old_ version are available for download:
 {% include releases_list state="pro" label="PRO" single_column="yes" %}
 {% include releases_list state="old" label="OLD" single_column="yes" %}
 
+See → [All releases]({{'/download/all_releases' | relative_url}}).
 
 ### Development release
 Use this to get access to the latest and greatest, but as a side effect there might be some
