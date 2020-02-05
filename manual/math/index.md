@@ -50,18 +50,18 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html) libr
 
 - the namespaces for [TMath](https://root.cern/doc/master/namespaceTMath.html) and [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html).
 
-- ROOT classes for random number generators, [TRandom](https://root.cern/doc/master/classTRandom.html) etc.
+- ROOT classes for random number generators, {% include ref class="TRandom" %} etc.
 
-- ROOT class for complex numbers, [TComplex](https://root.cern/doc/master/classTComplex.html)
+- ROOT class for complex numbers, {% include ref class="TComplex" %}
 
 - other ROOT classes like:
-   - [TKDTree](https://root.cern/doc/master/classTKDTree.html): ROOT class implementing a kd-tree.
+   - {% include ref class="TKDTree" %}: ROOT class implementing a kd-tree.
    - [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html): ROOT class for testing the for goodness of fit tests.
 
 
 ### TMath
 
-In the namespace [TMath](https://root.cern/doc/master/namespaceTMath.html), a collection of free functions is provided for the following functionality:
+The [TMath](https://root.cern/doc/master/namespaceTMath.html) namespace provides a collection of free functions:
 
 - numerical constants (like pi, e, h, etc.)
 
@@ -73,7 +73,7 @@ In the namespace [TMath](https://root.cern/doc/master/namespaceTMath.html), a co
 
 - algorithms for binary search/hashing sorting
 
-- special mathematical functions like `Bessel`, `Erf`, `Gamma`, etc.;
+- special mathematical functions like `Bessel`, `Erf`, `Gamma`, etc.
 
 - statistical functions, like common probability and cumulative (quantile) distributions
 
@@ -100,7 +100,7 @@ In the namespace [TMath](https://root.cern/doc/master/namespaceTMath.html), a co
 
 #### Statistic functions operating on arrays
 
-[TMath](https://root.cern/doc/master/namespaceTMath.html) Math provides functions that process arrays for calculation:
+[TMath](https://root.cern/doc/master/namespaceTMath.html) provides functions that process arrays for calculation:
 
 - mean
 - median
@@ -111,29 +111,28 @@ In the namespace [TMath](https://root.cern/doc/master/namespaceTMath.html), a co
 _**Example**_
 
 {% highlight C++ %}
-   // Size of the array.
+// Size of the array.
    const int n = 100;
 
-   // Vector v with random values.
+// Vector v with random values.
    vector<double> v(n);
    std::generate(v.begin(), v.end(), rand);
 
-   // Weight vector w.
+// Weight vector w.
    vector<double> w(n);
    std::fill(w.begin(), w.end, 1);
    double mean;
 
-   // Calculate the mean of the vector
-   // with iterators.
+// Calculate the mean of the vector with iterators.
    mean = TMath::Mean(v.begin(), v.end());
 {% endhighlight %}
 
 ### ROOT:Math
 
-In the namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html), a set of function interfaces to define the basic behaviour of a mathematical function is provided:
+The [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html) namespace provides a set of function interfaces to define the basic behaviour of a mathematical function:
 
 - **One-dimensional function interfaces**<br>
-Used for numerical algorithms operating only on one-dimensional functions. The cannot applied to
+Used for numerical algorithms operating only on one-dimensional functions. They cannot applied to
 multi-dimensional functions.
 
 - **Multi-dimensional function interfaces**<br>
@@ -147,13 +146,13 @@ Used for fitting after evaluating multi-dimensional functions.
 
 The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides the following classes for generating pseudo-random numbers:
 
-[TRandom](https://root.cern/doc/master/classTRandom.html): Using a linear congruential random generator.
+{% include ref class="TRandom" %}: Using a linear congruential random generator.
 
-[TRandom1](https://root.cern/doc/master/classTRandom1.html): Random number generator based on the Ranlux engine.
+{% include ref class="TRandom1" %}: Random number generator based on the Ranlux engine.
 
-[TRandom2](https://root.cern/doc/master/classTRandom1.html): Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
+{% include ref class="TRandom2" %}: Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
 
-[TRandom3](https://root.cern/doc/master/classTRandom3.html): Based on the Mersenne and Twister pseudo-random number generator.
+{% include ref class="TRandom3" %}: Based on the Mersenne and Twister pseudo-random number generator.
 
 > **Note**
 >
@@ -164,8 +163,8 @@ The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides 
 - Use the [SetSeed()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#ab9efcc04f4be1e7e6e49c5281abdee5b) method.
 
 When no value is given, the generator default seed is used. In this case an identical sequence will be generated every time the application is run.<br>
-When the 0 value is used as seed, then a unique seed is generated using a TUUID, for [TRandom1](https://root.cern/doc/master/classTRandom1.html), [TRandom2](https://root.cern/doc/master/classTRandom1.html) and [TRandom3](https://root.cern/doc/master/classTRandom3.html).<br>
-For [TRandom](https://root.cern/doc/master/classTRandom.html) the seed is generated using only the machine clock, which has a resolution of about 1 sec. Therefore, identical sequences will be generated if the elapsed time is less than a second.
+When the 0 value is used as seed, then a unique seed is generated using a TUUID, for {% include ref class="TRandom" %}, {% include ref class="TRandom1" %} and {% include ref class="TRandom3" %}.<br>
+For {% include ref class="TRandom" %} the seed is generated using only the machine clock, which has a resolution of about 1 s. Therefore, identical sequences will be generated if the elapsed time is less than a second.
 
 #### Using the random number generators
 
@@ -174,36 +173,36 @@ For [TRandom](https://root.cern/doc/master/classTRandom.html) the seed is genera
 _**Example**_
 
 {% highlight C++ %}
-   // Use the default seed (same random numbers will be generated each time).
-   // Generate a number in interval ]0,1] (0 is excluded).
+// Use the default seed (same random numbers will be generated each time).
+// Generate a number in the interval ]0,1] (0 is excluded).
    TRandom3 r;
    r.Rndm();
    double x[100];
 
-   // Generate an array of random numbers in ]0,1].
+// Generate an array of random numbers in ]0,1].
    r.RndmArray(100,x);
 
-   // Construct with a user-defined seed.
+// Construct with a user-defined seed.
    TRandom3 rdm(111);
 
-   // Use 0: a unique seed will be automatically generated using TUUID.
+// Use 0: a unique seed will be automatically generated using TUUID.
    TRandom1 r1(0);
    TRandom2 r2(0);
    TRandom3 r3(0);
 
-   // Seed generated using machine clock (different every second).
+// Seed generated using machine clock (different every second).
    TRandom r0(0);
 {% endhighlight %}
 
 ### Complex numbers
 
-The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides [TComplex](https://root.cern/doc/master/classTComplex.html) a class for complex numbers.
+The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides with {% include ref class="TComplex" %} a class for complex numbers.
 
 ## MathMore library
 
 The [MathMore](https://root.cern/doc/master/MathMorePage.html) library provides an advanced collection of functions and C++ classes for numerical computing. This is an extension of the functionality provided by the [MathCore](https://root.cern/doc/master/MathCorePage.html) library. The [MathMore](https://root.cern/doc/master/MathMorePage.html)  library is implemented wrapping in C++ the GNU Scientific Library ([GSL](https://www.gnu.org/software/gsl/)).
 
-The The [MathMore](https://root.cern/doc/master/MathMorePage.html) library includes classes and functions for:
+The [MathMore](https://root.cern/doc/master/MathMorePage.html) library includes classes and functions for:
 
 - [Special functions](https://root.cern/doc/master/group__SpecFunc.html)<br>
 Containing all the major functions such as Bessel functions, Legendre polynomial, etc.
@@ -221,8 +220,8 @@ Contains mathematical functions used in statistics such as probability density f
 
 - [Interpolation Classes](https://root.cern/doc/master/group__Interpolation.html)
 
-- [Function Approximation (ChebyshevApprox)](https://root.cern/doc/master/group__FuncApprox.html)<br>
-Based on Chebyshev polynomials.
+- [Function Approximation (ChebyshevApprox)](https://root.cern/doc/master/group__FuncApprox.html)
+<br>Based on Chebyshev polynomials.
 
 - [Random Classes](https://root.cern/doc/master/group__Random.html)
 
@@ -276,25 +275,25 @@ Only relevant for a sparse matrix. It indicates where elements are unequal 0.
 
 Use one of the following methods to access the information about the relevant matrix property:
 
-- `Int_t GetRowLwb()`<br>Row lower-bound index.
+- `Int_t GetRowLwb()`: Row lower-bound index.
 
-- `Int_t GetRowUpb()`<br>Row upper-bound index.
+- `Int_t GetRowUpb()`: Row upper-bound index.
 
-- `Int_t GetNrows():`<br>Number of rows.
+- `Int_t GetNrows()`: Number of rows.
 
-- `Int_t GetColLwb()`<br>Column lower-bound index.
+- `Int_t GetColLwb()`: Column lower-bound index.
 
-- `Int_t GetColUpb()`<br>Column upper-bound index.
+- `Int_t GetColUpb()`: Column upper-bound index.
 
-- `Int_t GetNcols()`<br>Number of columns.
+- `Int_t GetNcols()`: Number of columns.
 
-- `Int_t GetNoElements()`<br>Number of elements, for a dense matrix this equals: `fNrows x fNcols`.
+- `Int_t GetNoElements()`: Number of elements, for a dense matrix this equals: `fNrows x fNcols`.
 
-- `Double_t GetTol()`<br>Tolerance number that is used in decomposition operations.
+- `Double_t GetTol()`: Tolerance number that is used in decomposition operations.
 
-- `Int_t *GetRowIndexArray()`<br>For sparse matrices, access to the row index of `fNrows+1` entries.
+- `Int_t *GetRowIndexArray()`: For sparse matrices, access to the row index of `fNrows+1` entries.
 
-- `Int_t *GetColIndexArray()`<br>For sparse matrices, access to the column index of `fNelems` entries.
+- `Int_t *GetColIndexArray()`: For sparse matrices, access to the column index of `fNelems` entries.
 
 #### Setting matrix properties
 
@@ -370,6 +369,7 @@ The following list shows the application of the `Use()` method:
 _**Example**_
 
 A Hilbert matrix is created by copying an array.
+
 {% highlight C++ %}
    TMatrixD h(5,5);
    TArrayD data(25);
@@ -381,7 +381,7 @@ A Hilbert matrix is created by copying an array.
    h.SetMatrixArray(data.GetArray());
 {% endhighlight %}
 
-We also can assign the data array to the matrix without actually copying it.
+You can also assign the data array to the matrix without actually copying it.
 
 {% highlight C++ %}
    TMatrixD h; h.Use(5,5,data.GetArray());
@@ -491,7 +491,7 @@ This example shows how to check whether the matrix is singular before attempting
 
 ### Matrix operators and methods
 
-The matrix/vector operations are classified according to BLAS (Basic Linear Algebra Subroutines) levels.
+The matrix/vector operations are classified according to BLAS (basic linear algebra subroutines) levels.
 
 #### Arithmetic operations between matrices
 
@@ -567,7 +567,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
   </tbody>
 </table>
 
-#### Comparisons and Boolean operations
+#### Comparison and Boolean operations
 
 **Comparison between two matrices**
 
@@ -777,12 +777,12 @@ The next table summarizes how to access the individual matrix elements in the ma
 
 There are the following classes available for matrix decompositions:
 
-- [TDecompLU](https://root.cern/doc/master/classTDecompLU.html): Decomposes a general `n x n` matrix `A` into `P A = L U`.
-- [TDecompBK](https://root.cern/doc/master/classTDecompBK.html): The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`.
-- [TDecompChol](https://root.cern/doc/master/classTDecompChol.html): The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
-- [TDecompQRH](https://root.cern/doc/master/classTDecompQRH.html): QR decomposition class.
-- [TDecompSVD](https://root.cern/doc/master/classTDecompSVD.html): Single value decomposition class.
-- [TDecompSparse](https://root.cern.ch/doc/master/classTDecompSparse.html): Sparse symmetric decomposition class.
+- {% include ref class="TDecompLU" %}: Decomposes a general `n x n` matrix `A` into `P A = L U`.
+- {% include ref class="TDecompBK" %}: The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`.
+- {% include ref class="TDecompChol" %}: The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
+- {% include ref class="TDecompQRH" %}: QR decomposition class.
+- {% include ref class="TDecompSVD" %}: Single value decomposition class.
+- {% include ref class="TDecompSparse" %}: Sparse symmetric decomposition class.
 
 ### Matrix Eigen analysis
 
@@ -811,7 +811,7 @@ The [Minuit2](https://root.cern/doc/master/group__Minuit.html) library is a new 
 
 UNU.RAN is an ANSI C library licensed under GPL.
 
-The [TUnuran](https://root.cern/doc/master/classTUnuran.html) class is used to interface the UNURAN package.
+The {% include ref class="TUnuran" %} class is used to interface the UNURAN package.
 
 > **Tutorials**
 >
@@ -837,7 +837,7 @@ TUnuran unr;
 
 ### Using TUnuranContDist for a one-dimensional distribution
 
-Use [TUnuranContDist](https://root.cern/doc/master/classTUnuranContDist.html) for creating a continuous 1-D distribution object (for example from a [TF1](https://root.cern/doc/master/classTF1.html) object providing the pdf (probability density function).<br>
+- Use {% include ref class="TUnuranContDist" %} for creating a continuous 1-D distribution object (for example from a {% include ref class="TF1" %} object providing the PDF (probability density function).<br>
 You can provide additional information via [TUnuranContDist::SetDomain(min,max)](https://root.cern/doc/master/classTUnuranContDist.html#aa82c3fc018dadafc55ef3a45239ce191) like the `domain()` for generating numbers in a restricted region.
 
 _**Example**_
@@ -858,7 +858,7 @@ _**Example**_
 
 ### Using TUnuranMultiContDist for a multi-dimensional distribution
 
-Use [TUnuranMultiContDist](https://root.cern/doc/master/classTUnuranMultiContDist.html) to create a multi-dimensional distribution, which can be created from a multi-dimensional pdf (probability density function).
+- Use {% include ref class="TUnuranMultiContDist" %} to create a multi-dimensional distribution, which can be created from a multi-dimensional PDF (probability density function).
 
 _**Example**_
 
@@ -866,7 +866,7 @@ _**Example**_
 // Multi- dimensional case from TF1 (TF2 or TF3) objects.
    TUnuranMultiContDist dist(pdfFuncMulti);
 
-// The recommended method for multi-dimensional function is "hitro".
+// The recommended method for a multi-dimensional function is "hitro".
    unr.Init(dist,"method=hitro");
 
 // Sample distribution N times (generate N random numbers).
@@ -878,16 +878,16 @@ _**Example**_
 
 ### Using TUnuranDiscrDist for a discrete one-dimensional distribution
 
-Use [TUnuranDiscrDist](https://root.cern/doc/master/classTUnuranMultiContDist.html) for creating a discrete one-dimensional distribution, which can be initialized from a [TF1](https://root.cern/doc/master/classTF1.html) object or from a vector of probabilities.
+- Use {% include ref class="TUnuranDiscrDist" %} for creating a discrete one-dimensional distribution, which can be initialized from a {% include ref class="TF1" %} object or from a vector of probabilities.
 
 _**Example**_
 
 {% highlight C++ %}
-// Create distribution from a vector of probabilities.
+// Create a distribution from a vector of probabilities.
    double pv[NSize] = {0.1,0.2,...};
    TUnuranDiscrDist dist(pv,pv+NSize);
 
-// The recommended method for discrete distribution is "dgt".
+// The recommended method for a discrete distribution is "dgt".
    unr.Init(dist, "method=dgt");
 
 // Sample N times (generate N random numbers).
@@ -897,12 +897,12 @@ _**Example**_
 
 ### Using TUnuranEmpDist an empirical distribution
 
-Use [TUnuranEmpDist](https://root.cern/doc/master/classTUnuranEmpDist.html) for creating an empirical distribution, which can be initialized from a [TH1](https://root.cern/doc/master/classTH1.html) object (using the bins or from its buffer for un-binned data) or from a vector of data.
+Use {% include ref class="TUnuranEmpDist" %} for creating an empirical distribution, which can be initialized from a {% include ref class="TH1" %} object (using the bins or from its buffer for un-binned data) or from a vector of data.
 
 _**Example**_
 
 {% highlight C++ %}
-// Create distribution from a set of data.
+// Create a distribution from a set of data.
 // vdata is an std::vector containing the data.
    TUnuranEmpDist dist(vdata.begin(),vdata.end());
    unr.Init(dist);
