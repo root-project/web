@@ -8,7 +8,7 @@ toc_sticky: true
 ---
 
 To obtain the ROOT sources you can either download a specific version from the
-[download page](/node/102) or access the Git repository directly. You can also
+[download page]({{'/download/all_releases' | relative_url}}) or access the Git repository directly. You can also
 [browse the repository](https://github.com/root-project/root) directly.
 
 ## Sources from released versions
