@@ -129,20 +129,20 @@ resources:
      url: https://root.cern.ch/img/logos/ROOT_Logo/
 
 download:
-  - title: Download (binaries and sources)
-    url: download
-    children:
+   - title: Download (binaries and sources)
+     url: download
+     children:
       - title: All releases
         url: download/all_releases
       - title: Nightlies
         url: download/nightlies
       - title: ROOT sources
         url: download/building_root/get_root_sources
-  - title: Using binaries
-    url: download/using_binaries
-  - title: Building ROOT
-    url: download/building
-    children:
+   - title: Using binaries
+     url: download/using_binaries
+   - title: Building ROOT
+     url: download/building
+     children:
       - title: Supported platforms
         url: download/building_root/supported_platforms
       - title: Prerequisites
@@ -151,7 +151,7 @@ download:
         url: download/building_root
       - title: Building ROOT with make
         url: download/building_root/build_root_old_method
-        
+
 news:
    - title: News
      url: news
