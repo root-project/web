@@ -26,53 +26,53 @@ ROOT supports the following histogram types:
 
 -   Profile histograms, which are used to display the mean value of Y and its standard deviation for each bin in X.
 
-All histogram classes are derived from the [TH1](https://root.cern/doc/master/classTH1.html) base class.
+All histogram classes are derived from the {% include ref class="Th1" %} base class.
 
 The following histogram classes are available in ROOT, among others:
 
 ### 1-D histograms
 
-  - [TH1C](https://root.cern/doc/master/classTH1C.html): One byte per channel. Maximum bin content = 127.
+  - {% include ref class="TH1C" %}: One byte per channel. Maximum bin content = 127.
 
-  - [TH1S](https://root.cern/doc/master/classTH1S.html): One short per channel. Maximum bin content = 32767.
+  - {% include ref class="TH1S" %}: One short per channel. Maximum bin content = 32767.
 
-  - [TH1I](https://root.cern/doc/master/classTH1I.html): One int per channel. Maximum bin content = 2147483647.
+  - {% include ref class="TH1I" %}: One int per channel. Maximum bin content = 2147483647.
 
-  - [TH1F](https://root.cern/doc/master/classTH1F.html): One float per channel. Maximum precision 7 digits.
+  - {% include ref class="TH1F" %}: One float per channel. Maximum precision 7 digits.
 
-  - [TH1D](https://root.cern/doc/master/classTH1D.html): One double per channel. Maximum precision 14 digits.
+  - {% include ref class="TH1D" %}: One double per channel. Maximum precision 14 digits.
 
 ### 2-D histograms
 
-  - [TH2C](https://root.cern/doc/master/classTH2C.html): One byte per channel. Maximum bin content = 127.
+  - {% include ref class="TH2C" %}: One byte per channel. Maximum bin content = 127.
 
-  - [TH2S](https://root.cern/doc/master/classTH2S.html): One short per channel. Maximum bin content = 32767.
+  - {% include ref class="TH2S" %}: One short per channel. Maximum bin content = 32767.
 
-  - [TH2I](https://root.cern/doc/master/classTH2I.html): One int per channel. Maximum bin content = 2147483647.
+  - {% include ref class="TH2I" %}: One int per channel. Maximum bin content = 2147483647.
 
-  - [TH2F](https://root.cern/doc/master/classTH2F.html): One float per channel. Maximum precision 7 digits.
+  - {% include ref class="TH2F" %}: One float per channel. Maximum precision 7 digits.
 
-  - [TH2D](https://root.cern/doc/master/classTH2D.html): One double per channel. Maximum precision 14 digits.
+  - {% include ref class="TH2D" %}: One double per channel. Maximum precision 14 digits.
 
 ### 3-D histograms
 
-  - [TH3C](https://root.cern/doc/master/classTH3C.html): One byte per channel. Maximum bin content = 127.
+  - {% include ref class="TH3C" %}: One byte per channel. Maximum bin content = 127.
 
-  - [TH3S](https://root.cern/doc/master/classTH3S.html): One short per channel. Maximum bin content = 32767.
+  - {% include ref class="TH3S" %}: One short per channel. Maximum bin content = 32767.
 
-  - [TH3I](https://root.cern/doc/master/classTH3I.html): One int per channel. Maximum bin content = 2147483647.
+  - {% include ref class="TH3I" %}: One int per channel. Maximum bin content = 2147483647.
 
-  - [TH3F](https://root.cern/doc/master/classTH3F.html): One float per channel. Maximum precision 7 digits.
+  - {% include ref class="TH3F" %}: One float per channel. Maximum precision 7 digits.
 
-  - [TH3D](https://root.cern/doc/master/classTH3D.html): One double per channel. Maximum precision 14 digits.
+  - {% include ref class="TH3D" %}: One double per channel. Maximum precision 14 digits.
 
 ### Profile histograms
 
-  - [TProfile](https://root.cern/doc/master/classTProfile.html): Profile histogram to display the mean value of Y and its error for each bin in X.
+  - {% include ref class="TProfile" %}: Profile histogram to display the mean value of Y and its error for each bin in X.
 
-  - [TProfile2D](https://root.cern/doc/master/classTProfile2D.html): Profile2D histograms are used to display the mean value of Z and its RMS for each cell in X,Y.
+  - {% include ref class="TProfile2D" %}: Profile2D histograms are used to display the mean value of Z and its RMS for each cell in X,Y.
 
-  - [TProfile3D](https://root.cern/doc/master/classTProfile3D.html): Profile3D histograms are used to display the mean value of T and its RMS for each cell in X,Y,Z.
+  - {% include ref class="TProfile3D" %}: Profile3D histograms are used to display the mean value of T and its RMS for each cell in X,Y,Z.
 
 ### Bin numbering
 
@@ -113,7 +113,7 @@ You can re-bin a histogram via the [TH1::Rebin()](https://root.cern/doc/master/c
 
 _**Examples**_
 
-In the following examples, histograms are created for the classes [TH1I](https://root.cern/doc/master/classTH1I.html), [TH2F](https://root.cern/doc/master/classTH2F.html), [TH3D](https://root.cern/doc/master/classTH3D.html):
+In the following examples, histograms are created for the classes {% include ref class="TH1I" %}, {% include ref class="TH2F" %}, {% include ref class="TH3D" %}:
 
 {% highlight C++ %}
    TH1* h1 = new TH1I("h1", "h1 title", 100, 0.0, 4.0);
@@ -127,7 +127,9 @@ In the following examples, histograms are created for the classes [TH1I](https:/
 
 _**Example**_
 
-`TH1* hc = (TH1*)h1->Clone();`
+{% highlight C++ %}
+   TH1* hc = (TH1*)h1->Clone();
+{% endhighlight %}
 
 ### Filling a histogram
 
@@ -174,27 +176,33 @@ Following operations are supported on histograms or between histograms:
 
 -   Multiplications and divisions are supported in the same way as additions.
 
-You can use the operators (+, *, /) or the [TH1](https://root.cern/doc/master/classTH1.html) methods `Add()`, `Multiply()` and `Divide()`.
+You can use the operators (+, *, /) or the {% include ref class="TH1" %} methods `Add()`, `Multiply()` and `Divide()`.
 
 _**Examples**_
 
 Multiplying a histogram object with a constant:
 
-`h1.Scale(const)`
+{% highlight C++ %}
+   h1.Scale(const)
+{% endhighlight %}
 
 Creating a new histogram without changing the original one:
 
-`TH1F h3 = 8*h1;`
+{% highlight C++ %}
+   TH1F h3 = 8*h1;
+{% endhighlight %}
 
 Multiplying two histograms and put the result in the third one:
 
-`TH1F h3 = h1*h2;`
+{% highlight C++ %}
+   TH1F h3 = h1*h2;
+{% endhighlight %}
 
 ### Drawing a histogram
 
   - Use the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da) method to draw a histogram.
 
-    It creates a [THistPainter](https://root.cern/doc/master/classTHistPainter.html) object that specializes the drawing of the histogram. The `THistPainter` class is separated from the histogram, so that the histogram does not contain the graphics overhead.
+    It creates a {% include ref class="THistPainter" %} object that specializes the drawing of the histogram. The `THistPainter` class is separated from the histogram, so that the histogram does not contain the graphics overhead.
 
   - Use the [TH1::DrawCopy()](https://root.cern/doc/master/classTH1.html#aa19b24b96284284d677cd73f00d29d79) method to create a copy of the histogram when drawing it.
 
@@ -215,7 +223,7 @@ _**Example**_
 
 #### Getting the bin width
 
-- Use [GetBinWidth()](https://root.cern/doc/master/classTH1.html#ad69a5fa0002361fd77f37990a29d1aa3) to get the bin width of a histogram.
+- Use the [GetBinWidth()](https://root.cern/doc/master/classTH1.html#ad69a5fa0002361fd77f37990a29d1aa3) method to get the bin width of a histogram.
 
 {% highlight C++ %}
    TH1F h1("h1","Histogram from a Gaussian",100,-3,3);
@@ -234,8 +242,7 @@ _**Example**_
 
 **Drawing options for all histogram classes**
 
-For detailed information on the drawing options for all histogram classes, refer to
-[THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01a).
+For detailed information on the drawing options for all histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01a).
 
 `AXIS`: Draws only the axis.
 
@@ -297,8 +304,7 @@ _**Example**_
 
 **Drawing options for 1-D histogram classes**
 
-For detailed information on the drawing options for 1-D histogram classes, refer to
-[THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01b).
+For detailed information on the drawing options for 1-D histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01b).
 
 `AH`: Draws the histogram, but not the axis labels and tick marks.
 
@@ -336,7 +342,7 @@ For detailed information on the drawing options for 1-D histogram classes, refer
 
 **Drawing options for 2-D histogram classes**
 
-For detailed information on the drawing options for 2-D histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html).
+For detailed information on the drawing options for 2-D histogram classes, refer to {% include ref class="THistPainter" %}.
 
 By default, 2-D histograms are drawn as scatter plots.
 
@@ -366,7 +372,7 @@ By default, 2-D histograms are drawn as scatter plots.
 
 `CONT5`: Uses Delaunay triangles to compute the contours.
 
-`LIST`: Generates a list of [TGraph](https://root.cern/doc/master/classTGraph.html) objects for each contour.
+`LIST`: Generates a list of {% include ref class="TGraph" %} objects for each contour.
 
 `FB`: To be used with `LEGO` or `SURFACE`, suppresses the Front-Box.
 
@@ -376,19 +382,19 @@ By default, 2-D histograms are drawn as scatter plots.
 
 `SCAT`: Draws a scatter-plot (default).
 
-`SPEC`: Uses [TSpectrum2Painter](https://root.cern/doc/master/classTSpectrum2Painter.html) tool for drawing.
+`SPEC`: Uses the {% include ref class="TSpectrum2Painter" %} tool for drawing.
 
 `TEXT`: Draws bin contents as text (format set via `gStyle->SetPaintTextFormat`).
 
 `TEXTnn`: Draws bin contents as text at angle nn (0 < nn < 90).
 
-`[cutg]`: Draws only the sub-range selected by the [TCutG](https://root.cern/doc/master/classTCutG.html) name "`cutg`".
+`[cutg]`: Draws only the sub-range selected by the {% include ref class="TCutG" %} name "`cutg`".
 
 `Z`: The Z option can be specified with the options: `BOX`, `COL`, `CONT`, `SURF`, and `LEGO` to display.
 
 **Drawing options for 3-D histogram classes**
 
-For detailed information on the drawing options for 3-D histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html).
+For detailed information on the drawing options for 3-D histogram classes, refer to {% include ref class="THistPainter" %}.
 
 By default, 3-D histograms are drawn as scatter plots.
 
@@ -457,7 +463,7 @@ Instead of using the `Editor`, you also can simply draw the error bars by:
 
 _**Example**_
 
-A histogram object `hist` is fit with a gaussian:
+A histogram object `hist` is fit with a Gaussian:
 
 {% highlight C++ %}
    root[] hist.Fit("gaus");
@@ -475,18 +481,18 @@ The following pre-defined functions are available:
 
 - `landau`: Landau function with mean and sigma. This function has been adapted from the `CERNLIB` routine `G110 denlan` (see → [TMath::Landau](https://root.cern/doc/master/namespaceTMath.html#a656690875991a17d35e8a514f37f35d9)).
 
-- `gausn`: Normalized form of the gaussian function with 3 parameters `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)/(p2*sqrt(2PI))`
+- `gausn`: Normalized form of the Gaussian function with 3 parameters `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)/(p2*sqrt(2PI))`
 
 
 ### Fitting 1-D histograms with user-defined functions
 
-First you create a [TF1](https://root.cern/doc/master/classTF1.html) object, then use the name of the `TF1` fitting function in the [Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method.
+First you create a {% include ref class="TF1" %} object, then use the name of the `TF1` fitting function in the [Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method.
 
 You can create the `TF1` fitting function as follows:
 
-- from an existing expressions defined in [TFormula](https://root.cern/doc/master/classTFormula.html),
+- from an existing expressions defined in {% include ref class="TFormula" %},
 
-- defining your own function.
+- by defining your own function.
 
 **Creating a TF1 fitting function with a TFormula expression**
 
@@ -523,7 +529,7 @@ An 1-D histogram is fit with a user-defined function.<br>
 See also the `fitexample.C` tutorial.
 
 {% highlight C++ %}
-   // Define a function with 3 parameters
+// Define a function with 3 parameters
    Double_t fitf(Double_t *x,Double_t *par) {
       Double_t arg = 0;
       if (par[2]!=0) arg = (x[0] - par[1])/par[2];
@@ -532,26 +538,26 @@ See also the `fitexample.C` tutorial.
    }
 {% endhighlight %}
 
-Now the `fitf` function is used to fit a histogram.
+Now the `fitf` function is used to fit the histogram.
 
 {% highlight C++ %}
    void fitexample() {
-   // Open a ROOT file and get a histogram.
-   TFile *f = new TFile("hsimple.root");
 
+// Open a ROOT file and get a histogram.
+   TFile *f = new TFile("hsimple.root");
    TH1F *hpx = (TH1F*)f->Get("hpx");
 
-   // Create a TF1 object using the fitf function.
-   // The last three parameters specify the number of parameters for the function.
+// Create a TF1 object using the fitf function.
+// The last three parameters specify the number of parameters for the function.
    TF1 *func = new TF1("fit",fitf,-3,3,3);
 
-   // Set the parameters to the mean and RMS of the histogram.
+// Set the parameters to the mean and RMS of the histogram.
    func->SetParameters(500,hpx->GetMean(),hpx->GetRMS());
 
-   //Giving the parameters names.
+//Giving the parameters names.
    func->SetParNames ("Constant","Mean_value","Sigma");
 
-   // Call TH1::Fit with the name of the TF1 object.
+// Call TH1::Fit with the name of the TF1 object.
    hpx->Fit("fit");
    }
 {% endhighlight %}
@@ -574,6 +580,12 @@ _**Examples**_
 {% endhighlight %}
 
 ### Configuring the fit
+
+The following configuration actions are available when fitting a histogram or graph using the `Fit()` method:
+
+- [Fixing and setting parameter bounds](#fixing-and-setting-parameter-bounds)
+- [Fitting subranges](#fitting-subranges)
+- [Fitting multiple sub ranges](#fitting-multiple-sub-ranges)
 
 #### Fixing and setting parameter bounds
 
@@ -622,7 +634,7 @@ There is function with 6 parameters. Then there is a setup possible like the fol
 #### Fitting subranges
 
 By default, [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) fits the function on the defined histogram range. You can specify the `R` option in the second
-parameter of `TH1::Fit()` to restrict the fit to the range specified in the [TF1](https://root.cern/doc/master/classTF1.html) constructor.
+parameter of `TH1::Fit()` to restrict the fit to the range specified in the {% include ref class="TF1" %} constructor.
 
 _**Example**_
 
@@ -641,11 +653,136 @@ You can also specify a range in the call to `TH1::Fit()`.
 
 See also the ROOT macros `$ROOTSYS/tutorials/fit/myfit.C` and `multifit.C` for more detailed examples.
 
+#### Fitting multiple sub ranges
+
+You can find a ROOT macro for fitting multiple sub ranges at `$ROOTSYS/tutorials/fit/multifit.C`. It shows how to use several Gaussian functions
+with different parameters on separate sub ranges of the same histogram.
+
+_**Example**_
+
+Four {% include ref class="TF1" %} objects are created, one for each sub range.
+
+{% highlight C++ %}
+   g1 = new TF1("m1","gaus",85,95);
+   g2 = new TF1("m2","gaus",98,108);
+   g3 = new TF1("m3","gaus",110,121);
+
+// The total is the sum of the three, each has 3 parameters.
+   total = new TF1("mstotal","gaus(0)+gaus(3)+gaus(6)",85,125);
+{% endhighlight %}
+
+The histogram are filled with bins defined in the array `x`.
+
+{% highlight C++ %}
+   h = new TH1F("g1","Example of several fits in subranges",np,85,134);
+   h->SetMaximum(7);
+   for (int i=0; i<np; i++) {
+      h->SetBinContent(i+1,x[i]);
+   }
+
+// Define the parameter array for the total function.
+   Double_t par[9];
+{% endhighlight %}
+
+When fitting simple functions, such as a Gaussian, the initial values of the parameters are automatically computed. In the more complicated case of the sum of 3 Gaussian functions, the initial values of parameters must be set.
+In this particular case, the initial values are taken from the result of the individual fits. 
+
+{% highlight C++ %}
+// Fit each function and add it to the list of functions.
+   h->Fit(g1,"R");
+   h->Fit(g2,"R+");
+   h->Fit(g3,"R+");
+
+// Get the parameters from the fit
+   g1->GetParameters(&par[0]);
+   g2->GetParameters(&par[3]);
+   g3->GetParameters(&par[6]);
+
+// Use the parameters on the sum
+   total->SetParameters(par);
+   h->Fit(total,"R+");
+{% endhighlight %}
+
+### Result of the fit 
+
+You can obtain the following results of a fit:
+
+- fitted function
+- parameter values
+- errors and eventually
+- covariance and correlation matrix
+
+#### Associated function
+
+One or more objects (typically a `TF1\*`) can be added to the list of functions (`fFunctions`) associated to each histogram.
+[TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) adds the fitted function to this list. 
+
+Given a histogram `h`, you can retrieve the associated function with:
+
+{% highlight C++ %}
+   TF1 *myfunc = h->GetFunction("myfunc");
+{% endhighlight %}
+
+#### Accessing the fit parameters and Results
+
+If the histogram or graph is made persistent, the list of associated functions is also persistent. 
+
+Retrieve a pointer to the function with the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c) method. Then you can retrieve the fit parameters from the function.
+
+_**Example**_
+
+{% highlight C++ %}
+   TF1 *fit = hist->GetFunction(function_name);
+   Double_t chi2 = fit->GetChisquare();
+
+// Value of the first parameter.
+   Double_t p1 = fit->GetParameter(0);
+
+// Error of the first parameter.
+   Double_t e1 = fit->GetParError(0);
+{% endhighlight %}
+
+With the fit option `S`,  you can access the full result of the fit including the covariance and correlation matrix.
+
+#### Associated errors
+
+By default, for each bin, the sum of weights is computed at fill time. You can also call [TH1::Sumw2()](https://root.cern/doc/master/classTH1.html#aefa4ee94f053ec3d217f3223b01fa014) to force the storage
+and computation of the sum of the square of weights per bin. If `Sumw2()` has been called, the error per bin is computed
+as the sqrt(sum of squares of weights). oOtherwise, the error is set equal to the sqrt(bin content). 
+
+To return the error for a given bin number, use:
+
+{% highlight C++ %}
+   Double_t error = h->GetBinError(bin);
+{% endhighlight %}
+
+Empty bins are excluded in the fit when using the Chi-square fit method. When fitting an histogram representing
+counts (this is with Poisson statistics) it is recommended to use the Log-Likelihood method (option `L` or `WL`), particularly
+in case of low statistics. 
+
+#### Fit statistics
+
+You can change the statistics box to display the fit parameters with the [TStyle::SetOptFit()](https://root.cern/doc/master/classTStyle.html#aedeb1d117d9f16af9f8ad430bf956d64) method. This parameter has four digits: `mode = pcev (default = 0111)`
+
+- `p = 1`: Print probability.
+- `c = 1`: Print Chi-square/number of degrees of freedom.
+- `e = 1`: Print errors (if e=1, v must be 1).
+- `v = 1`: Print name/values of parameters.
+
+_**Example**_
+
+To print the fit probability, parameter names/values, and errors, use:
+
+{% highlight C++ %}
+   gStyle->SetOptFit(1011);
+{% endhighlight %}
+
+
 ### Using the Fit Panel
 
 The following section describes how to use the Fit Panel using an example.
 
-Given is a histogram following a gaussian distribution.
+Given is a histogram following a Gaussian distribution.
 
 {% highlight C++ %}
    TH1F *h1 = new TH1F("h1", "h1", 200, -5,5);
@@ -731,7 +868,7 @@ There are two types of input data:
 
 _**Example**_
 
-There is histogram, represented as a [TH1](https://root.cern/doc/master/classTH1.html) type object. Now a `ROOT:Fit::BinData` object is created and filled.
+There is histogram, represented as a {% include ref class="TH1" %} type object. Now a `ROOT:Fit::BinData` object is created and filled.
 
 {% highlight C++ %}
    ROOT::Fit::DataOptions opt;
@@ -767,7 +904,7 @@ Data are taken from a histogram (TH1 object).
 {% highlight C++ %}
    double * buffer = histogram->GetBuffer();
 
-// Number of entry is first entry in the buffer
+// Number of entry is first entry in the buffer.
    int n = buffer[0];
 
 // When creating the data object, it is important to create it with the size of the data.
@@ -781,14 +918,14 @@ Data are taken from a histogram (TH1 object).
 The model function needs to be expressed as function of some unknown parameters. The fitting will find the best
 parameter value to describe the observed data.
 
-You can for example use the [TF1](https://root.cern/doc/master/classTF1.html) class, the parametric function class to describe the model function.
+You can for example use the {% include ref class="TF1" %} class, the parametric function class to describe the model function.
 But the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html) class takes as input a more general parametric function object, the abstract interface class [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a). It describes a generic one-dimensional or multi-dimensional function with parameters.
 This interface extends the abstract [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9) class with methods to set/retrieve parameter values and to evaluate the function
 given the independent vector of values X and vector of parameters P.
 
 #### Configuring the fit
 
-Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html) (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html) class) for configuring the fit.
+Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html) (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html) class) class for configuring the fit.
 
 There the following fit configurations:
 
@@ -831,13 +968,13 @@ method is implemented using the [LogLikelihoodFCN](https://root.cern/doc/master/
 
 The result of the fit is contained in the [ROOT::Fit::Result](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#acb09076a64e460e493dcc74fa7b36668) object.
 
-You can print the result of the fit with the [FitResult::Print](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html#a879917fed14db36f8d63fb0170d68d1d) method.
+You can print the result of the fit with the [FitResult::Print()](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html#a879917fed14db36f8d63fb0170d68d1d) method.
 
 ## Profile histograms
 
 Profile histograms are used to display the mean value of `Y` and its error for each bin in `X`.
 
-When you fill a profile histogram with [TProfile.Fill()](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125):
+When you fill a profile histogram with the [TProfile.Fill()](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125) method:
 
 - `H[j]` contains for each bin `j` the sum of the `y` values for this bin.
 
@@ -854,7 +991,7 @@ The following formulae show the cumulated contents (capital letters) and the val
 `s[j] = sqrt[E[j] / L[j] - h[j]**2]`<br>
 `e[j] = s[j] / sqrt[L[j]]`<br>
 
-The displayed bin content for bin `J` of a [TProfile](https://root.cern/doc/master/classTProfile.html) is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d).
+The displayed bin content for bin `J` of a {% include ref class="TProfile" %}is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d).
 The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a).
 In case the option `s` is used (in the constructor or by calling  [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725)) the displayed error is `s(J)`.
 
@@ -880,4 +1017,3 @@ _**Example**_
    file="histograms.root" object="hprof" width="500px" height="350px"
    caption="A profile histogram example."
 %}
-
