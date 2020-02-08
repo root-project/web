@@ -796,14 +796,22 @@ The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html) has been de
 
 ## TMinuit
 
-The Minuit minimization package was originally written in Fortran by Fred James and part of PACKLIB (patch D506). It has been converted to a C++ class, [TMinuit](https://root.cern/doc/master/classTMinuit.html), by R.Brun.
+The Minuit minimization package was originally written in Fortran by Fred James and part of PACKLIB (patch D506). It has been converted to a C++ class, {% include ref class=" " %}, by R.Brun.
 
+> **Topical Manual**
+>
+> For TMinuit, a Topical Manual it available at [Topical Manual - TMinuit]({{ '/topical/#minuit' | relative_url }}).<br>
+> It contains in-depth information about TMinuit.
 
 ## Minuit2 Library
 
 
 The [Minuit2](https://root.cern/doc/master/group__Minuit.html) library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm, which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
 
+> **Topical Manuals**
+>
+> For Minuit2, Topical Manuals are available at [Topical Manuals - Minuit2]({{ '/topical/#minuit-2' | relative_url }}).<br>
+> They contain in-depth information about Minuit2.
 
 ## UNU.RAN
 
