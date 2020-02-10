@@ -26,7 +26,7 @@ ROOT supports the following histogram types:
 
 -   Profile histograms, which are used to display the mean value of Y and its standard deviation for each bin in X.
 
-All histogram classes are derived from the {% include ref class="Th1" %} base class.
+All histogram classes are derived from the {% include ref class="TH1" %} base class.
 
 The following histogram classes are available in ROOT, among others:
 
@@ -230,7 +230,7 @@ _**Example**_
    h1.FillRandom("gaus",10000);
    h1.Draw();
    h1.GetBinWidth(0)
-   
+
    (double) 0.060000000
 {% endhighlight %}
 
@@ -685,7 +685,7 @@ The histogram are filled with bins defined in the array `x`.
 {% endhighlight %}
 
 When fitting simple functions, such as a Gaussian, the initial values of the parameters are automatically computed. In the more complicated case of the sum of 3 Gaussian functions, the initial values of parameters must be set.
-In this particular case, the initial values are taken from the result of the individual fits. 
+In this particular case, the initial values are taken from the result of the individual fits.
 
 {% highlight C++ %}
 // Fit each function and add it to the list of functions.
@@ -703,7 +703,7 @@ In this particular case, the initial values are taken from the result of the ind
    h->Fit(total,"R+");
 {% endhighlight %}
 
-### Result of the fit 
+### Result of the fit
 
 You can obtain the following results of a fit:
 
@@ -715,7 +715,7 @@ You can obtain the following results of a fit:
 #### Associated function
 
 One or more objects (typically a `TF1\*`) can be added to the list of functions (`fFunctions`) associated to each histogram.
-[TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) adds the fitted function to this list. 
+[TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) adds the fitted function to this list.
 
 Given a histogram `h`, you can retrieve the associated function with:
 
@@ -725,7 +725,7 @@ Given a histogram `h`, you can retrieve the associated function with:
 
 #### Accessing the fit parameters and Results
 
-If the histogram or graph is made persistent, the list of associated functions is also persistent. 
+If the histogram or graph is made persistent, the list of associated functions is also persistent.
 
 Retrieve a pointer to the function with the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c) method. Then you can retrieve the fit parameters from the function.
 
@@ -748,7 +748,7 @@ With the fit option `S`,  you can access the full result of the fit including th
 
 By default, for each bin, the sum of weights is computed at fill time. You can also call [TH1::Sumw2()](https://root.cern/doc/master/classTH1.html#aefa4ee94f053ec3d217f3223b01fa014) to force the storage
 and computation of the sum of the square of weights per bin. If `Sumw2()` has been called, the error per bin is computed
-as the sqrt(sum of squares of weights). oOtherwise, the error is set equal to the sqrt(bin content). 
+as the sqrt(sum of squares of weights). oOtherwise, the error is set equal to the sqrt(bin content).
 
 To return the error for a given bin number, use:
 
@@ -758,7 +758,7 @@ To return the error for a given bin number, use:
 
 Empty bins are excluded in the fit when using the Chi-square fit method. When fitting an histogram representing
 counts (this is with Poisson statistics) it is recommended to use the Log-Likelihood method (option `L` or `WL`), particularly
-in case of low statistics. 
+in case of low statistics.
 
 #### Fit statistics
 
