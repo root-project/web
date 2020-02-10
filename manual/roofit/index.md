@@ -261,7 +261,7 @@ Since likelihood evaluations are potentially time-consuming, RooFit facilitates 
    RooAbsReal* nll = pdf.createNLL(data, NumCPU(8)) ;
 {% endhighlight %}
 
-You can also construct along similar lines the profile likelihood, which is the likelihood minimized w.r.t. the nuisance parameters, i.e for a likelihood `L(p,q)` where `p` is a parameter of interest and `q` is a nuisance parameter, the value of the profile likelihood `PL(p)` is the value of `L(p,q)` at the value of `q` where `L(p,q)` is lowest. A profile likelihood is construct as follows: 
+You can also construct along similar lines the profile likelihood, which is the likelihood minimized w.r.t. the nuisance parameters, i.e for a likelihood `L(p,q)` where `p` is a parameter of interest and `q` is a nuisance parameter, the value of the profile likelihood `PL(p)` is the value of `L(p,q)` at the value of `q` where `L(p,q)` is lowest. A profile likelihood is construct as follows:
 
 {% highlight C++ %}
    RooAbsReal* pll = nll->createProfile(<paramOfInterest>);
@@ -308,7 +308,7 @@ A toy PDF and a data set are constructed. A likelihood scan and a profile likeli
 }
 {% endhighlight %}
 
-{% include figure_image
-   img="likelihood.png"
+{% include figure_jsroot
+   file="roofit.root" object="likelihood" width="600px" height="400px"
    caption="The likelihood and the profile likelihood in the frac parameter."
 %}
