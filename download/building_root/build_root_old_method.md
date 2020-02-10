@@ -28,8 +28,7 @@ The main advantages of using the trunk are:
   - To fix or extend ROOT you can change ROOT's sources yourself and send the changes
     (git diff) as feedback.
 
-You can obtain the entire ROOT source from our public repository:<br>
-[Git]({{'/resources/git_primer' | relative_url}})
+You can obtain the entire ROOT source from our public [Git]({{'/resources/git_primer' | relative_url}}) repository:
 
 {% highlight sh linenos %}
    git clone http://root.cern.ch/git/root.git
@@ -56,23 +55,19 @@ sure you meet all demands for additional features before trying to enable them.
 ## Two build methods
 
 ROOT can be built either using the classic `./configure;make` method or by using
-[CMake](http://www.cmake.org/). The advantage of the first method is that it works
-out-of-the box on all Unix like machines, while on Windows it requires the cygwin
-environment to be installed. The advantages of CMake are that is works on all
-platforms and makes/builds projects for the native IDE's (like Visual Studio on
-Windows, or Xcode on OSX).
+[CMake](http://www.cmake.org/). 
 
-Follow [these instructions]({{'/resources/building_root' | relative_url}}) to install
-ROOT using CMake, or read below on using the `./configure;make` method.
+The advantage of the `./configure;make` method method is that it works out-of-the box on all Unix like machines, while on Windows it requires the cygwin
+environment to be installed. 
+
+The advantages of `CMake` are that is works on all platforms and makes/builds projects for the native IDE's (like Visual Studio on
+Windows, or Xcode on OSX). See →  [these instructions]({{'/resources/building_root' | relative_url}}) for installing ROOT using `CMake`.
 
 ## Choosing the installation method
 
 There are two main methods of installing ROOT from source:
-- location independent,
-- location dependent. 
-
-The location independent method is advised for a personal installation of ROOT, while
-the location dependent method is for a system wide installation. Both methods are described below.
+- [location independent](#location-independent-installation): suitable for a personal installation of ROOT.
+- [location dependent](#location-dependent-installation): suitable for for a system wide ROOT installation.
 
 ### Location independent installation
 
@@ -108,7 +103,7 @@ This make the MacOS X built fully relocatable and independent of (DY)`LD_LIBRARY
 To get rid of the intermediary build products do:<br>
 `make clean` (and don't do: `make install`, which is a NOOP).
 
-### Fixed location installation
+### Location dependent installation
 
 You want to install ROOT in a fixed location, not depending on `LD_LIBRARY_PATH`.
 Typically you want to do this when installing in a system location like
@@ -198,7 +193,7 @@ available in the ROOT sources.
 If you want to compile the ROOT optional plugin libraries to handle advanced math (GSL),
 Globus or SRP authentication, MySQL access, Castor access, event generator interfaces
 (Pythia6 and Pythia8), etc. you can either specify the options as environment variables
-or as ./configure arguments. For example:
+or as `./configure` arguments. For example:
 
 {% highlight sh linenos %}
 # Used during build of ROOT can be overridden in ./configure
@@ -227,7 +222,7 @@ variable, as described above.
 The flags consist of two classes:
 
 
-1. `--enable-<feature>/--disable-<feature>` flags:<br />
+1. `--enable-<feature>/--disable-<feature>` flags:<br/>
    These flags enables/disables support for the corresponding feature `<feature>`.
    Specifying such a flag will make the configure script look for third-party libraries,
    headers, etc. at default locations.
@@ -346,19 +341,19 @@ the case when you use your own version of Pythia6 you still need to use the foll
 small files to build the shared library:
 
 {% highlight sh linenos %}
-pythia6_common_address.c
-tpythia6_called_from_cc.F
+   pythia6_common_address.c
+   tpythia6_called_from_cc.F
 {% endhighlight %}
 
 
 For more details on the build procedure, see an example in the file makePythia6.linux.
 
-More information about Pythia8 is available from:
+More information about Pythia8 is available from:<br>
 [http://www.thep.lu.se/~torbjorn/Pythia.html](http://www.thep.lu.se/~torbjorn/Pythia.html).
 
 ### GSL
 
-The GNU Scientific Library, GSL is used in the mathmore package of ROOT. To install GSL package see <a href="http://www.gnu.org/software/gsl/">http://www.gnu.org/software/gsl/</a> and configure ROOT with, e.g.:
+The GNU Scientific Library, GSL is used in the [MathMore library]({{ '/manual/math#mathmore-library' | relative_url }}) of ROOT. To install the GSL package, see → <a href="http://www.gnu.org/software/gsl/">http://www.gnu.org/software/gsl/</a> and configure ROOT with, e.g.,:
 
 {% highlight sh linenos %}
 --with-gsl-incdir="the directory where gsl/gsl_version.h is"
@@ -422,9 +417,9 @@ before doing configure.<br />
 On Windows machines it recommended to not install graphviz but to download
 the pre-installed version from [http://www.graphviz.org/](http://www.graphviz.org/).
 The ROOT configure command remains the same.
- d
+
 ### Bonjour/Zeroconf
 
-To get support of Bonjour/Zeroconf you must install the appropiate libraries for you
+To get support of Bonjour/Zeroconf you must install the appropriate libraries for you
 platform and compile enabling the Bonjour support. See the
 [PROOF configuration pages](https://d35c7d8c.web.cern.ch/configuration-faq#bonjour) for details.
