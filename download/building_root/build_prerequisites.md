@@ -7,10 +7,10 @@ toc: true
 toc_sticky: true
 ---
 
-Here are the prerequisite packages listed that need to be installed on the different
-platforms to be able to configure and to build basic ROOT.
-<br>If more advanced ROOT plugins are required look at the  `cmake` or `./configure` output and add the desired third
-party packages before configuring again.
+
+Below are the required packages listed that must be installed on the various platforms to configure and build ROOT.
+<br>If more advanced ROOT plugins are required look at the `cmake` or `./configure` output and add the desired third
+party packages before configuring and building ROOT again.
 
 - [Fedora family](#fedora-18-19-and-20-scientific-linux-5-6-centos-6-7)
 - [Ubuntu family](#ubuntu-10-12--14-and-16)
@@ -203,12 +203,18 @@ Use `sudo zypper install _package_` or use the graphical "Software / Package Man
     or alternatively use this [gfortran.dmg](http://r.research.att.com/tools/)
 
 Alternatively ROOT can be installed directly from [MacPort](http://www.macports.org) with the command:
-"<tt>sudo port install root</tt>"
+
+```
+sudo port install root
+```
 
 ## Windows
 
-If you are using Windows make sure you've installed Microsoft Visual C++ (e.g. the [no-cost edition](http://www.microsoft.com/express/vc/)) plus CMake. The CMake build will work directly **without the need** to install [cygwin](http://cygwin.com) as it was required previously before the adaption of CMake.
-**Note:** For the moment native Windows support for ROOT6 versions is not available.
+If you are using Windows make sure you have installed Microsoft Visual C++ (e.g., the [no-cost edition](http://www.microsoft.com/express/vc/)) plus `CMake`. The `CMake` build will work directly **without the need** to install [cygwin](http://cygwin.com) as it was required previously before the adaption of `CMake`.
+
+> **Note:** 
+
+> Currently native Windows support for ROOT6 versions is not available.
 
 ## AIX 5, 6 and 7
 
