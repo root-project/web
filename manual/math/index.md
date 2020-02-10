@@ -796,7 +796,9 @@ The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html) has been de
 
 ## TMinuit
 
-The Minuit minimization package was originally written in Fortran by Fred James and part of PACKLIB (patch D506). It has been converted to a C++ class, {% include ref class=" " %}, by R.Brun.
+The Minuit minimization package was originally written in Fortran by Fred James and part
+of PACKLIB (patch D506). It has been converted to the C++ class
+{% include ref class="TMinuit" %}, by R.Brun.
 
 > **Topical Manual**
 >
