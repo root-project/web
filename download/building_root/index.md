@@ -9,18 +9,17 @@ toc_sticky: true
 
 ## Introduction
 
-ROOT uses the [CMake](http://www.cmake.org/) cross-platform build-generator tool as a
-primary build system. CMake does not build the project, it generates the files needed by
-your build tool (GNU make, Ninja,  Visual Studio, etc) for building ROOT. The classic
-build with configure/make is is still available but it will not be evolving with the
-new features of ROOT. The instructions can be found [here](build_root_old_method).
+ROOT uses the [CMake](http://www.cmake.org/) cross-platform build-generator tool as the
+primary build system.<br> `CMake` does not build the project, it generates the files needed by
+your build tool (GNU make, Ninja,  Visual Studio, etc) for building ROOT. 
 
-If you are really anxious about getting a functional ROOT build, go to the
-[Quick Start](#quick-start)  section. If you are a CMake novice, start on
-[Basic](#basic-cmake-usage) CMake usage and then go back to the
-[Quick Start](#quick-start) once you know what you are doing. The
-[Options](#build-options) and [Variables](#variables) section
-is a reference for customizing your build. If you already have experience with CMake,
+The classic build with `configure/make` is is still available but it will not be evolving with the
+new features of ROOT. For instructions building ROOT with `configure/make`, see → [Building ROOT with make (old method)](build_root_old_method).
+
+If you are really anxious about getting a functional ROOT build, go to the [Quick Start](#quick-start) section.<br>
+If you are a `CMake` novice, start on [Basic](#basic-cmake-usage) `CMake` usage and then go back to the
+[Quick Start](#quick-start) once you know what you are doing.
+<br>The [Options](#build-options) and [Variables](#variables) section is a reference for customizing your build. If you already have experience with `CMake`,
 this is the recommended starting point.
 
 ## Preparation
@@ -30,22 +29,21 @@ setup before starting the build.
 
 ## Quick start
 
-The following are the basic instructions for UNIX systems. We use here the command-line,
-non-interactive CMake interface.
+The following are the basic instructions for UNIX systems. We use here the command-line, non-interactive `CMake` interface.
 
 1. Download and unpack the ROOT's sources from the download area or using directly the
    Git repository. Follow the [instructions for getting the ROOT sources](get_root_sources)
-2. Open a shell. Your development tools must be reachable from this shell through the PATH environment variable.
-3. Create a directory for containing the build. It is not supported to build ROOT on the source directory. cd to this directory:
+2. Open a shell. Your development tools must be reachable from this shell through the `PATH` environment variable.
+3. Create a directory for containing the build. It is not supported to build ROOT on the source directory. Change (`cd`) to this directory:
 
         $ mkdir <builddir>
         $ cd <builddir>
-4. Execute the cmake command on the shell replacing path/to/source with the path to the top of your ROOT source tree:
+4. Execute the `cmake` command on the shell replacing `path/to/source` with the path to the top of your ROOT source tree:
 
         $ cmake path/to/source
-    CMake will detect your development environment, perform a series of test and generate the files required for building ROOT. CMake will use default values for all build parameters. See the [Build Options](#options) and [Variables](#variables) sections for fine-tuning your build
-    This can fail if CMake can’t detect your toolset, or if it thinks that the environment is not sane enough. On this case make sure that the toolset that you intend to use is the only one reachable from the shell and that the shell itself is the correct one for you development environment. You can force CMake to use a given build tool, see the Usage section.
-5. After CMake has finished running, proceed to use IDE project files or start the build from the build directory:
+    `CMake` will detect your development environment, perform a series of test and generate the files required for building ROOT. `CMake` will use default values for all build parameters. See the [Build Options](#options) and [Variables](#variables) sections for fine-tuning your build
+    This can fail if `CMake` cannot detect your toolset, or if it thinks that the environment is not sane enough. On this case make sure that the toolset that you intend to use is the only one reachable from the shell and that the shell itself is the correct one for you development environment. You can force `CMake` to use a given build tool, see the Usage section.
+5. Proceed to use IDE project files or start the build from the build directory, after `CMake` has finished running:
 
         $ cmake --build .  [-- <options to the native tool>]
     The --build option tells cmake to invoke the underlying build tool (make, ninja, xcodebuild, msbuild, etc).
@@ -56,15 +54,15 @@ non-interactive CMake interface.
         $ source /path/to/install-or-build/dir/bin/thisroot.sh
 
    It is recommended to put this command into the `.profile` or `.login` file in order to have the environment variables  properly defined at each login.
-7. Start ROOT interactive application
+7. Start ROOT interactive application:
 
         $ root
 
 ## Installation methods
 
-There are two main methods of installing ROOT from source: **location independent** and **fix location**. The former is advised for a personal installation of ROOT, while the later for a system wide installation. Both require to set the `CMAKE_INSTALL_PREFIX` variable at configuration time. The later requires in addition to set the `gnuinstall` option at configuration. It also allows the tuning of destinations for the various components, by setting the variables`CMAKE_INSTALL_xxxDIR`, where`xxx` is`BIN`,`LIB`,`INCLUDE`, etc. The full list is described in the [variables section](#variables).
+There are two main methods of installing ROOT from the source: **location independent** and **fix location**. The former is advised for a personal installation of ROOT, while the later for a system wide installation. Both require to set the `CMAKE_INSTALL_PREFIX` variable at configuration time. The later requires in addition to set the `gnuinstall` option at configuration. It also allows the tuning of destinations for the various components, by setting the variables`CMAKE_INSTALL_xxxDIR`, where`xxx` is`BIN`,`LIB`,`INCLUDE`, etc. The full list is described in the [variables section](#variables).
 
-To use the **location independent** installation requires to set environment variables PATH and LD_LIBRARY_PATH. This is done by sourcing the script (depending on the shell family) `source bin/thisroot.sh`. While to use the **fix location** installation you do not need to set any environment to run root.
+To use the **location independent** installation requires to set environment variables `PATH` and `LD_LIBRARY_PATH`. This is done by sourcing the script (depending on the shell family) `source bin/thisroot.sh`. While to use the **fix location** installation you do not need to set any environment to run root.
 
 Do the installation of ROOT from the build directory:
 
@@ -77,7 +75,7 @@ It is possible to set a different install prefix at installation time by invokin
 ## Build options
 Each build option is a boolean variable that can be turned ON or OFF. The current value is recorded in the CMake cache (CMakeCache.txt file on the build directory) and therefore it is not needed to be specified on the cmake command each time. Please note that some of the options might be turned OFF automatically for some platforms or if the required external library or component can not be satisfied. The user can view and edit the full list of options using the `ccmake` utility or `cmake-gui` for Windows. Note that some of the options are not yet implemented.
 
-The user can set any CMake variable or option that controls the build process from the cmake command line. The command using the option `-D <var>:<type>=<value>` creates an entry in the CMake cache. This is the list of the ROOT specific CMake options:
+The user can set any CMake variable or option that controls the build process from the `cmake` command line. The command using the option `-D <var>:<type>=<value>` creates an entry in the CMake cache. This is the list of the ROOT specific CMake options:
 
 
 | option name  | default value  | description |
@@ -188,7 +186,7 @@ The user can set any CMake variable or option that controls the build process fr
 * The default value for these options are platform dependent.
 
 ## CMake generators
-CMake can generate, in addition to standard makefiles, specific proejcts for various integrated development environments (IDEs) such as Xcode, Eclipse, Visual Studio, etc.. The available generators depend on the platform for which cmake have been build. To see the list of available generators do `cmake --help` .
+`CMake` can generate, in addition to standard makefiles, specific projects for various integrated development environments (IDEs) such as Xcode, Eclipse, Visual Studio, etc.. The available generators depend on the platform for which cmake have been build. To see the list of available generators do `cmake --help` .
 
 ### Ninja
 Generate a Ninja project with `cmake -G Ninja /path/to/source/dir`. Building ROOT with Ninja is faster.
@@ -197,13 +195,13 @@ Generate a Ninja project with `cmake -G Ninja /path/to/source/dir`. Building ROO
 Generate the Xcode project with `cmake -G Xcode /path/to/source/dir`. Open the generated file with the Xcode application.
 
 ### Visual Studio
-Generate the Microsoft Visual Studio soultion with `cmake -G "Visual Studio 10" /path/to/source/dir`. Open the generated solution with `C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe` ROOT.sln`
+Generate the Microsoft Visual Studio solution with `cmake -G "Visual Studio 10" /path/to/source/dir`. Open the generated solution with `C:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE\devenv.exe` ROOT.sln`
 
 ## Variables
 This is list of useful ROOT and general CMake variables that can control the build process:
 
 ### CMake standard variables
-Here are some of the CMake variables that are used often, along with a brief explanation and ROOT-specific notes. For full documentation, check the CMake docs or execute `cmake --help-variable VARIABLE_NAME`.
+Here are some of the `CMake` variables that are used often, along with a brief explanation and ROOT-specific notes. For full documentation, check the `CMake` docs or execute `cmake --help-variable VARIABLE_NAME`.
 
 | Variable | Type | Explanation |
 |----------|-------|---------------|
@@ -242,7 +240,7 @@ A number of additional variables to control the way ROOT is built.
 
 ### External libraries
 
-ROOT requires a number of external libraries that the CMake system needs to locate. The list of externals depends on the build options that have been enabled. CMake will look for these third party products at a number of standard places in your system but the user can influence the search by setting some environment variables before invoking the CMake command or by setting package specific CMake variables to their exact location.
+ROOT requires a number of external libraries that the `CMake` system needs to locate. The list of externals depends on the build options that have been enabled. CMake will look for these third party products at a number of standard places in your system but the user can influence the search by setting some environment variables before invoking the CMake command or by setting package specific CMake variables to their exact location.
 
 The actual cached values used by CMake for the exact location of libraries and include files of the used external libraries can be inspected and modified using the `ccmake` utility.
 
@@ -312,7 +310,7 @@ CMake allows you to specify a build tool (e.g., GNU make, Visual Studio, or Xcod
 
 This will list the generator names at the end of the help text.
 
-Generators’ names are case-sensitive, and may contain spaces. For this reason, you should enter them exactly as they are listed in the cmake --help output, in quotes. For example, to generate project files specifically for Visual Studio 12, you can execute:
+The generator names are case-sensitive, and may contain spaces. For this reason, you should enter them exactly as they are listed in the cmake --help output, in quotes. For example, to generate project files specifically for Visual Studio 12, you can execute:
 
     $ cmake -G "Visual Studio 12" path/to/source
 
@@ -322,13 +320,13 @@ For a given development platform there can be more than one adequate generator. 
 Variables customize how the build will be generated. Options are boolean variables, with possible values ON/OFF. Options and variables are defined on the CMake command line like this:
 
     $ cmake -DVARIABLE=value path/to/source
-You can set a variable after the initial CMake invocation to change its value. You can also undefine a variable:
+You can set a variable after the initial `CMake` invocation to change its value. You can also undefine a variable:
 
     $ cmake -UVARIABLE path/to/source
-Variables are stored in the CMake cache. This is a file named CMakeCache.txt stored at the root of your build directory that is generated by cmake. Editing it yourself is not recommended.
+Variables are stored in the `CMake` cache. This is a file named `CMakeCache.txt` stored at the root of your build directory that is generated by `cmake`. Editing it yourself is not recommended.
 
-Variables are listed in the CMake cache with the variable name and type separated by a colon. You can also specify the variable and type on the CMake command line:
+Variables are listed in the `CMake` cache with the variable name and type separated by a colon. You can also specify the variable and type on the `CMake` command line:
 
     $ cmake -DVARIABLE:TYPE=value path/to/source
 
-Variables in the CMake cache are 'remembered', so you do not need to type them if you execute cmake command again. It is recommended to delete the file CMakeCache.txt to start from a clean configuration.
+Variables in the `CMake` cache are 'remembered', so you do not need to type them if you execute `cmake` command again. It is recommended to delete the file `CMakeCache.txt` to start from a clean configuration.
