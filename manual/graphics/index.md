@@ -73,7 +73,7 @@ The function is displayed in a canvas.
 
 #### Drawing objects with special characters in its name
 
-In general, avoid using objects that containing special character like `\`, `/`, `#` etc. in the objects names. Also object names starting with a number might be not accessible from the ROOT command line. 
+In general, avoid using objects that containing special character like `\`, `/`, `#` etc. in the objects names. Also object names starting with a number might be not accessible from the ROOT command line.
 `/` is the separator for the directory level in a ROOT file therefore an object having a `/` in its name cannot be accessed from the command line.
 
 Nevertheless, some objects may be named in this way and saved in a ROOT file. The following macro shows how to access such an object in a ROOT file.
@@ -106,7 +106,7 @@ void draw_object(const char *file_name = "myfile.root", const char *obj_name = "
       std::cout << "Cannot find a TKey named" << obj_name << "! Aborting..." << std::endl;
       return;
    }
-   
+
 // Read the object itself.
    TObject *obj = ((TKey *)key)->ReadObj();
    if (!obj) {
@@ -702,10 +702,10 @@ The parameters are:
 - `*objis` a pointer to an object having a marker, a line, or a fill attributes (a histogram, or a graph).
 - `label` is the label to be associated to the object.
 - `option`:
-	- "`L`": Draws a line associated with line attributes of `obj`, if `obj` inherits from {% include ref class="TAttLine" %}.
-	- "`P`": Draw a poly-marker associated with marker attributes of `obj`, if `obj` inherits {% include ref class="TAttMarker" %}.
-	- "`F`": Draws a box with fill associated with fill attributes of `obj`, if `obj` inherits {% include ref class="TAttFill" %}.
-	
+   - "`L`": Draws a line associated with line attributes of `obj`, if `obj` inherits from {% include ref class="TAttLine" %}.
+   - "`P`": Draw a poly-marker associated with marker attributes of `obj`, if `obj` inherits {% include ref class="TAttMarker" %}.
+   - "`F`": Draws a box with fill associated with fill attributes of `obj`, if `obj` inherits {% include ref class="TAttFill" %}.
+
 _**Example**_
 
 The following legend contains a histogram, a function and a graph. The histogram is put in the legend using its reference pointer whereas the graph and the function are added using their names. Because {% include ref class="TGraph" %} constructors do not have the {% include ref class="TGraph" %} name as parameter, the graph name should be specified using the `SetName()` method.
@@ -714,7 +714,7 @@ The following legend contains a histogram, a function and a graph. The histogram
 {
    auto c1 = new TCanvas("c1","c1",600,500);
    gStyle->SetOptStat(0);
-   
+
 // Histogram:
    auto h1 = new TH1F("h1","TLegend Example",200,-10,10);
    h1->FillRandom("gaus",30000);
@@ -736,7 +736,7 @@ The following legend contains a histogram, a function and a graph. The histogram
       ex[i] = 1.0;
       ey[i] = 10.*i;
    }
- 
+
  // Graph:
    auto gr = new TGraphErrors(n,x,y,ex,ey);
    gr->SetName("gr");
@@ -757,11 +757,10 @@ The following legend contains a histogram, a function and a graph. The histogram
 }
 {% endhighlight %}
 
-{% include figure_image
-   img="legend.png"
+{% include figure_jsroot
+   file="graphics.root" object="legend" width="600px" height="500px"
    caption="Legend containing a histogram, a function and a graph."
 %}
-
 
 ## Canvas and pad
 
