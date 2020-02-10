@@ -24,7 +24,7 @@ ROOT provides the following classes for trees and branches, among others:
 
 - [TTree](https://root.cern/doc/master/classTTree.html): Represents a columnar data set. Any C++ type can be stored in its columns.
 
-- [TNtuple](https://root.cern/doc/master/classTNtuple.html): A simple `TTree` restricted to a list of float variables only. 
+- [TNtuple](https://root.cern/doc/master/classTNtuple.html): A simple `TTree` restricted to a list of float variables only.
 
 - [TBranch](https://root.cern/doc/master/classTBranch.html): Organizes columns, i.e. branches, of a `TTree`.
 
@@ -513,7 +513,7 @@ void processChain(){
 
 ## N-tuples
 
-An N-tuple ([TNtuple](https://root.cern/doc/master/classTNtuple.html)) is a simple [TTree](https://root.cern/doc/master/classTTree.html) restricted to a list of float variables only. 
+An N-tuple ([TNtuple](https://root.cern/doc/master/classTNtuple.html)) is a simple [TTree](https://root.cern/doc/master/classTTree.html) restricted to a list of float variables only.
 
 ### Writing simple N-tuples
 
@@ -539,7 +539,7 @@ void write_ntuple_to_file(){
 // Get pressure.
       pres=rndm.Uniform(0.5,1.5);
 // Current.
-      cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.)); 
+      cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.));
 
 // Add some random smearing (measurement errors)
 // 1% error on voltage.
@@ -549,7 +549,7 @@ void write_ntuple_to_file(){
 // 1% error on pressure.
       pres*=rndm.Gaus(1.,0.02);
 // 1% error on current.
-      cur*=rndm.Gaus(1.,0.01); 
+      cur*=rndm.Gaus(1.,0.01);
 
 // Write to an N-tuple.
       cond_data.Fill(pot,cur,temp,pres);
@@ -574,13 +574,13 @@ caption="N-tuple in the ROOT Object Browser."
 Use the following commands at the system prompt or in the ROOT shell to draw a simple correlation plot:
 
 {% highlight C++ %}
-[] root ntuple.root
-> cond_data->Draw("Current:Potential")
+$ root ntuple.root
+root [1] cond_data->Draw("Current:Potential")
 {% endhighlight %}
 
-{% include figure_image
-img="current-potential.png"
-caption="Current/Potential correlation plot."
+{% include figure_jsroot
+   file="trees.root" object="potential" width="600px" height="450px"
+   caption="Current/Potential correlation plot."
 %}
 
 ### Reading N-tuples
@@ -653,7 +653,7 @@ void write_ntuple_to_file_advanced(const std::string& outputFileName="ntuple.roo
    cond_data.Branch("Temperature", &temp, "Temperature/F");
    cond_data.Branch("Pressure", &pres, "Pressure/F");
    for (int i=0;i<numDataPoints;++i){
-   
+
 // Fill it randomly to fake the acquired data.
       pot=gRandom->Uniform(0.,10.)*gRandom->Gaus(1.,0.01);
       temp=gRandom->Uniform(250.,350.)+gRandom->Gaus(0.,0.3);
