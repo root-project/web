@@ -138,13 +138,13 @@ download:
         url: download/nightlies
       - title: ROOT sources
         url: download/building_root/get_root_sources
+   - title: Supported platforms
+     url: download/building_root/supported_platforms
    - title: Using binaries
      url: download/using_binaries
    - title: Building ROOT
      url: download/building
      children:
-      - title: Supported platforms
-        url: download/building_root/supported_platforms
       - title: Prerequisites
         url: download/building_root/build_prerequisites
       - title: Building ROOT with CMake
