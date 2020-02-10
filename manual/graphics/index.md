@@ -541,7 +541,7 @@ axis->SetTitleSize(Float_t size = 0.02)
 
 `ndiv` and `optim` are defined as follows:
 
-`ndiv` = `N1` + 100*`N2` + 10000*`N3`<br>
+`ndiv = N1 + 100*N2 + 10000*N3`<br>
    with:<br>
    `N1` = Number of first division.<br>
    `N2` = Number of secondary divisions.<br>
