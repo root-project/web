@@ -13,13 +13,13 @@ ROOT uses the [CMake](http://www.cmake.org/) cross-platform build-generator tool
 primary build system.<br> `CMake` does not build the project, it generates the files needed by
 your build tool (GNU make, Ninja,  Visual Studio, etc) for building ROOT. 
 
-The classic build with `configure/make` is is still available but it will not be evolving with the
+The classic build with `configure/make` is still available but it will not be evolving with the
 new features of ROOT. For instructions building ROOT with `configure/make`, see → [Building ROOT with make (old method)](build_root_old_method).
 
 If you are really anxious about getting a functional ROOT build, go to the [Quick Start](#quick-start) section.<br>
-If you are a `CMake` novice, start on [Basic](#basic-cmake-usage) `CMake` usage and then go back to the
-[Quick Start](#quick-start) once you know what you are doing.
-<br>The [Options](#build-options) and [Variables](#variables) section is a reference for customizing your build. If you already have experience with `CMake`,
+If you are a `CMake` novice, start on [Basic CMake usage](#basic-cmake-usage) and then go back to the
+[Quick Start](#quick-start).
+<br>The [Options](#build-options) and the [Variables](#variables) section is a reference for customizing your build. If you already have experience with `CMake`,
 this is the recommended starting point.
 
 ## Preparation
@@ -300,11 +300,11 @@ The actual cached values used by CMake for the exact location of libraries and i
 | XROOTD | XROOTD_ROOT_DIR | PATH | Directory where to find XROOTD |
 
 ## Basic CMake usage
-This section explains basic aspects of CMake which you may need in your day-to-day usage.
+This section explains basic aspects of `CMake` which you may need in your day-to-day usage.
 
-CMake comes with extensive documentation, in the form of html files, and as online help accessible via the cmake executable itself. Execute cmake --help for further help options.
+`CMake` comes with extensive documentation, in the form of html files, and as online help accessible via the `cmake` executable itself. Execute cmake --help for further help options.
 
-CMake allows you to specify a build tool (e.g., GNU make, Visual Studio, or Xcode). If not specified on the command line, CMake tries to guess which build tool to use, based on your environment. Once it has identified your build tool, CMake uses the corresponding Generator to create files for your build tool (e.g., Makefiles or Visual Studio or Xcode project files). You can explicitly specify the generator with the command line option -G "Name of the generator". To see a list of the available generators on your system, execute
+`CMake` allows you to specify a build tool (e.g., GNU make, Visual Studio, or Xcode). If not specified on the command line, CMake tries to guess which build tool to use, based on your environment. Once it has identified your build tool, CMake uses the corresponding Generator to create files for your build tool (e.g., Makefiles or Visual Studio or Xcode project files). You can explicitly specify the generator with the command line option -G "Name of the generator". To see a list of the available generators on your system, execute
 
     $ cmake --help
 
@@ -317,7 +317,7 @@ The generator names are case-sensitive, and may contain spaces. For this reason,
 For a given development platform there can be more than one adequate generator. If you use Visual Studio, “NMake Makefiles” is a generator you can use for building with NMake. By default, CMake chooses the most specific generator supported by your development environment. If you want an alternative generator, you must tell this to CMake with the -G option.
 
 ### Options and variables
-Variables customize how the build will be generated. Options are boolean variables, with possible values ON/OFF. Options and variables are defined on the CMake command line like this:
+Variables customize how the build will be generated. Options are boolean variables, with possible values ON/OFF. Options and variables are defined on the `CMake` command line like this:
 
     $ cmake -DVARIABLE=value path/to/source
 You can set a variable after the initial `CMake` invocation to change its value. You can also undefine a variable:
