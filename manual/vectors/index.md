@@ -18,39 +18,39 @@ Every class, function, manipulator, or other symbol defined in the GenVector pac
 
 The following GenVector classes and class templates are available, among others:
 
-- [DisplacementVector3D](https://root.cern/doc/master/classROOT_1_1Math_1_1DisplacementVector3D.html): Describing a generic displacement vector in 3 dimensions. 
+- {% include ref class="DisplacementVector3D" %}: Describing a generic displacement vector in 3 dimensions. 
 
-- [PositionVector3D](https://root.cern/doc/master/classROOT_1_1Math_1_1PositionVector3D.html): Describing a generic position vector (point) in 3 dimensions. 
+- {% include ref class="PositionVector3D" %}: Describing a generic position vector (point) in 3 dimensions. 
 
-- [LorentzVector](https://root.cern/doc/master/classROOT_1_1Math_1_1LorentzVector.html): Describing a generic LorentzVector in the 4D space-time, using the specified coordinate system for the spatial vector part. 
+- {% include ref class="LorentzVector" %}: Describing a generic LorentzVector in the 4D space-time, using the specified coordinate system for the spatial vector part. 
 
-- [DisplacementVector2D](https://root.cern/doc/master/classROOT_1_1Math_1_1DisplacementVector2D.html): Describing a generic displacement vector in 2 dimensions. 
+- {% include ref class="DisplacementVector2D" %}: Describing a generic displacement vector in 2 dimensions. 
 
-- [PositionVector2D](https://root.cern/doc/master/classROOT_1_1Math_1_1PositionVector2D.html): Describing a generic position vector (point) in 2 dimensions. 
+- {% include ref class="PositionVector2D" %}: Describing a generic position vector (point) in 2 dimensions. 
 
-- [Rotation3D](https://root.cern/doc/master/classROOT_1_1Math_1_1Rotation3D.html): Class with the (3D) rotation, represented by a 3x3 orthogonal matrix. 
+- {% include ref class="Rotation3D" %}: Class with the (3D) rotation, represented by a 3x3 orthogonal matrix. 
 
-- [AxisAngle](https://root.cern/doc/master/classROOT_1_1Math_1_1AxisAngle.html): Describing a rotation, represented with a direction axis (3D Vector), and an angle of rotation around that axis. 
+- {% include ref class="AxisAngle" %}: Describing a rotation, represented with a direction axis (3D Vector), and an angle of rotation around that axis. 
 
-- [EulerAngles](https://root.cern/doc/master/classROOT_1_1Math_1_1EulerAngles.html): Describing a rotation as three angles (Euler Angles).
+- {% include ref class="EulerAngles" %}: Describing a rotation as three angles (Euler angles).
 
-- [Quaternion](https://root.cern/doc/master/classROOT_1_1Math_1_1Quaternion.html): Rotation class with the (3D) rotation represented by a unit quaternion (u, i, j, k). 
+- {% include ref class="Quaternion" %}: Rotation class with the (3D) rotation represented by a unit quaternion (u, i, j, k). 
 
-- [RotationX](https://root.cern/doc/master/classROOT_1_1Math_1_1RotationX.html): Rotation class representing a 3D rotation about the X axis by the angle of rotation.
+- {% include ref class="RotationX" %}: Rotation class representing a 3D rotation about the X axis by the angle of rotation.
 
-- [RotationY](https://root.cern/doc/master/classROOT_1_1Math_1_1RotationY.html): Rotation class representing a 3D rotation about the Y axis by the angle of rotation. 
+- {% include ref class="RotationY" %}: Rotation class representing a 3D rotation about the Y axis by the angle of rotation. 
 
-- [RotationZ](https://root.cern/doc/master/classROOT_1_1Math_1_1RotationZ.html): Rotation class representing a 3D rotation about the Z axis by the angle of rotation. 
+- {% include ref class="RotationZ" %}: Rotation class representing a 3D rotation about the Z axis by the angle of rotation. 
 
-- [LorentzRotation](https://root.cern/doc/master/classROOT_1_1Math_1_1LorentzRotation.html): Lorentz transformation class with the (4D) transformation represented by a 4x4 orthosymplectic matrix. 
+- {% include ref class="LorentzRotation" %}: Lorentz transformation class with the (4D) transformation represented by a 4x4 orthosymplectic matrix. 
 
-- [Boost](https://root.cern/doc/master/classROOT_1_1Math_1_1Boost.html): Lorentz boost class with the (4D) transformation represented internally by a 4x4 orthosymplectic matrix. 
+- {% include ref class="Boost" %}: Lorentz boost class with the (4D) transformation represented internally by a 4x4 orthosymplectic matrix. 
 
-- [BoostX](https://root.cern/doc/master/classROOT_1_1Math_1_1BoostX.html): Representing a Lorentz Boost along the X axis, by beta.
+- {% include ref class="BoostX" %}: Representing a Lorentz Boost along the X axis, by beta.
 
-- [BoostY](https://root.cern/doc/master/classROOT_1_1Math_1_1BoostY.html): Class representing a Lorentz Boost along the Y axis, by beta.
+- {% include ref class="BoostY" %}: Class representing a Lorentz Boost along the Y axis, by beta.
 
-- [BoostZ](https://root.cern/doc/master/classROOT_1_1Math_1_1BoostZ.html) Class representing a Lorentz Boost along the Z axis, by beta. 
+- {% include ref class="BoostZ" %} Class representing a Lorentz Boost along the Z axis, by beta. 
 
 ## Coordinate systems
 
