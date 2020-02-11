@@ -28,7 +28,7 @@ The main advantages of using the trunk are:
   - To fix or extend ROOT you can change ROOT's sources yourself and send the changes
     (git diff) as feedback.
 
-You can obtain the entire ROOT source from our public [Git]({{'/resources/git_primer' | relative_url}}) repository:
+You can obtain the entire ROOT source from our public Git repository (see → also [Git Primer]({{'/resources/git_primer' | relative_url}}):
 
 {% highlight sh linenos %}
    git clone http://root.cern.ch/git/root.git
@@ -57,16 +57,16 @@ sure you meet all demands for additional features before trying to enable them.
 ROOT can be built either using the classic `./configure;make` method or by using
 [CMake](http://www.cmake.org/). 
 
-The advantage of the `./configure;make` method method is that it works out-of-the box on all Unix like machines, while on Windows it requires the cygwin
+The advantage of the `./configure;make` method is that it runs out-of-the box on all Unix like machines, while on Windows it requires the cygwin
 environment to be installed. 
 
-The advantages of `CMake` are that is works on all platforms and makes/builds projects for the native IDE's (like Visual Studio on
+The advantage of `CMake` is that it runs on all platforms and makes/builds projects for the native IDE's (like Visual Studio on
 Windows, or Xcode on OSX). See →  [these instructions]({{'/resources/building_root' | relative_url}}) for installing ROOT using `CMake`.
 
 ## Choosing the installation method
 
 There are two main methods of installing ROOT from source:
-- [location independent](#location-independent-installation): suitable for a personal installation of ROOT.
+- [location independent](#location-independent-installation): suitable for a personal ROOT installation.
 - [location dependent](#location-dependent-installation): suitable for for a system wide ROOT installation.
 
 ### Location independent installation
@@ -119,7 +119,7 @@ way (like /etc/ld.so.conf) of making the dynamic loader aware of where you insta
 ROOT libraries. Also note that the location of the etc directory needs to be explicitly
 set via the --etcdir= option if the default of `/etc/root` is not desired.
 
-  - Get the sources of latest ROOT (see above)
+  - Get the sources of latest ROOT
   - Now type the build commands:
 {% highlight sh linenos %}
 ./configure --help
@@ -314,8 +314,8 @@ As always, for the most up to date list of options see: `./configure --help`.
 Most Linux distributions come with an OpenGL library (Mesa) pre-installed. The OpenGL
 libraries are already in XFree86 version 4 or above. On most Linux system the mesa-
 libGl-devel-* package must be installed. The Nvidia and ATI vendor drivers come often
-with their own optimized versions of OpenGL. On how to get the Mesa open source OpenGL
-see [http://www.mesa3d.org](http://www.mesa3d.org).
+with their own optimized versions of OpenGL. For more information on getting the Mesa open source OpenGL,
+see → [http://www.mesa3d.org](http://www.mesa3d.org).
 
 ### CASTOR/SHIFT managed tape I/O
 
@@ -326,7 +326,7 @@ the [Castor web site](http://castor.web.cern.ch).
 ### MySQL client
 
 To build the MySQL interface library you need to have libmysqlclient.so installed. On
-most Linux system this library comes with the mysql-devel package. For more see
+most Linux system this library comes with the mysql-devel package. For more information on the MySQL client, see →
 [http://www.mysql.com](http://www.mysql.com).
 
 ### Pythia event generators
@@ -369,7 +369,7 @@ Also when building GSL on 64 bit machines, like Mac OS X 10.5, configure GSL lik
 ### FFTW
 
 Only a basic interface to FFTW v3 is implemented (no "advanced" or "guru" features). To
-install this package see [http://www.fftw.org](http://www.fftw.org) and configure ROOT
+install this package, see → [http://www.fftw.org](http://www.fftw.org) and configure ROOT
 with, e.g.:
 
 {% highlight sh linenos %}
@@ -421,5 +421,4 @@ The ROOT configure command remains the same.
 ### Bonjour/Zeroconf
 
 To get support of Bonjour/Zeroconf you must install the appropriate libraries for you
-platform and compile enabling the Bonjour support. See the
-[PROOF configuration pages](https://d35c7d8c.web.cern.ch/configuration-faq#bonjour) for details.
+platform and compile enabling the Bonjour support. For more information, see → [PROOF configuration pages](https://d35c7d8c.web.cern.ch/configuration-faq#bonjour).

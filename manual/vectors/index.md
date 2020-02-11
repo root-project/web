@@ -14,9 +14,20 @@ In contrast to the ROOT physics libraries, the GenVector package provides class 
 
 Every class, function, manipulator, or other symbol defined in the GenVector package, is in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html) namespace.
 
-## GenVector classes and class templates
+## GenVector classes and vector class templates
 
-The following GenVector classes and class templates are available, among others:
+The vector class templates are provided to represent vectors (in the physics sense) in 2, 3, and Minkowski space 4 dimensions.
+
+Each vector template class  uses as its only parameter the the coordinate system.
+
+Every vector class publishes a typedef for `CoordinateType`, which allows to specify the coordinate system , as well as a typedef for `Scalar` (which will match the `Scalar` type for the coordinate system).
+
+The vector classes are comparable (operator `==` and operator `!=` for the objects or the identical class (including the coordinate system used). Checks for the
+equivalence of two vectors in different coordinate systems can be done by converting one to the system of the other.
+
+None of the vector classes have methods to rotate a vector. To rotate a vector, you first have to instantiate the desired rotation object, and then apply it to the vector.
+
+The following GenVector classes and class templates are available:
 
 - {% include ref class="DisplacementVector3D" %}: Describing a generic displacement vector in 3 dimensions. 
 
@@ -81,4 +92,5 @@ The vector classes are based on a generic type of coordinate system, expressed a
 - [ROOT::Math::PtEtaPhiE4D](https://root.cern/doc/master/classROOT_1_1Math_1_1PtEtaPhiE4D.html): 4D cylindrical coordinate system using `Pt`, `Phi`, `Eta` and `E` (or `rho`, `phi`, `eta`, `T`). The metric used is (-,-,-,+). 
 
 - [ROOT::Math::PtEtaPhiM4D](https://root.cern/doc/master/classROOT_1_1Math_1_1PtEtaPhiM4D.html): 4D cylindrical coordinate system using `Pt`, `Phi`, `Eta` and `M` (mass). The metric used is (-,-,-,+). 
+
 
