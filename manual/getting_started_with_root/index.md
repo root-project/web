@@ -114,6 +114,15 @@ A list of ROOT commands is displayed.
    .help                      - Shows this information
 
    .q                         - Exit the program
+
+
+ROOT special commands.
+==========================================================================
+   .pwd                : show current directory, pad and style
+   .ls                 : list contents of current directory
+   .which [file]       : shows path of macro file
+   .help Class         : opens the reference guide for that class
+   .help Class::Member : opens the reference guide for function/member
 ```
 
 ### Starting ROOT with command line options
