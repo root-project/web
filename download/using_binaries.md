@@ -1,8 +1,6 @@
 ---
 title: Using binaries
 layout: single
-toc: true
-toc_sticky: true
 sidebar:
   nav: "download"
 ---
