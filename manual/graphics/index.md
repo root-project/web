@@ -919,12 +919,12 @@ cursor position, `px=0` and `py=0` corresponds to the top-left corner of the pad
 {% include ref class="TPad" %} provides some methods to convert from one system of coordinates to another. 
 
 In the following table, a point is defined by:
-- (px,py) in pixel coordinates,
-- (ux,uy) in user coordinates,
-- (ndcx,ndcy) in normalized coordinates,
-- (apx, apy) in absolute pixel coordinates.
+- `(px,py)` in pixel coordinates,
+- `(ux,uy)` in user coordinates,
+- `(ndcx,ndcy)` in normalized coordinates,
+- `(apx, apy)` in absolute pixel coordinates.
 
-table width="100%" border="0">
+<table width="100%" border="0">
   <tbody>
     <tr>
       <th scope="col">Conversion</th>
