@@ -771,7 +771,7 @@ pads ({% include ref class="TPad" %}). A pad is a graphical container that conta
 
 - Use the global variable `gPad` to access the active pad.
 
-For more information on global variables, → see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables' | relative_url }})
+For more information on global variables, → see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables' | relative_url }}).
 
 _**Example**_
 
@@ -862,14 +862,14 @@ A sub-pad is to be built into the active pad (pointed by `gPad`). First, the sub
 build the {% include ref class="TPad" %} constructor.
 
 {% highlight C++ %}
-root[] spad1 = new TPad("spad1","The first subpad",.1,.1,.5,.5)
+   root[] spad1 = new TPad("spad1","The first subpad",.1,.1,.5,.5)
 {% endhighlight %}
 
 The NDC (Normalized Coordinate System) coordinates are specified for the lower left point `(0.1, 0.1)` and for the upper right point `(0.5, 0.5)`.<br>
 Then the sub-pad is drawn.
 
 {% highlight C++ %}
-root[] spad1->Draw()
+   root[] spad1->Draw()
 {% endhighlight %}
 
 For building more sub-pads, repeat this procedure as many times as necessary.
@@ -877,6 +877,141 @@ For building more sub-pads, repeat this procedure as many times as necessary.
 #### Dividing a pad into sub-pads
 
 - Use the [TPad::Divide()](https://root.cern/doc/master/classTPad.html#a064b8ae1d12a9be393c0e22c5958cc7c) method to divide a pad into sub-pads.
+
+### Coordinate systems of a pad
+
+For a {% include ref class="TPad" %} the following coordinate systems are available:
+- user coordinates
+- normalized coordinates (NDC)
+- pixel coordinates
+
+You can convert from one system of coordinates to another.
+
+#### User coordinate system
+
+Most methods of {% include ref class="TPad" %} use the user coordinate system, and all graphic primitives have their parameters defined in terms of user coordinates. By default, when an empty pad is drawn, the
+user coordinates are set to a range from 0 to 1 starting at the lower left corner.
+
+- Use the [TPad::range(float x1,float y1,float x2,float y2)](https://root.cern/doc/master/classTPad.html#ae50a151ce00ad2414495314923f1b911) method to set the user coordinate system.<br/>
+The arguments `x1` and `x2` define the new range in the x direction, and `y1` and `y2` define the new range in the y direction.
+
+_**Example**_
+
+Both coordinates go from -100 to 100, with the center of the pad at (0,0).
+
+{% highlight C++ %}
+   TCanvas MyCanvas ("MyCanvas")
+    gPad->Range(-100,-100,100,100)
+{% endhighlight %}
+
+#### Normalized coordinate system (NDC)
+
+Normalized coordinates are independent of the window size and of the user system. The coordinates range from 0 to 1 and (0, 0) correspond to the bottom-left corner of the pad.
+
+#### Pixel coordinate system
+
+The pixel coordinate system is used by functions such as `DistanceToPrimitive()` and `ExecuteEvent()`. Its primary use is for cursor position, which is always given in pixel coordinates. If (`px`,`py`) is the
+cursor position, `px=0` and `py=0` corresponds to the top-left corner of the pad, which is the standard convention in windowing systems.
+
+
+#### Converting between coordinate systems
+
+{% include ref class="TPad" %} provides some methods to convert from one system of coordinates to another. 
+
+In the following table, a point is defined by:
+- (px,py) in pixel coordinates,
+- (ux,uy) in user coordinates,
+- (ndcx,ndcy) in normalized coordinates,
+- (apx, apy) in absolute pixel coordinates.
+
+table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th scope="col">Conversion</th>
+      <th scope="col">Methods (from TPad)</th>
+      <th scope="col">Returns</th>
+    </tr>
+    <tr>
+      <td>NDC to pixel</td>
+      <td>UtoPixel(ndcx)</td>
+      <td>Int_t</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>VtoPixel(ndcy)</td>
+      <td>Int_t</td>
+    </tr>
+    <tr>
+      <td>Pixel to user</td>
+      <td>PixeltoX(px)</td>
+      <td>Double_t</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>PixeltoY(py)</td>
+      <td>Double_t</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>PixeltoXY(px,py,&ux,&uy)</td>
+      <td>Double_t ux,uy</td>
+    </tr>
+        <tr>
+      <td>User to pixel</td>
+      <td>XtoPixel(ux)</td>
+      <td>Int_t</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>YtoPixel(uy)</td>
+      <td>Int_t</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>XYtoPixel(ux,uy,&px,&py)</td>
+      <td>Int_t px,py</td>
+    </tr>
+        <tr>
+      <td>User to absolute pixel</td>
+      <td>XtoAbsPixel(ux)</td>
+      <td>Int_t</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>YtoAbsPixel(uy)</td>
+      <td>Int_t</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>XYtoAbsPixel(ux,uy,&apx,&apy)</td>
+      <td>Int_t apx,apy</td>
+    </tr>
+                <tr>
+      <td>Absolute pixel to user</td>
+      <td>AbsPixeltoX(apx)</td>
+      <td>Double_t</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>AbsPixeltoY(apy)</td>
+      <td>Double_t</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>AbsPixeltoXY(apx,apy,&ux,&uy)</td>
+      <td>Double_t ux,uy</td>
+    </tr>
+  </tbody>
+</table>
+
+> **Note**
+>
+> All the pixel conversion functions along the Y axis consider that `py=0` is at the top of the pad except `PixeltoY()`, which assumes that the position `py=0` is at the bottom of the pad. To make `PixeltoY()` converting the same way as the other conversion functions, it should be used the following way (`p` is a pointer to a {% include ref class="TPad" %}):
+> {% highlight C++ %}
+> p->PixeltoY(py - p->GetWh());
+> {% endhighlight %}
+
+
 
 ### Copying a canvas
 
