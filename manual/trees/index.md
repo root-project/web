@@ -521,7 +521,7 @@ void processChain(){
 
 ## N-tuples
 
-An N-tuple {% include ref class="TNtuple" % }is a simple {% include ref class="TTree" % } restricted to a list of float variables only.
+An N-tuple {% include ref class="TNtuple" %}is a simple {% include ref class="TTree" %} restricted to a list of float variables only.
 
 ### Writing simple N-tuples
 
@@ -647,7 +647,7 @@ Potential     Current     Temperature     Pressure
 
 ### Writing arbitrary N-tuples
 
-You can write N-tuples of arbitrary type by using the {% include ref class="TBranch" % } class. This is especially important as
+You can write N-tuples of arbitrary type by using the {% include ref class="TBranch" %} class. This is especially important as
 [TNtuple::Fill()](https://root.cern/doc/master/classTNtuple.html#a7fd062e6a5cc4e4af50b9096b73feaa0) accepts only floats.
 
 _**Example**_
@@ -689,7 +689,7 @@ void write_ntuple_to_file_advanced(const std::string& outputFileName="ntuple.roo
 
 ## Reading TTrees, TChains and TNtuples
 
-The {% include ref class="TTreeReader" % } class provides a simple, robust and fast interface to read values from ROOT columnar data sets such as {% include ref class="TTree" % }, {% include ref class="TChain" % } or {% include ref class="TNtuple" % }.
+The {% include ref class="TTreeReader" %} class provides a simple, robust and fast interface to read values from ROOT columnar data sets such as {% include ref class="TTree" %}, {% include ref class="TChain" %} or {% include ref class="TNtuple" %}.
 
 _**Example**_
 
