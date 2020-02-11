@@ -7,11 +7,11 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT provides the [TTree](https://root.cern/doc/master/classTTree.html) and the [TNtuple](https://root.cern/doc/master/classTNtuple.html) class to store large quantities of same-class objects. They are optimized to reduce disk space and enhance access speed.
+ROOT provides the {% include ref class="TTree" %} and the {% include ref class="TNtuple" %} class to store large quantities of same-class objects. They are optimized to reduce disk space and enhance access speed.
 
-A tree consists of a list of independent columns, called branches. The [TBranch](https://root.cern/doc/master/classTBranch.html) class represents a branch. A branch can contain all kind of data, such as objects or arrays in addition to all the simple types.
+A tree consists of a list of independent columns, called branches. The {% include ref class="TBranch" %}class represents a branch. A branch can contain all kind of data, such as objects or arrays in addition to all the simple types.
 
-A `TNtuple` is a `TTree` that is limited to only contains floating-point numbers.
+A {% include ref class="TNtuple" %} is a {% include ref class="TTree" %}, which is limited to contain only floating-point numbers.
 
 
 > **Tutorials**
@@ -22,13 +22,13 @@ A `TNtuple` is a `TTree` that is limited to only contains floating-point numbers
 
 ROOT provides the following classes for trees and branches, among others:
 
-- [TTree](https://root.cern/doc/master/classTTree.html): Represents a columnar data set. Any C++ type can be stored in its columns.
+- {% include ref class="TTree" %}: Represents a columnar data set. Any C++ type can be stored in its columns.
 
-- [TNtuple](https://root.cern/doc/master/classTNtuple.html): A simple `TTree` restricted to a list of float variables only.
+- {% include ref class="TNtuple" %}: A simple `TTree` restricted to a list of float variables only.
 
-- [TBranch](https://root.cern/doc/master/classTBranch.html): Organizes columns, i.e. branches, of a `TTree`.
+- {% include ref class="TBranch" %}: Organizes columns, i.e. branches, of a `TTree`.
 
-- [TChain](https://root.cern/doc/master/classTChain.html): A list of ROOT files containing `TTree` objects.
+- {% include ref class="TChain" %}: A list of ROOT files containing `TTree` objects.
 
 
 ## Working with trees
@@ -36,7 +36,7 @@ ROOT provides the following classes for trees and branches, among others:
 
 ### Creating a tree
 
-- Use the [TTree](https://root.cern/doc/master/classTTree.html) constructor to create a tree.
+- Use the {% include ref class="TTree" %} constructor to create a tree.
 
 _**Example**_
 
@@ -54,16 +54,16 @@ _**Example**_
 
 `TTree folder_tree("MyFolderTree","/MyFolder");`
 
-`MyFolder` is the top folder. `/` indicates the [TTree](https://root.cern/doc/master/classTTree.html) constructor that a folder is being used.
+`MyFolder` is the top folder. `/` indicates the {% include ref class="TTree" %} constructor that a folder is being used.
 You can fill the tree by placing the data into the folder structure and then calling the [TTree::Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067) method.
 
 
 ### Example: Building a tree from an ASCII file
 
-The tutorial `$ROOTSYS/tutorials/tree/cernbuild.C `provides an example how to build a [TTree](https://root.cern/doc/master/classTTree.html) from an ASCII file.
+The tutorial `$ROOTSYS/tutorials/tree/cernbuild.C` provides an example how to build a {% include ref class="TTree" %} from an ASCII file.
 The input file is `cernstaff.dat` that contains statistics about the staff at CERN.
 
-The ROOT macro `cernbuild.C` creates a root file (`cernstaff.root`) and prints the tree `T` and its branches with [TTree::Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094).
+The `cernbuild.C` ROOT macro creates a root file (`cernstaff.root`) and prints the tree `T` and its branches with [TTree::Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094).
 
 {% highlight C++ %}
 root [0] .x cernbuild.C
@@ -121,9 +121,10 @@ root [1]
 {% endhighlight %}
 
 ### Filling a tree
-- Use the [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067) method to fill a [TTree](https://root.cern/doc/master/classTTree.html) instance.
-A loop on all defined branches (see → [Branches(#branches)] is executed.
 
+- Use the [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067) method to fill a {% include ref class="TTree" %} instance.
+
+A loop on all defined branches (see → [Branches(#branches)] is executed.
 
 ### Writing a tree
 
@@ -131,7 +132,7 @@ A loop on all defined branches (see → [Branches(#branches)] is executed.
 
 The `TTree::Write()` method is needed to write the ROOT file header.
 
-When writing a [TTree](https://root.cern/doc/master/classTTree.html)  to a ROOT file and if the ROOT file size reaches the value stored in the [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9), the current
+When writing a {% include ref class="TTree" %} to a ROOT file and if the ROOT file size reaches the value stored in the [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9), the current
 ROOT file is closed and a new ROOT file is created. If the original ROOT file is named `myfile.root`, the subsequent ROOT files are named
 `myfile_1.root`, `myfile_2.root`, etc.
 
@@ -210,7 +211,7 @@ Scanning the `cernstaff.root` file (see → [Building a tree from an ASCII file]
 
 With the Tree Viewer you can examine a tree in a GUI.
 
-- Use the [TTreeViewer](https://root.cern/doc/master/classTTreeViewer.html) class to open the ROOT file, containing a tree, in the Tree Viewer.
+- Use the {% include ref class="TTreeViewer" %} class to open the ROOT file (containing the tree) in the Tree Viewer.
 
 _**Example**_
 
@@ -228,9 +229,9 @@ caption="Tree Viewer."
 
 ### Drawing correlating variables in a scatterplot
 
-You can show the correlation between variables, listed in the [TTreeViewer](https://root.cern/doc/master/classTTreeViewer.html), by drawing a scatterplot.
+You can show the correlation between the variables, listed in the {% include ref class="TTreeViewer" %}, by drawing a scatterplot.
 
-- Select a variable in the [TTreeViewer](https://root.cern/doc/master/classTTreeViewer.html) and drag it to the `X:-empty-` entry.
+- Select a variable in the {% include ref class="TTreeViewer" %}  and drag it to the `X:-empty-` entry.
 - Select a second variable and drag it to the `Y:-empty-` entry.
 
 {% include figure_image
@@ -257,14 +258,14 @@ the grid is randomly populated with a density of dots that’s proportional to t
 
 ## Branches
 
-You can organize columns, i.e. branches, of a tree with the [TBranch](https://root.cern/doc/master/classTBranch.html) class. A variable on a `TBranch` is called a leaf ([TLeaf](https://root.cern/doc/master/classTLeaf.html)).
+You can organize columns, this is branches, of a tree with the {% include ref class="TBranch" %} class. A variable on a `TBranch` is called a leaf ({% include ref class="TLeaf" %}).
 
-The branch type differs by what is stored in it. A branch can hold the following data:
+The branch type differs by what is stored in it. A branch can contain the following data:
 
 - an entire object,
 - a list of simple variables,
 - contents of a folder,
-- contents of a [TList]([TList](https://root.cern/doc/master/classTList.html)),
+- contents of a {% include ref class="TList" %},
 - an array of objects.
 
 If two variables are independent and the variables will not be used together, place them on separate branches.
@@ -272,23 +273,27 @@ If the variables are related, such as the coordinates of a point, create one bra
 
 ### Adding a branch
 
-- Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a) method to add a [TBranch]([TBranch](https://root.cern/doc/master/classTBranch.html)) to a tree:
+- Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a) method to add a {% include ref class="TBranch" %} to a tree:
 
-   `auto branch = tree.Branch(branchname, address, leaflist, bufsize)`
+{% highlight C++ %}
+   auto branch = tree.Branch(branchname, address, leaflist, bufsize)
+{% endhighlight %}
 
 `address` is the address of the first item of a structure.
 `leaflist` is the concatenation of all the variable names and types separated by a colon character. The variable name and the variable type are separated by a slash (/). The variable type must be 1 character.
-For more information on adding a branch to tree, see → [TTree](https://root.cern/doc/master/classTTree.html).
+For more information on adding a branch to tree, see → {% include ref class="TTree" %}.
 
 > **Note**
 >
-> Do *not* use the `TBranch` constructor to add a branch to a tree.
+> Do *not* use the {% include ref class="TBranch" %} constructor to add a branch to a tree.
 
 ### Adding a branch with a folder
 
 - Use the following syntax to add a branch with a folder:
 
-   `tree->Branch("/aFolder");`
+{% highlight C++ %}
+   tree->Branch("/aFolder")
+{% endhighlight %}
 
 This creates one branch for each element in the folder. The method returns the total number of branches created.
 
@@ -298,7 +303,9 @@ A `STLcollection` is a address of a pointer to `std::vector`, `std::list`, `std:
 
 - Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a) method to add a `STLcollection`:
 
-   `auto branch = tree.Branch(branchname, STLcollection, buffsize, splitlevel);`
+{% highlight C++ %}
+   auto branch = tree.Branch(branchname, STLcollection, buffsize, splitlevel);
+ {% endhighlight %}
 
 If the `splitlevel` is a value bigger than 100 [TTree::kSplitCollectionOfPointers](https://root.cern/doc/master/classTTree.html#a6d07819a66bb97bafd460adfad555114ae3b257c9ade74c1a53383d800c0a708c) then the `STLcollection` will be written in split mode.
 
@@ -309,8 +316,8 @@ If a dynamic structures changes with each entry, you have to redefine the branch
 - Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a) method to add objects to a tree:
 
 {% highlight C++ %}
-MyClass object;
-auto branch = tree.Branch(branchname, &object, bufsize, splitlevel)
+   MyClass object;
+   auto branch = tree.Branch(branchname, &object, bufsize, splitlevel)
 {% endhighlight %}
 
 `&object` must be the address of a valid object. The object must not be destroyed (i.e. be deleted) until the [TTree]([TTree](https://root.cern/doc/master/classTTree.html)) is deleted or [TTree::ResetBranchAddress](https://root.cern/doc/master/classTTree.html#a181eb19c03433781fde2fa94443710dc) is called.
@@ -331,7 +338,7 @@ You can add a branch to an existing tree.
 
 _**Example**_
 
-If one variable in the tree was computed with a certain algorithm, you may want to try another algorithm and compare the results. To do this, you cann add a new branch, fill it, and save the tree.
+If one variable in the tree was computed with a certain algorithm, you may want to try another algorithm and compare the results. To do this, you can add a new branch, fill it, and save the tree.
 
 {% highlight C++ %}
 void tree3AddBranch() {
@@ -363,7 +370,7 @@ The following methods are available for data analysis using trees:
 
 ### Using TTree:Draw()
 
-With the [TTree::Draw()](https://root.cern/doc/master/classTTree.html#ac4016b174665a086fe16695aad3356e2) method, you  can easily plot variables (i.e. leaf).
+With the [TTree::Draw()](https://root.cern/doc/master/classTTree.html#ac4016b174665a086fe16695aad3356e2) method, you can easily plot variables (this is leaf).
 
 _**Example**_
 
@@ -377,29 +384,29 @@ TFile**      cernstaff.root
   KEY: TTree   T;1   CERN 1988 staff data
 {% endhighlight %}
 
-The `cernstaff.root` file contains the [TTree](https://root.cern/doc/master/classTTree.html) `T`. A pointer is created to the tree.
+The `cernstaff.root` file contains the {% include ref class="TTree" %}  `T`. A pointer is created to the tree.
 
 {% highlight C++ %}
-root [2] TTree *MyTree = T
+   root [2] TTree *MyTree = T
 {% endhighlight %}
 
 To show the different `Draw()` options, a canvas with four sub-pads is created.
 
 {% highlight C++ %}
-root [3] TCanvas *myCanvas = new TCanvas()
-root [4] myCanvas->Divide(2,2)
+   root [3] TCanvas *myCanvas = new TCanvas()
+   root [4] myCanvas->Divide(2,2)
 {% endhighlight %}
 
 The first pad with is activated with [TCanvas::cd](https://root.cern/doc/master/classTCanvas.html#ad996aa7bc34186944363b48963de4de5).
 
 {% highlight C++ %}
-root [5] myCanvas->cd(1)
+   root [5] myCanvas->cd(1)
 {% endhighlight %}
 
 The `Cost` variable is drawn. [TTree::Draw](https://root.cern/doc/master/classTCanvas.html#a2309e37a6471e07f9dad3e5af1fe5561) automatically creates a histogram. The style of the histogram is inherited from the [TTree](https://root.cern/doc/master/classTTree.html) attributes.
 
 {% highlight C++ %}
-root [9] MyTree->Draw("Cost")
+   root [9] MyTree->Draw("Cost")
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -411,8 +418,8 @@ Next, the second pad is activated and scatter plot is drawn. Two dimensions (her
 In general, this parameter is a string that containsup to three expressions, one for each dimension, separated by a colon (“e1:e2:e3”).
 
 {% highlight C++ %}
-root [10] myCanvas->cd(2)
-root [11] MyTree->Draw("Cost:Age")
+   root [10] myCanvas->cd(2)
+   root [11] MyTree->Draw("Cost:Age")
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -424,8 +431,8 @@ Next, the third pad is activated and a selection is added. `Cost` versus `Age` f
 You can use any C++ operator. The value of the selection is used as a weight when filling the histogram. If the expression includes only Boolean operations the result is 0 (histogram is not filled) or 1 ((histogram is filled).
 
 {% highlight C++ %}
-root [11] myCanvas->cd(3)
-root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
+   root [11] myCanvas->cd(3)
+   root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -436,8 +443,8 @@ root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
 Next, the fourth pad is activated and the histogram is drawn with the draw option `surf2`. Refer to the [THistPainter](https://root.cern/doc/master/classTHistPainter.html) class for possible draw options.
 
 {% highlight C++ %}
-root [11] myCanvas->cd(4)
-root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","colz")
+   root [11] myCanvas->cd(4)
+   root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","colz")
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -447,17 +454,17 @@ root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","colz")
 
 ### Using TTree::MakeClass()
 
-With the [TTree::MakeClass()](https://root.cern/doc/master/classTTree.html#ac4ceaf4ae0b87412acf94093043cc2de) method, you can generate a skeleton class designed to loop over the entries of the tree.
+- Use the [TTree::MakeClass()](https://root.cern/doc/master/classTTree.html#ac4ceaf4ae0b87412acf94093043cc2de) method, to generate a skeleton class for looping over the entries of a tree.
 
 
 ### Using TTree::MakeSelector()
 
-With the [TTree::MakeSlelector()](https://root.cern/doc/master/classTTree.html#abe2c6509820373c42a88f343434cbcb4) class, you can generate a skeleton selector class designed to loop over a tree.
+- Use the [TTree::MakeSlelector()](https://root.cern/doc/master/classTTree.html#abe2c6509820373c42a88f343434cbcb4) class, to generate a skeleton selector class for looping over a tree.
 
 
 ## Using Chains
 
-A chain is a list of ROOT files containing [TTree](https://root.cern/doc/master/classTTree.html) objects. A chain is created via the [TChain](https://root.cern/doc/master/classTChain.html) object.
+A chain is a list of ROOT files containing {% include ref class="TTree" %} objects. A chain is created via the {% include ref class="TChain" %} object.
 
 _**Example**_
 
@@ -470,13 +477,13 @@ There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each fil
    chain.Add("file3.root");
 {% endhighlight %}
 
-The name of the [TChain](https://root.cern/doc/master/classTChain.html) is the same as the name of the tree.
+The name of the {% include ref class="TChain" %} is the same as the name of the tree.
 
-The [TChain](https://root.cern/doc/master/classTChain.html) class is derived from the [TTree](https://root.cern/doc/master/classTTree.html) class.
+The {% include ref class="TChain" %} class is derived from the {% include ref class="TTree" %}class.
 
 _**Example**_
 
-To generate an histogram corresponding to the attribute `x` in tree `T` by processing sequentially the three files of this chain, you can write:
+To generate an histogram corresponding to the attribute `x` in the tree `T` by processing sequentially the three files of this chain, you can write:
 
 {% highlight C++ %}
    chain.Draw("x");
@@ -493,27 +500,28 @@ void processChain(){
    chain.Add("file2.root");
    chain.Add("file3.root");
 
-// Create an histogram
+// Create an histogram.
    hnseg = new TH1F("hnseg","Number of segments for selected tracks",4096,0,8192);
 
 // Specify the address where to read the event object.
 // In the program writing the ROOT files, the event was stored in a branch called "event".
    Event *event = new Event();
+   
 // The object must be created before setting the branch address.
    chain.SetBranchAddress("event", &event);
 
 // Start main loop on all events.
-//In case you want to read only a few branches, use TChain::SetBranchStatus to activate/deactivate a branch.
+// In case you want to read only a few branches, use TChain::SetBranchStatus to activate/deactivate a branch.
    Int_t nevent = chain.GetEntries();
    for (Int_t i=0;i<nevent;i++) {
-      chain.GetEvent(i);              //read complete accepted event in memory
-      hnseg->Fill(event->GetNseg());  //Fill histogram with number of segments
+      chain.GetEvent(i);              //Read the complete accepted event in memory.
+      hnseg->Fill(event->GetNseg());  //Fill the histogram with number of segments.
    }
 {% endhighlight %}
 
 ## N-tuples
 
-An N-tuple ([TNtuple](https://root.cern/doc/master/classTNtuple.html)) is a simple [TTree](https://root.cern/doc/master/classTTree.html) restricted to a list of float variables only.
+An N-tuple {% include ref class="TNtuple" % }is a simple {% include ref class="TTree" % } restricted to a list of float variables only.
 
 ### Writing simple N-tuples
 
@@ -525,35 +533,43 @@ _**Example**_
 void write_ntuple_to_file(){
    TFile ofile("ntuple.root","CREATE");
 
-// Initialise the TNtuple
+// Initialize the TNtuple.
    TNtuple cond_data("cond_data","Example N-Tuple","Potential:Current:Temperature:Pressure");
 
-// Fill it randomly to fake the acquired data
+// Fill it randomly to fake the acquired data.
    TRandom3 rndm;
    float pot,cur,temp,pres;
    for (int i=0;i<10000;++i){
+   
 // Get voltage.
       pot=rndm.Uniform(0.,10.);
+      
 // Get temperature.
       temp=rndm.Uniform(250.,350.);
+      
 // Get pressure.
       pres=rndm.Uniform(0.5,1.5);
+      
 // Current.
       cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.));
 
-// Add some random smearing (measurement errors)
+// Add some random smearing (measurement errors).
 // 1% error on voltage.
       pot*=rndm.Gaus(1.,0.01);
+      
 // 0.3 absolute error on temperature.
       temp+=rndm.Gaus(0.,0.3);
+      
 // 1% error on pressure.
       pres*=rndm.Gaus(1.,0.02);
+      
 // 1% error on current.
       cur*=rndm.Gaus(1.,0.01);
 
 // Write to an N-tuple.
       cond_data.Fill(pot,cur,temp,pres);
    }
+   
 // Save the N-tuple and close the ROOT file.
 cond_data.Write();
 }
@@ -574,8 +590,8 @@ caption="N-tuple in the ROOT Object Browser."
 Use the following commands at the system prompt or in the ROOT shell to draw a simple correlation plot:
 
 {% highlight C++ %}
-$ root ntuple.root
-root [1] cond_data->Draw("Current:Potential")
+   $ root ntuple.root
+   root [1] cond_data->Draw("Current:Potential")
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -631,7 +647,7 @@ Potential     Current     Temperature     Pressure
 
 ### Writing arbitrary N-tuples
 
-You can write N-tuples of arbitrary type by using the [TBranch](https://root.cern/doc/master/classTBranch.html) class. This is especially important as
+You can write N-tuples of arbitrary type by using the {% include ref class="TBranch" % } class. This is especially important as
 [TNtuple::Fill()](https://root.cern/doc/master/classTNtuple.html#a7fd062e6a5cc4e4af50b9096b73feaa0) accepts only floats.
 
 _**Example**_
@@ -660,9 +676,11 @@ void write_ntuple_to_file_advanced(const std::string& outputFileName="ntuple.roo
       pres=gRandom->Uniform(0.5,1.5)*gRandom->Gaus(1.,0.02);
       cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.))*
       gRandom->Gaus(1.,0.01);
+      
 // Write to the N-tuple.
       cond_data.Fill();
       }
+      
 // Save the N-tuple and close the ROOT file.
    cond_data.Write();
    ofile.Close();
@@ -671,7 +689,7 @@ void write_ntuple_to_file_advanced(const std::string& outputFileName="ntuple.roo
 
 ## Reading TTrees, TChains and TNtuples
 
-The [TTreeReader](https://root.cern/doc/master/classTTreeReader.html) class provides a simple, robust and fast interface to read values from ROOT columnar data sets such as [TTree](https://root.cern/doc/master/classTTree.html), [TChain](https://root.cern/doc/master/classTChain.html) or [TNtuple](https://root.cern/doc/master/classTNtuple.html).
+The {% include ref class="TTreeReader" % } class provides a simple, robust and fast interface to read values from ROOT columnar data sets such as {% include ref class="TTree" % }, {% include ref class="TChain" % } or {% include ref class="TNtuple" % }.
 
 _**Example**_
 
