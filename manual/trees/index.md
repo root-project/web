@@ -9,7 +9,7 @@ toc_sticky: true
 
 ROOT provides the {% include ref class="TTree" %} and the {% include ref class="TNtuple" %} class to store large quantities of same-class objects. They are optimized to reduce disk space and enhance access speed.
 
-A tree consists of a list of independent columns, called branches. The {% include ref class="TBranch" %}class represents a branch. A branch can contain all kind of data, such as objects or arrays in addition to all the simple types.
+A tree consists of a list of independent columns, called branches. The {% include ref class="TBranch" %} class represents a branch. A branch can contain all kind of data, such as objects or arrays in addition to all the simple types.
 
 A {% include ref class="TNtuple" %} is a {% include ref class="TTree" %}, which is limited to contain only floating-point numbers.
 
@@ -506,7 +506,7 @@ void processChain(){
 // Specify the address where to read the event object.
 // In the program writing the ROOT files, the event was stored in a branch called "event".
    Event *event = new Event();
-   
+
 // The object must be created before setting the branch address.
    chain.SetBranchAddress("event", &event);
 
@@ -540,36 +540,36 @@ void write_ntuple_to_file(){
    TRandom3 rndm;
    float pot,cur,temp,pres;
    for (int i=0;i<10000;++i){
-   
+
 // Get voltage.
       pot=rndm.Uniform(0.,10.);
-      
+
 // Get temperature.
       temp=rndm.Uniform(250.,350.);
-      
+
 // Get pressure.
       pres=rndm.Uniform(0.5,1.5);
-      
+
 // Current.
       cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.));
 
 // Add some random smearing (measurement errors).
 // 1% error on voltage.
       pot*=rndm.Gaus(1.,0.01);
-      
+
 // 0.3 absolute error on temperature.
       temp+=rndm.Gaus(0.,0.3);
-      
+
 // 1% error on pressure.
       pres*=rndm.Gaus(1.,0.02);
-      
+
 // 1% error on current.
       cur*=rndm.Gaus(1.,0.01);
 
 // Write to an N-tuple.
       cond_data.Fill(pot,cur,temp,pres);
    }
-   
+
 // Save the N-tuple and close the ROOT file.
 cond_data.Write();
 }
@@ -676,11 +676,11 @@ void write_ntuple_to_file_advanced(const std::string& outputFileName="ntuple.roo
       pres=gRandom->Uniform(0.5,1.5)*gRandom->Gaus(1.,0.02);
       cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.))*
       gRandom->Gaus(1.,0.01);
-      
+
 // Write to the N-tuple.
       cond_data.Fill();
       }
-      
+
 // Save the N-tuple and close the ROOT file.
    cond_data.Write();
    ofile.Close();
