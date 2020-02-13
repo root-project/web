@@ -7,8 +7,8 @@ sidebar:
   nav: "resources"
 ---
 
-The ROOT team has adopted [Doxygen](http://www.stack.nl/~dimitri/doxygen/) for generating
-the [Reference Guide](https://root.cern/doc/master/). Here you will find a number of conventions
+The ROOT team has adopted [Doxygen](http://www.stack.nl/~dimitri/doxygen/){:target="_blank"} for generating
+the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}. Here you will find a number of conventions
 and tips to be used in source code to generate proper documentation.
 
 ## How to generate the doxygen documentation
@@ -99,7 +99,7 @@ and the header file:
    void EnableImplicitMT(UInt_t numthreads = 0);
 {% endhighlight %}
 
-Then a [proper documentation](https://root.cern/doc/master/namespaceROOT.html#a06f2b8b216b615e5abbc872c9feff40f)
+Then a [proper documentation](https://root.cern/doc/master/namespaceROOT.html#a06f2b8b216b615e5abbc872c9feff40f){:target="_blank"}
 with the default parameters is generated.
 
 
@@ -165,8 +165,8 @@ of the macro header.
 ## Useful tips for common documentation artifacts
 A couple of useful online web tools for the conversion and formatting:
 
-- [HTML to Markdown converter](https://domchristie.github.io/to-markdown/)
-- [Latex equation editor](https://www.codecogs.com/latex/eqneditor.php)
+- [HTML to Markdown converter](https://domchristie.github.io/to-markdown/){:target="_blank"}
+- [Latex equation editor](https://www.codecogs.com/latex/eqneditor.php){:target="_blank"}
 
 ### Code blocks
 Simple code blocks are documented by indenting the code 4 spaces.
