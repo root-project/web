@@ -8,7 +8,7 @@ sidebar:
 ROOT consists of several loosely coupled but consistently designed parts. The "code owners"
 of these parts are experts that review pull requests and guide these packages over a couple
 of years. An up-to-date, detailed mapping of code versus owners can be found in the ROOT
-[GitHub repository](https://github.com/root-project/root/blob/master/.github/CODEOWNERS).
+[GitHub repository](https://github.com/root-project/root/blob/master/.github/CODEOWNERS){:target="_blank"}.
 The long-term, coarse list can be found below:
 
 |             Module                |                          Code Owner                             |
