@@ -9,7 +9,10 @@ toc_sticky: true
 
 ## Naming conventions
 
-For naming conventions we follow the [Taligent](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_63.html#HEADING77) rules. They have written a very large body of C++ and their rules seem well thought out. No need to invent something new. The only addition/change we made is to append an `_t` to `typedef`s and simple `struct`s, e.g.:
+For naming conventions we follow the [Taligent](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_63.html#HEADING77){:target="_blank"}
+rules. They have written a very large body of C++ and their rules seem well thought out.
+No need to invent something new. The only addition/change we made is to append
+an `_t` to `typedef`s and simple `struct`s, e.g.:
 
 {% highlight C++ %}
 typedef int Int_t ; struct Simple_t { ..... } ;
@@ -19,7 +22,10 @@ Addherence to the rules is mandatory.  After a while one really gets used to the
 
 ## Class definition conventions
 
-Also here the [Taligent guide](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_69.html) is quite reasonable. Of course, no class data member should ever be public. Make the data fields always private. Or protected, if you want to grant an inherited class direct access.
+Also here the [Taligent guide](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_69.html){:target="_blank"}
+is quite reasonable. Of course, no class data member should ever be public. Make the data
+fields always private. Or protected, if you want to grant an inherited class direct
+access.
 
 ### Inline
 
@@ -30,7 +36,12 @@ Add trivial get or setters directly in the class definition. This improves readi
 In the class definition we first declare all private data members, followed by the private static members, the private methods and the private static methods. Then the protected members and methods and finally the public methods (no public data members). We put private members first since that is the language default and it gives the developer a quick view on what data members are used in a class.
 
 ## Avoid raw C types
-Avoid the use of raw C types like `int`, `long`, `float`, `double` when using data that might be written to disk. For example, the sizes of `int` and `long` are machine dependent. On 32 bit machines `int`s and `long`s are 32 bits, but on 64 bit processors an `int` can be either 32 or 64 bits and a `long` 64 bits, depending on the processor. For portability reasons and consistent numerical results use the typedefs provided by ROOT's `Rtypes.h` for the basic raw C types. E.g.: Double_t, Float_t, Int_t etc.
+Avoid the use of raw C types like `int`, `long`, `float`, `double` when using data that
+might be written to disk. For example, the sizes of `int` and `long` are machine dependent.
+On 32 bit machines `int`s and `long`s are 32 bits, but on 64 bit processors an `int` can
+be either 32 or 64 bits and a `long` 64 bits, depending on the processor. For portability
+reasons and consistent numerical results use the typedefs provided by ROOT's `Rtypes.h` for
+the basic raw C types. E.g.: `Double_t`, `Float_t`, `Int_t` etc.
 
 ## Exception handling
 Don't let every method throw an exception when a simple error return code is often enough.
@@ -39,7 +50,9 @@ Don't let every method throw an exception when a simple error return code is oft
 In ROOT 5 all classes are in the `ROOT` namespace. Some packages will be in a sub-namespace, e.g. `ROOT::Reflex`. For backward compatibility with the previous versions of ROOT, where all classes were in the global namespace, we have by default `using namespace ROOT;` in all headers. However, this can be turned off by defining the `USE_ROOT_NAMESPACE` macro.
 
 ## Using comments
-ROOT chose Doxygen for its code documentation: please refer to [this how-to](https://root.cern.ch/formatting-comments-doxygen) for all the details.
+ROOT chose [Doxygen](http://www.doxygen.nl){:target="_blank"} for its code documentation:
+please refer to
+[this page]({{'resources/doxygen' | relative_url}}) for all the details.
 
 ## Source file layout
 
@@ -63,7 +76,7 @@ Each header file has the following layout:
 *   Forward declarations
 *   Actual class definition
 
-For a typical example see [TObject.h](http://root.cern.ch/root/htmldoc/TObject.h).
+For a typical example see [TObject.h](https://root.cern/doc/master/TObject_8h_source.html){:target="_blank"}.
 
 Note the explicit checks to avoid unnecessarily opening already included header files. For large systems this kind of defensive measures can make quite a difference in compile time. Also never include a header file when a forward declaration is enough. On include header files for base classes or classes that are used by value in the class definition.
 
@@ -78,7 +91,7 @@ Each implementation file has the following layout:
 *   Header file includes
 *   Actual method implementation
 
-For a typical example see [TObject.cxx](http://root.cern.ch/root/htmldoc/src/TObject.cxx.html).
+For a typical example see [TObject.cxx](https://root.cern/doc/master/TObject_8cxx_source.html){:target="_blank"}.
 Note the mandatory method separator line:
 {% highlight C++ %}
 ////////////////////////////////////////
@@ -236,7 +249,7 @@ UseTab:          Never
 {% endhighlight %}
 
 ## Astyle
-If you don't have access to ClangFormat, [astyle](http://astyle.sourceforge.net/) can be useful. Starting from a code like this:
+If you don't have access to ClangFormat, [astyle](http://astyle.sourceforge.net/){:target="_blank"} can be useful. Starting from a code like this:
 
 {% highlight C++ %}
 int aap ( int inp ) {
@@ -298,4 +311,6 @@ unpad-paren
 {% endhighlight %}
 
 ## Where to go from here
-For the rest read the [Taligent Guide](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_1.html) and use common sense.
+For the rest read the
+[Taligent Guide](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_1.html){:target="_blank"}
+and use common sense.

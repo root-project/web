@@ -25,8 +25,9 @@ Presently, there are two ways in which you can contribute:
    become part of the repository!
 
 2. **Sending Patches** <br>
-   You can send us a patch or a pull request with [Github](https://github.com/root-project/root){:target="_blank"}, provided that you follow these
-   two simple rules:
+   You can send us a patch or a [pull request]({{'resources/git_primer/creating_pr' | relative_url}})
+   with [Github](https://github.com/root-project/root){:target="_blank"}, provided that you
+   follow these two simple rules:
 
     - Make sure you follow the [ROOT coding conventions]({{'/contribute/coding_conventions' | relative_url }}) in your code
     - Make sure you provide a set of tests for your feature/bug fix
