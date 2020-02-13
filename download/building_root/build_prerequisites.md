@@ -80,7 +80,7 @@ Use `yum install _package_` or use the graphical "Add/Remove Software" program.
 *   **git:** for /usr/bin/git
 *   **dpkg-dev**  for dpkg-architecture (needed by configure to locate system libraries starting from 11)
 *   **cmake:** for /usr/bin/cmake
-*   **g++:** for /usr/bin/g++  (ROOT 6 requires g++ 4.8 or clang 3.4  for how to install g++ 4.8 on Ubuntu 12 see [ubuntuhandbook](http://ubuntuhandbook.org/index.php/2013/08/install-gcc-4-8-via-ppa-in-ubuntu-12-04-13-04/))
+*   **g++:** for /usr/bin/g++  (ROOT 6 requires g++ 4.8 or clang 3.4  for how to install g++ 4.8 on Ubuntu 12 see [ubuntuhandbook](http://ubuntuhandbook.org/index.php/2013/08/install-gcc-4-8-via-ppa-in-ubuntu-12-04-13-04/){:target="_blank"})
 *   **gcc:** for /usr/bin/gcc
 *   **binutils:** for /usr/bin/ld
 *   **libx11-dev:** for usr/include/X11/Xlib.h and for /usr/lib/libX11.so
@@ -194,15 +194,15 @@ Use `sudo zypper install _package_` or use the graphical "Software / Package Man
 
 *   **Xcode developer package:** for make, g++, gcc, ld, etc.  Xcode is found on the MacOS X installation DVD or in the Mac App store.
     install command line tools through the XCode preferences and/or running in a terminal  `xcode-select --install`
-*   **[Xquartz](http://xquartz.macosforge.org/):** for the X11 server (not needed in case the version with Cocoa native backend is build)
-*   Other dependencies can be installed from [MacPorts](http://www.macports.org/)
+*   **[Xquartz](http://xquartz.macosforge.org/){:target="_blank"}:** for the X11 server (not needed in case the version with Cocoa native backend is build)
+*   Other dependencies can be installed from [MacPorts](http://www.macports.org/){:target="_blank"}
 
 ### Most common optional packages
 
-*   **gcc 4.x from [MacPorts](http://www.macports.org):** for /opt/local/bin/gfortran
-    or alternatively use this [gfortran.dmg](http://r.research.att.com/tools/)
+*   **gcc 4.x from [MacPorts](http://www.macports.org){:target="_blank"}:** for /opt/local/bin/gfortran
+    or alternatively use this [gfortran.dmg](http://r.research.att.com/tools/){:target="_blank"}
 
-Alternatively ROOT can be installed directly from [MacPort](http://www.macports.org) with the command:
+Alternatively ROOT can be installed directly from [MacPort](http://www.macports.org){:target="_blank"} with the command:
 
 ```
 sudo port install root
@@ -210,9 +210,12 @@ sudo port install root
 
 ## Windows
 
-If you are using Windows make sure you have installed Microsoft Visual C++ (e.g., the [no-cost edition](http://www.microsoft.com/express/vc/)) plus `CMake`. The `CMake` build will work directly **without the need** to install [cygwin](http://cygwin.com) as it was required previously before the adaption of `CMake`.
+If you are using Windows make sure you have installed Microsoft Visual C++ (e.g., the
+[no-cost edition](http://www.microsoft.com/express/vc/){:target="_blank"}) plus `CMake`.
+The `CMake` build will work directly **without the need** to install
+[cygwin](http://cygwin.com){:target="_blank"} as it was required previously before the adaption of `CMake`.
 
-> **Note:** 
+> **Note:**
 
 > Currently native Windows support for ROOT6 versions is not available.
 
@@ -234,4 +237,4 @@ If you are using Windows make sure you have installed Microsoft Visual C++ (e.g.
 *   **zlib-devel:** for resolving dependencies
 *   **expat:** for resolving dependencies
 
-Use `rpm -Uvh _package_` to install the above packages from [AIX Toolbox for Linux Applications](http://www-03.ibm.com/systems/power/software/aix/linux/toolbox/alpha.html). Subversion can be obtained from [collab.net](http://www.open.collab.net/downloads/community/).
+Use `rpm -Uvh _package_` to install the above packages from [AIX Toolbox for Linux Applications](http://www-03.ibm.com/systems/power/software/aix/linux/toolbox/alpha.html){:target="_blank"}. Subversion can be obtained from [collab.net](http://www.open.collab.net/downloads/community/){:target="_blank"}.

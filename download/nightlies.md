@@ -6,13 +6,13 @@ sidebar:
 ---
 
 
-> **Disclaimer** 
+> **Disclaimer**
 >
 > The usual nightly restrictions apply: a build might have failed, a build might be unavailble for a particular configuration, features might be missing are not yet in release quality.
 
 ## Where to find nightly builds:
 
-  - [Directory](https://root.cern/download/nightly/?C=N;O=D) with nightly binaries for various platforms
+  - [Directory](https://root.cern/download/nightly/?C=N;O=D){:target="_blank"} with nightly binaries for various platforms
   - CVMFS:
 <br>
 Source the relevant setup scripts, such as:

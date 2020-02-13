@@ -43,7 +43,7 @@ See → [Nightlies]({{ '/download/nightlies' | relative_url }}).
 
 ### Docker (experimental)
 We also provide ROOT in Docker containers.<br>
-See → [Docker Hub](https://hub.docker.com/r/rootproject/root-ubuntu16/).
+See → [Docker Hub](https://hub.docker.com/r/rootproject/root-ubuntu16/){:target="_blank"}.
 
 ## Building ROOT
 
