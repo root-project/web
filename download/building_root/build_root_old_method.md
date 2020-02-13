@@ -55,10 +55,10 @@ sure you meet all demands for additional features before trying to enable them.
 ## Two build methods
 
 ROOT can be built either using the classic `./configure;make` method or by using
-[CMake](http://www.cmake.org/). 
+[CMake](http://www.cmake.org/){:target="_blank"}.
 
 The advantage of the `./configure;make` method is that it runs out-of-the box on all Unix like machines, while on Windows it requires the cygwin
-environment to be installed. 
+environment to be installed.
 
 The advantage of `CMake` is that it runs on all platforms and makes/builds projects for the native IDE's (like Visual Studio on
 Windows, or Xcode on OSX). See →  [these instructions]({{'/resources/building_root' | relative_url}}) for installing ROOT using `CMake`.
@@ -229,7 +229,7 @@ The flags consist of two classes:
    If you find that the default locations does not work with some standard path e.g.,
    on `OS <Foo>`, library `lib<Bar>`, is in general installed in `path <Baz>`, but
    "configure" doesn't look there, please file a
-   [bug report](https://sft.its.cern.ch/jira/projects/ROOT). <br /><br />
+   [bug report](https://sft.its.cern.ch/jira/projects/ROOT){:target="_blank"}. <br /><br />
    If, for some reason, you have installed some third-party library outside it's
    usual location, you can make ./configure look for it using the corresponding
    `--with-<feature dir>` option (see below).<br /><br />
@@ -315,26 +315,26 @@ Most Linux distributions come with an OpenGL library (Mesa) pre-installed. The O
 libraries are already in XFree86 version 4 or above. On most Linux system the mesa-
 libGl-devel-* package must be installed. The Nvidia and ATI vendor drivers come often
 with their own optimized versions of OpenGL. For more information on getting the Mesa open source OpenGL,
-see → [http://www.mesa3d.org](http://www.mesa3d.org).
+see → [http://www.mesa3d.org](http://www.mesa3d.org){:target="_blank"}.
 
 ### CASTOR/SHIFT managed tape I/O
 
 To build the library providing CERN Castor/RFIO (remote I/O) support you need to get
 the Castor library from CERN. You can get pre-build libraries or the full source from
-the [Castor web site](http://castor.web.cern.ch).
+the [Castor web site](http://castor.web.cern.ch){:target="_blank"}.
 
 ### MySQL client
 
 To build the MySQL interface library you need to have libmysqlclient.so installed. On
 most Linux system this library comes with the mysql-devel package. For more information on the MySQL client, see →
-[http://www.mysql.com](http://www.mysql.com).
+[http://www.mysql.com](http://www.mysql.com){:target="_blank"}.
 
 ### Pythia event generators
 
 To build the event generator interfaces for Pythia6, you first have to get the pythia
 libraries. You can import Pythia6 and the makefiles to build the Pythia6 shared library
 on several platforms from:
-[ftp://root.cern.ch/root/pythia6.tar.gz](ftp://root.cern.ch/root/pythia6.tar.gz).
+[ftp://root.cern.ch/root/pythia6.tar.gz](ftp://root.cern.ch/root/pythia6.tar.gz){:target="_blank"}.
 
 The original sources (Pythia6409) can be found via Lund FTP server. Note that even in
 the case when you use your own version of Pythia6 you still need to use the following 2
@@ -349,11 +349,12 @@ small files to build the shared library:
 For more details on the build procedure, see an example in the file makePythia6.linux.
 
 More information about Pythia8 is available from:<br>
-[http://www.thep.lu.se/~torbjorn/Pythia.html](http://www.thep.lu.se/~torbjorn/Pythia.html).
+[http://www.thep.lu.se/~torbjorn/Pythia.html](http://www.thep.lu.se/~torbjorn/Pythia.html){:target="_blank"}.
 
 ### GSL
 
-The GNU Scientific Library, GSL is used in the [MathMore library]({{ '/manual/math#mathmore-library' | relative_url }}) of ROOT. To install the GSL package, see → <a href="http://www.gnu.org/software/gsl/">http://www.gnu.org/software/gsl/</a> and configure ROOT with, e.g.,:
+The GNU Scientific Library, GSL is used in the [MathMore library]({{ '/manual/math#mathmore-library' | relative_url }}) of ROOT. To install the GSL package,
+see → [http://www.gnu.org/software/gsl/](http://www.gnu.org/software/gsl/){:target="_blank"} and configure ROOT with, e.g.,:
 
 {% highlight sh linenos %}
 --with-gsl-incdir="the directory where gsl/gsl_version.h is"
@@ -369,7 +370,7 @@ Also when building GSL on 64 bit machines, like Mac OS X 10.5, configure GSL lik
 ### FFTW
 
 Only a basic interface to FFTW v3 is implemented (no "advanced" or "guru" features). To
-install this package, see → [http://www.fftw.org](http://www.fftw.org) and configure ROOT
+install this package, see → [http://www.fftw.org](http://www.fftw.org){:target="_blank"} and configure ROOT
 with, e.g.:
 
 {% highlight sh linenos %}
@@ -388,7 +389,7 @@ Also when building FFTW on 64 bit machines, like Mac OS X 10.5, configure FFTW l
 The graphviz package is used by the TGraphStruct class to represent structural
 information as diagrams of abstract graphs and networks.
 
-This package can be downloaded from [http://www.graphviz.org/](http://www.graphviz.org/).
+This package can be downloaded from [http://www.graphviz.org/](http://www.graphviz.org/){:target="_blank"}.
 
 To find graphviz the ROOT's configure file looks in standard locations. It is possible
 to define a specific location using the configure flags:
@@ -415,10 +416,11 @@ CC="gcc -m64"
 
 before doing configure.<br />
 On Windows machines it recommended to not install graphviz but to download
-the pre-installed version from [http://www.graphviz.org/](http://www.graphviz.org/).
+the pre-installed version from [http://www.graphviz.org/](http://www.graphviz.org/){:target="_blank"}.
 The ROOT configure command remains the same.
 
 ### Bonjour/Zeroconf
 
 To get support of Bonjour/Zeroconf you must install the appropriate libraries for you
-platform and compile enabling the Bonjour support. For more information, see → [PROOF configuration pages](https://d35c7d8c.web.cern.ch/configuration-faq#bonjour).
+platform and compile enabling the Bonjour support. For more information,
+see → [PROOF configuration pages](https://d35c7d8c.web.cern.ch/configuration-faq#bonjour){:target="_blank"}.

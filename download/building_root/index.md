@@ -9,9 +9,9 @@ toc_sticky: true
 
 ## Introduction
 
-ROOT uses the [CMake](http://www.cmake.org/) cross-platform build-generator tool as the
+ROOT uses the [CMake](http://www.cmake.org/){:target="_blank"} cross-platform build-generator tool as the
 primary build system.<br> `CMake` does not build the project, it generates the files needed by
-your build tool (GNU make, Ninja,  Visual Studio, etc) for building ROOT. 
+your build tool (GNU make, Ninja,  Visual Studio, etc) for building ROOT.
 
 The classic build with `configure/make` is still available but it will not be evolving with the
 new features of ROOT. For instructions building ROOT with `configure/make`, see → [Building ROOT with make (old method)](build_root_old_method).
