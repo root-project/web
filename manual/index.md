@@ -8,15 +8,12 @@ toc_sticky: true
 toc_label: ROOT Manual
 ---
 
-<center><b>
-<p style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#eec1d5; padding: 0.5em;">UNDER CONSTRUCTION</p>
-</b></center>
-
 <div style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#c4f1d8; padding: 0.5em;">
 
-The ROOT Manual provides detailed information about the use and applications of ROOT, the
-object-oriented framework that provides all the functionalities needed to deal with big
-data processing, statistical analysis, visualization and storage in high-energy physics.
+The <b>ROOT Manual</b> provides detailed information about the use and applications of
+<b>ROOT</b>, the object-oriented framework that provides all the functionalities needed
+to deal with big data processing, statistical analysis, visualization and storage in high-
+energy physics.
 
 <br><br>
 
@@ -77,7 +74,7 @@ Topical manuals are available for some functional parts of ROOT. They contain in
   - [Histograms]({{ '/manual/histograms' | relative_url }})
 
   - [Graphs]({{ '/manual/graphs' | relative_url }})
-  
+
   - [Vectors]({{ '/manual/vectors' | relative_url }})
 
   - [Trees]({{ '/manual/trees' | relative_url }})
@@ -102,7 +99,7 @@ Topical manuals are available for some functional parts of ROOT. They contain in
   - [Primer]({{ '/primer/' | relative_url }})
 
   - [Topical Manuals]({{ '/topical/' | relative_url }})
-  
+
   - [Geometry]({{ '/manual/geometry' | relative_url }})
 
   - [Forum](https://root-forum.cern.ch/)
