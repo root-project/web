@@ -7,7 +7,7 @@ sidebar:
   nav: "resources"
 ---
 
-The ROOT project uses a [Jenkins instance](https://epsft-jenkins.cern.ch/view/ROOT/) to
+The ROOT project uses a [Jenkins instance](https://epsft-jenkins.cern.ch/view/ROOT/){:target="_blank"} to
 schedule a number of software development procedures (nightly builds, production of releases,
 documentation generation, etc.). Practical information about the service can be found here.
 The purpose of this page is to document the different existing procedures for the ROOT

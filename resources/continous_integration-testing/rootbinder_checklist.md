@@ -7,15 +7,15 @@ sidebar:
   nav: "resources"
 ---
 
-ROOTBinder is hosted [in this github repository](https://github.com/cernphsft/rootbinder). 
-In order to upgrade the container which is launched in [Binder](https://mybinder.org), the 
-steps to be taken are the following: 
+ROOTBinder is hosted [in this github repository](https://github.com/cernphsft/rootbinder){:target="_blank"}.
+In order to upgrade the container which is launched in [Binder](https://mybinder.org){:target="_blank"}, the
+steps to be taken are the following:
 
 ## What if something goes wrong
 
-It is possible that something goes wrong and the link to the interactive demo has to be 
-interrupted. In this case the file https://root.cern.ch/notebooks/rootbinder.html has to be 
-modified so to redirect to a page which clarifies the current status of the demo, 
+It is possible that something goes wrong and the link to the interactive demo has to be
+interrupted. In this case the file https://root.cern.ch/notebooks/rootbinder.html has to be
+modified so to redirect to a page which clarifies the current status of the demo,
 for example: https://root.cern.ch/rootbinder-unreachable .
 
 ## Preparation of the ROOT tarball
