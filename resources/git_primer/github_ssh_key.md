@@ -15,9 +15,11 @@ Run
 
     ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ~/.ssh/github_id_rsa
 
-The email address is for your convenience, it doesn't really matter what you put there; you can even use this to state the name of the computer that will use that key.
+The email address is for your convenience, it doesn't really matter what you put there;
+you can even use this to state the name of the computer that will use that key.
 
-You can use a passphrase - but even without it's sufficiently safe, because only you have the secret key file! But please enabling [Two Factor Authentication](https://help.github.com/articles/about-two-factor-authentication/)!
+You can use a passphrase - but even without it's sufficiently safe, because only you have
+the secret key file! But please enabling [Two Factor Authentication](https://help.github.com/articles/about-two-factor-authentication/){:target="_blank"}!
 
 ### 2. Add the key to Github
 
@@ -49,6 +51,6 @@ should print
 
 ### References
 
-   * [Create an ssh key](https://help.github.com/articles/connecting-to-github-with-ssh/)
-   * [Add the key to Github](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account)
-   * [Check](https://help.github.com/articles/testing-your-ssh-connection/)
+   * [Create an ssh key](https://help.github.com/articles/connecting-to-github-with-ssh/){:target="_blank"}
+   * [Add the key to Github](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account){:target="_blank"}
+   * [Check](https://help.github.com/articles/testing-your-ssh-connection/){:target="_blank"}

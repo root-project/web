@@ -29,9 +29,9 @@ It is assumed at this point that you have a passing familiarity with CVS and/or 
 *   `man git`
 *   `git help <command>`
 *   `man git-<command>`
-*   [The git community book](http://book.git-scm.com/index.html)
-*   [Pragmatic Guide to Git](http://www.pragprog.com/titles/pg_git/pragmatic-guide-to-git)
-*   [Google](http://www.google.com/)
+*   [The git community book](http://book.git-scm.com/index.html){:target="_blank"}
+*   [Pragmatic Guide to Git](http://www.pragprog.com/titles/pg_git/pragmatic-guide-to-git){:target="_blank"}
+*   [Google](http://www.google.com/){:target="_blank"}
 
 ### Glossary
 
@@ -345,13 +345,13 @@ _If you have not pushed tags yet_ (See above) then the fix is trivial: for the f
 
 Tig is a command line tool that wraps many Git browse operations (like log, diff, show, status) in a colored text-mode interface based on ncurses. Tig has been written by Jonas Fonseca.
 
-See the [full Tig manual](http://jonas.nitro.dk/tig/manual.html) for a detailed description.
+See the [full Tig manual](http://jonas.nitro.dk/tig/manual.html){:target="_blank"} for a detailed description.
 
 ### Obtaining Tig
 
 Tig is available as package from many Linux distributions. On Debian/Ubuntu it is available with the package name tig from the default repositories.
 
-On RHEL-based systems it is available from the additional repository [RepoForge](http://repoforge.org/).
+On RHEL-based systems it is available from the additional repository [RepoForge](http://repoforge.org/){:target="_blank"}.
 
 On OS X it is easily installed via Homebrew:
 
@@ -361,7 +361,7 @@ On OS X it is easily installed via Homebrew:
 
 Many git commands can be piped into tig. When tig is invoked this way, it is in **pager mode**: output will be colored according to the input format, and colored.
 
-For instance it is possible to pipe the differences of one file like this: 
+For instance it is possible to pipe the differences of one file like this:
 
     git diff path/to/file.cxx | tig
 
@@ -411,7 +411,7 @@ This file contains global (`~/.gitconfig`) or repository-local configuration set
 
 *   Set user and email information to label commits usefully:
 
-        git config --global user.name "Chris Green" 
+        git config --global user.name "Chris Green"
         git config --global user.email <email-address>
 
 *   Set colors for various types of command output.
@@ -421,4 +421,4 @@ This file contains global (`~/.gitconfig`) or repository-local configuration set
 
 See the attached .gitconfig example. Have fun!
 
-Reproduced with permission from the following page:  [https://cdcvs.fnal.gov/redmine/projects/cet-is-public/wiki/GitTipsAndTri...](https://cdcvs.fnal.gov/redmine/projects/cet-is-public/wiki/GitTipsAndTricks#A-suggested-work-flow-for-distributed-projects-NoSY) by <span class="author">Chris Green</span>
+Reproduced with permission from the following page:  [https://cdcvs.fnal.gov/redmine/projects/cet-is-public/wiki/GitTipsAndTri...](https://cdcvs.fnal.gov/redmine/projects/cet-is-public/wiki/GitTipsAndTricks#A-suggested-work-flow-for-distributed-projects-NoSY){:target="_blank"} by <span class="author">Chris Green</span>

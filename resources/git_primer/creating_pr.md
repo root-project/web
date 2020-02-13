@@ -128,4 +128,4 @@ then push the result (without using --force).
 
 ## Resources
 
- - [GitHub and Git Foundations (YouTube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEHhfG9vJzVCTiDYcbhAiEqL)
+ - [GitHub and Git Foundations (YouTube)](https://www.youtube.com/playlist?list=PL0lo9MOBetEHhfG9vJzVCTiDYcbhAiEqL){:target="_blank"}
