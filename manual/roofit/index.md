@@ -11,7 +11,7 @@ ROOT provides with the RooFit library a toolkit for modeling the expected distri
 
 > **Tutorials**
 >
-> RooFit tutorials are available at → [https://root.cern/doc/master/group__tutorial__roofit.html](https://root.cern/doc/master/group__tutorial__roofit.html)
+> RooFit tutorials are available at → [https://root.cern/doc/master/group__tutorial__roofit.html](https://root.cern/doc/master/group__tutorial__roofit.html){:target="_blank"}
 
 > **Topical Manuals**
 >
