@@ -16,7 +16,7 @@ A graph or chart is a plot of categorical variables, this is un-binned data, see
 
 > **Tutorials**
 >
-> Histogram tutorials are available at → [https://root.cern/doc/master/group__tutorial__hist.html](https://root.cern/doc/master/group__tutorial__hist.html)
+> Histogram tutorials are available at → [https://root.cern/doc/master/group__tutorial__hist.html](https://root.cern/doc/master/group__tutorial__hist.html){:target="_blank"}
 
 ## Histogram classes
 
@@ -102,7 +102,7 @@ This *global bin* is useful to access the bin information independently of the d
 
 #### Re-binning
 
-You can re-bin a histogram via the [TH1::Rebin()](https://root.cern/doc/master/classTH1.html#aff6520fdae026334bf34fa1800946790) method. It returns a new histogram with the re-binned contents. If bin errors were stored, they are recomputed during the re-binning.
+You can re-bin a histogram via the [TH1::Rebin()](https://root.cern/doc/master/classTH1.html#aff6520fdae026334bf34fa1800946790){:target="_blank"} method. It returns a new histogram with the re-binned contents. If bin errors were stored, they are recomputed during the re-binning.
 
 ## Working with histograms
 
@@ -133,7 +133,7 @@ _**Example**_
 
 ### Filling a histogram
 
-- Fill a histogram with the [TH1::Fill()](https://root.cern/doc/master/classTH1.html#a77e71290a82517d317ea8d05e96b6c4a) method.
+- Fill a histogram with the [TH1::Fill()](https://root.cern/doc/master/classTH1.html#a77e71290a82517d317ea8d05e96b6c4a){:target="_blank"} method.
 
 _**Examples**_
 
@@ -151,7 +151,7 @@ The `Fill()` method returns the bin number for 1-D histograms or *global bin* nu
 
 #### Filling a histogram with random numbers
 
-- Fill a histogram with random numbers with the [TH1::FillRandom()](https://root.cern/doc/master/classTH1.html#a1e9d6258ae798a0eb52aef58a72758a5) method.
+- Fill a histogram with random numbers with the [TH1::FillRandom()](https://root.cern/doc/master/classTH1.html#a1e9d6258ae798a0eb52aef58a72758a5){:target="_blank"} method.
 
 The `FillRandom()` method uses the contents of an existing `TF1` function or another `TH1` histogram (for all dimensions).
 
@@ -164,7 +164,7 @@ A histogram is randomly filled 10 000 times with a default Gaussian distribution
    h1.FillRandom("gaus",10000);
 {% endhighlight %}
 
-Use the [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232) method to get a random number distributed according the contents of a histogram.
+Use the [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232){:target="_blank"} method to get a random number distributed according the contents of a histogram.
 
 ### Adding, multiplying and dividing histograms
 
@@ -200,13 +200,13 @@ Multiplying two histograms and put the result in the third one:
 
 ### Drawing a histogram
 
-  - Use the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da) method to draw a histogram.
+  - Use the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"} method to draw a histogram.
 
     It creates a {% include ref class="THistPainter" %} object that specializes the drawing of the histogram. The `THistPainter` class is separated from the histogram, so that the histogram does not contain the graphics overhead.
 
-  - Use the [TH1::DrawCopy()](https://root.cern/doc/master/classTH1.html#aa19b24b96284284d677cd73f00d29d79) method to create a copy of the histogram when drawing it.
+  - Use the [TH1::DrawCopy()](https://root.cern/doc/master/classTH1.html#aa19b24b96284284d677cd73f00d29d79){:target="_blank"} method to create a copy of the histogram when drawing it.
 
-  - Use the [TH1::DrawNormalized()](https://root.cern/doc/master/classTH1.html#a46394b325a71d59fe0009172079b4a62) method to draw a normalized copy of a histogram.
+  - Use the [TH1::DrawNormalized()](https://root.cern/doc/master/classTH1.html#a46394b325a71d59fe0009172079b4a62){:target="_blank"} method to draw a normalized copy of a histogram.
 
 _**Example**_
 
@@ -223,7 +223,7 @@ _**Example**_
 
 #### Getting the bin width
 
-- Use the [GetBinWidth()](https://root.cern/doc/master/classTH1.html#ad69a5fa0002361fd77f37990a29d1aa3) method to get the bin width of a histogram.
+- Use the [GetBinWidth()](https://root.cern/doc/master/classTH1.html#ad69a5fa0002361fd77f37990a29d1aa3){:target="_blank"} method to get the bin width of a histogram.
 
 {% highlight C++ %}
    TH1F h1("h1","Histogram from a Gaussian",100,-3,3);
@@ -242,7 +242,7 @@ _**Example**_
 
 **Drawing options for all histogram classes**
 
-For detailed information on the drawing options for all histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01a).
+For detailed information on the drawing options for all histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01a){:target="_blank"}.
 
 `AXIS`: Draws only the axis.
 
@@ -304,7 +304,7 @@ _**Example**_
 
 **Drawing options for 1-D histogram classes**
 
-For detailed information on the drawing options for 1-D histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01b).
+For detailed information on the drawing options for 1-D histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01b){:target="_blank"}.
 
 `AH`: Draws the histogram, but not the axis labels and tick marks.
 
@@ -455,11 +455,11 @@ Instead of using the `Editor`, you also can simply draw the error bars by:
 
 > **Tutorials**
 >
-> Fitting tutorials are available at → [https://root.cern/doc/master/group__tutorial__fit.html](https://root.cern/doc/master/group__tutorial__fit.html)
+> Fitting tutorials are available at → [https://root.cern/doc/master/group__tutorial__fit.html](https://root.cern/doc/master/group__tutorial__fit.html){:target="_blank"}
 
 ### Fitting 1-D histograms with pre-defined functions
 
-- Use the [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method to fit a 1-D histogram with a pre-defined function. The name of the pre-definded function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
+- Use the [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a 1-D histogram with a pre-defined function. The name of the pre-definded function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
 
 _**Example**_
 
@@ -564,7 +564,7 @@ Now the `fitf` function is used to fit the histogram.
 
 ### Accessing the fitted function parameters and results
 
-- Use the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c) method to access the fitted function parameters.
+- Use the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c){:target="_blank"} method to access the fitted function parameters.
 
 _**Examples**_
 
@@ -593,7 +593,7 @@ For pre-defined functions like `poln`, `exp`, `gaus`, and `landau`, the paramete
 
 For not pre-defined functions, the fit parameters must be initialized before invoking the `Fit()` method.
 
-- Use the [TF1::SetParLimits()](https://root.cern/doc/master/group__tutorial__fit.html) method to set the bounds for one parameter.
+- Use the [TF1::SetParLimits()](https://root.cern/doc/master/group__tutorial__fit.html){:target="_blank"} method to set the bounds for one parameter.
 
 {% highlight C++ %}
    func->SetParLimits(0,-1,1);
@@ -610,7 +610,7 @@ The parameter is fixed 4 at 10.
    func->SetParLimits(4,10,10);
 {% endhighlight %}
 
-- Use the [TF1::FixParameter()](https://root.cern/doc/master/classTF1.html#ae8869189ca9a2affe690fe26dcaa6c8c) method to fix a parameter to 0.
+- Use the [TF1::FixParameter()](https://root.cern/doc/master/classTF1.html#ae8869189ca9a2affe690fe26dcaa6c8c){:target="_blank"} method to fix a parameter to 0.
 
 _**Example**_
 
@@ -633,7 +633,7 @@ There is function with 6 parameters. Then there is a setup possible like the fol
 
 #### Fitting subranges
 
-By default, [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) fits the function on the defined histogram range. You can specify the `R` option in the second
+By default, [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} fits the function on the defined histogram range. You can specify the `R` option in the second
 parameter of `TH1::Fit()` to restrict the fit to the range specified in the {% include ref class="TF1" %} constructor.
 
 _**Example**_
@@ -715,7 +715,7 @@ You can obtain the following results of a fit:
 #### Associated function
 
 One or more objects (typically a `TF1\*`) can be added to the list of functions (`fFunctions`) associated to each histogram.
-[TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) adds the fitted function to this list.
+[TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} adds the fitted function to this list.
 
 Given a histogram `h`, you can retrieve the associated function with:
 
@@ -727,7 +727,7 @@ Given a histogram `h`, you can retrieve the associated function with:
 
 If the histogram or graph is made persistent, the list of associated functions is also persistent.
 
-Retrieve a pointer to the function with the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c) method. Then you can retrieve the fit parameters from the function.
+Retrieve a pointer to the function with the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c){:target="_blank"} method. Then you can retrieve the fit parameters from the function.
 
 _**Example**_
 
@@ -762,7 +762,7 @@ in case of low statistics.
 
 #### Fit statistics
 
-You can change the statistics box to display the fit parameters with the [TStyle::SetOptFit()](https://root.cern/doc/master/classTStyle.html#aedeb1d117d9f16af9f8ad430bf956d64) method. This parameter has four digits: `mode = pcev (default = 0111)`
+You can change the statistics box to display the fit parameters with the [TStyle::SetOptFit()](https://root.cern/doc/master/classTStyle.html#aedeb1d117d9f16af9f8ad430bf956d64){:target="_blank"} method. This parameter has four digits: `mode = pcev (default = 0111)`
 
 - `p = 1`: Print probability.
 - `c = 1`: Print Chi-square/number of degrees of freedom.
@@ -846,25 +846,25 @@ This includes the method that will be used, as well as what fit options will be 
 [ROOT::Fit](https://root.cern/doc/master/namespaceROOT_1_1Fit.html) is the namespace for fitting classes (regression analysis). The fitting classes are part of the [MathCore library]({{ '/manual/math#mathcore-library' | relative_url }}).<br>
 The defined classes can be classified in the following groups:
 
-- [Fit method classes](https://root.cern/doc/master/group__FitMethodFunc.html): Classes describing fit method functions like:
-	- [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html): Class for binned fits using the least square methods.
-	- [ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html): Class for evaluating the log likelihood for binned Poisson likelihood fits.
-	- [ROOT::Fit::LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html): Calls for likelihood fits.
+- [Fit method classes](https://root.cern/doc/master/group__FitMethodFunc.html){:target="_blank"}: Classes describing fit method functions like:
+   - [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html){:target="_blank"}: Class for binned fits using the least square methods.
+   - [ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html){:target="_blank"}: Class for evaluating the log likelihood for binned Poisson likelihood fits.
+   - [ROOT::Fit::LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html){:target="_blank"}: Calls for likelihood fits.
 
 - [Fit data classes](https://root.cern/doc/master/group__FitData.html): Classes for describing the input data for fitting. These classes are, among others, [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html), for binned data sets
  (data points containing both coordinates and a corresponding value/weight with optionally an error on the value or the coordinate), and [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html), for un-binned data sets.
 
-- [User fitting classes](https://root.cern/doc/master/group__FitMain.html): Classes for fitting a given data set.
+- [User fitting classes](https://root.cern/doc/master/group__FitMain.html){:target="_blank"}: Classes for fitting a given data set.
 
 #### Creating the input data
 
 There are two types of input data:
-- Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html)): They are used for least square (chi-square) fits of histograms or [TGraph](https://root.cern/doc/master/classTGraph.html) objects.
-- Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html)): They are used for fitting vectors of data points, for example from a [TTree](https://root.cern/doc/master/classTTree.html).
+- Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}): They are used for least square (chi-square) fits of histograms or [TGraph](https://root.cern/doc/master/classTGraph.html) objects.
+- Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"}): They are used for fitting vectors of data points, for example from a [TTree](https://root.cern/doc/master/classTTree.html).
 
 **Using binned data**
 
-- Use the [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html) class for binned data.
+- Use the [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"} class for binned data.
 
 _**Example**_
 
@@ -880,11 +880,11 @@ There is histogram, represented as a {% include ref class="TH1" %} type object. 
    ROOT::Fit::FillData(data, h1);
 {% endhighlight %}
 
-By using [ROOT::Fit::DataOptions](https://root.cern/doc/master/structROOT_1_1Fit_1_1DataOptions.html) you can specify the data range and some fitting options.
+By using [ROOT::Fit::DataOptions](https://root.cern/doc/master/structROOT_1_1Fit_1_1DataOptions.html){:target="_blank"} you can specify the data range and some fitting options.
 
 **Using un-binned data**
 
-- Use the [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html) class for un-binned data.
+- Use the [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"} class for un-binned data.
 
 For creating un-binned data sets, there are two possibilities:
 1. Copy the data inside a `ROOT::Fit::UnBinData` object.<br>
@@ -919,13 +919,13 @@ The model function needs to be expressed as function of some unknown parameters.
 parameter value to describe the observed data.
 
 You can for example use the {% include ref class="TF1" %} class, the parametric function class to describe the model function.
-But the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html) class takes as input a more general parametric function object, the abstract interface class [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a). It describes a generic one-dimensional or multi-dimensional function with parameters.
-This interface extends the abstract [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9) class with methods to set/retrieve parameter values and to evaluate the function
+But the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} class takes as input a more general parametric function object, the abstract interface class [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a). It describes a generic one-dimensional or multi-dimensional function with parameters.
+This interface extends the abstract [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} class with methods to set/retrieve parameter values and to evaluate the function
 given the independent vector of values X and vector of parameters P.
 
 #### Configuring the fit
 
-Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html) (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html) class) class for configuring the fit.
+Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html) (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} class) class for configuring the fit.
 
 There the following fit configurations:
 
@@ -952,29 +952,29 @@ Depending on the available input data and the selected function for fitting, you
 
 The following pre-defined fitting methods are available:
 
-- Least-square fit: [Fitter::LeastSquare(const BinData &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a44dc06cfe20c1036657e78d939b34593) or [Fitter::Fit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#ae6b7c345d4e0b62ebec1a9d08afd233c).
-Both methods should be used when the binned data values follow a Gaussian distribution. These fit methods are implemented using the class [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html#af0040f12bc304dd9610daec9d0dfed70).
+- Least-square fit: [Fitter::LeastSquare(const BinData &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a44dc06cfe20c1036657e78d939b34593){:target="_blank"} or [Fitter::Fit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#ae6b7c345d4e0b62ebec1a9d08afd233c){:target="_blank"}.
+Both methods should be used when the binned data values follow a Gaussian distribution. These fit methods are implemented using the class [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html#af0040f12bc304dd9610daec9d0dfed70){:target="_blank"}.
 
-- Binned likelihood fit: [Fitter::LikelihoodFit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a61a145587e2b65e90e4f05d3df2d6004). This method should be used when the binned data values follow a Poisson or a multinomial distribution. The Poisson case
+- Binned likelihood fit: [Fitter::LikelihoodFit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a61a145587e2b65e90e4f05d3df2d6004){:target="_blank"}. This method should be used when the binned data values follow a Poisson or a multinomial distribution. The Poisson case
 (extended fit) is the default and in this case the function normalization is also fit to the data. This method is implemented by the
 [ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html) class
 
-- Un-Binned likelihood fit: [Fitter::LikelihoodFit(const UnBindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a980281c2d7ecfbf94fe584fc3da1a566). By default the fit is not extended, this is the normalization is not fitted to the data. This
-method is implemented using the [LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html) class.
+- Un-Binned likelihood fit: [Fitter::LikelihoodFit(const UnBindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a980281c2d7ecfbf94fe584fc3da1a566){:target="_blank"}. By default the fit is not extended, this is the normalization is not fitted to the data. This
+method is implemented using the [LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html){:target="_blank"} class.
 
 - Linear fit: A linear fit can be selected, if the model function is linear in the parameters.
 
 #### Fit result
 
-The result of the fit is contained in the [ROOT::Fit::Result](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#acb09076a64e460e493dcc74fa7b36668) object.
+The result of the fit is contained in the [ROOT::Fit::Result](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#acb09076a64e460e493dcc74fa7b36668){:target="_blank"} object.
 
-You can print the result of the fit with the [FitResult::Print()](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html#a879917fed14db36f8d63fb0170d68d1d) method.
+You can print the result of the fit with the [FitResult::Print()](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html#a879917fed14db36f8d63fb0170d68d1d){:target="_blank"} method.
 
 ## Profile histograms
 
 Profile histograms are used to display the mean value of `Y` and its error for each bin in `X`.
 
-When you fill a profile histogram with the [TProfile.Fill()](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125) method:
+When you fill a profile histogram with the [TProfile.Fill()](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125){:target="_blank"} method:
 
 - `H[j]` contains for each bin `j` the sum of the `y` values for this bin.
 
@@ -991,9 +991,9 @@ The following formulae show the cumulated contents (capital letters) and the val
 `s[j] = sqrt[E[j] / L[j] - h[j]**2]`<br>
 `e[j] = s[j] / sqrt[L[j]]`<br>
 
-The displayed bin content for bin `J` of a {% include ref class="TProfile" %}is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d).
-The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a).
-In case the option `s` is used (in the constructor or by calling  [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725)) the displayed error is `s(J)`.
+The displayed bin content for bin `J` of a {% include ref class="TProfile" %}is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d){:target="_blank"}.
+The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a){:target="_blank"}.
+In case the option `s` is used (in the constructor or by calling  [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725){:target="_blank"}) the displayed error is `s(J)`.
 
 In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
 
