@@ -862,7 +862,6 @@ Regular expression and wildcards can be easily used in methods like:
 
 The method finds the first occurrence of the regular expression in the string and returns its position.
 
-
 ## Using Cling commands to control ROOT
 
 You can pass commands directly to ROOT by placing a dot before the command.
