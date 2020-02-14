@@ -915,7 +915,7 @@ cursor position, `px=0` and `py=0` corresponds to the top-left corner of the pad
 
 #### Converting between coordinate systems
 
-{% include ref class="TPad" %} provides some methods to convert from one system of coordinates to another. 
+{% include ref class="TPad" %} provides some methods to convert from one system of coordinates to another.
 
 In the following table, a point is defined by:
 - `(px,py)` in pixel coordinates,
@@ -1005,7 +1005,10 @@ In the following table, a point is defined by:
 
 > **Note**
 >
-> All the pixel conversion functions along the Y axis consider that `py=0` is at the top of the pad except `PixeltoY()`, which assumes that the position `py=0` is at the bottom of the pad. To make `PixeltoY()` converting the same way as the other conversion functions, it should be used the following way (`p` is a pointer to a {% include ref class="TPad" %}):<br>
+> All the pixel conversion functions along the Y axis consider that `py=0` is at the top
+> of the pad except `PixeltoY()`, which assumes that the position `py=0` is at the bottom
+> of the pad. To make `PixeltoY()` converting the same way as the other conversion
+> functions, it should be used the following way (`p` is a pointer to a {% include ref class="TPad" %}):<br>
 {% highlight C++ %}
 p->PixeltoY(py - p->GetWh());
 {% endhighlight %}
