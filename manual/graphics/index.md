@@ -74,7 +74,7 @@ The function is displayed in a canvas.
 
 {% include figure_jsroot
    file="graphics.root" object="func1" width="500px" height="350px"
-   caption="Canvas (point the bottom left light blue square or right-click
+   caption="Canvas (point to the bottom left light blue square or right-click
    on the image to interact with the object)."
 %}
 
