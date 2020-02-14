@@ -14,13 +14,13 @@ For using PyROOT, a Python version > 2.2 is required.<br>
 The top level Python module `ROOT.py` is located in `$ROOTSYS/lib`. The `ROOT.py` module imports the `libPyROOT.so` ROOT extension module and performs an initialization similar to ROOT.
 
 > **Python**
-> 
-> The usage of Python with ROOT requires working knowledge of Python. For detailed information on Python, refer to Python language references such as [Python Language Reference](https://docs.python.org/3/reference/).
+>
+> The usage of Python with ROOT requires working knowledge of Python. For detailed information on Python, refer to Python language references such as [Python Language Reference](https://docs.python.org/3/reference/){:target="_blank"}.
 
 
 > **Tutorials**
 >
-> PyROOT tutorials are available at → [https://root.cern/doc/master/group__tutorial__pyroot.html](https://root.cern/doc/master/group__tutorial__pyroot.html)
+> PyROOT tutorials are available at → [https://root.cern/doc/master/group__tutorial__pyroot.html](https://root.cern/doc/master/group__tutorial__pyroot.html){:target="_blank"}
 
 ## Running PyROOT from the Python interpreter
 
@@ -48,8 +48,8 @@ fun1.Draw()
 
 ## Running Python from the ROOT/Cling interpreter
 
-In ROOT can run any Python command via the [TPython](https://root.cern/doc/master/classTPython.html) class.
- 
+In ROOT can run any Python command via the {% include ref class="TPython" %} class.
+
  _**Example**_
 
 {% highlight C++ %}
