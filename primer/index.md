@@ -114,7 +114,7 @@ ROOT is available for many platforms (Linux, Mac OS X, Windows...), but
 in this guide we will implicitly assume that you are using Linux. The
 first thing you need to do with ROOT is install it, don't you ? Obtaining
 the latest ROOT version is straightforward. Just seek the "Pro" version
-on this webpage <http://root.cern.ch/downloading-root>.
+on [the download page]({{'download' | relative_url}}).
 You will find precompiled versions for the different architectures, or
 the ROOT source code to compile yourself. Just pick up the flavour you
 need and follow the installation instructions.
@@ -2779,8 +2779,8 @@ transparently used in Python!# Concluding Remarks
 This is the end of our guided tour for beginners through ROOT. There is
 still a lot coming to mind to be said, but by now you are experienced
 enough to use the ROOT documentation, most importantly the **[ROOT home
-page](http://root.cern.ch)** and the **[ROOT reference
-guide](https://root.cern/doc/master/)** with the
+page](http://root.cern.ch){:target="_blank"}** and the **[ROOT reference
+guide](https://root.cern/doc/master/){:target="_blank"}** with the
 documentation of all ROOT classes.
 
 A very useful way for you to continue exploring ROOT is to study the
