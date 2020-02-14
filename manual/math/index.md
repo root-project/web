@@ -800,9 +800,9 @@ The Minuit minimization package was originally written in Fortran by Fred James 
 of PACKLIB (patch D506). It has been converted to the C++ class
 {% include ref class="TMinuit" %}, by R.Brun.
 
-> **Topical Manual**
+> **Topical manual**
 >
-> For TMinuit, a Topical Manual it available at [Topical Manual - TMinuit]({{ '/topical/#minuit' | relative_url }}).<br>
+> For TMinuit, a topical manual it available at [Topical Manual - TMinuit]({{ '/topical/#minuit' | relative_url }}).<br>
 > It contains in-depth information about TMinuit.
 
 ## Minuit2 Library
@@ -810,9 +810,9 @@ of PACKLIB (patch D506). It has been converted to the C++ class
 
 The [Minuit2](https://root.cern/doc/master/group__Minuit.html){:target="_blank"} library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm, which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
 
-> **Topical Manuals**
+> **Topical manuals**
 >
-> For Minuit2, Topical Manuals are available at [Topical Manuals - Minuit2]({{ '/topical/#minuit-2' | relative_url }}).<br>
+> For Minuit2, topical manuals are available at [Topical Manuals - Minuit2]({{ '/topical/#minuit-2' | relative_url }}).<br>
 > They contain in-depth information about Minuit2.
 
 ## UNU.RAN
