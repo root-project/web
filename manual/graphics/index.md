@@ -35,9 +35,16 @@ ROOT provides numerous graphic classes, of which the following are among the mos
 
 - {% include ref class="TPad" %}
 
-### Working with graphics
+## Working with graphics
 
-#### Drawing objects
+ROOT offers many possibilities to work with graphics, for example:
+
+- [drawing objects](#drawing objects)
+- [drawing objects with special characters in its name](#drawing-objects-with-special-characters-in-its-name)
+- [using the context menu for manipulating objects](#using-the-context-menu-for-manipulating-objects)
+- [using the Graphics Editor for objects](#using-the-graphics-editor-for-objects)
+
+### Drawing objects
 
 The {% include ref class="TObject" %} class has the virtual method
 `Draw()` by which objects can be "drawn".
@@ -71,7 +78,7 @@ The function is displayed in a canvas.
    on the image to interact with the object)."
 %}
 
-#### Drawing objects with special characters in its name
+### Drawing objects with special characters in its name
 
 In general, avoid using objects that containing special character like `\`, `/`, `#` etc. in the objects names. Also object names starting with a number might be not accessible from the ROOT command line.
 `/` is the separator for the directory level in a ROOT file therefore an object having a `/` in its name cannot be accessed from the command line.
@@ -121,7 +128,7 @@ void draw_object(const char *file_name = "myfile.root", const char *obj_name = "
 {% endhighlight %}
 
 
-#### Using the context menu for manipulating objects
+### Using the context menu for manipulating objects
 
 Right-click on the function to display the context menu.
 
@@ -144,7 +151,7 @@ Select a range, for example 5, 25.
    caption="Range 5, 25 for sin(x)."
 %}
 
-#### Using the Graphics Editor for objects
+### Using the Graphics Editor for objects
 
 You can edit an existing object in a canvas by right-clicking the object or by using the Graphics Editor.
 
