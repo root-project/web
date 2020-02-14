@@ -15,7 +15,7 @@ A histogram is used for continuous data, where the bins represent ranges of data
 
 > **Tutorials**
 >
-> Graph tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphs.html](https://root.cern/doc/master/group__tutorial__graphs.html)
+> Graph tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphs.html](https://root.cern/doc/master/group__tutorial__graphs.html){:target="_blank"}
 
 ## Graph classes
 
@@ -136,13 +136,14 @@ _**Example**_
 
 ### Fitting graphs
 
-- Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb), for fitting graphs.
+- Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}, for fitting graphs.
 
 For more information on the `Fit()` method, see *Fitting histograms*.
 
 ## Graphs with error bars
 
-A {% include ref class="TGraphErrors" %} is a [TGraph](https://root.cern/doc/master/classTGraph.html) with error bars.
+A {% include ref class="TGraphErrors" %} is a {% include ref class="TGraph" %}
+with error bars.
 
 The {% include ref class="TGraphPainter" %} class implements all drawing options for graphs with error bars.
 
@@ -186,7 +187,7 @@ _**Example**_
 
 A {% include ref class="TMultiGraph" %} is a collection of TGraph (or derived) objects.
 
-- Use [TMultiGraph::Add()](https://root.cern/doc/master/classTMultiGraph.html#a2e3c69dd70582da81cf1e32414cc5e2d) to add a new graph to the list.
+- Use [TMultiGraph::Add()](https://root.cern/doc/master/classTMultiGraph.html#a2e3c69dd70582da81cf1e32414cc5e2d){:target="_blank"} to add a new graph to the list.
 
 The `TMultiGraph` owns the objects in the list. The drawing and fitting options are the same as for {% include ref class="TGraph" %}.
 
@@ -224,4 +225,4 @@ _**Example**_
 
 ## TGraph2D ##
 
-A [TGraph2D](https://root.cern/doc/master/classTGraph2D.html) graph is a graphics object that is made of three arrays X, Y and Z with the same number of points each.
+A {% include ref class="TGraph2D" %} graph is a graphics object that is made of three arrays X, Y and Z with the same number of points each.
