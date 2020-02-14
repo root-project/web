@@ -25,11 +25,11 @@ Painting a pad is done by the `Paint()` method of each object in the list of pri
 
 > **Tutorials**
 >
-> Graphics tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphics.html](https://root.cern/doc/master/group__tutorial__graphics.html)
+> Graphics tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphics.html](https://root.cern/doc/master/group__tutorial__graphics.html){:target="_blank"}
 
 ## Graphic classes
 
-ROOT provides the following classes for graphics, among others:
+ROOT provides numerous graphic classes, of which the following are among the most important:
 
 - {% include ref class="TCanvas" %}
 
@@ -100,7 +100,7 @@ void draw_object(const char *file_name = "myfile.root", const char *obj_name = "
       return;
    }
 
-// try to find the proper key by its object name.
+// Try to find the proper key by its object name.
    TKey *key = (TKey *)list->FindObject(obj_name);
    if (!key) {
       std::cout << "Cannot find a TKey named" << obj_name << "! Aborting..." << std::endl;
@@ -569,9 +569,8 @@ For a time axis, you can set the
 
 #### Time formats
 
-The Time format defines the format of the labels along the time axis. It can be changed using the `TAxis::SetTimeFormat()` method. The time format used if from the C function `strftime()`.
-It is a string containing the following formatting characters,
-
+The time format defines the format of the labels along the time axis. It can be changed using the `TAxis::SetTimeFormat()` method. The time format used if from the C function `strftime()`.
+It is a string containing the following formatting characters, <br/>
 for date:<br>
 `%a`: abbreviated weekday name<br>
 `%b`: abbreviated month name<br>
@@ -588,7 +587,7 @@ for time:<br>
 `%S`: seconds (00-61)<br>
 `%%`: %<br>
 
-The other characters are output as is. For example to have a format like `dd/mm/yyyy`. use:
+The other characters are output as is. For example to have a format like `dd/mm/yyyy`, use:
 
 {% highlight C++ %}
 ~~~ .cpp h->GetXaxis()->SetTimeFormat("%d/%m/%Y"); ~~~
@@ -628,7 +627,7 @@ The time offset can be specified using the control character `%F` after the norm
 _**Example**_
 
 {% highlight C++ %}
-histo->GetXaxis()->SetTimeFormat("%d\/%m\/%y%F2000-02-28 13:00:01");
+   histo->GetXaxis()->SetTimeFormat("%d\/%m\/%y%F2000-02-28 13:00:01");
 {% endhighlight %}
 
 
@@ -639,41 +638,41 @@ If a time axis has no specified time offset, the global time offset will be stor
 _**Example**_
 
 {% highlight C++ %}
-gStyle->SetTitleH(0.08);
-TDatime da(2003,02,28,12,00,00);
-gStyle->SetTimeOffset(da.Convert());
+   gStyle->SetTitleH(0.08);
+   TDatime da(2003,02,28,12,00,00);
+   gStyle->SetTimeOffset(da.Convert());
 
-auto ct = new TCanvas("ct","Time on axis",0,0,600,600);
-ct->Divide(1,3);
+   auto ct = new TCanvas("ct","Time on axis",0,0,600,600);
+   ct->Divide(1,3);
 
-auto ht1 = new TH1F("ht1","ht1",30000,0.,200000.);
-auto ht2 = new TH1F("ht2","ht2",30000,0.,200000.);
-auto ht3 = new TH1F("ht3","ht3",30000,0.,200000.);
-for (Int_t i=1;i<30000;i++) {
-   auto noise = gRandom->Gaus(0,120);
-   ht1->SetBinContent(i,noise);
-   ht2->SetBinContent(i,noise*noise);
-   ht3->SetBinContent(i,noise*noise*noise);
-}
+   auto ht1 = new TH1F("ht1","ht1",30000,0.,200000.);
+   auto ht2 = new TH1F("ht2","ht2",30000,0.,200000.);
+   auto ht3 = new TH1F("ht3","ht3",30000,0.,200000.);
+   for (Int_t i=1;i<30000;i++) {
+      auto noise = gRandom->Gaus(0,120);
+      ht1->SetBinContent(i,noise);
+      ht2->SetBinContent(i,noise*noise);
+      ht3->SetBinContent(i,noise*noise*noise);
+   }
 
-ct->cd(1);
-ht1->GetXaxis()->SetLabelSize(0.06);
-ht1->GetXaxis()->SetTimeDisplay(1);
-ht1->GetXaxis()->SetTimeFormat("%d/%m/%y%F2000-02-28 13:00:01");
-ht1->Draw();
+   ct->cd(1);
+   ht1->GetXaxis()->SetLabelSize(0.06);
+   ht1->GetXaxis()->SetTimeDisplay(1);
+   ht1->GetXaxis()->SetTimeFormat("%d/%m/%y%F2000-02-28 13:00:01");
+   ht1->Draw();
 
-ct->cd(2);
-ht2->GetXaxis()->SetLabelSize(0.06);
-ht2->GetXaxis()->SetTimeDisplay(1);
-ht2->GetXaxis()->SetTimeFormat("%d/%m/%y");
-ht2->Draw();
+   ct->cd(2);
+   ht2->GetXaxis()->SetLabelSize(0.06);
+   ht2->GetXaxis()->SetTimeDisplay(1);
+   ht2->GetXaxis()->SetTimeFormat("%d/%m/%y");
+   ht2->Draw();
 
-ct->cd(3);
-ht3->GetXaxis()->SetLabelSize(0.06);
-TDatime dh(2019,12,4,15,00,00);
-ht3->GetXaxis()->SetTimeDisplay(1);
-ht3->GetXaxis()->SetTimeOffset(dh.Convert());
-ht3->Draw();
+   ct->cd(3);
+   ht3->GetXaxis()->SetLabelSize(0.06);
+   TDatime dh(2019,12,4,15,00,00);
+   ht3->GetXaxis()->SetTimeDisplay(1);
+   ht3->GetXaxis()->SetTimeOffset(dh.Convert());
+   ht3->Draw();
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -696,7 +695,7 @@ A legend is defined with default coordinates, border size and option. The legend
 
 The title is a regular entry and supports {% include ref class="TLatex" %}. The default is no title (header = 0).
 
-- Use the [AddEntry()](https://root.cern/doc/master/classTLegend.html#a0fa2f13a4fea32bf9e1558a7b8df2d24) method to a add a new entry to a legend.
+- Use the [AddEntry()](https://root.cern/doc/master/classTLegend.html#a0fa2f13a4fea32bf9e1558a7b8df2d24){:target="_blank"} method to a add a new entry to a legend.
 
 The parameters are:
 - `*objis` a pointer to an object having a marker, a line, or a fill attributes (a histogram, or a graph).
@@ -737,7 +736,7 @@ The following legend contains a histogram, a function and a graph. The histogram
       ey[i] = 10.*i;
    }
 
- // Graph:
+// Graph:
    auto gr = new TGraphErrors(n,x,y,ex,ey);
    gr->SetName("gr");
    gr->SetLineColor(kRed);
@@ -778,18 +777,18 @@ _**Example**_
 If you want to change the fill color of the active pad to blue, but you do not know the name of the active pad, you can use `gPad`.
 
 {% highlight C++ %}
-gPad->SetFillColor(38)
+   gPad->SetFillColor(38)
 {% endhighlight %}
 
 ### Accessing an object in an active pad
 
-- Use the [TPad::GetPrimitive(const char* name)](https://root.cern/doc/master/classTPad.html#af757a87208deb609e0b0d29e6edfaf94) method to access an object in an active pad.
+- Use the [TPad::GetPrimitive(const char* name)](https://root.cern/doc/master/classTPad.html#af757a87208deb609e0b0d29e6edfaf94){:target="_blank"} method to access an object in an active pad.
 
 _**Example**_
 
 {% highlight C++ %}
-root[] obj = gPad->GetPrimitive("myobjectname")
-(class TObject*)0x1063cba8
+   root[] obj = gPad->GetPrimitive("myobjectname")
+   (class TObject*)0x1063cba8
 {% endhighlight %}
 
 A pointer to the object `myobjectname` is returned and put into the `obj` variable.<br>
@@ -799,7 +798,7 @@ The type of the returned pointer is a `TObject*` that has a name.
 
 You can hide an object in a pad by removing it from the list of objects owned by that pad.
 
-- Use the [TPad::GetListOfPrimitives()](https://root.cern/doc/master/classTPad.html#a2bf11bfddaa3f25ae259c3d55203f0f4) method to list is accessible objects of a pad.
+- Use the [TPad::GetListOfPrimitives()](https://root.cern/doc/master/classTPad.html#a2bf11bfddaa3f25ae259c3d55203f0f4){:target="_blank"} method to list is accessible objects of a pad.
 
 - Use the `Remove()` method to remove the object from the list.
 
@@ -811,9 +810,9 @@ Then you can remove the object from the list, i.e. pad.<br>
 The object disappears as soon as the pas is updated.
 
 {% highlight C++ %}
-root[1] obj = gPad->GetPrimitive("myobjectname")
-root[2] li = gPad->GetListOfPrimitives()
-root[3] li->Remove(obj)
+   root[1] obj = gPad->GetPrimitive("myobjectname")
+   root[2] li = gPad->GetListOfPrimitives()
+   root[3] li->Remove(obj)
 {% endhighlight %}
 
 ### Updating a pad
@@ -833,13 +832,13 @@ _**Example**_
 
 {% highlight C++ %}
 // The pad has changed.
-root[] pad1->Modified()
+   root[] pad1->Modified()
 
 // Recursively updating all modified pads:
-root[] c1->Update()
+   root[] c1->Update()
 {% endhighlight %}
 
-A subsequent call to [TCanvas::Update()](https://root.cern/doc/master/classTCanvas.html#a83bb3270c4e4cd4250730d5586ceebd6) scans the list of sub-pads and repaints the pads.
+A subsequent call to [TCanvas::Update()](https://root.cern/doc/master/classTCanvas.html#a83bb3270c4e4cd4250730d5586ceebd6){:target="_blank"} scans the list of sub-pads and repaints the pads.
 
 ### Dividing a pad into sub-pads
 
@@ -865,7 +864,7 @@ build the {% include ref class="TPad" %} constructor.
    root[] spad1 = new TPad("spad1","The first subpad",.1,.1,.5,.5)
 {% endhighlight %}
 
-The NDC (Normalized Coordinate System) coordinates are specified for the lower left point `(0.1, 0.1)` and for the upper right point `(0.5, 0.5)`.<br>
+The NDC (normalized coordinate system) coordinates are specified for the lower left point `(0.1, 0.1)` and for the upper right point `(0.5, 0.5)`.<br>
 Then the sub-pad is drawn.
 
 {% highlight C++ %}
@@ -876,7 +875,7 @@ For building more sub-pads, repeat this procedure as many times as necessary.
 
 #### Dividing a pad into sub-pads
 
-- Use the [TPad::Divide()](https://root.cern/doc/master/classTPad.html#a064b8ae1d12a9be393c0e22c5958cc7c) method to divide a pad into sub-pads.
+- Use the [TPad::Divide()](https://root.cern/doc/master/classTPad.html#a064b8ae1d12a9be393c0e22c5958cc7c){:target="_blank"} method to divide a pad into sub-pads.
 
 ### Coordinate systems of a pad
 
@@ -892,7 +891,7 @@ You can convert from one system of coordinates to another.
 Most methods of {% include ref class="TPad" %} use the user coordinate system, and all graphic primitives have their parameters defined in terms of user coordinates. By default, when an empty pad is drawn, the
 user coordinates are set to a range from 0 to 1 starting at the lower left corner.
 
-- Use the [TPad::range(float x1,float y1,float x2,float y2)](https://root.cern/doc/master/classTPad.html#ae50a151ce00ad2414495314923f1b911) method to set the user coordinate system.<br/>
+- Use the [TPad::range(float x1,float y1,float x2,float y2)](https://root.cern/doc/master/classTPad.html#ae50a151ce00ad2414495314923f1b911){:target="_blank"} method to set the user coordinate system.<br/>
 The arguments `x1` and `x2` define the new range in the x direction, and `y1` and `y2` define the new range in the y direction.
 
 _**Example**_
@@ -1015,6 +1014,6 @@ p->PixeltoY(py - p->GetWh());
 
 ### Copying a canvas
 
-- Use the [TCanvas::DrawClonePad](https://root.cern/doc/master/classTCanvas.html#afcb8727555c9c2be024eb307fd3d295a) method to make a copy of the canvas.
+- Use the [TCanvas::DrawClonePad](https://root.cern/doc/master/classTCanvas.html#afcb8727555c9c2be024eb307fd3d295a){:target="_blank"} method to make a copy of the canvas.
 
-You can also use the [TObject:DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9) method, to draw a clone of this object in the current selected pad.
+You can also use the [TObject:DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9){:target="_blank"} method, to draw a clone of this object in the current selected pad.
