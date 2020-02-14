@@ -53,7 +53,7 @@ Topical manuals are available for some functional parts of ROOT. They contain in
 > [C++ Language Reference](https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=vs-2019){:target="_blank"}.
 >
 
-## Basics
+## ROOT Manual - Basics
 
   - [Getting started with ROOT]({{ '/manual/getting_started_with_root' | relative_url }})
 
@@ -68,7 +68,7 @@ Topical manuals are available for some functional parts of ROOT. They contain in
   - [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})
 
 
-## Functional parts
+## ROOT Manual - Functional parts
 
   - [Graphics]({{ '/manual/graphics' | relative_url }})
 
@@ -93,7 +93,7 @@ Topical manuals are available for some functional parts of ROOT. They contain in
   - [Python interface PyROOT]({{ '/manual/python' | relative_url }})
 
 
-## Further Information
+## Further information
 
   - [Reference Guide](https://root.cern/doc/master/){:target="_blank"}
 
