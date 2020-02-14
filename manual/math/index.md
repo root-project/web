@@ -196,34 +196,34 @@ _**Example**_
 
 ### Complex numbers
 
-The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides with {% include ref class="TComplex" %} a class for complex numbers.
+The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides with {% include ref class="TComplex" %} a class for complex numbers.
 
 ## MathMore library
 
-The [MathMore](https://root.cern/doc/master/MathMorePage.html) library provides an advanced collection of functions and C++ classes for numerical computing. This is an extension of the functionality provided by the [MathCore](https://root.cern/doc/master/MathCorePage.html) library. The [MathMore](https://root.cern/doc/master/MathMorePage.html)  library is implemented wrapping in C++ the GNU Scientific Library ([GSL](https://www.gnu.org/software/gsl/)).
+The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"} library provides an advanced collection of functions and C++ classes for numerical computing. This is an extension of the functionality provided by the [MathCore](https://root.cern/doc/master/MathCorePage.html) library. The [MathMore](https://root.cern/doc/master/MathMorePage.html)  library is implemented wrapping in C++ the GNU Scientific Library ([GSL](https://www.gnu.org/software/gsl/)).
 
-The [MathMore](https://root.cern/doc/master/MathMorePage.html) library includes classes and functions for:
+The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"} library includes classes and functions for:
 
-- [Special functions](https://root.cern/doc/master/group__SpecFunc.html)<br>
+- [Special functions](https://root.cern/doc/master/group__SpecFunc.html){:target="_blank"}<br>
 Containing all the major functions such as Bessel functions, Legendre polynomial, etc.
 
-- [Statistical functions](https://root.cern/doc/master/group__StatFunc.html)<br>
+- [Statistical functions](https://root.cern/doc/master/group__StatFunc.html){:target="_blank"}<br>
 Contains mathematical functions used in statistics such as probability density functions, cumulative distributions functions and their inverse (quantiles).
 
 - Numerical algorithms:
-   - [Numerical Integration](https://root.cern/doc/master/group__Integration.html)
-   - [Numerical Monte Carlo Integration classes](https://root.cern/doc/master/group__MCIntegration.html)
-   - [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html)
-   - [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html)
-   - [One-dimensional Minimization](https://root.cern/doc/master/group__Min1D.html)
-   - [Multi-dimensional Minimization](https://root.cern/doc/master/group__MultiMin.html)
+   - [Numerical Integration](https://root.cern/doc/master/group__Integration.html){:target="_blank"}
+   - [Numerical Monte Carlo Integration classes](https://root.cern/doc/master/group__MCIntegration.html){:target="_blank"}
+   - [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html){:target="_blank"}
+   - [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html){:target="_blank"}
+   - [One-dimensional Minimization](https://root.cern/doc/master/group__Min1D.html){:target="_blank"}
+   - [Multi-dimensional Minimization](https://root.cern/doc/master/group__MultiMin.html){:target="_blank"}
 
-- [Interpolation Classes](https://root.cern/doc/master/group__Interpolation.html)
+- [Interpolation Classes](https://root.cern/doc/master/group__Interpolation.html){:target="_blank"}
 
-- [Function Approximation (ChebyshevApprox)](https://root.cern/doc/master/group__FuncApprox.html)
+- [Function Approximation (ChebyshevApprox)](https://root.cern/doc/master/group__FuncApprox.html){:target="_blank"}
 <br>Based on Chebyshev polynomials.
 
-- [Random Classes](https://root.cern/doc/master/group__Random.html)
+- [Random Classes](https://root.cern/doc/master/group__Random.html){:target="_blank"}
 
 
 ## Linear algebra package
@@ -300,28 +300,28 @@ Use one of the following methods to access the information about the relevant ma
 Use one of the following methods to set a matrix property:
 
 - `SetTol (Double_t tol)`<br>
-Set the tolerance number.
+Sets the tolerance number.
 
 - `ResizeTo (Int_t nrows,Int_t ncols, Int_t nr_nonzeros=-1)`<br>
-Change matrix shape to `nrows x ncols`. Index will start at 0.
+Changes the matrix shape to `nrows x ncols`. Index will start at 0.
 
 - `ResizeTo(Int_t row_lwb,Int_t row_upb, Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros=-1)`<br>
-Change matrix shape to `row_lwb:row_upb x col_lwb:col_upb`.
+Changes the matrix shape to `row_lwb:row_upb x col_lwb:col_upb`.
 
 - `SetRowIndexArray (Int_t *data)`<br>
-For sparse matrices, set the row index. The array data should contain at least `fNrows+1` entries column lower-bound index.
+For sparse matrices, it sets the row index. The array data should contain at least `fNrows+1` entries column lower-bound index.
 
 - `SetColIndexArray (Int_t *data)`<br>
-For sparse matrices, set the column index. The array data should contain at least `fNelems` entries.
+For sparse matrices, it sets the column index. The array data should contain at least `fNelems` entries.
 
 - `SetSparseIndex (Int_t nelems new)`<br>
-Allocate memory for a sparse map of `nelems_new` elements and copy (if exists) at most `nelems_new`  matrix elements over to the new structure.
+Allocates memory for a sparse map of `nelems_new` elements and copies (if exists) at most `nelems_new` matrix elements over to the new structure.
 
 - `SetSparseIndex (const TMatrixDBase &a)`<br>
-Copy the sparse map from matrix `a`.
+Copies the sparse map from matrix `a`.
 
 - `SetSparseIndexAB (const TMatrixDSparse &a, const TMatrixDSparse &b)`<br>
-Set the sparse map to the same map of matrix `a` and `b`.
+Sets the sparse map to the same map of matrix `a` and `b`.
 
 ### Creating and filling a matrix
 
@@ -790,9 +790,9 @@ With the `TMatrixDEigen` and `TMatrixDSymEigen` classes, you can compute eigenva
 
 ## SMatrix
 
-[SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html) is a C++ package for high performance vector and matrix computations. It can be used only in problems when the size of the matrices is known at compile time, like in the tracking reconstruction of HEP experiments. It is based on a C++ technique, called expression templates, to achieve an high level optimization. The C++ templates can be used to implement vector and matrix expressions such that these expressions can be transformed at compile time to code which is equivalent to hand optimized code in a low-level language like FORTRAN or C.
+[SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} is a C++ package for high performance vector and matrix computations. It can be used only in problems when the size of the matrices is known at compile time, like in the tracking reconstruction of HEP experiments. It is based on a C++ technique, called expression templates, to achieve an high level optimization. The C++ templates can be used to implement vector and matrix expressions such that these expressions can be transformed at compile time to code which is equivalent to hand optimized code in a low-level language like FORTRAN or C.
 
-The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html) has been developed initially by T. Glebe of the Max-Planck-Institut, Heidelberg, as part of the HeraB analysis framework. A subset of the original package has been now incorporated in the ROOT distribution, with the aim to provide to the LHC experiments a stand-alone and high performance matrix package for reconstruction. The API of the current package differs from the original one, in order to be compliant to the ROOT coding conventions.
+The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} has been developed initially by T. Glebe of the Max-Planck-Institut, Heidelberg, as part of the HeraB analysis framework. A subset of the original package has been now incorporated in the ROOT distribution, with the aim to provide to the LHC experiments a stand-alone and high performance matrix package for reconstruction. The API of the current package differs from the original one, in order to be compliant to the ROOT coding conventions.
 
 ## TMinuit
 
@@ -808,7 +808,7 @@ of PACKLIB (patch D506). It has been converted to the C++ class
 ## Minuit2 Library
 
 
-The [Minuit2](https://root.cern/doc/master/group__Minuit.html) library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm, which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
+The [Minuit2](https://root.cern/doc/master/group__Minuit.html){:target="_blank"} library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm, which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
 
 > **Topical Manuals**
 >
@@ -817,7 +817,7 @@ The [Minuit2](https://root.cern/doc/master/group__Minuit.html) library is a new 
 
 ## UNU.RAN
 
-[UNU.RAN](http://statmath.wu-wien.ac.at/unuran) (**U**niversal **N**on **U**niform **RA**ndom **N**umber generator for generating non-uniform pseudo-random numbers) contains universal (also called automatic or black-box) algorithms that can generate random numbers from large classes of continuous (in one or multi-dimensions), discrete distributions, empirical distributions (like histograms) and also from practically all standard distributions.
+[UNU.RAN](http://statmath.wu-wien.ac.at/unuran){:target="_blank"} (**U**niversal **N**on **U**niform **RA**ndom **N**umber generator for generating non-uniform pseudo-random numbers) contains universal (also called automatic or black-box) algorithms that can generate random numbers from large classes of continuous (in one or multi-dimensions), discrete distributions, empirical distributions (like histograms) and also from practically all standard distributions.
 
 UNU.RAN is an ANSI C library licensed under GPL.
 
@@ -825,11 +825,11 @@ The {% include ref class="TUnuran" %} class is used to interface the UNURAN pack
 
 > **Tutorials**
 >
-> UNU:RAN tutorials are available at → [https://root.cern/doc/master/group__tutorial__unuran.html](https://root.cern/doc/master/group__tutorial__unuran.html)
+> UNU:RAN tutorials are available at → [https://root.cern/doc/master/group__tutorial__unuran.html](https://root.cern/doc/master/group__tutorial__unuran.html){:target="_blank"}
 
 ### Initializing TUnuran with string API
 
-You can initialize UNU.RAN with the string API via [TUnuran::Init()](https://root.cern/doc/master/classTUnuran.html#a793f7255df1e6d595fdfb6bc2f3a8256), passing the distribution type and the method.
+You can initialize UNU.RAN with the string API via [TUnuran::Init()](https://root.cern/doc/master/classTUnuran.html#a793f7255df1e6d595fdfb6bc2f3a8256){:target="_blank"}, passing the distribution type and the method.
 
 _**Example**_
 
@@ -848,7 +848,7 @@ TUnuran unr;
 ### Using TUnuranContDist for a one-dimensional distribution
 
 - Use {% include ref class="TUnuranContDist" %} for creating a continuous 1-D distribution object (for example from a {% include ref class="TF1" %} object providing the PDF (probability density function).<br>
-You can provide additional information via [TUnuranContDist::SetDomain(min,max)](https://root.cern/doc/master/classTUnuranContDist.html#aa82c3fc018dadafc55ef3a45239ce191) like the `domain()` for generating numbers in a restricted region.
+You can provide additional information via [TUnuranContDist::SetDomain(min,max)](https://root.cern/doc/master/classTUnuranContDist.html#aa82c3fc018dadafc55ef3a45239ce191){:target="_blank"} like the `domain()` for generating numbers in a restricted region.
 
 _**Example**_
 
@@ -856,7 +856,7 @@ _**Example**_
 // 1D case: create a distribution from two TF1 object, pointers pdfFunc.
    TUnuranContDist dist(pdfFunc);
 
-// Initialize UNU.RAN passing the distribution and a string.
+// Initialize UNU.RAN, passing the distribution and a string.
 // Define the method.
    unr.Init(dist, "method=hinv");
 
