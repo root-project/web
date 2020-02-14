@@ -172,7 +172,7 @@ Type at the ROOT prompt:
 ## Using the interactive C++ interpreter Cling
 
 ROOT uses the interactive C++ interpreter Cling that is built on top of the
-**L**ow **L**evel **V**irtual **M**achine ([LLVM](https://llvm.org/)) and the [Clang libraries](https://clang.llvm.org/).
+**L**ow **L**evel **V**irtual **M**achine ([LLVM](https://llvm.org/){:target="_blank"}) and the [Clang libraries](https://clang.llvm.org/){:target="_blank"}.
 Cling provides command line prompt and a just-in-time (JIT) compiler for compilation.
 
 > **Note**
