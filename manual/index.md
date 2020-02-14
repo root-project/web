@@ -33,12 +33,13 @@ Both parts contain a lot of, often interactive, examples.
 <br><br>
 <b>ROOT Reference Guide</b><br>
 The ROOT Manual refers to numerous information, especially for ROOT classes, from the
-<a href="https://root.cern/doc/master/">ROOT Reference Guide</a>. The ROOT Reference Guide
+<a href="https://root.cern/doc/master/" target="_blank">ROOT Reference Guide</a>. The ROOT Reference Guide
 is the primary source of information for all ROOT classes.
 
 <br><br>
 <b>Tutorials</b><br>
-Tutorials are available for all parts of the ROOT Manual at → <a href="https://root.cern/doc/master/group__Tutorials.html">https://root.cern/doc/master/group__Tutorials.html</a>.
+Tutorials are available for all parts of the ROOT Manual
+at → <a href="https://root.cern/doc/master/group__Tutorials.html" target="_blank">https://root.cern/doc/master/group__Tutorials.html</a>.
 
 <br><br>
 <b>Topical manuals</b><br>
@@ -49,7 +50,9 @@ Topical manuals are available for some functional parts of ROOT. They contain in
 
 > **C++**
 >
-> The usage of ROOT requires in-depth knowledge of C++. For detailed information on C++, refer to C++ language references such as [C++ Language Reference](https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=vs-2019).
+> The usage of ROOT requires in-depth knowledge of C++. For detailed information on C++,
+> refer to C++ language references such as
+> [C++ Language Reference](https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=vs-2019){:target="_blank"}.
 >
 
 ## Basics
@@ -75,8 +78,6 @@ Topical manuals are available for some functional parts of ROOT. They contain in
 
   - [Graphs]({{ '/manual/graphs' | relative_url }})
 
-  - [Vectors]({{ '/manual/vectors' | relative_url }})
-
   - [Trees]({{ '/manual/trees' | relative_url }})
 
   - [Data frames]({{ '/manual/data_frame' | relative_url }})
@@ -87,20 +88,22 @@ Topical manuals are available for some functional parts of ROOT. They contain in
 
   - [Mathematical libraries]({{ '/manual/math' | relative_url }})
 
+  - [Vectors]({{ '/manual/vectors' | relative_url }})
+
+  - [Geometry]({{ '/manual/geometry' | relative_url }})
+
   - [Python interface PyROOT]({{ '/manual/python' | relative_url }})
 
 
 ## Further Information
 
-  - [Reference Guide](https://root.cern/doc/master/)
+  - [Reference Guide](https://root.cern/doc/master/){:target="_blank"}
 
-  - [Tutorials](https://root.cern/doc/master/group__Tutorials.html)
+  - [Tutorials](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"}
 
   - [Primer]({{ '/primer/' | relative_url }})
 
   - [Topical Manuals]({{ '/topical/' | relative_url }})
 
-  - [Geometry]({{ '/manual/geometry' | relative_url }})
-
-  - [Forum](https://root-forum.cern.ch/)
+  - [Forum](https://root-forum.cern.ch/){:target="_blank"}
 
