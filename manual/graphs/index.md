@@ -25,7 +25,6 @@ ROOT provides numerous graph classes, of which the following are among the most 
 
 {% include ref class="TGraphErrors" %}: A graph with error bars.
 
-
 {% include ref class="TGraphBentErrors" %}: A {% include ref class="TGraph" %} with bent, asymmetric error bars.
 
 {% include ref class="TGraphMultiErrors" %}: A {% include ref class="TGraph" %} with asymmetric error bars and multiple y error dimensions.
