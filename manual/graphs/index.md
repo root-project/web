@@ -133,14 +133,23 @@ _**Example**_
 
 ### Fitting graphs
 
+<<<<<<< HEAD
 - Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}
 , for fitting graphs.
+=======
+- Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}, for fitting graphs.
+>>>>>>> branch 'gh-pages' of https://github.com/root-project/web
 
 For more information on the `Fit()` method, → see [Fitting histograms]({{ '/manual/histograms#fitting-histograms' | relative_url }}).
 
 ## Graphs with error bars
 
+<<<<<<< HEAD
 A {% include ref class="TGraphErrors" %} is a {% include ref class="TGraph" %} with error bars.
+=======
+A {% include ref class="TGraphErrors" %} is a {% include ref class="TGraph" %}
+with error bars.
+>>>>>>> branch 'gh-pages' of https://github.com/root-project/web
 
 The {% include ref class="TGraphPainter" %} class implements all drawing options for graphs with error bars.
 
