@@ -17,29 +17,27 @@ energy physics.
 
 <br><br>
 
-In the first part <b>ROOT MANUAL - Basics</b>, the central building blocks and concepts of
+<b>ROOT MANUAL - Basics:</b> In the first part of the manual, the central building blocks and concepts of
 ROOT are presented and explained.
 
 <br><br>
 
-In the second part <b>ROOT MANUAL - Functional parts</b>, the numerous application areas
+<b>ROOT MANUAL - Functional parts:</b> In the second part of the manual, the numerous application areas
 and special topics of ROOT are dealt with. Here you will receive in-depth information
 about the extensive possibilities of data analysis with ROOT.
 
 <br><br>
 
-Both parts contain a lot of, often interactive, examples.
+Both parts of the manual contain a lot of, often interactive, examples.
 
 <br><br>
 <b>ROOT Reference Guide</b><br>
-The ROOT Manual refers to numerous information, especially for ROOT classes, from the
-<a href="https://root.cern/doc/master/" target="_blank">ROOT Reference Guide</a>. The ROOT Reference Guide
+The ROOT Manual refers to numerous information, especially for ROOT classes, from the → <a href="https://root.cern/doc/master/" target="_blank">ROOT Reference Guide</a>. The ROOT Reference Guide
 is the primary source of information for all ROOT classes.
 
 <br><br>
 <b>Tutorials</b><br>
-Tutorials are available for all parts of the ROOT Manual
-at → <a href="https://root.cern/doc/master/group__Tutorials.html" target="_blank">https://root.cern/doc/master/group__Tutorials.html</a>.
+Tutorials are available for all parts of the ROOT Manual at → <a href="https://root.cern/doc/master/group__Tutorials.html" target="_blank">https://root.cern/doc/master/group__Tutorials.html</a>.
 
 <br><br>
 <b>Topical manuals</b><br>
