@@ -26,18 +26,18 @@ The package includes:
 
 > **Tutorials**
 >
-> TMVA tutorials are available at → [https://root.cern/doc/master/group__tutorial__tmva.html](https://root.cern/doc/master/group__tutorial__tmva.html)
+> TMVA tutorials are available at → [https://root.cern/doc/master/group__tutorial__tmva.html](https://root.cern/doc/master/group__tutorial__tmva.html){:target="_blank"}
 
-> **Topical Manuals**
+> **Topical manuals**
 >
-> For TMVA, Topical Manuals are available at [Topical Manuals - TMVA]({{ '/topical/#tmva' | relative_url }}).<br>
+> For TMVA, topical manuals are available at [Topical Manuals - TMVA]({{ '/topical/#tmva' | relative_url }}).<br>
 > They contain in-depth information about TMVA.
 
 ## Using TMVA
 
 The ROOT tutorials for TMVA, available in `$ROOTSYS/tutorials/tmva`, provide example jobs for the training phase and the application of the training results in a classification or regression analysis using the TMVA Reader. 
 
-**Training examples**
+### Training examples
 
 - `TMVAClassification.C`: Provides examples for the training and testing of TMVA classifiers.
 
@@ -45,7 +45,7 @@ The ROOT tutorials for TMVA, available in `$ROOTSYS/tutorials/tmva`, provide exa
 
 - `TMVARegression.C`: Provides examples for the training and testing of TMVA classifiers.
 
-**Application examples**
+### Application examples
 
 - `TMVAClassificationApplication.C`:  Provides an example on how to use the trained classifiers within an analysis module.
 
