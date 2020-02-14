@@ -28,27 +28,27 @@ The ROOT Mathematical libraries consist of the following components:
 
 ## MathCore library
 
-The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides a collection of functions, C++ classes and ROOT classes for HEP numerical computing. <br>
+The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides a collection of functions, C++ classes and ROOT classes for HEP numerical computing. <br>
 The `MathCore` is a self-consistent minimal set of tools required for the basic numerical computing. More advanced mathematical functionalities is provided by the [MathMore library](#mathmore-library).
 The following is included in the `MathCore` library:
 
-- [Special mathematical functions](https://root.cern/doc/master/group__SpecFunc.html): Functions like the gamma, beta and error function that are used in HEP.
+- [Special mathematical functions](https://root.cern/doc/master/group__SpecFunc.html){:target="_blank"}: Functions like the gamma, beta and error function that are used in HEP.
 
-- [Statistical functions](https://root.cern/doc/master/group__StatFunc.html): Mathematical functions used in statistics, such as the probability density functions and the cumulative distributions functions for continuous and discrete distributions.
+- [Statistical functions](https://root.cern/doc/master/group__StatFunc.html){:target="_blank"}: Mathematical functions used in statistics, such as the probability density functions and the cumulative distributions functions for continuous and discrete distributions.
 
-- [Function classes and interfaces](https://root.cern/doc/master/group__CppFunctions.html): Interfaces (abstract classes) and base classes, including helper classes to wrap free (static) and non-static member functions.
+- [Function classes and interfaces](https://root.cern/doc/master/group__CppFunctions.html){:target="_blank"}: Interfaces (abstract classes) and base classes, including helper classes to wrap free (static) and non-static member functions.
 
 - Numerical algorithms: User classes with basic implementations for:
-   - [Numerical Integration](https://root.cern/doc/master/group__Integration.html)
-   - [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html)
-   - [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html)
-   - [One-dimensional minimization](https://root.cern/doc/master/group__Min1D.html) and [multi-dimensional minimization](https://root.cern/doc/master/group__MultiMin.html)
+   - [Numerical Integration](https://root.cern/doc/master/group__Integration.html){:target="_blank"}
+   - [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html){:target="_blank"}
+   - [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html){:target="_blank"}
+   - [One-dimensional minimization](https://root.cern/doc/master/group__Min1D.html){:target="_blank"} and [multi-dimensional minimization](https://root.cern/doc/master/group__MultiMin.html){:target="_blank"}
 
-- [Fitting and parameter estimation](https://root.cern/doc/master/group__Fit.html): ROOT classes for fitting and parameter estimation from a given data set.
+- [Fitting and parameter estimation](https://root.cern/doc/master/group__Fit.html){:target="_blank"}: ROOT classes for fitting and parameter estimation from a given data set.
 
-In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html) library contains the following ROOT classes that were originally part of *libCore*:
+In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library contains the following ROOT classes that were originally part of *libCore*:
 
-- the namespaces for [TMath](https://root.cern/doc/master/namespaceTMath.html) and [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html).
+- the namespaces for [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} and [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"}.
 
 - ROOT classes for random number generators, {% include ref class="TRandom" %} etc.
 
@@ -56,12 +56,12 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html) libr
 
 - other ROOT classes like:
    - {% include ref class="TKDTree" %}: ROOT class implementing a kd-tree.
-   - [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html): ROOT class for testing the for goodness of fit tests.
+   - [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html){:target="_blank"}: ROOT class for testing the for goodness of fit tests.
 
 
 ### TMath
 
-The [TMath](https://root.cern/doc/master/namespaceTMath.html) namespace provides a collection of free functions:
+The [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} namespace provides a collection of free functions:
 
 - numerical constants (like pi, e, h, etc.)
 
@@ -82,7 +82,7 @@ The [TMath](https://root.cern/doc/master/namespaceTMath.html) namespace provides
 
 #### Numerical constants
 
-[TMath](https://root.cern/doc/master/namespaceTMath.html) provides constants in the form of inline functions:
+[TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides constants in the form of inline functions:
 
 - pi
 - base of natural logarithm
@@ -100,7 +100,7 @@ The [TMath](https://root.cern/doc/master/namespaceTMath.html) namespace provides
 
 #### Statistic functions operating on arrays
 
-[TMath](https://root.cern/doc/master/namespaceTMath.html) provides functions that process arrays for calculation:
+[TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides functions that process arrays for calculation:
 
 - mean
 - median
@@ -129,7 +129,7 @@ _**Example**_
 
 ### ROOT:Math
 
-The [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html) namespace provides a set of function interfaces to define the basic behaviour of a mathematical function:
+The [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} namespace provides a set of function interfaces to define the basic behaviour of a mathematical function:
 
 - **One-dimensional function interfaces**<br>
 Used for numerical algorithms operating only on one-dimensional functions. They cannot applied to
@@ -144,7 +144,7 @@ Used for fitting after evaluating multi-dimensional functions.
 
 ### Random numbers
 
-The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides the following classes for generating pseudo-random numbers:
+The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides the following classes for generating pseudo-random numbers:
 
 {% include ref class="TRandom" %}: Using a linear congruential random generator.
 
@@ -160,7 +160,7 @@ The [MathCore](https://root.cern/doc/master/MathCorePage.html) library provides 
 
 #### Seeding the random number generators
 
-- Use the [SetSeed()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#ab9efcc04f4be1e7e6e49c5281abdee5b) method.
+- Use the [SetSeed()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#ab9efcc04f4be1e7e6e49c5281abdee5b){:target="_blank"} method.
 
 When no value is given, the generator default seed is used. In this case an identical sequence will be generated every time the application is run.<br>
 When the 0 value is used as seed, then a unique seed is generated using a TUUID, for {% include ref class="TRandom" %}, {% include ref class="TRandom1" %} and {% include ref class="TRandom3" %}.<br>
@@ -168,7 +168,7 @@ For {% include ref class="TRandom" %} the seed is generated using only the machi
 
 #### Using the random number generators
 
-- Use the [Rndm()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#af47234971a577abc33b975867fc4877d) method for generating a pseudo-random number distributed between 0 and 1.
+- Use the [Rndm()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#af47234971a577abc33b975867fc4877d){:target="_blank"} method for generating a pseudo-random number distributed between 0 and 1.
 
 _**Example**_
 
