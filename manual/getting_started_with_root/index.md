@@ -189,25 +189,27 @@ _**Examples**_
 
 Simple operations:
 
-```
+{% highlight C++ %}
    root[0] 21+21
    (int) 42
-```
-```
+{% endhighlight %}
+
+{% highlight C++ %}
    root[1] sqrt(42)
    6.4807407
-```
+{% endhighlight %}
+
 Relational operators:
-```
+{% highlight C++ %}
    root [2] 42 > 98
    false
-```
+{% endhighlight %}
 
-Calling a function from a ROOT class like [TMath](https://root.cern/doc/master/namespaceTMath.html).
-```
+Calling a function from a ROOT class like {% include ref class="TMath" %}.
+{% highlight C++ %}
    root [3] Math::Pi()
    3.1415927
-```
+{% endhighlight %}
 
 ### Multi-line commands
 
@@ -222,7 +224,7 @@ You can use ROOT to execute multi-line commands on the ROOT prompt.
 
 _**Example**_
 
-```
+{% highlight C++ %}
    root [0] {
    root [1] Int_t j = 0;
    root [2] for (Int_t i = 0; i < 3; i++)
@@ -234,7 +236,7 @@ _**Example**_
    i = 0, j = 0
    i = 1, j = 1
    i = 2, j = 3
-```
+{% endhighlight %}
 
 ## ROOT macros
 
@@ -255,7 +257,7 @@ is saved must match.
 
 2. Use the following general structure for the ROOT macro:
 
-   ```
+{% highlight C++ %}
       void MacroName() {
          ...
 
@@ -263,7 +265,7 @@ is saved must match.
          code line ends with ;
          ...
       }
-   ```
+{% endhighlight %}
 
 3.  Save the file ROOT macro, using the macro name as file name: **MacroName**.C
 
@@ -306,7 +308,7 @@ You can execute a ROOT macro:
 
 You can execute a RROT macro conditionally inside another ROOT macro.
 
-- Call the interpreter [TROOT::ProcessLine()](https://root.cern/doc/master/classTROOT.html#a32fc66033a13d1415e0ad523994dd0e5).
+- Call the interpreter [TROOT::ProcessLine()](https://root.cern/doc/master/classTROOT.html#a32fc66033a13d1415e0ad523994dd0e5){:target="_blank"}.
 
 `ProcessLine()` takes a parameter, which is a pointer to an int or to a
 `TInterpreter::EErrorCode` to let you access the interpreter error code after an attempt to interpret.
@@ -317,12 +319,13 @@ _**Example**_
 
 The example `$ROOTSYS/tutorials/tree/cernstaff.C` calls a ROOT macro to build a ROOT file, if it does not exist.
 
-```
+{% highlight C++ %}
    void cernstaff() {
       if (gSystem->AccessPathName("cernstaff.root")) {
       gROOT->ProcessLine(".x cernbuild.C");
    }
-```
+{% endhighlight %}
+
 ### Executing a ROOT macro from the invocation of ROOT
 
 You can pass a macro to ROOT in its invocation.
@@ -439,9 +442,9 @@ With a given header file `MyHeader.h`, ACliC automatically generates a dictionar
 
 You can manually create a dictionary by using `rootcling`:
 
-```
-      rootcling -f DictOutput.cxx -c OPTIONS Header1.h Header2.h ... Linkdef.h
-```
+{% highlight C++ %}
+   rootcling -f DictOutput.cxx -c OPTIONS Header1.h Header2.h ... Linkdef.h
+{% endhighlight %}
 
 - `DictOutput.cxx` specifies the output file that will contain the dictionary. It will be accompanied by a header file `DictOutput.h`.
 
@@ -630,11 +633,11 @@ _**Example**_
 
 Hiding the declaration and initialization of the array `gArray` from both Cling and `rootcling`:
 
-```
+{% highlight C++ %}
    #if !defined(__CLING__)
    int gArray[] = { 2, 3, 4};
    #endif
-```
+{% endhighlight %}
 
 Cling and `rootcling` will ignore all statements between the `#if !defined (__CLING__)`
 and `#endif`. Because ACLiC calls `rootcling` to build a dictionary, the declaration of
@@ -678,8 +681,7 @@ _**Example**_
    };
 {% endhighlight %}
 
-In this case, `rootcling` does not have enough information about the
-[TTree](https://root.cern/doc/master/classTTree.html) class to produce the correct
+In this case, `rootcling` does not have enough information about the {% include ref class="TTree" %} class to produce the correct
 dictionary file.
 
 If you try this, `rootcling` and compiling will be error free. However, instantiating a
@@ -846,7 +848,7 @@ The escape characters are:
 
 `ˆC`: C = any letter. Control code.
 
-You can use the [TRegexp](https://root.cern/doc/master/classTRegexp.html) class to create a regular expression from an input string. If the wildcard is true, then the input string contains a wildcard expression.
+You can use the {% include ref class="TRegexp" %} class to create a regular expression from an input string. If the wildcard is true, then the input string contains a wildcard expression.
 
 _**Example**_
 
@@ -874,11 +876,11 @@ You can pass commands directly to ROOT by placing a dot before the command.
 
 `.?`: Provides a list of all commands.
 
-`.!<OS_command>`: Access the shell of the operating system. For example `.!ls` or `.!pwd`.
+`.!<OS_command>`: Accesses the shell of the operating system. For example `.!ls` or `.!pwd`.
 
 `.x <file_name>`: Executes a ROOT macro.
 
-`.U <file_name>`: Unload file.
+`.U <file_name>`: Unloads a file.
 
 `.L <file_name>`: Loads a ROOT macro or library.
 
