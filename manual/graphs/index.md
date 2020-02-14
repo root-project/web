@@ -15,32 +15,30 @@ A histogram is used for continuous data, where the bins represent ranges of data
 
 > **Tutorials**
 >
-> Graph tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphs.html](https://root.cern/doc/master/group__tutorial__graphs.html)
+> Graph tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphs.html](https://root.cern/doc/master/group__tutorial__graphs.html){:target="_blank"}
 
 ## Graph classes
 
-The following graph classes are available in ROOT, among others:
-
+ROOT provides numerous graph classes, of which the following are among the most important:
 
 {% include ref class="TGraph" %}: A graph.
 
 {% include ref class="TGraphErrors" %}: A graph with error bars.
 
-{% include ref class="TGraphAsymmErrors" %}: A `TGraph` with asymmetric error bars.
 
-{% include ref class="TGraphBentErrors" %}: A `TGraph` with bent, asymmetric error bars.
+{% include ref class="TGraphBentErrors" %}: A {% include ref class="TGraph" %} with bent, asymmetric error bars.
 
-{% include ref class="TGraphMultiErrors" %}: A `TGraph` with asymmetric error bars and multiple y error dimensions.
+{% include ref class="TGraphMultiErrors" %}: A {% include ref class="TGraph" %} with asymmetric error bars and multiple y error dimensions.
 
 {% include ref class="TGraphPolar" %}: A polar graph including error bars.
 
 {% include ref class="TGraphQQ" %}: Draws quantile-quantile plots.
 
-{% include ref class="TMultiGraph" %}: A collection of `TGraph` (or derived) objects.
+{% include ref class="TMultiGraph" %}: A collection of {% include ref class="TGraph" %} (or derived) objects.
 
 {% include ref class="TGraph2D" %}: Graph made of three arrays X, Y and Z with the same number of points each.
 
-{% include ref class="TGraph2DErrors" %}: A `TGraph2D` with error bars.
+{% include ref class="TGraph2DErrors" %}: A {% include ref class="TGraph2D" %} with error bars.
 
 ## Working with graphs
 
@@ -56,13 +54,13 @@ Arrays of coordinates are defined and then graph with the {% include ref class="
 The coordinates can be arrays of doubles or floats.
 
 {% highlight C++ %}
-Int_t n = 20;
-Double_t x[n], y[n];
-for (Int_t i=0; i<n; i++) {
-   x[i] = i*0.1;
-   y[i] = 10*sin(x[i]+0.2);
-}
-TGraph *gr1 = new TGraph (n, x, y);
+   Int_t n = 20;
+   Double_t x[n], y[n];
+   for (Int_t i=0; i<n; i++) {
+      x[i] = i*0.1;
+      y[i] = 10*sin(x[i]+0.2);
+   }
+   TGraph *gr1 = new TGraph (n, x, y);
 {% endhighlight %}
 
 ### Drawing a graph
@@ -102,13 +100,13 @@ For detailed information on the drawing options for graph classes, refer to {% i
 
 `F`: A filled area is drawn.
 
-`F1`: As F, but the filled area is no more repartee around X=0 or Y=0
+`F1`: As F, but the filled area is no more repartee around X=0 or Y=0.
 
 `F2`: Draws a filled area poly line connecting the center of bins.
 
 `A`: Axis are drawn around the graph.
 
-`C`: A smooth curve is drawn
+`C`: A smooth curve is drawn.
 
 `*` A star is plotted at each point.
 
@@ -136,17 +134,18 @@ _**Example**_
 
 ### Fitting graphs
 
-- Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb), for fitting graphs.
+- Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}
+, for fitting graphs.
 
-For more information on the `Fit()` method, see *Fitting histograms*.
+For more information on the `Fit()` method, → see [Fitting histograms]({{ '/manual/histograms#fitting-histograms' | relative_url }}).
 
 ## Graphs with error bars
 
-A {% include ref class="TGraphErrors" %} is a [TGraph](https://root.cern/doc/master/classTGraph.html) with error bars.
+A {% include ref class="TGraphErrors" %} is a {% include ref class="TGraph" %} with error bars.
 
 The {% include ref class="TGraphPainter" %} class implements all drawing options for graphs with error bars.
 
-`TGraphErrors` uses 4 parameters: X, Y (as in `TGraph`), X-errors, and Y-errors (the size of the errors in the x and y direction).
+{% include ref class="TGraphErrors" %} uses 4 parameters: X, Y (as in {% include ref class="TGraph" %}), X-errors, and Y-errors (the size of the errors in the x and y direction).
 
 _**Example**_
 
@@ -184,11 +183,11 @@ _**Example**_
 
 ## TMultiGraph ##
 
-A {% include ref class="TMultiGraph" %} is a collection of TGraph (or derived) objects.
+A {% include ref class="TMultiGraph" %} is a collection of {% include ref class="TGraph" %} (or derived) objects.
 
-- Use [TMultiGraph::Add()](https://root.cern/doc/master/classTMultiGraph.html#a2e3c69dd70582da81cf1e32414cc5e2d) to add a new graph to the list.
+- Use [TMultiGraph::Add()](https://root.cern/doc/master/classTMultiGraph.html#a2e3c69dd70582da81cf1e32414cc5e2d){:target="_blank"} to add a new graph to the list.
 
-The `TMultiGraph` owns the objects in the list. The drawing and fitting options are the same as for {% include ref class="TGraph" %}.
+The {% include ref class="TMultiGraph" %} owns the objects in the list. The drawing and fitting options are the same as for {% include ref class="TGraph" %}.
 
 _**Example**_
 
@@ -224,4 +223,4 @@ _**Example**_
 
 ## TGraph2D ##
 
-A [TGraph2D](https://root.cern/doc/master/classTGraph2D.html) graph is a graphics object that is made of three arrays X, Y and Z with the same number of points each.
+A {% include ref class="TGraph2D" %} graph is a graphics object that is made of three arrays X, Y and Z with the same number of points each.
