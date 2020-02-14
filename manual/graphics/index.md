@@ -25,7 +25,7 @@ Painting a pad is done by the `Paint()` method of each object in the list of pri
 
 > **Tutorials**
 >
-> Graphics tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphics.html](https://root.cern/doc/master/group__tutorial__graphics.html)
+> Graphics tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphics.html](https://root.cern/doc/master/group__tutorial__graphics.html){:target="_blank"}
 
 ## Graphic classes
 
@@ -696,7 +696,7 @@ A legend is defined with default coordinates, border size and option. The legend
 
 The title is a regular entry and supports {% include ref class="TLatex" %}. The default is no title (header = 0).
 
-- Use the [AddEntry()](https://root.cern/doc/master/classTLegend.html#a0fa2f13a4fea32bf9e1558a7b8df2d24) method to a add a new entry to a legend.
+- Use the [AddEntry()](https://root.cern/doc/master/classTLegend.html#a0fa2f13a4fea32bf9e1558a7b8df2d24){:target="_blank"} method to a add a new entry to a legend.
 
 The parameters are:
 - `*objis` a pointer to an object having a marker, a line, or a fill attributes (a histogram, or a graph).
@@ -783,7 +783,7 @@ gPad->SetFillColor(38)
 
 ### Accessing an object in an active pad
 
-- Use the [TPad::GetPrimitive(const char* name)](https://root.cern/doc/master/classTPad.html#af757a87208deb609e0b0d29e6edfaf94) method to access an object in an active pad.
+- Use the [TPad::GetPrimitive(const char* name)](https://root.cern/doc/master/classTPad.html#af757a87208deb609e0b0d29e6edfaf94){:target="_blank"} method to access an object in an active pad.
 
 _**Example**_
 
@@ -799,7 +799,7 @@ The type of the returned pointer is a `TObject*` that has a name.
 
 You can hide an object in a pad by removing it from the list of objects owned by that pad.
 
-- Use the [TPad::GetListOfPrimitives()](https://root.cern/doc/master/classTPad.html#a2bf11bfddaa3f25ae259c3d55203f0f4) method to list is accessible objects of a pad.
+- Use the [TPad::GetListOfPrimitives()](https://root.cern/doc/master/classTPad.html#a2bf11bfddaa3f25ae259c3d55203f0f4){:target="_blank"} method to list is accessible objects of a pad.
 
 - Use the `Remove()` method to remove the object from the list.
 
@@ -839,7 +839,7 @@ root[] pad1->Modified()
 root[] c1->Update()
 {% endhighlight %}
 
-A subsequent call to [TCanvas::Update()](https://root.cern/doc/master/classTCanvas.html#a83bb3270c4e4cd4250730d5586ceebd6) scans the list of sub-pads and repaints the pads.
+A subsequent call to [TCanvas::Update()](https://root.cern/doc/master/classTCanvas.html#a83bb3270c4e4cd4250730d5586ceebd6){:target="_blank"} scans the list of sub-pads and repaints the pads.
 
 ### Dividing a pad into sub-pads
 
@@ -876,7 +876,7 @@ For building more sub-pads, repeat this procedure as many times as necessary.
 
 #### Dividing a pad into sub-pads
 
-- Use the [TPad::Divide()](https://root.cern/doc/master/classTPad.html#a064b8ae1d12a9be393c0e22c5958cc7c) method to divide a pad into sub-pads.
+- Use the [TPad::Divide()](https://root.cern/doc/master/classTPad.html#a064b8ae1d12a9be393c0e22c5958cc7c){:target="_blank"} method to divide a pad into sub-pads.
 
 ### Coordinate systems of a pad
 
@@ -892,7 +892,7 @@ You can convert from one system of coordinates to another.
 Most methods of {% include ref class="TPad" %} use the user coordinate system, and all graphic primitives have their parameters defined in terms of user coordinates. By default, when an empty pad is drawn, the
 user coordinates are set to a range from 0 to 1 starting at the lower left corner.
 
-- Use the [TPad::range(float x1,float y1,float x2,float y2)](https://root.cern/doc/master/classTPad.html#ae50a151ce00ad2414495314923f1b911) method to set the user coordinate system.<br/>
+- Use the [TPad::range(float x1,float y1,float x2,float y2)](https://root.cern/doc/master/classTPad.html#ae50a151ce00ad2414495314923f1b911){:target="_blank"} method to set the user coordinate system.<br/>
 The arguments `x1` and `x2` define the new range in the x direction, and `y1` and `y2` define the new range in the y direction.
 
 _**Example**_
@@ -916,7 +916,7 @@ cursor position, `px=0` and `py=0` corresponds to the top-left corner of the pad
 
 #### Converting between coordinate systems
 
-{% include ref class="TPad" %} provides some methods to convert from one system of coordinates to another. 
+{% include ref class="TPad" %} provides some methods to convert from one system of coordinates to another.
 
 In the following table, a point is defined by:
 - `(px,py)` in pixel coordinates,
@@ -1006,7 +1006,10 @@ In the following table, a point is defined by:
 
 > **Note**
 >
-> All the pixel conversion functions along the Y axis consider that `py=0` is at the top of the pad except `PixeltoY()`, which assumes that the position `py=0` is at the bottom of the pad. To make `PixeltoY()` converting the same way as the other conversion functions, it should be used the following way (`p` is a pointer to a {% include ref class="TPad" %}):<br>
+> All the pixel conversion functions along the Y axis consider that `py=0` is at the top
+> of the pad except `PixeltoY()`, which assumes that the position `py=0` is at the bottom
+> of the pad. To make `PixeltoY()` converting the same way as the other conversion
+> functions, it should be used the following way (`p` is a pointer to a {% include ref class="TPad" %}):<br>
 {% highlight C++ %}
 p->PixeltoY(py - p->GetWh());
 {% endhighlight %}
@@ -1015,6 +1018,6 @@ p->PixeltoY(py - p->GetWh());
 
 ### Copying a canvas
 
-- Use the [TCanvas::DrawClonePad](https://root.cern/doc/master/classTCanvas.html#afcb8727555c9c2be024eb307fd3d295a) method to make a copy of the canvas.
+- Use the [TCanvas::DrawClonePad](https://root.cern/doc/master/classTCanvas.html#afcb8727555c9c2be024eb307fd3d295a){:target="_blank"} method to make a copy of the canvas.
 
-You can also use the [TObject:DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9) method, to draw a clone of this object in the current selected pad.
+You can also use the [TObject:DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9){:target="_blank"} method, to draw a clone of this object in the current selected pad.
