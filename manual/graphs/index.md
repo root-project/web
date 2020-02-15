@@ -224,7 +224,7 @@ _**Example**_
 
 ## TGraph2D ##
 
-A {% include ref class="TGraph2D" %} graph is a graphics object that is made of three arrays X, Y and Z with the same number of points each.
+A {% include ref class="TGraph2D" %} graph is a graphics object that is made of three arrays `X`, `Y` and `Z` with the same number of points each.
 
 The {% include ref class="TGraph2D" %} class has the following constructors:
 
