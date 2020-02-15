@@ -178,6 +178,7 @@ _**Example**_
    gr->SetMarkerStyle(20);
    gr->Draw("LP");
 }
+{% endhighlight %}
 
 {% include figure_image
    img="zoom.png"
