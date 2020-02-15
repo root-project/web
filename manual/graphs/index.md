@@ -19,7 +19,7 @@ A histogram is used for continuous data, where the bins represent ranges of data
 
 ## Graph classes
 
-ROOT provides numerous graph classes, of which the following are among the most important:
+ROOT provides numerous graph classes, of which the following are among the most used:
 
 {% include ref class="TGraph" %}: A graph.
 
@@ -131,12 +131,66 @@ _**Example**_
    caption="Graph drawn with Draw(\"AL\*\")."
 %}
 
+### Setting the title for a graph
+
+Before giving the axis of a graph a title you need to draw the graph first. 
+
+You can set the title by getting the axis and calling the [TGraph::SetTitle()](https://root.cern/doc/master/classTGraph.html#a56aed9b71c9ea7dc48285c8ecc285aed){:target="_blank"} method.
+
+You can use the [TAxis::CenterTitle](https://root.cern/doc/master/classTAxis.html#a7eeb578be928e04606ed5510d8472953){:target="_blank"} method to center the title.
+
+_**Example**_
+
+Assuming that `n`, `x`, and `y` are defined. Then the titles of the `x` and `y` axes are set as follows:
+
+{% highlight C++ %}
+   root[] gr5 = new TGraph(n,x,y)
+   root[] gr5->Draw()
+   <TCanvas::MakeDefCanvas>: created default TCanvas with name c1
+   root[] gr5->Draw("ALP")
+   root[] gr5->GetXaxis()->SetTitle("X-Axis")
+   root[] gr5->GetYaxis()->SetTitle("Y-Axis")
+   root[] gr5->GetXaxis()->CenterTitle()
+   root[] gr5->GetYaxis()->CenterTitle()
+   root[] gr5->Draw("ALP")
+{% endhighlight %}
+
+### Zooming a graph
+
+To zoom a graph you can create a histogram with the desired axis range first. Draw the empty histogram and then
+draw the graph using the existing axis from the histogram.
+
+_**Example**_
+
+{% highlight C++ %}
+{
+   TCanvas *c1 = new TCanvas("c1","A Zoomed Graph",200,10,700,500);
+   TH2F *hpx = new TH2F("hpx","Zoomed Graph Example",10,0,0.5,10,1.0,8.0);
+   hpx->SetStats(kFALSE); // no statistics
+   hpx->Draw();
+
+   Int_t n = 10;
+   Double_t x[10] = {-.22,.05,.25,.35,.5,.61,.7,.85,.89,.95};
+   Double_t y[10] = {1,2.9,5.6,7.4,9,9.6,8.7,6.3,4.5,1};
+   
+   TGraph *gr = new TGraph(n,x,y);
+   gr->SetMarkerColor(4);
+   gr->SetMarkerStyle(20);
+   gr->Draw("LP");
+}
+
+{% include figure_image
+   img="zoom.png"
+   caption="A zoomed graph."
+%}
+
 ### Fitting graphs
 
 - Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}
 , for fitting graphs.
 
 For more information on the `Fit()` method, → see [Fitting histograms]({{ '/manual/histograms#fitting-histograms' | relative_url }}).
+
 
 ## Graphs with error bars
 
