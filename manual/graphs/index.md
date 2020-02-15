@@ -131,7 +131,7 @@ _**Example**_
    caption="Graph drawn with Draw(\"AL\*\")."
 %}
 
-### Setting the title for a graph
+### Setting titles for a graph
 
 Before giving the axis of a graph a title you need to draw the graph first. 
 
@@ -187,8 +187,7 @@ _**Example**_
 
 ### Fitting graphs
 
-- Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}
-, for fitting graphs.
+- Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}), for fitting graphs.
 
 For more information on the `Fit()` method, → see [Fitting histograms]({{ '/manual/histograms#fitting-histograms' | relative_url }}).
 
