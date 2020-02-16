@@ -528,7 +528,7 @@ method, to generate a skeleton class for looping over the entries of a tree.
  class, to generate a skeleton selector class for looping over a tree.
 
 
-### Using a ROOT macro for data analysis
+### Example: Using a ROOT macro for data analysis
 
 The following example shows a simple ROOT macro for analyzing a tree. The ROOT macro calculates the sum of all event sizes.
 
@@ -544,20 +544,20 @@ void CountEvents()
 // Variables used to store the data.
 
 // Sum of data size (in bytes) of all events.
-   Int_t     totalSize = 0;
+   Int_t totalSize = 0;
    
 // Size of the current event.
-   Int_t     eventSize = 0;
+   Int_t eventSize = 0;
    
 // Pointer to the event.fEventsize branch.
-   TBranch  *eventSizeBranch = 0;
+   TBranch *eventSizeBranch = 0;
 
 // Open the ROOT file.
    TFile *f = TFile::Open("http://root.cern/eventdata.root");
    if (f == 0) {
    
 // If we cannot open the ROOT file, print an error message and return immediately.
-      printf("Error: cannot open http://lcg-heppkg.web.cern.ch/lcg-heppkg/ROOT/eventdata.root!\n");
+      printf("Error: cannot open http://root.cern/eventdata.root!\n");
       return;
    }
    

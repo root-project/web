@@ -451,6 +451,14 @@ Instead of using the `Editor`, you also can simply draw the error bars by:
 {% endhighlight %}
 
 
+### Example: Histogramming a data analysis
+
+In [Example: Using a ROOT macro for data analysis]({{ '/manual/trees#example-using-a-root-macro-for-data-analysis' | relative_url }}) was shown how to create a ROOT macro for analyzing a tree in a ROOT file.
+
+Here it is shown, how to create a histogram for a variable of the tree.
+
+
+
 ## Fitting histograms
 
 > **Tutorials**
