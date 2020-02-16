@@ -14,12 +14,12 @@ to deal with big data processing, statistical analysis, visualization and storag
 
 <br><br>
 
-<b><a href="/web/manual/functional_parts">ROOT Manual - Basics</a>:</b><br>
+<b><a href="/web/manual/functional_parts">ROOT Manual - Basics</a></b><br>
 In the first part of the manual, the central building blocks and concepts of ROOT are presented and explained.
 
 <br><br>
 
-<b><a href="/web/manual/functional_parts">ROOT Manual - Functional parts</a>:</b><br>
+<b><a href="/web/manual/functional_parts">ROOT Manual - Functional parts</a></b><br>
 In the second part of the manual, the numerous application areas and special topics of ROOT are dealt with. Here you will receive in-depth information about the extensive possibilities of data analysis with ROOT.
 
 <br><br>
