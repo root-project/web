@@ -10,7 +10,7 @@ toc_label: ROOT Manual
 
 The <b>ROOT Manual</b> provides detailed information about the use and applications of
 <b>ROOT</b>, the object-oriented framework that provides all the functionalities needed
-to deal with big data processing, statistical analysis, visualization and storage in high-energy physics. The manual contains many, often interactive examples, so that you can immediately start using ROOT.
+to deal with big data processing, statistical analysis, visualization and storage in high-energy physics.<br>The manual contains many, often interactive examples, so that you can immediately start interacting with ROOT.
 
 <br><br>
 
@@ -23,20 +23,24 @@ ROOT are presented and explained.
 and special topics of ROOT are dealt with. Here you will receive in-depth information about the extensive possibilities of data analysis with ROOT.
 
 <br><br>
+
 <b><a href="https://root.cern/doc/master/" target="_blank">ROOT Reference Guide</a></b><br>
 The ROOT Manual refers to numerous information, especially for ROOT classes, from the → <a href="https://root.cern/doc/master/" target="_blank">ROOT Reference Guide</a>. The ROOT Reference Guide
 is the primary source of information for all ROOT classes.
 
 <br><br>
+
 <b><a href="https://root.cern/doc/master/group__Tutorials.html" target="_blank">Tutorials</a></b><br>
 Tutorials are available for all parts of the ROOT Manual at → <a href="https://root.cern/doc/master/group__Tutorials.html" target="_blank">https://root.cern/doc/master/group__Tutorials.html</a>.
 
 <br><br>
+
 <b><a href="/web/topical">Topical Manuals</a></b><br>
-Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics, see → <a href="/web/topical">Topical Manuals</a>.
+Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics that are not explained in detail in the ROOT Manual, see → <a href="/web/topical">Topical Manuals</a>.
 
 <br><br>
-<b>Further information</b><br><br>
+
+<b>Further information</b><br>
 For ROOT users, developers, and friends we provide a <a href="https://root-forum.cern.ch/" target="_blank">Forum</a>. Beginners can start with the <a href="/web/primer">Primer</a>.
 
 </div>
