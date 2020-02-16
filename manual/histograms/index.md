@@ -455,11 +455,11 @@ Instead of using the `Editor`, you also can simply draw the error bars by:
 
 In [Example: Using a ROOT macro for data analysis]({{ '/manual/trees#example-using-a-root-macro-for-data-analysis' | relative_url }}) was shown how to create a ROOT macro for analyzing a tree in a ROOT file.
 
-Here it is shown, how to create a histogram for a variable `hPosX`.
+Here it is shown, how to create a histogram for a variable `hPosX` for this data analysis.
 
 _**Example**_
 
-A 1-D histogram {% include ref class="TH1F" %} is created for the particles `hPosX`.
+A 1-D histogram {% include ref class="TH1F" %} is created for the X position of particles (`hPosX`).
 
 {% highlight C++ %}
 
