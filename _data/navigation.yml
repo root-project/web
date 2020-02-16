@@ -20,7 +20,7 @@ main:
 # side bar menus
 
 manual:
-  - title: ROOT MANUAL - Basics
+  - title: ROOT Manual - Basics
     url: manual/basics
     children:
       - title: Getting started with ROOT
@@ -35,7 +35,7 @@ manual:
         url: manual/object_ownership
       - title: ROOT files
         url: manual/storing_root_objects
-  - title: ROOT MANUAL - Functional parts
+  - title: ROOT Manual - Functional parts
     url: manual/functional_parts
     children:
       - title: Graphics
