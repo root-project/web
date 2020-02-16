@@ -10,8 +10,7 @@ toc_label: ROOT Manual
 
 The <b>ROOT Manual</b> provides detailed information about the use and applications of
 <b>ROOT</b>, the object-oriented framework that provides all the functionalities needed
-to deal with big data processing, statistical analysis, visualization and storage in high-
-energy physics. The manual contains many, often interactive examples, so that you can immediately start using ROOT.
+to deal with big data processing, statistical analysis, visualization and storage in high-energy physics. The manual contains many, often interactive examples, so that you can immediately start using ROOT.
 
 <br><br>
 

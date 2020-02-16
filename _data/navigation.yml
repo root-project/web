@@ -21,6 +21,7 @@ main:
 
 manual:
   - title: ROOT MANUAL - Basics
+    url: manual/basics
     children:
       - title: Getting started with ROOT
         url: manual/getting_started_with_root
@@ -35,6 +36,7 @@ manual:
       - title: ROOT files
         url: manual/storing_root_objects
   - title: ROOT MANUAL - Functional parts
+    url: manual/functional_parts
     children:
       - title: Graphics
         url: manual/graphics
