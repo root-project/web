@@ -9,7 +9,7 @@ toc_sticky: true
 
 ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the ROOT file back, the object is reconstructed in the memory.
 
-ROOT files also often contain tress ({% include ref class="TTree" %}, see → [Trees]({{ '/manual/trees' | relative_url }})), a typical data container used for example by all LHC (Large Hadron Collider ) experiments.
+ROOT files also often contain tress ({% include ref class="TTree" %}, see → [Trees]({{ '/manual/trees' | relative_url }})), a typical data container used for example by all LHC (Large Hadron Collider) experiments.
 
 ## Working with ROOT files
 

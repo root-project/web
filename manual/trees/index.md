@@ -7,7 +7,9 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT provides the {% include ref class="TTree" %} and the {% include ref class="TNtuple" %} class to store large quantities of same-class objects. A tree is a typical data container used for example by all LHC (Large Hadron Collider ) experiments. Trees are optimized to reduce disk space and enhance access speed.
+ROOT provides the {% include ref class="TTree" %} and the {% include ref class="TNtuple" %} class to store large quantities of same-class objects.<br>
+A tree is a typical data container used for example by all LHC (Large Hadron Collider) experiments.<br>
+Trees are optimized to reduce disk space and enhance access speed.
 
 A tree consists of a list of independent columns, called branches. The {% include ref class="TBranch" %} class represents a branch. A branch can contain all kind of data, such as objects or arrays in addition to all the simple types.
 
@@ -152,8 +154,8 @@ ROOT file is closed and a new ROOT file is created. If the original ROOT file is
 - Use the [TTree::Print(Option_t * option = "")](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094){:target="_blank"} method to print a summary of the tree contents. 
 
 - `option = "all"`: Friend trees are also printed.
-- `option = "toponly"`:  only the top level branches are printed.
-- `options = "clusters"`: Information about the cluster of baskets is printed.
+- `option = "toponly"`:  Only the top level branches are printed.
+- `option = "clusters"`: Information about the cluster of baskets is printed.
 
 _**Example**_
 
@@ -257,9 +259,9 @@ Scanning the `cernstaff.root` file (see → [Building a tree from an ASCII file]
 
 With the Tree Viewer you can examine a tree in a GUI.
 
-> Note 
+> **Note**
 > 
-> You can also use the ROOT Object Browser to examine a tree that is saved in a ROOT file. See → [ROOT files]({{ '/manual/storing_root_objects#root-object-browser"' | relative_url }})
+> You can also use the ROOT Object Browser to examine a tree that is saved in a ROOT file. See → [ROOT Object Browser]({{ '/manual/storing_root_objects#root-object-browser' | relative_url }}).
 
 - Use the {% include ref class="TTreeViewer" %} class to open the ROOT file (containing the tree) in the Tree Viewer.
 
@@ -526,13 +528,74 @@ method, to generate a skeleton class for looping over the entries of a tree.
  class, to generate a skeleton selector class for looping over a tree.
 
 
+### Using a ROOT macro for data analysis
+
+The following example shows a simple ROOT macro for analyzing a tree. The ROOT macro calculates the sum of all event sizes.
+
+_**Example**_
+
+{% highlight C++ %}
+#include "TFile.h"
+#include "TTree.h"
+#include "TBranch.h"
+
+void CountEvents()
+{
+// Variables used to store the data.
+
+// Sum of data size (in bytes) of all events.
+   Int_t     totalSize = 0;
+   
+// Size of the current event.
+   Int_t     eventSize = 0;
+   
+// Pointer to the event.fEventsize branch.
+   TBranch  *eventSizeBranch = 0;
+
+// Open the ROOT file.
+   TFile *f = TFile::Open("http://root.cern/eventdata.root");
+   if (f == 0) {
+   
+// If we cannot open the ROOT file, print an error message and return immediately.
+      printf("Error: cannot open http://lcg-heppkg.web.cern.ch/lcg-heppkg/ROOT/eventdata.root!\n");
+      return;
+   }
+   
+// Get a pointer to the tree.
+   TTree *tree = (TTree *)f->Get("EventTree");
+
+// Use SetBranchAddress() with simple types (e.g. double, int) instead of objects (e.g. std::vector<Particle>).
+   tree->SetMakeClass(1);
+
+// Connect the branch "fEventSize" with the variable eventSize that we want to contain the data.
+// While we are at it, ask the tree to save the branch in eventSizeBranch.
+   tree->SetBranchAddress("fEventSize", &eventSize, &eventSizeBranch);
+
+// First, get the total number of entries.
+   Long64_t nentries = tree->GetEntries();
+
+// Then loop over all of them.
+   for (Long64_t i=0;i<nentries;i++) {
+
+// Load the data for TTree entry number "i" from branch
+// fEventSize into the connected variable (eventSize).
+      eventSizeBranch->GetEntry(i);
+      totalSize += eventSize;
+   }
+   Int_t sizeInMB = totalSize/1024/1024;
+   printf("Total size of all events: %d MB\n", sizeInMB);
+}
+
+{% endhighlight %}
+
+
 ## Using Chains
 
 A chain is a list of ROOT files containing {% include ref class="TTree" %} objects. A chain is created via the {% include ref class="TChain" %} object.
 
 _**Example**_
 
-There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each file contains a tree `T`. The chain is created with
+There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each ROOT file contains a tree `T`. The chain is created with
 [TChain::Add()](https://root.cern/doc/master/classTChain.html#a9510cc7fc76ff28c30e6775bd9085d6e){:target="_blank"}.
 
 {% highlight C++ %}
