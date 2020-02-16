@@ -14,7 +14,7 @@ to deal with big data processing, statistical analysis, visualization and storag
 
 <br><br>
 
-<b><a href="/web/manual/functional_parts">ROOT Manual - Basics</a></b><br>
+<b><a href="/web/manual/basics">ROOT Manual - Basics</a></b><br>
 In the first part of the manual, the central building blocks and concepts of ROOT are presented and explained.
 
 <br><br>
