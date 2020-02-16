@@ -6,6 +6,12 @@ sidebar:
 
 ---
 
+In the second part of the ROOT Manual, numerous application areas and special topics of ROOT are presented.<br>
+In [Trees]({{ '/manual/trees' | relative_url }}) chapter is described, how the the data from LHC (Large Hadron Collider) experiments are stored.
+In chapters like [Histograms]({{ '/manual/histograms' | relative_url }}), [Data frames]({{ '/manual/data_frame' | relative_url }}), and [RooFit]({{ '/manual/roofit' | relative_url }}) is explained, how you can visualize and analyze the data with ROOT.
+
+The second part of the ROOT Manual contains:
+
 - [Graphics]({{ '/manual/graphics' | relative_url }})
 
 - [Histograms]({{ '/manual/histograms' | relative_url }})
