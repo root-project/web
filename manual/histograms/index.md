@@ -455,8 +455,96 @@ Instead of using the `Editor`, you also can simply draw the error bars by:
 
 In [Example: Using a ROOT macro for data analysis]({{ '/manual/trees#example-using-a-root-macro-for-data-analysis' | relative_url }}) was shown how to create a ROOT macro for analyzing a tree in a ROOT file.
 
-Here it is shown, how to create a histogram for a variable of the tree.
+Here it is shown, how to create a histogram for a variable `hPosX`.
 
+_**Example**_
+
+A 1-D histogram {% include ref class="TH1F" %} is created for the particles `hPosX`.
+
+{% highlight C++ %}
+
+#include "TFile.h"
+#include "TTree.h"
+#include "TBranch.h"
+#include "TH1F.h"
+
+const Int_t kMaxfParticles = 1293;
+
+void AnalyzeTree()
+{
+// Variables used to store the data.
+
+// Sum of data size (in bytes) of all events.
+   Int_t totalSize = 0;
+   
+// Size of the current event.
+   Int_t     eventSize = 0;
+    
+// X position of the particles.
+   TH1F     *hPosX;                 
+
+// List of branches.
+   TBranch  *nParticlesBranch;
+   TBranch  *particlesPosXBranch;
+   TBranch  *particlesMomentumBranch;
+
+// Declaration of leaf types
+   Int_t nParticles;
+   Double_t  particlesPosX[kMaxfParticles];
+   Double_t  particlesMomentum[kMaxfParticles];
+
+// Open the ROOT file.
+   TFile *f = TFile::Open("http://root.cern/eventdata.root");
+   if (f == 0) {
+   
+// If we cannot open the file, print an error message and return immediately.
+      printf("Error: cannot open http://root.cern/eventdata.root!\n");
+      return;
+   }
+
+// Get a pointer to the tree.
+   TTree *tree = (TTree *)f->Get("EventTree");
+   
+// To use SetBranchAddress() with simple types (e.g. double, int) instead of objects (e.g. std::vector<Particle>).
+   tree->SetMakeClass(1);
+
+// Connect the branches with their member variables.
+   tree->SetBranchAddress("fParticles", &nParticles, &nParticlesBranch);
+   tree->SetBranchAddress("fParticles.fPosX", particlesPosX, &particlesPosXBranch);
+   tree->SetBranchAddress("fParticles.fMomentum", particlesMomentum, &particlesMomentumBranch);
+
+// Create the TH1F histogram.
+   hPosX = new TH1F("hPosX", "Position in X", 20, -5, 5);
+
+// Enable bin errors.
+   hPosX->Sumw2();
+
+   Long64_t nentries = tree->GetEntries();
+   for (Long64_t i=0;i<nentries;i++) {
+
+// We only need the number of particles ...
+      nParticlesBranch->GetEntry(i);
+
+// ... and their position in X...
+      particlesPosXBranch->GetEntry(i);
+
+// ... and their momentum.
+      particlesMomentumBranch->GetEntry(i);
+
+// Do the actual analysis.
+      for (int iParticle = 0; iParticle < nParticles; ++iParticle) {
+         if (particlesMomentum[iParticle] > 40.0)
+            hPosX->Fill(particlesPosX[iParticle]);
+      }
+   }
+
+// Fit the histogram.
+   hPosX->Fit("pol2");
+
+// Draw the histogram.
+   hPosX->Draw();
+}
+{% endhighlight %}
 
 
 ## Fitting histograms
