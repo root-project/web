@@ -14,12 +14,12 @@ to deal with big data processing, statistical analysis, visualization and storag
 
 <br><br>
 
-<b>[ROOT MANUAL - Basics]({{ '/manual/basics' | relative_url }}):</b> In the first part of the manual, the central building blocks and concepts of
+<b><a href="/web/manual/functional_parts">ROOT MANUAL - Basics</a>:</b> In the first part of the manual, the central building blocks and concepts of
 ROOT are presented and explained.
 
 <br><br>
 
-<b>[ROOT MANUAL - Functional parts]({{ '/manual/functional_parts' | relative_url }}):</b> In the second part of the manual, the numerous application areas
+<b><a href="/web/manual/functional_parts">ROOT MANUAL - Functional parts</a>:</b> In the second part of the manual, the numerous application areas
 and special topics of ROOT are dealt with. Here you will receive in-depth information about the extensive possibilities of data analysis with ROOT.
 
 <br><br>
@@ -32,13 +32,14 @@ is the primary source of information for all ROOT classes.
 Tutorials are available for all parts of the ROOT Manual at → <a href="https://root.cern/doc/master/group__Tutorials.html" target="_blank">https://root.cern/doc/master/group__Tutorials.html</a>.
 
 <br><br>
-<b><a href="/web/topical">Topical Manuals</a>Topical manuals</a></b><br>
+<b><a href="/web/topical">Topical Manuals</a></b><br>
 Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics, see → <a href="/web/topical">Topical Manuals</a>.
 
 <br><br>
-<b>Further information</b></b><br>
-For ROOT users, developers, and friends we provide a [Forum](https://root-forum.cern.ch/){:target="_blank"}. Beginners can start with the [Primer]({{ '/primer/' | relative_url }}).
+<b>Further information</b><br><br>
+For ROOT users, developers, and friends we provide a <a href="https://root-forum.cern.ch/" target="_blank">Forum</a>. Beginners can start with the <a href="/web/primer">Primer</a>.
 
+</div>
 
 > **C++**
 >
