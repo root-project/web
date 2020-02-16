@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT provides the {% include ref class="TTree" %} and the {% include ref class="TNtuple" %} class to store large quantities of same-class objects. They are optimized to reduce disk space and enhance access speed.
+ROOT provides the {% include ref class="TTree" %} and the {% include ref class="TNtuple" %} class to store large quantities of same-class objects. A tree is a typical data container used for example by all LHC (Large Hadron Collider ) experiments. Trees are optimized to reduce disk space and enhance access speed.
 
 A tree consists of a list of independent columns, called branches. The {% include ref class="TBranch" %} class represents a branch. A branch can contain all kind of data, such as objects or arrays in addition to all the simple types.
 
@@ -20,7 +20,7 @@ A {% include ref class="TNtuple" %} is a {% include ref class="TTree" %}, which 
 
 ## Tree classes
 
-ROOT provides the following classes for trees and branches, among others:
+ROOT provides numerous classes for trees and branches, of which the following are among the most used:
 
 - {% include ref class="TTree" %}: Represents a columnar data set. Any C++ type can be stored in its columns.
 
@@ -33,6 +33,15 @@ ROOT provides the following classes for trees and branches, among others:
 
 ## Working with trees
 
+OOT offers many possibilities to work with trees, for example:
+
+- [Creating a tree](#creating-a-tree)
+- [Creating a tree from a folder structure](#creating-a-tree-from-a-folder-structure)
+- [Filling a tree](#filling-a-tree)
+- [Writing a tree](#writing-a-tree)
+- [Printing the summary of a tree](#printing-the-summary-of-a-tree)
+- [Showing an entry of a tree](#showing-an-entry-of-a-tree)
+- [Scanning trees](#scanning-trees)
 
 ### Creating a tree
 
@@ -128,7 +137,9 @@ A loop on all defined branches (see → [Branches](#branches)) is executed.
 
 ### Writing a tree
 
-- Use the [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f){:target="_blank"} method to write the tree and the histograms.
+The data of a tree are saved in a ROOT file (see → [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})).
+
+- Use the [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f){:target="_blank"} method to write the tree into a ROOt file.
 
 The `TTree::Write()` method is needed to write the ROOT file header.
 
@@ -136,11 +147,46 @@ When writing a {% include ref class="TTree" %} to a ROOT file and if the ROOT fi
 ROOT file is closed and a new ROOT file is created. If the original ROOT file is named `myfile.root`, the subsequent ROOT files are named
 `myfile_1.root`, `myfile_2.root`, etc.
 
+### Printing the summary of a tree
+
+- Use the [TTree::Print(Option_t * option = "")](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094){:target="_blank"} method to print a summary of the tree contents. 
+
+- `option = "all"`: Friend trees are also printed.
+- `option = "toponly"`:  only the top level branches are printed.
+- `options = "clusters"`: Information about the cluster of baskets is printed.
+
+_**Example**_
+
+{% highlight C++ %}
+root[] TFile f("cernstaff.root")
+root[] T->TTree::Print()
+
+******************************************************************************
+*Tree    :T         : CERN 1988 staff data                                   *
+*Entries :     3354 : Total =          175531 bytes  File  Size =      47246 *
+*        :          : Tree compression factor =   3.69                       *
+******************************************************************************
+*Br    0 :Category  : Category/I                                             *
+*Entries :     3354 : Total  Size=      13985 bytes  File Size  =       4919 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   2.74     *
+*............................................................................*
+*Br    1 :Flag      : Flag/i                                                 *
+*Entries :     3354 : Total  Size=      13965 bytes  File Size  =       2165 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   6.23     *
+*............................................................................*
+*Br    2 :Age       : Age/I                                                  *
+*Entries :     3354 : Total  Size=      13960 bytes  File Size  =       3489 *
+*Baskets :        1 : Basket Size=      32000 bytes  Compression=   3.86     *
+*............................................................................*
+*Br    3 :Service   : Service/I                                              *
+*Entries :     3354 : Total  Size=      13980 bytes  File Size  =       2214 *
+...
+...
+{% endhighlight %}
 
 ### Showing an entry of a tree
 
 - Use the [TTree::Show()](https://root.cern/doc/master/classTTree.html#a10e5e7424059bc7d17502331b41b0c16){:target="_blank"} method to access one entry of a tree.
-
 
 _**Example**_
 
@@ -211,11 +257,15 @@ Scanning the `cernstaff.root` file (see → [Building a tree from an ASCII file]
 
 With the Tree Viewer you can examine a tree in a GUI.
 
+> Note 
+> 
+> You can also use the ROOT Object Browser to examine a tree that is saved in a ROOT file. See → [ROOT files]({{ '/manual/storing_root_objects#root-object-browser"' | relative_url }})
+
 - Use the {% include ref class="TTreeViewer" %} class to open the ROOT file (containing the tree) in the Tree Viewer.
 
 _**Example**_
 
-Open the Tree Viewer for the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)), which contains a tree `T`.
+Open the Tree Viewer for the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)) that contains the tree `T`.
 
 {% highlight C++ %}
    root[] TFile f("cernstaff.root")

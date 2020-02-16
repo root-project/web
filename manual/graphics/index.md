@@ -29,7 +29,7 @@ Painting a pad is done by the `Paint()` method of each object in the list of pri
 
 ## Graphic classes
 
-ROOT provides numerous graphic classes, of which the following are among the most important:
+ROOT provides numerous graphic classes, of which the following are among the most used:
 
 - {% include ref class="TCanvas" %}
 

@@ -7,7 +7,9 @@ toc: true
 toc_sticky: true
 ---
 
- ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the ROOT file back, the object is reconstructed in the memory.
+ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the ROOT file back, the object is reconstructed in the memory.
+
+ROOT files also often contain tress ({% include ref class="TTree" %}, see → [Trees]({{ '/manual/trees' | relative_url }})), a typical data container used for example by all LHC (Large Hadron Collider ) experiments.
 
 ## Working with ROOT files
 
@@ -502,6 +504,11 @@ Simple session:
 root[] TFile *f1 = TFile::Open("local/file.root","update")
 root[] TFile *f2 = TFile::Open("root://my.server.org/data/file.root","new")
 root[] TFile *f3 = TFile::Open("http://root.cern.ch/files/hsimple.root")
+{% endhighlight %}
+
+`ls ()` lists what is in the ROOT file.
+
+{% highlight C++ %}
 root[] f3.ls()
 TDavixFile**    http://root.cern.ch/files/hsimple.root
  TDavixFile*    http://root.cern.ch/files/hsimple.root
@@ -509,6 +516,4 @@ TDavixFile**    http://root.cern.ch/files/hsimple.root
   KEY: TH2F     hpxpy;1 py vs px
   KEY: TProfile hprof;1 Profile of pz versus px
   KEY: TNtuple  ntuple;1 Demo ntuple
-
-root[] hpx.Draw()
 {% endhighlight %}
