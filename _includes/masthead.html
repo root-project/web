@@ -27,7 +27,7 @@
               {%- assign url = link.url | relative_url -%}
             {%- endif -%}
             <li class="masthead__menu-item">
-              <a href="{{ url }}" {% if link.description %}title="{{ link.description }}"{% endif %}><font color="white">{{ link.title }}</font></a>
+              <a href="{{ url }}" {% if link.description %}title="{{ link.description }}"{% endif %} {% if link.target %}target="{{link.target}}"{% endif %}><font color="white">{{ link.title }}</font></a>
             </li>
           {%- endfor -%}
         </ul>

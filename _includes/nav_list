@@ -24,7 +24,7 @@
             {% assign active = "" %}
           {% endif %}
 
-          <a href="{{ nav_url }}"><span class="nav__sub-title" style="{{active}};">{{ nav.title }}</span></a>
+          <a href="{{ nav_url }}" {% if nav.target %}target="{{nav.target}}"{% endif %}><span class="nav__sub-title" style="{{active}};">{{ nav.title }}</span></a>
         {% else %}
           <span class="nav__sub-title">{{ nav.title }}</span>
         {% endif %}
@@ -49,7 +49,7 @@
               {% assign active = "" %}
             {% endif %}
 
-            <li> <span class="nav__sub-sub-title" style="{{active}}"><a href="{{ child_url }}">{{ child.title }}</a></li></span>
+            <li> <span class="nav__sub-sub-title" style="{{active}}"><a href="{{ child_url }}" {% if child.target %}target="{{child.target}}"{% endif %}>{{ child.title }}</a></li></span>
 
           {% endfor %}
         </ul>
