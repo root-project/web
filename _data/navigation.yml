@@ -6,17 +6,23 @@ main:
     description: "All you need to download and install ROOT"
   - title: "Get Started"
     url: get_started
+    description: "ROOT usage starting point"
   - title: "Forum"
     url: https://root-forum.cern.ch/
+    description: "Ask questions about ROOT"
     target: _blank
   - title: "Manual"
     url: manual
+    description: "High level ROOT manual"
   - title: "Resources"
     url: resources
+    description: "For ROOT developers"
   - title: "News"
     url: news
+    description: "Latest ROOT news"
   - title: "Contribute"
     url: contribute
+    description: "Contribute to ROOT !"
 
 # side bar menus
 
