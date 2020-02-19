@@ -143,7 +143,7 @@ resources:
         target: _blank
    - title: Doxygen in ROOT
      url: resources/doxygen
-   - title: Your version of the ROOT web site
+   - title: Editing the ROOT web site
      url: resources/web
    - title: Benchmarks
      url: https://rootbnch-grafana-test.cern.ch
