@@ -32,8 +32,6 @@ You need to follow the following steps:
 
    ![](gh-pages.png)
 
-   It might be necessary to perform a "Change theme" to actually see the site published.
-   Just choose a random theme. It will not affect the theme of the ROOT web site.
 
 5. Clone your forked ROOT repository using:
 ```
