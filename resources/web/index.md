@@ -43,6 +43,13 @@ git clone https://github.com/root-project/web.git web
 ```
 cd web
 ```
+You will notice that the current git branch is `gh-pages`
+```
+% git checkout
+Your branch is up to date with 'origin/gh-pages'.
+```
+Stay on this branch. it is the one used to [automatically build the web
+site on the git repository](#publish-your-modifications).
 
 5. Build the site and make it available on a local server.
 ```
