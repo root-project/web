@@ -22,31 +22,41 @@ You need to follow the following steps:
 
 1. Make sure have set up git on our system
 2. You should have registered a GitHub account and [forked the ROOT web site repository](https://github.com/root-project/web/fork){:target="_blank"}.
-3. Then go in the "Settings" of the forked copy:
-
-   ![](settings.png)
-
-4. In the "GitHub Pages" section you should see
-   **gh-pages branch** . After a while a green line should show up saying your site is published.
-   like on the following picture:
-
-   ![](gh-pages.png)
-
-
-5. Clone your forked ROOT repository using:
+3. Clone your forked ROOT web repository locally on your machine using:
 ```
 git clone https://github.com/<your GitHub username>/web
 ```
+4. To force the first build of the web site on your forked copy, issue an empty commit with the
+commands:
+```
+cd web
+git commit -m 'rebuild pages' --allow-empty
+git push origin gh-pages
+```
+5. On your github (on the web) go in the "Settings" of the forked copy:
+
+   ![](settings.png)
+
+6. In the "GitHub Pages" section you should see something similar to the next picture
+telling you that your site in ready to be published and is being build from **gh-pages branch**
+
+   ![](gh-pages-1.png)
+
+7. After a while, a green message should show up saying your site is published.
+   like on the following picture:
+
+   ![](gh-pages-2.png)
+
 
 You now have the ROOT web site sources (from github) on your local machine. You can
 "commit" and "push" changes to the origin or do "Pull Requests" upstream.
 
 When you push changes to the origin (your forked copy) you can see them alive on:
 
-`https://<your GitHub username>.github.io//web`.
+`https://<your GitHub username>.github.io//web`
 
 > **But**  that can be very slow because you need to wait github rebuild your site before
-> seeing the change you did. That's why it might be much more efficient to run a server
+> seeing the changes you did. That's why it might be much more efficient to run a server
 > locally as explained in the next section.
 
 ## Generate a local running version of the ROOT web site
@@ -134,7 +144,7 @@ changes.
 It is not necessary to restart the server each time you do a modification except if you
 modify the file `web/_config.yml`
 
-You may notice that the command `bundle exec jekyll serve` generated a folder `_site` in
+You may notice that the command `bundle exec jekyll serve` generates a folder `_site` in
 the `/path/to/the/directory/web/` folder. This is the html version of the web site. Do not
 modify or create files in that folder. This folder is ignored by git.
 
