@@ -48,5 +48,5 @@ For ROOT users, developers, and friends we provide a <a href="https://root-forum
 > **C++**
 >
 > The usage of ROOT requires in-depth knowledge of C++.<br>
-> For detailed information on C++, refer to C++ language references such as [C++ Language Reference](https://docs.microsoft.com/en-us/cpp/cpp/cpp-language-reference?view=vs-2019){:target="_blank"}.
+> For detailed information on C++, refer to C++ language references such as [C++ Language Reference]( https://en.cppreference.com/w/cpp){:target="_blank"}.
 >
