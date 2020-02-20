@@ -145,6 +145,9 @@ resources:
      url: resources/doxygen
    - title: Editing the ROOT web site
      url: resources/web
+     children:
+      - title: "Web Site To-Do list"
+        url: resources/web/todo
    - title: Benchmarks
      url: https://rootbnch-grafana-test.cern.ch
      target: _blank
