@@ -29,7 +29,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [ ] Need to fix search before going online
    - [ ] Weird box around topic link when hitting the "back" button - talk to Axel
    - [ ] "Using ROOT" logos: Fermilab, CSCS, NERSC, GSI
-   - [ ] Provide tiny step-by-step page for editing pages
+   - [X] Provide tiny step-by-step page for editing pages
    - [X] Footer: " © Copyright CERN 2014-18. All rights reserved. " update year
    - [ ] Footer: add contact info: forum, bug reports, else rootdev@cern.ch
    - [ ] Add "About..." in top menu on main page, to link to "More..."-page
