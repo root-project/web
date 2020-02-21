@@ -34,9 +34,9 @@ but we should be aware of what still needs to be done (before we go live).
    - [ ] Footer: add contact info: forum, bug reports, else rootdev@cern.ch
    - [ ] Add "About..." in top menu on main page, to link to "More..."-page
    - [ ] Rename "Resources" to "For Developers"
-   - [ ] Remove all of "Building ROOT with make (old method)"
-   - [ ] Get rid of "old" vs "pro" tags; just show the latest production release and "others".
-   - [ ] Remove "Release candidate
+   - [X] Remove all of "Building ROOT with make (old method)"
+   - [X] Get rid of "old" vs "pro" tags; just show the latest production release and "others".
+   - [X] Remove "Release candidate
      A release candidate is a preview of the next production release. It
      allows users to make their code ready for the new production release,
      and to provide early feedback."
