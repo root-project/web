@@ -32,10 +32,6 @@ much more quickly to a stable version that can then become the new _production_ 
 The _development_ version can be build from GitHub sources.<br>
 See → [ROOT sources]({{'/download/building_root/get_root_sources' | relative_url}}).
 
-### Release candidate
-A release candidate is a preview of the next _production_ release. It allows users to
-make their code ready for the new _production_ release, and to provide early feedback.
-
 ### Nightlies
 You can download nightly snapshots of ROOT. That is useful to check whether a bug fix actually fixes an issue you reported, or to see the newest
 feature you heard about. It helps us _tremendously_ to get feedback from you on nightlies: please try them out and report back to us!<br>
@@ -47,14 +43,8 @@ See → [Docker Hub](https://hub.docker.com/r/rootproject/root-ubuntu16/){:targe
 
 ## Building ROOT
 
-**Building ROOT with CMake**
-
 ROOT uses the CMake cross-platform build-generator tool as a primary build system.<br>
 See → [Building ROOT with CMake]({{'/download/building_root' | relative_url}}).
 
-**Building ROOT with make (old method)**
-
-The classic build with `configure/make` is is still available but it will not be evolving with the new features of ROOT.<br>
-See → [Building ROOT with make]({{'/download/building_root/build_root_old_method' | relative_url}}).
 
 
