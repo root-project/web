@@ -20,7 +20,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [ ] "Other News" -> "Tech Blog"
    - [ ] Put "Latest Releases" on top of "Tech Blog"
    - [ ] Increase the font size of the title of "Under the Spotlight"
-   - [ ] "ROOT is..." Don't mention R
+   - [X] "ROOT is..." Don't mention R
    - [ ] "Latest Releases": don't use monotype?
    - [ ] "Latest Releases": remove extra indent of "Release 6.xx.yy..."
    - [ ] Front page: icon titles should be considerable larger
