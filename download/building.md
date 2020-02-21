@@ -27,8 +27,3 @@ See → [Prerequisites]({{'/download/build_prerequisites' | relative_url}}).
 
 ROOT uses the CMake cross-platform build-generator tool as a primary build system.<br>
 See → [Building ROOT with CMake]({{'/download/building_root' | relative_url}}).
-
-## Building ROOT with make (old method)
-
-The classic build with `configure/make` is is still available but it will not be evolving with the new features of ROOT.<br>
-See → [Building ROOT with make]({{'/download/building_root/build_root_old_method' | relative_url}}).
