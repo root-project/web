@@ -41,7 +41,7 @@ but we should be aware of what still needs to be done (before we go live).
      A release candidate is a preview of the next production release. It
      allows users to make their code ready for the new production release,
      and to provide early feedback."
-   - [ ] "Specific ROOT version? Download our <a href="...">binary</a>
+   - [ ] "Specific ROOT version? Download our `<a href="...">binary</a>`
    - [ ] "Using Fedora? dnf install..."
    - [ ] "Conda? conda ..."
    - [ ] "Docker? Get image here..."
