@@ -13,9 +13,6 @@ ROOT uses the [CMake](http://www.cmake.org/){:target="_blank"} cross-platform bu
 primary build system.<br> `CMake` does not build the project, it generates the files needed by
 your build tool (GNU make, Ninja,  Visual Studio, etc) for building ROOT.
 
-The classic build with `configure/make` is still available but it will not be evolving with the
-new features of ROOT. For instructions building ROOT with `configure/make`, see → [Building ROOT with make (old method)](build_root_old_method).
-
 If you are really anxious about getting a functional ROOT build, go to the [Quick Start](#quick-start) section.<br>
 If you are a `CMake` novice, start on [Basic CMake usage](#basic-cmake-usage) and then go back to the
 [Quick Start](#quick-start).
