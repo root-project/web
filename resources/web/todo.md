@@ -27,6 +27,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [ ] Consider using the "ROOT is..." paragraph font (i.e. "default font") also for the colored boxes below
    - [ ] Reference latest "pro" release for all reference guide links
    - [ ] Need to fix search before going online
+   - [ ] Use site map provided by this [jekyll](https://github.com/jekyll/jekyll-sitemap) plugin.
    - [ ] Weird box around topic link when hitting the "back" button - talk to Axel
    - [ ] "Using ROOT" logos: Fermilab, CSCS, NERSC, GSI
    - [X] Provide tiny step-by-step page for editing pages
