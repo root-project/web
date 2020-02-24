@@ -14,15 +14,15 @@ main:
   - title: "Manual"
     url: manual
     description: "High level ROOT manual"
-  - title: "Resources"
-    url: resources
-    description: "For ROOT developers"
   - title: "News"
     url: news
     description: "Latest ROOT news"
   - title: "Contribute"
     url: contribute
     description: "Contribute to ROOT !"
+  - title: "For Developers"
+    url: for_developers
+    description: "Resources for ROOT developers"
 
 # side bar menus
 
@@ -82,46 +82,46 @@ manual:
         url: https://root-forum.cern.ch/
         target: _blank
 
-resources:
+for_developers:
    - title: Program of Work
-     url: resources/program_of_work
+     url: for_developers/program_of_work
    - title: Code Owners
-     url: resources/code_owners
+     url: for_developers/code_owners
    - title: Release Checklist
-     url: resources/release_checklist
+     url: for_developers/release_checklist
    - title: Shifter's Instructions
-     url: resources/shifters_instructions
+     url: for_developers/shifters_instructions
    - title: Git Primer
-     url: resources/git_primer
+     url: for_developers/git_primer
      children:
       - title: "Creating a Pull Request"
-        url: resources/git_primer/creating_pr
+        url: for_developers/git_primer/creating_pr
       - title: "GitHub ssh key"
-        url: resources/git_primer/github_ssh_key
+        url: for_developers/git_primer/github_ssh_key
       - title: "Git Tips and Trick"
-        url: resources/git_primer/git_tips_and_tricks
+        url: for_developers/git_primer/git_tips_and_tricks
       - title: "Git How Tos"
-        url: resources/git_primer/git_how_tos
+        url: for_developers/git_primer/git_how_tos
       - title: "NoSY Worlflow"
-        url: resources/git_primer/nosy_workflow
+        url: for_developers/git_primer/nosy_workflow
    - title: Browse Sources
      url: https://github.com/root-project/root
      target: _blank
    - title: Meetings
-     url: resources/meetings
+     url: for_developers/meetings
    - title: ROOT 7
-     url: resources/root7
+     url: for_developers/root7
    - title: Run the Tests
-     url: resources/run_the_tests
+     url: for_developers/run_the_tests
    - title: Setup externals from AFS/CVMFS
-     url: resources/setup_externals_from_afs-cvmfs
+     url: for_developers/setup_externals_from_afs-cvmfs
    - title: Continous Integration / Testing
      children:
       - title: Jenkins Service
         url: https://epsft-jenkins.cern.ch/view/ROOT/
         target: _blank
       - title: Jenkins How To
-        url: resources/continous_integration-testing/jenkins_how_to
+        url: for_developers/continous_integration-testing/jenkins_how_to
         target: _blank
       - title: CDash
         url: http://cdash.cern.ch/index.php?project=ROOT
@@ -139,15 +139,15 @@ resources:
         url: https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page
         target: _blank
       - title: ROOTBinder Checklist
-        url: resources/continous_integration-testing/rootbinder_checklist
+        url: for_developers/continous_integration-testing/rootbinder_checklist
         target: _blank
    - title: Doxygen in ROOT
-     url: resources/doxygen
+     url: for_developers/doxygen
    - title: Editing the ROOT web site
-     url: resources/web
+     url: for_developers/web
      children:
       - title: "Web Site To-Do list"
-        url: resources/web/todo
+        url: for_developers/web/todo
    - title: Benchmarks
      url: https://rootbnch-grafana-test.cern.ch
      target: _blank
