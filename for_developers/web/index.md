@@ -134,7 +134,7 @@ the server will notice it and will regenerate the web site. You will get an outp
 similar to:
 ```
 Regenerating: 1 file(s) changed at 2020-02-19 10:40:02
-              resources/web/index.md
+              for_developers/web/index.md
  Jekyll Feed: Generating feed for posts
               ...done in 9.877795 seconds.
 ```

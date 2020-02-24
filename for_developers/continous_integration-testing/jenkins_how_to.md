@@ -64,7 +64,7 @@ show the configuration matrix that can be used to select a contrete configuratio
 following figure:
 
 <center>
-<img src="{{'resources/continous_integration-testing/Jenkins-figure1-10.png' | relative_url}}">
+<img src="{{'for_developers/continous_integration-testing/Jenkins-figure1-10.png' | relative_url}}">
 </center>
 
 For each individual build (select one cell in the matrix) the following information is provided:

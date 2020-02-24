@@ -1,5 +1,5 @@
 ---
-title: Resources
+title: For Developers
 layout: single
 sidebar:
   nav: "for_developers"
