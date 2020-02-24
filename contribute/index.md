@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-We warmly welcome external contributions to the ROOT! By providing code, you agree to
+We warmly welcome external contributions to  ROOT! By providing code, you agree to
 transfer your copyright on the code to the "ROOT project". Of course you will be duly
 credited and your name will appear on the
 [contributors]({{'/contribute/contributors' | relative_url}}) page and in the

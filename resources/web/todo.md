@@ -14,9 +14,9 @@ but we should be aware of what still needs to be done (before we go live).
 ### Web site
    - [ ] Don't open in new window / tab
    - [X] Link for C++: https://en.cppreference.com/w/cpp
-   - [ ] Collaborate: "to the ROOT" -> "to ROOT"
-   - [ ] Make right "in this page" box scrollable, somehow; see e.g. ROOT Primer
-   - [ ] Front page: aligne "Under the Spotlight" and "Other News" titles
+   - [X] Collaborate: "to the ROOT" -> "to ROOT"
+   - [ ] Make right "On this page" box scrollable, somehow; see e.g. ROOT Primer
+   - [ ] Front page: align "Under the Spotlight" and "Other News" titles
    - [ ] "Other News" -> "Tech Blog"
    - [ ] Put "Latest Releases" on top of "Tech Blog"
    - [ ] Increase the font size of the title of "Under the Spotlight"
