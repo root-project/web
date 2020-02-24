@@ -23,7 +23,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [X] "ROOT is..." Don't mention R
    - [ ] "Latest Releases": don't use monotype?
    - [ ] "Latest Releases": remove extra indent of "Release 6.xx.yy..."
-   - [ ] Front page: icon titles should be considerable larger
+   - [X] Front page: icon titles should be considerable larger
    - [ ] Consider using the "ROOT is..." paragraph font (i.e. "default font") also for the colored boxes below
    - [ ] Reference latest "pro" release for all reference guide links
    - [ ] Need to fix search before going online
