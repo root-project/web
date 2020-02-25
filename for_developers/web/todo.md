@@ -34,7 +34,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [X] Provide tiny step-by-step page for editing pages
    - [X] Footer: " © Copyright CERN 2014-18. All rights reserved. " update year
    - [X] Footer: add contact info: forum, bug reports, else rootdev@cern.ch
-   - [ ] Add "About..." in top menu on main page, to link to "More..."-page
+   - [X] Add "About..." in top menu on main page, to link to "More..."-page
    - [X] Rename "Resources" to "For Developers"
    - [X] Remove all of "Building ROOT with make (old method)"
    - [X] Get rid of "old" vs "pro" tags; just show the latest production release and "others".

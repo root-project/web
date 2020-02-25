@@ -1,6 +1,9 @@
 # main links => top menu bar
 
 main:
+  - title: "About ..."
+    url: about
+    description: "About ROOT"
   - title: "Download"
     url: download
     description: "All you need to download and install ROOT"
