@@ -17,7 +17,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [X] Collaborate: "to the ROOT" -> "to ROOT"
    - [ ] Make right "On this page" box scrollable, somehow; see e.g. ROOT Primer
    - [ ] Front page: align "Under the Spotlight" and "Other News" titles
-   - [ ] "Other News" -> "Tech Blog"
+   - [X] "Other News" -> "Tech Blog"
    - [ ] Put "Latest Releases" on top of "Tech Blog"
    - [ ] Increase the font size of the title of "Under the Spotlight"
    - [X] "ROOT is..." Don't mention R
@@ -28,7 +28,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [ ] Reference latest "pro" release for all reference guide links
    - [X] Need to fix search before going online
    - [ ] Auto complete in search
-   - [ ] Use site map provided by this [jekyll](https://github.com/jekyll/jekyll-sitemap) plugin.
+   - [X] Use site map provided by this [jekyll](https://github.com/jekyll/jekyll-sitemap) plugin.
    - [ ] Weird box around topic link when hitting the "back" button - talk to Axel
    - [ ] "Using ROOT" logos: Fermilab, CSCS, NERSC, GSI
    - [X] Provide tiny step-by-step page for editing pages
