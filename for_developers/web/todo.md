@@ -18,7 +18,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [ ] Make right "On this page" box scrollable, somehow; see e.g. ROOT Primer
    - [X] Front page: align "Under the Spotlight" and "Other News" titles
    - [X] "Other News" -> "Tech Blog"
-   - [ ] Put "Latest Releases" on top of "Tech Blog"
+   - [X] Put "Latest Releases" on top of "Tech Blog"
    - [X] Increase the font size of the title of "Under the Spotlight"
    - [X] "ROOT is..." Don't mention R
    - [ ] "Latest Releases": don't use monotype?
