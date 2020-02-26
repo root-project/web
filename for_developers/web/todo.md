@@ -16,15 +16,15 @@ but we should be aware of what still needs to be done (before we go live).
    - [X] Link for C++: https://en.cppreference.com/w/cpp
    - [X] Collaborate: "to the ROOT" -> "to ROOT"
    - [ ] Make right "On this page" box scrollable, somehow; see e.g. ROOT Primer
-   - [ ] Front page: align "Under the Spotlight" and "Other News" titles
+   - [X] Front page: align "Under the Spotlight" and "Other News" titles
    - [X] "Other News" -> "Tech Blog"
    - [ ] Put "Latest Releases" on top of "Tech Blog"
-   - [ ] Increase the font size of the title of "Under the Spotlight"
+   - [X] Increase the font size of the title of "Under the Spotlight"
    - [X] "ROOT is..." Don't mention R
    - [ ] "Latest Releases": don't use monotype?
    - [ ] "Latest Releases": remove extra indent of "Release 6.xx.yy..."
    - [X] Front page: icon titles should be considerable larger
-   - [ ] Consider using the "ROOT is..." paragraph font (i.e. "default font") also for the colored boxes below
+   - [X] Consider using the "ROOT is..." paragraph font (i.e. "default font") also for the colored boxes below
    - [ ] Reference latest "pro" release for all reference guide links
    - [X] Need to fix search before going online
    - [ ] Auto complete in search
