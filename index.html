@@ -53,34 +53,35 @@ It is mainly written in C++ but integrated with other languages such as Python.
 		<tr>
 			<td style="width:55%; border:1px solid #cef2e0; padding:0; background:#f5fffa; vertical-align:top; color:#000;">
 				<h1 style="margin:0.3em; background:#cef2e0; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; color:#000; padding:0.2em 0.4em;">Under the Spotlight</h1>
+				<br>
 				<div style="padding:0.1em 0.6em;">
-					<font size="2">
-						{% for post in site.posts limit:3 %}
-						<font face = "Courier">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b>
-						<p>{{ post.excerpt }}</p>
-						{% endfor %}
-					</font>
+					{% for post in site.posts limit:3 %}
+					<font size="2"><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b></font> <font size="1">({{post.date | date_to_string}})</font>
+					<font size="2"><p>{{ post.excerpt }}</p></font>
+					{% endfor %}
 				</div>
 			</td>
 			<td style="border:1px solid transparent;">
 			</td>
 			<td style="width:45%; border:1px solid #cedff2; padding:0; background:#f5faff; vertical-align:top;">
 				<h1 style="margin:0.3em; background:#cedff2; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; color:#000; padding:0.2em 0.4em;">Latest Releases</h1>
+				<br>
 				<div style="padding:0.1em 0.6em;">
 					<font size="2">
-						{% include releases_list number=4 single_column="yes" %}
-						<b><a href="{{'/download/all_releases' | relative_url}}"> More ...</a></b>
+					{% include releases_list number=4 single_column="yes" %}
+					<b><a href="{{'/download/all_releases' | relative_url}}"> More ...</a></b>
 					</font>
 				</div>
 				<br>
 				<h1 style="margin:0.3em; background:#cedff2; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; color:#000; padding:0.2em 0.4em;">Tech Blog</h1>
+				<br>
 				<div style="padding:0.1em 0.6em;">
 					<font size="2">
-						{% for post in site.posts %}
-						{% if forloop.index >= 4 and forloop.index <=8 %}
-						<font face = "Courier">{{post.date | date_to_string}}  </font><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b><br>
-						{% endif %}
-						{% endfor %}
+					{% for post in site.posts %}
+					{% if forloop.index >= 4 and forloop.index <=8 %}
+					<b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b> <font size="1">({{post.date | date_to_string}})</font><br>
+					{% endif %}
+					{% endfor %}
 					</font>
 				</div>
 			</td>
