@@ -27,7 +27,10 @@ sidebar:
 
 {% include releases_list version="3" %}
 
-Release notes can be found on the respective release page; release notes for old releases
-can be found [here]({{ '/download/all_releases/old_release_notes' | relative_url }}).
+<hr>
+
+Release notes can be found on the respective release page.
+
+Release notes for old releases can be found [here]({{ '/download/all_releases/old_release_notes' | relative_url }}).
 
 All releases files can be download from [here](https://root.cern.ch/download/).
