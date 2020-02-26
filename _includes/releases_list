@@ -6,7 +6,6 @@
 
 {% assign sorted = site.releases | reverse %}
 
-<font face = "Courier">
 
 {% if single %}
 <ul style="list-style-type:none; margin:0; padding:0">
@@ -48,5 +47,3 @@
 {% endif %}
 
 </ul>
-
-</font>

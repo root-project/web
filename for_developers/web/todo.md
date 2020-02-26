@@ -21,7 +21,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [X] Put "Latest Releases" on top of "Tech Blog"
    - [X] Increase the font size of the title of "Under the Spotlight"
    - [X] "ROOT is..." Don't mention R
-   - [ ] "Latest Releases": don't use monotype?
+   - [X] "Latest Releases": don't use monotype?
    - [X] "Latest Releases": remove extra indent of "Release 6.xx.yy..."
    - [X] Front page: icon titles should be considerable larger
    - [X] Consider using the "ROOT is..." paragraph font (i.e. "default font") also for the colored boxes below
