@@ -12,12 +12,13 @@ sidebar:
 
 ### Production release
 
-The _production_ release is a version we feel comfortable with to exposing to a large audience for serious work.
-We may issue patch releases of _production_ versions with bug fixes. We release about two
-_production_ versions per year. The _old_ version is the previous _production_ version that
-people might need for some time before switching to the new version.
+The _production_ release is a version we feel comfortable with to exposing to a large
+audience for serious work. We may issue patch releases of _production_ versions with bug
+fixes. We release about two _production_ versions per year.
+The [_old_]({{'/download/all_releases' | relative_url}}) version is the previous _production_
+version that people might need for some time before switching to the new version.
 
-The following latest _production_ and _old_ version are available for download:
+The following latest _production_ version is available for download:
 
 {% include releases_list state="pro" label="PRO" single_column="yes" %}
 
