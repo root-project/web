@@ -12,13 +12,21 @@ sidebar:
 
 ## Highlights
 
-The new prompt functionality `root[0] .help TTree::Draw` does what you'd expect it to do: open ROOT's documentation on `TTree::Draw` in a browser window (or, if remote, show the URL so you can click it.) We hope you'll enjoy that!
+A new compression algorithm [ZSTD](https://github.com/facebook/zstd.git) was added. Please use it: it’s faster than the default zlib, and it compresses better. (We don’t want to change the default: we want old ROOT versions to be able to read new files.) The release notes show how to use it.
+
+The new prompt functionality `root[0] .help TTree::Draw` does what you’d expect it to do: open ROOT’s documentation on TTree::Draw in a browser window (or, if remote, show the URL so you can click it.) We hope you’ll enjoy that!
 
 RooFit has lots of improvements in this release, from considerable speed-ups to a myriad of fixed bugs.
 
 ROOT does not show its splash screen during start-up anymore. In case you miss it, just run `root -a`.
 
-PyROOT receives a major upgrade in v6.22. You'll need to get prepared by a couple of Python code changes on your side, notably when instantiating class templates from Python. The release notes spell out the details.
+PyROOT receives a major upgrade in v6.22. You’ll need to get prepared by a couple of Python code changes on your side, notably when instantiating class templates from Python. The release notes spell out the details.
+ROOT’s prompt as well as its Jupyter interface now allow you to re-declare many things:
+
+```
+root [0] int a = 0;
+root [1] float a = 42.;
+```
 
 And many, many bugs were fixed - thanks for your reports!
 
