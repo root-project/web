@@ -14,9 +14,7 @@ Histograms play a fundamental role in any kind of physical analysis. Histograms 
 A histogram is used for continuous data, where the bins represent ranges of data. ROOT supports constant and variable bin widths.<br>
 A graph or chart is a plot of categorical variables, this is un-binned data, see → [Graphs]({{ '/manual/graphs' | relative_url }}).
 
-> **Tutorials**
->
-> Histogram tutorials are available at → [https://root.cern/doc/master/group__tutorial__hist.html](https://root.cern/doc/master/group__tutorial__hist.html){:target="_blank"}
+{% include tutorials name="Histogram" url="hist" %}
 
 ## Histogram classes
 

@@ -23,9 +23,7 @@ Adding an element to a pad is done by the `Draw()` method of each class.
 
 Painting a pad is done by the `Paint()` method of each object in the list of primitives.
 
-> **Tutorials**
->
-> Graphics tutorials are available at → [https://root.cern/doc/master/group__tutorial__graphics.html](https://root.cern/doc/master/group__tutorial__graphics.html){:target="_blank"}
+{% include tutorials name="Graphics" url="graphics" %}
 
 ## Graphic classes
 
