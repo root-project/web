@@ -42,7 +42,7 @@ but we should be aware of what still needs to be done (before we go live).
      A release candidate is a preview of the next production release. It
      allows users to make their code ready for the new production release,
      and to provide early feedback."
-   - [ ] "Specific ROOT version? Download our `<a href="...">binary</a>`
+   - [ ] Specific ROOT version? Download our `<a href="...">binary</a>`
    - [ ] "Using Fedora? dnf install..."
    - [ ] "Conda? conda ..."
    - [ ] "Docker? Get image here..."
@@ -51,3 +51,13 @@ but we should be aware of what still needs to be done (before we go live).
 
 ### Reference guide
    - [ ] "List of all members" twice
+   
+### Manual
+   - [ ] Make sure we are not lossing information from the user's guide
+         which are not in the référence guide.
+   - [ ] Scan the most accessed thread in the forum and reflect them in the Manual
+   - [ ] Change the links to the tutorials pages to a more visible "eye-catching" icon
+   - [ ] Extract the fitting part of the histogram section to make make a new section
+         related to fitting and put it close to the Roofit one in the left side menu of 
+         the manual.
+   - [ ] Shorten the "On this page" menu to make sure they are fully visible. 
