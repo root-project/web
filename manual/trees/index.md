@@ -15,10 +15,7 @@ A tree consists of a list of independent columns, called branches. The {% includ
 
 A {% include ref class="TNtuple" %} is a {% include ref class="TTree" %}, which is limited to contain only floating-point numbers.
 
-
-> **Tutorials**
->
-> Tree tutorials are available at → [https://root.cern/doc/master/group__tutorial__tree.html](https://root.cern/doc/master/group__tutorial__tree.html){:target="_blank"}
+{% include tutorials name="Tree" url="tree" %}
 
 ## Tree classes
 
