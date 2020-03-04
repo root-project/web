@@ -10,10 +10,9 @@ ROOT offers with [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFra
 a high level interface for analysis of data stored in
 {% include ref class="TTree" %}s, CSV files and other data formats.
 
-> **Tutorials**
->
-> Data frame tutorials are available at → [https://root.cern.ch/doc/master/group__tutorial__dataframe.html](https://root.cern.ch/doc/master/group__tutorial__dataframe.html){:target="_blank"}
+{% include tutorials name="Data frame" url="dataframe" %}
 
+<br>
 The following is a brief introduction to ROOT data frames. For detailed information on ROOT data frames, see → [https://root.cern/doc/master/classROOT_1_1RDataFrame.html](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"}.
 
 ## Data analysis with RDataFrame

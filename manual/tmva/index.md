@@ -24,9 +24,7 @@ The package includes:
 - Rectangular cut optimisation
 - Support Vector Machine (SVM)
 
-> **Tutorials**
->
-> TMVA tutorials are available at → [https://root.cern/doc/master/group__tutorial__tmva.html](https://root.cern/doc/master/group__tutorial__tmva.html){:target="_blank"}
+{% include tutorials name="TMVA" url="tmva" %}
 
 > **Topical manuals**
 >

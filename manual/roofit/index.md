@@ -9,9 +9,7 @@ toc_sticky: true
 
 ROOT provides with the RooFit library a toolkit for modeling the expected distribution of events in a physics analysis.
 
-> **Tutorials**
->
-> RooFit tutorials are available at → [https://root.cern/doc/master/group__tutorial__roofit.html](https://root.cern/doc/master/group__tutorial__roofit.html){:target="_blank"}
+{% include tutorials name="RooFit" url="roofit" %}
 
 > **Topical Manuals**
 >

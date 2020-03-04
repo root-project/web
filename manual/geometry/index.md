@@ -9,10 +9,7 @@ toc_sticky: true
 
 The ROOT geometry package is a tool for building, browsing, navigating and visualizing detector geometries.
 
-
-> **Tutorials**
->
-> Geometry tutorials are available at → [https://root.cern/doc/master/group__tutorial__geom.html](https://root.cern/doc/master/group__tutorial__geom.html){:target="_blank"}
+{% include tutorials name="Geometry" url="geom" %}
 
 ## Main geometry class
 
