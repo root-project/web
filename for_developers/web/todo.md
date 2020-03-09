@@ -53,8 +53,8 @@ but we should be aware of what still needs to be done (before we go live).
    - [ ] "List of all members" twice
    
 ### Manual
-   - [ ] Make sure we are not lossing information from the user's guide
-         which are not in the référence guide.
+   - [ ] Make sure we are not losing information from the user's guide
+         which are not in the reference guide.
    - [ ] Scan the most accessed thread in the forum and reflect them in the Manual
    - [ ] Change the links to the tutorials pages to a more visible "eye-catching" icon
    - [ ] Extract the fitting part of the histogram section to make make a new section
