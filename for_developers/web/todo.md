@@ -51,13 +51,13 @@ but we should be aware of what still needs to be done (before we go live).
 
 ### Reference guide
    - [ ] "List of all members" twice
-   
+
 ### Manual
    - [ ] Make sure we are not losing information from the user's guide
          which are not in the reference guide.
    - [ ] Scan the most accessed thread in the forum and reflect them in the Manual
-   - [ ] Change the links to the tutorials pages to a more visible "eye-catching" icon
+   - [X] Change the links to the tutorials pages to a more visible "eye-catching" icon
    - [ ] Extract the fitting part of the histogram section to make make a new section
-         related to fitting and put it close to the Roofit one in the left side menu of 
+         related to fitting and put it close to the Roofit one in the left side menu of
          the manual.
-   - [ ] Shorten the "On this page" menu to make sure they are fully visible. 
+   - [ ] Shorten the "On this page" menu to make sure they are fully visible.
