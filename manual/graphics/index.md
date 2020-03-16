@@ -187,8 +187,9 @@ You can create the following graphical objects:
 The following sections introduce some of the graphical objects that ROOT provides. Usually, one defines these
 graphical objects with their constructor and draws them with their `Draw()` method.
 
+[Ellipses](#ellipses)
 
-### Lines
+**Lines**
 
 - Use the {% include ref class="TLine" %} constructor to create a line.
 
@@ -205,7 +206,7 @@ _**Example**_
    root[] l->Draw()
 {% endhighlight %}
 
-### Arrows
+**Arrows**
 
 - Use the {% include ref class="TArrow" %} constructor to create an arrow.
 
@@ -254,7 +255,7 @@ _**Example**_
    caption="Examples of various arrow formats."
 %}
 
-### Polylines
+**Polylines**
 
 A polyline is a set of joint segments. It is defined by a set of N points in a 2D-space.
 
@@ -284,7 +285,7 @@ _**Example**_
    caption="Example for a polyline."
 %}
 
-### Ellipses
+**Ellipses** {#ellipses}
 
 - Use the {% include ref class="TEllipse" %} constructor to create an ellipse.
 
