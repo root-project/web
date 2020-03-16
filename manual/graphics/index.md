@@ -187,8 +187,17 @@ You can create the following graphical objects:
 The following sections introduce some of the graphical objects that ROOT provides. Usually, one defines these
 graphical objects with their constructor and draws them with their `Draw()` method.
 
-[Ellipses](#ellipses)
+The following graphical objects are presented:
 
+- [Lines](#lines)
+- [Arrows](#arrows)
+- [Ellipses](#ellipses)
+- [Polylines](#polylines)
+- [Rectangles](#rectangles)
+- [Markers](#markers)
+- [Curly lines and arcs](#curly_lines_and_arcs)
+
+<a name="lines"></a>
 **Lines**
 
 - Use the {% include ref class="TLine" %} constructor to create a line.
@@ -206,6 +215,7 @@ _**Example**_
    root[] l->Draw()
 {% endhighlight %}
 
+<a name="arrows"></a>
 **Arrows**
 
 - Use the {% include ref class="TArrow" %} constructor to create an arrow.
@@ -255,6 +265,8 @@ _**Example**_
    caption="Examples of various arrow formats."
 %}
 
+
+<a name="polylines"></a>
 **Polylines**
 
 A polyline is a set of joint segments. It is defined by a set of N points in a 2D-space.
@@ -285,7 +297,8 @@ _**Example**_
    caption="Example for a polyline."
 %}
 
-**Ellipses**v <a name="ellipses"></a>
+<a name="ellipses"></a>
+**Ellipses** 
 
 - Use the {% include ref class="TEllipse" %} constructor to create an ellipse.
 
@@ -325,8 +338,8 @@ _**Example**_
    caption="Examples for a ellipses."
 %}
 
-
-### Rectangles
+<a name="rectangles"></a>
+**Rectangles**
 
 - Use the {% include ref class="TBox" %} constructor to create a rectangle/box.
 
@@ -348,7 +361,8 @@ _**Example**_
 
 {% endhighlight %}
 
-### Markers
+<a name="markers"></a>
+**Markers**
 
 - Use the {% include ref class="TMarker" %} constructor to create a marker.
 
@@ -369,8 +383,8 @@ _**Example**_
 
 - Use the `TAttMarker::SetMarkerSize(size)` method to set the `size` of a marker.
 
-
-### Curly lines and arcs
+<a name="curly_lines_and_arcs"></a>
+**Curly lines and arcs**
 
 Curly lines and the curly arcs are special kinds of lines that are used to draw Feynman diagrams.
 
