@@ -285,7 +285,7 @@ _**Example**_
    caption="Example for a polyline."
 %}
 
-**Ellipses** {#ellipses}
+**Ellipses**v <a name="ellipses"></a>
 
 - Use the {% include ref class="TEllipse" %} constructor to create an ellipse.
 
