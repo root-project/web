@@ -197,7 +197,7 @@ The following graphical objects are presented:
 - [Markers](#markers)
 - [Curly lines and arcs](#curly_lines_and_arcs)
 
-<a name="lines"></a>
+<p><a name="lines"></a></p>
 **Lines**
 
 - Use the {% include ref class="TLine" %} constructor to create a line.
@@ -215,7 +215,7 @@ _**Example**_
    root[] l->Draw()
 {% endhighlight %}
 
-<a name="arrows"></a>
+<p><a name="arrows"></a></p>
 **Arrows**
 
 - Use the {% include ref class="TArrow" %} constructor to create an arrow.
@@ -266,7 +266,7 @@ _**Example**_
 %}
 
 
-<a name="polylines"></a>
+<p><a name="polylines"></a></p>
 **Polylines**
 
 A polyline is a set of joint segments. It is defined by a set of N points in a 2D-space.
@@ -297,7 +297,7 @@ _**Example**_
    caption="Example for a polyline."
 %}
 
-<a name="ellipses"></a>
+<p><a name="ellipses"></a></p>
 **Ellipses** 
 
 - Use the {% include ref class="TEllipse" %} constructor to create an ellipse.
@@ -338,7 +338,7 @@ _**Example**_
    caption="Examples for a ellipses."
 %}
 
-<a name="rectangles"></a>
+<p><a name="rectangles"></a></p>
 **Rectangles**
 
 - Use the {% include ref class="TBox" %} constructor to create a rectangle/box.
@@ -361,7 +361,7 @@ _**Example**_
 
 {% endhighlight %}
 
-<a name="markers"></a>
+<p><a name="markers"></a></p>
 **Markers**
 
 - Use the {% include ref class="TMarker" %} constructor to create a marker.
@@ -583,11 +583,12 @@ For a histogram `histo`, the x-axis is set as time axis.
 
 For a time axis, you can set the
 
-- time format
+- [time formats](#time_formats)
 
-- time offset
+- [time offset](#time_offset)
 
-#### Time formats
+<p><a name="time_formats"></a></p>
+**Time formats**
 
 The time format defines the format of the labels along the time axis. It can be changed using the `TAxis::SetTimeFormat()` method. The time format used if from the C function `strftime()`.
 It is a string containing the following formatting characters, <br/>
@@ -613,7 +614,8 @@ The other characters are output as is. For example to have a format like `dd/mm/
 ~~~ .cpp h->GetXaxis()->SetTimeFormat("%d/%m/%Y"); ~~~
 {% endhighlight %}
 
-#### Time offset
+<p><a name="time_offset"></a></p>
+**Time offset**
 
 The time is a time in seconds in the UNIX standard UTC format (this is an universal time, not the local time), defining the starting date of an histogram axis. This date should be greater than 01/01/95 and is given in seconds.
 <br> There are the three ways to define the time offset:
@@ -900,13 +902,14 @@ For building more sub-pads, repeat this procedure as many times as necessary.
 ### Coordinate systems of a pad
 
 For a {% include ref class="TPad" %} the following coordinate systems are available:
-- user coordinates
-- normalized coordinates (NDC)
-- pixel coordinates
+- [user coordinates](#user_coordinate_system)
+- [normalized coordinates (NDC)](#ndc)
+- [pixel coordinates](#pixel_coordinate_system)
 
-You can convert from one system of coordinates to another.
+You can [convert](convert) from one system of coordinates to another.
 
-#### User coordinate system
+<p><a name="user_coordinate_system"></a></p>
+**User coordinate system**
 
 Most methods of {% include ref class="TPad" %} use the user coordinate system, and all graphic primitives have their parameters defined in terms of user coordinates. By default, when an empty pad is drawn, the
 user coordinates are set to a range from 0 to 1 starting at the lower left corner.
@@ -923,17 +926,19 @@ Both coordinates go from -100 to 100, with the center of the pad at (0,0).
     gPad->Range(-100,-100,100,100)
 {% endhighlight %}
 
-#### Normalized coordinate system (NDC)
+<p><a name="ndc"></a></p>
+**Normalized coordinate system (NDC)**
 
 Normalized coordinates are independent of the window size and of the user system. The coordinates range from 0 to 1 and (0, 0) correspond to the bottom-left corner of the pad.
 
-#### Pixel coordinate system
+<p><a name="pixel_coordinate_system"></a></p>
+**Pixel coordinate system**
 
 The pixel coordinate system is used by functions such as `DistanceToPrimitive()` and `ExecuteEvent()`. Its primary use is for cursor position, which is always given in pixel coordinates. If (`px`,`py`) is the
 cursor position, `px=0` and `py=0` corresponds to the top-left corner of the pad, which is the standard convention in windowing systems.
 
-
-#### Converting between coordinate systems
+<p><a name="convert"></a></p>
+**Converting between coordinate systems**
 
 {% include ref class="TPad" %} provides some methods to convert from one system of coordinates to another.
 
