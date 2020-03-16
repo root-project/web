@@ -383,7 +383,7 @@ _**Example**_
 
 - Use the `TAttMarker::SetMarkerSize(size)` method to set the `size` of a marker.
 
-<a name="curly_lines_and_arcs"></a>
+<p><a name="curly_lines_and_arcs"></a></p>
 **Curly lines and arcs**
 
 Curly lines and the curly arcs are special kinds of lines that are used to draw Feynman diagrams.
