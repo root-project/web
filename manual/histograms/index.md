@@ -847,7 +847,7 @@ With the fit option `S`,  you can access the full result of the fit including th
 <p><a name="associated-errors"></a></p>
 **Associated errors**
 
-By default, for each bin, the sum of weights is computed at fill time. You can also call [TH1::Sumw2()](https://root.cern/doc/master/classTH1.html#aefa4ee94f053ec3d217f3223b01fa014) to force the storage
+By default, for each bin, the sum of weights is computed at fill time. You can also call [TH1::Sumw2()](https://root.cern/doc/master/classTH1.html#aefa4ee94f053ec3d217f3223b01fa014){:target="_blank"} to force the storage
 and computation of the sum of the square of weights per bin. If `Sumw2()` has been called, the error per bin is computed
 as the sqrt(sum of squares of weights). oOtherwise, the error is set equal to the sqrt(bin content).
 
