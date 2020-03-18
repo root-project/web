@@ -2,7 +2,7 @@
 layout: releases
 version: 6.20/00
 release_date: 2020-02-26
-state: pro
+state:
 
 toc: true
 toc_sticky: true
