@@ -76,7 +76,7 @@ The following histogram classes are available in ROOT, among others:
 
 All histogram types support fixed or variable bin sizes. 2-D histograms may have fixed size bins along X and variable size bins along Y or vice-versa.
 
-#### Conventions
+**Conventions**
 
 For all histogram types: `nbins`, `xlow`, `xup`:
 
@@ -98,7 +98,7 @@ Assuming a 3-D histogram `h` with `binx`, `biny`, `binz`, the function returns a
 
 This *global bin* is useful to access the bin information independently of the dimension.
 
-#### Re-binning
+**Re-binning**
 
 You can re-bin a histogram via the [TH1::Rebin()](https://root.cern/doc/master/classTH1.html#aff6520fdae026334bf34fa1800946790){:target="_blank"} method. It returns a new histogram with the re-binned contents. If bin errors were stored, they are recomputed during the re-binning.
 
@@ -681,7 +681,9 @@ The following configuration actions are available when fitting a histogram or gr
 - [Fitting subranges](#fitting-subranges)
 - [Fitting multiple sub ranges](#fitting-multiple-sub-ranges)
 
-#### Fixing and setting parameter bounds
+
+<p><a name="fixing-and-setting-parameter-bounds"></a></p>
+**Fixing and setting parameter bounds**
 
 For pre-defined functions like `poln`, `exp`, `gaus`, and `landau`, the parameter initial values are set automatically.
 
@@ -725,7 +727,8 @@ There is function with 6 parameters. Then there is a setup possible like the fol
    func->FixParameter(4,0);
 {% endhighlight %}
 
-#### Fitting subranges
+<p><a name="fitting-subranges"></a></p>
+**Fitting subranges**
 
 By default, [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} fits the function on the defined histogram range. You can specify the `R` option in the second
 parameter of `TH1::Fit()` to restrict the fit to the range specified in the {% include ref class="TF1" %} constructor.
@@ -747,7 +750,8 @@ You can also specify a range in the call to `TH1::Fit()`.
 
 See also the ROOT macros `$ROOTSYS/tutorials/fit/myfit.C` and `multifit.C` for more detailed examples.
 
-#### Fitting multiple sub ranges
+<p><a name="fitting-multiple-sub-ranges"></a></p>
+**Fitting multiple sub ranges**
 
 You can find a ROOT macro for fitting multiple sub ranges at `$ROOTSYS/tutorials/fit/multifit.C`. It shows how to use several Gaussian functions
 with different parameters on separate sub ranges of the same histogram.
@@ -801,12 +805,13 @@ In this particular case, the initial values are taken from the result of the ind
 
 You can obtain the following results of a fit:
 
-- fitted function
-- parameter values
-- errors and eventually
-- covariance and correlation matrix
+- [fitted function](#associated-function)
+- [parameter values](#accessing-the-fit-parameters-and-results)
+- [errors](#associated-errors)
+- [covariance and correlation matrix](#fit-statistics)
 
-#### Associated function
+<p><a name="associated-function"></a></p>
+**Associated function**
 
 One or more objects (typically a `TF1\*`) can be added to the list of functions (`fFunctions`) associated to each histogram.
 [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} adds the fitted function to this list.
@@ -817,7 +822,8 @@ Given a histogram `h`, you can retrieve the associated function with:
    TF1 *myfunc = h->GetFunction("myfunc");
 {% endhighlight %}
 
-#### Accessing the fit parameters and Results
+<p><a name="accessing-the-fit-parameters-and-results"></a></p>
+**Accessing the fit parameters and results**
 
 If the histogram or graph is made persistent, the list of associated functions is also persistent.
 
@@ -838,7 +844,8 @@ _**Example**_
 
 With the fit option `S`,  you can access the full result of the fit including the covariance and correlation matrix.
 
-#### Associated errors
+<p><a name="associated-errors"></a></p>
+**Associated errors**
 
 By default, for each bin, the sum of weights is computed at fill time. You can also call [TH1::Sumw2()](https://root.cern/doc/master/classTH1.html#aefa4ee94f053ec3d217f3223b01fa014) to force the storage
 and computation of the sum of the square of weights per bin. If `Sumw2()` has been called, the error per bin is computed
@@ -854,7 +861,8 @@ Empty bins are excluded in the fit when using the Chi-square fit method. When fi
 counts (this is with Poisson statistics) it is recommended to use the Log-Likelihood method (option `L` or `WL`), particularly
 in case of low statistics.
 
-#### Fit statistics
+<p><a name="fit-statistics"></a></p>
+**Fit statistics**
 
 You can change the statistics box to display the fit parameters with the [TStyle::SetOptFit()](https://root.cern/doc/master/classTStyle.html#aedeb1d117d9f16af9f8ad430bf956d64){:target="_blank"} method. This parameter has four digits: `mode = pcev (default = 0111)`
 
