@@ -869,11 +869,12 @@ canvas ({% include ref class="TCanvas" %}), you can divide
 pad ({% include ref class="TPad" %}) into sub-pads.<br>
 There are two ways to divide a pad into sub-pads:
 
-- building pad objects and draw them into a parent pad,
+- [building pad objects and draw them into a parent pad](#sub-pad),
 
-- automatically divide a pad into horizontal and vertical sub-pads.
+- [automatically divide a pad into horizontal and vertical sub-pads](#divide).
 
-#### Creating a single sub-pad
+<p><a name="sub-pad"></a></p>
+**Creating a single sub-pad**
 
 To build sub-pads in a pad, you must indicate the size and the position of the sub-pads.
 
@@ -895,7 +896,8 @@ Then the sub-pad is drawn.
 
 For building more sub-pads, repeat this procedure as many times as necessary.
 
-#### Dividing a pad into sub-pads
+<p><a name="divide"></a></p>
+**Dividing a pad into sub-pads**
 
 - Use the [TPad::Divide()](https://root.cern/doc/master/classTPad.html#a064b8ae1d12a9be393c0e22c5958cc7c){:target="_blank"} method to divide a pad into sub-pads.
 
