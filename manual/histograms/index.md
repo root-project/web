@@ -573,14 +573,14 @@ The following pre-defined functions are available:
 
 - `chebyshevN`: Chebyshev polynomial of degree `N`, where `N` is a number between 0 and 9: `f(x) = p0 + p1*x + p2*(2*x2-1) +...`
 
-- `landau`: Landau function with mean and sigma. This function has been adapted from the `CERNLIB` routine `G110 denlan` (see → [TMath::Landau](https://root.cern/doc/master/namespaceTMath.html#a656690875991a17d35e8a514f37f35d9)).
+- `landau`: Landau function with mean and sigma. This function has been adapted from the `CERNLIB` routine `G110 denlan` (see → [TMath::Landau](https://root.cern/doc/master/namespaceTMath.html#a656690875991a17d35e8a514f37f35d9){:target="_blank"}).
 
 - `gausn`: Normalized form of the Gaussian function with 3 parameters `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)/(p2*sqrt(2PI))`
 
 
 ### Fitting 1-D histograms with user-defined functions
 
-First you create a {% include ref class="TF1" %} object, then use the name of the `TF1` fitting function in the [Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a) method.
+First you create a {% include ref class="TF1" %} object, then use the name of the `TF1` fitting function in the [Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method.
 
 You can create the `TF1` fitting function as follows:
 
@@ -953,16 +953,16 @@ The defined classes can be classified in the following groups:
    - [ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html){:target="_blank"}: Class for evaluating the log likelihood for binned Poisson likelihood fits.
    - [ROOT::Fit::LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html){:target="_blank"}: Calls for likelihood fits.
 
-- [Fit data classes](https://root.cern/doc/master/group__FitData.html): Classes for describing the input data for fitting. These classes are, among others, [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html), for binned data sets
- (data points containing both coordinates and a corresponding value/weight with optionally an error on the value or the coordinate), and [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html), for un-binned data sets.
+- [Fit data classes](https://root.cern/doc/master/group__FitData.html): Classes for describing the input data for fitting. These classes are, among others, [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}, for binned data sets
+ (data points containing both coordinates and a corresponding value/weight with optionally an error on the value or the coordinate), and [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html)c, for un-binned data sets.
 
 - [User fitting classes](https://root.cern/doc/master/group__FitMain.html){:target="_blank"}: Classes for fitting a given data set.
 
 #### Creating the input data
 
 There are two types of input data:
-- Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}): They are used for least square (chi-square) fits of histograms or [TGraph](https://root.cern/doc/master/classTGraph.html) objects.
-- Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"}): They are used for fitting vectors of data points, for example from a [TTree](https://root.cern/doc/master/classTTree.html).
+- Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}): They are used for least square (chi-square) fits of histograms or {% include ref class="TGraph" %} objects.
+- Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"}): They are used for fitting vectors of data points, for example from a {% include ref class="TTree" %}[TTree].
 
 **Using binned data**
 
@@ -1021,13 +1021,13 @@ The model function needs to be expressed as function of some unknown parameters.
 parameter value to describe the observed data.
 
 You can for example use the {% include ref class="TF1" %} class, the parametric function class to describe the model function.
-But the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} class takes as input a more general parametric function object, the abstract interface class [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a). It describes a generic one-dimensional or multi-dimensional function with parameters.
+But the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} class takes as input a more general parametric function object, the abstract interface class [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"}. It describes a generic one-dimensional or multi-dimensional function with parameters.
 This interface extends the abstract [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} class with methods to set/retrieve parameter values and to evaluate the function
 given the independent vector of values X and vector of parameters P.
 
 #### Configuring the fit
 
-Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html) (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} class) class for configuring the fit.
+Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} class) class for configuring the fit.
 
 There the following fit configurations:
 
@@ -1095,7 +1095,7 @@ The following formulae show the cumulated contents (capital letters) and the val
 
 The displayed bin content for bin `J` of a {% include ref class="TProfile" %}is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d){:target="_blank"}.
 The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a){:target="_blank"}.
-In case the option `s` is used (in the constructor or by calling  [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725){:target="_blank"}) the displayed error is `s(J)`.
+In case the option `s` is used (in the constructor or by calling [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725){:target="_blank"}) the displayed error is `s(J)`.
 
 In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
 
