@@ -121,7 +121,7 @@ for_developers:
    - title: Continous Integration / Testing
      children:
       - title: Jenkins Service
-        url: https://epsft-jenkins.cern.ch/view/ROOT/
+        url: https://lcgapp-services.cern.ch/root-jenkins/
         target: _blank
       - title: Jenkins How To
         url: for_developers/continous_integration-testing/jenkins_how_to
