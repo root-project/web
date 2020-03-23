@@ -139,7 +139,10 @@ Does not execute the logon script and logoff script as specified in `.rootrc`.
 Exits after processing the command line macro files.
 
 `-l` <br>
-Does not show the splash screen.
+Do not show the ROOT banner.
+
+`-a` <br>
+Show the ROOT splash screen.
 
 `-x` <br>
 Exit on exception.
