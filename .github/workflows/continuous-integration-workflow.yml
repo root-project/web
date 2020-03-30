@@ -9,5 +9,10 @@ jobs:
     # This job runs on Linux
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+        run: git checkout HEAD^
       - name: Jekyll Action
         uses: root-project/jekyll-action@HEAD
