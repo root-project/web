@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          repository: https://github.com/root-project/web.git
           ref: gh-pages
-        run: git checkout HEAD^
       - name: Jekyll Action
         uses: root-project/jekyll-action@HEAD
