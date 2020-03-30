@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Jekyll Action
-        uses: root-project/jekyll-action@v1.1-alpha.0
+        uses: root-project/jekyll-action@HEAD
