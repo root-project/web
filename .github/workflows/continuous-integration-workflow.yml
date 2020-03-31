@@ -14,7 +14,7 @@ jobs:
       - name: Jekyll Action
         uses: root-project/jekyll-action@HEAD
       - name: Deploy
-        uses: appleboy/scp-action@v0.0.1
+        uses: appleboy/scp-action@v0.0.7
         env:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
