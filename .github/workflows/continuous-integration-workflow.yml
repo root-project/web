@@ -11,7 +11,5 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: gh-pages
       - name: Jekyll Action
         uses: root-project/jekyll-action@HEAD
