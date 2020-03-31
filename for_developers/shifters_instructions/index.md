@@ -21,6 +21,8 @@ the broken tests in the incremental and nightly builds and/or involve the releva
 experts to make that happen.
 
 ### Open pull requests
-The shifter has the responsibility to follow up PRs if the relevant expert did
-not either interacting with the contributor or involving the relevant expert.
-Again, feedback needs to be given within 24 hours after the PR submission.
+The shifter has the responsibility to follow up PRs if the relevant expert did not
+either interacting with the contributor or involving the relevant expert. Again,
+feedback needs to be given within 24 hours after the PR submission. Simple PRs should
+be reviewed. For simple PRs submitted by a contributor, the shifter should merge them
+immediately if they are acceptable (i.e. passing continuous integration and shifter's review).
