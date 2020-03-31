@@ -18,7 +18,6 @@ jobs:
         env:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.KEY }}
         with:
           source: "build"
