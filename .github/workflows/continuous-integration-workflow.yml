@@ -13,3 +13,13 @@ jobs:
         uses: actions/checkout@v2
       - name: Jekyll Action
         uses: root-project/jekyll-action@HEAD
+      - name: Deploy
+        uses: appleboy/scp-action@v0.0.1
+        env:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.KEY }}
+        with:
+          source: "build"
+          target: "/var/www/root/jekylltmp/"
