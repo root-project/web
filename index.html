@@ -1,0 +1,96 @@
+---
+layout: splash
+author_profile: false
+excerpt: "A modular scientific software toolkit"
+header:
+  overlay_filter: "0.3"
+  overlay_image: /assets/images/splash.jpg
+  actions:
+    - label: <i class="fas fa-download"></i> Install Now
+      url: "download"
+---
+
+<table id="navtable">
+   <tbody>
+		<tr>
+			<td align="center">
+				<a href="{{ "get_started" | relative_url }}">
+				<img width="128" src="{{'/assets/images/start.svg' | relative_url}}"></a>
+                <font color="#346295" style="font-weight:bold" face="Comic sans MS" size="3">
+				<br>Get Started
+                </font>
+			</td>
+			<td align="center"  border="0">
+				<a href="https://root.cern/doc/master/index.html" target="_blank">
+				<img width="128" src="{{'/assets/images/doc.svg' | relative_url}}"></a>
+                <font color="#346295" style="font-weight:bold" face="Comic sans MS" size="3">
+				<br>Reference
+                </font>
+            </td>
+			<td align="center" border="0">
+				<a href="https://root-forum.cern.ch" target="_blank">
+				<img width="128" src="{{'/assets/images/forum.svg' | relative_url}}"></a>
+                <font color="#346295" style="font-weight:bold" face="Comic sans MS" size="3">
+				<br>Forum
+                </font>
+			</td>
+			<td align="center" border="0">
+				<a href="gallery">
+				<img width="128" src="{{'/assets/images/gallery.svg' | relative_url}}"></a>
+                <font color="#346295" style="font-weight:bold" face="Comic sans MS" size="3">
+				<br>Gallery
+                </font>
+			</td>
+		</tr>
+   </tbody>
+</table>
+
+<br><br>
+<h1> ROOT is ... </h1>
+A modular scientific software toolkit. It provides all the functionalities
+needed to deal with big data processing, statistical analysis, visualisation and
+storage.
+It is mainly written in C++ but integrated with other languages such as Python.
+
+<br><br>
+
+<table style="width: 100%; margin-top:4px; border-spacing: 0px;">
+	<tbody>
+		<tr>
+			<td style="width:55%; border:1px solid #cef2e0; padding:0; background:#f5fffa; vertical-align:top; color:#000;">
+				<h1 style="margin:0.3em; background:#cef2e0; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; color:#000; padding:0.2em 0.4em;">Under the Spotlight</h1>
+				<br>
+				<div style="padding:0.1em 0.6em;">
+					{% for post in site.posts limit:3 %}
+					<font size="2"><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b></font> <font size="1">({{post.date | date_to_string}})</font>
+					<font size="2"><p>{{ post.excerpt }}</p></font>
+					{% endfor %}
+				</div>
+			</td>
+			<td style="border:1px solid transparent;">
+			</td>
+			<td style="width:45%; border:1px solid #cedff2; padding:0; background:#f5faff; vertical-align:top;">
+				<h1 style="margin:0.3em; background:#cedff2; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; color:#000; padding:0.2em 0.4em;">Latest Releases</h1>
+				<br>
+				<div style="padding:0.1em 0.6em;">
+					<font size="2">
+					{% include releases_list number=4 single_column="yes" %}
+					<b><a href="{{'/download/all_releases' | relative_url}}"> More ...</a></b>
+					</font>
+				</div>
+				<br>
+				<h1 style="margin:0.3em; background:#cedff2; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; color:#000; padding:0.2em 0.4em;">Tech Blog</h1>
+				<br>
+				<div style="padding:0.1em 0.6em;">
+					<font size="2">
+					{% for post in site.posts %}
+					{% if forloop.index >= 4 and forloop.index <=8 %}
+					<b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b> <font size="1">({{post.date | date_to_string}})</font><br>
+					{% endif %}
+					{% endfor %}
+					</font>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
