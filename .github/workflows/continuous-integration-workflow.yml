@@ -18,7 +18,7 @@ jobs:
         env:
           HOST: ${{ secrets.HOST }}
           USERNAME: ${{ secrets.USERNAME }}
-          KEY: ${{ secrets.KEY }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         with:
           source: "build"
           target: "/eos/project/r/root-eos/www/jekylltmp/"
