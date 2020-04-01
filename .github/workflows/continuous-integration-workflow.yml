@@ -21,4 +21,4 @@ jobs:
           KEY: ${{ secrets.KEY }}
         with:
           source: "build"
-          target: "/var/www/root/jekylltmp/"
+          target: "/eos/project/r/root-eos/www/jekylltmp/"
