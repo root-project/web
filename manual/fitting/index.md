@@ -119,13 +119,13 @@ The signature is:
 - `C`: In case of linear fitting, do no calculate the chisquare (saves time).
 - `F`: If fitting a linear function (e.g., `polN`), switch to use the default minimizer (e.g., {% include ref class="TMinuit" %}). By default, `polN` functions are fitted by the linear fitter.
 
-`goption`:The graphics option that is the same as [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"}.
+`goption`: The graphics option that is the same as [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"}.
 
 `xxmin`, `xxmax`: Specifies the range over which to apply the fit.
 
 ### Using TGraph::Fit()
 
-The signature for fitting {% include ref class="TGraph" %} is the same as for the {% include ref class="Th1" %}. 
+The signature for fitting {% include ref class="TGraph" %} is the same as for the {% include ref class="TH1" %}. 
 
 Only the following options only apply for fitting histograms:
 - `L`
