@@ -143,7 +143,7 @@ Most common optional packages:
 sudo zypper install gcc-fortran libopenssl-devel pcre-devel Mesa glew-devel pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel libxml2-devel krb5-devel gsl-devel chromium libQt5Gui-devel  libqt5-qtwebengine-devel
 ```
 
-## <a name=macosx></a>MacOS X
+## MacOS X
 
 *   **Xcode developer package:** for make, g++, gcc, ld, etc.  Xcode is found on the MacOS X installation DVD or in the Mac App store.
     install command line tools through the XCode preferences and/or running in a terminal  `xcode-select --install`
