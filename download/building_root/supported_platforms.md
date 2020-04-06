@@ -17,6 +17,7 @@ The compiler needs to support -std=c++11 to be able to build version 6.
 - **linuxx8664gcc** for x86-64 Linux with gcc >= 4.8
 - **macosx** for MacOS X >= 10.8 with clang
 - **openbsd** for OpenBSD >= 5.x with gcc >= 4.8
+- **win32** for Windows with Visual Studio >= 2019 / vc >= 16.1
 
 ### In preparation
 - **linuxx8664icc** for x86-64 Linux with Intel icc >= 15

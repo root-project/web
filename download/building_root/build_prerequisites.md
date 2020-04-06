@@ -210,14 +210,23 @@ sudo port install root
 
 ## Windows
 
+### ROOT 5 (deprecated)
+
 If you are using Windows make sure you have installed Microsoft Visual C++ (e.g., the
 [no-cost edition](http://www.microsoft.com/express/vc/){:target="_blank"}) plus `CMake`.
 The `CMake` build will work directly **without the need** to install
 [cygwin](http://cygwin.com){:target="_blank"} as it was required previously before the adaption of `CMake`.
 
+### ROOT 6
+
+*   **[Git for Windows](https://git-scm.com/download/win)**
+*   **[CMake](https://cmake.org/download/)** (version >= 16.3)
+*   **[Microsoft Visual C++](https://visualstudio.microsoft.com/)** (ROOT6 requires at least Visual Studio 2019 version 16.1). The **Community** version is free, fully-featured for students, open-source contributors, and individuals.
+*   **[Python](https://python.org)** (ROOT6 requires version >= 2.7)
+
 > **Note:**
 
-> Currently native Windows support for ROOT6 versions is not available.
+> ROOT 6 on Windows still has several known issues and missing features we are currently working on.
 
 ## AIX 5, 6 and 7
 
