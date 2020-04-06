@@ -17,7 +17,7 @@ The page lists the prerequisite packages that need to be installed on the differ
 - [Windows family](#windows)
 - [AIX family](#aix)
 
-## <a name=fedora></a>Fedora 18, 19 and 20; Scientific Linux 5, 6; CentOS 6, 7
+## Fedora 18, 19 and 20; Scientific Linux 5, 6; CentOS 6, 7
 
 *   **git:** for /usr/bin/git
 *   **make:** for /usr/bin/make
@@ -72,7 +72,7 @@ avahi-compat-libdns_sd-devel libldap-dev \
 libxml2-devel gsl-static
 ~~~
 
-## <a name=ubuntu></a>Ubuntu 10, 12 , 14 and 16
+## Ubuntu 10, 12 , 14 and 16
 
 *   **git:** for /usr/bin/git
 *   **dpkg-dev**  for dpkg-architecture (needed by configure to locate system libraries starting from 11)
@@ -130,7 +130,7 @@ libldap2-dev libxml2-dev libkrb5-dev \
 libgsl0-dev libqt4-dev
 ~~~
 
-## <a name=opensuse></a>openSUSE Leap 15 and Thumblweed
+## openSUSE Leap 15 and Thumblweed
 
 Minimal set:
 ```
@@ -158,11 +158,11 @@ Most common optional packages:
 Alternatively ROOT can be installed directly from [MacPort](http://www.macports.org) with the command:
 "<tt>sudo port install root</tt>"
 
-## <a name=windows></a>Windows
+## Windows
 
 If you are using Windows make sure you've installed Microsoft Visual C++ (e.g. the [no-cost edition](http://www.microsoft.com/express/vc/)) plus CMake.
 
-## <a name=aix></a>AIX 5, 6 and 7
+## AIX 5, 6 and 7
 
 *   **git:** for /usr/bin/git
 *   **bash:** for /usr/bin/bash
