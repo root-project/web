@@ -133,9 +133,9 @@ Only the following options only apply for fitting histograms:
 - `I`
 
 The following options only apply for [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}:
-– `EX0`: When fitting a {% include ref class="TGraphErrors" %} or a {% include ref class="TgraphAsymErrors" %}, the errors on the coordinates are not used in the fit.
-– `ROB`: Use the Robust fitting in case of linear fitting . Computes the LTS regression coefficients (robust (resistant) regression), using the default fraction of good points.
-– `ROB=0.x`: As above, but compute the LTS regression coefficients, using 0.x as a fraction of good points.
+- `EX0`: When fitting a {% include ref class="TGraphErrors" %} or a {% include ref class="TgraphAsymErrors" %}, the errors on the coordinates are not used in the fit.
+- `ROB`: Use the Robust fitting in case of linear fitting . Computes the LTS regression coefficients (robust (resistant) regression), using the default fraction of good points.
+- `ROB=0.x`: As above, but compute the LTS regression coefficients, using 0.x as a fraction of good points.
 
 ## Using the TF1 function class
 
