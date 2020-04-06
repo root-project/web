@@ -11,7 +11,7 @@ Fitting is the method for modeling the expected distribution of events in a phys
 - [Fit Panel](#using-the-fit-panel): After a histogram is drawn, the Fit Panel GUI is best used for prototyping the fit.
 - [Fit() method](#using-the-fit-method): You can fit histograms and graphs programmatically with the `Fit()` method.
 - Minimization packages: ROOT provides several minimization packages like [Minuit2](({{ '/manual/math/#minuit2-library' | relative_url }})) and FUMILI.
-- [RooFit]({{ '/manual/roofit' | relative_url }}): The RooFit library is a toolkit for modeling the expected distribution of events in a physics analysis
+- [RooFit]({{ '/manual/roofit' | relative_url }}): The RooFit library is a toolkit for modeling the expected distribution of events in a physics analysis.
 
 {% include tutorials name="Fit" url="fit" %}
 
@@ -584,7 +584,7 @@ Both methods should be used when the binned data values follow a Gaussian distri
 
 - Binned likelihood fit: [Fitter::LikelihoodFit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a61a145587e2b65e90e4f05d3df2d6004){:target="_blank"}. This method should be used when the binned data values follow a Poisson or a multinomial distribution. The Poisson case
 (extended fit) is the default and in this case the function normalization is also fit to the data. This method is implemented by the
-[ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html) class
+[ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html) class.
 
 - Un-binned likelihood fit: [Fitter::LikelihoodFit(const UnBindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a980281c2d7ecfbf94fe584fc3da1a566){:target="_blank"}. By default the fit is not extended, this is the normalization is not fitted to the data. This
 method is implemented using the [LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html){:target="_blank"} class.
