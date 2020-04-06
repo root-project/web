@@ -82,6 +82,63 @@ This includes the method that will be used, as well as what fit options will be 
 
 ## Using the Fit() method
 
+The `Fit()` method is implemented for:
+- the histogram classes {% include ref class="TH1" %}
+- the sparse histogram classes {% include ref class="THnSparse" %}
+- the graph classes {% include ref class="TGraph" %}, {% include ref class="TGraph2D" %} and {% include ref class="TMultiGraph" %} (for fitting a collection of Graphs with the same function)
+
+### Using TH1::Fit()
+
+- Use the [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a histogram programmatically.<br>By default, the fitted function object is added to the histogram and is drawn in the current pad.
+
+The signature is:
+
+{% highlight C++ %}
+   TFitResultPtr Fit(TF1 *function, Option_t *option, Option_t *goption, Axis_t xxmin, Axis_t xxmax)
+{% endhighlight %}
+
+`function`: Pointer to the fitted function (the fit model) object.
+
+`option`: The fitting option, with the following options:
+– `W`: Sets all weights to 1 for non empty bins; ignore error bars.
+– `WW`: Sets all weights to 1 including empty bins; ignore error bars.
+– `I`: Uses integral of function in bin instead of value at bin center.
+– `L`: Uses a log likelihood method (default is chi-square method). To be used when the histogram represents counts.
+– `WL`: Weighted log likelihood method. To be used when the histogram has been filled with weights different than 1.
+– `P`: Uses Pearson chi-square method. Uses expected errors instead of the observed one given by [TH1::GetBinError()](https://root.cern/doc/master/classTH1.html#a3af6cc15ab6c2490428c9b691885d919){:target="_blank"} (default case). The expected error is instead estimated from the the square-root of the bin function value.
+– `Q`: Quiet mode (minimum printing).
+– `V`: Verbose mode (default is between Q and V)
+– `S`: The result of the fit is returned in the {% include ref class="TFitResultPtr" %}.
+– `E`: Performs better errors estimation using the Minos technique.
+– `M` Improves fit results, by using the IMPROVE algorithm of {% include ref class="TMinuit" %}.
+– `R`: Uses the range specified in the function range.
+– `N`: Does not store the graphics function, does not draw.
+– `0`: Does not plot the result of the fit. By default the fitted function is drawn unless the option `N` is specified.
+– `+`: Adds this new fitted function to the list of fitted functions (by default, the previous function is deleted and only the last one is kept)
+– `B`: Use this option when you want to fix one or more parameters and the fitting function is a predefined one, like `polN`, `expo`, `landau`, `gaus`. Note that in case of pre-defined functions some default initial values and limits are set.
+– `C`: In case of linear fitting, do no calculate the chisquare (saves time).
+– `F`: If fitting a linear function (e.g., polN), switch to use the default minimizer (e.g., {% include ref class="TMinuit" %}). By default, `polN` functions are fitted by the linear fitter.
+
+`goption`:The graphics option that is the same as [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"}.
+
+`xxmin`, `xxmax`: Specifies the range over which to apply the fit.
+
+### Using TGraph::Fit()
+
+The signature for fitting {% include ref class="TGraph" %} is the same as for the {% include ref class="Th1" %}. 
+
+Only some options apply only for fitting histograms. These are the option
+- `L`
+- `WL`
+- `I`. T
+
+The following options only apply for [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}:
+– `EX0`: When fitting a {% include ref class="TGraphErrors" %} or a {% include ref class="TgraphAsymErrors" %}, the errors on the coordinates are not used in the fit.
+– `ROB`: Use the Robust fitting in case of linear fitting . Computes the LTS regression coefficients (robust (resistant) regression), using the default fraction of good points.
+– `ROB=0.x`: As above, but compute the LTS regression coefficients, using 0.x as a fraction of good points.
+
+## Using the TF1 function class
+
 ### Fitting 1-D histograms with pre-defined functions
 
 - Use the [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a 1-D histogram with a pre-defined function. The name of the pre-definded function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
@@ -146,7 +203,7 @@ A `TF1` fitting function must have two parameters:
 
 - `Double_t *v`: Pointer to the variable array. This array must be a 1-D array with `v[0] = x` in case of a 1-dim histogram, `v[0] =x`, `v[1] = y` for a 2-D histogram, etc.
 
-- `Double_t *par`: Pointer to the parameter array. ´par´ contains the current values of parameters when it is called by the `FCN()` function.
+- `Double_t *par`: Pointer to the parameter array. `par` contains the current values of parameters when it is called by the `FCN()` function.
 
 _**Example**_
 
@@ -380,7 +437,7 @@ With the fit option `S`,  you can access the full result of the fit including th
 
 By default, for each bin, the sum of weights is computed at fill time. You can also call [TH1::Sumw2()](https://root.cern/doc/master/classTH1.html#aefa4ee94f053ec3d217f3223b01fa014){:target="_blank"} to force the storage
 and computation of the sum of the square of weights per bin. If `Sumw2()` has been called, the error per bin is computed
-as the sqrt(sum of squares of weights). oOtherwise, the error is set equal to the sqrt(bin content).
+as the sqrt(sum of squares of weights). Otherwise, the error is set equal to the sqrt(bin content).
 
 To return the error for a given bin number, use:
 
@@ -411,7 +468,7 @@ To print the fit probability, parameter names/values, and errors, use:
 {% endhighlight %}
 
 
-### Using ROOT::Fit classes
+## Using ROOT::Fit classes
 
 [ROOT::Fit](https://root.cern/doc/master/namespaceROOT_1_1Fit.html) is the namespace for fitting classes (regression analysis). The fitting classes are part of the [MathCore library]({{ '/manual/math#mathcore-library' | relative_url }}).<br>
 The defined classes can be classified in the following groups:
@@ -426,7 +483,7 @@ The defined classes can be classified in the following groups:
 
 - [User fitting classes](https://root.cern/doc/master/group__FitMain.html){:target="_blank"}: Classes for fitting a given data set.
 
-#### Creating the input data
+### Creating the input data
 
 There are two types of input data:
 - Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}): They are used for least square (chi-square) fits of histograms or {% include ref class="TGraph" %} objects.
@@ -483,7 +540,7 @@ Data are taken from a histogram (TH1 object).
       data.add(buffer[2*i+1]);
 {% endhighlight %}
 
-#### Creating a fit model
+### Creating a fit model
 
 The model function needs to be expressed as function of some unknown parameters. The fitting will find the best
 parameter value to describe the observed data.
@@ -493,7 +550,7 @@ But the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fit
 This interface extends the abstract [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} class with methods to set/retrieve parameter values and to evaluate the function
 given the independent vector of values X and vector of parameters P.
 
-#### Configuring the fit
+### Configuring the fit
 
 Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} class) class for configuring the fit.
 
@@ -516,7 +573,7 @@ Setting the lower/upper bounds for the first parameter and a lower bound for the
    fitter.Config().ParSettings(2).SetLowerLimit(0);
 {% endhighlight %}
 
-#### Performing the fit
+### Performing the fit
 
 Depending on the available input data and the selected function for fitting, you can use one of the methods of the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html) class to perform the fit.
 
@@ -534,7 +591,7 @@ method is implemented using the [LogLikelihoodFCN](https://root.cern/doc/master/
 
 - Linear fit: A linear fit can be selected, if the model function is linear in the parameters.
 
-#### Fit result
+### Fit result
 
 The result of the fit is contained in the [ROOT::Fit::Result](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#acb09076a64e460e493dcc74fa7b36668){:target="_blank"} object.
 
