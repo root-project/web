@@ -17,7 +17,7 @@ Fitting is the method for modeling the expected distribution of events in a phys
 
 ## Using the Fit Panel
 
-After you have drawn a histogram (see → [Drawing a histograms]({{ '/manual/histograms/#drawing-a-histogram' | relative_url }}), you can use the Fit Panel for fitting the data. The Fit Panel is best suited for prototyping
+After you have drawn a histogram (see → [Drawing a histograms]({{ '/manual/histograms/#drawing-a-histogram' | relative_url }})), you can use the Fit Panel for fitting the data. The Fit Panel is best suited for prototyping
 
 The following section describes how to use the Fit Panel using an example.
 
