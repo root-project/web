@@ -100,24 +100,24 @@ The signature is:
 `function`: Pointer to the fitted function (the fit model) object.
 
 `option`: The fitting option, with the following options:
-– `W`: Sets all weights to 1 for non empty bins; ignore error bars.
-– `WW`: Sets all weights to 1 including empty bins; ignore error bars.
-– `I`: Uses integral of function in bin instead of value at bin center.
-– `L`: Uses a log likelihood method (default is chi-square method). To be used when the histogram represents counts.
-– `WL`: Weighted log likelihood method. To be used when the histogram has been filled with weights different than 1.
-– `P`: Uses Pearson chi-square method. Uses expected errors instead of the observed one given by [TH1::GetBinError()](https://root.cern/doc/master/classTH1.html#a3af6cc15ab6c2490428c9b691885d919){:target="_blank"} (default case). The expected error is instead estimated from the the square-root of the bin function value.
-– `Q`: Quiet mode (minimum printing).
-– `V`: Verbose mode (default is between Q and V)
-– `S`: The result of the fit is returned in the {% include ref class="TFitResultPtr" %}.
-– `E`: Performs better errors estimation using the Minos technique.
-– `M` Improves fit results, by using the IMPROVE algorithm of {% include ref class="TMinuit" %}.
-– `R`: Uses the range specified in the function range.
-– `N`: Does not store the graphics function, does not draw.
-– `0`: Does not plot the result of the fit. By default the fitted function is drawn unless the option `N` is specified.
-– `+`: Adds this new fitted function to the list of fitted functions (by default, the previous function is deleted and only the last one is kept)
-– `B`: Use this option when you want to fix one or more parameters and the fitting function is a predefined one, like `polN`, `expo`, `landau`, `gaus`. Note that in case of pre-defined functions some default initial values and limits are set.
-– `C`: In case of linear fitting, do no calculate the chisquare (saves time).
-– `F`: If fitting a linear function (e.g., polN), switch to use the default minimizer (e.g., {% include ref class="TMinuit" %}). By default, `polN` functions are fitted by the linear fitter.
+- `W`: Sets all weights to 1 for non empty bins; ignore error bars.
+- `WW`: Sets all weights to 1 including empty bins; ignore error bars.
+- `I`: Uses integral of function in bin instead of value at bin center.
+- `L`: Uses a log likelihood method (default is chi-square method). To be used when the histogram represents counts.
+- `WL`: Weighted log likelihood method. To be used when the histogram has been filled with weights different than 1.
+- `P`: Uses Pearson chi-square method. Uses expected errors instead of the observed one given by [TH1::GetBinError()](https://root.cern/doc/master/classTH1.html#a3af6cc15ab6c2490428c9b691885d919){:target="_blank"} (default case). The expected error is instead estimated from the the square-root of the bin function value.
+- `Q`: Quiet mode (minimum printing).
+- `V`: Verbose mode (default is between `Q` and `V`).
+- `S`: The result of the fit is returned in the {% include ref class="TFitResultPtr" %}.
+- `E`: Performs better errors estimation using the Minos technique.
+- `M` Improves fit results, by using the IMPROVE algorithm of {% include ref class="TMinuit" %}.
+- `R`: Uses the range specified in the function range.
+- `N`: Does not store the graphics function, does not draw.
+- `0`: Does not plot the result of the fit. By default the fitted function is drawn unless the option `N` is specified.
+- `+`: Adds this new fitted function to the list of fitted functions (by default, the previous function is deleted and only the last one is kept).
+- `B`: Use this option when you want to fix one or more parameters and the fitting function is a predefined one, like `polN`, `expo`, `landau`, `gaus`. Note that in case of pre-defined functions some default initial values and limits are set.
+- `C`: In case of linear fitting, do no calculate the chisquare (saves time).
+- `F`: If fitting a linear function (e.g., `polN`), switch to use the default minimizer (e.g., {% include ref class="TMinuit" %}). By default, `polN` functions are fitted by the linear fitter.
 
 `goption`:The graphics option that is the same as [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"}.
 
@@ -127,10 +127,10 @@ The signature is:
 
 The signature for fitting {% include ref class="TGraph" %} is the same as for the {% include ref class="Th1" %}. 
 
-Only some options apply only for fitting histograms. These are the option
+Only the following options only apply for fitting histograms:
 - `L`
 - `WL`
-- `I`. T
+- `I`
 
 The following options only apply for [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}:
 – `EX0`: When fitting a {% include ref class="TGraphErrors" %} or a {% include ref class="TgraphAsymErrors" %}, the errors on the coordinates are not used in the fit.
