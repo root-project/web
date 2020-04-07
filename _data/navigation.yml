@@ -54,12 +54,14 @@ manual:
         url: manual/histograms
       - title: Graphs
         url: manual/graphs
+      - title: Fitting histograms
+        url: manual/fitting
+      - title: RooFit
+        url: manual/roofit
       - title: Trees
         url: manual/trees
       - title: Data frames
         url: manual/data_frame
-      - title: RooFit
-        url: manual/roofit
       - title: TMVA
         url: manual/tmva
       - title: Mathematical libraries
