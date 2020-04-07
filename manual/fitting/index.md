@@ -188,7 +188,7 @@ The {% include ref class="TF1" %} constructor is used with the formula `sin(x)/x
    root[] TF1 *f1 = new TF1("f1","sin(x)/x",0,10)
 {% endhighlight %}
 
-You can also use a {% include ref class="TF1" %} object in the constructor of another {% include ref class="TF1" %}.
+You can also use a {% include ref class="TF1" %} object in the constructor of another {% include ref class="TF1" %} object.
 
 {% highlight C++ %}
    root[] TF1 *f2 = new TF1("f2","f1*2",0,10)
