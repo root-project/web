@@ -85,7 +85,7 @@ This includes the method that will be used, as well as what fit options will be 
 The `Fit()` method is implemented for:
 - the histogram classes {% include ref class="TH1" %}
 - the sparse histogram classes {% include ref class="THnSparse" %}
-- the graph classes {% include ref class="TGraph" %}, {% include ref class="TGraph2D" %} and {% include ref class="TMultiGraph" %} (for fitting a collection of Graphs with the same function)
+- the graph classes {% include ref class="TGraph" %}, {% include ref class="TGraph2D" %} and {% include ref class="TMultiGraph" %} (for fitting a collection of graphs with the same function)
 
 ### Using TH1::Fit()
 
@@ -94,7 +94,7 @@ The `Fit()` method is implemented for:
 The signature is:
 
 {% highlight C++ %}
-   TFitResultPtr Fit(TF1 *function, Option_t *option, Option_t *goption, Axis_t xxmin, Axis_t xxmax)
+   TFitResultPtr Fit(TF1 *function, Option_t *option, Option_t *goption,<br> Axis_t xxmin, Axis_t xxmax)
 {% endhighlight %}
 
 `function`: Pointer to the fitted function (the fit model) object.
@@ -110,12 +110,12 @@ The signature is:
 - `V`: Verbose mode (default is between `Q` and `V`).
 - `S`: The result of the fit is returned in the {% include ref class="TFitResultPtr" %}.
 - `E`: Performs better errors estimation using the Minos technique.
-- `M` Improves fit results, by using the IMPROVE algorithm of {% include ref class="TMinuit" %}.
+- `M`: Improves fit results, by using the IMPROVE algorithm of {% include ref class="TMinuit" %}.
 - `R`: Uses the range specified in the function range.
 - `N`: Does not store the graphics function, does not draw.
 - `0`: Does not plot the result of the fit. By default the fitted function is drawn unless the option `N` is specified.
 - `+`: Adds this new fitted function to the list of fitted functions (by default, the previous function is deleted and only the last one is kept).
-- `B`: Use this option when you want to fix one or more parameters and the fitting function is a predefined one, like `polN`, `expo`, `landau`, `gaus`. Note that in case of pre-defined functions some default initial values and limits are set.
+- `B`: Use this option when you want to fix one or more parameters and the fitting function is a predefined one, like `polN`, `expo`, `landau`, `gaus`.<br>Note that in case of pre-defined functions, some default initial values and limits are set.
 - `C`: In case of linear fitting, do no calculate the chisquare (saves time).
 - `F`: If fitting a linear function (e.g., `polN`), switch to use the default minimizer (e.g., {% include ref class="TMinuit" %}). By default, `polN` functions are fitted by the linear fitter.
 
@@ -138,6 +138,8 @@ The following options only apply for [TGraph::Fit](https://root.cern/doc/master/
 - `ROB=0.x`: As above, but compute the LTS regression coefficients, using 0.x as a fraction of good points.
 
 ## Using the TF1 function class
+
+In the following section is described how to use the {% include ref class="TF1" %} class that is used for fitting histograms and graphs.
 
 ### Fitting 1-D histograms with pre-defined functions
 
@@ -172,7 +174,7 @@ First you create a {% include ref class="TF1" %} object, then use the name of th
 
 You can create the `TF1` fitting function as follows:
 
-- from an existing expressions defined in {% include ref class="TFormula" %},
+- from an existing expressions defined in {% include ref class="TFormula" %} (with and without parameters),
 
 - by defining your own function.
 
@@ -180,30 +182,52 @@ You can create the `TF1` fitting function as follows:
 
 _**Example**_
 
-A `myfit` function is created with three parameters in the range between 0 and 2.
+The {% include ref class="TF1" %} constructor is used with the formula `sin(x)/x`.
 
 {% highlight C++ %}
-   myfit->SetParName(0,"c0");
-   myfit->SetParName(1,"c1");
-   myfit->SetParName(2,"slope");
-   myfit->SetParameter(0, 1);
-   myfit->SetParameter(1, 0.05);
-   myfit->SetParameter(2, 0.2);
+   root[] TF1 *f1 = new TF1("f1","sin(x)/x",0,10)
 {% endhighlight %}
 
-Then you can use the `Fit()` function for fitting.
+You can also use a {% include ref class="TF1" %} object in the constructor of another {% include ref class="TF1" %} object.
 
 {% highlight C++ %}
-   hist->Fit("myfit");
+   root[] TF1 *f2 = new TF1("f2","f1*2",0,10)
 {% endhighlight %}
+
+_**Example**_
+
+The {% include ref class="TF1" %} constructor is used with the formula `x*sin(x)` and two parameters.<br>
+The parameter index is enclosed in square brackets.
+
+{% highlight C++ %}
+   root[] TF1 *f1 = new TF1("f1","[0]*x*sin([1]*x)",-3,3);
+{% endhighlight %}
+
+Use `SetParameter()` to set the initial values.
+
+{% highlight C++ %}
+   root[] f1->SetParameter(0,10);
+{% endhighlight %}
+
+Use `SetParameters()` to set multiple parameters at once.
+
+{% highlight C++ %}
+   root[] f1->SetParameters(10,5);
+{% endhighlight %}
+
 
 **Creating a user TF1 fitting function**
 
-A `TF1` fitting function must have two parameters:
+You can define your own function and then pass the function pointer to the {% include ref class="TF1" %} constructor. Your function for a {% include ref class="TF1" %} constructor must have the following signature:
 
-- `Double_t *v`: Pointer to the variable array. This array must be a 1-D array with `v[0] = x` in case of a 1-dim histogram, `v[0] =x`, `v[1] = y` for a 2-D histogram, etc.
+{% highlight C++ %}
+   Double_t fitf(Double_t *x,Double_t *par)
+{% endhighlight %}
 
-- `Double_t *par`: Pointer to the parameter array. `par` contains the current values of parameters when it is called by the `FCN()` function.
+
+`Double_t *x`: Pointer to the variable array. This array must be a 1-D array with `v[0] = x` in case of a 1-D histogram, `v[0] =x`, `v[1] = y` for a 2-D histogram, etc.
+
+`Double_t *par`: Pointer to the parameter array. `par` contains the current values of parameters when it is called by the `FCN()` function.
 
 _**Example**_
 
