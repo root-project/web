@@ -7,7 +7,9 @@ sidebar:
   nav: "for_developers"
 ---
 
-The following instructions are useful for setting up an environment with all the required ROOT externals coming from the central installations inAFS or CVMFS. This is exactly the same scripts used by the continuous integration system (Jenkins).
+The following instructions are useful for setting up an environment with all the required
+ROOT externals coming from the central installations in AFS or CVMFS. This is exactly the
+same scripts used by the continuous integration system (Jenkins).
 
 ## For *slc* and *centos* systems using the gcc compiler
 The instructions are a single line to source an existing script in AFS/CVMFS. In the following example OS is 'slc6', the compiler is 'gcc49', and build type is 'release'.

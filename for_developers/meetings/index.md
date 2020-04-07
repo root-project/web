@@ -7,7 +7,7 @@ sidebar:
   nav: "for_developers"
 ---
 
-All ROOT-related meetings ca be found in [ROOT's Indico category](https://indico.cern.ch/category/526/);
+All ROOT-related meetings can be found in [ROOT's Indico category](https://indico.cern.ch/category/526/);
 the upcoming ones can be seen here to the right.
 
 ## <a name="developers"></a>Weekly Developers Meetings
