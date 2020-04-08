@@ -177,7 +177,7 @@ download:
    - title: Building ROOT
      url: download/building
      children:
-      - title: Prerequisites
+      - title: Build Prerequisites
         url: download/building_root/build_prerequisites
       - title: Building ROOT with CMake
         url: download/building_root

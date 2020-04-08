@@ -1,5 +1,5 @@
 ---
-title: Prerequisites
+title: Build Prerequisites
 layout: single
 sidebar:
   nav: "download"
@@ -30,7 +30,6 @@ The page lists the prerequisite packages that need to be installed on the differ
 *   **libXft-devel:** for /usr/include/X11/Xft/Xft.h and for /usr/lib/libXft.so
 *   **libXext-devel:** for /usr/include/X11/extensions/shape.h and for /usr/lib/libXext.so
 *   **python:**  (ROOT6 requires version >= 2.7)
-*   **python-devel:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
 *   **redhat-lsb-core:**   needed by some tests (tutorials) using lsb_release and some CDash scripts
 
 Most common optional packages:
@@ -48,6 +47,7 @@ Most common optional packages:
 *   **graphviz-devel:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
 *   **avahi-compat-libdns_sd-devel:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **libldap-dev:** for /usr/include/ldap.h and for /usr/lib/libldap.so
+*   **python-devel:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
 *   **python-numpy-devel:** needed for PyMVA
 *   **libxml2-devel:** for /usr/bin/xml2-config
 *   **gsl-static:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a. On Fedora 16 use **gsl-devel**.
@@ -58,8 +58,7 @@ Use "<tt>yum install</tt> _package_" or use the graphical "Add/Remove Software" 
 Required packages:
 ~~~
 sudo yum install git cmake gcc-c++ gcc binutils \
-libX11-devel libXpm-devel libXft-devel libXext-devel \
-python-devel
+libX11-devel libXpm-devel libXft-devel libXext-devel
 ~~~
 
 Optional packages:
@@ -68,7 +67,7 @@ Optional packages:
 sudo yum install gcc-gfortran openssl-devel pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel \
-avahi-compat-libdns_sd-devel libldap-dev \
+avahi-compat-libdns_sd-devel libldap-dev python-devel \
 libxml2-devel gsl-static
 ~~~
 
@@ -87,7 +86,6 @@ libxml2-devel gsl-static
 *   **libpng:** png library
 *   **libjpeg:** jpeg library
 *   **python:** (ROOT6 requires version >= 2.7)
-*   **python-dev:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
 
 Most common optional packages:
 
@@ -103,6 +101,7 @@ Most common optional packages:
 *   **graphviz-dev:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
 *   **libavahi-compat-libdnssd-dev:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **libldap2-dev:** for /usr/include/ldap.h and for /usr/lib/libldap.so
+*   **python-dev:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
 *   **python-numpy-dev:** needed for PyMVA
 *   **libxml2-dev:** for /usr/bin/xml2-config
 *   **libkrb5-dev:** for /usr/include/krb5.h and for /usr/lib/libkrb5.so
@@ -116,7 +115,7 @@ Required packages:
 
 ~~~
 sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
-libxft-dev libxext-dev python-dev
+libxft-dev libxext-dev
 ~~~
 
 Optional packages:
@@ -126,7 +125,7 @@ sudo apt-get install gfortran libssl-dev libpcre3-dev \
 xlibmesa-glu-dev libglew1.5-dev libftgl-dev \
 libmysqlclient-dev libfftw3-dev libcfitsio-dev \
 graphviz-dev libavahi-compat-libdnssd-dev \
-libldap2-dev libxml2-dev libkrb5-dev \
+libldap2-dev python-dev libxml2-dev libkrb5-dev \
 libgsl0-dev libqt4-dev
 ~~~
 
@@ -134,13 +133,17 @@ libgsl0-dev libqt4-dev
 
 Minimal set:
 ```
-sudo zypper install git bash cmake gcc-c++ gcc binutils python libXpm-devel xorg-x11-devel libXext-devel python-devel
+sudo zypper install git bash cmake gcc-c++ gcc binutils python libXpm-devel
+xorg-x11-devel libXext-devel
 ```
 
 Most common optional packages:
 
 ```
-sudo zypper install gcc-fortran libopenssl-devel pcre-devel Mesa glew-devel pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel libxml2-devel krb5-devel gsl-devel chromium libQt5Gui-devel  libqt5-qtwebengine-devel
+sudo zypper install gcc-fortran libopenssl-devel pcre-devel Mesa glew-devel
+pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel
+libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel libxml2-devel
+krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 ```
 
 ## MacOS X
@@ -174,8 +177,8 @@ The `CMake` build will work directly **without the need** to install
 *   **[Microsoft Visual C++](https://visualstudio.microsoft.com/)** (ROOT6 requires at least Visual Studio 2019 version 16.1). The **Community** version is free, fully-featured for students, open-source contributors, and individuals.
 *   **[Python](https://python.org)** (ROOT6 requires version >= 2.7)
 
-> **Note:**
-
+> **Note**
+>
 > ROOT 6 on Windows still has several known issues and missing features we are currently working on.
 
 ## AIX 5, 6 and 7
