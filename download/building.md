@@ -16,12 +16,12 @@ toc_sticky: true
 - **openbsd** for OpenBSD >= 5.x with gcc >= 4.8
 
 The compiler needs to support -std=c++11 to be able to build ROOT version 6.<br>
-See also → [Supported platforms]({{'/download/supported_platforms' | relative_url}}).
+See also → [Supported platforms]({{'/download/building_root/supported_platforms' | relative_url}}).
 
 ## Prerequisites for building ROOT
 
 Depending on the used platform, some prerequisites must be met.<br>
-See → [Prerequisites]({{'/download/build_prerequisites' | relative_url}}).
+See → [Build Prerequisites]({{'/download/building_root/build_prerequisites' | relative_url}}).
 
 ## Building ROOT with CMake
 
