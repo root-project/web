@@ -94,7 +94,8 @@ The `Fit()` method is implemented for:
 The signature is:
 
 {% highlight C++ %}
-   TFitResultPtr Fit(TF1 *function, Option_t *option, Option_t *goption,<br> Axis_t xxmin, Axis_t xxmax)
+   TFitResultPtr Fit(TF1 *function, Option_t *option, Option_t *goption,
+   Axis_t xxmin, Axis_t xxmax)
 {% endhighlight %}
 
 `function`: Pointer to the fitted function (the fit model) object.
