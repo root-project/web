@@ -11,7 +11,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: gh-pages
       - name: Jekyll Action
         uses: root-project/jekyll-action@HEAD
+      - name: Deploy
+        uses: appleboy/scp-action@v0.0.7
+        env:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        with:
+          source: "build"
+          target: "/eos/project/r/root-eos/www/jekylltmp/"
