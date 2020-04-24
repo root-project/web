@@ -115,7 +115,7 @@ Required packages:
 
 ~~~
 sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
-libxft-dev libxext-dev
+libxft-dev libxext-dev python
 ~~~
 
 Optional packages:
