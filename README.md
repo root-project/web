@@ -2,9 +2,7 @@
 
 A working version of this prototype can be seen here:
 
-  https://cern.ch/test-rootweb/
-
-  GitHub also provides https://root-project.github.io/web/
+  https://root-project.github.io/web/
 
 This new web site is based on [jekyll](https://jekyllrb.com/)
 
