@@ -427,7 +427,7 @@ A {% include ref class="TPaveLabel" %} can contain only one line of text. A {% i
 
 ** Latex**
 
-Latex ({% include ref class="TLatex" %}) can also be used as text, especially to draw mathematical formulas or equations. The syntax of {% include ref class="TLatex" %} is very similar to the Latex in mathematical mode.
+Latex ({% include ref class="TLatex" %}) can be used as text, especially to draw mathematical formulas or equations. The syntax of {% include ref class="TLatex" %} is very similar to the Latex in mathematical mode.
 
 _**Example**_
 
@@ -450,7 +450,7 @@ _**Example**_
 
 {% include figure_image
    img="latex.png"
-   caption="Latex in pad."
+   caption="Latex in a pad."
 %}
 
 
