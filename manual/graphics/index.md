@@ -425,7 +425,7 @@ _**Example**_
 A {% include ref class="TPaveLabel" %} can contain only one line of text. A {% include ref class="TPaveText" %} can contain several lines of text. A {% include ref class="TPavesText" %} is a stack of text panels.
 
 
-** Latex**
+**Latex**
 
 Latex ({% include ref class="TLatex" %}) can be used as text, especially to draw mathematical formulas or equations. The syntax of {% include ref class="TLatex" %} is very similar to the Latex in mathematical mode.
 
