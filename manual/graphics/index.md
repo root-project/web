@@ -8,7 +8,7 @@ toc_sticky: true
 ---
 
 ROOT provides powerful graphics capabilities for displaying and interacting with graphical object like plots, histograms, 2D and 3D
-graphical objects, etc. Here the basic functions and principles are presented, which can be applied to graphs (→ see [Graphs]({{ '/manual/graphs' | relative_url }}) ) and histograms (→ see [Histograms]({{ '/manual/histograms' | relative_url }}) ).
+graphical objects, etc. Here the basic functions and principles are presented, which can be applied to graphs (→ see [Graphs]({{ '/manual/graphs' | relative_url }})) and histograms (→ see [Histograms]({{ '/manual/histograms' | relative_url }})).
 
 The basic whiteboard on which an object is drawn is called in ROOT a canvas
 (class {% include ref class="TCanvas" %}). A canvas is an area mapped to a window directly
@@ -196,6 +196,7 @@ The following graphical objects are presented:
 - [Rectangles](#rectangles)
 - [Markers](#markers)
 - [Curly lines and arcs](#curly_lines_and_arcs)
+- [Text and latex](#text)
 
 <p><a name="lines"></a></p>
 **Lines**
@@ -264,7 +265,6 @@ _**Example**_
    file="graphics.root" object="arrows" width="500px" height="350px"
    caption="Examples of various arrow formats."
 %}
-
 
 <p><a name="polylines"></a></p>
 **Polylines**
@@ -408,6 +408,51 @@ Refer to the `$ROOTSYS/tutorials/graphics/feynman.C` tutorial for creating a Fey
    file="graphics.root" object="feynman"
    caption="Feynman diagram."
 %}
+
+<p><a name="text"></a></p>
+**Text and Latex**
+
+Text that is displayed in a pad is embedded in a box, called pave ({% include ref class="TPaveLabel" %}, {% include ref class="TPaveText" %} and {% include ref class="TPavesText" %}) . All text displayed in ROOT graphics is an object of the {% include ref class="TText" %} class.
+
+_**Example**_
+
+{% highlight C++ %}
+   root[] pl = new TPaveLabel(-50,0,50,200,"Some text")
+   root[] pl->SetBorderSize(0)
+   root[] pl->Draw()
+{% endhighlight %}
+
+A {% include ref class="TPaveLabel" %} can contain only one line of text. A {% include ref class="TPaveText" %} can contain several lines of text. A {% include ref class="TPavesText" %} is a stack of text panels.
+
+
+** Latex**
+
+Latex ({% include ref class="TLatex" %}) can also be used as text, especially to draw mathematical formulas or equations. The syntax of {% include ref class="TLatex" %} is very similar to the Latex in mathematical mode.
+
+_**Example**_
+
+{% highlight C++ %}
+   TCanvas *c1 = new TCanvas("c1","test",600,700);
+   
+// Write formulas.
+   TLatex l;
+   l.SetTextAlign(12);
+   l.SetTextSize(0.04);
+   l.DrawLatex(0.1,0.9,"1)   C(x) = d #sqrt{#frac{2}{#lambdaD}}\
+   #int^{x}_{0}cos(#frac{#pi}{2}t^{2})dt");
+   l.DrawLatex(0.1,0.7,"2)   C(x) = d #sqrt{#frac{2}{#lambdaD}}\
+   #int^{x}cos(#frac{#pi}{2}t^{2})dt");
+   l.DrawLatex(0.1,0.5,"3)   R = |A|^{2} = #frac{1}{2}#left(#[]{#frac{1}{2}+\
+   C(V)}^{2}+#[]{#frac{1}{2}+S(V)}^{2}#right)");
+   l.DrawLatex(0.1,0.3, "4)   F(t) = #sum_{i=-#infty}^{#infty}A(i)cos#[]{#frac{i}{t+i}}");
+   l.DrawLatex(0.1,0.1,"5)   {}_{3}^{7}Li");
+{% endhighlight %}
+
+{% include figure_image
+   img="latex.png"
+   caption="Latex in pad."
+%}
+
 
 ## Graphical objects attributes and styles
 
