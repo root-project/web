@@ -196,7 +196,7 @@ The following graphical objects are presented:
 - [Rectangles](#rectangles)
 - [Markers](#markers)
 - [Curly lines and arcs](#curly_lines_and_arcs)
-- [Text and latex](#text)
+- [Text and Latex](#text)
 
 <p><a name="lines"></a></p>
 **Lines**
@@ -546,7 +546,6 @@ You can force objects (in a canvas or pad) to get the attributes of the current 
 {% endhighlight %}
 
 
-
 ## Axis
 
 Axis are automatically built in by various high level objects such as histograms or graphs.
@@ -559,7 +558,7 @@ the {% include ref class="TGaxis" %} class.
 _**Example**_
 
 {% highlight C++ %}
-TAxis *axis = histo->GetXaxis()
+   TAxis *axis = histo->GetXaxis()
 {% endhighlight %}
 
 ### Setting the axis title
@@ -587,17 +586,18 @@ The available axis options are listed in the following example.
 _**Example**_
 
 {% highlight C++ %}
-TAxis *axis = histo->GetXaxis();
-axis->SetAxisColor(Color_t color = 1);
-axis->SetLabelColor(Color_t color = 1);
-axis->SetLabelFont(Style_t font = 62);
-axis->SetLabelOffset(Float_t offset = 0.005);
-axis->SetLabelSize(Float_t size = 0.04);
-axis->SetNdivisions(Int_t n = 510, Bool_t optim = kTRUE);
-axis->SetNoExponent(Bool_t noExponent = kTRUE);
-axis->SetTickLength(Float_t length = 0.03);
-axis->SetTitleOffset(Float_t offset = 1);
-axis->SetTitleSize(Float_t size = 0.02)
+   TAxis *axis = histo->GetXaxis();
+   
+   axis->SetAxisColor(Color_t color = 1);
+   axis->SetLabelColor(Color_t color = 1);
+   axis->SetLabelFont(Style_t font = 62);
+   axis->SetLabelOffset(Float_t offset = 0.005);
+   axis->SetLabelSize(Float_t size = 0.04);
+   axis->SetNdivisions(Int_t n = 510, Bool_t optim = kTRUE);
+   axis->SetNoExponent(Bool_t noExponent = kTRUE);
+   axis->SetTickLength(Float_t length = 0.03);
+   axis->SetTitleOffset(Float_t offset = 1);
+   axis->SetTitleSize(Float_t size = 0.02)
 {% endhighlight %}
 
 ### Setting the number of divisions
@@ -606,13 +606,26 @@ axis->SetTitleSize(Float_t size = 0.02)
 
 `ndiv` and `optim` are defined as follows:
 
-`ndiv = N1 + 100*N2 + 10000*N3`<br>
-   with:<br>
-   `N1` = Number of first division.<br>
-   `N2` = Number of secondary divisions.<br>
-   `N3` = Number of tertiary divisions.<br>
-`optim` = `kTRUE (default)`: The divisions’ number will be optimized around the specified value.<br>
-`optim` = `kFALSE`, or n < 0: The axis will be forced to use exactly n divisions.<br>
+- `ndiv = N1 + 100*N2 + 10000*N3`, with: `N1` = number of first division, `N2` = number of secondary divisions, `N3` = number of tertiary divisions.<br>
+- `optim` = `kTRUE (default)`: The divisions’ number will be optimized around the specified value.<br>
+- `optim` = `kFALSE`, or n < 0: The axis will be forced to use exactly n divisions.
+
+_**Example**_
+
+`ndiv = 0`: no tick marks.<br>
+`ndiv = 2`: 2 divisions, one tick mark in the middle of the axis.<br>
+`ndiv = 510`: 10 primary divisions, 5 secondary divisions.<br>
+`ndiv = -10`: exactly 10 primary divisions.
+
+
+### Zooming the axis
+
+- Use [TAxis::SetRange()](https://root.cern/doc/master/classTAxis.html#aed523b084d6b3f24f6b1128d7810e199){:target="_blank"} or [TAxis::SetRangeUser()](https://root.cern/doc/master/classTAxis.html#ac85f8261dedc23bbe68f90afd196cdb8){:target="_blank"} to zoom the axis.
+
+The `SetRange()` method parameters are bin numbers. For example if a histogram plots the values from 0 to 500 and has 100 bins, `SetRange(0,10)` will cover the values 0 to 50.
+
+The `SetRangeUser()` method parameters are user coordinates. If the start or end is in the middle of a bin the resulting range is approximation. It finds the low edge
+bin for the start and the high edge bin for the high.
 
 ### Setting time units for axis
 
@@ -746,6 +759,14 @@ _**Example**_
    file="graphics.root" object="ct" width="600px" height="600px"
    caption="Time axis."
 %}
+
+
+### Drawing an axis independently of a graph/histogram
+
+- Use the {% include ref class="TGaxis" %} class to draw an axis independently of a graph or a histogram.
+
+This may be useful if you want to draw a supplementary axis for a graph.
+
 
 ## Legends
 
