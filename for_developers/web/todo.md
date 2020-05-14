@@ -50,7 +50,7 @@ but we should be aware of what still needs to be done (before we go live).
    - [ ] "At CERN on lxplus? You have root 6.18!"
 
 ### Reference guide
-   - [ ] "List of all members" twice
+   - [ ] "List of all members" appears twice
 
 ### Manual
    - [ ] Make sure we are not losing information from the user's guide
@@ -61,3 +61,33 @@ but we should be aware of what still needs to be done (before we go live).
          related to fitting and put it close to the Roofit one in the left side menu of
          the manual.
    - [ ] Shorten the "On this page" menu to make sure they are fully visible.
+
+
+### Math documentation
+
+   The Mathematical parts of the ROOT documentation is one of the most complex to be
+   apprehended by users. Because:
+
+   1. the topic is vast and complex,
+   2. there is many sources of documentation,
+   3. there are missing , duplicate and outdated things.
+
+   Therefore the math part of ROOT is a very good test for the new documentation structure now
+   being implemented. Basically this new structure of the documentation has three parts:
+
+   1. The reference Guide (in doxygen) which contains every thing ! all the details of all
+   classes.
+   2. The topical manuals which document external packages used by ROOT. The Mathematical
+   part of ROOT has a lot of them (Roofit, Sprectrum, TMVA etc ...)
+   3. The "Manual" newly created by Johannes which is a "map" allowing users to retrieve their
+   way in all this huge volume of information. It makes the "glue" linking things together
+   in order to build a comprehensive image of the ROOT framework.
+
+   The work on the math documentation will be done in several steps:
+
+   1. Make a list of what is available in the reference guide and topical manual (JH)
+   2. Remove duplicates and out of date stuff in the reference guide  and topical manual (LM & JH)
+   3. Make sure things only in the (old) ROOT User's Guide are moved in the reference guide
+   or in some dedicated topicals manuals (LM)
+   4. Restructure le Reference Guide to make sure the various parts are easily accessible (OC)
+   5. Complete the Manual (JH)
