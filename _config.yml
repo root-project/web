@@ -22,7 +22,7 @@ subtitle                 : "Data Analysis Framework"
 name                     : "ROOT"
 description              : "Data Analysis Framework"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "/web"
+baseurl                  : "/test-rootweb"
 repository               : root-project/web # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : /assets/images/logo.png
