@@ -50,9 +50,9 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html){:tar
 
 - the namespaces for [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} and [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"}.
 
-- ROOT classes for random number generators, {% include ref class="TRandom" %} etc.
+- ROOT classes for pseudo-random number generators, {% include ref class="TRandom" %} and the derived classes {% include ref class="TRandom1" %}, {% include ref class="TRandom2" %} and {% include ref class="TRandom3" %}
 
-- ROOT class for complex numbers, {% include ref class="TComplex" %}
+- ROOT class for complex numbers, {% include ref class="TComplex" %}.
 
 - other ROOT classes like:
    - {% include ref class="TKDTree" %}: ROOT class implementing a kd-tree.
@@ -63,24 +63,25 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html){:tar
 
 The [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} namespace provides a collection of free functions:
 
-- numerical constants (like pi, e, h, etc.)
+- [numerical constants (like pi, e, h, etc.)](#numerical-constants)
 
-- trigonometric and elementary mathematical functions
+- [trigonometric and elementary mathematical functions](#elementary-functions)
 
 - functions to work with arrays and collections (e.g., functions to find the minimum and maximum of arrays)
 
-- statistic functions to work on array of data (e.g., mean and RMS of arrays)
+- [statistic functions to work on array of data (e.g., mean and RMS of arrays)](#statistic-functions-operating-on-arrays)
 
 - algorithms for binary search/hashing sorting
 
-- special mathematical functions like `Bessel`, `Erf`, `Gamma`, etc.
+- [special mathematical functions like `Bessel`, `Erf`, `Gamma`, etc.](#special-and-statistical-function)
 
 - statistical functions, like common probability and cumulative (quantile) distributions
 
 - geometrical functions
 
 
-#### Numerical constants
+<p><a name="numerical-constants"></a></p>
+**Numerical constants**
 
 [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides constants in the form of inline functions:
 
@@ -98,7 +99,38 @@ The [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} 
 - Euler-Mascheroni constant
 - elementary charge
 
-#### Statistic functions operating on arrays
+<p><a name="elementary-functions"></a></p>
+**Elementary functions**
+
+Some of elementary mathematical functions refer to basic mathematical functions like the square root, the power to a number of the calculus
+of a logarithm, while others are used for number treatment, like rounding.
+
+Although there are some functions that are not in the standard C math library (like `Factorial`), most of the functionality
+offered here is just a wrapper of the first ones. Nevertheless, some of the them also offer some security checks or a
+better precision, like the trigonometrical functions `ASin(x)`, `ACos(x)` or `ATan(x)`.
+
+_**Examples**_
+
+{% highlight C++ %}
+// Generate a vector with 10 random numbers.
+   vector<double> v(10);
+   std::generate(v.begin(), v.end(), rand);
+
+// Find the minimum value of the vector (iterator version).
+   vector<double>::iterator it;
+   it = TMath::LocMin(v.begin(), v.end());
+   std::cout << *it << std::endl;
+
+// The same with the old-style version.
+   int i;
+   i = TMath::LocMin(10, &v[0]);
+   std::cout << v[i] << std::endl;
+
+{% endhighlight %}
+
+
+<p><a name="statistic-functions-operating-on-arrays"></a></p>
+**Statistic functions operating on arrays**
 
 [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides functions that process arrays for calculation:
 
@@ -126,6 +158,26 @@ _**Example**_
 // Calculate the mean of the vector with iterators.
    mean = TMath::Mean(v.begin(), v.end());
 {% endhighlight %}
+
+
+<p><a name="special-and-statistical-function"></a></p>
+**Special and statistical functions**
+
+[TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides special functions like `Bessel`, `error functions`, `Gamma` or similar plus statistical mathematical
+functions, including probability density functions, cumulative distribution and their inverse.
+
+The majority of the special functions and the statistical distributions are provided also as free functions in the
+`ROOT::Math` namespace. 
+
+Functions not present in `ROOT::Math` and provided only by [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} are:
+- Special functions:
+	– DiLogarithm
+	– Struve
+- Statistical functions:
+	– KolmogorovProb
+	– Voigt function
+	– LaplaceDist
+	– Vavilov
 
 ### ROOT:Math
 
@@ -200,7 +252,7 @@ The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"}
 
 ## MathMore library
 
-The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"} library provides an advanced collection of functions and C++ classes for numerical computing. This is an extension of the functionality provided by the [MathCore](https://root.cern/doc/master/MathCorePage.html) library. The [MathMore](https://root.cern/doc/master/MathMorePage.html)  library is implemented wrapping in C++ the GNU Scientific Library ([GSL](https://www.gnu.org/software/gsl/)).
+The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"} library provides an advanced collection of functions and C++ classes for numerical computing. This is an extension of the functionality provided by the [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library. The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"}  library is implemented wrapping in C++ the GNU Scientific Library ([GSL](https://www.gnu.org/software/gsl/){:target="_blank"}). The mathematical functions are implemented as a set of free functions in the namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"}.
 
 The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"} library includes classes and functions for:
 
@@ -211,19 +263,19 @@ Containing all the major functions such as Bessel functions, Legendre polynomial
 Contains mathematical functions used in statistics such as probability density functions, cumulative distributions functions and their inverse (quantiles).
 
 - Numerical algorithms:
-   - [Numerical Integration](https://root.cern/doc/master/group__Integration.html){:target="_blank"}
-   - [Numerical Monte Carlo Integration classes](https://root.cern/doc/master/group__MCIntegration.html){:target="_blank"}
-   - [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html){:target="_blank"}
+   - [Numerical integration](https://root.cern/doc/master/group__Integration.html){:target="_blank"}
+   - [Numerical Monte Carlo integration classes](https://root.cern/doc/master/group__MCIntegration.html){:target="_blank"}
+   - [Numerical differentiation](https://root.cern/doc/master/group__Deriv.html){:target="_blank"}
    - [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html){:target="_blank"}
-   - [One-dimensional Minimization](https://root.cern/doc/master/group__Min1D.html){:target="_blank"}
-   - [Multi-dimensional Minimization](https://root.cern/doc/master/group__MultiMin.html){:target="_blank"}
+   - [One-dimensional minimization](https://root.cern/doc/master/group__Min1D.html){:target="_blank"}
+   - [Multi-dimensional minimization](https://root.cern/doc/master/group__MultiMin.html){:target="_blank"}
 
-- [Interpolation Classes](https://root.cern/doc/master/group__Interpolation.html){:target="_blank"}
+- [Interpolation classes](https://root.cern/doc/master/group__Interpolation.html){:target="_blank"}
 
-- [Function Approximation (ChebyshevApprox)](https://root.cern/doc/master/group__FuncApprox.html){:target="_blank"}
+- [Function approximation (ChebyshevApprox)](https://root.cern/doc/master/group__FuncApprox.html){:target="_blank"}
 <br>Based on Chebyshev polynomials.
 
-- [Random Classes](https://root.cern/doc/master/group__Random.html){:target="_blank"}
+- [Random classes](https://root.cern/doc/master/group__Random.html){:target="_blank"}
 
 
 ## Linear algebra package
