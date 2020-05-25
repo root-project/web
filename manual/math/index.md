@@ -171,13 +171,13 @@ The majority of the special functions and the statistical distributions are prov
 
 Functions not present in `ROOT::Math` and provided only by [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} are:
 - Special functions:
-	– DiLogarithm
-	– Struve
+	- DiLogarithm
+	- Struve
 - Statistical functions:
-	– KolmogorovProb
-	– Voigt function
-	– LaplaceDist
-	– Vavilov
+	- KolmogorovProb
+	- Voigt function
+	- LaplaceDist
+	- Vavilov
 
 ### ROOT:Math
 
