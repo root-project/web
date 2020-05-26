@@ -41,6 +41,8 @@ sidebar:
     *   [New ROOT GUI Classes](https://root.cern.ch/root/hepvis98/newgui.html){:target="_blank"}
 *   Paper published in the Linux Journal, Issue 51, July 1998.
      [ROOT: An Object-Oriented Data Analysis Framework.](https://root.cern.ch/download/lj.ps.gz)
+*   Computer Physics Communications; Anniversary Issue; Volume 180, Issue 12, December 2009, Pages 2499-2512.
+     [ROOT — A C++ framework for petabyte data storage, statistical analysis and visualization.](https://www.sciencedirect.com/science/article/pii/S0010465509002550?via%3Dihub)
 
 **CHEP 2012**
 
@@ -56,7 +58,8 @@ sidebar:
 **Papers NOT by the ROOT team, but related in spirit**
 
 *   The "Bazaar" software development process we try to follow:
-     The Cathedral and the Bazaar by Eric S. Raymond.
+     [The Cathedral and the Bazaar](http://www.catb.org/esr/writings/cathedral-bazaar/) by Eric S. Raymond.
+*   [Microkernel vs Monolithic System](https://en.wikipedia.org/wiki/Tanenbaum–Torvalds_debate). Famous discussion between Linus Torvalds and Andy Tanenbaum on the merits of these two approaches. ROOT is often seen, like Linux, as a monolithic system. Both are not doing too bad.
 
 **In case you want to cite CINT, use the following references**
 
