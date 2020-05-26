@@ -29,18 +29,18 @@ The ROOT Mathematical libraries consist of the following components:
 ## MathCore library
 
 The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides a collection of functions, C++ classes and ROOT classes for HEP numerical computing. <br>
-The `MathCore` is a self-consistent minimal set of tools required for the basic numerical computing. More advanced mathematical functionalities is provided by the [MathMore library](#mathmore-library).
+The `MathCore` is a self-consistent minimal set of tools required for the basic numerical computing. More advanced mathematical functionalities is provided by the [MathMore](#mathmore-library) library.
 The following is included in the `MathCore` library:
 
-- [Special mathematical functions](https://root.cern/doc/master/group__SpecFunc.html){:target="_blank"}: Functions like the gamma, beta and error function that are used in HEP.
+- [Special functions](https://root.cern/doc/master/group__SpecFunc.html){:target="_blank"}: Functions like the gamma, beta and error function that are used in HEP.
 
-- [Statistical functions](https://root.cern/doc/master/group__StatFunc.html){:target="_blank"}: Mathematical functions used in statistics, such as the probability density functions and the cumulative distributions functions for continuous and discrete distributions.
+- [Statistical functions](https://root.cern/doc/master/group__StatFunc.html){:target="_blank"}: Functions used in statistics, such as the probability density functions and the cumulative distributions functions for continuous and discrete distributions.
 
 - [Function classes and interfaces](https://root.cern/doc/master/group__CppFunctions.html){:target="_blank"}: Interfaces (abstract classes) and base classes, including helper classes to wrap free (static) and non-static member functions.
 
 - Numerical algorithms: User classes with basic implementations for:
-   - [Numerical Integration](https://root.cern/doc/master/group__Integration.html){:target="_blank"}
-   - [Numerical Differentiation](https://root.cern/doc/master/group__Deriv.html){:target="_blank"}
+   - [Numerical integration](https://root.cern/doc/master/group__Integration.html){:target="_blank"}
+   - [Numerical differentiation](https://root.cern/doc/master/group__Deriv.html){:target="_blank"}
    - [One-dimensional Root-Finding](https://root.cern/doc/master/group__RootFinders.html){:target="_blank"}
    - [One-dimensional minimization](https://root.cern/doc/master/group__Min1D.html){:target="_blank"} and [multi-dimensional minimization](https://root.cern/doc/master/group__MultiMin.html){:target="_blank"}
 
@@ -50,7 +50,7 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html){:tar
 
 - the namespaces for [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} and [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"}.
 
-- ROOT classes for pseudo-random number generators, {% include ref class="TRandom" %} and the derived classes {% include ref class="TRandom1" %}, {% include ref class="TRandom2" %} and {% include ref class="TRandom3" %}
+- ROOT classes for pseudo-random number generators, {% include ref class="TRandom" %} and the derived classes {% include ref class="TRandom1" %}, {% include ref class="TRandom2" %} and {% include ref class="TRandom3" %}.
 
 - ROOT class for complex numbers, {% include ref class="TComplex" %}.
 
@@ -198,19 +198,22 @@ Used for fitting after evaluating multi-dimensional functions.
 
 The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides the following classes for generating pseudo-random numbers:
 
-{% include ref class="TRandom" %}: Using a linear congruential random generator.
-
-{% include ref class="TRandom1" %}: Random number generator based on the Ranlux engine.
-
-{% include ref class="TRandom2" %}: Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
-
-{% include ref class="TRandom3" %}: Based on the Mersenne and Twister pseudo-random number generator.
+- {% include ref class="TRandom" %}: Using a linear congruential random generator.
+- {% include ref class="TRandom1" %}: Random number generator based on the Ranlux engine.
+- {% include ref class="TRandom2" %}: Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
+- {% include ref class="TRandom3" %}: Based on the Mersenne and Twister pseudo-random number generator.
 
 > **Note**
 >
 > For generating non-uniform random numbers, the UNU.RAN package (see → [UNU.RAN](#unuran)) is available.
 
-#### Seeding the random number generators
+You can work with the random number generators as follows: 
+- [Seeding the random number generators](#seeding-the-random-number-generators)
+- [Using the random number generators](#using-the-random-number-generators)
+- [Random number distributions](#random-number-distributions)
+
+<p><a name="seeding-the-random-number-generators"></a></p>
+**Seeding the random number generators**
 
 - Use the [SetSeed()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#ab9efcc04f4be1e7e6e49c5281abdee5b){:target="_blank"} method.
 
@@ -218,7 +221,8 @@ When no value is given, the generator default seed is used. In this case an iden
 When the 0 value is used as seed, then a unique seed is generated using a TUUID, for {% include ref class="TRandom" %}, {% include ref class="TRandom1" %} and {% include ref class="TRandom3" %}.<br>
 For {% include ref class="TRandom" %} the seed is generated using only the machine clock, which has a resolution of about 1 s. Therefore, identical sequences will be generated if the elapsed time is less than a second.
 
-#### Using the random number generators
+<p><a name="using-the-random-number-generators"></a></p>
+**Using the random number generators**
 
 - Use the [Rndm()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#af47234971a577abc33b975867fc4877d){:target="_blank"} method for generating a pseudo-random number distributed between 0 and 1.
 
@@ -245,6 +249,79 @@ _**Example**_
 // Seed generated using machine clock (different every second).
    TRandom r0(0);
 {% endhighlight %}
+
+<p><a name="random-number-distributions"></a></p>
+**Random number distributions**
+
+The {% include ref class="TRandom" %} class provides functions that can be used by all other derived classes to generate random variables according to predefined distributions. In the simplest cases, as in the exponential distribution, the non-uniform random number is obtained by suitable transformations. In the more complicated cases, the random variables are obtained by acceptance-rejection methods that require several random numbers.
+
+_**Example**_
+
+{% highlight C++ %}
+   TRandom3 r;
+// Generate a gaussian distributed number with:
+// mu=0, sigma=1 (default values)
+   double x1 = r.Gaus();
+   double x2 = r.Gaus(10,3);
+// Use mu = 10, sigma = 3;
+{% endhighlight %}
+
+The following table shows the various distributions that can be generated using methods of the {% include ref class="TRandom" %} classes.<br>
+In addition, you can use [TF1::GetRandom()](https://root.cern/doc/master/classTF1.html#ab44c5f63db88a3831d74c7c84dc6316b){:target="_blank"} or [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232){:target="_blank"} to generate random numbers distributed according to a user defined function, in a limited interval, or to a user defined histogram. 
+
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th scope="col">Distributions</th>
+      <th scope="col">Description</th>
+    </tr>
+    <tr>
+      <td>Double_t Uniform(Double_t x1,Double_t x2)</td>
+      <td>Uniform random numbers between x1,x2.</td>
+    </tr>
+    <tr>
+      <td>Double_t Gaus(Double_t mu,Double_t sigma)</td>
+      <td>Gaussian random numbers. Default values: mu=0, sigma=1.</td>
+    </tr>
+    <tr>
+      <td>Double_t Exp(Double_t tau)</td>
+      <td>Exponential random numbers with mean tau.</td>
+    </tr>
+    <tr>
+      <td>Double_t Landau(Double_t mean,Double_t sigma)</td>
+      <td>Landau distributed random numbers. Default values: mean=0, sigma=1.</td>
+    </tr>
+    <tr>
+      <td>Double_t BreitWigner(Double_t mean,Double_t gamma)</td>
+      <td>Breit-Wigner distributed random numbers. Default values mean=0, gamma=1.</td>
+    </tr>
+    <tr>
+      <td>Int_t Poisson(Double_t mean)</td>
+      <td>Poisson random numbers.</td>
+    </tr>
+    <tr>
+      <td>Double_t PoissonD(Double_t mean)</td>
+      <td>Poisson random numbers.</td>
+    </tr>
+    <tr>
+      <td>Int_t Binomial(Int_t ntot,Double_t prob)</td>
+      <td>Binomial Random numbers</td>
+    </tr>
+    <tr>
+      <td>Circle(Double_t &x,Double_t &y,Double_t r)</td>
+      <td>Generate a random 2D point (x,y) in a circle of radius r.</td>
+    </tr>
+    <tr>
+      <td>Sphere(Double_t &x,Double_t &y,Double_t &z,Double_t r)</td>
+      <td>Generate a random 3D point (x,y,z) in a sphere of radius r.</td>
+    </tr>
+     <tr>
+      <td>Rannor(Double_t &a,Double_t &b)</td>
+      <td>Generate a pair of Gaussian random numbers with mu=0 and sigma=1.</td>
+    </tr>
+</tbody>
+</table>
+
 
 ### Complex numbers
 
