@@ -11,9 +11,11 @@ sidebar:
 ---
 
 ## Highlights
+
 Basically only bug fixes. The actual list issues solved by this release can be found in the release notes.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v608/release-notes.html#release-6.0802).
 
 ## Source distribution

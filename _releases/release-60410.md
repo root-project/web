@@ -12,9 +12,10 @@ sidebar:
 
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/root/html604/notes/release-notes.html#release-6.0410)
 
-## Source distributions
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

@@ -10,6 +10,7 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Release Notes
 
 The release notes for this release can be found [here](https://root.cern/doc/v620/release-notes.html#release-6.2002).

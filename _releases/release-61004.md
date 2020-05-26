@@ -10,10 +10,13 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
+
 Bug fix release. See release notes to see what has been fixed.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v610/release-notes.html#release-6.1004).
 
 ## Source distribution

@@ -10,6 +10,7 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
 
 This is a development release. We created it to expose to users part of the enourmous amount of new functionalities which have been integrated in ROOT and will be available in ROOT 6.12/00.

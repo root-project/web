@@ -9,10 +9,13 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
+
 This is the first bug-fix release for the v6.14 release series. It fixes a couple of bugs in `ROOT::RDataFrame` and several build failures.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v614/release-notes.html#release-6.1402).
 
 ## Source distribution

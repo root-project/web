@@ -9,12 +9,14 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
 
 This version restores zlib as the default compression algorithm for ROOT files.
 We have seen branch data that LZ4 did not compress well; until those cases are optimized, ROOT will resort to its well understood, traditional compression algorithm zlib.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v614/release-notes.html#release-6.1404).
 
 ## Source distribution

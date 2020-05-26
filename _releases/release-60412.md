@@ -11,12 +11,14 @@ sidebar:
 ---
 
 ## Highlights
+
 Patch release of 6.04 with some essential fixes required by ATLAS. See the release notes for details.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v604/release-notes.html#release-6.0412)
 
-## Source distributions
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

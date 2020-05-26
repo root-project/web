@@ -11,9 +11,11 @@ sidebar:
 ---
 
 ## Highlights
+
 Patch release fixing a number of issues. See release notes.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v606/release-notes.html#release-6.0606).
 
 ## Source distribution

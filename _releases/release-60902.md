@@ -10,7 +10,9 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
+
 This is the first ROOT development release of the 6.09 series! It is meant to offer a preview of the many features which will be included in the 6.10 production release.
 
 Some highlights:

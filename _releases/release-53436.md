@@ -11,9 +11,11 @@ sidebar:
 ---
 
 ## Highlights
+
 Bug fix release.
 
 ## Release Notes
+
 The release notes for this release can be found [here]({{ '/download/all_releases/root-version-v5-34-00-patch-release-notes#36' | relative_url }}).
 
 The fixed/completed list of JIRA tickets are:

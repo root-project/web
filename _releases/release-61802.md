@@ -11,6 +11,7 @@ sidebar:
 
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern/doc/v618/release-notes.html#release-6.1802).
 
 ## Source distribution

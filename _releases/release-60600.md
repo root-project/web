@@ -24,9 +24,10 @@ analysis.
 migrated to Doxygen.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v606/release-notes.html).
 
-## Source distributions
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

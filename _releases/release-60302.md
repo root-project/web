@@ -11,7 +11,7 @@ sidebar:
 ---
 
 
-## Source distributions
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

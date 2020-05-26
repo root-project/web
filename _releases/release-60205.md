@@ -12,9 +12,10 @@ sidebar:
 
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/root-version-v6-02-00-patch-release-notes)
 
-## Source distributions
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

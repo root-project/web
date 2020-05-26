@@ -10,10 +10,13 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
+
 Patch version on top of 6.06/00 with a number of fixes. See release notes for details.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v606/release-notes.html#release-6.0602).
 
 ## Source distribution

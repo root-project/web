@@ -10,10 +10,12 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Release Notes
+
 The release notes for this release can be found [here]({{ '/download/all_releases/root-version-v5-34-00-patch-release-notes#07' | relative_url }}).
 
-## Source distributions
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

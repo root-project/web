@@ -10,10 +10,6 @@ sidebar:
   nav: "download"
 ---
 
-<!-- ## Highlights
-NOT YET IMPLEMENTED
--->
-
 
 ## Source distribution
 

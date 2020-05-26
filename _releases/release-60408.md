@@ -12,13 +12,15 @@ sidebar:
 
 
 ## Highlights
+
 - A number of fixes with respect 6.04/06 (see the full list of fixes in the [release notes](https://root.cern.ch/root/html604/notes/release-notes.html#release-6.0408)).
 - Better support for Mac OS X 10.11 (El Capitan). Note that the binaries for Mac OS X 10.11 has been produced and can also be downloaded from this page, but the built in Davix module has been disabled because the required OpenSSL has been removed in this OS X version. We will put it back once this issue is solved.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/root/html604/notes/release-notes.html#release-6.0408)
 
-## Source distributions
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

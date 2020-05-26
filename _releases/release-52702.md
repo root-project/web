@@ -10,7 +10,8 @@ sidebar:
   nav: "download"
 ---
 
-## Source distributions
+
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

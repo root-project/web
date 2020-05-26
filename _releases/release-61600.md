@@ -10,6 +10,7 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
 
 This release brings several new features:
@@ -29,6 +30,7 @@ If you want to experiment, try the new [experimental PyROOT](https://root.cern/d
 First and foremost, this release has many, *many* bugs fixed: thanks to everyone who has contributes with reports, reproducers and patches!
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern/doc/v616/release-notes.html).
 
 ## Source distribution

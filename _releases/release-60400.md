@@ -10,7 +10,9 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
+
 The ROOT team is proud to announce the release of ROOT 6.04/00 featuring many usability enhancements. Highlights of this release include:
 
 *   a new `TFormula` implementation that uses cling
@@ -20,9 +22,10 @@ The ROOT team is proud to announce the release of ROOT 6.04/00 featuring many us
 [monotonic perceptual ordering]( {% post_url 2014-05-31-rainbow-color-map %} )
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/root/html604/notes/release-notes.html)
 
-## Source distributions
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

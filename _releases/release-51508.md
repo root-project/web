@@ -9,18 +9,17 @@ toc_sticky: true
 sidebar:
   nav: "download"
 ---
-<!-- ## Highlights
-NOT YET IMPLEMENTED
--->
 
 
 ## Source distribution
+
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | source | [root_v5.15.08.source.tar.gz](https://root.cern.ch/download/root_v5.15.08.source.tar.gz) |  21M |
 
 
 ## Binary distributions
+
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | Linux.RH9.0.gcc32 | [root_v5.15.08.Linux.RH9.0.gcc32.tar.gz](https://root.cern.ch/download/root_v5.15.08.Linux.RH9.0.gcc32.tar.gz) |  36M |
@@ -40,6 +39,7 @@ NOT YET IMPLEMENTED
 
 
 ## Git
+
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~

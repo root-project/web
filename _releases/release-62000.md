@@ -10,6 +10,7 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
 
 A new compression algorithm [ZSTD](https://github.com/facebook/zstd.git) was added. Please use it: it’s faster than the default zlib, and it compresses better. (We don’t want to change the default: we want old ROOT versions to be able to read new files.) The release notes show how to use it.
@@ -31,6 +32,7 @@ root [1] float a = 42.;
 And many, many bugs were fixed - thanks for your reports!
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern/doc/v620/release-notes.html).
 
 ## Source distribution

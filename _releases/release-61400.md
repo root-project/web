@@ -10,12 +10,14 @@ sidebar:
 ---
 
 ## Highlights
+
 - LZ4 compression is now the default: it's blazingly fast when reading ROOT files!
 - [ROOT::RDataFrame](https://root.cern.ch/doc/master/group__tutorial__dataframe.html) is now the recommended way for analyzing trees: simple, expressive and parallel!
 - Windows is back!
 - ...and this release is dedicated to our *ROOT Workshop in Sarajevo, 10-13 September 2018*: [come and register!](https://cern.ch/root2018)
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v614/release-notes.html).
 
 ## Source distribution

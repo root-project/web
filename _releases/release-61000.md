@@ -10,7 +10,9 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
+
 This is the first release of the 6.10 production series. It includes a number of new features and here are some highlights:
 
    * Automatic colouring of plots. How? Check this out [here](https://root.cern/doc/master/classTHistPainter.html#HP061).
@@ -21,6 +23,7 @@ This is the first release of the 6.10 production series. It includes a number of
    * ClassDefInline(MyClass, 3) adds ClassDef functionality without the need to generate a dictionary, which is especially useful for scripts and other non-framework code.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v610/release-notes.html).
 
 ## Source distribution

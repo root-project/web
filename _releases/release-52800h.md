@@ -10,13 +10,12 @@ sidebar:
   nav: "download"
 ---
 
-## Source distributions
+
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | source | [root_v5.28.00h.source.tar.gz](https://root.cern.ch/download/root_v5.28.00h.source.tar.gz) |  30M |
-
-
 
 
 ## Installations in AFS and CVMFS

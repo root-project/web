@@ -10,10 +10,12 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/root/html600/notes/release-notes.html)
 
-## Source distributions
+## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|

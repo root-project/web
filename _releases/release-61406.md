@@ -9,11 +9,13 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
 
 MacOS 10.14 / Xcode 10 is now supported, and several bugs have been fixed.
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern.ch/doc/v614/release-notes.html#release-6.1406).
 
 ## Source distribution

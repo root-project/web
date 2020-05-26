@@ -12,6 +12,7 @@ sidebar:
 
 
 ## Binary distributions
+
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | Linux.RH7.3.gcc32 | [root_v3.10.01a.Linux.RH7.3.gcc32.tar.gz](https://root.cern.ch/download/root_v3.10.01a.Linux.RH7.3.gcc32.tar.gz) |  15M |

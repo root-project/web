@@ -28,6 +28,7 @@ ROOT v6.18/00 is a consolidation release with many performance improvements! Its
 If you build against ROOT using its CMake infrastructure you might be interested in the changes to `ROOT_GENERATE_DICTIONARY` and `ROOT_STANDARD_LIBRARY_PACKAGE`. For this and what else is new please have a look at the [release notes](https://root.cern/doc/v618/release-notes.html)!
 
 ## Release Notes
+
 The release notes for this release can be found [here](https://root.cern/doc/v618/release-notes.html).
 
 ## Source distribution

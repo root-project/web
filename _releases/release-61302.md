@@ -10,6 +10,7 @@ sidebar:
   nav: "download"
 ---
 
+
 ## Highlights
 
 - LZ4 is now the default compression format, accelerating reading by factors; see e.g. [this presentation](https://indico.fnal.gov/event/16264/contribution/8/material/slides/0.pdf)

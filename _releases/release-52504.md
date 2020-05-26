@@ -10,8 +10,6 @@ sidebar:
   nav: "download"
 ---
 
->
-
 
 ## Source distribution
 
