@@ -1017,7 +1017,7 @@ _**Example**_
 
 ### Using TUnuranDiscrDist for a discrete one-dimensional distribution
 
-- Use {% include ref class="TUnuranDiscrDist" %} for creating a discrete one-dimensional distribution, which can be initialized from a {% include ref class="TF1" %} object or from a vector of probabilities.
+- Use {% include ref class="TUnuranDiscrDist" %} to create a discrete one-dimensional distribution, which can be initialized from a {% include ref class="TF1" %} object or from a vector of probabilities.
 
 _**Example**_
 
