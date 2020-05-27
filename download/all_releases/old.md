@@ -5,11 +5,19 @@ sidebar:
   nav: "download"
 ---
 
-Older releases
+Releases with this term are Old.
 
-{% include releases_list state="old" %}
+{% include releases_list state="old" label="" single_column="yes" %}
 
 ### Release Notes
+
+{% assign sorted = site.releases | reverse %}
+
+{% for release in sorted %}
+{% if release.state == "old" %}
+{% assign version = release.version %}
+{% endif %}
+{% endfor %}
 
 {% assign tag1 = version | truncate: 4, "" | replace: ".","" | prepend: "v"%}
 {% assign tag2 = version | replace: "/","" | prepend: "release-" %}

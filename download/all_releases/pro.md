@@ -7,9 +7,17 @@ sidebar:
 
 Releases with this term are in Production.
 
-{% include releases_list state="pro" %}
+{% include releases_list state="pro" label="" single_column="yes" %}
 
 ### Release Notes
+
+{% assign sorted = site.releases | reverse %}
+
+{% for release in sorted %}
+{% if release.state == "pro" %}
+{% assign version = release.version %}
+{% endif %}
+{% endfor %}
 
 {% assign tag1 = version | truncate: 4, "" | replace: ".","" | prepend: "v"%}
 {% assign tag2 = version | replace: "/","" | prepend: "release-" %}
