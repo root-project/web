@@ -63,41 +63,15 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html){:tar
 
 The [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} namespace provides a collection of free functions:
 
-- [numerical constants (like pi, e, h, etc.)](#numerical-constants)
-
+- numerical constants (like &#x03C0; e, h, etc.)
 - [trigonometric and elementary mathematical functions](#elementary-functions)
-
 - functions to work with arrays and collections (e.g., functions to find the minimum and maximum of arrays)
-
 - [statistic functions to work on array of data (e.g., mean and RMS of arrays)](#statistic-functions-operating-on-arrays)
-
 - algorithms for binary search/hashing sorting
-
 - [special mathematical functions like `Bessel`, `Erf`, `Gamma`, etc.](#special-and-statistical-function)
-
 - statistical functions, like common probability and cumulative (quantile) distributions
-
 - geometrical functions
 
-
-<p><a name="numerical-constants"></a></p>
-**Numerical constants**
-
-[TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides constants in the form of inline functions:
-
-- pi
-- base of natural logarithm
-- velocity of light
-- gravitational constant (G)
-- standard acceleration of gravity (g)
-- Plank’s constant
-- Boltzmann’s and Steffan-Boltzmann’s constants
-- Avogadro’s number
-- universal gas constant
-- molecular weight of dry air
-- dry air gas constant
-- Euler-Mascheroni constant
-- elementary charge
 
 <p><a name="elementary-functions"></a></p>
 **Elementary functions**
@@ -166,10 +140,9 @@ _**Example**_
 [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides special functions like `Bessel`, `error functions`, `Gamma` or similar plus statistical mathematical
 functions, including probability density functions, cumulative distribution and their inverse.
 
-The majority of the special functions and the statistical distributions are provided also as free functions in the
-`ROOT::Math` namespace. 
+The majority of the special functions and the statistical distributions are provided also as free functions in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} namespace. 
 
-Functions not present in `ROOT::Math` and provided only by [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} are:
+Functions not present in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} name that are provided only by [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} are:
 - Special functions:
 	- DiLogarithm
 	- Struve
@@ -179,7 +152,7 @@ Functions not present in `ROOT::Math` and provided only by [TMath](https://root.
 	- LaplaceDist
 	- Vavilov
 
-### ROOT:Math
+### ROOT::Math
 
 The [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} namespace provides a set of function interfaces to define the basic behaviour of a mathematical function:
 
@@ -193,6 +166,7 @@ Used for numerical algorithms operating on multi-dimensional functions.
 - **Parametric function interfaces**<br>
 Used for fitting after evaluating multi-dimensional functions.
 
+In addition, helper classes, wrapping the user interfaces in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} function interfaces are provided. With them you can insert your own type of function in the needed function interface. 
 
 ### Random numbers
 
