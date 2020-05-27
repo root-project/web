@@ -33,7 +33,11 @@
 {% if state == "pro" %}
 {% for release in sorted %}
 {% if release.state == "pro" %}
+{% if label != "" %}
 <li> <a href="{{ release.url | relative_url }}" class="btn btn--info">{{ label }}</a> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date | date: "%-d %B %Y"}} </a></li>
+{% else %}
+<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date | date: "%-d %B %Y"}} </a></li>
+{% endif %}
 {% endif %}
 {% endfor %}
 {% endif %}
@@ -41,7 +45,11 @@
 {% if state == "old" %}
 {% for release in sorted %}
 {% if release.state == "old" %}
+{% if label != "" %}
 <li> <a href="{{ release.url | relative_url }}" class="btn btn--info">{{ label }}</a> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date | date: "%-d %B %Y"}} </a></li>
+{% else %}
+<li> <a href="{{ release.url | relative_url }}"> Release {{ release.version}} - {{release.release_date | date: "%-d %B %Y"}} </a></li>
+{% endif %}
 {% endif %}
 {% endfor %}
 {% endif %}
