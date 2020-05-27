@@ -156,17 +156,41 @@ Functions not present in the [ROOT::Math](https://root.cern/doc/master/namespace
 
 The [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} namespace provides a set of function interfaces to define the basic behaviour of a mathematical function:
 
-- **One-dimensional function interfaces**<br>
-Used for numerical algorithms operating only on one-dimensional functions. They cannot applied to
-multi-dimensional functions.
-
-- **Multi-dimensional function interfaces**<br>
-Used for numerical algorithms operating on multi-dimensional functions.
-
-- **Parametric function interfaces**<br>
-Used for fitting after evaluating multi-dimensional functions.
+- [One-dimensional function interfaces](#one-dimensional-function-interfaces)
+- [Multi-dimensional function interfaces](#multi-dimensional-function-interfaces)
+- [Parametric function interfaces]('parametric-function-interfaces)
 
 In addition, helper classes, wrapping the user interfaces in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} function interfaces are provided. With them you can insert your own type of function in the needed function interface. 
+
+To use the self-defined functions, they must have inherited from one of the following classes:
+
+{% include figure_image
+img="function-hierarchy.png"
+caption="ROOT::Math function interface structure."
+%}
+
+<p><a name="one-dimensional-function-interfaces"></a></p>
+**One-dimensional function interfaces**
+
+This interface is used for numerical algorithms operating only on one-dimensional functions. It cannot applied to multi-dimensional functions.
+
+[ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"}<br>
+This interface provides a method to evaluate the function given a value (simple double) by implementing `double operator()` (`const double`). The user class
+defined only needs to reimplement the pure abstract method double `DoEval(double x)`, that will do the work of evaluating the function at point x.
+
+[ROOT::Math::IGradientFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IGradientFunctionOneDim.html){:target="_blank"}<br>
+This interface is needed by some numerical algorithms to calculate the derivatives of the function.
+
+<p><a name="multi-dimensional-function-interfaces"></a></p>
+**Multi-dimensional function interfaces**
+
+This interface is used for numerical algorithms operating on multi-dimensional functions.
+
+<p><a name="parametric-function-interfaces"></a></p>
+**Parametric function interfaces**
+
+This interface is used for fitting after evaluating multi-dimensional functions.
+
 
 ### Random numbers
 
