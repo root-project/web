@@ -63,7 +63,7 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html){:tar
 
 The [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} namespace provides a collection of free functions:
 
-- numerical constants (like &#x03C0; e, h, etc.)
+- numerical constants (like &#x03C0;, e, h, etc.)
 - [trigonometric and elementary mathematical functions](#elementary-functions)
 - functions to work with arrays and collections (e.g., functions to find the minimum and maximum of arrays)
 - [statistic functions to work on array of data (e.g., mean and RMS of arrays)](#statistic-functions-operating-on-arrays)
