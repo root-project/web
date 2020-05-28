@@ -6,7 +6,7 @@
 {% assign fig     = {{include.fig}} %}
 {% assign caption = {{include.caption}} %}
 
-{% assign id =  f | append: o | replace: ".root","" %}
+{% assign id =  f | append: o | replace: ".root","" | replace: "/","" %}
 
 {% capture sect_size %}{{ sect | size }}{% endcapture %}
 
