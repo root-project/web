@@ -160,7 +160,7 @@ The [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:targe
 - [Multi-dimensional function interfaces](#multi-dimensional-function-interfaces)
 - [Parametric function interfaces]('parametric-function-interfaces)
 
-In addition, helper classes, wrapping the user interfaces in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} function interfaces are provided. With them you can insert your own type of function in the needed function interface. 
+In addition, helper classes, wrapping the user interfaces in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} function interfaces are provided. With [wrapper functions](#wrapper-functions) you can insert your own type of function in the needed function interface. 
 
 To use the self-defined functions, they must have inherited from one of the following classes:
 
@@ -176,21 +176,327 @@ This interface is used for numerical algorithms operating only on one-dimensiona
 
 [ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"}<br>
 This interface provides a method to evaluate the function given a value (simple double) by implementing `double operator()` (`const double`). The user class
-defined only needs to reimplement the pure abstract method double `DoEval(double x)`, that will do the work of evaluating the function at point x.
+defined only needs to reimplement the pure abstract method double `DoEval(double x)` that will do the work of evaluating the function at point x.
+
+_**Example**_
+
+Example for the implementation of a class that represents a mathematical function.
+
+{% highlight C++ %}
+   #include "Math/IFunction.h"
+   
+   class MyFunction: public ROOT::Math::IBaseFunctionOneDim
+   {
+      double DoEval(double x) const
+      {
+      return x*x;
+      }
+   ROOT::Math::IBaseFunctionOneDim* Clone() const
+      {
+      return new MyFunction();
+      }
+   };
+{% endhighlight %}
 
 [ROOT::Math::IGradientFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IGradientFunctionOneDim.html){:target="_blank"}<br>
-This interface is needed by some numerical algorithms to calculate the derivatives of the function.
+This interface is needed by some numerical algorithms to calculate the derivatives of the function. It introduces the method double `Derivative(double x)` that will return
+the derivative of the function at the point x. The class inherit by the user will have to implement the abstract
+method `double DoDerivative(double x)`, leaving the rest of the class untouched.
+
+_**Example**_
+
+Example for the implementation of a gradient one-dimensional function.
+
+{% highlight C++ %}
+   #include "Math/IFunction.h"
+   
+   class MyGradientFunction: public ROOT::Math::IGradientFunctionOneDim
+   {
+   public:
+   double DoEval(double x) const
+      {
+      return sin(x);
+      }
+   ROOT::Math::IBaseFunctionOneDim* Clone() const
+      {
+      return new MyGradientFunction();
+      }
+   double DoDerivative(double x) const
+      {
+      return -cos(x);
+      }
+   };
+ {% endhighlight %}
 
 <p><a name="multi-dimensional-function-interfaces"></a></p>
 **Multi-dimensional function interfaces**
 
 This interface is used for numerical algorithms operating on multi-dimensional functions.
 
+[ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"}<br>
+This interface provides the `double operator()` (`const double*`) that takes an array of doubles with all the values for the different dimensions. In this case, the user has to provide
+the functionality for two different functions: `double DoEval(const double*)` and unsigned `int NDim()`. The first ones evaluates the function given the array that represents the multiple variables. The second returns the number of dimensions of the function.
+
+_**Example**_
+
+Example for the implementation of a basic multi-dimensional function.
+
+{% highlight C++ %}
+   #include "Math/IFunction.h"
+   
+   class MyFunction: public ROOT::Math::IBaseFunctionMultiDim
+   {
+   public:
+   double DoEval(const double* x) const
+      {
+      return x[0] + sin(x[1]);
+      }
+   unsigned int NDim() const
+      {
+      return 2;
+      }
+   ROOT::Math::IBaseFunctionMultiDim* Clone() const
+      {
+      return new MyFunction();
+      }
+   };
+{% endhighlight %}
+
+
+[ROOT::Math::IGradientFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5ea9b643efd905580803446b000aab44){:target="_blank"}<br>
+This interface offers the same functionality as the base function and additionally the calculation of the derivative. It only adds the double `Derivative(double* x, uint ivar)` method for
+the user to implement. This method must implement the derivative of the function with respect to the variable indicated with the second parameter.
+
+_**Example**_
+
+Example for the implementation of a multi-dimensional gradient function.
+
+{% highlight C++ %}
+   #include "Math/IFunction.h"
+   
+   class MyGradientFunction: public ROOT::Math::IGradientFunctionMultiDim
+   {
+   public:
+   double DoEval(const double* x) const
+      {
+      return x[0] + sin(x[1]);
+      }
+   unsigned int NDim() const
+      {
+      return 2;
+      }
+   ROOT::Math::IGradientFunctionMultiDim* Clone() const
+      {
+      return new MyGradientFunction();
+      }
+   double DoDerivative(const double* x, unsigned int ipar) const
+      {
+      if ( ipar == 0 )
+      return sin(x[1]);
+      else
+      return x[0] + x[1] * cos(x[1]);
+      }
+   };
+{% endhighlight %}
+
 <p><a name="parametric-function-interfaces"></a></p>
 **Parametric function interfaces**
 
 This interface is used for fitting after evaluating multi-dimensional functions.
 
+[ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"}<br>
+This interface describes a multi-dimensional parametric function. Similarly to the one dimensional version, the user needs to provide the `void SetParameters(double* p)` method as well
+as the getter methods `const double * Parameters()` and `uint NPar()`.
+
+_**Example**_
+
+Example for the implementation of a parametric function.
+
+{% highlight C++ %}
+   #include "Math/IFunction.h"
+   #include "Math/IParamFunction.h"
+   
+   class MyParametricFunction: public ROOT::Math::IParametricFunctionMultiDim
+   {
+   private:
+   const double* pars;
+   public:
+   double DoEvalPar(const double* x, const double* p) const
+      {
+      return p[0] * x[0] + sin(x[1]) + p[1];
+      }
+   unsigned int NDim() const
+      {
+      return 2;
+      }
+   ROOT::Math::IParametricFunctionMultiDim* Clone() const
+     {
+     return new MyParametricFunction();
+     }
+   const double* Parameters() const
+      {
+      return pars;
+      }
+   void SetParameters(const double* p)
+      {
+      pars = p;
+      }
+   unsigned int NPar() const
+      {
+      return 2;
+      }
+   };
+{% endhighlight %}
+
+[ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"}<br>
+This interface provides an interface for parametric gradient multi-dimensional functions. In addition to function evaluation, it provides the gradient with respect to the parameters,
+via the `ParameterGradient()` method. This interface is only used in case of some dedicated fitting algorithms, when is required or more efficient to provide derivatives with respect to the parameters.
+
+_**Example**_
+
+Example for the implementation of a parametric gradient function.
+
+{% highlight C++ %}
+   #include "Math/IFunction.h"
+   #include "Math/IParamFunction.h"
+   
+   class MyParametricGradFunction:
+   public ROOT::Math::IParametricGradFunctionMultiDim
+   {
+   private:
+   const double* pars;
+   public:
+   double DoEvalPar(const double* x, const double* p) const
+      {
+      return p[0] * x[0] + sin(x[1]) + p[1];
+      }
+   unsigned int NDim() const
+      {
+      return 2;
+      }
+   ROOT::Math::IParametricGradFunctionMultiDim* Clone() const
+      {
+      return new MyParametricGradFunction();
+      }
+   const double* Parameters() const
+      {
+      return pars;
+      }
+   void SetParameters(const double* p)
+      {
+      pars = p;
+      }
+   unsigned int NPar() const
+      {
+      return 2;
+      }
+   double DoParameterDerivative(const double* x, const double* p,
+   unsigned int ipar) const
+      {
+      if ( ipar == 0 )
+      return sin(x[1]) + p[1];
+      else
+      return p[0] * x[0] + x[1] * cos(x[1]) + p[1];
+      }
+      };
+{% endhighlight %}
+
+<p><a name="wrapper-functions"></a></p>
+**Wrapper functions**
+
+To insert your own type of function in the needed function interface, helper classes, wrapping the user interface in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} function interfaces are provided.
+
+There is one possible wrapper for every interface.
+
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th scope="col">Interface</th>
+      <th scope="col">Wrapper</th>
+      <th scope="col">Description</th>
+    </tr>
+    <tr>
+      <td>ROOT::Math::IBaseFunctionOneDim</td>
+      <td>ROOT::Math::Functor1D</td>
+      <td>See → Wrapping one-dimensional functions</td>
+    </tr>
+  <tr>
+      <td>ROOT::Math::IGradientFunctionOneDim</td>
+      <td>ROOT::Math::GradFunctor1D</td>
+      <td>See → Wrapping one-dimensional gradient functions</td>
+    </tr>
+      <tr>
+      <td>ROOT::Math::IBaseFunctionMultiDim</td>
+      <td>ROOT::Math::Functor</td>
+      <td>See → Wrapping multi-dimensional functions</td>
+    </tr>
+      <tr>
+      <td>ROOT::Math::IGradientFunctionMultiDim</td>
+      <td>ROOT::Math::GradFunctor</td>
+      <td>See → Wrapping multi-dimensional gradient functions</td>
+    </tr>
+</tbody>
+</table>
+
+<p><a name="wrapping-one-dimensional-functions"></a></p>
+**Wrapping one-dimensional functions**
+
+Use [ROOT::Math::Functor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor1D.html){:target="_blank"} to wrap one-dimensional functions.
+
+[ROOT::Math::Functor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor1D.html){:target="_blank"} can wrap the following types:
+- A free C function of type `double ()(double )`.
+- Any C++ callable object implementation `double operator()( double)`.
+- A class member function with the correct signature like `double Foo::Eval(double )`. In this case one pass the object pointer and a pointer to the member function (`&Foo::Eval`).
+
+_**Example**_
+
+{% highlight C++ %}
+   #include "Math/Functor.h"
+
+   class MyFunction1D {
+   public:
+   double operator()(double x) const {
+   return x*x;
+   }
+   double Eval(double x) const { return x+x; }
+   };
+   double freeFunction1D(double x ) {
+   return 2*x;
+     }
+     int main()
+     {
+
+// Wrapping a free function.
+      ROOT::Math::Functor1D f1(&freeFunction1D);
+      MyFunction1D myf1;
+      
+// Wrapping a function object implementing operator().
+      ROOT::Math::Functor1D f2(myf1);
+
+// Wrapping a class member function.
+      ROOT::Math::Functor1D f3(&myf1,&MyFunction1D::Eval);
+      cout << f1(2) << endl;
+      cout << f2(2) << endl;
+      cout << f3(2) << endl;
+      return 0;
+   }
+{% endhighlight %}
+
+<p><a name="wrapping-one-dimensional-gradient-functions"></a></p>
+**Wrapping one-dimensional gradient functions**
+
+Use [ROOT::Math::GradFunctor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor1D.html){:target="_blank"} to wrap one-dimensional gradient functions. 
+
+It can be constructed in three different ways:
+- Any object implementing both double `operator()( double)` for the function evaluation and `double Derivative(double)` for the function derivative.
+- Any object implementing any member function like `Foo::XXX(double )` for the function evaluation and any other member function like `Foo::YYY(double)` for the derivative.
+- Any two function objects implementing `double operator()( double)`. One object provides the function evaluation, the other the derivative. One or both function object can be a free C function of type `double ()(double)`.
+
+<p><a name="wrapping-multi-dimensional-functions"></a></p>
+**Wrapping multi-dimensional functions**
+
+<p><a name="wrapping multi-dimensional-gradient-functions"></a></p>
+**Wrapping multi-dimensional gradient functions**
 
 ### Random numbers
 
