@@ -440,6 +440,7 @@ There is one possible wrapper for every interface.
 
 <p><a name="wrapping-one-dimensional-functions"></a></p>
 **Wrapping one-dimensional functions**
+
 Use [ROOT::Math::Functor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor1D.html){:target="_blank"} to wrap one-dimensional functions.
 
 [ROOT::Math::Functor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor1D.html){:target="_blank"} can wrap the following types:
