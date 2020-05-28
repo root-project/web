@@ -199,7 +199,7 @@ Example for the implementation of a class that represents a mathematical functio
 {% endhighlight %}
 
 [ROOT::Math::IGradientFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IGradientFunctionOneDim.html){:target="_blank"}<br>
-This interface is needed by some numerical algorithms to calculate the derivatives of the function. It introduces the method double ´Derivative(double x)` that will return
+This interface is needed by some numerical algorithms to calculate the derivatives of the function. It introduces the method double `Derivative(double x)` that will return
 the derivative of the function at the point x. The class inherit by the user will have to implement the abstract
 method `double DoDerivative(double x)`, leaving the rest of the class untouched.
 
@@ -423,7 +423,7 @@ There is one possible wrapper for every interface.
   <tr>
       <td>ROOT::Math::IGradientFunctionOneDim</td>
       <td>ROOT::Math::GradFunctor1D</td>
-      <td>Wrapping one-dimensional gradient functions</td>
+      <td>See → Wrapping one-dimensional gradient functions</td>
     </tr>
       <tr>
       <td>ROOT::Math::IBaseFunctionMultiDim</td>
