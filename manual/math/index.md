@@ -416,24 +416,24 @@ There is one possible wrapper for every interface.
       <th scope="col">Description</th>
     </tr>
     <tr>
-      <td>[ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"}</td>
-      <td>[ROOT::Math::Functor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor1D.html){:target="_blank"}</td>
-      <td>See → [Wrapping one-dimensional functions](#wrapping-one-dimensional-functions)</td>
+      <td>ROOT::Math::IBaseFunctionOneDim</td>
+      <td>ROOT::Math::Functor1D</td>
+      <td>See → Wrapping one-dimensional functions</td>
     </tr>
   <tr>
-      <td>[ROOT::Math::IGradientFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IGradientFunctionOneDim.html){:target="_blank"}</td>
-      <td>[ROOT::Math::GradFunctor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor1D.html){:target="_blank"}</td>
-      <td>See → [Wrapping one-dimensional gradient functions](wrapping-one-dimensional-gradient-functions)</td>
+      <td>ROOT::Math::IGradientFunctionOneDim</td>
+      <td>ROOT::Math::GradFunctor1D</td>
+      <td>Wrapping one-dimensional gradient functions</td>
     </tr>
       <tr>
-      <td>[ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"}</td>
-      <td>[ROOT::Math::Functor](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor.html){:target="_blank"}</td>
-      <td>See → [Wrapping multi-dimensional functions](wrapping-multi-dimensional-functions)</td>
+      <td>ROOT::Math::IBaseFunctionMultiDim</td>
+      <td>ROOT::Math::Functor</td>
+      <td>See → Wrapping multi-dimensional functions</td>
     </tr>
       <tr>
-      <td>[ROOT::Math::IGradientFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5ea9b643efd905580803446b000aab44){:target="_blank"}</td>
-      <td>[ROOT::Math::GradFunctor](https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor.html){:target="_blank"}</td>
-      <td>See → [Wrapping multi-dimensional gradient functions](Wrapping multi-dimensional gradient functions)</td>
+      <td>ROOT::Math::IGradientFunctionMultiDim</td>
+      <td>ROOT::Math::GradFunctor</td>
+      <td>See → Wrapping multi-dimensional gradient functions</td>
     </tr>
 </tbody>
 </table>
