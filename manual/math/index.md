@@ -543,7 +543,7 @@ _**Example**_
 <p><a name="wrapping multi-dimensional-gradient-functions"></a></p>
 **Wrapping multi-dimensional gradient functions**
 
-Use [ROOT::Math::GradFunctor68https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor.html){:target="_blank"} to wrap C++ callable objects to make gradient functions. 
+Use [ROOT::Math::GradFunctor]8https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor.html){:target="_blank"} to wrap C++ callable objects to make gradient functions. 
 
 It can be constructed in three different way:
 - From an object implementing both `double operator()( const double*)` for the function evaluation and `double Derivative(const double *, int icoord)` for the partial derivatives.
