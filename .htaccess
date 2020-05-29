@@ -1,4 +1,5 @@
+# Force trailing slash
 <IfModule mod_rewrite.c>
- RewriteCond %{REQUEST_URI} /+[^\.]+$
- RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+	RewriteCond %{REQUEST_URI} /+[^\.]+$ 
+	RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
 </IfModule>
