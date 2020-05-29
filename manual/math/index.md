@@ -495,8 +495,60 @@ It can be constructed in three different ways:
 <p><a name="wrapping-multi-dimensional-functions"></a></p>
 **Wrapping multi-dimensional functions**
 
+Use the [ROOT::Math::Functor](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor.html){:target="_blank"} to wrap multi-dimensional function objects. 
+
+It can wrap all the following types:
+- Any C++ callable object implementing double `operator()( const double * )`.
+- A free C function of type `double ()(const double *)`.
+- A member function with the correct signature like `Foo::Eval(const double *)`. In this case one pass the object pointer and a pointer to the member function `(&Foo::Eval)`.
+
+_**Example**_
+
+{% highlight C++ %}
+   #include "Math/Functor.h"
+   
+   class MyFunction {
+   public:
+   double operator()(const double *x) const {
+   return x[0]+x[1];
+   }
+   double Eval(const double * x) const { return x[0]+x[1]; }
+   };
+   double freeFunction(const double * x )
+     {
+     return x[0]+x[1];
+     }
+   int main()
+      {
+      
+// Test directly calling the function object.
+    MyFunction myf;
+
+// Test from a free function pointer.
+    ROOT::Math::Functor f1(&freeFunction,2);
+
+// Test from function object.
+    ROOT::Math::Functor f2(myf,2);
+
+// Test from a member function.
+    ROOT::Math::Functor f3(&myf,&MyFunction::Eval,2);
+    double x[] = {1,2};
+    cout << f1(x) << endl;
+    cout << f2(x) << endl;
+    cout << f3(x) << endl;
+    return 0;
+}
+{% endhighlight %}
+
 <p><a name="wrapping multi-dimensional-gradient-functions"></a></p>
 **Wrapping multi-dimensional gradient functions**
+
+Use [ROOT::Math::GradFunctor68https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor.html){:target="_blank"} to wrap C++ callable objects to make gradient functions. 
+
+It can be constructed in three different way:
+- From an object implementing both `double operator()( const double*)` for the function evaluation and `double Derivative(const double *, int icoord)` for the partial derivatives.
+- From an object implementing any member function like `Foo::XXX(const double *)` for the function evaluation and any member function like `Foo::XXX(const double *, int icoord)` for the partial derivatives. 
+- From an function object implementing `double operator()( const double *)` for the function evaluation and another function object implementing `double operator() (const double *, int icoord)` for the partial derivatives.
 
 ### Random numbers
 
