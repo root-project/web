@@ -16,7 +16,7 @@ jobs:
       - name: Deploy
         uses: ItsKarma/aws-cli@v1.70.0
         with:
-          args: --endpoint-url https://s3.cern.ch s3 cp build s3://ROOT --recursive --acl public-read
+          args: --endpoint-url https://s3.cern.ch s3 cp build s3://root --recursive --acl public-read
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
