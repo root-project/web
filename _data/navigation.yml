@@ -1,7 +1,7 @@
 # main links => top menu bar
 
 main:
-  - title: "About ..."
+  - title: "About"
     url: about
     description: "About ROOT"
   - title: "Download"
