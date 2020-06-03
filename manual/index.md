@@ -6,7 +6,7 @@ sidebar:
 toc_label: ROOT Manual
 ---
 
-<div style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#c4f1d8; padding: 0.5em;">
+<div style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#f5faff; padding: 0.5em;">
 
 The <b>ROOT Manual</b> provides detailed information about the use and applications of
 <b>ROOT</b>, the object-oriented framework that provides all the functionalities needed
@@ -14,29 +14,32 @@ to deal with big data processing, statistical analysis, visualization and storag
 
 <br><br>
 
-<b><a href="/web/manual/basics">ROOT Manual - Basics</a></b><br>
+<b><a href="/web/manual/basics">Basics</a></b><br>
 In the first part of the manual, the central building blocks and concepts of ROOT are presented and explained.
 
 <br><br>
 
-<b><a href="/web/manual/functional_parts">ROOT Manual - Functional parts</a></b><br>
+<b><a href="/web/manual/functional_parts">Functional parts</a></b><br>
 In the second part of the manual, the numerous application areas and special topics of ROOT are dealt with. Here you will receive in-depth information about the extensive possibilities of data analysis with ROOT.
+</div>
 
-<br><br>
+<br>
+<h1>Other learning resources</h1>
 
-<b><a href="https://root.cern/doc/master/" target="_blank">ROOT Reference Guide</a></b><br>
-The ROOT Manual refers to numerous information, especially for ROOT classes, from the → <a href="https://root.cern/doc/master/" target="_blank">ROOT Reference Guide</a>. The ROOT Reference Guide
-is the primary source of information for all ROOT classes.
+<div style="border:1px; border-style:solid; border-color:#AAAAAA; background-color:#f5fffa; padding: 0.5em;">
+<b><a href="https://root.cern/doc/master/" target="_blank">Reference Guide</a></b><br>
+The ROOT Manual provides a high-level explanation of ROOT's functionality and its functional parts.
+Refer to the ROOT Reference Guide instead for detailed information about each ROOT class or function.
 
 <br><br>
 
 <b><a href="https://root.cern/doc/master/group__Tutorials.html" target="_blank">Tutorials</a></b><br>
-Tutorials are available for all parts of the ROOT Manual at → <a href="https://root.cern/doc/master/group__Tutorials.html" target="_blank">https://root.cern/doc/master/group__Tutorials.html</a>.
+Tutorials are available for all parts of the ROOT Manual.
 
 <br><br>
 
 <b><a href="/web/topical">Topical Manuals</a></b><br>
-Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics that are not explained in detail in the ROOT Manual, see → <a href="/web/topical">Topical Manuals</a>.
+Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics that are not explained in detail in the ROOT Manual.
 
 <br><br>
 
