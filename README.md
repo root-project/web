@@ -6,7 +6,7 @@ A working version of this prototype can be seen here:
 
 or
 
-  https://s3-website.cern.ch/ROOT/
+  https://root.s3-website.cern.ch/web/
 
 This new web site is based on [jekyll](https://jekyllrb.com/)
 
