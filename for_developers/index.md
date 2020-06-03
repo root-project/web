@@ -14,24 +14,24 @@ to [contribute]({{'contribute' | relative_url}}) to the ROOT system.
 The program of work is guided by the project vision laid out [here](https://indico.cern.ch/event/710739/contributions/2920120/attachments/1619048/2574778/ROOT_Vision_2020_-_SFT.pdf){:target="_blank"},
 and documented for the relevant years in the following documents:
 
-### [Code Owners](code_owners)
+### [Code Owners]({{'/for_developers/code_owners' | relative_url}})
 ROOT consists of several loosely coupled but consistently designed parts. The "code owners"
 of these parts are experts that review pull requests and guide these packages over a couple
 of years.
 
-### [Release Checklist](release_checklist)
+### [Release Checklist]({{'/for_developers/release_checklist' | relative_url}})
 Steps to be followed to produce a new ROOT release.
 
-### [Shifter's Instructions](shifters_instructions)
+### [Shifter's Instructions]({{'/for_developers/shifters_instructions' | relative_url}})
 The aspects the shifter shall keep under control.
 
-### [Git Primer](git_primer)
+### [Git Primer]({{'/for_developers/git_primer' | relative_url}})
 The minimal amount of knowledge about git a ROOT contributor needs to know:
-   - [Creating a Pull Request](git_primer/creating_pr)
-   - [GitHub ssh key](git_primer/github_ssh_key)
-   - [Git Tips and Trick](git_primer/git_tips_and_tricks)
-   - [Git How Tos](git_primer/git_how_tos)
-   - [NoSY Worlflow](git_primer/nosy_workflow)
+   - [Creating a Pull Request]({{'/for_developers/git_primer/creating_pr' | relative_url}})
+   - [GitHub ssh key]({{'/for_developers/git_primer/github_ssh_key' | relative_url}})
+   - [Git Tips and Trick]({{'/for_developers/git_primer/git_tips_and_tricks' | relative_url}})
+   - [Git How Tos]({{'/for_developers/git_primer/git_how_tos' | relative_url}})
+   - [NoSY Worlflow]({{'/for_developers/git_primer/nosy_workflow' | relative_url}})
 
 ### [Browse Sources](https://github.com/root-project/root)
 The official GitHub repository for ROOT.
@@ -66,7 +66,7 @@ the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
 
 ### [Editing the ROOT web site](web)
 Jekyll is used for generating the ROOT web site.
-   - [Web Site To-Do list](web/todo)
+   - [Web Site To-Do list]({{'/for_developers/web/todo | relative_url}})
 
 ### [Benchmarks](https://rootbnch-grafana-test.cern.ch)
 ### [ROOT Logos](https://root.cern.ch/img/logos/ROOT_Logo/)
