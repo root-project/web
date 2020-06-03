@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Licence
+title: License
 sidebar:
   nav: "about"
 ---
