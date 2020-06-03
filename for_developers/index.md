@@ -66,7 +66,7 @@ the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
 
 ### [Editing the ROOT web site](web)
 Jekyll is used for generating the ROOT web site.
-   - [Web Site To-Do list]({{'/for_developers/web/todo | relative_url}})
+   - [Web Site To-Do list]({{'/for_developers/web/todo' | relative_url}})
 
 ### [Benchmarks](https://rootbnch-grafana-test.cern.ch)
 ### [ROOT Logos](https://root.cern.ch/img/logos/ROOT_Logo/)
