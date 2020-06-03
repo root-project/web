@@ -60,13 +60,12 @@ ROOT externals coming from the central installations in AFS or CVMFS.
    - [Jira](https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page)
    - [ROOTBinder Checklist](continous_integration-testing/rootbinder_checklist)
 
-### [Doxygen in ROOT](doxygen)
+### [Doxygen in ROOT]({{'/for_developers/doxygen' | relative_url}})
 [Doxygen](http://www.stack.nl/~dimitri/doxygen/){:target="_blank"} is used for generating
 the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
 
-### [Editing the ROOT web site](web)
+### [Editing the ROOT web site]({{'/for_developers/web' | relative_url}})
 Jekyll is used for generating the ROOT web site.
-   - [Web Site To-Do list]({{'/for_developers/web/todo' | relative_url}})
 
 ### [Benchmarks](https://rootbnch-grafana-test.cern.ch)
 ### [ROOT Logos](https://root.cern.ch/img/logos/ROOT_Logo/)

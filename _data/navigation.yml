@@ -150,9 +150,6 @@ for_developers:
      url: for_developers/doxygen
    - title: Editing the ROOT web site
      url: for_developers/web
-     children:
-      - title: "Web Site To-Do list"
-        url: for_developers/web/todo
    - title: Benchmarks
      url: https://rootbnch-grafana-test.cern.ch
      target: _blank
