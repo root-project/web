@@ -43,7 +43,7 @@ If you go to `https://github.com/<your GitHub username>/root`, you will see a
 notification saying "Your recently pushed branches: histogram-race-condition-fix
 (some minutes ago)":
 
-<img src="{{'for_developers/git_primer/pr_submission_view.png' | relative_url}}">
+![](PR_submission_view.png)
 
 You can now hit the green "Compare & pull request" button which lets you create
 the pull request.
@@ -89,9 +89,9 @@ git push --force
 ## Summary
 
 <center>
-<img src="{{'for_developers/git_primer/pr_workflow.png' | relative_url}}">
+<img src="{{'for_developers/git_primer/PR_workflow.png' | relative_url}}">
 </center>
-
+<br>
 
 The entire workflow is summarized in the image above. First, we cloned root-
 project/root, and cloned it to our local machine. Then after making the commit,
