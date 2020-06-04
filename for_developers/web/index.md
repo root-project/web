@@ -8,7 +8,8 @@ sidebar:
 ---
 
 The ROOT team has adopted [Jekyll](https://jekyllrb.com/){:target="_blank"} for generating
-the ROOT web site. The ROOT web site uses the ["Minimal-Mistakes" theme](https://mmistakes.github.io/minimal-mistakes/){:target="_blank"}.
+the ROOT web site. The ROOT web site uses [a forked copy of the
+"Minimal-Mistakes" theme](https://github.com/root-project/minimal-mistakes){:target="_blank"}.
 Many scripts and functionalities have been added compare to this original theme.
 
 This page gives you the instructions to:
