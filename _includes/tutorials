@@ -4,8 +4,8 @@
 <center>
 <a href="https://root.cern/doc/master/group__tutorial__{{url}}.html">
 <img width="128" src="{{'/assets/images/tutorials.png' | relative_url}}">
-<font color="#346295" style="font-weight:bold" face="Comic sans MS" size="3">
-<br>{{name}} tutorials 
+<font color="#346295" style="font-weight:bold" size="3">
+<br>{{name}} tutorials
 </font>
 </a>
 </center>
