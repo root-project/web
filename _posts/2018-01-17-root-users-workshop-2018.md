@@ -4,9 +4,11 @@ layout: archive
 author:
 ---
 
-<p>The ROOT team would like to invite you to the <a href="https://cern.ch/root2018">11th ROOT Users' Workshop</a>.</p>
+<p>The ROOT team would like to invite you to the <a href="https://cern.ch/root2018">11th
+ROOT Users' Workshop</a>.</p>
 
-<p><a href="https://cern.ch/root2018"><img style="float:right; padding:1em 3em !important;" alt="Festina Lente Bridge" src="/sites/d35c7d8c.web.cern.ch/files/Festina_Lente_Bridge_jpg-cut-2-scaled_0.jpeg"/></a>
+<p><a href="https://cern.ch/root2018"><img style="float:right; padding:1em 3em !important;" alt="Festina Lente Bridge"
+src="{{'/assets/images/Festina_Lente_Bridge_jpg-cut-2-scaled_0.jpg' | relative_url }}"/></a>
 This time we meet in <a href="http://visitsarajevo.ba/?lang=en">Sarajevo</a>, the capital of Bosnia and Herzegovina -
 a buzzing melting pot of cultures since centuries.
 The workshop features four days of presentations and discussions on everything ROOT:
@@ -15,7 +17,8 @@ ROOT is changing; this is your chance to influence what happens and to interact 
 Our way of saying "thank you for participating" is to make sure that you have a great time in a unique location!</p>
 
 <p style="clear:both">
-<a href="http://root.cern.ch/files/ROOT_poster_2018.pdf"><img style="float:right; padding:1em 3em !important;width:332px" alt="ROOT 2018 Poster" src="/sites/d35c7d8c.web.cern.ch/files/ROOT_poster_2018_scaled.png"/></a>
+<a href="http://root.cern.ch/files/ROOT_poster_2018.pdf"><img style="float:right; padding:1em 3em !important;width:332px" alt="ROOT 2018 Poster"
+src="{{ '/assets/images/ROOT_poster_2018_scaled.png' | relative_url }}"/></a>
 The topics will cover:</p>
 <ul>
 <li>ROOT roadmap</li>
