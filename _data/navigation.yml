@@ -213,6 +213,8 @@ about:
         url: about/integration_with_other_languages
    - title: License
      url: about/license
+   - title: Versioning
+     url: about/versioning
    - title: Project Founders
      url: about/project_founders
    - title: Team
