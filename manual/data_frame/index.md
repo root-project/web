@@ -6,37 +6,69 @@ sidebar:
 toc: true
 toc_sticky: true
 ---
-ROOT offers with [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"}
-a high level interface for analysis of data stored in
-{% include ref class="TTree" %}s, CSV files and other data formats.
+
+With [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"}, ROOT offers
+a modern, high-level interface for analysis of data stored in
+{% include ref class="TTree" %}s, CSV files and other data formats, in C++ or Python.
 
 {% include tutorials name="Data frame" url="dataframe" %}
 
 <br>
-The following is a brief introduction to ROOT data frames. For detailed information on ROOT data frames, see → [https://root.cern/doc/master/classROOT_1_1RDataFrame.html](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"}.
+The following is a brief introduction to ROOT data frames. For detailed information on ROOT data frames, see → [RDataFrame's reference guide](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"}.
 
 ## Data analysis with RDataFrame
 
-Usually a ROOT data analysis is a sequence of operations to be performed on data sets. [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"} provides the necessary methods to perform most common operations required by a ROOT analysis.
+[RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"} provides the necessary methods to perform all operations required by your analysis.
 
-In detail, `RDataFrame` supports the following workflow for data analysis:
+Every `RDataFrame` program follows this workflow:
 
-1. Creating a data frame object (using [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"}'s constructor) by specifying the data set.
+1. Construct a data frame object by specifying a data set. `RDataFrame` supports single TTrees as well as multiple ROOT TTrees (i.e., TChains), CSV files, SQLite files, and it can be extended to custom data formats.
 
-2. Applying a series of transformations to the data by:
+2. Transform the data frame by:
 
-   - [applying filters](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations){:target="_blank"}. This "cuts" the rows of the data set.
+   - [applying filters](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations){:target="_blank"}. This selects only specific rows of the data set.
 
-   - [creating custom columns](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations){:target="_blank"}. Custom columns can, for example, contain the results of a computation.
+   - [creating custom columns](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations){:target="_blank"}. Custom columns can, for example, contain the results of a computation that must be performed for every row of the data set.
 
-3. [Applying actions on the transformed data](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#actions){:target="_blank"}. Actions (instant or lazy) or are used to produce a result out of the data.
+3. [Produce results](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#actions){:target="_blank"}. _Actions_ are used to aggregate data into results. Most actions are _lazy_, i.e. they are not executed on the spot, but registered with `RDataFrame` and executed only when a result is accessed for the first time. The most typical result produced by ROOT analyses is a histogram, but `RDataFrame` supports any kind of data aggregation operation, including [writing out new ROOT files](https://root.cern.ch/doc/master/classROOT_1_1RDF_1_1RInterface.html#a233b7723e498967f4340705d2c4db7f8).
 
+## How does it look in code?
+This is a simple cut-and-fill with `RDataFrame`:
+
+```c++
+ROOT::RDataFrame df("mytree", {"f1.root", "f2.root"});
+auto h = df.Filter("x > 0").Histo1D("x");
+h->Draw(); // the event loop is run here, upon first access to one of the results
+```
+
+The lazy triggering of the _event loop_ (i.e. the loop over all data) makes it easy to generate multiple results while reading the data only once:
+
+```c++
+// C++11 lambda expressions and C++ functions are also supported as filter expressions
+auto filtered_df = df.Filter([](float x) { return x > 0; }, {"x"});
+auto hx = filtered_df.Histo1D("x");
+auto hy = filtered_df.Histo1D("y");
+hx->Draw(); // event loop is run here, both hx and hy are filled
+```
+
+As a last example, let's filter the events, define a new quantity, produce a control plot _and_ write out the filtered dataset, all in the same multi-thread event loop:
+
+```c++
+ROOT::EnableImplicitMT(); // enable multi-threading (see below)
+ROOT::RDataFrame df(treename, filenames); // create dataframe
+auto df2 = df.Filter("x > 0").Define("y", "x*x"); // filter and define new column
+auto control_h = df2.Histo1D("y"); // book filling of a control plot
+// write out new dataset. this triggers the event loop and also fills the booked control plot
+df2.Snapshot("newtree", "newfile.root", {"x","y"});
+```
+
+For more examples, including ones in Python, see [the tutorials](https://root.cern/doc/master/group__tutorial__dataframe.html).
 
 ## Parallel execution
 
-[RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html) can perform multi-threaded event loops to speed up the execution of its actions.
+[RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html) can perform multi-threaded event loops to speed up the execution of its actions. Each thread will process part of the data set, and `RDataFrame` will then merge the thread-local partial results before returning the final result to the user.
 
-- Use the [ROOT::EnableImplicitMT()](https://root.cern/doc/master/namespaceROOT.html#a06f2b8b216b615e5abbc872c9feff40f){:target="_blank"} method **before** constructing a `RDataFrame` object.
+- To enable parallel data processing, call the [ROOT::EnableImplicitMT()](https://root.cern/doc/master/namespaceROOT.html#a06f2b8b216b615e5abbc872c9feff40f){:target="_blank"} function **before** constructing a `RDataFrame` object.
 
 This enables ROOT's implicit multi-threading for all objects and methods that provide an internal parallelization mechanism.
 
