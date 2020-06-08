@@ -26,7 +26,7 @@ For example, on Ubuntu 19, a user could execute the following bash commands to i
 ```bash
 $ wget https://root.cern/download/root_v6.20.04.Linux-ubuntu19-x86_64-gcc9.2.tar.gz
 $ tar -xzvf root_v6.20.04.Linux-ubuntu19-x86_64-gcc9.2.tar.gz
-$ source root/bin/thisroot.sh # also available: thisroot.{csh,fish}
+$ source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
 ```
 
 To avoid having to `source thisroot.sh` every time one needs to use ROOT, it is typical to add the instruction to
