@@ -30,14 +30,14 @@ The following are the basic instructions for UNIX-like systems. We will use the 
 $ git clone --branch v6-20-00-patches https://github.com/root-project/root.git root_src
 ```
 In the following we will refer to the directory where ROOT sources are (e.g. `root_src` above) as `<sourcedir>`.
-1. Create a directory for the build and a directory for the installation. It is not supported to build ROOT on the source directory. Then change (`cd`) to the build directory:
+1. Create a directory for the build and a directory for the installation. It is not supported to build ROOT in the source directory. Then change (`cd`) to the build directory:
 ```bash
 $ mkdir <builddir> <installdir>
 $ cd <builddir>
 ```
-1. Execute the `cmake` command on the shell replacing `path/to/source` with the path to the top of your ROOT source tree:
+1. Execute the `cmake` command on the shell replacing `<sourcedir>` and `<installdir>` appropriately:
 ```bash
-$ cmake -DCMAKE_INSTALL_PREFIX=<installdir> path/to/source
+$ cmake -DCMAKE_INSTALL_PREFIX=<installdir> <sourcedir>
 ```
 `CMake` will detect your development environment, perform a series of test and generate the files required for building ROOT. `CMake` will use default values for all build parameters. See the [Build Options](#options) and [Variables](#variables) sections for fine-tuning your build
 This can fail if `CMake` cannot detect your toolset, or if it thinks that the environment is not sane enough. In this case make sure that the toolset that you intend to use is the only one reachable from the shell and that the shell itself is the correct one for you development environment. You can force `CMake` to use a given build tool, see the Usage section.
@@ -45,9 +45,9 @@ This can fail if `CMake` cannot detect your toolset, or if it thinks that the en
 ```bash
 $ cmake --build . --target install [-- <options to the native tool>]
 ```
-The --build option tells cmake to invoke the underlying build tool (make, ninja, xcodebuild, msbuild, etc).
+The `--build` option tells cmake to invoke the underlying build tool (make, ninja, xcodebuild, msbuild, etc).
 The underlying build tool can also be invoked directly of course, but the` cmake --build` command is more portable.
-On unix systems (with make or ninja) you can speedup the build with `cmake --build . --  -jN` where N is the number of available cores.
+On UNIX systems (with make or ninja) you can speedup the build with `cmake --build . --  -jN` where N is the number of available cores.
 1. Setup ROOT in your environment:
 ```bash
 $ source <installdir>/bin/thisroot.sh # or thisroot.{csh,fish,bat} depending on the environment
