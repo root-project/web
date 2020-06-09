@@ -7,14 +7,13 @@ toc_sticky: true
 
 The page lists the prerequisite packages that need to be installed on the different platforms to be able to configure, build and run ROOT.
 
-- [Fedora family](#fedora)
-- [Ubuntu family](#ubuntu)
-- [OpenSUSE family](#opensuse)
-- [Mac OS X family](#macosx)
-- [Windows family](#windows)
-- [AIX family](#aix)
+The table of content can be used to quickly jump to your operating system.
 
-## Fedora 18, 19 and 20; Scientific Linux 5, 6; CentOS 6, 7
+## Fedora, Scientific Linux and CentOS
+
+Use `yum install <package>` or the graphical "Add/Remove Software" program.
+
+### Required packages
 
 *   **git:** for /usr/bin/git
 *   **make:** for /usr/bin/make
@@ -29,7 +28,14 @@ The page lists the prerequisite packages that need to be installed on the differ
 *   **python:**  (ROOT6 requires version >= 2.7)
 *   **redhat-lsb-core:**   needed by some tests (tutorials) using lsb_release and some CDash scripts
 
-Most common optional packages:
+As a one-liner:
+
+```bash
+sudo yum install git cmake gcc-c++ gcc binutils \
+libX11-devel libXpm-devel libXft-devel libXext-devel
+```
+
+### Most common optional packages
 
 *   **gcc-gfortran:** for /usr/bin/gfortran
 *   **openssl-devel:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
@@ -47,33 +53,29 @@ Most common optional packages:
 *   **python-devel:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
 *   **python-numpy-devel:** needed for PyMVA
 *   **libxml2-devel:** for /usr/bin/xml2-config
-*   **gsl-static:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a. On Fedora 16 use **gsl-devel**.
+*   **gsl-static:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
 *   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 
-Use "<tt>yum install</tt> _package_" or use the graphical "Add/Remove Software" program.
+As a one-liner:
 
-Required packages:
-~~~
-sudo yum install git cmake gcc-c++ gcc binutils \
-libX11-devel libXpm-devel libXft-devel libXext-devel
-~~~
-
-Optional packages:
-
-~~~
+```bash
 sudo yum install gcc-gfortran openssl-devel pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel \
 avahi-compat-libdns_sd-devel libldap-dev python-devel \
 libxml2-devel gsl-static
-~~~
+```
 
-## Ubuntu 10, 12 , 14 and 16
+## Ubuntu and other Debian-based distributions
+
+Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Manager" program.
+
+### Required packages
 
 *   **git:** for /usr/bin/git
 *   **dpkg-dev**  for dpkg-architecture (needed by configure to locate system libraries starting from 11)
 *   **cmake:** for /usr/bin/cmake
-*   **g++:** for /usr/bin/g++  (ROOT 6 requires g++ 4.8 or clang 3.4  for how to install g++ 4.8 on Ubuntu 12 see [ubuntuhandbook](http://ubuntuhandbook.org/index.php/2013/08/install-gcc-4-8-via-ppa-in-ubuntu-12-04-13-04/))
+*   **g++:** for /usr/bin/g++
 *   **gcc:** for /usr/bin/gcc
 *   **binutils:** for /usr/bin/ld
 *   **libx11-dev:** for usr/include/X11/Xlib.h and for /usr/lib/libX11.so
@@ -84,7 +86,14 @@ libxml2-devel gsl-static
 *   **libjpeg:** jpeg library
 *   **python:** (ROOT6 requires version >= 2.7)
 
-Most common optional packages:
+As a one-liner:
+
+```bash
+sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
+libxft-dev libxext-dev python
+```
+
+### Most common optional packages
 
 *   **gfortran:** for /usr/bin/gfortran
 *   **openssl-dev** or **libssl-dev:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
@@ -106,66 +115,40 @@ Most common optional packages:
 *   **libqt4-dev:** for /usr/include/qt4/Qt/qglobal.h and for /usr/lib/libQtCore.so
 *   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 
-Use `sudo apt-get install _package_` or use the graphical "Synaptic Package Manager" program.
+As a one-liner:
 
-Required packages:
-
-~~~
-sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
-libxft-dev libxext-dev python
-~~~
-
-Optional packages:
-
-~~~
+```bash
 sudo apt-get install gfortran libssl-dev libpcre3-dev \
 xlibmesa-glu-dev libglew1.5-dev libftgl-dev \
 libmysqlclient-dev libfftw3-dev libcfitsio-dev \
 graphviz-dev libavahi-compat-libdnssd-dev \
 libldap2-dev python-dev libxml2-dev libkrb5-dev \
 libgsl0-dev libqt4-dev
-~~~
+```
 
-## openSUSE Leap 15 and Thumblweed
+## openSUSE
 
 Minimal set:
-```
+
+```bash
 sudo zypper install git bash cmake gcc-c++ gcc binutils python libXpm-devel
 xorg-x11-devel libXext-devel
 ```
 
 Most common optional packages:
 
-```
+```bash
 sudo zypper install gcc-fortran libopenssl-devel pcre-devel Mesa glew-devel
 pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel
 libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel libxml2-devel
 krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 ```
 
-## MacOS X
+## MacOS
 
-*   **Xcode developer package:** for make, g++, gcc, ld, etc.  Xcode is found on the MacOS X installation DVD or in the Mac App store.
-    install command line tools through the XCode preferences and/or running in a terminal  `xcode-select --install`
-*   **[Xquartz](http://xquartz.macosforge.org/):** for the X11 server (not needed in case the version with Cocoa native backend is build)
-*   Other dependencies can be installed from [MacPorts](http://www.macports.org/)
-
-Most common optional packages:
-
-*   **gcc 4.x from [MacPorts](http://www.macports.org):** for /opt/local/bin/gfortran
-    or alternatively use this [gfortran.dmg](http://r.research.att.com/tools/)
-
-Alternatively ROOT can be installed directly from [MacPort](http://www.macports.org) with the command:
-"<tt>sudo port install root</tt>"
+* **Xcode developer package:** Xcode is found on the Mac App store. Install command line tools through the XCode preferences and/or running in a terminal  `xcode-select --install`
 
 ## Windows
-
-### ROOT 5 (deprecated)
-
-If you are using Windows make sure you have installed Microsoft Visual C++ (e.g., the
-[no-cost edition](http://www.microsoft.com/express/vc/){:target="_blank"}) plus `CMake`.
-The `CMake` build will work directly **without the need** to install
-[cygwin](http://cygwin.com){:target="_blank"} as it was required previously before the adaption of `CMake`.
 
 ### ROOT 6
 
@@ -176,9 +159,17 @@ The `CMake` build will work directly **without the need** to install
 
 > **Note**
 >
-> ROOT 6 on Windows still has several known issues and missing features we are currently working on.
+> ROOT 6 on Windows is currently in beta, and has several known issues as well as missing features.
+> We are currently working on making ROOT on Windows production-grade.
 
-## AIX 5, 6 and 7
+### ROOT 5 (deprecated)
+
+If you are using Windows make sure you have installed Microsoft Visual C++ (e.g., the
+[no-cost edition](http://www.microsoft.com/express/vc/){:target="_blank"}) plus `CMake`.
+The `CMake` build will work directly **without the need** to install
+[cygwin](http://cygwin.com){:target="_blank"} as it was required previously before the adaption of `CMake`.
+
+## AIX
 
 *   **git:** for /usr/bin/git
 *   **bash:** for /usr/bin/bash
@@ -196,4 +187,4 @@ The `CMake` build will work directly **without the need** to install
 *   **zlib-devel:** for resolving dependencies
 *   **expat:** for resolving dependencies
 
-Use `rpm -Uvh _package_` to install the above packages from [AIX Toolbox for Linux Applications](http://www-03.ibm.com/systems/power/software/aix/linux/toolbox/alpha.html). Subversion can be obtained from [collab.net](http://www.open.collab.net/downloads/community/).
+Use `rpm -Uvh <package>` to install the above packages from [AIX Toolbox for Linux Applications](http://www-03.ibm.com/systems/power/software/aix/linux/toolbox/alpha.html). Subversion can be obtained from [collab.net](http://www.open.collab.net/downloads/community/).
