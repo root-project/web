@@ -62,9 +62,13 @@ To have ROOT setup automatically at each login, that command can be appended to 
 
 > TODO: explain how ROOT features/STL backports interact with C++ standards and how to pick a standard
 
-## Enabling experimental features, aka ROOT 7
+## Enabling experimental features, aka ROOT7
 
-> TODO: explain how to build ROT with ROOT 7 enabled
+New and improved versions of standard ROOT components are being implemented under codename ROOT7.
+
+Turning on C++14 or higher using `-DCMAKE_CXX_STANDARD={14,17,...}` will automatically enable ROOT7.
+Alternatively, you can explicitly enable ROOT7 with `-Droot7=ON`, which will in turn set the standard to C++14 if a
+value was not already specified by the user.
 
 ## Building ROOT with CUDA suppot
 
