@@ -61,4 +61,4 @@ root [3] TPython::Prompt()
 2
 {% endhighlight %}
 
-{% include_relative incompatibilities.md %}
+{% include_relative bi_changes.md %}
