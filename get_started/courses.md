@@ -33,12 +33,6 @@ These are general ROOT tutorials covering the basics of ROOT like Histograms, Tr
 *   RooFit/RooStats tutorial for INFN School of statistics 2013 ([Slides](https://agenda.infn.it/getFile.py/access?contribId=15&resId=0&materialId=slides&confId=5719){:target="_blank"}, [Exercises](https://twiki.cern.ch/twiki/bin/view/RooStats/RooStatsTutorialsJune2013){:target="_blank"})
 *   RooFit/RooStats tutorial for Desy School of Statistics 2015 ([RooFit slides](https://indico.desy.de/getFile.py/access?contribId=6&resId=0&materialId=slides&confId=11244){:target="_blank"}, [RooStats slides](https://indico.desy.de/getFile.py/access?contribId=10&resId=0&materialId=slides&confId=11244){:target="_blank"}, [Exercises](https://twiki.cern.ch/twiki/bin/view/RooStats/RooStatsTutorialsMarch2015){:target="_blank"})
 
-## Older but still very valuable resources
-
-*   [BaBar tutorials](http://www.slac.stanford.edu/BFROOT/www/doc/workbook/workbook.html){:target="_blank"}
-*   [FNAL tutorials](http://www-root.fnal.gov/root/){:target="_blank"}
-*   [Minos tutorials](http://www-numi.fnal.gov/offline_software/srt_public_context/WebDocs/Companion/index.html){:target="_blank"}
-
 ## Preparing ROOT courses for the CERN technical training
 
 *   [ROOT courses proposal](https://root.cern.ch/root-training-proposal){:target="_blank"}
