@@ -168,23 +168,3 @@ If you are using Windows make sure you have installed Microsoft Visual C++ (e.g.
 [no-cost edition](http://www.microsoft.com/express/vc/){:target="_blank"}) plus `CMake`.
 The `CMake` build will work directly **without the need** to install
 [cygwin](http://cygwin.com){:target="_blank"} as it was required previously before the adaption of `CMake`.
-
-## AIX
-
-*   **git:** for /usr/bin/git
-*   **bash:** for /usr/bin/bash
-*   **make:** for /usr/linux/bin/make
-*   **pkg-config:** for fontconfig, freetype2, xft and xrender installation
-*   **fontconfig:** for /usr/lib/libfontconfig.a
-*   **fontconfig-devel:** for /usr/include/fontconfig
-*   **freetype2:** for /usr/lib/libfreetype.a needed by xft
-*   **freetype2-devel:** for /usr/include/freetype2
-*   **libxml2:** for /usr/lib/libxml2.a
-*   **libxml2-devel:** for /usr/bin/xml2-config
-*   **xft:** for /usr/include/X11/Xft/Xft.h and /usr/lib/libXft.a
-*   **xrender:** for /opt/freeware/include/X11/extensions/Xrender.h and /usr/lib/libXrender.a
-*   **zlib:** for resolving dependencies
-*   **zlib-devel:** for resolving dependencies
-*   **expat:** for resolving dependencies
-
-Use `rpm -Uvh <package>` to install the above packages from [AIX Toolbox for Linux Applications](http://www-03.ibm.com/systems/power/software/aix/linux/toolbox/alpha.html). Subversion can be obtained from [collab.net](http://www.open.collab.net/downloads/community/).
