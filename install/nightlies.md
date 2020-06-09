@@ -1,10 +1,7 @@
 ---
 title: Nightlies
 layout: single
-sidebar:
-  nav: "download"
 ---
-
 
 > **Disclaimer**
 >
