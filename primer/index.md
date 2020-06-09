@@ -478,10 +478,9 @@ in this case, and set its parameters. In line *3* a histogram is
 instantiated, with a name, a title, a certain number of bins (100 of
 them, equidistant, equally sized) in the range from 0 to 5.
 
-{% include figure_image sect=2 fig=3
-file="canvases.root" object="TH1F_Example.png"
-caption="Visualisation of a histogram filled with exponentially distributed,
-random numbers."
+{% include figure_jsroot sect=2 fig=3
+file="canvases.root" object="TH1F_Example"
+caption="Visualisation of a histogram filled with exponentially distributed, random numbers."
 %}
 
 
