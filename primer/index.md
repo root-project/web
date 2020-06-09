@@ -2227,6 +2227,7 @@ variable as float and reading it as double.
 
 List of variable types that can be used to define the type of a branch in ROOT:
 
+```
   type               size     C++             identifier
   ------------------ -------- --------------- ------------
   signed integer     32 bit   int             I
@@ -2236,7 +2237,7 @@ List of variable types that can be used to define the type of a branch in ROOT:
   floating point     32 bit   float           F
                      64 bit   double          D
   boolean            -        bool            O
-
+```
 
 ***Processing N-tuples Spanning over Several Files***
 
