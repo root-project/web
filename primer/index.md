@@ -1138,6 +1138,8 @@ data points.
 10  53  5.43
 {% endhighlight %}
 
+
+{% include figure_image
 img="graph_with_expectation.png"
 %}
 
