@@ -60,3 +60,5 @@ root [3] TPython::Prompt()
 >>> print i
 2
 {% endhighlight %}
+
+{% include_relative incompatibilities.md %}
