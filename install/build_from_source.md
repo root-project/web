@@ -56,7 +56,61 @@ To have ROOT setup automatically at each login, that command can be appended to 
 
 ## ROOT, Python and PyROOT
 
-> TODO: explain what build options are relevant, what they do, Python2/Python3, etc.
+PyROOT, the set of Python bindings of ROOT, changed its structure and build/installation process in v6.22. In the following the main aspects are summarized for both after and before v6.22.
+
+### After v6.22
+
+The main feature introduced in v6.22 concerning the PyROOT build system is the possibility to build for both Python3 and Python2 (MultiPython), available only if the version of CMake used to build is >= 3.14. In the following, build and installation processes both with CMake >= 3.14 and < 3.14 are described. 
+
+#### CMake >= 3.14
+
+In this case, PyROOT libraries are built by default with both Python3 and Python2. For each Python version X.Y used to build PyROOT (e.g. 3.8, 2.7, etc.) the following libraries will appear both in the build directory and in the installation directory:
+- `libROOTPythonizationsX_Y.so`
+- `libcppyX_Y.so`
+- `libcppyy_backendX_Y.so`
+- `libJupyROOTX_Y.so`
+
+The following pure Python modules will appear as well:
+- `ROOT`
+- `cppyy`
+- `cppyy_backend`
+- `JupyROOT`
+- `JsMVA`
+
+If no option is specified, PyROOT will be built for the most recent Python3 and Python2 versions that CMake can find. If only one version can be found, PyROOT will be built only for that version. Moreover, for a given Python installation to be considered, it must provide both the Python interpreter (binary) and the development package. To build PyROOT, it is thus suggested to verify that python-dev is present and install it if not.
+
+In order to build with specific Python installations (not necessarily the highest ones) hints to CMake can be provided by using `-DPython2_ROOT_DIR=python2_dir` and/or `-DPython3_ROOT_DIR=python3_dir` to point to the root directory of some desired Python installation. Similarly, `Python2_EXECUTABLE` and/or `Python3_EXECUTABLE` can be used to point to particular Python executables.
+
+PyROOT can be built with only one version of Python even if multiple installations are present in the system. For this purpose, the option `-DPYTHON_EXECUTABLE=/path/to/python_exec` must be used to point to the desired Python installation. Note that if `PYTHON_EXECUTABLE` is specified, neither `Python3_EXECUTABLE` or `Python2_EXECUTABLE` will be taken into consideration.
+
+When executing a Python script, the Python version used will determine which version of the PyROOT libraries will be loaded. Therefore, once the ROOT environment has been set (e.g. via `source $ROOTSYS/bin/thisroot.sh`), PyROOT can be used from any of the Python versions it has been built for.
+
+_**Example**_
+```bash
+# Specify -DPython3_EXECUTABLE and -DPython2_EXECUTABLE in order not to pick the highest Python3 and Python2 versions
+$ cmake -DCMAKE_INSTALL_PREFIX=<installdir> -DPython3_EXECUTABLE=<python3interpreter> -DPython2_EXECUTABLE=<python2interpreter> <sourcedir>
+$ cmake --build . --target install [-- <options to the native tool>]
+$ source <installdir>/bin/thisroot.sh
+# ROOT can be imported from both Python versions used to build
+$ <python3interpreter>
+>>> import ROOT
+>>>
+$ <python2interpreter>
+>>> import ROOT
+>>>
+```
+
+Regarding `TPython`, its library (`libROOTTPython.so`) is built only for the highest Python version that PyROOT is built with. Therefore, in a Python3-Python2 ROOT build, the Python code executed with `TPython` must be Python3-compliant.
+
+
+#### CMake < 3.14
+
+If CMake version is < 3.14, the MultiPython feature is not available. PyROOT will thus be built only for one Python version: this is either the one found by CMake, usually the highest available in the system, or the one provided by setting the variable `PYTHON_EXECUTABLE`.
+
+### Before v6.22
+
+For ROOT <= 6.20, an older version of PyROOT (not based on Cppyy) will be built. This same version can be built also in versions >= 6.22 by specifying `-Dpyroot_legacy=ON`. In this case the Python version used to build will be by default the one pointed by the executable `python`. A specific Python installation can be used by specifying either `PYTHON_EXECUTABLE` or `Python_EXECUTABLE`.
+
 
 ## Setting the C++ standard
 
