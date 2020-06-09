@@ -108,7 +108,7 @@ ROOT Docker containers for several linux flavours are available at [ROOT's offic
 
 For example, to try out the latest ROOT release just run `docker run rootproject/root`.
 
-# Compile from source
+# Build from source
 
 In case no other installation method is available, or if you want full control over the options ROOT is built with,
 it is possible to compile ROOT from source. See [Building ROOT from source]({{'/install/build_from_source' | relative_url}}) for detailed instructions.
