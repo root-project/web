@@ -179,6 +179,16 @@ download:
       - title: Building ROOT with CMake
         url: download/building_root
 
+install:
+   - title: Useful links
+     children:
+      - title: Dependencies
+        url: install/dependencies
+      - title: Nightlies
+        url: install/nightlies
+      - title: Building from source
+        url: install/build_from_source.md
+
 news:
    - title: News
      url: news

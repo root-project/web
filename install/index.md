@@ -3,6 +3,8 @@ title: Installing ROOT
 layout: single
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "install"
 ---
 
 ROOT is available on Linux, Mac, and (as a beta release) on Windows.<br>
