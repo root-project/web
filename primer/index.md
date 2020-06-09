@@ -99,8 +99,8 @@ ROOT package. This goal will be accomplished using concrete examples, according
 to the "learning by doing" principle. Also because of this reason, this guide
 cannot cover all the complexity of the ROOT package. Nevertheless, once you feel
 confident with the concepts presented in the following chapters, you will be
-able to appreciate the ROOT Users Guide [@ROOT_Users_Guide] and navigate through
-the Class Reference [@ROOT_Class_Reference] to find all the details you might be
+able to navigate through the [Reference Guide](https://root.cern/doc/master/index.html) to
+find all the details you might be
 interested in. You can even look at the code itself, since ROOT is a
 free, open-source product. Use these documents in parallel to this
 tutorial!
@@ -125,7 +125,7 @@ need and follow the installation instructions.
 
 Now that you have installed ROOT, what's this interactive shell thing
 you're running ? It's like this: ROOT leads a double life. It has an
-interpreter for macros (Cling [@Cling]) that you can run from the command
+interpreter for macros (Cling) that you can run from the command
 line or run like applications. But it is also an interactive shell that
 can evaluate arbitrary statements and expressions. This is extremely
 useful for debugging, quick hacking and testing. Let us first have a
@@ -1228,7 +1228,7 @@ it together with its x and y projections. Some points of the code will
 be explained in detail. This time, the graph is populated with data
 points using random numbers, introducing a new and very important
 ingredient, the ROOT `TRandom3` random number generator using the
-Mersenne Twister algorithm [@MersenneTwister].
+[Mersenne Twister algorithm](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html).
 
 {% highlight C++ linenos %}
 // Create, Draw and fit a TGraph2DErrors
@@ -1717,7 +1717,7 @@ to it.
 ROOT offers various minimisation algorithms to minimise a chi2 or a
 negative log-likelihood function. The default minimiser is MINUIT, a
 package originally implemented in the FORTRAN programming language. A
-C++ version is also available, MINUIT2, as well as Fumili [@Fumili] an
+C++ version is also available, MINUIT2, as well as [Fumili](https://root.cern/doc/master/classTFumili.html) an
 algorithm optimised for fitting. The
 minimisation algorithms can be selected using the static functions of
 the `ROOT::Math::MinimizerOptions` class. Steering options for the
