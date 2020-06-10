@@ -68,14 +68,11 @@ In this case, PyROOT libraries are built by default with both Python3 and Python
 - `libROOTPythonizationsX_Y.so`
 - `libcppyX_Y.so`
 - `libcppyy_backendX_Y.so`
-- `libJupyROOTX_Y.so`
 
 The following pure Python modules will appear as well:
 - `ROOT`
 - `cppyy`
 - `cppyy_backend`
-- `JupyROOT`
-- `JsMVA`
 
 If no option is specified, PyROOT will be built for the most recent Python3 and Python2 versions that CMake can find. If only one version can be found, PyROOT will be built only for that version. Moreover, for a given Python installation to be considered, it must provide both the Python interpreter (binary) and the development package. To build PyROOT, it is thus suggested to verify that python-dev is present and install it if not.
 
@@ -100,7 +97,10 @@ $ <python2interpreter>
 >>>
 ```
 
-Regarding `TPython`, its library (`libROOTTPython.so`) is built only for the highest Python version that PyROOT is built with. Therefore, in a Python3-Python2 ROOT build, the Python code executed with `TPython` must be Python3-compliant.
+The following other components are built and installed along with PyROOT:
+- `TPython`: its library (`libROOTTPython.so`) is built only for the highest Python version that PyROOT is built with. Therefore, in a Python3-Python2 ROOT build, the Python code executed with `TPython` must be Python3-compliant.
+- `JupyROOT`: built for both Python3 and Python2, it consists of a library `libJupyROOTX_Y.so` and a pure Python module `JupyROOT`.
+- `JsMVA`: it consists of a pure Python module which can be used with both Python versions.
 
 
 #### CMake < 3.14
