@@ -114,13 +114,21 @@ For ROOT <= 6.20, an older version of PyROOT (not based on Cppyy) will be built.
 
 ## Setting the C++ standard
 
-> TODO: explain how ROOT features/STL backports interact with C++ standards and how to pick a standard
+ROOT needs to be configured and built with the same C++ standard as the programs that will make use of it.
+The relevant cmake flag is [`CMAKE_CXX_STANDARD`](https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html){:target="_blank"}.
+For example, from the command line, the standard can be selected by passing one of `-DCMAKE_CXX_STANDARD={11,14,17,...}`.
+
+#### ROOT STL backports
+
+ROOT backports certain useful C++ standard library features to make them available in C++11, for example `std::make_unique` and `std::string_view`.
+The backports can be found [here in the reference guide](https://root.cern.ch/doc/master/dir_7780993579c9aa6baf9598fd7cc29d54.html).
+The backports fallback to the actual STL implementation if the C++ standard ROOT is compiled with supports the feature.
 
 ## Enabling experimental features, aka ROOT7
 
 New and improved versions of standard ROOT components are being implemented under codename ROOT7.
 
-Turning on C++14 or higher using `-DCMAKE_CXX_STANDARD={14,17,...}` will automatically enable ROOT7.
+Turning on C++14 (see [Setting the C++ standard](#setting-the-c-standard)) or higher using  will automatically enable ROOT7.
 Alternatively, you can explicitly enable ROOT7 with `-Droot7=ON`, which will in turn set the standard to C++14 if a
 value was not already specified by the user.
 
