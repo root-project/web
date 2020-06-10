@@ -22,7 +22,7 @@ main:
     description: "Latest ROOT news"
   - title: "Contribute"
     url: contribute
-    description: "Contribute to ROOT !"
+    description: "Contribute to ROOT!"
   - title: "For Developers"
     url: for_developers
     description: "Resources for ROOT developers"
