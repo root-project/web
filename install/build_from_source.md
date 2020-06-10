@@ -109,7 +109,7 @@ If CMake version is < 3.14, the MultiPython feature is not available. PyROOT wil
 
 ### Before v6.22
 
-For ROOT <= 6.20, an older version of PyROOT (not based on Cppyy) will be built. This same version can be built also in versions >= 6.22 by specifying `-Dpyroot_legacy=ON`. In this case the Python version used to build will be by default the one pointed by the executable `python`. A specific Python installation can be used by specifying either `PYTHON_EXECUTABLE` or `Python_EXECUTABLE`.
+For ROOT <= 6.20, an older version of PyROOT (not based on Cppyy) will be built. This same version can be built also in versions >= 6.22 by specifying `-Dpyroot_legacy=ON`. In this case the Python version used to build will be by default the one pointed by the executable `python`. A specific Python installation can be used by setting `PYTHON_EXECUTABLE`.
 
 
 ## Setting the C++ standard
