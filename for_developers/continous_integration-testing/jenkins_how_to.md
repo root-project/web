@@ -17,9 +17,7 @@ project and basic interaction with them to obtain most of the information.
 
 ### Access and accounts
 
-Everybody with a CERN account has automatically read access to Jenkins service instance.
-For write access (e.g. to be able to stop and launch new jobs) please send a request to
-Patricia Mendez to obtain an account.
+Everybody with a CERN account has read access to our Jenkins instance.
 
 ### ROOT jobs
 
