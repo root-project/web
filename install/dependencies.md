@@ -16,7 +16,7 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 ### Required packages
 
 *   **make:** for /usr/bin/make
-*   **cmake:** for /usr/bin/cmake
+*   **cmake3:** for /usr/bin/cmake3
 *   **gcc-c++:** for  for /usr/bin/g++ (ROOT 6 requires g++ 4.8 or clang 3.4; for SLC5/SLC6)
 *   **gcc:** for /usr/bin/gcc
 *   **binutils:** for /usr/bin/ld
@@ -30,7 +30,7 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 As a one-liner:
 
 ```bash
-sudo yum install cmake gcc-c++ gcc binutils \
+sudo yum install git cmake3 gcc-c++ gcc binutils \
 libX11-devel libXpm-devel libXft-devel libXext-devel
 ```
 
@@ -48,11 +48,11 @@ libX11-devel libXpm-devel libXft-devel libXext-devel
 *   **cfitsio-devel:** for /usr/include/fitsio2.h and for /usr/lib/libcfitsio.so
 *   **graphviz-devel:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
 *   **avahi-compat-libdns_sd-devel:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
-*   **libldap-dev:** for /usr/include/ldap.h and for /usr/lib/libldap.so
+*   **openldap-devel:** for /usr/include/ldap.h and for /usr/lib/libldap.so
 *   **python-devel:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
 *   **python-numpy-devel:** needed for PyMVA
 *   **libxml2-devel:** for /usr/bin/xml2-config
-*   **gsl-static:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
+*   **gsl-devel:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
 *   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 
 As a one-liner:
@@ -61,8 +61,8 @@ As a one-liner:
 sudo yum install gcc-gfortran openssl-devel pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel \
-avahi-compat-libdns_sd-devel libldap-dev python-devel \
-libxml2-devel gsl-static
+avahi-compat-libdns_sd-devel openldap-devel python-devel \
+libxml2-devel gsl-devel
 ```
 
 ## Ubuntu and other Debian-based distributions
