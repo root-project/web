@@ -90,8 +90,6 @@ manual:
 for_developers:
    - title: Program of Work
      url: for_developers/program_of_work
-   - title: Code Owners
-     url: for_developers/code_owners
    - title: Release Checklist
      url: for_developers/release_checklist
    - title: Shifter's Instructions
