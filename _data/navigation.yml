@@ -109,8 +109,8 @@ for_developers:
         url: for_developers/git_primer/git_how_tos
       - title: "NoSY Worlflow"
         url: for_developers/git_primer/nosy_workflow
-   - title: Browse Sources
-     url: https://github.com/root-project/root
+   - title: GitHub
+     url: https://github.com/root-project
      target: _blank
    - title: Meetings
      url: for_developers/meetings
@@ -133,9 +133,6 @@ for_developers:
         target: _blank
       - title: Coverity
         url: https://coverity.cern.ch/login/login.htm
-        target: _blank
-      - title: GitHub
-        url: https://github.com/root-project/root
         target: _blank
       - title: GitWeb
         url: https://root.cern.ch/gitweb/?p=root.git;a=summary

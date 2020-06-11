@@ -33,9 +33,6 @@ The minimal amount of knowledge about git a ROOT contributor needs to know:
    - [Git How Tos]({{'/for_developers/git_primer/git_how_tos' | relative_url}})
    - [NoSY Worlflow]({{'/for_developers/git_primer/nosy_workflow' | relative_url}})
 
-### [Browse Sources](https://github.com/root-project/root)
-The official GitHub repository for ROOT.
-
 ### [Meetings](meetings)
 All ROOT-related meetings can be found in [ROOT's Indico category](https://indico.cern.ch/category/526/).
 
@@ -55,7 +52,6 @@ ROOT externals coming from the central installations in AFS or CVMFS.
    - [Jenkins How To](continous_integration-testing/jenkins_how_to)
    - [CDash](http://cdash.cern.ch/index.php?project=ROOT)
    - [Coverity](https://coverity.cern.ch/login/login.htm)
-   - [GitHub](https://github.com/root-project/root)
    - [GitWeb](https://root.cern.ch/gitweb/?p=root.git;a=summary)
    - [Jira](https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page)
    - [ROOTBinder Checklist](continous_integration-testing/rootbinder_checklist)
