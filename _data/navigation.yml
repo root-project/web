@@ -94,6 +94,9 @@ for_developers:
      url: for_developers/release_checklist
    - title: Shifter's Instructions
      url: for_developers/shifters_instructions
+   - title: Git Tutorial
+     url: https://git-scm.com/docs/gittutorial
+     target: _blank
    - title: GitHub
      url: https://github.com/root-project
      target: _blank
