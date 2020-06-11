@@ -187,7 +187,7 @@ install:
       - title: Nightlies
         url: install/nightlies
       - title: Building from source
-        url: install/build_from_source.md
+        url: install/build_from_source
 
 news:
    - title: News
