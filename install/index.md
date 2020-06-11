@@ -110,6 +110,10 @@ ROOT Docker containers for several linux flavours are available at [ROOT's offic
 
 For example, to try out the latest ROOT release just run `docker run rootproject/root`.
 
+# Run on CERN lxplus
+
+Users with a CERN computing account can simply connect to `lxplus.cern.ch` via SSH and start `root`: the latest stable version is installed as a normal system package.
+
 # Build from source
 
 In case no other installation method is available, or if you want full control over the options ROOT is built with,
