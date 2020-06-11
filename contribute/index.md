@@ -31,7 +31,7 @@ Presently, there are two ways in which you can contribute:
 
     - Make sure you follow the [ROOT coding conventions]({{'/contribute/coding_conventions' | relative_url }}) in your code
     - Make sure you provide a set of tests for your feature/bug fix
-    - Make sure your git commits can be added to ROOT's master branch with a "rebase and merge", i.e. by fast-forwarding the master branch: ROOT tries to avoid merge commits as much as possible
+    - Make sure your git commits can be added to ROOT's master branch with a "rebase and merge", i.e. by fast-forwarding the master branch. This can be easily done by git-rebasing your branch on ROOT's master branch. ROOT tries to avoid noisy merge commits as much as possible, so that the log remains mostly linear and easy to understand at a glance.
 
 Often it is useful to [contact us](https://root-forum.cern.ch){:target="_blank"} first to
 discuss the code you want to develop or the bug you want to fix.
