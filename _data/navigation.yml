@@ -198,9 +198,9 @@ news:
      url: news/publications
 
 contribute:
-   - title: Contribute
+   - title: How To Contribute
      url: contribute
-   - title: Contributors
+   - title: Past Contributors
      url: contribute/contributors
    - title: Coding Conventions
      url: contribute/coding_conventions
