@@ -25,14 +25,6 @@ Steps to be followed to produce a new ROOT release.
 ### [Shifter's Instructions]({{'/for_developers/shifters_instructions' | relative_url}})
 The aspects the shifter shall keep under control.
 
-### [Git Primer]({{'/for_developers/git_primer' | relative_url}})
-The minimal amount of knowledge about git a ROOT contributor needs to know:
-   - [Creating a Pull Request]({{'/for_developers/git_primer/creating_pr' | relative_url}})
-   - [GitHub ssh key]({{'/for_developers/git_primer/github_ssh_key' | relative_url}})
-   - [Git Tips and Trick]({{'/for_developers/git_primer/git_tips_and_tricks' | relative_url}})
-   - [Git How Tos]({{'/for_developers/git_primer/git_how_tos' | relative_url}})
-   - [NoSY Worlflow]({{'/for_developers/git_primer/nosy_workflow' | relative_url}})
-
 ### [Meetings](meetings)
 All ROOT-related meetings can be found in [ROOT's Indico category](https://indico.cern.ch/category/526/).
 
