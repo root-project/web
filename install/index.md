@@ -56,7 +56,7 @@ The package is [sci-physics/root](https://packages.gentoo.org/packages/sci-physi
 
 ## Conda
 
-For any Linux distribution and MacOS, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="_blank"}. To create a new conda environment containing ROOT, execute `conda create -c conda-forge --name <my-environment> root`. Activate the environment with `source <my-environment>`. More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
+For any Linux distribution and MacOS, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="_blank"}. To create a new conda environment containing ROOT, execute `conda create -c conda-forge --name <my-environment> root`. Activate the environment with `conda activate <my-environment>`. More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
 
 Please report any issues with the conda package [here](https://github.com/conda-forge/root-feedstock){:target="_blank"}.
 
