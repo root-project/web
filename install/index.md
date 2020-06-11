@@ -33,6 +33,7 @@ $ source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
 
 To avoid having to `source thisroot.sh` every time one needs to use ROOT, it is typical to add the instruction to
 `.bashrc`, `.profile` or analogous configuration files.
+Note, however, that sourcing `thisroot.sh` might interfere with ROOT versions installed with different methods.
 
 # Install via a package manager
 
