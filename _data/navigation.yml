@@ -208,19 +208,6 @@ contribute:
 about:
    - title: About ROOT
      url: about
-     children:
-      - title: Save data
-        url: about/save_data
-      - title: Access data
-        url: about/access_data
-      - title: Mine data
-        url: about/mine_data
-      - title: Publish Results
-        url: about/publish_results
-      - title: Interactive or Built Applications
-        url: about/interactive_or_built_applications
-      - title: Integration with other languages
-        url: about/integration_with_other_languages
    - title: License
      url: about/license
    - title: Versioning
