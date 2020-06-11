@@ -38,7 +38,7 @@ To avoid having to `source thisroot.sh` every time one needs to use ROOT, it is 
 
 > **Supported by the community:** these packages are not maintained by the ROOT team, but by helpful members of the community. Please go through each package manager's standard channels to report any related issue. If you package ROOT and would like to be added to the list below, please contact us by clicking the letter icon at the bottom of the page.
 
-## System package managers
+## Linux package managers
 
 ROOT can be directly installed from the operating system's package manager in the following Linux distributions:
 
@@ -56,11 +56,11 @@ The package is [sci-physics/root](https://packages.gentoo.org/packages/sci-physi
 
 ## Conda
 
-For other Linux distributions and Mac, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="_blank"}. To install it in the current conda environment, it is sufficient to execute `conda install root -c conda-forge`. More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
+For any Linux distribution and MacOS, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="_blank"}. To create a new conda environment containing ROOT, execute `conda create -c conda-forge --name <my-environment> root`. Activate the environment with `source <my-environment>`. More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
 
 Please report any issues with the conda package [here](https://github.com/conda-forge/root-feedstock){:target="_blank"}.
 
-## Homebrew
+## Homebrew for MacOS
 
 On Mac, ROOT is also available as a [homebrew formula](https://formulae.brew.sh/formula/root){:target="_blank"}. You can install it with `brew install root`.
 
