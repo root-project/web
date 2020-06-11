@@ -15,7 +15,6 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 
 ### Required packages
 
-*   **git:** for /usr/bin/git
 *   **make:** for /usr/bin/make
 *   **cmake:** for /usr/bin/cmake
 *   **gcc-c++:** for  for /usr/bin/g++ (ROOT 6 requires g++ 4.8 or clang 3.4; for SLC5/SLC6)
@@ -31,7 +30,7 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 As a one-liner:
 
 ```bash
-sudo yum install git cmake gcc-c++ gcc binutils \
+sudo yum install cmake gcc-c++ gcc binutils \
 libX11-devel libXpm-devel libXft-devel libXext-devel
 ```
 
@@ -72,7 +71,6 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 
 ### Required packages
 
-*   **git:** for /usr/bin/git
 *   **dpkg-dev**  for dpkg-architecture (needed by configure to locate system libraries starting from 11)
 *   **cmake:** for /usr/bin/cmake
 *   **g++:** for /usr/bin/g++
@@ -89,7 +87,7 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 As a one-liner:
 
 ```bash
-sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
+sudo apt-get install dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
 libxft-dev libxext-dev python
 ```
 
@@ -131,7 +129,7 @@ libgsl0-dev libqt4-dev
 Minimal set:
 
 ```bash
-sudo zypper install git bash cmake gcc-c++ gcc binutils python libXpm-devel
+sudo zypper install bash cmake gcc-c++ gcc binutils python libXpm-devel
 xorg-x11-devel libXext-devel
 ```
 
@@ -152,7 +150,6 @@ krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 
 ### ROOT 6
 
-*   **[Git for Windows](https://git-scm.com/download/win)**
 *   **[CMake](https://cmake.org/download/)** (version >= 16.3)
 *   **[Microsoft Visual C++](https://visualstudio.microsoft.com/)** (ROOT6 requires at least Visual Studio 2019 version 16.1). The **Community** version is free, fully-featured for students, open-source contributors, and individuals.
 *   **[Python](https://python.org)** (ROOT6 requires version >= 2.7)
