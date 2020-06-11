@@ -14,7 +14,7 @@ to [contribute]({{'contribute' | relative_url}}) to the ROOT system.
 The program of work is guided by the project vision laid out [here](https://indico.cern.ch/event/710739/contributions/2920120/attachments/1619048/2574778/ROOT_Vision_2020_-_SFT.pdf){:target="_blank"},
 and documented for the relevant years in the following documents:
 
-### [Code Owners]({{'/for_developers/code_owners' | relative_url}})
+### [Code Owners](https://github.com/root-project/root/blob/master/.github/CODEOWNERS){:target="_blank"}
 ROOT consists of several loosely coupled but consistently designed parts. The "code owners"
 of these parts are experts that review pull requests and guide these packages over a couple
 of years.
