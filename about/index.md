@@ -37,4 +37,4 @@ you can compile your program to run at full speed. In both cases, you can also c
 
   - [Use ROOT within other languages]({{'about/integration_with_other_languages' | relative_url}})
 ROOT provides a set of bindings in order to seamlessly integrate with existing languages
-such as Python, R and Mathematica.
+such as Python and R.

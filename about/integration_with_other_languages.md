@@ -7,8 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT is written in C++ but is integrated with other languages such as Python, R and
-Mathematica.
+ROOT is written in C++ but is integrated with other languages such as Python and R and.
 
 ## Python
 The Python bindings are also commonly called PyROOT. PyROOT is indeed a Python
