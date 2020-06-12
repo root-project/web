@@ -109,6 +109,8 @@ site on the git repository](#publish-your-modifications).
 bundle exec jekyll serve
 ```
 
+If you only plan to make minor modifications, you can append the `--incremental` flag to speed up the rebuild process.
+
 6. After about 30 seconds you should get an output similar to
 ```
 Configuration file: /path/to/the/directory/web/_config.yml
