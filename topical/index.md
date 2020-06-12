@@ -15,8 +15,8 @@ This page lists all the manuals related to packages used by or close to the ROOT
 The RooFit library provides a toolkit for modeling the expected distribution of events in
 a physics analysis.
 
-  - [RootFit Manual (PDF A4 format)](http://root.cern.ch/download/doc/RooFit_Users_Manual_2.91-33.pdf){:target="_blank"}
-  - [RootFit Quick Start Guide (PDF A4 format)](https://root.cern.ch/download/doc/roofit_quickstart_3.00.pdf){:target="_blank"}
+  - [RooFit Manual (PDF A4 format)](http://root.cern.ch/download/doc/RooFit_Users_Manual_2.91-33.pdf){:target="_blank"}
+  - [RooFit Quick Start Guide (PDF A4 format)](https://root.cern.ch/download/doc/roofit_quickstart_3.00.pdf){:target="_blank"}
 
 ## HTTP Server
 
@@ -51,7 +51,7 @@ ROOT files is supported.
 ## CERNLib
 
 The CERN Program Library was a large collection of general-purpose programs written in
-FORTRAN. It is deprecated for many years but mainy algorithms it implemented at that time
+FORTRAN. It is deprecated for many years but many algorithms it implemented at that time
 were back-ported to ROOT. That's why
 [a link to the pdf version of the CERNLib manual](https://root.cern.ch/sites/d35c7d8c.web.cern.ch/files/cernlib.pdf){:target="_blank"}
 is kept here.
