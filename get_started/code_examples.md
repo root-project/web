@@ -17,7 +17,7 @@ be visualized in [NBViewer](http://nbviewer.jupyter.org/){:target="_blank"} or t
 <img src="https://root.cern.ch/doc/master/notebook.gif" alt="View in nbviewer" style="height:1em">
 <img src="https://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png" alt="Open in SWAN" style="height:1em">
 
-Once you have [properly setup the ROOT environment]({{'manual/getting-started-with-root' | relative_url }}){:target="_blank"},
+Once you have [properly setup the ROOT environment]({{'manual/getting_started_with_root' | relative_url }}){:target="_blank"},
 all the tutorials will be available on *your* machine in the `$ROOTSYS/tutorials` folder.
 You can then [execute/read the macros]({{'manual/getting_started_with_root/#root-macros' | relative_url }})
 there to learn from the examples. Do not hesitate to comment out/ add code to these tutorials
