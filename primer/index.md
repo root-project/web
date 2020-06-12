@@ -15,7 +15,7 @@ with the demanding tasks typical of state of the art scientific data analysis.
 Among its prominent features are an advanced graphical user
 interface, ideal for interactive analysis, an interpreter for the C++
 programming language, for rapid and efficient prototyping and a
-persistency mechanism for C++ objects, used also to write every year
+persistence mechanism for C++ objects, used also to write every year
 petabytes of data recorded by the Large Hadron Collider experiments.
 This introductory guide illustrates the main features of ROOT which are
 relevant for the typical problems of data analysis: input and plotting of data
@@ -88,7 +88,7 @@ Nuclear Research, CERN in Geneva.
 
 ROOT is very flexible and provides both a programming interface to use in own
 applications and a graphical user interface for interactive data analysis. The
-purpose of this document is to serve as a beginners guide and provides extendable
+purpose of this document is to serve as a beginners guide and provides extendible
 examples for your own use cases, based on typical problems addressed in
 student labs. This guide will hopefully lay the ground for more complex
 applications in your future scientific work building on a modern,
@@ -107,7 +107,7 @@ tutorial!
 
 The ROOT Data Analysis Framework itself is written in and heavily relies
 on the `C++` programming language: some knowledge about `C++` is required.
-Jus take advantage from the immense available literature about `C++` if you do
+Just take advantage from the immense available literature about `C++` if you do
 not have any idea of what this language is about.
 
 ROOT is available for many platforms (Linux, Mac OS X, Windows...), but
@@ -686,7 +686,7 @@ The most important among them are presented in the following:
     entry point for the ROOT interpreter. Technically an abstraction level
     over a singleton instance of `TCling`.
 
-At this point you have already learnt quite a bit about some basic
+At this point you have already learned quite a bit about some basic
 features of ROOT.
 
 ***Please move on to become an expert!***
@@ -822,7 +822,7 @@ void macro1(){
     TGraphErrors graph(n_points,x_vals,y_vals,nullptr,y_errs);
     graph.SetTitle("Measurement XYZ;lenght [cm];Arb.Units");
 
-    // Make the plot estetically better
+    // Make the plot esthetically better
     graph.SetMarkerStyle(kOpenCircle);
     graph.SetMarkerColor(kBlue);
     graph.SetLineColor(kBlue);
@@ -926,7 +926,7 @@ Let's comment it in detail:
 -   Line *55-57*: defines an arrow with a triangle on the right hand
     side, a thickness of 2 and draws it.
 
--   Line *60-61*: interpret a Latex string which hast its lower left
+-   Line *60-61*: interpret a Latex string which has its lower left
     corner located in the specified coordinate. The `#splitline{}{}`
     construct allows to store multiple lines in the same `TLatex`
     object.
@@ -1318,7 +1318,7 @@ Let's go through the code, step by step to understand what is going on:
 
 {% include figure_image sect=4 fig=3
 img="fitted2dFunction.png"
-caption="A dataset fitted with a bidimensional function visualised as a colored
+caption="A dataset fitted with a two-dimensional function visualised as a colored
 surface."
 %}
 
@@ -1405,7 +1405,7 @@ can fill and draw a histogram with the following example macro.
 
 void macro5(){
     auto cnt_r_h=new TH1F("count_rate",
-                "Count Rate;N_{Counts};# occurencies",
+                "Count Rate;N_{Counts};# occurrence",
                 100, // Number of Bins
                 -0.5, // Lower X Boundary
                 15.5); // Upper X Boundary
@@ -1989,8 +1989,8 @@ void write_to_file(){
 }
 {% endhighlight %}
 
-Not bad, eh ? Especially for a language that does not foresees
-persistency natively like C++. The *RECREATE* option forces ROOT to
+Not bad, eh ? Especially for a language that does not foresee
+persistence natively like C++. The *RECREATE* option forces ROOT to
 create a new file even if a file with the same name exists on disk.
 
 Now, you may use the Cling command line to access information in the file
@@ -2745,7 +2745,7 @@ histo.Draw ()
 {% endhighlight %}
 
 ## Custom code: from C++ to Python
-The ROOT interpreter and type sytem offer interesting possibilities when it comes
+The ROOT interpreter and type system offer interesting possibilities when it comes
 to JITting of C++ code.
 Take for example this header file, containing a class and a function.
 
