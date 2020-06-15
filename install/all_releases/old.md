@@ -2,7 +2,7 @@
 title: Old
 layout: single
 sidebar:
-  nav: "download"
+  nav: "releases"
 ---
 
 Releases with this term are Old.

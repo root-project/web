@@ -142,27 +142,11 @@ for_developers:
      url: https://root.cern.ch/img/logos/ROOT_Logo/
      target: _blank
 
-download:
-   - title: Download (binaries and sources)
-     url: download
+releases:
+   - title: Useful links
      children:
       - title: All releases
-        url: download/all_releases
-      - title: Nightlies
-        url: download/nightlies
-      - title: ROOT sources
-        url: download/building_root/get_root_sources
-   - title: Supported platforms
-     url: download/building_root/supported_platforms
-   - title: Using binaries
-     url: download/using_binaries
-   - title: Building ROOT
-     url: download/building
-     children:
-      - title: Build Prerequisites
-        url: download/building_root/build_prerequisites
-      - title: Building ROOT with CMake
-        url: download/building_root
+        url: install/all_releases
 
 install:
    - title: Useful links
