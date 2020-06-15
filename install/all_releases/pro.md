@@ -2,7 +2,7 @@
 title: Pro
 layout: single
 sidebar:
-  nav: "download"
+  nav: "releases"
 ---
 
 Releases with this term are in Production.

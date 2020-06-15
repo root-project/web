@@ -4,7 +4,7 @@ layout: single
 toc: true
 toc_sticky: true
 sidebar:
-  nav: "download"
+  nav: "releases"
 ---
 
 <br>
@@ -32,6 +32,6 @@ sidebar:
 
 Release notes can be found on the respective release page.
 
-Release notes for old releases can be found [here]({{ '/download/all_releases/old_release_notes' | relative_url }}).
+Release notes for old releases can be found [here]({{ '/install/all_releases/old_release_notes' | relative_url }}).
 
 All releases files can be download from [here](https://root.cern.ch/download/).
