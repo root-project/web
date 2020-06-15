@@ -113,8 +113,8 @@ not have any idea of what this language is about.
 ROOT is available for many platforms (Linux, Mac OS X, Windows...), but
 in this guide we will implicitly assume that you are using Linux. The
 first thing you need to do with ROOT is install it, don't you ? Obtaining
-the latest ROOT version is straightforward. Just seek the "Pro" version
-on [the download page]({{'download' | relative_url}}).
+the latest ROOT version is straightforward. Just choose your preferred
+installation method from [the install page]({{'download' | relative_url}}).
 You will find precompiled versions for the different architectures, or
 the ROOT source code to compile yourself. Just pick up the flavour you
 need and follow the installation instructions.
