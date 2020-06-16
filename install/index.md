@@ -19,7 +19,7 @@ We distribute pre-compiled ROOT for several major Linux distributions as well as
 The steps to install a pre-compiled binary are simple:
 
 1. Install all [required dependencies]({{'/install/dependencies' | relative_url}}) with the system package manager
-1. [Download the release]({{'/install/binary_releases' | relative_url}}) for the desired platform and ROOT version
+1. [Download the release]({{'/install/all_releases' | relative_url}}) for the desired platform and ROOT version
 1. Unpack the archive
 1. Add the ROOT libraries and executables to your environment by sourcing the appropriate `thisroot.*` script. These setup scripts can be found in the ROOT binary release, in the `bin` directory.
 
