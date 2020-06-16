@@ -12,7 +12,7 @@ To prevent memory leaks and multiple attempts to delete an object, you need to k
 
 The following cases are possible:
 
-- Qwnership by current directory (`gDirectory`).<br>
+- Ownership by current directory (`gDirectory`).<br>
 → See [Ownership by current directory (gDirectory)](#ownership-by-current-directory-gdirectory).
 
 - Ownership by the master [TROOT](https://root.cern/doc/master/classTROOT.html) object (`gROOT`).<br>
