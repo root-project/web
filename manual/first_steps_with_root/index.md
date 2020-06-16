@@ -622,7 +622,7 @@ For adding a shared library, you can load it before you compile the ROOT macros,
 
 Portable ROOT macros run both with the Cling interpreter and ACLiC (*Compiling Your Code*).
 
-Therefore, it recommended not to use the Cling extensions and program around the Cling limitations.
+Therefore, it is recommended not to use the Cling extensions and program around the Cling limitations.
 
 If it is not possible to program around the Cling limitations, use the C preprocessor symbols
 defined for Cling and `rootcling`:
