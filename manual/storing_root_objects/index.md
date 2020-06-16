@@ -157,7 +157,7 @@ ROOT will automatically close any ROOT files still open when the session ends.
 
 _**Example**_
 
-From the ROOT file `hsimple.root` (see → [Getting started with ROOT]({{ '/manual/getting_started_with_root#starting-with-hsimplec' | relative_url }})), the histogram `hpx;1` is retrieved.
+From the ROOT file `hsimple.root` (see → [First steps with ROOT]({{ '/manual/first_steps_with_root#starting-with-hsimplec' | relative_url }})), the histogram `hpx;1` is retrieved.
 
 {% highlight C++ %}
    TFile f("hsimple.root");

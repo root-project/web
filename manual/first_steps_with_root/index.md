@@ -1,5 +1,5 @@
 ---
-title: Getting started with ROOT
+title: First steps with ROOT
 layout: single
 sidebar:
   nav: "manual"
