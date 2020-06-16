@@ -158,7 +158,7 @@ The [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:targe
 
 - [One-dimensional function interfaces](#one-dimensional-function-interfaces)
 - [Multi-dimensional function interfaces](#multi-dimensional-function-interfaces)
-- [Parametric function interfaces]('parametric-function-interfaces)
+- [Parametric function interfaces](#parametric-function-interfaces)
 
 In addition, helper classes, wrapping the user interfaces in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} function interfaces are provided. With [wrapper functions](#wrapper-functions) you can insert your own type of function in the needed function interface. 
 
@@ -438,6 +438,8 @@ There is one possible wrapper for every interface.
 </tbody>
 </table>
 
+Note the special case when [wrapping TF1 objects in parametric function interfaces](#wrapping-tf1-objects-in-parametric-function-interfaces).
+
 <p><a name="wrapping-one-dimensional-functions"></a></p>
 **Wrapping one-dimensional functions**
 
@@ -543,12 +545,57 @@ _**Example**_
 <p><a name="wrapping multi-dimensional-gradient-functions"></a></p>
 **Wrapping multi-dimensional gradient functions**
 
-Use [ROOT::Math::GradFunctor]8https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor.html){:target="_blank"} to wrap C++ callable objects to make gradient functions. 
+Use [ROOT::Math::GradFunctor](https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor.html){:target="_blank"} to wrap C++ callable objects to make gradient functions. 
 
 It can be constructed in three different way:
 - From an object implementing both `double operator()( const double*)` for the function evaluation and `double Derivative(const double *, int icoord)` for the partial derivatives.
 - From an object implementing any member function like `Foo::XXX(const double *)` for the function evaluation and any member function like `Foo::XXX(const double *, int icoord)` for the partial derivatives. 
 - From an function object implementing `double operator()( const double *)` for the function evaluation and another function object implementing `double operator() (const double *, int icoord)` for the partial derivatives.
+
+The function dimension is required when constructing the functor.
+
+<p><a name="wrapping-tf1-objects-in-parametric-function-interfaces"></a></p>
+**Wrapping TF1 objects in parametric function interfaces**
+
+Often the {% include ref class="TF1" %} class is used.<br>
+Use the [ROOT::Math::WrappedTF1](https://root.cern/doc/master/classROOT_1_1Math_1_1WrappedTF1.html) class, if the interface to wrap is one-dimensional.
+
+The default constructor takes a {% include ref class="TF1" %} reference as an argument, that will be wrapped with the interfaces of a [ROOT::Math::IParametricGradFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IParametricGradFunctionOneDim.html){:target="_blank"}. 
+
+_**Example**_
+
+{% highlight C++ %}
+   #include "TF1.h"
+   #include "Math/WrappedTF1.h"
+   int main()
+   {
+      TF1 f("Sin Function", "sin(x)+y",0,3);
+      ROOT::Math::WrappedTF1 wf1(f);
+      cout << f(1) << endl;
+      cout << wf1(1) << endl;
+      return 0;
+   }
+{% endhighlight %}
+
+Use the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b) class, if the interface to wrap is multi-dimensional.
+
+Following the usual procedure, setting the {% include ref class="TF1" %} though the constructor, will wrap it into a [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"}. 
+
+_**Example**_
+
+{% highlight C++ %}
+   #include "TF1.h"
+   #include "Math/WrappedMultiTF1.h"
+   int main()
+   {
+      TF2 f("Sin Function", "sin(x) + y",0,3,0,2);
+      ROOT::Math::WrappedMultiTF1 wf1(f);
+      double x[] = {1,2};
+      cout << f(x) << endl;
+      cout << wf1(x) << endl;
+      return 0;
+ }
+ {% endhighlight %}
 
 ### Random numbers
 
