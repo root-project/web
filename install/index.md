@@ -157,11 +157,6 @@ source /cvmfs/sft.cern.ch/lcg/views/LCG_97/x86_64-centos7-gcc8-dbg/setup.sh
 
 To check what ROOT version is contained in an LCG release, check [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="\_blank"}.
 
-## ROOT nightly builds
-
-ROOT nightly builds for Centos7 are also available on CVMFS. They are not as stable as official releases, but contain the very latest features and bug fixes.
-LCG views nightly builds plus dependencies are at `/cvmfs/sft-nightlies.cern.ch/lcg/views/dev3/latest/<platform>`.
-
 ## Gentoo Prefix on CVMFS
 
 ROOT is also experimentally available in a [Gentoo Prefix](https://wiki.gentoo.org/wiki/Project:Prefix){:target="\_blank"} installation
