@@ -45,25 +45,67 @@ ROOT can be directly installed from the operating system's package manager in th
 
 ### Fedora
 
-Fedora's [ROOT package](https://src.fedoraproject.org/rpms/root){:target="\_blank"} can be installed with `yum install root`.
+Fedora's [ROOT package](https://src.fedoraproject.org/rpms/root){:target="\_blank"} can be installed with
+
+```sh
+$ yum install root
+```
+
+More typically, however, users will want more than just the base package. The full list of components can be seen at
+<https://src.fedoraproject.org/rpms/root/>{:target="\_blank"} by clicking in one of the offered versions.
+To install ROOT with support for python and notebooks, for example, run
+
+```sh
+$ yum install root python3-root root-notebook
+```
+
+### CentOS
+
+ROOT is available on CentOS via [EPEL](https://fedoraproject.org/wiki/EPEL){:target="\_blank"}. To install ROOT on CentOS, just run
+
+```sh
+$ yum install epel-release
+$ yum install root
+```
 
 ### Arch Linux
 
-Arch's [ROOT package](https://www.archlinux.org/packages/community/x86_64/root){:target="\_blank"} can be installed with `pacman -Syu root`.
+Arch's [ROOT package](https://www.archlinux.org/packages/community/x86_64/root){:target="\_blank"} can be installed with
+
+```sh
+$ pacman -Syu root
+```
 
 ### Gentoo
 
-The package is [sci-physics/root](https://packages.gentoo.org/packages/sci-physics/root){:target="\_blank"}.
+The Gentoo package for ROOT is [sci-physics/root](https://packages.gentoo.org/packages/sci-physics/root){:target="\_blank"}.
+It can be installed with
+
+```sh
+$ emerge sci-physics/root
+```
 
 ## Conda
 
-For any Linux distribution and MacOS, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="\_blank"}. To create a new conda environment containing ROOT, execute `conda create -c conda-forge --name <my-environment> root`. Activate the environment with `conda activate <my-environment>`. More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
+For any Linux distribution and MacOS, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="\_blank"}. To create a new conda environment containing ROOT and activate it, execute
+
+```sh
+$ conda create -c conda-forge --name <my-environment> root
+$ conda activate <my-environment>
+```
+
+More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
 
 Please report any issues with the conda package [here](https://github.com/conda-forge/root-feedstock){:target="\_blank"}.
 
 ## Homebrew for MacOS
 
-On Mac, ROOT is also available as a [homebrew formula](https://formulae.brew.sh/formula/root){:target="\_blank"}. You can install it with `brew install root`.
+On Mac, ROOT is also available as a [homebrew formula](https://formulae.brew.sh/formula/root){:target="\_blank"}.
+You can install it with
+
+```sh
+$ brew install root
+```
 
 # LCG releases on CVMFS
 
