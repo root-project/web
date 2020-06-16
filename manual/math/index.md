@@ -558,9 +558,9 @@ The function dimension is required when constructing the functor.
 **Wrapping TF1 objects in parametric function interfaces**
 
 Often the {% include ref class="TF1" %} class is used.<br>
-Use the [ROOT::Math::WrappedTF1](https://root.cern/doc/master/classROOT_1_1Math_1_1WrappedTF1.html) class, if the interface to wrap is one-dimensional.
+Use the [ROOT::Math::WrappedTF1](https://root.cern/doc/master/classROOT_1_1Math_1_1WrappedTF1.html) class, if the interface to be wrapped is one-dimensional.
 
-The default constructor takes a {% include ref class="TF1" %} reference as an argument, that will be wrapped with the interfaces of a [ROOT::Math::IParametricGradFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IParametricGradFunctionOneDim.html){:target="_blank"}. 
+The default constructor takes a {% include ref class="TF1" %} reference as argument, that will be wrapped with the interfaces of a [ROOT::Math::IParametricGradFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IParametricGradFunctionOneDim.html){:target="_blank"}. 
 
 _**Example**_
 
@@ -577,7 +577,7 @@ _**Example**_
    }
 {% endhighlight %}
 
-Use the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b) class, if the interface to wrap is multi-dimensional.
+Use the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b) class, if the interface to be wrapped is multi-dimensional.
 
 Following the usual procedure, setting the {% include ref class="TF1" %} though the constructor, will wrap it into a [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"}. 
 
