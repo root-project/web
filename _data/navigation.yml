@@ -33,8 +33,8 @@ manual:
   - title: ROOT Manual - Basics
     url: manual/basics
     children:
-      - title: Getting started with ROOT
-        url: manual/getting_started_with_root
+      - title: First steps with ROOT
+        url: manual/first_steps_with_root
       - title: ROOT classes, data types and global variables
         url: manual/root_classes_data_types_and_global_variables
       - title: Adding a class to ROOT

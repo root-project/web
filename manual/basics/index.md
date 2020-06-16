@@ -11,7 +11,7 @@ For everyone who wants to start immediately with data analysis, the [ROOT files]
 
 The first part of the ROOT Manual contains:
 
-- [Getting started with ROOT]({{ '/manual/getting_started_with_root' | relative_url }})
+- [First steps with ROOT]({{ '/manual/first_steps_with_root' | relative_url }})
 
 - [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables' | relative_url }})
 
