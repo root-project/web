@@ -55,6 +55,11 @@ Arch's [ROOT package](https://www.archlinux.org/packages/community/x86_64/root){
 
 The package is [sci-physics/root](https://packages.gentoo.org/packages/sci-physics/root){:target="_blank"}.
 
+### Ubuntu and Debian-based distributions
+
+The ROOT team is working on the release of an official `.deb` package. More news on this topic very soon.<br>
+In the meanwhile, ROOT is available on Ubuntu via [conda](#conda) or our [pre-compiled binaries](#download-a-pre-compiled-binary-distribution).
+
 ## Conda
 
 For any Linux distribution and MacOS, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="_blank"}. To create a new conda environment containing ROOT, execute `conda create -c conda-forge --name <my-environment> root`. Activate the environment with `conda activate <my-environment>`. More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
