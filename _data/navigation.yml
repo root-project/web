@@ -200,6 +200,9 @@ about:
      url: about/team
    - title: Previous Developers
      url: about/previous_developers
+   - title: Cite us
+     url: https://github.com/root-project/root/#cite
+     target: _blank
 
 start:
    - title: Get Started
