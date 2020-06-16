@@ -131,7 +131,7 @@ source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.20.04/x86_64-centos7-gcc48-opt
 On Centos7, ROOT as well as its dependencies and many other packages are also available as an LCG _view_:
 
 ```
-/cvmfs/sft.cern.ch/lcg/views/LCG_<viewnumber>/<platform>
+/cvmfs/sft.cern.ch/lcg/views/LCG_<version>/<platform>
 ```
 
 For example, to set up a full environment with ROOT 6.20/02 on CERN lxplus, you can run:
