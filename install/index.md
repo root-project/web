@@ -45,32 +45,32 @@ ROOT can be directly installed from the operating system's package manager in th
 
 ### Fedora
 
-Fedora's [ROOT package](https://src.fedoraproject.org/rpms/root){:target="_blank"} can be installed with `yum install root`.
+Fedora's [ROOT package](https://src.fedoraproject.org/rpms/root){:target="\_blank"} can be installed with `yum install root`.
 
 ### Arch Linux
 
-Arch's [ROOT package](https://www.archlinux.org/packages/community/x86_64/root){:target="_blank"} can be installed with `pacman -Syu root`.
+Arch's [ROOT package](https://www.archlinux.org/packages/community/x86_64/root){:target="\_blank"} can be installed with `pacman -Syu root`.
 
 ### Gentoo
 
-The package is [sci-physics/root](https://packages.gentoo.org/packages/sci-physics/root){:target="_blank"}.
+The package is [sci-physics/root](https://packages.gentoo.org/packages/sci-physics/root){:target="\_blank"}.
 
 ## Conda
 
-For any Linux distribution and MacOS, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="_blank"}. To create a new conda environment containing ROOT, execute `conda create -c conda-forge --name <my-environment> root`. Activate the environment with `conda activate <my-environment>`. More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
+For any Linux distribution and MacOS, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="\_blank"}. To create a new conda environment containing ROOT, execute `conda create -c conda-forge --name <my-environment> root`. Activate the environment with `conda activate <my-environment>`. More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
 
-Please report any issues with the conda package [here](https://github.com/conda-forge/root-feedstock){:target="_blank"}.
+Please report any issues with the conda package [here](https://github.com/conda-forge/root-feedstock){:target="\_blank"}.
 
 ## Homebrew for MacOS
 
-On Mac, ROOT is also available as a [homebrew formula](https://formulae.brew.sh/formula/root){:target="_blank"}. You can install it with `brew install root`.
+On Mac, ROOT is also available as a [homebrew formula](https://formulae.brew.sh/formula/root){:target="\_blank"}. You can install it with `brew install root`.
 
 # LCG releases on CVMFS
 
 ## Pre-built ROOT without dependencies
 
-If your platform mounts [CVMFS](https://cernvm.cern.ch/portal/filesystem){:target="_blank"} (as, for example, CERN lxplus does),
-ROOT is directly available as an [LCG release](http://lcginfo.cern.ch/){:target="_blank"}.
+If your platform mounts [CVMFS](https://cernvm.cern.ch/portal/filesystem){:target="\_blank"} (as, for example, CERN lxplus does),
+ROOT is directly available as an [LCG release](http://lcginfo.cern.ch/){:target="\_blank"}.
 
 ROOT installations with minimal external dependencies are available for Fedora, Ubuntu, Centos 7 and MacOS at:
 
@@ -98,7 +98,7 @@ For example, to set up a full environment with ROOT 6.20/02 on CERN lxplus, you 
 source /cvmfs/sft.cern.ch/lcg/views/LCG_97/x86_64-centos7-gcc8-dbg/setup.sh
 ```
 
-To check what ROOT version is contained in an LCG release, check [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="_blank"}.
+To check what ROOT version is contained in an LCG release, check [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="\_blank"}.
 
 ## ROOT nightly builds
 
@@ -107,7 +107,7 @@ LCG views nightly builds plus dependencies are at `/cvmfs/sft-nightlies.cern.ch/
 
 # Run in a Docker container
 
-ROOT Docker containers for several linux flavours are available at [ROOT's official DockerHub](https://hub.docker.com/r/rootproject){:target="_blank"}.
+ROOT Docker containers for several linux flavours are available at [ROOT's official DockerHub](https://hub.docker.com/r/rootproject){:target="\_blank"}.
 
 For example, to try out the latest ROOT release just run `docker run rootproject/root`.
 
