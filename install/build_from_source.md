@@ -138,7 +138,37 @@ the relevant ROOT build options to enable are `-Dcuda=ON -Dcudnn=ON -Dtmva-gpu=O
 
 ## System-wide installation
 
-> TODO: explain how to install ROOT as a system package, i.e. using gnuinstall and installing in /opt
+There are two main methods of installing ROOT from source: _location independent_ and _fixed location_. The former is
+advised for a personal installation of ROOT, while the latter for a system-wide installation. Both require to set the
+`CMAKE_INSTALL_PREFIX` variable at configuration time (its default is `/usr/local` if unset). The mode of installation
+is controlled via the `gnuinstall` option during configuration.
+
+### Location Independent Installation (gnuinstall=OFF)
+
+This is the configuration used by the binary releases on the website. This method requires setting environment variables
+such as `PATH`, `LD_LIBRARY_PATH`, and `PYTHONPATH`. This is usually done by sourcing the script `bin/thisroot.sh` or
+equivalent for your shell from the installation directory. The installation can be done by running
+
+```
+$ cmake --build . --target install
+```
+
+from the build directory. If ROOT is built with `-Drpath=ON`, then it is usually not necessary to set `LD_LIBRARY_PATH`
+after installation. It is also important to note that with this method it is usually not possible to customize
+installation paths like `CMAKE_INSTALL_BINDIR`, `CMAKE_INSTALL_LIBDIR`, etc.
+
+### Fixed Location Installation (gnuinstall=ON)
+
+The fixed location installation method is enabled with `-Dgnuinstall=ON` at configuration time, which then also allows 
+the tuning of destinations for the various components by setting the variables `CMAKE_INSTALL_xxxDIR`, where `xxx` is `BIN`,
+`LIB`, `INCLUDE`, etc. The full list is available in `cmake/Modules/RootInstallDirs.cmake` inside the repository and
+also in the list of variables below. The fixed location installation method does not require setting any environment
+variables when ROOT is installed into default system paths (e.g. `/usr`, `/usr/local`). However, if
+`CMAKE_INSTALL_LIBDIR` is a directory that is not searched for by the linker, it is recommended to enable
+`-Drpath=ON` or to add `CMAKE_INSTALL_LIBDIR` to `/etc/ld.so.conf` in order to avoid having to set `LD_LIBRARY_PATH`
+to be able to run ROOT. Nevertheless, it may still be necessary to set `PYTHONPATH` with this method if PyROOT is not
+installed into one of the system paths searched for by Python (run `python -m site` to see this list of paths). This
+can be done with `export PYTHONPATH=$(root-config --libdir)` if `root-config` is already in your `PATH`.
 
 ## All build options
 
