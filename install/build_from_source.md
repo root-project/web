@@ -7,22 +7,21 @@ toc_sticky: true
 
 ## Introduction
 
-ROOT uses the [CMake](http://www.cmake.org/){:target="_blank"} cross-platform build-generator tool as the
-primary build system.<br> `CMake` does not build the project, it generates the files needed by
-your build tool (GNU make, Ninja,  Visual Studio, etc) for building ROOT.
+ROOT uses the [CMake](http://www.cmake.org/){:target="\_blank"} cross-platform build-generator tool as the
+primary build system.<br> CMake does not build the project, it generates the files needed by
+your build tool (GNU make, Ninja, Visual Studio, etc) for building ROOT.
 
 If you are really anxious about getting a functional ROOT build, go to the [Quick Start](#quick-start) section.<br>
-If you are a `CMake` novice, start on [Basic CMake usage]({{'/install/basic_cmake' | relative_url}}) and then go back to the
+If you are a CMake novice, start on [Basic CMake usage]({{'/install/basic_cmake' | relative_url}}) and then go back to the
 [Quick Start](#quick-start).
-<br>The [Options](#build-options) and the [Variables](#variables) section is a reference for customizing your build. If you already have experience with `CMake`,
-this is the recommended starting point.
+<br>The [Options](#build-options) and the [Variables](#variables) section is a reference for customizing your build. If you already have experience with CMake, this is the recommended starting point.
 
 ## Preparation
 Make sure you have installed all [required dependencies]({{'/install/dependencies' | relative_url}}) before building ROOT.
 
 ## Quick start
 
-The following are the basic instructions for UNIX-like systems. We will use the command-line, non-interactive `CMake` interface.
+The following are the basic instructions for UNIX-like systems. We will use the command-line, non-interactive CMake interface.
 
 1. Download and unpack the [ROOT sources for a specific release]({{'/install/all_releases' | relative_url}}) (make sure to download the "Source distribution" and not a binary distribution) or simply clone ROOT's git repository and check out the branch you would like to build, for example:
 ```bash
@@ -39,9 +38,9 @@ $ cd <builddir>
 ```bash
 $ cmake -DCMAKE_INSTALL_PREFIX=<installdir> <sourcedir>
 ```
-`CMake` will detect your development environment, perform a series of test and generate the files required for building ROOT. `CMake` will use default values for all build parameters. See the [Build Options](#options) and [Variables](#variables) sections for fine-tuning your build
-This can fail if `CMake` cannot detect your toolset, or if it thinks that the environment is not sane enough. In this case make sure that the toolset that you intend to use is the only one reachable from the shell and that the shell itself is the correct one for you development environment. You can force `CMake` to use a given build tool, see the Usage section.
-1. Proceed to use IDE project files or start the build from the build directory, after `CMake` has finished running:
+CMake will detect your development environment, perform a series of test and generate the files required for building ROOT. CMake will use default values for all build parameters. See the [Build Options](#options) and [Variables](#variables) sections for fine-tuning your build
+This can fail if CMake cannot detect your toolset, or if it thinks that the environment is not sane enough. In this case make sure that the toolset that you intend to use is the only one reachable from the shell and that the shell itself is the correct one for you development environment. You can force CMake to use a given build tool, see the Usage section.
+1. Proceed to use IDE project files or start the build from the build directory, after CMake has finished running:
 ```bash
 $ cmake --build . --target install [-- <options to the native tool>]
 ```
@@ -256,7 +255,7 @@ The user can set any CMake variable or option that controls the build process fr
 > \* The default value for these options is platform dependent.
 
 ### Relevant CMake variables
-Here are some of the `CMake` variables that are used often, along with a brief explanation and ROOT-specific notes. For full documentation, check the `CMake` docs or execute `cmake --help-variable VARIABLE_NAME`.
+Here are some of the CMake variables that are used often, along with a brief explanation and ROOT-specific notes. For full documentation, check the CMake docs or execute `cmake --help-variable VARIABLE_NAME`.
 
 | Variable | Type | Explanation |
 |----------|-------|---------------|
@@ -297,7 +296,7 @@ A number of additional variables to control the way ROOT is built.
 
 > TODO: do users need to know about the actual CMake variables?
 
-ROOT requires a number of external libraries that the `CMake` system needs to locate. The list of externals depends on the build options that have been enabled. CMake will look for these third party products at a number of standard places in your system but the user can influence the search by setting some environment variables before invoking the CMake command or by setting package specific CMake variables to their exact location.
+ROOT requires a number of external libraries that the CMake system needs to locate. The list of externals depends on the build options that have been enabled. CMake will look for these third party products at a number of standard places in your system but the user can influence the search by setting some environment variables before invoking the CMake command or by setting package specific CMake variables to their exact location.
 
 The actual cached values used by CMake for the exact location of libraries and include files of the used external libraries can be inspected and modified using the `ccmake` utility.
 
