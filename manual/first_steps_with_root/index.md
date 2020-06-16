@@ -218,7 +218,7 @@ Calling a function from a ROOT class like {% include ref class="TMath" %}.
 
 You can use ROOT to execute multi-line commands on the ROOT prompt.
 
-1.  To begin a multi-line command, type at the ROOT prompt: `{`
+1.  To begin a multi-line command, type at the ROOT prompt:`{`
 
 2.  Type one command per line.
 
@@ -251,7 +251,7 @@ ROOT provides a lot of tutorials that are available as ROOT macros (→ see [ROO
 
 You can save a ROOT macro in a file and execute it at the ROOT prompt or the system prompt.
 
-### Creating a ROOT macro
+### Creating ROOT macros
 
 The name of the ROOT macro and the file name (without file extension) in which the macro
 is saved must match.
@@ -272,7 +272,7 @@ is saved must match.
 
 3.  Save the file ROOT macro, using the macro name as file name: **MacroName**.C
 
-### Executing a ROOT macro
+### Executing ROOT macros
 
 You can execute a ROOT macro:
 
@@ -280,23 +280,23 @@ You can execute a ROOT macro:
   - at the ROOT prompt,
   - by loading it to a ROOT session.
 
-- To execute a ROOT macro at the system prompt, type:
+To execute a ROOT macro at the system prompt, type:
 
    ```
    root MacroName.C
    ```
 
-   --or--
+--or--
 
-- To execute a ROOT macro at the ROOT prompt, type:
+To execute a ROOT macro at the ROOT prompt, type:
 
    ```
    .x MacroName.C`
    ```
 
-   -- or --
+-- or --
 
-- To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
+To load a ROOT macro to a ROOT session, type (at the ROOT prompt):
 
    ```
    .L MacroName.C
@@ -307,13 +307,18 @@ You can execute a ROOT macro:
 >
 > You can load multiple ROOT macros, as each ROOT macro has a unique name in the ROOT name space.
 
-### Executing a ROOT macro from a ROOT macro
+In addition, you can:
+ - [execute a ROOT macro from a ROOT macro](#executing-a-ROOT-macro-from-a ROOT-macro)
+ - [execute a ROOT macro from the invocation of ROOT](#executing-a-root-macro-from-the-invocation-of-root)
 
-You can execute a RROT macro conditionally inside another ROOT macro.
+<p><a name="executing-a-ROOT-macro-from-a ROOT-macro"></a></p>
+**Executing a ROOT macro from a ROOT macro**
+
+You can execute a ROOT macro conditionally inside another ROOT macro.
 
 - Call the interpreter [TROOT::ProcessLine()](https://root.cern/doc/master/classTROOT.html#a32fc66033a13d1415e0ad523994dd0e5){:target="_blank"}.
 
-`ProcessLine()` takes a parameter, which is a pointer to an int or to a
+`ProcessLine()` takes a parameter, which is a pointer to an `int` or to a
 `TInterpreter::EErrorCode` to let you access the interpreter error code after an attempt to interpret.
 This contains the error as defined in enum `TInterpreter::EErrorCode` with `TInterpreter::kSuccess`
 as being the value for a successful execution.
@@ -329,7 +334,8 @@ The example `$ROOTSYS/tutorials/tree/cernstaff.C` calls a ROOT macro to build a 
    }
 {% endhighlight %}
 
-### Executing a ROOT macro from the invocation of ROOT
+<p><a name="executing-a-root-macro-from-the-invocation-of-root"></a></p>
+**Executing a ROOT macro from the invocation of ROOT**
 
 You can pass a macro to ROOT in its invocation.
 
@@ -341,7 +347,7 @@ The exact kind of quoting depends on the used shell. This example works for bash
    $ root -l -b 'myCode.C("some String", 12)'
 ```
 
-### Compiling ROOT macros with ACLiC
+### Compiling ROOT macros
 
 You can use ACLiC (*Compiling Your Code*) to compile your code and build a dictionary and a shared library from your ROOT macro. ACliC is implemented in [TSystem::CompileMacro()](https://root.cern.ch/doc/master/classTSystem.html).
 
@@ -360,7 +366,7 @@ ROOT macro files with one of following extensions: `.h`, `.hh`, `.hpp`, `.hxx`,`
 This means that, by default, you cannot combine ROOT macros from different files into one
 library by using `#include` statements; you will need to compile each ROOT macro separately.
 
-#### Compiling a ROOT macro
+#### Compiling a ROOT macro with ACLiC
 
 Before you can compile your interpreted ROOT macro, you need to add the include statements for
 the classes used in the ROOT macro. Only then you can build and load a shared library containing
