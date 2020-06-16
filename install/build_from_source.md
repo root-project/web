@@ -125,7 +125,12 @@ value was not already specified by the user.
 
 ## Building ROOT with CUDA suppot
 
-> TODO: explain how to add support for CUDA, what build options are important...
+To build ROOT with CUDA support, you need to have [Nvidia's CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit){:target="\_blank"} installed,
+and optionally [Nvidia's Cudnn](https://developer.nvidia.com/cudnn){:target="\_blank"} library. The relevant CMake
+options to set are `CMAKE_CUDA_HOST_COMPILER` (usually set to the same as `CMAKE_CXX_COMPILER`), and `CMAKE_CUDA_STANDARD`.
+Starting with ROOT 6.20.06 it is possible to set `CMAKE_CXX_STANDARD` and `CMAKE_CUDA_STANDARD` to different values
+to allow to compile ROOT with C++17 while CUDA code with C++14 when using CUDA 9 or 10. In addition to these options,
+the relevant ROOT build options to enable are `-Dcuda=ON -Dcudnn=ON -Dtmva-gpu=ON`.
 
 ## Built-in dependencies and external dependencies
 
