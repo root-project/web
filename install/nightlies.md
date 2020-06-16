@@ -5,7 +5,7 @@ layout: single
 
 > **Disclaimer**
 >
-> The usual nightly restrictions apply: a build might have failed, a build might be unavailble for a particular configuration, features might be missing or not yet in release quality.
+> The usual nightly restrictions apply: a build might have failed, a build might be unavailable for a particular configuration, features might be missing or not yet in release quality.
 
 ## Where to find nightly builds:
 

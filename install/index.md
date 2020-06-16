@@ -119,7 +119,7 @@ $ brew install root
 After [installing macports](https://www.macports.org/install.php), the [ROOT port](https://ports.macports.org/port/root6/summary) can be installed with
 
 ```sh
-sudo port install root6
+$ sudo port install root6
 ```
 
 # LCG releases on CVMFS

@@ -131,7 +131,7 @@ Turning on C++14 (see [Setting the C++ standard](#setting-the-c-standard)) or hi
 Alternatively, you can explicitly enable ROOT7 with `-Droot7=ON`, which will in turn set the standard to C++14 if a
 value was not already specified by the user.
 
-## Building ROOT with CUDA suppot
+## Building ROOT with CUDA support
 
 To build ROOT with CUDA support, you need to have [Nvidia's CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit){:target="\_blank"} installed,
 and optionally [Nvidia's Cudnn](https://developer.nvidia.com/cudnn){:target="\_blank"} library. The relevant CMake
