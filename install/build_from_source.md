@@ -165,7 +165,7 @@ installation paths like `CMAKE_INSTALL_BINDIR`, `CMAKE_INSTALL_LIBDIR`, etc.
 
 The fixed location installation method is enabled with `-Dgnuinstall=ON` at configuration time, which then also allows 
 the tuning of destinations for the various components by setting the variables `CMAKE_INSTALL_xxxDIR`, where `xxx` is `BIN`,
-`LIB`, `INCLUDE`, etc. The full list is available in `cmake/Modules/RootInstallDirs.cmake` inside the repository and
+`LIB`, `INCLUDE`, etc. The full list is available in `cmake/modules/RootInstallDirs.cmake` inside the repository and
 also in the list of variables below. The fixed location installation method does not require setting any environment
 variables when ROOT is installed into default system paths (e.g. `/usr`, `/usr/local`). However, if
 `CMAKE_INSTALL_LIBDIR` is a directory that is not searched for by the linker, it is recommended to enable
