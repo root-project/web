@@ -140,10 +140,6 @@ Starting with ROOT 6.20.06 it is possible to set `CMAKE_CXX_STANDARD` and `CMAKE
 to allow to compile ROOT with C++17 while CUDA code with C++14 when using CUDA 9 or 10. In addition to these options,
 the relevant ROOT build options to enable are `-Dcuda=ON -Dcudnn=ON -Dtmva-gpu=ON`.
 
-## Built-in dependencies and external dependencies
-
-> TODO: explain how built-in work, which libraries are available as built-in (or how to find out), what the behavior is, mention fail-on-missing, etc.
-
 ## System-wide installation
 
 There are two main methods of installing ROOT from source: _location independent_ and _fixed location_. The former is
@@ -328,8 +324,6 @@ A number of additional variables to control the way ROOT is built.
 | LLVM_BUILD_TYPE | STRING | Build type for the bundled LLVM. It is used to set the CMAKE_BUILD_TYPE for the /interpreter/ subdirectory |
 
 ### External libraries
-
-> TODO: do users need to know about the actual CMake variables?
 
 ROOT requires a number of external libraries that the CMake system needs to locate. The list of externals depends on the build options that have been enabled. CMake will look for these third party products at a number of standard places in your system but the user can influence the search by setting some environment variables before invoking the CMake command or by setting package specific CMake variables to their exact location.
 
