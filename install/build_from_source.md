@@ -118,7 +118,7 @@ ROOT needs to be configured and built with the same C++ standard as the programs
 The relevant cmake flag is [`CMAKE_CXX_STANDARD`](https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html){:target="_blank"}.
 For example, from the command line, the standard can be selected by passing one of 11, 14, 20,... such as `-DCMAKE_CXX_STANDARD=14`.
 
-#### ROOT STL backports
+### ROOT STL backports
 
 ROOT backports certain useful C++ standard library features to make them available in C++11, for example `std::make_unique` and `std::string_view`.
 The backports can be found [here in the reference guide](https://root.cern.ch/doc/master/dir_7780993579c9aa6baf9598fd7cc29d54.html).
