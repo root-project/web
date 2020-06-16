@@ -112,6 +112,14 @@ You can install it with
 $ brew install root
 ```
 
+## Macports
+
+After [installing macports](https://www.macports.org/install.php), the [ROOT port](https://ports.macports.org/port/root6/summary) can be installed with
+
+```sh
+sudo port install root6
+```
+
 # LCG releases on CVMFS
 
 ## Pre-built ROOT without dependencies
