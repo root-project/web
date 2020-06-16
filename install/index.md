@@ -151,7 +151,7 @@ LCG views nightly builds plus dependencies are at `/cvmfs/sft-nightlies.cern.ch/
 
 ROOT Docker containers for several linux flavours are available at [ROOT's official DockerHub](https://hub.docker.com/r/rootproject){:target="\_blank"}.
 
-For example, to try out the latest ROOT release just run `docker run rootproject/root`.
+For example, to try out the latest ROOT release just run `docker run -it rootproject/root`.
 
 # Run on CERN lxplus
 
