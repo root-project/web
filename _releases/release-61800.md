@@ -6,7 +6,7 @@ release_date: 2019-06-25
 toc: true
 toc_sticky: true
 sidebar:
-  nav: "download"
+  nav: "releases"
 ---
 
 

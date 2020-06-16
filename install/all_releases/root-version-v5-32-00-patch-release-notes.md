@@ -4,7 +4,7 @@ layout: single
 toc: true
 toc_sticky: true
 sidebar:
-  nav: "download"
+  nav: "releases"
 ---
 
 <p>A new production version ROOT v5-32-04 has been released June 13, 2012.</p>

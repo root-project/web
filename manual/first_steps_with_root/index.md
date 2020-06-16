@@ -10,7 +10,7 @@ toc_sticky: true
 > **Note**
 >
 > Before using ROOT, it must be installed successfully and all environment variables must be set.
-> → See [Download and Installation Guide]({{ '/download' | relative_url }}).
+> → See [Installation Guide]({{ '/install' | relative_url }}).
 >
 > In particular it is recommended to put the following command into the `.profile` or `.login`
 > file in order to have the environment variables  properly defined at each login.

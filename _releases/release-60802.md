@@ -7,7 +7,7 @@ state:
 toc: true
 toc_sticky: true
 sidebar:
-  nav: "download"
+  nav: "releases"
 ---
 
 ## Highlights

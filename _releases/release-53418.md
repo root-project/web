@@ -7,13 +7,13 @@ state:
 toc: true
 toc_sticky: true
 sidebar:
-  nav: "download"
+  nav: "releases"
 ---
 
 
 ## Release Notes
 
-The release notes for this release can be found [here]({{ '/download/all_releases/root-version-v5-34-00-patch-release-notes#18' | relative_url }}).
+The release notes for this release can be found [here]({{ '/install/all_releases/root-version-v5-34-00-patch-release-notes#18' | relative_url }}).
 
 ## Source distribution
 
