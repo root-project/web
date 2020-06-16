@@ -129,13 +129,13 @@ $ sudo port install root6
 If your platform mounts [CVMFS](https://cernvm.cern.ch/portal/filesystem){:target="\_blank"} (as, for example, CERN lxplus does),
 ROOT is directly available as an [LCG release](http://lcginfo.cern.ch/){:target="\_blank"}.
 
-ROOT installations with minimal external dependencies are available for Fedora, Ubuntu, Centos 7 and MacOS at:
+ROOT installations with minimal external dependencies are available for Fedora, Ubuntu, CentOS 7 and MacOS at:
 
 ```
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/<version>/<platform>
 ```
 
-For example, to set up ROOT 6.20/04 on a Centos7 machine that already has all [ROOT required dependencies]({{'/install/dependencies' | relative_url}}) installed, just run:
+For example, to set up ROOT 6.20/04 on a CentOS7 machine that already has all [ROOT required dependencies]({{'/install/dependencies' | relative_url}}) installed, just run:
 
 ```
 source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.20.04/x86_64-centos7-gcc48-opt/bin/thisroot.sh
@@ -143,7 +143,7 @@ source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.20.04/x86_64-centos7-gcc48-opt
 
 ## ROOT plus dependencies
 
-On Centos7, ROOT as well as its dependencies and many other packages are also available as an LCG _view_:
+On CentOS7, ROOT as well as its dependencies and many other packages are also available as an LCG _view_:
 
 ```
 /cvmfs/sft.cern.ch/lcg/views/LCG_<version>/<platform>
