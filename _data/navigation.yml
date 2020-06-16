@@ -10,7 +10,7 @@ main:
   - title: "Get Started"
     url: get_started
     description: "ROOT usage starting point"
-  - title: "Forum"
+  - title: "Forum & Help"
     url: https://root-forum.cern.ch/
     description: "Ask questions about ROOT"
     target: _blank
@@ -83,7 +83,7 @@ manual:
         url: primer/
       - title: "Topical Manuals"
         url: topical/
-      - title: "Forum"
+      - title: "Forum & Help"
         url: https://root-forum.cern.ch/
         target: _blank
 
