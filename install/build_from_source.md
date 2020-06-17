@@ -254,7 +254,7 @@ The user can set any CMake variable or option that controls the build process fr
 | qt | | Qt graphics backend, requires libqt >= 4.8 |
 | qtgsi | * | GSI's Qt integration, requires libqt >= 4.8 |
 | roofit | * | Build the libRooFit advanced fitting package |
-| root7 | OFF | ROOT 7 support |
+| root7 | OFF | ROOT 7 support ([read more](#enabling-experimental-features-aka-root7)) |
 | roottest | OFF | Include roottest in the test suit, if roottest exists in root or if it is a sibling directory |
 | ruby | OFF | Ruby ROOT bindings, requires ruby >= 1.8 |
 | r | OFF | R ROOT bindings, requires R, Rcpp and RInside |
