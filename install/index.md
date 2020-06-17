@@ -126,7 +126,7 @@ $ sudo port install root6
 
 ## Pre-built ROOT without dependencies
 
-If your platform mounts [CVMFS](https://cernvm.cern.ch/portal/filesystem){:target="\_blank"} (as, for example, CERN lxplus does),
+If your platform mounts [CVMFS](https://cernvm.cern.ch/portal/filesystem){:target="\_blank"} (as, for example, CERN LXPLUS does),
 ROOT is directly available as an [LCG release](http://lcginfo.cern.ch/){:target="\_blank"}.
 
 ROOT installations with minimal external dependencies are available for Fedora, Ubuntu, CentOS 7 and MacOS at:
@@ -149,7 +149,7 @@ On CentOS7, ROOT as well as its dependencies and many other packages are also av
 /cvmfs/sft.cern.ch/lcg/views/LCG_<version>/<platform>
 ```
 
-For example, to set up a full environment with ROOT 6.20/02 on CERN lxplus, you can run:
+For example, to set up a full environment with ROOT 6.20/02 on CERN LXPLUS, you can run:
 
 ```
 source /cvmfs/sft.cern.ch/lcg/views/LCG_97/x86_64-centos7-gcc8-dbg/setup.sh
@@ -172,7 +172,7 @@ ROOT Docker containers for several linux flavours are available at [ROOT's offic
 
 For example, to try out the latest ROOT release just run `docker run -it rootproject/root`.
 
-# Run on CERN lxplus
+# Run on CERN LXPLUS
 
 Users with a CERN computing account can simply connect to `lxplus.cern.ch` via SSH and start `root`: the latest stable version is installed as a normal system package.
 
