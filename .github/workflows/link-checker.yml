@@ -17,12 +17,15 @@ jobs:
       
     - name: Jekyll Action
       uses: root-project/jekyll-action@HEAD
+    
+    - name: Move build to web
+      run: rm -rf web && mv build web
       
     - name: Link Checker
       uses: peter-evans/link-checker@v1
       with:
         # liche arguments (https://github.com/raviqqe/liche)
-        args: -x savannah.cern.ch -v -d build/ -r build/
+        args: -x savannah.cern.ch -v -d . -r web
     
     - uses: actions/upload-artifact@v2
       with:
