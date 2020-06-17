@@ -16,10 +16,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Jekyll Action
         uses: root-project/jekyll-action@HEAD
-      - name: Deploy
-        uses: ItsKarma/aws-cli@v1.70.0
-        with:
-          args: --endpoint-url https://s3.cern.ch s3 cp build s3://root/web --recursive --acl public-read
+      - name: Sync to S3
+        run: aws --endpoint-url https://s3.cern.ch s3 sync --delete build s3://root/web
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
