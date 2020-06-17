@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: Jekyll Action
-      uses: root-project/jekyll-action@v2
+      uses: root-project/jekyll-action@HEAD
       
     - name: Link Checker
       uses: peter-evans/link-checker@v1
