@@ -27,7 +27,10 @@ jobs:
         # liche arguments (https://github.com/raviqqe/liche)
         args: -x savannah.cern.ch -v -d . -r web
     
+    - name: Debug
+      run: pwd && ls -la
+    
     - uses: actions/upload-artifact@v2
       with:
         name: Report
-        path: $GITHUB_WORKSPACE/link-checker/out.md
+        path: ../link-checker/out.md
