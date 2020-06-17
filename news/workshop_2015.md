@@ -56,7 +56,7 @@ sidebar:
 </ul>
 
 
-<p>Just as <a href="/node/106">the previous workshops</a>, this anniversary workshop is mostly about intense interaction with the ROOT developers: we will discuss, solve, invent and plan. In the past, these workshops have been eye-openers for users and developers - and we expect nothing less for the 9th workshop! </p>
+<p>Just as <a href="../workshops/">the previous workshops</a>, this anniversary workshop is mostly about intense interaction with the ROOT developers: we will discuss, solve, invent and plan. In the past, these workshops have been eye-openers for users and developers - and we expect nothing less for the 9th workshop! </p>
 
 <h3>Important dates</h3>
 
