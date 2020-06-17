@@ -766,30 +766,30 @@ The linear algebra package provides a complete environment in ROOT to perform ca
 
 ROOT provides the following matrix classes, among others:
 
-- `TMatrixDBase`
+- `TMatrixDBase`: Base class for matrices.
 
-- `TMatrixF`
+- `TMatrixF`: Matrix with single precision (`float`).
 
-- `TMatrixFSym`
+- `TMatrixFSym`: Symmetrical matrix with single precision (`float`).
 
-- `TVectorF`
+- `TVectorF`: Vector with single precision (`float`).
 
-- `TMatrixD`
+- `TMatrixD`: Matrix with double precision (`double`).
 
-- `TMatrixDSym`
+- `TMatrixDSym`: Symmetrical matrix with double precision (`double`).
 
-- `TMatrixDSparse`
+- `TMatrixDSparse`: Sparse matrix with double precision (`double`).
 
-- `TDecompBase`
+- {% include ref class="TDecompBase" %}: Decomposition base class. 
 
-- `TDecompChol`
+- {% include ref class="TDecompChol" %}: Cholesky decomposition class. 
 
-#### Matrix properties
+### Matrix properties
 
 A matrix has five properties, which are all set in the constructor:
 
 - `precision` <br>
-If the `precision` is float (i.e. single precision), use the `TMatrixF` class family. If the precision is double, use the `TMatrixD` class family.
+If the `precision` is float (this is single precision), use the `TMatrixF` class family. If the precision is double, use the `TMatrixD` class family.
 
 - `type`<br>
 Possible values are: `general` (`TMatrixD`), `symmetric` (`TMatrixDSym`) or `sparse` (`TMatrixDSparse`).
@@ -803,7 +803,13 @@ Range start of row and column index. By default these start at 0.
 - `sparse map`<br>
 Only relevant for a sparse matrix. It indicates where elements are unequal 0.
 
-#### Accessing matrix properties
+You can:
+- access the matrix properties
+- Set the matrix properties
+
+
+<p><a name="accessing-matrix-properties"></a></p>
+**Accessing matrix properties**
 
 Use one of the following methods to access the information about the relevant matrix property:
 
@@ -827,7 +833,9 @@ Use one of the following methods to access the information about the relevant ma
 
 - `Int_t *GetColIndexArray()`: For sparse matrices, access to the column index of `fNelems` entries.
 
-#### Setting matrix properties
+
+<p><a name="setting-matrix-properties"></a></p>
+**Setting matrix properties**
 
 Use one of the following methods to set a matrix property:
 
