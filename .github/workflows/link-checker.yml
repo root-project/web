@@ -24,16 +24,16 @@ jobs:
     - name: Link Checker
       uses: peter-evans/link-checker@v1
       env:
-        LINKCHECKER_OUTPUT_DIR: $GITHUB_WORKSPACE
+        LINKCHECKER_OUTPUT_DIR: $HOME
         LINKCHECKER_OUTPUT_FILENAME: report.md
       with:
         # liche arguments (https://github.com/raviqqe/liche)
-        args: -x savannah -c 32 -t 1 -d . -r web
+        args: -x savannah -d . -r web/about
     
     - name: Debug
-      run: pwd && ls -la && ls -la .. && ls -la ../.. && cd $GITHUB_WORKSPACE && pwd && ls -la
+      run: pwd && ls -la && ls -la .. && ls -la ../.. && echo "HOME" && cd $HOME && pwd && ls -la
     
     - uses: actions/upload-artifact@v2
       with:
         name: Report
-        path: $GITHUB_WORKSPACE/report.md
+        path: $HOME/report.md
