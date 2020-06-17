@@ -26,7 +26,10 @@ jobs:
         LINKCHECKER_OUTPUT_FILENAME: report.md
       with:
         # liche arguments (https://github.com/raviqqe/liche)
-        args: -v -x releases -d . -r web/about
+        args: -v -x releases -d . -r web/
+        
+    - name: Print errors
+      run: cat $HOME/report.md | grep ERROR
     
     - uses: actions/upload-artifact@v2
       with:
