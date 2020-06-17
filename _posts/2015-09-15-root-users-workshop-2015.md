@@ -83,7 +83,7 @@ nothing less for the 9th workshop! </p>
 
 <h3>Venue, Accommodation</h3>
 
-<p>The workshop takes place at the <a href="http://www.schweizerhof-saasfee.ch/index.php/de/home-en-hotel-schweizerhof" target="_blank">Schweizerhof hotel in Saas-Fee</a>. A set of rooms has been pre-reserved <a href="https://indico.cern.ch/event/349459/page/0" target="_blank">and can be reserved by participants</a>. A <a href="http://www.saas-fee.ch/en/suchen-buchen/hotels/" target="_blank">wide variety of alternatives is available in walking distance</a>.</p>
+<p>The workshop takes place at the Schweizerhof hotel in Saas-Fee. A set of rooms has been pre-reserved <a href="https://indico.cern.ch/event/349459/page/0" target="_blank">and can be reserved by participants</a>. A <a href="http://www.saas-fee.ch/en/suchen-buchen/hotels/" target="_blank">wide variety of alternatives is available in walking distance</a>.</p>
 
 <h3>Organizing Committee</h3>
 
