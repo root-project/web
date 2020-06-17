@@ -14,8 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     # Run the link checker (https://github.com/marketplace/actions/link-checker) using liche (https://github.com/raviqqe/liche)
     steps:
+    - uses: actions/checkout@v2
     - name: Link Checker
       uses: peter-evans/link-checker@v1
       with:
         # liche arguments
         args: -x savannah.cern.ch -v -r *
+    - uses: actions/upload-artifact@v2
+      with:
+        name: link-checker-report
+        path: ./link-checker/out.md
