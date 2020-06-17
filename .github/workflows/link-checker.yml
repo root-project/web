@@ -22,9 +22,9 @@ jobs:
       uses: peter-evans/link-checker@v1
       with:
         # liche arguments (https://github.com/raviqqe/liche)
-        args: -x savannah.cern.ch -v -r web/_site
+        args: -x savannah.cern.ch -v -r $GITHUB_WORKSPACE/web/_site
     
     - uses: actions/upload-artifact@v2
       with:
-        name: link-checker-report
+        name: Report
         path: link-checker/out.md
