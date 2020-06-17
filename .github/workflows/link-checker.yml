@@ -23,14 +23,17 @@ jobs:
       
     - name: Link Checker
       uses: peter-evans/link-checker@v1
+      env:
+        LINKCHECKER_OUTPUT_DIR: $GITHUB_WORKSPACE
+        LINKCHECKER_OUTPUT_FILENAME: report.md
       with:
         # liche arguments (https://github.com/raviqqe/liche)
         args: -x savannah.cern.ch -v -d . -r web
     
     - name: Debug
-      run: pwd && ls -la
+      run: pwd && ls -la && ls -la .. && ls -la ../..
     
     - uses: actions/upload-artifact@v2
       with:
         name: Report
-        path: ../link-checker/out.md
+        path: $GITHUB_WORKSPACE/report.md
