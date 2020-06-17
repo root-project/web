@@ -2,9 +2,9 @@
 
 A working version of this prototype can be seen here:
 
-  https://root-project.github.io/web/
+  https://root-project.github.io
 
-(or https://root.s3-website.cern.ch/web/)
+(or https://root.s3-website.cern.ch)
 
 This new web site is based on [jekyll](https://jekyllrb.com/)
 
