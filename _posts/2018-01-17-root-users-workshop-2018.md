@@ -17,7 +17,7 @@ ROOT is changing; this is your chance to influence what happens and to interact 
 Our way of saying "thank you for participating" is to make sure that you have a great time in a unique location!</p>
 
 <p style="clear:both">
-<a href="http://root.cern.ch/files/ROOT_poster_2018.pdf"><img style="float:right; padding:1em 3em !important;width:332px" alt="ROOT 2018 Poster"
+<a><img style="float:right; padding:1em 3em !important;width:332px" alt="ROOT 2018 Poster"
 src="{{ '/assets/images/ROOT_poster_2018_scaled.png' | relative_url }}"/></a>
 The topics will cover:</p>
 <ul>
