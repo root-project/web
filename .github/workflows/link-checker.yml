@@ -1,6 +1,5 @@
 name: Link Checker
 
-# Run on push to gh-pages and for PRs
 on:
   push:
     branches: [ gh-pages ]
@@ -10,7 +9,6 @@ on:
 jobs:
   build:
     name: Link Checker
-    # Run with ubuntu latest
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -28,10 +26,7 @@ jobs:
         LINKCHECKER_OUTPUT_FILENAME: report.md
       with:
         # liche arguments (https://github.com/raviqqe/liche)
-        args: -x savannah -d . -r web/about
-    
-    - name: Debug
-      run: pwd && ls -la && ls -la .. && ls -la ../.. && echo "HOME" && cd $HOME && pwd && ls -la
+        args: -v -x releases -d . -r web/about
     
     - uses: actions/upload-artifact@v2
       with:
