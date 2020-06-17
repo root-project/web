@@ -1,0 +1,23 @@
+name: HTML proofer
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Jekyll Action
+      uses: root-project/jekyll-action@HEAD
+
+    - name: Install HTML proofer
+      run: sudo apt install ruby && gem install html-proofer
+    
+    - name: Run HTML proofer
+      run: htmlproofer --empty-alt-ignore --file-ignore "/release/" --disable-external build
