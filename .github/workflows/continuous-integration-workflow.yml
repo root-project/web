@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - gh-pages
+      - sync_to_root
 
 jobs:
   build:
@@ -17,7 +18,7 @@ jobs:
       - name: Jekyll Action
         uses: root-project/jekyll-action@HEAD
       - name: Sync to S3
-        run: aws --endpoint-url https://s3.cern.ch s3 sync --delete build s3://root/web
+        run: aws --endpoint-url https://s3.cern.ch s3 sync --delete build s3://root
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
