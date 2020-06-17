@@ -165,7 +165,7 @@ of the macro header.
 ## Useful tips for common documentation artifacts
 A couple of useful online web tools for the conversion and formatting:
 
-- [HTML to Markdown converter](https://domchristie.github.io/to-markdown/){:target="_blank"}
+- [HTML to Markdown converter](https://domchristie.github.io/turndown/){:target="_blank"}
 - [Latex equation editor](https://www.codecogs.com/latex/eqneditor.php){:target="_blank"}
 
 ### Code blocks
