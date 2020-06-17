@@ -54,7 +54,7 @@ You now have the ROOT web site sources (from github) on your local machine. You 
 
 When you push changes to the origin (your forked copy) you can see them alive on:
 
-`https://<your GitHub username>.github.io//web`
+`https://<your GitHub username>.github.io/`
 
 > **But**  that can be very slow because you need to wait github rebuild your site before
 > seeing the changes you did. That's why it might be much more efficient to run a server
@@ -113,20 +113,20 @@ If you only plan to make minor modifications, you can append the `--incremental`
 
 6. After about 30 seconds you should get an output similar to
 ```
-Configuration file: /path/to/the/directory/web/_config.yml
-            Source: /path/to/the/directory/web
-       Destination: /path/to/the/directory/web/_site
+Configuration file: /path/to/the/directory/_config.yml
+            Source: /path/to/the/directory
+       Destination: /path/to/the/directory/_site
  Incremental build: disabled. Enable with --incremental
       Generating...
        Jekyll Feed: Generating feed for posts
                     done in 21.638 seconds.
- Auto-regeneration: enabled for /path/to/the/directory/web
-    Server address: http://127.0.0.1:4000/web/
+ Auto-regeneration: enabled for /path/to/the/directory
+    Server address: http://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 ```
 
 7. Your server is now running. As suggested in the previous output open the url
-`http://127.0.0.1:4000/web/`
+`http://127.0.0.1:4000/`
 in your favorite web browser.
 
 ### Modify the web site
@@ -137,7 +137,7 @@ the server will notice it and will regenerate the web site. You will get an outp
 similar to:
 ```
 Regenerating: 1 file(s) changed at 2020-02-19 10:40:02
-              for_developers/web/index.md
+              for_developers/index.md
  Jekyll Feed: Generating feed for posts
               ...done in 9.877795 seconds.
 ```
@@ -156,4 +156,4 @@ modify or create files in that folder. This folder is ignored by git.
 Once you are happy with your modifications, you can publish them via a direct push (if you have
 the rights) to the github repository or via a Pull Request if you work on a forked copy as described
 in [the previous section](#get-the-root-web-site-sources). After a while the web site
-`https://root-project.github.io/web/` will be automatically updated by git.
+`https://root-project.github.io/` will be automatically updated by git.
