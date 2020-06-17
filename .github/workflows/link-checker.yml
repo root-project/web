@@ -1,0 +1,21 @@
+name: Link Checker
+
+# Run on push to gh-pages and for PRs
+on:
+  push:
+    branches: [ gh-pages ]
+  pull_request:
+    branches: [ gh-pages ]
+
+jobs:
+  build:
+    name: Link Checker
+    # Run with ubuntu latest
+    runs-on: ubuntu-latest
+    # Run the link checker (https://github.com/marketplace/actions/link-checker) using liche (https://github.com/raviqqe/liche)
+    steps:
+    - name: Link Checker
+      uses: peter-evans/link-checker@v1
+      with:
+        # liche arguments
+        args: -x savannah.cern.ch -v -r *
