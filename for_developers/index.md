@@ -49,7 +49,7 @@ ROOT externals coming from the central installations in AFS or CVMFS.
    - [ROOTBinder Checklist](continous_integration-testing/rootbinder_checklist)
 
 ### [Doxygen in ROOT]({{'/for_developers/doxygen' | relative_url}})
-[Doxygen](http://www.stack.nl/~dimitri/doxygen/){:target="_blank"} is used for generating
+[Doxygen](https://www.doxygen.nl/){:target="_blank"} is used for generating
 the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
 
 ### [Editing the ROOT web site]({{'/for_developers/web' | relative_url}})
