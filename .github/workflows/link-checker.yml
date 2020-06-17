@@ -12,15 +12,19 @@ jobs:
     name: Link Checker
     # Run with ubuntu latest
     runs-on: ubuntu-latest
-    # Run the link checker (https://github.com/marketplace/actions/link-checker) using liche (https://github.com/raviqqe/liche)
     steps:
     - uses: actions/checkout@v2
+      
+    - name: Jekyll Action
+      uses: root-project/jekyll-action@HEAD
+      
     - name: Link Checker
       uses: peter-evans/link-checker@v1
       with:
-        # liche arguments
-        args: -x savannah.cern.ch -v -r *
+        # liche arguments (https://github.com/raviqqe/liche)
+        args: -x savannah.cern.ch -v -r web/_site
+    
     - uses: actions/upload-artifact@v2
       with:
         name: link-checker-report
-        path: ./link-checker/out.md
+        path: link-checker/out.md
