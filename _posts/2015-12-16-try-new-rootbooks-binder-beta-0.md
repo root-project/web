@@ -13,4 +13,4 @@ documentation for the most impatient user, read the notebooks, execute them inte
 
 Let us surprise you with full blown modern C++ interpretation, interactive graphics, integration with iPython widgets and much more!
 
-[Binder](http://www.mybinder.org) is a tool that turns a GitHub repo into a collection of interactive notebooks powered by Jupyter and Kubernetes: follow the link to the [Binder website](http://www.mybinder.org) to learn more.
+[Binder](https://mybinder.org/) is a tool that turns a GitHub repo into a collection of interactive notebooks powered by Jupyter and Kubernetes: follow the link to the [Binder website](https://mybinder.org/) to learn more.
