@@ -52,7 +52,7 @@ This workshop, following from a successful <a href="{{'/news/workshops' | relati
 
 <p>Accommodation fee: 195 CHF/day&nbsp;(breakfast included). Double occupancy adds 115 CHF/day to the price. Dinner is available for extra 30 CHF/person.</p>
 
-<p>The workshop venue is the <a href="http://www.schweizerhof-saasfee.ch/de/" target="_blank">Schweizerhof</a> hotel.</p>
+<p>The workshop venue is the Schweizerhof hotel.</p>
 
 <p>The participants will have rooms in either the Schweizerhof, <a href="http://www.thedom.ch/hotel/?id=4" target="_blank">The Dom</a>, <a href="http://www.duglacier.ch" target="_blank">Du Glacier</a>, <a href="http://www.europa-saasfee.ch/en" target="_blank">Europa</a>, <a href="http://www.allalin.ch" target="_blank">Allalin</a> or the <a href="http://www.saaserhof.ch" target="_blank">Saaserhof</a> hotels.</p>
 
