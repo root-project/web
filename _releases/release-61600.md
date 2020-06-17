@@ -45,7 +45,7 @@ The release notes for this release can be found [here](https://root.cern/doc/v61
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | CentOS Cern 7 gcc4.8 | [root_v6.16.00.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.16.00.Linux-centos7-x86_64-gcc4.8.tar.gz) | 141M |
-| Linux fedora28 gcc8.2 | [root_v6.16.00.Linux-fedora28-x86_64-gcc8.2.tar.gz](https://root.cer/download/root_v6.16.00.Linux-fedora28-x86_64-gcc8.2.tar.gz) | 150M |
+| Linux fedora28 gcc8.2 | [root_v6.16.00.Linux-fedora28-x86_64-gcc8.2.tar.gz](https://root.cern/download/root_v6.16.00.Linux-fedora28-x86_64-gcc8.2.tar.gz) | 150M |
 | Linux fedora29 gcc8.2 | [root_v6.16.00.Linux-fedora29-x86_64-gcc8.2.tar.gz](https://root.cern/download/root_v6.16.00.Linux-fedora29-x86_64-gcc8.2.tar.gz) | 154M |
 | Ubuntu 14 gcc4.8 | [root_v6.16.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.16.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 141M |
 | Ubuntu 16 gcc5.4 | [root_v6.16.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.16.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 143M |
