@@ -16,13 +16,13 @@ jobs:
     - uses: actions/checkout@v2
       
     - name: Jekyll Action
-      uses: root-project/jekyll-action@HEAD
+      uses: root-project/jekyll-action@v2
       
     - name: Link Checker
       uses: peter-evans/link-checker@v1
       with:
         # liche arguments (https://github.com/raviqqe/liche)
-        args: -x savannah.cern.ch -v -r $GITHUB_WORKSPACE/web/build
+        args: -x savannah.cern.ch -v -r build
     
     - uses: actions/upload-artifact@v2
       with:
