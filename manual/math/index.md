@@ -804,8 +804,8 @@ Range start of row and column index. By default these start at 0.
 Only relevant for a sparse matrix. It indicates where elements are unequal 0.
 
 You can:
-- access the matrix properties
-- Set the matrix properties
+- [access the matrix properties](#accessing-matrix-properties)
+- [set the matrix properties](#setting-matrix-properties)
 
 
 <p><a name="accessing-matrix-properties"></a></p>
