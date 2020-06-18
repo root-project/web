@@ -652,7 +652,7 @@ editor for use in your own macros.
 
 All global pointers in ROOT begin with a small "g". Some of them were
 already implicitly introduced (for example in the section
-[Configure ROOT at start-up](#configure-root-at-start-up)).
+Configure ROOT at start-up).
 The most important among them are presented in the following:
 
 -   **[gROOT](https://root.cern/doc/master/classTROOT.html)**: the `gROOT`
