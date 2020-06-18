@@ -23,7 +23,7 @@ The top level Python module `ROOT.py` is located in `$ROOTSYS/lib`. The `ROOT.py
 
 Ensure that the Python command is executed where the `libPyROOT.so` ROOT extension module is located. This is the main entry point for any Python script using the ROOT classes.
 
-PyROOT scripts work as a usual Python scripts. You just need to import ROOT:
+PyROOT scripts work as usual Python scripts. You just need to import ROOT:
 
 ```
 import ROOT
@@ -64,8 +64,8 @@ root [3] TPython::Prompt()
 ## New PyROOT: Backwards-Incompatible Changes
 
 ROOT 6.22 makes the new (experimental) PyROOT its default. This new PyROOT is designed on top of the new cppyy, which
-provides more and better support for modern C++. The documentation for cppyy and the new features it provides can be
-found [here](https://cppyy.readthedocs.io).
+provides more and better support for modern C++. Refer to the [cppyy documentation](https://cppyy.readthedocs.io){:target="_blank"} for the new features it provides.
+
 
 The new PyROOT has some backwards-incompatible changes with respect to its predecessor, which are listed next:
 - Instantiation of function templates must be done using square brackets instead of parentheses. For example, if we consider the following
