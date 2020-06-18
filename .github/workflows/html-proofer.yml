@@ -1,8 +1,6 @@
 name: HTML proofer
 
 on:
-  push:
-    branches: [ gh-pages ]
   pull_request:
     branches: [ gh-pages ]
 
