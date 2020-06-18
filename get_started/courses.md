@@ -30,8 +30,8 @@ These are general ROOT tutorials covering the basics of ROOT like Histograms, Tr
 
 ## RooFit/RooStats tutorials
 
-*   RooFit/RooStats tutorial for INFN School of statistics 2013 ([Slides](https://agenda.infn.it/getFile.py/access?contribId=15&resId=0&materialId=slides&confId=5719){:target="_blank"}, [Exercises](https://twiki.cern.ch/twiki/bin/view/RooStats/RooStatsTutorialsJune2013){:target="_blank"})
-*   RooFit/RooStats tutorial for Desy School of Statistics 2015 ([RooFit slides](https://indico.desy.de/getFile.py/access?contribId=6&resId=0&materialId=slides&confId=11244){:target="_blank"}, [RooStats slides](https://indico.desy.de/getFile.py/access?contribId=10&resId=0&materialId=slides&confId=11244){:target="_blank"}, [Exercises](https://twiki.cern.ch/twiki/bin/view/RooStats/RooStatsTutorialsMarch2015){:target="_blank"})
+*   RooFit/RooStats tutorial for INFN School of statistics 2013 ([Slides](https://agenda.infn.it/event/5719/contributions/60039/){:target="_blank"}, [Exercises](https://twiki.cern.ch/twiki/bin/view/RooStats/RooStatsTutorialsJune2013){:target="_blank"})
+*   RooFit/RooStats tutorial for Desy School of Statistics 2015 ([RooFit slides](https://indico.desy.de/indico/event/11244/){:target="_blank"}, [RooStats slides](https://indico.desy.de/indico/event/11244/){:target="_blank"}, [Exercises](https://twiki.cern.ch/twiki/bin/view/RooStats/RooStatsTutorialsMarch2015){:target="_blank"})
 
 ## Preparing ROOT courses for the CERN technical training
 
