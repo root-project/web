@@ -208,7 +208,7 @@ Relational operators:
    false
 {% endhighlight %}
 
-Calling a function from a ROOT class like {% include ref class="TMath" %}.
+Calling a function from a ROOT class like `TMath::Pi`.
 {% highlight C++ %}
    root [3] Math::Pi()
    3.1415927

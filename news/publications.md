@@ -35,10 +35,6 @@ sidebar:
 *   First comparison between ROOT, Objectivity/DB and LHC++ histOOgrams.
      [Paper](https://root.cern.ch/download/oobench.ps.gz) and [full source](https://root.cern.ch/download/oobenchsrc.tar.gz) of used test programs.
 *   Papers presented at HEPVis'98 at SLAC from Jan 28-30, 1998.
-    *   [ROOT Status Report](https://root.cern.ch/root/hepvis98/root_status.html){:target="_blank"}
-    *   [Atlfast++](https://root.cern.ch/root/hepvis98/atlfast.html){:target="_blank"}, the Atlas Fast Simulation program based on ROOT
-    *   [gh2root](https://root.cern.ch/root/hepvis98/gh2root.html){:target="_blank"}, the GEANT3 to ROOT conversion tool
-    *   [New ROOT GUI Classes](https://root.cern.ch/root/hepvis98/newgui.html){:target="_blank"}
 *   Paper published in the Linux Journal, Issue 51, July 1998.
      [ROOT: An Object-Oriented Data Analysis Framework.](https://root.cern.ch/download/lj.ps.gz)
 *   Computer Physics Communications; Anniversary Issue; Volume 180, Issue 12, December 2009, Pages 2499-2512.
