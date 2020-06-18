@@ -13,10 +13,9 @@ jobs:
     
     - name: Jekyll Action
       uses: root-project/jekyll-action@HEAD
-
-    - name: Install HTML proofer
-      run: sudo apt install ruby && sudo gem install html-proofer
     
     - name: Run HTML proofer
-      # Don't check release pages and pagination pages
-      run: htmlproofer --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --disable-external --allow-hash-href build
+      uses: chabad360/htmlproofer@v1.1
+      with:
+          directory: "./build"
+          arguments: --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --disable-external --allow-hash-href
