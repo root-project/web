@@ -25,7 +25,7 @@ These are general ROOT tutorials covering the basics of ROOT like Histograms, Tr
 *   [ROOT tutorial at JRC-IRMM, Belgium, Feb 2014](https://twiki.cern.ch/twiki/bin/view/Main/RootIRMMTutorial2013){:target="_blank"}
 *   ROOT tutorial at Gridka School, Aug 2013 ([Slides](https://indico.scc.kit.edu/indico/getFile.py/access?contribId=29&sessionId=19&resId=0&materialId=slides&confId=26){:target="_blank"}, [Exercises](https://twiki.cern.ch/twiki/bin/view/Main/RootGridKaTutorial2013){:target="_blank"})
 *   [ROOT 6 Analysis Workshop (GridKA 2014)](https://root.cern/d/root-6-analysis-workshop){:target="_blank"} **← Old Drupal Book**
-*   ROOT Tree-I/O tutorial at Desy C++ School,  Nov 2013 ([Slides](https://indico.desy.de/getFile.py/access?sessionId=4&resId=1&materialId=0&confId=8607){:target="_blank"}, [Exercises](https://twiki.cern.ch/twiki/bin/view/Main/ROOTDesyTutorial2013){:target="_blank"})
+*   ROOT Tree-I/O tutorial at Desy C++ School,  Nov 2013 ([Slides](https://indico.desy.de/indico/event/8607/session/4/material/0/1){:target="_blank"}, [Exercises](https://twiki.cern.ch/twiki/bin/view/Main/ROOTDesyTutorial2013){:target="_blank"})
 *   [ROOT tutorial at La Plata (ULP), Nov 2013](https://twiki.cern.ch/twiki/bin/view/Main/ROOTLaPlataTutorial){:target="_blank"}
 
 ## RooFit/RooStats tutorials
