@@ -126,7 +126,7 @@ Introspection, which is also referred to as reflection, run time type identifica
 ROOT implements reflection with the {% include ref class="TClass" %} class. It provides all information about a class, a full description of data members and methods, including the comment field and the method
 parameter types.
 
-If the class is a descendent of {% include ref class="TCObject" %}, you can check if an object inherits from a specific class, you can use the
+If the class is a descendent of {% include ref class="TObject" %}, you can check if an object inherits from a specific class, you can use the
 [TObject::InheritsFrom()](https://root.cern/doc/master/classTObject.html#ab80cf94f9f66badac741633f944ae02a) method. The method returns `kTrue` if the object inherits from the specified class name or {% include ref class="TClass" %}.
 
 {% highlight C++ %}
