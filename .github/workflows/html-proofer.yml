@@ -18,4 +18,5 @@ jobs:
       run: sudo apt install ruby && sudo gem install html-proofer
     
     - name: Run HTML proofer
-      run: htmlproofer --empty-alt-ignore --file-ignore "/release/" --disable-external build
+      # Don't check release pages and pagination pages
+      run: htmlproofer --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --disable-external build
