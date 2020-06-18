@@ -10,40 +10,27 @@ header:
       url: "install"
 ---
 
-<table id="navtable">
-   <tbody>
-      <tr>
-         <td align="center">
-            <a href="{{ "get_started" | relative_url }}">
-            <img width="128" src="{{'/assets/images/start.svg' | relative_url}}"></a>
-                <font color="#346295" style="font-weight:bold" size="3">
-            <br>Get Started
-                </font>
-         </td>
-         <td align="center"  border="0">
-            <a href="https://root.cern/doc/master/index.html" target="_blank">
-            <img width="128" src="{{'/assets/images/doc.svg' | relative_url}}"></a>
-                <font color="#346295" style="font-weight:bold" size="3">
-            <br>Reference
-                </font>
-            </td>
-         <td align="center" border="0">
-            <a href="https://root-forum.cern.ch" target="_blank">
-            <img width="128" src="{{'/assets/images/forum.svg' | relative_url}}"></a>
-                <font color="#346295" style="font-weight:bold" size="3">
-            <br>Forum & Help
-                </font>
-         </td>
-         <td align="center" border="0">
-            <a href="gallery">
-            <img width="128" src="{{'/assets/images/gallery.svg' | relative_url}}"></a>
-                <font color="#346295" style="font-weight:bold" size="3">
-            <br>Gallery
-                </font>
-         </td>
-      </tr>
-   </tbody>
-</table>
+
+<div style="width: 100%;">
+    <center>
+    <div style="width: 25%; display:inline-block;">
+        <div><a href="{{ get_started | relative_url }}"><img width="128" src="{{'/assets/images/start.svg' | relative_url}}"></a></div>
+        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Get Started</font></div>
+    </div><!--
+    --><div style="width: 25%; display:inline-block;">
+        <div><a href="https://root.cern/doc/master/index.html"><img width="128" src="{{'/assets/images/doc.svg' | relative_url}}"></a></div>
+        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Reference</font></div>
+    </div><!--
+    --><div style="width: 25%; display:inline-block;">
+        <div><a href="https://root-forum.cern.ch"><img width="128" src="{{'/assets/images/forum.svg' | relative_url}}"></a></div>
+        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Forum & Help</font></div>
+    </div><!--
+    --><div style="width: 25%; display:inline-block;">
+        <div><a href="{{ gallery | relative_url }}"><img width="128" src="{{'/assets/images/gallery.svg' | relative_url}}"></a></div>
+        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Gallery</font></div>
+    </div>
+    </center>
+</div>
 
 <br><br>
 <h1> ROOT is... </h1>
