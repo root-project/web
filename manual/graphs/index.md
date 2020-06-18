@@ -11,7 +11,7 @@ A graph is an object made of two arrays `X` and `Y`, holding the `x`,`y` coordin
 **Un-binned data**
 
 A graph or chart is a set of categorical variables, this is un-binned data.<br>
-A histogram is used for continuous data, where the bins represent ranges of data (binned data), see → [Fitting histograms](/manual/fitting).
+A histogram is used for continuous data, where the bins represent ranges of data (binned data), see → [Fitting histograms]({{ "/manual/fitting" | relative_url }}).
 
 {% include tutorials name="Graph" url="graphs" %}
 
@@ -187,7 +187,7 @@ _**Example**_
 
 - Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}), for fitting graphs.
 
-For more information on the `Fit()` method, → see [Fitting histograms](/manual/fitting).
+For more information on the `Fit()` method, → see [Fitting histograms]({{ "/manual/fitting" | relative_url }}).
 
 
 ## Graphs with error bars

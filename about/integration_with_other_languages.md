@@ -16,7 +16,7 @@ interpreter. This is done generically using the ROOT dictionary, therefore there
 need to generate any Python wrapper code to include new ROOT classes. At the same time
 PyROOT offers the possibility to execute and evaluate any Python command or start a
 Python shell from the ROOT/Cling prompt. Further details are available in the
-[PyROOT manual](/manual/python/){:target="_blank"}. One of the most powerful features
+[PyROOT manual]({{ "/manual/python" | relative_url }}). One of the most powerful features
 of PyROOT is that bindings are created automatically for every entity present in the
 ROOT type system. In other words, even if a header is interpreted at runtime, Python
 bindings will be created automatically.
