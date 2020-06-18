@@ -17,5 +17,3 @@ Some highlights:
    * More parallelism behind the scenes, for example parallel compression when writing to a TTree. Just let ROOT run your code in parallel: invoke [ROOT::EnableImplicitMT()](https://root.cern/doc/master/namespaceROOT.html#ade6e397b327482d267ad54de92db4b89)
    * A faster ROOT: for example lots of symbols are now hidden, TMethodCall is now twice as fast as before.
    * ClassDefInline(MyClass, 3) adds ClassDef functionality without the need to generate a dictionary, which is especially useful for scripts and other non-framework code.
-
-Check it out [here](node/4147)
