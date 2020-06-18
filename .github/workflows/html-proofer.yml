@@ -19,4 +19,4 @@ jobs:
     
     - name: Run HTML proofer
       # Don't check release pages and pagination pages
-      run: htmlproofer --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --disable-external build
+      run: htmlproofer --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --disable-external --allow-hash-href build
