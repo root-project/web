@@ -2489,7 +2489,7 @@ process, and can be retrieved from this list after merging in
 
 To explore the power of this mechanism, generate some very large
 n-tuples using the script from the section
-[Storing Arbitrary N-tuples](#storing-arbitrary-n-tuples) -
+Storing Arbitrary N-tuples -
 you could try 10 000 000 events (this
 results in a large n-tuple of about 160 MByte in size). You could also
 generate a large number of files and use wildcards to add the to the
