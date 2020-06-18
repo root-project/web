@@ -813,25 +813,32 @@ You can:
 
 Use one of the following methods to access the information about the relevant matrix property:
 
-- `Int_t GetRowLwb()`: Row lower-bound index.
+- `Int_t` [GetRowLwb()](https://root.cern/doc/master/classTMatrixTBase.html#a612c6cfd4fe2cd171ae1e2bbd41de272){:target="_blank"}: Row lower-bound index.
 
-- `Int_t GetRowUpb()`: Row upper-bound index.
+- `Int_t` [GetRowUpb()](https://root.cern/doc/master/classTMatrixTBase.html#a510aa8161d3bc4103f5d16d059661b66){:target="_blank"}: Row upper-bound index.
 
-- `Int_t GetNrows()`: Number of rows.
+- `Int_t` [GetNrows()](https://root.cern/doc/master/classTDecompBase.html#a66a4c05c9e1641439f25408fd4da3373){:target="_blank"}: Number of rows.
 
-- `Int_t GetColLwb()`: Column lower-bound index.
+- `Int_t` [GetColLwb()](https://root.cern/doc/master/classTDecompBase.html#a478fc5dca42d64412651d046af98204b){:target="_blank"}: Column lower-bound index.
 
-- `Int_t GetColUpb()`: Column upper-bound index.
+- `Int_t` [GetColUpb()](https://root.cern/doc/master/classTMatrixTBase.html#a862103c9fe9ec7d6b5c22df29183aafe){:target="_blank"}: Column upper-bound index.
 
-- `Int_t GetNcols()`: Number of columns.
+- `Int_t` [GetNcols](https://root.cern/doc/master/classTDecompBase.html#a95b1a2f332e0896dafdcc59bd6b7d06a){:target="_blank"}: Number of columns.
 
-- `Int_t GetNoElements()`: Number of elements, for a dense matrix this equals: `fNrows x fNcols`.
+- `Int_t` [GetNoElements()](https://root.cern/doc/master/classTMatrixTBase.html#a6ffb1b7e317f65e601e6f8529d287896){:target="_blank"}: Number of elements, for a dense matrix this equals: `fNrows x fNcols`.
 
-- `Double_t GetTol()`: Tolerance number that is used in decomposition operations.
+- `Double_t` [GetTol()](https://root.cern/doc/master/classTMatrixTBase.html#af1fd9bf8dcae0bcc96e5c6d526bd176b){:target="_blank"}: Tolerance number that is used in decomposition operations.
 
-- `Int_t *GetRowIndexArray()`: For sparse matrices, access to the row index of `fNrows+1` entries.
+- `Int_t` [*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"}: For sparse matrices, access to the row index of `fNrows+1` entries.
 
-- `Int_t *GetColIndexArray()`: For sparse matrices, access to the column index of `fNelems` entries.
+- `Int_t` [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"}: For sparse matrices, access to the column index of `fNelems` entries.
+
+[*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"} and [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"} are specific to the sparse matrix, which is implemented according to the Harwell-
+Boeing format. Here, besides the usual shape/size descriptors of the matrix like `fNrows`, `fRowLwb`, `fNcols` and `fColLwb`,
+also a row index `fRowIndex` and a column index `fColIndex` are stored:
+
+- `fRowIndex[0,..,fNrows]`: Stores for each row the index range of the elements in the data and column array.
+- `fColIndex[0,..,fNelems-1]`: Stores the column number for each data element != 0.
 
 
 <p><a name="setting-matrix-properties"></a></p>
