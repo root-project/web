@@ -77,11 +77,13 @@ feature_row:
             <br>
             <div style="padding:0.1em 0.6em;">
                <font size="2">
-               {% for post in site.posts %}
-               {% if forloop.index >= 4 and forloop.index <=8 %}
-               <b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b> <font size="1">({{post.date | date_to_string}})</font><br>
-               {% endif %}
-               {% endfor %}
+                  <ul style="list-style-type:none; margin:0; padding:0;">
+                  {% for post in site.posts %}
+                  {% if forloop.index >= 4 and forloop.index <=8 %}
+                  <li><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b> <font size="1">({{post.date | date_to_string}})</font><br></li>
+                  {% endif %}
+                  {% endfor %}
+               </ul>
                </font>
             </div>
          </td>
