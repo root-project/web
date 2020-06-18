@@ -37,7 +37,7 @@ ROOT provides numerous graphic classes, of which the following are among the mos
 
 ROOT offers many possibilities to work with graphics, for example:
 
-- [drawing objects](#drawing objects)
+- [drawing objects](#drawing-objects)
 - [drawing objects with special characters in its name](#drawing-objects-with-special-characters-in-its-name)
 - [using the context menu for manipulating objects](#using-the-context-menu-for-manipulating-objects)
 - [using the Graphics Editor for objects](#using-the-graphics-editor-for-objects)

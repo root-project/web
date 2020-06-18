@@ -10,14 +10,14 @@ toc_sticky: true
 Fitting is the method for modeling the expected distribution of events in a physics data analysis. ROOT offers various options to perform the fitting of the data:
 - [Fit Panel](#using-the-fit-panel): After a histogram is drawn, the Fit Panel GUI is best used for prototyping the fit.
 - [Fit() method](#using-the-fit-method): You can fit histograms and graphs programmatically with the `Fit()` method.
-- Minimization packages: ROOT provides several minimization packages like [Minuit2](({{ '/manual/math/#minuit2-library' | relative_url }})) and FUMILI.
-- [RooFit]({{ '/manual/roofit' | relative_url }}): The RooFit library is a toolkit for modeling the expected distribution of events in a physics analysis.
+- Minimization packages: ROOT provides several minimization packages like [Minuit2](/manual/math/#minuit2-library) and FUMILI.
+- [RooFit](/manual/roofit): The RooFit library is a toolkit for modeling the expected distribution of events in a physics analysis.
 
 {% include tutorials name="Fit" url="fit" %}
 
 ## Using the Fit Panel
 
-After you have drawn a histogram (see → [Drawing a histograms]({{ '/manual/histograms/#drawing-a-histogram' | relative_url }})), you can use the Fit Panel for fitting the data. The Fit Panel is best suited for prototyping
+After you have drawn a histogram (see → [Drawing a histograms](/manual/histograms/#drawing-a-histogram)), you can use the Fit Panel for fitting the data. The Fit Panel is best suited for prototyping
 
 The following section describes how to use the Fit Panel using an example.
 

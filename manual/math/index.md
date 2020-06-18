@@ -969,7 +969,7 @@ For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &
 
 #### Using decomposition classes for inverting
 
-You can also use the following decomposition classes (see → [Matrix decompositions](#matrix-decompositions")) for inverting a matrix:
+You can also use the following decomposition classes (see → [Matrix decompositions](#matrix-decompositions)) for inverting a matrix:
 
 <table width="100%" border="0">
   <tbody>

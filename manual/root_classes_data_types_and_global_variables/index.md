@@ -49,7 +49,7 @@ The following naming conventions apply to ROOT objects:
 
 ## ROOT classes
 
-In addition to the ROOT core classes (→ see [ROOT core classes](="#root-core-classes")), there are ROOT classes available for the following topics:
+In addition to the ROOT core classes (→ see [ROOT core classes](#root-core-classes)), there are ROOT classes available for the following topics:
 
 -   Geometry
 
