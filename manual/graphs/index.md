@@ -187,7 +187,7 @@ _**Example**_
 
 - Use the graph `Fit()` methods (for example [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}), for fitting graphs.
 
-For more information on the `Fit()` method, → see [Fitting histograms](/manual/histograms#fitting-histograms).
+For more information on the `Fit()` method, → see [Fitting histograms](/manual/fitting).
 
 
 ## Graphs with error bars
