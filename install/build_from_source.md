@@ -14,7 +14,7 @@ your build tool (GNU make, Ninja, Visual Studio, etc) for building ROOT.
 If you are really anxious about getting a functional ROOT build, go to the [Quick Start](#quick-start) section.<br>
 If you are a CMake novice, start on [Basic CMake usage]({{'/install/basic_cmake' | relative_url}}) and then go back to the
 [Quick Start](#quick-start).
-<br>The [Options](#build-options) and the [Variables](#variables) section is a reference for customizing your build. If you already have experience with CMake, this is the recommended starting point.
+<br>The [Options](#all-build-options) and the [Variables](#relevant-cmake-variables) section is a reference for customizing your build. If you already have experience with CMake, this is the recommended starting point.
 
 ## Preparation
 Make sure you have installed all [required dependencies]({{'/install/dependencies' | relative_url}}) before building ROOT.
@@ -38,7 +38,7 @@ $ cd <builddir>
 ```bash
 $ cmake -DCMAKE_INSTALL_PREFIX=<installdir> <sourcedir>
 ```
-CMake will detect your development environment, perform a series of test and generate the files required for building ROOT. CMake will use default values for all build parameters. See the [Build Options](#options) and [Variables](#variables) sections for fine-tuning your build
+CMake will detect your development environment, perform a series of test and generate the files required for building ROOT. CMake will use default values for all build parameters. See the [Build Options](#all-build-options) and [Variables](#relevant-cmake-variables) sections for fine-tuning your build
 This can fail if CMake cannot detect your toolset, or if it thinks that the environment is not sane enough. In this case make sure that the toolset that you intend to use is the only one reachable from the shell and that the shell itself is the correct one for you development environment. You can force CMake to use a given build tool, see the Usage section.
 1. Proceed to use IDE project files or start the build from the build directory, after CMake has finished running:
 ```bash
