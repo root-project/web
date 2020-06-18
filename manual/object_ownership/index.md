@@ -48,7 +48,7 @@ Changing the directory of a histogram (same applies to trees and event lists):
    h->SetDirectory(newDir);
 {% endhighlight %}
 
-You can remove a histogram from a directory by using `SetDirectory(0)`. Once a histogram is removed from the directory, it will not be deleted when the directory is closed. You have to delete the histogram once you have finished with it.
+You can remove a histogram from a directory by using `SetDirectory(nullptr)`. Once a histogram is removed from the directory, it will not be deleted when the directory is closed. You have to delete the histogram once you have finished with it.
 
 To change the default that automatically adds the histogram to the current directory, you can call the static function.
 
