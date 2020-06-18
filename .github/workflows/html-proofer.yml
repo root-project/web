@@ -18,4 +18,4 @@ jobs:
       uses: chabad360/htmlproofer@v1.1
       with:
           directory: "./build"
-          arguments: --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --allow-hash-href --url-ignore "/https://ph-root-2.cern.ch/.*/"
+          arguments: --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --allow-hash-href --url-ignore "/(https://ph-root-2.cern.ch/.*|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins)/"
