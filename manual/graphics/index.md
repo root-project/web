@@ -974,7 +974,7 @@ For a {% include ref class="TPad" %} the following coordinate systems are availa
 - [normalized coordinates (NDC)](#ndc)
 - [pixel coordinates](#pixel_coordinate_system)
 
-You can [convert](convert) from one system of coordinates to another.
+You can convert from one system of coordinates to another.
 
 <p><a name="user_coordinate_system"></a></p>
 **User coordinate system**
