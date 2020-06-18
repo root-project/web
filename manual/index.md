@@ -14,12 +14,12 @@ to deal with big data processing, statistical analysis, visualization and storag
 
 <br><br>
 
-<b><a href="/manual/basics">Basics</a></b><br>
+<b><a href={{ "/manual/basics" | relative_url }}>Basics</a></b><br>
 In the first part of the manual, the central building blocks and concepts of ROOT are presented and explained.
 
 <br><br>
 
-<b><a href="/manual/functional_parts">Functional parts</a></b><br>
+<b><a href={{ "/manual/functional_parts" | relative_url }}>Functional parts</a></b><br>
 In the second part of the manual, the numerous application areas and special topics of ROOT are dealt with. Here you will receive in-depth information about the extensive possibilities of data analysis with ROOT.
 </div>
 
@@ -38,13 +38,13 @@ Tutorials are available for all parts of the ROOT Manual.
 
 <br><br>
 
-<b><a href="/topical">Topical Manuals</a></b><br>
+<b><a href={{ "/topical" | relative_url }}>Topical Manuals</a></b><br>
 Topical manuals are available for some functional parts of ROOT. They contain in-depth information for specific topics that are not explained in detail in the ROOT Manual.
 
 <br><br>
 
 <b>Further information</b><br>
-For ROOT users, developers, and friends we provide a <a href="https://root-forum.cern.ch/" target="_blank">Forum</a>. Beginners can start with the <a href="/primer">Primer</a>.
+For ROOT users, developers, and friends we provide a <a href="https://root-forum.cern.ch/" target="_blank">Forum</a>. Beginners can start with the <a href={{ "/primer" | relative_url }}>Primer</a>.
 
 </div>
 
