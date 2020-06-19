@@ -6,6 +6,7 @@ on:
 jobs:
   delete_deployed_pr:
     name: Delete deployed PR from S3
+    runs-on: ubuntu-latest
     # PRs are only deployed if the PR branch is not in a fork
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     steps:
