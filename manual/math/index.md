@@ -13,13 +13,9 @@ The ROOT Mathematical libraries consist of the following components:
 
 - [MathMore library](#mathmore-library)
 
-- [Linear algebra package](#linear-algebra-package)
+- [Linear algebra packages](#linear-algebra-packages)
 
-- [SMatrix](#smatrix)
-
-- [TMinuit](#tminuit)
-
-- [Minuit2 Library](#minuit2-library)
+- [Minimization libraries and classes](#minimization-libraries-and-classes)
 
 - [Vectors]({{ '/manual/vectors' | relative_url }})
 
@@ -758,11 +754,19 @@ Contains mathematical functions used in statistics such as probability density f
 - [Random classes](https://root.cern/doc/master/group__Random.html){:target="_blank"}
 
 
-## Linear algebra package
+## Linear algebra packages
 
-The linear algebra package provides a complete environment in ROOT to perform calculations like equation solving and eigenvalue decompositions.
+The linear algebra packages provide a complete environment in ROOT to perform calculations like equation solving and eigenvalue decompositions.
 
-### Matrix classes
+There are the following linear algebra packages available:
+
+- [Matrix package](#matrix-package)
+- [SMatrix](#smatrix)
+
+
+### Matrix package
+
+#### Matrix classes
 
 ROOT provides the following matrix classes, among others:
 
@@ -784,7 +788,7 @@ ROOT provides the following matrix classes, among others:
 
 - {% include ref class="TDecompChol" %}: Cholesky decomposition class. 
 
-### Matrix properties
+#### Matrix properties
 
 A matrix has five properties, which are all set in the constructor:
 
@@ -870,7 +874,7 @@ Copies the sparse map from matrix `a`.
 - `SetSparseIndexAB (const TMatrixDSparse &a, const TMatrixDSparse &b)`<br>
 Sets the sparse map to the same map of matrix `a` and `b`.
 
-### Creating and filling a matrix
+#### Creating and filling a matrix
 
 Use one of the following constructors to create a matrix:
 
@@ -953,7 +957,7 @@ Now a unit matrix in sparse format is created.
    unit2.SetMatrixArray(data.GetArray());
 {% endhighlight %}
 
-### Inverting a matrix
+#### Inverting a matrix
 
 - Use the `Invert(Double_t &det=0)` function to invert a matrix:
 
@@ -1036,11 +1040,18 @@ This example shows how to check whether the matrix is singular before attempting
 {% endhighlight %}
 
 
-### Matrix operators and methods
+#### Matrix operators and methods
 
 The matrix/vector operations are classified according to BLAS (basic linear algebra subroutines) levels.
 
-#### Arithmetic operations between matrices
+The following operations and methods are available:
+- [arithmetic operations between matrices](#arithmetic-operations-between-matrices)
+- [arithmetic operations between matrices and real numbers](#arithmetic-operations-between-matrices-and-real-numbers)
+- [comparison between two matrices](#comparison-between-two-matrices)
+- [comparison between matrix and real number](#comparison-between-matrix-and-real-number)
+
+<p><a name="arithmetic-operations-between-matrices"></a></p>
+**Arithmetic operations between matrices**
 
 <table width="100%" border="0">
   <tbody>
@@ -1087,7 +1098,8 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
   </tbody>
 </table>
 
-#### Arithmetic operations between matrices and real numbers
+<p><a name="arithmetic-operations-between-matrices-and-real-numbers"></a></p>
+**Arithmetic operations between matrices and real numbers**
 
 <table width="100%" border="0">
   <tbody>
@@ -1114,8 +1126,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
   </tbody>
 </table>
 
-#### Comparison and Boolean operations
-
+<p><a name="comparison-between-two-matrices"></a></p>
 **Comparison between two matrices**
 
 <table width="100%" border="0">
@@ -1173,6 +1184,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
   </tbody>
 </table>
 
+<p><a name="comparison-between-matrix-and-real-number"></a></p>
 **Comparison between matrix and real number**
 
 <table width="100%" border="0">
@@ -1275,7 +1287,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
   </tbody>
 </table>
 
-### Matrix views
+#### Matrix views
 
 With the following matrix view classes, you can access the matrix elements:
 
@@ -1284,7 +1296,7 @@ With the following matrix view classes, you can access the matrix elements:
 - `TMatrixDDiag`
 - `TMatrixDSub`
 
-#### Matrix view operators
+**Matrix view operators**
 
 For the matrix view classes `TMatrixDRow`, `TMatrixDColumn` and `TMatrixDDiag`, the necessary assignment operators are available to interact with the vector class `TVectorD`.<br>The sub matrix view classes `TMatrixDSub` has links to the matrix classes `TMatrixD` and `TMatrixDSym.`
 
@@ -1331,17 +1343,43 @@ There are the following classes available for matrix decompositions:
 - {% include ref class="TDecompSVD" %}: Single value decomposition class.
 - {% include ref class="TDecompSparse" %}: Sparse symmetric decomposition class.
 
-### Matrix Eigen analysis
+#### Matrix Eigen analysis
 
 With the `TMatrixDEigen` and `TMatrixDSymEigen` classes, you can compute eigenvalues and eigenvectors for general dense and symmetric real matrices.
 
-## SMatrix
+### SMatrix
 
 [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} is a C++ package for high performance vector and matrix computations. It can be used only in problems when the size of the matrices is known at compile time, like in the tracking reconstruction of HEP experiments. It is based on a C++ technique, called expression templates, to achieve an high level optimization. The C++ templates can be used to implement vector and matrix expressions such that these expressions can be transformed at compile time to code which is equivalent to hand optimized code in a low-level language like FORTRAN or C.
 
 The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} has been developed initially by T. Glebe of the Max-Planck-Institut, Heidelberg, as part of the HeraB analysis framework. A subset of the original package has been now incorporated in the ROOT distribution, with the aim to provide to the LHC experiments a stand-alone and high performance matrix package for reconstruction. The API of the current package differs from the original one, in order to be compliant to the ROOT coding conventions.
 
-## TMinuit
+[SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} contains the following generic classes for describing matrices and vectors of arbitrary dimensions and of arbitrary type:
+- [SVector](#svector)
+- [SMatrix](#smatrix)
+
+#### SVector
+
+The template class [ROOT::Math::SVector](https://root.cern/doc/master/classROOT_1_1Math_1_1SVector.html){:target="_blank"} represents n-dimensional vectors for objects of arbitrary type. This class
+has 2 template parameters, which define at compile time, its properties: 
+1. type of the contained elements (for example `float` or `double`)
+2. size of the vector
+
+
+#### SMatrix
+
+The template class [ROOT::Math::SMatrix](https://root.cern/doc/master/classROOT_1_1Math_1_1SMatrix.html){:target="_blank"} represents a matrix of arbitrary type with `nrows x ncol`dimension. The class has 4 template parameters, which define at compile time, its properties:
+- type of the contained elements, `T`, for example `float` or `double`
+- number of rows
+- number of columns
+- representation type
+
+## Minimization libraries and classes
+
+ROOT provides several minimization libraries and classes:
+- [TMinuit](#tminuit)
+- [Minuit2 Library](#minuit2-library)
+
+### TMinuit
 
 The Minuit minimization package was originally written in Fortran by Fred James and part
 of PACKLIB (patch D506). It has been converted to the C++ class
@@ -1352,8 +1390,7 @@ of PACKLIB (patch D506). It has been converted to the C++ class
 > For TMinuit, a topical manual it available at [Topical Manual - TMinuit]({{ '/topical/#minuit' | relative_url }}).<br>
 > It contains in-depth information about TMinuit.
 
-## Minuit2 Library
-
+### Minuit2 library
 
 The [Minuit2](https://root.cern/doc/master/group__Minuit.html){:target="_blank"} library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm, which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
 
