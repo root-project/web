@@ -64,7 +64,7 @@ update to new ROOT versions would eat up lots of manpower - and their job is phy
 beauty of coding. Physics doesn't change a bit by adding templates. We don't want to have 20000
 angry physicists (minus Matt) in our corridor, protesting because we broke all their code
 ("but your new code will be much nicer!"). That would be an
-<a href="http://techland.time.com/2013/05/06/microsofts-strategic-blunder-with-windows-8/">epic</a><a> </a><a href="http://techcrunch.com/2013/06/19/microsoft-heeds-gamer-feedback-dumps-xbox-one-drm-restrictions/">failure</a> in addressing customer needs.</p>
+<a href="https://techland.time.com/2013/05/06/microsofts-strategic-blunder-with-windows-8/">epic</a><a> </a><a href="https://techcrunch.com/2013/06/19/microsoft-heeds-gamer-feedback-dumps-xbox-one-drm-restrictions/">failure</a> in addressing customer needs.</p>
 
 <p>So what we need is an alternative program, something that comes after ROOT. Something that
 challenges ROOT - not by a wish list, but by an alternative implementation that's powerful

@@ -9,7 +9,7 @@ ROOT Users' Workshop</a>.</p>
 
 <p><a href="https://cern.ch/root2018"><img style="float:right; padding:1em 3em !important;" alt="Festina Lente Bridge"
 src="{{'/assets/images/Festina_Lente_Bridge_jpg-cut-2-scaled_0.jpg' | relative_url }}"/></a>
-This time we meet in <a href="http://visitsarajevo.ba/?lang=en">Sarajevo</a>, the capital of Bosnia and Herzegovina -
+This time we meet in <a href="https://visitsarajevo.ba/?lang=en">Sarajevo</a>, the capital of Bosnia and Herzegovina -
 a buzzing melting pot of cultures since centuries.
 The workshop features four days of presentations and discussions on everything ROOT:
 what works for you, what doesn't and how ROOT evolves to address future challenges.

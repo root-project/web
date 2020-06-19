@@ -127,7 +127,7 @@ $ sudo port install root6
 ## Pre-built ROOT without dependencies
 
 If your platform mounts [CVMFS](https://cernvm.cern.ch/portal/filesystem){:target="\_blank"} (as, for example, CERN LXPLUS does),
-ROOT is directly available as an [LCG release](http://lcginfo.cern.ch/){:target="\_blank"}.
+ROOT is directly available as an [LCG release](https://lcginfo.cern.ch/){:target="\_blank"}.
 
 ROOT installations with minimal external dependencies are available for Fedora, Ubuntu, CentOS 7 and MacOS at:
 
@@ -155,7 +155,7 @@ For example, to set up a full environment with ROOT 6.20/02 on CERN LXPLUS, you 
 source /cvmfs/sft.cern.ch/lcg/views/LCG_97/x86_64-centos7-gcc8-dbg/setup.sh
 ```
 
-To check what ROOT version is contained in an LCG release, check [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="\_blank"}.
+To check what ROOT version is contained in an LCG release, check [lcginfo.cern.ch](https://lcginfo.cern.ch/){:target="\_blank"}.
 
 ## Gentoo Prefix on CVMFS
 

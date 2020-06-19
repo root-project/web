@@ -6,14 +6,14 @@ author:
 
 The next ROOT Users' Workshop will celebrate ROOT's 20th anniversary. It will take place
 on 15-18 Sept 2015 in
-<a href="http://www.saas-fee.ch/en/aktivitaeten-sommer" target="_blank">Saas-Fee,
+<a href="https://www.saas-fee.ch/en/aktivitaeten-sommer" target="_blank">Saas-Fee,
 Switzerland</a>
 
 <h3>ROOT Anniversary Workshop</h3>
 
 <p>The next ROOT Users' Workshop will celebrate ROOT's 20th anniversary. It will take
 place on 15-18 Sept 2015 in
-<a href="http://www.saas-fee.ch/en/aktivitaeten-sommer" target="_blank">Saas-Fee, Switzerland</a>.</p>
+<a href="https://www.saas-fee.ch/en/aktivitaeten-sommer" target="_blank">Saas-Fee, Switzerland</a>.</p>
 
 <p style="margin-top: 1em; margin-bottom: 1em; color: rgb(0, 0, 0); font-family: Arial,
 Verdana, sans-serif; line-height: 17.055999755859375px;">
@@ -26,7 +26,7 @@ Verdana, sans-serif; line-height: 17.055999755859375px;">
 <h3>Schedule</h3>
 
 <ul>
-   <li>Timetable, presentations and list of participants are in <a href="http://indico.cern.ch/e/root20" target="_blank">Indico</a></li>
+   <li>Timetable, presentations and list of participants are in <a href="https://indico.cern.ch/e/root20" target="_blank">Indico</a></li>
    <li>Add to your calendar <a href="https://indico.cern.ch/export/event/349459.ics" target="_blank">here</a></li>
 </ul>
 
@@ -83,7 +83,7 @@ nothing less for the 9th workshop! </p>
 
 <h3>Venue, Accommodation</h3>
 
-<p>The workshop takes place at the Schweizerhof hotel in Saas-Fee. A set of rooms has been pre-reserved <a href="https://indico.cern.ch/event/349459" target="_blank">and can be reserved by participants</a>. A <a href="http://www.saas-fee.ch/en/suchen-buchen/hotels/" target="_blank">wide variety of alternatives is available in walking distance</a>.</p>
+<p>The workshop takes place at the Schweizerhof hotel in Saas-Fee. A set of rooms has been pre-reserved <a href="https://indico.cern.ch/event/349459" target="_blank">and can be reserved by participants</a>. A <a href="https://www.saas-fee.ch/en/suchen-buchen/hotels/" target="_blank">wide variety of alternatives is available in walking distance</a>.</p>
 
 <h3>Organizing Committee</h3>
 

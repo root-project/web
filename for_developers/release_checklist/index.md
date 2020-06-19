@@ -8,7 +8,7 @@ sidebar:
 ### Steps to be followed to produce a new ROOT release are:
 
   1. Get the 'green' light from all main developers
-  2. Check that all the [Jenkins builds](https://epsft-jenkins.cern.ch/view/ROOT/){:target="_blank"} / [CDash](http://cdash.cern.ch/index.php?project=ROOT){:target="_blank"} builds are green
+  2. Check that all the [Jenkins builds](https://epsft-jenkins.cern.ch/view/ROOT/){:target="_blank"} / [CDash](https://cdash.cern.ch/index.php?project=ROOT){:target="_blank"} builds are green
   3. Verify that no performance regressions exist in the [benchmark system](https://rootbnch-grafana-test.cern.ch/){:target="_blank"}
   4. Update versions in JIRA
       - 'Release' the version in the [project configuration](https://sft.its.cern.ch/jira/plugins/servlet/project-config/ROOT/versions){:target="_blank"}
@@ -34,7 +34,7 @@ sidebar:
       - `git push origin vX-YY-ZZ`
   11. Tag ROOTTEST repository
   12. Make source tar file and copy to ftp area on root.cern.ch
-      - Run from the build directory `$ make distsrc` _[not on a MacOS machine](http://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-on-os-x-give-errors-when-unt){:target="_blank"}_
+      - Run from the build directory `$ make distsrc` _[not on a MacOS machine](https://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-on-os-x-give-errors-when-unt){:target="_blank"}_
       - `scp ../root_vX.YY.ZZ.source.tar.gz sftnight@root:/home/www/root/download`
   13. Produce binary tarfiles
       - start the procedure [root-release-6.12](https://epsft-jenkins.cern.ch/view/ROOT/job/root-release-6.12/){:target="_blank"} (or whichever branch) in Jenkins
@@ -44,7 +44,7 @@ sidebar:
   15. Update the release pages
       - Generate the release notes with the Jenkins procedure called [root-releasenotes](https://epsft-jenkins.cern.ch/view/ROOT/job/root-releasenotes/){:target="_blank"}
       - Update the releases xml with the Jenkins procedure called [root-release-makeReleasesXml/](https://epsft-jenkins.cern.ch/view/ROOT/job/root-release-makeReleasesXml/){:target="_blank"}
-      - Once authenticated, import the releases xml in the site clicking import [here](http://cern.ch/go/6Dc8){:target="_blank"} __(Be reminded: this works for authenticated users only!)__.
+      - Once authenticated, import the releases xml in the site clicking import [here](https://cern.ch/go/6Dc8){:target="_blank"} __(Be reminded: this works for authenticated users only!)__.
       - Eventually edit the 'highlights' section, which is currently commented, in the generated release page.
       - If this applies, mark the release as Pro or Old and remove the attribute to the one previously holding it. There are radio buttons exposed by Drupal when editing a release's page.
       - If not a patch release edit [reference-guide]({{'reference' | relative_url}}) page to add the new reference guide for the release.

@@ -503,15 +503,15 @@ Simple session:
 {% highlight C++ %}
 root[] TFile *f1 = TFile::Open("local/file.root","update")
 root[] TFile *f2 = TFile::Open("root://my.server.org/data/file.root","new")
-root[] TFile *f3 = TFile::Open("http://root.cern.ch/files/hsimple.root")
+root[] TFile *f3 = TFile::Open("https://root.cern.ch/files/hsimple.root")
 {% endhighlight %}
 
 `ls ()` lists what is in the ROOT file.
 
 {% highlight C++ %}
 root[] f3.ls()
-TDavixFile**    http://root.cern.ch/files/hsimple.root
- TDavixFile*    http://root.cern.ch/files/hsimple.root
+TDavixFile**    https://root.cern.ch/files/hsimple.root
+ TDavixFile*    https://root.cern.ch/files/hsimple.root
   KEY: TH1F     hpx;1 This is the px distribution
   KEY: TH2F     hpxpy;1 py vs px
   KEY: TProfile hprof;1 Profile of pz versus px

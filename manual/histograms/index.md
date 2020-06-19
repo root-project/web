@@ -492,11 +492,11 @@ void AnalyzeTree()
    Double_t  particlesMomentum[kMaxfParticles];
 
 // Open the ROOT file.
-   TFile *f = TFile::Open("http://root.cern/eventdata.root");
+   TFile *f = TFile::Open("https://root.cern/eventdata.root");
    if (f == 0) {
    
 // If we cannot open the file, print an error message and return immediately.
-      printf("Error: cannot open http://root.cern/eventdata.root!\n");
+      printf("Error: cannot open https://root.cern/eventdata.root!\n");
       return;
    }
 

@@ -117,7 +117,7 @@ for_developers:
         url: for_developers/continous_integration-testing/jenkins_how_to
         target: _blank
       - title: CDash
-        url: http://cdash.cern.ch/index.php?project=ROOT
+        url: https://cdash.cern.ch/index.php?project=ROOT
         target: _blank
       - title: Coverity
         url: https://coverity.cern.ch/login/login.htm

@@ -1401,7 +1401,7 @@ The [Minuit2](https://root.cern/doc/master/group__Minuit.html){:target="_blank"}
 
 ## UNU.RAN
 
-[UNU.RAN](http://statmath.wu-wien.ac.at/unuran){:target="_blank"} (**U**niversal **N**on **U**niform **RA**ndom **N**umber generator for generating non-uniform pseudo-random numbers) contains universal (also called automatic or black-box) algorithms that can generate random numbers from large classes of continuous (in one or multi-dimensions), discrete distributions, empirical distributions (like histograms) and also from practically all standard distributions.
+[UNU.RAN](https://statmath.wu-wien.ac.at/unuran){:target="_blank"} (**U**niversal **N**on **U**niform **RA**ndom **N**umber generator for generating non-uniform pseudo-random numbers) contains universal (also called automatic or black-box) algorithms that can generate random numbers from large classes of continuous (in one or multi-dimensions), discrete distributions, empirical distributions (like histograms) and also from practically all standard distributions.
 
 UNU.RAN is an ANSI C library licensed under GPL.
 

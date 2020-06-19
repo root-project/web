@@ -28,7 +28,7 @@ In this case we can use the script that is used by jenkins. The script expects 4
 - BUILDTYPE is the type of the build. E.g. Release, Debug
 - EXTERNALS is the label for the set of versions of the externals. Typically 'ROOT-date', but 'ROOT-latest' is a safe bet.
 ```
-git clone http://root.cern.ch/git/rootspi.git
+git clone https://root.cern.ch/git/rootspi.git
 source rootspi/jenkins/jk-setup.sh slc6 icc14 Release ROOT-latest
 ```
 

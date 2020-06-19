@@ -12,7 +12,7 @@ and Jupyter notebooks.
 The tutorials are available for all major ROOT releases.
 **[These](https://root.cern.ch/doc/master/group__Tutorials.html){:target="_blank"}** are the links for their
 latest version. Most tutorials are also available as ROOTBook which can
-be visualized in [NBViewer](http://nbviewer.jupyter.org/){:target="_blank"} or tried interactively in
+be visualized in [NBViewer](https://nbviewer.jupyter.org/){:target="_blank"} or tried interactively in
 [SWAN](https://swan.web.cern.ch){:target="_blank"}. Such tutorials are marked with these badges:
 <img src="https://root.cern.ch/doc/master/notebook.gif" alt="View in nbviewer" style="height:1em">
 <img src="https://swanserver.web.cern.ch/swanserver/images/badge_swan_white_150.png" alt="Open in SWAN" style="height:1em">
