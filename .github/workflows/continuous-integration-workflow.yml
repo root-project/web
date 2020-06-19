@@ -15,10 +15,10 @@ jobs:
     name: Jekyll Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Jekyll Action
+      - name: Build website
         uses: root-project/jekyll-action@HEAD
 
       - name: Run HTML proofer
