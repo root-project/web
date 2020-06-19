@@ -203,6 +203,8 @@ about:
    - title: Cite us
      url: https://github.com/root-project/root/#cite
      target: _blank
+   - title: Legal
+     url: about/legal
 
 start:
    - title: Get Started
