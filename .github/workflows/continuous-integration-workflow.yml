@@ -8,7 +8,7 @@ on:
       - gh-pages
 
 env:
-  PR_NUMBER: ${{ (github.event_name == 'pull_request') && github.event.number || '' }}
+  PR_NUMBER: ${{ github.event.pull_request.number }}
 
 jobs:
   build:
@@ -33,6 +33,8 @@ jobs:
           arguments: --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --allow-hash-href --url-ignore "/(https://ph-root-2.cern.ch/.*|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*)/" --only-4xx
 
       - name: Sync to S3
+        # do not sync if pull request coming from a fork (we do not have access to secrets in that case)
+        if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
         run: |
           DEST="s3://root/${PR_NUMBER:-}" # if PR, upload in s3://root/<prnumber>
           aws --endpoint-url https://s3.cern.ch s3 sync --delete build/${PR_NUMBER:-} ${DEST}
