@@ -7,7 +7,7 @@ sidebar:
 
 ### Icons
 
-The website icons are made by Linearicons from [https://linearicons.com/](https://linearicons.com/).
+This website uses icons by Linearicons from [https://linearicons.com/](https://linearicons.com/).
 
 ### Website Generator and Theme
 
