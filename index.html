@@ -1,13 +1,24 @@
 ---
 layout: splash
+title: "ROOT: analyzing petabytes of data, scientifically."
 author_profile: false
-excerpt: "A scientific data analysis toolkit"
+excerpt: "Get the latest: v6.22/00"
 header:
   overlay_filter: "0.3"
   overlay_image: /assets/images/splash.jpg
   actions:
     - label: <i class="fas fa-download"></i> Install Now
       url: "install"
+intro:
+  - title: Welcome to ROOT!
+    excerpt: "An [open-source](about/license) data analysis framework used by [high energy physics](https://en.wikipedia.org/wiki/Particle_physics) and others.<br/>[Learn more...](about)"
+feature_row:
+  - title: '&Sqrt;-1'
+    excerpt: "ROOT enables <i>statistically sound</i> scientific analyses and visualization of large amounts of data: today, more than 1 exabyte (1,000,000,000 gigabyte) are stored in ROOT files. [The Higgs was found with ROOT!](gallery#higgs-plots)"
+  - title: '*.*'
+    excerpt: "As high-performance software, ROOT is written mainly in C++. You can use it on Linux, macOS, or Windows; it works out of the box."
+  - title: '$ _'
+    excerpt: "ROOT comes with an [incredible C++ interpreter](primer#learn-c-at-the-root-prompt), ideal for fast prototyping. Don't like C++? ROOT integrates super-smoothly with Python thanks to its [unique dynamic and powerful Python &#8644; C++ binding](manual/python/). Or what about [using ROOT in a Jupyter notebook](https://nbviewer.jupyter.org/url/root.cern/doc/master/notebooks/rf301_composition.C.nbconvert.ipynb)?"
 ---
 
 
@@ -33,13 +44,10 @@ header:
 </div>
 
 <br><br>
-<h1> ROOT is... </h1>
-An open source, modular toolkit for scientific data analysis. It provides all the functionalities
-needed to deal with big data processing, statistical analysis, visualisation and
-storage.
-It is mainly written in C++ but integrated with other languages such as Python.
+{% include feature_row id="intro" type="center" %}
 
-<br><br>
+{% include feature_row id="feature_row" %}
+
 
 <table style="width: 100%; margin-top:4px; border-spacing: 0px;">
    <tbody>
