@@ -9,6 +9,9 @@ On behalf of the developers, contributors and user community: **welcome to ROOT!
 
 The [ROOT beginners' guide (aka "Primer")]({{ '/primer' | relative_url }})
 is certainly the first document to read to master the power of ROOT.
+
+The [Manual]({{ '/manual' | relative_url }}) introduces you to the main parts of ROOT.
+
 After this introduction,
 [tutorial presentations (and video!)](https://indico.cern.ch/event/395198){:target="_blank"} offer a
 different, more direct approach to the ROOT fundamental
