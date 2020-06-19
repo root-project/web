@@ -23,4 +23,4 @@ jobs:
           # - rootbnch-grafana-test.cern.ch: Breaks due to SSO
           # - lcgapp-services.cern.ch: Breaks due to SSO
           # - indico.desy.de: Returns frequently error code 403
-          arguments: --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --allow-hash-href --url-ignore "/(https://ph-root-2.cern.ch/.*|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*)/"
+          arguments: --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --allow-hash-href --url-ignore "/(https://ph-root-2.cern.ch/.*|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*)/" --only-4xx
