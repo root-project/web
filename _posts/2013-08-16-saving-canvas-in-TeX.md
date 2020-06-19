@@ -21,7 +21,7 @@ them using PDF or PostScript and render the text using TeX. But that’s not ver
 as two files are needed to render one picture. A better way is to use a dedicated environment
 like PGF/TikZ.
 
-_“ PGF ([A Portable Graphic Format for TeX](http://pgf.sourceforge.net/)) is a macro package
+_“ PGF ([A Portable Graphic Format for TeX](https://pgf.sourceforge.net/)) is a macro package
 for creating graphics. It is platform- and format-independent and works together with the most
 important TeX backend drivers, including pdftex and dvips. It comes with a user-friendly
 syntax layer called TikZ. “_

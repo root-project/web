@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## Naming conventions
 
-For naming conventions we follow the [Taligent](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_63.html#HEADING77){:target="_blank"}
+For naming conventions we follow the [Taligent](https://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_63.html#HEADING77){:target="_blank"}
 rules. They have written a very large body of C++ and their rules seem well thought out.
 No need to invent something new. The only addition/change we made is to append
 an `_t` to `typedef`s and simple `struct`s, e.g.:
@@ -22,7 +22,7 @@ Addherence to the rules is mandatory.  After a while one really gets used to the
 
 ## Class definition conventions
 
-Also here the [Taligent guide](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_69.html){:target="_blank"}
+Also here the [Taligent guide](https://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_69.html){:target="_blank"}
 is quite reasonable. Of course, no class data member should ever be public. Make the data
 fields always private. Or protected, if you want to grant an inherited class direct
 access.
@@ -50,7 +50,7 @@ Don't let every method throw an exception when a simple error return code is oft
 In ROOT 5 all classes are in the `ROOT` namespace. Some packages will be in a sub-namespace, e.g. `ROOT::Reflex`. For backward compatibility with the previous versions of ROOT, where all classes were in the global namespace, we have by default `using namespace ROOT;` in all headers. However, this can be turned off by defining the `USE_ROOT_NAMESPACE` macro.
 
 ## Using comments
-ROOT chose [Doxygen](http://www.doxygen.nl){:target="_blank"} for its code documentation:
+ROOT chose [Doxygen](https://www.doxygen.nl){:target="_blank"} for its code documentation:
 please refer to
 [this page]({{'for_developers/doxygen' | relative_url}}) for all the details.
 
@@ -249,7 +249,7 @@ UseTab:          Never
 {% endhighlight %}
 
 ## Astyle
-If you don't have access to ClangFormat, [astyle](http://astyle.sourceforge.net/){:target="_blank"} can be useful. Starting from a code like this:
+If you don't have access to ClangFormat, [astyle](https://astyle.sourceforge.net/){:target="_blank"} can be useful. Starting from a code like this:
 
 {% highlight C++ %}
 int aap ( int inp ) {
@@ -312,5 +312,5 @@ unpad-paren
 
 ## Where to go from here
 For the rest read the
-[Taligent Guide](http://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_1.html){:target="_blank"}
+[Taligent Guide](https://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_1.html){:target="_blank"}
 and use common sense.

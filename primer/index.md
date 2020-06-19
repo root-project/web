@@ -1228,7 +1228,7 @@ it together with its x and y projections. Some points of the code will
 be explained in detail. This time, the graph is populated with data
 points using random numbers, introducing a new and very important
 ingredient, the ROOT `TRandom3` random number generator using the
-[Mersenne Twister algorithm](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html).
+[Mersenne Twister algorithm](https://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html).
 
 {% highlight C++ linenos %}
 // Create, Draw and fit a TGraph2DErrors
@@ -2580,7 +2580,7 @@ Python is used in a wide variety of application areas and one of the most used
 scripting languages today.
 With the help of PyROOT it becomes possible to combine the power of a scripting
 language with ROOT tools. Introductory material to Python is available from many
-sources on the web, see e. g. http://docs.python.org.
+sources on the web, see e. g. https://docs.python.org.
 
 ## PyROOT
 
@@ -2781,7 +2781,7 @@ transparently used in Python!# Concluding Remarks
 This is the end of our guided tour for beginners through ROOT. There is
 still a lot coming to mind to be said, but by now you are experienced
 enough to use the ROOT documentation, most importantly the **[ROOT home
-page](http://root.cern.ch){:target="_blank"}** and the **[ROOT reference
+page](https://root.cern.ch){:target="_blank"}** and the **[ROOT reference
 guide](https://root.cern/doc/master/){:target="_blank"}** with the
 documentation of all ROOT classes.
 

@@ -54,6 +54,6 @@ different use cases.
 ## Graphics Examples
 High Energy Physics publications feature advanced examples of ROOT graphics (see this
 example coming from
-[Nature](http://www.nature.com/nature/journal/v522/n7554/fig_tab/nature14474_F2.html){:target="_blank"}).
+[Nature](https://www.nature.com/nature/journal/v522/n7554/fig_tab/nature14474_F2.html){:target="_blank"}).
 You can also take a tour to the [screenshots]({{'gallery' | relative_url}}) session of the site for more
 images.

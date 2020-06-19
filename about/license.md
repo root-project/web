@@ -9,11 +9,11 @@ The ROOT system is being made available under the [LGPL 2.1](https://www.gnu.org
 or (at your option) any later version, which allows ROOT to be used in a wide range of open and closed environments. The LGPL is copied verbatim below.
 
 The optional [MathMore](https://root.cern.ch/mathmore-library) library uses the GSL library which is licensed under the
-[GPL](http://www.gnu.org/licenses/gpl-3.0.en.html){:target="_blank"} and hence the MathMore library is only available under
+[GPL](https://www.gnu.org/licenses/gpl-3.0.en.html){:target="_blank"} and hence the MathMore library is only available under
 the GPL (to exclude MathMore from ROOT run configure with the `-Dmathmore=OFF` option).
 
-[RooFit](http://roofit.sourceforge.net){:target="_blank"} is distributed under a University of California and Stanford University
-[license](http://roofit.sourceforge.net/license.txt){:target="_blank"}.
+[RooFit](https://roofit.sourceforge.net){:target="_blank"} is distributed under a University of California and Stanford University
+[license](https://roofit.sourceforge.net/license.txt){:target="_blank"}.
 
 ---------------
 ~~~

@@ -41,7 +41,7 @@ libX11-devel libXpm-devel libXft-devel libXext-devel
 *   **pcre-devel:** for /usr/bin/pcre-config
 *   **mesa-libGL-deve**l: for /usr/include/GL/gl.h and for /usr/lib[64]/libGL.so
 *   **mesa-libGLU-devel**: for /usr/include/GL/glu.h and for /usr/lib[64]/libGLU.so
-*   **glew-devel (may need enabling of the [EPEL](http://fedoraproject.org/wiki/EPEL) additional software repository)**: for /usr/include/GL/glew.h and for /usr/lib[64]/libGLEW.so
+*   **glew-devel (may need enabling of the [EPEL](https://fedoraproject.org/wiki/EPEL) additional software repository)**: for /usr/include/GL/glew.h and for /usr/lib[64]/libGLEW.so
 *   **ftgl-devel:** for /usr/bin/pkg-config
 *   **mysql-devel:** for /usr/bin/mysql_config
 *   **fftw-devel:** for /usr/include/fftw3.h and for /usr/lib/libfftw3.so
@@ -162,6 +162,6 @@ krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 ### ROOT 5 (deprecated)
 
 If you are using Windows make sure you have installed Microsoft Visual C++ (e.g., the
-[no-cost edition](http://www.microsoft.com/express/vc/){:target="_blank"}) plus `CMake`.
+[no-cost edition](https://www.microsoft.com/express/vc/){:target="_blank"}) plus `CMake`.
 The `CMake` build will work directly **without the need** to install
-[cygwin](http://cygwin.com){:target="_blank"} as it was required previously before the adaption of `CMake`.
+[cygwin](https://cygwin.com){:target="_blank"} as it was required previously before the adaption of `CMake`.

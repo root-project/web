@@ -15,29 +15,29 @@ This page lists all the manuals related to packages used by or close to the ROOT
 The RooFit library provides a toolkit for modeling the expected distribution of events in
 a physics analysis.
 
-  - [RooFit Manual (PDF A4 format)](http://root.cern.ch/download/doc/RooFit_Users_Manual_2.91-33.pdf){:target="_blank"}
+  - [RooFit Manual (PDF A4 format)](https://root.cern.ch/download/doc/RooFit_Users_Manual_2.91-33.pdf){:target="_blank"}
   - [RooFit Quick Start Guide (PDF A4 format)](https://root.cern.ch/download/doc/roofit_quickstart_3.00.pdf){:target="_blank"}
 
 ## HTTP Server
 
 The idea of THttpServer is to provide remote http access to running ROOT application and
 enable HTML/JavaScript user interface. Download it
-[here](http://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServer.html){:target="_blank"}.
+[here](https://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServer.html){:target="_blank"}.
 
 
 ### HttpServer manual: 6 Release Cycle
 
-  - [HttpServer manual (PDF A4 format)](http://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServer.pdf){:target="_blank"}
-  - [HttpServer manual (PDF Letter format)](http://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServerLetter.pdf){:target="_blank"}
-  - [HttpServer manual (HTML version)](http://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServer.html){:target="_blank"}
-  - [HttpServer manual (epub version for iPad and iPhone)](http://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServer.epub){:target="_blank"}
+  - [HttpServer manual (PDF A4 format)](https://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServer.pdf){:target="_blank"}
+  - [HttpServer manual (PDF Letter format)](https://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServerLetter.pdf){:target="_blank"}
+  - [HttpServer manual (HTML version)](https://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServer.html){:target="_blank"}
+  - [HttpServer manual (epub version for iPad and iPhone)](https://root.cern.ch/root/htmldoc/guides/HttpServer/HttpServer.epub){:target="_blank"}
 
 ### HttpServer manual (5.34)
 
-  - [HttpServer manual (PDF A4 format)](http://root.cern.ch/root/html534/guides/HttpServer/HttpServer.pdf){:target="_blank"}
-  - [HttpServer manual (PDF Letter format)](http://root.cern.ch/root/html534/guides/HttpServer/HttpServerLetter.pdf){:target="_blank"}
-  - [HttpServer manual (HTML version)](http://root.cern.ch/root/html534/guides/HttpServer/HttpServer.html){:target="_blank"}
-  - [HttpServer manual (epub version for iPad and iPhone)](http://root.cern.ch/root/html534/guides/HttpServer/HttpServer.epub){:target="_blank"}
+  - [HttpServer manual (PDF A4 format)](https://root.cern.ch/root/html534/guides/HttpServer/HttpServer.pdf){:target="_blank"}
+  - [HttpServer manual (PDF Letter format)](https://root.cern.ch/root/html534/guides/HttpServer/HttpServerLetter.pdf){:target="_blank"}
+  - [HttpServer manual (HTML version)](https://root.cern.ch/root/html534/guides/HttpServer/HttpServer.html){:target="_blank"}
+  - [HttpServer manual (epub version for iPad and iPhone)](https://root.cern.ch/root/html534/guides/HttpServer/HttpServer.epub){:target="_blank"}
 
 
 ## JSROOT
@@ -67,40 +67,40 @@ is kept here.
 ## Minuit 2
 
 Minuit2 is a tool to find the minimum value of a multi-parameter function. Download the
-manual [here](http://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.html){:target="_blank"}.
+manual [here](https://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.html){:target="_blank"}.
 
 ### Minuit2 manual: 6 Release Series
 
-  - [Minuit2 manual (PDF A4 format)](http://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.pdf){:target="_blank"}
-  - [Minuit2 manual (PDF Letter format)](http://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2Letter.pdf){:target="_blank"}
-  - [Minuit2 manual (HTML version)](http://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.html){:target="_blank"}
-  - [Minuit2 manual (epub version for iPad and iPhone)](http://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.epub){:target="_blank"}
+  - [Minuit2 manual (PDF A4 format)](https://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.pdf){:target="_blank"}
+  - [Minuit2 manual (PDF Letter format)](https://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2Letter.pdf){:target="_blank"}
+  - [Minuit2 manual (HTML version)](https://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.html){:target="_blank"}
+  - [Minuit2 manual (epub version for iPad and iPhone)](https://root.cern.ch/root/htmldoc/guides/minuit2/Minuit2.epub){:target="_blank"}
 
 ### Minuit2 manual (5.34)
 
-  - [Minuit2 manual (PDF A4 format)](http://root.cern.ch/root/html534/guides/minuit2/Minuit2.pdf){:target="_blank"}
-  - [Minuit2 manual (PDF Letter format)](http://root.cern.ch/root/html534/guides/minuit2/Minuit2Letter.pdf){:target="_blank"}
-  - [Minuit2 manual (HTML version)](http://root.cern.ch/root/html534/guides/minuit2/Minuit2.html){:target="_blank"}
-  - [Minuit2 manual (epub version for iPad and iPhone)](http://root.cern.ch/root/html534/guides/minuit2/Minuit2.epub){:target="_blank"}
+  - [Minuit2 manual (PDF A4 format)](https://root.cern.ch/root/html534/guides/minuit2/Minuit2.pdf){:target="_blank"}
+  - [Minuit2 manual (PDF Letter format)](https://root.cern.ch/root/html534/guides/minuit2/Minuit2Letter.pdf){:target="_blank"}
+  - [Minuit2 manual (HTML version)](https://root.cern.ch/root/html534/guides/minuit2/Minuit2.html){:target="_blank"}
+  - [Minuit2 manual (epub version for iPad and iPhone)](https://root.cern.ch/root/html534/guides/minuit2/Minuit2.epub){:target="_blank"}
 
 ## TSpectrum
 
 {% include ref class="TSpectrum" %} is a class providing processing and visualization functions:
-consult its manual [here](http://root.cern.ch/root/htmldoc/guides/spectrum/Spectrum.html){:target="_blank"}.
+consult its manual [here](https://root.cern.ch/root/htmldoc/guides/spectrum/Spectrum.html){:target="_blank"}.
 
 ### TSpectrum manual: 6 Release Cycle
 
-  - [TSpectrum manual (PDF A4 format)](http://root.cern.ch/root/htmldoc/guides/spectrum/Spectrum.pdf){:target="_blank"}
-  - [TSpectrum manual (PDF Letter format)](http://root.cern.ch/root/htmldoc/guides/spectrum/SpectrumLetter.pdf){:target="_blank"}
-  - [TSpectrum manual (HTML version)](http://root.cern.ch/root/htmldoc/guides/spectrum/Spectrum.html){:target="_blank"}
-  - [TSpectrum manual (epub version for iPad and iPhone)](http://root.cern.ch/root/htmldoc/guides/spectrum/Spectrum.epub){:target="_blank"}
+  - [TSpectrum manual (PDF A4 format)](https://root.cern.ch/root/htmldoc/guides/spectrum/Spectrum.pdf){:target="_blank"}
+  - [TSpectrum manual (PDF Letter format)](https://root.cern.ch/root/htmldoc/guides/spectrum/SpectrumLetter.pdf){:target="_blank"}
+  - [TSpectrum manual (HTML version)](https://root.cern.ch/root/htmldoc/guides/spectrum/Spectrum.html){:target="_blank"}
+  - [TSpectrum manual (epub version for iPad and iPhone)](https://root.cern.ch/root/htmldoc/guides/spectrum/Spectrum.epub){:target="_blank"}
 
 ### TSpectrum manual (5.34)
 
-  - [TSpectrum manual (PDF A4 format)](http://root.cern.ch/root/html534/guides/spectrum/Spectrum.pdf){:target="_blank"}
-  - [TSpectrum manual (PDF Letter format)](http://root.cern.ch/root/html534/guides/spectrum/SpectrumLetter.pdf){:target="_blank"}
-  - [TSpectrum manual (HTML version)](http://root.cern.ch/root/html534/guides/spectrum/Spectrum.html){:target="_blank"}
-  - [TSpectrum manual (epub version for iPad and iPhone)](http://root.cern.ch/root/html534/guides/spectrum/Spectrum.epub){:target="_blank"}
+  - [TSpectrum manual (PDF A4 format)](https://root.cern.ch/root/html534/guides/spectrum/Spectrum.pdf){:target="_blank"}
+  - [TSpectrum manual (PDF Letter format)](https://root.cern.ch/root/html534/guides/spectrum/SpectrumLetter.pdf){:target="_blank"}
+  - [TSpectrum manual (HTML version)](https://root.cern.ch/root/html534/guides/spectrum/Spectrum.html){:target="_blank"}
+  - [TSpectrum manual (epub version for iPad and iPhone)](https://root.cern.ch/root/html534/guides/spectrum/Spectrum.epub){:target="_blank"}
 
 
 ## TMVA

@@ -9,13 +9,13 @@ sidebar:
 
 *   Rene Brun and Fons Rademakers,
      _ROOT - An Object Oriented Data Analysis Framework_,
-     Proceedings AIHENP'96 Workshop, Lausanne, Sep. 1996, Nucl. Inst. & Meth. in Phys. Res. A 389 (1997) 81-86\. See also http://root.cern.ch/
+     Proceedings AIHENP'96 Workshop, Lausanne, Sep. 1996, Nucl. Inst. & Meth. in Phys. Res. A 389 (1997) 81-86\. See also https://root.cern.ch/
 
 
 **The most recent overview paper on ROOT**
 
 *   Computer Physics Communications; Anniversary Issue; Volume 180, Issue 12, December 2009, Pages 2499-2512.
-     [_ROOT — A C++ framework for petabyte data storage, statistical analysis and visualization._](http://dx.doi.org/10.1016/j.cpc.2009.08.005){:target="_blank"}
+     [_ROOT — A C++ framework for petabyte data storage, statistical analysis and visualization._](https://dx.doi.org/10.1016/j.cpc.2009.08.005){:target="_blank"}
 
 
 **A (mostly historically interesting) list of ROOT talks and publications**
@@ -42,19 +42,19 @@ sidebar:
 
 **CHEP 2012**
 
-*   [ROOT overview](http://indico.cern.ch/contributionDisplay.py?contribId=587&confId=149557){:target="_blank"} presented by Fons Rademakers. [Cling - The LLVM-based C++ Interpreter](http://indico.cern.ch/contributionDisplay.py?contribId=255&confId=149557){:target="_blank"} presented by Vassil Vassilev.
-*   [ROOT I/O in Javascript](http://indico.cern.ch/contributionDisplay.py?contribId=170&confId=149557){:target="_blank"} presented by Bertrand Bellenot.
-*   [PEAC - A set of tools to quickly enable PROOF on a cluster](http://indico.cern.ch/contributionDisplay.py?contribId=169&confId=149557){:target="_blank"} poster presented by Gerri Ganis and Martin Vala.
-*   [Preparing for the new C++11 standard](http://indico.cern.ch/contributionDisplay.py?contribId=298&confId=149557){:target="_blank"} poster presented by Axel Naumann;
-*   [ROOT: High Quality, Systematically](http://indico.cern.ch/contributionDisplay.py?contribId=297&confId=149557){:target="_blank"} poster presented by Axel Naumann;
-*   [Improvements in ROOT I/O](http://indico.cern.ch/contributionDisplay.py?contribId=11&confId=149557){:target="_blank"} poster presented by Philippe Canal.
+*   [ROOT overview](https://indico.cern.ch/contributionDisplay.py?contribId=587&confId=149557){:target="_blank"} presented by Fons Rademakers. [Cling - The LLVM-based C++ Interpreter](https://indico.cern.ch/contributionDisplay.py?contribId=255&confId=149557){:target="_blank"} presented by Vassil Vassilev.
+*   [ROOT I/O in Javascript](https://indico.cern.ch/contributionDisplay.py?contribId=170&confId=149557){:target="_blank"} presented by Bertrand Bellenot.
+*   [PEAC - A set of tools to quickly enable PROOF on a cluster](https://indico.cern.ch/contributionDisplay.py?contribId=169&confId=149557){:target="_blank"} poster presented by Gerri Ganis and Martin Vala.
+*   [Preparing for the new C++11 standard](https://indico.cern.ch/contributionDisplay.py?contribId=298&confId=149557){:target="_blank"} poster presented by Axel Naumann;
+*   [ROOT: High Quality, Systematically](https://indico.cern.ch/contributionDisplay.py?contribId=297&confId=149557){:target="_blank"} poster presented by Axel Naumann;
+*   [Improvements in ROOT I/O](https://indico.cern.ch/contributionDisplay.py?contribId=11&confId=149557){:target="_blank"} poster presented by Philippe Canal.
 
-[An Exhibition Booth for demonstrating recent developments in data processing software used at the LHC](http://indico.cern.ch/contributionDisplay.py?contribId=407&confId=149557){:target="_blank"} presented by the CERN PH-SFT group (in Kimmel).
+[An Exhibition Booth for demonstrating recent developments in data processing software used at the LHC](https://indico.cern.ch/contributionDisplay.py?contribId=407&confId=149557){:target="_blank"} presented by the CERN PH-SFT group (in Kimmel).
 
 **Papers NOT by the ROOT team, but related in spirit**
 
 *   The "Bazaar" software development process we try to follow:
-     [The Cathedral and the Bazaar](http://www.catb.org/esr/writings/cathedral-bazaar/) by Eric S. Raymond.
+     [The Cathedral and the Bazaar](https://www.catb.org/esr/writings/cathedral-bazaar/) by Eric S. Raymond.
 *   [Microkernel vs Monolithic System](https://en.wikipedia.org/wiki/Tanenbaum–Torvalds_debate). Famous discussion between Linus Torvalds and Andy Tanenbaum on the merits of these two approaches. ROOT is often seen, like Linux, as a monolithic system. Both are not doing too bad.
 
 **In case you want to cite CINT, use the following references**

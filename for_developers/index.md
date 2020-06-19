@@ -42,7 +42,7 @@ ROOT externals coming from the central installations in AFS or CVMFS.
 ### Continous Integration / Testing
    - [Jenkins Service](https://lcgapp-services.cern.ch/root-jenkins/)
    - [Jenkins How To](continous_integration-testing/jenkins_how_to)
-   - [CDash](http://cdash.cern.ch/index.php?project=ROOT)
+   - [CDash](https://cdash.cern.ch/index.php?project=ROOT)
    - [Coverity](https://coverity.cern.ch/login/login.htm)
    - [GitWeb](https://root.cern.ch/gitweb/?p=root.git;a=summary)
    - [Jira](https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page)

@@ -121,12 +121,12 @@ Configuration file: /path/to/the/directory/_config.yml
        Jekyll Feed: Generating feed for posts
                     done in 21.638 seconds.
  Auto-regeneration: enabled for /path/to/the/directory
-    Server address: http://127.0.0.1:4000/
+    Server address: https://127.0.0.1:4000/
   Server running... press ctrl-c to stop.
 ```
 
 7. Your server is now running. As suggested in the previous output open the url
-`http://127.0.0.1:4000/`
+`https://127.0.0.1:4000/`
 in your favorite web browser.
 
 ### Modify the web site

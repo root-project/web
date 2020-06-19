@@ -31,7 +31,7 @@ The Reference Guide is available for all major ROOT releases, and for the curren
 
 (*) If your project documentation is done via Doxygen and it depends on ROOT, you may want to
 link your project documentation to the ROOT reference guide. This can be done using ROOT
-tag file produced by [Doxygen](http://www.doxygen.nl){:target="_blank"}.
+tag file produced by [Doxygen](https://www.doxygen.nl){:target="_blank"}.
 
 
 Additionally, the source code is accessible via:
