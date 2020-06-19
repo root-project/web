@@ -1,0 +1,16 @@
+on:
+  pull_request:
+    types: [closed]
+    branches: [gh-pages]
+
+jobs:
+  delete_deployed_pr:
+    name: Delete deployed PR from S3
+    # PRs are only deployed if the PR branch is not in a fork
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    steps:
+      - run: aws --endpoint-url https://s3.cern.ch s3 rm --recursive s3://root/${PR_NUMBER:?}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
