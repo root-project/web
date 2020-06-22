@@ -71,7 +71,7 @@ function defined between a lower and upper limit.
 The function is displayed in a canvas.
 
 {% include figure_jsroot
-   file="graphics.root" object="func1" width="500px" height="350px"
+   file="/manual/graphics/graphics.root" object="func1" width="500px" height="350px"
    caption="Canvas (point to the bottom left light blue square or right-click
    on the image to interact with the object)."
 %}
@@ -131,21 +131,21 @@ void draw_object(const char *file_name = "myfile.root", const char *obj_name = "
 Right-click on the function to display the context menu.
 
 {% include figure_image
-   img="context-menu.png"
+   img="/manual/graphics/context-menu.png"
    caption="Context menu for manipulating objects."
 %}
 
 Here you can change many properties of the object like title, name, range, line and fill attributes etc. For example, you can change the range by clicking `SetRange`.
 
 {% include figure_image
-   img="set-range.png"
+   img="/manual/graphics/set-range.png"
    caption="SetRange dialog window."
 %}
 
 Select a range, for example 5, 25.
 
 {% include figure_image
-   img="new-range.png"
+   img="/manual/graphics/new-range.png"
    caption="Range 5, 25 for sin(x)."
 %}
 
@@ -156,7 +156,7 @@ You can edit an existing object in a canvas by right-clicking the object or by u
 - Click **View** and then select **Editor**.
 
 {% include figure_image
-   img="editor.png"
+   img="/manual/graphics/editor.png"
    caption="Editor for setting attributes interactively."
 %}
 
@@ -165,7 +165,7 @@ You can draw and edit basic primitives starting from an empty canvas or on top o
 - Click **View** and then select **Toolbar**.
 
 {% include figure_image
-   img="toolbar.png"
+   img="/manual/graphics/toolbar.png"
    caption="Toolbar providing more options."
 %}
 
@@ -262,7 +262,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="graphics.root" object="arrows" width="500px" height="350px"
+   file="/manual/graphics/graphics.root" object="arrows" width="500px" height="350px"
    caption="Examples of various arrow formats."
 %}
 
@@ -293,7 +293,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_image
-   img="polyline.png"
+   img="/manual/graphics/polyline.png"
    caption="Example for a polyline."
 %}
 
@@ -334,7 +334,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_image
-   img="ellipse.png"
+   img="/manual/graphics/ellipse.png"
    caption="Examples for a ellipses."
 %}
 
@@ -405,7 +405,7 @@ _**Example**_
 Refer to the `$ROOTSYS/tutorials/graphics/feynman.C` tutorial for creating a Feynman diagram.
 
 {% include figure_jsroot
-   file="graphics.root" object="feynman"
+   file="/manual/graphics/graphics.root" object="feynman"
    caption="Feynman diagram."
 %}
 
@@ -449,7 +449,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_image
-   img="latex.png"
+   img="/manual/graphics/latex.png"
    caption="Latex in a pad."
 %}
 
@@ -756,7 +756,7 @@ _**Example**_
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="graphics.root" object="ct" width="600px" height="600px"
+   file="/manual/graphics/graphics.root" object="ct" width="600px" height="600px"
    caption="Time axis."
 %}
 
@@ -845,7 +845,7 @@ The following legend contains a histogram, a function and a graph. The histogram
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="graphics.root" object="legend" width="600px" height="500px"
+   file="/manual/graphics/graphics.root" object="legend" width="600px" height="500px"
    caption="Legend containing a histogram, a function and a graph."
 %}
 
