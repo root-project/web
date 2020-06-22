@@ -20,7 +20,10 @@
    <a name="f{{sect}}{{fig}}"></a>
 {% endif %}
 
-<script src="{{ '/assets/js/ImageZoom.js' | relative_url }}" type="text/javascript"></script>
+{% if {{included_ImageZoom}} != 1 %}
+  <script src="{{ '/assets/js/ImageZoom.js' | relative_url }}" type="text/javascript"></script>
+  {% assign included_ImageZoom = 1 %}
+{% endif %}
 <div id="{{id}}" style="{{style}}"></div>
 <script>
     drawImage("{{image}}", '{{id}}');
