@@ -18,7 +18,7 @@ This is the first ROOT development release of the 6.09 series! It is meant to of
 Some highlights:
 
    * Automatic colouring of plots. How? Check this out [here](https://root.cern/doc/master/classTHistPainter.html#HP061).
-   * The [TDataFrame](https://root.cern/doc/master/classROOT_1_1Experimental_1_1TDataFrame.html) framework landed in ROOT: it is possible to analyse data contained in ROOT trees in a functional manner taking advantage transparently of all cores of your machine
+   * The [TDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html) framework landed in ROOT: it is possible to analyse data contained in ROOT trees in a functional manner taking advantage transparently of all cores of your machine
    * More building blocks for expressing parallelism: check out our [TThreadExecutor](https://root.cern/doc/master/classROOT_1_1TThreadExecutor.html) class!
    * More parallelism behind the scenes, for example parallel compression when writing to a TTree. Just let ROOT run your code in parallel: invoke [ROOT::EnableImplicitMT()](https://root.cern/doc/master/namespaceROOT.html#ade6e397b327482d267ad54de92db4b89)
    * A faster ROOT: for example lots of symbols are now hidden, TMethodCall is now twice as fast as before.
