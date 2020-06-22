@@ -168,7 +168,7 @@ sidebar:
 	</li>
 	<li>NetxNG
 	<ul>
-		<li>Restore functionality to TNetXNGFile, which is available when access root files by other methods, and allow access to root files within a zip archive (<a href="http://sft.its.cern.ch/jira/browse/ROOT-7185" target="_blank">ROOT-7185</a>)</li>
+		<li>Restore functionality to TNetXNGFile, which is available when access root files by other methods, and allow access to root files within a zip archive (<a href="https://sft.its.cern.ch/jira/browse/ROOT-7185" target="_blank">ROOT-7185</a>)</li>
 	</ul>
 	</li>
 </ul>
@@ -181,7 +181,7 @@ sidebar:
 		<li>Increase robustness of rootcling cli (<a href="https://sft.its.cern.ch/jira/browse/ROOT-6999" target="_blank">ROOT-6999</a>)</li>
 		<li>Support multiple libraries for an autoload key which is a header file name (<a href="https://sft.its.cern.ch/jira/browse/ROOT-7020" target="_blank">ROOT-7020</a>)</li>
 		<li>Propagate to the TClass instances the properties specified in selection rules matching classes via typedef nanames (<a href="https://sft.its.cern.ch/jira/browse/ROOT-6796" target="_blank">ROOT-6796</a>)</li>
-		<li>Fix crash in TClonesArray::ExpandCreateFast <a href="http://sft.its.cern.ch/jira/browse/ROOT-7046" target="_blank">ROOT-7046.</a></li>
+		<li>Fix crash in TClonesArray::ExpandCreateFast <a href="https://sft.its.cern.ch/jira/browse/ROOT-7046" target="_blank">ROOT-7046.</a></li>
 		<li>Add TClass::HasDictionarySelection() to query whether a class has been selected (and if not loaded is available through a rootmap).</li>
 		<li>Optimise code generated for forward declarations in the rootmaps to speed up startup and reduce memory footprint in presence of large sets of selected classes.</li>
 		<li>Avoid duplicates in rootmaps selectively avoiding to use as keys external class names</li>
@@ -220,21 +220,21 @@ sidebar:
 <ul>
 	<li>I/O.
 	<ul>
-		<li>Prevent crashes when using default constructed TFile and TDirectoryFile ( <a href="http://sft.its.cern.ch/jira/browse/ROOT-7005" target="_blank">ROOT-7005</a>)</li>
+		<li>Prevent crashes when using default constructed TFile and TDirectoryFile ( <a href="https://sft.its.cern.ch/jira/browse/ROOT-7005" target="_blank">ROOT-7005</a>)</li>
 	</ul>
 	</li>
 	<li>TTree
 	<ul>
-		<li>Fix memory leak of CollectionProxy for non split branch for an STL collection. ( <a href="http://sft.its.cern.ch/jira/browse/ROOT-7019" target="_blank">ROOT-7019</a>)</li>
-		<li>Significantly improve the scheduling of I/O rules in split TTree solving <a href="http://sft.its.cern.ch/jira/browse/ROOT-7009" target="_blank">ROOT-7009.</a></li>
+		<li>Fix memory leak of CollectionProxy for non split branch for an STL collection. ( <a href="https://sft.its.cern.ch/jira/browse/ROOT-7019" target="_blank">ROOT-7019</a>)</li>
+		<li>Significantly improve the scheduling of I/O rules in split TTree solving <a href="https://sft.its.cern.ch/jira/browse/ROOT-7009" target="_blank">ROOT-7009.</a></li>
 	</ul>
 	</li>
 	<li>Interpreter.
 	<ul>
-		<li>Handle re-emission of referenced weak symbols as real symbols later (<a href="http://sft.its.cern.ch/jira/browse/ROOT-7024" target="_blank">ROOT-7024</a>)</li>
+		<li>Handle re-emission of referenced weak symbols as real symbols later (<a href="https://sft.its.cern.ch/jira/browse/ROOT-7024" target="_blank">ROOT-7024</a>)</li>
 		<li>Simplify creation of pch input header using the __has_include macro</li>
 		<li>Remove system header sys/time.h in favour of ctime</li>
-		<li>Add in the pch all stl headers. On mac, exclude regex to workaround <a href="http://sft.its.cern.ch/jira/browse/ROOT-7004" target="_blank">ROOT-7004</a></li>
+		<li>Add in the pch all stl headers. On mac, exclude regex to workaround <a href="https://sft.its.cern.ch/jira/browse/ROOT-7004" target="_blank">ROOT-7004</a></li>
 		<li>Do not construct a class's interpreter info while its TClass is initialized, and don't refuse to construct it permanently just because autoparsing was suspended when tried first.</li>
 	</ul>
 	</li>
@@ -351,7 +351,7 @@ sidebar:
 	</li>
 	<li>IO
 	<ul>
-		<li>Set the default for Davix to enable Davix.GSI.GridMode, to be consistent with the comment in the default system rootrc. GridMode is needed to use https with usual grid https endpoints such as SEs. <a href="http://sft.its.cern.ch/jira/browse/ROOT-6897" target="_blank">ROOT-6897</a></li>
+		<li>Set the default for Davix to enable Davix.GSI.GridMode, to be consistent with the comment in the default system rootrc. GridMode is needed to use https with usual grid https endpoints such as SEs. <a href="https://sft.its.cern.ch/jira/browse/ROOT-6897" target="_blank">ROOT-6897</a></li>
 	</ul>
 	</li>
 </ul>

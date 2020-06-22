@@ -22,7 +22,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 * I/O
    * Add support for LZ4 compression.
    * Properly handle 'cycle' number larger than 32767 by rounding to zero rather than a negative number.
-   * Properly propagate errors in OpenExcessFiles in TFileMerger ([ROOT-8167](http://sft.its.cern.ch/jira/browse/ROOT-8167)).
+   * Properly propagate errors in OpenExcessFiles in TFileMerger ([ROOT-8167](https://sft.its.cern.ch/jira/browse/ROOT-8167)).
 * TTree
    * Fix detection of errors that appears in nested TTreeFormula [ROOT-8218]
 * Graphics
@@ -35,13 +35,13 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 *  Build system
     * Added option 'builtin_openssl' to build OpenSSL internally. Needed mainly for Mac OS X 10.11 (El Capitan).
 * Core
-    * TObject instances allocated as part of an array and made part of a collection, as for example the TCanvas instances into the global list of instances, are not longer deleted if the content of the collection is deleted.  Technically the element of the array are now treated by collections as if they have been allocated on the stack.  This fixes the issue described at ([ROOT-7846](http://sft.its.cern.ch/jira/browse/ROOT-7846)).
+    * TObject instances allocated as part of an array and made part of a collection, as for example the TCanvas instances into the global list of instances, are not longer deleted if the content of the collection is deleted.  Technically the element of the array are now treated by collections as if they have been allocated on the stack.  This fixes the issue described at ([ROOT-7846](https://sft.its.cern.ch/jira/browse/ROOT-7846)).
 * I/O
-    * Resolve an issue when space is freed in a large `ROOT` file and a TDirectory is updated and stored the lower (less than 2GB) freed portion of the file ([ROOT-8055](http://sft.its.cern.ch/jira/browse/ROOT-8055)).
+    * Resolve an issue when space is freed in a large `ROOT` file and a TDirectory is updated and stored the lower (less than 2GB) freed portion of the file ([ROOT-8055](https://sft.its.cern.ch/jira/browse/ROOT-8055)).
 *  Montecarlo
     * Re-introduced method TPythia6:Pytune()
 *  TTree
-    * Fix ([ROOT-7423](http://sft.its.cern.ch/jira/browse/ROOT-7423)) TTreeCache may not stop the learning phase when asynchronous prefetching is enabled.
+    * Fix ([ROOT-7423](https://sft.its.cern.ch/jira/browse/ROOT-7423)) TTreeCache may not stop the learning phase when asynchronous prefetching is enabled.
     * Fix the issue described in the (following forum post(https://root.cern.ch/phpBB3/viewtopic.php?t=20269)), where a some order of calls to TTree::Scan and TTree::Write resulted in invalid output.
     * Repair setting the branch address of a leaflist style branch taking directly the address of the struct.  (Note that leaflist is nonetheless still deprecated and declaring the struct to the interpreter and passing the object directly to create the branch is much better).
 * Graphics
@@ -55,10 +55,10 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
   * New version of libpng (1.2.55) as requested [here](https://sft.its.cern.ch/jira/browse/ROOT-8045).
 
 * TNetXNGFileStager
-    *   Fix ([ROOT-7703](http://sft.its.cern.ch/jira/browse/ROOT-7703)) This restores the behavior of Locate() to that found with TXNetFileStager: Rather than return only the xrootd server's reply, the endpoint hostname is looked up and Locate() returns the full url, including the path.
+    *   Fix ([ROOT-7703](https://sft.its.cern.ch/jira/browse/ROOT-7703)) This restores the behavior of Locate() to that found with TXNetFileStager: Rather than return only the xrootd server's reply, the endpoint hostname is looked up and Locate() returns the full url, including the path.
 * TWebFile
-    *   Fix ([ROOT-7809](http://sft.its.cern.ch/jira/browse/ROOT-7809)) Returns an error for a redirect which does not specify the new URI, rather than going into a loop.
-    *   Fix ([ROOT-7817](http://sft.its.cern.ch/jira/browse/ROOT-7817)) Avoid a crash under some circumstances when trying to open an invalid path.
+    *   Fix ([ROOT-7809](https://sft.its.cern.ch/jira/browse/ROOT-7809)) Returns an error for a redirect which does not specify the new URI, rather than going into a loop.
+    *   Fix ([ROOT-7817](https://sft.its.cern.ch/jira/browse/ROOT-7817)) Avoid a crash under some circumstances when trying to open an invalid path.
 * SQL
     *   Fix TPgSQLStatement::SetBinary to actually handle binary data (previous limited to ascii).
 
@@ -67,15 +67,15 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 
 
 *   Build
-    *   Support for gcc 5.1 and CMake builds ([ROOT-7440](http://sft.its.cern.ch/jira/browse/ROOT-7440)). To make it work required to disable #define private public for this compiler.
+    *   Support for gcc 5.1 and CMake builds ([ROOT-7440](https://sft.its.cern.ch/jira/browse/ROOT-7440)). To make it work required to disable #define private public for this compiler.
     *   Support for Intel ICC 15.
     *   Fix in the RPATH treatment that is needed for MacOS X 10.11 (El Capitan)
     *   Handle build for the missing OpenSSL ([ROOT-7680](https://sft.its.cern.ch/jira/browse/ROOT-7680))
     *   Implemented the options 'minimal' and 'minimal'
 *   I/O
-    *   Fix the issue described at ([ROOT-7500](http://sft.its.cern.ch/jira/browse/ROOT-7500)): crash due to change in base class which versioned derived class.
+    *   Fix the issue described at ([ROOT-7500](https://sft.its.cern.ch/jira/browse/ROOT-7500)): crash due to change in base class which versioned derived class.
 *  TTree
-    *   Fix ([ROOT-6885](http://sft.its.cern.ch/jira/browse/ROOT-6885)) This affects very large TChain with friend trees.
+    *   Fix ([ROOT-6885](https://sft.its.cern.ch/jira/browse/ROOT-6885)) This affects very large TChain with friend trees.
 *  JSROOT
     *  Upgraded to latest JSROOT version 3.8
 *  RooFit
@@ -88,14 +88,14 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 
 
 *   Build
-    *   Pythia6 not found with CMake ([ROOT-7333](http://sft.its.cern.ch/jira/browse/ROOT-7333))
-    *   Fixes in .license and .credits commands ([ROOT-7311](http://sft.its.cern.ch/jira/browse/ROOT-7311))
+    *   Pythia6 not found with CMake ([ROOT-7333](https://sft.its.cern.ch/jira/browse/ROOT-7333))
+    *   Fixes in .license and .credits commands ([ROOT-7311](https://sft.its.cern.ch/jira/browse/ROOT-7311))
     *   bindexplib.exe support for x64
 *   I/O.
-    *   Properly handle the reload/recreate of TClass for STL containers (fixes [ROOT-7239](http://sft.its.cern.ch/jira/browse/ROOT-7239))
+    *   Properly handle the reload/recreate of TClass for STL containers (fixes [ROOT-7239](https://sft.its.cern.ch/jira/browse/ROOT-7239))
     *   Fix the ordering of the keys in a TFile being written; in particular fixing the result of GetKey and FindKey which were no longer returning the lastest cycle for a TFile being written since v5.34/11.
 *   Graphics
-    *   In the animated gif it is now possible to specify the delay between the last image and the fist image in case of infinite loop ([ROOT-7263](http://sft.its.cern.ch/jira/browse/ROOT-7263)).
+    *   In the animated gif it is now possible to specify the delay between the last image and the fist image in case of infinite loop ([ROOT-7263](https://sft.its.cern.ch/jira/browse/ROOT-7263)).
     *   2D stats painting now takes the stats format into account when painting Integral. This problem was mentioned [here](https://root.cern.ch/phpBB3/viewtopic.php?f=3&t=19746).
     *   Fix [ROOT-6703](https://sft.its.cern.ch/jira/browse/ROOT-6703).
 *   Proof
@@ -115,7 +115,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Fixed build problems with Mac OS X
 *   Core
 
-    *   TextInput: prevent history file clashes from concurrent processes ([ROOT-6539](http://sft.its.cern.ch/jira/browse/ROOT-6539)).
+    *   TextInput: prevent history file clashes from concurrent processes ([ROOT-6539](https://sft.its.cern.ch/jira/browse/ROOT-6539)).
 *   I/O.
     *   Properly skip the content of base class onfile that have been removed from the in-memory class layout.
     *   Properly support TStreamerInfo written by ROOT v4.00.
@@ -130,7 +130,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 
 
 *   Build system
-    *   Fix problem with libraries starting with the same same ([ROOT-7048](http://sft.its.cern.ch/jira/browse/ROOT-7048))
+    *   Fix problem with libraries starting with the same same ([ROOT-7048](https://sft.its.cern.ch/jira/browse/ROOT-7048))
     *   Support for CMake version > 3.1
 *   Proof
     *   Added support for addition of workers while running to TPacketizer to use in dynamic startups.
@@ -140,11 +140,11 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Better adjustment of the tilde accent position in case of Cocoa backend.
     *   When printing a coloured 2D histograms (with option COLZ) into a PDF or PostScript file, the preview on screen using many standard PDF previewer tools showed very thin white lines between the bins as well as in the color palette. This made very ugly the final output. This problem is due to bad implementation of anti-aliasing in these previewers. A way to bypass this issue was to turn off the anti-aliasing in the previewer but then the rest of the document does not look nice. This problem is now bypassed with a fix in both PDF and PostScript output.
 *   Interpreter
-    *   Include <iostream> in CINT also for frameworks ([ROOT-7103](http://sft.its.cern.ch/jira/browse/ROOT-7103)).
+    *   Include <iostream> in CINT also for frameworks ([ROOT-7103](https://sft.its.cern.ch/jira/browse/ROOT-7103)).
 *   NetxNG
-    *   Restore functionality to TNetXNGFile, which is available when access root files by other methods, and allow access to root files within a zip archive ([ROOT-7185](http://sft.its.cern.ch/jira/browse/ROOT-7185))<span class="Apple-tab-span" style="white-space:pre"></span>
+    *   Restore functionality to TNetXNGFile, which is available when access root files by other methods, and allow access to root files within a zip archive ([ROOT-7185](https://sft.its.cern.ch/jira/browse/ROOT-7185))<span class="Apple-tab-span" style="white-space:pre"></span>
 *   Montecarlo
-    *   Support for Pythia8 version > 8.2 ([ROOT-7070](http://sft.its.cern.ch/jira/browse/ROOT-7185))
+    *   Support for Pythia8 version > 8.2 ([ROOT-7070](https://sft.its.cern.ch/jira/browse/ROOT-7185))
 
 <a id='26'></a>
 ## Changes in version v5-34-26 (February 20, 2015)
@@ -157,9 +157,9 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   In TMathText \mu is now working for Postscript output.
     *   Implement transparent colors in TTeXDump using TiKZ "opacity".
 *   Core
-    *   Fix crash in TClonesArray::ExpandCreateFast [ROOT-7046.](http://sft.its.cern.ch/jira/browse/ROOT-7046)
+    *   Fix crash in TClonesArray::ExpandCreateFast [ROOT-7046.](https://sft.its.cern.ch/jira/browse/ROOT-7046)
 *   I/O
-    *   Prevent crashes when using default constructed TFile and TDirectoryFile ( [ROOT-7005](http://sft.its.cern.ch/jira/browse/ROOT-7005))
+    *   Prevent crashes when using default constructed TFile and TDirectoryFile ( [ROOT-7005](https://sft.its.cern.ch/jira/browse/ROOT-7005))
     *   Better support of TString and std::string in XML/JSON streamers
     *   Solve problem in TBufferXML to support default streamer (no + sign in LinkDef.h file)
     *   Support of STL containers in JSON
@@ -167,8 +167,8 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Special handling of std::map in JSON
     *   xml: support all standard symbols in node names
 *   TTree
-    *   Fix memory leak of CollectionProxy for non split branch for an STL collection. ( [ROOT-7019](http://sft.its.cern.ch/jira/browse/ROOT-7019))
-    *   Significantly improve the scheduling of I/O rules in split TTree solving [ROOT-7009.](http://sft.its.cern.ch/jira/browse/ROOT-7009)
+    *   Fix memory leak of CollectionProxy for non split branch for an STL collection. ( [ROOT-7019](https://sft.its.cern.ch/jira/browse/ROOT-7019))
+    *   Significantly improve the scheduling of I/O rules in split TTree solving [ROOT-7009.](https://sft.its.cern.ch/jira/browse/ROOT-7009)
 *   JSROOT
     *   Several files can now be loaded simultaneously
     *   Use d3.time.scale to display time scales
@@ -190,7 +190,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 
 
 *   Build system
-    *   Changed of the order of libraries in link statement to avoid problems. [ROOT-6855](http://sft.its.cern.ch/jira/browse/ROOT-6855)
+    *   Changed of the order of libraries in link statement to avoid problems. [ROOT-6855](https://sft.its.cern.ch/jira/browse/ROOT-6855)
 *   Core
     *   Correct the order of initialization and thread locking when create the TClass sub list (data members, base, functions) to prevent a thread from using the list before it is completely created.
     *   Implement TDictionary::op=() given that it has a copy ctor (Coverity).
@@ -240,7 +240,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 *   Vc
     *   Update to the new version, 0.7.4 (the same as in the ROOT 6 branches)
 *   IO
-    *   Set the default for Davix to enable Davix.GSI.GridMode, to be consistent with the comment in the default system rootrc. GridMode is needed to use https with usual grid https endpoints such as SEs. [ROOT-6897](http://sft.its.cern.ch/jira/browse/ROOT-6897)
+    *   Set the default for Davix to enable Davix.GSI.GridMode, to be consistent with the comment in the default system rootrc. GridMode is needed to use https with usual grid https endpoints such as SEs. [ROOT-6897](https://sft.its.cern.ch/jira/browse/ROOT-6897)
 *   Hist
     *   Remove TH1::Clone and use (as before 5.34.23) TObject::Clone for cloning histogram
     *   Use TH1::Copy instead of TH1::Clone in TH1 and TProfile::RebinAxis
@@ -257,14 +257,14 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Fix for [ROOT-6812](https://sft.its.cern.ch/jira/browse/ROOT-6812): Can't compile v5-34-22 on MacOS X in "configure mode"
     *   Silence anachronism warning on Windows with Vc.
     *   Add --enable-cxx14 and --cxxflag and --cflags to the configure script. For now --enable-cxx14 uses -std=c++1y. --cxxflag and --cflags should be used when custom configuring ROOT with compiler flags that affects binary compatibility (like -std=c++1y for example). This prevents this kind of important customization, historically done in MyRules.mk, from being 'forgotten' from root-config.
-    *   Fix for [ROOT-6751](http://sft.its.cern.ch/jira/browse/ROOT-6751): etcdir not set
-    *   CMake changes required for Mac OSX10.10 (Yosemite) - [ROOT-6836](http://sft.its.cern.ch/jira/browse/ROOT-6836)
+    *   Fix for [ROOT-6751](https://sft.its.cern.ch/jira/browse/ROOT-6751): etcdir not set
+    *   CMake changes required for Mac OSX10.10 (Yosemite) - [ROOT-6836](https://sft.its.cern.ch/jira/browse/ROOT-6836)
 *   Core
 
     *   Fix thread_local declaration (affecting gcc 4.7)
     *   Many changes to improve thread safety.
 *   Math
-    *   Fix for [ROOT-6879](http://sft.its.cern.ch/jira/browse/ROOT-6879): TMinuit destructor when gROOT has been already deleted
+    *   Fix for [ROOT-6879](https://sft.its.cern.ch/jira/browse/ROOT-6879): TMinuit destructor when gROOT has been already deleted
 *   Histograms
     *   Fix TAxis::Copy function did not correctly handle the case where not all bins had labels.
     *   Implement TH1::Clone()
