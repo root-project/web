@@ -10,9 +10,9 @@ sidebar:
 
 <div>
 <p>The first release candidate of the new production version ROOT v6-02-00 has been released Sept 25, 2014.</p>
-<p>Get the source from <a href="/node/92" target="_blank">Git</a> using:</p>
+<p>Get the source from Git using:</p>
 <code>git clone http://root.cern.ch/git/root.git root-v6-02; cd root-v6-02; git checkout -b v6-02-00-patches </code>
-<p>After obtaining the source read the file <a href="/node/103" target="_blank">README/INSTALL</a> (in short just do: cd root; ./configure; make).</p>
+<p>After obtaining the source read the file README/INSTALL (in short just do: cd root; ./configure; make).</p>
 <h2>Note for MaxOsX 10.10 (Yosemite)</h2>
 <p>When installing ROOT from sources the XCode command line tools need to be re-installed with:</p>
 <code> xcode-select --install </code>
@@ -207,7 +207,7 @@ sidebar:
 	</li>
 	<li>Interpreter
 	<ul>
-		<li>Add ability to unload ACLIC'ed sources (<a browse="" ch="" href="&lt;a href=" jira="">ROOT-7027</a>).</li>
+		<li>Add ability to unload ACLIC'ed sources (ROOT-7027).</li>
 		<li>Reduce memory usage trying to update only existing TClass instances in fwd declared or emulated state</li>
 	</ul>
 	</li>
