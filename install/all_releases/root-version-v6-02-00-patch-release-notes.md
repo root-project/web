@@ -299,7 +299,7 @@ sidebar:
 		<li>In some some cases an extra point was drawn when a TGraph2D was drawn with P, P0 or PCOL options.</li>
 		<li>The hollow fill style was not rendered correctly by TTexDump. (<a href="https://sft.its.cern.ch/jira/browse/ROOT-6841" target="_blank">ROOT-6841</a>)</li>
 		<li>It was possible to interactively zoom outside the histograms' limits. Protections have been added.</li>
-		<li>Fix an <a href="http://root.cern.ch/phpBB3/viewtopic.php?f=3&amp;t=18778" target="_blank">issue</a> with E0 option and log scale.</li>
+		<li>Fix an <a href="https://root.cern.ch/phpBB3/viewtopic.php?f=3&amp;t=18778" target="_blank">issue</a> with E0 option and log scale.</li>
 		<li>Better line width matching with screen and pdf output (<a href="https://sft.its.cern.ch/jira/browse/ROOT-6858" target="_blank">ROOT-6858</a>)</li>
 		<li>With the Cocoa backend on Mac, the PDF and PS output produced miss-aligned exponents because the GetTextExtend method behaved differently in batch mode and "screen" mode. This is now fixed.</li>
 		<li>In TTextDump the text color was ignored. It was always black.</li>
