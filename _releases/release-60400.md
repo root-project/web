@@ -18,8 +18,7 @@ The ROOT team is proud to announce the release of ROOT 6.04/00 featuring many us
 *   a new `TFormula` implementation that uses cling
 *   I/O of C++11 containers
 *   TTreeCache is now enabled by default to accelerate analyses
-*   many new beautiful palettes ([kBird!](https://root.cern/doc/master/classTColor.html#C06)) that are optimized against
-[monotonic perceptual ordering]( {% post_url 2014-05-31-rainbow-color-map %} )
+*   many new beautiful palettes ([kBird!](https://root.cern/doc/master/classTColor.html#C06)) that are optimized against monotonic perceptual ordering
 
 ## Release Notes
 
