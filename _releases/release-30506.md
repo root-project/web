@@ -22,7 +22,7 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| AIX.5 | [root_v3.05.06.AIX.5.tar.gz](https://root.cern.ch/download/root_v3.05.06.AIX.5.tar.gz) |  17M |
+| AIX.5 | root_v3.05.06.AIX.5.tar.gz |  17M |
 | HP UX.B.10.20.aCC | [root_v3.05.06.HP-UX.B.10.20.aCC.tar.gz](https://root.cern.ch/download/root_v3.05.06.HP-UX.B.10.20.aCC.tar.gz) |  23M |
 | IRIX.6.5.cc | [root_v3.05.06.IRIX.6.5.cc.tar.gz](https://root.cern.ch/download/root_v3.05.06.IRIX.6.5.cc.tar.gz) |  16M |
 | IRIX.6.5.gcc | [root_v3.05.06.IRIX.6.5.gcc.tar.gz](https://root.cern.ch/download/root_v3.05.06.IRIX.6.5.gcc.tar.gz) |  18M |
