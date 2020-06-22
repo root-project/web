@@ -9,6 +9,8 @@ on:
 
 env:
   PR_NUMBER: ${{ github.event.pull_request.number }}
+  # only deploy if push to gh-pages or if pull request not coming from a fork (cannot access github secrets otherwise)
+  SHOULD_DEPLOY: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository }}
 
 jobs:
   build:
@@ -32,9 +34,15 @@ jobs:
           # - indico.desy.de: Returns frequently error code 403
           arguments: --empty-alt-ignore --file-ignore "/(releases|page.?/index.html)/" --allow-hash-href --url-ignore "/(https://ph-root-2.cern.ch/.*|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*)/" --only-4xx --enforce-https --check-favicon
 
+      - name: Wait for other deployments
+        # wait for other workflows that are deploying the website to finish, (not 100% foolproof, see #240)
+        if: ${{ env.SHOULD_DEPLOY && github.event_name != 'pull_request' }}
+        uses: softprops/turnstyle@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Sync to S3
-        # do not sync if pull request coming from a fork (we do not have access to secrets in that case)
-        if: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
+        if: ${{ env.SHOULD_DEPLOY == true }}
         run: |
           DEST="s3://root/${PR_NUMBER:-}" # if PR, upload in s3://root/<prnumber>
           aws --endpoint-url https://s3.cern.ch s3 sync --delete build/${PR_NUMBER:-} ${DEST}
