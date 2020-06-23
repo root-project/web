@@ -17,15 +17,15 @@ sidebar:
 <code>/afs/cern.ch/sw/lcg/app/releases/ROOT/5.24.00b/ </code>
 
 <p>The complete source tree for all systems (23.5 MB) is available here:</p>
-<code> <a href="ftp://root.cern.ch/root/root_v5.24.00b.source.tar.gz" target="_blank">ftp://root.cern.ch/root/root_v5.24.00b.source.tar.gz</a> </code>
+<code> <a href="ftp://root.cern/root/root_v5.24.00b.source.tar.gz" target="_blank">ftp://root.cern/root/root_v5.24.00b.source.tar.gz</a> </code>
 
 <p>Alternatively get the source from <a href="/git-primer" target="_blank">Subversion</a> <span style="color:#B22222;">(broken)</span> using:</p>
-<code> svn co <a href="http://root.cern.ch/svn/root/tags/v5-24-00b" target="_blank" title="http://root.cern.ch/svn/root/tags/v5-24-00b">http://root.cern.ch/svn/root/tags/v5-24-00b</a> root </code>
+<code> svn co <a href="http://root.cern/svn/root/tags/v5-24-00b" target="_blank" title="http://root.cern/svn/root/tags/v5-24-00b">http://root.cern/svn/root/tags/v5-24-00b</a> root </code>
 
 <p>After obtaining the source read the file README/INSTALL (in short just do: cd root; ./configure; make).</p>
 
 <p>To get the source of the head of the v5-24-00-patches branch do:</p>
-<code> svn co <a href="http://root.cern.ch/svn/root/branches/v5-24-00-patches" target="_blank" title="http://root.cern.ch/svn/root/branches/v5-24-00-patches">http://root.cern.ch/svn/root/branches/v5-24-00-patches</a> root </code>
+<code> svn co <a href="http://root.cern/svn/root/branches/v5-24-00-patches" target="_blank" title="http://root.cern/svn/root/branches/v5-24-00-patches">http://root.cern/svn/root/branches/v5-24-00-patches</a> root </code>
 
 <h2>Changes in the head of the v5-24-00-patches branch</h2>
 
@@ -228,7 +228,7 @@ sidebar:
 	<ul>
 		<li>Fix a bug in the constructor of FeldmanCousins.cxx</li>
 		<li>Improve the LikelihoodInterval::LowerLimit() and UpperLimit()</li>
-		<li>Fix RooStatUtils::SetParameters (see <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=29521" target="_blank" title="http://root.cern.ch/viewvc?view=rev&amp;revision=29521">http://root.cern.ch/viewvc?view=rev&amp;revision=29521</a> )</li>
+		<li>Fix RooStatUtils::SetParameters (see <a href="http://root.cern/viewvc?view=rev&amp;revision=29521" target="_blank" title="http://root.cern/viewvc?view=rev&amp;revision=29521">http://root.cern/viewvc?view=rev&amp;revision=29521</a> )</li>
 		<li>Fix a problem in ProfileLikelihoodCalculator::GetHypoTest() when there are no nuisance parameters&nbsp;</li>
 	</ul>
 	</li>

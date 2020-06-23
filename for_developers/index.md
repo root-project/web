@@ -44,7 +44,7 @@ ROOT externals coming from the central installations in AFS or CVMFS.
    - [Jenkins How To](continous_integration-testing/jenkins_how_to)
    - [CDash](https://cdash.cern.ch/index.php?project=ROOT)
    - [Coverity](https://coverity.cern.ch/login/login.htm)
-   - [GitWeb](https://root.cern.ch/gitweb/?p=root.git;a=summary)
+   - [GitWeb](https://root.cern/gitweb/?p=root.git;a=summary)
    - [Jira](https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page)
    - [ROOTBinder Checklist](continous_integration-testing/rootbinder_checklist)
 
@@ -56,4 +56,4 @@ the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
 Jekyll is used for generating the ROOT web site.
 
 ### [Benchmarks](https://rootbnch-grafana-test.cern.ch)
-### [ROOT Logos](https://root.cern.ch/img/logos/ROOT_Logo/)
+### [ROOT Logos](https://root.cern/img/logos/ROOT_Logo/)

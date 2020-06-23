@@ -15,16 +15,16 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.12.00e.source.tar.gz](https://root.cern.ch/download/root_v5.12.00e.source.tar.gz) |  17M |
+| source | [root_v5.12.00e.source.tar.gz](https://root.cern/download/root_v5.12.00e.source.tar.gz) |  17M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Linux.slc3.gcc3.4.4 | [root_v5.12.00e.Linux.slc3.gcc3.4.4.tar.gz](https://root.cern.ch/download/root_v5.12.00e.Linux.slc3.gcc3.4.4.tar.gz) |  34M |
-| Linux.slc4.gcc3.4.5 | [root_v5.12.00e.Linux.slc4.gcc3.4.5.tar.gz](https://root.cern.ch/download/root_v5.12.00e.Linux.slc4.gcc3.4.5.tar.gz) |  34M |
-| Linux.slc4_amd64.gcc3.4.5 | [root_v5.12.00e.Linux.slc4_amd64.gcc3.4.5.tar.gz](https://root.cern.ch/download/root_v5.12.00e.Linux.slc4_amd64.gcc3.4.5.tar.gz) |  35M |
+| Linux.slc3.gcc3.4.4 | [root_v5.12.00e.Linux.slc3.gcc3.4.4.tar.gz](https://root.cern/download/root_v5.12.00e.Linux.slc3.gcc3.4.4.tar.gz) |  34M |
+| Linux.slc4.gcc3.4.5 | [root_v5.12.00e.Linux.slc4.gcc3.4.5.tar.gz](https://root.cern/download/root_v5.12.00e.Linux.slc4.gcc3.4.5.tar.gz) |  34M |
+| Linux.slc4_amd64.gcc3.4.5 | [root_v5.12.00e.Linux.slc4_amd64.gcc3.4.5.tar.gz](https://root.cern/download/root_v5.12.00e.Linux.slc4_amd64.gcc3.4.5.tar.gz) |  35M |
 
 
 

@@ -13,22 +13,22 @@ sidebar:
 
 ## Release Notes
 
-The release notes for this release can be found [here](https://root.cern.ch/root-version-v6-02-00-patch-release-notes)
+The release notes for this release can be found [here](https://root.cern/root-version-v6-02-00-patch-release-notes)
 
 ## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.02.02.source.tar.gz](https://root.cern.ch/download/root_v6.02.02.source.tar.gz) |  95M |
+| source | [root_v6.02.02.source.tar.gz](https://root.cern/download/root_v6.02.02.source.tar.gz) |  95M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Scientific Linux Cern 6_amd64 gcc4.8 | [root_v6.02.02.Linux-slc6_amd64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.02.02.Linux-slc6_amd64-gcc4.8.tar.gz) | 144M |
-| OsX 10.9 i386 | [root_v6.02.02.macosx64-10.9-i386.tar.gz](https://root.cern.ch/download/root_v6.02.02.macosx64-10.9-i386.tar.gz) | 130M |
-| OsX 10.10 i386 | [root_v6.02.02.macosx64-10.10-i386.tar.gz](https://root.cern.ch/download/root_v6.02.02.macosx64-10.10-i386.tar.gz) | 130M |
+| Scientific Linux Cern 6_amd64 gcc4.8 | [root_v6.02.02.Linux-slc6_amd64-gcc4.8.tar.gz](https://root.cern/download/root_v6.02.02.Linux-slc6_amd64-gcc4.8.tar.gz) | 144M |
+| OsX 10.9 i386 | [root_v6.02.02.macosx64-10.9-i386.tar.gz](https://root.cern/download/root_v6.02.02.macosx64-10.9-i386.tar.gz) | 130M |
+| OsX 10.10 i386 | [root_v6.02.02.macosx64-10.10-i386.tar.gz](https://root.cern/download/root_v6.02.02.macosx64-10.10-i386.tar.gz) | 130M |
 
 
 
@@ -54,7 +54,7 @@ To use ROOT directly from AFS:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

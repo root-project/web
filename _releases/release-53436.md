@@ -46,41 +46,41 @@ The fixed/completed list of JIRA tickets are:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.34.36.source.tar.gz](https://root.cern.ch/download/root_v5.34.36.source.tar.gz) |  72M |
+| source | [root_v5.34.36.source.tar.gz](https://root.cern/download/root_v5.34.36.source.tar.gz) |  72M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v5.34.36.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-centos7-x86_64-gcc4.8.tar.gz) |  72M |
-| CentOS Cern 7 gcc4.9 | [root_v5.34.36.Linux-centos7-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-centos7-x86_64-gcc4.9.tar.gz) |  73M |
-| Linux fedora20 gcc4.8 | [root_v5.34.36.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-fedora20-x86_64-gcc4.8.tar.gz) |  58M |
-| Scientific Linux Cern 6 gcc4.4 | [root_v5.34.36.Linux-slc6-x86_64-gcc4.4.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-slc6-x86_64-gcc4.4.tar.gz) |  70M |
-| Scientific Linux Cern 6 gcc4.7 | [root_v5.34.36.Linux-slc6-x86_64-gcc4.7.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-slc6-x86_64-gcc4.7.tar.gz) |  71M |
-| Scientific Linux Cern 6 gcc4.8 | [root_v5.34.36.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-slc6-x86_64-gcc4.8.tar.gz) |  71M |
-| Scientific Linux Cern 6 gcc4.9 | [root_v5.34.36.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-slc6-x86_64-gcc4.9.tar.gz) |  73M |
-| Scientific Linux Cern 6 gcc5.1 | [root_v5.34.36.Linux-slc6-x86_64-gcc5.1.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-slc6-x86_64-gcc5.1.tar.gz) |  73M |
-| Ubuntu 12 gcc4.6 | [root_v5.34.36.Linux-ubuntu12-x86_64-gcc4.6.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-ubuntu12-x86_64-gcc4.6.tar.gz) |  58M |
-| Ubuntu 14 gcc4.8 | [root_v5.34.36.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.36.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) |  62M |
-| OsX 10.9 clang60 | [root_v5.34.36.macosx64-10.9-clang60.dmg](https://root.cern.ch/download/root_v5.34.36.macosx64-10.9-clang60.dmg) |  56M |
-| OsX 10.9 clang60 | [root_v5.34.36.macosx64-10.9-clang60.tar.gz](https://root.cern.ch/download/root_v5.34.36.macosx64-10.9-clang60.tar.gz) |  56M |
-| OsX 10.10 clang70 | [root_v5.34.36.macosx64-10.10-clang70.dmg](https://root.cern.ch/download/root_v5.34.36.macosx64-10.10-clang70.dmg) |  57M |
-| OsX 10.10 clang70 | [root_v5.34.36.macosx64-10.10-clang70.tar.gz](https://root.cern.ch/download/root_v5.34.36.macosx64-10.10-clang70.tar.gz) |  56M |
-| OsX 10.11 clang70 | [root_v5.34.36.macosx64-10.11-clang70.dmg](https://root.cern.ch/download/root_v5.34.36.macosx64-10.11-clang70.dmg) |  58M |
-| OsX 10.11 clang70 | [root_v5.34.36.macosx64-10.11-clang70.tar.gz](https://root.cern.ch/download/root_v5.34.36.macosx64-10.11-clang70.tar.gz) |  58M |
-| Windows Visual Studio 2010 (dbg) | [root_v5.34.36.win32.vc10.debug.exe](https://root.cern.ch/download/root_v5.34.36.win32.vc10.debug.exe) |  92M |
-| Windows Visual Studio 2010 (dbg) | [root_v5.34.36.win32.vc10.debug.zip](https://root.cern.ch/download/root_v5.34.36.win32.vc10.debug.zip) | 140M |
-| Windows Visual Studio 2010 | [root_v5.34.36.win32.vc10.exe](https://root.cern.ch/download/root_v5.34.36.win32.vc10.exe) |  46M |
-| Windows Visual Studio 2010 | [root_v5.34.36.win32.vc10.zip](https://root.cern.ch/download/root_v5.34.36.win32.vc10.zip) |  63M |
-| Windows Visual Studio 2012 (dbg) | [root_v5.34.36.win32.vc11.debug.exe](https://root.cern.ch/download/root_v5.34.36.win32.vc11.debug.exe) |  98M |
-| Windows Visual Studio 2012 (dbg) | [root_v5.34.36.win32.vc11.debug.zip](https://root.cern.ch/download/root_v5.34.36.win32.vc11.debug.zip) | 151M |
-| Windows Visual Studio 2012 | [root_v5.34.36.win32.vc11.exe](https://root.cern.ch/download/root_v5.34.36.win32.vc11.exe) |  47M |
-| Windows Visual Studio 2012 | [root_v5.34.36.win32.vc11.zip](https://root.cern.ch/download/root_v5.34.36.win32.vc11.zip) |  64M |
-| Windows Visual Studio 2013 (dbg) | [root_v5.34.36.win32.vc12.debug.exe](https://root.cern.ch/download/root_v5.34.36.win32.vc12.debug.exe) |  99M |
-| Windows Visual Studio 2013 (dbg) | [root_v5.34.36.win32.vc12.debug.zip](https://root.cern.ch/download/root_v5.34.36.win32.vc12.debug.zip) | 152M |
-| Windows Visual Studio 2013 | [root_v5.34.36.win32.vc12.exe](https://root.cern.ch/download/root_v5.34.36.win32.vc12.exe) |  47M |
-| Windows Visual Studio 2013 | [root_v5.34.36.win32.vc12.zip](https://root.cern.ch/download/root_v5.34.36.win32.vc12.zip) |  64M |
+| CentOS Cern 7 gcc4.8 | [root_v5.34.36.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.36.Linux-centos7-x86_64-gcc4.8.tar.gz) |  72M |
+| CentOS Cern 7 gcc4.9 | [root_v5.34.36.Linux-centos7-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v5.34.36.Linux-centos7-x86_64-gcc4.9.tar.gz) |  73M |
+| Linux fedora20 gcc4.8 | [root_v5.34.36.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.36.Linux-fedora20-x86_64-gcc4.8.tar.gz) |  58M |
+| Scientific Linux Cern 6 gcc4.4 | [root_v5.34.36.Linux-slc6-x86_64-gcc4.4.tar.gz](https://root.cern/download/root_v5.34.36.Linux-slc6-x86_64-gcc4.4.tar.gz) |  70M |
+| Scientific Linux Cern 6 gcc4.7 | [root_v5.34.36.Linux-slc6-x86_64-gcc4.7.tar.gz](https://root.cern/download/root_v5.34.36.Linux-slc6-x86_64-gcc4.7.tar.gz) |  71M |
+| Scientific Linux Cern 6 gcc4.8 | [root_v5.34.36.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.36.Linux-slc6-x86_64-gcc4.8.tar.gz) |  71M |
+| Scientific Linux Cern 6 gcc4.9 | [root_v5.34.36.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v5.34.36.Linux-slc6-x86_64-gcc4.9.tar.gz) |  73M |
+| Scientific Linux Cern 6 gcc5.1 | [root_v5.34.36.Linux-slc6-x86_64-gcc5.1.tar.gz](https://root.cern/download/root_v5.34.36.Linux-slc6-x86_64-gcc5.1.tar.gz) |  73M |
+| Ubuntu 12 gcc4.6 | [root_v5.34.36.Linux-ubuntu12-x86_64-gcc4.6.tar.gz](https://root.cern/download/root_v5.34.36.Linux-ubuntu12-x86_64-gcc4.6.tar.gz) |  58M |
+| Ubuntu 14 gcc4.8 | [root_v5.34.36.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.36.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) |  62M |
+| OsX 10.9 clang60 | [root_v5.34.36.macosx64-10.9-clang60.dmg](https://root.cern/download/root_v5.34.36.macosx64-10.9-clang60.dmg) |  56M |
+| OsX 10.9 clang60 | [root_v5.34.36.macosx64-10.9-clang60.tar.gz](https://root.cern/download/root_v5.34.36.macosx64-10.9-clang60.tar.gz) |  56M |
+| OsX 10.10 clang70 | [root_v5.34.36.macosx64-10.10-clang70.dmg](https://root.cern/download/root_v5.34.36.macosx64-10.10-clang70.dmg) |  57M |
+| OsX 10.10 clang70 | [root_v5.34.36.macosx64-10.10-clang70.tar.gz](https://root.cern/download/root_v5.34.36.macosx64-10.10-clang70.tar.gz) |  56M |
+| OsX 10.11 clang70 | [root_v5.34.36.macosx64-10.11-clang70.dmg](https://root.cern/download/root_v5.34.36.macosx64-10.11-clang70.dmg) |  58M |
+| OsX 10.11 clang70 | [root_v5.34.36.macosx64-10.11-clang70.tar.gz](https://root.cern/download/root_v5.34.36.macosx64-10.11-clang70.tar.gz) |  58M |
+| Windows Visual Studio 2010 (dbg) | [root_v5.34.36.win32.vc10.debug.exe](https://root.cern/download/root_v5.34.36.win32.vc10.debug.exe) |  92M |
+| Windows Visual Studio 2010 (dbg) | [root_v5.34.36.win32.vc10.debug.zip](https://root.cern/download/root_v5.34.36.win32.vc10.debug.zip) | 140M |
+| Windows Visual Studio 2010 | [root_v5.34.36.win32.vc10.exe](https://root.cern/download/root_v5.34.36.win32.vc10.exe) |  46M |
+| Windows Visual Studio 2010 | [root_v5.34.36.win32.vc10.zip](https://root.cern/download/root_v5.34.36.win32.vc10.zip) |  63M |
+| Windows Visual Studio 2012 (dbg) | [root_v5.34.36.win32.vc11.debug.exe](https://root.cern/download/root_v5.34.36.win32.vc11.debug.exe) |  98M |
+| Windows Visual Studio 2012 (dbg) | [root_v5.34.36.win32.vc11.debug.zip](https://root.cern/download/root_v5.34.36.win32.vc11.debug.zip) | 151M |
+| Windows Visual Studio 2012 | [root_v5.34.36.win32.vc11.exe](https://root.cern/download/root_v5.34.36.win32.vc11.exe) |  47M |
+| Windows Visual Studio 2012 | [root_v5.34.36.win32.vc11.zip](https://root.cern/download/root_v5.34.36.win32.vc11.zip) |  64M |
+| Windows Visual Studio 2013 (dbg) | [root_v5.34.36.win32.vc12.debug.exe](https://root.cern/download/root_v5.34.36.win32.vc12.debug.exe) |  99M |
+| Windows Visual Studio 2013 (dbg) | [root_v5.34.36.win32.vc12.debug.zip](https://root.cern/download/root_v5.34.36.win32.vc12.debug.zip) | 152M |
+| Windows Visual Studio 2013 | [root_v5.34.36.win32.vc12.exe](https://root.cern/download/root_v5.34.36.win32.vc12.exe) |  47M |
+| Windows Visual Studio 2013 | [root_v5.34.36.win32.vc12.zip](https://root.cern/download/root_v5.34.36.win32.vc12.zip) |  64M |
 
 
 
@@ -107,7 +107,7 @@ Standalone installations with minimal external dependencies are available at:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

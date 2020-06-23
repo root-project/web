@@ -33,28 +33,28 @@ For all details, see the release notes:
 
 ## Release Notes
 
-The release notes for this release can be found [here](https://root.cern.ch/doc/v612/release-notes.html#release-6.1204).
+The release notes for this release can be found [here](https://root.cern/doc/v612/release-notes.html#release-6.1204).
 
 ## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.12.04.source.tar.gz](https://root.cern.ch/download/root_v6.12.04.source.tar.gz) | 155M |
+| source | [root_v6.12.04.source.tar.gz](https://root.cern/download/root_v6.12.04.source.tar.gz) | 155M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v6.12.04.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.12.04.Linux-centos7-x86_64-gcc4.8.tar.gz) | 134M |
-| Linux fedora26 gcc7.2 | [root_v6.12.04.Linux-fedora26-x86_64-gcc7.2.tar.gz](https://root.cern.ch/download/root_v6.12.04.Linux-fedora26-x86_64-gcc7.2.tar.gz) | 121M |
-| Linux fedora27 gcc7.2 | [root_v6.12.04.Linux-fedora27-x86_64-gcc7.2.tar.gz](https://root.cern.ch/download/root_v6.12.04.Linux-fedora27-x86_64-gcc7.2.tar.gz) | 121M |
-| Ubuntu 14 gcc4.8 | [root_v6.12.04.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.12.04.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 119M |
-| Ubuntu 16 gcc5.4 | [root_v6.12.04.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern.ch/download/root_v6.12.04.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 121M |
-| OsX 10.12 clang90 | [root_v6.12.04.macosx64-10.12-clang90.dmg](https://root.cern.ch/download/root_v6.12.04.macosx64-10.12-clang90.dmg) | 125M |
-| OsX 10.12 clang90 | [root_v6.12.04.macosx64-10.12-clang90.tar.gz](https://root.cern.ch/download/root_v6.12.04.macosx64-10.12-clang90.tar.gz) | 125M |
-| OsX 10.13 clang90 | [root_v6.12.04.macosx64-10.13-clang90.dmg](https://root.cern.ch/download/root_v6.12.04.macosx64-10.13-clang90.dmg) | 123M |
-| OsX 10.13 clang90 | [root_v6.12.04.macosx64-10.13-clang90.tar.gz](https://root.cern.ch/download/root_v6.12.04.macosx64-10.13-clang90.tar.gz) | 123M |
+| CentOS Cern 7 gcc4.8 | [root_v6.12.04.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.12.04.Linux-centos7-x86_64-gcc4.8.tar.gz) | 134M |
+| Linux fedora26 gcc7.2 | [root_v6.12.04.Linux-fedora26-x86_64-gcc7.2.tar.gz](https://root.cern/download/root_v6.12.04.Linux-fedora26-x86_64-gcc7.2.tar.gz) | 121M |
+| Linux fedora27 gcc7.2 | [root_v6.12.04.Linux-fedora27-x86_64-gcc7.2.tar.gz](https://root.cern/download/root_v6.12.04.Linux-fedora27-x86_64-gcc7.2.tar.gz) | 121M |
+| Ubuntu 14 gcc4.8 | [root_v6.12.04.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.12.04.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 119M |
+| Ubuntu 16 gcc5.4 | [root_v6.12.04.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.12.04.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 121M |
+| OsX 10.12 clang90 | [root_v6.12.04.macosx64-10.12-clang90.dmg](https://root.cern/download/root_v6.12.04.macosx64-10.12-clang90.dmg) | 125M |
+| OsX 10.12 clang90 | [root_v6.12.04.macosx64-10.12-clang90.tar.gz](https://root.cern/download/root_v6.12.04.macosx64-10.12-clang90.tar.gz) | 125M |
+| OsX 10.13 clang90 | [root_v6.12.04.macosx64-10.13-clang90.dmg](https://root.cern/download/root_v6.12.04.macosx64-10.13-clang90.dmg) | 123M |
+| OsX 10.13 clang90 | [root_v6.12.04.macosx64-10.13-clang90.tar.gz](https://root.cern/download/root_v6.12.04.macosx64-10.13-clang90.tar.gz) | 123M |
 
 
 

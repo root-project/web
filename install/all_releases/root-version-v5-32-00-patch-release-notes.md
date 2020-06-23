@@ -15,24 +15,24 @@ sidebar:
 
 <p>The complete source tree for all systems (54 MB) is available here:</p>
 
-<p><code><a href="ftp://root.cern.ch/root/root_v5.32.04.source.tar.gz" target="_blank">ftp://root.cern.ch/root/root_v5.32.04.source.tar.gz</a> </code></p>
+<p><code><a href="ftp://root.cern/root/root_v5.32.04.source.tar.gz" target="_blank">ftp://root.cern/root/root_v5.32.04.source.tar.gz</a> </code></p>
 
 <p>Alternatively get the source from <a href="/node/92" target="_blank">Git</a> using:</p>
 
-<p><code>git clone http://root.cern.ch/git/root.git root-v5-32 cd root-v5-32 git checkout -b v5-32-04 v5-32-04 </code></p>
+<p><code>git clone http://root.cern/git/root.git root-v5-32 cd root-v5-32 git checkout -b v5-32-04 v5-32-04 </code></p>
 
 <p>After obtaining the source read the file <a href="/node/103" target="_blank">README/INSTALL</a> (in short just do: cd root; ./configure; make).</p>
 
 <p>To get the source of the head of the v5-32-00-patches branch do:</p>
 
-<p><code>git clone -b v5-32-00-patches http://root.cern.ch/git/root.git root-v5-32 </code></p>
+<p><code>git clone -b v5-32-00-patches http://root.cern/git/root.git root-v5-32 </code></p>
 
 <h2>Changes in head of v5-32-00-patches branch</h2>
 
 <ul>
 	<li>I/O
 	<ul>
-		<li>Corrected the calculation of the number of read calls in TRFIOFile (See the forum <a href="http://root.cern.ch/phpBB3/viewtopic.php?f=3&amp;t=14673&amp;p=64367#p64367" target="_blank">post</a> on the subject. Fixed by revision 45140).</li>
+		<li>Corrected the calculation of the number of read calls in TRFIOFile (See the forum <a href="http://root.cern/phpBB3/viewtopic.php?f=3&amp;t=14673&amp;p=64367#p64367" target="_blank">post</a> on the subject. Fixed by revision 45140).</li>
 		<li>Add protection against corrupted ROOT File (wrong length stored in the file header) (Revision 45170).</li>
 		<li>Fix for recent versions of castor (Revision 48474).</li>
 		<li>&nbsp;</li>
@@ -40,7 +40,7 @@ sidebar:
 	</li>
 	<li>Proof
 	<ul>
-		<li>Import patches <a href="http://root.cern.ch/viewvc?rev=45092&amp;root=root&amp;view=rev" target="_blank">#45092</a> and <a href="http://root.cern.ch/viewvc?rev=45093&amp;root=root&amp;view=rev" target="_blank">#45093</a> adding functions to retrieve environment information from the nodes, typically from the master (datadir or some env settings).
+		<li>Import patches <a href="http://root.cern/viewvc?rev=45092&amp;root=root&amp;view=rev" target="_blank">#45092</a> and <a href="http://root.cern/viewvc?rev=45093&amp;root=root&amp;view=rev" target="_blank">#45093</a> adding functions to retrieve environment information from the nodes, typically from the master (datadir or some env settings).
 		<p><b>Warning:</b> This change in binary incompatible.</p>
 		</li>
 	</ul>
@@ -58,7 +58,7 @@ sidebar:
 	<li>Core
 	<ul>
 		<li>Avoid risk of executing the tear down routines twice at process termination when -q is used and there is no input file descriptor. (revision 44838).</li>
-		<li>Fix linking of qtcint.dll when explicitly linking is required (see <a href="http://root.cern.ch/phpBB3/viewtopic.php?t=14943" target="_blank">the related forum post</a>).</li>
+		<li>Fix linking of qtcint.dll when explicitly linking is required (see <a href="http://root.cern/phpBB3/viewtopic.php?t=14943" target="_blank">the related forum post</a>).</li>
 	</ul>
 	</li>
 	<li>Net
@@ -85,10 +85,10 @@ sidebar:
 	</li>
 	<li><a>Proof </a>
 	<ul>
-		<li><a>Import patch </a><a href="http://root.cern.ch/viewvc?rev=44397&amp;root=root&amp;view=rev" target="_blank">#44397</a> changing the default merging procedure used histograms to cover correctly all the cases.</li>
-		<li><a>Import patch </a><a href="http://root.cern.ch/viewvc?rev=44048&amp;root=root&amp;view=rev" target="_blank">#44048</a> removing the automatic creation of TDrawFeedback by TProofChain.</li>
-		<li><a>Import patch </a><a href="http://root.cern.ch/viewvc?rev=44701&amp;root=root&amp;view=rev" target="_blank">#44701</a> fixing several stability issues in xproofd. Patch is server side only; only the upgraded xproofd (or libXrdProofd) is equired.</li>
-		<li><a>Import patch </a><a href="http://root.cern.ch/viewvc?rev=42703&amp;root=root&amp;view=rev" target="_blank">#42703</a> removing unused variables in xproofd.</li>
+		<li><a>Import patch </a><a href="http://root.cern/viewvc?rev=44397&amp;root=root&amp;view=rev" target="_blank">#44397</a> changing the default merging procedure used histograms to cover correctly all the cases.</li>
+		<li><a>Import patch </a><a href="http://root.cern/viewvc?rev=44048&amp;root=root&amp;view=rev" target="_blank">#44048</a> removing the automatic creation of TDrawFeedback by TProofChain.</li>
+		<li><a>Import patch </a><a href="http://root.cern/viewvc?rev=44701&amp;root=root&amp;view=rev" target="_blank">#44701</a> fixing several stability issues in xproofd. Patch is server side only; only the upgraded xproofd (or libXrdProofd) is equired.</li>
+		<li><a>Import patch </a><a href="http://root.cern/viewvc?rev=42703&amp;root=root&amp;view=rev" target="_blank">#42703</a> removing unused variables in xproofd.</li>
 	</ul>
 	</li>
 	<li>CINT
@@ -98,7 +98,7 @@ sidebar:
 	</li>
 	<li>RooFit
 	<ul>
-		<li>Fix bug in binned generation of extended pdf (patch <a href="http://root.cern.ch/viewvc?rev=44630&amp;root=root&amp;view=rev" target="_blank">#44630</a> )</li>
+		<li>Fix bug in binned generation of extended pdf (patch <a href="http://root.cern/viewvc?rev=44630&amp;root=root&amp;view=rev" target="_blank">#44630</a> )</li>
 	</ul>
 	</li>
 	<li>Hist
@@ -137,15 +137,15 @@ sidebar:
 	</li>
 	<li>TreeViewer
 	<ul>
-		<li>Fix a problem with array names (e.g. fVertex[]) as reported <a href="http://root.cern.ch/phpBB3//viewtopic.php?f=3&amp;t=14507" target="_blank">on the forum</a>.</li>
+		<li>Fix a problem with array names (e.g. fVertex[]) as reported <a href="http://root.cern/phpBB3//viewtopic.php?f=3&amp;t=14507" target="_blank">on the forum</a>.</li>
 	</ul>
 	</li>
 	<li>Proof
 	<ul>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42921&amp;root=root&amp;view=rev" target="_blank">#42921</a> to add also to TXUnixSocket the possibility to disable reconnections via the variable TXSocket.Reconnect (0 disable reconnections; default is 1) .</li>
-		<li>Import patches <a href="http://root.cern.ch/viewvc?rev=42775&amp;root=root&amp;view=rev" target="_blank">#42775</a>, <a href="http://root.cern.ch/viewvc?rev=42788&amp;root=root&amp;view=rev" target="_blank">#42788</a>, <a href="http://root.cern.ch/viewvc?rev=42882&amp;root=root&amp;view=rev" target="_blank">#42882</a> and <a href="http://root.cern.ch/viewvc?rev=42883&amp;root=root&amp;view=rev" target="_blank">#42883</a> enabling parallel dataset verification.</li>
-		<li>Import patches <a href="http://root.cern.ch/viewvc?rev=43101&amp;root=root&amp;view=rev" target="_blank">#43101</a>, <a href="http://root.cern.ch/viewvc?rev=43884&amp;root=root&amp;view=rev" target="_blank">#43884</a> and <a href="http://root.cern.ch/viewvc?rev=43886&amp;root=root&amp;view=rev" target="_blank">#43886</a> adding in proofbench full support for dataset generation on external storage.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=43567&amp;root=root&amp;view=rev" target="_blank">#43567</a> fixing a few issues with dataset verification of back-ends different from xrootd.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42921&amp;root=root&amp;view=rev" target="_blank">#42921</a> to add also to TXUnixSocket the possibility to disable reconnections via the variable TXSocket.Reconnect (0 disable reconnections; default is 1) .</li>
+		<li>Import patches <a href="http://root.cern/viewvc?rev=42775&amp;root=root&amp;view=rev" target="_blank">#42775</a>, <a href="http://root.cern/viewvc?rev=42788&amp;root=root&amp;view=rev" target="_blank">#42788</a>, <a href="http://root.cern/viewvc?rev=42882&amp;root=root&amp;view=rev" target="_blank">#42882</a> and <a href="http://root.cern/viewvc?rev=42883&amp;root=root&amp;view=rev" target="_blank">#42883</a> enabling parallel dataset verification.</li>
+		<li>Import patches <a href="http://root.cern/viewvc?rev=43101&amp;root=root&amp;view=rev" target="_blank">#43101</a>, <a href="http://root.cern/viewvc?rev=43884&amp;root=root&amp;view=rev" target="_blank">#43884</a> and <a href="http://root.cern/viewvc?rev=43886&amp;root=root&amp;view=rev" target="_blank">#43886</a> adding in proofbench full support for dataset generation on external storage.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=43567&amp;root=root&amp;view=rev" target="_blank">#43567</a> fixing a few issues with dataset verification of back-ends different from xrootd.</li>
 	</ul>
 	</li>
 </ul>
@@ -166,22 +166,22 @@ sidebar:
 	<li>I/O
 	<ul>
 		<li>Fix the merging (hadd and TFileMerger) of TTree in subdirectories when an incremental merge is requested (or needed). See the post <a bugs="" href="https://savannah.cern.ch/bugs/index.php?92486" savannah.cern.ch="">#92486</a>).</li>
-		<li>In TChainIndex (and hence tree friendship involving chains), properly handle the case where the requested index is too high. (See Forum <a href="http://root.cern.ch/phpBB3/viewtopic.php?p=61833" target="_blank">#61833)</a>.</li>
+		<li>In TChainIndex (and hence tree friendship involving chains), properly handle the case where the requested index is too high. (See Forum <a href="http://root.cern/phpBB3/viewtopic.php?p=61833" target="_blank">#61833)</a>.</li>
 	</ul>
 	</li>
 	<li>Proof
 	<ul>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=43245&amp;root=root&amp;view=rev" target="_blank">#43245</a> fixing an issue with forcing local copies of files before merging (bit not always honored).</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=43295&amp;root=root&amp;view=rev" target="_blank">#43295</a> to remove dependencies of netx on xrootd-related internal headers (the patch also removes external support for xrootd versions older than 4 years)</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=43107&amp;root=root&amp;view=rev" target="_blank">#43107</a> to add the possibility to force submerging at node level, i.e. one submerger per physical machine; in this way the network traffic can be minimized, for example when merging large output files.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=43426&amp;root=root&amp;view=rev" target="_blank">#43426</a> fixing a problem with TProofOutputFile (more flexibility in the automatic definition of the env LOCALDATASERVER).</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=43440&amp;root=root&amp;view=rev" target="_blank">#43440</a> fixing an issue with the username used to access a remote file in the xproofd daemon. Fixes a problem when retrieving files from workers where the username is different, e.g. PoD on gLite.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=43470&amp;root=root&amp;view=rev" target="_blank">#43470</a> fixing an backward compatibility issue affecting TProofBench::MakeDataSet.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=43245&amp;root=root&amp;view=rev" target="_blank">#43245</a> fixing an issue with forcing local copies of files before merging (bit not always honored).</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=43295&amp;root=root&amp;view=rev" target="_blank">#43295</a> to remove dependencies of netx on xrootd-related internal headers (the patch also removes external support for xrootd versions older than 4 years)</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=43107&amp;root=root&amp;view=rev" target="_blank">#43107</a> to add the possibility to force submerging at node level, i.e. one submerger per physical machine; in this way the network traffic can be minimized, for example when merging large output files.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=43426&amp;root=root&amp;view=rev" target="_blank">#43426</a> fixing a problem with TProofOutputFile (more flexibility in the automatic definition of the env LOCALDATASERVER).</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=43440&amp;root=root&amp;view=rev" target="_blank">#43440</a> fixing an issue with the username used to access a remote file in the xproofd daemon. Fixes a problem when retrieving files from workers where the username is different, e.g. PoD on gLite.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=43470&amp;root=root&amp;view=rev" target="_blank">#43470</a> fixing an backward compatibility issue affecting TProofBench::MakeDataSet.</li>
 	</ul>
 	</li>
 	<li>QT
 	<ul>
-		<li>Repair generation of qtcint (see the forum post <a href="http://root.cern.ch/phpBB3/viewtopic.php?t=13636" target="_blank">#13636</a>.</li>
+		<li>Repair generation of qtcint (see the forum post <a href="http://root.cern/phpBB3/viewtopic.php?t=13636" target="_blank">#13636</a>.</li>
 	</ul>
 	</li>
 	<li>Histfactory
@@ -205,25 +205,25 @@ sidebar:
 	</li>
 	<li>Cint
 	<ul>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42566&amp;root=root&amp;view=rev" target="_blank">#42566</a> fixing an issue preventing the generation on the dictionary for MathCore on some 32bits distributions This fixes <a href="https://savannah.cern.ch/bugs/?90906" target="_blank">#90906</a>.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42805&amp;root=root&amp;view=rev" target="_blank">#42805</a> fixing the problem <a href="https://savannah.cern.ch/bugs/index.php?83909" target="_blank">#83909</a> which leading to failure of the auto-dictionary generator when dealing with class template inside a namespace.</li>
-		<li>Fix parsing of templated function names in Linkdefs (Savannah <a href="https://savannah.cern.ch/bugs/index.php?90486" target="_blank">#90486</a>, <a href="http://root.cern.ch/viewvc?rev=42849&amp;root=root&amp;view=rev" target="_blank">r42849</a>).</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42566&amp;root=root&amp;view=rev" target="_blank">#42566</a> fixing an issue preventing the generation on the dictionary for MathCore on some 32bits distributions This fixes <a href="https://savannah.cern.ch/bugs/?90906" target="_blank">#90906</a>.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42805&amp;root=root&amp;view=rev" target="_blank">#42805</a> fixing the problem <a href="https://savannah.cern.ch/bugs/index.php?83909" target="_blank">#83909</a> which leading to failure of the auto-dictionary generator when dealing with class template inside a namespace.</li>
+		<li>Fix parsing of templated function names in Linkdefs (Savannah <a href="https://savannah.cern.ch/bugs/index.php?90486" target="_blank">#90486</a>, <a href="http://root.cern/viewvc?rev=42849&amp;root=root&amp;view=rev" target="_blank">r42849</a>).</li>
 		<li>Fix G__ONELINE at 1024 even if configuring --with-cint-longline (<a href="https://savannah.cern.ch/bugs/index.php?90330" target="_blank">bug #90330</a>, r42584).</li>
 		<li>Warn if selection.xml references a field that does not exist (<a href="https://savannah.cern.ch/bugs/index.php?90061" target="_blank">bug #90061</a>, r42899).</li>
 		<li>Silence warning in Shadow.h on Windows (r42902).</li>
-		<li>Fix the executing of <tt>TPad * pp = (TPad*)gPad</tt>, see the <a href="http://root.cern.ch/phpBB3/viewtopic.php?t=14197" target="_blank">report on the forum.</a></li>
+		<li>Fix the executing of <tt>TPad * pp = (TPad*)gPad</tt>, see the <a href="http://root.cern/phpBB3/viewtopic.php?t=14197" target="_blank">report on the forum.</a></li>
 	</ul>
 	</li>
 	<li>Core
 	<ul>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42757&amp;root=root&amp;view=rev" target="_blank">#42757</a> fixing memory leak due to multiple allocations of gLibraryVersion.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42757&amp;root=root&amp;view=rev" target="_blank">#42757</a> fixing memory leak due to multiple allocations of gLibraryVersion.</li>
 		<li>Add missing implementation for TGenericClassInfo::GetDirectoryAutoAdd.</li>
 	</ul>
 	</li>
 	<li>I/O
 	<ul>
 		<li>Initialize the thread local gDirectory to gROOT rather than null (this is in particular useful to support TObject::Clone which needs a non-zero gDirectory)</li>
-		<li>Resolve <a href="https://savannah.cern.ch/bugs/index.php?88174" target="_blank">#88174</a> which lead to failure in hadd and the TFileMerger (See patch <a href="http://root.cern.ch/viewvc?rev=42802&amp;root=root&amp;view=rev" target="_blank">#42802</a>).</li>
+		<li>Resolve <a href="https://savannah.cern.ch/bugs/index.php?88174" target="_blank">#88174</a> which lead to failure in hadd and the TFileMerger (See patch <a href="http://root.cern/viewvc?rev=42802&amp;root=root&amp;view=rev" target="_blank">#42802</a>).</li>
 	</ul>
 	</li>
 	<li>TTree
@@ -287,7 +287,7 @@ sidebar:
 	<ul>
 		<li>Use flag=2 for constant term optimization in the evaluation of the profile likelihood test statistic</li>
 		<li>Fix a bug in running an automatic scan in the HypoTestInverter.</li>
-		<li>Fix a bug in making the Asimov data set in the AsymptoticCalculator when using workspaces generated with the new HistFactory version (see this RootForum&nbsp;<a href="http://root.cern.ch/phpBB3//viewtopic.php?f=15&amp;t=13863" target="_blank">post</a>).</li>
+		<li>Fix a bug in making the Asimov data set in the AsymptoticCalculator when using workspaces generated with the new HistFactory version (see this RootForum&nbsp;<a href="http://root.cern/phpBB3//viewtopic.php?f=15&amp;t=13863" target="_blank">post</a>).</li>
 		<li>Add possibility to make an AsimovDataSet using &nbsp;nominal nuisance parameter values</li>
 		<li>Add ProfileLikelihoodTestStat::SetOneSidedDiscovery() for q0 and added ::SetSigned() option to allow test statistic to probe fluctuations corresponding to p-values &gt;50%.</li>
 		<li>Misc. fixes to SamplingDistPlot and HypoTestPlot</li>
@@ -308,13 +308,13 @@ sidebar:
 	<li>Proof
 	<ul>
 		<li>Import in stressProof the patches introducing new tests, adding a return code consistent with standard test facilities and the option '-noprogress' to switch off the progress information which may create problems in wrapper applications intercepting the output (e.g. ctest). Patches imported: 42000,42142,42302,42303,42376,42386,42387,42393,42400,42416,42434,42451,42462 .</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42578&amp;root=root&amp;view=rev" target="_blank">#42578</a> fixing in getProof.C some issues mostly related to PROOF-Lite.</li>
-		<li>Import class to analyse the performance tree (see <a href="http://root.cern.ch/drupal/content/analysing-performance-tree" target="_blank">description</a> <span style="color:#B22222;">(broken)</span> )</li>
-		<li>Adapt patch <a href="http://root.cern.ch/viewvc?rev=42671&amp;root=root&amp;view=rev" target="_blank">#42671</a> fixing a problem with TProof::Load reported in the PROOF forum, caused by the fact that the additional files were not copied in the master sandbox but left in the cache.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42798&amp;root=root&amp;view=rev" target="_blank">#42798</a> in TDataSetManagerFile consolidating the way duplicates are removed.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42904&amp;root=root&amp;view=rev" target="_blank">#42904</a> in TProofOutputFile changing the default mode for merging histograms in TFileMerger, to reduce the memory footprint.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=43074&amp;root=root&amp;view=rev" target="_blank">#43074</a> fixing the way errors are handled when uploading files (e.g. UploadPackage).</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=43157&amp;root=root&amp;view=rev" target="_blank">#43157</a> fixing a compilation issue with xrootd 3.0.2 .</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42578&amp;root=root&amp;view=rev" target="_blank">#42578</a> fixing in getProof.C some issues mostly related to PROOF-Lite.</li>
+		<li>Import class to analyse the performance tree (see <a href="http://root.cern/drupal/content/analysing-performance-tree" target="_blank">description</a> <span style="color:#B22222;">(broken)</span> )</li>
+		<li>Adapt patch <a href="http://root.cern/viewvc?rev=42671&amp;root=root&amp;view=rev" target="_blank">#42671</a> fixing a problem with TProof::Load reported in the PROOF forum, caused by the fact that the additional files were not copied in the master sandbox but left in the cache.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42798&amp;root=root&amp;view=rev" target="_blank">#42798</a> in TDataSetManagerFile consolidating the way duplicates are removed.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42904&amp;root=root&amp;view=rev" target="_blank">#42904</a> in TProofOutputFile changing the default mode for merging histograms in TFileMerger, to reduce the memory footprint.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=43074&amp;root=root&amp;view=rev" target="_blank">#43074</a> fixing the way errors are handled when uploading files (e.g. UploadPackage).</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=43157&amp;root=root&amp;view=rev" target="_blank">#43157</a> fixing a compilation issue with xrootd 3.0.2 .</li>
 	</ul>
 	</li>
 	<li>Core / Textinput
@@ -329,7 +329,7 @@ sidebar:
 	</li>
 	<li>GUI
 	<ul>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42940&amp;root=root&amp;view=rev" target="_blank">#42940</a> fixing a problem with new style when using SetBackgroundPixmap() with flat buttons.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42940&amp;root=root&amp;view=rev" target="_blank">#42940</a> fixing a problem with new style when using SetBackgroundPixmap() with flat buttons.</li>
 	</ul>
 	</li>
 	<li>PyROOT
@@ -349,14 +349,14 @@ sidebar:
 	</li>
 	<li>Hist
 	<ul>
-		<li>Import fix<a href="http:// http://root.cern.ch/viewvc?rev=42155&amp;root=root&amp;view=rev" target="_blank"> #42155</a> from the trunk to fix for bug <a href="https://savannah.cern.ch/bugs/index.php?88561" target="_blank">#88561</a></li>
+		<li>Import fix<a href="http:// http://root.cern/viewvc?rev=42155&amp;root=root&amp;view=rev" target="_blank"> #42155</a> from the trunk to fix for bug <a href="https://savannah.cern.ch/bugs/index.php?88561" target="_blank">#88561</a></li>
 		<li>THnSparse: fix calculation of number of entries (r42190)</li>
 		<li>Import r42237 to optimize the merging of histograms in case of equal axes.</li>
 	</ul>
 	</li>
 	<li>Minuit2
 	<ul>
-		<li>Import fix <a href="http:// http://root.cern.ch/viewvc?rev=42147&amp;root=root&amp;view=rev" target="_blank">#42147</a> in Minuit2Minimizer for fixing bug <a href="https://savannah.cern.ch/bugs/?89111" target="_blank">#89111</a> &nbsp;seen only on Windows</li>
+		<li>Import fix <a href="http:// http://root.cern/viewvc?rev=42147&amp;root=root&amp;view=rev" target="_blank">#42147</a> in Minuit2Minimizer for fixing bug <a href="https://savannah.cern.ch/bugs/?89111" target="_blank">#89111</a> &nbsp;seen only on Windows</li>
 	</ul>
 	</li>
 	<li>Roofit
@@ -376,9 +376,9 @@ sidebar:
 	</li>
 	<li>Proof
 	<ul>
-		<li>Adapt patch <a href="http://root.cern.ch/viewvc?rev=42142&amp;root=root&amp;view=rev" target="_blank">#42142</a> fixing the return code of stressProof.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42238&amp;root=root&amp;view=rev" target="_blank">#42238</a> fixing checks of controlling envs and parameters in TPerfStat.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=42248&amp;root=root&amp;view=rev" target="_blank">#42248</a> fixing name of the internal directory in the draw functions of TProofBench.</li>
+		<li>Adapt patch <a href="http://root.cern/viewvc?rev=42142&amp;root=root&amp;view=rev" target="_blank">#42142</a> fixing the return code of stressProof.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42238&amp;root=root&amp;view=rev" target="_blank">#42238</a> fixing checks of controlling envs and parameters in TPerfStat.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=42248&amp;root=root&amp;view=rev" target="_blank">#42248</a> fixing name of the internal directory in the draw functions of TProofBench.</li>
 	</ul>
 	</li>
 	<li>Core
@@ -413,14 +413,14 @@ sidebar:
 	</li>
 	<li>Proof
 	<ul>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=41771&amp;root=root&amp;view=rev" target="_blank">#41771</a> fixing an issue locating the xrootd authentication framework plugin in the PROOF client</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=41772&amp;root=root&amp;view=rev" target="_blank">#41772</a> fixing an issue with the configuration of xrootd lib paths when xrootd libs are in system lib paths.</li>
-		<li>Import patches <a href="http://root.cern.ch/viewvc?rev=41785&amp;root=root&amp;view=rev" target="_blank">#41785</a> and <a href="http://root.cern.ch/viewvc?rev=41786&amp;root=root&amp;view=rev" target="_blank">#41786</a> fixing an issue with packetizers preventing proper entry range processing and the file ordering in datasets.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=41788&amp;root=root&amp;view=rev" target="_blank">#41788</a> fixing an issue with AddInputData when objects are TTree or derived.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=41801&amp;root=root&amp;view=rev" target="_blank">#41801</a> fixing an issue in the packetizers potentially crashing PROOF-Lite at exit when using file-resident outputs.</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=41869&amp;root=root&amp;view=rev" target="_blank">#41869</a> cleaning-up and simplifying the configuration of xrootd-related list of libraries.</li>
-		<li>Import patches <a href="http://root.cern.ch/viewvc?rev=41958&amp;root=root&amp;view=rev" target="_blank">#41958</a> and <a href="http://root.cern.ch/viewvc?rev=41999&amp;root=root&amp;view=rev" target="_blank">#41999</a> to improve checks, definition and cleaning of the working dir in tutorials/proof/getProof.C</li>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?rev=41904&amp;root=root&amp;view=rev" target="_blank">#41904</a> extending TProofMgr::Ping functionality to 'xrootd' too. This is useful to test if an xrootd server is available at a given address.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=41771&amp;root=root&amp;view=rev" target="_blank">#41771</a> fixing an issue locating the xrootd authentication framework plugin in the PROOF client</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=41772&amp;root=root&amp;view=rev" target="_blank">#41772</a> fixing an issue with the configuration of xrootd lib paths when xrootd libs are in system lib paths.</li>
+		<li>Import patches <a href="http://root.cern/viewvc?rev=41785&amp;root=root&amp;view=rev" target="_blank">#41785</a> and <a href="http://root.cern/viewvc?rev=41786&amp;root=root&amp;view=rev" target="_blank">#41786</a> fixing an issue with packetizers preventing proper entry range processing and the file ordering in datasets.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=41788&amp;root=root&amp;view=rev" target="_blank">#41788</a> fixing an issue with AddInputData when objects are TTree or derived.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=41801&amp;root=root&amp;view=rev" target="_blank">#41801</a> fixing an issue in the packetizers potentially crashing PROOF-Lite at exit when using file-resident outputs.</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=41869&amp;root=root&amp;view=rev" target="_blank">#41869</a> cleaning-up and simplifying the configuration of xrootd-related list of libraries.</li>
+		<li>Import patches <a href="http://root.cern/viewvc?rev=41958&amp;root=root&amp;view=rev" target="_blank">#41958</a> and <a href="http://root.cern/viewvc?rev=41999&amp;root=root&amp;view=rev" target="_blank">#41999</a> to improve checks, definition and cleaning of the working dir in tutorials/proof/getProof.C</li>
+		<li>Import patch <a href="http://root.cern/viewvc?rev=41904&amp;root=root&amp;view=rev" target="_blank">#41904</a> extending TProofMgr::Ping functionality to 'xrootd' too. This is useful to test if an xrootd server is available at a given address.</li>
 	</ul>
 	</li>
 	<li>Hist
@@ -442,7 +442,7 @@ sidebar:
 	</li>
 	<li>RooFit/RooFitCore
 	<ul>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=41862" target="_blank">#41862</a>, #41871, #41899, #41976 to improve cache optimizations</li>
+		<li>Import patch <a href="http://root.cern/viewvc?view=rev&amp;revision=41862" target="_blank">#41862</a>, #41871, #41899, #41976 to improve cache optimizations</li>
 		<li>Patch #42089 (add new bin-integrator)</li>
 		<li>Patch #42128 (various optimizations in pdf handling)</li>
 		<li>Patch #42153 (further optimizations, expand bin-integrator to 2/3d, support for mixed binned/unbinned generation)</li>

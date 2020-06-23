@@ -15,7 +15,7 @@ This page lists a number of ROOT tutorials and courses. Some are made by third p
 *   CERN Summer Students' Introductory Tutorial ([2018](https://indico.cern.ch/event/734958/){:target="_blank"}, [2017](https://indico.cern.ch/event/648140/){:target="_blank"}, [2016](https://indico.cern.ch/event/536772/){:target="_blank"}, [2015](https://indico.cern.ch/event/395198/){:target="_blank"} )
 *   [First Steps With ROOT](https://root.cern/d/first-steps-root){:target="_blank"} **← Old Drupal Book**
 *   [Introductory Tutorials (approx 2 hours)](https://root.cern/d/introductory-tutorials){:target="_blank"} **← Old Drupal Book**
-*   [Lectures at the CERN School of Computing](https://root.cern.ch/download/ROOT_CSC11-Handout.pdf) [(CSC)](https://csc.web.cern.ch/CSC/){:target="_blank"}
+*   [Lectures at the CERN School of Computing](https://root.cern/download/ROOT_CSC11-Handout.pdf) [(CSC)](https://csc.web.cern.ch/CSC/){:target="_blank"}
 *   [Bill Seligman's ROOT Tutorial](https://www.nevis.columbia.edu/~seligman/root-class){:target="_blank"}
 
 ## <a id="Intermediate" name="Intermediate"></a>Intermediate
@@ -35,7 +35,7 @@ These are general ROOT tutorials covering the basics of ROOT like Histograms, Tr
 
 ## Preparing ROOT courses for the CERN technical training
 
-*   [ROOT courses proposal](https://root.cern.ch/root-training-proposal){:target="_blank"}
+*   [ROOT courses proposal](https://root.cern/root-training-proposal){:target="_blank"}
 *   [Working document for the courses](https://docs.google.com/spreadsheets/d/16GqoK2BvWGoX7vLgytz02LmJys7u2Mrzhfpdeg6yZGI){:target="_blank"}
 
 

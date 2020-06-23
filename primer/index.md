@@ -2781,7 +2781,7 @@ transparently used in Python!# Concluding Remarks
 This is the end of our guided tour for beginners through ROOT. There is
 still a lot coming to mind to be said, but by now you are experienced
 enough to use the ROOT documentation, most importantly the **[ROOT home
-page](https://root.cern.ch){:target="_blank"}** and the **[ROOT reference
+page](https://root.cern){:target="_blank"}** and the **[ROOT reference
 guide](https://root.cern/doc/master/){:target="_blank"}** with the
 documentation of all ROOT classes.
 

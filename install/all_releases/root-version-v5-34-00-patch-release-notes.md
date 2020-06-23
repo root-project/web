@@ -42,11 +42,11 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     * Re-introduced method TPythia6:Pytune()
 *  TTree
     * Fix ([ROOT-7423](https://sft.its.cern.ch/jira/browse/ROOT-7423)) TTreeCache may not stop the learning phase when asynchronous prefetching is enabled.
-    * Fix the issue described in the (following forum post(https://root.cern.ch/phpBB3/viewtopic.php?t=20269)), where a some order of calls to TTree::Scan and TTree::Write resulted in invalid output.
+    * Fix the issue described in the (following forum post(https://root.cern/phpBB3/viewtopic.php?t=20269)), where a some order of calls to TTree::Scan and TTree::Write resulted in invalid output.
     * Repair setting the branch address of a leaflist style branch taking directly the address of the struct.  (Note that leaflist is nonetheless still deprecated and declaring the struct to the interpreter and passing the object directly to create the branch is much better).
 * Graphics
    * `TGraph::GetHistogram()` was resetting the TimeDisplay attribute of axis. The problem was reported [here](https://sft.its.cern.ch/jira/browse/ROOT-7766).
-   * When painting a `TH3` as 3D boxes, `TMarker3DBox` ignored the max and min values specified by `SetMaximum()` and `SetMinimum()`. The problem was reported [here](https://root.cern.ch/phpBB3/viewtopic.php?f=3&t=20906&p=90632#p90632).
+   * When painting a `TH3` as 3D boxes, `TMarker3DBox` ignored the max and min values specified by `SetMaximum()` and `SetMinimum()`. The problem was reported [here](https://root.cern/phpBB3/viewtopic.php?f=3&t=20906&p=90632#p90632).
    *  When using time format in axis, `TGaxis::PaintAxis()` may in some cases call `strftime()` with invalid parameter causing a crash.
   This problem was reported [here](https://sft.its.cern.ch/jira/browse/ROOT-7689).
   * `TASImage` When the first or last point of a wide line is exactly on the window limit the line is drawn vertically or horizontally.
@@ -96,7 +96,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Fix the ordering of the keys in a TFile being written; in particular fixing the result of GetKey and FindKey which were no longer returning the lastest cycle for a TFile being written since v5.34/11.
 *   Graphics
     *   In the animated gif it is now possible to specify the delay between the last image and the fist image in case of infinite loop ([ROOT-7263](https://sft.its.cern.ch/jira/browse/ROOT-7263)).
-    *   2D stats painting now takes the stats format into account when painting Integral. This problem was mentioned [here](https://root.cern.ch/phpBB3/viewtopic.php?f=3&t=19746).
+    *   2D stats painting now takes the stats format into account when painting Integral. This problem was mentioned [here](https://root.cern/phpBB3/viewtopic.php?f=3&t=19746).
     *   Fix [ROOT-6703](https://sft.its.cern.ch/jira/browse/ROOT-6703).
 *   Proof
     *   In TProofPerfAnalysis, add functionality to save derived objects created / drawn during the calls.
@@ -151,7 +151,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 
 
 *   Hists
-    *   Fix the problem reported [here](https://root.cern.ch/phpBB3/viewtopic.php?f=3&t=19186).
+    *   Fix the problem reported [here](https://root.cern/phpBB3/viewtopic.php?f=3&t=19186).
 *   Graphics
     *   Fix an issue with transparent pad in TTexDump.
     *   In TMathText \mu is now working for Postscript output.
@@ -276,7 +276,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   In some cases an extra point was drawn when a TGraph2D was drawn with P, P0 or PCOL.
     *   The hollow fill style was not rendered correctly by TTexDump. ([ROOT-6841](https://sft.its.cern.ch/jira/browse/ROOT-6841))
     *   It was possible to interactively zoom outside the histograms' limits. Protections have been added.
-    *   Fix an [issue](http://root.cern.ch/phpBB3/viewtopic.php?f=3&t=18778) with E0 option and log scale.
+    *   Fix an [issue](http://root.cern/phpBB3/viewtopic.php?f=3&t=18778) with E0 option and log scale.
     *   Better line width matching with screen and pdf output ([ROOT-6858](https://sft.its.cern.ch/jira/browse/ROOT-6858))
 *   Http
     *   Imported new version of http server and jsroot (Sergey Linev)
@@ -363,7 +363,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 *   Core
     *   Fix [ROOT-6445](https://sft.its.cern.ch/jira/browse/ROOT-6445): TThread initialization prevent TApplication::Terminate() without user input.
 *   TTree
-    *   Add support for turn on and customizing the TTreeCache from the environment and .rootrc (see [commit 2201cac9](http://root.cern.ch/gitweb?p=root.git;a=commitdiff;h=2201cac9d4b38c4f3a7f485cd64861ed4c7dabe1))
+    *   Add support for turn on and customizing the TTreeCache from the environment and .rootrc (see [commit 2201cac9](http://root.cern/gitweb?p=root.git;a=commitdiff;h=2201cac9d4b38c4f3a7f485cd64861ed4c7dabe1))
 *   Graphics
     *   Fix ROOT-6470: The marker definition in the TeX output generated by TTeXDump was misplaced.
     *   Implement the option FUNC for 2D histograms.<span style="white-space:pre" class="Apple-tab-span"></span>
@@ -386,7 +386,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 *   TTree
     *   TTreePerfStats now calculated properly the unzipping time for its given TTree only.
     *   Fix TTreeCache learning when used by TTree::Draw (problem with SetEntryRange) ; this solves [ROOT-6103.](https://sft.its.cern.ch/jira/browse/ROOT-6103)
-    *   Fix TTreeFormula to prevent miscaculation in case [ROOT-5545](http://root.cern.ch/phpBB3/viewtopic.php?t=18049>involving TCutG</a>.</li>
+    *   Fix TTreeFormula to prevent miscaculation in case [ROOT-5545](http://root.cern/phpBB3/viewtopic.php?t=18049>involving TCutG</a>.</li>
 
 *   Proof
     *   Disable by default memory checks during event loop as they can impact significantly performance with fast I/O devices (no impact for CPU intensive tasks). They can be enabled by setting the parameter PROOF_MemLogFreq or the env PROOF_MEMLOGFREQ to the checking period in terms of events.
@@ -439,7 +439,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Fix the projections of TProfile2D to TProfile, by implementing TProfile2D::ProfileX(Y) and the projections TProfile3D to TProfile2D by implementing TProfile3D::Project3DProfile ([ROOT-6620](https://sft.its.cern.ch/jira/browse/ROOT-6220))
     *   Improve the title of the created histograms in SetShowProjections
     *   Merge from the master a new version of TUnfold (v.17)
-    *   Fix TH1::Fit to draw only the function when fitting an histogram already plotted in a pad. (See [RootTalk-18071](http://root.cern.ch/phpBB3/viewtopic.php?f=3&t=18071))
+    *   Fix TH1::Fit to draw only the function when fitting an histogram already plotted in a pad. (See [RootTalk-18071](http://root.cern/phpBB3/viewtopic.php?f=3&t=18071))
 *   Net
     *   New HTTP Server package
 
@@ -786,7 +786,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Added user-defined extensions to volumes and nodes. This can be done inheriting from the base class TGeoExtension. To attach a user TObject derived class, one can use the reference counted TGeoRCExtension. The TGeoExtension class allows for either using or not reference counting. A utility TGeoRCPtr was added to allor smart reference counted pointers. To attach a user extension, use TGeoVolume::SetUserExtension() or TGeoNode::SetUserExtension(). To grab a reference counted pointer use GrabUserExtension(), to simply use/release use the method GetExtension().
     *   Added possibility to draw polygons in 2D using TGeoPolygon::Draw() or TGeoXtru::DrawPolygon()
 
-![](http://root.cern.ch/drupal/sites/default/files/images/polygon.preview.gif)
+![](http://root.cern/drupal/sites/default/files/images/polygon.preview.gif)
 
 <a id='07'></a>
 ## Changes in version v5-34-07 (April 26, 2013)
@@ -821,7 +821,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   SetBranchAddress now returns an error code.
     *   In TTree::SetBranchAddress, properly reset the TargetClass when the address is changed (back) to the original type.
     *   Issue an error message if the class type of the argument to TTree::SetBranchAddress can not be determined (missing dictionary but having only a typeid).
-    *   Correct the behavior when attempting to create a branch with split level zero with an object that requires the use a TBranchObject (for example TVector3). See the ROOT Forum [#15975](http://root.cern.ch/phpBB3/viewtopic.php?t=15975)
+    *   Correct the behavior when attempting to create a branch with split level zero with an object that requires the use a TBranchObject (for example TVector3). See the ROOT Forum [#15975](http://root.cern/phpBB3/viewtopic.php?t=15975)
     *   Properly handle the evolution of an STL container containing a class with contains sub-object.
     *   Extend the output of TTree::Print(debugInfo) to include the action sequence information (and add support for the sub option 'func' that also prints the function's (mangled) name.
 *   Math
@@ -829,10 +829,10 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 *   Net
     *   The class TS3WebFile was modified to support also reading files hosted by Google using the S3 protocol. Its TFile plugin was also modified to reflect this.
 *   Proof
-    *   Import patch [#46634](http://root.cern.ch/viewvc?rev=46634&root=root&view=rev) removing the dependence on the XRootD header XrdSutAux.hh
-    *   Import patch [#48766](http://root.cern.ch/viewvc?rev=48766&root=root&view=rev) fixing a possible double-delete when a selector is processed by object.
-    *   Import patch [#48939](http://root.cern.ch/viewvc?rev=48939&root=root&view=rev) fixing problem in pq2-verify.
-    *   Import patch [#49113](http://root.cern.ch/viewvc?rev=49113&root=root&view=rev) fixing a possible crash in submerger mode due to missing protection.
+    *   Import patch [#46634](http://root.cern/viewvc?rev=46634&root=root&view=rev) removing the dependence on the XRootD header XrdSutAux.hh
+    *   Import patch [#48766](http://root.cern/viewvc?rev=48766&root=root&view=rev) fixing a possible double-delete when a selector is processed by object.
+    *   Import patch [#48939](http://root.cern/viewvc?rev=48939&root=root&view=rev) fixing problem in pq2-verify.
+    *   Import patch [#49113](http://root.cern/viewvc?rev=49113&root=root&view=rev) fixing a possible crash in submerger mode due to missing protection.
 *   PyROOT
     *   Support for python3.3.
 *   GL
@@ -910,8 +910,8 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
     *   Fix a [problem with the option SAME](https://savannah.cern.ch/bugs/?100221).
 *   Proof
     *   Correctly set the PROOF internal protocol value to the level required by the new dataset staging request functionality.
-    *   Import patch [#48355](http://root.cern.ch/viewvc?rev=48355&root=root&view=rev) with important fixes in TDataSetManagerAliEn.
-    *   Import patch [#48439](http://root.cern.ch/viewvc?rev=48439&root=root&view=rev) with fixes/modifications in xpdtest, setxrd.sh and installXrootd.sh.
+    *   Import patch [#48355](http://root.cern/viewvc?rev=48355&root=root&view=rev) with important fixes in TDataSetManagerAliEn.
+    *   Import patch [#48439](http://root.cern/viewvc?rev=48439&root=root&view=rev) with fixes/modifications in xpdtest, setxrd.sh and installXrootd.sh.
 *   Eve
     *   Added a few extra class members to TEveRecTrackT needed by ALICE.
 *   RooFit
@@ -934,42 +934,42 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
  <font size="-2">Binary Incompatible</font>
 
 *   Core
-    *   Fixes two thread safety issues affecting accessing TClonesArray objects in more than one thread (see revision [#47726](http://root.cern.ch/viewvc?rev=47726&root=root&view=rev)).
-    *   Import patch [#48132](http://root.cern.ch/viewvc?rev=48132&root=root&view=rev) fixing an issue in TUnixSystem::RedirectOutput; this resolves the Savannah report [#96935](http://savannah.cern.ch/bugs/?96935).
+    *   Fixes two thread safety issues affecting accessing TClonesArray objects in more than one thread (see revision [#47726](http://root.cern/viewvc?rev=47726&root=root&view=rev)).
+    *   Import patch [#48132](http://root.cern/viewvc?rev=48132&root=root&view=rev) fixing an issue in TUnixSystem::RedirectOutput; this resolves the Savannah report [#96935](http://savannah.cern.ch/bugs/?96935).
 *   I/O
     *   Prevent a segmentation fault at the time a TFile is closed and/or deleted if it contains a TTree that is stored in a subdirectory.
     *   Prevent infinite loop when encountering unzipping error. This resolves the Savannah report [#99523](http://savannah.cern.ch/bugs/?99523).
-    *   Import patch [#48115](http://root.cern.ch/viewvc?rev=48115&root=root&view=rev) in TFileMerger basically skipping, for non-mergeable objects, the check on recurrent names. This should fix the Savannah report [#99015](http://savannah.cern.ch/bugs/?99015).
+    *   Import patch [#48115](http://root.cern/viewvc?rev=48115&root=root&view=rev) in TFileMerger basically skipping, for non-mergeable objects, the check on recurrent names. This should fix the Savannah report [#99015](http://savannah.cern.ch/bugs/?99015).
 *   Proof
-    *   Import patch [#46864](http://root.cern.ch/viewvc?rev=46864&root=root&view=rev) fixing a crash in TStatus::Add in the case of missing files. This was a regression introduced by branch patch [#45751](http://root.cern.ch/viewvc?rev=45751&root=root&view=rev) (import of [#45283](http://root.cern.ch/viewvc?rev=45283&root=root&view=rev)).
-    *   Import patch [#46992](http://root.cern.ch/viewvc?rev=46992&root=root&view=rev) addressing a possible crash after finalisation.
-    *   Import patch [#47067](http://root.cern.ch/viewvc?rev=47067&root=root&view=rev) fixing possible (random) failure of test 22.
-    *   Import patch [#47235](http://root.cern.ch/viewvc?rev=47235&root=root&view=rev) fixing a file permission issue in afdsmgrd.
-    *   Import patch [#47238](http://root.cern.ch/viewvc?rev=47238&root=root&view=rev) fixing a few issues preventing proper cleaning of the 'data' directory when running stressProof in Proof-Lite.
-    *   Import patch [#47251](http://root.cern.ch/viewvc?rev=47251&root=root&view=rev) fixing an issue with unexpected settings in TStatus::fBits.
-    *   Import patch [#47270](http://root.cern.ch/viewvc?rev=47270&root=root&view=rev) adding notification of the estimated time left (and, at the end, of the processing time) also when running in batch mode.
-    *   Import patch [#47367](http://root.cern.ch/viewvc?rev=47367&root=root&view=rev) fixing an issue with TDSet::Validate.
-    *   Import patch [#47444](http://root.cern.ch/viewvc?rev=47444&root=root&view=rev) to not print all progress messages during the merging phase in non-tty mode (avoid filling up the logs with useless info).
-    *   Import patch [#47451](http://root.cern.ch/viewvc?rev=47451&root=root&view=rev) to add flexibility in defining directories for PAR packages.
-    *   Import patches [#47528](http://root.cern.ch/viewvc?rev=47528&root=root&view=rev) and [#47573](http://root.cern.ch/viewvc?rev=47573&root=root&view=rev) to support specifying the check version option in TProof::EnablePackage.
-    *   Import patch [#47664](http://root.cern.ch/viewvc?rev=47664&root=root&view=rev) fixing an undefined variable in TSelEventGen (proofbench PAR package).
-    *   Import patch [#47729](http://root.cern.ch/viewvc?rev=47729&root=root&view=rev) fixing a backward incompatibility introduced by patch [#45751](http://root.cern.ch/viewvc?
+    *   Import patch [#46864](http://root.cern/viewvc?rev=46864&root=root&view=rev) fixing a crash in TStatus::Add in the case of missing files. This was a regression introduced by branch patch [#45751](http://root.cern/viewvc?rev=45751&root=root&view=rev) (import of [#45283](http://root.cern/viewvc?rev=45283&root=root&view=rev)).
+    *   Import patch [#46992](http://root.cern/viewvc?rev=46992&root=root&view=rev) addressing a possible crash after finalisation.
+    *   Import patch [#47067](http://root.cern/viewvc?rev=47067&root=root&view=rev) fixing possible (random) failure of test 22.
+    *   Import patch [#47235](http://root.cern/viewvc?rev=47235&root=root&view=rev) fixing a file permission issue in afdsmgrd.
+    *   Import patch [#47238](http://root.cern/viewvc?rev=47238&root=root&view=rev) fixing a few issues preventing proper cleaning of the 'data' directory when running stressProof in Proof-Lite.
+    *   Import patch [#47251](http://root.cern/viewvc?rev=47251&root=root&view=rev) fixing an issue with unexpected settings in TStatus::fBits.
+    *   Import patch [#47270](http://root.cern/viewvc?rev=47270&root=root&view=rev) adding notification of the estimated time left (and, at the end, of the processing time) also when running in batch mode.
+    *   Import patch [#47367](http://root.cern/viewvc?rev=47367&root=root&view=rev) fixing an issue with TDSet::Validate.
+    *   Import patch [#47444](http://root.cern/viewvc?rev=47444&root=root&view=rev) to not print all progress messages during the merging phase in non-tty mode (avoid filling up the logs with useless info).
+    *   Import patch [#47451](http://root.cern/viewvc?rev=47451&root=root&view=rev) to add flexibility in defining directories for PAR packages.
+    *   Import patches [#47528](http://root.cern/viewvc?rev=47528&root=root&view=rev) and [#47573](http://root.cern/viewvc?rev=47573&root=root&view=rev) to support specifying the check version option in TProof::EnablePackage.
+    *   Import patch [#47664](http://root.cern/viewvc?rev=47664&root=root&view=rev) fixing an undefined variable in TSelEventGen (proofbench PAR package).
+    *   Import patch [#47729](http://root.cern/viewvc?rev=47729&root=root&view=rev) fixing a backward incompatibility introduced by patch [#45751](http://root.cern/viewvc?
                 rev=45751&root=root&view=rev).
-    *   Import patch [#47832](http://root.cern.ch/viewvc?rev=47832&root=root&view=rev) to make sure that the fSlaves list contains always ALL workers, even those which did not initially startup; this way GetListOfSlaveInfos can be used to find out which workers had problems starting up.
-    *   Import patch [#47833](http://root.cern.ch/viewvc?rev=47833&root=root&view=rev) to make sure that the XrdProofClient instance is always defined when calling MapClient. This was not done for example when using the weak authentication protocol 'host', or similar protocols not requiring a real authentication token.
-    *   Import patches [#48060](http://root.cern.ch/viewvc?rev=48060&root=root&view=rev) and [#48239](http://root.cern.ch/viewvc?rev=48239&root=root&view=rev) introducing an improved dataset management model where the PROOF (ROOT) dataset manager is a light frontend to the experiment file catalogs; TDataSetManagerFile is still used as local cache of the experiment information or to store the work-in-progress status of the dataset manager daemon. This model is expected to solve the scalability issues observed currently at AAFs. The patches include the new class TDataSetManagerAliEn with the first concrete implementation of experiment catalog interface and a new version of afdsmgrd able to cope with the new dataset model.
-    *   Import patch [#48063](http://root.cern.ch/viewvc?rev=48063&root=root&view=rev) fixing fixing possible deadlock in session startup.
-    *   Import patch [#48068](http://root.cern.ch/viewvc?rev=48068&root=root&view=rev) fixing some issues in TProofBench.
-    *   Import patches [#48086](http://root.cern.ch/viewvc?rev=48086&root=root&view=rev) and [#48099](http://root.cern.ch/viewvc?rev=48099&root=root&view=rev) fixing some building issues.
-    *   Import patch [#48104](http://root.cern.ch/viewvc?rev=48104&root=root&view=rev) fixing fixes failure in TProofBench.
-    *   Import patch [#48122](http://root.cern.ch/viewvc?rev=48122&root=root&view=rev) turning-off role checking for localhost connections (not required and limiting daemon test applications).
-    *   Import patches [#48016](http://root.cern.ch/viewvc?rev=48016&root=root&view=rev) and [#48127](http://root.cern.ch/viewvc?rev=48127&root=root&view=rev) with several fixes in xproofd.
-    *   Import patch [#48130](http://root.cern.ch/viewvc?rev=48130&root=root&view=rev) adding the executable 'ptest' which can be used to test the status of the daemon.
-    *   Import patches [#48130](http://root.cern.ch/viewvc?rev=48130&root=root&view=rev) and [#48141](http://root.cern.ch/viewvc?rev=48141&root=root&view=rev) to support building ROOT using an untagged xrootd (e.g. the trunk).
-    *   Import patch [#48166](http://root.cern.ch/viewvc?rev=48166&root=root&view=rev) reducing verbosity during merge of TProofOutputFile in no debug mode.
-    *   Import patches [#48211](http://root.cern.ch/viewvc?rev=48211&root=root&view=rev) and [#48226](http://root.cern.ch/viewvc?rev=48226&root=root&view=rev) to fix possible deadlocks associated with the handling of asynchronous timers.
+    *   Import patch [#47832](http://root.cern/viewvc?rev=47832&root=root&view=rev) to make sure that the fSlaves list contains always ALL workers, even those which did not initially startup; this way GetListOfSlaveInfos can be used to find out which workers had problems starting up.
+    *   Import patch [#47833](http://root.cern/viewvc?rev=47833&root=root&view=rev) to make sure that the XrdProofClient instance is always defined when calling MapClient. This was not done for example when using the weak authentication protocol 'host', or similar protocols not requiring a real authentication token.
+    *   Import patches [#48060](http://root.cern/viewvc?rev=48060&root=root&view=rev) and [#48239](http://root.cern/viewvc?rev=48239&root=root&view=rev) introducing an improved dataset management model where the PROOF (ROOT) dataset manager is a light frontend to the experiment file catalogs; TDataSetManagerFile is still used as local cache of the experiment information or to store the work-in-progress status of the dataset manager daemon. This model is expected to solve the scalability issues observed currently at AAFs. The patches include the new class TDataSetManagerAliEn with the first concrete implementation of experiment catalog interface and a new version of afdsmgrd able to cope with the new dataset model.
+    *   Import patch [#48063](http://root.cern/viewvc?rev=48063&root=root&view=rev) fixing fixing possible deadlock in session startup.
+    *   Import patch [#48068](http://root.cern/viewvc?rev=48068&root=root&view=rev) fixing some issues in TProofBench.
+    *   Import patches [#48086](http://root.cern/viewvc?rev=48086&root=root&view=rev) and [#48099](http://root.cern/viewvc?rev=48099&root=root&view=rev) fixing some building issues.
+    *   Import patch [#48104](http://root.cern/viewvc?rev=48104&root=root&view=rev) fixing fixes failure in TProofBench.
+    *   Import patch [#48122](http://root.cern/viewvc?rev=48122&root=root&view=rev) turning-off role checking for localhost connections (not required and limiting daemon test applications).
+    *   Import patches [#48016](http://root.cern/viewvc?rev=48016&root=root&view=rev) and [#48127](http://root.cern/viewvc?rev=48127&root=root&view=rev) with several fixes in xproofd.
+    *   Import patch [#48130](http://root.cern/viewvc?rev=48130&root=root&view=rev) adding the executable 'ptest' which can be used to test the status of the daemon.
+    *   Import patches [#48130](http://root.cern/viewvc?rev=48130&root=root&view=rev) and [#48141](http://root.cern/viewvc?rev=48141&root=root&view=rev) to support building ROOT using an untagged xrootd (e.g. the trunk).
+    *   Import patch [#48166](http://root.cern/viewvc?rev=48166&root=root&view=rev) reducing verbosity during merge of TProofOutputFile in no debug mode.
+    *   Import patches [#48211](http://root.cern/viewvc?rev=48211&root=root&view=rev) and [#48226](http://root.cern/viewvc?rev=48226&root=root&view=rev) to fix possible deadlocks associated with the handling of asynchronous timers.
 *   Tree
-    *   Import patch [#47057](http://root.cern.ch/viewvc?rev=47057&root=root&view=rev) in TTree::Merge to make sure that things are really written out to disk before attempting any reading; solves an issue in TFileMerger when the merged file is written to a xrootd backend.
+    *   Import patch [#47057](http://root.cern/viewvc?rev=47057&root=root&view=rev) in TTree::Merge to make sure that things are really written out to disk before attempting any reading; solves an issue in TFileMerger when the merged file is written to a xrootd backend.
     *   TTree::ReadFile and TTree::ReadStream now skip empty lines and commented out line (starting with #) before looking for a description. (This fixes the most recent part of the Savannah report [#28084](http://savannah.cern.ch/bugs/?28084)).
     *   In TTree::ReadFile and TTree::ReadStreama allow colon (:) as the separator for the list of branch and types even in the case of a comma separated file. This resolves the Savannah report [#99528](http://savannah.cern.ch/bugs/?99528).
 *   Graphics
@@ -987,7 +987,7 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
 *   PyROOT
     *   Reworked GIL release to be as close to the C++ call as possible
 *   Hist
-    *   Fix a bug in fitting TGraphAsymErrors when including error in x (see Forum [#15564](http://root.cern.ch/phpBB3/viewtopic.php?f=3&t=15564))
+    *   Fix a bug in fitting TGraphAsymErrors when including error in x (see Forum [#15564](http://root.cern/phpBB3/viewtopic.php?f=3&t=15564))
     *   Improve TAxis::SetRange with the possibility to include/exclude also underflow and overflow bins (see issue [#97331](http://savannah.cern.ch/bugs/?97331))
     *   Fix a bug in re-using the stored fit function in the histogram for fitting a second time
 *   Minuit
@@ -996,7 +996,7 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
     *   Fix a bug,introduced in 5.34.01, when generating the correct number of events when using the Extended() option ([#98832](https://savannah.cern.ch/bugs/index.php?98832))
     *   Import in RooPoisson the implementation of the analytical integral for the mean
 *   RooStats
-    *   Fix an issue in FactorizePdf (see Forum [#15694](http://root.cern.ch/phpBB3/viewtopic.php?f=15&t=15694))
+    *   Fix an issue in FactorizePdf (see Forum [#15694](http://root.cern/phpBB3/viewtopic.php?f=15&t=15694))
     *   Fix a memory leak in SPlot ([#99400](https://savannah.cern.ch/bugs/?99400))
     *   Add functions in RooStatsUtils to factorize the pdf and to remove constraint terms. Speed-up the SimpleLikelihoodRatio evaluation by avoiding to evaluate the constraints
     *   Fix the AsymptoticCalculator to try to use same binning for Asimov data set as observed data
@@ -1048,7 +1048,7 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
 *   FFTW
     *   Fix bug [#97707](https://savannah.cern.ch/bugs/?97707) in TFFTComplexReal::SetPoint(ipoint, c)
 *   MathCore
-    *   Fix a bug in the Fitter class in setting a different error scale for likelihood fits (see post [#15368](http://root.cern.ch/phpBB3/viewtopic.php?f=15&t=15368))
+    *   Fix a bug in the Fitter class in setting a different error scale for likelihood fits (see post [#15368](http://root.cern/phpBB3/viewtopic.php?f=15&t=15368))
 *   Graphics
     *   Implementation of MacOS X back-end finished.
     *   When <tt>GetX(YZ)axis</tt> were called on a <tt>TGraph2D</tt>, the frame limit and plotting options were changed.
@@ -1078,32 +1078,32 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
 *   Meta
     *   Making sure that when we lookup for an existing entry we look for an exact match (as oppose to doing a lookup of the unqualified name) to avoid unrelated nested typedef/names to over-ride global scope classes that are marked for autoloading (r42421).
 *   I/O
-    *   Avoid spurious error message when reading an existing file with a class inheriting from std::string ([r45117](http://root.cern.ch/viewvc?rev=45117&root=root&view=rev))
-    *   Corrected the calculation of the number of read calls in TRFIOFile (See the forum [post](http://root.cern.ch/phpBB3/viewtopic.php?f=3&t=14673&p=64367#p64367) on the subject. Fixed by revision [45140](http://root.cern.ch/viewvc?rev=45140&root=root&view=rev)).
-    *   Add protection against corrupted ROOT File (wrong length stored in the file header) (Revision [45170](http://root.cern.ch/viewvc?rev=45170&root=root&view=rev)).
-    *   Fix file->Get("Lumi/physics;2") to properly retrieve the 2nd cycle (revision [45243](http://root.cern.ch/viewvc?rev=45243&root=root&view=rev)).
-    *   Implement TChain::RemoveFriend to avoid leaving the TChain in an unstable state (See the forum [post](http://root.cern.ch/phpBB3/viewtopic.php?t=15206) on the subject.  Fixed by revision [46069](http://root.cern.ch/viewvc?rev=46069&root=root&view=rev)).
+    *   Avoid spurious error message when reading an existing file with a class inheriting from std::string ([r45117](http://root.cern/viewvc?rev=45117&root=root&view=rev))
+    *   Corrected the calculation of the number of read calls in TRFIOFile (See the forum [post](http://root.cern/phpBB3/viewtopic.php?f=3&t=14673&p=64367#p64367) on the subject. Fixed by revision [45140](http://root.cern/viewvc?rev=45140&root=root&view=rev)).
+    *   Add protection against corrupted ROOT File (wrong length stored in the file header) (Revision [45170](http://root.cern/viewvc?rev=45170&root=root&view=rev)).
+    *   Fix file->Get("Lumi/physics;2") to properly retrieve the 2nd cycle (revision [45243](http://root.cern/viewvc?rev=45243&root=root&view=rev)).
+    *   Implement TChain::RemoveFriend to avoid leaving the TChain in an unstable state (See the forum [post](http://root.cern/phpBB3/viewtopic.php?t=15206) on the subject.  Fixed by revision [46069](http://root.cern/viewvc?rev=46069&root=root&view=rev)).
 *   Proof
-    *   Import patches [#45846](http://root.cern.ch/viewvc?rev=45846&root=root&view=rev), [#45847](http://root.cern.ch/viewvc?rev=45847&root=root&view=rev) and [#45849](http://root.cern.ch/viewvc?rev=45849&root=root&view=rev) fixing a few consistency issues (honoring 'workers=N' when passed as option in PROOF-Lite, parallel dataset verification when PROOF is sequential).
-    *   Import patches [#45876](http://root.cern.ch/viewvc?rev=45876&root=root&view=rev), [#45823](http://root.cern.ch/viewvc?rev=45823&root=root&view=rev) and [#45827](http://root.cern.ch/viewvc?rev=45827&root=root&view=rev) fixing, in stressProof, sandbox cleaning and adding some switches to better control log saving an path in case of failures. The patch also adds the correct switches in test/CMakeList.txt for cmake -based test running.
-    *   Import patch [#45759](http://root.cern.ch/viewvc?rev=45759&root=root&view=rev) fixing possible double delete in TProofDraw.
-    *   Import patches [#45283](http://root.cern.ch/viewvc?rev=45283&root=root&view=rev), [#45289](http://root.cern.ch/viewvc?rev=45289&root=root&view=rev), [#45318](http://root.cern.ch/viewvc?rev=45318&root=root&view=rev), [#45348](http://root.cern.ch/viewvc?rev=45348&root=root&view=rev), [#45367](http://root.cern.ch/viewvc?rev=45367&root=root&view=rev), [#45570](http://root.cern.ch/viewvc?rev=45570&root=root&view=rev), [#45610](http://root.cern.ch/viewvc?rev=45610&root=root&view=rev), [#45614](http://root.cern.ch/viewvc?rev=45614&root=root&view=rev), [#45615](http://root.cern.ch/viewvc?rev=45615&root=root&view=rev), [#45632](http://root.cern.ch/viewvc?rev=45632&root=root&view=rev), [#45634](http://root.cern.ch/viewvc?rev=45634&root=root&view=rev), [#45282](http://root.cern.ch/viewvc?rev=45282&root=root&view=rev), [#45696](http://root.cern.ch/viewvc?rev=45696&root=root&view=rev), [#45697](http://root.cern.ch/viewvc?rev=45697&root=root&view=rev), [#45718](http://root.cern.ch/viewvc?rev=45718&root=root&view=rev) and [#45740](http://root.cern.ch/viewvc?rev=45740&root=root&view=rev) automatizing the usage of file-based technology to handle outputs (see [Handling Outputs](/handling-outputs)).
-    *   Import patch [#45664](http://root.cern.ch/viewvc?rev=45664&root=root&view=rev) fixing an issue with afdsmgrd build in the case a '--prefix=' was passed.
-    *   Import patches [#45283](http://root.cern.ch/viewvc?rev=45283&root=root&view=rev) (parts), [#45318](http://root.cern.ch/viewvc?rev=45318&root=root&view=rev), [#45607](http://root.cern.ch/viewvc?rev=45607&root=root&view=rev), [#45610](http://root.cern.ch/viewvc?rev=45610&root=root&view=rev), [#45613](http://root.cern.ch/viewvc?rev=45613&root=root&view=rev), [#45614](http://root.cern.ch/viewvc?rev=45614&root=root&view=rev) (parts), [#45630](http://root.cern.ch/viewvc?rev=45630&root=root&view=rev), [#45632](http://root.cern.ch/viewvc?rev=45632&root=root&view=rev) (parts) and [#45643](http://root.cern.ch/viewvc?rev=45643&root=root&view=rev) fixing several issues:
+    *   Import patches [#45846](http://root.cern/viewvc?rev=45846&root=root&view=rev), [#45847](http://root.cern/viewvc?rev=45847&root=root&view=rev) and [#45849](http://root.cern/viewvc?rev=45849&root=root&view=rev) fixing a few consistency issues (honoring 'workers=N' when passed as option in PROOF-Lite, parallel dataset verification when PROOF is sequential).
+    *   Import patches [#45876](http://root.cern/viewvc?rev=45876&root=root&view=rev), [#45823](http://root.cern/viewvc?rev=45823&root=root&view=rev) and [#45827](http://root.cern/viewvc?rev=45827&root=root&view=rev) fixing, in stressProof, sandbox cleaning and adding some switches to better control log saving an path in case of failures. The patch also adds the correct switches in test/CMakeList.txt for cmake -based test running.
+    *   Import patch [#45759](http://root.cern/viewvc?rev=45759&root=root&view=rev) fixing possible double delete in TProofDraw.
+    *   Import patches [#45283](http://root.cern/viewvc?rev=45283&root=root&view=rev), [#45289](http://root.cern/viewvc?rev=45289&root=root&view=rev), [#45318](http://root.cern/viewvc?rev=45318&root=root&view=rev), [#45348](http://root.cern/viewvc?rev=45348&root=root&view=rev), [#45367](http://root.cern/viewvc?rev=45367&root=root&view=rev), [#45570](http://root.cern/viewvc?rev=45570&root=root&view=rev), [#45610](http://root.cern/viewvc?rev=45610&root=root&view=rev), [#45614](http://root.cern/viewvc?rev=45614&root=root&view=rev), [#45615](http://root.cern/viewvc?rev=45615&root=root&view=rev), [#45632](http://root.cern/viewvc?rev=45632&root=root&view=rev), [#45634](http://root.cern/viewvc?rev=45634&root=root&view=rev), [#45282](http://root.cern/viewvc?rev=45282&root=root&view=rev), [#45696](http://root.cern/viewvc?rev=45696&root=root&view=rev), [#45697](http://root.cern/viewvc?rev=45697&root=root&view=rev), [#45718](http://root.cern/viewvc?rev=45718&root=root&view=rev) and [#45740](http://root.cern/viewvc?rev=45740&root=root&view=rev) automatizing the usage of file-based technology to handle outputs (see [Handling Outputs](/handling-outputs)).
+    *   Import patch [#45664](http://root.cern/viewvc?rev=45664&root=root&view=rev) fixing an issue with afdsmgrd build in the case a '--prefix=' was passed.
+    *   Import patches [#45283](http://root.cern/viewvc?rev=45283&root=root&view=rev) (parts), [#45318](http://root.cern/viewvc?rev=45318&root=root&view=rev), [#45607](http://root.cern/viewvc?rev=45607&root=root&view=rev), [#45610](http://root.cern/viewvc?rev=45610&root=root&view=rev), [#45613](http://root.cern/viewvc?rev=45613&root=root&view=rev), [#45614](http://root.cern/viewvc?rev=45614&root=root&view=rev) (parts), [#45630](http://root.cern/viewvc?rev=45630&root=root&view=rev), [#45632](http://root.cern/viewvc?rev=45632&root=root&view=rev) (parts) and [#45643](http://root.cern/viewvc?rev=45643&root=root&view=rev) fixing several issues:
          - consolidation of username definition in the automatic LOCALDATASERVER setting (by xproofd);
          - fix for TProof::GetUser (Savannah issue #92533)
          - use of LOCALDATASERVER in ProofAux.C, fixing potential failures of stressProof
          - fix for potential segv in the destructors of TPacketizerUnit and TVirtualPacketizer
          - fix issue with merging elements in ProcFileElements which was causing spurious failures in stressProof, test #19
-    *   Import patches [#45568](http://root.cern.ch/viewvc?rev=45568&root=root&view=rev) and [#45597](http://root.cern.ch/viewvc?rev=45597&root=root&view=rev) fixing a few issues in PROOF-Lite.
-    *   Import patches [#45092](http://root.cern.ch/viewvc?rev=45092&root=root&view=rev) and [#45093](http://root.cern.ch/viewvc?rev=45093&root=root&view=rev) adding functions to retrieve environment information from the nodes, typically from the master (datadir or some env settings).
+    *   Import patches [#45568](http://root.cern/viewvc?rev=45568&root=root&view=rev) and [#45597](http://root.cern/viewvc?rev=45597&root=root&view=rev) fixing a few issues in PROOF-Lite.
+    *   Import patches [#45092](http://root.cern/viewvc?rev=45092&root=root&view=rev) and [#45093](http://root.cern/viewvc?rev=45093&root=root&view=rev) adding functions to retrieve environment information from the nodes, typically from the master (datadir or some env settings).
          **Warning:** This change in binary incompatible.
-    *   Import patch [#45181](http://root.cern.ch/viewvc?rev=45181&root=root&view=rev) fixing a crash in xproofd when using security.
+    *   Import patch [#45181](http://root.cern/viewvc?rev=45181&root=root&view=rev) fixing a crash in xproofd when using security.
 *   Graphics
     *   The time axis behavior should now be correct along time zone and summer saving time. A fix has been done with the of Philippe Gras (CEA Saclay. IRFU/SEDI) and Julian Sitarek (IFAE). Time axis transported from a time zone to an other in a ROOT file are correct too. A new example test have been introduced to test the time axis (timeonaxis3.C)
 *   GUI
 
-    *   Prevent the use of a global by TGLabel before it is initialized (revision [#46073](http://root.cern.ch/viewvc?rev=46073&root=root&view=rev)
+    *   Prevent the use of a global by TGLabel before it is initialized (revision [#46073](http://root.cern/viewvc?rev=46073&root=root&view=rev)
 *   EVE
 
     *   Avoid crash in TEveTrack::TEveTrack(TEveMCTrack*) constructor when PDG code is unknown. fCharge is set to 0 in this case.
@@ -1118,7 +1118,7 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
     *   Fix setting a second time the nuisance pdf in the ToyMCSampler. This bug affect the HybridCalculator when using different nuisance pdf's for the null and alternate models.
     *   Fix generation of AsymptoticCalculator::GenerateAsimovData  for counting models containing several observables
 *   HistFactory
-    *   Import changes described in revision [45703](http://root.cern.ch/viewvc?view=rev&revision=45703)
+    *   Import changes described in revision [45703](http://root.cern/viewvc?view=rev&revision=45703)
     *   Import changes to have model built without a data tag selected
 *   Hist
     *   Update projection methods to re-set binning on a previously existing histogram ([#94101](https://savannah.cern.ch/bugs/?94101) and [#95808](https://savannah.cern.ch/bugs/?95808))
@@ -1132,7 +1132,7 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
 
 *   Core
     *   Avoid risk of executing the tear down routines twice at process termination when -q is used and there is no input file descriptor. (revision 44838).
-    *   Fix linking of qtcint.dll when explicitly linking is required (see [the related forum post](http://root.cern.ch/phpBB3/viewtopic.php?t=14943)).
+    *   Fix linking of qtcint.dll when explicitly linking is required (see [the related forum post](http://root.cern/phpBB3/viewtopic.php?t=14943)).
 *   I/O
     *   Fail gracefully instead of segfaulting on broken files in GetStreamerInfoList (Fixes Savannah [#5439](http://savannah.cern.ch/patch/?5439)).
     *   Avoid seg fault when deleting a reseted TMemFile (revision 44749).
@@ -1143,12 +1143,12 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
     *   Fixes issue in TChainIndex that made reading the first entry of the 2nd and subsequent files in the TChain not beeing properly reading when using the index. (Fixes Savannah [#94910](http://savannah.cern.ch/bugs/?94910)).
     *   Avoid an unnecessary flushing of the TTreeCache after the first time it filled (revision 44750)
 *   Proof
-    *   Import patch [#44606](http://root.cern.ch/viewvc?rev=44606&root=root&view=rev) adding support for gcc4.7 in afdsmgrd (version 1.0.3).
-    *   Import patch [#44701](http://root.cern.ch/viewvc?rev=44701&root=root&view=rev) with several important fixes in xproofd. Patch is server side only; only the upgrade of xproofd (or libXrdProofd) are required.
+    *   Import patch [#44606](http://root.cern/viewvc?rev=44606&root=root&view=rev) adding support for gcc4.7 in afdsmgrd (version 1.0.3).
+    *   Import patch [#44701](http://root.cern/viewvc?rev=44701&root=root&view=rev) with several important fixes in xproofd. Patch is server side only; only the upgrade of xproofd (or libXrdProofd) are required.
 *   RooFit
-    *   Fix bug in binned generation of extended pdf (patch [#44630](http://root.cern.ch/viewvc?rev=44630&root=root&view=rev) )
+    *   Fix bug in binned generation of extended pdf (patch [#44630](http://root.cern/viewvc?rev=44630&root=root&view=rev) )
 *   HistFactory
-    *   Fix a problem for pyroot and an issue in creating directory (patch [#44579](http://root.cern.ch/viewvc?view=rev&revision=44579) ).
+    *   Fix a problem for pyroot and an issue in creating directory (patch [#44579](http://root.cern/viewvc?view=rev&revision=44579) ).
 *   Hist
     *   Fix bug in merging histograms and profile when first histogram to merge is empty (bug [#95190](https://savannah.cern.ch/bugs/?95190) and [#94295](https://savannah.cern.ch/bugs/?94295))
     *   Enable TBrowser to access THnSparse with more than 16 axes (r44827).
@@ -1171,11 +1171,11 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
 *   Net
     *   Fix in TWebFile reading using https (via TSSLSocket).
 *   IO
-    *   Optimization in TFileMerger for the case where there is only one file to 'merge' (patch [#44533](http://root.cern.ch/viewvc?rev=44533&root=root&view=rev)).
+    *   Optimization in TFileMerger for the case where there is only one file to 'merge' (patch [#44533](http://root.cern/viewvc?rev=44533&root=root&view=rev)).
 *   Proof
-    *   Import patches [#44411](http://root.cern.ch/viewvc?rev=44411&root=root&view=rev) and [#44425](http://root.cern.ch/viewvc?rev=44425&root=root&view=rev) fixing a problem in handling local files in TDataSetManager::ScanFile;
-    *   Import version 1.0.2 of afdsmgrd (patches [#44243](http://root.cern.ch/viewvc?rev=44243&root=root&view=rev), [#44292](http://root.cern.ch/viewvc?rev=44292&root=root&view=rev) and [#44332](http://root.cern.ch/viewvc?rev=44332&root=root&view=rev)) with several important fixes for PEAC and AAFs and the integration in the cmake build
-    *   Import patch [#44397](http://root.cern.ch/viewvc?rev=44397&root=root&view=rev) changing the default merging procedure used histograms to cover correctly all the cases.
+    *   Import patches [#44411](http://root.cern/viewvc?rev=44411&root=root&view=rev) and [#44425](http://root.cern/viewvc?rev=44425&root=root&view=rev) fixing a problem in handling local files in TDataSetManager::ScanFile;
+    *   Import version 1.0.2 of afdsmgrd (patches [#44243](http://root.cern/viewvc?rev=44243&root=root&view=rev), [#44292](http://root.cern/viewvc?rev=44292&root=root&view=rev) and [#44332](http://root.cern/viewvc?rev=44332&root=root&view=rev)) with several important fixes for PEAC and AAFs and the integration in the cmake build
+    *   Import patch [#44397](http://root.cern/viewvc?rev=44397&root=root&view=rev) changing the default merging procedure used histograms to cover correctly all the cases.
     *   Import patches for Coverity-related issues
 *   THtml
     *   Also check for modifications in headers ([bug #94695](https://savannah.cern.ch/bugs/index.php?94695), r44323).

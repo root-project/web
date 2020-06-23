@@ -19,32 +19,32 @@ The release notes for this release can be found [here]({{ '/install/all_releases
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.34.22.source.tar.gz](https://root.cern.ch/download/root_v5.34.22.source.tar.gz) |  72M |
+| source | [root_v5.34.22.source.tar.gz](https://root.cern/download/root_v5.34.22.source.tar.gz) |  72M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Linux slc5 gcc4.3 | [root_v5.34.22.Linux-slc5-gcc4.3.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc5-gcc4.3.tar.gz) |  68M |
-| Linux slc5 gcc4.7 | [root_v5.34.22.Linux-slc5-gcc4.7.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc5-gcc4.7.tar.gz) |  70M |
-| Linux slc5_amd64 gcc4.3 | [root_v5.34.22.Linux-slc5_amd64-gcc4.3.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc5_amd64-gcc4.3.tar.gz) |  69M |
-| Linux slc5_amd64 gcc4.7 | [root_v5.34.22.Linux-slc5_amd64-gcc4.7.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc5_amd64-gcc4.7.tar.gz) |  70M |
-| Scientific Linux Cern 6 gcc4.7 | [root_v5.34.22.Linux-slc6-gcc4.7.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc6-gcc4.7.tar.gz) |  61M |
-| Scientific Linux Cern 6 gcc4.8 | [root_v5.34.22.Linux-slc6-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc6-gcc4.8.tar.gz) |  60M |
-| Scientific Linux Cern 6_amd64 gcc4.4 | [root_v5.34.22.Linux-slc6_amd64-gcc4.4.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc6_amd64-gcc4.4.tar.gz) |  69M |
-| Scientific Linux Cern 6_amd64 gcc4.7 | [root_v5.34.22.Linux-slc6_amd64-gcc4.7.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc6_amd64-gcc4.7.tar.gz) |  70M |
-| Scientific Linux Cern 6_amd64 gcc4.8 | [root_v5.34.22.Linux-slc6_amd64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc6_amd64-gcc4.8.tar.gz) |  71M |
-| Scientific Linux Cern 6_amd64 gcc4.9 | [root_v5.34.22.Linux-slc6_amd64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v5.34.22.Linux-slc6_amd64-gcc4.9.tar.gz) |  72M |
-| OsX 10.9 i386 | [root_v5.34.22.macosx64-10.9-i386.tar.gz](https://root.cern.ch/download/root_v5.34.22.macosx64-10.9-i386.tar.gz) |  57M |
-| Windows Visual Studio 10 (dbg) | [root_v5.34.22.win32.vc10.debug.exe](https://root.cern.ch/download/root_v5.34.22.win32.vc10.debug.exe) |  93M |
-| Windows Visual Studio 10 (dbg) | [root_v5.34.22.win32.vc10.debug.tar.gz](https://root.cern.ch/download/root_v5.34.22.win32.vc10.debug.tar.gz) | 138M |
-| Windows Visual Studio 10 | [root_v5.34.22.win32.vc10.exe](https://root.cern.ch/download/root_v5.34.22.win32.vc10.exe) |  47M |
-| Windows Visual Studio 10 | [root_v5.34.22.win32.vc10.tar.gz](https://root.cern.ch/download/root_v5.34.22.win32.vc10.tar.gz) |  61M |
-| Windows Visual Studio 11 (dbg) | [root_v5.34.22.win32.vc11.debug.exe](https://root.cern.ch/download/root_v5.34.22.win32.vc11.debug.exe) |  97M |
-| Windows Visual Studio 11 (dbg) | [root_v5.34.22.win32.vc11.debug.tar.gz](https://root.cern.ch/download/root_v5.34.22.win32.vc11.debug.tar.gz) | 147M |
-| Windows Visual Studio 11 | [root_v5.34.22.win32.vc11.exe](https://root.cern.ch/download/root_v5.34.22.win32.vc11.exe) |  47M |
-| Windows Visual Studio 11 | [root_v5.34.22.win32.vc11.tar.gz](https://root.cern.ch/download/root_v5.34.22.win32.vc11.tar.gz) |  61M |
+| Linux slc5 gcc4.3 | [root_v5.34.22.Linux-slc5-gcc4.3.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc5-gcc4.3.tar.gz) |  68M |
+| Linux slc5 gcc4.7 | [root_v5.34.22.Linux-slc5-gcc4.7.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc5-gcc4.7.tar.gz) |  70M |
+| Linux slc5_amd64 gcc4.3 | [root_v5.34.22.Linux-slc5_amd64-gcc4.3.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc5_amd64-gcc4.3.tar.gz) |  69M |
+| Linux slc5_amd64 gcc4.7 | [root_v5.34.22.Linux-slc5_amd64-gcc4.7.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc5_amd64-gcc4.7.tar.gz) |  70M |
+| Scientific Linux Cern 6 gcc4.7 | [root_v5.34.22.Linux-slc6-gcc4.7.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc6-gcc4.7.tar.gz) |  61M |
+| Scientific Linux Cern 6 gcc4.8 | [root_v5.34.22.Linux-slc6-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc6-gcc4.8.tar.gz) |  60M |
+| Scientific Linux Cern 6_amd64 gcc4.4 | [root_v5.34.22.Linux-slc6_amd64-gcc4.4.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc6_amd64-gcc4.4.tar.gz) |  69M |
+| Scientific Linux Cern 6_amd64 gcc4.7 | [root_v5.34.22.Linux-slc6_amd64-gcc4.7.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc6_amd64-gcc4.7.tar.gz) |  70M |
+| Scientific Linux Cern 6_amd64 gcc4.8 | [root_v5.34.22.Linux-slc6_amd64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc6_amd64-gcc4.8.tar.gz) |  71M |
+| Scientific Linux Cern 6_amd64 gcc4.9 | [root_v5.34.22.Linux-slc6_amd64-gcc4.9.tar.gz](https://root.cern/download/root_v5.34.22.Linux-slc6_amd64-gcc4.9.tar.gz) |  72M |
+| OsX 10.9 i386 | [root_v5.34.22.macosx64-10.9-i386.tar.gz](https://root.cern/download/root_v5.34.22.macosx64-10.9-i386.tar.gz) |  57M |
+| Windows Visual Studio 10 (dbg) | [root_v5.34.22.win32.vc10.debug.exe](https://root.cern/download/root_v5.34.22.win32.vc10.debug.exe) |  93M |
+| Windows Visual Studio 10 (dbg) | [root_v5.34.22.win32.vc10.debug.tar.gz](https://root.cern/download/root_v5.34.22.win32.vc10.debug.tar.gz) | 138M |
+| Windows Visual Studio 10 | [root_v5.34.22.win32.vc10.exe](https://root.cern/download/root_v5.34.22.win32.vc10.exe) |  47M |
+| Windows Visual Studio 10 | [root_v5.34.22.win32.vc10.tar.gz](https://root.cern/download/root_v5.34.22.win32.vc10.tar.gz) |  61M |
+| Windows Visual Studio 11 (dbg) | [root_v5.34.22.win32.vc11.debug.exe](https://root.cern/download/root_v5.34.22.win32.vc11.debug.exe) |  97M |
+| Windows Visual Studio 11 (dbg) | [root_v5.34.22.win32.vc11.debug.tar.gz](https://root.cern/download/root_v5.34.22.win32.vc11.debug.tar.gz) | 147M |
+| Windows Visual Studio 11 | [root_v5.34.22.win32.vc11.exe](https://root.cern/download/root_v5.34.22.win32.vc11.exe) |  47M |
+| Windows Visual Studio 11 | [root_v5.34.22.win32.vc11.tar.gz](https://root.cern/download/root_v5.34.22.win32.vc11.tar.gz) |  61M |
 
 
 
@@ -74,7 +74,7 @@ To use ROOT directly from AFS:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

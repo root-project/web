@@ -15,14 +15,14 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v3.03.09b.source.tar.gz](https://root.cern.ch/download/root_v3.03.09b.source.tar.gz) | 6.0M |
+| source | [root_v3.03.09b.source.tar.gz](https://root.cern/download/root_v3.03.09b.source.tar.gz) | 6.0M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| win32 | [root_v3.03.09b.win32.tar.gz](https://root.cern.ch/download/root_v3.03.09b.win32.tar.gz) |  12M |
+| win32 | [root_v3.03.09b.win32.tar.gz](https://root.cern/download/root_v3.03.09b.win32.tar.gz) |  12M |
 
 
 ## Git

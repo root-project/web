@@ -349,7 +349,7 @@ The exact kind of quoting depends on the used shell. This example works for bash
 
 ### Compiling ROOT macros
 
-You can use ACLiC (*Compiling Your Code*) to compile your code and build a dictionary and a shared library from your ROOT macro. ACliC is implemented in [TSystem::CompileMacro()](https://root.cern.ch/doc/master/classTSystem.html).
+You can use ACLiC (*Compiling Your Code*) to compile your code and build a dictionary and a shared library from your ROOT macro. ACliC is implemented in [TSystem::CompileMacro()](https://root.cern/doc/master/classTSystem.html).
 
 When using ACliC, ROOT checks what library really needs to be build and calls your system's C++ compiler, linker and dictionary generator. Then ROOT loads a native shared library.
 

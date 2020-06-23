@@ -15,25 +15,25 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.21.04.source.tar.gz](https://root.cern.ch/download/root_v5.21.04.source.tar.gz) |  25M |
+| source | [root_v5.21.04.source.tar.gz](https://root.cern/download/root_v5.21.04.source.tar.gz) |  25M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Linux.slc4.gcc3.4 | [root_v5.21.04.Linux.slc4.gcc3.4.tar.gz](https://root.cern.ch/download/root_v5.21.04.Linux.slc4.gcc3.4.tar.gz) |  47M |
-| Linux.slc4_amd64.gcc3.4 | [root_v5.21.04.Linux.slc4_amd64.gcc3.4.tar.gz](https://root.cern.ch/download/root_v5.21.04.Linux.slc4_amd64.gcc3.4.tar.gz) |  49M |
-| macosx i386 icc 9.1 | [root_v5.21.04.macosx-i386-icc-9.1.tar.gz](https://root.cern.ch/download/root_v5.21.04.macosx-i386-icc-9.1.tar.gz) |  48M |
-| macosx powerpc gcc 4.0 | [root_v5.21.04.macosx-powerpc-gcc-4.0.tar.gz](https://root.cern.ch/download/root_v5.21.04.macosx-powerpc-gcc-4.0.tar.gz) |  45M |
-| macosx104 i386 gcc 4.0 | [root_v5.21.04.macosx104-i386-gcc-4.0.tar.gz](https://root.cern.ch/download/root_v5.21.04.macosx104-i386-gcc-4.0.tar.gz) |  44M |
-| macosx105 i386 gcc 4.0 | [root_v5.21.04.macosx105-i386-gcc-4.0.tar.gz](https://root.cern.ch/download/root_v5.21.04.macosx105-i386-gcc-4.0.tar.gz) |  36M |
-| SunOS.5.9 | [root_v5.21.04.SunOS.5.9.tar.gz](https://root.cern.ch/download/root_v5.21.04.SunOS.5.9.tar.gz) |  51M |
-| win32 (dbg) | [root_v5.21.04.win32.debug.tar.gz](https://root.cern.ch/download/root_v5.21.04.win32.debug.tar.gz) |  86M |
-| win32 | [root_v5.21.04.win32.tar.gz](https://root.cern.ch/download/root_v5.21.04.win32.tar.gz) |  45M |
-| Windows Visual Studio 90 (dbg) | [root_v5.21.04.win32.vc90.debug.tar.gz](https://root.cern.ch/download/root_v5.21.04.win32.vc90.debug.tar.gz) | 104M |
-| Windows Visual Studio 90 | [root_v5.21.04.win32.vc90.tar.gz](https://root.cern.ch/download/root_v5.21.04.win32.vc90.tar.gz) |  46M |
-| win32gcc gcc 3.4 | [root_v5.21.04.win32gcc-gcc-3.4.tar.gz](https://root.cern.ch/download/root_v5.21.04.win32gcc-gcc-3.4.tar.gz) |  48M |
+| Linux.slc4.gcc3.4 | [root_v5.21.04.Linux.slc4.gcc3.4.tar.gz](https://root.cern/download/root_v5.21.04.Linux.slc4.gcc3.4.tar.gz) |  47M |
+| Linux.slc4_amd64.gcc3.4 | [root_v5.21.04.Linux.slc4_amd64.gcc3.4.tar.gz](https://root.cern/download/root_v5.21.04.Linux.slc4_amd64.gcc3.4.tar.gz) |  49M |
+| macosx i386 icc 9.1 | [root_v5.21.04.macosx-i386-icc-9.1.tar.gz](https://root.cern/download/root_v5.21.04.macosx-i386-icc-9.1.tar.gz) |  48M |
+| macosx powerpc gcc 4.0 | [root_v5.21.04.macosx-powerpc-gcc-4.0.tar.gz](https://root.cern/download/root_v5.21.04.macosx-powerpc-gcc-4.0.tar.gz) |  45M |
+| macosx104 i386 gcc 4.0 | [root_v5.21.04.macosx104-i386-gcc-4.0.tar.gz](https://root.cern/download/root_v5.21.04.macosx104-i386-gcc-4.0.tar.gz) |  44M |
+| macosx105 i386 gcc 4.0 | [root_v5.21.04.macosx105-i386-gcc-4.0.tar.gz](https://root.cern/download/root_v5.21.04.macosx105-i386-gcc-4.0.tar.gz) |  36M |
+| SunOS.5.9 | [root_v5.21.04.SunOS.5.9.tar.gz](https://root.cern/download/root_v5.21.04.SunOS.5.9.tar.gz) |  51M |
+| win32 (dbg) | [root_v5.21.04.win32.debug.tar.gz](https://root.cern/download/root_v5.21.04.win32.debug.tar.gz) |  86M |
+| win32 | [root_v5.21.04.win32.tar.gz](https://root.cern/download/root_v5.21.04.win32.tar.gz) |  45M |
+| Windows Visual Studio 90 (dbg) | [root_v5.21.04.win32.vc90.debug.tar.gz](https://root.cern/download/root_v5.21.04.win32.vc90.debug.tar.gz) | 104M |
+| Windows Visual Studio 90 | [root_v5.21.04.win32.vc90.tar.gz](https://root.cern/download/root_v5.21.04.win32.vc90.tar.gz) |  46M |
+| win32gcc gcc 3.4 | [root_v5.21.04.win32gcc-gcc-3.4.tar.gz](https://root.cern/download/root_v5.21.04.win32gcc-gcc-3.4.tar.gz) |  48M |
 
 
 ## Git

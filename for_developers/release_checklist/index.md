@@ -33,7 +33,7 @@ sidebar:
       - `git push origin vX-YY-00-patches`
       - `git push origin vX-YY-ZZ`
   11. Tag ROOTTEST repository
-  12. Make source tar file and copy to ftp area on root.cern.ch
+  12. Make source tar file and copy to ftp area on root.cern
       - Run from the build directory `$ make distsrc` _[not on a MacOS machine](https://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-on-os-x-give-errors-when-unt){:target="_blank"}_
       - `scp ../root_vX.YY.ZZ.source.tar.gz sftnight@root:/home/www/root/download`
   13. Produce binary tarfiles

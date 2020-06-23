@@ -15,15 +15,15 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v3.05.04.source.tar.gz](https://root.cern.ch/download/root_v3.05.04.source.tar.gz) | 9.0M |
+| source | [root_v3.05.04.source.tar.gz](https://root.cern/download/root_v3.05.04.source.tar.gz) | 9.0M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Linux.RH7.2.icc700 | [root_v3.05.04.Linux.RH7.2.icc700.tar.gz](https://root.cern.ch/download/root_v3.05.04.Linux.RH7.2.icc700.tar.gz) |  20M |
-| win32 (dbg) | [root_v3.05.04.win32.debug.tar.gz](https://root.cern.ch/download/root_v3.05.04.win32.debug.tar.gz) |  26M |
+| Linux.RH7.2.icc700 | [root_v3.05.04.Linux.RH7.2.icc700.tar.gz](https://root.cern/download/root_v3.05.04.Linux.RH7.2.icc700.tar.gz) |  20M |
+| win32 (dbg) | [root_v3.05.04.win32.debug.tar.gz](https://root.cern/download/root_v3.05.04.win32.debug.tar.gz) |  26M |
 
 
 ## Git

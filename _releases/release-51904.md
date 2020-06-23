@@ -15,24 +15,24 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.19.04.source.tar.gz](https://root.cern.ch/download/root_v5.19.04.source.tar.gz) |  24M |
+| source | [root_v5.19.04.source.tar.gz](https://root.cern/download/root_v5.19.04.source.tar.gz) |  24M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Linux.slc4.gcc3.4 | [root_v5.19.04.Linux.slc4.gcc3.4.tar.gz](https://root.cern.ch/download/root_v5.19.04.Linux.slc4.gcc3.4.tar.gz) |  43M |
-| Linux.slc4_amd64.gcc3.4 | [root_v5.19.04.Linux.slc4_amd64.gcc3.4.tar.gz](https://root.cern.ch/download/root_v5.19.04.Linux.slc4_amd64.gcc3.4.tar.gz) |  44M |
-| macosx i386 gcc 4.0 | [root_v5.19.04.macosx-i386-gcc-4.0.tar.gz](https://root.cern.ch/download/root_v5.19.04.macosx-i386-gcc-4.0.tar.gz) |  43M |
-| macosx i386 icc 9.1 | [root_v5.19.04.macosx-i386-icc-9.1.tar.gz](https://root.cern.ch/download/root_v5.19.04.macosx-i386-icc-9.1.tar.gz) |  46M |
-| macosx powerpc gcc 4.0 | [root_v5.19.04.macosx-powerpc-gcc-4.0.tar.gz](https://root.cern.ch/download/root_v5.19.04.macosx-powerpc-gcc-4.0.tar.gz) |  43M |
-| SunOS.5.9 | [root_v5.19.04.SunOS.5.9.tar.gz](https://root.cern.ch/download/root_v5.19.04.SunOS.5.9.tar.gz) |  47M |
-| win32 (dbg) | [root_v5.19.04.win32.debug.tar.gz](https://root.cern.ch/download/root_v5.19.04.win32.debug.tar.gz) |  80M |
-| win32 | [root_v5.19.04.win32.tar.gz](https://root.cern.ch/download/root_v5.19.04.win32.tar.gz) |  42M |
-| Windows Visual Studio 90 (dbg) | [root_v5.19.04.win32.vc90.debug.tar.gz](https://root.cern.ch/download/root_v5.19.04.win32.vc90.debug.tar.gz) | 100M |
-| Windows Visual Studio 90 | [root_v5.19.04.win32.vc90.tar.gz](https://root.cern.ch/download/root_v5.19.04.win32.vc90.tar.gz) |  42M |
-| win32gcc | [root_v5.19.04.win32gcc.tar.gz](https://root.cern.ch/download/root_v5.19.04.win32gcc.tar.gz) |  46M |
+| Linux.slc4.gcc3.4 | [root_v5.19.04.Linux.slc4.gcc3.4.tar.gz](https://root.cern/download/root_v5.19.04.Linux.slc4.gcc3.4.tar.gz) |  43M |
+| Linux.slc4_amd64.gcc3.4 | [root_v5.19.04.Linux.slc4_amd64.gcc3.4.tar.gz](https://root.cern/download/root_v5.19.04.Linux.slc4_amd64.gcc3.4.tar.gz) |  44M |
+| macosx i386 gcc 4.0 | [root_v5.19.04.macosx-i386-gcc-4.0.tar.gz](https://root.cern/download/root_v5.19.04.macosx-i386-gcc-4.0.tar.gz) |  43M |
+| macosx i386 icc 9.1 | [root_v5.19.04.macosx-i386-icc-9.1.tar.gz](https://root.cern/download/root_v5.19.04.macosx-i386-icc-9.1.tar.gz) |  46M |
+| macosx powerpc gcc 4.0 | [root_v5.19.04.macosx-powerpc-gcc-4.0.tar.gz](https://root.cern/download/root_v5.19.04.macosx-powerpc-gcc-4.0.tar.gz) |  43M |
+| SunOS.5.9 | [root_v5.19.04.SunOS.5.9.tar.gz](https://root.cern/download/root_v5.19.04.SunOS.5.9.tar.gz) |  47M |
+| win32 (dbg) | [root_v5.19.04.win32.debug.tar.gz](https://root.cern/download/root_v5.19.04.win32.debug.tar.gz) |  80M |
+| win32 | [root_v5.19.04.win32.tar.gz](https://root.cern/download/root_v5.19.04.win32.tar.gz) |  42M |
+| Windows Visual Studio 90 (dbg) | [root_v5.19.04.win32.vc90.debug.tar.gz](https://root.cern/download/root_v5.19.04.win32.vc90.debug.tar.gz) | 100M |
+| Windows Visual Studio 90 | [root_v5.19.04.win32.vc90.tar.gz](https://root.cern/download/root_v5.19.04.win32.vc90.tar.gz) |  42M |
+| win32gcc | [root_v5.19.04.win32gcc.tar.gz](https://root.cern/download/root_v5.19.04.win32gcc.tar.gz) |  46M |
 
 
 ## Git

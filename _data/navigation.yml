@@ -123,7 +123,7 @@ for_developers:
         url: https://coverity.cern.ch/login/login.htm
         target: _blank
       - title: GitWeb
-        url: https://root.cern.ch/gitweb/?p=root.git;a=summary
+        url: https://root.cern/gitweb/?p=root.git;a=summary
         target: _blank
       - title: Jira
         url: https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page
@@ -139,7 +139,7 @@ for_developers:
      url: https://rootbnch-grafana-test.cern.ch
      target: _blank
    - title: ROOT Logos
-     url: https://root.cern.ch/img/logos/ROOT_Logo/
+     url: https://root.cern/img/logos/ROOT_Logo/
      target: _blank
 
 releases:

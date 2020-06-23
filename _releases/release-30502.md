@@ -15,7 +15,7 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Linux.RH5.1.egcs | [root_v3.05.02.Linux.RH5.1.egcs.tar.gz](https://root.cern.ch/download/root_v3.05.02.Linux.RH5.1.egcs.tar.gz) |  15M |
+| Linux.RH5.1.egcs | [root_v3.05.02.Linux.RH5.1.egcs.tar.gz](https://root.cern/download/root_v3.05.02.Linux.RH5.1.egcs.tar.gz) |  15M |
 
 
 ## Git

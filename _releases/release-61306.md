@@ -15,17 +15,17 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.13.06.source.tar.gz](https://root.cern.ch/download/root_v6.13.06.source.tar.gz) | 155M |
+| source | [root_v6.13.06.source.tar.gz](https://root.cern/download/root_v6.13.06.source.tar.gz) | 155M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| OsX 10.12 clang90 | [root_v6.13.06.macosx64-10.12-clang90.dmg](https://root.cern.ch/download/root_v6.13.06.macosx64-10.12-clang90.dmg) | 124M |
-| OsX 10.12 clang90 | [root_v6.13.06.macosx64-10.12-clang90.tar.gz](https://root.cern.ch/download/root_v6.13.06.macosx64-10.12-clang90.tar.gz) | 123M |
-| OsX 10.13 clang90 | [root_v6.13.06.macosx64-10.13-clang90.dmg](https://root.cern.ch/download/root_v6.13.06.macosx64-10.13-clang90.dmg) | 124M |
-| OsX 10.13 clang90 | [root_v6.13.06.macosx64-10.13-clang90.tar.gz](https://root.cern.ch/download/root_v6.13.06.macosx64-10.13-clang90.tar.gz) | 124M |
+| OsX 10.12 clang90 | [root_v6.13.06.macosx64-10.12-clang90.dmg](https://root.cern/download/root_v6.13.06.macosx64-10.12-clang90.dmg) | 124M |
+| OsX 10.12 clang90 | [root_v6.13.06.macosx64-10.12-clang90.tar.gz](https://root.cern/download/root_v6.13.06.macosx64-10.12-clang90.tar.gz) | 123M |
+| OsX 10.13 clang90 | [root_v6.13.06.macosx64-10.13-clang90.dmg](https://root.cern/download/root_v6.13.06.macosx64-10.13-clang90.dmg) | 124M |
+| OsX 10.13 clang90 | [root_v6.13.06.macosx64-10.13-clang90.tar.gz](https://root.cern/download/root_v6.13.06.macosx64-10.13-clang90.tar.gz) | 124M |
 
 
 ## Git

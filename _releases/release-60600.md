@@ -18,40 +18,40 @@ Some of the highlights of this release include:
  -  a much more usable new default graphics palette,
  -  a lightweight multi-processing interface to accelerate your analyses
  -  [ROOT
-notebooks](https://root.cern.ch/notebooks/HowTos/HowTo_ROOT-Notebooks.html), a fantastic new way of tutoring and doing interactive
+notebooks](https://root.cern/notebooks/HowTos/HowTo_ROOT-Notebooks.html), a fantastic new way of tutoring and doing interactive
 analysis.
- - most of the [class documentation](https://root.cern.ch/doc/master/) has been
+ - most of the [class documentation](https://root.cern/doc/master/) has been
 migrated to Doxygen.
 
 ## Release Notes
 
-The release notes for this release can be found [here](https://root.cern.ch/doc/v606/release-notes.html).
+The release notes for this release can be found [here](https://root.cern/doc/v606/release-notes.html).
 
 ## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.06.00.source.tar.gz](https://root.cern.ch/download/root_v6.06.00.source.tar.gz) | 103M |
+| source | [root_v6.06.00.source.tar.gz](https://root.cern/download/root_v6.06.00.source.tar.gz) | 103M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v6.06.00.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.06.00.Linux-centos7-x86_64-gcc4.8.tar.gz) | 161M |
-| CentOS Cern 7 gcc4.9 | [root_v6.06.00.Linux-centos7-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v6.06.00.Linux-centos7-x86_64-gcc4.9.tar.gz) | 168M |
-| Linux fedora20 gcc4.8 | [root_v6.06.00.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.06.00.Linux-fedora20-x86_64-gcc4.8.tar.gz) | 145M |
-| Linux fedora21 gcc4.9 | [root_v6.06.00.Linux-fedora21-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v6.06.00.Linux-fedora21-x86_64-gcc4.9.tar.gz) | 151M |
-| Linux fedora22 gcc5.1 | [root_v6.06.00.Linux-fedora22-x86_64-gcc5.1.tar.gz](https://root.cern.ch/download/root_v6.06.00.Linux-fedora22-x86_64-gcc5.1.tar.gz) | 150M |
-| Scientific Linux Cern 6 gcc4.8 | [root_v6.06.00.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.06.00.Linux-slc6-x86_64-gcc4.8.tar.gz) | 160M |
-| Scientific Linux Cern 6 gcc4.9 | [root_v6.06.00.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v6.06.00.Linux-slc6-x86_64-gcc4.9.tar.gz) | 167M |
-| Ubuntu 14 gcc4.8 | [root_v6.06.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.06.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 150M |
-| OsX 10.9 clang60 | [root_v6.06.00.macosx64-10.9-clang60.dmg](https://root.cern.ch/download/root_v6.06.00.macosx64-10.9-clang60.dmg) | 139M |
-| OsX 10.9 clang60 | [root_v6.06.00.macosx64-10.9-clang60.tar.gz](https://root.cern.ch/download/root_v6.06.00.macosx64-10.9-clang60.tar.gz) | 140M |
-| OsX 10.10 clang70 | [root_v6.06.00.macosx64-10.10-clang70.dmg](https://root.cern.ch/download/root_v6.06.00.macosx64-10.10-clang70.dmg) | 140M |
-| OsX 10.10 clang70 | [root_v6.06.00.macosx64-10.10-clang70.tar.gz](https://root.cern.ch/download/root_v6.06.00.macosx64-10.10-clang70.tar.gz) | 140M |
-| OsX 10.11 clang70 | [root_v6.06.00.macosx64-10.11-clang70.dmg](https://root.cern.ch/download/root_v6.06.00.macosx64-10.11-clang70.dmg) | 142M |
-| OsX 10.11 clang70 | [root_v6.06.00.macosx64-10.11-clang70.tar.gz](https://root.cern.ch/download/root_v6.06.00.macosx64-10.11-clang70.tar.gz) | 143M |
+| CentOS Cern 7 gcc4.8 | [root_v6.06.00.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.06.00.Linux-centos7-x86_64-gcc4.8.tar.gz) | 161M |
+| CentOS Cern 7 gcc4.9 | [root_v6.06.00.Linux-centos7-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v6.06.00.Linux-centos7-x86_64-gcc4.9.tar.gz) | 168M |
+| Linux fedora20 gcc4.8 | [root_v6.06.00.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.06.00.Linux-fedora20-x86_64-gcc4.8.tar.gz) | 145M |
+| Linux fedora21 gcc4.9 | [root_v6.06.00.Linux-fedora21-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v6.06.00.Linux-fedora21-x86_64-gcc4.9.tar.gz) | 151M |
+| Linux fedora22 gcc5.1 | [root_v6.06.00.Linux-fedora22-x86_64-gcc5.1.tar.gz](https://root.cern/download/root_v6.06.00.Linux-fedora22-x86_64-gcc5.1.tar.gz) | 150M |
+| Scientific Linux Cern 6 gcc4.8 | [root_v6.06.00.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.06.00.Linux-slc6-x86_64-gcc4.8.tar.gz) | 160M |
+| Scientific Linux Cern 6 gcc4.9 | [root_v6.06.00.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v6.06.00.Linux-slc6-x86_64-gcc4.9.tar.gz) | 167M |
+| Ubuntu 14 gcc4.8 | [root_v6.06.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.06.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 150M |
+| OsX 10.9 clang60 | [root_v6.06.00.macosx64-10.9-clang60.dmg](https://root.cern/download/root_v6.06.00.macosx64-10.9-clang60.dmg) | 139M |
+| OsX 10.9 clang60 | [root_v6.06.00.macosx64-10.9-clang60.tar.gz](https://root.cern/download/root_v6.06.00.macosx64-10.9-clang60.tar.gz) | 140M |
+| OsX 10.10 clang70 | [root_v6.06.00.macosx64-10.10-clang70.dmg](https://root.cern/download/root_v6.06.00.macosx64-10.10-clang70.dmg) | 140M |
+| OsX 10.10 clang70 | [root_v6.06.00.macosx64-10.10-clang70.tar.gz](https://root.cern/download/root_v6.06.00.macosx64-10.10-clang70.tar.gz) | 140M |
+| OsX 10.11 clang70 | [root_v6.06.00.macosx64-10.11-clang70.dmg](https://root.cern/download/root_v6.06.00.macosx64-10.11-clang70.dmg) | 142M |
+| OsX 10.11 clang70 | [root_v6.06.00.macosx64-10.11-clang70.tar.gz](https://root.cern/download/root_v6.06.00.macosx64-10.11-clang70.tar.gz) | 143M |
 
 
 
@@ -81,7 +81,7 @@ To use ROOT directly from AFS:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~
