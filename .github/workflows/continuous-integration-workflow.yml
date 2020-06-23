@@ -37,6 +37,11 @@ jobs:
           # - Broken links on pagination pages, e.g., page2/index.html
           arguments: --empty-alt-ignore --file-ignore "/(.*root-version-v5.*|page.?/index.html)/" --allow-hash-href --url-ignore "/(https://ph-root-2.cern.ch/.*|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*)/" --only-4xx --enforce-https --check-favicon
 
+      - name: Look for root.cern.ch links
+        run: |
+          N_WRONG_LINKS=$(grep -R 'root\.cern\.ch' build | wc -l)
+          exit $N_WRONG_LINKS
+
       - name: Wait for other deployments
         # wait for other workflows that are deploying the website to finish, (not 100% foolproof, see #240)
         if: ${{ env.SHOULD_DEPLOY == 'true' && github.event_name != 'pull_request' }}
