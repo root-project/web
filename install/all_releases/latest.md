@@ -1,20 +1,20 @@
 ---
-title: Old
+title: Latest
 layout: single
 sidebar:
   nav: "releases"
 ---
 
-Releases with this term are Old.
+Release with this term is the latest one.
 
-{% include releases_list state="old" label="" single_column="yes" %}
+{% include releases_list state="latest" label="" single_column="yes" %}
 
 ### Release Notes
 
 {% assign sorted = site.releases | reverse %}
 
 {% for release in sorted %}
-{% if release.state == "old" %}
+{% if release.state == "latest" %}
 {% assign version = release.version %}
 {% endif %}
 {% endfor %}
