@@ -1,5 +1,5 @@
 ---
-title: Python interface PyROOT
+title: "Python interface: PyROOT"
 layout: single
 sidebar:
   nav: "manual"
@@ -7,64 +7,89 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT provides an interface to Python, which is enabled via a set of bindings called PyROOT.<br>
-PyROOT is enabled by default in ROOT.
+ROOT can also be used from Python thanks to its Python-C++ bindings, called **PyROOT**.  PyROOT allows to access all the ROOT functionality from Python while, at the same time, benefiting from the performance of the ROOT C++ libraries.
 
-For using PyROOT, a Python version > 2.2 is required.<br>
-The top level Python module `ROOT.py` is located in `$ROOTSYS/lib`. The `ROOT.py` module imports the `libPyROOT.so` ROOT extension module and performs an initialization similar to ROOT.
+PyROOT is compatible with both Python2 (>= 2.7) and Python3.
 
-> **Python**
->
-> The usage of Python with ROOT requires working knowledge of Python. For detailed information on Python, refer to Python language references such as [Python Language Reference](https://docs.python.org/3/reference/){:target="_blank"}.
+> Using PyROOT requires working knowledge of Python. Detailed information about the Python language can be found in the [Python Language Reference](https://docs.python.org/3/reference/){:target="_blank"}.
 
-{% include tutorials name="PyROOT" url="pyroot" %}
+Together with ROOT 6.22, a major revision of PyROOT has been released. This **new PyROOT** has extensive support for *modern C++* (it operates on top of [cppyy](https://cppyy.readthedocs.io/)), is more *pythonic* and is able to *interoperate* with widely-used Python data-science libraries (e.g. [NumPy](https://numpy.org/), [pandas](https://pandas.pydata.org/), [Numba](https://numba.pydata.org/)). Therefore, we strongly recommend to move to the new PyROOT!
 
-## Running PyROOT from the Python interpreter
+## Building and installing
+PyROOT is enabled by default when building and installing ROOT. Please refer to [Building ROOT from source]({{ '/install/build_from_source' | relative_url }}) for specific information on how PyROOT can be built, and to [Installing ROOT]({{ '/install' | relative_url }}) to learn about the ways to install ROOT.
 
-Ensure that the Python command is executed where the `libPyROOT.so` ROOT extension module is located. This is the main entry point for any Python script using the ROOT classes.
+## Getting started
 
-PyROOT scripts work as usual Python scripts. You just need to import ROOT:
+Once ROOT has been installed, PyROOT can be used both from the Python prompt and from a Python script. The entry point to PyROOT is the `ROOT` module, which needs to be imported first: 
 
-```
+```python
 import ROOT
 ```
 
-_**Example**_
+After that, all the ROOT C++ functionality (classes, functions, etc.) can be accessed via the `ROOT` module. In the example below, we show how to create a histogram (an instance of the `TH1F` class) and randomly fill it with a gaussian distribution.
 
-```
-from ROOT import TCanvas, TF1
-
-c1 = TCanvas( 'c1', 'Example with Formula', 200, 10, 700, 500 )
-
-# Create a one dimensional function and draw it.
-fun1 = TF1( 'fun1', 'abs(sin(x)/x)', 0, 10 )
-c1.SetGrid()
-fun1.Draw()
+```python
+h = ROOT.TH1F("myHist", "myTitle", 64, -4, 4)
+h.FillRandom("gaus")
 ```
 
+### Tutorials
 
-## Running Python from the ROOT/Cling interpreter
+There are a number of tutorials that show how to use the various ROOT features from Python. They can be found in the link below. 
 
-In ROOT can run any Python command via the {% include ref class="TPython" %} class.
+{% include tutorials name="PyROOT" url="pyroot" %}
 
- _**Example**_
+## Interactive graphics
 
-{% highlight C++ %}
-root [0] TPython::Exec( "print 1 + 1" )
+Just like from C++, it is also possible to create interactive ROOT graphics from Python thanks to PyROOT. As an example, let's consider the following code, which creates a one-dimensional function and draws it:
+
+```python
+>>> import ROOT
+>>> f = ROOT.TF1("f1", "sin(x)/x", 0., 10.)
+>>> f.Draw()
+```
+
+As a result of running the code above from the Python prompt, a new canvas will open up to show the drawn function:
+
+{% include figure_image
+img="tf1_draw.png"
+caption="Example of graphics generated with PyROOT."
+%}
+
+> **Note that** the code above can also be written in a script file and executed with Python. In that case, the script will run to completion and the Python process will terminate, making the created canvas disappear. If you want to keep the Python process alive and thus be able to inspect your canvas, run the script with `python -i script_name.py`.
+
+## Interface
+
+Coming soon!
+
+## Loading user libraries & jitting
+
+Coming soon!
+
+## IPython: running Python from C++
+
+ROOT also allows to run Python code from C++ via the `TPython` class.
+
+The example below shows how to use `Exec` to run a Python statement, `Eval` to evaluate a Python expression and get its result back in C++ and `Prompt` to start an interactive Python session. 
+
+```cpp
+root [0] TPython::Exec( "print(1 + 1)" )
 2
 root [1] auto b = (TBrowser*)TPython::Eval( "ROOT.TBrowser()" )
-(class TObject*)0x8d1daa0
+(TBrowser *) @0x7ffec81094f8
 root [2] TPython::Prompt()
->>> i = 2^D
-root [3] TPython::Prompt()
->>> print i
+>>> i = 2
+>>> print(i)
 2
-{% endhighlight %}
+```
+
+For a more complete description of the `TPython` interface, please check the reference guide for {% include ref class="TPython" %}.
+
+## JupyROOT: PyROOT for Jupyter notebooks
+
+Coming soon!
 
 ## New PyROOT: Backwards-Incompatible Changes
-
-ROOT 6.22 makes the new (experimental) PyROOT its default. This new PyROOT is designed on top of the new cppyy, which
-provides more and better support for modern C++. Refer to the [cppyy documentation](https://cppyy.readthedocs.io){:target="_blank"} for the new features it provides.
 
 The new PyROOT has some backwards-incompatible changes with respect to its predecessor, which are listed next:
 - Instantiation of function templates must be done using square brackets instead of parentheses. For example, if we consider the following

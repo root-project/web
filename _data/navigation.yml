@@ -70,7 +70,7 @@ manual:
         url: manual/vectors
       - title: Geometry
         url: manual/geometry
-      - title: Python interface PyROOT
+      - title: "Python interface: PyROOT"
         url: manual/python
   - title: Further information
     children:
