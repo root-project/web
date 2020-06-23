@@ -8,7 +8,7 @@ sidebar:
 ---
 
 ROOT is available on Linux, Mac, and (as a beta release) on Windows.<br>
-The latest stable ROOT release is {% include root_stable_version %} ([about ROOT versioning scheme]({{ '/about/versioning' | relative_url }})).
+The latest stable ROOT release is [{% include root_stable_version %}]({% include root_stable_version_url %}) ([about ROOT versioning scheme]({{ '/about/versioning' | relative_url }})).
 
 There are several ways to install ROOT on your computer: they are all listed in the table of content on the right. Which one is best for you depends on your operating system and usage requirements.
 In all cases, make sure to always use the most recent ROOT release possible to get the latest bug fixes, features and quick user support.

@@ -1,1 +1,1 @@
-{% assign sorted = site.releases | reverse %}{% for release in sorted %}{% if release.state == "pro" %}<b><a href="{{ release.url | relative_url }}">{{release.version}}</a></b>{% endif %}{% endfor %}
+{% assign sorted = site.releases | reverse %}{% for release in sorted %}{% if release.state == "latest" %}{{release.version}}{% endif %}{% endfor %}
