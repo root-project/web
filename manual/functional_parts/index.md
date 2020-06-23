@@ -32,4 +32,4 @@ The second part of the ROOT Manual contains:
 
 - [Geometry]({{ '/manual/geometry' | relative_url }})
 
-- [Python interface PyROOT]({{ '/manual/python' | relative_url }})
+- [Python interface: PyROOT]({{ '/manual/python' | relative_url }})
