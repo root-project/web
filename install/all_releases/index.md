@@ -9,8 +9,7 @@ sidebar:
 
 <br>
 
-{% include releases_list state="pro" label="PRO" single_column="yes" %}
-{% include releases_list state="old" label="OLD" single_column="yes" %}
+{% include releases_list state="latest" label="LATEST" single_column="yes" %}
 
 ### Version 6
 
