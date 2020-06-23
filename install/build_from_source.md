@@ -120,7 +120,7 @@ For example, from the command line, the standard can be selected by passing one 
 ### ROOT STL backports
 
 ROOT backports certain useful C++ standard library features to make them available in C++11, for example `std::make_unique` and `std::string_view`.
-The backports can be found [here in the reference guide](https://root.cern.ch/doc/master/dir_7780993579c9aa6baf9598fd7cc29d54.html).
+The backports can be found [here in the reference guide](https://root.cern/doc/master/dir_7780993579c9aa6baf9598fd7cc29d54.html).
 The backports are disabled, falling back to the actual C++ standard library implementation if it provides it, depending for instance on the C++ standard ROOT is compiled with and the compiler version.
 
 ## Enabling experimental features, aka ROOT7

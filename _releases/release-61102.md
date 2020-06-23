@@ -25,7 +25,7 @@ These are some of the highlights of the new features you can find in ROOT 6.11/0
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.11.02.source.tar.gz](https://root.cern.ch/download/root_v6.11.02.source.tar.gz) | 153M |
+| source | [root_v6.11.02.source.tar.gz](https://root.cern/download/root_v6.11.02.source.tar.gz) | 153M |
 
 
 ## Binary distributions
@@ -34,13 +34,13 @@ Note that this release supports osx 10.13 and XCode9 only if built from sources.
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v6.11.02.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.11.02.Linux-centos7-x86_64-gcc4.8.tar.gz) | 130M |
-| Linux fedora22 gcc5.3 | [root_v6.11.02.Linux-fedora22-x86_64-gcc5.3.tar.gz](https://root.cern.ch/download/root_v6.11.02.Linux-fedora22-x86_64-gcc5.3.tar.gz) | 117M |
-| Ubuntu 16 gcc5.4 | [root_v6.11.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern.ch/download/root_v6.11.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 117M |
-| OsX 10.11 clang80 | [root_v6.11.02.macosx64-10.11-clang80.dmg](https://root.cern.ch/download/root_v6.11.02.macosx64-10.11-clang80.dmg) | 116M |
-| OsX 10.11 clang80 | [root_v6.11.02.macosx64-10.11-clang80.tar.gz](https://root.cern.ch/download/root_v6.11.02.macosx64-10.11-clang80.tar.gz) | 116M |
-| OsX 10.12 clang81 | [root_v6.11.02.macosx64-10.12-clang81.dmg](https://root.cern.ch/download/root_v6.11.02.macosx64-10.12-clang81.dmg) | 119M |
-| OsX 10.12 clang81 | [root_v6.11.02.macosx64-10.12-clang81.tar.gz](https://root.cern.ch/download/root_v6.11.02.macosx64-10.12-clang81.tar.gz) | 119M |
+| CentOS Cern 7 gcc4.8 | [root_v6.11.02.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.11.02.Linux-centos7-x86_64-gcc4.8.tar.gz) | 130M |
+| Linux fedora22 gcc5.3 | [root_v6.11.02.Linux-fedora22-x86_64-gcc5.3.tar.gz](https://root.cern/download/root_v6.11.02.Linux-fedora22-x86_64-gcc5.3.tar.gz) | 117M |
+| Ubuntu 16 gcc5.4 | [root_v6.11.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.11.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 117M |
+| OsX 10.11 clang80 | [root_v6.11.02.macosx64-10.11-clang80.dmg](https://root.cern/download/root_v6.11.02.macosx64-10.11-clang80.dmg) | 116M |
+| OsX 10.11 clang80 | [root_v6.11.02.macosx64-10.11-clang80.tar.gz](https://root.cern/download/root_v6.11.02.macosx64-10.11-clang80.tar.gz) | 116M |
+| OsX 10.12 clang81 | [root_v6.11.02.macosx64-10.12-clang81.dmg](https://root.cern/download/root_v6.11.02.macosx64-10.12-clang81.dmg) | 119M |
+| OsX 10.12 clang81 | [root_v6.11.02.macosx64-10.12-clang81.tar.gz](https://root.cern/download/root_v6.11.02.macosx64-10.12-clang81.tar.gz) | 119M |
 
 ## Installations in CVMFS
 

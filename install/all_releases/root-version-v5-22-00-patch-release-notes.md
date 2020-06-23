@@ -17,15 +17,15 @@ sidebar:
 <code>/afs/cern.ch/sw/lcg/app/releases/ROOT/5.22.00j/ </code>
 
 <p>The complete source tree for all systems (23.5 MB) is available here:</p>
-<code> <a href="ftp://root.cern.ch/root/root_v5.22.00j.source.tar.gz" target="_blank">ftp://root.cern.ch/root/root_v5.22.00j.source.tar.gz</a> </code>
+<code> <a href="ftp://root.cern/root/root_v5.22.00j.source.tar.gz" target="_blank">ftp://root.cern/root/root_v5.22.00j.source.tar.gz</a> </code>
 
 <p>Alternatively get the source from <a href="/git-primer" target="_blank">Subversion</a> <span style="color:#B22222;">(broken)</span> using:</p>
-<code> svn co <a href="http://root.cern.ch/svn/root/tags/v5-22-00j" target="_blank" title="http://root.cern.ch/svn/root/tags/v5-22-00j">http://root.cern.ch/svn/root/tags/v5-22-00j</a> root </code>
+<code> svn co <a href="http://root.cern/svn/root/tags/v5-22-00j" target="_blank" title="http://root.cern/svn/root/tags/v5-22-00j">http://root.cern/svn/root/tags/v5-22-00j</a> root </code>
 
-<p>After obtaining the source read the file <a href="https://root.cern.ch/build-root-old-method" target="_blank">README/INSTALL</a> <span style="color:#B22222;">(broken) </span>(in short just do: cd root; ./configure; make).</p>
+<p>After obtaining the source read the file <a href="https://root.cern/build-root-old-method" target="_blank">README/INSTALL</a> <span style="color:#B22222;">(broken) </span>(in short just do: cd root; ./configure; make).</p>
 
 <p>To get the source of the head of the v5-22-00-patches branch do:</p>
-<code> svn co <a href="http://root.cern.ch/svn/root/branches/v5-22-00-patches" target="_blank" title="http://root.cern.ch/svn/root/branches/v5-22-00-patches">http://root.cern.ch/svn/root/branches/v5-22-00-patches</a> root </code>
+<code> svn co <a href="http://root.cern/svn/root/branches/v5-22-00-patches" target="_blank" title="http://root.cern/svn/root/branches/v5-22-00-patches">http://root.cern/svn/root/branches/v5-22-00-patches</a> root </code>
 
 <h2>Changes in the head of the v5-22-00-patches branch</h2>
 
@@ -68,7 +68,7 @@ sidebar:
 <ul>
 	<li>Xrootd
 	<ul>
-		<li>Import fixes to build on MacOS X 10.4 (<a href="http://root.cern.ch/viewvc?view=rev&amp;revision=32679" target="_blank">#32679</a>,&nbsp; <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=32680" target="_blank">#32680</a>, <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=32683" target="_blank">#32683</a>, <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=32707" target="_blank">#32707</a>)</li>
+		<li>Import fixes to build on MacOS X 10.4 (<a href="http://root.cern/viewvc?view=rev&amp;revision=32679" target="_blank">#32679</a>,&nbsp; <a href="http://root.cern/viewvc?view=rev&amp;revision=32680" target="_blank">#32680</a>, <a href="http://root.cern/viewvc?view=rev&amp;revision=32683" target="_blank">#32683</a>, <a href="http://root.cern/viewvc?view=rev&amp;revision=32707" target="_blank">#32707</a>)</li>
 	</ul>
 	</li>
 	<li>Meta
@@ -89,17 +89,17 @@ sidebar:
 	<li>Xrootd
 	<ul>
 		<li>New version (v20100205-0000) containing several fixes needed in particular by ATLAS; this includes the new SSL module for authentication needed by Castor.</li>
-		<li>Import&nbsp; crucial fix <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=32322" target="_blank">#32322</a> on for the krb5 security module</li>
+		<li>Import&nbsp; crucial fix <a href="http://root.cern/viewvc?view=rev&amp;revision=32322" target="_blank">#32322</a> on for the krb5 security module</li>
 	</ul>
 	</li>
 	<li>Krb5auth
 	<ul>
-		<li>Import patches <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=29438" target="_blank">#29438</a> and <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=29474" target="_blank">#29474</a> in krb5auth to fix building issues with current linux distribution (e.g. kubuntu)</li>
+		<li>Import patches <a href="http://root.cern/viewvc?view=rev&amp;revision=29438" target="_blank">#29438</a> and <a href="http://root.cern/viewvc?view=rev&amp;revision=29474" target="_blank">#29474</a> in krb5auth to fix building issues with current linux distribution (e.g. kubuntu)</li>
 	</ul>
 	</li>
 	<li>Netx
 	<ul>
-		<li>Import the relevant parts of patch <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=30949" target="_blank">#30949</a> adding the possibility to set on the fly (via the option field of the URL) the new read-ahead policies explicitely introduced in XrdClient for ATLAS.</li>
+		<li>Import the relevant parts of patch <a href="http://root.cern/viewvc?view=rev&amp;revision=30949" target="_blank">#30949</a> adding the possibility to set on the fly (via the option field of the URL) the new read-ahead policies explicitely introduced in XrdClient for ATLAS.</li>
 	</ul>
 	</li>
 	<li>I/O

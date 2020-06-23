@@ -9,8 +9,8 @@ For recent releases, the release notes can be found on their respective
 [release page]({{ '/install/all_releases' | relative_url }}).
 
 
-  - [ROOT Version v6-06-00 Patch Release Notes](https://root.cern.ch/doc/v606/release-notes.html#patch-releases)
-  - [ROOT Version v6-04-00 Patch Release Notes](https://root.cern.ch/doc/v604/release-notes.html#patch-releases)
+  - [ROOT Version v6-06-00 Patch Release Notes](https://root.cern/doc/v606/release-notes.html#patch-releases)
+  - [ROOT Version v6-04-00 Patch Release Notes](https://root.cern/doc/v604/release-notes.html#patch-releases)
   - [ROOT Version v6-02-00 Patch Release Notes]({{ '/install/all_releases/root-version-v6-02-00-patch-release-notes' | relative_url }})
   - [ROOT Version v5-34-00 Patch Release Notes]({{ '/install/all_releases/root-version-v5-34-00-patch-release-notes' | relative_url }})
   - [ROOT Version v5-32-00 Patch Release Notes]({{ '/install/all_releases/root-version-v5-32-00-patch-release-notes' | relative_url }})

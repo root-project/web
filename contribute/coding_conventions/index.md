@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## Naming conventions
 
-For naming conventions we follow the [Taligent](https://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_63.html#HEADING77){:target="_blank"}
+For naming conventions we follow the [Taligent](https://root.cern/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_63.html#HEADING77){:target="_blank"}
 rules. They have written a very large body of C++ and their rules seem well thought out.
 No need to invent something new. The only addition/change we made is to append
 an `_t` to `typedef`s and simple `struct`s, e.g.:
@@ -22,7 +22,7 @@ Addherence to the rules is mandatory.  After a while one really gets used to the
 
 ## Class definition conventions
 
-Also here the [Taligent guide](https://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_69.html){:target="_blank"}
+Also here the [Taligent guide](https://root.cern/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_69.html){:target="_blank"}
 is quite reasonable. Of course, no class data member should ever be public. Make the data
 fields always private. Or protected, if you want to grant an inherited class direct
 access.
@@ -312,5 +312,5 @@ unpad-paren
 
 ## Where to go from here
 For the rest read the
-[Taligent Guide](https://root.cern.ch/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_1.html){:target="_blank"}
+[Taligent Guide](https://root.cern/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_1.html){:target="_blank"}
 and use common sense.

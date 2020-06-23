@@ -15,31 +15,31 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.24.00.source.tar.gz](https://root.cern.ch/download/root_v5.24.00.source.tar.gz) |  26M |
-| root_v5.24.00a.source | [root_v5.24.00a.source.tar.gz](https://root.cern.ch/download/root_v5.24.00a.source.tar.gz) |  26M |
-| root_v5.24.00b.source | [root_v5.24.00b.source.tar.gz](https://root.cern.ch/download/root_v5.24.00b.source.tar.gz) |  26M |
+| source | [root_v5.24.00.source.tar.gz](https://root.cern/download/root_v5.24.00.source.tar.gz) |  26M |
+| root_v5.24.00a.source | [root_v5.24.00a.source.tar.gz](https://root.cern/download/root_v5.24.00a.source.tar.gz) |  26M |
+| root_v5.24.00b.source | [root_v5.24.00b.source.tar.gz](https://root.cern/download/root_v5.24.00b.source.tar.gz) |  26M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Linux slc4 gcc3.4 | [root_v5.24.00.Linux-slc4-gcc3.4.tar.gz](https://root.cern.ch/download/root_v5.24.00.Linux-slc4-gcc3.4.tar.gz) |  51M |
-| Linux slc4 gcc4.3 | [root_v5.24.00.Linux-slc4-gcc4.3.tar.gz](https://root.cern.ch/download/root_v5.24.00.Linux-slc4-gcc4.3.tar.gz) |  51M |
-| Linux slc4_amd64 gcc3.4 | [root_v5.24.00.Linux-slc4_amd64-gcc3.4.tar.gz](https://root.cern.ch/download/root_v5.24.00.Linux-slc4_amd64-gcc3.4.tar.gz) |  53M |
-| Linux slc4_amd64 gcc4.3 | [root_v5.24.00.Linux-slc4_amd64-gcc4.3.tar.gz](https://root.cern.ch/download/root_v5.24.00.Linux-slc4_amd64-gcc4.3.tar.gz) |  52M |
-| Linux slc5 gcc3.4 | [root_v5.24.00.Linux-slc5-gcc3.4.tar.gz](https://root.cern.ch/download/root_v5.24.00.Linux-slc5-gcc3.4.tar.gz) |  52M |
-| Linux slc5 gcc4.3 | [root_v5.24.00.Linux-slc5-gcc4.3.tar.gz](https://root.cern.ch/download/root_v5.24.00.Linux-slc5-gcc4.3.tar.gz) |  51M |
-| Linux slc5_amd64 gcc3.4 | [root_v5.24.00.Linux-slc5_amd64-gcc3.4.tar.gz](https://root.cern.ch/download/root_v5.24.00.Linux-slc5_amd64-gcc3.4.tar.gz) |  54M |
-| Linux slc5_amd64 gcc4.3 | [root_v5.24.00.Linux-slc5_amd64-gcc4.3.tar.gz](https://root.cern.ch/download/root_v5.24.00.Linux-slc5_amd64-gcc4.3.tar.gz) |  52M |
-| macosx powerpc gcc 4.0 | [root_v5.24.00.macosx-powerpc-gcc-4.0.tar.gz](https://root.cern.ch/download/root_v5.24.00.macosx-powerpc-gcc-4.0.tar.gz) |  48M |
-| macosx105 i386 gcc 4.0 | [root_v5.24.00.macosx105-i386-gcc-4.0.tar.gz](https://root.cern.ch/download/root_v5.24.00.macosx105-i386-gcc-4.0.tar.gz) |  39M |
-| solarisCC5 | [root_v5.24.00.solarisCC5.tar.gz](https://root.cern.ch/download/root_v5.24.00.solarisCC5.tar.gz) |  60M |
-| win32 (dbg) | [root_v5.24.00.win32.debug.tar.gz](https://root.cern.ch/download/root_v5.24.00.win32.debug.tar.gz) |  93M |
-| win32 | [root_v5.24.00.win32.tar.gz](https://root.cern.ch/download/root_v5.24.00.win32.tar.gz) |  49M |
-| Windows Visual Studio 90 (dbg) | [root_v5.24.00.win32.vc90.debug.tar.gz](https://root.cern.ch/download/root_v5.24.00.win32.vc90.debug.tar.gz) | 122M |
-| Windows Visual Studio 90 | [root_v5.24.00.win32.vc90.tar.gz](https://root.cern.ch/download/root_v5.24.00.win32.vc90.tar.gz) |  51M |
-| win32gcc gcc 3.4 | [root_v5.24.00.win32gcc-gcc-3.4.tar.gz](https://root.cern.ch/download/root_v5.24.00.win32gcc-gcc-3.4.tar.gz) |  52M |
+| Linux slc4 gcc3.4 | [root_v5.24.00.Linux-slc4-gcc3.4.tar.gz](https://root.cern/download/root_v5.24.00.Linux-slc4-gcc3.4.tar.gz) |  51M |
+| Linux slc4 gcc4.3 | [root_v5.24.00.Linux-slc4-gcc4.3.tar.gz](https://root.cern/download/root_v5.24.00.Linux-slc4-gcc4.3.tar.gz) |  51M |
+| Linux slc4_amd64 gcc3.4 | [root_v5.24.00.Linux-slc4_amd64-gcc3.4.tar.gz](https://root.cern/download/root_v5.24.00.Linux-slc4_amd64-gcc3.4.tar.gz) |  53M |
+| Linux slc4_amd64 gcc4.3 | [root_v5.24.00.Linux-slc4_amd64-gcc4.3.tar.gz](https://root.cern/download/root_v5.24.00.Linux-slc4_amd64-gcc4.3.tar.gz) |  52M |
+| Linux slc5 gcc3.4 | [root_v5.24.00.Linux-slc5-gcc3.4.tar.gz](https://root.cern/download/root_v5.24.00.Linux-slc5-gcc3.4.tar.gz) |  52M |
+| Linux slc5 gcc4.3 | [root_v5.24.00.Linux-slc5-gcc4.3.tar.gz](https://root.cern/download/root_v5.24.00.Linux-slc5-gcc4.3.tar.gz) |  51M |
+| Linux slc5_amd64 gcc3.4 | [root_v5.24.00.Linux-slc5_amd64-gcc3.4.tar.gz](https://root.cern/download/root_v5.24.00.Linux-slc5_amd64-gcc3.4.tar.gz) |  54M |
+| Linux slc5_amd64 gcc4.3 | [root_v5.24.00.Linux-slc5_amd64-gcc4.3.tar.gz](https://root.cern/download/root_v5.24.00.Linux-slc5_amd64-gcc4.3.tar.gz) |  52M |
+| macosx powerpc gcc 4.0 | [root_v5.24.00.macosx-powerpc-gcc-4.0.tar.gz](https://root.cern/download/root_v5.24.00.macosx-powerpc-gcc-4.0.tar.gz) |  48M |
+| macosx105 i386 gcc 4.0 | [root_v5.24.00.macosx105-i386-gcc-4.0.tar.gz](https://root.cern/download/root_v5.24.00.macosx105-i386-gcc-4.0.tar.gz) |  39M |
+| solarisCC5 | [root_v5.24.00.solarisCC5.tar.gz](https://root.cern/download/root_v5.24.00.solarisCC5.tar.gz) |  60M |
+| win32 (dbg) | [root_v5.24.00.win32.debug.tar.gz](https://root.cern/download/root_v5.24.00.win32.debug.tar.gz) |  93M |
+| win32 | [root_v5.24.00.win32.tar.gz](https://root.cern/download/root_v5.24.00.win32.tar.gz) |  49M |
+| Windows Visual Studio 90 (dbg) | [root_v5.24.00.win32.vc90.debug.tar.gz](https://root.cern/download/root_v5.24.00.win32.vc90.debug.tar.gz) | 122M |
+| Windows Visual Studio 90 | [root_v5.24.00.win32.vc90.tar.gz](https://root.cern/download/root_v5.24.00.win32.vc90.tar.gz) |  51M |
+| win32gcc gcc 3.4 | [root_v5.24.00.win32gcc-gcc-3.4.tar.gz](https://root.cern/download/root_v5.24.00.win32gcc-gcc-3.4.tar.gz) |  52M |
 
 
 
@@ -79,7 +79,7 @@ Standalone installations with minimal external dependencies are available at:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

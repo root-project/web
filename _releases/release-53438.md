@@ -18,24 +18,24 @@ The release notes for this release can be found [here]({{ '/install/all_releases
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.34.38.source.tar.gz](https://root.cern.ch/download/root_v5.34.38.source.tar.gz) |  72M |
+| source | [root_v5.34.38.source.tar.gz](https://root.cern/download/root_v5.34.38.source.tar.gz) |  72M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Ubuntu 14 gcc4.8 | [root_v5.34.38.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.38.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) |  62M |
-| OsX 10.11 clang80 | [root_v5.34.38.macosx64-10.11-clang80.dmg](https://root.cern.ch/download/root_v5.34.38.macosx64-10.11-clang80.dmg) |  59M |
-| OsX 10.11 clang80 | [root_v5.34.38.macosx64-10.11-clang80.tar.gz](https://root.cern.ch/download/root_v5.34.38.macosx64-10.11-clang80.tar.gz) |  58M |
-| Windows Visual Studio 2012 (dbg) | [root_v5.34.38.win32.vc11.debug.exe](https://root.cern.ch/download/root_v5.34.38.win32.vc11.debug.exe) |  98M |
-| Windows Visual Studio 2012 (dbg) | [root_v5.34.38.win32.vc11.debug.zip](https://root.cern.ch/download/root_v5.34.38.win32.vc11.debug.zip) | 151M |
-| Windows Visual Studio 2012 | [root_v5.34.38.win32.vc11.exe](https://root.cern.ch/download/root_v5.34.38.win32.vc11.exe) |  47M |
-| Windows Visual Studio 2012 | [root_v5.34.38.win32.vc11.zip](https://root.cern.ch/download/root_v5.34.38.win32.vc11.zip) |  65M |
-| Windows Visual Studio 2013 (dbg) | [root_v5.34.38.win32.vc12.debug.exe](https://root.cern.ch/download/root_v5.34.38.win32.vc12.debug.exe) |  99M |
-| Windows Visual Studio 2013 (dbg) | [root_v5.34.38.win32.vc12.debug.zip](https://root.cern.ch/download/root_v5.34.38.win32.vc12.debug.zip) | 151M |
-| Windows Visual Studio 2013 | [root_v5.34.38.win32.vc12.exe](https://root.cern.ch/download/root_v5.34.38.win32.vc12.exe) |  47M |
-| Windows Visual Studio 2013 | [root_v5.34.38.win32.vc12.zip](https://root.cern.ch/download/root_v5.34.38.win32.vc12.zip) |  64M |
+| Ubuntu 14 gcc4.8 | [root_v5.34.38.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.38.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) |  62M |
+| OsX 10.11 clang80 | [root_v5.34.38.macosx64-10.11-clang80.dmg](https://root.cern/download/root_v5.34.38.macosx64-10.11-clang80.dmg) |  59M |
+| OsX 10.11 clang80 | [root_v5.34.38.macosx64-10.11-clang80.tar.gz](https://root.cern/download/root_v5.34.38.macosx64-10.11-clang80.tar.gz) |  58M |
+| Windows Visual Studio 2012 (dbg) | [root_v5.34.38.win32.vc11.debug.exe](https://root.cern/download/root_v5.34.38.win32.vc11.debug.exe) |  98M |
+| Windows Visual Studio 2012 (dbg) | [root_v5.34.38.win32.vc11.debug.zip](https://root.cern/download/root_v5.34.38.win32.vc11.debug.zip) | 151M |
+| Windows Visual Studio 2012 | [root_v5.34.38.win32.vc11.exe](https://root.cern/download/root_v5.34.38.win32.vc11.exe) |  47M |
+| Windows Visual Studio 2012 | [root_v5.34.38.win32.vc11.zip](https://root.cern/download/root_v5.34.38.win32.vc11.zip) |  65M |
+| Windows Visual Studio 2013 (dbg) | [root_v5.34.38.win32.vc12.debug.exe](https://root.cern/download/root_v5.34.38.win32.vc12.debug.exe) |  99M |
+| Windows Visual Studio 2013 (dbg) | [root_v5.34.38.win32.vc12.debug.zip](https://root.cern/download/root_v5.34.38.win32.vc12.debug.zip) | 151M |
+| Windows Visual Studio 2013 | [root_v5.34.38.win32.vc12.exe](https://root.cern/download/root_v5.34.38.win32.vc12.exe) |  47M |
+| Windows Visual Studio 2013 | [root_v5.34.38.win32.vc12.zip](https://root.cern/download/root_v5.34.38.win32.vc12.zip) |  64M |
 
 
 ## Git

@@ -12,7 +12,7 @@ sidebar:
 <p>Binaries are currently not available for patch releases.</p>
 
 <p>To get the source of the head of the v5-10-00-patches branch do:</p>
-<code>svn co <a href="http://root.cern.ch/svn/root/branches/v5-10-00-patches" title="http://root.cern.ch/svn/root/branches/v5-10-00-patches">http://root.cern.ch/svn/root/branches/v5-10-00-patches</a> root </code>
+<code>svn co <a href="http://root.cern/svn/root/branches/v5-10-00-patches" title="http://root.cern/svn/root/branches/v5-10-00-patches">http://root.cern/svn/root/branches/v5-10-00-patches</a> root </code>
 
 <p>After obtaining the source read the file <a href="/get-root-sources">README/INSTALL</a>&nbsp; <span style="color:#B22222;">(broken)</span>.</p>
 

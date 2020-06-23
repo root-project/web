@@ -14,9 +14,9 @@ steps to be taken are the following:
 ## What if something goes wrong
 
 It is possible that something goes wrong and the link to the interactive demo has to be
-interrupted. In this case the file https://root.cern.ch/notebooks/rootbinder.html has to be
+interrupted. In this case the file https://root.cern/notebooks/rootbinder.html has to be
 modified so to redirect to a page which clarifies the current status of the demo,
-for example: https://root.cern.ch/rootbinder-unreachable .
+for example: https://root.cern/rootbinder-unreachable .
 
 ## Preparation of the ROOT tarball
 
@@ -25,7 +25,7 @@ for example: https://root.cern.ch/rootbinder-unreachable .
 * Start the docker container: `docker run -t -i NAMEOFTHEIMAGE`
   * The list of images is available with the command `docker images`
 * Build the desired version of ROOT calling the build directory "root"
-* Make a compressed tarball of root and copy it to https://root.cern.ch/notebooks/rootbinderdata
+* Make a compressed tarball of root and copy it to https://root.cern/notebooks/rootbinderdata
 
 ## Test and preparation of the image in Binder
 

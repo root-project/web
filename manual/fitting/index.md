@@ -89,7 +89,7 @@ The `Fit()` method is implemented for:
 
 ### Using TH1::Fit()
 
-- Use the [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a histogram programmatically.<br>By default, the fitted function object is added to the histogram and is drawn in the current pad.
+- Use the [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a histogram programmatically.<br>By default, the fitted function object is added to the histogram and is drawn in the current pad.
 
 The signature is:
 
@@ -144,7 +144,7 @@ In the following section is described how to use the {% include ref class="TF1" 
 
 ### Fitting 1-D histograms with pre-defined functions
 
-- Use the [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a 1-D histogram with a pre-defined function. The name of the pre-definded function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
+- Use the [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a 1-D histogram with a pre-defined function. The name of the pre-definded function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
 
 _**Example**_
 
@@ -171,7 +171,7 @@ The following pre-defined functions are available:
 
 ### Fitting 1-D histograms with user-defined functions
 
-First you create a {% include ref class="TF1" %} object, then use the name of the `TF1` fitting function in the [Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method.
+First you create a {% include ref class="TF1" %} object, then use the name of the `TF1` fitting function in the [Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method.
 
 You can create the `TF1` fitting function as follows:
 
@@ -343,7 +343,7 @@ There is function with 6 parameters. Then there is a setup possible like the fol
 <p><a name="fitting-subranges"></a></p>
 **Fitting subranges**
 
-By default, [TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} fits the function on the defined histogram range. You can specify the `R` option in the second
+By default, [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} fits the function on the defined histogram range. You can specify the `R` option in the second
 parameter of `TH1::Fit()` to restrict the fit to the range specified in the {% include ref class="TF1" %} constructor.
 
 _**Example**_
@@ -427,7 +427,7 @@ You can obtain the following results of a fit:
 **Associated function**
 
 One or more objects (typically a `TF1\*`) can be added to the list of functions (`fFunctions`) associated to each histogram.
-[TH1::Fit()](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} adds the fitted function to this list.
+[TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} adds the fitted function to this list.
 
 Given a histogram `h`, you can retrieve the associated function with:
 

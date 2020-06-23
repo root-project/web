@@ -15,7 +15,7 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| LinuxIPAQ | [root_v3.04.01.LinuxIPAQ.tar.gz](https://root.cern.ch/download/root_v3.04.01.LinuxIPAQ.tar.gz) | 7.6M |
+| LinuxIPAQ | [root_v3.04.01.LinuxIPAQ.tar.gz](https://root.cern/download/root_v3.04.01.LinuxIPAQ.tar.gz) | 7.6M |
 
 
 ## Git

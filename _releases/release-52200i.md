@@ -15,7 +15,7 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.22.00i.source.tar.gz](https://root.cern.ch/download/root_v5.22.00i.source.tar.gz) |  25M |
+| source | [root_v5.22.00i.source.tar.gz](https://root.cern/download/root_v5.22.00i.source.tar.gz) |  25M |
 
 
 
@@ -49,7 +49,7 @@ To use ROOT directly from AFS:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

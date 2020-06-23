@@ -28,24 +28,24 @@ Some highlights:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.09.02.source.tar.gz](https://root.cern.ch/download/root_v6.09.02.source.tar.gz) | 150M |
+| source | [root_v6.09.02.source.tar.gz](https://root.cern/download/root_v6.09.02.source.tar.gz) | 150M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v6.09.02.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.09.02.Linux-centos7-x86_64-gcc4.8.tar.gz) | 143M |
-| Linux fedora22 gcc5.3 | [root_v6.09.02.Linux-fedora22-x86_64-gcc5.3.tar.gz](https://root.cern.ch/download/root_v6.09.02.Linux-fedora22-x86_64-gcc5.3.tar.gz) | 130M |
-| Linux fedora24 gcc6.1 | [root_v6.09.02.Linux-fedora24-x86_64-gcc6.1.tar.gz](https://root.cern.ch/download/root_v6.09.02.Linux-fedora24-x86_64-gcc6.1.tar.gz) | 110M |
-| Ubuntu 14 gcc4.8 | [root_v6.09.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.09.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 129M |
-| Ubuntu 16 gcc5.4 | [root_v6.09.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern.ch/download/root_v6.09.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 130M |
-| OsX 10.10 clang70 | [root_v6.09.02.macosx64-10.10-clang70.dmg](https://root.cern.ch/download/root_v6.09.02.macosx64-10.10-clang70.dmg) | 113M |
-| OsX 10.10 clang70 | [root_v6.09.02.macosx64-10.10-clang70.tar.gz](https://root.cern.ch/download/root_v6.09.02.macosx64-10.10-clang70.tar.gz) | 114M |
-| OsX 10.11 clang80 | [root_v6.09.02.macosx64-10.11-clang80.dmg](https://root.cern.ch/download/root_v6.09.02.macosx64-10.11-clang80.dmg) | 118M |
-| OsX 10.11 clang80 | [root_v6.09.02.macosx64-10.11-clang80.tar.gz](https://root.cern.ch/download/root_v6.09.02.macosx64-10.11-clang80.tar.gz) | 118M |
-| OsX 10.12 clang80 | [root_v6.09.02.macosx64-10.12-clang80.dmg](https://root.cern.ch/download/root_v6.09.02.macosx64-10.12-clang80.dmg) | 125M |
-| OsX 10.12 clang80 | [root_v6.09.02.macosx64-10.12-clang80.tar.gz](https://root.cern.ch/download/root_v6.09.02.macosx64-10.12-clang80.tar.gz) | 125M |
+| CentOS Cern 7 gcc4.8 | [root_v6.09.02.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.09.02.Linux-centos7-x86_64-gcc4.8.tar.gz) | 143M |
+| Linux fedora22 gcc5.3 | [root_v6.09.02.Linux-fedora22-x86_64-gcc5.3.tar.gz](https://root.cern/download/root_v6.09.02.Linux-fedora22-x86_64-gcc5.3.tar.gz) | 130M |
+| Linux fedora24 gcc6.1 | [root_v6.09.02.Linux-fedora24-x86_64-gcc6.1.tar.gz](https://root.cern/download/root_v6.09.02.Linux-fedora24-x86_64-gcc6.1.tar.gz) | 110M |
+| Ubuntu 14 gcc4.8 | [root_v6.09.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.09.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 129M |
+| Ubuntu 16 gcc5.4 | [root_v6.09.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.09.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 130M |
+| OsX 10.10 clang70 | [root_v6.09.02.macosx64-10.10-clang70.dmg](https://root.cern/download/root_v6.09.02.macosx64-10.10-clang70.dmg) | 113M |
+| OsX 10.10 clang70 | [root_v6.09.02.macosx64-10.10-clang70.tar.gz](https://root.cern/download/root_v6.09.02.macosx64-10.10-clang70.tar.gz) | 114M |
+| OsX 10.11 clang80 | [root_v6.09.02.macosx64-10.11-clang80.dmg](https://root.cern/download/root_v6.09.02.macosx64-10.11-clang80.dmg) | 118M |
+| OsX 10.11 clang80 | [root_v6.09.02.macosx64-10.11-clang80.tar.gz](https://root.cern/download/root_v6.09.02.macosx64-10.11-clang80.tar.gz) | 118M |
+| OsX 10.12 clang80 | [root_v6.09.02.macosx64-10.12-clang80.dmg](https://root.cern/download/root_v6.09.02.macosx64-10.12-clang80.dmg) | 125M |
+| OsX 10.12 clang80 | [root_v6.09.02.macosx64-10.12-clang80.tar.gz](https://root.cern/download/root_v6.09.02.macosx64-10.12-clang80.tar.gz) | 125M |
 
 
 
@@ -73,7 +73,7 @@ Standalone installations with minimal external dependencies are available at:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

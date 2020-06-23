@@ -13,13 +13,13 @@ sidebar:
 
 ## Release Notes
 
-The release notes for this release can be found [here](https://root.cern.ch/root/html530/notes/release-notes.html#patch-releases)
+The release notes for this release can be found [here](https://root.cern/root/html530/notes/release-notes.html#patch-releases)
 
 ## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.30.05.source.tar.gz](https://root.cern.ch/download/root_v5.30.05.source.tar.gz) |  39M |
+| source | [root_v5.30.05.source.tar.gz](https://root.cern/download/root_v5.30.05.source.tar.gz) |  39M |
 
 
 
@@ -49,7 +49,7 @@ To use ROOT directly from AFS:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

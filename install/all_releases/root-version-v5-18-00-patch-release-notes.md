@@ -14,15 +14,15 @@ sidebar:
 <p>Binaries are currently not available for patch releases.</p>
 
 <p>The complete source tree for all systems (23.5 MB) is available here:</p>
-<code><a href="ftp://root.cern.ch/root/root_v5.18.00f.source.tar.gz" target="_blank">ftp://root.cern.ch/root/root_v5.18.00f.source.tar.gz</a> </code>
+<code><a href="ftp://root.cern/root/root_v5.18.00f.source.tar.gz" target="_blank">ftp://root.cern/root/root_v5.18.00f.source.tar.gz</a> </code>
 
 <p>Alternatively get the source from <a href="/git-primer" target="_blank">Subversion</a> <span style="color:#B22222;">(broken)</span> using:</p>
-<code> svn co <a href="http://root.cern.ch/svn/root/tags/v5-18-00f" target="_blank" title="http://root.cern.ch/svn/root/tags/v5-18-00f">http://root.cern.ch/svn/root/tags/v5-18-00f</a> root </code>
+<code> svn co <a href="http://root.cern/svn/root/tags/v5-18-00f" target="_blank" title="http://root.cern/svn/root/tags/v5-18-00f">http://root.cern/svn/root/tags/v5-18-00f</a> root </code>
 
 <p>After obtaining the source read the file README/INSTALL <span style="color:#B22222;">(broken)</span> (in short just do: cd root; ./configure; make).</p>
 
 <p>To get the source of the head of the v5-18-00-patches branch do:</p>
-<code> svn co <a href="http://root.cern.ch/svn/root/branches/v5-18-00-patches" target="_blank" title="http://root.cern.ch/svn/root/branches/v5-18-00-patches">http://root.cern.ch/svn/root/branches/v5-18-00-patches</a> root </code>
+<code> svn co <a href="http://root.cern/svn/root/branches/v5-18-00-patches" target="_blank" title="http://root.cern/svn/root/branches/v5-18-00-patches">http://root.cern/svn/root/branches/v5-18-00-patches</a> root </code>
 
 <h2>Changes in the head of the v5-18-00-patches branch</h2>
 
@@ -161,7 +161,7 @@ sidebar:
 	</li>
 	<li>TDirectory
 	<ul>
-		<li>Fix in GetDirectory(), that did not work when the file name has the form: <a href="http://root.cern.ch/pippa.root:/LL" target="_blank">http://root.cern.ch/pippa.root:/LL</a>.</li>
+		<li>Fix in GetDirectory(), that did not work when the file name has the form: <a href="http://root.cern/pippa.root:/LL" target="_blank">http://root.cern/pippa.root:/LL</a>.</li>
 	</ul>
 	</li>
 	<li>CINT

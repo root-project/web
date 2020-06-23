@@ -16,35 +16,35 @@ MacOS 10.14 / Xcode 10 is now supported, and several bugs have been fixed.
 
 ## Release Notes
 
-The release notes for this release can be found [here](https://root.cern.ch/doc/v614/release-notes.html#release-6.1406).
+The release notes for this release can be found [here](https://root.cern/doc/v614/release-notes.html#release-6.1406).
 
 ## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.14.06.source.tar.gz](https://root.cern.ch/download/root_v6.14.06.source.tar.gz) | 155M |
+| source | [root_v6.14.06.source.tar.gz](https://root.cern/download/root_v6.14.06.source.tar.gz) | 155M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v6.14.06.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.14.06.Linux-centos7-x86_64-gcc4.8.tar.gz) | 141M |
-| Linux fedora27 gcc7.3 | [root_v6.14.06.Linux-fedora27-x86_64-gcc7.3.tar.gz](https://root.cern.ch/download/root_v6.14.06.Linux-fedora27-x86_64-gcc7.3.tar.gz) | 132M |
-| Linux fedora28 gcc8.2 | [root_v6.14.06.Linux-fedora28-x86_64-gcc8.2.tar.gz](https://root.cern.ch/download/root_v6.14.06.Linux-fedora28-x86_64-gcc8.2.tar.gz) | 131M |
-| Ubuntu 14 gcc4.8 | [root_v6.14.06.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.14.06.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 141M |
-| Ubuntu 16 gcc5.4 | [root_v6.14.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern.ch/download/root_v6.14.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 142M |
-| Ubuntu 18 gcc7.3 | [root_v6.14.06.Linux-ubuntu18-x86_64-gcc7.3.tar.gz](https://root.cern.ch/download/root_v6.14.06.Linux-ubuntu18-x86_64-gcc7.3.tar.gz) | 149M |
-| OsX 10.12 clang90 | [root_v6.14.06.macosx64-10.12-clang90.dmg](https://root.cern.ch/download/root_v6.14.06.macosx64-10.12-clang90.dmg) | 126M |
-| OsX 10.12 clang90 | [root_v6.14.06.macosx64-10.12-clang90.tar.gz](https://root.cern.ch/download/root_v6.14.06.macosx64-10.12-clang90.tar.gz) | 125M |
-| OsX 10.13 clang100 | [root_v6.14.06.macosx64-10.13-clang100.dmg](https://root.cern.ch/download/root_v6.14.06.macosx64-10.13-clang100.dmg) | 128M |
-| OsX 10.13 clang100 | [root_v6.14.06.macosx64-10.13-clang100.tar.gz](https://root.cern.ch/download/root_v6.14.06.macosx64-10.13-clang100.tar.gz) | 127M |
-| OsX 10.14 clang100 | [root_v6.14.06.macosx64-10.14-clang100.dmg](https://root.cern.ch/download/root_v6.14.06.macosx64-10.14-clang100.dmg) | 128M |
-| OsX 10.14 clang100 | [root_v6.14.06.macosx64-10.14-clang100.tar.gz](https://root.cern.ch/download/root_v6.14.06.macosx64-10.14-clang100.tar.gz) | 127M |
-| **preview** Windows Visual Studio 2017 (dbg) | [root_v6.14.06.win32.vc15.debug.exe](https://root.cern.ch/download/root_v6.14.06.win32.vc15.debug.exe) | 182M |
-| **preview** Windows Visual Studio 2017 (dbg) | [root_v6.14.06.win32.vc15.debug.zip](https://root.cern.ch/download/root_v6.14.06.win32.vc15.debug.zip) | 294M |
-| **preview** Windows Visual Studio 2017 | [root_v6.14.06.win32.vc15.exe](https://root.cern.ch/download/root_v6.14.06.win32.vc15.exe) |  79M |
-| **preview** Windows Visual Studio 2017 | [root_v6.14.06.win32.vc15.zip](https://root.cern.ch/download/root_v6.14.06.win32.vc15.zip) | 108M |
+| CentOS Cern 7 gcc4.8 | [root_v6.14.06.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.14.06.Linux-centos7-x86_64-gcc4.8.tar.gz) | 141M |
+| Linux fedora27 gcc7.3 | [root_v6.14.06.Linux-fedora27-x86_64-gcc7.3.tar.gz](https://root.cern/download/root_v6.14.06.Linux-fedora27-x86_64-gcc7.3.tar.gz) | 132M |
+| Linux fedora28 gcc8.2 | [root_v6.14.06.Linux-fedora28-x86_64-gcc8.2.tar.gz](https://root.cern/download/root_v6.14.06.Linux-fedora28-x86_64-gcc8.2.tar.gz) | 131M |
+| Ubuntu 14 gcc4.8 | [root_v6.14.06.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.14.06.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 141M |
+| Ubuntu 16 gcc5.4 | [root_v6.14.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.14.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 142M |
+| Ubuntu 18 gcc7.3 | [root_v6.14.06.Linux-ubuntu18-x86_64-gcc7.3.tar.gz](https://root.cern/download/root_v6.14.06.Linux-ubuntu18-x86_64-gcc7.3.tar.gz) | 149M |
+| OsX 10.12 clang90 | [root_v6.14.06.macosx64-10.12-clang90.dmg](https://root.cern/download/root_v6.14.06.macosx64-10.12-clang90.dmg) | 126M |
+| OsX 10.12 clang90 | [root_v6.14.06.macosx64-10.12-clang90.tar.gz](https://root.cern/download/root_v6.14.06.macosx64-10.12-clang90.tar.gz) | 125M |
+| OsX 10.13 clang100 | [root_v6.14.06.macosx64-10.13-clang100.dmg](https://root.cern/download/root_v6.14.06.macosx64-10.13-clang100.dmg) | 128M |
+| OsX 10.13 clang100 | [root_v6.14.06.macosx64-10.13-clang100.tar.gz](https://root.cern/download/root_v6.14.06.macosx64-10.13-clang100.tar.gz) | 127M |
+| OsX 10.14 clang100 | [root_v6.14.06.macosx64-10.14-clang100.dmg](https://root.cern/download/root_v6.14.06.macosx64-10.14-clang100.dmg) | 128M |
+| OsX 10.14 clang100 | [root_v6.14.06.macosx64-10.14-clang100.tar.gz](https://root.cern/download/root_v6.14.06.macosx64-10.14-clang100.tar.gz) | 127M |
+| **preview** Windows Visual Studio 2017 (dbg) | [root_v6.14.06.win32.vc15.debug.exe](https://root.cern/download/root_v6.14.06.win32.vc15.debug.exe) | 182M |
+| **preview** Windows Visual Studio 2017 (dbg) | [root_v6.14.06.win32.vc15.debug.zip](https://root.cern/download/root_v6.14.06.win32.vc15.debug.zip) | 294M |
+| **preview** Windows Visual Studio 2017 | [root_v6.14.06.win32.vc15.exe](https://root.cern/download/root_v6.14.06.win32.vc15.exe) |  79M |
+| **preview** Windows Visual Studio 2017 | [root_v6.14.06.win32.vc15.zip](https://root.cern/download/root_v6.14.06.win32.vc15.zip) | 108M |
 
 
 

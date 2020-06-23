@@ -13,32 +13,32 @@ sidebar:
 
 ## Release Notes
 
-The release notes for this release can be found [here](https://root.cern.ch/doc/v604/release-notes.html#release-6.0416).
+The release notes for this release can be found [here](https://root.cern/doc/v604/release-notes.html#release-6.0416).
 
 ## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.04.16.source.tar.gz](https://root.cern.ch/download/root_v6.04.16.source.tar.gz) |  96M |
+| source | [root_v6.04.16.source.tar.gz](https://root.cern/download/root_v6.04.16.source.tar.gz) |  96M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v6.04.16.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.04.16.Linux-centos7-x86_64-gcc4.8.tar.gz) | 160M |
-| CentOS Cern 7 gcc4.9 | [root_v6.04.16.Linux-centos7-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v6.04.16.Linux-centos7-x86_64-gcc4.9.tar.gz) | 167M |
-| Linux fedora20 gcc4.8 | [root_v6.04.16.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.04.16.Linux-fedora20-x86_64-gcc4.8.tar.gz) | 144M |
-| Linux fedora21 gcc4.9 | [root_v6.04.16.Linux-fedora21-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v6.04.16.Linux-fedora21-x86_64-gcc4.9.tar.gz) | 149M |
-| Scientific Linux Cern 6 gcc4.8 | [root_v6.04.16.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.04.16.Linux-slc6-x86_64-gcc4.8.tar.gz) | 160M |
-| Scientific Linux Cern 6 gcc4.9 | [root_v6.04.16.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v6.04.16.Linux-slc6-x86_64-gcc4.9.tar.gz) | 167M |
-| Ubuntu 14 gcc4.8 | [root_v6.04.16.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.04.16.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 149M |
-| OsX 10.9 clang60 | [root_v6.04.16.macosx64-10.9-clang60.dmg](https://root.cern.ch/download/root_v6.04.16.macosx64-10.9-clang60.dmg) | 139M |
-| OsX 10.9 clang60 | [root_v6.04.16.macosx64-10.9-clang60.tar.gz](https://root.cern.ch/download/root_v6.04.16.macosx64-10.9-clang60.tar.gz) | 139M |
-| OsX 10.10 clang70 | [root_v6.04.16.macosx64-10.10-clang70.dmg](https://root.cern.ch/download/root_v6.04.16.macosx64-10.10-clang70.dmg) | 139M |
-| OsX 10.10 clang70 | [root_v6.04.16.macosx64-10.10-clang70.tar.gz](https://root.cern.ch/download/root_v6.04.16.macosx64-10.10-clang70.tar.gz) | 140M |
-| OsX 10.11 clang70 | [root_v6.04.16.macosx64-10.11-clang70.dmg](https://root.cern.ch/download/root_v6.04.16.macosx64-10.11-clang70.dmg) | 143M |
-| OsX 10.11 clang70 | [root_v6.04.16.macosx64-10.11-clang70.tar.gz](https://root.cern.ch/download/root_v6.04.16.macosx64-10.11-clang70.tar.gz) | 143M |
+| CentOS Cern 7 gcc4.8 | [root_v6.04.16.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.04.16.Linux-centos7-x86_64-gcc4.8.tar.gz) | 160M |
+| CentOS Cern 7 gcc4.9 | [root_v6.04.16.Linux-centos7-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v6.04.16.Linux-centos7-x86_64-gcc4.9.tar.gz) | 167M |
+| Linux fedora20 gcc4.8 | [root_v6.04.16.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.04.16.Linux-fedora20-x86_64-gcc4.8.tar.gz) | 144M |
+| Linux fedora21 gcc4.9 | [root_v6.04.16.Linux-fedora21-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v6.04.16.Linux-fedora21-x86_64-gcc4.9.tar.gz) | 149M |
+| Scientific Linux Cern 6 gcc4.8 | [root_v6.04.16.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.04.16.Linux-slc6-x86_64-gcc4.8.tar.gz) | 160M |
+| Scientific Linux Cern 6 gcc4.9 | [root_v6.04.16.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v6.04.16.Linux-slc6-x86_64-gcc4.9.tar.gz) | 167M |
+| Ubuntu 14 gcc4.8 | [root_v6.04.16.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.04.16.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 149M |
+| OsX 10.9 clang60 | [root_v6.04.16.macosx64-10.9-clang60.dmg](https://root.cern/download/root_v6.04.16.macosx64-10.9-clang60.dmg) | 139M |
+| OsX 10.9 clang60 | [root_v6.04.16.macosx64-10.9-clang60.tar.gz](https://root.cern/download/root_v6.04.16.macosx64-10.9-clang60.tar.gz) | 139M |
+| OsX 10.10 clang70 | [root_v6.04.16.macosx64-10.10-clang70.dmg](https://root.cern/download/root_v6.04.16.macosx64-10.10-clang70.dmg) | 139M |
+| OsX 10.10 clang70 | [root_v6.04.16.macosx64-10.10-clang70.tar.gz](https://root.cern/download/root_v6.04.16.macosx64-10.10-clang70.tar.gz) | 140M |
+| OsX 10.11 clang70 | [root_v6.04.16.macosx64-10.11-clang70.dmg](https://root.cern/download/root_v6.04.16.macosx64-10.11-clang70.dmg) | 143M |
+| OsX 10.11 clang70 | [root_v6.04.16.macosx64-10.11-clang70.tar.gz](https://root.cern/download/root_v6.04.16.macosx64-10.11-clang70.tar.gz) | 143M |
 
 
 
@@ -65,7 +65,7 @@ Standalone installations with minimal external dependencies are available at:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

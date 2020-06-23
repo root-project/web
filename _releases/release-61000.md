@@ -24,30 +24,30 @@ This is the first release of the 6.10 production series. It includes a number of
 
 ## Release Notes
 
-The release notes for this release can be found [here](https://root.cern.ch/doc/v610/release-notes.html).
+The release notes for this release can be found [here](https://root.cern/doc/v610/release-notes.html).
 
 ## Source distribution
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.10.00.source.tar.gz](https://root.cern.ch/download/root_v6.10.00.source.tar.gz) | 150M |
+| source | [root_v6.10.00.source.tar.gz](https://root.cern/download/root_v6.10.00.source.tar.gz) | 150M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v6.10.00.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.10.00.Linux-centos7-x86_64-gcc4.8.tar.gz) | 146M |
-| Linux fedora22 gcc5.3 | [root_v6.10.00.Linux-fedora22-x86_64-gcc5.3.tar.gz](https://root.cern.ch/download/root_v6.10.00.Linux-fedora22-x86_64-gcc5.3.tar.gz) | 133M |
-| Linux fedora24 gcc6.1 | [root_v6.10.00.Linux-fedora24-x86_64-gcc6.1.tar.gz](https://root.cern.ch/download/root_v6.10.00.Linux-fedora24-x86_64-gcc6.1.tar.gz) | 113M |
-| Ubuntu 14 gcc4.8 | [root_v6.10.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.10.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 131M |
-| Ubuntu 16 gcc5.4 | [root_v6.10.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern.ch/download/root_v6.10.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 133M |
-| OsX 10.10 clang70 | [root_v6.10.00.macosx64-10.10-clang70.dmg](https://root.cern.ch/download/root_v6.10.00.macosx64-10.10-clang70.dmg) | 115M |
-| OsX 10.10 clang70 | [root_v6.10.00.macosx64-10.10-clang70.tar.gz](https://root.cern.ch/download/root_v6.10.00.macosx64-10.10-clang70.tar.gz) | 116M |
-| OsX 10.11 clang80 | [root_v6.10.00.macosx64-10.11-clang80.dmg](https://root.cern.ch/download/root_v6.10.00.macosx64-10.11-clang80.dmg) | 120M |
-| OsX 10.11 clang80 | [root_v6.10.00.macosx64-10.11-clang80.tar.gz](https://root.cern.ch/download/root_v6.10.00.macosx64-10.11-clang80.tar.gz) | 120M |
-| OsX 10.12 clang80 | [root_v6.10.00.macosx64-10.12-clang80.dmg](https://root.cern.ch/download/root_v6.10.00.macosx64-10.12-clang80.dmg) | 123M |
-| OsX 10.12 clang80 | [root_v6.10.00.macosx64-10.12-clang80.tar.gz](https://root.cern.ch/download/root_v6.10.00.macosx64-10.12-clang80.tar.gz) | 123M |
+| CentOS Cern 7 gcc4.8 | [root_v6.10.00.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.10.00.Linux-centos7-x86_64-gcc4.8.tar.gz) | 146M |
+| Linux fedora22 gcc5.3 | [root_v6.10.00.Linux-fedora22-x86_64-gcc5.3.tar.gz](https://root.cern/download/root_v6.10.00.Linux-fedora22-x86_64-gcc5.3.tar.gz) | 133M |
+| Linux fedora24 gcc6.1 | [root_v6.10.00.Linux-fedora24-x86_64-gcc6.1.tar.gz](https://root.cern/download/root_v6.10.00.Linux-fedora24-x86_64-gcc6.1.tar.gz) | 113M |
+| Ubuntu 14 gcc4.8 | [root_v6.10.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.10.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 131M |
+| Ubuntu 16 gcc5.4 | [root_v6.10.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.10.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 133M |
+| OsX 10.10 clang70 | [root_v6.10.00.macosx64-10.10-clang70.dmg](https://root.cern/download/root_v6.10.00.macosx64-10.10-clang70.dmg) | 115M |
+| OsX 10.10 clang70 | [root_v6.10.00.macosx64-10.10-clang70.tar.gz](https://root.cern/download/root_v6.10.00.macosx64-10.10-clang70.tar.gz) | 116M |
+| OsX 10.11 clang80 | [root_v6.10.00.macosx64-10.11-clang80.dmg](https://root.cern/download/root_v6.10.00.macosx64-10.11-clang80.dmg) | 120M |
+| OsX 10.11 clang80 | [root_v6.10.00.macosx64-10.11-clang80.tar.gz](https://root.cern/download/root_v6.10.00.macosx64-10.11-clang80.tar.gz) | 120M |
+| OsX 10.12 clang80 | [root_v6.10.00.macosx64-10.12-clang80.dmg](https://root.cern/download/root_v6.10.00.macosx64-10.12-clang80.dmg) | 123M |
+| OsX 10.12 clang80 | [root_v6.10.00.macosx64-10.12-clang80.tar.gz](https://root.cern/download/root_v6.10.00.macosx64-10.12-clang80.tar.gz) | 123M |
 
 
 
@@ -78,7 +78,7 @@ Standalone installations with minimal external dependencies are available at:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

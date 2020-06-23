@@ -19,40 +19,40 @@ The release notes for this release can be found [here]({{ '/install/all_releases
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v5.34.28.source.tar.gz](https://root.cern.ch/download/root_v5.34.28.source.tar.gz) |  72M |
+| source | [root_v5.34.28.source.tar.gz](https://root.cern/download/root_v5.34.28.source.tar.gz) |  72M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v5.34.28.Linux-cc7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.28.Linux-cc7-x86_64-gcc4.8.tar.gz) |  71M |
-| CentOS Cern 7 gcc4.9 | [root_v5.34.28.Linux-cc7-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v5.34.28.Linux-cc7-x86_64-gcc4.9.tar.gz) |  72M |
-| Linux fedora20 gcc4.8 | [root_v5.34.28.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.28.Linux-fedora20-x86_64-gcc4.8.tar.gz) |  57M |
-| Scientific Linux Cern 6 gcc4.4 | [root_v5.34.28.Linux-slc6-x86_64-gcc4.4.tar.gz](https://root.cern.ch/download/root_v5.34.28.Linux-slc6-x86_64-gcc4.4.tar.gz) |  69M |
-| Scientific Linux Cern 6 gcc4.7 | [root_v5.34.28.Linux-slc6-x86_64-gcc4.7.tar.gz](https://root.cern.ch/download/root_v5.34.28.Linux-slc6-x86_64-gcc4.7.tar.gz) |  71M |
-| Scientific Linux Cern 6 gcc4.8 | [root_v5.34.28.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.28.Linux-slc6-x86_64-gcc4.8.tar.gz) |  71M |
-| Scientific Linux Cern 6 gcc4.9 | [root_v5.34.28.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v5.34.28.Linux-slc6-x86_64-gcc4.9.tar.gz) |  72M |
-| Ubuntu 12 gcc4.6 | [root_v5.34.28.Linux-ubuntu12-x86_64-gcc4.6.tar.gz](https://root.cern.ch/download/root_v5.34.28.Linux-ubuntu12-x86_64-gcc4.6.tar.gz) |  57M |
-| Ubuntu 14 gcc4.8 | [root_v5.34.28.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v5.34.28.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) |  61M |
-| OsX 10.8 clang51 | [root_v5.34.28.macosx64-10.8-clang51.dmg](https://root.cern.ch/download/root_v5.34.28.macosx64-10.8-clang51.dmg) |  58M |
-| OsX 10.8 clang51 | [root_v5.34.28.macosx64-10.8-clang51.tar.gz](https://root.cern.ch/download/root_v5.34.28.macosx64-10.8-clang51.tar.gz) |  57M |
-| OsX 10.9 clang60 | [root_v5.34.28.macosx64-10.9-clang60.dmg](https://root.cern.ch/download/root_v5.34.28.macosx64-10.9-clang60.dmg) |  56M |
-| OsX 10.9 clang60 | [root_v5.34.28.macosx64-10.9-clang60.tar.gz](https://root.cern.ch/download/root_v5.34.28.macosx64-10.9-clang60.tar.gz) |  56M |
-| OsX 10.10 clang60 | [root_v5.34.28.macosx64-10.10-clang60.dmg](https://root.cern.ch/download/root_v5.34.28.macosx64-10.10-clang60.dmg) |  57M |
-| OsX 10.10 clang60 | [root_v5.34.28.macosx64-10.10-clang60.tar.gz](https://root.cern.ch/download/root_v5.34.28.macosx64-10.10-clang60.tar.gz) |  56M |
-| Windows Visual Studio 10 (dbg) | [root_v5.34.28.win32.vc10.debug.exe](https://root.cern.ch/download/root_v5.34.28.win32.vc10.debug.exe) |  92M |
-| Windows Visual Studio 10 (dbg) | [root_v5.34.28.win32.vc10.debug.zip](https://root.cern.ch/download/root_v5.34.28.win32.vc10.debug.zip) | 140M |
-| Windows Visual Studio 10 | [root_v5.34.28.win32.vc10.exe](https://root.cern.ch/download/root_v5.34.28.win32.vc10.exe) |  46M |
-| Windows Visual Studio 10 | [root_v5.34.28.win32.vc10.zip](https://root.cern.ch/download/root_v5.34.28.win32.vc10.zip) |  63M |
-| Windows Visual Studio 11 (dbg) | [root_v5.34.28.win32.vc11.debug.exe](https://root.cern.ch/download/root_v5.34.28.win32.vc11.debug.exe) |  98M |
-| Windows Visual Studio 11 (dbg) | [root_v5.34.28.win32.vc11.debug.zip](https://root.cern.ch/download/root_v5.34.28.win32.vc11.debug.zip) | 151M |
-| Windows Visual Studio 11 | [root_v5.34.28.win32.vc11.exe](https://root.cern.ch/download/root_v5.34.28.win32.vc11.exe) |  47M |
-| Windows Visual Studio 11 | [root_v5.34.28.win32.vc11.zip](https://root.cern.ch/download/root_v5.34.28.win32.vc11.zip) |  64M |
-| Windows Visual Studio 12 (dbg) | [root_v5.34.28.win32.vc12.debug.exe](https://root.cern.ch/download/root_v5.34.28.win32.vc12.debug.exe) |  99M |
-| Windows Visual Studio 12 (dbg) | [root_v5.34.28.win32.vc12.debug.zip](https://root.cern.ch/download/root_v5.34.28.win32.vc12.debug.zip) | 152M |
-| Windows Visual Studio 12 | [root_v5.34.28.win32.vc12.exe](https://root.cern.ch/download/root_v5.34.28.win32.vc12.exe) |  47M |
-| Windows Visual Studio 12 | [root_v5.34.28.win32.vc12.zip](https://root.cern.ch/download/root_v5.34.28.win32.vc12.zip) |  64M |
+| CentOS Cern 7 gcc4.8 | [root_v5.34.28.Linux-cc7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.28.Linux-cc7-x86_64-gcc4.8.tar.gz) |  71M |
+| CentOS Cern 7 gcc4.9 | [root_v5.34.28.Linux-cc7-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v5.34.28.Linux-cc7-x86_64-gcc4.9.tar.gz) |  72M |
+| Linux fedora20 gcc4.8 | [root_v5.34.28.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.28.Linux-fedora20-x86_64-gcc4.8.tar.gz) |  57M |
+| Scientific Linux Cern 6 gcc4.4 | [root_v5.34.28.Linux-slc6-x86_64-gcc4.4.tar.gz](https://root.cern/download/root_v5.34.28.Linux-slc6-x86_64-gcc4.4.tar.gz) |  69M |
+| Scientific Linux Cern 6 gcc4.7 | [root_v5.34.28.Linux-slc6-x86_64-gcc4.7.tar.gz](https://root.cern/download/root_v5.34.28.Linux-slc6-x86_64-gcc4.7.tar.gz) |  71M |
+| Scientific Linux Cern 6 gcc4.8 | [root_v5.34.28.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.28.Linux-slc6-x86_64-gcc4.8.tar.gz) |  71M |
+| Scientific Linux Cern 6 gcc4.9 | [root_v5.34.28.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v5.34.28.Linux-slc6-x86_64-gcc4.9.tar.gz) |  72M |
+| Ubuntu 12 gcc4.6 | [root_v5.34.28.Linux-ubuntu12-x86_64-gcc4.6.tar.gz](https://root.cern/download/root_v5.34.28.Linux-ubuntu12-x86_64-gcc4.6.tar.gz) |  57M |
+| Ubuntu 14 gcc4.8 | [root_v5.34.28.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v5.34.28.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) |  61M |
+| OsX 10.8 clang51 | [root_v5.34.28.macosx64-10.8-clang51.dmg](https://root.cern/download/root_v5.34.28.macosx64-10.8-clang51.dmg) |  58M |
+| OsX 10.8 clang51 | [root_v5.34.28.macosx64-10.8-clang51.tar.gz](https://root.cern/download/root_v5.34.28.macosx64-10.8-clang51.tar.gz) |  57M |
+| OsX 10.9 clang60 | [root_v5.34.28.macosx64-10.9-clang60.dmg](https://root.cern/download/root_v5.34.28.macosx64-10.9-clang60.dmg) |  56M |
+| OsX 10.9 clang60 | [root_v5.34.28.macosx64-10.9-clang60.tar.gz](https://root.cern/download/root_v5.34.28.macosx64-10.9-clang60.tar.gz) |  56M |
+| OsX 10.10 clang60 | [root_v5.34.28.macosx64-10.10-clang60.dmg](https://root.cern/download/root_v5.34.28.macosx64-10.10-clang60.dmg) |  57M |
+| OsX 10.10 clang60 | [root_v5.34.28.macosx64-10.10-clang60.tar.gz](https://root.cern/download/root_v5.34.28.macosx64-10.10-clang60.tar.gz) |  56M |
+| Windows Visual Studio 10 (dbg) | [root_v5.34.28.win32.vc10.debug.exe](https://root.cern/download/root_v5.34.28.win32.vc10.debug.exe) |  92M |
+| Windows Visual Studio 10 (dbg) | [root_v5.34.28.win32.vc10.debug.zip](https://root.cern/download/root_v5.34.28.win32.vc10.debug.zip) | 140M |
+| Windows Visual Studio 10 | [root_v5.34.28.win32.vc10.exe](https://root.cern/download/root_v5.34.28.win32.vc10.exe) |  46M |
+| Windows Visual Studio 10 | [root_v5.34.28.win32.vc10.zip](https://root.cern/download/root_v5.34.28.win32.vc10.zip) |  63M |
+| Windows Visual Studio 11 (dbg) | [root_v5.34.28.win32.vc11.debug.exe](https://root.cern/download/root_v5.34.28.win32.vc11.debug.exe) |  98M |
+| Windows Visual Studio 11 (dbg) | [root_v5.34.28.win32.vc11.debug.zip](https://root.cern/download/root_v5.34.28.win32.vc11.debug.zip) | 151M |
+| Windows Visual Studio 11 | [root_v5.34.28.win32.vc11.exe](https://root.cern/download/root_v5.34.28.win32.vc11.exe) |  47M |
+| Windows Visual Studio 11 | [root_v5.34.28.win32.vc11.zip](https://root.cern/download/root_v5.34.28.win32.vc11.zip) |  64M |
+| Windows Visual Studio 12 (dbg) | [root_v5.34.28.win32.vc12.debug.exe](https://root.cern/download/root_v5.34.28.win32.vc12.debug.exe) |  99M |
+| Windows Visual Studio 12 (dbg) | [root_v5.34.28.win32.vc12.debug.zip](https://root.cern/download/root_v5.34.28.win32.vc12.debug.zip) | 152M |
+| Windows Visual Studio 12 | [root_v5.34.28.win32.vc12.exe](https://root.cern/download/root_v5.34.28.win32.vc12.exe) |  47M |
+| Windows Visual Studio 12 | [root_v5.34.28.win32.vc12.zip](https://root.cern/download/root_v5.34.28.win32.vc12.zip) |  64M |
 
 
 
@@ -81,7 +81,7 @@ To use ROOT directly from AFS:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

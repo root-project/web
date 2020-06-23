@@ -9,7 +9,7 @@ sidebar:
 
 *   Rene Brun and Fons Rademakers,
      _ROOT - An Object Oriented Data Analysis Framework_,
-     Proceedings AIHENP'96 Workshop, Lausanne, Sep. 1996, Nucl. Inst. & Meth. in Phys. Res. A 389 (1997) 81-86\. See also https://root.cern.ch/
+     Proceedings AIHENP'96 Workshop, Lausanne, Sep. 1996, Nucl. Inst. & Meth. in Phys. Res. A 389 (1997) 81-86\. See also https://root.cern/
 
 
 **The most recent overview paper on ROOT**
@@ -21,22 +21,22 @@ sidebar:
 **A (mostly historically interesting) list of ROOT talks and publications**
 
 *   Paper presented at the AIHENP conference in Laussanne 1996.
-     [ROOT - An Object Oriented Data Analysis Framework](https://root.cern.ch/download/laussanne.ps.gz)
+     [ROOT - An Object Oriented Data Analysis Framework](https://root.cern/download/laussanne.ps.gz)
 *   Slides of the presentation at CHEP'97 conference in Berlin.
-     [ROOT - An Interactive Object Oriented Framework and its application to NA49 data analysis](https://root.cern.ch/download//chep97_slides.tar.gz)
+     [ROOT - An Interactive Object Oriented Framework and its application to NA49 data analysis](https://root.cern/download//chep97_slides.tar.gz)
 *   Paper presented at the CHEP'97 conference in Berlin.
-     [ROOT - An Interactive Object Oriented Framework and its application to NA49 data analysis](https://root.cern.ch/download//chep97.ps.gz)
+     [ROOT - An Interactive Object Oriented Framework and its application to NA49 data analysis](https://root.cern/download//chep97.ps.gz)
 *   Paper published in "Interface Magazine" (Japanese Engineering Magazine).
-     [The Power of Object Oriented Frameworks](https://root.cern.ch/download//frameworks.ps.gz)
+     [The Power of Object Oriented Frameworks](https://root.cern/download//frameworks.ps.gz)
 *   Slides used in various presentations of the ROOT system.
-     This is a [compressed tar file](https://root.cern.ch/download/seminar.tar.gz) including a README file and about 40 Postscript files.
+     This is a [compressed tar file](https://root.cern/download/seminar.tar.gz) including a README file and about 40 Postscript files.
 *   First three parts of a ROOT course.
-     [Part1](https://root.cern.ch/download//course1.ps.gz), [part2](https://root.cern.ch/download/course2.ps.gz) and [part3](https://root.cern.ch/download/course3.ps.gz) (the course is not finished yet and part 3 ends quite abruptly).
+     [Part1](https://root.cern/download//course1.ps.gz), [part2](https://root.cern/download/course2.ps.gz) and [part3](https://root.cern/download/course3.ps.gz) (the course is not finished yet and part 3 ends quite abruptly).
 *   First comparison between ROOT, Objectivity/DB and LHC++ histOOgrams.
-     [Paper](https://root.cern.ch/download/oobench.ps.gz) and [full source](https://root.cern.ch/download/oobenchsrc.tar.gz) of used test programs.
+     [Paper](https://root.cern/download/oobench.ps.gz) and [full source](https://root.cern/download/oobenchsrc.tar.gz) of used test programs.
 *   Papers presented at HEPVis'98 at SLAC from Jan 28-30, 1998.
 *   Paper published in the Linux Journal, Issue 51, July 1998.
-     [ROOT: An Object-Oriented Data Analysis Framework.](https://root.cern.ch/download/lj.ps.gz)
+     [ROOT: An Object-Oriented Data Analysis Framework.](https://root.cern/download/lj.ps.gz)
 *   Computer Physics Communications; Anniversary Issue; Volume 180, Issue 12, December 2009, Pages 2499-2512.
      [ROOT — A C++ framework for petabyte data storage, statistical analysis and visualization.](https://www.sciencedirect.com/science/article/pii/S0010465509002550?via%3Dihub)
 

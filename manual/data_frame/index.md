@@ -30,7 +30,7 @@ Every `RDataFrame` program follows this workflow:
 
    - [creating custom columns](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations){:target="_blank"}. Custom columns can, for example, contain the results of a computation that must be performed for every row of the data set.
 
-3. [Produce results](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#actions){:target="_blank"}. _Actions_ are used to aggregate data into results. Most actions are _lazy_, i.e. they are not executed on the spot, but registered with `RDataFrame` and executed only when a result is accessed for the first time. The most typical result produced by ROOT analyses is a histogram, but `RDataFrame` supports any kind of data aggregation operation, including [writing out new ROOT files](https://root.cern.ch/doc/master/classROOT_1_1RDF_1_1RInterface.html#a233b7723e498967f4340705d2c4db7f8).
+3. [Produce results](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#actions){:target="_blank"}. _Actions_ are used to aggregate data into results. Most actions are _lazy_, i.e. they are not executed on the spot, but registered with `RDataFrame` and executed only when a result is accessed for the first time. The most typical result produced by ROOT analyses is a histogram, but `RDataFrame` supports any kind of data aggregation operation, including [writing out new ROOT files](https://root.cern/doc/master/classROOT_1_1RDF_1_1RInterface.html#a233b7723e498967f4340705d2c4db7f8).
 
 ## How does it look in code?
 This is a simple cut-and-fill with `RDataFrame`:

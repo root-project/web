@@ -15,21 +15,21 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.05.02.source.tar.gz](https://root.cern.ch/download/root_v6.05.02.source.tar.gz) |  96M |
+| source | [root_v6.05.02.source.tar.gz](https://root.cern/download/root_v6.05.02.source.tar.gz) |  96M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS Cern 7 gcc4.8 | [root_v6.05.02.Linux-cc7-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.05.02.Linux-cc7-x86_64-gcc4.8.tar.gz) | 164M |
-| CentOS Cern 7 gcc4.9 | [root_v6.05.02.Linux-cc7-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v6.05.02.Linux-cc7-x86_64-gcc4.9.tar.gz) | 170M |
-| Linux fedora20 gcc4.8 | [root_v6.05.02.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.05.02.Linux-fedora20-x86_64-gcc4.8.tar.gz) | 147M |
-| Scientific Linux Cern 6 gcc4.8 | [root_v6.05.02.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.05.02.Linux-slc6-x86_64-gcc4.8.tar.gz) | 163M |
-| Scientific Linux Cern 6 gcc4.9 | [root_v6.05.02.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern.ch/download/root_v6.05.02.Linux-slc6-x86_64-gcc4.9.tar.gz) | 170M |
-| Ubuntu 14 gcc4.8 | [root_v6.05.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern.ch/download/root_v6.05.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 153M |
-| OsX 10.10 clang61 | [root_v6.05.02.macosx64-10.10-clang61.dmg](https://root.cern.ch/download/root_v6.05.02.macosx64-10.10-clang61.dmg) | 143M |
-| OsX 10.10 clang61 | [root_v6.05.02.macosx64-10.10-clang61.tar.gz](https://root.cern.ch/download/root_v6.05.02.macosx64-10.10-clang61.tar.gz) | 143M |
+| CentOS Cern 7 gcc4.8 | [root_v6.05.02.Linux-cc7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.05.02.Linux-cc7-x86_64-gcc4.8.tar.gz) | 164M |
+| CentOS Cern 7 gcc4.9 | [root_v6.05.02.Linux-cc7-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v6.05.02.Linux-cc7-x86_64-gcc4.9.tar.gz) | 170M |
+| Linux fedora20 gcc4.8 | [root_v6.05.02.Linux-fedora20-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.05.02.Linux-fedora20-x86_64-gcc4.8.tar.gz) | 147M |
+| Scientific Linux Cern 6 gcc4.8 | [root_v6.05.02.Linux-slc6-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.05.02.Linux-slc6-x86_64-gcc4.8.tar.gz) | 163M |
+| Scientific Linux Cern 6 gcc4.9 | [root_v6.05.02.Linux-slc6-x86_64-gcc4.9.tar.gz](https://root.cern/download/root_v6.05.02.Linux-slc6-x86_64-gcc4.9.tar.gz) | 170M |
+| Ubuntu 14 gcc4.8 | [root_v6.05.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.05.02.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 153M |
+| OsX 10.10 clang61 | [root_v6.05.02.macosx64-10.10-clang61.dmg](https://root.cern/download/root_v6.05.02.macosx64-10.10-clang61.dmg) | 143M |
+| OsX 10.10 clang61 | [root_v6.05.02.macosx64-10.10-clang61.tar.gz](https://root.cern/download/root_v6.05.02.macosx64-10.10-clang61.tar.gz) | 143M |
 
 
 
@@ -59,7 +59,7 @@ To use ROOT directly from AFS:
 The entire ROOT source can be obtained from our public Git repository:
 
 ~~~
-git clone http://root.cern.ch/git/root.git
+git clone http://root.cern/git/root.git
 ~~~
 The release specific tag can be obtained using:
 ~~~

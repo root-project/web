@@ -15,8 +15,8 @@ sidebar:
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Linux.RH7.3.gcc32 | [root_v3.05.07a.Linux.RH7.3.gcc32.tar.gz](https://root.cern.ch/download/root_v3.05.07a.Linux.RH7.3.gcc32.tar.gz) |  14M |
-| Linux.RH7.3.gcc2952 | [root_v3.05.07a.Linux.RH7.3.gcc2952.tar.gz](https://root.cern.ch/download/root_v3.05.07a.Linux.RH7.3.gcc2952.tar.gz) |  15M |
+| Linux.RH7.3.gcc32 | [root_v3.05.07a.Linux.RH7.3.gcc32.tar.gz](https://root.cern/download/root_v3.05.07a.Linux.RH7.3.gcc32.tar.gz) |  14M |
+| Linux.RH7.3.gcc2952 | [root_v3.05.07a.Linux.RH7.3.gcc2952.tar.gz](https://root.cern/download/root_v3.05.07a.Linux.RH7.3.gcc2952.tar.gz) |  15M |
 
 
 ## Git

@@ -14,10 +14,10 @@ sidebar:
 <p>Binaries are currently not available for patch releases.</p>
 
 <p>The complete source tree for all systems (21.4 MB) is available here:</p>
-<code><a href="ftp://root.cern.ch/root/root_v5.14.00i.source.tar.gz">ftp://root.cern.ch/root/root_v5.14.00i.source.tar.gz</a> </code>
+<code><a href="ftp://root.cern/root/root_v5.14.00i.source.tar.gz">ftp://root.cern/root/root_v5.14.00i.source.tar.gz</a> </code>
 
 <p>Alternatively get the source from <a href="/git-primer">Subversion</a> using:</p>
-<code> svn co <a href="http://root.cern.ch/svn/root/tags/v5-14-00i" title="http://root.cern.ch/svn/root/tags/v5-14-00i">http://root.cern.ch/svn/root/tags/v5-14-00i</a> root </code>
+<code> svn co <a href="http://root.cern/svn/root/tags/v5-14-00i" title="http://root.cern/svn/root/tags/v5-14-00i">http://root.cern/svn/root/tags/v5-14-00i</a> root </code>
 
 <p>After obtaining the source read the file <a href="/drupal/content/installing-root-source" target="_blank">README/INSTALL</a>.</p>
 

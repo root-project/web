@@ -17,15 +17,15 @@ sidebar:
 <code>/afs/cern.ch/sw/lcg/app/releases/ROOT/5.26.00g/ </code>
 
 <p>The complete source tree for all systems (23.5 MB) is available here:</p>
-<code> <a href="ftp://root.cern.ch/root/root_v5.26.00g.source.tar.gz" target="_blank">ftp://root.cern.ch/root/root_v5.26.00g.source.tar.gz</a> </code>
+<code> <a href="ftp://root.cern/root/root_v5.26.00g.source.tar.gz" target="_blank">ftp://root.cern/root/root_v5.26.00g.source.tar.gz</a> </code>
 
 <p>Alternatively get the source from <a href="/git-primer" target="_blank">Subversion</a> <span style="color:#B22222;">(broken)</span> using:</p>
-<code> svn co <a href="http://root.cern.ch/svn/root/tags/v5-26-00g" target="_blank" title="http://root.cern.ch/svn/root/tags/v5-26-00g">http://root.cern.ch/svn/root/tags/v5-26-00g</a> root </code>
+<code> svn co <a href="http://root.cern/svn/root/tags/v5-26-00g" target="_blank" title="http://root.cern/svn/root/tags/v5-26-00g">http://root.cern/svn/root/tags/v5-26-00g</a> root </code>
 
 <p>After obtaining the source read the file <a href="/node/103" target="_blank">README/INSTALL</a> (in short just do: cd root; ./configure; make).</p>
 
 <p>To get the source of the head of the v5-26-00-patches branch do:</p>
-<code> svn co <a href="http://root.cern.ch/svn/root/branches/v5-26-00-patches" target="_blank" title="http://root.cern.ch/svn/root/branches/v5-26-00-patches">http://root.cern.ch/svn/root/branches/v5-26-00-patches</a> root </code>
+<code> svn co <a href="http://root.cern/svn/root/branches/v5-26-00-patches" target="_blank" title="http://root.cern/svn/root/branches/v5-26-00-patches">http://root.cern/svn/root/branches/v5-26-00-patches</a> root </code>
 
 <h2>Changes in the head of the v5-26-00-patches branch</h2>
 
@@ -38,7 +38,7 @@ sidebar:
 	<li>Proof
 	<ul>
 		<li>Import patches #41393 and #41399 fixing possible issues with PATH and LD_LIBRARY_PATH settings for proofserv.</li>
-		<li>Adapt patch <a href="http://root.cern.ch/viewvc?rev=39078&amp;root=root&amp;view=rev" target="_blank">#39078</a> to bypass a compilation problem with gcc 4.5.2 on linux.</li>
+		<li>Adapt patch <a href="http://root.cern/viewvc?rev=39078&amp;root=root&amp;view=rev" target="_blank">#39078</a> to bypass a compilation problem with gcc 4.5.2 on linux.</li>
 	</ul>
 	</li>
 </ul>
@@ -53,7 +53,7 @@ sidebar:
 	</li>
 	<li>xrootd
 	<ul>
-		<li>Backport in xrootd of <a href="http://root.cern.ch/viewvc/trunk/net/xrootd/src/xrootd/src/XrdSecsss/XrdSecProtocolsss.cc?r1=37905&amp;r2=37998" target="_blank">this fix</a> for ATLAS.</li>
+		<li>Backport in xrootd of <a href="http://root.cern/viewvc/trunk/net/xrootd/src/xrootd/src/XrdSecsss/XrdSecProtocolsss.cc?r1=37905&amp;r2=37998" target="_blank">this fix</a> for ATLAS.</li>
 	</ul>
 	</li>
 </ul>
@@ -68,14 +68,14 @@ sidebar:
 	</li>
 	<li>Proof
 	<ul>
-		<li>In TProofPlayerRemote::IsClient, import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=36440" target="_blank">#36440</a> adding a missing protection to fix a crash in submerger mode when the output list contained TProofOutputFile objects.</li>
-		<li>In TProof, import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=35965" target="_blank">#35965</a> to correctly update the number of submergers when workers die (it should fix an issue experienced by ALICE).</li>
+		<li>In TProofPlayerRemote::IsClient, import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=36440" target="_blank">#36440</a> adding a missing protection to fix a crash in submerger mode when the output list contained TProofOutputFile objects.</li>
+		<li>In TProof, import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=35965" target="_blank">#35965</a> to correctly update the number of submergers when workers die (it should fix an issue experienced by ALICE).</li>
 	</ul>
 	</li>
 	<li>Hist
 	<ul>
-		<li>Import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=36552" target="_blank">#36552</a> fixing TH1::IntegralAndError()</li>
-		<li>Import fix <a href="http://root.cern.ch/viewvc?rev=39628&amp;root=root&amp;view=rev" target="_blank">#39628</a> in TH1::LabelsInflate or Deflate (bug <a href="https://savannah.cern.ch/bugs/?83066" target="_blank">#83066</a>).</li>
+		<li>Import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=36552" target="_blank">#36552</a> fixing TH1::IntegralAndError()</li>
+		<li>Import fix <a href="http://root.cern/viewvc?rev=39628&amp;root=root&amp;view=rev" target="_blank">#39628</a> in TH1::LabelsInflate or Deflate (bug <a href="https://savannah.cern.ch/bugs/?83066" target="_blank">#83066</a>).</li>
 	</ul>
 	</li>
 	<li>Xrootd
@@ -105,7 +105,7 @@ sidebar:
 	</li>
 	<li>Net
 	<ul>
-		<li>In TFileStager::IsStaged, Import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32312" target="_blank">#32312</a>: always close files after testing.</li>
+		<li>In TFileStager::IsStaged, Import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=32312" target="_blank">#32312</a>: always close files after testing.</li>
 	</ul>
 	</li>
 	<li>Proof
@@ -115,7 +115,7 @@ sidebar:
 	</li>
 	<li>Math
 	<ul>
-		<li>Fix a problem in both Minuit2Minimizer and TMInuitMinimizer when re-defining a parameter (see ROOT&nbsp;Forum post&nbsp;<a href="http://root.cern.ch/phpBB2/viewtopic.php?t=9947" target="_blank">9947</a>).</li>
+		<li>Fix a problem in both Minuit2Minimizer and TMInuitMinimizer when re-defining a parameter (see ROOT&nbsp;Forum post&nbsp;<a href="http://root.cern/phpBB2/viewtopic.php?t=9947" target="_blank">9947</a>).</li>
 	</ul>
 	</li>
 </ul>
@@ -138,7 +138,7 @@ sidebar:
 	</li>
 	<li>Proof
 	<ul>
-		<li>Import change <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33437" target="_blank">#33437</a> and <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=34714" target="_blank">#34714</a>: fixing an issue with binary location when configuring with '--prefix='.</li>
+		<li>Import change <a href="http://root.cern/viewcvs?view=rev&amp;revision=33437" target="_blank">#33437</a> and <a href="http://root.cern/viewcvs?view=rev&amp;revision=34714" target="_blank">#34714</a>: fixing an issue with binary location when configuring with '--prefix='.</li>
 	</ul>
 	</li>
 </ul>
@@ -251,30 +251,30 @@ sidebar:
 	</li>
 	<li>Proof
 	<ul>
-		<li>In XrdProofdAdmin, import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32808" target="_blank">#32808</a>: fix bug preventing a correct check of the exported paths</li>
-		<li>In TProofServ, import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32812" target="_blank">#32812</a> and <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32814" target="_blank">#32814</a>: fix bug affecting the behaviour of kBuildPackage for packages in the global directories</li>
-		<li>In TXProofMgr, import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32815" target="_blank">#32815</a>: disable TXSocket handling while sending / receiving files; this fixes occasional freeze in TXProofMgr::GetFile / TXProofMgr::PutFile due to a screw up of the synchronization in the TXSocket pipe</li>
-		<li>In TProofMgr, import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32874" target="_blank">#32874</a>: avoid contacting the DNS when initializing TProofMgr as base class of TProofMgrLite: it is not needed and it may introduce long startup delays</li>
-		<li>In TProof, import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32833" target="_blank">#32833</a>:<span style="font-family: monospace;"> </span>fix a problem counting valid nodes in sequential or 'masteronly' mode,<span style="font-family: monospace;"> </span>generating the fake error message "GoParallel: attaching to candidate!"</li>
-		<li>In TProofLite, import changes (<a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32897" target="_blank">#32897</a>, <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32898" target="_blank">#32898</a> and <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32900" target="_blank">#32900)</a> to fix a problem with the unix sock path length affecting MacOS X</li>
-		<li>In&nbsp; XrdProofdManager, XrdProofdProofServMgr import fix&nbsp; <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32953" target="_blank">#32953</a> to fix a problem with the unix sock path length affecting MacOS X</li>
-		<li>In&nbsp; XrdProofdProofServMgr import fix&nbsp; <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33003" target="_blank">#33003</a> to fix a problem with open file descriptors potentially showing up in the case of very fast daemon restarts (and many users).</li>
-		<li>In TProofServ import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33009" target="_blank">#33009</a>: in Reset(), check that the directory make sense; fixes an issue with a fake error message in PROOF-Lite when issuing TProof::SetParallel().</li>
-		<li>In TProofPlayerLite import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33015" target="_blank">#33015</a>: properly initialize the merging progress counter; fixes problem with negative values for '<em>workers still sending</em>' in PROOF-Lite .</li>
-		<li>In TProofLite import fixes <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33027" target="_blank">#33027</a> and <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33035" target="_blank">#33035</a>: fix possible segvs when processing a dataset where none of the files had been validated and/or when starting a query right after.</li>
-		<li>In TProof import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33153" target="_blank">#33153</a>: fix an issue with the parsing of the option field when forcing the creation of a new session, e.g. TProof::Open("&lt;master&gt;/?N") .</li>
-		<li>In TProofServ import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33418" target="_blank">#33418</a>: make sure that information used internally in the option field on the master (about the aclic option) is not sent to workers while issuing the Process message.</li>
-		<li>In TXProofMgr import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33639" target="_blank">#33639</a>:<span style="font-family: monospace;"> </span>fix problem affecting TProofMgr::Find.</li>
-		<li>Import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33640" target="_blank">#33640</a>: fix a few issues affecting the usage of tree friends in PROOF and a bug<span style="font-family: monospace;"> </span>affecting the locality check for files in TDSet.<span style="font-family: monospace;"> </span></li>
-		<li>In TProof::ClearData() import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33639" target="_blank">#33641</a>:<span style="font-family: monospace;"> f</span>ix problem observed when the dataset repository is empty<span style="font-family: monospace;"> </span></li>
-		<li>In TProof import fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33648" target="_blank">#33648</a>: fix an issue with the workers names in TSlaveInfo in PROOF-Lite .<span style="font-family: monospace;"> </span></li>
-		<li>In TPacketizerAdaptive and TPacketizer, import part of fix <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33781" target="_blank">#33781</a>: fix a subtle bug affecting the (possibly rare) case when not all entries are required and # entries does not correspond to an complete subset of files (e.g. # entries = 1001000 with files of 100000 entries each).</li>
+		<li>In XrdProofdAdmin, import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=32808" target="_blank">#32808</a>: fix bug preventing a correct check of the exported paths</li>
+		<li>In TProofServ, import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=32812" target="_blank">#32812</a> and <a href="http://root.cern/viewcvs?view=rev&amp;revision=32814" target="_blank">#32814</a>: fix bug affecting the behaviour of kBuildPackage for packages in the global directories</li>
+		<li>In TXProofMgr, import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=32815" target="_blank">#32815</a>: disable TXSocket handling while sending / receiving files; this fixes occasional freeze in TXProofMgr::GetFile / TXProofMgr::PutFile due to a screw up of the synchronization in the TXSocket pipe</li>
+		<li>In TProofMgr, import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=32874" target="_blank">#32874</a>: avoid contacting the DNS when initializing TProofMgr as base class of TProofMgrLite: it is not needed and it may introduce long startup delays</li>
+		<li>In TProof, import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=32833" target="_blank">#32833</a>:<span style="font-family: monospace;"> </span>fix a problem counting valid nodes in sequential or 'masteronly' mode,<span style="font-family: monospace;"> </span>generating the fake error message "GoParallel: attaching to candidate!"</li>
+		<li>In TProofLite, import changes (<a href="http://root.cern/viewcvs?view=rev&amp;revision=32897" target="_blank">#32897</a>, <a href="http://root.cern/viewcvs?view=rev&amp;revision=32898" target="_blank">#32898</a> and <a href="http://root.cern/viewcvs?view=rev&amp;revision=32900" target="_blank">#32900)</a> to fix a problem with the unix sock path length affecting MacOS X</li>
+		<li>In&nbsp; XrdProofdManager, XrdProofdProofServMgr import fix&nbsp; <a href="http://root.cern/viewcvs?view=rev&amp;revision=32953" target="_blank">#32953</a> to fix a problem with the unix sock path length affecting MacOS X</li>
+		<li>In&nbsp; XrdProofdProofServMgr import fix&nbsp; <a href="http://root.cern/viewcvs?view=rev&amp;revision=33003" target="_blank">#33003</a> to fix a problem with open file descriptors potentially showing up in the case of very fast daemon restarts (and many users).</li>
+		<li>In TProofServ import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=33009" target="_blank">#33009</a>: in Reset(), check that the directory make sense; fixes an issue with a fake error message in PROOF-Lite when issuing TProof::SetParallel().</li>
+		<li>In TProofPlayerLite import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=33015" target="_blank">#33015</a>: properly initialize the merging progress counter; fixes problem with negative values for '<em>workers still sending</em>' in PROOF-Lite .</li>
+		<li>In TProofLite import fixes <a href="http://root.cern/viewcvs?view=rev&amp;revision=33027" target="_blank">#33027</a> and <a href="http://root.cern/viewcvs?view=rev&amp;revision=33035" target="_blank">#33035</a>: fix possible segvs when processing a dataset where none of the files had been validated and/or when starting a query right after.</li>
+		<li>In TProof import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=33153" target="_blank">#33153</a>: fix an issue with the parsing of the option field when forcing the creation of a new session, e.g. TProof::Open("&lt;master&gt;/?N") .</li>
+		<li>In TProofServ import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=33418" target="_blank">#33418</a>: make sure that information used internally in the option field on the master (about the aclic option) is not sent to workers while issuing the Process message.</li>
+		<li>In TXProofMgr import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=33639" target="_blank">#33639</a>:<span style="font-family: monospace;"> </span>fix problem affecting TProofMgr::Find.</li>
+		<li>Import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=33640" target="_blank">#33640</a>: fix a few issues affecting the usage of tree friends in PROOF and a bug<span style="font-family: monospace;"> </span>affecting the locality check for files in TDSet.<span style="font-family: monospace;"> </span></li>
+		<li>In TProof::ClearData() import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=33639" target="_blank">#33641</a>:<span style="font-family: monospace;"> f</span>ix problem observed when the dataset repository is empty<span style="font-family: monospace;"> </span></li>
+		<li>In TProof import fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=33648" target="_blank">#33648</a>: fix an issue with the workers names in TSlaveInfo in PROOF-Lite .<span style="font-family: monospace;"> </span></li>
+		<li>In TPacketizerAdaptive and TPacketizer, import part of fix <a href="http://root.cern/viewcvs?view=rev&amp;revision=33781" target="_blank">#33781</a>: fix a subtle bug affecting the (possibly rare) case when not all entries are required and # entries does not correspond to an complete subset of files (e.g. # entries = 1001000 with files of 100000 entries each).</li>
 	</ul>
 	</li>
 	<li>Xrootd
 	<ul>
-		<li>Import fixes to build on MacOS X 10.4 (<a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32679" target="_blank">#32679</a>, <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32680" target="_blank">#32680</a>, <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32683" target="_blank">#32683</a>, <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32707" target="_blank">#32707</a>)</li>
-		<li>Import fixes <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=32800" target="_blank">#32800</a>:
+		<li>Import fixes to build on MacOS X 10.4 (<a href="http://root.cern/viewcvs?view=rev&amp;revision=32679" target="_blank">#32679</a>, <a href="http://root.cern/viewcvs?view=rev&amp;revision=32680" target="_blank">#32680</a>, <a href="http://root.cern/viewcvs?view=rev&amp;revision=32683" target="_blank">#32683</a>, <a href="http://root.cern/viewcvs?view=rev&amp;revision=32707" target="_blank">#32707</a>)</li>
+		<li>Import fixes <a href="http://root.cern/viewcvs?view=rev&amp;revision=32800" target="_blank">#32800</a>:
 		<ul>
 			<li>Tiny fix in XrdSecProtocolkrb5.cc (remove a redundant unlock)</li>
 			<li>Improvements in 'xrdgsiproxy':
@@ -285,7 +285,7 @@ sidebar:
 			</li>
 		</ul>
 		</li>
-		<li>Import fixes <a href="http://root.cern.ch/viewcvs?view=rev&amp;revision=33677" target="_blank">#33677</a> fixing a fake authentication failure with proxies created by voms-proxy-init when the input certificates are PKCS12-formatted</li>
+		<li>Import fixes <a href="http://root.cern/viewcvs?view=rev&amp;revision=33677" target="_blank">#33677</a> fixing a fake authentication failure with proxies created by voms-proxy-init when the input certificates are PKCS12-formatted</li>
 	</ul>
 	</li>
 	<li>GUI
@@ -333,7 +333,7 @@ sidebar:
 	</li>
 	<li>Proof
 	<ul>
-		<li>Import patch <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=32237" target="_blank">#32237</a> to fix a problem occuring when submergers cannot open the required sockets (output was not always sent ot the master).</li>
+		<li>Import patch <a href="http://root.cern/viewvc?view=rev&amp;revision=32237" target="_blank">#32237</a> to fix a problem occuring when submergers cannot open the required sockets (output was not always sent ot the master).</li>
 	</ul>
 	</li>
 	<li>Xrootd
@@ -358,7 +358,7 @@ sidebar:
 <ul>
 	<li>Core
 	<ul>
-		<li>Hide editline's symbols to prevent clashes with readline (r31990, <a href="http://root.cern.ch/phpBB2/viewtopic.php?p=41352" target="_blank">Forum post 41352</a>).</li>
+		<li>Hide editline's symbols to prevent clashes with readline (r31990, <a href="http://root.cern/phpBB2/viewtopic.php?p=41352" target="_blank">Forum post 41352</a>).</li>
 		<li>Fix in rootcint when using the -p option (<strong>[Bad link]</strong>).</li>
 	</ul>
 	</li>
@@ -382,15 +382,15 @@ sidebar:
 	</li>
 	<li>Graf
 	<ul>
-		<li>TLatex: revert <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=29285" target="_blank" title="http://root.cern.ch/viewvc?view=rev&amp;revision=29285">http://root.cern.ch/viewvc?view=rev&amp;revision=29285</a> this fix had side effects. Indexes on Greek characters did not work.</li>
+		<li>TLatex: revert <a href="http://root.cern/viewvc?view=rev&amp;revision=29285" target="_blank" title="http://root.cern/viewvc?view=rev&amp;revision=29285">http://root.cern/viewvc?view=rev&amp;revision=29285</a> this fix had side effects. Indexes on Greek characters did not work.</li>
 	</ul>
 	</li>
 	<li>Proof
 	<ul>
-		<li>Fix memory leaks in TProofServ::HandleProcess and TEventIterTree (fix <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=31946" target="_blank">#31946</a>)</li>
-		<li>Fix double deletion in TProofServ::HandleSubMerger and memory leak in TEventIterUnit (fix <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=32003" target="_blank">#32003</a>)</li>
-		<li>Fix a problem with real-time notification during dataset verification (fix <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=32031" target="_blank">#32031</a>)</li>
-		<li>XrdProofd plugin (fixes <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=31934" target="_blank">#31934</a>, <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=31935" target="_blank">#31935</a> and <a href="http://root.cern.ch/viewvc?view=rev&amp;revision=31937" target="_blank">#31937</a>):
+		<li>Fix memory leaks in TProofServ::HandleProcess and TEventIterTree (fix <a href="http://root.cern/viewvc?view=rev&amp;revision=31946" target="_blank">#31946</a>)</li>
+		<li>Fix double deletion in TProofServ::HandleSubMerger and memory leak in TEventIterUnit (fix <a href="http://root.cern/viewvc?view=rev&amp;revision=32003" target="_blank">#32003</a>)</li>
+		<li>Fix a problem with real-time notification during dataset verification (fix <a href="http://root.cern/viewvc?view=rev&amp;revision=32031" target="_blank">#32031</a>)</li>
+		<li>XrdProofd plugin (fixes <a href="http://root.cern/viewvc?view=rev&amp;revision=31934" target="_blank">#31934</a>, <a href="http://root.cern/viewvc?view=rev&amp;revision=31935" target="_blank">#31935</a> and <a href="http://root.cern/viewvc?view=rev&amp;revision=31937" target="_blank">#31937</a>):
 		<ul>
 			<li>Fix an issue with return codes of sending methods preventing a proper detection of failures by masters and/or clients</li>
 			<li>Fix an issue with the garbage collection of inter-daemon connections</li>
@@ -407,7 +407,7 @@ sidebar:
 	<li>PyROOT
 	<ul>
 		<li>Fix <a href="http://savannah.cern.ch/bugs/?59945" target="_blank">#59945</a> and <a href="https://savannah.cern.ch/bugs/?61105" target="_blank">#61105</a>.</li>
-		<li>Properly handle the extra thread created in PyROOT to process events (r31983 and r31996, <a href="http://root.cern.ch/phpBB2/viewtopic.php?t=9640" target="_blank">Forum post 9640</a> and <a href="http://root.cern.ch/phpBB2/viewtopic.php?t=7748" target="_blank">7748</a>).</li>
+		<li>Properly handle the extra thread created in PyROOT to process events (r31983 and r31996, <a href="http://root.cern/phpBB2/viewtopic.php?t=9640" target="_blank">Forum post 9640</a> and <a href="http://root.cern/phpBB2/viewtopic.php?t=7748" target="_blank">7748</a>).</li>
 	</ul>
 	</li>
 </ul>
