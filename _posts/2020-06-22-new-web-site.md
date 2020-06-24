@@ -20,7 +20,7 @@ under the open-source MIT license. The main advantages are:
   - The look and feel of the web site is "theme-based". We chose
     [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) with some
     [customizations](https://github.com/root-project/minimal-mistakes).
-  - Because the generated site is static, it's much easier to embed ROOT specific tools like
+  - Because the generated site is static, it's much easier to embed ROOT-specific tools like
     [JSROOT output]({{'manual/graphics#drawing-objects' | relative_url }}) and therefore have interactive plots.
 
 On the content side, we kept the all main items which made the past ROOT web site so successful,
