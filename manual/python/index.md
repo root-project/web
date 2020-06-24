@@ -7,7 +7,9 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT can also be used from Python thanks to its Python-C++ bindings, called **PyROOT**.  PyROOT allows to access all the ROOT functionality from Python while, at the same time, benefiting from the performance of the ROOT C++ libraries.
+ROOT can be used from Python thanks to its Python-C++ bindings, called **PyROOT**. PyROOT is HEP's entrance to all C++ from Python, e.g. for frameworks and their steering code. The PyROOT bindings are *automatic* and *dynamic*: no pre-generation of Python wrappers is necessary.
+
+With PyROOT, all the ROOT functionality can be accessed from Python while, at the same time, benefiting from the performance of the ROOT C++ libraries.
 
 PyROOT is compatible with both Python2 (>= 2.7) and Python3.
 
@@ -60,11 +62,11 @@ caption="Example of graphics generated with PyROOT."
 
 ## Interface
 
-Coming soon!
+*Content is coming soon!*
 
 ## Loading user libraries & jitting
 
-Coming soon!
+*Content is coming soon!*
 
 ## IPython: running Python from C++
 
@@ -87,7 +89,7 @@ For a more complete description of the `TPython` interface, please check the ref
 
 ## JupyROOT: PyROOT for Jupyter notebooks
 
-Coming soon!
+*Content is coming soon!*
 
 ## New PyROOT: Backwards-Incompatible Changes
 
