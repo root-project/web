@@ -180,7 +180,7 @@ Each build option is a boolean variable that can be turned ON or OFF. The curren
 
 The user can set any CMake variable or option that controls the build process from the `cmake` command line. The command using the option `-D <var>:<type>=<value>` creates an entry in the CMake cache. This is the list of the ROOT-specific CMake options:
 
-{% include build_options_622.md %}
+{% include build_options_v6-22-00-patches.md %}
 
 > \* The default value for these options is platform dependent.
 
