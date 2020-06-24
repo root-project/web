@@ -16,7 +16,7 @@ After this introduction,
 [tutorial presentations (and video!)](https://indico.cern.ch/event/395198){:target="_blank"} offer a
 different, more direct approach to the ROOT fundamental
 concepts as well as some hands-on exercise. In order to integrate the information present
-in the aforementioned sources, [this collection of ROOT courses](courses){:target="_blank"}
+in the aforementioned sources, [this collection of ROOT courses]({{ '/get_started/courses' | relative_url }})
 is definitively useful. Once the fundamental concepts have been acquired, a rich set of
 [code examples]({{ '/get_started/code_examples' | relative_url }}) are available to dive into the code.
 

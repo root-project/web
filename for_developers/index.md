@@ -25,17 +25,17 @@ Steps to be followed to produce a new ROOT release.
 ### [Shifter's Instructions]({{'/for_developers/shifters_instructions' | relative_url}})
 The aspects the shifter shall keep under control.
 
-### [Meetings](meetings)
+### [Meetings]({{'/for_developers/meetings' | relative_url}})
 All ROOT-related meetings can be found in [ROOT's Indico category](https://indico.cern.ch/category/526/).
 
-### [ROOT 7](root7)
+### [ROOT 7]({{'/for_developers/root7' | relative_url}})
 This new major version of ROOT will make ROOT much simpler and safer to use.
 
-### [Run the Tests](run_the_tests)
+### [Run the Tests]({{'/for_developers/run_the_tests' | relative_url}})
 Running all ROOT tests on at least a platform before sending a PR or before pushing anything to the ROOT repository is *mandatory*.
 The ROOT continuous integration infrastructure allows to automatically check the PR also on a battery of platform, for example including macos and linux boxes.
 
-### [Setup externals from AFS/CVMFS](setup_externals_from_afs-cvmfs)
+### [Setup externals from AFS/CVMFS]({{'/for_developers/setup_externals_from_afs-cvmfs' | relative_url}})
 Instructions for setting up an environment with all the required
 ROOT externals coming from the central installations in AFS or CVMFS.
 
