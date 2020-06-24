@@ -27,10 +27,10 @@ On the content side, we kept the all main items which made the past ROOT web sit
 such as "Forum & Help" or the "ROOT Reference Guide". 
 The main new entries are:
 
-   - [Manual](https://root.cern/manual): It provides detailed information about the use and 
+   - [Manual]({{'manual' | relative_url }}): It provides detailed information about the use and 
      applications of ROOT. It contains many, often interactive examples, so that you can immediately
      start interacting with ROOT.
-   - [Install](https://root.cern/install): an equivalent entry already existed in the previous site, but 
+   - [Install]({{'install' | relative_url }}): an equivalent entry already existed in the previous site, but 
      this one has been completely redesigned in a more modern way to facilitate the ROOT installation 
      on all possible platforms. 
 
