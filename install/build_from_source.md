@@ -178,11 +178,11 @@ can be done with `export PYTHONPATH=$(root-config --libdir)` if `root-config` is
 
 Each build option is a boolean variable that can be turned ON or OFF. The current value is recorded in the CMake cache (CMakeCache.txt file on the build directory) and therefore it is not needed to be specified on the cmake command each time. Please note that some of the options might be turned OFF automatically for some platforms or if the required external library or component can not be satisfied. The user can view and edit the full list of options using the `ccmake` utility or `cmake-gui` for Windows. Note that on Windows some of the options are not yet implemented.
 
-The user can set any CMake variable or option that controls the build process from the `cmake` command line. The command using the option `-D <var>:<type>=<value>` creates an entry in the CMake cache. This is the list of the ROOT-specific CMake options:
+The user can set any CMake variable or option that controls the build process from the `cmake` command line. Passing `cmake -D <var>=<value>` creates an entry in the CMake cache. The list of the ROOT-specific CMake options can be found below.  
+**Note**: Some options have platform-dependent default values (e.g. cocoa is `ON` on apple)
 
 {% include build_options_v6-22-00-patches.md %}
 
-> \* The default value for these options is platform dependent.
 
 ### Relevant CMake variables
 Here are some of the CMake variables that are used often, along with a brief explanation and ROOT-specific notes. For full documentation, check the CMake docs or execute `cmake --help-variable VARIABLE_NAME`.
