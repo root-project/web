@@ -122,9 +122,6 @@ for_developers:
       - title: Coverity
         url: https://coverity.cern.ch/login/login.htm
         target: _blank
-      - title: GitWeb
-        url: https://root.cern/gitweb/?p=root.git;a=summary
-        target: _blank
       - title: Jira
         url: https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page
         target: _blank
