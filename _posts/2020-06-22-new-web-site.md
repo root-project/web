@@ -23,11 +23,11 @@ under the open-source MIT license. The main advantages are:
   - Because the generated site is static, it's much easier to embed ROOT-specific tools like
     [JSROOT output]({{'manual/graphics#drawing-objects' | relative_url }}) and therefore have interactive plots.
 
-On the content side, we kept the all main items which made the past ROOT web site so successful,
+On the content side, we kept all the main items which made the past ROOT web site so successful,
 such as "Forum & Help" or the "ROOT Reference Guide". 
 The main new entries are:
 
-   - [Manual]({{'manual' | relative_url }}): It provides detailed information about the use and 
+   - [Manual]({{'manual' | relative_url }}): it provides detailed information about the use and 
      applications of ROOT. It contains many, often interactive examples, so that you can immediately
      start interacting with ROOT.
    - [Install]({{'install' | relative_url }}): an equivalent entry already existed in the previous site, but 
