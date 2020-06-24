@@ -6,7 +6,7 @@ author: Olivier Couet
 
 If you are reading this blog post it means you are surfing on the New ROOT Web Site!
 
-This new web site is a complete redesign, both from the content point of view and the
+This new web site is a complete redesign, both from the content point of view and on
 the technology used to build it.
 
 Regarding the latter we are now using the [Jekyll](https://jekyllrb.com) system. Jekyll is a
