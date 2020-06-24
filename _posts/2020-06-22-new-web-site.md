@@ -9,13 +9,14 @@ If you are reading this blog post it means you are surfing on the New ROOT Web S
 This new web site is a complete redesign, both from the content point of view and on
 the technology used to build it.
 
-Regarding the latter we are now using the [Jekyll](https://jekyllrb.com) system. Jekyll is a
-simple, blog-aware, static site generator for personal, project, or organization sites.
-Written in Ruby by Tom Preston-Werner, GitHub's co-founder, it is distributed under the
-open source MIT license. The main advantages are:
+We are now using [Jekyll](https://jekyllrb.com) to generate static web pages.
+Jekyll was created by Tom Preston-Werner, one of the GitHub's founder, it is distributed 
+under the open source MIT license. The main advantages are:
 
-  - As it is closely linked to GitHub, ROOT users and developers can make Pull Requests
-    on it as one would do for code. It makes changes much easier!
+  - We can version-control our web pages; the workflow is very similar
+    to that of ROOT's source, making it ideal for the ROOT team. For instance ROOT users
+    and developers can make Pull Requests on it as one would do for code. 
+    It makes changes much easier!
   - The look and feel of the web site is "theme based". We chose the
     [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) with some
     [customization](https://github.com/root-project/minimal-mistakes).
