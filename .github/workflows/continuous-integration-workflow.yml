@@ -2,14 +2,14 @@ name: ROOT Web Publisher
 on:
   push:
     branches:
-      - gh-pages
+      - main
   pull_request:
     branches:
-      - gh-pages
+      - main
 
 env:
   PR_NUMBER: ${{ github.event.pull_request.number }}
-  # only deploy if push to gh-pages or if pull request not coming from a fork (cannot access github secrets otherwise)
+  # only deploy if push to main or if pull request not coming from a fork (cannot access github secrets otherwise)
   SHOULD_DEPLOY: ${{ github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository }}
 
 jobs:
