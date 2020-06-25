@@ -107,7 +107,7 @@ def getCvmfsInfo(version):
     """
     path = F"/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/{version.forFilename()}"
     if not os.path.exists(path):
-        raise FileNotFound(F'Cannot find directory ${path} - did you deploy to cvmfs already?')
+        raise FileNotFoundError(F'Cannot find directory ${path} - did you deploy to cvmfs already?')
     artifacts = []
     for dirname in os.listdir(path):
         if os.path.isdir(os.path.join(path, dirname)):
