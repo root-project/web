@@ -32,14 +32,14 @@ commands:
 ```
 cd web
 git commit -m 'rebuild pages' --allow-empty
-git push origin gh-pages
+git push origin main
 ```
 5. On your github (on the web) go in the "Settings" of the forked copy:
 
    ![](settings.png)
 
 6. In the "GitHub Pages" section you should see something similar to the next picture
-telling you that your site in ready to be published and is being build from **gh-pages branch**
+telling you that your site in ready to be published and is being build from **main branch**
 
    ![](gh-pages-1.png)
 
@@ -96,10 +96,10 @@ You can also clone a forked copy from you own github as explained in the
 ```
 cd web
 ```
-You will notice that the current git branch is `gh-pages`
+You will notice that the current git branch is `main`
 ```
 % git checkout
-Your branch is up to date with 'origin/gh-pages'.
+Your branch is up to date with 'origin/main'.
 ```
 Stay on this branch. It is the one used to [automatically build the web
 site on the git repository](#publish-your-modifications).
