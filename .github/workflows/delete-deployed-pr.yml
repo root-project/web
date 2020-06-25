@@ -2,7 +2,7 @@ name: Delete deployed PR from S3
 on:
   pull_request:
     types: [closed]
-    branches: [gh-pages]
+    branches: [main]
 
 jobs:
   delete_deployed_pr:
