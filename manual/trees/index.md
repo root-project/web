@@ -148,7 +148,7 @@ ROOT file is closed and a new ROOT file is created. If the original ROOT file is
 
 ### Printing the summary of a tree
 
-- Use the [TTree::Print(Option_t * option = "")](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094){:target="_blank"} method to print a summary of the tree contents. 
+- Use the [TTree::Print(Option_t * option = "")](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094){:target="_blank"} method to print a summary of the tree contents.
 
 - `option = "all"`: Friend trees are also printed.
 - `option = "toponly"`:  Only the top level branches are printed.
@@ -257,7 +257,7 @@ Scanning the `cernstaff.root` file (see → [Building a tree from an ASCII file]
 With the Tree Viewer you can examine a tree in a GUI.
 
 > **Note**
-> 
+>
 > You can also use the ROOT Object Browser to examine a tree that is saved in a ROOT file. See → [ROOT Object Browser]({{ '/manual/storing_root_objects#root-object-browser' | relative_url }}).
 
 - Use the {% include ref class="TTreeViewer" %} class to open the ROOT file (containing the tree) in the Tree Viewer.
@@ -542,22 +542,22 @@ void CountEvents()
 
 // Sum of data size (in bytes) of all events.
    Int_t totalSize = 0;
-   
+
 // Size of the current event.
    Int_t eventSize = 0;
-   
+
 // Pointer to the event.fEventsize branch.
    TBranch *eventSizeBranch = 0;
 
 // Open the ROOT file.
-   TFile *f = TFile::Open("https://root.cern/eventdata.root");
+   TFile *f = TFile::Open("http://root.cern/files/introtutorials/eventdata.root");
    if (f == 0) {
-   
+
 // If we cannot open the ROOT file, print an error message and return immediately.
-      printf("Error: cannot open https://root.cern/eventdata.root!\n");
+      printf("Error: cannot open http://root.cern/files/introtutorials/eventdata.root!\n");
       return;
    }
-   
+
 // Get a pointer to the tree.
    TTree *tree = (TTree *)f->Get("EventTree");
 

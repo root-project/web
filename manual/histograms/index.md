@@ -474,12 +474,12 @@ void AnalyzeTree()
 
 // Sum of data size (in bytes) of all events.
    Int_t totalSize = 0;
-   
+
 // Size of the current event.
    Int_t     eventSize = 0;
-    
+
 // X position of the particles.
-   TH1F     *hPosX;                 
+   TH1F     *hPosX;
 
 // List of branches.
    TBranch  *nParticlesBranch;
@@ -492,17 +492,17 @@ void AnalyzeTree()
    Double_t  particlesMomentum[kMaxfParticles];
 
 // Open the ROOT file.
-   TFile *f = TFile::Open("https://root.cern/eventdata.root");
+   TFile *f = TFile::Open("http://root.cern/files/introtutorials/eventdata.root");
    if (f == 0) {
-   
+
 // If we cannot open the file, print an error message and return immediately.
-      printf("Error: cannot open https://root.cern/eventdata.root!\n");
+      printf("Error: cannot open http://root.cern/files/introtutorials/eventdata.root!\n");
       return;
    }
 
 // Get a pointer to the tree.
    TTree *tree = (TTree *)f->Get("EventTree");
-   
+
 // To use SetBranchAddress() with simple types (e.g. double, int) instead of objects (e.g. std::vector<Particle>).
    tree->SetMakeClass(1);
 
