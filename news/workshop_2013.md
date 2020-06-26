@@ -8,7 +8,7 @@ sidebar:
 <div class="content">
 <h3><em>Featuring ROOT 6 - The Next Generation</em></h3>
 
-<p><b><a href="https://d35c7d8c.web.cern.ch/sites/d35c7d8c.web.cern.ch/files/ROOT2013-Workshop-Poster.pdf" target="_blank">Workshop Poster</a></b>, <b><a href="https://d35c7d8c.web.cern.ch/sites/d35c7d8c.web.cern.ch/files/ROOT-Workshop-2013_4.pdf" target="_blank">First Bulletin</a>, <b><a href="https://d35c7d8c.web.cern.ch/sites/d35c7d8c.web.cern.ch/files/ROOT2013-Bulletin2-12-02-2013-3_1.pdf" target="_blank">Second Bulletin</a></b></b></p>
+<p><b><a href="https://root.cern/d/sites/d35c7d8c.web.cern.ch/files/ROOT2013-Workshop-Poster.pdf" target="_blank">Workshop Poster</a></b>, <b><a href="https://root.cern/d/sites/d35c7d8c.web.cern.ch/files/ROOT-Workshop-2013_4.pdf" target="_blank">First Bulletin</a>, <b><a href="https://root.cern/d/sites/d35c7d8c.web.cern.ch/files/ROOT2013-Bulletin2-12-02-2013-3_1.pdf" target="_blank">Second Bulletin</a></b></b></p>
 
 <p>Since almost two decades, <em><strong>ROOT</strong></em> has established itself as the&nbsp;framework for HENP data processing and analysis. The LHC&nbsp;upgrade program and the new experiments being designed at&nbsp;CERN and elsewhere will pose even more &nbsp;formidable&nbsp;challenges in terms of data complexity and size. The new&nbsp;parallel and heterogeneous computing architectures that are&nbsp;either announced or already available will call for a deep&nbsp;rethinking of the code and the data structures to be exploited efficiently.<br />
 This workshop, following from a successful <a href="{{'/news/workshops' | relative_url}}" target="_blank">series of such events</a>, will allow you to learn in detail about the new ROOT 6 and will help shape the future evolution of ROOT.</p>
