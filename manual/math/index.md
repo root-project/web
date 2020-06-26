@@ -161,7 +161,7 @@ In addition, helper classes, wrapping the user interfaces in the [ROOT::Math](ht
 To use the self-defined functions, they must have inherited from one of the following classes:
 
 {% include figure_image
-img="function-hierarchy.png"
+img="/manual/math/function-hierarchy.png"
 caption="ROOT::Math function interface structure."
 %}
 
@@ -597,10 +597,10 @@ _**Example**_
 
 The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides the following classes for generating pseudo-random numbers:
 
-- {% include ref class="TRandom" %}: Using a linear congruential random generator.
-- {% include ref class="TRandom1" %}: Random number generator based on the Ranlux engine.
-- {% include ref class="TRandom2" %}: Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
-- {% include ref class="TRandom3" %}: Based on the Mersenne and Twister pseudo-random number generator.
+- {% include ref class="TRandom" %} Using a linear congruential random generator.
+- {% include ref class="TRandom1" %} Random number generator based on the Ranlux engine.
+- {% include ref class="TRandom2" %} Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
+- {% include ref class="TRandom3" %} Based on the Mersenne and Twister pseudo-random number generator.
 
 > **Note**
 >
@@ -765,6 +765,18 @@ There are the following linear algebra packages available:
 
 
 ### Matrix package
+
+Overview of the matrix package
+
+- matrix classes
+- matrix properties
+- creating and filling a matrix
+- inverting a matrix
+- matrix operators and methods
+- matrix views
+- matrix decompositions
+- matrix Eigen analysis
+
 
 #### Matrix classes
 
@@ -978,7 +990,7 @@ Both methods are available for general and symmetric matrices.
 
 For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &det=0)` function is available. Here the Cramer algorithm will be applied, which is faster but less accurate.
 
-#### Using decomposition classes for inverting
+##### Using decomposition classes for inverting
 
 You can also use the following decomposition classes (see → [Matrix decompositions](#matrix-decompositions)) for inverting a matrix:
 
