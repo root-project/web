@@ -173,9 +173,53 @@ root [2] TPython::Prompt()
 
 For a more complete description of the `TPython` interface, please check the reference guide for {% include ref class="TPython" %}.
 
-## JupyROOT: PyROOT for Jupyter notebooks
+## JupyROOT: (Py)ROOT for Jupyter notebooks
 
-*Content is coming soon!*
+[Jupyter notebooks](https://jupyter.org/) provide a web-based interface that can be used to do interactive computing with ROOT.
+
+### How to use it
+
+Two kernels (or language flavours) allow to run ROOT from Jupyter: *Python* (2 and 3) and *C++*. In order to use such kernels, there are mainly two options:
+
+- Local ROOT installation: to install ROOT locally, please follow the instructions [here]({{ '/install' | relative_url }}). In addition to ROOT, two Python packages are required, which can be installed e.g. with `pip`:
+
+```shell
+pip install jupyter
+pip install metakernel
+```
+
+Once all requirements are installed, a Jupyter server with the Python and C++ kernels can be started by running from a terminal:
+
+```shell
+root --notebook
+```
+
+- SWAN: CERN provides an online service to create and run Jupyter notebooks, called [SWAN](https://swan.cern.ch). With this option no installation is required: a browser and a working Internet connection are enough. Both the Python and C++ kernels are available in SWAN.
+
+Many ROOT tutorials are available in the form of Jupyter notebooks. For example, most [PyROOT tutorials](https://root.cern/doc/master/group__tutorial__pyroot.html) are listed with two buttons below to obtain their notebook version and to open them in SWAN, respectively.
+
+### JavaScript graphics
+
+The ROOT graphics are also available in Jupyter, both in Python and C++. Moreover, the user can choose between two modes:
+- *Static* (default): the graphics are displayed as a static image in the output of the notebook cell.
+- *Interactive*: the graphics are shown as an interactive JavaScript display. In order to activate this mode, the `%jsroot on` line needs to be added to the cell. This is an example for a Python notebook:
+
+```python
+%jsroot on
+c = ROOT.TCanvas()
+f1 = ROOT.TF1("func1", "sin(x)", 0, 10)
+f1.Draw()
+c.Draw() # Necessary to make the graphics show!
+```
+
+Executing the code above in a cell will make the following interactive canvas appear as output:
+
+{% include figure_jsroot
+   file="/manual/graphics/graphics.root" object="func1" width="500px" height="350px"
+%}
+
+> **Note that** the creation and drawing of a canvas are necessary when displaying ROOT graphics in a notebook. If no canvas is drawn in the cell, no graphics output will be shown!
+
 
 ## New PyROOT: Backwards-Incompatible Changes
 
