@@ -66,7 +66,93 @@ caption="Example of graphics generated with PyROOT."
 
 ## Loading user libraries & jitting
 
-*Content is coming soon!*
+PyROOT allows to use *any C++ library* from Python, not only ROOT. This is possible thanks to the automatic and dynamic bindings between Python and C++ that PyROOT provides: without any prior generation of wrappers, at execution time, PyROOT can load and call into C++ code. The following sub-sections cover different supported scenarios for dynamic C++ code invocation.
+
+### Jitting strings with code
+
+ROOT comes with a C++ interpreter to which we can request to process a given piece of C++ code. Sometimes, if such code is short (e.g. the definition of a small function or class) or for rapid exploration/debugging, it is enough the place the C++ code in a Python string and give it to the interpreter. The code will be just-in-time compiled (jitted) and immediately available for invocation, as shown in the example below.
+
+```python
+import ROOT
+
+# Write some C++ code in a string
+cpp_code = """
+// Function definition
+int f(int i) { return i*i; }
+
+// Class definition
+class A {
+public:
+    A() { cout << "Hello PyROOT!" << endl; }
+};
+"""
+
+# Inject the code in the ROOT interpreter
+ROOT.gInterpreter.ProcessLine(cpp_code)
+
+# We find all the C++ entities in Python, right away!
+a = ROOT.A()   # this prints Hello PyROOT!
+x = ROOT.f(3)  # x = 9
+```
+
+### Including a header
+
+If the C++ code we want to use is in a header, we can also ask the interpreter to include it. Let's assume we have a header called `my_header.h` with the following content:
+
+```cpp
+int f(int i) { return i*i; }
+
+class A {
+public:
+    A() { cout << "Hello PyROOT!" << endl; }
+};
+```
+
+We can execute the code below:
+
+```python
+ # Make the header known to the interpreter
+ ROOT.gInterpreter.ProcessLine('#include "my_header.h"')
+
+ # We find all the C++ entities in Python, right away!
+ a = ROOT.A()   # this prints Hello PyROOT!
+ x = ROOT.f(3)  # x = 9
+```
+
+### Loading a library
+
+It is also possible to dynamically load C++ libraries with PyROOT and call into them. This time let's suppose our code is split between a header `my_header.h`:
+
+```cpp
+int f(int i);
+
+class A {
+public:
+    A();
+};
+```
+
+and a source file:
+
+```cpp
+#include "my_header.h"
+
+int f(int i) { return i*i; }
+
+A::A() { cout << "Hello PyROOT!" << endl; }
+```
+
+Assuming we create a C++ library `my_cpp_library.so` from the code above, we can load and use such library like so:
+
+```python
+ # First include header, then load C++ library
+ROOT.gInterpreter.ProcessLine('#include "my_header.h"')`
+ROOT.gSystem.Load('./my_cpp_library.so')
+
+# We find all the C++ entities in Python, right away!
+a = ROOT.A()   # this prints Hello PyROOT!
+x = ROOT.f(3)  # x = 9
+```
 
 ## TPython: running Python from C++
 
