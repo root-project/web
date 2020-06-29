@@ -70,7 +70,7 @@ PyROOT allows to use *any C++ library* from Python, not only ROOT. This is possi
 
 ### Jitting strings with code
 
-ROOT comes with a C++ interpreter to which we can request to process a given piece of C++ code. Sometimes, if such code is short (e.g. the definition of a small function or class) or for rapid exploration/debugging, it is enough the place the C++ code in a Python string and give it to the interpreter. The code will be just-in-time compiled (jitted) and immediately available for invocation, as shown in the example below.
+ROOT comes with a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}) to which we can request to process a given piece of C++ code. Sometimes, if such code is short (e.g. the definition of a small function or class) or for rapid exploration/debugging, it is enough the place the C++ code in a Python string and give it to the interpreter. The code will be just-in-time compiled (jitted) and immediately available for invocation, as shown in the example below, which calls the constructor of the C++ class `A` and function `f` from Python after defining them via the interpreter.
 
 ```python
 import ROOT
@@ -91,7 +91,7 @@ public:
 ROOT.gInterpreter.ProcessLine(cpp_code)
 
 # We find all the C++ entities in Python, right away!
-a = ROOT.A()   # this prints Hello PyROOT!
+a = ROOT.A()   # prints Hello PyROOT!
 x = ROOT.f(3)  # x = 9
 ```
 
@@ -115,7 +115,7 @@ We can execute the code below:
  ROOT.gInterpreter.ProcessLine('#include "my_header.h"')
 
  # We find all the C++ entities in Python, right away!
- a = ROOT.A()   # this prints Hello PyROOT!
+ a = ROOT.A()   # prints Hello PyROOT!
  x = ROOT.f(3)  # x = 9
 ```
 
@@ -150,7 +150,7 @@ ROOT.gInterpreter.ProcessLine('#include "my_header.h"')`
 ROOT.gSystem.Load('./my_cpp_library.so')
 
 # We find all the C++ entities in Python, right away!
-a = ROOT.A()   # this prints Hello PyROOT!
+a = ROOT.A()   # prints Hello PyROOT!
 x = ROOT.f(3)  # x = 9
 ```
 
@@ -202,7 +202,7 @@ Many ROOT tutorials are available in the form of Jupyter notebooks. For example,
 
 The ROOT graphics are also available in Jupyter, both in Python and C++. Moreover, the user can choose between two modes:
 - *Static* (default): the graphics are displayed as a static image in the output of the notebook cell.
-- *Interactive*: the graphics are shown as an interactive JavaScript display. In order to activate this mode, the `%jsroot on` line needs to be added to the cell. This is an example for a Python notebook:
+- *Interactive*: the graphics are shown as an interactive JavaScript display. In order to activate this mode, the `%jsroot on` line needs to be included in a cell. Once enabled, the mode will stay on until it is disabled with `%jsroot off` (i.e. no need to enable it in every cell). This is an example for a Python notebook:
 
 ```python
 %jsroot on
