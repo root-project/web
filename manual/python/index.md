@@ -68,7 +68,7 @@ caption="Example of graphics generated with PyROOT."
 
 *Content is coming soon!*
 
-## IPython: running Python from C++
+## TPython: running Python from C++
 
 ROOT also allows to run Python code from C++ via the `TPython` class.
 
