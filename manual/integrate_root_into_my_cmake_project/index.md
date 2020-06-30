@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-Integrating ROOT into your [CMake](http://www.cmake.org) based project should be straight
+Integrating ROOT into your [CMake](https://cmake.org) based project should be straight
 forward. The main interface is the CMake command
 [find_package(...)](https://cmake.org/cmake/help/latest/command/find_package.html), which
 defines the following standard variables:
