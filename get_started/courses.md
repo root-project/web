@@ -35,7 +35,7 @@ These are general ROOT tutorials covering the basics of ROOT like Histograms, Tr
 
 ## Preparing ROOT courses for the CERN technical training
 
-*   [ROOT courses proposal](https://root.cern/root-training-proposal){:target="_blank"}
+*   [ROOT courses proposal](https://root.cern/d/root-training-proposal){:target="_blank"}
 *   [Working document for the courses](https://docs.google.com/spreadsheets/d/16GqoK2BvWGoX7vLgytz02LmJys7u2Mrzhfpdeg6yZGI){:target="_blank"}
 
 
