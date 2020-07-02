@@ -85,11 +85,29 @@ manual:
         target: _blank
       - title: "Primer"
         url: primer/
+      - title: "Cling"
+        url: cling/
       - title: "Topical Manuals"
         url: topical/
       - title: "Forum & Help"
         url: https://root-forum.cern.ch/
         target: _blank
+
+cling:
+      - title: "Cling"
+        url: cling/
+      - title: "Cling Build Instructions"
+        url: cling/cling_build_instructions
+      - title: "Cling In Brief"
+        url: cling/cling_in_brief
+      - title: "Cling: Dynamic Scopes"
+        url: cling/cling_dynamic_scopes
+      - title: "Cling: Implementing Dynamic Scopes with clang"
+        url: cling/cling_implementing_dynamic_scopes_with_clang
+      - title: "Requested Cling Features"
+        url: cling/requested_cling_features
+      - title: "Validation for Code Unloading and Error Recovery"
+        url: cling/validation_for_code_unloading_and_error_recovery
 
 for_developers:
    - title: Program of Work
