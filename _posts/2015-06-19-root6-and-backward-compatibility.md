@@ -6,7 +6,7 @@ author: Axel Naumann
 
 <p>Hi everyone, dear Matt!</p>
 
-<p>Matt Walker has posted an <a href="https://root.cern/blog/do-we-need-yet-another-custom-c-interpreter">
+<p>Matt Walker has posted an <a href="https://root.cern/d/blog/do-we-need-yet-another-custom-c-interpreter">
 extensive review</a> of ROOT and what he would hope the future of ROOT to be. Because I think
 many of his comments are good ones, and because I have heard some of them from several people
 in the past, I decided to give the answer to an audience that's little bit wider, in a dedicated

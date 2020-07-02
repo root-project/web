@@ -6,7 +6,7 @@ author: Enric Tejedor
 
 ROOT has its Jupyter kernel! More information [here](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages).
 
-Yet another milestone of the integration plan of ROOT with the [Jupyter](https://jupyter.org) technology has been reached: ROOT now offers a [Jupyter kernel](https://github.com/root-project/root/tree/master/bindings/jupyroot)! You can [try it](https://root.cern/how/how-create-rootbook) already now.
+Yet another milestone of the integration plan of ROOT with the [Jupyter](https://jupyter.org) technology has been reached: ROOT now offers a [Jupyter kernel](https://github.com/root-project/root/tree/master/bindings/jupyroot)! You can [try it](https://root.cern/d/how/how-create-rootbook) already now.
 
 ROOT is the 54th entry in [this list](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages) and this is pretty cool. Now not only the PyROOT, the ROOT Python bindings, are [integrated with notebooks](https://github.com/root-project/root/tree/master/bindings/jupyroot#python-rootbook) but it's also possible to express your data mining in C++ within a notebook, taking advantage of all the powerful features of ROOT - plotting (now also interactive thanks to [Javascript ROOT](https://root.cern/js/)), multivariate analysis, linear algebra, I/O and reflection: all available within a notebook.
 
