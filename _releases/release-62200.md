@@ -11,15 +11,15 @@ sidebar:
 ---
 ## Highlights
 
-The [all new PyROOT](/new-pyroot-622) is now the default PyROOT! It's a major upgrade, bringing much improved C++ support, and in generally more "pythonic" than the previous version. It's based on [cppyy](https://cppyy.readthedocs.io/en/latest/) which in turn is based on ROOT's [cling](/d/cling) (and a bit more from ROOT). See also the [PyROOT section in the release notes](/doc/v622/release-notes.html#pyroot).
+The [all new PyROOT](https://root.cern/new-pyroot-622) is now the default PyROOT! It's a major upgrade, bringing much improved C++ support, and in generally more "pythonic" than the previous version. It's based on [cppyy](https://cppyy.readthedocs.io/en/latest/) which in turn is based on ROOT's [cling](https://root.cern/d/cling) (and a bit more from ROOT). See also the [PyROOT section in the release notes](https://root.cern/doc/v622/release-notes.html#pyroot).
 
 There is more major python news: ROOT can now be built against Python3 and Python2 *at the same time*, creating the necessary libraries for `import ROOT` to work from both `python2` and `python3`, for a single ROOT build. Most of the binaries below now offer this.
 
-RooFit has some nice improvements, such as `workspace.Import(...)` for Python, and `myRooCategory["electron"] = 1` for Python and C++, and type-safe proxies. See the [relevant release notes section](/doc/v622/release-notes.html#roofit-libraries) for details.
+RooFit has some nice improvements, such as `workspace.Import(...)` for Python, and `myRooCategory["electron"] = 1` for Python and C++, and type-safe proxies. See the [relevant release notes section](https://root.cern/doc/v622/release-notes.html#roofit-libraries) for details.
 
 TMVA has seen an extension of its Deep Learning module by adding support for LSTM and GRU Recurrent layers; all all recurrent layers (LSTM, GRU, and simple RNN) are now implemented for GPUs with the cuDNN library.
 
-We have invested a lot of time in [fixing many of the bugs](/doc/v622/release-notes.html#bugs-and-issues-fixed-in-this-release) that you found: thank you for these reports!
+We have invested a lot of time in [fixing many of the bugs](https://root.cern/doc/v622/release-notes.html#bugs-and-issues-fixed-in-this-release) that you found: thank you for these reports!
 
 ## Release Notes
 
