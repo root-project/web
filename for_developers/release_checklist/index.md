@@ -44,7 +44,6 @@ sidebar:
   15. Update the release pages
       - Generate the release notes with the Jenkins procedure called [root-releasenotes](https://epsft-jenkins.cern.ch/view/ROOT/job/root-releasenotes/){:target="_blank"}
       - Update the releases xml with the Jenkins procedure called [root-release-makeReleasesXml/](https://epsft-jenkins.cern.ch/view/ROOT/job/root-release-makeReleasesXml/){:target="_blank"}
-      - Once authenticated, import the releases xml in the site clicking import [here](https://cern.ch/go/6Dc8){:target="_blank"} __(Be reminded: this works for authenticated users only!)__.
       - Eventually edit the 'highlights' section, which is currently commented, in the generated release page.
       - If this applies, mark the release as Pro or Old and remove the attribute to the one previously holding it. There are radio buttons exposed by Drupal when editing a release's page.
       - If not a patch release edit [reference-guide]({{'reference' | relative_url}}) page to add the new reference guide for the release.
