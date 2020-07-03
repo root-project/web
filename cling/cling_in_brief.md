@@ -7,9 +7,9 @@ toc: true
 toc_sticky: true
 ---
 
-The C++ interactive interpreter `cling` is based on <a href="http://llvm.org/">`LLVM`</a>
-and its C++ frontend <a href="http://clang.llvm.org/">`clang`</a>.
-It has replaced ROOT's C++ interpreter <a href="introduction-cint.html">CINT</a>.
+The C++ interactive interpreter `cling` is based on [`LLVM`](http://llvm.org/)
+and its C++ frontend [`clang`](http://clang.llvm.org/).
+It has replaced ROOT's C++ interpreter CINT.
 Its main advantages:
 
   - Production-grade parser.
@@ -18,7 +18,10 @@ Its main advantages:
   - Separate parser and execution engine.
   - C++ 11... support through clang.
 
-We have announced cling to the public in 2011. cling is in production use by CERN; bugs should be reported to the ROOT project <a href="https://root.cern.ch/bugs">here</a>.
-We offer <a href="https://root.cern.ch/download/cling/">binary snapshots for download</a>.
-There are <a href="cling-build-instructions.html">build instructions</a>, both for a stand-alone version of `cling` and for `cling` as part of ROOT.
-We even have <a href="http://cling.web.cern.ch/cling/doxygen/">doxygen documentation</a> of cling's code.
+We have announced cling to the public in 2011. cling is in production use by CERN; bugs
+should be reported to the ROOT project [](https://root.cern.ch/bugs)here.
+We offer [binary snapshots for download](https://root.cern.ch/download/cling/).
+There are [build instructions](cling_build_instructions), both for a stand-alone
+version of `cling` and for `cling` as part of ROOT.
+We even have [doxygen documentation](http://cling.web.cern.ch/cling/doxygen/) of cling's
+code.
