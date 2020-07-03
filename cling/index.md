@@ -56,9 +56,9 @@ metaprocessor commands:
   * Contact the developers at [cling-dev@cern.ch](mailto:cling-dev@cern.ch)
   * LLVM Developers' Meeting, _"Creating cling, an interactive interpreter interface for clang"_,
     Axel Naumann, Philippe Canal, Paul Russo, Vassil Vassilev, 04.11.2010, San Jose, CA, United
-    States ([slides](http://llvm.org/devmtg/2010-11/Naumann-Cling.pdf))
+    States ([slides](https://llvm.org/devmtg/2010-11/Naumann-Cling.pdf))
   * Google Tech Talk ([slides](https://github.com/root-project/cling/blob/master/www/docs/talks/AxelNaumann-cling-GoogleTech.pdf),
-    [video](http://www.youtube.com/watch?v=f9Xfh8pv3Fs))
+    [video](https://www.youtube.com/watch?v=f9Xfh8pv3Fs))
   * more [clang-centric presentations](https://github.com/root-mirror/cling/tree/master/www/docs/talks)
 
 ## Used Technologies
