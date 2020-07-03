@@ -26,9 +26,7 @@ LLVM cannot generate code from it.
 
 
 According to the advice of the Sebastian Redl (from the clang dev team), we needed to mark all
-unknown symbols as of dependent type. The e-mail can be found
-<a href="http://comments.gmane.org/gmane.comp.compilers.clang.devel/10463" title="clang, unknown identifiers, and ahead of time compilation">here</a>
-.
+unknown symbols as of dependent type.
 
 In order to mark an unknown symbol as dependent we need to watch clang::Sema's lookup
 facilities. We were able to patch Sema in less intrusive way than we did before. We provide

@@ -12,7 +12,7 @@ toc_sticky: true
 Cling is an interactive C++ interpreter, built on the top of LLVM and Clang libraries.
 Its advantages over the standard interpreters are that it has command line prompt and uses
 just-in-time (JIT) compiler for compilation. Many of the developers (e.g. Mono in their
-project called [CSharpRepl](http://www.mono-project.com/CsharpRepl)) of such
+project called [CSharpRepl](https://www.mono-project.com/CsharpRepl)) of such
 kind of software applications name them interactive compilers.
 
 One of Cling's main goals is to provide contemporary, high-performance alternative of the
@@ -21,7 +21,7 @@ major priority during the development.
 
 ## Download
 
-To get the sources and build it yourself, see [here](cling_build_instructions).
+To get the sources and build it yourself, see [here]({{cling_build_instructions | relative_url_}}).
 To get a binary snapshot, see <a href="https://root.cern.ch/download/cling//">here</a>.
 
 ## Command Line
@@ -63,14 +63,14 @@ metaprocessor commands:
 
 ## Used Technologies
 
-The [Low Level Virtual Machine (LLVM)](http://llvm.org/) is a compiler infrastructure, written
+The [Low Level Virtual Machine (LLVM)](https://llvm.org/) is a compiler infrastructure, written
 in C++, which is designed for compile-time, link-time, run-time, and "idle-time" optimization
 of programs written in arbitrary programming languages. Originally implemented for C/C++,
 the language-independent design (and the success) of LLVM has since spawned a wide variety
 of front ends, including Objective-C, Fortran, Ada, Haskell, Java bytecode, Python, Ruby,
 ActionScript, GLSL, and others.
 
-[Clang](http://clang.llvm.org/) is a compiler front end for the C, C++,
+[Clang](https://clang.llvm.org/) is a compiler front end for the C, C++,
 Objective-C and Objective-C++ programming languages. It uses the Low Level Virtual Machine
 (LLVM) as its back end, and as such Clang is part of LLVM releases since LLVM 2.6. Its goal
 is to offer a replacement to the GNU Compiler Collection (GCC). Development is sponsored by

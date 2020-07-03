@@ -7,8 +7,8 @@ toc: true
 toc_sticky: true
 ---
 
-The C++ interactive interpreter `cling` is based on [`LLVM`](http://llvm.org/)
-and its C++ frontend [`clang`](http://clang.llvm.org/).
+The C++ interactive interpreter `cling` is based on [`LLVM`](https://llvm.org/)
+and its C++ frontend [`clang`](https://clang.llvm.org/).
 It has replaced ROOT's C++ interpreter CINT.
 Its main advantages:
 
@@ -21,7 +21,7 @@ Its main advantages:
 We have announced cling to the public in 2011. cling is in production use by CERN; bugs
 should be reported to the ROOT project [](https://root.cern.ch/bugs)here.
 We offer [binary snapshots for download](https://root.cern.ch/download/cling/).
-There are [build instructions](cling_build_instructions), both for a stand-alone
+There are [build instructions]({{cling_build_instructions | relative_url_}}), both for a stand-alone
 version of `cling` and for `cling` as part of ROOT.
-We even have [doxygen documentation](http://cling.web.cern.ch/cling/doxygen/) of cling's
+We even have [doxygen documentation](https://cling.web.cern.ch/cling/doxygen/) of cling's
 code.
