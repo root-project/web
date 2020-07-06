@@ -24,11 +24,11 @@ The steps to install a pre-compiled binary are simple:
 1. Unpack the archive
 1. Add the ROOT libraries and executables to your environment by sourcing the appropriate `thisroot.*` script. These setup scripts can be found in the ROOT binary release, in the `bin` directory.
 
-For example, on Ubuntu 19, a user could execute the following bash commands to install ROOT v6.20/04, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}):
+For example, on Ubuntu 19, a user could execute the following bash commands to install ROOT v6.22/00, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}):
 
 ```bash
-$ wget https://root.cern/download/root_v6.20.04.Linux-ubuntu19-x86_64-gcc9.2.tar.gz
-$ tar -xzvf root_v6.20.04.Linux-ubuntu19-x86_64-gcc9.2.tar.gz
+$ wget https://root.cern/download/root_v6.22.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz
+$ tar -xzvf root_v6.22.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz
 $ source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
 ```
 
@@ -136,10 +136,10 @@ ROOT installations with minimal external dependencies are available for Fedora, 
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/<version>/<platform>
 ```
 
-For example, to set up ROOT 6.20/04 on a CentOS7 machine that already has all [ROOT required dependencies]({{'/install/dependencies' | relative_url}}) installed, just run:
+For example, to set up ROOT 6.22/00 on a CentOS7 machine that already has all [ROOT required dependencies]({{'/install/dependencies' | relative_url}}) installed, just run:
 
 ```
-source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.20.04/x86_64-centos7-gcc48-opt/bin/thisroot.sh
+source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.22.00/x86_64-centos7-gcc48-opt/bin/thisroot.sh
 ```
 
 ## ROOT plus dependencies
@@ -185,8 +185,8 @@ it is possible to compile ROOT from source. See [Building ROOT from source]({{'/
 As a quick summary, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}), ROOT can be compiled with these commands on most UNIX-like systems:
 
 ```bash
-# substitute `v6-20-00-patches` with the patches branch of the latest release
-$ git clone --branch v6-20-00-patches https://github.com/root-project/root.git root_src
+# substitute `v6-22-00-patches` with the patches branch of the latest release
+$ git clone --branch v6-22-00-patches https://github.com/root-project/root.git root_src
 $ mkdir root_build root_install && cd root_build
 $ cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # && check cmake configuration output for warnings or errors
 $ cmake --build . -- install -j4 # if you have 4 cores available for compilation
