@@ -37,10 +37,12 @@ jobs:
           # - Broken links in historic ROOT v5 release notes
           arguments:  --empty-alt-ignore --file-ignore "/.*root-version-v5.*/" --allow-hash-href --url-ignore "/(https://ph-root-2.cern.ch/.*|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*|https://nbviewer.jupyter.org)/" --only-4xx --http-status-ignore "429" --enforce-https --check-favicon --url_swap '^/doc/:https\://root.cern/doc/,^/d/:https\://root.cern/d/,^/files/:https\://root.cern/files/,^/download/:https\://root.cern/download/,^/js/:https\://root.cern/js/,^/TaligentDocs/:https\://root.cern/TaligentDocs/,^/root/:https\://root.cern/root/'
 
-      - name: Look for root.cern.ch links
+      - name: Only allow links to root.cern, never root.cern.ch
         run: |
+          grep -n -R 'root\.cern\.ch' build || exit 0  # grep returns non-zero if no match is found
           N_WRONG_LINKS=$(grep -R 'root\.cern\.ch' build | wc -l)
-          exit $N_WRONG_LINKS
+          echo -e "\nFound $N_WRONG_LINKS links to root.cern.ch. Please change them to link to root.cern (no '.ch') instead."
+          exit 1
 
       - name: Wait for other deployments
         # wait for other workflows that are deploying the website to finish, (not 100% foolproof, see #240)
