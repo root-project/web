@@ -61,9 +61,9 @@ to package maintainers:
       <td>0.5</td>
       <td>5.0 release series</td>
       <td>
-      <a href="https://root.cern.ch/gitweb/?p=clang.git;a=commit;h=287240897208a004509a2be4525aa83acbb2ba5f">287240</a>..
-      <a href="https://root.cern.ch/gitweb/?p=clang.git;a=commit;h=27d2d5b247e83f3ac5d6e9f36d25d168a6afc97a">27d2d5</a>
-      (aka <a href="https://root.cern.ch/gitweb/?p=clang.git;a=shortlog;h=refs/tags/cling-patches-rrelease_50">cling-patches-rrelease_50</a>)
+      <a href="https://root.cern/gitweb/?p=clang.git;a=commit;h=287240897208a004509a2be4525aa83acbb2ba5f">287240</a>..
+      <a href="https://root.cern/gitweb/?p=clang.git;a=commit;h=27d2d5b247e83f3ac5d6e9f36d25d168a6afc97a">27d2d5</a>
+      (aka <a href="https://root.cern/gitweb/?p=clang.git;a=shortlog;h=refs/tags/cling-patches-rrelease_50">cling-patches-rrelease_50</a>)
       </td>
    </tr>
 </table>

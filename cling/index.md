@@ -22,7 +22,7 @@ major priority during the development.
 ## Download
 
 To get the sources and build it yourself, see [here]({{cling_build_instructions | relative_url_}}).
-To get a binary snapshot, see <a href="https://root.cern.ch/download/cling//">here</a>.
+To get a binary snapshot, see <a href="https://root.cern/download/cling//">here</a>.
 
 ## Command Line
 
