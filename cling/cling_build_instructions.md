@@ -23,12 +23,12 @@ Alternatively, you can build manually.
 Start by checking out llvm, clang and cling:
 
 {% highlight C++ %}
-git clone http://root.cern.ch/git/llvm.git src
+git clone http://root.cern/git/llvm.git src
 cd src
 git checkout cling-patches
 cd tools
-git clone http://root.cern.ch/git/cling.git
-git clone http://root.cern.ch/git/clang.git
+git clone http://root.cern/git/cling.git
+git clone http://root.cern/git/clang.git
 cd clang
 git checkout cling-patches
 cd ../..
