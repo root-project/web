@@ -1476,7 +1476,7 @@ Use one of the following constructors to create a matrix:
 - Constructor of an identity matrix.
 - Copy constructor (and assignment) for a matrix with the same representation, or from a different one when possible, for example from a symmetric to a general matrix.
 - Constructor (and assignment) from a matrix expression, like D=A*B+C. Due to the expression template technique, no temporary objects are created in this operation. In the case of an operation like A=A*B+C, a temporary object is needed and it is created automatically to store the intermediary result in order to preserve the validity of this operation.
-- Constructor from a generic STL-like iterator copying the data referred by the iterator, following its order. It is both possible to specify the begin and end of the iterator or the begin and the size. In case of a symmetric matrix, it is required only the triangular block and the user can specify whether giving a block representing the lower (default case) or the upper diagonal part.
+- Constructor from a generic STL-like iterator copying the data referred by the iterator, following its order. It is both possible, to specify the begin and end of the iterator or the begin and the size. In case of a symmetric matrix, it is required only the triangular block and the user can specify whether giving a block representing the lower (default case) or the upper diagonal part.
 
  _**Example**_
  Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix the representation has the default value `ROOT::Math::MatRepStd`. For a general square matrix, the number of columns can be omitted.
@@ -1502,9 +1502,9 @@ Use one of the following constructors to create a matrix:
   {% endhighlight %}
   
   
-  _**Example**_
+_**Example**_
   
-A symmetric matrix is filled from an `std::vector`.
+A symmetric matrix is filled from a `std::vector`.
 
 {% highlight C++ %}
    std::vector<double> v(6);
