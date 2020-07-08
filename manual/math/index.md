@@ -597,10 +597,10 @@ _**Example**_
 
 The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides the following classes for generating pseudo-random numbers:
 
-- {% include ref class="TRandom" %} Using a linear congruential random generator.
-- {% include ref class="TRandom1" %} Random number generator based on the Ranlux engine.
-- {% include ref class="TRandom2" %} Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
-- {% include ref class="TRandom3" %} Based on the Mersenne and Twister pseudo-random number generator.
+- {% include ref class="TRandom" %} - Using a linear congruential random generator.
+- {% include ref class="TRandom1" %} - Random number generator based on the Ranlux engine.
+- {% include ref class="TRandom2" %} - Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
+- {% include ref class="TRandom3" %} - Based on the Mersenne and Twister pseudo-random number generator.
 
 > **Note**
 >
@@ -766,19 +766,19 @@ There are the following linear algebra packages available:
 
 ### Matrix package
 
-Overview of the matrix package
+The following topics are covered for the matrix package:
 
-- matrix classes
-- matrix properties
-- creating and filling a matrix
-- inverting a matrix
-- matrix operators and methods
-- matrix views
-- matrix decompositions
-- matrix Eigen analysis
+- [matrix classes](#matrix-classes)
+- [matrix properties](#matrix-properties)
+- [creating and filling a matrix](#creating-and-filling-a-matrix)
+- [inverting a matrix](#inverting-a-matrix)
+- [matrix operators and methods](#matrix-operators-and-methods)
+- [matrix views](#matrix-views)
+- [matrix decompositions](#matrix-decompositions)
+- [matrix Eigen analysis](#matrix-eigen-analysis)
 
-
-#### Matrix classes
+<p><a name="matrix-classes"></a></p>
+**Matrix classes**
 
 ROOT provides the following matrix classes, among others:
 
@@ -796,11 +796,13 @@ ROOT provides the following matrix classes, among others:
 
 - `TMatrixDSparse`: Sparse matrix with double precision (`double`).
 
-- {% include ref class="TDecompBase" %}: Decomposition base class. 
+- {% include ref class="TDecompBase" %} -  Decomposition base class. 
 
-- {% include ref class="TDecompChol" %}: Cholesky decomposition class. 
+- {% include ref class="TDecompChol" %} - Cholesky decomposition class. 
 
-#### Matrix properties
+
+<p><a name="matrix-properties"></a></p>
+**Matrix properties**
 
 A matrix has five properties, which are all set in the constructor:
 
@@ -845,11 +847,11 @@ Use one of the following methods to access the information about the relevant ma
 
 - `Double_t` [GetTol()](https://root.cern/doc/master/classTMatrixTBase.html#af1fd9bf8dcae0bcc96e5c6d526bd176b){:target="_blank"}: Tolerance number that is used in decomposition operations.
 
-- `Int_t` [*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"}: For sparse matrices, access to the row index of `fNrows+1` entries.
+- `Int_t` [*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"} - For sparse matrices, access to the row index of `fNrows+1` entries.
 
-- `Int_t` [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"}: For sparse matrices, access to the column index of `fNelems` entries.
+- `Int_t` [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"} - For sparse matrices, access to the column index of `fNelems` entries.
 
-[*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"} and [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"} are specific to the sparse matrix, which is implemented according to the Harwell-
+[*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"}  and [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"}  are specific to the sparse matrix, which is implemented according to the Harwell-
 Boeing format. Here, besides the usual shape/size descriptors of the matrix like `fNrows`, `fRowLwb`, `fNcols` and `fColLwb`,
 also a row index `fRowIndex` and a column index `fColIndex` are stored:
 
@@ -886,7 +888,9 @@ Copies the sparse map from matrix `a`.
 - `SetSparseIndexAB (const TMatrixDSparse &a, const TMatrixDSparse &b)`<br>
 Sets the sparse map to the same map of matrix `a` and `b`.
 
-#### Creating and filling a matrix
+
+<p><a name="creating-and-filling-a-matrix"></a></p>
+**Creating and filling a matrix**
 
 Use one of the following constructors to create a matrix:
 
@@ -969,7 +973,9 @@ Now a unit matrix in sparse format is created.
    unit2.SetMatrixArray(data.GetArray());
 {% endhighlight %}
 
-#### Inverting a matrix
+
+<p><a name="inverting-a-matrix"></a></p>
+**Inverting a matrix**
 
 - Use the `Invert(Double_t &det=0)` function to invert a matrix:
 
@@ -990,7 +996,7 @@ Both methods are available for general and symmetric matrices.
 
 For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &det=0)` function is available. Here the Cramer algorithm will be applied, which is faster but less accurate.
 
-##### Using decomposition classes for inverting
+**Using decomposition classes for inverting**
 
 You can also use the following decomposition classes (see → [Matrix decompositions](#matrix-decompositions)) for inverting a matrix:
 
@@ -1052,7 +1058,8 @@ This example shows how to check whether the matrix is singular before attempting
 {% endhighlight %}
 
 
-#### Matrix operators and methods
+<p><a name="matrix-operators-and-methods"></a></p>
+**Matrix operators and methods**
 
 The matrix/vector operations are classified according to BLAS (basic linear algebra subroutines) levels.
 
@@ -1299,7 +1306,8 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
   </tbody>
 </table>
 
-#### Matrix views
+<p><a name="matrix-views"></a></p>
+**Matrix views**
 
 With the following matrix view classes, you can access the matrix elements:
 
@@ -1344,20 +1352,77 @@ The next table summarizes how to access the individual matrix elements in the ma
   </tbody>
 </table>
 
-#### Matrix decompositions
+
+<p><a name="matrix-decompositions"></a></p>
+**Matrix decompositions**
 
 There are the following classes available for matrix decompositions:
 
-- {% include ref class="TDecompLU" %}: Decomposes a general `n x n` matrix `A` into `P A = L U`.
-- {% include ref class="TDecompBK" %}: The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`.
-- {% include ref class="TDecompChol" %}: The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
-- {% include ref class="TDecompQRH" %}: QR decomposition class.
-- {% include ref class="TDecompSVD" %}: Single value decomposition class.
-- {% include ref class="TDecompSparse" %}: Sparse symmetric decomposition class.
+- {% include ref class="TDecompLU" %} - Decomposes a general `n x n` matrix `A` into `P A = L U`.
+- {% include ref class="TDecompBK" %} - The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`.
+- {% include ref class="TDecompChol" %} - The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
+- {% include ref class="TDecompQRH" %} - QR decomposition class.
+- {% include ref class="TDecompSVD" %} - Single value decomposition class.
+- {% include ref class="TDecompSparse" %} - Sparse symmetric decomposition class.
 
-#### Matrix Eigen analysis
+<p><a name="matrix-eigen-analysis"></a></p>
+**Matrix Eigen analysis**
 
-With the `TMatrixDEigen` and `TMatrixDSymEigen` classes, you can compute eigenvalues and eigenvectors for general dense and symmetric real matrices.
+With the {% include ref class="TMatrixDEigen" %} and {% include ref class="TMatrixDSymEigen" %} classes, you can compute eigenvalues and eigenvectors for general dense and symmetric real matrices.
+
+The following table lists the methods of the {% include ref class="TMatrixDEigen" %} and the {% include ref class="TMatrixDSymEigen" %} to obtain the eigenvalues and eigenvectors. {% include ref class="TMatrixDSymEigen" %} constructors can only be called with `TMatrixDSym`:
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+
+      <th scope="col">Format</th>
+      <th scope="col">Output</th>
+      <th scope="col">Description</th>
+    </tr>
+    <tr>
+      <td>eig.GetEigenVectors()</td>
+      <td>TMatrixD</td>
+      <td>Eigenvectors for both TMatrixDEigen and TMatrixDSymEigen.</td>
+    </tr>
+    <tr>
+      <td>eig.GetEigenValues()</td>
+      <td>TVectorD</td>
+      <td>Eigenvalues vector for TMatrixDSymEigen.</td>
+    </tr>
+    <tr>
+      <td>eig.GetEigenValues()</td>
+      <td>TMatrixD</td>
+      <td>Eigenvalues matrix for TMatrixDEigen.</td>
+    </tr>
+    <tr>
+      <td>eig.GetEigenValuesRe()</td>
+      <td>TVectorD</td>
+      <td>Real part of eigenvalues for TMatrixDEigen.</td>
+    </tr>
+    <tr>
+      <td>eig.GetEigenValuesIm()</td>
+      <td>TVectorD</td>
+      <td>Imaginary part of eigenvalues for TMatrixDEigen.</td>
+    </tr>
+  </tbody>
+ </table>
+ 
+ _**Example**_
+
+The usage of the eigenvalue class is shown in this example where it is checked that the square of the singular values of
+a matrix `c` are identical to the eigenvalues of c<sup>T</sup>.c:
+
+{% highlight C++ %}
+   const TMatrixD m = THilbertMatrixD(10,10);
+   TDecompSVD svd(m);
+   TVectorD sig = svd.GetSig(); sig.Sqr();
+
+// Symmetric matrix EigenVector algorithm.
+   TMatrixDSym mtm(TMatrixDBase::kAtA,m);
+   const TMatrixDSymEigen eigen(mtm);
+   const TVectorD eigenVal = eigen.GetEigenValues();
+   const Bool_t ok = VerifyVectorIdentity(sig,eigenVal,1,1.-e-14);
+{% endhighlight %}
 
 ### SMatrix
 
@@ -1376,14 +1441,81 @@ has 2 template parameters, which define at compile time, its properties:
 1. type of the contained elements (for example `float` or `double`)
 2. size of the vector
 
+**Creating a vector**
 
+Use one of the following constructors to create a vector:
+
+- Default constructor for a zero vector (all elements equal to zero).
+- Constructor (and assignment) from a vector expression, like `v=p*q+w`. Due to the expression template technique, no temporary objects are created in this operation.
+- Constructor by passing directly the elements. This is possible only for vectors up to size 10.
+- Constructor from an iterator copying the data referred by the iterator. It is possible to specify the begin and end of the iterator or the begin and the size. Note that for
+
+ _**Example**_
+ The namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} is used.
+ 
+ {% highlight C++ %}
+// Create an empty vector of size 3 ( v[0]=v[1]=v[2]=0).
+   SVector<double,3> v;
+   double d[3] = {1,2,3};
+// Create a vector from a C array.
+   SVector<double,3> v(d,3); 
+  {% endhighlight %}
+  
 #### SMatrix
 
 The template class [ROOT::Math::SMatrix](https://root.cern/doc/master/classROOT_1_1Math_1_1SMatrix.html){:target="_blank"} represents a matrix of arbitrary type with `nrows x ncol`dimension. The class has 4 template parameters, which define at compile time, its properties:
-- type of the contained elements, `T`, for example `float` or `double`
+- type of the contained elements (for example `float` or `double`)
 - number of rows
 - number of columns
 - representation type
+
+**Creating a matrix**
+
+Use one of the following constructors to create a matrix:
+- Default constructor for a zero matrix (all elements equal to zero).
+- Constructor of an identity matrix.
+- Copy constructor (and assignment) for a matrix with the same representation, or from a different one when possible, for example from a symmetric to a general matrix.
+- Constructor (and assignment) from a matrix expression, like D=A*B+C. Due to the expression template technique, no temporary objects are created in this operation. In the case of an operation like A=A*B+C, a temporary object is needed and it is created automatically to store the intermediary result in order to preserve the validity of this operation.
+- Constructor from a generic STL-like iterator copying the data referred by the iterator, following its order. It is both possible, to specify the begin and end of the iterator or the begin and the size. In case of a symmetric matrix, it is required only the triangular block and the user can specify whether giving a block representing the lower (default case) or the upper diagonal part.
+
+ _**Example**_
+ Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix the representation has the default value `ROOT::Math::MatRepStd`. For a general square matrix, the number of columns can be omitted.
+ 
+ {% highlight C++ %}
+// Typedef definitions used in the following declarations:
+   typedef ROOT::Math::SMatrix<double,3> SMatrix33;
+   typedef ROOT::Math::SMatrix<double,2> SMatrix22;
+   typedef ROOT::Math::SMatrix<double,3,3,
+   ROOT::Math::MatRepSym<double,3>> SMatrixSym3;
+   typedef ROOT::Math::SVector>double,2> SVector2;
+   typedef ROOT::Math::SVector>double,3> SVector3;
+   typedef ROOT::Math::SVector>double,6> SVector6;
+   SMatrix33 m0; // create a zero 3x3 matrix
+
+// Create a 3x3 identity matrix.
+   SMatrix33 i = ROOT::Math::SMatrixIdentity();
+   double a[9] = {1,2,3,4,5,6,7,8,9}; // input matrix data
+
+// Create a matrix using the a[] data.
+// This will produce the 3x3 matrix:
+    SMatrix33 m(a,9); 
+  {% endhighlight %}
+  
+  
+_**Example**_
+  
+A symmetric matrix is filled from a `std::vector`.
+
+{% highlight C++ %}
+   std::vector<double> v(6);
+   for (int i = 0; i<6; ++i) v[i] = double(i+1);
+   
+// This will produce the symmetric matrix:
+   SMatrixSym3 s(v.begin(),v.end()) 
+
+// Create a general matrix from a symmetric matrix (the opposite will not compile)
+   SMatrix33 m2 = s;
+{% endhighlight %}
 
 ## Minimization libraries and classes
 
@@ -1393,9 +1525,7 @@ ROOT provides several minimization libraries and classes:
 
 ### TMinuit
 
-The Minuit minimization package was originally written in Fortran by Fred James and part
-of PACKLIB (patch D506). It has been converted to the C++ class
-{% include ref class="TMinuit" %}, by R.Brun.
+The Minuit minimization package was originally written in Fortran by Fred James and part of PACKLIB (patch D506). It has been converted to the C++ class {% include ref class="TMinuit" %}, by R.Brun.
 
 > **Topical manual**
 >
@@ -1438,7 +1568,6 @@ TUnuran unr;
 // Sample distributions N times (generate N random numbers).
    for (int i = 0; i<N; ++i)
    double x = unr.Sample();
-
 {% endhighlight %}
 
 ### Using TUnuranContDist for a one-dimensional distribution

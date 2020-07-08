@@ -39,9 +39,9 @@ manual:
         url: manual/root_classes_data_types_and_global_variables
       - title: Adding a class to ROOT
         url: manual/adding_a_class_to_root
-      - title: Integrate ROOT into my CMake project
+      - title: Integrating ROOT into CMake projects
         url: manual/integrate_root_into_my_cmake_project
-      - title: Interacting-with-shared-libraries
+      - title: Interacting with shared libraries
         url: manual/interacting-with-shared-libraries
       - title: ROOT collections
         url: manual/root_collections
