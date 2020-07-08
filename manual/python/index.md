@@ -70,8 +70,8 @@ After importing the ROOT module, one can access the PyROOT configuration object 
 
 ```python
 import ROOT
-ROOT.PyConfig.OptionName1 = SomeValue1
-ROOT.PyConfig.OptionName2 = SomeValue2
+ROOT.PyConfig.DisableRootLogon = True
+ROOT.PyConfig.IgnoreCommandLineOptions = False
 ```
 
 The available configuration options are described next:
@@ -92,9 +92,9 @@ If the user would like to completely disable the rootlogon functionality, they c
 
 - `IgnoreCommandLineOptions` (default `True`): if a PyROOT script is executed with some command line arguments, they will be ignored by default by ROOT, so the user is free to process them as they wish. However, by setting `PyConfig.IgnoreCommandLineOptions` to `False`, those arguments will be forwarded to ROOT for parsing, e.g. to enable the batch mode from the command line. A complete list of the arguments accepted by ROOT can be found [here]({{ '/manual/first_steps_with_root/#starting-root-with-command-line-options' | relative_url }}).
 
-- `ShutDown` (default `True`): when PyROOT is terminating, during its cleanup phase, the ROOT C++ interpreter is shut down. If PyROOT is executed as part of a longer-running application that needs the C++ interpreter, `PyConfig.Shutdown` can be set to `False` to prevent that shutdown.
+- `ShutDown` (default `True`): when PyROOT is terminating, during its cleanup phase, the ROOT C++ interpreter is shut down. If PyROOT is executed as part of a longer-running application that needs the C++ interpreter, `PyConfig.ShutDown` can be set to `False` to prevent that shutdown.
 
-- `StartGUIThread` (default `True`): when not executing in [interactive mode](https://docs.python.org/3/tutorial/interpreter.html#interactive-mode), PyROOT starts a thread that periodically polls for ROOT events (e.g. GUI events) to process them. If a given PyROOT application does not need this event processing, it can prevent the creation of the thread by setting `PyConfig.StartGUIThread` to `False`.
+- `StartGUIThread` (default `True`): except when executed from [IPython](https://ipython.org/), a [Jupyter](https://jupyter.org/) notebook or in [interactive mode](https://docs.python.org/3/tutorial/interpreter.html#interactive-mode), PyROOT starts a thread that periodically polls for ROOT events (e.g. GUI events) to process them. If a given PyROOT application does not need this event processing, it can prevent the creation of the thread by setting `PyConfig.StartGUIThread` to `False`.
 
 ### Enabling batch mode
 
@@ -111,11 +111,11 @@ ROOT.gROOT.SetBatch(True)
 
 ### Low-level manipulation of objects
 
-When instantiating a C++ class from Python via PyROOT, both a C++ object and its Python proxy object are created. Such Python object forwards any access to its internal C++ object, thus acting as a proxy. PyROOT offers some functions to inspect or manipulate Python proxies and their C++ counterparts, based on functionality provided by [cppyy](https://cppyy.readthedocs.io/en/latest/lowlevel.html). All these functions can be accessed as `ROOT.NameOfFunction` and they are listed next:
+When instantiating a C++ class from Python via PyROOT, both a C++ object and its Python proxy object are created. Such Python object forwards any access to its internal C++ object, thus acting as a proxy. PyROOT offers some functions to inspect or manipulate Python proxies and their C++ counterparts, based on functionality provided by [cppyy](https://cppyy.readthedocs.io/en/latest/lowlevel.html). All these functions can be accessed with the pattern `ROOT.NameOfFunction` and they are listed next:
 
 - `AddressOf(obj)`: when applied to a Proxy object `obj`, it returns an indexable buffer of length 1, whose only element is the address of the C++ object proxied by `obj`. The address of the buffer is the same as the address of the address of the C++ object. This function is kept for backwards compatibility with old PyROOT versions.
 
-- `addressof(obj, field, byref)`: similarly to `AddressOf`, it can be used to obtain the address of an internal C++ object from its Python proxy. However, `addressof` returns that address as an integer, not as an indexable buffer. Furthermore, `addressof` accepts two more parameters: `field` and `byref`. `field` can be used to specify the name of a field in a struct, in order to get the address of that field. If `byref` is set to true, `addressof` returns the address of the address of the C++ object. Equivalent to [cppyy's `addressof`](https://cppyy.readthedocs.io/en/latest/lowlevel.html#capsules). Example of usage:
+- `addressof(obj, field, byref)`: similarly to `AddressOf`, it can be used to obtain the address of an internal C++ object from its Python proxy. However, `addressof` returns that address as an integer, not as an indexable buffer. Furthermore, `addressof` accepts two more parameters: `field` and `byref`. `field` can be used to specify the name of a field in a struct, in order to get the address of that field. If `byref` is set to true, `addressof` returns the address of the address of the C++ object. This function is equivalent to [cppyy's `addressof`](https://cppyy.readthedocs.io/en/latest/lowlevel.html#capsules). Example usage:
 
 ```python
 >>> import ROOT
