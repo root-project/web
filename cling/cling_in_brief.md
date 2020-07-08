@@ -3,8 +3,6 @@ title: Cling In Brief
 layout: single
 sidebar:
   nav: "cling"
-toc: true
-toc_sticky: true
 ---
 
 The C++ interactive interpreter `cling` is based on [`LLVM`](https://llvm.org/)

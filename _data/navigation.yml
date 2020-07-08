@@ -92,6 +92,8 @@ manual:
       - title: "Forum & Help"
         url: https://root-forum.cern.ch/
         target: _blank
+      - title: "Cling"
+        url: cling/
 
 cling:
       - title: "Cling"
