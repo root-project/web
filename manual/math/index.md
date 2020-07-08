@@ -775,7 +775,7 @@ The following topics are covered for the matrix package:
 - [matrix operators and methods](#matrix-operators-and-methods)
 - [matrix views](#matrix-views)
 - [matrix decompositions](#matrix-decompositions)
-- [matrix Eigen analysis]('matrix-eigen-analysis)
+- [matrix Eigen analysis](#matrix-eigen-analysis)
 
 <p><a name="matrix-classes"></a></p>
 **Matrix classes**
