@@ -104,6 +104,9 @@ for_developers:
    - title: GitHub
      url: https://github.com/root-project
      target: _blank
+     children:
+      - title: Creating a Pull Request
+        url: for_developers/creating_pr
    - title: Meetings
      url: for_developers/meetings
    - title: ROOT 7
