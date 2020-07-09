@@ -27,38 +27,11 @@ You need to follow the following steps:
 ```
 git clone https://github.com/<your GitHub username>/web
 ```
-4. To force the first build of the web site on your forked copy, issue an empty commit with the
-commands:
-```
-cd web
-git commit -m 'rebuild pages' --allow-empty
-git push origin main
-```
-5. On your github (on the web) go in the "Settings" of the forked copy:
-
-   ![](settings.png)
-
-6. In the "GitHub Pages" section you should see something similar to the next picture
-telling you that your site in ready to be published and is being build from **main branch**
-
-   ![](gh-pages-1.png)
-
-7. After a while, a green message should show up saying your site is published.
-   like on the following picture:
-
-   ![](gh-pages-2.png)
-
 
 You now have the ROOT web site sources (from github) on your local machine. You can
-"commit" and "push" changes to the origin or do "Pull Requests" upstream.
+"commit" and "push" changes to the origin or do ["Pull Requests"]({{ 'for_developers/creating_pr' | relative_url}})
+upstream.
 
-When you push changes to the origin (your forked copy) you can see them alive on:
-
-`https://<your GitHub username>.github.io/`
-
-> **But**  that can be very slow because you need to wait github rebuild your site before
-> seeing the changes you did. That's why it might be much more efficient to run a server
-> locally as explained in the next section.
 
 ## Generate a local running version of the ROOT web site
 
@@ -106,10 +79,10 @@ site on the git repository](#publish-your-modifications).
 
 5. Build the site and make it available on a local server.
 ```
-bundle exec jekyll serve
+bundle exec jekyll serve --baseurl="/base"
 ```
-
-If you only plan to make minor modifications, you can append the `--incremental` flag to speed up the rebuild process.
+If you only plan to make minor modifications, you can append the `--incremental` flag
+to speed up the rebuild process.
 
 6. After about 30 seconds you should get an output similar to
 ```
@@ -147,13 +120,14 @@ changes.
 It is not necessary to restart the server each time you do a modification except if you
 modify the file `web/_config.yml`
 
-You may notice that the command `bundle exec jekyll serve` generates a folder `_site` in
+You may notice that the command `bundle exec jekyll serve --baseurl="/base"` generates a folder `_site` in
 the `/path/to/the/directory/web/` folder. This is the html version of the web site. Do not
 modify or create files in that folder. This folder is ignored by git.
 
 ### Publish your modifications
 
-Once you are happy with your modifications, you can publish them via a direct push (if you have
-the rights) to the github repository or via a Pull Request if you work on a forked copy as described
+Once you are happy with your modifications, you can publish them via a
+["Pull Requests"]({{ 'for_developers/creating_pr' | relative_url}})
+as described
 in [the previous section](#get-the-root-web-site-sources). After a while the web site
-`https://root-project.github.io/` will be automatically updated by git.
+[`https://root.cern/`](https://root.cern/) will be automatically updated by git.
