@@ -85,8 +85,6 @@ manual:
         target: _blank
       - title: "Primer"
         url: primer/
-      - title: "Cling"
-        url: cling/
       - title: "Topical Manuals"
         url: topical/
       - title: "Forum & Help"
