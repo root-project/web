@@ -46,7 +46,6 @@ sidebar:
       - Update the releases xml with the Jenkins procedure called [root-release-makeReleasesXml/](https://epsft-jenkins.cern.ch/view/ROOT/job/root-release-makeReleasesXml/){:target="_blank"}
       - Eventually edit the 'highlights' section, which is currently commented, in the generated release page.
       - If this applies, mark the release as Pro or Old and remove the attribute to the one previously holding it. There are radio buttons exposed by Drupal when editing a release's page.
-      - If not a patch release edit [reference-guide]({{'reference' | relative_url}}) page to add the new reference guide for the release.
   16. Announcements
       - send mail to the following mailing lists: root-planning@cern.ch, root-dev@cern.ch, roottalk@cern.ch
       - write announcement in RootTalk [forum news](https://root-forum.cern.ch/c/news){:target="_blank"}
