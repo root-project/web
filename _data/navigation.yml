@@ -78,8 +78,6 @@ manual:
         url: manual/python
   - title: Further information
     children:
-      - title: "Reference Guide"
-        url: reference
       - title: "Tutorials"
         url: https://root.cern/doc/master/group__Tutorials.html
         target: _blank
