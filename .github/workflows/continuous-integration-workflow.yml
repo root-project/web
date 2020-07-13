@@ -45,6 +45,13 @@ jobs:
           echo -e "\nFound $N_WRONG_LINKS links to root.cern.ch. Please change them to link to root.cern (no '.ch') instead."
           exit 1
 
+      - name: Only allow links to ref guide for master (except in release notes)
+        run: |
+          grep --exclude-dir="releases" --exclude-dir="reference" --exclude-dir="all_releases" -n -R -P 'https:\/\/root\.cern\/doc\/(?!master)' build\
+             || exit 0 # grep returns non-zero if no match is found
+          echo -e "\nFound links to /doc/NOT_MASTER (see above). Please change them to link to /doc/master."
+          exit 1
+
       - name: Wait for other deployments
         # wait for other workflows that are deploying the website to finish, (not 100% foolproof, see #240)
         if: ${{ env.SHOULD_DEPLOY == 'true' && github.event_name != 'pull_request' }}
