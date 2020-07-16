@@ -177,6 +177,8 @@ For example, to try out the latest ROOT release just run `docker run -it rootpro
 
 Users with a CERN computing account can simply connect to `lxplus.cern.ch` via SSH and start `root`: the latest stable version is installed as a normal system package.
 
+Note that certain features (e.g. multi-threading capabilities) are not available on `lxplus.cern.ch` (or, equivalently, `lxplus7.cern.ch`) due to incompatible versions of certain ROOT dependencies on CentOS7. You can use `lxplus8.cern.ch` to get access to CentOS8, where this limitation is not present.
+
 # Build from source
 
 In case no other installation method is available, or if you want full control over the options ROOT is built with,
