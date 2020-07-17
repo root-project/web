@@ -156,7 +156,7 @@ For example, to set up a full environment with ROOT 6.20/02 on CERN LXPLUS, you 
 source /cvmfs/sft.cern.ch/lcg/views/LCG_97/x86_64-centos7-gcc8-dbg/setup.sh
 ```
 
-To check what ROOT version is contained in an LCG release, check [lcginfo.cern.ch](https://lcginfo.cern.ch/){:target="\_blank"}.
+To check what ROOT version is contained in an LCG release, check [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="\_blank"}.
 
 ## Gentoo Prefix on CVMFS
 
