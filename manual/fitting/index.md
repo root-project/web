@@ -106,7 +106,7 @@ The signature is:
 - `I`: Uses integral of function in bin instead of value at bin center.
 - `L`: Uses a log likelihood method (default is chi-square method). To be used when the histogram represents counts.
 - `WL`: Weighted log likelihood method. To be used when the histogram has been filled with weights different than 1.
-- `P`: Uses Pearson chi-square method. Uses expected errors instead of the observed one given by [TH1::GetBinError()](https://root.cern/doc/master/classTH1.html#a3af6cc15ab6c2490428c9b691885d919){:target="_blank"} (default case). The expected error is instead estimated from the the square-root of the bin function value.
+- `P`: Uses Pearson chi-square method. Uses expected errors instead of the observed one given by [TH1::GetBinError()](https://root.cern/doc/master/classTH1.html#a3af6cc15ab6c2490428c9b691885d919){:target="_blank"} (default case). The expected error is instead estimated from the square-root of the bin function value.
 - `Q`: Quiet mode (minimum printing).
 - `V`: Verbose mode (default is between `Q` and `V`).
 - `S`: The result of the fit is returned in the {% include ref class="TFitResultPtr" %}.
@@ -126,7 +126,7 @@ The signature is:
 
 ### Using TGraph::Fit()
 
-The signature for fitting {% include ref class="TGraph" %} is the same as for the {% include ref class="TH1" %}. 
+The signature for fitting {% include ref class="TGraph" %} is the same as for the {% include ref class="TH1" %}.
 
 Only the following options only apply for fitting histograms:
 - `L`

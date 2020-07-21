@@ -322,7 +322,7 @@ If the variables are related, such as the coordinates of a point, create one bra
 
 ### Adding a branch
 
-- Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"} method to add a {% include ref class="TBranch" %} to a tree:
+- Use the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"} method to add a {% include ref class="TBranch" %} to a tree:
 
 {% highlight C++ %}
    auto branch = tree.Branch(branchname, address, leaflist, bufsize)
@@ -350,7 +350,7 @@ This creates one branch for each element in the folder. The method returns the t
 
 A `STLcollection` is a address of a pointer to `std::vector`, `std::list`, `std::deque`, `std::set` or `std::multiset` containing pointers to objects.
 
-- Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"} method to add a `STLcollection`:
+- Use the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"} method to add a `STLcollection`:
 
 {% highlight C++ %}
    auto branch = tree.Branch(branchname, STLcollection, buffsize, splitlevel);
@@ -362,7 +362,7 @@ If a dynamic structures changes with each entry, you have to redefine the branch
 
 ### Adding a branch of objects
 
-- Use the the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"} method to add objects to a tree:
+- Use the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"} method to add objects to a tree:
 
 {% highlight C++ %}
    MyClass object;
@@ -621,7 +621,7 @@ The next example illustrates how to set the address of an object to be read and 
 {% highlight C++ %}
 TH1F* hnseg(nullptr);
 void processChain(){
-// Create the a chain out of three ROOT files.
+// Create a chain out of three ROOT files.
    TChain chain("T");
    chain.Add("file1.root");
    chain.Add("file2.root");

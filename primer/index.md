@@ -820,7 +820,7 @@ void macro1(){
 
     // Instance of the graph
     TGraphErrors graph(n_points,x_vals,y_vals,nullptr,y_errs);
-    graph.SetTitle("Measurement XYZ;lenght [cm];Arb.Units");
+    graph.SetTitle("Measurement XYZ;length [cm];Arb.Units");
 
     // Make the plot esthetically better
     graph.SetMarkerStyle(kOpenCircle);
@@ -1151,7 +1151,7 @@ int macro2(){
                                 "%lg %lg %lg");
     graph_expected.SetTitle(
        "Measurement XYZ and Expectation;"
-       "lenght [cm];"
+       "length [cm];"
        "Arb.Units");
     graph_expected.SetFillColor(kYellow);
     graph_expected.DrawClone("E3AL"); // E3 draws the band
