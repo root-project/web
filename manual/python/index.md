@@ -145,7 +145,7 @@ Moreover, `addressof` can be used in conjunction with `TTree::Branch` from Pytho
 ## Loading user libraries & Just-In-Time compilation (JITting)
 
 PyROOT allows to use *any C++ library* from Python, not only ROOT's libraries. This is possible thanks to the automatic and dynamic bindings between Python and C++ that PyROOT provides.
-Without any prior generation of wrappers, at execution time, PyROOT can load C++ code, and call its functions.
+Without any prior generation of wrappers, at execution time, PyROOT can load C++ code and call into it.
 
 This allows for writing high-performance C++, compiling it, and using it from Python.
 The following options are available, ordered by complexity and performance:
