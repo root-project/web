@@ -121,6 +121,12 @@ need and follow the installation instructions.
 
 **Let's dive into ROOT!**
 
+> **Note**
+>
+> The macros and data files presented is this document can be found
+> in the [ROOT GitHub repository](https://github.com/root-project/root/tree/master/documentation/primer/macros)
+>
+
 # ROOT Basics
 
 Now that you have installed ROOT, what's this interactive shell thing
