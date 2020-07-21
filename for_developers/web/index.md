@@ -28,9 +28,10 @@ You need to follow the following steps:
 git clone https://github.com/<your GitHub username>/web
 ```
 
-You now have the ROOT web site sources (from github) on your local machine. You can
-"commit" and "push" changes to the origin or do ["Pull Requests"]({{ 'for_developers/creating_pr' | relative_url}})
-upstream.
+You now have a copy of the ROOT web site sources from github. You can
+work on them, play with a locally served website (next section), and finally
+create ["Pull Requests"]({{ 'for_developers/creating_pr' | relative_url}})
+to get changes upstream.
 
 
 ## Generate a local running version of the ROOT web site
@@ -63,7 +64,7 @@ gem install jekyll bundler
 git clone https://github.com/root-project/web.git web
 ```
 You can also clone a forked copy from you own github as explained in the
-[previous section](#get-the-root-web-site-sources)
+[section on getting the sources](#get-the-root-web-site-sources)
 
 4. Change into your new directory.
 ```
@@ -74,8 +75,9 @@ You will notice that the current git branch is `main`
 % git checkout
 Your branch is up to date with 'origin/main'.
 ```
-Stay on this branch. It is the one used to [automatically build the web
-site on the git repository](#publish-your-modifications).
+This branch is the one from which the official web site is built. You can create a
+new branch with your work, which you can use to create a pull request to update
+`root-project/web/main`.
 
 5. Build the site and make it available on a local server.
 ```
@@ -98,16 +100,13 @@ Configuration file: /path/to/the/directory/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-7. Your server is now running. As suggested in the previous output open the url
-`https://127.0.0.1:4000/`
-in your favorite web browser.
+7. Your server is now running. As shown above, the website can be accessed using a URL
+similar to `https://127.0.0.1:4000/`.
 
-### Modify the web site
-
-Now you can start to modify and create files in the `/path/to/the/directory/web/`
-file structure. Each time you create a new file or save a modified version of a file
-the server will notice it and will regenerate the web site. You will get an output
-similar to:
+8. Work on the website.
+   Each time you create a new file or save a modified version of a file
+   the server will notice it and will regenerate the web site. You will get an output
+   similar to:
 ```
 Regenerating: 1 file(s) changed at 2020-02-19 10:40:02
               for_developers/index.md
@@ -115,7 +114,7 @@ Regenerating: 1 file(s) changed at 2020-02-19 10:40:02
               ...done in 9.877795 seconds.
 ```
 once "`... done`" is displayed you can reload the web site from your browser to see your
-changes.
+changes. Remember the `--incremental` can speed up serving times considerably.
 
 It is not necessary to restart the server each time you do a modification except if you
 modify the file `web/_config.yml`
@@ -124,10 +123,16 @@ You may notice that the command `bundle exec jekyll serve --baseurl="/base"` gen
 the `/path/to/the/directory/web/` folder. This is the html version of the web site. Do not
 modify or create files in that folder. This folder is ignored by git.
 
-### Publish your modifications
+
+## Get modifications upstream
 
 Once you are happy with your modifications, you can publish them via a
-["Pull Requests"]({{ 'for_developers/creating_pr' | relative_url}})
-as described
-in [the previous section](#get-the-root-web-site-sources). After a while the web site
-[`https://root.cern/`](https://root.cern/) will be automatically updated by git.
+["Pull Request"]({{ 'for_developers/creating_pr' | relative_url}}). You
+can either push a branch to your fork of the website repository, and create the pull
+request from your fork to [https://github.com/root-project/web](https://github.com/root-project/web), or
+if you have write access to the `root-project/web` repository, you can directly push a new branch.
+If you create a pull request "inside" `root-project/web`, github can create a preview website, which
+will be served at `https://root.cern/<PRNumber>` (after the build step completes).
+
+When a pull request is merged, [`https://root.cern/`](https://root.cern/) will be updated automatically
+after a short while.
