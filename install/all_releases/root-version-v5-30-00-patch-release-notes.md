@@ -201,7 +201,7 @@ sidebar:
 	</li>
 	<li>RooStats
 	<ul>
-		<li>Fix a bug in the computation the the one-side Profile Likelihood test statistics (bug <a href="https://savannah.cern.ch/bugs/?86013" target="_blank">#86013</a>) which was introduced in 5.30.01 when using the RooMinimizer for the computation of the test statistic. Fix also the case when no nuisance parameters are present.&nbsp;</li>
+		<li>Fix a bug in the computation the one-side Profile Likelihood test statistics (bug <a href="https://savannah.cern.ch/bugs/?86013" target="_blank">#86013</a>) which was introduced in 5.30.01 when using the RooMinimizer for the computation of the test statistic. Fix also the case when no nuisance parameters are present.&nbsp;</li>
 		<li>Fix in ModelConfig the re-definition of parameter sets.</li>
 		<li>Speedup computation of p-values (Integral) in SamplingDistribution by caching the empirical cdf.</li>
 		<li>Fix the rest of the pdf components cache in ToyMCSampler when setting a new pdf</li>

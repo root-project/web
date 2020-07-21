@@ -76,7 +76,7 @@ Some of elementary mathematical functions refer to basic mathematical functions 
 of a logarithm, while others are used for number treatment, like rounding.
 
 Although there are some functions that are not in the standard C math library (like `Factorial`), most of the functionality
-offered here is just a wrapper of the first ones. Nevertheless, some of the them also offer some security checks or a
+offered here is just a wrapper of the first ones. Nevertheless, some of them also offer some security checks or a
 better precision, like the trigonometrical functions `ASin(x)`, `ACos(x)` or `ATan(x)`.
 
 _**Examples**_
@@ -136,7 +136,7 @@ _**Example**_
 [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides special functions like `Bessel`, `error functions`, `Gamma` or similar plus statistical mathematical
 functions, including probability density functions, cumulative distribution and their inverse.
 
-The majority of the special functions and the statistical distributions are provided also as free functions in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} namespace. 
+The majority of the special functions and the statistical distributions are provided also as free functions in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} namespace.
 
 Functions not present in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} name that are provided only by [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} are:
 - Special functions:
@@ -156,7 +156,7 @@ The [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:targe
 - [Multi-dimensional function interfaces](#multi-dimensional-function-interfaces)
 - [Parametric function interfaces](#parametric-function-interfaces)
 
-In addition, helper classes, wrapping the user interfaces in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} function interfaces are provided. With [wrapper functions](#wrapper-functions) you can insert your own type of function in the needed function interface. 
+In addition, helper classes, wrapping the user interfaces in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} function interfaces are provided. With [wrapper functions](#wrapper-functions) you can insert your own type of function in the needed function interface.
 
 To use the self-defined functions, they must have inherited from one of the following classes:
 
@@ -180,7 +180,7 @@ Example for the implementation of a class that represents a mathematical functio
 
 {% highlight C++ %}
    #include "Math/IFunction.h"
-   
+
    class MyFunction: public ROOT::Math::IBaseFunctionOneDim
    {
       double DoEval(double x) const
@@ -205,7 +205,7 @@ Example for the implementation of a gradient one-dimensional function.
 
 {% highlight C++ %}
    #include "Math/IFunction.h"
-   
+
    class MyGradientFunction: public ROOT::Math::IGradientFunctionOneDim
    {
    public:
@@ -239,7 +239,7 @@ Example for the implementation of a basic multi-dimensional function.
 
 {% highlight C++ %}
    #include "Math/IFunction.h"
-   
+
    class MyFunction: public ROOT::Math::IBaseFunctionMultiDim
    {
    public:
@@ -269,7 +269,7 @@ Example for the implementation of a multi-dimensional gradient function.
 
 {% highlight C++ %}
    #include "Math/IFunction.h"
-   
+
    class MyGradientFunction: public ROOT::Math::IGradientFunctionMultiDim
    {
    public:
@@ -311,7 +311,7 @@ Example for the implementation of a parametric function.
 {% highlight C++ %}
    #include "Math/IFunction.h"
    #include "Math/IParamFunction.h"
-   
+
    class MyParametricFunction: public ROOT::Math::IParametricFunctionMultiDim
    {
    private:
@@ -355,7 +355,7 @@ Example for the implementation of a parametric gradient function.
 {% highlight C++ %}
    #include "Math/IFunction.h"
    #include "Math/IParamFunction.h"
-   
+
    class MyParametricGradFunction:
    public ROOT::Math::IParametricGradFunctionMultiDim
    {
@@ -467,7 +467,7 @@ _**Example**_
 // Wrapping a free function.
       ROOT::Math::Functor1D f1(&freeFunction1D);
       MyFunction1D myf1;
-      
+
 // Wrapping a function object implementing operator().
       ROOT::Math::Functor1D f2(myf1);
 
@@ -483,7 +483,7 @@ _**Example**_
 <p><a name="wrapping-one-dimensional-gradient-functions"></a></p>
 **Wrapping one-dimensional gradient functions**
 
-Use [ROOT::Math::GradFunctor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor1D.html){:target="_blank"} to wrap one-dimensional gradient functions. 
+Use [ROOT::Math::GradFunctor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor1D.html){:target="_blank"} to wrap one-dimensional gradient functions.
 
 It can be constructed in three different ways:
 - Any object implementing both double `operator()( double)` for the function evaluation and `double Derivative(double)` for the function derivative.
@@ -493,7 +493,7 @@ It can be constructed in three different ways:
 <p><a name="wrapping-multi-dimensional-functions"></a></p>
 **Wrapping multi-dimensional functions**
 
-Use the [ROOT::Math::Functor](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor.html){:target="_blank"} to wrap multi-dimensional function objects. 
+Use the [ROOT::Math::Functor](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor.html){:target="_blank"} to wrap multi-dimensional function objects.
 
 It can wrap all the following types:
 - Any C++ callable object implementing double `operator()( const double * )`.
@@ -504,7 +504,7 @@ _**Example**_
 
 {% highlight C++ %}
    #include "Math/Functor.h"
-   
+
    class MyFunction {
    public:
    double operator()(const double *x) const {
@@ -518,7 +518,7 @@ _**Example**_
      }
    int main()
       {
-      
+
 // Test directly calling the function object.
     MyFunction myf;
 
@@ -541,11 +541,11 @@ _**Example**_
 <p><a name="wrapping multi-dimensional-gradient-functions"></a></p>
 **Wrapping multi-dimensional gradient functions**
 
-Use [ROOT::Math::GradFunctor](https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor.html){:target="_blank"} to wrap C++ callable objects to make gradient functions. 
+Use [ROOT::Math::GradFunctor](https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor.html){:target="_blank"} to wrap C++ callable objects to make gradient functions.
 
 It can be constructed in three different way:
 - From an object implementing both `double operator()( const double*)` for the function evaluation and `double Derivative(const double *, int icoord)` for the partial derivatives.
-- From an object implementing any member function like `Foo::XXX(const double *)` for the function evaluation and any member function like `Foo::XXX(const double *, int icoord)` for the partial derivatives. 
+- From an object implementing any member function like `Foo::XXX(const double *)` for the function evaluation and any member function like `Foo::XXX(const double *, int icoord)` for the partial derivatives.
 - From an function object implementing `double operator()( const double *)` for the function evaluation and another function object implementing `double operator() (const double *, int icoord)` for the partial derivatives.
 
 The function dimension is required when constructing the functor.
@@ -556,7 +556,7 @@ The function dimension is required when constructing the functor.
 Often the {% include ref class="TF1" %} class is used.<br>
 Use the [ROOT::Math::WrappedTF1](https://root.cern/doc/master/classROOT_1_1Math_1_1WrappedTF1.html) class, if the interface to be wrapped is one-dimensional.
 
-The default constructor takes a {% include ref class="TF1" %} reference as argument, that will be wrapped with the interfaces of a [ROOT::Math::IParametricGradFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IParametricGradFunctionOneDim.html){:target="_blank"}. 
+The default constructor takes a {% include ref class="TF1" %} reference as argument, that will be wrapped with the interfaces of a [ROOT::Math::IParametricGradFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IParametricGradFunctionOneDim.html){:target="_blank"}.
 
 _**Example**_
 
@@ -575,7 +575,7 @@ _**Example**_
 
 Use the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b) class, if the interface to be wrapped is multi-dimensional.
 
-Following the usual procedure, setting the {% include ref class="TF1" %} though the constructor, will wrap it into a [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"}. 
+Following the usual procedure, setting the {% include ref class="TF1" %} though the constructor, will wrap it into a [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"}.
 
 _**Example**_
 
@@ -606,7 +606,7 @@ The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"}
 >
 > For generating non-uniform random numbers, the UNU.RAN package (see → [UNU.RAN](#unuran)) is available.
 
-You can work with the random number generators as follows: 
+You can work with the random number generators as follows:
 - [Seeding the random number generators](#seeding-the-random-number-generators)
 - [Using the random number generators](#using-the-random-number-generators)
 - [Random number distributions](#random-number-distributions)
@@ -666,7 +666,7 @@ _**Example**_
 {% endhighlight %}
 
 The following table shows the various distributions that can be generated using methods of the {% include ref class="TRandom" %} classes.<br>
-In addition, you can use [TF1::GetRandom()](https://root.cern/doc/master/classTF1.html#ab44c5f63db88a3831d74c7c84dc6316b){:target="_blank"} or [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232){:target="_blank"} to generate random numbers distributed according to a user defined function, in a limited interval, or to a user defined histogram. 
+In addition, you can use [TF1::GetRandom()](https://root.cern/doc/master/classTF1.html#ab44c5f63db88a3831d74c7c84dc6316b){:target="_blank"} or [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232){:target="_blank"} to generate random numbers distributed according to a user defined function, in a limited interval, or to a user defined histogram.
 
 <table width="100%" border="0">
   <tbody>
@@ -796,9 +796,9 @@ ROOT provides the following matrix classes, among others:
 
 - `TMatrixDSparse`: Sparse matrix with double precision (`double`).
 
-- {% include ref class="TDecompBase" %} -  Decomposition base class. 
+- {% include ref class="TDecompBase" %} -  Decomposition base class.
 
-- {% include ref class="TDecompChol" %} - Cholesky decomposition class. 
+- {% include ref class="TDecompChol" %} - Cholesky decomposition class.
 
 
 <p><a name="matrix-properties"></a></p>
@@ -1406,7 +1406,7 @@ The following table lists the methods of the {% include ref class="TMatrixDEigen
     </tr>
   </tbody>
  </table>
- 
+
  _**Example**_
 
 The usage of the eigenvalue class is shown in this example where it is checked that the square of the singular values of
@@ -1437,7 +1437,7 @@ The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_b
 #### SVector
 
 The template class [ROOT::Math::SVector](https://root.cern/doc/master/classROOT_1_1Math_1_1SVector.html){:target="_blank"} represents n-dimensional vectors for objects of arbitrary type. This class
-has 2 template parameters, which define at compile time, its properties: 
+has 2 template parameters, which define at compile time, its properties:
 1. type of the contained elements (for example `float` or `double`)
 2. size of the vector
 
@@ -1452,15 +1452,15 @@ Use one of the following constructors to create a vector:
 
  _**Example**_
  The namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} is used.
- 
+
  {% highlight C++ %}
 // Create an empty vector of size 3 ( v[0]=v[1]=v[2]=0).
    SVector<double,3> v;
    double d[3] = {1,2,3};
 // Create a vector from a C array.
-   SVector<double,3> v(d,3); 
+   SVector<double,3> v(d,3);
   {% endhighlight %}
-  
+
 #### SMatrix
 
 The template class [ROOT::Math::SMatrix](https://root.cern/doc/master/classROOT_1_1Math_1_1SMatrix.html){:target="_blank"} represents a matrix of arbitrary type with `nrows x ncol`dimension. The class has 4 template parameters, which define at compile time, its properties:
@@ -1480,7 +1480,7 @@ Use one of the following constructors to create a matrix:
 
  _**Example**_
  Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix the representation has the default value `ROOT::Math::MatRepStd`. For a general square matrix, the number of columns can be omitted.
- 
+
  {% highlight C++ %}
 // Typedef definitions used in the following declarations:
    typedef ROOT::Math::SMatrix<double,3> SMatrix33;
@@ -1498,20 +1498,20 @@ Use one of the following constructors to create a matrix:
 
 // Create a matrix using the a[] data.
 // This will produce the 3x3 matrix:
-    SMatrix33 m(a,9); 
+    SMatrix33 m(a,9);
   {% endhighlight %}
-  
-  
+
+
 _**Example**_
-  
+
 A symmetric matrix is filled from a `std::vector`.
 
 {% highlight C++ %}
    std::vector<double> v(6);
    for (int i = 0; i<6; ++i) v[i] = double(i+1);
-   
+
 // This will produce the symmetric matrix:
-   SMatrixSym3 s(v.begin(),v.end()) 
+   SMatrixSym3 s(v.begin(),v.end())
 
 // Create a general matrix from a symmetric matrix (the opposite will not compile)
    SMatrix33 m2 = s;

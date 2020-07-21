@@ -357,7 +357,7 @@ ACLiC executes the following steps:
 
 1. Calling `rootcling` to create a dictionary.
 
-2. Calling the the system's C++ compiler to build the shared library.
+2. Calling the system's C++ compiler to build the shared library.
 
 3. If there are errors, it calls the C++ compiler to build a dummy executable to clearly report the unresolved symbols.
 
