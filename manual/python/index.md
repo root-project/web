@@ -150,7 +150,7 @@ Without any prior generation of wrappers, at execution time, PyROOT can load C++
 This allows for writing high-performance C++, compiling it, and using it from Python.
 The following options are available, ordered by complexity and performance:
 
-1. [Just-in-time compilation of small strings](#JITString): Small functions and classes to be used from Python, testing
+1. [Just-in-time compilation of small strings](#JITString): Small functions and classes to be used from Python. Especially useful for testing and debugging.
 1. [Just-in-time compilation of entire files](#JITHeader): Small or medium-size C++ code in single files
 1. [Loading C++ libraries, JITting headers](#JITLoadLib): Larger C++ code in libraries. Allows for optimising code for high performance. Headers compiled just in time.
 1. [Loading C++ libraries with dictionaries](#JITLoadDict): Load large/very large, high-performance C++ projects, no just-in-time compilation
@@ -254,7 +254,7 @@ x = ROOT.f(3)  # x = 9
 ### 4. Loading a library with ROOT dictionaries
 
 For larger analysis frameworks, one may not want to compile the headers each time the Python interpreter is started. One may also
-want to read or write custom C++/C objects in ROOT files, and use them with RDataFrame or similar tools.
+want to read or write custom C++/C objects in ROOT files, and use them with `RDataFrame` or similar tools.
 A large analysis framework might further have multiple libraries.
 In these cases, one generates [ROOT dictionaries]({{ 'manual/interacting-with-shared-libraries' | relative_url }}), and adds these to the libraries, which will provide ROOT
 with the necessary information to generate Python bindings on the fly.
@@ -286,7 +286,7 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
    import ROOT
    ROOT.gSystem.Load('./libAnalysisLib.so')
    ```
-   The loading of C++ libraries can even be automated using the `__init__.py` of a python package.
+   The loading of C++ libraries can even be automated using the `__init__.py` of a Python package.
 
 
 
