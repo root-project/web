@@ -142,13 +142,25 @@ Moreover, `addressof` can be used in conjunction with `TTree::Branch` from Pytho
 
 - `SetOwnership(obj, python_owns)`: a Python proxy can either own or not own its internal C++ object. If a Python proxy owns its C++ object and the proxy is being destroyed, the C++ object will be deleted too. This ownership can be modified for a given Python proxy with `SetOwnership`. For example, when calling `SetOwnership(obj, False)`, the user makes sure that the C++ object proxied by `obj` will not be deleted by PyROOT when `obj` is garbage collected; this is useful e.g. if the user knows the deletion will happen in C++ and wants to prevent a double delete. This functionality should be used with care not to produce memory leaks.
 
-## Loading user libraries & jitting
+## Loading user libraries & Just-In-Time compilation (JITting)
 
-PyROOT allows to use *any C++ library* from Python, not only ROOT. This is possible thanks to the automatic and dynamic bindings between Python and C++ that PyROOT provides: without any prior generation of wrappers, at execution time, PyROOT can load and call into C++ code. The following sub-sections cover different supported scenarios for dynamic C++ code invocation.
+PyROOT allows to use *any C++ library* from Python, not only ROOT's libraries. This is possible thanks to the automatic and dynamic bindings between Python and C++ that PyROOT provides.
+Without any prior generation of wrappers, at execution time, PyROOT can load C++ code and call into it.
 
-### Jitting strings with code
+This allows for writing high-performance C++, compiling it, and using it from Python.
+The following options are available, ordered by complexity and performance:
 
-ROOT comes with a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}) to which we can request to process a given piece of C++ code. Sometimes, if such code is short (e.g. the definition of a small function or class) or for rapid exploration/debugging, it is enough the place the C++ code in a Python string and give it to the interpreter. The code will be just-in-time compiled (jitted) and immediately available for invocation, as shown in the example below, which calls the constructor of the C++ class `A` and function `f` from Python after defining them via the interpreter.
+1. [Just-in-time compilation of small strings](#JITString): Small functions and classes to be used from Python. Especially useful for testing and debugging.
+1. [Just-in-time compilation of entire files](#JITHeader): Small or medium-size C++ code in single files
+1. [Loading C++ libraries, JITting headers](#JITLoadLib): Larger C++ code in libraries. Allows for optimising code for high performance. Headers compiled just in time.
+1. [Loading C++ libraries with dictionaries](#JITLoadDict): Load large/very large, high-performance C++ projects, no just-in-time compilation
+
+
+<a name="JITString"></a>
+### 1. Jitting strings with code 
+
+ROOT comes with a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}), which can process pieces of C++ code. Sometimes, if such code is short (e.g. the definition of a small function or class) or for rapid exploration/debugging, it is enough the place the C++ code in a Python string, which is passed to the interpreter.
+The code will be just-in-time compiled (jitted) and is immediately available for invocation, as shown in the example below. Here, the constructor of the C++ class `A` and the function `f` are called from Python after defining them via the interpreter.
 
 ```python
 import ROOT
@@ -173,9 +185,10 @@ a = ROOT.A()   # prints Hello PyROOT!
 x = ROOT.f(3)  # x = 9
 ```
 
-### Including a header
+<a name="JITHeader"></a>
+### 2. Including a header
 
-If the C++ code we want to use is in a header, we can also ask the interpreter to include it. Let's assume we have a header called `my_header.h` with the following content:
+If the C++ code we want to use is in a header, we can also ask the interpreter to include and compile it on the fly. Let's assume we have a header called `my_header.h` with the following content:
 
 ```cpp
 int f(int i) { return i*i; }
@@ -186,7 +199,7 @@ public:
 };
 ```
 
-We can execute the code below:
+In Python, we can access it like this:
 
 ```python
  # Make the header known to the interpreter
@@ -197,9 +210,14 @@ We can execute the code below:
  x = ROOT.f(3)  # x = 9
 ```
 
-### Loading a library
+<a name="JITLoadLib"></a>
+### 3. Loading a library, but JITting the headers
 
-It is also possible to dynamically load C++ libraries with PyROOT and call into them. This time let's suppose our code is split between a header `my_header.h`:
+It is also possible to dynamically load C++ libraries with PyROOT, and call functions from the library. The advantage of this method is that
+all the code in the library needs to be compiled only once, possibly with optimisations (`-O2`, `-O3`), and it can be used again and again from Python without further JITting.
+It is, however, necessary to JIT the headers to make the code usable in Python.
+
+With the following header `my_header.h`:
 
 ```cpp
 int f(int i);
@@ -210,7 +228,7 @@ public:
 };
 ```
 
-and a source file:
+and the source file:
 
 ```cpp
 #include "my_header.h"
@@ -220,7 +238,7 @@ int f(int i) { return i*i; }
 A::A() { cout << "Hello PyROOT!" << endl; }
 ```
 
-Assuming we create a C++ library `my_cpp_library.so` from the code above, we can load and use such library like so:
+one can create the library `my_cpp_library.so`. In Python, we can load and use it like so:
 
 ```python
  # First include header, then load C++ library
@@ -231,6 +249,46 @@ ROOT.gSystem.Load('./my_cpp_library.so')
 a = ROOT.A()   # prints Hello PyROOT!
 x = ROOT.f(3)  # x = 9
 ```
+
+<a name="JITLoadDict"></a>
+### 4. Loading a library with ROOT dictionaries
+
+For larger analysis frameworks, one may not want to compile the headers each time the Python interpreter is started. One may also
+want to read or write custom C++/C objects in ROOT files, and use them with `RDataFrame` or similar tools.
+A large analysis framework might further have multiple libraries.
+In these cases, one generates [ROOT dictionaries]({{ 'manual/interacting-with-shared-libraries' | relative_url }}), and adds these to the libraries, which will provide ROOT
+with the necessary information to generate Python bindings on the fly.
+This is what the large LHC experiments do to steer their analysis frameworks from Python.
+
+1. Create one or multiple C++ libraries, e.g. as a CMake project that uses ROOT. [CMake details]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
+1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read/written from/into files.
+1. Have ROOT generate a dictionary file of all relevant headers. Use a [`LinkDef.h` file]({{ '/manual/interacting-with-shared-libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
+   to select which classes or functions ROOT should be in the dictionary.
+
+   The corresponding cmake instructions would look similar to this:
+   ```cmake
+   # Generate G__AnalysisLib.cxx with all the necessary class info:
+   ROOT_GENERATE_DICTIONARY(G__AnalysisLib inc/classA.h inc/classB.h ...
+                             LINKDEF LinkDef.h)
+
+    add_library(AnalysisLib SHARED
+       src/classA.cxx
+       src/classB.cxx
+       ...
+       G__AnalysisLib.cxx) # Important: Here, all dictionary info is directly compiled into the library.
+
+    # Ensure dictionary is generated before compiling the library:
+    add_dependencies(AnalysisLib G__AnalysisLib)
+   ```
+1. Work on C++, and compile the library using CMake.
+1. Load the library (libraries) with high-performance C++ and dictionaries in one go:
+   ```python
+   import ROOT
+   ROOT.gSystem.Load('./libAnalysisLib.so')
+   ```
+   The loading of C++ libraries can even be automated using the `__init__.py` of a Python package.
+
+
 
 ## TPython: running Python from C++
 
