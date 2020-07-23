@@ -23,7 +23,7 @@ We have invested a lot of time in [fixing many of the bugs](/doc/v622/release-no
 
 ## Release Notes
 
-The release notes for this release can be found [here](/doc/v622/release-notes.html#release-6.2200).
+The release notes for this release can be found [here](https://root.cern/doc/v622/release-notes.html).
 
 ## Source distribution
 
