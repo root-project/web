@@ -17,6 +17,10 @@ The first part of the ROOT Manual contains:
 
 - [Adding a class to ROOT]({{ '/manual/adding_a_class_to_root' | relative_url }})
 
+- [Integrating ROOT into CMake projects]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
+
+- [Interacting with shared libraries]({{ '/manual/interacting-with-shared-libraries' | relative_url }})
+
 - [ROOT collections]({{ '/manual/root_collections' | relative_url }})
 
 - [Object ownership]({{ '/manual/object_ownership' | relative_url }})
