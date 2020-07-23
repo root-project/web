@@ -83,6 +83,8 @@ manual:
         target: _blank
       - title: "Primer"
         url: primer/
+      - title: "All Reference Guides"
+        url: reference/
       - title: "Topical Manuals"
         url: topical/
       - title: "Forum & Help"
