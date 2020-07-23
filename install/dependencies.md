@@ -26,18 +26,18 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 *   **libXext-devel:** for /usr/include/X11/extensions/shape.h and for /usr/lib/libXext.so
 *   **python:**  (ROOT6 requires version >= 2.7)
 *   **redhat-lsb-core:**   needed by some tests (tutorials) using lsb_release and some CDash scripts
+*   **openssl-devel:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
 
 As a one-liner:
 
 ```bash
 sudo yum install git cmake3 gcc-c++ gcc binutils \
-libX11-devel libXpm-devel libXft-devel libXext-devel
+libX11-devel libXpm-devel libXft-devel libXext-devel openssl-devel
 ```
 
 ### Most common optional packages
 
 *   **gcc-gfortran:** for /usr/bin/gfortran
-*   **openssl-devel:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
 *   **pcre-devel:** for /usr/bin/pcre-config
 *   **mesa-libGL-deve**l: for /usr/include/GL/gl.h and for /usr/lib[64]/libGL.so
 *   **mesa-libGLU-devel**: for /usr/include/GL/glu.h and for /usr/lib[64]/libGLU.so
@@ -58,7 +58,7 @@ libX11-devel libXpm-devel libXft-devel libXext-devel
 As a one-liner:
 
 ```bash
-sudo yum install gcc-gfortran openssl-devel pcre-devel \
+sudo yum install gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel \
 avahi-compat-libdns_sd-devel openldap-devel python-devel \
@@ -83,18 +83,18 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 *   **libpng:** png library
 *   **libjpeg:** jpeg library
 *   **python:** (ROOT6 requires version >= 2.7)
+*   **openssl-dev** or **libssl-dev:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
 
 As a one-liner:
 
 ```bash
 sudo apt-get install dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
-libxft-dev libxext-dev python
+libxft-dev libxext-dev python openssl-dev
 ```
 
 ### Most common optional packages
 
 *   **gfortran:** for /usr/bin/gfortran
-*   **openssl-dev** or **libssl-dev:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
 *   **libpcre3-dev:** for /usr/bin/pcre-config
 *   **xlibmesa-glu-dev:** for /usr/include/GL/gl.h and for /usr/lib/libGL.so
 *   **libglew1.5-dev:** for /usr/include/GL/glew.h and for /usr/lib/libGLEW.so
@@ -116,7 +116,7 @@ libxft-dev libxext-dev python
 As a one-liner:
 
 ```bash
-sudo apt-get install gfortran libssl-dev libpcre3-dev \
+sudo apt-get install gfortran libpcre3-dev \
 xlibmesa-glu-dev libglew1.5-dev libftgl-dev \
 libmysqlclient-dev libfftw3-dev libcfitsio-dev \
 graphviz-dev libavahi-compat-libdnssd-dev \
@@ -130,13 +130,13 @@ Minimal set:
 
 ```bash
 sudo zypper install bash cmake gcc-c++ gcc binutils python libXpm-devel
-xorg-x11-devel libXext-devel
+xorg-x11-devel libXext-devel libopenssl-devel
 ```
 
 Most common optional packages:
 
 ```bash
-sudo zypper install gcc-fortran libopenssl-devel pcre-devel Mesa glew-devel
+sudo zypper install gcc-fortran pcre-devel Mesa glew-devel
 pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel
 libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel libxml2-devel
 krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
