@@ -8,8 +8,7 @@ sidebar:
 The Reference Guide is available for all major ROOT releases.
 This page gives the list of all the past versions.
 
-
-| ROOT Version           | HTML link                                                                  | Download link                                                           | Link to the Tag file (*)                                            |
+| ROOT Version           | HTML link                                                                  | Download link                                                           | Link to the Tag file                                                |
 |------------------------|----------------------------------------------------------------------------|------------------------------------------------------------------------ |---------------------------------------------------------------------|
 | HEAD of the git master | [browse](https://root.cern/doc/master/){:target="_blank"}                  |                                                                         | [tag file](https://root.cern/doc/master/ROOT.tag){:target="_blank"} |
 | 6.22                   | [browse](https://root.cern/doc/v622/){:target="_blank"}                    | [download](https://root.cern/download/html622.tar.gz){:target="_blank"} | [tag file](https://root.cern/doc/v622/ROOT.tag){:target="_blank"}   |
@@ -30,7 +29,7 @@ This page gives the list of all the past versions.
 | 5.26                   | [browse](https://root.cern/root/html526/ClassIndex.html){:target="_blank"} | [download](https://root.cern/download/html526.tar.gz){:target="_blank"} |
 | 5.24                   | [browse](https://root.cern/root/html524/ClassIndex.html){:target="_blank"} | [download](https://root.cern/download/html524.tar.gz){:target="_blank"} |
 
-
 If your project documentation is done via Doxygen and it depends on ROOT, you may want to
 link your project documentation to the ROOT reference guide. This can be done using ROOT
-tag file produced by [Doxygen](https://www.doxygen.nl){:target="_blank"}.
+tag file (corresponding to your ROOT version) produced by
+[Doxygen](https://www.doxygen.nl){:target="_blank"} available in the previous table.
