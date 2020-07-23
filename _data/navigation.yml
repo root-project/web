@@ -79,8 +79,7 @@ manual:
   - title: Further information
     children:
       - title: "Tutorials"
-        url: https://root.cern/doc/master/group__Tutorials.html
-        target: _blank
+        url: tutorials/
       - title: "Primer"
         url: primer/
       - title: "All Reference Guides"
