@@ -1,11 +1,9 @@
 {% assign name = {{include.name}}  %}
 {% assign url  = {{include.url}}  %}
 
-<center>
-<a href="https://root.cern/doc/master/group__tutorial__{{url}}.html" target="_blank">
-<img width="128" src="{{'/assets/images/tutorials.png' | relative_url}}">
-<font color="#346295" style="font-weight:bold" size="3">
-<br>{{name}} tutorials
+<font style="font-weight:bold" size="4">
+  <a href="https://root.cern/doc/master/group__tutorial__{{url}}.html" target="_blank">
+    <img style="width:auto; height:2em;" src="{{'/assets/images/tutorials.png' | relative_url}}">
+    <font color="#346295"> &rarr; {{name}} tutorials </font>
+  </a>
 </font>
-</a>
-</center>
