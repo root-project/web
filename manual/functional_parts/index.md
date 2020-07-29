@@ -28,7 +28,7 @@ The second part of the ROOT Manual contains:
 
 - [Mathematical libraries]({{ '/manual/math' | relative_url }})
 
-- [Vectors]({{ '/manual/vectors' | relative_url }})
+- [Physics vectors]({{ '/manual/physics_vectors' | relative_url }})
 
 - [Geometry]({{ '/manual/geometry' | relative_url }})
 

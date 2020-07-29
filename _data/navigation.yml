@@ -70,8 +70,8 @@ manual:
         url: manual/tmva
       - title: Mathematical libraries
         url: manual/math
-      - title: Vectors
-        url: manual/vectors
+      - title: Physics vectors
+        url: manual/physics_vectors
       - title: Geometry
         url: manual/geometry
       - title: "Python interface: PyROOT"

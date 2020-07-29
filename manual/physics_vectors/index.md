@@ -1,5 +1,5 @@
 ---
-title: Vectors
+title: Physics vectors
 layout: single
 sidebar:
   nav: "manual"
