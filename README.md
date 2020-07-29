@@ -1,13 +1,13 @@
-# New ROOT Web Site Prototype
+# ROOT Web Site
 
-A working version of this prototype can be seen here: https://root.s3-website.cern.ch
+The website is deployed at https://root.cern.
 
-This new web site is based on [jekyll](https://jekyllrb.com/)
+This new web site is based on [jekyll](https://jekyllrb.com/).
 
-It uses the ["Minimal-Mistakes" theme](https://mmistakes.github.io/minimal-mistakes/)
+It uses [a modified version](https://github.com/root-project/minimal-mistakes) of the ["Minimal-Mistakes" theme](https://mmistakes.github.io/minimal-mistakes/).
 
-The ROOT website uses [its own version of this theme](https://github.com/root-project/minimal-mistakes)
+## Test deployment of pull requests
 
-## Testing changes to the website
-
-Pull requests from branches in the root-project/web repo itself are deployed at https://root.s3-website.cern.ch/<prnumber>. Pull requests from forks of this repository will not be deployed.
+Pull requests from branches in the root-project/web repo itself are deployed at https://root.cern/<prnumber>.
+Pull requests from forks of this repository will not be deployed.
+Note that whenever a new version of the website is deployed, all PR deployments are deleted. Simply re-run the github workflow for the PR to re-deploy it.
