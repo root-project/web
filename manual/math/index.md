@@ -17,7 +17,7 @@ The ROOT Mathematical libraries consist of the following components:
 
 - [Minimization libraries and classes](#minimization-libraries-and-classes)
 
-- [Vectors]({{ '/manual/vectors' | relative_url }})
+- [Physics vectors]({{ '/manual/physics_vectors' | relative_url }})
 
 - [UNU.RAN](#unuran)
 
