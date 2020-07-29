@@ -2807,4 +2807,14 @@ was already mentioned in this guide, implemented through the class
 
 **End of this guide ... but hopefully not of your interaction with ROOT !**
 
+# Downloadable versions
+
+This guide can be downloaded in various formats. They are listed here:
+
+ -  [PDF A4 format](https://root.cern/root/htmldoc/guides/primer/ROOTPrimer.pdf){:target="_blank"}
+ -  [PDF Letter format](https://root.cern/root/htmldoc/guides/primer/ROOTPrimerLetter.pdf){:target="_blank"}
+ -  [HTML version](https://root.cern/root/htmldoc/guides/primer/ROOTPrimer.html){:target="_blank"}
+ -  [epub version for iPad and iPhone](https://root.cern/root/htmldoc/guides/primer/ROOTPrimer.epub){:target="_blank"}
+ -  [GitHub/SWAN version](https://github.com/root-project/NotebookPrimer){:target="_blank"}
+
 # References
