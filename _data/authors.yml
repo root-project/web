@@ -88,7 +88,7 @@ Danilo Piparo:
                  to many of its areas: I/O, reflection, math and statistics. He is mainly
                  involved in the aspects of ROOT which are relative to parallelism,
                  performance and programming model."
-  short_bio   : "Danilo, He is mainly involved in the aspects of ROOT which are relative
+  short_bio   : "Danilo is mainly involved in the aspects of ROOT which are relative
                  to parallelism, performance and programming model."
   tag         : "team"
   avatar      : "/assets/images/DP.jpg"
@@ -120,20 +120,19 @@ Enric Tejedor:
 Enrico Guiraud:
   name        : "Enrico Guiraud"
   bio         : "Enrico is a physicist turned computer scientist. His first experience at
-                 CERN was as Openlab summer student in 2015, experience during which he
-                 worked on multi-process analysis interfaces for ROOT. In 2016, he
-                 graduated cum laude from the Department of Physics of the University of
-                 Milan. His master's degree focused on statistical physics and
-                 computational methods for physics. In 2016, he joined the ROOT team as a
-                 computer science doctoral student, funded by the Wolfgang Gentner
-                 Scholarships programme. His most relevant contributions to ROOT have
-                 been in the areas of data analysis performance and programming model."
-  short_bio   : "Enrico's most relevant contributions to ROOT have been in the areas of
-                 data analysis performance and programming model."
+                 CERN was as Openlab summer student in 2015, during which he worked on
+                 multi-process analysis interfaces for ROOT. In 2016, he graduated cum laude
+                 from the Department of Physics of the University of Milan. His master's degree
+                 focused on statistical physics and computational methods for physics.
+                 He stably joined the ROOT team in 2016, first as a computer science doctoral student,
+                 funded by the Wolfgang Gentner Scholarships programme, and then as a CERN fellow.
+                 His most relevant contributions have been in the performance and programming model of ROOT's
+                 data analysis interfaces, and he is author and current maintainer of RDataFrame."
+  short_bio   : "Enrico is the current maintainer of RDataFrame and his work revolves around parallelism and analysis interfaces."
   tag         : "team"
   avatar      : "/assets/images/EG.png"
   affiliation : "CERN"
-  email       : "Enrico.Guiraud@cern.ch"
+  email       : "enrico.guiraud@cern.ch"
 
 
 Guilherme Amadio:
