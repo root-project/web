@@ -20,3 +20,13 @@ Note that this means that all images other than [`rootproject/root`](https://hub
 A big thanks to everyone who contributed to [root-docker](https://github.com/root-project/root-docker), with code or by participating in related discussions.
 
 As usual, we are looking forward to hear your feedback! You find us [on the forum](https://root-forum.cern.ch).
+
+### Update (30/07/2020):
+
+Thanks to our friendly neighborhood CVMFS developers, the latest ROOT Docker images are now also available as "unpacked" singularity containers. This means that on machines where CVMFS is present (e.g. on LXPLUS) you can start a ROOT singularity container with
+
+```
+singularity exec /cvmfs/unpacked.cern.ch/registry.hub.docker.com/rootproject/root:6.22.00-ubuntu20.04 root
+```
+
+More information on container images on CVMFS can be found [at this link](https://cvmfs.readthedocs.io/en/latest/cpt-containers.html#using-unpacked-cern-ch).
