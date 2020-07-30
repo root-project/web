@@ -79,18 +79,6 @@ Bertrand Bellenot:
   email       : "Bertrand.Bellenot@cern.ch"
 
 
-Danilo Piparo:
-  name        : "Danilo Piparo"
-  bio         : "Danilo is a particle Physicist and scientific software enthusiast. He
-                 has been a member of the ROOT team from 2013 to 2019 and contributed
-                 to many of its areas: I/O, reflection, math and statistics. He was mainly
-                 involved in the aspects of ROOT which are relative to parallelism,
-                 performance and programming model."
-  tag         : "previous"
-  affiliation : "CERN"
-  email       : "Danilo.Piparo@cern.ch"
-
-
 Enric Tejedor:
   name        : "Enric Tejedor"
   bio         : "Enric Tejedor received his Ph.D. from the Technical University of Catalonia
@@ -312,6 +300,18 @@ Anna Kreshuk:
                  most notably to the fitting machinery, the interface to FFTW, numerous
                  math-related functions, TEntryList container and PROOF GUI."
   tag         : "previous"
+
+
+Danilo Piparo:
+  name        : "Danilo Piparo"
+  bio         : "Danilo is a particle Physicist and scientific software enthusiast. He
+                 has been a member of the ROOT team from 2013 to 2019 and contributed
+                 to many of its areas: I/O, reflection, math and statistics. He was mainly
+                 involved in the aspects of ROOT which are relative to parallelism,
+                 performance and programming model."
+  tag         : "previous"
+  affiliation : "CERN"
+  email       : "Danilo.Piparo@cern.ch"
 
 
 David Gonzalez Maline:
