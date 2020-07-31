@@ -16,6 +16,12 @@
         <img style="width:auto; height:2em;" src="{{'/assets/images/mail.svg' | relative_url}}"></a></div>
         <div><font color="#346295" " size="1">Mail</font></div>
     </div>
+    <div style="display:inline-block;">
+        <div><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}">
+        <img style="width:auto; height:2em;" src="{{'/assets/images/feed.svg' | relative_url}}"></a></div>
+        <div><font color="#346295" " size="1">Feed</font></div>
+    </div>
 </center>
 <hr>
+
 <!-- end custom footer snippets -->
