@@ -229,5 +229,5 @@ start:
      children:
       - title: Courses
         url: get_started/courses
-      - title: Code Examples
-        url: get_started/code_examples
+      - title: Tutorials
+        url: tutorials

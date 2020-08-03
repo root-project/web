@@ -18,7 +18,7 @@ different, more direct approach to the ROOT fundamental
 concepts as well as some hands-on exercise. In order to integrate the information present
 in the aforementioned sources, [this collection of ROOT courses](courses){:target="_blank"}
 is definitively useful. Once the fundamental concepts have been acquired, a rich set of
-[code examples]({{ '/get_started/code_examples' | relative_url }}) are available to dive into the code.
+[tutorials]({{ '/tutorials' | relative_url }}) are available to dive into the code.
 
 Remember, you can always resort to the
 [ROOT Forum](https://root-forum.cern.ch){:target="_blank"}
