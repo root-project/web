@@ -3,8 +3,6 @@ title: For Developers
 layout: single
 sidebar:
   nav: "for_developers"
-toc: true
-toc_sticky: true
 ---
 
 The links in this section are intended for **the ROOT developers** and for people who want
