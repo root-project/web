@@ -7,8 +7,8 @@ author: Enrico Guiraud
 Hello,
 Enrico here with an update on the [ROOT Docker images](https://hub.docker.com/r/rootproject/root)!
 
-Since the ROOT team [announced the release of ROOT Docker images](https://root.cern/root-docker-container-alpha-version/), in 2017,
-we have received overwhelmingly positive feedback, the [community has contributed Dockerfiles](https://github.com/root-project/root-docker/graphs/contributors) for more platforms such as Centos7 and Arch Linux, and the images have been downloaded thousands of times, with the now fairly dated `rootproject/root-ubuntu16` image towering over other available options at over 100k downloads. ROOT Docker images are definitely not in the alpha phase anymore, and are now listed among other installation options on our [brand new installation page](https://root.cern/install).
+Since the ROOT team [announced the release of ROOT Docker images]({{ 'blog/root-docker-container-alpha-version/' | relative_url }}), in 2017,
+we have received overwhelmingly positive feedback, the [community has contributed Dockerfiles](https://github.com/root-project/root-docker/graphs/contributors) for more platforms such as Centos7 and Arch Linux, and the images have been downloaded thousands of times, with the now fairly dated `rootproject/root-ubuntu16` image towering over other available options at over 100k downloads. ROOT Docker images are definitely not in the alpha phase anymore, and are now listed among other installation options on our [brand new installation page]({{ 'install' | relative_url }}).
 
 As a consequence, we are renewing our effort in supporting up-to-date, ready-to-deploy ROOT Docker images.
 
