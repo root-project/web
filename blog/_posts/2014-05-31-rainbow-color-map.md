@@ -1,6 +1,6 @@
 ---
 title: The Rainbow Color Map
-layout: single
+layout: archive
 toc: true
 toc_sticky: true
 author: Olivier Couet
