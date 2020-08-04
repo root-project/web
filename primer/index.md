@@ -1388,7 +1388,7 @@ file="canvases.root" object="multigraph"
 caption="A set of graphs grouped in a multigraph."
 %}
 
-[^2]: [This article]({{ 'rainbow-color-map' | relative_url }}) gives more details about color map choice.
+[^2]: [This article]({{ 'blog/rainbow-color-map' | relative_url }}) gives more details about color map choice.
 
 # Histograms
 

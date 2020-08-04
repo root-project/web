@@ -11,7 +11,7 @@ sidebar:
 ---
 ## Highlights
 
-The [all new PyROOT]({{ "/new-pyroot-622/" | relative_url }}) is now the default PyROOT! It's a major upgrade, bringing much improved C++ support, and in generally more "pythonic" than the previous version. It's based on [cppyy](https://cppyy.readthedocs.io/en/latest/) which in turn is based on ROOT's [cling](/d/cling) (and a bit more from ROOT). See also the [PyROOT section in the release notes](/doc/v622/release-notes.html#pyroot).
+The [all new PyROOT]({{ 'blog/new-pyroot-622/' | relative_url }}) is now the default PyROOT! It's a major upgrade, bringing much improved C++ support, and in generally more "pythonic" than the previous version. It's based on [cppyy](https://cppyy.readthedocs.io/en/latest/) which in turn is based on ROOT's [cling](/d/cling) (and a bit more from ROOT). See also the [PyROOT section in the release notes](/doc/v622/release-notes.html#pyroot).
 
 There is more major python news: ROOT can now be built against Python3 and Python2 *at the same time*, creating the necessary libraries for `import ROOT` to work from both `python2` and `python3`, for a single ROOT build. Most of the binaries below now offer this.
 
