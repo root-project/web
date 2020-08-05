@@ -52,7 +52,7 @@ feature_row:
       <tr>
          <td style="width:68%; border:1px solid #cedff2; padding:0; background:#f5faff; vertical-align:top">
             <div style="padding:0.1em 0.6em;">
-               {% for post in site.posts limit:3 %}
+               {% for post in site.posts limit:5 %}
                <font size="4"><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b></font> <font size="1">({{post.date | date_to_string}})</font>
                <font size="2">{{ post.excerpt }}</font>
                {% endfor %}
