@@ -2,14 +2,14 @@
 title: ROOT Users' Workshop 2015
 layout: single
 sidebar:
-  nav: "news"
+  nav: "blog"
 ---
 
 <h3>ROOT Anniversary Workshop</h3>
 
 <p>The next ROOT Users' Workshop will celebrate ROOT's 20th anniversary. It will take place on 15-18 Sept 2015 in <a href="https://www.saas-fee.ch/en/aktivitaeten-sommer" target="_blank">Saas-Fee, Switzerland</a>.</p>
 
-<img alt="SaasFeeSummer.jpg" src="{{'/news/SaasFeeSummer.jpg' | relative_url}}" style="width: 500px; height: 389px;" /> <br />
+<img alt="SaasFeeSummer.jpg" src="{{'/blog/SaasFeeSummer.jpg' | relative_url}}" style="width: 500px; height: 389px;" /> <br />
   <em style="font-size: x-small; color: gray;">(c) The Dom</em>
 
 <p>Since now two decades, ROOT has established itself as the framework for HENP data processing and analysis. The LHC upgrade program and the new experiments being designed at CERN and elsewhere will pose even more formidable challenges in terms of data complexity and size. The new parallel and heterogeneous computing architectures that are either announced or already available trigger deep rethinking of the code and the data structures to be exploited efficiently.</p>

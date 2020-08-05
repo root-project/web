@@ -64,7 +64,7 @@ Verdana, sans-serif; line-height: 17.055999755859375px;">
 
 <p> </p>
 
-<p>Just as <a href="{{ 'news/workshops' | relative_url }}">the previous workshops</a>, this anniversary workshop is mostly
+<p>Just as <a href="{{ 'blog/workshops' | relative_url }}">the previous workshops</a>, this anniversary workshop is mostly
 about intense interaction with the ROOT developers: we will discuss, solve, invent and plan.
 In the past, these workshops have been eye-openers for users and developers - and we expect
 nothing less for the 9th workshop! </p>

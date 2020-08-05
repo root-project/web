@@ -17,9 +17,9 @@ main:
   - title: "Manual"
     url: manual
     description: "High level ROOT manual"
-  - title: "News"
-    url: news
-    description: "Latest ROOT news"
+  - title: "Blog Posts"
+    url: blog
+    description: "Latest ROOT blog posts"
   - title: "Contribute"
     url: contribute
     description: "Contribute to ROOT!"
@@ -175,13 +175,13 @@ install:
       - title: Building from source
         url: install/build_from_source
 
-news:
-   - title: News
-     url: news
+blog:
+   - title: Blog Posts
+     url: blog
    - title: Workshops
-     url: news/workshops
+     url: blog/workshops
    - title: Publications
-     url: news/publications
+     url: blog/publications
 
 contribute:
    - title: How To Contribute
