@@ -2,7 +2,7 @@
 title: ROOT Users Workshop 2013, 11 - 14 March, Saas-Fee
 layout: single
 sidebar:
-  nav: "blog"
+  nav: "releases"
 ---
 
 <div class="content">

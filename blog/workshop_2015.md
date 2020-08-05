@@ -2,7 +2,7 @@
 title: ROOT Users' Workshop 2015
 layout: single
 sidebar:
-  nav: "blog"
+  nav: "releases"
 ---
 
 <h3>ROOT Anniversary Workshop</h3>

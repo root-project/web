@@ -159,12 +159,6 @@ for_developers:
      url: https://root.cern/img/logos/ROOT_Logo/
      target: _blank
 
-releases:
-   - title: Useful links
-     children:
-      - title: All releases
-        url: install/all_releases
-
 install:
    - title: Useful links
      children:
@@ -175,13 +169,17 @@ install:
       - title: Building from source
         url: install/build_from_source
 
-blog:
-   - title: Blog Posts
-     url: blog
-   - title: Workshops
-     url: blog/workshops
-   - title: Publications
-     url: blog/publications
+releases:
+   - title: Useful links
+     children:
+      - title: Blog Posts
+        url: blog
+      - title: All releases
+        url: install/all_releases
+      - title: Workshops
+        url: blog/workshops
+      - title: Publications
+        url: blog/publications
 
 contribute:
    - title: How To Contribute

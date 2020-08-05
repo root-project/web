@@ -2,7 +2,7 @@
 title: Publications
 layout: single
 sidebar:
-  nav: "blog"
+  nav: "releases"
 ---
 
 **In case you want to cite ROOT in your own publications, this is the preferred reference**

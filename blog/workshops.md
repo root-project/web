@@ -2,7 +2,7 @@
 title: Workshops
 layout: single
 sidebar:
-  nav: "blog"
+  nav: "releases"
 ---
 
 ### Here the list with ROOT workshops:
