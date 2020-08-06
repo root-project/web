@@ -25,7 +25,6 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 *   **libXft-devel:** for /usr/include/X11/Xft/Xft.h and for /usr/lib/libXft.so
 *   **libXext-devel:** for /usr/include/X11/extensions/shape.h and for /usr/lib/libXext.so
 *   **python:**  (ROOT6 requires version >= 2.7)
-*   **redhat-lsb-core:**   needed by some tests (tutorials) using lsb_release and some CDash scripts
 *   **openssl-devel:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
 
 As a one-liner:
@@ -37,6 +36,7 @@ libX11-devel libXpm-devel libXft-devel libXext-devel openssl-devel
 
 ### Most common optional packages
 
+*   **redhat-lsb-core:** needed by some tests using lsb_release
 *   **gcc-gfortran:** for /usr/bin/gfortran
 *   **pcre-devel:** for /usr/bin/pcre-config
 *   **mesa-libGL-deve**l: for /usr/include/GL/gl.h and for /usr/lib[64]/libGL.so
@@ -71,7 +71,7 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 
 ### Required packages
 
-*   **dpkg-dev**  for dpkg-architecture (needed by configure to locate system libraries starting from 11)
+*   **dpkg-dev**  for dpkg-architecture (needed by configure to locate system libraries)
 *   **cmake:** for /usr/bin/cmake
 *   **g++:** for /usr/bin/g++
 *   **gcc:** for /usr/bin/gcc
