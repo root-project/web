@@ -470,3 +470,12 @@ Valeri Onuchin:
                  enabled web server."
   tag         : "previous"
 
+
+Stefan Wunsch:
+  name        : "Stefan Wunsch"
+  bio         : "Stefan studied physics at the Karlsruhe Institute of Technology with focus on data analysis, machine learning and software development. Previous projects have been with the Belle and CMS experiments about the integration of modern machine learning in the reconstruction and data analysis toolchain. After his first stay at CERN in 2016 as summer student with the CMS experiment, he returned to CERN in 2018 as PhD working in the ROOT team on machine learning and analysis facilities."
+  short_bio   : "Stefan is working in the ROOT team on machine learning and analysis facilities."
+  tag         : "team"
+  avatar      : "/assets/images/SW.jpeg"
+  affiliation : "CERN"
+  email       : "stefan.wunsch@cern.ch"
