@@ -29,6 +29,7 @@ jobs:
           directory: './build/'
           # Reasons for url-ignore
           # - https://root.cern/[0-9]+: Breaks checking local builds due to links in the metadata
+          # - https://root.cern/(?!(files|download|doc)): Checking links to the deployed website breaks appearing in the metadata of newly added webpages. Exceptions are links to files, download and doc, which are not part of the Jekyll setup.
           # - rootbnch-grafana-test.cern.ch: Breaks due to SSO
           # - lcgapp-services.cern.ch: Breaks due to SSO
           # - indico.desy.de: Returns frequently error code 403
@@ -36,7 +37,7 @@ jobs:
           # - lcginfo.cern.ch: does not support HTTPS, see https://sft.its.cern.ch/jira/browse/SPI-1672
           # Reasons for file-ignore
           # - Broken links in historic ROOT v5 release notes
-          arguments:  --empty-alt-ignore --file-ignore "/.*root-version-v5.*/" --allow-hash-href --url-ignore "/(https://root.cern/[0-9]+|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*|https://nbviewer.jupyter.org|http://lcginfo.cern.ch)/" --only-4xx --http-status-ignore "429" --enforce-https --check-favicon --url_swap '^/doc/:https\://root.cern/doc/,^/d/:https\://root.cern/d/,^/files/:https\://root.cern/files/,^/download/:https\://root.cern/download/,^/js/:https\://root.cern/js/,^/TaligentDocs/:https\://root.cern/TaligentDocs/,^/root/:https\://root.cern/root/'
+        arguments:  --empty-alt-ignore --file-ignore "/.*root-version-v5.*/" --allow-hash-href --url-ignore "/(https://root.cern/[0-9]+|https://root.cern/(?!(files|download|doc))|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*|https://nbviewer.jupyter.org|http://lcginfo.cern.ch)/" --only-4xx --http-status-ignore "429" --enforce-https --check-favicon --url_swap '^/doc/:https\://root.cern/doc/,^/d/:https\://root.cern/d/,^/files/:https\://root.cern/files/,^/download/:https\://root.cern/download/,^/js/:https\://root.cern/js/,^/TaligentDocs/:https\://root.cern/TaligentDocs/,^/root/:https\://root.cern/root/'
 
       - name: Only allow links to root.cern, never root.cern.ch
         run: |
