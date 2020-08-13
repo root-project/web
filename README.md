@@ -8,6 +8,6 @@ It uses [a modified version](https://github.com/root-project/minimal-mistakes) o
 
 ## Test deployment of pull requests
 
-Pull requests from branches in the root-project/web repo itself are deployed at https://root.cern/<prnumber>.
+Pull requests from branches in the root-project/web repo itself are deployed at `https://root.cern/<PRNUMBER>`.
 Pull requests from forks of this repository will not be deployed.
 Note that whenever a new version of the website is deployed, all PR deployments are deleted. Simply re-run the github workflow for the PR to re-deploy it.
