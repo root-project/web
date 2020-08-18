@@ -262,8 +262,9 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
 
 1. Create one or multiple C++ libraries, e.g. as a CMake project that uses ROOT. [CMake details]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
 1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read/written from/into files.
-1. Have ROOT generate a dictionary file of all relevant headers. Use a [`LinkDef.h` file]({{ '/manual/interacting-with-shared-libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
-   to select which classes or functions ROOT should be in the dictionary.
+1. Have ROOT generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files.
+   Use a [`LinkDef.h` file]({{ '/manual/interacting-with-shared-libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
+   to select which classes or functions ROOT should include in the dictionary.
 
    The corresponding cmake instructions would look similar to this:
    ```cmake
@@ -280,12 +281,20 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
     # Ensure dictionary is generated before compiling the library:
     add_dependencies(AnalysisLib G__AnalysisLib)
    ```
-1. Work on C++, and compile the library using CMake.
-1. Load the library (libraries) with high-performance C++ and dictionaries in one go:
+1. Implement the C++ side, and compile the library using CMake.
+1. On the Python side, load the library/libraries with high-performance C++ in one go:
    ```python
    import ROOT
    ROOT.gSystem.Load('./libAnalysisLib.so')
    ```
+   > **NB** If either ROOT or the headers that were used to create the dictionaries were moved to a different location, and ROOT cannot
+   > find them (it will issue an error in this case), the location of the headers has to be communicated to ROOT:
+   > ```python
+   > import ROOT
+   > ROOT.gInterpreter.AddIncludePath('path/to/headers/')
+   > ROOT.gSystem.Load('./libAnalysisLib.so')
+   > ```
+
    The loading of C++ libraries can even be automated using the `__init__.py` of a Python package.
 
 
