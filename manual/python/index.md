@@ -482,7 +482,7 @@ TypeError: CppBase not an acceptable base: no virtual destructor
 | cppyy.gbl.nullptr                         | cppyy.nullptr                   |
 | cppyy.gbl.PyROOT.TPyException             | cppyy.gbl.CPyCppyy.TPyException |
 | buffer.SetSize(N)                         | buffer.reshape((N,))            |
-| obj.\_\_cppname\_\_                       | obj.\_\_cpp\_name\_\_           |
+| obj.\_\_cppname\_\_                       | klass.\_\_cpp\_name\_\_         |
 | obj.\_get\_smart\_ptr                     | obj.\_\_smartptr\_\_            |
 | callable.\_creates                        | callable.\_\_creates\_\_        |
 | callable.\_mempolicy                      | callable.\_\_mempolicy\_\_      |
