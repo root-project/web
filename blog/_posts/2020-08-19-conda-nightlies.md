@@ -26,6 +26,6 @@ The usual disclaimer about nightly builds applies: minor bugs might crop in and 
 
 A big thanks goes to Chris Burr for all the help in making this happen.
 A nice blog post by Henry Schreiner, also maintainer of the ROOT Conda package, about the ins and outs of ROOT in Conda is [at this link](https://iscinumpy.gitlab.io/post/root-conda/).
-All available distribution channels for ROOT nightly builds are listed at https://root.cern/install/nightlies.
+All available distribution channels for ROOT nightly builds are listed at [https://root.cern/install/nightlies](https://root.cern/install/nightlies).
 
 Let us know what you think by clicking the comment button below!
