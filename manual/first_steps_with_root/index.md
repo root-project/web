@@ -410,7 +410,7 @@ the library name, just replacing the `so` extension by the extension `d`.
 To compile a ROOT macro with default optimizations, type:
 
 ```
-      root[] .L MyScript.C++g
+      root[] .L MyScript.C++
 ```
 
 To compile a ROOT macro with optimizations, type:
@@ -422,7 +422,7 @@ To compile a ROOT macro with optimizations, type:
 To compile a ROOT macro with debug symbols, type:
 
 ```
-      root[] .L MyScript.C++
+      root[] .L MyScript.C++g
 ```
 
 #### Generating dictionaries
