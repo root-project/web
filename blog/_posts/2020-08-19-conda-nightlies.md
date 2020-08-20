@@ -24,7 +24,7 @@ $ conda activate root-nightly
 
 The usual disclaimer about nightly builds applies: minor bugs might crop in and features might not yet be production-ready.
 
-A big thanks goes to Chris Burr for all the help in making this happen.
+A big thank you goes to Chris Burr for all the help in making this happen.
 Also check out [this nice blog post](https://iscinumpy.gitlab.io/post/root-conda) from Henry Schreiner, another maintainer of the ROOT Conda package, about the ins and outs of ROOT+Conda.
 All available distribution channels for ROOT nightly builds are listed at [https://root.cern/install/nightlies](https://root.cern/install/nightlies).
 
