@@ -12,14 +12,14 @@ Or, you know, compile the very latest ROOT from source code -- but nobody has ti
 If you are a ROOT power user with no time to lose, or you just want to quickly try out that new feature you heard about, or you _really_ need a bug fix that was merged _yesterday_ to get those fancy plots done, I have good news for you! Thanks to the great folks behind ROOT's [conda package](https://root.cern/install/#conda), not only you can install the latest ROOT stable version on your computer [in under 5 minutes](https://indico.cern.ch/event/759388/contributions/3306849/), but from today you can also install the bleeding edge, unreleased development version of ROOT _from yesterday_ with the following one-liner:
 
 ```bash
-$ conda create --name root-nightly -c conda-forge -c https://root.cern/download/conda-nightly/latest root-nightly
+$ conda create --name root-nightly-env -c conda-forge -c https://root.cern/download/conda-nightly/latest root-nightly
 ```
 
-That command creates a Conda environment called `root-nightly` which contains the very latest ROOT with the very latest goodies.
+That command creates a Conda environment called `root-nightly-env` which contains the very latest ROOT with the very latest goodies.
 To activate the environment and use that ROOT version, just call
 
 ```
-$ conda activate root-nightly
+$ conda activate root-nightly-env
 ```
 
 The usual disclaimer about nightly builds applies: minor bugs might crop in and features might not yet be production-ready.
