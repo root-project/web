@@ -597,3 +597,26 @@ modifier methods on the `std::string` objects.
 <class cppyy.gbl.std.string at 0x4cd41b0>
 <class cppyy.gbl.std.string at 0x4cd41b0>
 ```
+
+- When obtaining the boolean value of a C++ instance proxy, both old and new PyROOT return
+`False` when such proxy points to null. On the other hand, when the proxy points to a C++ object,
+old PyROOT just returns `True`, while new PyROOT has slightly modified this behaviour: in new
+cppyy, if `__len__` is available, the result of `__len__` is used to determine truth. This is
+done to comply with the normal Python behaviour, where `__len__` is tried if `__bool__` is not
+present
+(see [here](https://docs.python.org/3.8/reference/datamodel.html#object.__bool__)). For example,
+the following code shows how the insertion of `__len__` changes the boolean value of an instance
+proxy:
+
+```python
+>>> import ROOT
+>>> ROOT.gInterpreter.Declare('class A {};')
+
+>>> a = ROOT.A()
+>>> bool(a)
+True
+
+>>> ROOT.A.__len__ = lambda self : 0
+>>> bool(a)  # False because len(a) == 0
+False
+```
