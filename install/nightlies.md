@@ -19,9 +19,10 @@ The [usual instructions]({{ '/install/#download-a-pre-compiled-binary-distributi
 If you have access to LCG, as it is the case on LXPLUS, for example, ROOT nightlies can be obtained by sourcing the relevant scripts:
 
 ```
-source /cvmfs/sft.cern.ch/lcg/nightlies/dev3/<DAY>/lcgenv/*/<PLATFORM+Compiler>/lcgenv-env.sh
-source /cvmfs/sft.cern.ch/lcg/nightlies/dev3/<DAY>/ROOT/HEAD/<PLATFORM+Compiler>/bin/thisroot.sh
+source /cvmfs/sft.cern.ch/lcg/views/dev3python3/latest/<Platform+compiler>/setup.sh
 ```
+- For python2, use `lcg/views/dev3/`
+- To get a ROOT version a few days old, replace `latest` with the desired day.
 
 ## Conda package
 
