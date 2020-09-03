@@ -1,14 +1,17 @@
 ---
 title: Releases
-layout: single
+layout: single-no-title
 toc: true
 toc_sticky: true
 sidebar:
   nav: "releases"
 ---
 
+<table style="border: 0px ;"><tr>
+<td style="border: 0px"><b><font size="5">{{ page.title }}</font></b></td>
+<td style="border: 0px"><a href="{{ 'feed/releases.xml' | relative_url }}"><img style="width:auto; height:2.0em;" src="{{'/assets/images/feed.svg' | relative_url}}"></a></td>
+</tr></table>
 <br>
-
 {% include releases_list state="latest" label="LATEST" single_column="yes" %}
 
 ### Version 6
