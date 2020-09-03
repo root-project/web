@@ -620,3 +620,23 @@ True
 >>> bool(a)  # False because len(a) == 0
 False
 ```
+
+- In new cppyy, buffer objects are represented by the `LowLevelView` type. If such a buffer
+points to null, it is not iterable, unlike in the old PyROOT. For example, in the following
+code, `GetX()` returns a null pointer and therefore an exception will be thrown when calling
+`list(x)`:
+
+```python
+>> import ROOT
+
+>> g = ROOT.TGraph()
+>> x = g.GetX()
+
+>> xl = list(x)  # throws ReferenceError
+```
+
+The code above can be protected by checking for the validity of `x`:
+
+```python
+>>> xl = list(x) if x else 'your default'
+```
