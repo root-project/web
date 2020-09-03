@@ -298,3 +298,9 @@ collections:
     output: true
 
 github: [metadata]
+
+feed:
+  posts_limit: 20
+  collections:
+    - releases
+    - ideas
