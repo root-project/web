@@ -58,7 +58,19 @@ when visualising data. The main issues with this kind of color map are:
   4. it introduces gradients not related to the data,
   5. it artificially divides the data into a small number of categories, one for each color.
 
-Despite these problems the color map is still the most widely used in pseudo-color representations. May be just because "it looks nice". The following picture is a very good example showing how misleading the color map can be. These two images represent the same data set. The one on left uses a rainbow color map whereas the one on right uses a more appropriate map. It is amazing to see how the rainbow map hides the well known structure of the Florida coast line. This is because all the values between 500m below sea level to 500m above sea level are all painted the same color yellow. When the color map explicitly delineates sea level, the coastline is visible. Also, because the luminance of the colormap varies monotonically above and below sea level, structures which were hidden by the Rainbow colormap become apparent, such as the Continental shelf and the Appalachian mountains. In this example, the coastline of Florida is very familiar. But in many cases, an analyst examines a visualization to discover features. Using the Rainbow colormap can distort the perception of these features and be very misleading
+Despite these problems the color map is still the most widely used in pseudo-color representations.
+May be just because "it looks nice". The following picture is a very good example showing
+how misleading the color map can be. These two images represent the same data set. The one
+on left uses a rainbow color map whereas the one on right uses a more appropriate map. It
+is amazing to see how the rainbow map hides the well known structure of the Florida coast
+line. This is because all the values between 500m below sea level to 500m above sea level
+are all painted the same color yellow. When the color map explicitly delineates sea level,
+the coastline is visible. Also, because the luminance of the colormap varies monotonically
+above and below sea level, structures which were hidden by the Rainbow colormap become apparent,
+such as the Continental shelf and the Appalachian mountains. In this example, the coastline of
+Florida is very familiar. But in many cases, an analyst examines a visualization to discover
+features. Using the Rainbow colormap can distort the perception of these features and be
+very misleading
 
 {% include figure_image
    img="/assets/images/RCM03.png"
@@ -68,7 +80,9 @@ Despite these problems the color map is still the most widely used in pseudo-col
    masks significant features in the data, and emphasizes less important ones. The \"Perceptual\"
    colormap in the right panel explicitly identifies the \"0\" in the data, which is sea level,
    and provides monotonic luminance variations above and below zero. This colormap provides
-   a more faithful representation of the structures in the data."
+   a more faithful representation of the structures in the data.
+   [This tutorial](https://root.cern/doc/master/perceptualcolormap_8C.html) shows how to
+   produce a perceptual palette in ROOT."
 %}
 
 ## Color maps in High Energy Physics
@@ -117,7 +131,8 @@ using this palette.
 }
 {% endhighlight %}
 
-This histogram has more bins than the previous example, playing on them with various colormap will be more interesting.
+This histogram has more bins than the previous example, playing on them with various colormap
+will be more interesting.
 
 ### Rainbow color map in linear scale
 
