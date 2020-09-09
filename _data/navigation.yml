@@ -142,8 +142,8 @@ for_developers:
       - title: Coverity
         url: https://coverity.cern.ch/login/login.htm
         target: _blank
-      - title: Jira
-        url: https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page
+      - title: Bug Reports
+        url: https://github.com/root-project/root/issues/new
         target: _blank
       - title: ROOTBinder Checklist
         url: for_developers/continous_integration-testing/rootbinder_checklist
