@@ -17,9 +17,9 @@ main:
   - title: "Manual"
     url: manual
     description: "High level ROOT manual"
-  - title: "News"
-    url: news
-    description: "Latest ROOT news"
+  - title: "Blog Posts"
+    url: blog
+    description: "Latest ROOT blog posts"
   - title: "Contribute"
     url: contribute
     description: "Contribute to ROOT!"
@@ -70,26 +70,39 @@ manual:
         url: manual/tmva
       - title: Mathematical libraries
         url: manual/math
-      - title: Vectors
-        url: manual/vectors
+      - title: Physics vectors
+        url: manual/physics_vectors
       - title: Geometry
         url: manual/geometry
       - title: "Python interface: PyROOT"
         url: manual/python
   - title: Further information
     children:
-      - title: "Reference Guide"
-        url: reference
       - title: "Tutorials"
-        url: https://root.cern/doc/master/group__Tutorials.html
-        target: _blank
+        url: tutorials/
       - title: "Primer"
         url: primer/
+      - title: "All Reference Guides"
+        url: reference/
       - title: "Topical Manuals"
         url: topical/
       - title: "Forum & Help"
         url: https://root-forum.cern.ch/
         target: _blank
+      - title: "Cling"
+        url: cling/
+
+cling:
+      - title: "Cling"
+        url: cling/
+      - title: "Cling Build Instructions"
+        url: cling/cling_build_instructions
+      - title: "Cling In Brief"
+        url: cling/cling_in_brief
+      - title: "Cling: Dynamic Scopes"
+        url: cling/cling_dynamic_scopes
+      - title: "Cling: Implementing Dynamic Scopes with clang"
+        url: cling/cling_implementing_dynamic_scopes_with_clang
 
 for_developers:
    - title: Program of Work
@@ -104,6 +117,9 @@ for_developers:
    - title: GitHub
      url: https://github.com/root-project
      target: _blank
+     children:
+      - title: Creating a Pull Request
+        url: for_developers/creating_pr
    - title: Meetings
      url: for_developers/meetings
    - title: ROOT 7
@@ -126,8 +142,8 @@ for_developers:
       - title: Coverity
         url: https://coverity.cern.ch/login/login.htm
         target: _blank
-      - title: Jira
-        url: https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page
+      - title: Bug Reports
+        url: https://github.com/root-project/root/issues/new
         target: _blank
       - title: ROOTBinder Checklist
         url: for_developers/continous_integration-testing/rootbinder_checklist
@@ -159,13 +175,13 @@ install:
       - title: Building from source
         url: install/build_from_source
 
-news:
-   - title: News
-     url: news
+blog:
+   - title: Blog Posts
+     url: blog
    - title: Workshops
-     url: news/workshops
+     url: blog/workshops
    - title: Publications
-     url: news/publications
+     url: blog/publications
 
 contribute:
    - title: How To Contribute
@@ -213,5 +229,5 @@ start:
      children:
       - title: Courses
         url: get_started/courses
-      - title: Code Examples
-        url: get_started/code_examples
+      - title: Tutorials
+        url: tutorials

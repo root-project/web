@@ -3,8 +3,6 @@ title: For Developers
 layout: single
 sidebar:
   nav: "for_developers"
-toc: true
-toc_sticky: true
 ---
 
 The links in this section are intended for **the ROOT developers** and for people who want
@@ -45,7 +43,7 @@ ROOT externals coming from the central installations in AFS or CVMFS.
    - [CDash](https://cdash.cern.ch/index.php?project=ROOT)
    - [Coverity](https://coverity.cern.ch/login/login.htm)
    - [GitWeb](https://root.cern/gitweb/?p=root.git;a=summary)
-   - [Jira](https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Asummary-page)
+   - [Bug Reports](https://github.com/root-project/root/issues/new)
    - [ROOTBinder Checklist](continous_integration-testing/rootbinder_checklist)
 
 ### [Doxygen in ROOT]({{'/for_developers/doxygen' | relative_url}})

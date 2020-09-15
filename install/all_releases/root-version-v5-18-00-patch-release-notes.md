@@ -134,7 +134,7 @@ sidebar:
 <ul>
 	<li>TRFIOFile, TCastorFile
 	<ul>
-		<li>Make sure the the anchor part of the URL is not passed to the Castor low-level functions. This is needed to correctly open elements of archives files.</li>
+		<li>Make sure the anchor part of the URL is not passed to the Castor low-level functions. This is needed to correctly open elements of archives files.</li>
 	</ul>
 	</li>
 	<li>configure, config/Makefile.in, xrootd/Module.mk

@@ -121,6 +121,12 @@ need and follow the installation instructions.
 
 **Let's dive into ROOT!**
 
+> **Note**
+>
+> The macros and data files presented is this document can be found
+> in the [ROOT GitHub repository](https://github.com/root-project/root/tree/master/documentation/primer/macros)
+>
+
 # ROOT Basics
 
 Now that you have installed ROOT, what's this interactive shell thing
@@ -820,7 +826,7 @@ void macro1(){
 
     // Instance of the graph
     TGraphErrors graph(n_points,x_vals,y_vals,nullptr,y_errs);
-    graph.SetTitle("Measurement XYZ;lenght [cm];Arb.Units");
+    graph.SetTitle("Measurement XYZ;length [cm];Arb.Units");
 
     // Make the plot esthetically better
     graph.SetMarkerStyle(kOpenCircle);
@@ -1151,7 +1157,7 @@ int macro2(){
                                 "%lg %lg %lg");
     graph_expected.SetTitle(
        "Measurement XYZ and Expectation;"
-       "lenght [cm];"
+       "length [cm];"
        "Arb.Units");
     graph_expected.SetFillColor(kYellow);
     graph_expected.DrawClone("E3AL"); // E3 draws the band
@@ -1192,20 +1198,22 @@ resulting Figure is [4.2](#f42):
 
 void macro3(){
     auto c = new TCanvas("myCanvas","myCanvas",600,600);
-    Double_t rmin=0.;
-    Double_t rmax=TMath::Pi()*6.;
-    const Int_t npoints=1000;
-    Double_t r[npoints];
-    Double_t theta[npoints];
-    for (Int_t ipt = 0; ipt < npoints; ipt++) {
-        r[ipt] = ipt*(rmax-rmin)/npoints+rmin;
-        theta[ipt] = TMath::Sin(r[ipt]);
+    double rmin = 0.;
+    double rmax = TMath::Pi()*6.;
+    const int npoints = 1000;
+    double r[npoints];
+    double theta[npoints];
+    for (int ipt = 0; ipt < npoints; ipt++) {
+        theta[ipt] = ipt*(rmax-rmin)/npoints+rmin;
+        r[ipt] = TMath::Sin(theta[ipt]);
     }
-    TGraphPolar grP1 (npoints,r,theta);
-    grP1.SetTitle("A Fan");
-    grP1.SetLineWidth(3);
-    grP1.SetLineColor(2);
-    grP1.DrawClone("L");
+    auto grP1 = new TGraphPolar(npoints,theta,r);
+    grP1->SetTitle("A Fan");
+    grP1->SetLineWidth(3);
+    grP1->SetLineColor(2);
+    grP1->Draw("L");
+    gPad->Update();
+    grP1->GetPolargram()->SetToRadian();
 }
 {% endhighlight %}
 
@@ -1380,7 +1388,7 @@ file="canvases.root" object="multigraph"
 caption="A set of graphs grouped in a multigraph."
 %}
 
-[^2]: [This article]({{ 'rainbow-color-map' | relative_url }}) gives more details about color map choice.
+[^2]: [This article]({{ 'blog/rainbow-color-map' | relative_url }}) gives more details about color map choice.
 
 # Histograms
 
@@ -2798,5 +2806,15 @@ was already mentioned in this guide, implemented through the class
 `TTree`. But there is still much more for you to explore!
 
 **End of this guide ... but hopefully not of your interaction with ROOT !**
+
+# Downloadable versions
+
+This guide can be downloaded in various formats. They are listed here:
+
+ -  [PDF A4 format](https://root.cern/root/htmldoc/guides/primer/ROOTPrimer.pdf){:target="_blank"}
+ -  [PDF Letter format](https://root.cern/root/htmldoc/guides/primer/ROOTPrimerLetter.pdf){:target="_blank"}
+ -  [HTML version](https://root.cern/root/htmldoc/guides/primer/ROOTPrimer.html){:target="_blank"}
+ -  [epub version for iPad and iPhone](https://root.cern/root/htmldoc/guides/primer/ROOTPrimer.epub){:target="_blank"}
+ -  [GitHub/SWAN version](https://github.com/root-project/NotebookPrimer){:target="_blank"}
 
 # References

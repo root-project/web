@@ -1,23 +1,16 @@
 ---
-title:  "ROOT Users' Workshop 2015"
-layout: archive
-author:
+title: ROOT Users' Workshop 2015
+layout: single
+sidebar:
+  nav: "blog"
 ---
-
-The next ROOT Users' Workshop will celebrate ROOT's 20th anniversary. It will take place
-on 15-18 Sept 2015 in
-<a href="https://www.saas-fee.ch/en/aktivitaeten-sommer" target="_blank">Saas-Fee,
-Switzerland</a>
 
 <h3>ROOT Anniversary Workshop</h3>
 
-<p>The next ROOT Users' Workshop will celebrate ROOT's 20th anniversary. It will take
-place on 15-18 Sept 2015 in
-<a href="https://www.saas-fee.ch/en/aktivitaeten-sommer" target="_blank">Saas-Fee, Switzerland</a>.</p>
+<p>The next ROOT Users' Workshop will celebrate ROOT's 20th anniversary. It will take place on 15-18 Sept 2015 in <a href="https://www.saas-fee.ch/en/aktivitaeten-sommer" target="_blank">Saas-Fee, Switzerland</a>.</p>
 
-<p style="margin-top: 1em; margin-bottom: 1em; color: rgb(0, 0, 0); font-family: Arial,
-Verdana, sans-serif; line-height: 17.055999755859375px;">
-
+<img alt="SaasFeeSummer.jpg" src="{{'/blog/SaasFeeSummer.jpg' | relative_url}}" style="width: 500px; height: 389px;" /> <br />
+  <em style="font-size: x-small; color: gray;">(c) The Dom</em>
 
 <p>Since now two decades, ROOT has established itself as the framework for HENP data processing and analysis. The LHC upgrade program and the new experiments being designed at CERN and elsewhere will pose even more formidable challenges in terms of data complexity and size. The new parallel and heterogeneous computing architectures that are either announced or already available trigger deep rethinking of the code and the data structures to be exploited efficiently.</p>
 
@@ -62,16 +55,11 @@ Verdana, sans-serif; line-height: 17.055999755859375px;">
    </li>
 </ul>
 
-<p> </p>
 
-<p>Just as <a href="{{ 'news/workshops' | relative_url }}">the previous workshops</a>, this anniversary workshop is mostly
-about intense interaction with the ROOT developers: we will discuss, solve, invent and plan.
-In the past, these workshops have been eye-openers for users and developers - and we expect
-nothing less for the 9th workshop! </p>
+<p>Just as <a href="../workshops/">the previous workshops</a>, this anniversary workshop is mostly about intense interaction with the ROOT developers: we will discuss, solve, invent and plan. In the past, these workshops have been eye-openers for users and developers - and we expect nothing less for the 9th workshop! </p>
 
 <h3>Important dates</h3>
 
-<p> </p>
 
 <ul>
    <li><a href="https://indico.cern.ch/event/349459/call-for-abstracts/submit" target="_blank">Abstract submission</a> by Aug 2, 2015</li>
@@ -79,7 +67,6 @@ nothing less for the 9th workshop! </p>
    <li><a href="https://indico.cern.ch/event/349459/registration/#payment" target="_blank">Workshop fee payment</a> (200CHF per person including lunches from Tuesday to Friday, coffee breaks and the conference dinner) by Aug 21, 2015</li>
 </ul>
 
-<p> </p>
 
 <h3>Venue, Accommodation</h3>
 

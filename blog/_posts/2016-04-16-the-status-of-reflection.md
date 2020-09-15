@@ -1,6 +1,6 @@
 ---
 title: The status of reflection in C++
-layout: single
+layout: archive
 toc: true
 toc_sticky: true
 author: Axel Naumann

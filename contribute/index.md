@@ -41,7 +41,7 @@ We maintain a set of "ideas" for talented scientists and developers to pick up. 
 
 {% assign sorted = site.ideas | reverse %}
 
-### Ideas
+### Ideas <a href="{{ 'feed/ideas.xml' | relative_url }}"><img style="width:auto; height:1.0em;" src="{{'/assets/images/feed.svg' | relative_url}}"></a>
 
 <ul>
 {% for idea in sorted %}

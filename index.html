@@ -50,42 +50,28 @@ feature_row:
 <table style="width: 100%; margin-top:4px; border-spacing: 0px;">
    <tbody>
       <tr>
-         <td style="width:55%; border:1px solid #cedff2; padding:0; background:#f5faff; vertical-align:top">
-            <h1 style="margin:0.3em; background:#cedff2; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; padding:0.2em 0.4em;">Under the Spotlight</h1>
-            <br>
+         <td style="width:68%; border:1px solid #cedff2; padding:0; background:#f5faff; vertical-align:top">
             <div style="padding:0.1em 0.6em;">
-               {% for post in site.posts limit:3 %}
-               <font size="2"><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b></font> <font size="1">({{post.date | date_to_string}})</font>
-               <font size="2"><p>{{ post.excerpt }}</p></font>
+               {% for post in site.posts limit:5 %}
+               <font size="4"><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b></font> <font size="1">({{post.date | date_to_string}})</font>
+               <font size="2">{{ post.excerpt }}</font>
                {% endfor %}
+               <b><a href="{{'/blog' | relative_url}}"> More ...</a></b>
             </div>
          </td>
          <td style="border:0px;">
          </td>
-         <td style="width:45%; border:1px solid #cedff2; padding:0; background:#f5faff; vertical-align:top;">
+         <td style="width:32%; border:1px solid #cedff2; padding:0; background:#f5faff; vertical-align:top;">
             <h1 style="margin:0.3em; background:#cedff2; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; padding:0.2em 0.4em;">Latest Releases</h1>
             <br>
             <div style="padding:0.1em 0.6em;">
                <font size="2">
-               {% include releases_list number=4 single_column="yes" %}
+               {% include releases_list number=5 single_column="yes" %}
+               <br>
                <b><a href="{{'/install/all_releases' | relative_url}}"> More ...</a></b>
                </font>
             </div>
             <br>
-            <h1 style="margin:0.3em; background:#cedff2; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; padding:0.2em 0.4em;">Tech Blog</h1>
-            <br>
-            <div style="padding:0.1em 0.6em;">
-               <font size="2">
-                  <ul style="list-style-type:none; margin:0; padding:0;">
-                  {% for post in site.posts %}
-                  {% if forloop.index >= 4 and forloop.index <=8 %}
-                  <li><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b> <font size="1">({{post.date | date_to_string}})</font><br></li>
-                  {% endif %}
-                  {% endfor %}
-               </ul>
-               <b><a href="{{'/news' | relative_url}}"> More ...</a></b>
-               </font>
-            </div>
          </td>
       </tr>
    </tbody>

@@ -28,18 +28,30 @@ jobs:
         with:
           directory: './build/'
           # Reasons for url-ignore
-          # - ourselves: Breaks checking local builds due to links in the metadata
+          # - https://root.cern/[0-9]+: Breaks checking local builds due to links in the metadata
+          # - https://root.cern/(?!(files|download|doc)): Checking links to the deployed website breaks appearing in the metadata of newly added webpages. Exceptions are links to files, download and doc, which are not part of the Jekyll setup.
           # - rootbnch-grafana-test.cern.ch: Breaks due to SSO
           # - lcgapp-services.cern.ch: Breaks due to SSO
           # - indico.desy.de: Returns frequently error code 403
+          # - nbviewer: When notebook generation fails, nbviewer returns 404 errors, and errors might even be cached in CDNs for a while
+          # - lcginfo.cern.ch: does not support HTTPS, see https://sft.its.cern.ch/jira/browse/SPI-1672
           # Reasons for file-ignore
           # - Broken links in historic ROOT v5 release notes
-          arguments: --empty-alt-ignore --file-ignore "/.*root-version-v5.*/" --allow-hash-href --url-ignore "/(https://ph-root-2.cern.ch/.*|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*)/" --only-4xx --enforce-https --check-favicon --url_swap '^/doc/:https\://root.cern/doc/,^/d/:https\://root.cern/d/,^/files/:https\://root.cern/files/,^/download/:https\://root.cern/download/,^/js/:https\://root.cern/js/,^/TaligentDocs/:https\://root.cern/TaligentDocs/,^/root/:https\://root.cern/root/'
+          arguments:  --empty-alt-ignore --file-ignore "/.*root-version-v5.*/" --allow-hash-href --url-ignore "/(https://root.cern/[0-9]+|https://root.cern/(?!(files|download|doc))|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*|https://nbviewer.jupyter.org|http://lcginfo.cern.ch)/" --only-4xx --http-status-ignore "429" --enforce-https --check-favicon --url_swap '^/doc/:https\://root.cern/doc/,^/d/:https\://root.cern/d/,^/files/:https\://root.cern/files/,^/download/:https\://root.cern/download/,^/js/:https\://root.cern/js/,^/TaligentDocs/:https\://root.cern/TaligentDocs/,^/root/:https\://root.cern/root/'
 
-      - name: Look for root.cern.ch links
+      - name: Only allow links to root.cern, never root.cern.ch
         run: |
+          grep -n -R 'root\.cern\.ch' build || exit 0  # grep returns non-zero if no match is found
           N_WRONG_LINKS=$(grep -R 'root\.cern\.ch' build | wc -l)
-          exit $N_WRONG_LINKS
+          echo -e "\nFound $N_WRONG_LINKS links to root.cern.ch. Please change them to link to root.cern (no '.ch') instead."
+          exit 1
+
+      - name: Only allow links to ref guide for master (except in release notes)
+        run: |
+          grep --exclude-dir="releases" --exclude-dir="reference" --exclude-dir="all_releases" --exclude-dir="feed" -n -R -P 'https:\/\/root\.cern\/doc\/(?!master)' build\
+             || exit 0 # grep returns non-zero if no match is found
+          echo -e "\nFound links to /doc/NOT_MASTER (see above). Please change them to link to /doc/master."
+          exit 1
 
       - name: Wait for other deployments
         # wait for other workflows that are deploying the website to finish, (not 100% foolproof, see #240)

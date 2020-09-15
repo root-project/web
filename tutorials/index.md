@@ -1,11 +1,11 @@
 ---
-title: Code Examples
+title: Tutorials
 layout: single
 sidebar:
   nav: "start"
 ---
 
-ROOT offers a rich set of code examples that allow you to see ROOT's building blocks "in action",
+ROOT offers a rich set of tutorials that allow you to see ROOT's building blocks "in action",
 as part of more complex programs. They are separated in two categories: C++ or python scripts
 and Jupyter notebooks.
 

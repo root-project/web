@@ -1,5 +1,5 @@
 ---
-title: Vectors
+title: Physics vectors
 layout: single
 sidebar:
   nav: "manual"
@@ -18,7 +18,7 @@ Every class, function, manipulator, or other symbol defined in the GenVector pac
 
 The vector class templates are provided to represent vectors (in the physics sense) in 2, 3, and Minkowski space 4 dimensions.
 
-Each vector template class  uses as its only parameter the the coordinate system.
+Each vector template class  uses as its only parameter the coordinate system.
 
 Every vector class publishes a typedef for `CoordinateType`, which allows to specify the coordinate system , as well as a typedef for `Scalar` (which will match the `Scalar` type for the coordinate system).
 

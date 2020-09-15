@@ -60,17 +60,107 @@ caption="Example of graphics generated with PyROOT."
 
 > **Note that** the code above can also be written in a script file and executed with Python. In that case, the script will run to completion and the Python process will terminate, making the created canvas disappear. If you want to keep the Python process alive and thus be able to inspect your canvas, run the script with `python -i script_name.py`.
 
-## Interface
+## User interface
 
-*Content is coming soon!*
+Besides being the entry point to all ROOT functionality, the `ROOT` Python module also offers an interface to configure PyROOT and to manipulate PyROOT objects at a lower level. The next subsections describe in more detail the characteristics of the PyROOT user interface.
 
-## Loading user libraries & jitting
+### Configuration options
 
-PyROOT allows to use *any C++ library* from Python, not only ROOT. This is possible thanks to the automatic and dynamic bindings between Python and C++ that PyROOT provides: without any prior generation of wrappers, at execution time, PyROOT can load and call into C++ code. The following sub-sections cover different supported scenarios for dynamic C++ code invocation.
+After importing the ROOT module, one can access the PyROOT configuration object as `ROOT.PyConfig`. Such object has a set of properties that can be modified to steer the behaviour of PyROOT. For the configuration to be taken into account, it needs to be applied right after `ROOT` is imported. For example:
 
-### Jitting strings with code
+```python
+import ROOT
+ROOT.PyConfig.DisableRootLogon = True
+ROOT.PyConfig.IgnoreCommandLineOptions = False
+```
 
-ROOT comes with a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}) to which we can request to process a given piece of C++ code. Sometimes, if such code is short (e.g. the definition of a small function or class) or for rapid exploration/debugging, it is enough the place the C++ code in a Python string and give it to the interpreter. The code will be just-in-time compiled (jitted) and immediately available for invocation, as shown in the example below, which calls the constructor of the C++ class `A` and function `f` from Python after defining them via the interpreter.
+The available configuration options are described next:
+
+- `DisableRootLogon` (default `False`): just like it happens in C++, PyROOT also supports the [rootlogon](https://root.cern/doc/master/rootlogon_8C.html) functionality. When PyROOT starts, it will look for a file called `.rootlogon.py` in the user's home directory and, if such file exists, PyROOT will import it. This can be used to make some settings every time PyROOT is launched, for example defining some style for your plots:
+
+```python
+# Content of .rootlogon.py
+import ROOT
+myStyle = ROOT.TStyle('MyStyle','My graphics style')
+myStyle.SetCanvasColor(ROOT.kBlue) # My canvases will have blue color!
+ROOT.gROOT.SetStyle('MyStyle')
+```
+
+If PyROOT cannot find `.rootlogon.py` in the user's home directory, it will look for the equivalent in C++ (`.rootlogon.C`), first in [ROOT's etc directory](https://root.cern/doc/master/classTROOT.html#ab8e51627a12d886d6c8177b46481352a), then in the user's home directory and finally in the current working directory. Note that it is also possible to use both the Python and the C++ rootlogons, since the latter can be loaded from the former, for instance with `ROOT.gROOT.LoadMacro('.rootlogon.C')`.
+
+If the user would like to completely disable the rootlogon functionality, they can do so by setting `PyConfig.DisableRootLogon` to `True`. 
+
+- `IgnoreCommandLineOptions` (default `True`): if a PyROOT script is executed with some command line arguments, they will be ignored by default by ROOT, so the user is free to process them as they wish. However, by setting `PyConfig.IgnoreCommandLineOptions` to `False`, those arguments will be forwarded to ROOT for parsing, e.g. to enable the batch mode from the command line. A complete list of the arguments accepted by ROOT can be found [here]({{ '/manual/first_steps_with_root/#starting-root-with-command-line-options' | relative_url }}).
+
+- `ShutDown` (default `True`): when PyROOT is terminating, during its cleanup phase, the ROOT C++ interpreter is shut down. If PyROOT is executed as part of a longer-running application that needs the C++ interpreter, `PyConfig.ShutDown` can be set to `False` to prevent that shutdown.
+
+- `StartGUIThread` (default `True`): except when executed from [IPython](https://ipython.org/), a [Jupyter](https://jupyter.org/) notebook or in [interactive mode](https://docs.python.org/3/tutorial/interpreter.html#interactive-mode), PyROOT starts a thread that periodically polls for ROOT events (e.g. GUI events) to process them. If a given PyROOT application does not need this event processing, it can prevent the creation of the thread by setting `PyConfig.StartGUIThread` to `False`.
+
+### Enabling batch mode
+
+When running in batch mode, PyROOT will not display any graphics. There are two ways in which a user can activate the batch mode:
+
+1. Passing `-b` as a command line argument, e.g. `python -b my_pyroot_script.py`. For this to work, `PyConfig.IgnoreCommandLineOptions` must be set to `False` inside the PyROOT script, as discussed [here]({{ '/manual/python/#configuration-options' | relative_url }}).
+
+2. Calling `gROOT.SetBatch` in the PyROOT script, right after importing `ROOT`:
+
+```python
+import ROOT
+ROOT.gROOT.SetBatch(True)
+```
+
+### Low-level manipulation of objects
+
+When instantiating a C++ class from Python via PyROOT, both a C++ object and its Python proxy object are created. Such Python object forwards any access to its internal C++ object, thus acting as a proxy. PyROOT offers some functions to inspect or manipulate Python proxies and their C++ counterparts, based on functionality provided by [cppyy](https://cppyy.readthedocs.io/en/latest/lowlevel.html). All these functions can be accessed with the pattern `ROOT.NameOfFunction` and they are listed next:
+
+- `AddressOf(obj)`: when applied to a Proxy object `obj`, it returns an indexable buffer of length 1, whose only element is the address of the C++ object proxied by `obj`. The address of the buffer is the same as the address of the address of the C++ object. This function is kept for backwards compatibility with old PyROOT versions.
+
+- `addressof(obj, field, byref)`: similarly to `AddressOf`, it can be used to obtain the address of an internal C++ object from its Python proxy. However, `addressof` returns that address as an integer, not as an indexable buffer. Furthermore, `addressof` accepts two more parameters: `field` and `byref`. `field` can be used to specify the name of a field in a struct, in order to get the address of that field. If `byref` is set to true, `addressof` returns the address of the address of the C++ object. This function is equivalent to [cppyy's `addressof`](https://cppyy.readthedocs.io/en/latest/lowlevel.html#capsules). Example usage:
+
+```python
+>>> import ROOT
+>>> ROOT.gInterpreter.Declare("struct MyStruct { int foo; float bar; };")
+True
+>>> mys = ROOT.MyStruct()
+>>> ROOT.addressof(mys) # Address of mys' C++ object
+94352024283040L
+>>> ROOT.addressof(mys, 'foo') # Address of "foo" field (same as address of object) 
+94352024283040L
+>>> ROOT.addressof(mys, 'bar') # Address of "bar" field
+94352024283044L
+>>> ROOT.addressof(mys, byref = True) # Address of address of mys' C++ object
+140376843834640L
+```
+
+Moreover, `addressof` can be used in conjunction with `TTree::Branch` from Python as shown [here](https://github.com/root-project/root/blob/d1d035e17b9b8dd97bcd146dd6e0c84a0d1aa4a1/bindings/pyroot/pythonizations/test/ttree_branch.py#L134).
+
+- `AsCObject`: equivalent to [cppyy's `as_cobject`](https://cppyy.readthedocs.io/en/latest/lowlevel.html#capsules).
+
+- `BindObject`: equivalent to [cppyy's `bind_object`](https://cppyy.readthedocs.io/en/latest/lowlevel.html#c-c-casts).
+
+- `MakeNullPointer(class_proxy)`: equivalent to `BindObject(0, class_proxy)`, it returns a Proxy object of the class represented by `class_proxy` that is bound to a C++ null pointer. For example, `MakeNullPointer(TTree)` returns a `TTree` proxy object which internally points to null. This function is kept for backwards compatibility with old PyROOT versions.
+
+- `SetOwnership(obj, python_owns)`: a Python proxy can either own or not own its internal C++ object. If a Python proxy owns its C++ object and the proxy is being destroyed, the C++ object will be deleted too. This ownership can be modified for a given Python proxy with `SetOwnership`. For example, when calling `SetOwnership(obj, False)`, the user makes sure that the C++ object proxied by `obj` will not be deleted by PyROOT when `obj` is garbage collected; this is useful e.g. if the user knows the deletion will happen in C++ and wants to prevent a double delete. This functionality should be used with care not to produce memory leaks.
+
+## Loading user libraries & Just-In-Time compilation (JITting)
+
+PyROOT allows to use *any C++ library* from Python, not only ROOT's libraries. This is possible thanks to the automatic and dynamic bindings between Python and C++ that PyROOT provides.
+Without any prior generation of wrappers, at execution time, PyROOT can load C++ code and call into it.
+
+This allows for writing high-performance C++, compiling it, and using it from Python.
+The following options are available, ordered by complexity and performance:
+
+1. [Just-in-time compilation of small strings](#JITString): Small functions and classes to be used from Python. Especially useful for testing and debugging.
+1. [Just-in-time compilation of entire files](#JITHeader): Small or medium-size C++ code in single files
+1. [Loading C++ libraries, JITting headers](#JITLoadLib): Larger C++ code in libraries. Allows for optimising code for high performance. Headers compiled just in time.
+1. [Loading C++ libraries with dictionaries](#JITLoadDict): Load large/very large, high-performance C++ projects, no just-in-time compilation
+
+
+<a name="JITString"></a>
+### 1. Jitting strings with code 
+
+ROOT comes with a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}), which can process pieces of C++ code. Sometimes, if such code is short (e.g. the definition of a small function or class) or for rapid exploration/debugging, it is enough the place the C++ code in a Python string, which is passed to the interpreter.
+The code will be just-in-time compiled (jitted) and is immediately available for invocation, as shown in the example below. Here, the constructor of the C++ class `A` and the function `f` are called from Python after defining them via the interpreter.
 
 ```python
 import ROOT
@@ -95,9 +185,10 @@ a = ROOT.A()   # prints Hello PyROOT!
 x = ROOT.f(3)  # x = 9
 ```
 
-### Including a header
+<a name="JITHeader"></a>
+### 2. Including a header
 
-If the C++ code we want to use is in a header, we can also ask the interpreter to include it. Let's assume we have a header called `my_header.h` with the following content:
+If the C++ code we want to use is in a header, we can also ask the interpreter to include and compile it on the fly. Let's assume we have a header called `my_header.h` with the following content:
 
 ```cpp
 int f(int i) { return i*i; }
@@ -108,7 +199,7 @@ public:
 };
 ```
 
-We can execute the code below:
+In Python, we can access it like this:
 
 ```python
  # Make the header known to the interpreter
@@ -119,9 +210,14 @@ We can execute the code below:
  x = ROOT.f(3)  # x = 9
 ```
 
-### Loading a library
+<a name="JITLoadLib"></a>
+### 3. Loading a library, but JITting the headers
 
-It is also possible to dynamically load C++ libraries with PyROOT and call into them. This time let's suppose our code is split between a header `my_header.h`:
+It is also possible to dynamically load C++ libraries with PyROOT, and call functions from the library. The advantage of this method is that
+all the code in the library needs to be compiled only once, possibly with optimisations (`-O2`, `-O3`), and it can be used again and again from Python without further JITting.
+It is, however, necessary to JIT the headers to make the code usable in Python.
+
+With the following header `my_header.h`:
 
 ```cpp
 int f(int i);
@@ -132,7 +228,7 @@ public:
 };
 ```
 
-and a source file:
+and the source file:
 
 ```cpp
 #include "my_header.h"
@@ -142,7 +238,7 @@ int f(int i) { return i*i; }
 A::A() { cout << "Hello PyROOT!" << endl; }
 ```
 
-Assuming we create a C++ library `my_cpp_library.so` from the code above, we can load and use such library like so:
+one can create the library `my_cpp_library.so`. In Python, we can load and use it like so:
 
 ```python
  # First include header, then load C++ library
@@ -153,6 +249,55 @@ ROOT.gSystem.Load('./my_cpp_library.so')
 a = ROOT.A()   # prints Hello PyROOT!
 x = ROOT.f(3)  # x = 9
 ```
+
+<a name="JITLoadDict"></a>
+### 4. Loading a library with ROOT dictionaries
+
+For larger analysis frameworks, one may not want to compile the headers each time the Python interpreter is started. One may also
+want to read or write custom C++/C objects in ROOT files, and use them with `RDataFrame` or similar tools.
+A large analysis framework might further have multiple libraries.
+In these cases, one generates [ROOT dictionaries]({{ 'manual/interacting-with-shared-libraries' | relative_url }}), and adds these to the libraries, which will provide ROOT
+with the necessary information to generate Python bindings on the fly.
+This is what the large LHC experiments do to steer their analysis frameworks from Python.
+
+1. Create one or multiple C++ libraries, e.g. as a CMake project that uses ROOT. [CMake details]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
+1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read/written from/into files.
+1. Have ROOT generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files.
+   Use a [`LinkDef.h` file]({{ '/manual/interacting-with-shared-libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
+   to select which classes or functions ROOT should include in the dictionary.
+
+   The corresponding cmake instructions would look similar to this:
+   ```cmake
+   # Generate G__AnalysisLib.cxx with all the necessary class info:
+   ROOT_GENERATE_DICTIONARY(G__AnalysisLib inc/classA.h inc/classB.h ...
+                             LINKDEF LinkDef.h)
+
+    add_library(AnalysisLib SHARED
+       src/classA.cxx
+       src/classB.cxx
+       ...
+       G__AnalysisLib.cxx) # Important: Here, all dictionary info is directly compiled into the library.
+
+    # Ensure dictionary is generated before compiling the library:
+    add_dependencies(AnalysisLib G__AnalysisLib)
+   ```
+1. Implement the C++ side, and compile the library using CMake.
+1. On the Python side, load the library/libraries with high-performance C++ in one go:
+   ```python
+   import ROOT
+   ROOT.gSystem.Load('./libAnalysisLib.so')
+   ```
+   > **NB** If either ROOT or the headers that were used to create the dictionaries were moved to a different location, and ROOT cannot
+   > find them (it will issue an error in this case), the location of the headers has to be communicated to ROOT:
+   > ```python
+   > import ROOT
+   > ROOT.gInterpreter.AddIncludePath('path/to/headers/')
+   > ROOT.gSystem.Load('./libAnalysisLib.so')
+   > ```
+
+   The loading of C++ libraries can even be automated using the `__init__.py` of a Python package.
+
+
 
 ## TPython: running Python from C++
 
@@ -337,7 +482,7 @@ TypeError: CppBase not an acceptable base: no virtual destructor
 | cppyy.gbl.nullptr                         | cppyy.nullptr                   |
 | cppyy.gbl.PyROOT.TPyException             | cppyy.gbl.CPyCppyy.TPyException |
 | buffer.SetSize(N)                         | buffer.reshape((N,))            |
-| obj.\_\_cppname\_\_                       | obj.\_\_cpp\_name\_\_           |
+| obj.\_\_cppname\_\_                       | type(obj).\_\_cpp\_name\_\_         |
 | obj.\_get\_smart\_ptr                     | obj.\_\_smartptr\_\_            |
 | callable.\_creates                        | callable.\_\_creates\_\_        |
 | callable.\_mempolicy                      | callable.\_\_mempolicy\_\_      |
@@ -451,4 +596,47 @@ modifier methods on the `std::string` objects.
 ...
 <class cppyy.gbl.std.string at 0x4cd41b0>
 <class cppyy.gbl.std.string at 0x4cd41b0>
+```
+
+- When obtaining the boolean value of a C++ instance proxy, both old and new PyROOT return
+`False` when such proxy points to null. On the other hand, when the proxy points to a C++ object,
+old PyROOT just returns `True`, while new PyROOT has slightly modified this behaviour: in new
+cppyy, if `__len__` is available, the result of `__len__` is used to determine truth. This is
+done to comply with the normal Python behaviour, where `__len__` is tried if `__bool__` is not
+present
+(see [here](https://docs.python.org/3.8/reference/datamodel.html#object.__bool__)). For example,
+the following code shows how the insertion of `__len__` changes the boolean value of an instance
+proxy:
+
+```python
+>>> import ROOT
+>>> ROOT.gInterpreter.Declare('class A {};')
+
+>>> a = ROOT.A()
+>>> bool(a)
+True
+
+>>> ROOT.A.__len__ = lambda self : 0
+>>> bool(a)  # False because len(a) == 0
+False
+```
+
+- In new cppyy, buffer objects are represented by the `LowLevelView` type. If such a buffer
+points to null, it is not iterable, unlike in the old PyROOT. For example, in the following
+code, `GetX()` returns a null pointer and therefore an exception will be thrown when calling
+`list(x)`:
+
+```python
+>> import ROOT
+
+>> g = ROOT.TGraph()
+>> x = g.GetX()
+
+>> xl = list(x)  # throws ReferenceError
+```
+
+The code above can be protected by checking for the validity of `x`:
+
+```python
+>>> xl = list(x) if x else 'your default'
 ```
