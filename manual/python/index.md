@@ -263,7 +263,7 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
 1. Create one or multiple C++ libraries, e.g. as a CMake project that uses ROOT. [CMake details]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
 1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read/written from/into files.
 1. Have ROOT generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files.
-   Use a [`LinkDef.h` file]({{ '/manual/interacting-with-shared-libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
+   Use a [`LinkDef.h` file]({{ '/manual/interacting_with_shared_libraries' | relative_url }})
    to select which classes or functions ROOT should include in the dictionary.
 
    The corresponding cmake instructions would look similar to this:
