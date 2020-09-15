@@ -19,11 +19,11 @@ be visualized in [NBViewer](https://nbviewer.jupyter.org/){:target="_blank"} or 
 
 Once you have [properly setup the ROOT environment]({{'manual/first_steps_with_root' | relative_url }}){:target="_blank"},
 all the tutorials will be available on *your* machine in the `$ROOTSYS/tutorials` folder.
-You can then [execute/read the macros]({{'manual/first_steps_with_root/#root-macros' | relative_url }})
+You can then [execute/read the macros]({{'manual/interacting_with_shared_libraries' | relative_url }})
 there to learn from the examples. Do not hesitate to comment out/ add code to these tutorials
 macros to learn interactively how ROOT works.
 Among the long list of tutorials you may want to start with:
-[histograms](https://root.cern/doc/master/group__tutorial__hist.html){:target="_blank"},
-[graphs](https://root.cern/doc/master/group__tutorial__graphs.html){:target="_blank"},
-[graphics](https://root.cern/doc/master/group__tutorial__graphics.html){:target="_blank"} and
-[trees](https://root.cern/doc/master/group__tutorial__tree.html){:target="_blank"}.
+- [histograms](https://root.cern/doc/master/group__tutorial__hist.html){:target="_blank"}
+- [graphs](https://root.cern/doc/master/group__tutorial__graphs.html){:target="_blank"}
+- [graphics](https://root.cern/doc/master/group__tutorial__graphics.html){:target="_blank"}
+- [trees](https://root.cern/doc/master/group__tutorial__tree.html){:target="_blank"}

@@ -19,7 +19,7 @@ The first part of the ROOT Manual contains:
 
 - [Integrating ROOT into CMake projects]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
 
-- [Interacting with shared libraries]({{ '/manual/interacting-with-shared-libraries' | relative_url }})
+- [Interacting with shared libraries]({{ '/manual/interacting_with_shared_libraries' | relative_url }})
 
 - [ROOT collections]({{ '/manual/root_collections' | relative_url }})
 

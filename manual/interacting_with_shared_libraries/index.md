@@ -507,8 +507,7 @@ Let's look at the different parts:
     - `-DSOMETHING` //will define a preprocessor macro which is sometimes needed to parse header file.
 
   - `Header1.h Header2.h...` are the headers that rootcling will read and extract the type information from.
-  - `Linkdef.h` is the magic file that steers rootcling; [it's worth its own paragraph!](#selecting-dictionary-entries-linkdefh)
-
+  - `Linkdef.h` is the magic file that steers rootcling.
 
 ## Embedding the rootcling call into a GNU Makefile
 
@@ -535,7 +534,7 @@ libMyLib.so: MyDict.cxx $(SOURCES)
 [TAB]     g++ -shared -o$@ `root-config --ldflags` $(CXXFLAGS) -I$(ROOTSYS)/include $^
 ```
 
-## Selecting Dictionary Entries: Linkdef.h
+## Selecting dictionary entries: Linkdef.h
 
 To select who should go into a dictionary you will want to specify a <span style="font-family:courier new,courier,monospace;">Linkdef.h</span> file when you manually invoke <span style="font-family:courier new,courier,monospace;">rootcint</span>. It is passed as the last argument to rootcint, and it must _end_ on<span style="font-family:courier new,courier,monospace;"> Linkdef.h, LinkDef.h,</span> or <span style="font-family:courier new,courier,monospace;">linkdef.h</span>. E.g. <span style="font-family:courier new,courier,monospace;">My_Linkdef.h</span> is good, <span style="font-family:courier new,courier,monospace;">Linkdef_mine.h</span> is not.
 
@@ -596,7 +595,7 @@ Sometimes it's easier to say: I want a dictionary for everything defined in file
 ```
 into your <span style="font-family:courier new,courier,monospace;">Linkdef.h</span> file. Of course subdir/MyHeader.h must correspond to one of the header files you passed to rootcint!
 
-### The End
+### The end
 
 Now all that's missing is the closing
 
