@@ -256,14 +256,14 @@ x = ROOT.f(3)  # x = 9
 For larger analysis frameworks, one may not want to compile the headers each time the Python interpreter is started. One may also
 want to read or write custom C++/C objects in ROOT files, and use them with `RDataFrame` or similar tools.
 A large analysis framework might further have multiple libraries.
-In these cases, one generates [ROOT dictionaries]({{ 'manual/interacting-with-shared-libraries' | relative_url }}), and adds these to the libraries, which will provide ROOT
+In these cases, one generates [ROOT dictionaries]({{ 'manual/interacting_with_shared_libraries' | relative_url }}), and adds these to the libraries, which will provide ROOT
 with the necessary information to generate Python bindings on the fly.
 This is what the large LHC experiments do to steer their analysis frameworks from Python.
 
 1. Create one or multiple C++ libraries, e.g. as a CMake project that uses ROOT. [CMake details]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
 1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read/written from/into files.
 1. Have ROOT generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files.
-   Use a [`LinkDef.h` file]({{ '/manual/interacting-with-shared-libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
+   Use a [`LinkDef.h` file]({{ '/manual/interacting_with_shared_libraries' | relative_url }})
    to select which classes or functions ROOT should include in the dictionary.
 
    The corresponding cmake instructions would look similar to this:

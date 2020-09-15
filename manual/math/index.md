@@ -597,10 +597,10 @@ _**Example**_
 
 The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides the following classes for generating pseudo-random numbers:
 
-- {% include ref class="TRandom" %} - Using a linear congruential random generator.
-- {% include ref class="TRandom1" %} - Random number generator based on the Ranlux engine.
-- {% include ref class="TRandom2" %} - Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
-- {% include ref class="TRandom3" %} - Based on the Mersenne and Twister pseudo-random number generator.
+- {% include ref class="TRandom" %}: Using a linear congruential random generator.
+- {% include ref class="TRandom1" %}: Random number generator based on the Ranlux engine.
+- {% include ref class="TRandom2" %}: Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
+- {% include ref class="TRandom3" %}: Based on the Mersenne and Twister pseudo-random number generator.
 
 > **Note**
 >
@@ -796,9 +796,9 @@ ROOT provides the following matrix classes, among others:
 
 - `TMatrixDSparse`: Sparse matrix with double precision (`double`).
 
-- {% include ref class="TDecompBase" %} -  Decomposition base class.
+- {% include ref class="TDecompBase" %}: Decomposition base class.
 
-- {% include ref class="TDecompChol" %} - Cholesky decomposition class.
+- {% include ref class="TDecompChol" %}: Cholesky decomposition class.
 
 
 <p><a name="matrix-properties"></a></p>
@@ -847,11 +847,11 @@ Use one of the following methods to access the information about the relevant ma
 
 - `Double_t` [GetTol()](https://root.cern/doc/master/classTMatrixTBase.html#af1fd9bf8dcae0bcc96e5c6d526bd176b){:target="_blank"}: Tolerance number that is used in decomposition operations.
 
-- `Int_t` [*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"} - For sparse matrices, access to the row index of `fNrows+1` entries.
+- `Int_t` [*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"}: For sparse matrices, access to the row index of `fNrows+1` entries.
 
-- `Int_t` [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"} - For sparse matrices, access to the column index of `fNelems` entries.
+- `Int_t` [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"}: For sparse matrices, access to the column index of `fNelems` entries.
 
-[*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"}  and [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"}  are specific to the sparse matrix, which is implemented according to the Harwell-
+[*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"} and [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"}  are specific to the sparse matrix, which is implemented according to the Harwell-
 Boeing format. Here, besides the usual shape/size descriptors of the matrix like `fNrows`, `fRowLwb`, `fNcols` and `fColLwb`,
 also a row index `fRowIndex` and a column index `fColIndex` are stored:
 
@@ -1082,7 +1082,7 @@ The following operations and methods are available:
     <tr>
       <td>Element</td>
       <td>C=A+B</td>
-      <td>overwrites A</td>
+      <td>Overwrites A</td>
     </tr>
     <tr>
       <td>Wise sum</td>
@@ -1094,15 +1094,15 @@ The following operations and methods are available:
       <td>Element wise substraction</td>
       <td>C=A-B A-=B<br>
 TMatrixD(A,TMatrixD::kMinus,B)</td>
-      <td>overwrites A<br>
-constructor</td>
+      <td>Overwrites A<br>
+Constructor</td>
     </tr>
             <tr>
       <td>Matrix multiplication</td>
       <td>C=A*B<br>
 A*=B<br>
 C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD::kTransposeMult,B)<br>TMatrixD(A, TMatrixD::kMultTranspose,B)</td>
-      <td>overwrites A<br>&nbsp;<br>&nbsp;<br>constructor of A.B<br>constructor of A<sup>T</sup> .B<br>constructor of A.B<sup>T</sup></td>
+      <td>Overwrites A<br>&nbsp;<br>&nbsp;<br>Constructor of A.B<br>Constructor of A<sup>T</sup> .B<br>Constructor of A.B<sup>T</sup></td>
     </tr>
       <tr>
       <td>Element wise multiplication</td>
@@ -1133,7 +1133,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
       <td>overwrites A</td>
     </tr>
     <tr>
-      <td>Element wise subtraction</td>
+      <td>Element wise substraction</td>
       <td>C=r-A C=A-r A-=r</td>
       <td>overwrites A</td>
     </tr>
@@ -1151,54 +1151,54 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
 <table width="100%" border="0">
   <tbody>
     <tr>
-      <th scope="col">Description</th>
+      <th scope="col">Format</th>
       <th scope="col">Output</th>
-      <th scope="col">Descriptions</th>
+      <th scope="col">Description</th>
     </tr>
     <tr>
       <td>A == B</td>
       <td>Bool_t</td>
-      <td>equal to</td>
+      <td>Equal to</td>
     </tr>
     <tr>
       <td>A != B</td>
       <td>matrix</td>
-      <td>not equal</td>
+      <td>Not equal</td>
     </tr>
         <tr>
       <td>A > B</td>
       <td>matrix</td>
-      <td>greater than</td>
+      <td>Greater than</td>
     </tr>
         <tr>
       <td>A >= B</td>
       <td>matrix</td>
-      <td>greater than or equal to</td>
+      <td>Greater than or equal to</td>
     </tr>
         <tr>
       <td>A < B</td>
       <td>matrix</td>
-      <td>smaller than</td>
+      <td>Smaller than</td>
     </tr>
         <tr>
       <td>A <= B</td>
       <td>matrix</td>
-      <td>smaller than or equal to</td>
+      <td>Smaller than or equal to</td>
     </tr>
         <tr>
       <td>AreCompatible(A,B)</td>
       <td>Bool_t</td>
-      <td>compare matrix properties</td>
+      <td>Compare matrix properties</td>
     </tr>
         <tr>
       <td>Compare(A,B)</td>
       <td>Bool_t</td>
-      <td>return summary of comparison</td>
+      <td>Return summary of comparison</td>
     </tr>
         <tr>
       <td>VerifyMatrixIdentity(A,B,verb, maxDev)</td>
       <td>&nbsp;</td>
-      <td>check matrix identity within maxDev tolerance</td>
+      <td>Check matrix identity within maxDev tolerance</td>
     </tr>
   </tbody>
 </table>
@@ -1216,42 +1216,42 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
     <tr>
       <td>A == r</td>
       <td>Bool_t</td>
-      <td>equal to</td>
+      <td>Equal to</td>
     </tr>
     <tr>
       <td>A != r</td>
       <td>Bool_t</td>
-      <td>not equal</td>
+      <td>Not equal</td>
     </tr>
         <tr>
       <td>A > r</td>
       <td>Bool_t</td>
-      <td>greater than</td>
+      <td>Greater than</td>
     </tr>
         <tr>
       <td>A >= r</td>
       <td>Bool_t</td>
-      <td>greater than or equal to</td>
+      <td>Greater than or equal to</td>
     </tr>
         <tr>
       <td>A < r</td>
       <td>Bool_t</td>
-      <td>smaller than</td>
+      <td>Smaller than</td>
     </tr>
         <tr>
       <td>A <= r</td>
       <td>Bool_t</td>
-      <td>smaller than or equal to</td>
+      <td>Smaller than or equal to</td>
     </tr>
         <tr>
       <td>VerifyMatrixValue(A,r,verb, maxDev)</td>
       <td>Bool_t</td>
-      <td>compare matrix value with r within maxDev tolerance</td>
+      <td>Compare matrix value with r within maxDev tolerance</td>
     </tr>
         <tr>
       <td>A.RowNorm()</td>
       <td>Double_t</td>
-      <td>norm induced by the infinity vector norm</td>
+      <td>Norm induced by the infinity vector norm</td>
     </tr>
         <tr>
       <td>A.NormInf()</td>
@@ -1261,7 +1261,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
         <tr>
       <td>A.ColNorm()</td>
       <td>Double_t</td>
-      <td>norm induced by the 1 vector norm</td>
+      <td>Norm induced by the 1 vector norm</td>
     </tr>
         <tr>
       <td>A.Norm1()</td>
@@ -1271,7 +1271,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
         <tr>
       <td>A.E2Norm()</td>
       <td>Double_t</td>
-      <td>square of the Euclidean norm</td>
+      <td>Square of the Euclidean norm</td>
     </tr>
         <tr>
       <td>A.NonZeros()</td>
@@ -1281,7 +1281,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
         <tr>
       <td>A.Sum()</td>
       <td>Double_t</td>
-      <td>number of elements unequal zero</td>
+      <td>Number of elements unequal zero</td>
     </tr>
         <tr>
       <td>A.Min()</td>
@@ -1332,22 +1332,22 @@ The next table summarizes how to access the individual matrix elements in the ma
     <tr>
 
       <td>TMatrixDRow(A,i)(j) TMatrixDRow(A,i)[j]</td>
-      <td>element A<sub>ij</sub></td>
+      <td>Element A<sub>ij</sub></td>
     </tr>
     <tr>
 
       <td>TMatrixDColumn(A,j)(i) TMatrixDColumn(A,j)[i]</td>
-      <td>element A<sub>ij</sub></td>
+      <td>Element A<sub>ij</sub></td>
     </tr>
         <tr>
 
       <td>TMatrixDDiag(A(i) TMatrixDDiag(A[i]</td>
-      <td>element A<sub>ij</sub></td>
+      <td>Element A<sub>ij</sub></td>
     </tr>
     <tr>
 
       <td>TMatrixDSub(A(i) TMatrixDSub(A,rl,rh,cl,ch)(i,j)</td>
-      <td>element A<sub>ij</sub><br>element A<sub>rl+i,cl+j</sub></td>
+      <td>Element A<sub>ij</sub><br>Element A<sub>rl+i,cl+j</sub></td>
     </tr>
   </tbody>
 </table>
@@ -1358,12 +1358,12 @@ The next table summarizes how to access the individual matrix elements in the ma
 
 There are the following classes available for matrix decompositions:
 
-- {% include ref class="TDecompLU" %} - Decomposes a general `n x n` matrix `A` into `P A = L U`.
-- {% include ref class="TDecompBK" %} - The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`.
-- {% include ref class="TDecompChol" %} - The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
-- {% include ref class="TDecompQRH" %} - QR decomposition class.
-- {% include ref class="TDecompSVD" %} - Single value decomposition class.
-- {% include ref class="TDecompSparse" %} - Sparse symmetric decomposition class.
+- {% include ref class="TDecompLU" %}: Decomposes a general `n x n` matrix `A` into `P A = L U`.
+- {% include ref class="TDecompBK" %}: The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`.
+- {% include ref class="TDecompChol" %}: The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
+- {% include ref class="TDecompQRH" %}: QR decomposition class.
+- {% include ref class="TDecompSVD" %}: Single value decomposition class.
+- {% include ref class="TDecompSparse" %}: Sparse symmetric decomposition class.
 
 <p><a name="matrix-eigen-analysis"></a></p>
 **Matrix Eigen analysis**
@@ -1438,8 +1438,8 @@ The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_b
 
 The template class [ROOT::Math::SVector](https://root.cern/doc/master/classROOT_1_1Math_1_1SVector.html){:target="_blank"} represents n-dimensional vectors for objects of arbitrary type. This class
 has 2 template parameters, which define at compile time, its properties:
-1. type of the contained elements (for example `float` or `double`)
-2. size of the vector
+1. Type of the contained elements (for example `float` or `double`).
+2. Size of the vector.
 
 **Creating a vector**
 
