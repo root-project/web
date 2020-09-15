@@ -41,8 +41,8 @@ manual:
         url: manual/adding_a_class_to_root
       - title: Integrating ROOT into CMake projects
         url: manual/integrate_root_into_my_cmake_project
-      - title: Interacting with shared libraries
-        url: manual/interacting-with-shared-libraries
+      - title: ROOT macros and shared libraries
+        url: manual/interacting_with_shared_libraries
       - title: ROOT collections
         url: manual/root_collections
       - title: Object ownership
