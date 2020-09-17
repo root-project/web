@@ -22,7 +22,7 @@ PyROOT is enabled by default when building and installing ROOT. Please refer to 
 
 ## Getting started
 
-Once ROOT has been installed, PyROOT can be used both from the Python prompt and from a Python script. The entry point to PyROOT is the `ROOT` module, which needs to be imported first: 
+Once ROOT has been installed, PyROOT can be used both from the Python prompt and from a Python script. The entry point to PyROOT is the `ROOT` module, which needs to be imported first:
 
 ```python
 import ROOT
@@ -37,7 +37,7 @@ h.FillRandom("gaus")
 
 ### Tutorials
 
-There are a number of tutorials that show how to use the various ROOT features from Python. They can be found in the link below. 
+There are a number of tutorials that show how to use the various ROOT features from Python. They can be found in the link below.
 
 {% include tutorials name="PyROOT" url="pyroot" %}
 
@@ -88,7 +88,7 @@ ROOT.gROOT.SetStyle('MyStyle')
 
 If PyROOT cannot find `.rootlogon.py` in the user's home directory, it will look for the equivalent in C++ (`.rootlogon.C`), first in [ROOT's etc directory](https://root.cern/doc/master/classTROOT.html#ab8e51627a12d886d6c8177b46481352a), then in the user's home directory and finally in the current working directory. Note that it is also possible to use both the Python and the C++ rootlogons, since the latter can be loaded from the former, for instance with `ROOT.gROOT.LoadMacro('.rootlogon.C')`.
 
-If the user would like to completely disable the rootlogon functionality, they can do so by setting `PyConfig.DisableRootLogon` to `True`. 
+If the user would like to completely disable the rootlogon functionality, they can do so by setting `PyConfig.DisableRootLogon` to `True`.
 
 - `IgnoreCommandLineOptions` (default `True`): if a PyROOT script is executed with some command line arguments, they will be ignored by default by ROOT, so the user is free to process them as they wish. However, by setting `PyConfig.IgnoreCommandLineOptions` to `False`, those arguments will be forwarded to ROOT for parsing, e.g. to enable the batch mode from the command line. A complete list of the arguments accepted by ROOT can be found [here]({{ '/manual/first_steps_with_root/#starting-root-with-command-line-options' | relative_url }}).
 
@@ -124,7 +124,7 @@ True
 >>> mys = ROOT.MyStruct()
 >>> ROOT.addressof(mys) # Address of mys' C++ object
 94352024283040L
->>> ROOT.addressof(mys, 'foo') # Address of "foo" field (same as address of object) 
+>>> ROOT.addressof(mys, 'foo') # Address of "foo" field (same as address of object)
 94352024283040L
 >>> ROOT.addressof(mys, 'bar') # Address of "bar" field
 94352024283044L
@@ -157,7 +157,7 @@ The following options are available, ordered by complexity and performance:
 
 
 <a name="JITString"></a>
-### 1. Jitting strings with code 
+### 1. Jitting strings with code
 
 ROOT comes with a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}), which can process pieces of C++ code. Sometimes, if such code is short (e.g. the definition of a small function or class) or for rapid exploration/debugging, it is enough the place the C++ code in a Python string, which is passed to the interpreter.
 The code will be just-in-time compiled (jitted) and is immediately available for invocation, as shown in the example below. Here, the constructor of the C++ class `A` and the function `f` are called from Python after defining them via the interpreter.
@@ -303,7 +303,7 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
 
 ROOT also allows to run Python code from C++ via the `TPython` class.
 
-The example below shows how to use `Exec` to run a Python statement, `Eval` to evaluate a Python expression and get its result back in C++ and `Prompt` to start an interactive Python session. 
+The example below shows how to use `Exec` to run a Python statement, `Eval` to evaluate a Python expression and get its result back in C++ and `Prompt` to start an interactive Python session.
 
 ```cpp
 root [0] TPython::Exec( "print(1 + 1)" )
@@ -360,7 +360,7 @@ c.Draw() # Necessary to make the graphics show!
 Executing the code above in a cell will make the following interactive canvas appear as output:
 
 {% include figure_jsroot
-   file="/manual/graphics/graphics.root" object="func1" width="500px" height="350px"
+   file="python.root" object="func1" width="500px" height="350px"
 %}
 
 > **Note that** the creation and drawing of a canvas are necessary when displaying ROOT graphics in a notebook. If no canvas is drawn in the cell, no graphics output will be shown!
