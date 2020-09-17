@@ -161,7 +161,7 @@ In addition, helper classes, wrapping the user interfaces in the [ROOT::Math](ht
 To use the self-defined functions, they must have inherited from one of the following classes:
 
 {% include figure_image
-img="/manual/math/function-hierarchy.png"
+img="function-hierarchy.png"
 caption="ROOT::Math function interface structure."
 %}
 
