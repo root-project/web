@@ -28,7 +28,7 @@ Once ROOT has been installed, PyROOT can be used both from the Python prompt and
 import ROOT
 ```
 
-After that, all the ROOT C++ functionality (classes, functions, etc.) can be accessed via the `ROOT` module. In the example below, we show how to create a histogram (an instance of the `TH1F` class) and randomly fill it with a gaussian distribution.
+Then all the ROOT C++ functionality (classes, functions, etc.) can be accessed via the `ROOT` module. In the example below, we show how to create a histogram (an instance of the `TH1F` class) and randomly fill it with a gaussian distribution.
 
 ```python
 h = ROOT.TH1F("myHist", "myTitle", 64, -4, 4)
