@@ -278,7 +278,7 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
 1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read or written from or into files.
 1. Have ROOT generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files.
    Use a [`LinkDef.h` file]({{ '/manual/interacting_with_shared_libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
-   to select which classes or functions ROOT should include in the dictionary.
+   to select which classes or functions ROOT should be included in the dictionary.
 
    The corresponding cmake instructions would look similar to this:
    ```cmake
