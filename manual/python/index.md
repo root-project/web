@@ -58,7 +58,8 @@ img="tf1_draw.png"
 caption="Example of graphics generated with PyROOT."
 %}
 
-> **Note that** the code above can also be written in a script file and executed with Python. In that case, the script will run to completion and the Python process will terminate, making the created canvas disappear. If you want to keep the Python process alive and thus be able to inspect your canvas, run the script with `python -i script_name.py`.
+> **Note**
+> The code above can also be written in a script file and executed with Python. In that case, the script will run to completion and the Python process will terminate, making the created canvas disappear. If you want to keep the Python process alive and thus be able to inspect your canvas, run the script with `python -i script_name.py`.
 
 ## User interface
 
