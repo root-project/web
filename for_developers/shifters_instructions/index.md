@@ -26,3 +26,6 @@ either interacting with the contributor or involving the relevant expert. Again,
 feedback needs to be given within 24 hours after the PR submission. Simple PRs should
 be reviewed. For simple PRs submitted by a contributor, the shifter should merge them
 immediately if they are acceptable (i.e. passing continuous integration and shifter's review).
+
+### Incoming issues
+The shifter should check incoming issues for completeness and do an assignment where it is clear.
