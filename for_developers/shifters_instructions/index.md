@@ -29,3 +29,4 @@ immediately if they are acceptable (i.e. passing continuous integration and shif
 
 ### Incoming issues
 The shifter should check incoming issues for completeness and do an assignment where it is clear.
+We have a [GitHub project](https://github.com/root-project/root/projects/2) that lists issues that are waiting to be triaged.
