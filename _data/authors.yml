@@ -501,4 +501,22 @@ Javier Lopez Gomez:
   tag         : "team"
   avatar      : "/assets/images/JLG.jpg"
   affiliation : "CERN"
-  email        : "javier.lopez.gomez@cern.ch"
+  email       : "javier.lopez.gomez@cern.ch"
+
+
+Vincenzo Eduardo Padulano:
+  name        : "Vincenzo Eduardo Padulano"
+  bio         : "Vincenzo graduated with a B.Sc. in Physics and a M.Sc. in Data Science at
+                 the University of Milano-Bicocca. He started working at CERN in the summer
+                 of 2019 for the ROOT team as an intern to develop his master thesis. During
+                 that experience he focused on blending state-of-the-art software and
+                 techniques from the data science community (namely Spark and Kubernetes)
+                 with ROOT analysis. Currently member of the ROOT team as a CERN Doctoral
+                 Student and enrolled in the Computer Science PhD program at the Polytechnic
+                 University of Valencia. His area of research is in developing distributed
+                 computing solutions for the ROOT framework."
+  short_bio   : "Vincenzo is developing distributed computing solutions for the ROOT framework."
+  tag         : "team"
+  avatar      : "/assets/images/VEP.png"
+  affiliation : "CERN"
+  email       : "vincenzo.eduardo.padulano@cern.ch"
