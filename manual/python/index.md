@@ -7,7 +7,11 @@ toc: true
 toc_sticky: true
 ---
 
+<<<<<<< HEAD
 ROOT can be used from Python because of its Python-C++ bindings, called PyROOT. PyROOT is HEP's entrance to all C++ from Python, for example, for frameworks and their steering code. The PyROOT bindings are *automatic* and *dynamic*: no pre-generation of Python wrappers is necessary.
+=======
+ROOT can be used from Python thanks to its Python-C++ bindings, called PyROOT. PyROOT is HEP's entrance to all C++ from Python, for example, for frameworks and their steering code. The PyROOT bindings are *automatic* and *dynamic*: no pre-generation of Python wrappers is necessary.
+>>>>>>> c18af140339d60bf3e34fdfa58889318d3c316c4
 
 With PyROOT, all the ROOT functionality can be accessed from Python while, at the same time, benefiting from the performance of the ROOT C++ libraries.
 
@@ -278,7 +282,11 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
 1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read or written from or into files.
 1. Have ROOT generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files.
    Use a [`LinkDef.h` file]({{ '/manual/interacting_with_shared_libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
+<<<<<<< HEAD
    to select which classes or functions ROOT should include in the dictionary.
+=======
+   to select which classes or functions ROOT should be included in the dictionary.
+>>>>>>> c18af140339d60bf3e34fdfa58889318d3c316c4
 
    The corresponding cmake instructions would look similar to this:
    ```cmake
