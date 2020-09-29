@@ -248,11 +248,11 @@ Sergey Linev:
 Stephan Hageboeck:
   name        : "Stephan Hageboeck"
   bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the university of Bonn in
-                 Germany. He worked in ATLAS to improve the sensitivity in the search for
-                 Higgs --> bb decays. His main focus was on analysis frameworks, machine learning,
-                 systematic uncertainties and statistical models. He joined the ROOT team in 2018 to
-                 support and improve RooFit. He further looks into math and statistics, as well as into
-                 questions regarding performance and programming model."
+Germany. He worked in ATLAS to improve the sensitivity in the search for
+Higgs --> bb decays. His main focus was on analysis frameworks, machine learning,
+systematic uncertainties and statistical models. He joined the ROOT team in 2018 to
+support and improve RooFit. He further looks into math and statistics, as well as into
+questions regarding performance and programming model."
   tag         : "team"
   avatar      : "/assets/images/SH.jpg"
   affiliation : "CERN"
