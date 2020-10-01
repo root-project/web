@@ -43,7 +43,7 @@ Once a {% include ref class="TFile" %} object has been created, it becomes the d
 
 **Current directory**
 
-When you create a `TFile` object, it becomes the current directory. Therefore, the last ROOT file to be opened is always the current directory.<br>
+When you create a {% include ref class="TFile" %} object, it becomes the current directory. Therefore, the last ROOT file to be opened is always the current directory.<br>
 Check the current directory as follows:
 
 {% highlight C++ %}
@@ -54,7 +54,7 @@ Check the current directory as follows:
 
 In this case the current directory is the ROOT session (`Rint`).
 
-When you create a `TFile` object, the ROOT file becomes the current directory.
+When you create a {% include ref class="TFile" %} object, the ROOT file becomes the current directory.
 
 {% highlight C++ %}
    TFile f1("my.root");
@@ -65,7 +65,7 @@ When you create a `TFile` object, the ROOT file becomes the current directory.
 
 ### Checking whether a ROOT file is open
 
-- Use [TFile::IsOpen()](https://root.cern/doc/master/classTFile.html#a67dedbe56cfe4792cff78df129718c11) to check whether the ROOT file was successfully opened.
+- Use [TFile::IsOpen()](https://root.cern/doc/master/classTFile.html#a67dedbe56cfe4792cff78df129718c11){:target="_blank"} to check whether the ROOT file was successfully opened.
 
 > **Note**
 >
@@ -85,7 +85,7 @@ When you create a `TFile` object, the ROOT file becomes the current directory.
 
 To write objects to a ROOT file, they must be open.
 
-- Use [TFile::Write()](https://root.cern/doc/master/classTFile.html#adc21e8868cd0938691cf794b4b20096b) to write objects into the ROOT file.
+- Use [TFile::Write()](https://root.cern/doc/master/classTFile.html#adc21e8868cd0938691cf794b4b20096b){:target="_blank"} to write objects into the ROOT file.
 
  _**Example**_
 
@@ -137,7 +137,7 @@ The ROOT file is saved by default in the current working directory.
 
 ### Closing a ROOT file
 
-- Use [TFile::Close()](https://root.cern/doc/master/classTFile.html#ae312f07848b4b30679409e5e785991a6) to close a ROOT file:
+- Use [TFile::Close()](https://root.cern/doc/master/classTFile.html#ae312f07848b4b30679409e5e785991a6){:target="_blank"} to close a ROOT file:
 
 {% highlight C++ %}
    MyFile->Close();
@@ -178,7 +178,7 @@ In detail, the following happens when executing `GetObject()`:
 
 - An empty object is created by calling the default constructor for the class referenced in {% include ref class="TKey" %}.
 
-- The [Streamer()](https://root.cern/doc/master/classTClass.html#ac1c95f1787550ebc5367590aedacbd67) method is called for this new object.
+- The [Streamer()](https://root.cern/doc/master/classTClass.html#ac1c95f1787550ebc5367590aedacbd67){:target="_blank"} method is called for this new object.
 
 In case there is an object with multiple cycles, you can pick a particular cycle with a name like `hpx;` (for example `hpx;2`).
 
@@ -238,8 +238,8 @@ _**Example**_
 
 With the ROOT command line tools you can quickly inspect and modify the contents of ROOT files.
 There are ROOT command line tools for:
-- simple file operations,
-- automating common operations performed on ROOT classes.
+- simple file operations
+- automating common operations performed on ROOT classes
 
 **File operations**
 
@@ -253,7 +253,10 @@ There are ROOT command line tools for:
 
 - `rootbrowse`: Opens a {% include ref class="TBrowser" %} directly on the content of a ROOT file.
 - `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another ROOT file.
-- `rootprint`: Plot objects in an image ROOT file.
+- `rootprint`: Plots objects in an image ROOT file.
+- `rootslimtree`: Copies trees with a subset of branches from source ROOT files.
+- `genreflex`: Generates dictionary sources and related ROOT pcm starting from an header.
+- `hadd`: Adds histograms from a list of ROOT files and writes them to a target ROOT file.
 
 Use the `-h` option to get more information on the available options for the specific ROOT command line tool.
 
@@ -303,7 +306,7 @@ folder, and the consumer class retrieves a reference to the folder. The consumer
 ### Creating a folder hierarchy
 
 To create a folder hierarchy, you add a top folder of your hierarchy to //root. Then you add a folder to an existing
-folder with the [TFolder::AddFolder()](https://root.cern/doc/master/classTFolder.html#a2d3c9ab44d8b660d5c3c42693f745d00) method. The `AddFolder()` method takes two parameters: the name and title of the folder to be added. It returns a pointer of the newly created folder.
+folder with the [TFolder::AddFolder()](https://root.cern/doc/master/classTFolder.html#a2d3c9ab44d8b660d5c3c42693f745d00){:target="_blank"} method. The `AddFolder()` method takes two parameters: the name and title of the folder to be added. It returns a pointer of the newly created folder.
 
 The following example creates a folder hierarchy shown in the ROOT Object Browser.
 
@@ -344,7 +347,7 @@ _**Example**_
 
 ### Reading data from a folder
 
-- Use the [TROOT::FindObjectAny()](https://root.cern/doc/master/classTROOT.html#a9c9964aaea5c7cf333483240aa48b46f) method to search for a folder or an object in a folder. 
+- Use the [TROOT::FindObjectAny()](https://root.cern/doc/master/classTROOT.html#a9c9964aaea5c7cf333483240aa48b46f){:target="_blank"} method to search for a folder or an object in a folder. 
 
 The `FindObjectAny()` method analyzes the string passed as its argument and searches in the hierarchy until it finds an object or folder matching the name. 
 
@@ -352,7 +355,7 @@ With `FindObjectAny()` you can give the full path name, or the name of the folde
 
 A string-based search is time consuming. If the retrieved object is used frequently or inside a loop, save a pointer to the object as a class data member. 
 
-By default, a folder does not own the object it contains. You can overwrite that with [TFolder::SetOwner()](https://root.cern/doc/master/classTFolder.html#aa9fb0db2a0692067380be4bb82bf0a8a). Once
+By default, a folder does not own the object it contains. You can overwrite that with [TFolder::SetOwner()](https://root.cern/doc/master/classTFolder.html#aa9fb0db2a0692067380be4bb82bf0a8a){:target="_blank"}. Once
 the folder is the owner of its contents, the contents are deleted when the folder is deleted.
 
 _**Example**_ 
@@ -373,7 +376,7 @@ If a file `myFile.root` is added to the list of files, you can retrieve a pointe
 
 ### Physical layout of a ROOT file
 
-- Call the [TFile::Map()](https://root.cern/doc/master/classTFile.html#a5568f2f0a4a678ffaf769d0bf210610f) method to view the physical layout of a ROOT file.
+- Call the [TFile::Map()](https://root.cern/doc/master/classTFile.html#a5568f2f0a4a678ffaf769d0bf210610f){:target="_blank"} method to view the physical layout of a ROOT file.
 
 The output prints the date/time, the start record address, the number of bytes in the record, the class name of the record and the compression factor.
 
@@ -439,7 +442,7 @@ TKey Name = h14,    Title = histo    nr:14,    Cycle = 1
 
 #### Finding TKey objects
 
-With the `TFile::Get()` method, you can find [TKey](https://root.cern/doc/master/classTKey.html) objects.
+With the `TFile::Get()` method, you can find [TKey](https://root.cern/doc/master/classTKey.html){:target="_blank"} objects.
 
 _**Example**_
 
@@ -494,7 +497,7 @@ key: h13 points to an object of class: TH1F at 4694
 
 You can remotely access ROOT files on the base of the protocol URL.
 
-You can read and write a ROOT file over the net by using the [TFile::Open()](https://root.cern/doc/master/classTFile.html#aec5f3fae0774aabfc615ebb4b00fe5e0) method.
+You can read and write a ROOT file over the net by using the [TFile::Open()](https://root.cern/doc/master/classTFile.html#aec5f3fae0774aabfc615ebb4b00fe5e0){:target="_blank"} method.
 
 _**Example**_
 
