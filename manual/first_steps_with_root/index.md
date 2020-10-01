@@ -127,6 +127,10 @@ ROOT special commands.
 
 ### Starting ROOT with command line options
 
+> ROOT command line tools
+>
+> ROOT also provides many command line tools for simple file operations or automating common operations performed on ROOT classes. → See [ROOT command line tools]({{ '/manual/storing_root_objects/#root-command-line-tools' | relative_url }})
+
 You can start ROOT with the following command line options:
 
 `-b` <br>
@@ -150,13 +154,7 @@ Exit on exception.
 `dir` <br>
 If `dir` is a valid directory, change to it (cd) before executing ROOT.
 
-`-?` <br>
-Print usage.
-
-`-h` <br>
-Print usage.
-
-`--help` <br>
+`-?`, `-h`, `--help`<br>
 Print usage.
 
 `-config` <br>
@@ -164,6 +162,8 @@ Print `./configure` options.
 
 `-memstat` <br>
 Run ROOT with memory usage monitoring.
+
+
 
 ### Quitting ROOT
 
