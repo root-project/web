@@ -238,8 +238,8 @@ _**Example**_
 
 With the ROOT command line tools you can quickly inspect and modify the contents of ROOT files.
 There are ROOT command line tools for:
-- simple file operations,
-- automating common operations performed on ROOT classes,
+- simple file operations
+- automating common operations performed on ROOT classes
 
 **File operations**
 
