@@ -172,7 +172,7 @@ In detail, the following happens when executing `GetObject()`:
 
 - The key with name `hpx;1` is found in the list of keys.
 
-- A {% include ref class="TBuffer" %}object is created.
+- A {% include ref class="TBuffer" %} object is created.
 
 - The buffer is read from the ROOT file.
 
@@ -249,6 +249,16 @@ There are ROOT command line tools for:
 - `rootmv`: Moves objects stored in a ROOT file to another ROOT file.
 - `rootmkdir`: Creates a "directory" inside a ROOT file.
 
+_**Example**_
+
+The contents of the `/tutorials/hsimple.root` ROOT file is listed on the system prompt:
+
+{% highlight C++ %}
+$ rootls hsimple.root
+hprof  hpx  hpxpy  ntuple
+{% endhighlight %}
+
+
 **Operations on ROOT classes**
 
 - `rootbrowse`: Opens a {% include ref class="TBrowser" %} directly on the content of a ROOT file.
@@ -306,7 +316,7 @@ folder, and the consumer class retrieves a reference to the folder. The consumer
 ### Creating a folder hierarchy
 
 To create a folder hierarchy, you add a top folder of your hierarchy to //root. Then you add a folder to an existing
-folder with the [TFolder::AddFolder()](https://root.cern/doc/master/classTFolder.html#a2d3c9ab44d8b660d5c3c42693f745d00){:target="_blank"} method. The `AddFolder()` method takes two parameters: the name and title of the folder to be added. It returns a pointer of the newly created folder.
+folder with the [TFolder::AddFolder()](https://root.cern/doc/master/classTFolder.html#a2d3c9ab44d8b660d5c3c42693f745d00){:target="_blank"} method. The [TFolder::AddFolder()](https://root.cern/doc/master/classTFolder.html#a2d3c9ab44d8b660d5c3c42693f745d00){:target="_blank"} method takes two parameters: the name and title of the folder to be added. It returns a pointer of the newly created folder.
 
 The following example creates a folder hierarchy shown in the ROOT Object Browser.
 
@@ -450,15 +460,15 @@ _**Example**_
    root[] TH1F *h9 = (TH1F*)f.Get("h9");
 {% endhighlight %}
 
-The `Get()` method finds the `TKey` object with name **h9**.
+The `Get()` method finds the {% include ref class="TKey" %} object with name **h9**.
 
 #### Iterating over objects
 
-Keys are available in a {% include ref class="TList" %} of {% include ref class="TKey" %}s. Therefore, you can iterate over the list of keys.
+Keys are available in a {% include ref class="TList" %} containing {% include ref class="TKey" %} objects. Therefore, you can iterate over the list of keys.
 
 _**Example**_
 
-The `TKeys` of the `demo.root` (see example → [Creating a ROOT file](#creating-a-root-file) file are iterated.
+The `TKeys` of the `demo.root` (see example → [Creating a ROOT file](#creating-a-root-file)) file are iterated.
 
 {% highlight C++ %}
 {
