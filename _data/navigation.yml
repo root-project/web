@@ -136,7 +136,7 @@ for_developers:
         url: https://lcgapp-services.cern.ch/root-jenkins/
         target: _blank
       - title: Jenkins How To
-        url: for_developers/continous_integration-testing/jenkins_how_to
+        url: for_developers/continuous_integration-testing/jenkins_how_to
         target: _blank
       - title: CDash
         url: https://cdash.cern.ch/index.php?project=ROOT
@@ -148,7 +148,7 @@ for_developers:
         url: https://github.com/root-project/root/issues/new
         target: _blank
       - title: ROOTBinder Checklist
-        url: for_developers/continous_integration-testing/rootbinder_checklist
+        url: for_developers/continuous_integration-testing/rootbinder_checklist
         target: _blank
    - title: Doxygen in ROOT
      url: for_developers/doxygen
