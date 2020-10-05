@@ -51,7 +51,7 @@ In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html){:tar
 - ROOT class for complex numbers, {% include ref class="TComplex" %}.
 
 - other ROOT classes like:
-   - {% include ref class="TKDTree" %}: ROOT class implementing a kd-tree.
+   - [TKDTree](https://root.cern/doc/master/classTKDTree.html){:target="_blank"}: ROOT class implementing a kd-tree.
    - [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html){:target="_blank"}: ROOT class for testing the for goodness of fit tests.
 
 
@@ -597,10 +597,10 @@ _**Example**_
 
 The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides the following classes for generating pseudo-random numbers:
 
-- {% include ref class="TRandom" %}: Using a linear congruential random generator.
-- {% include ref class="TRandom1" %}: Random number generator based on the Ranlux engine.
-- {% include ref class="TRandom2" %}: Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
-- {% include ref class="TRandom3" %}: Based on the Mersenne and Twister pseudo-random number generator.
+- [TRandom](https://root.cern/doc/master/classTRandom.html){:target="_blank"}: Using a linear congruential random generator.
+- [TRandom1](https://root.cern/doc/master/classTRandom1.html){:target="_blank"}: Random number generator based on the Ranlux engine.
+- [TRandom2](https://root.cern/doc/master/classTRandom2.html){:target="_blank"}: Based on the maximally equi-distributed combined Tausworthe generator by L'Ecuyer.
+- [TRandom3](https://root.cern/doc/master/classTRandom3.html){:target="_blank"}: Based on the Mersenne and Twister pseudo-random number generator.
 
 > **Note**
 >
@@ -796,9 +796,9 @@ ROOT provides the following matrix classes, among others:
 
 - `TMatrixDSparse`: Sparse matrix with double precision (`double`).
 
-- {% include ref class="TDecompBase" %}: Decomposition base class.
+- [TDecompBase](https://root.cern/doc/master/classTDecompBase.html){:target="_blank"}: Decomposition base class.
 
-- {% include ref class="TDecompChol" %}: Cholesky decomposition class.
+- [TDecompChol](https://root.cern/doc/master/classTDecompChol.html){:target="_blank"}: Cholesky decomposition class.
 
 
 <p><a name="matrix-properties"></a></p>
@@ -851,7 +851,7 @@ Use one of the following methods to access the information about the relevant ma
 
 - `Int_t` [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"}: For sparse matrices, access to the column index of `fNelems` entries.
 
-[*GetRowIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a4fc6e583f4f42338f83aa9bc36d9e78c){:target="_blank"} and [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"}  are specific to the sparse matrix, which is implemented according to the Harwell-
+`*GetRowIndexArray()` and `*GetColIndexArray()` are specific to the sparse matrix, which is implemented according to the Harwell-
 Boeing format. Here, besides the usual shape/size descriptors of the matrix like `fNrows`, `fRowLwb`, `fNcols` and `fColLwb`,
 also a row index `fRowIndex` and a column index `fColIndex` are stored:
 
@@ -1358,12 +1358,12 @@ The next table summarizes how to access the individual matrix elements in the ma
 
 There are the following classes available for matrix decompositions:
 
-- {% include ref class="TDecompLU" %}: Decomposes a general `n x n` matrix `A` into `P A = L U`.
-- {% include ref class="TDecompBK" %}: The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`.
-- {% include ref class="TDecompChol" %}: The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
-- {% include ref class="TDecompQRH" %}: QR decomposition class.
-- {% include ref class="TDecompSVD" %}: Single value decomposition class.
-- {% include ref class="TDecompSparse" %}: Sparse symmetric decomposition class.
+- [TDecompLU](https://root.cern/doc/master/classTDecompLU.html){:target="_blank"}: Decomposes a general `n x n` matrix `A` into `P A = L U`.
+- [TDecompBK](https://root.cern/doc/master/classTDecompBK.html){:target="_blank"}: The Bunch-Kaufman diagonal pivoting method decomposes a real symmetric matrix `A`.
+- [TDecompChol](https://root.cern/doc/master/classTDecompChol.html){:target="_blank"} : The Cholesky decomposition class, which decomposes a symmetric, positive definite matrix `A = U^T * U` where `U` is a upper triangular matrix.
+- [TDecompQRH](https://root.cern/doc/master/classTDecompQRH.html){:target="_blank"}: QR decomposition class.
+- [TDecompSVD](https://root.cern/doc/master/classTDecompSVD.html){:target="_blank"}: Single value decomposition class.
+- [TDecompSparse](https://root.cern/doc/master/classTDecompSparse.html){:target="_blank"}: Sparse symmetric decomposition class.
 
 <p><a name="matrix-eigen-analysis"></a></p>
 **Matrix Eigen analysis**
@@ -1410,7 +1410,7 @@ The following table lists the methods of the {% include ref class="TMatrixDEigen
  _**Example**_
 
 The usage of the eigenvalue class is shown in this example where it is checked that the square of the singular values of
-a matrix `c` are identical to the eigenvalues of c<sup>T</sup>.c:
+a matrix `c` are identical to the eigenvalues of `c<sup>T</sup>.c`:
 
 {% highlight C++ %}
    const TMatrixD m = THilbertMatrixD(10,10);
@@ -1436,8 +1436,7 @@ The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_b
 
 #### SVector
 
-The template class [ROOT::Math::SVector](https://root.cern/doc/master/classROOT_1_1Math_1_1SVector.html){:target="_blank"} represents n-dimensional vectors for objects of arbitrary type. This class
-has 2 template parameters, which define at compile time, its properties:
+The template class [ROOT::Math::SVector](https://root.cern/doc/master/classROOT_1_1Math_1_1SVector.html){:target="_blank"} represents n-dimensional vectors for objects of arbitrary type. The class has two template parameters that define their properties at compile time:
 1. Type of the contained elements (for example `float` or `double`).
 2. Size of the vector.
 
@@ -1463,7 +1462,7 @@ Use one of the following constructors to create a vector:
 
 #### SMatrix
 
-The template class [ROOT::Math::SMatrix](https://root.cern/doc/master/classROOT_1_1Math_1_1SMatrix.html){:target="_blank"} represents a matrix of arbitrary type with `nrows x ncol`dimension. The class has 4 template parameters, which define at compile time, its properties:
+The template class [ROOT::Math::SMatrix](https://root.cern/doc/master/classROOT_1_1Math_1_1SMatrix.html){:target="_blank"} represents a matrix of arbitrary type with `nrows x ncol`dimension. The class has four template parameters that define their properties at compile time:
 - type of the contained elements (for example `float` or `double`)
 - number of rows
 - number of columns
@@ -1551,7 +1550,7 @@ The {% include ref class="TUnuran" %} class is used to interface the UNURAN pack
 
 > **Tutorials**
 >
-> UNU:RAN tutorials are available at → [https://root.cern/doc/master/group__tutorial__unuran.html](https://root.cern/doc/master/group__tutorial__unuran.html){:target="_blank"}
+> {% include tutorials name="Graph" url="unuran" %} 
 
 ### Initializing TUnuran with string API
 
