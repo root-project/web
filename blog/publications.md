@@ -20,7 +20,7 @@ sidebar:
 
 **A (mostly historically interesting) list of ROOT talks and publications**
 
-*   Paper presented at the AIHENP conference in Laussanne 1996.
+*   Paper presented at the AIHENP conference in Lausanne 1996.
      [ROOT - An Object Oriented Data Analysis Framework](https://root.cern/download/laussanne.ps.gz)
 *   Slides of the presentation at CHEP'97 conference in Berlin.
      [ROOT - An Interactive Object Oriented Framework and its application to NA49 data analysis](https://root.cern/download//chep97_slides.tar.gz)
@@ -60,8 +60,8 @@ sidebar:
 **In case you want to cite CINT, use the following references**
 
 *   C++ Interpreter - CINT, Masaharu Goto, CQ publishing, ISBN4-789-3085-3 (Japanese)
-*   Concept and application of Cint C++ interpreter, Masaharu Goto, Interface magazine 1996Aug-Nov, CQ publisihing, (Japanese)
+*   Concept and application of Cint C++ interpreter, Masaharu Goto, Interface magazine 1996Aug-Nov, CQ publishing, (Japanese)
 *   Cint - embedding Tcl/Tk graphics, Masaharu Goto, Interface magazine 1997 Feb, CQ publishing, (Japanese)
-*   BeOS and ROOT, Masaharu Goto, Interface magazine 1997 Sep, CQ publisihing, (Japanese)
+*   BeOS and ROOT, Masaharu Goto, Interface magazine 1997 Sep, CQ publishing, (Japanese)
 *   Learning C++ with CINT, Masaharu Goto, C magazine 1998Apr-1999Mar, Softbank Co, (Japanese)
 *   ROOT: An object oriented data analysis framework, Rene Brun & Fons Rademakers Linux Journal 998July Issue 51, Metro Link Inc, (English)

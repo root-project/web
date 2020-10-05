@@ -73,7 +73,7 @@ Int_t TF2::DistancetoPrimitive(Int_t px, Int_t py)
 ### Free functions documentation
 
 Doxygen does not document default parameters of free functions if the only doxygen
-ocumentation provided for the function is in source files (as opposed to header files).
+documentation provided for the function is in source files (as opposed to header files).
 To bypass this issue it is enough to provide a brief documentation for such functions in
 the header file. For example if the source file is:
 
