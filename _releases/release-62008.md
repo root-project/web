@@ -43,7 +43,7 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | **preview** Windows Visual Studio 2019 (debug) | [root_v6.20.08.win32.vc16.debug.exe](https://root.cern/download/root_v6.20.08.win32.vc16.debug.exe) | 155M |
 | **preview** Windows Visual Studio 2019 (debug) | [root_v6.20.08.win32.vc16.debug.zip](https://root.cern/download/root_v6.20.08.win32.vc16.debug.zip) | 228M |
 | **preview** Windows Visual Studio 2019 | [root_v6.20.08.win32.vc16.exe](https://root.cern/download/root_v6.20.08.win32.vc16.exe) |  85M |
-| **preview** Windows Visual Studio 2019 | [root_v6.20.08.win32.vc16.zip](https://root.cern/download/root_v6.20.08.win32.vc16.zip) | 115M |
+| **preview** Windows Visual Studio 2019 | `root_v6.20.08.win32.vc16.zip` | 115M |
 
 ## Installations in CVMFS
 
