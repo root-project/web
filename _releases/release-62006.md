@@ -42,7 +42,7 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | Windows Visual Studio 2019 (dbg) | <a href="https://root.cern/download/root_v6.20.06.win32.vc16.debug.exe">root_v6.20.06.win32.vc16.debug.exe</a> | 155M |
 | Windows Visual Studio 2019 (dbg) | <a href="https://root.cern/download/root_v6.20.06.win32.vc16.debug.zip">root_v6.20.06.win32.vc16.debug.zip</a> | 228M |
 | Windows Visual Studio 2019 | <a href="https://root.cern/download/root_v6.20.06.win32.vc16.exe">root_v6.20.06.win32.vc16.exe</a> | 85M |
-| Windows Visual Studio 2019 | <a href="https://root.cern/download/root_v6.20.06.win32.vc16.zip">root_v6.20.06.win32.vc16.zip</a> | 115M |
+| Windows Visual Studio 2019 | `root_v6.20.06.win32.vc16.zip` | 115M |
 
 ## Git
 

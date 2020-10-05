@@ -31,20 +31,20 @@ This new major version of ROOT will make ROOT much simpler and safer to use.
 
 ### [Run the Tests](run_the_tests)
 Running all ROOT tests on at least a platform before sending a PR or before pushing anything to the ROOT repository is *mandatory*.
-The ROOT continuous integration infrastructure allows to automatically check the PR also on a battery of platform, for example including macos and linux boxes.
+The ROOT continuous integration infrastructure allows to automatically check the PR also on a battery of platform, for example including MacOs and linux boxes.
 
 ### [Setup externals from AFS/CVMFS](setup_externals_from_afs-cvmfs)
 Instructions for setting up an environment with all the required
 ROOT externals coming from the central installations in AFS or CVMFS.
 
-### Continous Integration / Testing
+### Continuous Integration / Testing
    - [Jenkins Service](https://lcgapp-services.cern.ch/root-jenkins/)
-   - [Jenkins How To](continous_integration-testing/jenkins_how_to)
+   - [Jenkins How To](continuous_integration-testing/jenkins_how_to)
    - [CDash](https://cdash.cern.ch/index.php?project=ROOT)
    - [Coverity](https://coverity.cern.ch/login/login.htm)
    - [GitWeb](https://root.cern/gitweb/?p=root.git;a=summary)
    - [Bug Reports](https://github.com/root-project/root/issues/new)
-   - [ROOTBinder Checklist](continous_integration-testing/rootbinder_checklist)
+   - [ROOTBinder Checklist](continuous_integration-testing/rootbinder_checklist)
 
 ### [Doxygen in ROOT]({{'/for_developers/doxygen' | relative_url}})
 [Doxygen](https://www.doxygen.nl/){:target="_blank"} is used for generating
