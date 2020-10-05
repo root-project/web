@@ -34,10 +34,10 @@ The ROOT prompt is displayed.
 
 ```
    ------------------------------------------------------------------
-  | Welcome to ROOT 6.22/00                        https://root.cern |
+  | Welcome to ROOT 6.22/02                        https://root.cern |
   | (c) 1995-2020, The ROOT Team; conception: R. Brun, F. Rademakers |
-  | Built for macosx64 on Oct 30 2019, 08:24:09                      |
-  | From heads/master@v6-19-01-1850-gab67fd5a5d                      |
+  | Built for macosx64 on Aug 17 2020, 12:46:52                      |
+  | From tags/v6-22-02@v6-22-02                                      |
   | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
    ------------------------------------------------------------------
 
@@ -129,39 +129,29 @@ ROOT special commands.
 
 > ROOT command line tools
 >
-> ROOT also provides many command line tools for simple file operations or automating common operations performed on ROOT classes. → See [ROOT command line tools]({{ '/manual/storing_root_objects/#root-command-line-tools' | relative_url }})
+> ROOT also provides many command line tools at the system prompt for simple file operations or automating common operations performed on ROOT classes. → See [ROOT command line tools]({{ '/manual/storing_root_objects/#root-command-line-tools' | relative_url }})
 
 You can start ROOT with the following command line options:
 
-`-b` <br>
-ROOT session runs in batch mode, without graphics display. This mode is useful in case you do not want to set the DISPLAY.
+`-b`: ROOT session runs in batch mode, without graphics display. This mode is useful in case you do not want to set the DISPLAY.
 
-`-n` <br>
-Does not execute the logon script and logoff script as specified in `.rootrc`.
+`-n`: Does not execute the logon script and logoff script as specified in `.rootrc`.
 
-`-q` <br>
-Exits after processing the command line macro files.
+`-q`: Exits after processing the command line macro files.
 
-`-l` <br>
-Do not show the ROOT banner.
+`-l`: Does not show the ROOT banner.
 
-`-a` <br>
-Show the ROOT splash screen.
+`-a`: Shows the ROOT splash screen.
 
-`-x` <br>
-Exit on exception.
+`-x`: Exits on exception.
 
-`dir` <br>
-If `dir` is a valid directory, change to it (cd) before executing ROOT.
+`dir`: If `dir` is a valid directory, change to it (cd) before executing ROOT.
 
-`-?`, `-h`, `--help`<br>
-Print usage.
+`-?`, `-h`, `--help`: Prints usage.
 
-`-config` <br>
-Print `./configure` options.
+`-config`: Prints the `./configure` options.
 
-`-memstat` <br>
-Run ROOT with memory usage monitoring.
+`-memstat`: Runs ROOT with memory usage monitoring.
 
 
 
@@ -350,43 +340,13 @@ You can pass commands directly to ROOT by placing a dot before the command.
 
 A ROOT tutorial is a ROOT macro that demonstrates ROOT specific features.
 
-There are tutorials for the following topics, among others:
-
-  - Containers
-  - Data Frames
-  - Fast Fourier Transforms
-  - Fitting histograms, graphs, etc.
-  - FITS files interface
-  - FOAM (multi-dimensional general-purpose Monte Carlo event generator)
-  - Geometry
-  - Graphics
-  - Graphs
-  - Graphical User Interface (GUI)
-  - Histograms
-  - HTTP interface
-  - Images (using TImage class)
-  - Input/Output
-  - Mathematics, matrixes, etc
-  - Monte Carlo simulations
-  - Multicore (multithreading and multiprocessing)
-  - Physics
-  - PyRoot
-  - Quadratic programming package
-  - R
-  - RooFit
-  - RooStats (statistics)
-  - SQL
-  - Trees
-  - UNURAN
-  - Vectors
-  - XML
-  - and many more
-
-When you install ROOT, a tutorials directory is created, containing all ROOT tutorials listed on [reference guide tutorial page](https://root.cern/doc/master/group__Tutorials.html).
+When you install ROOT, a `tutorials` directory is created, containing all ROOT tutorials listed on [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"}.
 
 > **Note**
 >
 > You need write permissions to the `tutorials` directory to execute the tutorials.
+
+
 
 ### Starting with hsimple.C
 

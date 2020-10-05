@@ -85,7 +85,7 @@ When you create a {% include ref class="TFile" %} object, the ROOT file becomes 
 
 To write objects to a ROOT file, they must be open.
 
-- Use [TFile::Write()](https://root.cern/doc/master/classTFile.html#adc21e8868cd0938691cf794b4b20096b){:target="_blank"} to write objects into the ROOT file.
+- Use [TFile::Write()](https://root.cern/doc/master/classTFile.html#adc21e8868cd0938691cf794b4b20096b){:target="_blank"} to write objects to a ROOT file.
 
  _**Example**_
 
@@ -249,13 +249,22 @@ There are ROOT command line tools for:
 - `rootmv`: Moves objects stored in a ROOT file to another ROOT file.
 - `rootmkdir`: Creates a "directory" inside a ROOT file.
 
+_**Example**_
+
+On the system prompt you can use the ROOT command line tool`rootls` to list the contents of a ROOT file.
+
+{% highlight C++ %}
+$ rootls hsimple.root
+hprof  hpx  hpxpy  ntuple
+{% endhighlight %}
+
 **Operations on ROOT classes**
 
 - `rootbrowse`: Opens a {% include ref class="TBrowser" %} directly on the content of a ROOT file.
 - `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another ROOT file.
 - `rootprint`: Plots objects in an image ROOT file.
 - `rootslimtree`: Copies trees with a subset of branches from source ROOT files.
-- `genreflex`: Generates dictionary sources and related ROOT pcm starting from an header.
+- `genreflex`: Generates dictionary sources and related ROOT pcm, starting from an header.
 - `hadd`: Adds histograms from a list of ROOT files and writes them to a target ROOT file.
 
 Use the `-h` option to get more information on the available options for the specific ROOT command line tool.
@@ -411,7 +420,7 @@ root[] f.Map()
 
 ROOT provides not only sequential access to the content of a ROOT file, but also random or direct access.
 
-{% include ref class="TFile" %} keeps a list of {% include ref class="TKey" %}s, which is an index to the objects in the ROOT file.
+{% include ref class="TFile" %} keeps a list of {% include ref class="TKey" %} objects, which is an index to the objects in the ROOT file.
 
 The `TKey` class describes the record headers of objects in the ROOT file. With the `GetListOfKeys()` method you get the list of keys.
 
