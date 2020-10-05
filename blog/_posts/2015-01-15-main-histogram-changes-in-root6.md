@@ -76,7 +76,7 @@ Get/SetBinContent and Get/SetBinError, which have exactly the same functionality
 #### Faster internal method to retrieve/update bin content.
 
 TH1 now uses in its member functions (e.g. TH1::Add ) the new protected virtual functions
-UpdatedBinContent and RetrieveBinContent to update andretrieve the bin contents. These
+UpdatedBinContent and RetrieveBinContent to update and retrieve the bin contents. These
 functions have the advantage to be faster than the public methods Get/SetBinContent. If a
 user has implemented a derived class of TH1, he might need to re-implement these new
 protected virtual functions.

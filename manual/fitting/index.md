@@ -144,7 +144,7 @@ In the following section is described how to use the {% include ref class="TF1" 
 
 ### Fitting 1-D histograms with pre-defined functions
 
-- Use the [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a 1-D histogram with a pre-defined function. The name of the pre-definded function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
+- Use the [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a 1-D histogram with a pre-defined function. The name of the pre-defined function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
 
 _**Example**_
 
