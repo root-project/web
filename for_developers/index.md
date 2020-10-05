@@ -39,12 +39,12 @@ ROOT externals coming from the central installations in AFS or CVMFS.
 
 ### Continuous Integration / Testing
    - [Jenkins Service](https://lcgapp-services.cern.ch/root-jenkins/)
-   - [Jenkins How To](continous_integration-testing/jenkins_how_to)
+   - [Jenkins How To](continuous_integration-testing/jenkins_how_to)
    - [CDash](https://cdash.cern.ch/index.php?project=ROOT)
    - [Coverity](https://coverity.cern.ch/login/login.htm)
    - [GitWeb](https://root.cern/gitweb/?p=root.git;a=summary)
    - [Bug Reports](https://github.com/root-project/root/issues/new)
-   - [ROOTBinder Checklist](continous_integration-testing/rootbinder_checklist)
+   - [ROOTBinder Checklist](continuous_integration-testing/rootbinder_checklist)
 
 ### [Doxygen in ROOT]({{'/for_developers/doxygen' | relative_url}})
 [Doxygen](https://www.doxygen.nl/){:target="_blank"} is used for generating
