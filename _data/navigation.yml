@@ -86,7 +86,7 @@ manual:
         url: reference/
       - title: "Topical Manuals"
         url: topical/
-        title: "How-tos"
+      - title: "How-tos"
         url: https://root-forum.cern.ch/c/howto/
       - title: "Forum & Help"
         url: https://root-forum.cern.ch/
