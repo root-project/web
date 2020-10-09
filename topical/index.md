@@ -84,7 +84,7 @@ manual [here](https://root.cern/root/htmldoc/guides/minuit2/Minuit2.html){:targe
   - [Minuit2 manual (epub version for iPad and iPhone)](https://root.cern/root/html534/guides/minuit2/Minuit2.epub){:target="_blank"}
 
 ## GenVector
-[This additional documentation for the GenVector package](http://seal.cern.ch/documents/mathlib/GenVector.pdf)
+[This additional documentation for the GenVector package]({{ 'topical/GenVector.pdf' | relative_url }})
 is rather detailed, although it could be that is not completly up to date. Some new classes
 added later might be not documented in this manual.
 Nevertheless it is still very interesting.
