@@ -750,7 +750,7 @@ _**Example**_
 <p><a name="physics-vector-package"></a></p>
 ## Physics vector package
 
-The physics vector package is a combination of CLHEPs vector package written by Leif Lonnblad, Andreas Nilsson and Evgueni Tcherniaev (→ see [http://www.cern.ch/clhep/](http://www.cern.ch/clhep/){:target="_blank"}) and a ROOT package written by Pasha Murat.
+The physics vector package is a combination of CLHEPs vector package written by Leif Lonnblad, Andreas Nilsson and Evgueni Tcherniaev (→ see [https://www.cern.ch/clhep/](https://www.cern.ch/clhep/){:target="_blank"}) and a ROOT package written by Pasha Murat.
 
 There are the following classes in the physics vector package, which are described in detail in the [Reference Guide](https://root.cern/doc/master/group__Physics.html){:target="_blank"}:
 
