@@ -30,3 +30,11 @@ immediately if they are acceptable (i.e. passing continuous integration and shif
 ### Incoming issues
 The shifter should check incoming issues for completeness and do an assignment where it is clear.
 We have a [GitHub project](https://github.com/root-project/root/projects/2) that lists issues that are waiting to be triaged.
+
+### Links to check daily
+
+- [Forum](https://root-forum.cern.ch/latest)
+- [Nightly builds](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/)
+- [Issues that need triage](https://github.com/root-project/root/projects/2)
+- [Unassigned issues](https://github.com/root-project/root/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee)
+- [Unassigned pull requests](https://github.com/root-project/root/pulls?q=is%3Aopen+is%3Apr+no%3Aassignee)
