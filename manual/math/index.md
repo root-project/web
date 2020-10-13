@@ -140,13 +140,13 @@ The majority of the special functions and the statistical distributions are prov
 
 Functions not present in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} name that are provided only by [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} are:
 - Special functions:
-	- DiLogarithm
-	- Struve
+   - DiLogarithm
+   - Struve
 - Statistical functions:
-	- KolmogorovProb
-	- Voigt function
-	- LaplaceDist
-	- Vavilov
+   - KolmogorovProb
+   - Voigt function
+   - LaplaceDist
+   - Vavilov
 
 ### ROOT::Math
 
@@ -1534,7 +1534,7 @@ The Minuit minimization package was originally written in Fortran by Fred James 
 
 ### Minuit2 library
 
-The [Minuit2](https://root.cern/doc/master/group__Minuit.html){:target="_blank"} library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. 
+The [Minuit2](https://root.cern/doc/master/group__Minuit.html){:target="_blank"} library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances.
 
 Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm (see → [FUMILI minimization package](#fumili-minimization-package)), which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
 
@@ -1562,7 +1562,7 @@ The {% include ref class="TUnuran" %} class is used to interface the UNURAN pack
 
 > **Tutorials**
 >
-> {% include tutorials name="Graph" url="unuran" %} 
+> {% include tutorials name="Unuran" url="unuran" %}
 
 ### Initializing TUnuran with string API
 
