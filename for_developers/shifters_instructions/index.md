@@ -35,7 +35,7 @@ In order to do the triage, the steps below should be followed:
 1. Go through all issues that require triage in the [triage project](https://github.com/root-project/root/projects/2).
 2. For each issue, assign to the relevant people and add labels, e.g. type of issue, related ROOT components, priority,
 affected branches.
-3. At the [triage project view](https://github.com/root-project/root/projects/2), remove the triaged issues
+3. In the [triage project view](https://github.com/root-project/root/projects/2), remove the triaged issues
 from the project by clicking on `... -> Remove from project`.
 
 ### Links to check daily
