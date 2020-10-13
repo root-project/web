@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-The ROOT Mathematical libraries consist of the following components:
+The ROOT mathematical libraries consist of the following components:
 
 - [MathCore library](#mathcore-library)
 
@@ -1474,11 +1474,11 @@ Use one of the following constructors to create a matrix:
 - Default constructor for a zero matrix (all elements equal to zero).
 - Constructor of an identity matrix.
 - Copy constructor (and assignment) for a matrix with the same representation, or from a different one when possible, for example from a symmetric to a general matrix.
-- Constructor (and assignment) from a matrix expression, like D=A*B+C. Due to the expression template technique, no temporary objects are created in this operation. In the case of an operation like A=A*B+C, a temporary object is needed and it is created automatically to store the intermediary result in order to preserve the validity of this operation.
+- Constructor (and assignment) from a matrix expression, like `D=A*B+C`. Due to the expression template technique, no temporary objects are created in this operation. In the case of an operation like `A=A*B+C`, a temporary object is needed and it is created automatically to store the intermediary result in order to preserve the validity of this operation.
 - Constructor from a generic STL-like iterator copying the data referred by the iterator, following its order. It is both possible, to specify the begin and end of the iterator or the begin and the size. In case of a symmetric matrix, it is required only the triangular block and the user can specify whether giving a block representing the lower (default case) or the upper diagonal part.
 
  _**Example**_
- Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix the representation has the default value `ROOT::Math::MatRepStd`. For a general square matrix, the number of columns can be omitted.
+ Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix the representation has the default value [ROOT::Math::MatRepStd](https://root.cern/doc/master/classROOT_1_1Math_1_1MatRepStd.html){:target="_blank"}. For a general square matrix, the number of columns can be omitted.
 
  {% highlight C++ %}
 // Typedef definitions used in the following declarations:
@@ -1520,7 +1520,8 @@ A symmetric matrix is filled from a `std::vector`.
 
 ROOT provides several minimization libraries and classes:
 - [TMinuit](#tminuit)
-- [Minuit2 Library](#minuit2-library)
+- [Minuit2 library](#minuit2-library)
+- [FUMILI minimization package](#fumili-minimization-package)
 
 ### TMinuit
 
@@ -1533,12 +1534,23 @@ The Minuit minimization package was originally written in Fortran by Fred James 
 
 ### Minuit2 library
 
-The [Minuit2](https://root.cern/doc/master/group__Minuit.html){:target="_blank"} library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm, which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
+The [Minuit2](https://root.cern/doc/master/group__Minuit.html){:target="_blank"} library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances. 
+
+Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm (see → [FUMILI minimization package](#fumili-minimization-package)), which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
 
 > **Topical manuals**
 >
 > For Minuit2, topical manuals are available at [Topical Manuals - Minuit2]({{ '/topical/#minuit-2' | relative_url }}).<br>
 > They contain in-depth information about Minuit2.
+
+### FUMILI minimization package
+
+FUMILI is used to minimize Chi-square function or to search maximum of likelihood function.
+
+FUMILI is based on ideas, proposed by I.N. Silin. It was converted from FORTRAN to C by Sergey Yaschenko s.yaschenko@fz-juelich.de.
+
+For detailed information on the FUMILI minimization package, see → [TFumili class reference](https://root.cern/doc/master/classTFumili.html){:target="_blank"}.
+
 
 ## UNU.RAN
 
