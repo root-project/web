@@ -108,14 +108,14 @@ The vector classes are based on a generic type of coordinate system, expressed a
 
 ### Transformations
 
-The transformations are modeled using simple, non-template classes, using `double` as the scalar type to avoid too large numerical errors.<br/> 
+The transformations are modeled using simple, non-template classes, using `double` as the scalar type to avoid too large numerical errors.<br/>
 The transformations are grouped as follows:
 - rotations (3 dimensions)
 - Lorentz transformations
 - Poincare transformations (combinations of translation and rotation)
 
 Each group has several members, which may model physically equivalent transformations but with different internal representations. Transformation classes can
-operate on all type of vectors by using the `()` operator or the `*` operator. You can combine transformations with the `*` operator. 
+operate on all type of vectors by using the `()` operator or the `*` operator. You can combine transformations with the `*` operator.
 
 The available transformations are:
 
@@ -185,7 +185,7 @@ _**Examples**_
 
 // Returns the cylindrical components for the cartesian vector v1.
    v1.Rho(); v1.Eta(); v1.Phi();
-   
+
 // Returns the cartesian components for the cylindrical vector r2.
    r2.X(); r2.Y(); r2.Z()
 {% endhighlight %}
@@ -220,10 +220,10 @@ Single coordinate setter methods are available for the basic vector coordinates,
 {% highlight C++ %}
    XYZVector v1;
    v1.SetX(1);     // Correct setting x for a Cartesian vector.
-   
+
    Polar3DVector v2;
    v2.SetX(1);     // ERROR: cannot set X for a polar vector. The method does not compile.
-   
+
    v2.SetR(1);     // Correct setting r for a polar vector.
 {% endhighlight %}
 
@@ -283,7 +283,7 @@ _**Examples**_
 {% endhighlight %}
 
 > **Note**
-> 
+>
 > The `*` operator for the multiplication between two vectors is not supported, because it is ambiguous.
 
 **Other methods**
@@ -313,7 +313,7 @@ The following declarations are available:
 
 {% highlight C++ %}
    XYZPoint p1;         // An empty vector (x=0, y=0, z=0).
-   XYZPoint p2(1,2,3); 
+   XYZPoint p2(1,2,3);
 {% endhighlight %}
 
 Note that each point type is constructed by passing its coordinate representation. So a `XYZPoint(1,2,3)` is different
@@ -351,7 +351,7 @@ The following operations are possible between points and vector classes:
 {% endhighlight %}
 
 > **Note**
-> 
+>
 > The addition between two points is NOT possible and the difference between points returns a vector.
 
 **Other operations**
@@ -381,16 +381,16 @@ The following declarations are available:
 {% highlight C++ %}
 // Create an empty vector (x=0, y=0, z=0, t=0).
    XYZTVector v1;
-   
+
 // Vector with x=1, y=2, z=3, t=4.
    XYZTVector v2(1,2,3,4);
-   
+
 // Vector with pt=1, eta=2, phi=PI, E=5.
    PtEtaPhiEVector v3(1,2,PI,5);
 {% endhighlight %}
 
 Note that each type of vector is constructed by passing its coordinate representation. So a `XYZTVector(1,2,3,4)` is
-different from a `PtEtaPhiEVector(1,2,3,4)`.<br/> 
+different from a `PtEtaPhiEVector(1,2,3,4)`.<br/>
 In addition, you can construct the vector classes by any vector, which implements the accessors `x()`, `y()`, `z()` and `t()`.
 This can be another [ROOT::Math::LorentzVector](https://root.cern/doc/master/classROOT_1_1Math_1_1LorentzVector.html){:target="_blank"} based on a different coordinate system or any vector of a different
 package, like the CLHEP `HepLorentzVector` that implements the required signature.
@@ -413,7 +413,7 @@ _**Examples**_
 {% highlight C++ %}
 // Returns the Cartesian components for the cartesian vector v1.
    v1.X(); v1.X(); v1.Z(); v1.T();
-   
+
 // Returns the Cartesian components for the cylindrical vector v2.
    v2.Px(); v2.Py(); v2.Pz(); v2.E();
 
@@ -448,19 +448,19 @@ You can set the four coordinates via:
 
 // Sets pt,eta,phi,e for a PtEtaPhiEVector.
    v2.SetCoordinates(c1,c2,c3,c4);
-   
+
 // Sets Cartesian components for PtEtaPhiEVector.
    v2.SetXYZ(x,y,z,t);
 {% endhighlight %}
 
 
 Single coordinate setter methods are available for the basic vector coordinates, like `SetX()` for a `XYZTVector` or `SetPt()`
-for a `PtEtaPhiEVector`. Therefore, applying a `SetX()` on a non-Cartesian vector does not compile. 
+for a `PtEtaPhiEVector`. Therefore, applying a `SetX()` on a non-Cartesian vector does not compile.
 
 {% highlight C++ %}
    XYZTVector v1;
    v1.SetX(1);          // Correct setting x for a Cartesian vector.
-   
+
    PtEtaPhiEVector v2;
    v2.SetX(1);          // ERROR: cannot set X for a non-Cartesian vector. Method does not compile.
 
@@ -529,7 +529,7 @@ The transformation classes are grouped as follows:
 
 - 3D rotations,
 - Lorentz transformations,
-- Poincaré transformations, which are translation/rotation combinations. 
+- Poincaré transformations, which are translation/rotation combinations.
 
 Each group has several members which may model physically equivalent transformations but with different internal representations. All the classes are non-template and use double
 precision as the scalar type.
@@ -548,7 +548,7 @@ precision as the scalar type.
 Lorentz rotations and boosts:
 
 - [ROOT::Math::LorentzRotation](https://root.cern/doc/master/classROOT_1_1Math_1_1LorentzRotation.html){:target="_blank"}: 4D rotation (3D rotation plus a boost) described by a 4x4 matrix.
-- [ROOT::Math::Boost](https://root.cern/doc/master/classROOT_1_1Math_1_1Boost.html){:target="_blank"}: A Lorentz boost in an arbitrary direction and described by a 4x4 symmetrix matrix (10 numbers).
+- [ROOT::Math::Boost](https://root.cern/doc/master/classROOT_1_1Math_1_1Boost.html){:target="_blank"}: A Lorentz boost in an arbitrary direction and described by a 4x4 symmetric matrix (10 numbers).
 - [ROOT::Math::BoostX](https://root.cern/doc/master/classROOT_1_1Math_1_1BoostX.html){:target="_blank"}: A boost in the X axis direction.
 - [ROOT::Math::BoostY](https://root.cern/doc/master/classROOT_1_1Math_1_1BoostY.html){:target="_blank"}: A boost in the Y axis direction.
 - [ROOT::Math::BoostZ](https://root.cern/doc/master/classROOT_1_1Math_1_1BoostZ.html){:target="_blank"}: A boost in the Z axis direction.
@@ -580,11 +580,11 @@ _**Examples**_
 
 {% highlight C++ %}
    double data[9];
-   
+
 // Create a rotation from a rotation matrix.
    Rotation3D r(data,data+9);
    std::vector w(12);
-   
+
 // Create Transform3D from std::vector content.
    Transform3D t(w.begin(),w.end());
 {% endhighlight %}
@@ -676,7 +676,7 @@ _**Examples**_
 
 {% highlight C++ %}
    RotationX rx;
-   rx.SetComponents(1.);      // Set agle of the X rotation.
+   rx.SetComponents(1.);      // Set angle of the X rotation.
    double d[9] = {........};
    Rotation3D r;
    r.SetComponents(d,d+9);    // Set 9 components of 3D rotation.
@@ -685,7 +685,7 @@ _**Examples**_
    lr.GetComponents(d,d+16); // Get 16 components of a LorentzRotation.
    TMatrixD(3,4) m;
    Transform3D t;
-   t.GetComponens(m);        // Fill 3x4 matrix with components of t.
+   t.GetComponents(m);        // Fill 3x4 matrix with components of t.
 {% endhighlight %}
 
 You can use the `GetComponents()` and `SetComponents()` methods with a signature based on iterators or by using any foreign
@@ -695,7 +695,7 @@ matrix, which implements the operator(i,j) or a different signature depending on
 
 You can use the vector and rotation classes together with the linear algebra classes and to set and get the
 contents of any 3D or 4D vector from a linear algebra vector class, which implements an iterator or something which
-behaves like an iterator. 
+behaves like an iterator.
 
 For example, a pointer to a C array (`double*`) behaves like an iterator. It is then assumed that the coordinates, like `(x,y,z)` are stored contiguously.
 

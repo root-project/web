@@ -134,7 +134,7 @@ Use:
 
 The `kCanDelete` bit setting is displayed with [TObject::ls()](https://root.cern/doc/master/classTObject.html#ae1bc003ff9a558b3b3a60a14f16f1ae5). The last number is either 1 or 0 and is the `kCanDelete` bit.
 
-**Csollections**
+**Collections**
 
 The `gROOT `collections (see → [Ownership by the TROOT master object (gROOT)](#ownership-by-the-troot-master-object-groot)) own their members and will delete them regardless of the `kCanDelete` bit.
 

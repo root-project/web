@@ -1091,7 +1091,7 @@ The following operations and methods are available:
       <td>A = A + &alpha; B constructor</td>
     </tr>
         <tr>
-      <td>Element wise substraction</td>
+      <td>Element wise subtraction</td>
       <td>C=A-B A-=B<br>
 TMatrixD(A,TMatrixD::kMinus,B)</td>
       <td>Overwrites A<br>
@@ -1133,7 +1133,7 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
       <td>overwrites A</td>
     </tr>
     <tr>
-      <td>Element wise substraction</td>
+      <td>Element wise subtraction</td>
       <td>C=r-A C=A-r A-=r</td>
       <td>overwrites A</td>
     </tr>
