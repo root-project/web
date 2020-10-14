@@ -21,13 +21,13 @@ Together with ROOT 6.22, a major revision of PyROOT has been released. The new P
 
 ## Getting started
 
-When ROOT is installed, you can use PyROOT both from the Python prompt and from a Python script. The entry point to PyROOT is the `ROOT` module, which you must import first: 
+When ROOT is installed, you can use PyROOT both from the Python prompt and from a Python script. The entry point to PyROOT is the `ROOT` module, which you must import first:
 
 ```python
 import ROOT
 ```
 
-Then you can access the ROOT C++ classes, functions, etc. via the `ROOT` module. 
+Then you can access the ROOT C++ classes, functions, etc. via the `ROOT` module.
 
 _**Example**_
 
@@ -40,7 +40,7 @@ h.FillRandom("gaus")
 
 ## Interactive graphics
 
-Just like from C++, you can also create interactive ROOT graphics from Python with PyROOT. 
+Just like from C++, you can also create interactive ROOT graphics from Python with PyROOT.
 
 _**Example**_
 
@@ -69,7 +69,7 @@ Besides being the entry point to all ROOT functionality, the `ROOT` Python modul
 
 ### Configuration options
 
-After importing the ROOT module, you can access the PyROOT configuration object as `ROOT.PyConfig`. Such an object has a set of properties that you can modify to steer the behaviour of PyROOT. For the configuration to be taken into account, it needs to be applied right after `ROOT` is imported. 
+After importing the ROOT module, you can access the PyROOT configuration object as `ROOT.PyConfig`. Such an object has a set of properties that you can modify to steer the behaviour of PyROOT. For the configuration to be taken into account, it needs to be applied right after `ROOT` is imported.
 
 _**Example**_
 
@@ -93,7 +93,7 @@ ROOT.gROOT.SetStyle('MyStyle')
 
 If PyROOT cannot find `.rootlogon.py` in the user's home directory, it will look for the equivalent in C++ (`.rootlogon.C`), first in [ROOT's etc directory](https://root.cern/doc/master/classTROOT.html#ab8e51627a12d886d6c8177b46481352a){:target="_blank"}, then in the user's home directory and finally in the current working directory. Note that it is also possible to use both the Python and the C++ rootlogons, since the latter can be loaded from the former, for instance with `ROOT.gROOT.LoadMacro('.rootlogon.C')`.
 
-If you would like to completely disable the rootlogon functionality, set `PyConfig.DisableRootLogon` to `True`. 
+If you would like to completely disable the rootlogon functionality, set `PyConfig.DisableRootLogon` to `True`.
 
 - `IgnoreCommandLineOptions` (default `True`): If a PyROOT script is executed with some command line arguments, they will be ignored by default by ROOT, so you can process them as you wish. However, by setting `PyConfig.IgnoreCommandLineOptions` to `False`, those arguments will be forwarded to ROOT for parsing, for example, to enable the batch mode from the command line. For a complete list of the arguments accepted by ROOT, → see [Starting ROOT with command line options]({{ '/manual/first_steps_with_root/#starting-root-with-command-line-options' | relative_url }}).
 
@@ -165,7 +165,7 @@ The following options are available, ordered by complexity and performance:
 <a name="JITString"></a>
 ### 1. Just-in-time compilation of small strings
 
-ROOT has a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}), which can process C++ code. Sometimes, if such code is short (for exmple, the definition of a small function or class) or for rapid exploration or debugging. To do this, place the C++ code in a Python string, which is passed to the interpreter.
+ROOT has a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}), which can process C++ code. Sometimes, if such code is short (for example, the definition of a small function or class) or for rapid exploration or debugging. To do this, place the C++ code in a Python string, which is passed to the interpreter.
 The code will be just-in-time compiled (jitted) and is immediately available for invocation, as shown in the following example. Here, the constructor of the C++ class `A` and the function `f` are called from Python after defining them via the interpreter.
 
 _**Example**_
@@ -196,7 +196,7 @@ x = ROOT.f(3)  # x = 9
 <a name="JITHeader"></a>
 ### 2. Just-in-time compilation of entire files
 
-If you want to use the C++ code in a header, you can also use the interpreter to include and compile it on the fly. 
+If you want to use the C++ code in a header, you can also use the interpreter to include and compile it on the fly.
 
 _**Example**_
 
@@ -317,7 +317,7 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
 
 With ROOT you can execute Python code from C++ via the {% include ref class="TPython" %} class.
 
-The following example shows how you can use `Exec` to execute a Python statement. `Eval` is used to evaluate a Python expression and get its result back in C++ and `Prompt` to start an interactive Python session. 
+The following example shows how you can use `Exec` to execute a Python statement. `Eval` is used to evaluate a Python expression and get its result back in C++ and `Prompt` to start an interactive Python session.
 
 _**Example**_
 
@@ -491,7 +491,7 @@ File "<stdin>", line 1, in <module>
 TypeError: CppBase not an acceptable base: no virtual destructor
 ```
 
-- There are the folloing name changes for what concerns cppyy APIs and proxy object attributes:
+- There are the following name changes for what concerns cppyy APIs and proxy object attributes:
 
 | Old PyROOT/cppyy                          | New PyROOT/cppyy                |
 |-------------------------------------------|---------------------------------|
@@ -504,7 +504,7 @@ TypeError: CppBase not an acceptable base: no virtual destructor
 | cppyy.gbl.nullptr                         | cppyy.nullptr                   |
 | cppyy.gbl.PyROOT.TPyException             | cppyy.gbl.CPyCppyy.TPyException |
 | buffer.SetSize(N)                         | buffer.reshape((N,))            |
-| obj.\_\_cppname\_\_                       | type(obj).\_\_cpp\_name\_\_         |
+| obj.\_\_cppname\_\_                       | type(obj).\_\_cpp\_name\_\_     |
 | obj.\_get\_smart\_ptr                     | obj.\_\_smartptr\_\_            |
 | callable.\_creates                        | callable.\_\_creates\_\_        |
 | callable.\_mempolicy                      | callable.\_\_mempolicy\_\_      |

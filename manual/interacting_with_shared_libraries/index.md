@@ -122,7 +122,7 @@ When using ACliC, ROOT checks what library really needs to be build and calls yo
 ACLiC executes the following steps:
 
 1. Calls `rootcling` to create automatically a dictionary.
-<br/>For creating a dictionaty manually, → see [Using rootcling to generate dictionaries manually](#using-rootcling-to-generate-dictionaries-manually).
+<br/>For creating a dictionary manually, → see [Using rootcling to generate dictionaries manually](#using-rootcling-to-generate-dictionaries-manually).
 
 2. Calls the the system's C++ compiler to build the shared library.
 
@@ -255,7 +255,7 @@ With a given header file `MyHeader.h`, ACliC automatically generates a dictionar
       root[] .L MyHeader.h+
 ```
 
-### Using rootcling to generate dictionaries manually 
+### Using rootcling to generate dictionaries manually
 
 You can manually create a dictionary by using `rootcling`:
 
@@ -404,7 +404,7 @@ A `Linkdef.h` file starts with the following preamble:
 #pragma link off all functions;
 #pragma link C++ nestedclasses;
 ```
-The first line protects the compiler from seeing the `rootcint` directives. The `rootcint` directives are in the form of `#pragma` statements. A `#pragma` link of all _something_ says that by default, `rootcint` should not generate the dictionary for anything it sees. 
+The first line protects the compiler from seeing the `rootcint` directives. The `rootcint` directives are in the form of `#pragma` statements. A `#pragma` link of all _something_ says that by default, `rootcint` should not generate the dictionary for anything it sees.
 
 The nested classes directive tells `rootcint` not to ignore `nestedclasses`, this is, classes defined inside classes like here:
 

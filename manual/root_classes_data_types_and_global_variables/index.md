@@ -121,7 +121,7 @@ The virtual method `Draw()` is the entry point for the graphics rendering of ROO
 
 #### Introspection, reflection and run time type identification (RTTI)
 
-Introspection, which is also referred to as reflection, run time type identification (RTTI) is the ability of a class to reflect upon itself. 
+Introspection, which is also referred to as reflection, run time type identification (RTTI) is the ability of a class to reflect upon itself.
 
 ROOT implements reflection with the {% include ref class="TClass" %} class. It provides all information about a class, a full description of data members and methods, including the comment field and the method
 parameter types.
@@ -135,17 +135,17 @@ If the class is a descendent of {% include ref class="TObject" %}, you can check
 {% endhighlight %}
 
 ROOT and Cling rely on reflection and the class dictionary to identify the type of a variable at run time. With the
-{% include ref class="TObject" %} inheritance are some methods available that use introspection to help you see the data in the object or class. 
+{% include ref class="TObject" %} inheritance are some methods available that use introspection to help you see the data in the object or class.
 
 _**Example**_
 {% highlight C++ %}
 // Lists all data members and their current values.
-   obj->Dump(); 
+   obj->Dump();
 
 // Opens a window to browse data members.
    obj->Inspect();
 
-// Draws the class inheritance tree. 
+// Draws the class inheritance tree.
    obj->DrawClass(); // Draws the class inheritance tree
 {% endhighlight %}
 
@@ -153,7 +153,7 @@ _**Example**_
 
 To store an object in a ROOT collection, it must be a descendent of {% include ref class="TObject" %}. This is convenient if you want to store
 objects of different classes in the same Root collection and execute the method of the same name on all members of the
-ROOT collection. 
+ROOT collection.
 
 _**Example**_
 
@@ -181,7 +181,7 @@ Two useful methods are [TObject::Clone()](https://root.cern/doc/master/classTObj
 and creates a new object. The `DrawClone()` method does the same thing and in addition draws the clone.
 
 #### Browse()
-The [TObject::Browse()](https://root.cern/doc/master/classTObject.html#a257256699b369476a49bb17b9c1a76f4) method is called if the object is browse-able and is to be displayed in the ROOT Object Browser. 
+The [TObject::Browse()](https://root.cern/doc/master/classTObject.html#a257256699b369476a49bb17b9c1a76f4) method is called if the object is browse-able and is to be displayed in the ROOT Object Browser.
 
 _**Example**_
 
@@ -190,7 +190,7 @@ of each leaf. For the object its `Browse()` method to be called, the `IsFolder()
 
 #### SavePrimitive()
 
-The [TObject::SavcePrimitive()](https://root.cern/doc/master/classTObject.html#a9ee00859ee3b190759028d690e1ddf83) method is called by a canvas on its list of primitives, when the canvas is saved as a ROOT macro. The purpose of
+The [TObject::SavePrimitive()](https://root.cern/doc/master/classTObject.html#a9ee00859ee3b190759028d690e1ddf83) method is called by a canvas on its list of primitives, when the canvas is saved as a ROOT macro. The purpose of
 `SavePrimitve()` is to save a primitive as a C++ statement(s). Most ROOT classes implement the `SavePrimitive()`
 method. It is recommended that `SavePrimitive()` is implemented in user defined classes if it is to be drawn on
 a canvas. Such that the command `TCanvas::SaveAs(Canvas.C)` will preserve the user-class object in the resulting ROOT macro.
@@ -204,7 +204,7 @@ that can report peculiarities for different cursor positions (for example the bi
 
 #### Bit masks and unique ID
 A {% include ref class="TObject" %} descendent inherits two data members:
-- `fBits` 
+- `fBits`
 - `fUniqueID`
 
 `fBitsis`is a 32-bit data member used with a bit mask to get object information. Bits 0 - 13 are reserved as global bits, bits 14 - 23 can be used in different class
@@ -213,28 +213,28 @@ hierarchies.
 {% highlight C++ %}
    enum EObjBits {
 // If can be deleted.
-   kCanDelete = BIT(0), 
-   
-// If destructor must call RecursiveRemove().   
+   kCanDelete = BIT(0),
+
+// If destructor must call RecursiveRemove().
    kMustCleanup = BIT(3),
 
-// For backward compatibility only. 
-   kObjInCanvas = BIT(3), 
-   
+// For backward compatibility only.
+   kObjInCanvas = BIT(3),
+
 // If referenced by TRef or TRefArray.
    kIsReferenced = BIT(4),
-   
-// If has a TUUID, fUniqueID=UUIDNumber. 
-   kHasUUID = BIT(5), 
-   
+
+// If has a TUUID, fUniqueID=UUIDNumber.
+   kHasUUID = BIT(5),
+
 // If cannot be picked in a pad.
    kCannotPick = BIT(6),
 
 // If does not want a context menu.
-   kNoContextMenu = BIT(8), 
- 
+   kNoContextMenu = BIT(8),
+
 // Object actor succeeded but the object should not be used.
-   kInvalidObject = BIT(13) 
+   kInvalidObject = BIT(13)
 };
 {% endhighlight %}
 
@@ -260,9 +260,9 @@ ROOT provides a set of tools to help you understand the existing class structure
 	- Number of bytes occupied by the object.
 	- Object class name.
 	- Compression factor (if the file is compressed).
-	
+
 - [TClass::Draw](https://root.cern/doc/master/classTClass.html#ac11f715e58e6d0c360f4c80577a5484a): Draws the detailed class inheritance structure. All ROOT classes are documented with their associated inheritance tree. This tree can be generated interactively with `object->DrawClass()` or by selecting `DrawClass` item when right-clicking an object in a canvas.
-    
+
 - [TObject::Inspect](https://root.cern/doc/master/classTObject.html#a09f1614be7c5b3c35770529cc151449d) Dumps the contents of this object in a graphics canvas. A table is displayed where, for each data member, its name, current value and its title are given. If a data member is a pointer to another object, one can click on the pointer and, in turn, inspect the pointed object,etc.
 
 - [TObject::Dump](https://root.cern/doc/master/classTObject.html#a2a79fcd627629cb2b19d54bf6a6935db): Same as `TObject::Inspect`, except that the output is on stdout. An object dump can be written to a file.
