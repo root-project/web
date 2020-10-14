@@ -17,9 +17,9 @@ Its main advantages:
   - C++ 11... support through clang.
 
 We have announced cling to the public in 2011. cling is in production use by CERN; bugs
-should be reported to the ROOT project [](https://root.cern/bugs)here.
+should be reported to the ROOT project [here](https://root.cern/bugs).
 We offer [binary snapshots for download](https://root.cern/download/cling/).
-There are [build instructions]({{cling_build_instructions | relative_url_}}), both for a stand-alone
+There are [build instructions]({{'cling/cling_build_instructions' | relative_url}}), both for a stand-alone
 version of `cling` and for `cling` as part of ROOT.
 We even have [doxygen documentation](https://cling.web.cern.ch/cling/doxygen/) of cling's
 code.
