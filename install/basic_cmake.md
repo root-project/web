@@ -3,6 +3,8 @@ title: Basic CMake
 layout: single
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "install"
 ---
 
 ## Basic CMake usage
