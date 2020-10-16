@@ -25,4 +25,6 @@ The first part of the ROOT Manual contains:
 
 - [Object ownership]({{ '/manual/object_ownership' | relative_url }})
 
+- [Thread safetiness]({{ '/manual/thread_safetiness' | relative_url }})
+
 - [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})
