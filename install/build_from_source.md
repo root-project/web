@@ -3,6 +3,8 @@ title: Building ROOT from source
 layout: single
 toc: true
 toc_sticky: true
+sidebar:
+  nav: "install"
 ---
 
 ## Introduction
@@ -59,7 +61,7 @@ PyROOT, the set of Python bindings of ROOT, changed its structure and build/inst
 
 ### After v6.22
 
-The main feature introduced in v6.22 concerning the PyROOT build system is the possibility to build for both Python3 and Python2 (MultiPython), available only if the version of CMake used to build is >= 3.14. In the following, build and installation processes both with CMake >= 3.14 and < 3.14 are described. 
+The main feature introduced in v6.22 concerning the PyROOT build system is the possibility to build for both Python3 and Python2 (MultiPython), available only if the version of CMake used to build is >= 3.14. In the following, build and installation processes both with CMake >= 3.14 and < 3.14 are described.
 
 #### CMake >= 3.14
 
@@ -163,7 +165,7 @@ installation paths like `CMAKE_INSTALL_BINDIR`, `CMAKE_INSTALL_LIBDIR`, etc.
 
 ### Fixed Location Installation (gnuinstall=ON)
 
-The fixed location installation method is enabled with `-Dgnuinstall=ON` at configuration time, which then also allows 
+The fixed location installation method is enabled with `-Dgnuinstall=ON` at configuration time, which then also allows
 the tuning of destinations for the various components by setting the variables `CMAKE_INSTALL_xxxDIR`, where `xxx` is `BIN`,
 `LIB`, `INCLUDE`, etc. The full list is available in `cmake/modules/RootInstallDirs.cmake` inside the repository and
 also in the list of variables below. The fixed location installation method does not require setting any environment
@@ -178,7 +180,7 @@ can be done with `export PYTHONPATH=$(root-config --libdir)` if `root-config` is
 
 Each build option is a boolean variable that can be turned ON or OFF. The current value is recorded in the CMake cache (CMakeCache.txt file on the build directory) and therefore it is not needed to be specified on the cmake command each time. Please note that some of the options might be turned OFF automatically for some platforms or if the required external library or component can not be satisfied. The user can view and edit the full list of options using the `ccmake` utility or `cmake-gui` for Windows. Note that on Windows some of the options are not yet implemented.
 
-The user can set any CMake variable or option that controls the build process from the `cmake` command line. Passing `cmake -D <var>=<value>` creates an entry in the CMake cache. The list of the ROOT-specific CMake options can be found below.  
+The user can set any CMake variable or option that controls the build process from the `cmake` command line. Passing `cmake -D <var>=<value>` creates an entry in the CMake cache. The list of the ROOT-specific CMake options can be found below.
 **Note**: Some options have platform-dependent default values (e.g. cocoa is `ON` on apple)
 
 {% include build_options_v6-22-00-patches.md %}

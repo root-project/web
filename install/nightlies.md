@@ -1,6 +1,8 @@
 ---
 title: Nightlies
 layout: single
+sidebar:
+  nav: "install"
 ---
 
 This page lists all the ways you can install a bleeding-edge version of ROOT, i.e. one that was built last night from the head of the development branch.
