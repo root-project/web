@@ -7,13 +7,13 @@ toc: true
 toc_sticky: true
 ---
 
-With PyROOT you can use ROOT, because of its Python-C++ bindings, from Python. PyROOT is HEP's entrance to all C++ from Python, for example, for frameworks and their steering code. The PyROOT bindings are *automatic* and *dynamic*: no pre-generation of Python wrappers is necessary.
+With PyROOT, ROOT's Python-C++ bindings, you can use ROOT from Python. PyROOT is HEP's entrance to all C++ from Python, for example, for frameworks and their steering code. The PyROOT bindings are *automatic* and *dynamic*: no pre-generation of Python wrappers is necessary.
 
 With PyROOT you can access the full ROOT functionality from Python while benefiting from the performance of the ROOT C++ libraries.
 
 PyROOT is compatible with both Python2 (>= 2.7) and Python3.
 
-> The usage of PyROOT requires in-depth knowledge of Python.<br/>
+> The usage of PyROOT requires working knowledge of Python.<br/>
 > For detailed information on Python, refer to the [Python Language Reference](https://docs.python.org/3/reference/){:target="_blank"}.
 
 Together with ROOT 6.22, a major revision of PyROOT has been released. The new PyROOT has extensive support for *modern C++* (it operates on top of [cppyy](https://cppyy.readthedocs.io/){:target="_blank"}), is more *pythonic* and is able to *interoperate* with widely-used Python data-science libraries (for example, [NumPy](https://numpy.org/){:target="_blank"}, [pandas](https://pandas.pydata.org/){:target="_blank"}, [Numba](https://numba.pydata.org/){:target="_blank"}).<br/>Therefore, we strongly recommend to use the new PyROOT.
@@ -102,7 +102,7 @@ If you want to disable the rootlogon functionality, set `PyConfig.DisableRootLog
 
 - `IgnoreCommandLineOptions` (default `True`): If a PyROOT script is run with some command line arguments, ROOT ignores them by default, so you can process them as you wish. However, by setting `PyConfig.IgnoreCommandLineOptions` to `False`, those arguments are forwarded to ROOT for parsing, for example, to enable the batch mode from the command line.<br/>For a complete list of the arguments accepted by ROOT, → see [Starting ROOT with command line options]({{ '/manual/first_steps_with_root/#starting-root-with-command-line-options' | relative_url }}).
 
-- `ShutDown` (default `True`): If PyROOT is terminated during its cleanup phase, the ROOT C++ interpreter is shut down.<br/>If PyROOT is executed as part of a longer-running application that needs the C++ interpreter, you can set `PyConfig.ShutDown` to `False` to prevent that shutdown.
+- `ShutDown` (default `True`): When the application is finished, more precisely during PyROOT's cleanup phase, the ROOT C++ interpreter is shut down by default.<br/>If PyROOT is executed as part of a longer-running application that needs the C++ interpreter, you can set `PyConfig.ShutDown` to `False` to prevent that shutdown.
 
 - `StartGUIThread` (default `True`): Unless executed from [IPython](https://ipython.org/){:target="_blank"}, a [Jupyter](https://jupyter.org/){:target="_blank"} notebook or in [interactive mode](https://docs.python.org/3/tutorial/interpreter.html#interactive-mode){:target="_blank"}, PyROOT starts a thread that periodically polls for ROOT events (for example GUI events) to process them. If a given PyROOT application does not need this event processing, you can prevent the creation of the thread by setting `PyConfig.StartGUIThread` to `False`.
 
@@ -153,14 +153,14 @@ Moreover, you can use `addressof` in conjunction with `TTree::Branch` from Pytho
 
 - `MakeNullPointer(class_proxy)`: Equivalent to `BindObject(0, class_proxy)`, it returns a proxy object of the class represented by `class_proxy` that is bound to a C++ null pointer.<br/>For example, `MakeNullPointer(TTree)` returns a `TTree` proxy object that internally points to null. This function is kept for backwards compatibility with old PyROOT versions.
 
-- `SetOwnership(obj, python_owns)`: A Python proxy can either own or not own its internal C++ object. If a Python proxy owns its C++ object and the proxy is being destroyed, the C++ object is deleted too. This ownership can be modified for a given Python proxy with `SetOwnership`.<br>For example, when calling `SetOwnership(obj, False)`, make sure that the C++ object proxied by `obj` is not deleted by PyROOT when `obj` is garbage collected. This is useful for example, if you know that the deletion will happen in C++ and you want to prevent a double delete.<br/>Use this functionality with care not to produce any memory leaks.
+- `SetOwnership(obj, python_owns)`: A Python proxy can either own or not own its internal C++ object. If a Python proxy owns its C++ object and the proxy is being destroyed, the C++ object is deleted too. This ownership can be modified for a given Python proxy with `SetOwnership`.<br>For example, by calling `SetOwnership(obj, False)`, you make sure that the C++ object proxied by `obj` is not deleted by PyROOT when `obj` is garbage collected. This is useful for example, if you know that the deletion will happen in C++ and you want to prevent a double delete.<br/>Use this functionality with care not to produce any memory leaks.
 
 ## Loading user libraries and Just-In-Time compilation (JITting)
 
 With PyROOT you can use *any C++ library* from Python, not only the ROOT libraries. This is possible because of the automatic and dynamic bindings between Python and C++ that PyROOT provides.
 Without any prior generation of wrappers, at execution time, PyROOT can load C++ code and call into it.
 
-This enables you to write high performance C++, compile it and use it from Python. 
+This enables you to write high-performance C++, compile it and use it from Python. 
 The following options are available, ordered by complexity and performance:
 
 -  [Just-in-time compilation of small strings](#JITString): Small functions and classes to be used from Python. Especially useful for testing and debugging.
@@ -421,7 +421,7 @@ cppyy template proxy (internal)
 'int'
 ```
 
-Note that the above code does not affect class templates that can be instantiated either with parenthesis or square brackets:
+Note that the above code does not affect class templates, which can be instantiated either with parenthesis or square brackets:
 
 ```python
 >>> ROOT.std.vector['int'] # instantiation
@@ -570,7 +570,7 @@ The purpose of these classes was to serve as a base class for Python classes tha
 from the ROOT::Math classes. This allowed to define Python functions that could be used for fitting
 in Fit::Fitter.<br/>
 In the new PyROOT, `TPyMultiGenFunction` and `TPyMultiGradFunction` do not exist anymore, since their
-functionality is automatically provided by new cppyy. When a Python class inherits from a C++ class,
+functionality is automatically provided by new cppyy: if a Python class inherits from a C++ class,
 a wrapper C++ class is automatically generated. That wrapper class redirects any call from C++
 to the methods implemented by the Python class.
 
@@ -630,7 +630,7 @@ modifier methods on the `std::string` objects.
 
 - When obtaining the boolean value of a C++ instance proxy, both old and new PyROOT return
 `False` when such proxy points to null. On the other hand, when the proxy points to a C++ object,
-old PyROOT just returns `True`, while new PyROOT has slightly modified this behaviour. In new
+old PyROOT just returns `True`, while new PyROOT has slightly modified this behaviour: in new
 cppyy, if `__len__` is available, the result of `__len__` is used to determine truth. This is
 done to comply with the default Python behaviour, where `__len__` is tried if `__bool__` is not
 present (see → [object.__bool__](https://docs.python.org/3.8/reference/datamodel.html#object.__bool__){:target="_blank"}).
