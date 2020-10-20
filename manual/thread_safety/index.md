@@ -1,5 +1,5 @@
 ---
-title: Thread safetiness
+title: Thread safety
 layout: single
 sidebar:
   nav: "manual"
@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT classes support one of the following thread-safety levels:
+ROOT classes support one of the following thread safety levels:
 
 - Thread unsafe: objects must not be used concurrently by different threads, even if objects are not shared among threads.
 
