@@ -166,7 +166,8 @@ Type at the ROOT prompt:
 
 ROOT uses the interactive C++ interpreter Cling that is built on top of the
 **L**ow **L**evel **V**irtual **M**achine ([LLVM](https://llvm.org/){:target="_blank"}) and the [Clang libraries](https://clang.llvm.org/){:target="_blank"}.
-Cling provides command line prompt and a just-in-time (JIT) compiler for compilation.
+Cling provides command line prompt and a just-in-time (JIT) compiler for compilation.<br/>
+For more information on Cling, → see [Cling]({{ '/cling' | relative_url }}).
 
 > **Note**
 >
@@ -230,6 +231,8 @@ _**Example**_
    i = 1, j = 1
    i = 2, j = 3
 {% endhighlight %}
+
+You can also put the commands in a file, a so called a ROOT macro, and then execute and compile it. For more information on ROOT macros, → see [ROOT macros and shared libraries]({{ '/manual/interacting_with_shared_libraries' | relative_url }})
 
 ## Regular expressions
 
@@ -353,7 +356,7 @@ When you install ROOT, a `tutorials` directory is created, containing all ROOT t
 It is recommended to start with the `hsimple.C` macro first. It creates the ROOT file `hsimple.root`, which is used by many other macros.
 `hsimple.root` contains four histograms `hpx`, `hpx;1`, `hpxpy;1`` and ``hprof;1`.
 
-For detailed information on ROOT files, see → [Storing ROOT objects]({{ '/manual/storing_root_objects' | relative_url }}).
+For detailed information on ROOT files, see → [ROOT files]({{ '/manual/storing_root_objects' | relative_url }}).
 
 To execute the `hsimple.C` macro at the ROOT prompt, type:
 
