@@ -18,7 +18,10 @@ You can freely use instances of _different_ conditionally safe types concurrentl
 
 - Thread safe: you can freely use thread safe objects concurrently in multiple threads.
 
-Unless otherwise stated, classes starting with `R` (e.g. {% include ref class="RDataFrame" %}) are conditionally thread safe.
-Types whose name starts `T` (e.g. {% include ref class="TUrl" %}) as well as globals (such as `gStyle`) are thread unsafe.
-You can find the exceptions from the general thread safety guarantuees in the Doxygen class documention.
-Notably, most I/O classes starting with `T` (e.g. {% include ref class="TFile" %}) are conditionally thread safe, and `gROOT` is thread safe.
+In multi-threaded applications, you should call `ROOT::EnableThreadSafety()`.
+Otherwise you need to consider ROOT objects as being thread unsafe.
+
+With `ROOT::EnableThreadSafety()`, types whose names starts with `R` (e.g. {% include ref class="RDataFrame" %}) generally are conditionally thread safe.
+Most of the core, math and I/O related classes are conditionally thread safe ({% include ref class="TTree" %}, {% include ref class="TDirectory" %}, {% include ref class="TFile" %}, `TH*`, {% include ref class="TMinuit2" %}).
+Most of the general infrastructure classes (e.g. {% include ref class="TROOT" %}, {% include ref class="TClass" %}) are thread safe.
+For more detail see the individual class documentation.
