@@ -10,7 +10,7 @@ toc_sticky: true
 ROOT classes support one of the following thread safety levels:
 
 - Thread unsafe: make sure that any usage of thread unsafe objects is serialized.
-You should not use thread unsafe objects concurrently by multiple threads even if every thread uses its own copy of an object and even if the threads use objects of _different_ (thread unsafe) types.
+You should not use thread unsafe objects concurrently by multiple threads even if every thread uses its own copy of an object and even if the threads use objects of _different_ (thread unsafe) types (as they may directly or indirectly share state in a thread unsafe manner).
 
 - Conditionally thread safe: you can use conditionally safe objects concurrently by multiple threads as long as the threads do not share the same object (i.e. every thread uses a local instance of its objects).
 In addition, you can share the same conditionally safe object among threads as long as all threads use only `const` methods of the shared object.
