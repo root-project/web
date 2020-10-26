@@ -95,9 +95,9 @@ You can use {% include ref class="TRint" %} to create an environment provides an
 #include "TRint.h"
 #include "TCanvas.h"
 
-int main()
+int main(int argc, char **argv)
 {
-   TRint app("app", nullptr, nullptr);
+   TRint app("app", &argc, argv);
    TCanvas* c = new TCanvas("c", "Something", 0, 0, 800, 600);
    TF1 *f1 = new TF1("f1","sin(x)", -5, 5);
    f1->SetLineColor(kBlue+1);
