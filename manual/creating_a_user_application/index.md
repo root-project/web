@@ -7,11 +7,14 @@ toc: true
 toc_sticky: true
 ---
 
-Using the example of creating and displaying a canvas, the following shows how you can create a standalone user application.<br/>
-Two scenarios are presented:
+Using the example of creating and displaying a canvas, the following shows how you can
+create a standalone user application.
 
-- Quitting ROOT when closing the canvas
-- Returning to the ROOT prompt when closing the canvas
+Three scenarios are presented:
+
+- [Generating a PDF file and quitting ROOT](#generating-a-pdf-file-and-quitting-root).
+- [Quitting ROOT when closing the canvas](#quitting-root-when-closing-the-canvas).
+- [Returning to the ROOT prompt when closing the canvas](#returning-to-the-root-prompt-when-closing-the-canvas).
 
 
 ## Creating a canvas
@@ -22,7 +25,7 @@ With the following code a canvas is drawn (→ see also [Graphics]({{ '/manual/g
    TCanvas* c = new TCanvas("c", "Something", 0, 0, 800, 600);
    TF1 *f1 = new TF1("f1","sin(x)", -5, 5);
    f1->SetLineColor(kBlue+1);
-   f1->SetTitle("My graph; x");
+   f1->SetTitle("My graph;x; sin(x)");
    f1->Draw();
 {% endhighlight %}
 
@@ -31,25 +34,79 @@ With the following code a canvas is drawn (→ see also [Graphics]({{ '/manual/g
    caption="Canvas."
 %}
 
-A standalone program in C++ should be created for this code. 
+A standalone program in C++ should be created with this code.
 
 > **Note**
 >
-> If you use this code in a ROOT macro (→ see [ROOT macros and shared libraries]({{ '/manual/interacting_with_shared_libraries' | relative_url }})), you can only execute it with ROOT.
+> If you use this code in a ROOT macro (→ see [ROOT macros and shared libraries]({{ '/manual/interacting_with_shared_libraries' | relative_url }})),
+> you can only execute it with ROOT.
 
+
+## Generating a PDF file and quitting ROOT
+
+A standalone program in C++ contains the `main()` function, the starting point for the
+application execution. For this reason, create a C++ file that you can compile.
+
+The first lines of the C++ file include ROOT header files. The names of the ROOT header
+files are almost always the same as the class names (here {% include ref class="TF1" %} and {% include ref class="TCanvas" %}).
+
+{% highlight C++ %}
+#include "TF1.h"
+#include "TCanvas.h"
+
+int main(int argc, char **argv)
+{
+   TCanvas* c = new TCanvas("c", "Something", 0, 0, 800, 600);
+   TF1 *f1 = new TF1("f1","sin(x)", -5, 5);
+   f1->SetLineColor(kBlue+1);
+   f1->SetTitle("My graph;x; sin(x)");
+   f1->Draw();
+   c->Print("demo1.pdf");
+   return 0;
+}
+{% endhighlight %}
+
+Save the code in a file, for example as `demo1.cxx`.
+
+On Linux and MacOS compile the `demo1.cxx` file as follows :
+
+{% highlight C++ %}
+   g++ demo1.cxx $(root-config --glibs --cflags --libs) -o demo1
+{% endhighlight %}
+
+The equivalent command on Windows is:
+
+{% highlight C++ %}
+cl -nologo -MD -GR -EHsc demo1.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+{% endhighlight %}
+
+
+Then you can run the program as follows:
+
+{% highlight C++ %}
+   ./demo1
+{% endhighlight %}
+
+The following message is displayed:
+
+{% highlight C++ %}
+Info in <TCanvas::Print>: pdf file demo1.pdf has been created
+{% endhighlight %}
+
+The `demo1.pdf` file is saved in the current working directory. The pdf file contains the
+plot of the `f1` function.
 
 ## Quitting ROOT when closing the canvas
 
-A standalone program in C++ contains the `main()` function, the starting point for the application execution. For this reason, create a header file that you can compile.
 
-The first lines of a header file include ROOT header files. The names of the ROOT header files are almost always the same as the class names (for example, {% include ref class="TApplication" %}, {% include ref class="TF1" %}, {% include ref class="TCanvas" %}).
+Use {% include ref class="TApplication" %} to display the output on a screen.
+{% include ref class="TApplication" %} creates a ROOT application environment that
+provides an interface to the windowing system event loops and event handlers.
 
-Use {% include ref class="TApplication" %} to create a ROOT application environment that provides an interface to the windowing system event loops and event handlers. 
-
-To run the canvas as a standalone application you must create a `TApplication` object. Calling the `Run()` method starts the event loop.
+To run the canvas as a standalone application you must create a `TApplication` object.
+Calling the `Run()` method starts the event loop.
 
 {% highlight C++ %}
-#include <iostream>
 #include "TF1.h"
 #include "TApplication.h"
 #include "TCanvas.h"
@@ -61,7 +118,7 @@ int main(int argc, char **argv)
    TCanvas* c = new TCanvas("c", "Something", 0, 0, 800, 600);
    TF1 *f1 = new TF1("f1","sin(x)", -5, 5);
    f1->SetLineColor(kBlue+1);
-   f1->SetTitle("My graph; x");
+   f1->SetTitle("My graph;x; sin(x)");
    f1->Draw();
    c->Modified(); c->Update();
    TRootCanvas *rc = (TRootCanvas *)c->GetCanvasImp();
@@ -71,26 +128,35 @@ int main(int argc, char **argv)
 }
 {% endhighlight %}
 
-Save the code in file, for example `demo.cxx`.
+Save the code in a file, for example as `demo2.cxx`.
 
-Compile the `demo.cxx` file as follows:
+On Linux and MacOS compile the `demo2.cxx` file as follows :
 
 {% highlight C++ %}
-   g++ demo.cxx $(root-config --glibs --cflags --libs) -o demo
+   g++ demo2.cxx $(root-config --glibs --cflags --libs) -o demo2
 {% endhighlight %}
+
+The equivalent command on Windows is:
+
+{% highlight C++ %}
+cl -nologo -MD -GR -EHsc demo2.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+{% endhighlight %}
+
 
 Then you can run the program as follows:
 
 {% highlight C++ %}
-   ./demo
+   ./demo2
 {% endhighlight %}
 
 ## Returning to the ROOT prompt when closing the canvas
 
-You can use {% include ref class="TRint" %} to create an environment provides an interface to the windows manager and eventloops via the inheritance of {% include ref class="TApplication" %}. In addition `TRint`provides an interactive access to the Cling C++ interpreter via the command line.
+You can use {% include ref class="TRint" %} to create an environment provides an interface
+to the windows manager and eventloops via the inheritance of {% include ref class="TApplication" %}.
+In addition `TRint`provides an interactive access to the Cling C++ interpreter via the
+command line.
 
 {% highlight C++ %}
-#include <iostream>
 #include "TF1.h"
 #include "TRint.h"
 #include "TCanvas.h"
@@ -101,7 +167,7 @@ int main(int argc, char **argv)
    TCanvas* c = new TCanvas("c", "Something", 0, 0, 800, 600);
    TF1 *f1 = new TF1("f1","sin(x)", -5, 5);
    f1->SetLineColor(kBlue+1);
-   f1->SetTitle("My graph; x");
+   f1->SetTitle("My graph;x; sin(x)");
    f1->Draw();
    c->Modified(); c->Update();
    app.Run();
@@ -110,16 +176,23 @@ int main(int argc, char **argv)
 {% endhighlight %}
 
 
-Save the code in file, for example `demo2.cxx`.
+Save the code in a file, for example `demo3.cxx`.
 
-Compile the `demo2.cxx` file as follows:
+On Linux and MacOS compile the `demo3.cxx` file as follows :
 
 {% highlight C++ %}
-   g++ demo2.cxx $(root-config --glibs --cflags --libs) -o demo2
+   g++ demo3.cxx $(root-config --glibs --cflags --libs) -o demo3
 {% endhighlight %}
+
+The equivalent command on Windows is:
+
+{% highlight C++ %}
+cl -nologo -MD -GR -EHsc demo3.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+{% endhighlight %}
+
 
 Then you can run the program as follows:
 
 {% highlight C++ %}
-   ./demo2
+   ./demo3
 {% endhighlight %}
