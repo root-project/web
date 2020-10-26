@@ -12,9 +12,9 @@ create a standalone user application.
 
 Three scenarios are presented:
 
-- Generating the PDF output of the canvas and quitting.
-- Quitting ROOT when closing the canvas.
-- Returning to the ROOT prompt when closing the canvas.
+- [Generating a PDF file and quitting ROOT](#generating-a-pdf-file-and-quitting-root).
+- [Quitting ROOT when closing the canvas](#quitting-root-when-closing-the-canvas).
+- [Returning to the ROOT prompt when closing the canvas](#returning-to-the-root-prompt-when-closing-the-canvas).
 
 
 ## Creating a canvas
@@ -42,7 +42,7 @@ A standalone program in C++ should be created with this code.
 > you can only execute it with ROOT.
 
 
-## Generating the PDF output of the canvas and quitting
+## Generating a PDF file and quitting ROOT
 
 A standalone program in C++ contains the `main()` function, the starting point for the
 application execution. For this reason, create a C++ file that you can compile.
@@ -66,13 +66,20 @@ int main(int argc, char **argv)
 }
 {% endhighlight %}
 
-Save the code in file, for example as `demo1.cxx`.
+Save the code in a file, for example as `demo1.cxx`.
 
-Compile the `demo1.cxx` file as follows:
+On Linux and MacOS compile the `demo1.cxx` file as follows :
 
 {% highlight C++ %}
    g++ demo1.cxx $(root-config --glibs --cflags --libs) -o demo1
 {% endhighlight %}
+
+The equivalent command on Windows is:
+
+{% highlight C++ %}
+cl -nologo -MD -GR -EHsc demo1.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+{% endhighlight %}
+
 
 Then you can run the program as follows:
 
@@ -80,18 +87,20 @@ Then you can run the program as follows:
    ./demo1
 {% endhighlight %}
 
-You will get the following output:
+The following message is displayed:
 
 {% highlight C++ %}
 Info in <TCanvas::Print>: pdf file demo1.pdf has been created
 {% endhighlight %}
 
-`demo1.pdf` contains the plot of the function `f1`.
+The `demo1.pdf` file is saved in the current working directory. The pdf file contains the
+plot of the `f1` function.
 
 ## Quitting ROOT when closing the canvas
 
 
-To see the output on screen use {% include ref class="TApplication" %} to create a ROOT application environment that
+Use {% include ref class="TApplication" %} to display the output on a screen.
+{% include ref class="TApplication" %} creates a ROOT application environment that
 provides an interface to the windowing system event loops and event handlers.
 
 To run the canvas as a standalone application you must create a `TApplication` object.
@@ -119,7 +128,7 @@ int main(int argc, char **argv)
 }
 {% endhighlight %}
 
-Save the code in file, for example as `demo2.cxx`.
+Save the code in a file, for example as `demo2.cxx`.
 
 Compile the `demo2.cxx` file as follows:
 
@@ -160,7 +169,7 @@ int main(int argc, char **argv)
 {% endhighlight %}
 
 
-Save the code in file, for example `demo3.cxx`.
+Save the code in a file, for example `demo3.cxx`.
 
 Compile the `demo3.cxx` file as follows:
 
