@@ -21,7 +21,7 @@ You can freely use instances of _different_ conditionally safe types concurrentl
 In multi-threaded applications, you should call `ROOT::EnableThreadSafety()`.
 Otherwise you need to consider ROOT objects as being thread unsafe.
 
-With `ROOT::EnableThreadSafety()`, types whose names starts with `R` (e.g. {% include ref class="ROOT::RDataFrame" %}) generally are conditionally thread safe.
+With `ROOT::EnableThreadSafety()`, types whose names starts with `R` (e.g. [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html)) generally are conditionally thread safe.
 Most of the core, math and I/O related classes are conditionally thread safe ({% include ref class="TTree" %}, {% include ref class="TDirectory" %}, {% include ref class="TFile" %}, `TH*`, {% include ref class="TMinuit" %}).
 Most of the general infrastructure classes (e.g. {% include ref class="TROOT" %}, {% include ref class="TClass" %}) are thread safe.
 For more detail see the individual class documentation.
