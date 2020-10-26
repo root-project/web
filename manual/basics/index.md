@@ -29,4 +29,3 @@ The first part of the ROOT Manual contains:
 
 - [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})
 
-- [Creating a user application with ROOT](({{ '/manual/creating_a_user_application' | relative_url }}))

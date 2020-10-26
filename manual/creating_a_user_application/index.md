@@ -10,8 +10,8 @@ toc_sticky: true
 Using the example of creating and displaying a canvas, the following shows how you can create a standalone user application.<br/>
 Two scenarios are presented:
 
-- [Quitting ROOT when closing the canvas](#quitting-root-when-closing-the-canvas)
-- [Returning to the ROOT prompt when closing the canvas](#returning-to-the-ROOT-prompt-when-closing-the-canvas)
+- Quitting ROOT when closing the canvas
+- Returning to the ROOT prompt when closing the canvas
 
 
 ## Creating a canvas
@@ -25,6 +25,11 @@ With the following code a canvas is drawn (→ see also [Graphics]({{ '/manual/g
    f1->SetTitle("My graph; x");
    f1->Draw();
 {% endhighlight %}
+
+{% include figure_image
+   img="canvas.png"
+   caption="Canvas."
+%}
 
 A standalone program in C++ should be created for this code. 
 
