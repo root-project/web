@@ -51,6 +51,8 @@ manual:
         url: manual/thread_safety
       - title: ROOT files
         url: manual/storing_root_objects
+      - title: Creating a user application with ROOT
+        url: manual/creating_a_user_application
   - title: ROOT Manual - Functional parts
     url: manual/functional_parts
     children:
