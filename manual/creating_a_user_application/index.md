@@ -130,11 +130,18 @@ int main(int argc, char **argv)
 
 Save the code in a file, for example as `demo2.cxx`.
 
-Compile the `demo2.cxx` file as follows:
+On Linux and MacOS compile the `demo2.cxx` file as follows :
 
 {% highlight C++ %}
    g++ demo2.cxx $(root-config --glibs --cflags --libs) -o demo2
 {% endhighlight %}
+
+The equivalent command on Windows is:
+
+{% highlight C++ %}
+cl -nologo -MD -GR -EHsc demo2.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+{% endhighlight %}
+
 
 Then you can run the program as follows:
 
@@ -171,11 +178,18 @@ int main(int argc, char **argv)
 
 Save the code in a file, for example `demo3.cxx`.
 
-Compile the `demo3.cxx` file as follows:
+On Linux and MacOS compile the `demo3.cxx` file as follows :
 
 {% highlight C++ %}
    g++ demo3.cxx $(root-config --glibs --cflags --libs) -o demo3
 {% endhighlight %}
+
+The equivalent command on Windows is:
+
+{% highlight C++ %}
+cl -nologo -MD -GR -EHsc demo3.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+{% endhighlight %}
+
 
 Then you can run the program as follows:
 
