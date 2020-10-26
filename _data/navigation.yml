@@ -47,6 +47,8 @@ manual:
         url: manual/root_collections
       - title: Object ownership
         url: manual/object_ownership
+      - title: Thread safety
+        url: manual/thread_safety
       - title: ROOT files
         url: manual/storing_root_objects
   - title: ROOT Manual - Functional parts
