@@ -8,16 +8,16 @@ toc_sticky: true
 ---
 
 Using the example of creating and displaying a canvas, the following shows how you can
-create a standalone user application.
+create a standalone user application based on ROOT libraries.
 
-Three scenarios are presented:
+Three different kind of standalone user applications are presented:
 
-- [Generating a PDF file and quitting ROOT](#generating-a-pdf-file-and-quitting-root).
-- [Quitting ROOT when closing the canvas](#quitting-root-when-closing-the-canvas).
-- [Returning to the ROOT prompt when closing the canvas](#returning-to-the-root-prompt-when-closing-the-canvas).
+- [Generating a PDF file](#generating-a-pdf-file).
+- [Displaying a canvas](#displaying-a-canvas).
+- [Getting ROOT prompt](#getting-root-prompt).
 
 
-## Creating a canvas
+## A simple code example
 
 With the following code a canvas is drawn (→ see also [Graphics]({{ '/manual/graphics' | relative_url }})):
 
@@ -31,7 +31,7 @@ With the following code a canvas is drawn (→ see also [Graphics]({{ '/manual/g
 
 {% include figure_image
    img="canvas.png"
-   caption="Canvas."
+   caption="A simple canvas."
 %}
 
 A standalone program in C++ should be created with this code.
@@ -42,7 +42,7 @@ A standalone program in C++ should be created with this code.
 > you can only execute it with ROOT.
 
 
-## Generating a PDF file and quitting ROOT
+## Generating a PDF file
 
 A standalone program in C++ contains the `main()` function, the starting point for the
 application execution. For this reason, create a C++ file that you can compile.
@@ -96,7 +96,7 @@ Info in <TCanvas::Print>: pdf file demo1.pdf has been created
 The `demo1.pdf` file is saved in the current working directory. The pdf file contains the
 plot of the `f1` function.
 
-## Quitting ROOT when closing the canvas
+## Displaying a canvas
 
 
 Use {% include ref class="TApplication" %} to display the output on a screen.
@@ -149,7 +149,7 @@ Then you can run the program as follows:
    ./demo2
 {% endhighlight %}
 
-## Returning to the ROOT prompt when closing the canvas
+## Getting ROOT prompt
 
 You can use {% include ref class="TRint" %} to create an environment provides an interface
 to the windows manager and eventloops via the inheritance of {% include ref class="TApplication" %}.
