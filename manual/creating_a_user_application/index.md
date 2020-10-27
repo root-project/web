@@ -71,20 +71,20 @@ Save the code in a file, for example as `demo1.cxx`.
 On Linux and MacOS compile the `demo1.cxx` file as follows :
 
 {% highlight C++ %}
-   g++ demo1.cxx $(root-config --glibs --cflags --libs) -o demo1
+$ g++ demo1.cxx $(root-config --glibs --cflags --libs) -o demo1
 {% endhighlight %}
 
 The equivalent command on Windows is:
 
 {% highlight C++ %}
-cl -nologo -MD -GR -EHsc demo1.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+$ cl -nologo -MD -GR -EHsc demo1.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 {% endhighlight %}
 
 
 Then you can run the program as follows:
 
 {% highlight C++ %}
-   ./demo1
+$ ./demo1
 {% endhighlight %}
 
 The following message is displayed:
@@ -133,20 +133,20 @@ Save the code in a file, for example as `demo2.cxx`.
 On Linux and MacOS compile the `demo2.cxx` file as follows :
 
 {% highlight C++ %}
-   g++ demo2.cxx $(root-config --glibs --cflags --libs) -o demo2
+$ g++ demo2.cxx $(root-config --glibs --cflags --libs) -o demo2
 {% endhighlight %}
 
 The equivalent command on Windows is:
 
 {% highlight C++ %}
-cl -nologo -MD -GR -EHsc demo2.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+$ cl -nologo -MD -GR -EHsc demo2.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 {% endhighlight %}
 
 
 Then you can run the program as follows:
 
 {% highlight C++ %}
-   ./demo2
+$ ./demo2
 {% endhighlight %}
 
 ## Getting ROOT prompt
@@ -181,18 +181,18 @@ Save the code in a file, for example `demo3.cxx`.
 On Linux and MacOS compile the `demo3.cxx` file as follows :
 
 {% highlight C++ %}
-   g++ demo3.cxx $(root-config --glibs --cflags --libs) -o demo3
+$ g++ demo3.cxx $(root-config --glibs --cflags --libs) -o demo3
 {% endhighlight %}
 
 The equivalent command on Windows is:
 
 {% highlight C++ %}
-cl -nologo -MD -GR -EHsc demo3.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+$ cl -nologo -MD -GR -EHsc demo3.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 {% endhighlight %}
 
 
 Then you can run the program as follows:
 
 {% highlight C++ %}
-   ./demo3
+$ ./demo3
 {% endhighlight %}
