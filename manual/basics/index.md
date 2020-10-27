@@ -28,3 +28,4 @@ The first part of the ROOT Manual contains:
 - [Thread safety]({{ '/manual/thread_safety' | relative_url }})
 
 - [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})
+
