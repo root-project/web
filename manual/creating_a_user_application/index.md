@@ -8,16 +8,16 @@ toc_sticky: true
 ---
 
 Using the example of creating and displaying a canvas, the following shows how you can
-create a standalone user application.
+create a standalone user application based on ROOT libraries.
 
-Three scenarios are presented:
+Three different kind of standalone user applications are presented:
 
-- [Generating a PDF file and quitting ROOT](#generating-a-pdf-file-and-quitting-root).
-- [Quitting ROOT when closing the canvas](#quitting-root-when-closing-the-canvas).
-- [Returning to the ROOT prompt when closing the canvas](#returning-to-the-root-prompt-when-closing-the-canvas).
+- [Generating a PDF file](#generating-a-pdf-file).
+- [Displaying a canvas](#displaying-a-canvas).
+- [Getting ROOT prompt](#getting-root-prompt).
 
 
-## Creating a canvas
+## A simple code example
 
 With the following code a canvas is drawn (→ see also [Graphics]({{ '/manual/graphics' | relative_url }})):
 
@@ -31,7 +31,7 @@ With the following code a canvas is drawn (→ see also [Graphics]({{ '/manual/g
 
 {% include figure_image
    img="canvas.png"
-   caption="Canvas."
+   caption="A simple canvas."
 %}
 
 A standalone program in C++ should be created with this code.
@@ -42,7 +42,7 @@ A standalone program in C++ should be created with this code.
 > you can only execute it with ROOT.
 
 
-## Generating a PDF file and quitting ROOT
+## Generating a PDF file
 
 A standalone program in C++ contains the `main()` function, the starting point for the
 application execution. For this reason, create a C++ file that you can compile.
@@ -71,20 +71,20 @@ Save the code in a file, for example as `demo1.cxx`.
 On Linux and MacOS compile the `demo1.cxx` file as follows :
 
 {% highlight C++ %}
-   g++ demo1.cxx $(root-config --glibs --cflags --libs) -o demo1
+$ g++ demo1.cxx $(root-config --glibs --cflags --libs) -o demo1
 {% endhighlight %}
 
 The equivalent command on Windows is:
 
 {% highlight C++ %}
-cl -nologo -MD -GR -EHsc demo1.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+$ cl -nologo -MD -GR -EHsc demo1.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 {% endhighlight %}
 
 
 Then you can run the program as follows:
 
 {% highlight C++ %}
-   ./demo1
+$ ./demo1
 {% endhighlight %}
 
 The following message is displayed:
@@ -96,7 +96,7 @@ Info in <TCanvas::Print>: pdf file demo1.pdf has been created
 The `demo1.pdf` file is saved in the current working directory. The pdf file contains the
 plot of the `f1` function.
 
-## Quitting ROOT when closing the canvas
+## Displaying a canvas
 
 
 Use {% include ref class="TApplication" %} to display the output on a screen.
@@ -133,23 +133,23 @@ Save the code in a file, for example as `demo2.cxx`.
 On Linux and MacOS compile the `demo2.cxx` file as follows :
 
 {% highlight C++ %}
-   g++ demo2.cxx $(root-config --glibs --cflags --libs) -o demo2
+$ g++ demo2.cxx $(root-config --glibs --cflags --libs) -o demo2
 {% endhighlight %}
 
 The equivalent command on Windows is:
 
 {% highlight C++ %}
-cl -nologo -MD -GR -EHsc demo2.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+$ cl -nologo -MD -GR -EHsc demo2.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 {% endhighlight %}
 
 
 Then you can run the program as follows:
 
 {% highlight C++ %}
-   ./demo2
+$ ./demo2
 {% endhighlight %}
 
-## Returning to the ROOT prompt when closing the canvas
+## Getting ROOT prompt
 
 You can use {% include ref class="TRint" %} to create an environment provides an interface
 to the windows manager and eventloops via the inheritance of {% include ref class="TApplication" %}.
@@ -181,18 +181,18 @@ Save the code in a file, for example `demo3.cxx`.
 On Linux and MacOS compile the `demo3.cxx` file as follows :
 
 {% highlight C++ %}
-   g++ demo3.cxx $(root-config --glibs --cflags --libs) -o demo3
+$ g++ demo3.cxx $(root-config --glibs --cflags --libs) -o demo3
 {% endhighlight %}
 
 The equivalent command on Windows is:
 
 {% highlight C++ %}
-cl -nologo -MD -GR -EHsc demo3.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
+$ cl -nologo -MD -GR -EHsc demo3.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 {% endhighlight %}
 
 
 Then you can run the program as follows:
 
 {% highlight C++ %}
-   ./demo3
+$ ./demo3
 {% endhighlight %}
