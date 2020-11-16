@@ -26,9 +26,9 @@ The following cases are possible:
 
 ## Ownership by current directory (gDirectory)
 
-When a [histogram](https://root.cern/doc/master/group__Hist.html), a [tree](https://root.cern/doc/master/group__tree.html) or an [event list](https://root.cern/doc/master/classTEventList.html) is created, it is added by default to the list of objects in the current directory (`gDirectory`).
+When a [histogram](https://root.cern/doc/master/group__Hist.html){:target="_blank"}, a [tree](https://root.cern/doc/master/group__tree.html){:target="_blank"} or an [event list](https://root.cern/doc/master/classTEventList.html){:target="_blank"} is created, it is added by default to the list of objects in the current directory (`gDirectory`).
 
-You can get the list of objects in the current directory and retrieve a pointer to a specific object with the `GetList()` method.
+You can get the list of objects in the current directory and retrieve a pointer to a specific object with the [GetList()](https://root.cern/doc/master/classTDirectory.html#a1a894a8bb78b65cfab71426b839e9adc){:target="_blank"} method.
 
 _**Example**_
 
