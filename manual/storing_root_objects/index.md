@@ -512,6 +512,59 @@ key: h12 points to an object of class: TH1F at 4339
 key: h13 points to an object of class: TH1F at 4694
 {% endhighlight %}
 
+### Objects in memory and on disk
+
+[TFile::ls()](https://root.cern/doc/master/classTFile.html#a0b6ce84d5fecb4d34fc4fa38824320c2){:target="_blank"} lists with option `-d` the objects on disk and with option `-m` the objects in memory.<br/>
+If no option is specified, both are listed, first the objects in memory, then the objects on disk.<br/>
+The current directory is stored in the global variable [gDirectory]({{ '/manual/root_classes_data_types_and_global_variables/#gdirectory' | relative_url }}).
+
+_**Example**_
+
+{% highlight C++ %}
+root[] TFile *f = new TFile("hsimple.root");
+root[] gDirectory->ls("-m")
+TFile**		hsimple.root	Demo ROOT file with histograms
+ TFile*		hsimple.root	Demo ROOT file with histograms
+{% endhighlight %}
+
+_**Example**_
+
+This example lists the objects on disk in the current directory.
+
+{% highlight C++ %}
+root[] gDirectory->ls("-d")
+TFile**		hsimple.root	Demo ROOT file with histograms
+ TFile*		hsimple.root	Demo ROOT file with histograms
+  KEY: TH1F	hpx;1	This is the px distribution
+  KEY: TH2F	hpxpy;1	py vs px
+  KEY: TProfile	hprof;1	Profile of pz versus px
+  KEY: TNtuple	ntuple;1	Demo ntuple
+{% endhighlight %}
+
+To transfer an object from disk to memory, you have to use it explicitly.
+
+_**Example**_
+
+Drawing `hprof`from the `hsimple.root` reads it from the ROOT file and creates an object in memory.
+
+{% highlight C++ %}
+root[] hprof->Draw()
+<TCanvas::MakeDefCanvas>: created default TCanvas with name c1
+
+root[] f->ls()
+TFile** hsimple.root
+TFile* hsimple.root
+OBJ: TProfile hprof Profile of pz versus px : 0
+KEY: TH1F hpx;1 This is the px distribution
+KEY: TH2F hpxpy;1 py vs px
+KEY: TProfile hprof;1 Profile of pz versus px
+KEY: TNtuple ntuple;1 Demo ntuple
+{% endhighlight %}
+
+The line beginning with `OBJ` indicates that an {% include ref class="TProfile" %} object of class , called `hprof`, has been added in memory to this directory. 
+This new `hprof` in memory is independent from the `hprof` on disk. If you make changes to the `hprof` in memory, they are not propagated to the `hprof` on disk. A new version of `hprof` is only saved
+when use the `Write()` method.
+
 ## Remotely accessing a ROOT file
 
 You can remotely access ROOT files on the base of the protocol URL.
