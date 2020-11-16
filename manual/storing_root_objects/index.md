@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT offers the possibility to write instances of classes into a ROOT file, this is, you can make the created objects "persistent". When reading the ROOT file back, the object is reconstructed in the memory.
+In ROOT you can save and read objects from ROOT files. With a ROOT file you can make the created objects "persistent". When reading the ROOT file back, the object is reconstructed in the memory.
 
 ROOT files also often contain tress ({% include ref class="TTree" %}, see → [Trees]({{ '/manual/trees' | relative_url }})), a typical data container used for example by all LHC (Large Hadron Collider) experiments.
 
@@ -83,7 +83,9 @@ When you create a {% include ref class="TFile" %} object, the ROOT file becomes 
 
 ### Writing ROOT files
 
-To write objects to a ROOT file, they must be open.
+You can save any object, for example canvases, histograms or trees, in a ROOT file.
+
+To write objects to a ROOT file, the objects must be open.
 
 - Use [TFile::Write()](https://root.cern/doc/master/classTFile.html#adc21e8868cd0938691cf794b4b20096b){:target="_blank"} to write objects to a ROOT file.
 
@@ -201,9 +203,9 @@ for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
 > If ROOT is not properly terminated, the file directory may not be written at the end of the ROOT file.
 > Next time this ROOT file is used, ROOT will automatically detect this abnormal termination and will recover the directory by scanning sequentially the list of keys in the ROOT file.
 > If the ROOT file has been opened in UPDATE mode, the recovered directory will be automatically written to the ROOT file. This automatic recovery procedure is possible because of redundant information written to the ROOT file.<br>
-> In case you write large {% include ref class="TTree" %}s (see also → [Trees]({{ '/manual/trees' | relative_url }})), you may have large buffers in memory. In case of a job crash, you may loose a lot of data. Therefore, it recommended to use the auto save method [TTree::AutoSave](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8).
+> In case you write large trees (see also → [Trees]({{ '/manual/trees' | relative_url }})), you may have large buffers in memory. In case of a job crash, you may loose a lot of data. Therefore, it recommended to use the auto save method [TTree::AutoSave](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8).
 
-### Merging ROOT files
+### Merging ROOT files with hadd
 
 - Use the `hadd` utility in `$ROOTSYS/bin/hadd`, to merge ROOT files:
 
@@ -302,6 +304,10 @@ Graphical objects are displayed in the `Canvas_1` tab. Files that end with `.C` 
 A {% include ref class="TFolder" %} is a collection of objects visible and expandable in the ROOT Object Browser. Folders have a name and a
 title. They are identified in the folder hierarchy by an “UNIX-like” naming convention. New folders can be added and removed to/from a folder.
 
+> ** Difference between TFolder and TDirectory
+> A {% include ref class="TFolder" %} manages a hierarchy of objects in the memory. A {% include ref class="TDirectory" %} is doing that for a file.<br/>
+> You can save the {% include ref class="TFolder" %} structure to a directory in a ROOT file.
+
 The base of all folders is the `//root` folder. It is visible at the top of the left panel in the ROOT Object Browser. 
 
    {% include figure_image
@@ -383,9 +389,13 @@ If a file `myFile.root` is added to the list of files, you can retrieve a pointe
 
 ## Viewing the contents of a ROOT file
 
+{% include ref class="TFile" %} is a descendent of {% include ref class="TDirectory" %}, which means it behaves like a `TDirectory`. You can list the contents, print the
+name, and create subdirectories. In a ROOT session, you are always in a directory and the directory you are in is
+called the current directory and is stored in the global variable `gDirectory` (see → [gDirectory]({{ '/manual/root_classes_data_types_and_global_variables/#gdirectory' | relative_url }}).
+
 ### Physical layout of a ROOT file
 
-- Call the [TFile::Map()](https://root.cern/doc/master/classTFile.html#a5568f2f0a4a678ffaf769d0bf210610f){:target="_blank"} method to view the physical layout of a ROOT file.
+- Use the [TFile::Map()](https://root.cern/doc/master/classTFile.html#a5568f2f0a4a678ffaf769d0bf210610f){:target="_blank"} method to view the physical layout of a ROOT file.
 
 The output prints the date/time, the start record address, the number of bytes in the record, the class name of the record and the compression factor.
 
