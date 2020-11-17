@@ -8,8 +8,7 @@ toc_sticky: true
 ---
 
 With [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"}, ROOT offers
-a modern, high-level interface for analysis of data stored in
-{% include ref class="TTree" %}s, CSV files and other data formats, in C++ or Python.
+a modern, high-level interface for analysis of data stored in {% include ref class="TTree" %}s, CSV files and other data formats, in C++ or Python.
 
 {% include tutorials name="Data frame" url="dataframe" %}
 
