@@ -17,22 +17,26 @@ A {% include ref class="TNtuple" %} is a {% include ref class="TTree" %}, which 
 
 {% include tutorials name="Tree" url="tree" %}
 
+> **RNTuple**
+>
+> [RNTuple](https://root.cern/doc/master/md_tree_ntuple_v7_doc_README.html){:target="_blank"} (for n-tuple and nested tuple) is the experimental evolution of {% include ref class="TTree" %} columnar data storage. `RNTuple` introduces new interfaces that are more robust.
+
 ## Tree classes
 
 ROOT provides numerous classes for trees and branches, of which the following are among the most used:
 
-- {% include ref class="TTree" %}: Represents a columnar data set. Any C++ type can be stored in its columns.
+- [TTree](https://root.cern/doc/master/classTTree.html){:target="_blank"}: Represents a columnar data set. Any C++ type can be stored in its columns.
 
-- {% include ref class="TNtuple" %}: A simple `TTree` restricted to a list of float variables only.
+- [TNtuple](https://root.cern/doc/master/classTNtuple.html){:target="_blank"}: A simple `TTree` restricted to a list of float variables only.
 
-- {% include ref class="TBranch" %}: Organizes columns, i.e. branches, of a `TTree`.
+- [TBranch](https://root.cern/doc/master/classTBranch.html){:target="_blank"}: Organizes columns, i.e. branches, of a `TTree`.
 
-- {% include ref class="TChain" %}: A list of ROOT files containing `TTree` objects.
+- [TChain](https://root.cern/doc/master/classTChain.html){:target="_blank"}: A list of ROOT files containing `TTree` objects.
 
 
 ## Working with trees
 
-OOT offers many possibilities to work with trees, for example:
+ROOT offers many possibilities to work with trees, for example:
 
 - [Creating a tree](#creating-a-tree)
 - [Creating a tree from a folder structure](#creating-a-tree-from-a-folder-structure)
@@ -138,13 +142,12 @@ A loop on all defined branches (see → [Branches](#branches)) is executed.
 
 The data of a tree are saved in a ROOT file (see → [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})).
 
-- Use the [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f){:target="_blank"} method to write the tree into a ROOt file.
+- Use the [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f){:target="_blank"} method to write the tree into a ROOT file.
 
 The `TTree::Write()` method is needed to write the ROOT file header.
 
 When writing a {% include ref class="TTree" %} to a ROOT file and if the ROOT file size reaches the value stored in the [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9){:target="_blank"}, the current
-ROOT file is closed and a new ROOT file is created. If the original ROOT file is named `myfile.root`, the subsequent ROOT files are named
-`myfile_1.root`, `myfile_2.root`, etc.
+ROOT file is closed and a new ROOT file is created. If the original ROOT file is named `myfile.root`, the subsequent ROOT files are named `myfile_1.root`, `myfile_2.root`, etc.
 
 ### Printing the summary of a tree
 
@@ -288,7 +291,7 @@ img="variables_for_scatterplot_small.png"
 caption="Variables Age and Cost selected for the scatterplot."
 %}
 
-- Click `Scatterplot`
+- Click `Scatterplot`.
 
 {% include figure_image
 img="scatterplot-icon.png"
@@ -329,7 +332,7 @@ If the variables are related, such as the coordinates of a point, create one bra
 {% endhighlight %}
 
 `address` is the address of the first item of a structure.
-`leaflist` is the concatenation of all the variable names and types separated by a colon character. The variable name and the variable type are separated by a slash (/). The variable type must be 1 character.
+`leaflist` is the concatenation of all the variable names and types separated by a colon character. The variable name and the variable type are separated by a slash (/). The variable type must be one character.
 For more information on adding a branch to tree, see → {% include ref class="TTree" %}.
 
 > **Note**
@@ -346,7 +349,7 @@ For more information on adding a branch to tree, see → {% include ref class="T
 
 This creates one branch for each element in the folder. The method returns the total number of branches created.
 
-### Adding a branch of STL collections
+### Adding a branch with STL collections
 
 A `STLcollection` is a address of a pointer to `std::vector`, `std::list`, `std::deque`, `std::set` or `std::multiset` containing pointers to objects.
 
@@ -356,11 +359,11 @@ A `STLcollection` is a address of a pointer to `std::vector`, `std::list`, `std:
    auto branch = tree.Branch(branchname, STLcollection, buffsize, splitlevel);
  {% endhighlight %}
 
-If the `splitlevel` is a value bigger than 100 [TTree::kSplitCollectionOfPointers](https://root.cern/doc/master/classTTree.html#a6d07819a66bb97bafd460adfad555114ae3b257c9ade74c1a53383d800c0a708c) then the `STLcollection` will be written in split mode.
+If the `splitlevel` is a value bigger than 100 [TTree::kSplitCollectionOfPointers](https://root.cern/doc/master/classTTree.html#a6d07819a66bb97bafd460adfad555114ae3b257c9ade74c1a53383d800c0a708c){:target="_blank"}  then the `STLcollection` will be written in split mode.
 
-If a dynamic structures changes with each entry, you have to redefine the branch address with [TBranch::SetAddress](https://root.cern/doc/master/classTBranch.html#a63e019ffc9c53ba249bd729da6a78657) before filling the branch again.
+If a dynamic structures changes with each entry, you have to redefine the branch address with [TBranch::SetAddress](https://root.cern/doc/master/classTBranch.html#a63e019ffc9c53ba249bd729da6a78657){:target="_blank"}  before filling the branch again.
 
-### Adding a branch of objects
+### Adding a branch with objects
 
 - Use the following syntax of the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"} method to add objects to a tree:
 
@@ -369,27 +372,23 @@ If a dynamic structures changes with each entry, you have to redefine the branch
    auto branch = tree.Branch(branchname, &object, bufsize, splitlevel)
 {% endhighlight %}
 
-`&object` must be the address of a valid object. The object must not be destroyed (i.e. be deleted)
+`&object` must be the address of a valid object. The object must not be destroyed (this is be deleted)
 until the {% include ref class="TTree" %} is deleted or
 [TTree::ResetBranchAddress](https://root.cern/doc/master/classTTree.html#a181eb19c03433781fde2fa94443710dc){:target="_blank"}
 is called.
 
-For the `splitlevel` the following values are available:
+The following values are available for the `splitlevel`:
 
 `splitlevel=0`<br>
 The object is serialized in the branch buffer.
 
 `splitlevel=1 (default)`<br>
-This branch will automatically be split into sub-branches, with one sub-branch for each
-data member or object of the object itself. In case the object member is a
-{% include ref class="TClonesArray" %}, it is processed as a
-{% include ref class="TObject" %}, but only one branch.
+This branch is automatically into sub-branches, with one sub-branch for each
+data member or object of the object itself. If the object member is a [TClonesArray](https://root.cern/doc/master/classTClonesArray.html){:target="_blank"}, it is processed as it is with `splitlevel=2`.
 
 `splitlevel=2`<br>
-This branch will automatically be split into sub-branches, with one sub-branch for each
-data member or object of the object itself. In case the object member is a
-{% include ref class="TClonesArray" %}, it is processed as a
-{% include ref class="TObject" %}, but only one branch.
+This branch is automatically split into sub-branches, with one sub-branch for each
+data member or object of the object itself. If the object member is a [TClonesArray] (https://root.cern/doc/master/classTClonesArray.html){:target="_blank"} it is processed as a [TObject](https://root.cern/doc/master/classTObject.html){:target="_blank"}, but only for one branch.
 
 ### Adding a branch to an existing tree
 You can add a branch to an existing tree.
@@ -404,12 +403,12 @@ void tree3AddBranch() {
    Float_t new_v;
    auto t3 = f->Get<TTree>("t3");
    auto newBranch = t3->Branch("new_v", &new_v, "new_v/F");
-   Long64_t nentries = t3->GetEntries(); // read the number of entries in the t3
+   Long64_t nentries = t3->GetEntries();    // Read the number of entries in the t3.
    for (Long64_t i = 0; i < nentries; i++) {
       new_v = gRandom->Gaus(0, 1);
       newBranch->Fill();
    }
-   t3->Write("", TObject::kOverwrite); // save only the new version of the tree
+   t3->Write("", TObject::kOverwrite);       // Save only the new version of the tree.
 }
 {% endhighlight %}
 
@@ -475,7 +474,8 @@ automatically creates a histogram. The style of the histogram is inherited from 
 %}
 
 Next, the second pad is activated and scatter plot is drawn. Two dimensions (here `Cost` and `Age`) are separated by a colon ("x:y").<br>
-In general, this parameter is a string that containsup to three expressions, one for each dimension, separated by a colon (“e1:e2:e3”).
+In general, this parameter is a string that contains
+up to three expressions, one for each dimension, separated by a colon (“e1:e2:e3”).
 
 {% highlight C++ %}
    root [10] myCanvas->cd(2)
@@ -594,7 +594,7 @@ A chain is a list of ROOT files containing {% include ref class="TTree" %} objec
 
 _**Example**_
 
-There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each ROOT file contains a tree `T`. The chain is created with
+There are three ROOT files `file1.root`, `file2.root` and `file3.root`. Each ROOT file contains a tree `T`. A chain is created with
 [TChain::Add()](https://root.cern/doc/master/classTChain.html#a9510cc7fc76ff28c30e6775bd9085d6e){:target="_blank"}.
 
 {% highlight C++ %}
