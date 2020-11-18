@@ -304,7 +304,7 @@ Graphical objects are displayed in the `Canvas_1` tab. Files that end with `.C` 
 A {% include ref class="TFolder" %} is a collection of objects visible and expandable in the ROOT Object Browser. Folders have a name and a
 title. They are identified in the folder hierarchy by an “UNIX-like” naming convention. New folders can be added and removed to/from a folder.
 
-> ** Difference between TFolder and TDirectory
+> **Difference between TFolder and TDirector**<br/>
 > A {% include ref class="TFolder" %} manages a hierarchy of objects in the memory. A {% include ref class="TDirectory" %} is doing that for a file.<br/>
 > You can save the {% include ref class="TFolder" %} structure to a directory in a ROOT file.
 
@@ -477,7 +477,7 @@ Keys are available in a {% include ref class="TList" %} of {% include ref class=
 
 _**Example**_
 
-The `TKeys` of the `demo.root` (see example → [Creating a ROOT file](#creating-a-root-file) file are iterated.
+The `TKeys` of the `demo.root` (see example → [Creating a ROOT file](#creating-a-root-file)) file are iterated.
 
 {% highlight C++ %}
 {
@@ -561,9 +561,9 @@ KEY: TProfile hprof;1 Profile of pz versus px
 KEY: TNtuple ntuple;1 Demo ntuple
 {% endhighlight %}
 
-The line beginning with `OBJ` indicates that an {% include ref class="TProfile" %} object of class , called `hprof`, has been added in memory to this directory. 
-This new `hprof` in memory is independent from the `hprof` on disk. If you make changes to the `hprof` in memory, they are not propagated to the `hprof` on disk. A new version of `hprof` is only saved
-when use the `Write()` method.
+The line beginning with `OBJ` indicates that an {% include ref class="TProfile" %} object, called `hprof`, has been added in memory to this directory. 
+This new `hprof` in memory is independent from the `hprof` on disk. If you make changes to the `hprof` object in memory, they are not propagated to the `hprof` object on disk. A new version of `hprof` is only saved
+if you use the `Write()` method.
 
 ## Remotely accessing a ROOT file
 
