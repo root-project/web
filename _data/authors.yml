@@ -175,6 +175,18 @@ Javier Lopez Gomez:
   email       : "javier.lopez.gomez@cern.ch"
 
 
+Jonas Hahnfeld:
+  name        : "Jonas Hahnfeld"
+  bio         : "Jonas graduated with a M.Sc. in Computer Science from RWTH Aachen University
+                 and joined CERN as a Junior Fellow in November 2020. In the EP-SFT group, he
+                 works on GPU-related topics in ROOT and the simulation R&D subgroup."
+  short_bio   : "Jonas is working on GPU-related topics in ROOT."
+  tag         : "team"
+  affiliation : "CERN"
+  avatar      : "/assets/images/JH.jpg"
+  email       : "jonas.hahnfeld@cern.ch"
+
+
 Lorenzo Moneta:
   name        : "Lorenzo Moneta"
   bio         : "Lorenzo started working in 1989 as an experimental physicist for the ALEPH
