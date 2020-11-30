@@ -388,7 +388,7 @@ data member or object of the object itself. If the object member is a [TClonesAr
 
 `splitlevel=2`<br>
 This branch is automatically split into sub-branches, with one sub-branch for each
-data member or object of the object itself. If the object member is a [TClonesArray] (https://root.cern/doc/master/classTClonesArray.html){:target="_blank"} it is processed as a [TObject](https://root.cern/doc/master/classTObject.html){:target="_blank"}, but only for one branch.
+data member or object of the object itself. If the object member is a [TClonesArray](https://root.cern/doc/master/classTClonesArray.html){:target="_blank"} it is processed as a [TObject](https://root.cern/doc/master/classTObject.html){:target="_blank"}, but only for one branch.
 
 ### Adding a branch to an existing tree
 You can add a branch to an existing tree.
