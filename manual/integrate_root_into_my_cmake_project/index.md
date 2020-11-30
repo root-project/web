@@ -45,8 +45,7 @@ Generate dictionary for a set of header files (convenient wrapper on top of the 
 
 The `${dictionary}.cxx` and `${dictionary}.pcm` files are created using the header and the `linkdef` files, calling the `rootcling` command. Optionally, you can provide `OPTIONS` and `MODULE` to customize the way the `rootcling` command is called and the name for the .pcm files.
 
-### REFLEX_GENERATE_DICTIONARY
-Generate dictionary for a set of header files (convenient wrapper on top of the `rootcling` command).
+As an alternative, `REFLEX_GENERATE_DICTIONARY` offers the same underlying functionality with a slightly different interface:
 
 {% highlight C++ %}
    REFLEX_GENERATE_DICTIONARY( dictionary headerfiles ...
@@ -54,8 +53,6 @@ Generate dictionary for a set of header files (convenient wrapper on top of the 
       [DEPENDENCIES dep1 dep2 ...]
       [OPTIONS opt1 opt2 ...] )
 {% endhighlight %}
-
-The `${dictionary}.cxx` and `${dictionary}.pcm` files are created using the headers and the selection file, calling the `genreflex` command. Optionally, you can provide `OPTIONS` to customize the way the `genreflex` command is called.
 
 ## Full example (event project)
 
