@@ -8,8 +8,9 @@ toc_sticky: true
 ---
 
 You can integrate ROOT into a [CMake](https://cmake.org){:target="_blank"} based project.<br/>
-The main interface is the [CMake](https://cmake.org){:target="_blank"} command [find_package(...)](https://cmake.org/cmake/help/latest/command/find_package.html){:target="_blank"}, which
-defines the following standard variables:
+The main interface is the [CMake](https://cmake.org){:target="_blank"} command [find_package(...)](https://cmake.org/cmake/help/latest/command/find_package.html){:target="_blank"}.
+
+Calling `find_package(ROOT)` makes the following variables available:
 
 Variable | Type | Description
 ---------|-------|--------------
@@ -24,11 +25,16 @@ ROOT\_<option\>_FOUND  | BOOL |  TRUE for each enabled build option (e.g. cocoa,
 ROOT_FOUND |  BOOL | TRUE if the ROOT package has been found.
 ROOT_USE_FILE  | PATH   |  Path to a CMake module, which makes use of the previous variables and loads modules with useful macros or functions such as `ROOT_GENERATE_DICTIONARY`.
 
-## Adding additional libraries
+One cmake target per ROOT library is also available, e.g. `ROOT::Core` or `ROOT::Tree`.
+
+
+## Adding additional libraries to `ROOT_LIBRARIES`
 You can force additional ROOT libraries in the `ROOT_LIBRARIES` variable using the `COMPONENTS` option in the [find_package(...)](https://cmake.org/cmake/help/latest/command/find_package.html){:target="_blank"} command. For example, to add the `RooStats` library, you can specify it as an extra component (the name of the component is the name of the library without any library prefix or suffix).
 {% highlight C++ %}
    find_package(ROOT COMPONENTS RooStats)
 {% endhighlight %}
+
+However, prefer passing libraries as cmake targets whenever possible (see the [full example](#full-example-event-project) below).
 
 ## Useful commands
 ROOT provides a number of `CMake` macros/functions that are used internally but can also be used by projects layered on top of ROOT.
@@ -59,29 +65,28 @@ As an alternative, `REFLEX_GENERATE_DICTIONARY` offers the same underlying funct
 The following is an example of a project that creates a library including a dictionary and an executable file.
 
 {% highlight C++ %}
-# CMakeLists.txt for event package. It creates a library with a dictionary and a main program.
+# CMakeLists.txt for the "event" package. It creates a library with a dictionary and a main program.
 cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
 project(event)
 
-# You need to tell CMake where to find the ROOT installation. This can be done in a number of ways:
-#   - ROOT built with classic configure/make use the provided $ROOTSYS/etc/cmake/FindROOT.cmake.
-#   - ROOT built with CMake. Add in CMAKE_PREFIX_PATH the installation prefix for ROOT.
-list(APPEND CMAKE_PREFIX_PATH $ENV{ROOTSYS})
+# If ROOT is not installed in a default system location you need to tell CMake where to find it.
+# Sourcing `thisroot.sh` already sets the required environment variables.
+# Otherwise, adding the installation prefix of ROOT to CMAKE_PREFIX_PATH tells cmake where to look:
+#list(APPEND CMAKE_PREFIX_PATH "/path/to/root/installation")
 
-# Locates the ROOT package and defines a number of variables (e.g. ROOT_INCLUDE_DIRS).
+# Locate the ROOT package and define a number of useful variables (e.g. ROOT_INCLUDE_DIRS).
 find_package(ROOT REQUIRED COMPONENTS RIO Net)
-
-# Defines useful ROOT functions and ROOT macros (e.g. ROOT_GENERATE_DICTIONARY).
-include(${ROOT_USE_FILE})
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 ROOT_GENERATE_DICTIONARY(G__Event Event.h LINKDEF EventLinkDef.h)
 
 # Creates a shared library with a generated dictionary.
 add_library(Event SHARED Event.cxx G__Event.cxx)
-target_link_libraries(Event ${ROOT_LIBRARIES})
+target_link_libraries(Event PUBLIC ROOT::RIO ROOT::Net ROOT::Tree)
 
 # Creates the main program using the library.
 add_executable(Main MainEvent.cxx)
 target_link_libraries(Main Event)
 {% endhighlight %}
+
+See also [this excellent guide](https://cliutils.gitlab.io/modern-cmake/chapters/packages/ROOT.html) by Henry Schreiner for more information about building your ROOT project with modern cmake.
