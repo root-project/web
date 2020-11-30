@@ -726,6 +726,234 @@ In addition, you can use [TF1::GetRandom()](https://root.cern/doc/master/classTF
 
 The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides with {% include ref class="TComplex" %} a class for complex numbers.
 
+
+### Numerical integration
+
+ROOT provides algorithms for integration of one-dimensional functions, with several adaptive and non-adaptive methods and for integration of multi-dimensional function using an adaptive method or MonteCarlo Integration (GSLMCIntegrator). 
+
+[ROOT::Math::VirtualIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1VirtualIntegrator.html){:target="_blank"} defines the most basic functionality, this is, the common methods for the numerical integrator classes of one and multi dimensions.
+
+[ROOT::Math::VirtualIntegratorOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1VirtualIntegratorOneDim.html){:target="_blank"} is an abstract interface class for 1Dnumerical integration. This method must be implemented in concrete classes, so you must create the [ROOT::Math::IntegratorOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorOneDim.html){:target="_blank"} class for integrating one-dimensional
+functions.
+
+[ROOT::Math::VirtualIntegratorMultiDim](https://root.cern/doc/master/classROOT_1_1Math_1_1VirtualIntegratorMultiDim.html){:target="_blank"} is an abstract interface class for multi-numerical integration. This method must be implemented in concrete classes, so you must create the [ROOT::Math::IntegratorMultiDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorMultiDim.html){:target="_blank"} class for integrating multi-dimensional functions.
+
+**Using ROOT::Math::IntegratorOneDim**
+
+The following code example shows how you can use [ROOT::Math::IntegratorOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorOneDim.html){:target="_blank"}.
+
+_**Example**_
+
+In this example different instances of the class are created using some of the available algorithms in ROOT. If no algorithm is specified, the default one is used. The default integrator together with other integration options, such as relative and absolute tolerance, can be specified using the static method of the [ROOT::Math::IntegratorOneDimOptions](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorOneDimOptions.html)){:target="_blank"}.
+
+{% highlight C++ %}
+#include "Math/Integrator.h"
+const double ERRORLIMIT = 1E-3;
+double f(double x) {
+return x;
+}
+double f2(const double * x) {
+return x[0] + x[1];
+}
+int testIntegration1D() {
+   const double RESULT = 0.5;
+   int status = 0;
+
+// Set default tolerances for all integrators.
+   ROOT::Math::IntegratorOneDimOptions::SetDefaultAbsTolerance(1.E-6);
+   ROOT::Math::IntegratorOneDimOptions::SetDefaultRelTolerance(1.E-6);
+   
+   ROOT::Math::Functor1D wf(&f);
+   ROOT::Math::Integrator ig(ROOT::Math::IntegrationOneDim::kADAPTIVESINGULAR);
+   ig.SetFunction(wf);
+   double val = ig.Integral(0,1);
+   std::cout << "integral result is " << val << std::endl;
+   status += std::fabs(val-RESULT) > ERRORLIMIT;
+   
+   ROOT::Math::Integrator ig2(ROOT::Math::IntegrationOneDim::kNONADAPTIVE);
+   ig2.SetFunction(wf);
+   val = ig2.Integral(0,1);
+   std::cout << "integral result is " << val << std::endl;
+   status += std::fabs(val-RESULT) > ERRORLIMIT;
+
+   ROOT::Math::Integrator ig3(wf, ROOT::Math::IntegrationOneDim::kADAPTIVE);
+   val = ig3.Integral(0,1);
+   std::cout << "integral result is " << val << std::endl;
+   status += std::fabs(val-RESULT) > ERRORLIMIT;
+
+   ROOT::Math::Integrator ig4(ROOT::Math::IntegrationOneDim::kGAUSS)
+   ig4.SetFunction(wf);
+   val = ig4.Integral(0,1);
+   std::cout << "integral result is " << val << std::endl;
+   status += std::fabs(val-RESULT) > ERRORLIMIT;
+
+   ROOT::Math::Integrator ig4(ROOT::Math::IntegrationOneDim::kLEGENDRE);
+   ig4.SetFunction(wf);
+   val = ig4.Integral(0,1);
+   std::cout << "integral result is " << val << std::endl;
+   status += std::fabs(val-RESULT) > ERRORLIMIT;
+
+   return status;
+   }
+   
+{% endhighlight %}
+
+
+**Using ROOT::Math::IntegratorMultiDim**
+
+The following code example shows how you can use [ROOT::Math::IntegratorMultiDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorMultiDim.html){:target="_blank"}.
+
+_**Example**_
+
+In this example different instances of the class are using some of the available algorithms in ROOT.
+
+{% highlight C++ %}
+#include "Math/IntegratorMultiDim.h"
+#include "Math/Functor.h"
+
+double f2(const double * x) {
+return x[0] + x[1];
+}
+
+int testIntegrationMultiDim() {
+   const double RESULT = 1.0;
+   const double ERRORLIMIT = 1E-3;
+   int status = 0;
+
+   ROOT::Math::Functor wf(&f2,2);
+   double a[2] = {0,0};
+   double b[2] = {1,1};
+   
+   ROOT::Math::IntegratorMultiDim ig(ROOT::Math::IntegrationMultiDim::kADAPTIVE);
+   ig.SetFunction(wf);
+   double val = ig.Integral(a,b);
+   std::cout << "integral result is " << val << std::endl;
+   status += std::fabs(val-RESULT) > ERRORLIMIT;
+   
+   ROOT::Math::IntegratorMultiDim ig2(ROOT::Math::IntegrationMultiDim::kVEGAS);
+   ig2.SetFunction(wf);
+   val = ig2.Integral(a,b);
+   std::cout << "integral result is " << val << std::endl;
+   status += std::fabs(val-RESULT) > ERRORLIMIT;
+   
+   ROOT::Math::IntegratorMultiDim ig3(wf,ROOT::Math::IntegrationMultiDim::kPLAIN);
+   val = ig3.Integral(a,b);
+   std::cout << "integral result is " << val << std::endl;
+   status += std::fabs(val-RESULT) > ERRORLIMIT;
+   
+   ROOT::Math::IntegratorMultiDim ig4(wf,ROOT::Math::IntegrationMultiDim::kMISER);
+   val = ig4.Integral(a,b);
+   std::cout << "integral result is " << val << std::endl;
+   status += std::fabs(val-RESULT) > ERRORLIMIT;
+   
+   return status;
+}
+{% endhighlight %}
+
+####One-dimensional integration algorithms
+
+You can instantiate one-dimensional integration algorithms by using the following enumeration values:
+
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th scope="col">Enumeration name</th>
+      <th scope="col">Integrator class</th>
+    </tr>
+    <tr>
+      <td>ROOT::Math::IntegratorOneDim::kGAUSS</td>
+      <td>ROOT::Math::GaussianIntegrator</td>
+    </tr>
+    <tr>
+      <td>ROOT::Math::IntegratorOneDim::kLEGENDRE</td>
+      <td>ROOT::Math:::GausLegendreIntegrator</td>
+    </tr>
+    <tr>
+      <td>ROOT::Math::Integration::kNONADAPTIVE</td>
+      <td>ROOT::Math:::GSLIntegrator</td>
+    </tr>
+    <tr>
+      <td>ROOT::Math::Integration::kADAPTIVE</td>
+      <td>ROOT::Math:::GSLIntegrator</td>
+    </tr>
+    <tr>
+      <td>ROOT::Math::Integration::kADAPTIVESINGULAR</td>
+      <td>ROOT::Math:::GSLIntegrator</td>
+    </tr>
+</tbody>
+</table>
+
+**ROOT::Math:::GaussIntegrator**
+
+[ROOT::Math:::GaussIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GaussIntegrator.html){:target="_blank"} uses the most basic Gaussian integration algorithm. It uses the 8-point and the 16-point Gaussian quadrature approximations.
+
+_**Example**_
+
+{% highlight C++ %}
+#include "TF1.h"
+#include "Math/WrappedTF1.h"
+#include "Math/GaussIntegrator.h"
+
+int main()
+{
+   TF1 f("Sin Function", "sin(x)", 0, TMath::Pi());
+   ROOT::Math::WrappedTF1 wf1(f);
+   ROOT::Math::GaussIntegrator ig;
+   ig.SetFunction(wf1, false);
+   ig.SetRelTolerance(0.001);
+   cout << ig.Integral(0, TMath::PiOver2()) << endl;
+{% endhighlight %}
+
+
+**ROOT::Math::GaussLegendreIntegrator**
+
+[ROOT::Math::GaussLegendreIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GaussLegendreIntegrator.html){:target="_blank"} implementes the Gauss-Legendre quadrature formulas. This sort of numerical methods requieres that you specify the number of intermediate function points used in the calculation of the integral. It automatically determines the coordinates and weights of such points before performing the integration. You can use the example above,
+but replacing the creation of a [ROOT::Math:::GaussIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GaussIntegrator.html){:target="_blank"} object with [ROOT::Math::GaussLegendreIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GaussLegendreIntegrator.html){:target="_blank"}.
+
+
+**ROOT::Math::GSLIntegrator**
+
+[ROOT::Math::GSLIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GSLIntegrator.html){:target="_blank"} isa wrapper for the QUADPACK integrator implemented in the  [GSL](https://www.gnu.org/software/gsl/){:target="_blank"} library. It supports several integration methods that can be chosen in construction time. The default type is adaptive integration with singularity applying a Gauss-Kronrod 21-point integration rule. 
+
+####Multi-dimensional integration algorithms
+
+You can instantiate multi-dimensional integration algorithms by using the following enumeration values:
+
+<table width="100%" border="0">
+  <tbody>
+    <tr>
+      <th scope="col">Enumeration name</th>
+      <th scope="col">Integrator class</th>
+    </tr>
+    <tr>
+      <td>ROOT::Math::IntegratorMultiDim::kADAPTIVE</td>
+      <td>ROOT::Math::AdaptiveIntegratorMultiDim</td>
+    </tr>
+    <tr>
+      <td>ROOT::Math::IntegratorMultiDim::kVEGAS</td>
+      <td>ROOT::Math:::GSLMCIntegrator</td>
+    </tr>
+    <tr>
+      <td>ROOT::Math::IntegratorMultiDim::kMISER</td>
+      <td>ROOT::Math:::GSLMCIntegrator</td>
+    </tr>
+    <tr>
+      <td>ROOT::Math::IntegratorMultiDim::kPLAIN</td>
+      <td>ROOT::Math:::GSLMCIntegrator</td>
+    </tr>
+</tbody>
+</table>
+
+**ROOT::Math::AdaptiveIntegratorMultiDim**
+
+[ROOT::Math::AdaptiveIntegratorMultiDim](https://root.cern/doc/master/classROOT_1_1Math_1_1AdaptiveIntegratorMultiDim.html){:target="_blank"} implements an adaptive quadrature integration method for multi dimensional functions. It is described in the paper *Genz, A.A. Malik, An adaptive algorithm for numerical integration over an N-dimensional rectangular region, J. Comput. Appl. Math. 6 (1980) 295-302*.
+
+
+**ROOT::Math::GSLMCIntegrator**
+
+[ROOT::Math::GSLMCIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GSLMCIntegrator.html){:target="_blank"} is a class for performing numerical integration of a multidimensional function. It uses the numerical integration algorithms of [GSL](https://www.gnu.org/software/gsl/){:target="_blank"}, which reimplements the algorithms used in the QUADPACK, a numerical integration package written in Fortran. Plain MC, MISER and VEGAS integration algorithms are supported for integration over finite (hypercubic) ranges.
+
+
 ## MathMore library
 
 The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"} library provides an advanced collection of functions and C++ classes for numerical computing. This is an extension of the functionality provided by the [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library. The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"}  library is implemented wrapping in C++ the GNU Scientific Library ([GSL](https://www.gnu.org/software/gsl/){:target="_blank"}). The mathematical functions are implemented as a set of free functions in the namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"}.
@@ -752,6 +980,7 @@ Contains mathematical functions used in statistics such as probability density f
 <br>Based on Chebyshev polynomials.
 
 - [Random classes](https://root.cern/doc/master/group__Random.html){:target="_blank"}
+
 
 
 ## Linear algebra packages

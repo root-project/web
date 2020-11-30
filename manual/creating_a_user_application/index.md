@@ -12,9 +12,9 @@ create a standalone user application based on ROOT libraries.
 
 Three different kind of standalone user applications are presented:
 
-- [Generating a PDF file](#generating-a-pdf-file).
-- [Displaying a canvas](#displaying-a-canvas).
-- [Getting ROOT prompt](#getting-root-prompt).
+- [Generating a PDF file](#generating-a-pdf-file)
+- [Displaying a canvas](#displaying-a-canvas)
+- [Getting ROOT prompt](#getting-root-prompt)
 
 
 ## A simple code example
@@ -34,7 +34,7 @@ With the following code a canvas is drawn (→ see also [Graphics]({{ '/manual/g
    caption="A simple canvas."
 %}
 
-A standalone program in C++ should be created with this code.
+A C++ standalone program should be created with this code.
 
 > **Note**
 >
@@ -44,7 +44,7 @@ A standalone program in C++ should be created with this code.
 
 ## Generating a PDF file
 
-A standalone program in C++ contains the `main()` function, the starting point for the
+A C++ standalone program contains the `main()` function, the starting point for the
 application execution. For this reason, create a C++ file that you can compile.
 
 The first lines of the C++ file include ROOT header files. The names of the ROOT header
