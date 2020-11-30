@@ -157,6 +157,36 @@ Jakob Blomer:
   email       : ""
 
 
+Javier Lopez Gomez:
+  name        : "Javier Lopez Gomez"
+  bio         : "Javier is a computer scientist from University Carlos III of Madrid.  During the
+                 last few years, his focus has been on low-level software (e.g. operating
+                 systems, embedded software and electronics, and compilers).  He will finish his
+                 PhD in October 2020. His thesis is focused on providing techniques that improve
+                 software reliability while achieving a good trade-off between reliability and
+                 performance.  During his PhD, he collaborated with the ROOT project;
+                 specifically, he worked on supporting entity redefinition on the Cling C++
+                 interpreter.  He joined EP-SFT again as a fellow in September 2020, where he will
+                 work on improving ROOT's RNtuple storage layer."
+  short_bio   : "Javier is working on improving ROOT's RNtuple storage layer."
+  tag         : "team"
+  avatar      : "/assets/images/JLG.jpg"
+  affiliation : "CERN"
+  email       : "javier.lopez.gomez@cern.ch"
+
+
+Jonas Hahnfeld:
+  name        : "Jonas Hahnfeld"
+  bio         : "Jonas graduated with a M.Sc. in Computer Science from RWTH Aachen University
+                 and joined CERN as a Junior Fellow in November 2020. In the EP-SFT group, he
+                 works on GPU-related topics in ROOT and the simulation R&D subgroup."
+  short_bio   : "Jonas is working on GPU-related topics in ROOT."
+  tag         : "team"
+  affiliation : "CERN"
+  avatar      : "/assets/images/JH.jpg"
+  email       : "jonas.hahnfeld@cern.ch"
+
+
 Lorenzo Moneta:
   name        : "Lorenzo Moneta"
   bio         : "Lorenzo started working in 1989 as an experimental physicist for the ALEPH
@@ -245,6 +275,22 @@ Sergey Linev:
   email       : "S.Linev@gsi.de"
 
 
+Stefan Wunsch:
+  name        : "Stefan Wunsch"
+  bio         : "Stefan studied physics at the Karlsruhe Institute of Technology with focus
+                 on data analysis, machine learning and software development. Previous
+                 projects have been with the Belle and CMS experiments about the integration
+                 of modern machine learning in the reconstruction and data analysis toolchain.
+                 After his first stay at CERN in 2016 as summer student with the CMS
+                 experiment, he returned to CERN in 2018 as PhD working in the ROOT team on
+                 machine learning and analysis facilities."
+  short_bio   : "Stefan is working in the ROOT team on machine learning and analysis facilities."
+  tag         : "team"
+  avatar      : "/assets/images/SW.jpeg"
+  affiliation : "CERN"
+  email       : "stefan.wunsch@cern.ch"
+
+
 Stephan Hageboeck:
   name        : "Stephan Hageboeck"
   bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the university of Bonn in
@@ -278,6 +324,24 @@ Vassil Vassilev:
   avatar      : "/assets/images/VV.jpg"
   affiliation : "Princeton"
   email       : "Vasil.Georgiev.Vasilev@cern.ch"
+
+
+Vincenzo Eduardo Padulano:
+  name        : "Vincenzo Eduardo Padulano"
+  bio         : "Vincenzo graduated with a B.Sc. in Physics and a M.Sc. in Data Science at
+                 the University of Milano-Bicocca. He started working at CERN in the summer
+                 of 2019 for the ROOT team as an intern to develop his master thesis. During
+                 that experience he focused on blending state-of-the-art software and
+                 techniques from the data science community (namely Spark and Kubernetes)
+                 with ROOT analysis. Currently member of the ROOT team as a CERN Doctoral
+                 Student and enrolled in the Computer Science PhD program at the Polytechnic
+                 University of Valencia. His area of research is in developing distributed
+                 computing solutions for the ROOT framework."
+  short_bio   : "Vincenzo is developing distributed computing solutions for the ROOT framework."
+  tag         : "team"
+  avatar      : "/assets/images/VEP.jpg"
+  affiliation : "CERN"
+  email       : "vincenzo.eduardo.padulano@cern.ch"
 
 
 Andrei Gheata:
@@ -470,53 +534,3 @@ Valeri Onuchin:
                  enabled web server."
   tag         : "previous"
 
-
-Stefan Wunsch:
-  name        : "Stefan Wunsch"
-  bio         : "Stefan studied physics at the Karlsruhe Institute of Technology with focus
-                 on data analysis, machine learning and software development. Previous
-                 projects have been with the Belle and CMS experiments about the integration
-                 of modern machine learning in the reconstruction and data analysis toolchain.
-                 After his first stay at CERN in 2016 as summer student with the CMS
-                 experiment, he returned to CERN in 2018 as PhD working in the ROOT team on
-                 machine learning and analysis facilities."
-  short_bio   : "Stefan is working in the ROOT team on machine learning and analysis facilities."
-  tag         : "team"
-  avatar      : "/assets/images/SW.jpeg"
-  affiliation : "CERN"
-  email       : "stefan.wunsch@cern.ch"
-
-Javier Lopez Gomez:
-  name        : "Javier Lopez Gomez"
-  bio         : "Javier is a computer scientist from University Carlos III of Madrid.  During the
-                 last few years, his focus has been on low-level software (e.g. operating
-                 systems, embedded software and electronics, and compilers).  He will finish his
-                 PhD in October 2020. His thesis is focused on providing techniques that improve
-                 software reliability while achieving a good trade-off between reliability and
-                 performance.  During his PhD, he collaborated with the ROOT project;
-                 specifically, he worked on supporting entity redefinition on the Cling C++
-                 interpreter.  He joined EP-SFT again as a fellow in September 2020, where he will
-                 work on improving ROOT's RNtuple storage layer."
-  short_bio   : "Javier is working on improving ROOT's RNtuple storage layer."
-  tag         : "team"
-  avatar      : "/assets/images/JLG.jpg"
-  affiliation : "CERN"
-  email       : "javier.lopez.gomez@cern.ch"
-
-
-Vincenzo Eduardo Padulano:
-  name        : "Vincenzo Eduardo Padulano"
-  bio         : "Vincenzo graduated with a B.Sc. in Physics and a M.Sc. in Data Science at
-                 the University of Milano-Bicocca. He started working at CERN in the summer
-                 of 2019 for the ROOT team as an intern to develop his master thesis. During
-                 that experience he focused on blending state-of-the-art software and
-                 techniques from the data science community (namely Spark and Kubernetes)
-                 with ROOT analysis. Currently member of the ROOT team as a CERN Doctoral
-                 Student and enrolled in the Computer Science PhD program at the Polytechnic
-                 University of Valencia. His area of research is in developing distributed
-                 computing solutions for the ROOT framework."
-  short_bio   : "Vincenzo is developing distributed computing solutions for the ROOT framework."
-  tag         : "team"
-  avatar      : "/assets/images/VEP.png"
-  affiliation : "CERN"
-  email       : "vincenzo.eduardo.padulano@cern.ch"
