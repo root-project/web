@@ -74,7 +74,7 @@ project(event)
 # Otherwise, adding the installation prefix of ROOT to CMAKE_PREFIX_PATH tells cmake where to look:
 #list(APPEND CMAKE_PREFIX_PATH "/path/to/root/installation")
 
-# Locate the ROOT package and define a number of useful variables (e.g. ROOT_INCLUDE_DIRS).
+# Locate the ROOT package and define a number of useful targets and variables.
 find_package(ROOT REQUIRED COMPONENTS RIO Net)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
