@@ -82,7 +82,7 @@ ROOT_GENERATE_DICTIONARY(G__Event Event.h LINKDEF EventLinkDef.h)
 
 # Creates a shared library with a generated dictionary.
 add_library(Event SHARED Event.cxx G__Event.cxx)
-target_link_libraries(Event PUBLIC ROOT::RIO ROOT::Net ROOT::Tree)
+target_link_libraries(Event PUBLIC ROOT::RIO ROOT::Net)
 
 # Creates the main program using the library.
 add_executable(Main MainEvent.cxx)
