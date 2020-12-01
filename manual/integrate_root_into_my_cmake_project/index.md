@@ -66,13 +66,13 @@ The following is an example of a project that creates a library including a dict
 
 {% highlight C++ %}
 # CMakeLists.txt for the "event" package. It creates a library with a dictionary and a main program.
-cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
-project(event)
-
 # If ROOT is not installed in a default system location you need to tell CMake where to find it.
 # Sourcing `thisroot.sh` already sets the required environment variables.
-# Otherwise, adding the installation prefix of ROOT to CMAKE_PREFIX_PATH tells cmake where to look:
-#list(APPEND CMAKE_PREFIX_PATH "/path/to/root/installation")
+# Otherwise, you'll have to tell cmake where to look for ROOT,
+# e.g. by passing `-DCMAKE_PREFIX_PATH="/path/to/root/installation` at configuration time
+
+cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+project(event)
 
 # Locate the ROOT package and define a number of useful targets and variables.
 find_package(ROOT REQUIRED COMPONENTS RIO Net)
