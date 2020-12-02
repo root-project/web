@@ -27,6 +27,9 @@ ROOT_USE_FILE  | PATH   |  Path to a CMake module, which makes use of the previo
 
 One cmake target per ROOT library is also available, e.g. `ROOT::Core` or `ROOT::Tree`.
 
+> **Note**
+> To ensure compatibility between ROOT's C++ interpreter, Cling, and compiled code, your application *must* be compiled with the same C++ standard with which ROOT was compiled.
+> The C++ standard used for ROOT appears e.g. among the flags listed by `root-config --cflags`.
 
 ## Adding additional libraries to `ROOT_LIBRARIES`
 You can force additional ROOT libraries in the `ROOT_LIBRARIES` variable using the `COMPONENTS` option in the [find_package(...)](https://cmake.org/cmake/help/latest/command/find_package.html){:target="_blank"} command. For example, to add the `RooStats` library, you can specify it as an extra component (the name of the component is the name of the library without any library prefix or suffix).
@@ -80,11 +83,16 @@ find_package(ROOT REQUIRED COMPONENTS RIO Net)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 ROOT_GENERATE_DICTIONARY(G__Event Event.h LINKDEF EventLinkDef.h)
 
-# Creates a shared library with a generated dictionary.
+# Create a shared library with a generated dictionary.
+# Passing cmake targets such as `ROOT::RIO` as dependencies (rather than plain
+# library names e.g. via ${ROOT_LIBRARIES}) ensures that properties such as required
+# include directories and C++ standard are propagated to our libraries or executables.
+# Note: to ensure compatibility with Cling, targets *must* be compiled using the
+# same C++ standard as ROOT was compiled with.
 add_library(Event SHARED Event.cxx G__Event.cxx)
 target_link_libraries(Event PUBLIC ROOT::RIO ROOT::Net)
 
-# Creates the main program using the library.
+# Create the main program using the library.
 add_executable(Main MainEvent.cxx)
 target_link_libraries(Main Event)
 {% endhighlight %}
