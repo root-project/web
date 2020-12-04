@@ -55,6 +55,13 @@ $ source <installdir>/bin/thisroot.sh # or thisroot.{csh,fish,bat} depending on 
 ```
 To have ROOT setup automatically at each login, that command can be appended to a `.profile`, `.login`, `.bashrc` or equivalent configuration file.
 
+## Caveats
+
+As it makes use of a C++ interpreter, ROOT has somewhat stricter requirements than other C++ libraries: applications that depend on ROOT
+*must* be compiled with the same C++ standard with which ROOT was compiled.
+
+Also note that compatibility with compilers shipped with `devtoolset`s on CentOS or Red Hat is not guaranteed.
+
 ## ROOT, Python and PyROOT
 
 PyROOT, the set of Python bindings of ROOT, changed its structure and build/installation process in v6.22. In the following the main aspects are summarized for both after and before v6.22.
