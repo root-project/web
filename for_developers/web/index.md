@@ -54,7 +54,9 @@ get it from github. So the steps are:
 
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/){:target="_blank"}.
 
-2. Install Jekyll and [bundler](https://jekyllrb.com/docs/ruby-101/#bundler){:target="_blank"} [gems](https://jekyllrb.com/docs/ruby-101/#gems){:target="_blank"}.
+2. Install Jekyll and [bundler](https://jekyllrb.com/docs/ruby-101/#bundler){:target="_blank"}
+   [gems](https://jekyllrb.com/docs/ruby-101/#gems){:target="_blank"}. This command
+   might need to be run in `sudo` mode.
 ```
 gem install jekyll bundler
 ```
@@ -79,7 +81,12 @@ This branch is the one from which the official web site is built. You can create
 new branch with your work, which you can use to create a pull request to update
 `root-project/web/main`.
 
-5. Build the site and make it available on a local server.
+6. Some missing gems might need to be installed. The following command, ran
+   in the `web` directory, does it:
+```
+bundle install
+```  
+7. Build the site and make it available on a local server.
 ```
 bundle exec jekyll serve --baseurl="/base"
 ```
@@ -100,10 +107,10 @@ Configuration file: /path/to/the/directory/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-7. Your server is now running. As shown above, the website can be accessed using a URL
+8. Your server is now running. As shown above, the website can be accessed using a URL
 similar to `https://127.0.0.1:4000/`.
 
-8. Work on the website.
+9. Work on the website.
    Each time you create a new file or save a modified version of a file
    the server will notice it and will regenerate the web site. You will get an output
    similar to:
