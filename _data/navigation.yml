@@ -162,8 +162,7 @@ for_developers:
      url: https://rootbnch-grafana-test.cern.ch
      target: _blank
    - title: ROOT Logos
-     url: https://root.cern/img/logos/ROOT_Logo/
-     target: _blank
+     url: for_developers/logos
 
 releases:
    - title: Useful links
