@@ -118,28 +118,6 @@ Enrico Guiraud:
   email       : "enrico.guiraud@cern.ch"
 
 
-Guilherme Amadio:
-  name        : "Guilherme Amadio"
-  bio         : "Guilherme has always been at the interface between physics and computer
-                 science. He started his undergraduate studies in computer science at the
-                 University of São Paulo (USP) campus in São Carlos in 2000, but later
-                 moved to the São Paulo campus for the course of molecular sciences, a
-                 special interdisciplinary program of the university aimed at preparing
-                 students for scientific research. In 2004, he moved to Japan for his
-                 master degree in nuclear physics at the University of Tokyo, where he
-                 studied the elastic and inelastic scattering of ⁷Be+p. He then moved on
-                 to obtain his PhD in aerospace engineering from the University of
-                 Illinois at Urbana-Champaign, USA. Guilherme then worked for two years
-                 at São Paulo State University (UNESP) in collaboration with CERN and
-                 Fermilab before joining the ROOT Team in April of 2017. His
-                 responsibilities in ROOT include working on the build system, performance
-                 analysis and optimization, and support for SIMD vectorization."
-  tag         : "team"
-  avatar      : "/assets/images/GA.jpg"
-  affiliation : "CERN"
-  email       : ""
-
-
 Jakob Blomer:
   name        : "Jakob Blomer"
   bio         : "Jakob joined CERN for the first time as a summer student in 2007. He
@@ -291,20 +269,6 @@ Stefan Wunsch:
   email       : "stefan.wunsch@cern.ch"
 
 
-Stephan Hageboeck:
-  name        : "Stephan Hageboeck"
-  bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the university of Bonn in
-                 Germany. He worked in ATLAS to improve the sensitivity in the search for
-                 Higgs --> bb decays. His main focus was on analysis frameworks, machine learning,
-                 systematic uncertainties and statistical models. He joined the ROOT team in 2018 to
-                 support and improve RooFit. He further looks into math and statistics, as well as into
-                 questions regarding performance and programming model."
-  tag         : "team"
-  avatar      : "/assets/images/SH.jpg"
-  affiliation : "CERN"
-  email       : "Stephan.Hageboeck@cern.ch"
-
-
 Vassil Vassilev:
   name        : "Vassil Vassilev"
   bio         : "Vassil graduated from the University of Plovdiv Paisii Hilendarski,
@@ -421,6 +385,28 @@ Gerardo Ganis:
   affiliation : "CERN"
 
 
+Guilherme Amadio:
+  name        : "Guilherme Amadio"
+  bio         : "Guilherme has always been at the interface between physics and computer
+                 science. He started his undergraduate studies in computer science at the
+                 University of São Paulo (USP) campus in São Carlos in 2000, but later
+                 moved to the São Paulo campus for the course of molecular sciences, a
+                 special interdisciplinary program of the university aimed at preparing
+                 students for scientific research. In 2004, he moved to Japan for his
+                 master degree in nuclear physics at the University of Tokyo, where he
+                 studied the elastic and inelastic scattering of ⁷Be+p. He then moved on
+                 to obtain his PhD in aerospace engineering from the University of
+                 Illinois at Urbana-Champaign, USA. Guilherme then worked for two years
+                 at São Paulo State University (UNESP) in collaboration with CERN and
+                 Fermilab before joining the ROOT Team in April of 2017. His
+                 responsibilities in ROOT include working on the build system, performance
+                 analysis and optimization, and support for SIMD vectorization."
+  tag         : "previous"
+  avatar      : "/assets/images/GA.jpg"
+  affiliation : "CERN"
+  email       : ""
+
+
 Jan Iwaszkiewicz:
   name        : "Jan Iwaszkiewicz"
   bio         : "Jan was working in the context of a Ph.D. on scheduling and load-
@@ -501,6 +487,20 @@ Richard Maunder:
   bio         : "Richard worked as project associate on the 3D graphics OpenGL based
                  system."
   tag         : "previous"
+
+
+Stephan Hageboeck:
+  name        : "Stephan Hageboeck"
+  bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the university of Bonn in
+                 Germany. He worked in ATLAS to improve the sensitivity in the search for
+                 Higgs --> bb decays. His main focus was on analysis frameworks, machine learning,
+                 systematic uncertainties and statistical models. He joined the ROOT team in 2018 to
+                 support and improve RooFit. He further looks into math and statistics, as well as into
+                 questions regarding performance and programming model."
+  tag         : "previous"
+  avatar      : "/assets/images/SH.jpg"
+  affiliation : "CERN"
+  email       : "Stephan.Hageboeck@cern.ch"
 
 
 Susan Panacek:
