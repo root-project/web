@@ -171,8 +171,7 @@ caption="ROOT::Math function interface structure."
 This interface is used for numerical algorithms operating only on one-dimensional functions. It cannot applied to multi-dimensional functions.
 
 [ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"}<br>
-This interface provides a method to evaluate the function given a value (simple double) by implementing `double operator()` (`const double`). The user class
-defined only needs to reimplement the pure abstract method double `DoEval(double x)` that will do the work of evaluating the function at point x.
+This interface provides a method to evaluate the function given a value (simple double) by implementing `double operator()` (`const double`). The defined user class  only needs to reimplement the pure abstract method double `DoEval(double x)` that will do the work of evaluating the function at point x.
 
 _**Example**_
 
@@ -744,7 +743,7 @@ The following code example shows how you can use [ROOT::Math::IntegratorOneDim](
 
 _**Example**_
 
-In this example different instances of the class are created using some of the available algorithms in ROOT. If no algorithm is specified, the default one is used. The default integrator together with other integration options, such as relative and absolute tolerance, can be specified using the static method of the [ROOT::Math::IntegratorOneDimOptions](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorOneDimOptions.html)){:target="_blank"}.
+In this example different instances of the class are created using some of the available algorithms in ROOT. If no algorithm is specified, the default one is used. The default integrator together with other integration options, such as relative and absolute tolerance, can be specified using the static method of the [ROOT::Math::IntegratorOneDimOptions](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorOneDimOptions.html){:target="_blank"}.
 
 {% highlight C++ %}
 #include "Math/Integrator.h"
@@ -850,7 +849,7 @@ int testIntegrationMultiDim() {
 }
 {% endhighlight %}
 
-####One-dimensional integration algorithms
+#### One-dimensional integration algorithms
 
 You can instantiate one-dimensional integration algorithms by using the following enumeration values:
 
@@ -915,7 +914,7 @@ but replacing the creation of a [ROOT::Math:::GaussIntegrator](https://root.cern
 
 [ROOT::Math::GSLIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GSLIntegrator.html){:target="_blank"} isa wrapper for the QUADPACK integrator implemented in the  [GSL](https://www.gnu.org/software/gsl/){:target="_blank"} library. It supports several integration methods that can be chosen in construction time. The default type is adaptive integration with singularity applying a Gauss-Kronrod 21-point integration rule. 
 
-####Multi-dimensional integration algorithms
+#### Multi-dimensional integration algorithms
 
 You can instantiate multi-dimensional integration algorithms by using the following enumeration values:
 
@@ -946,7 +945,7 @@ You can instantiate multi-dimensional integration algorithms by using the follow
 
 **ROOT::Math::AdaptiveIntegratorMultiDim**
 
-[ROOT::Math::AdaptiveIntegratorMultiDim](https://root.cern/doc/master/classROOT_1_1Math_1_1AdaptiveIntegratorMultiDim.html){:target="_blank"} implements an adaptive quadrature integration method for multi dimensional functions. It is described in the paper *Genz, A.A. Malik, An adaptive algorithm for numerical integration over an N-dimensional rectangular region, J. Comput. Appl. Math. 6 (1980) 295-302*.
+[ROOT::Math::AdaptiveIntegratorMultiDim](https://root.cern/doc/master/classROOT_1_1Math_1_1AdaptiveIntegratorMultiDim.html){:target="_blank"} implements an adaptive quadrature integration method for multi-dimensional functions. It is described in the paper *Genz, A.A. Malik, An adaptive algorithm for numerical integration over an N-dimensional rectangular region, J. Comput. Appl. Math. 6 (1980) 295-302*.
 
 
 **ROOT::Math::GSLMCIntegrator**
@@ -1779,6 +1778,64 @@ FUMILI is used to minimize Chi-square function or to search maximum of likelihoo
 FUMILI is based on ideas, proposed by I.N. Silin. It was converted from FORTRAN to C by Sergey Yaschenko s.yaschenko@fz-juelich.de.
 
 For detailed information on the FUMILI minimization package, see → [TFumili class reference](https://root.cern/doc/master/classTFumili.html){:target="_blank"}.
+
+### Numerical minimization
+
+ROOT provides algorithms for one-dimensional und multi-dimensional numerical minimizations. 
+
+**One-dimensional minimization**
+
+The one-dimensional minimization algorithms are used to find the minimum of a one-dimensional minimization function. The function to minimize must be given to the class implementing the algorithm as a [ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"} object.
+
+You can apply one-dimensional minimization in the following ways: 
+
+- ROOT::Math::BrentMinimizer1D
+- ROOT::Math::GSLMInimizer1D
+- Using the TF1 class
+
+**ROOT::Math::BrentMinimizer1D**
+
+[ROOT::Math::BrentMinimizer1D](https://root.cern/doc/master/classROOT_1_1Math_1_1BrentMinimizer1D.html){:target="_blank"} implements the Brent method to minimize an one-dimensional function. You must provide an interval containing the function minimum.
+
+_**Example**_
+
+In this example a function is definded to minimize as a lambda function. The function to minimize must be given to the class implementing the algorithm as a [ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"} object.
+
+{% highlight C++ %}
+ROOT::Math::Functor1D func( [](double x){ return 1 + -4*x + 1*x*x; } );
+
+   ROOT::Math::BrentMinimizer1D bm;
+   bm.SetFunction(func, -10,10);
+   bm.Minimize(10,0,0);
+   cout << "Minimum: f(" << bm.XMinimum() << ") = " <<bm.FValMinimum() << endl;
+{% endhighlight %}
+
+Note that when setting the function to minimize, you must provide the interval range to find the minimum. In the `Minimize call, the maximum number of function calls, the relative and absolute tolerance must be provided.
+
+**ROOT::Math::GSLMInimizer1D**
+
+[ROOT::Math::GSLMInimizer1D](https://root.cern/doc/master/classROOT_1_1Math_1_1GSLMinimizer1D.html){:target="_blank"} wraps two different methods from the GNU Scientific Library (GSL). At construction time you can choose between the BRENT and the GOLDENSECTION algorithmen. The GOLDENSECTION algorithm is the simplest method but the slowest and the BRENT algorithm (default) combines the golden section with a parabolic interpolation. <br/>
+You can choose the algorithm as a different enumeration in the constructor:
+- `* ROOT::Math::Minim1D::kBRENT` for the BRENT algorithm (default).
+- `* ROOT::Math::Minim1D::kGOLDENSECTION` for the GOLDENSECTION algorithm.
+
+_**Example**_
+
+{% highlight C++ %}
+// This creates a class with the default BRENT algorithm.
+   ROOT::Math::GSLMinimizer1D minBrent;
+
+// This creates a class with the GOLDENSECTION algorithm
+   ROOT::Math::GSLMinimizer1D minGold(ROOT::Math::Minim1D::kGOLDENSECTION);
+{% endhighlight %}
+
+**Using the TF1 class**
+
+You can perform a one-dimensional minimization or maximization of a function by using directly the {% include ref class="TF1" %}  class. The minmization implemented in `TF1` uses the `BrentMInimizer1D` and is available with the class member functions `* TF1::GetMinimum` or `TF1::GetMaximum` to find the function minimum (`* TF1::GetMinimumX`) or the maximum value (`TF1::GetMaximumX`). You can provide the search interval for the minimum, the tolerance and the maximum iterations as optional parameters of the `* TF1::GetMinimum` or `TF1::GetMaximum` functions.
+
+**Multi-dimensional minimization**
+
+The algorithms for a multi-dimensional minimization are implemented in the `ROOT::Math::Minimizer` interface. They can be used the same way as it was shown for the one-dimensional mimimization.
 
 
 ## UNU.RAN
