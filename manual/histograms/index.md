@@ -30,47 +30,47 @@ The following histogram classes are available in ROOT, among others:
 
 ### 1-D histograms
 
-  - {% include ref class="TH1C" %}: One byte per channel. Maximum bin content = 127.
+  - [TH1C](https://root.cern/doc/master/classTH1C.html){:target="_blank"}: One byte per channel. Maximum bin content = 127.
 
-  - {% include ref class="TH1S" %}: One short per channel. Maximum bin content = 32767.
+  - [TH1S](https://root.cern/doc/master/classTH1S.html){:target="_blank"}: One short per channel. Maximum bin content = 32767.
 
-  - {% include ref class="TH1I" %}: One int per channel. Maximum bin content = 2147483647.
+  - [TH1I](https://root.cern/doc/master/classTH1I.html){:target="_blank"}: One int per channel. Maximum bin content = 2147483647.
 
-  - {% include ref class="TH1F" %}: One float per channel. Maximum precision 7 digits.
+  - [TH1F](https://root.cern/doc/master/classTH1F.html){:target="_blank"}: One float per channel. Maximum precision 7 digits.
 
-  - {% include ref class="TH1D" %}: One double per channel. Maximum precision 14 digits.
+  - [TH1D](https://root.cern/doc/master/classTH1D.html){:target="_blank"}: One double per channel. Maximum precision 14 digits.
 
 ### 2-D histograms
 
-  - {% include ref class="TH2C" %}: One byte per channel. Maximum bin content = 127.
+  - [TH2C](https://root.cern/doc/master/classTH2C.html){:target="_blank"}: One byte per channel. Maximum bin content = 127.
 
-  - {% include ref class="TH2S" %}: One short per channel. Maximum bin content = 32767.
+  - [TH2S](https://root.cern/doc/master/classTH2S.html){:target="_blank"}: One short per channel. Maximum bin content = 32767.
 
-  - {% include ref class="TH2I" %}: One int per channel. Maximum bin content = 2147483647.
+  - [TH2I](https://root.cern/doc/master/classTH2I.html){:target="_blank"}: One int per channel. Maximum bin content = 2147483647.
 
-  - {% include ref class="TH2F" %}: One float per channel. Maximum precision 7 digits.
+  - [TH2F](https://root.cern/doc/master/classTH2F.html){:target="_blank"}: One float per channel. Maximum precision 7 digits.
 
-  - {% include ref class="TH2D" %}: One double per channel. Maximum precision 14 digits.
+  - [TH2D](https://root.cern/doc/master/classTH2D.html){:target="_blank"}: One double per channel. Maximum precision 14 digits.
 
 ### 3-D histograms
 
-  - {% include ref class="TH3C" %}: One byte per channel. Maximum bin content = 127.
+  - [TH3C](https://root.cern/doc/master/classTH3C.html){:target="_blank"}: One byte per channel. Maximum bin content = 127.
 
-  - {% include ref class="TH3S" %}: One short per channel. Maximum bin content = 32767.
+  - [TH3S](https://root.cern/doc/master/classTH3S.html){:target="_blank"}: One short per channel. Maximum bin content = 32767.
 
-  - {% include ref class="TH3I" %}: One int per channel. Maximum bin content = 2147483647.
+  - [TH3I](https://root.cern/doc/master/classTH3I.html){:target="_blank"}: One int per channel. Maximum bin content = 2147483647.
 
-  - {% include ref class="TH3F" %}: One float per channel. Maximum precision 7 digits.
+  - [TH3F](https://root.cern/doc/master/classTH3F.html){:target="_blank"}: One float per channel. Maximum precision 7 digits.
 
-  - {% include ref class="TH3D" %}: One double per channel. Maximum precision 14 digits.
+  - [TH3D](https://root.cern/doc/master/classTH3D.html){:target="_blank"}: One double per channel. Maximum precision 14 digits.
 
 ### Profile histograms
 
-  - {% include ref class="TProfile" %}: Profile histogram to display the mean value of Y and its error for each bin in X.
+  - [TProfile](https://root.cern/doc/master/classTProfile.html){:target="_blank"}: Profile histogram to display the mean value of Y and its error for each bin in X.
 
-  - {% include ref class="TProfile2D" %}: Profile2D histograms are used to display the mean value of Z and its RMS for each cell in X,Y.
+  - [TProfile2D](https://root.cern/doc/master/classTProfile2D.html){:target="_blank"}: Profile2D histograms are used to display the mean value of Z and its RMS for each cell in X,Y.
 
-  - {% include ref class="TProfile3D" %}: Profile3D histograms are used to display the mean value of T and its RMS for each cell in X,Y,Z.
+  - [TProfile3D](https://root.cern/doc/master/classTProfile3D.html){:target="_blank"}: Profile3D histograms are used to display the mean value of T and its RMS for each cell in X,Y,Z.
 
 ### Bin numbering
 
