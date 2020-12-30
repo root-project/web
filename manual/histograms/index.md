@@ -544,6 +544,110 @@ void AnalyzeTree()
 }
 {% endhighlight %}
 
+### Normalizing histograms 
+
+You can use [TH1::Scale (Double_t c1 = 1, Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#add929909dcb3745f6a52e9ae0860bfbd){:target="_blank"} and [TH1::Integral (Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#aaf053a4b487c46b9e20c0bf534b34012){:target="_blank"} to normalize histograms. The following example shows several methods to normalize a histograms. After the normalization of a histogram, it must be redrawn.
+
+_**Example**_
+
+The following histogram is given:
+
+{% highlight C++ %}
+   TH1F *h = new TH1F("h","a trial histogram", 100, -1.5, 1.5);
+   h->Sumw2();
+   for (Int_t i = 0; i < 10000; i++) h->Fill(gRandom->Gaus(0, 1));
+   h->Draw();
+   h->GetEntries()
+   h->Integral()
+   h->Integral("width")
+{% endhighlight %}
+
+{% include figure_image
+   img="histo-trial.png"
+   caption="A trial histogram for normalizing."
+%}
+
+To test the normlization methods, you can clone the histogram, for example.
+
+{% highlight C++ %}
+   TH1F *h1 = (TH1F*)(h->Clone("h1"));
+   ...
+// One clone per method.
+   ...
+   TH1F *h7 = (TH1F*)(h->Clone("h7"));
+{% endhighlight %}
+
+**Method 1**
+
+{% highlight C++ %}
+   Double_t num = h->GetBinContent(i);
+   Double_t den = h->GetBinWidth(i);
+   Double_t value = 0;
+   if (den!=0)
+     {
+        value = num/den;
+        h->SetBinContent(i,value);
+     }
+{% endhighlight %}
+
+**Method 2**
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor/h->GetEntries());
+{% endhighlight %}
+
+**Method 3**
+
+{% highlight C++ %}
+   Double_t scale = h->GetXaxis()->GetBinWidth(1)/(h->Integral());
+   h->Scale(scale);
+{% endhighlight %}
+
+**Method 4**
+
+Showa the frequency probability in each bin.
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor/h->Integral());
+{% endhighlight %}
+
+**Method 5**
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor, "width");
+{% endhighlight %}
+
+**Method 6**
+
+Show the estimated probability density function.
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor/h->Integral(), "width");
+{% endhighlight %}
+
+**Method 7**
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor/h->Integral("width"));
+{% endhighlight %}
+
+After applying the normalization merthod, redraw the histogram with a [drawing option](#drawing-options):
+
+{% highlight C++ %}
+   myHist->Draw("HIST")
+{% endhighlight %}
+
+> **Remarks**
+>
+> In order to make sure that the errors are properly handled, first (i.e., before calling TH1::Scale) execute:
+> `if (h->GetSumw2N() == 0) h->Sumw2(kTRUE);`
+>
+>`TH1::SetBinContent` changes the bin content of a given bin and increments the number of entries of the histogram. Because of that you should use `TH1::SetBinError` as well.
 
 ## Profile histograms
 
