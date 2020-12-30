@@ -549,7 +549,6 @@ void AnalyzeTree()
 You can use [TH1::Scale (Double_t c1 = 1, Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#add929909dcb3745f6a52e9ae0860bfbd){:target="_blank"} and [TH1::Integral (Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#aaf053a4b487c46b9e20c0bf534b34012){:target="_blank"} to normalize histograms. 
 
 The following example shows several methods to normalize a histograms. After the normalization of a histogram, it must be redrawn.
-
 _**Example**_
 
 The following histogram is given:
@@ -607,6 +606,7 @@ To test the normalization methods, you can clone the histogram, for example.
 {% endhighlight %}
 
 **Method 4**
+
 
 Shows the frequency probability in each bin.
 
