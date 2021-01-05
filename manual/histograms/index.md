@@ -244,7 +244,7 @@ For detailed information on the drawing options for all histogram classes, refer
 
 `AXIS`: Draws only the axis.
 
-`HIST`: When a histogram has errors, it is visualized by default with error bars. To visualize it without errors, use HIST together with the required option (for example "`HIST SAME C`").
+`HIST`: When a histogram has errors, it is visualized by default with error bars. To visualize it without errors, use `HIST` together with the required option (for example "`HIST SAME C`").
 
 `SAME`: Superimposes on previous picture in the same pad.
 
@@ -272,7 +272,7 @@ For detailed information on the drawing options for all histogram classes, refer
 
 `SURF4`: Draws a surface plot using Gouraud shading.
 
-`SURF5`: Same as `SURF3` but only the colored contour is drawn. Used with option `CYL`, `SPH` or `PSR`, it allows to draw colored contours on a sphere, a cylinder or in a pseudo rapidly space. In Cartesian or polar coordinates, option SURF3 is used.
+`SURF5`: Same as `SURF3`, but only the colored contour is drawn. Used with option `CYL`, `SPH` or `PSR`, it allows to draw colored contours on a sphere, a cylinder or in a pseudo rapidly space. In Cartesian or polar coordinates, option `SURF3` is used.
 
 _**Example**_
 
@@ -336,7 +336,7 @@ For detailed information on the drawing options for 1-D histogram classes, refer
 
 `9`: Forces a histogram to be drawn in high resolution mode. By default, the histogram is drawn in low resolution in case the number of bins is greater than the number of pixels in the current pad.
 
-`][`: Draws a histogram without the vertical lines for the first and the last bin. Use it, when superposing many histograms on the same picture.
+`][`: Draws a histogram without the vertical lines for the first and the last bin. Use this, when superposing many histograms on the same picture.
 
 **Drawing options for 2-D histogram classes**
 
@@ -372,7 +372,7 @@ By default, 2-D histograms are drawn as scatter plots.
 
 `LIST`: Generates a list of {% include ref class="TGraph" %} objects for each contour.
 
-`FB`: To be used with `LEGO` or `SURFACE`, suppresses the Front-Box.
+`FB`: To be used with `LEGO` or `SURFACE`, suppresses the front-box.
 
 `BB`: To be used with `LEGO` or `SURFACE`, suppresses the back-box.
 
@@ -410,7 +410,7 @@ By default, 3-D histograms are drawn as scatter plots.
 
 ### Drawing a histogram with error bars
 
-You can draw a histogram with error bars.
+The following example shows how to draw a histogram with error bars.
 
 _**Example**_
 
@@ -486,7 +486,7 @@ void AnalyzeTree()
    TBranch  *particlesPosXBranch;
    TBranch  *particlesMomentumBranch;
 
-// Declaration of leaf types
+// Declaration of leaf types.
    Int_t nParticles;
    Double_t  particlesPosX[kMaxfParticles];
    Double_t  particlesMomentum[kMaxfParticles];
@@ -495,7 +495,7 @@ void AnalyzeTree()
    TFile *f = TFile::Open("http://root.cern/files/introtutorials/eventdata.root");
    if (f == 0) {
 
-// If we cannot open the file, print an error message and return immediately.
+// If the file cannot be opend, print an error message and return immediately.
       printf("Error: cannot open http://root.cern/files/introtutorials/eventdata.root!\n");
       return;
    }
@@ -503,7 +503,7 @@ void AnalyzeTree()
 // Get a pointer to the tree.
    TTree *tree = (TTree *)f->Get("EventTree");
 
-// To use SetBranchAddress() with simple types (e.g. double, int) instead of objects (e.g. std::vector<Particle>).
+// To use SetBranchAddress() with simple types (e.g., double, int) instead of objects (e.g., std::vector<Particle>).
    tree->SetMakeClass(1);
 
 // Connect the branches with their member variables.
@@ -544,6 +544,112 @@ void AnalyzeTree()
 }
 {% endhighlight %}
 
+### Normalizing histograms 
+
+You can use [TH1::Scale (Double_t c1 = 1, Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#add929909dcb3745f6a52e9ae0860bfbd){:target="_blank"} and [TH1::Integral (Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#aaf053a4b487c46b9e20c0bf534b34012){:target="_blank"} to normalize histograms. 
+
+The following example shows several methods to normalize a histograms. After the normalization of a histogram, it must be redrawn.
+_**Example**_
+
+The following histogram is given:
+
+{% highlight C++ %}
+   TH1F *h = new TH1F("h","a trial histogram", 100, -1.5, 1.5);
+   h->Sumw2();
+   for (Int_t i = 0; i < 10000; i++) h->Fill(gRandom->Gaus(0, 1));
+   h->Draw();
+   h->GetEntries()
+   h->Integral()
+   h->Integral("width")
+{% endhighlight %}
+
+{% include figure_image
+   img="histo-trial.png"
+   caption="A trial histogram for normalizing."
+%}
+
+To test the normalization methods, you can clone the histogram, for example.
+
+{% highlight C++ %}
+   TH1F *h1 = (TH1F*)(h->Clone("h1"));
+   ...
+// One clone per method.
+   ...
+   TH1F *h7 = (TH1F*)(h->Clone("h7"));
+{% endhighlight %}
+
+**Method 1**
+
+{% highlight C++ %}
+   Double_t num = h->GetBinContent(i);
+   Double_t den = h->GetBinWidth(i);
+   Double_t value = 0;
+   if (den!=0)
+     {
+        value = num/den;
+        h->SetBinContent(i,value);
+     }
+{% endhighlight %}
+
+**Method 2**
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor/h->GetEntries());
+{% endhighlight %}
+
+**Method 3**
+
+{% highlight C++ %}
+   Double_t scale = h->GetXaxis()->GetBinWidth(1)/(h->Integral());
+   h->Scale(scale);
+{% endhighlight %}
+
+**Method 4**
+
+
+Shows the frequency probability in each bin.
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor/h->Integral());
+{% endhighlight %}
+
+**Method 5**
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor, "width");
+{% endhighlight %}
+
+**Method 6**
+
+Shows the estimated probability density function.
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor/h->Integral(), "width");
+{% endhighlight %}
+
+**Method 7**
+
+{% highlight C++ %}
+   Double_t factor = 1.;
+   h->Scale(factor/h->Integral("width"));
+{% endhighlight %}
+
+After applying the normalization merthod, redraw the histogram with a [drawing option](#drawing-options):
+
+{% highlight C++ %}
+   myHist->Draw("HIST")
+{% endhighlight %}
+
+> **Remarks**
+>
+> In order to make sure that the errors are properly handled, first (i.e., before calling TH1::Scale) execute:<br/>
+> `if (h->GetSumw2N() == 0) h->Sumw2(kTRUE);`
+>
+>`TH1::SetBinContent` changes the bin content of a given bin and increments the number of entries of the histogram. Because of that you should use `TH1::SetBinError` as well.
 
 ## Profile histograms
 
@@ -566,9 +672,9 @@ The following formulae show the cumulated contents (capital letters) and the val
 `s[j] = sqrt[E[j] / L[j] - h[j]**2]`<br>
 `e[j] = s[j] / sqrt[L[j]]`<br>
 
-The displayed bin content for bin `J` of a {% include ref class="TProfile" %}is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d){:target="_blank"}.
+The displayed bin content for bin `J` of a {% include ref class="TProfile" %} is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d){:target="_blank"}.
 The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a){:target="_blank"}.
-In case the option `s` is used (in the constructor or by calling [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725){:target="_blank"}) the displayed error is `s(J)`.
+In case the option `s` is used (in the constructor or by calling [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725){:target="_blank"}), the displayed error is `s(J)`.
 
 In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
 
@@ -592,3 +698,4 @@ _**Example**_
    file="histograms.root" object="hprof" width="500px" height="350px"
    caption="A profile histogram example."
 %}
+
