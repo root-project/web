@@ -130,7 +130,7 @@ This example creates 15 histograms, fills each histogram with 1000 entries from 
    TFile f("demo.root","RECREATE");
    Hlist.Write();
 
-//Closing the ROOT file.
+// Closing the ROOT file.
    f.Close();
 }
 {% endhighlight %}
@@ -205,6 +205,22 @@ for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
 > If the ROOT file has been opened in UPDATE mode, the recovered directory will be automatically written to the ROOT file. This automatic recovery procedure is possible because of redundant information written to the ROOT file.<br>
 > In case you write large trees (see also → [Trees]({{ '/manual/trees' | relative_url }})), you may have large buffers in memory. In case of a job crash, you may loose a lot of data. Therefore, it recommended to use the auto save method [TTree::AutoSave](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8).
 
+### Reading histograms from a ROOT file
+
+- Use the `Get()` method to read histograms from a ROOT file.
+
+_**Example**_
+
+{% highlight C++ %}
+   TFile *f = new TFile("histo.root");
+
+   f->ls()
+
+   TH1F * h1 = (TH1F*)f->Get("h1");
+   h1->Draw();
+{% endhighlight %}
+
+
 ### Merging ROOT files with hadd
 
 - Use the `hadd` utility in `$ROOTSYS/bin/hadd`, to merge ROOT files:
@@ -227,7 +243,7 @@ _**Example**_
 // Creating a directory.
    f->mkdir("dir");
 
-// Changing a directory.
+// Changing the current working directory.
    f->cd("dir");
    
 // Listing the contents of a ROOT file.
