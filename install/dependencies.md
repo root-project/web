@@ -94,6 +94,8 @@ sudo apt-get install dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
 libxft-dev libxext-dev python openssl-dev
 ```
 
+On Debian, substitute `openssl-dev` with `libssl-dev`.
+
 ### Most common optional packages
 
 *   **gfortran:** for /usr/bin/gfortran
@@ -125,6 +127,8 @@ graphviz-dev libavahi-compat-libdnssd-dev \
 libldap2-dev python-dev libxml2-dev libkrb5-dev \
 libgsl0-dev libqt4-dev
 ```
+
+On Debian, substitute `libmysqlclient-dev` with `libmariadb-dev`.
 
 ## openSUSE
 
