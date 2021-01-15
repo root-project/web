@@ -38,7 +38,7 @@ This means that the ROOT snap cannot just access a user's camera or microphone f
 Furthermore, the snap will be prevented from accessing hidden files/folders in the top level of the home directory itself, such as `$HOME/.ssh`.
 
 To help make this work, the `$HOME` variable, and `gSystem->HomeDirectory()` will return a modified value for the users home directory, generally `/home/example/snap/root-framework/current/`. If a user wants to make use of `rootlogin.c` for the entire application, keep in mind it will look for it in `$HOME` which points there instead. 
-If you make use of the parallel installation ability mentioned below, this can be an advantage as each installed version of the ROOT snap will have a unique home, and may have different `rootlogin` files, history, etc.
+If you make use of the parallel installation ability mentioned below, this can be an advantage as each installed version of the ROOT snap will have a unique `$HOME`, and may have different `rootlogin` files, history, etc.
 
 To be clear, this does not prevent you from reading and writing to `/home/example/desktop/` for example.
 The value for the current working directory works the same as normal.
