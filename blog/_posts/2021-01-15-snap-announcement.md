@@ -153,8 +153,8 @@ If this is insufficient, you are likely better suited with an alternative packag
 ### Alternate CPU architectures
 Currently the ROOT snap is only built for AMD64/x86_64.
 
-Snaps can work on other architectures soon and if there is a demand for alternative architectures such as ARM64, please give feedback and it can be considered.
-In the meantime, the Snapcraft build system should generally work on ARM64 and various other architectures, so you might be able to make your own.
+Snaps can work on other architectures, if there is a demand for alternative architectures such as ARM64, please give feedback and it can be considered.
+In the meantime, the Snapcraft build system should generally work on ARM64 and various other architectures, so you might be able to compile your own.
 
 ## Summary
 In summary, I hope there are a lot of users for whom a Snap package of ROOT might make sense. Prior to uploading this blog post, there are already several thousand downloads, going well above my personal expectations, and the issue tracker has not crashed yet so I amm hopeful that it is being successful in helping get ROOT into people's hands. 
