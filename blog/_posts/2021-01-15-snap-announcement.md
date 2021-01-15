@@ -143,7 +143,7 @@ If this is essential to your workflow, you are likely better suited with an alte
 Executing binaries from outside the snap environment from inside the environment itself will not work due to the sandboxing, and the image itself is by default inflexible, so that adding more Python modules for example involves either rebuilding the snap or using debug modes.
 If there are binaries and packages that might make sense inside the container, please give feedback and they can be considered to be default!
 
-If you want to change the CMake parameters, add some extra packages or some extra Python modules, you might be pleasantly surprised with the Snapcraft build system and there are some instructions on my personal Github page on how to do it. [https://github.com/MrCarroll/root-snap](https://github.com/MrCarroll/root-snap)
+If you want to change the CMake parameters, add some extra packages or some extra Python modules, you might be pleasantly surprised with the Snapcraft build system and there are some instructions on my personal GitHub page on how to do it. [https://github.com/MrCarroll/root-snap](https://github.com/MrCarroll/root-snap)
 
 ### IDEs
 Because the snap purposefully keeps its files away from the normal system, IDEs do not work with the ROOT snap.
