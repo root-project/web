@@ -74,7 +74,7 @@ Nightly builds are produced and accessible with
 If you are already using the snap and want to swap to the edge branch, use
 `sudo snap refresh root-framework --channel=edge`.
 
-A track in Snapcraft terms is separate branch of a project that can be downloaded instead of the default release.
+A track in Snapcraft terms is a separate branch of a project that can be downloaded instead of the default release.
 The default release is called "latest", and its stable channel will generally follow the newest stable ROOT release.
 As a result, users will automatically update to newer branches of ROOT.
 However, in some scenarios people may like to use an older release, and tracks could be used to provide this in the future.
