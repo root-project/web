@@ -91,7 +91,7 @@ sudo snap install root-framework --channel=v6-22/stable
 
 [https://snapcraft.io/docs/commands-and-aliases](https://snapcraft.io/docs/commands-and-aliases)
 
-This feature is still experimental, but its possible to have both the ROOT stable snap and the ROOT nightly snap alongside each other.
+This feature is still experimental, but it is possible to have both the ROOT stable snap and the ROOT nightly snap alongside each other.
 However to make proper use of this functionality, it helps to understand Snap aliases.
 
 The `root` command itself is an alias, because the snap package is called `root-framework`. When installed from the Snap Store, an alias is created automatically between `root` and `root-framework`.
