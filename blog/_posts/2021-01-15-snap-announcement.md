@@ -157,7 +157,7 @@ Snaps can work on other architectures, if there is a demand for alternative arch
 In the meantime, the Snapcraft build system should generally work on ARM64 and various other architectures, so you might be able to compile your own.
 
 ## Summary
-In summary, I hope there are a lot of users for whom a Snap package of ROOT might make sense. Prior to uploading this blog post, there are already several thousand downloads, going well above my personal expectations, and the issue tracker has not crashed yet so I amm hopeful that it is being successful in helping get ROOT into people's hands. 
+In summary, I hope there are a lot of users for whom a Snap package of ROOT might make sense. Prior to uploading this blog post, there are already several thousand downloads, going well above my personal expectations, and the issue tracker has not crashed yet so I am hopeful that it is being successful in helping get ROOT into people's hands. 
 
 Please feel free to give your feedback on this package. Whilst not everything will be actionable, knowing what issues people have can help guide future improvements. In particular, feedback about additional python modules, issues with the sandboxing, and performance regressions are appreciated, though any feedback at all would be very much appreciated. You can get in touch with me on the ROOT forums as @james-carroll; or feel free to report issues at [https://github.com/MrCarroll/root-snap](https://github.com/MrCarroll/root-snap), where you can also find information on building your own custom ROOT snap.
 
