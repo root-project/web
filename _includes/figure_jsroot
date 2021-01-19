@@ -29,8 +29,7 @@
   <script src="https://root.cern/js/dev/scripts/JSRootCore.min.js" type="text/javascript"></script>
   {% assign included_JSRootCore = 1 %}
 {% endif %}
-<script type='text/javascript'> JSROOT.OpenFile("{{f}}", function(file) {
-file.ReadObject("{{o}}", function(obj) {JSROOT.draw("{{id}}", obj, "");});});</script>
+<script type='text/javascript'>JSROOT.openFile("{{f}}").then(file => file.readObject("{{o}}")).then(obj => JSROOT.draw("{{id}}", obj, ""));</script>
 
 {% capture caption_size %}{{ caption | size }}{% endcapture %}
 
