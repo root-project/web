@@ -53,6 +53,19 @@ More instructions about using the conda package are available in [this blog post
 
 Please report any issues with the conda package [here](https://github.com/conda-forge/root-feedstock){:target="\_blank"}.
 
+## Snap
+
+On many Linux distributions, ROOT can be installed via Snap. For example, on Ubuntu:
+
+```sh
+$ sudo snap install root-framework
+$ snap run root-framework
+# or if there is no fear of conflicts with other installations:
+$ root # and the output of `which root` should contain `/snap`
+```
+
+See our [dedicated blog post]({{/blog/snap-announcement/ | relative_url}}) for more information, or visit the official [ROOT Snap package](https://snapcraft.io/root-framework){:target="\_blank"} page.
+
 ## Linux package managers
 
 ROOT can be directly installed from the operating system's package manager in the following Linux distributions:
