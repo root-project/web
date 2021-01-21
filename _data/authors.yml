@@ -534,3 +534,10 @@ Valeri Onuchin:
                  enabled web server."
   tag         : "previous"
 
+
+James Carroll:
+  name        : "James Carroll"
+  short_bio   : "James is maintaining the ROOT snap package."
+  tag         : "blog"
+  avatar      : "/assets/images/JC.jpg"
+  email       : "eloquism@gmail.com"
