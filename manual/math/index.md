@@ -21,6 +21,8 @@ The ROOT mathematical libraries consist of the following components:
 
 - [UNU.RAN](#unuran)
 
+- [FOAM](#foam)
+
 
 ## MathCore library
 
@@ -1869,7 +1871,7 @@ TUnuran unr;
 
 ### Using TUnuranContDist for a one-dimensional distribution
 
-- Use {% include ref class="TUnuranContDist" %} for creating a continuous 1-D distribution object (for example from a {% include ref class="TF1" %} object providing the PDF (probability density function).<br>
+- Use {% include ref class="TUnuranContDist" %} for creating a continuous 1-D distribution object (for example from a {% include ref class="TF1" %} object providing the PDF (probability density function)).<br>
 You can provide additional information via [TUnuranContDist::SetDomain(min,max)](https://root.cern/doc/master/classTUnuranContDist.html#aa82c3fc018dadafc55ef3a45239ce191){:target="_blank"} like the `domain()` for generating numbers in a restricted region.
 
 _**Example**_
@@ -1890,7 +1892,7 @@ _**Example**_
 
 ### Using TUnuranMultiContDist for a multi-dimensional distribution
 
-- Use {% include ref class="TUnuranMultiContDist" %} to create a multi-dimensional distribution, which can be created from a multi-dimensional PDF (probability density function).
+- Use {% include ref class="TUnuranMultiContDist" %} to create a multi-dimensional distribution that can be created from a multi-dimensional PDF (probability density function).
 
 _**Example**_
 
@@ -1910,7 +1912,7 @@ _**Example**_
 
 ### Using TUnuranDiscrDist for a discrete one-dimensional distribution
 
-- Use {% include ref class="TUnuranDiscrDist" %} to create a discrete one-dimensional distribution, which can be initialized from a {% include ref class="TF1" %} object or from a vector of probabilities.
+- Use {% include ref class="TUnuranDiscrDist" %} to create a discrete one-dimensional distribution that can be initialized from a {% include ref class="TF1" %} object or from a vector of probabilities.
 
 _**Example**_
 
@@ -1927,9 +1929,9 @@ _**Example**_
    int k = unr.SampleDiscr();
 {% endhighlight %}
 
-### Using TUnuranEmpDist an empirical distribution
+### Using TUnuranEmpDist for an empirical distribution
 
-Use {% include ref class="TUnuranEmpDist" %} for creating an empirical distribution, which can be initialized from a {% include ref class="TH1" %} object (using the bins or from its buffer for un-binned data) or from a vector of data.
+Use {% include ref class="TUnuranEmpDist" %} for creating an empirical distribution that can be initialized from a {% include ref class="TH1" %} object (using the bins or from its buffer for un-binned data) or from a vector of data.
 
 _**Example**_
 
@@ -1943,3 +1945,31 @@ _**Example**_
    for (int i = 0; i<N; ++i)
    double x = unr.Sample();
 {% endhighlight %}
+
+## FOAM
+
+FOAM is a simplified version of a multi-dimensional general purpose Monte Carlo event generator (integrator) with hyper-cubical "foam of cells". 
+
+> **Tutorials and more information**
+>
+> {% include tutorials name="FOAM" url="FOAM" %}
+>
+> ["Foam: A General Purpose Cellular Monte Carlo Event Generatory" by S. Jadach](https://cds.cern.ch/record/541515/files/0203033.pdf){:target="_blank"}
+
+Certain features of full version of FOAM are omitted. mFOAM is intended as an easy to use tool for Monte Carlo simulation and integration in few dimensions. It relies on the ROOT package, borrowing persistency of classes from ROOT. You can use mFOAM from the ROOT shell. 
+
+_**Examples**_
+
+`ROOTSYS/tutorials/foam/foam_kanwa.C`: A simple example on running FOAM in interactive mode.
+
+`ROOTSYS/tutorials/foam/foam_demo.C`: Shows the usage of FOAM in compiled mode, which is the preferred method.
+
+`ROOTSYS/tutorials/foam/foam_demopers.C`: Demonstrates the persistency of FOAM classes. 
+
+
+
+
+
+
+
+
