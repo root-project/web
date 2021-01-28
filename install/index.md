@@ -64,7 +64,7 @@ $ snap run root-framework
 $ root # and the output of `which root` should contain `/snap`
 ```
 
-See our [dedicated blog post]({{/blog/snap-announcement/ | relative_url}}) for more information, or visit the official [ROOT Snap package](https://snapcraft.io/root-framework){:target="\_blank"} page.
+See our [dedicated blog post]({{'/blog/snap-announcement/' | relative_url}}) for more information, or visit the official [ROOT Snap package](https://snapcraft.io/root-framework){:target="\_blank"} page.
 
 ## Linux package managers
 
