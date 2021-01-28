@@ -1981,7 +1981,7 @@ _**Examples**_
 
 ## FFTW
 
-For computing Fast Fourier Transforms, ROOT uses the [FFTW](http://www.fftw.org){:target="_blank"} library. To use it, the fftw3 module must be enabled.
+For computing Fast Fourier Transforms, ROOT uses the FFTW library (see  →  http://www.fftw.org). To use it, the fftw3 module must be enabled.
 
 {% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms. 
 
