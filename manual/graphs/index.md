@@ -19,23 +19,23 @@ A histogram is used for continuous data, where the bins represent ranges of data
 
 ROOT provides numerous graph classes, of which the following are among the most used:
 
-{% include ref class="TGraph" %}: A graph.
+[TGraph](https://root.cern/doc/master/classTGraph.html){:target="_blank"}: A graph.
 
-{% include ref class="TGraphErrors" %}: A graph with error bars.
+[TGraphErrors](https://root.cern/doc/master/classTGraphErrors.html){:target="_blank"}: A graph with error bars.
 
-{% include ref class="TGraphBentErrors" %}: A {% include ref class="TGraph" %} with bent, asymmetric error bars.
+[TGraphBentErrors](https://root.cern/doc/master/classTGraphBentErrors.html){:target="_blank"}: A {% include ref class="TGraph" %} with bent, asymmetric error bars.
 
-{% include ref class="TGraphMultiErrors" %}: A {% include ref class="TGraph" %} with asymmetric error bars and multiple y error dimensions.
+[TGraphMultiErrors](https://root.cern/doc/master/classTGraphMultiErrors.html){:target="_blank"}: A {% include ref class="TGraph" %} with asymmetric error bars and multiple y error dimensions.
 
-{% include ref class="TGraphPolar" %}: A polar graph including error bars.
+[TGraphPolar](https://root.cern/doc/master/classTGraphPolar.html){:target="_blank"}: A polar graph including error bars.
 
-{% include ref class="TGraphQQ" %}: Draws quantile-quantile plots.
+[TGraphQQ](https://root.cern/doc/master/classTGraphQQ.html){:target="_blank"}: Draws quantile-quantile plots.
 
-{% include ref class="TMultiGraph" %}: A collection of {% include ref class="TGraph" %} (or derived) objects.
+[TMultiGraph](https://root.cern/doc/master/classTMultiGraph.html){:target="_blank"}: A collection of {% include ref class="TGraph" %} (or derived) objects.
 
-{% include ref class="TGraph2D" %}: Graph made of three arrays X, Y and Z with the same number of points each.
+[TGraph2D](https://root.cern/doc/master/classTGraph2D.html){:target="_blank"}: Graph made of three arrays X, Y and Z with the same number of points each.
 
-{% include ref class="TGraph2DErrors" %}: A {% include ref class="TGraph2D" %} with error bars.
+[TGraph2DErrors](https://root.cern/doc/master/classTGraph2DErrors.html){:target="_blank"}: A {% include ref class="TGraph2D" %} with error bars.
 
 ## Working with graphs
 
@@ -193,8 +193,7 @@ For more information on the `Fit()` method, → see [Fitting histograms]({{ "/ma
 ## Graphs with error bars
 
 
-A {% include ref class="TGraphErrors" %} is a {% include ref class="TGraph" %}
-with error bars.
+A {% include ref class="TGraphErrors" %} is a {% include ref class="TGraph" %} with error bars.
 
 The {% include ref class="TGraphPainter" %} class implements all drawing options for graphs with error bars.
 
