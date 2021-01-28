@@ -1852,7 +1852,16 @@ The {% include ref class="TUnuran" %} class is used to interface the UNURAN pack
 >
 > {% include tutorials name="Unuran" url="unuran" %}
 
-### Initializing TUnuran with string API
+**Working with UNU.RAN**
+
+- [Initializing TUnuran with string API](#initializing-tunuran)
+- [Using TUnuranContDist for a one-dimensional distribution](#using-tunurancontdist)
+- [Using TUnuranMultiContDist for a multi-dimensional distribution](#using-tunuranmulticontdist)
+- [Using TUnuranDiscrDist for a discrete one-dimensional distribution](#using-tunurandiscrdist)
+- [Using TUnuranEmpDist for an empirical distribution](#using-tunuranempdist)
+
+<p><a name="initializing-tunuran"></a></p>
+**Initializing TUnuran with string API**
 
 You can initialize UNU.RAN with the string API via [TUnuran::Init()](https://root.cern/doc/master/classTUnuran.html#a793f7255df1e6d595fdfb6bc2f3a8256){:target="_blank"}, passing the distribution type and the method.
 
@@ -1869,7 +1878,8 @@ TUnuran unr;
    double x = unr.Sample();
 {% endhighlight %}
 
-### Using TUnuranContDist for a one-dimensional distribution
+<p><a name="using-tunurancontdist"></a></p>
+**Using TUnuranContDist for a one-dimensional distribution**
 
 - Use {% include ref class="TUnuranContDist" %} for creating a continuous 1-D distribution object (for example from a {% include ref class="TF1" %} object providing the PDF (probability density function)).<br>
 You can provide additional information via [TUnuranContDist::SetDomain(min,max)](https://root.cern/doc/master/classTUnuranContDist.html#aa82c3fc018dadafc55ef3a45239ce191){:target="_blank"} like the `domain()` for generating numbers in a restricted region.
@@ -1890,7 +1900,8 @@ _**Example**_
 
 {% endhighlight %}
 
-### Using TUnuranMultiContDist for a multi-dimensional distribution
+<p><a name="using-tunuranmulticontdist"></a></p>
+**Using TUnuranMultiContDist for a multi-dimensional distribution**
 
 - Use {% include ref class="TUnuranMultiContDist" %} to create a multi-dimensional distribution that can be created from a multi-dimensional PDF (probability density function).
 
@@ -1910,7 +1921,8 @@ _**Example**_
 
 {% endhighlight %}
 
-### Using TUnuranDiscrDist for a discrete one-dimensional distribution
+<p><a name="using-tunurandiscrdist"></a></p>
+**Using TUnuranDiscrDist for a discrete one-dimensional distribution**
 
 - Use {% include ref class="TUnuranDiscrDist" %} to create a discrete one-dimensional distribution that can be initialized from a {% include ref class="TF1" %} object or from a vector of probabilities.
 
@@ -1929,7 +1941,8 @@ _**Example**_
    int k = unr.SampleDiscr();
 {% endhighlight %}
 
-### Using TUnuranEmpDist for an empirical distribution
+<p><a name="using-tunuranempdist"></a></p>
+**Using TUnuranEmpDist for an empirical distribution**
 
 Use {% include ref class="TUnuranEmpDist" %} for creating an empirical distribution that can be initialized from a {% include ref class="TH1" %} object (using the bins or from its buffer for un-binned data) or from a vector of data.
 
@@ -1966,7 +1979,17 @@ _**Examples**_
 
 `ROOTSYS/tutorials/foam/foam_demopers.C`: Demonstrates the persistency of FOAM classes. 
 
+## FFTW
 
+For computing Fast Fourier Transforms, ROOT uses the FFTW library (see  →  http://www.fftw.org). To use it, the fftw3 module must be enabled.
+
+{% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms. 
+
+With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6134bf0a5ea525c7f670f59f82a0){:target="_blank"}  you can change the default library.
+
+> **Tutorial**
+>
+> {% include tutorials name="fft" url="fft" %}
 
 
 
