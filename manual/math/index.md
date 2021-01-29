@@ -19,7 +19,7 @@ The ROOT mathematical libraries consist of the following components:
 
 - [Physics vectors]({{ '/manual/physics_vectors' | relative_url }})
 
-- [c](#root-statistics-classes)
+- [ROOT statistics classes](#root-statistics-classes)
 
 - [UNU.RAN](#unuran)
 
@@ -1845,7 +1845,7 @@ The algorithms for a multi-dimensional minimization are implemented in the `ROOT
 
 ## ROOT statistics classes
 
-ROOT provides statistic classes for:
+ROOT provides statistics classes for:
 
 - [Computing limits and confidence levels](#classes-for-computing-limits-and-confidence-levels)
 - [Fitting](#specialized-classes-for-fitting)
@@ -1853,31 +1853,31 @@ ROOT provides statistic classes for:
 
 ### Classes for computing limits and confidence levels
 
-{% include ref class="TFeldmanCousins" %}: Calculates the confidence levels of the upper or lower limit for a Poisson process using the Feldman-Cousins method (as described in PRD V57 #7, p3873-3889). No treatment is provided in this method for the uncertainties in the signal or the background.
+[TFeldmanCousins](https://root.cern/doc/master/classTFeldmanCousins.html){:target="_blank"}: Calculates the confidence levels of the upper or lower limit for a Poisson process using the Feldman-Cousins method (as described in PRD V57 #7, p3873-3889). No treatment is provided in this method for the uncertainties in the signal or the background.
 
-{% include ref class="TRolke" %}: Computes the confidence intervals for the rate of a Poisson process in the presence of background and efficiency, using the profile likelihood technique for treating the uncertainties in the efficiency and background estimate. The signal is always assumed to be Poisson; background may be Poisson, Gaussian, or user-supplied. efficiency may be Binomial, Gaussian, or user-supplied. See publication at Nucl. Instrum. Meth. A551:493-503,2005.
+[TRolke](https://root.cern/doc/master/classTRolke.html){:target="_blank"}: Computes the confidence intervals for the rate of a Poisson process in the presence of background and efficiency, using the profile likelihood technique for treating the uncertainties in the efficiency and background estimate. The signal is always assumed to be Poisson; background may be Poisson, Gaussian, or user-supplied. efficiency may be Binomial, Gaussian, or user-supplied. See publication at Nucl. Instrum. Meth. A551:493-503,2005.
 
-{% include ref class="TLimit" %}: Computes 95% of the confidence level limits using the likelihood ratio semi-Bayesian method (method; see e.g.,  T. Junk, NIM A434, p. 435-443, 1999). It takes signal background and data histograms wrapped in a {% include ref class="TLimitDataSource" %} as input, and runs a set of Monte Carlo experiments in order to compute the limits. If needed, inputs are fluctuated according to systematic.
+[TLimit](https://root.cern/doc/master/classTLimit.html){:target="_blank"}: Computes 95% of the confidence level limits using the likelihood ratio semi-Bayesian method (method; see e.g.,  T. Junk, NIM A434, p. 435-443, 1999). It takes signal background and data histograms wrapped in a {% include ref class="TLimitDataSource" %} as input, and runs a set of Monte Carlo experiments in order to compute the limits. If needed, inputs are fluctuated according to systematic.
 
 ### Specialized classes for fitting
 
-{% include ref class="TFractionFitter" %}: Fits Monte Carlo fractions to data histogram (à la HMCMLL, R. Barlow and C. Beeston, Comp. Phys. Comm. 77 (1993) 219-228). It takes into account both data and Monte Carlo statistical uncertainties through a likelihood fit using Poisson statistics. However, the template (Monte Carlo) predictions are also varied within statistics, leading to additional contributions to the overall likelihood. This leads to many more fit parameters (one per bin per template), but the minimization with respect to these additional parameters is done analytically rather than introducing them as formal fit parameters. Some special care needs to be taken in the case of bins with zero content. 
+[TFractionFitter](https://root.cern/doc/master/classTFractionFitter.html){:target="_blank"}: Fits Monte Carlo fractions to data histogram (à la HMCMLL, R. Barlow and C. Beeston, Comp. Phys. Comm. 77 (1993) 219-228). It takes into account both data and Monte Carlo statistical uncertainties through a likelihood fit using Poisson statistics. However, the template (Monte Carlo) predictions are also varied within statistics, leading to additional contributions to the overall likelihood. This leads to many more fit parameters (one per bin per template), but the minimization with respect to these additional parameters is done analytically rather than introducing them as formal fit parameters. Some special care needs to be taken in the case of bins with zero content. 
 
-{% include ref class="TMultiDimFit" %}: Implements a multi-dimensional function parametrization for multi-dimensional data by fitting them to multi-dimensional data using polynomial or Chebyshev or Legendre polynomial.
+[TMultiDimFit](https://root.cern/doc/master/classTMultiDimFit.html){:target="_blank"}: Implements a multi-dimensional function parametrization for multi-dimensional data by fitting them to multi-dimensional data using polynomial or Chebyshev or Legendre polynomial.
 
-{% include ref class="TSpectrum" %}: Contains advanced spectra processing functions for 1- and 2-dimensional background estimation, smoothing, deconvolution, peak search and fitting, and orthogonal transformations.
+[TSpectrum](https://root.cern/doc/master/classTSpectrum.html){:target="_blank"}: Contains advanced spectra processing functions for 1- and 2-dimensional background estimation, smoothing, deconvolution, peak search and fitting, and orthogonal transformations.
 
-`RooFit: Toolkit for fitting and data analysis modeling,  see → [RooFit]({{ '/manual/roofit' | relative_url }}).
+`RooFit`: Toolkit for fitting and data analysis modeling,  see → [RooFit]({{ '/manual/roofit' | relative_url }}).
 
-{% include ref class="TSPlot" %}: Allows to separate the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
+[TSPlot](https://root.cern/doc/master/classTSPlot.html){:target="_blank"}: Allows to separate the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
 
 ### Multi-variate analysis classes
 
-{% include ref class="TMultiLayerPerceptron" %}: Is a neural network class.
+[TMultiLayerPerceptron](https://root.cern/doc/master/classTMultiLayerPerceptron.html){:target="_blank"}: Is a neural network class.
 
-{% include ref class="TPrincipal" %}: Provides the Principal Component Analysis.
+[TPrincipal](https://root.cern/doc/master/classTPrincipal.html){:target="_blank"}: Provides the Principal Component Analysis.
 
-{% include ref class="TRobustEstimator" %}: Method for a minimum covariance determinant estimator (MCD).
+[TRobustEstimator](https://root.cern/doc/master/classTRobustEstimator.html){:target="_blank"}: Method for a minimum covariance determinant estimator (MCD).
 
 `TMVA`: Package for multi-variate data analysis, see →[TMVA]({{ '/manual/tmva' | relative_url }}).
 
@@ -1893,6 +1893,7 @@ The {% include ref class="TUnuran" %} class is used to interface the UNURAN pack
 > **Tutorials**
 >
 > {% include tutorials name="Unuran" url="unuran" %}
+>
 
 **Working with UNU.RAN**
 
@@ -2024,6 +2025,15 @@ _**Examples**_
 ## FFTW
 
 For computing Fast Fourier Transforms, ROOT uses the FFTW library (see  →  http://www.fftw.org). To use it, the fftw3 module must be enabled.
+
+{% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms. 
+
+With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6134bf0a5ea525c7f670f59f82a0){:target="_blank"}  you can change the default library.
+
+> **Tutorial**
+>
+> {% include tutorials name="fft" url="fft" %}
+>
 
 {% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms. 
 
