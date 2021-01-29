@@ -19,7 +19,7 @@ The ROOT mathematical libraries consist of the following components:
 
 - [Physics vectors]({{ '/manual/physics_vectors' | relative_url }})
 
-- [ROOT statistics classes](#root-statistics-classes)
+- [c](#root-statistics-classes)
 
 - [UNU.RAN](#unuran)
 
@@ -1867,9 +1867,9 @@ ROOT provides statistic classes for:
 
 {% include ref class="TSpectrum" %}: Contains advanced spectra processing functions for 1- and 2-dimensional background estimation, smoothing, deconvolution, peak search and fitting, and orthogonal transformations.
 
-{% include ref class="RooFit" %}: Toolkit for fitting and data analysis modeling,  see → [RooFit]({{ '/manual/roofit' | relative_url }}).
+`RooFit: Toolkit for fitting and data analysis modeling,  see → [RooFit]({{ '/manual/roofit' | relative_url }}).
 
-{% include ref class="TSplot" %}: Allows to separate the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
+{% include ref class="TSPlot" %}: Allows to separate the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
 
 ### Multi-variate analysis classes
 
@@ -1879,7 +1879,7 @@ ROOT provides statistic classes for:
 
 {% include ref class="TRobustEstimator" %}: Method for a minimum covariance determinant estimator (MCD).
 
-{% include ref class="TMVA" %}: Package for multi-variate data analysis, see →[TMVA]({{ '/manual/tmva' | relative_url }}).
+`TMVA`: Package for multi-variate data analysis, see →[TMVA]({{ '/manual/tmva' | relative_url }}).
 
 
 ## UNU.RAN
