@@ -19,9 +19,13 @@ The ROOT mathematical libraries consist of the following components:
 
 - [Physics vectors]({{ '/manual/physics_vectors' | relative_url }})
 
+- [ROOT statistics classes](#root-statistics-classes)
+
 - [UNU.RAN](#unuran)
 
 - [FOAM](#foam)
+
+- [FFTW](#fftw)
 
 
 ## MathCore library
@@ -1838,6 +1842,44 @@ You can perform a one-dimensional minimization or maximization of a function by 
 **Multi-dimensional minimization**
 
 The algorithms for a multi-dimensional minimization are implemented in the `ROOT::Math::Minimizer` interface. They can be used the same way as it was shown for the one-dimensional mimimization.
+
+## ROOT statistics classes
+
+ROOT provides statistic classes for:
+
+- [Computing limits and confidence levels](#classes-for-computing-limits-and-confidence-levels)
+- [Fitting](#specialized-classes-for-fitting)
+- [Multi-variate analysis](#multi-variate-analysis-classes)
+
+### Classes for computing limits and confidence levels
+
+{% include ref class="TFeldmanCousins" %}: Calculates the confidence levels of the upper or lower limit for a Poisson process using the Feldman-Cousins method (as described in PRD V57 #7, p3873-3889). No treatment is provided in this method for the uncertainties in the signal or the background.
+
+{% include ref class="TRolke" %}: Computes the confidence intervals for the rate of a Poisson process in the presence of background and efficiency, using the profile likelihood technique for treating the uncertainties in the efficiency and background estimate. The signal is always assumed to be Poisson; background may be Poisson, Gaussian, or user-supplied. efficiency may be Binomial, Gaussian, or user-supplied. See publication at Nucl. Instrum. Meth. A551:493-503,2005.
+
+{% include ref class="TLimit" %}: Computes 95% of the confidence level limits using the likelihood ratio semi-Bayesian method (method; see e.g.,  T. Junk, NIM A434, p. 435-443, 1999). It takes signal background and data histograms wrapped in a {% include ref class="TLimitDataSource" %} as input, and runs a set of Monte Carlo experiments in order to compute the limits. If needed, inputs are fluctuated according to systematic.
+
+### Specialized classes for fitting
+
+{% include ref class="TFractionFitter" %}: Fits Monte Carlo fractions to data histogram (à la HMCMLL, R. Barlow and C. Beeston, Comp. Phys. Comm. 77 (1993) 219-228). It takes into account both data and Monte Carlo statistical uncertainties through a likelihood fit using Poisson statistics. However, the template (Monte Carlo) predictions are also varied within statistics, leading to additional contributions to the overall likelihood. This leads to many more fit parameters (one per bin per template), but the minimization with respect to these additional parameters is done analytically rather than introducing them as formal fit parameters. Some special care needs to be taken in the case of bins with zero content. 
+
+{% include ref class="TMultiDimFit" %}: Implements a multi-dimensional function parametrization for multi-dimensional data by fitting them to multi-dimensional data using polynomial or Chebyshev or Legendre polynomial.
+
+{% include ref class="TSpectrum" %}: Contains advanced spectra processing functions for 1- and 2-dimensional background estimation, smoothing, deconvolution, peak search and fitting, and orthogonal transformations.
+
+{% include ref class="RooFit" %}: Toolkit for fitting and data analysis modeling,  see → [RooFit]({{ '/manual/roofit' | relative_url }}).
+
+{% include ref class="TSplot" %}: Allows to separate the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
+
+### Multi-variate analysis classes
+
+{% include ref class="TMultiLayerPerceptron" %}: Is a neural network class.
+
+{% include ref class="TPrincipal" %}: Provides the Principal Component Analysis.
+
+{% include ref class="TRobustEstimator" %}: Method for a minimum covariance determinant estimator (MCD).
+
+{% include ref class="TMVA" %}: Package for multi-variate data analysis, see →[TMVA]({{ '/manual/tmva' | relative_url }}).
 
 
 ## UNU.RAN
