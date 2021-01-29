@@ -458,22 +458,17 @@ _**Example**_
 
 There are the following classes for changing the attributes of graphical objects:
 
-- {% include ref class="TAttFill" %}: Used for filling an area with color and a style.
+- [TAttFill](https://root.cern/doc/master/classTAttFill.html){:target="_blank"} : Used for filling an area with color and a style.
 
-- {% include ref class="TAttLine" %}: Used for setting the color, width and style of a line.
+- [TAttLine](https://root.cern/doc/master/classTAttLine.html){:target="_blank"} : Used for setting the color, width and style of a line.
 
-- {% include ref class="TAttMarker" %}: Used for setting the styles for a marker.
+- [TAttMarker](https://root.cern/doc/master/classTAttMarker.html){:target="_blank"} : Used for setting the styles for a marker.
 
-- {% include ref class="TAttText" %}: Used for setting text attributes like alignment, color, size, font etc.
+- [TAttText](https://root.cern/doc/master/classTAttText.html){:target="_blank"} : Used for setting text attributes like alignment, color, size, font etc.
 
 ### Creating and modifying a style
 
-When objects are created, their default attributes (taken from {% include ref class="TAttFill" %},
-{% include ref class="TAttLine" %}, {% include ref class="TAttMarker" %},
-{% include ref class="TAttText" %})
-are taken from the current style. The current style is an object of the
-{% include ref class="TStyle" %} class and can be referenced via the global variable `gStyle`
-(→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})).
+When objects are created, their default attributes (taken from {% include ref class="TAttFill" %}, {% include ref class="TAttLine" %}, {% include ref class="TAttMarker" %}, {% include ref class="TAttText" %}) are taken from the current style. The current style is an object of the {% include ref class="TStyle" %} class and can be referenced via the global variable `gStyle` (→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})).
 
 ROOT provides two styles:
 
@@ -761,7 +756,7 @@ _**Example**_
 %}
 
 
-### Drawing an axis independently of a graph/histogram
+### Drawing an axis independently of a graph or a histogram
 
 - Use the {% include ref class="TGaxis" %} class to draw an axis independently of a graph or a histogram.
 

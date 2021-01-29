@@ -1869,7 +1869,7 @@ ROOT provides statistics classes for:
 
 `RooFit`: Toolkit for fitting and data analysis modeling,  see → [RooFit]({{ '/manual/roofit' | relative_url }}).
 
-{% include ref class="TSPlot" %}{:target="_blank"}: Allows to separate the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
+[TSPlot](https://root.cern/doc/master/classTSPlot.html){:target="_blank"}: Allows to separate the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
 
 ### Multi-variate analysis classes
 
@@ -2033,7 +2033,15 @@ With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6
 > **Tutorial**
 >
 > {% include tutorials name="fft" url="fft" %}
+>
 
+{% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms. 
+
+With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6134bf0a5ea525c7f670f59f82a0){:target="_blank"}  you can change the default library.
+
+> **Tutorial**
+>
+> {% include tutorials name="fft" url="fft" %}
 
 
 
