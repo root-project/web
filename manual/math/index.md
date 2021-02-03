@@ -27,6 +27,7 @@ The ROOT mathematical libraries consist of the following components:
 
 - [FFTW](#fftw)
 
+- [MLP](#mlp)
 
 ## MathCore library
 
@@ -2028,23 +2029,19 @@ For computing Fast Fourier Transforms, ROOT uses the FFTW library (see  →  htt
 
 {% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms. 
 
-With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6134bf0a5ea525c7f670f59f82a0){:target="_blank"}  you can change the default library.
+With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6134bf0a5ea525c7f670f59f82a0){:target="_blank"} you can change the default library.
 
 > **Tutorial**
 >
 > {% include tutorials name="fft" url="fft" %}
 >
 
-{% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms. 
+## MLP 
+The multilayer perceptron (MLP) is a library with the neural network class {% include ref class="TMultiLayerPerceptron" %} from the `MLPfit` package.
 
-With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6134bf0a5ea525c7f670f59f82a0){:target="_blank"}  you can change the default library.
+_**Example**_
 
-> **Tutorial**
->
-> {% include tutorials name="fft" url="fft" %}
-
-
-
+An example of the use of {% include ref class="TMultiLayerPerceptron" %} can be found in the `mlpHiggs.C` macro in the `$ROOTSYS/tutorials/legacy/mlp` directory.
 
 
 
