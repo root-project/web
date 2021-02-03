@@ -31,7 +31,7 @@ The ROOT mathematical libraries consist of the following components:
 
 ## MathCore library
 
-The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides a collection of functions, C++ classes and ROOT classes for HEP numerical computing. <br>
+The [MathCore](https://root.cern/doc/master/group__MathCore.html){:target="_blank"} library provides a collection of functions, C++ classes and ROOT classes for HEP numerical computing. <br>
 The `MathCore` is a self-consistent minimal set of tools required for the basic numerical computing. More advanced mathematical functionalities is provided by the [MathMore](#mathmore-library) library.
 The following is included in the `MathCore` library:
 
@@ -49,7 +49,7 @@ The following is included in the `MathCore` library:
 
 - [Fitting and parameter estimation](https://root.cern/doc/master/group__Fit.html){:target="_blank"}: ROOT classes for fitting and parameter estimation from a given data set.
 
-In addition, the [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library contains the following ROOT classes that were originally part of *libCore*:
+In addition, the [MathCore](https://root.cern/doc/master/group__MathCore.html){:target="_blank"} library contains the following ROOT classes that were originally part of *libCore*:
 
 - the namespaces for [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} and [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"}.
 
@@ -601,7 +601,7 @@ _**Example**_
 
 ### Random numbers
 
-The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides the following classes for generating pseudo-random numbers:
+The [MathCore](https://root.cern/doc/master/group__MathCore.html){:target="_blank"} library provides the following classes for generating pseudo-random numbers:
 
 - [TRandom](https://root.cern/doc/master/classTRandom.html){:target="_blank"}: Using a linear congruential random generator.
 - [TRandom1](https://root.cern/doc/master/classTRandom1.html){:target="_blank"}: Random number generator based on the Ranlux engine.
@@ -730,12 +730,12 @@ In addition, you can use [TF1::GetRandom()](https://root.cern/doc/master/classTF
 
 ### Complex numbers
 
-The [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library provides with {% include ref class="TComplex" %} a class for complex numbers.
+The [MathCore](https://root.cern/doc/master/group__MathCore.html){:target="_blank"} library provides with {% include ref class="TComplex" %} a class for complex numbers.
 
 
 ### Numerical integration
 
-ROOT provides algorithms for integration of one-dimensional functions, with several adaptive and non-adaptive methods and for integration of multi-dimensional function using an adaptive method or MonteCarlo Integration (GSLMCIntegrator). 
+ROOT provides algorithms for integration of one-dimensional functions, with several adaptive and non-adaptive methods and for integration of multi-dimensional function using an adaptive method or MonteCarlo Integration (GSLMCIntegrator).
 
 [ROOT::Math::VirtualIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1VirtualIntegrator.html){:target="_blank"} defines the most basic functionality, this is, the common methods for the numerical integrator classes of one and multi dimensions.
 
@@ -768,14 +768,14 @@ int testIntegration1D() {
 // Set default tolerances for all integrators.
    ROOT::Math::IntegratorOneDimOptions::SetDefaultAbsTolerance(1.E-6);
    ROOT::Math::IntegratorOneDimOptions::SetDefaultRelTolerance(1.E-6);
-   
+
    ROOT::Math::Functor1D wf(&f);
    ROOT::Math::Integrator ig(ROOT::Math::IntegrationOneDim::kADAPTIVESINGULAR);
    ig.SetFunction(wf);
    double val = ig.Integral(0,1);
    std::cout << "integral result is " << val << std::endl;
    status += std::fabs(val-RESULT) > ERRORLIMIT;
-   
+
    ROOT::Math::Integrator ig2(ROOT::Math::IntegrationOneDim::kNONADAPTIVE);
    ig2.SetFunction(wf);
    val = ig2.Integral(0,1);
@@ -801,7 +801,7 @@ int testIntegration1D() {
 
    return status;
    }
-   
+
 {% endhighlight %}
 
 
@@ -829,29 +829,29 @@ int testIntegrationMultiDim() {
    ROOT::Math::Functor wf(&f2,2);
    double a[2] = {0,0};
    double b[2] = {1,1};
-   
+
    ROOT::Math::IntegratorMultiDim ig(ROOT::Math::IntegrationMultiDim::kADAPTIVE);
    ig.SetFunction(wf);
    double val = ig.Integral(a,b);
    std::cout << "integral result is " << val << std::endl;
    status += std::fabs(val-RESULT) > ERRORLIMIT;
-   
+
    ROOT::Math::IntegratorMultiDim ig2(ROOT::Math::IntegrationMultiDim::kVEGAS);
    ig2.SetFunction(wf);
    val = ig2.Integral(a,b);
    std::cout << "integral result is " << val << std::endl;
    status += std::fabs(val-RESULT) > ERRORLIMIT;
-   
+
    ROOT::Math::IntegratorMultiDim ig3(wf,ROOT::Math::IntegrationMultiDim::kPLAIN);
    val = ig3.Integral(a,b);
    std::cout << "integral result is " << val << std::endl;
    status += std::fabs(val-RESULT) > ERRORLIMIT;
-   
+
    ROOT::Math::IntegratorMultiDim ig4(wf,ROOT::Math::IntegrationMultiDim::kMISER);
    val = ig4.Integral(a,b);
    std::cout << "integral result is " << val << std::endl;
    status += std::fabs(val-RESULT) > ERRORLIMIT;
-   
+
    return status;
 }
 {% endhighlight %}
@@ -919,7 +919,7 @@ but replacing the creation of a [ROOT::Math:::GaussIntegrator](https://root.cern
 
 **ROOT::Math::GSLIntegrator**
 
-[ROOT::Math::GSLIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GSLIntegrator.html){:target="_blank"} isa wrapper for the QUADPACK integrator implemented in the  [GSL](https://www.gnu.org/software/gsl/){:target="_blank"} library. It supports several integration methods that can be chosen in construction time. The default type is adaptive integration with singularity applying a Gauss-Kronrod 21-point integration rule. 
+[ROOT::Math::GSLIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GSLIntegrator.html){:target="_blank"} isa wrapper for the QUADPACK integrator implemented in the  [GSL](https://www.gnu.org/software/gsl/){:target="_blank"} library. It supports several integration methods that can be chosen in construction time. The default type is adaptive integration with singularity applying a Gauss-Kronrod 21-point integration rule.
 
 #### Multi-dimensional integration algorithms
 
@@ -962,9 +962,9 @@ You can instantiate multi-dimensional integration algorithms by using the follow
 
 ## MathMore library
 
-The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"} library provides an advanced collection of functions and C++ classes for numerical computing. This is an extension of the functionality provided by the [MathCore](https://root.cern/doc/master/MathCorePage.html){:target="_blank"} library. The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"}  library is implemented wrapping in C++ the GNU Scientific Library ([GSL](https://www.gnu.org/software/gsl/){:target="_blank"}). The mathematical functions are implemented as a set of free functions in the namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"}.
+The [MathMore](https://root.cern/doc/master/group__MathMore.html){:target="_blank"} library provides an advanced collection of functions and C++ classes for numerical computing. This is an extension of the functionality provided by the [MathCore](https://root.cern/doc/master/group__MathCore.html){:target="_blank"} library. The [MathMore](https://root.cern/doc/master/group__MathMore.html){:target="_blank"}  library is implemented wrapping in C++ the GNU Scientific Library ([GSL](https://www.gnu.org/software/gsl/){:target="_blank"}). The mathematical functions are implemented as a set of free functions in the namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"}.
 
-The [MathMore](https://root.cern/doc/master/MathMorePage.html){:target="_blank"} library includes classes and functions for:
+The [MathMore](https://root.cern/doc/master/group__MathMore.html){:target="_blank"} library includes classes and functions for:
 
 - [Special functions](https://root.cern/doc/master/group__SpecFunc.html){:target="_blank"}<br>
 Containing all the major functions such as Bessel functions, Legendre polynomial, etc.
@@ -1788,13 +1788,13 @@ For detailed information on the FUMILI minimization package, see → [TFumili cl
 
 ### Numerical minimization
 
-ROOT provides algorithms for one-dimensional und multi-dimensional numerical minimizations. 
+ROOT provides algorithms for one-dimensional und multi-dimensional numerical minimizations.
 
 **One-dimensional minimization**
 
 The one-dimensional minimization algorithms are used to find the minimum of a one-dimensional minimization function. The function to minimize must be given to the class implementing the algorithm as a [ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"} object.
 
-You can apply one-dimensional minimization in the following ways: 
+You can apply one-dimensional minimization in the following ways:
 
 - ROOT::Math::BrentMinimizer1D
 - ROOT::Math::GSLMInimizer1D
@@ -1862,7 +1862,7 @@ ROOT provides statistics classes for:
 
 ### Specialized classes for fitting
 
-[TFractionFitter](https://root.cern/doc/master/classTFractionFitter.html){:target="_blank"}: Fits Monte Carlo fractions to data histogram (à la HMCMLL, R. Barlow and C. Beeston, Comp. Phys. Comm. 77 (1993) 219-228). It takes into account both data and Monte Carlo statistical uncertainties through a likelihood fit using Poisson statistics. However, the template (Monte Carlo) predictions are also varied within statistics, leading to additional contributions to the overall likelihood. This leads to many more fit parameters (one per bin per template), but the minimization with respect to these additional parameters is done analytically rather than introducing them as formal fit parameters. Some special care needs to be taken in the case of bins with zero content. 
+[TFractionFitter](https://root.cern/doc/master/classTFractionFitter.html){:target="_blank"}: Fits Monte Carlo fractions to data histogram (à la HMCMLL, R. Barlow and C. Beeston, Comp. Phys. Comm. 77 (1993) 219-228). It takes into account both data and Monte Carlo statistical uncertainties through a likelihood fit using Poisson statistics. However, the template (Monte Carlo) predictions are also varied within statistics, leading to additional contributions to the overall likelihood. This leads to many more fit parameters (one per bin per template), but the minimization with respect to these additional parameters is done analytically rather than introducing them as formal fit parameters. Some special care needs to be taken in the case of bins with zero content.
 
 [TMultiDimFit](https://root.cern/doc/master/classTMultiDimFit.html){:target="_blank"}: Implements a multi-dimensional function parametrization for multi-dimensional data by fitting them to multi-dimensional data using polynomial or Chebyshev or Legendre polynomial.
 
@@ -2005,7 +2005,7 @@ _**Example**_
 
 ## FOAM
 
-FOAM is a simplified version of a multi-dimensional general purpose Monte Carlo event generator (integrator) with hyper-cubical "foam of cells". 
+FOAM is a simplified version of a multi-dimensional general purpose Monte Carlo event generator (integrator) with hyper-cubical "foam of cells".
 
 > **Tutorials and more information**
 >
@@ -2013,7 +2013,7 @@ FOAM is a simplified version of a multi-dimensional general purpose Monte Carlo 
 >
 > ["Foam: A General Purpose Cellular Monte Carlo Event Generatory" by S. Jadach](https://cds.cern.ch/record/541515/files/0203033.pdf){:target="_blank"}
 
-Certain features of full version of FOAM are omitted. mFOAM is intended as an easy to use tool for Monte Carlo simulation and integration in few dimensions. It relies on the ROOT package, borrowing persistency of classes from ROOT. You can use mFOAM from the ROOT shell. 
+Certain features of full version of FOAM are omitted. mFOAM is intended as an easy to use tool for Monte Carlo simulation and integration in few dimensions. It relies on the ROOT package, borrowing persistency of classes from ROOT. You can use mFOAM from the ROOT shell.
 
 _**Examples**_
 
@@ -2021,13 +2021,13 @@ _**Examples**_
 
 `ROOTSYS/tutorials/foam/foam_demo.C`: Shows the usage of FOAM in compiled mode, which is the preferred method.
 
-`ROOTSYS/tutorials/foam/foam_demopers.C`: Demonstrates the persistency of FOAM classes. 
+`ROOTSYS/tutorials/foam/foam_demopers.C`: Demonstrates the persistency of FOAM classes.
 
 ## FFTW
 
 For computing Fast Fourier Transforms, ROOT uses the FFTW library (see  →  http://www.fftw.org). To use it, the fftw3 module must be enabled.
 
-{% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms. 
+{% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms.
 
 With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6134bf0a5ea525c7f670f59f82a0){:target="_blank"} you can change the default library.
 
@@ -2036,7 +2036,7 @@ With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6
 > {% include tutorials name="fft" url="fft" %}
 >
 
-## MLP 
+## MLP
 The multilayer perceptron (MLP) is a library with the neural network class {% include ref class="TMultiLayerPerceptron" %} from the `MLPfit` package.
 
 _**Example**_
