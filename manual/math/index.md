@@ -29,13 +29,15 @@ The ROOT mathematical libraries consist of the following components:
 
 - [MLP](#mlp)
 
+-[Quadp](#quadp)
+
 ## MathCore library
 
 The [MathCore](https://root.cern/doc/master/group__MathCore.html){:target="_blank"} library provides a collection of functions, C++ classes and ROOT classes for HEP numerical computing. <br>
-The `MathCore` is a self-consistent minimal set of tools required for the basic numerical computing. More advanced mathematical functionalities is provided by the [MathMore](#mathmore-library) library.
+The `MathCore` is a self-consistent minimal set of tools needed for the basic numerical computing. More advanced mathematical functionalities are provided by the [MathMore](#mathmore-library) library.
 The following is included in the `MathCore` library:
 
-- [Special functions](https://root.cern/doc/master/group__SpecFunc.html){:target="_blank"}: Functions like the gamma, beta and error function that are used in HEP.
+- [Special functions](https://root.cern/doc/master/group__SpecFunc.html){:target="_blank"}: Functions such as gamma, beta and error function used in HEP.
 
 - [Statistical functions](https://root.cern/doc/master/group__StatFunc.html){:target="_blank"}: Functions used in statistics, such as the probability density functions and the cumulative distributions functions for continuous and discrete distributions.
 
@@ -57,7 +59,7 @@ In addition, the [MathCore](https://root.cern/doc/master/group__MathCore.html){:
 
 - ROOT class for complex numbers, {% include ref class="TComplex" %}.
 
-- other ROOT classes like:
+- other ROOT classes such as:
    - [TKDTree](https://root.cern/doc/master/classTKDTree.html){:target="_blank"}: ROOT class implementing a kd-tree.
    - [ROOT::Math::GoFTest](https://root.cern/doc/master/classROOT_1_1Math_1_1GoFTest.html){:target="_blank"}: ROOT class for testing the for goodness of fit tests.
 
@@ -66,25 +68,25 @@ In addition, the [MathCore](https://root.cern/doc/master/group__MathCore.html){:
 
 The [TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} namespace provides a collection of free functions:
 
-- numerical constants (like &#x03C0;, e, h, etc.)
+- numerical constants (such as &#x03C0;, e, h, etc.)
 - [trigonometric and elementary mathematical functions](#elementary-functions)
 - functions to work with arrays and collections (e.g., functions to find the minimum and maximum of arrays)
 - [statistic functions to work on array of data (e.g., mean and RMS of arrays)](#statistic-functions-operating-on-arrays)
 - algorithms for binary search/hashing sorting
-- [special mathematical functions like `Bessel`, `Erf`, `Gamma`, etc.](#special-and-statistical-function)
-- statistical functions, like common probability and cumulative (quantile) distributions
+- [special mathematical functions such as `Bessel`, `Erf`, `Gamma`, etc.](#special-and-statistical-function)
+- statistical functions, such as common probability and cumulative (quantile) distributions
 - geometrical functions
 
 
 <p><a name="elementary-functions"></a></p>
 **Elementary functions**
 
-Some of elementary mathematical functions refer to basic mathematical functions like the square root, the power to a number of the calculus
+Some of elementary mathematical functions refer to basic mathematical functions such as the square root, the power to a number of the calculus
 of a logarithm, while others are used for number treatment, like rounding.
 
-Although there are some functions that are not in the standard C math library (like `Factorial`), most of the functionality
+Although there are some functions that are not in the standard C math library (such as `Factorial`), most of the functionality
 offered here is just a wrapper of the first ones. Nevertheless, some of them also offer some security checks or a
-better precision, like the trigonometrical functions `ASin(x)`, `ACos(x)` or `ATan(x)`.
+better precision, such as the trigonometrical functions `ASin(x)`, `ACos(x)` or `ATan(x)`.
 
 _**Examples**_
 
@@ -140,8 +142,8 @@ _**Example**_
 <p><a name="special-and-statistical-function"></a></p>
 **Special and statistical functions**
 
-[TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides special functions like `Bessel`, `error functions`, `Gamma` or similar plus statistical mathematical
-functions, including probability density functions, cumulative distribution and their inverse.
+[TMath](https://root.cern/doc/master/namespaceTMath.html){:target="_blank"} provides special functions such as `Bessel`, `error functions`, `Gamma` or similar statistical mathematical
+functions, including probability density functions, cumulative distribution and its inverse.
 
 The majority of the special functions and the statistical distributions are provided also as free functions in the [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} namespace.
 
@@ -178,7 +180,7 @@ caption="ROOT::Math function interface structure."
 This interface is used for numerical algorithms operating only on one-dimensional functions. It cannot applied to multi-dimensional functions.
 
 [ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"}<br>
-This interface provides a method to evaluate the function given a value (simple double) by implementing `double operator()` (`const double`). The defined user class  only needs to reimplement the pure abstract method double `DoEval(double x)` that will do the work of evaluating the function at point x.
+This interface provides a method to evaluate the function given a value (simple double) by implementing `double operator()` (`const double`). The defined user class only needs to reimplement the purely abstract double `DoEval(double x)` method, which does the work of evaluating the function at point x.
 
 _**Example**_
 
@@ -201,9 +203,8 @@ Example for the implementation of a class that represents a mathematical functio
 {% endhighlight %}
 
 [ROOT::Math::IGradientFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IGradientFunctionOneDim.html){:target="_blank"}<br>
-This interface is needed by some numerical algorithms to calculate the derivatives of the function. It introduces the method double `Derivative(double x)` that will return
-the derivative of the function at the point x. The class inherit by the user will have to implement the abstract
-method `double DoDerivative(double x)`, leaving the rest of the class untouched.
+This interface is needed by some numerical algorithms to calculate the derivatives of the function. It introduces the method double `Derivative(double x)`, which returns
+the derivative of the function at point x. The class from which the user inherits must implement the abstract method `double DoDerivative(double x)`, leaving the rest of the class untouched.
 
 _**Example**_
 
@@ -237,7 +238,7 @@ This interface is used for numerical algorithms operating on multi-dimensional f
 
 [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"}<br>
 This interface provides the `double operator()` (`const double*`) that takes an array of doubles with all the values for the different dimensions. In this case, the user has to provide
-the functionality for two different functions: `double DoEval(const double*)` and unsigned `int NDim()`. The first ones evaluates the function given the array that represents the multiple variables. The second returns the number of dimensions of the function.
+the functionality for two different functions: `double DoEval(const double*)` and the unsigned `int NDim()`. The first evaluates the function given the array representing the multiple variables. The second returns the number of dimensions of the function.
 
 _**Example**_
 
@@ -450,7 +451,7 @@ Use [ROOT::Math::Functor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1Fu
 [ROOT::Math::Functor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1Functor1D.html){:target="_blank"} can wrap the following types:
 - A free C function of type `double ()(double )`.
 - Any C++ callable object implementation `double operator()( double)`.
-- A class member function with the correct signature like `double Foo::Eval(double )`. In this case one pass the object pointer and a pointer to the member function (`&Foo::Eval`).
+- A class member function with the correct signature like `double Foo::Eval(double )`. In this case you pass the object pointer and a pointer to the member function (`&Foo::Eval`).
 
 _**Example**_
 
@@ -493,8 +494,8 @@ Use [ROOT::Math::GradFunctor1D](https://root.cern/doc/master/classROOT_1_1Math_1
 
 It can be constructed in three different ways:
 - Any object implementing both double `operator()( double)` for the function evaluation and `double Derivative(double)` for the function derivative.
-- Any object implementing any member function like `Foo::XXX(double )` for the function evaluation and any other member function like `Foo::YYY(double)` for the derivative.
-- Any two function objects implementing `double operator()( double)`. One object provides the function evaluation, the other the derivative. One or both function object can be a free C function of type `double ()(double)`.
+- Any object implementing any member function such as `Foo::XXX(double )` for the function evaluation and any other member function such as `Foo::YYY(double)` for the derivative.
+- Any two function objects implementing `double operator()( double)`. One object provides the function evaluation, the other the derivative. One or both function objects can be a free C function of type `double ()(double)`.
 
 <p><a name="wrapping-multi-dimensional-functions"></a></p>
 **Wrapping multi-dimensional functions**
@@ -549,10 +550,10 @@ _**Example**_
 
 Use [ROOT::Math::GradFunctor](https://root.cern/doc/master/classROOT_1_1Math_1_1GradFunctor.html){:target="_blank"} to wrap C++ callable objects to make gradient functions.
 
-It can be constructed in three different way:
+It can be constructed in three different ways:
 - From an object implementing both `double operator()( const double*)` for the function evaluation and `double Derivative(const double *, int icoord)` for the partial derivatives.
-- From an object implementing any member function like `Foo::XXX(const double *)` for the function evaluation and any member function like `Foo::XXX(const double *, int icoord)` for the partial derivatives.
-- From an function object implementing `double operator()( const double *)` for the function evaluation and another function object implementing `double operator() (const double *, int icoord)` for the partial derivatives.
+- From an object implementing any member function such as `Foo::XXX(const double *)` for the function evaluation and any member function such as `Foo::XXX(const double *, int icoord)` for the partial derivatives.
+- From a function object implementing `double operator()( const double *)` for the function evaluation and another function object implementing `double operator() (const double *, int icoord)` for the partial derivatives.
 
 The function dimension is required when constructing the functor.
 
@@ -562,7 +563,7 @@ The function dimension is required when constructing the functor.
 Often the {% include ref class="TF1" %} class is used.<br>
 Use the [ROOT::Math::WrappedTF1](https://root.cern/doc/master/classROOT_1_1Math_1_1WrappedTF1.html) class, if the interface to be wrapped is one-dimensional.
 
-The default constructor takes a {% include ref class="TF1" %} reference as argument, that will be wrapped with the interfaces of a [ROOT::Math::IParametricGradFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IParametricGradFunctionOneDim.html){:target="_blank"}.
+The default constructor takes a {% include ref class="TF1" %} reference as argument, wrapped with the interfaces of the [ROOT::Math::IParametricGradFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IParametricGradFunctionOneDim.html){:target="_blank"} class.
 
 _**Example**_
 
@@ -581,7 +582,7 @@ _**Example**_
 
 Use the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b) class, if the interface to be wrapped is multi-dimensional.
 
-Following the usual procedure, setting the {% include ref class="TF1" %} though the constructor, will wrap it into a [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"}.
+Following the usual procedure, setting the {% include ref class="TF1" %} though the constructor, wraps it into a [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"}.
 
 _**Example**_
 
@@ -622,9 +623,9 @@ You can work with the random number generators as follows:
 
 - Use the [SetSeed()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#ab9efcc04f4be1e7e6e49c5281abdee5b){:target="_blank"} method.
 
-When no value is given, the generator default seed is used. In this case an identical sequence will be generated every time the application is run.<br>
+When no value is given, the default seed of the generator is used. In this case, an identical sequence is generated each time the application is run.<br>
 When the 0 value is used as seed, then a unique seed is generated using a TUUID, for {% include ref class="TRandom" %}, {% include ref class="TRandom1" %} and {% include ref class="TRandom3" %}.<br>
-For {% include ref class="TRandom" %} the seed is generated using only the machine clock, which has a resolution of about 1 s. Therefore, identical sequences will be generated if the elapsed time is less than a second.
+For {% include ref class="TRandom" %} the seed is generated using only the machine clock, which has a resolution of about 1 s. Therefore, identical sequences are generated when the elapsed time is less than one second.
 
 <p><a name="using-the-random-number-generators"></a></p>
 **Using the random number generators**
@@ -646,7 +647,7 @@ _**Example**_
 // Construct with a user-defined seed.
    TRandom3 rdm(111);
 
-// Use 0: a unique seed will be automatically generated using TUUID.
+// Use 0: a unique seed is automatically generated with TUUID.
    TRandom1 r1(0);
    TRandom2 r2(0);
    TRandom3 r3(0);
@@ -737,7 +738,7 @@ The [MathCore](https://root.cern/doc/master/group__MathCore.html){:target="_blan
 
 ROOT provides algorithms for integration of one-dimensional functions, with several adaptive and non-adaptive methods and for integration of multi-dimensional function using an adaptive method or MonteCarlo Integration (GSLMCIntegrator).
 
-[ROOT::Math::VirtualIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1VirtualIntegrator.html){:target="_blank"} defines the most basic functionality, this is, the common methods for the numerical integrator classes of one and multi dimensions.
+[ROOT::Math::VirtualIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1VirtualIntegrator.html){:target="_blank"} defines the most basic functionality, this is, the common methods for the numerical integrator classes of one- and multi-dimensions.
 
 [ROOT::Math::VirtualIntegratorOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1VirtualIntegratorOneDim.html){:target="_blank"} is an abstract interface class for 1Dnumerical integration. This method must be implemented in concrete classes, so you must create the [ROOT::Math::IntegratorOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorOneDim.html){:target="_blank"} class for integrating one-dimensional
 functions.
@@ -746,7 +747,7 @@ functions.
 
 **Using ROOT::Math::IntegratorOneDim**
 
-The following code example shows how you can use [ROOT::Math::IntegratorOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorOneDim.html){:target="_blank"}.
+The following code example shows how to use [ROOT::Math::IntegratorOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorOneDim.html){:target="_blank"}.
 
 _**Example**_
 
@@ -807,11 +808,11 @@ int testIntegration1D() {
 
 **Using ROOT::Math::IntegratorMultiDim**
 
-The following code example shows how you can use [ROOT::Math::IntegratorMultiDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorMultiDim.html){:target="_blank"}.
+The following code example shows how to use [ROOT::Math::IntegratorMultiDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IntegratorMultiDim.html){:target="_blank"}.
 
 _**Example**_
 
-In this example different instances of the class are using some of the available algorithms in ROOT.
+In this example, different instances of the class use some of the algorithms available in ROOT.
 
 {% highlight C++ %}
 #include "Math/IntegratorMultiDim.h"
@@ -991,7 +992,7 @@ Contains mathematical functions used in statistics such as probability density f
 
 ## Linear algebra packages
 
-The linear algebra packages provide a complete environment in ROOT to perform calculations like equation solving and eigenvalue decompositions.
+The linear algebra packages provide a complete environment in ROOT to perform calculations such as equation solving and eigenvalue decompositions.
 
 There are the following linear algebra packages available:
 
@@ -1087,7 +1088,7 @@ Use one of the following methods to access the information about the relevant ma
 - `Int_t` [*GetColIndexArray()](https://root.cern/doc/master/classTMatrixTSparse.html#a869e7f838f3f1abd6d3dac9323c3a72c){:target="_blank"}: For sparse matrices, access to the column index of `fNelems` entries.
 
 `*GetRowIndexArray()` and `*GetColIndexArray()` are specific to the sparse matrix, which is implemented according to the Harwell-
-Boeing format. Here, besides the usual shape/size descriptors of the matrix like `fNrows`, `fRowLwb`, `fNcols` and `fColLwb`,
+Boeing format. Here, besides the usual shape/size descriptors of the matrix such as `fNrows`, `fRowLwb`, `fNcols` and `fColLwb`,
 also a row index `fRowIndex` and a column index `fColIndex` are stored:
 
 - `fRowIndex[0,..,fNrows]`: Stores for each row the index range of the elements in the data and column array.
@@ -1103,7 +1104,7 @@ Use one of the following methods to set a matrix property:
 Sets the tolerance number.
 
 - `ResizeTo (Int_t nrows,Int_t ncols, Int_t nr_nonzeros=-1)`<br>
-Changes the matrix shape to `nrows x ncols`. Index will start at 0.
+Changes the matrix shape to `nrows x ncols`. Index starts at 0.
 
 - `ResizeTo(Int_t row_lwb,Int_t row_upb, Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros=-1)`<br>
 Changes the matrix shape to `row_lwb:row_upb x col_lwb:col_upb`.
@@ -1150,7 +1151,7 @@ Copies array data. If `option="F"`, the array fills the matrix column-wise else 
 Only available for sparse matrices. The three arrays should each contain `nr` entries with row index, column index and data entry. Only the entries with non-zero data value are inserted.
 
 - `operator()`, `operator[]`<br>
-These operators provide the easiest way to fill a matrix but are in particular for a sparse matrix expensive. If no entry for slot (`i`,`j`) is found in the sparse index table it will be entered, which involves some memory management. Therefore, before invoking this method in a loop set the index table first through a call to the `SetSparseIndex()` method.
+These operators provide the easiest way to fill a matrix but are in particular for a sparse matrix expensive. If no entry for slot (`i`,`j`) is found in the sparse index table, it is entered, which involves some memory management. Therefore, before invoking this method in a loop set the index table first through a call to the `SetSparseIndex()` method.
 
 - `SetSub(Int_t row_lwb,Int_t col_lwb,const TMatrixDBase &source)`<br>
 The matrix to be inserted at position (`row_lwb`,`col_lwb`) can be both, dense or sparse.
@@ -1229,7 +1230,7 @@ Now a unit matrix in sparse format is created.
 
 Both methods are available for general and symmetric matrices.
 
-For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &det=0)` function is available. Here the Cramer algorithm will be applied, which is faster but less accurate.
+For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &det=0)` function is available. Here the Cramer algorithm is used, which is faster but less accurate.
 
 **Using decomposition classes for inverting**
 
@@ -1645,7 +1646,7 @@ The following table lists the methods of the {% include ref class="TMatrixDEigen
  _**Example**_
 
 The usage of the eigenvalue class is shown in this example where it is checked that the square of the singular values of
-a matrix `c` are identical to the eigenvalues of `c<sup>T</sup>.c`:
+a matrix `c` are identical to the eigenvalues of c<sup>T</sup>.c:
 
 {% highlight C++ %}
    const TMatrixD m = THilbertMatrixD(10,10);
@@ -1661,9 +1662,9 @@ a matrix `c` are identical to the eigenvalues of `c<sup>T</sup>.c`:
 
 ### SMatrix
 
-[SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} is a C++ package for high performance vector and matrix computations. It can be used only in problems when the size of the matrices is known at compile time, like in the tracking reconstruction of HEP experiments. It is based on a C++ technique, called expression templates, to achieve an high level optimization. The C++ templates can be used to implement vector and matrix expressions such that these expressions can be transformed at compile time to code which is equivalent to hand optimized code in a low-level language like FORTRAN or C.
+[SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} is a C++ package for high performance vector and matrix computations. It can be used only in problems when the size of the matrices is known at compile time, like in the tracking reconstruction of HEP experiments. It is based on a C++ technique, called expression templates, to achieve an high level optimization. The C++ templates can be used to implement vector and matrix expressions in such a way that these expressions can be transformed at compile time to code equivalent to hand-optimized code in a low-level language such as FORTRAN or C.
 
-The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} has been developed initially by T. Glebe of the Max-Planck-Institut, Heidelberg, as part of the HeraB analysis framework. A subset of the original package has been now incorporated in the ROOT distribution, with the aim to provide to the LHC experiments a stand-alone and high performance matrix package for reconstruction. The API of the current package differs from the original one, in order to be compliant to the ROOT coding conventions.
+The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} has been developed initially by T. Glebe of the Max-Planck-Institut, Heidelberg, as part of the HeraB analysis framework. A subset of the original package has been now incorporated in the ROOT distribution, with the aim to provide to the LHC experiments a stand-alone and high performance matrix package for reconstruction. The API of the current package differs from the original one to conform to ROOT coding conventions.
 
 [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} contains the following generic classes for describing matrices and vectors of arbitrary dimensions and of arbitrary type:
 - [SVector](#svector)
@@ -1708,12 +1709,12 @@ The template class [ROOT::Math::SMatrix](https://root.cern/doc/master/classROOT_
 Use one of the following constructors to create a matrix:
 - Default constructor for a zero matrix (all elements equal to zero).
 - Constructor of an identity matrix.
-- Copy constructor (and assignment) for a matrix with the same representation, or from a different one when possible, for example from a symmetric to a general matrix.
+- Copy constructor (and assignment) for a matrix with the same representation, or from a different one when possible (for example from a symmetric to a general matrix).
 - Constructor (and assignment) from a matrix expression, like `D=A*B+C`. Due to the expression template technique, no temporary objects are created in this operation. In the case of an operation like `A=A*B+C`, a temporary object is needed and it is created automatically to store the intermediary result in order to preserve the validity of this operation.
 - Constructor from a generic STL-like iterator copying the data referred by the iterator, following its order. It is both possible, to specify the begin and end of the iterator or the begin and the size. In case of a symmetric matrix, it is required only the triangular block and the user can specify whether giving a block representing the lower (default case) or the upper diagonal part.
 
  _**Example**_
- Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix the representation has the default value [ROOT::Math::MatRepStd](https://root.cern/doc/master/classROOT_1_1Math_1_1MatRepStd.html){:target="_blank"}. For a general square matrix, the number of columns can be omitted.
+ Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix, the representation has the default value [ROOT::Math::MatRepStd](https://root.cern/doc/master/classROOT_1_1Math_1_1MatRepStd.html){:target="_blank"}. For a general square matrix, the number of columns can be omitted.
 
  {% highlight C++ %}
 // Typedef definitions used in the following declarations:
@@ -1731,7 +1732,7 @@ Use one of the following constructors to create a matrix:
    double a[9] = {1,2,3,4,5,6,7,8,9}; // input matrix data
 
 // Create a matrix using the a[] data.
-// This will produce the 3x3 matrix:
+// This results in the 3x3 matrix:
     SMatrix33 m(a,9);
   {% endhighlight %}
 
@@ -1744,10 +1745,10 @@ A symmetric matrix is filled from a `std::vector`.
    std::vector<double> v(6);
    for (int i = 0; i<6; ++i) v[i] = double(i+1);
 
-// This will produce the symmetric matrix:
+// This creates the symmetric matrix:
    SMatrixSym3 s(v.begin(),v.end())
 
-// Create a general matrix from a symmetric matrix (the opposite will not compile)
+// Create a general matrix from a symmetric matrix (the opposite does not compile)
    SMatrix33 m2 = s;
 {% endhighlight %}
 
@@ -1862,7 +1863,7 @@ ROOT provides statistics classes for:
 
 ### Specialized classes for fitting
 
-[TFractionFitter](https://root.cern/doc/master/classTFractionFitter.html){:target="_blank"}: Fits Monte Carlo fractions to data histogram (à la HMCMLL, R. Barlow and C. Beeston, Comp. Phys. Comm. 77 (1993) 219-228). It takes into account both data and Monte Carlo statistical uncertainties through a likelihood fit using Poisson statistics. However, the template (Monte Carlo) predictions are also varied within statistics, leading to additional contributions to the overall likelihood. This leads to many more fit parameters (one per bin per template), but the minimization with respect to these additional parameters is done analytically rather than introducing them as formal fit parameters. Some special care needs to be taken in the case of bins with zero content.
+[TFractionFitter](https://root.cern/doc/master/classTFractionFitter.html){:target="_blank"}: Fits Monte Carlo fractions to data histogram (à la HMCMLL, R. Barlow and C. Beeston, Comp. Phys. Comm. 77 (1993) 219-228). It accounts for the both data and the statistical Monte Carlo uncertainties through a likelihood fit using Poisson statistics. However, the template (Monte Carlo) predictions are also varied within statistics, leading to additional contributions to the overall likelihood. This leads to many more fitting parameters (one per bin per template), but minimization with respect to these additional parameters is performed analytically rather than introducing them as formal fitting parameters. Some special care needs to be taken in the case of bins with zero content.
 
 [TMultiDimFit](https://root.cern/doc/master/classTMultiDimFit.html){:target="_blank"}: Implements a multi-dimensional function parametrization for multi-dimensional data by fitting them to multi-dimensional data using polynomial or Chebyshev or Legendre polynomial.
 
@@ -1870,7 +1871,7 @@ ROOT provides statistics classes for:
 
 `RooFit`: Toolkit for fitting and data analysis modeling,  see → [RooFit]({{ '/manual/roofit' | relative_url }}).
 
-[TSPlot](https://root.cern/doc/master/classTSPlot.html){:target="_blank"}: Allows to separate the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
+[TSPlot](https://root.cern/doc/master/classTSPlot.html){:target="_blank"}: Allows separation of the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
 
 ### Multi-variate analysis classes
 
@@ -1885,7 +1886,7 @@ ROOT provides statistics classes for:
 
 ## UNU.RAN
 
-[UNU.RAN](https://statmath.wu-wien.ac.at/unuran){:target="_blank"} (**U**niversal **N**on **U**niform **RA**ndom **N**umber generator for generating non-uniform pseudo-random numbers) contains universal (also called automatic or black-box) algorithms that can generate random numbers from large classes of continuous (in one or multi-dimensions), discrete distributions, empirical distributions (like histograms) and also from practically all standard distributions.
+[UNU.RAN](https://statmath.wu-wien.ac.at/unuran){:target="_blank"} (**U**niversal **N**on **U**niform **RA**ndom **N**umber generator for generating non-uniform pseudo-random numbers) contains universal (also called automatic or black-box) algorithms that can generate random numbers from large classes of continuous (in one or multi-dimensions), discrete distributions, empirical distributions (auch as histograms), and also from practically all standard distributions.
 
 UNU.RAN is an ANSI C library licensed under GPL.
 
@@ -1925,7 +1926,7 @@ TUnuran unr;
 <p><a name="using-tunurancontdist"></a></p>
 **Using TUnuranContDist for a one-dimensional distribution**
 
-- Use {% include ref class="TUnuranContDist" %} for creating a continuous 1-D distribution object (for example from a {% include ref class="TF1" %} object providing the PDF (probability density function)).<br>
+Use {% include ref class="TUnuranContDist" %} for creating a continuous 1-D distribution object (for example from a {% include ref class="TF1" %} object providing the PDF (probability density function)).<br>
 You can provide additional information via [TUnuranContDist::SetDomain(min,max)](https://root.cern/doc/master/classTUnuranContDist.html#aa82c3fc018dadafc55ef3a45239ce191){:target="_blank"} like the `domain()` for generating numbers in a restricted region.
 
 _**Example**_
@@ -1947,7 +1948,7 @@ _**Example**_
 <p><a name="using-tunuranmulticontdist"></a></p>
 **Using TUnuranMultiContDist for a multi-dimensional distribution**
 
-- Use {% include ref class="TUnuranMultiContDist" %} to create a multi-dimensional distribution that can be created from a multi-dimensional PDF (probability density function).
+Use {% include ref class="TUnuranMultiContDist" %} to create a multi-dimensional distribution that can be created from a multi-dimensional PDF (probability density function).
 
 _**Example**_
 
@@ -1968,7 +1969,7 @@ _**Example**_
 <p><a name="using-tunurandiscrdist"></a></p>
 **Using TUnuranDiscrDist for a discrete one-dimensional distribution**
 
-- Use {% include ref class="TUnuranDiscrDist" %} to create a discrete one-dimensional distribution that can be initialized from a {% include ref class="TF1" %} object or from a vector of probabilities.
+Use {% include ref class="TUnuranDiscrDist" %} to create a discrete one-dimensional distribution that can be initialized from a {% include ref class="TF1" %} object or from a vector of probabilities.
 
 _**Example**_
 
@@ -2041,7 +2042,13 @@ The multilayer perceptron (MLP) is a library with the neural network class {% in
 
 _**Example**_
 
-An example of the use of {% include ref class="TMultiLayerPerceptron" %} can be found in the `mlpHiggs.C` macro in the `$ROOTSYS/tutorials/legacy/mlp` directory.
+An example of using the {% include ref class="TMultiLayerPerceptron" %} can be found in the `mlpHiggs.C` macro in the `$ROOTSYS/tutorials/legacy/mlp` directory.
 
+## Quadp
 
+Quadp is  an optimization library with linear and quadratic programming methods. It is based on the [matrix package](#matrix-package).
+
+_**Example**_
+
+An example of using Quadp can be found in the `portfolio.C` macro in the `$ROOTSYS/tutorials/quadp/` directory.
 
