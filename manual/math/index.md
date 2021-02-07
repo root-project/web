@@ -2045,11 +2045,10 @@ _**Example**_
 An example of using the {% include ref class="TMultiLayerPerceptron" %} can be found in the `mlpHiggs.C` macro in the `$ROOTSYS/tutorials/legacy/mlp` directory.
 
 ## Quadp
+<<<<<<< HEAD
 
 Quadp is  an optimization library with linear and quadratic programming methods. It is based on the [matrix package](#matrix-package).
 
 _**Example**_
 
 An example of using Quadp can be found in the `portfolio.C` macro in the `$ROOTSYS/tutorials/quadp/` directory.
-
-
