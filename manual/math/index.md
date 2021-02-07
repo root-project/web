@@ -29,7 +29,7 @@ The ROOT mathematical libraries consist of the following components:
 
 - [MLP](#mlp)
 
--[Quadp](#quadp)
+- [Quadp](#quadp)
 
 ## MathCore library
 
