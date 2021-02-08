@@ -33,29 +33,30 @@ The package includes:
 
 ## Using TMVA
 
-The ROOT tutorials for TMVA, available in `$ROOTSYS/tutorials/tmva`, provide example jobs for the training phase and the application of the training results in a classification or regression analysis using the TMVA Reader. 
+The ROOT tutorials for TMVA, available in `$ROOTSYS/tutorials/tmva`, provide example jobs for the training phase and the application of the training results in a classification or regression analysis using the TMVA Reader.
+
 
 ### Training examples
 
-- `TMVAClassification.C`: Provides examples for the training and testing of TMVA classifiers.
+- {% include tutorial name="TMVAClassification" %} Provides examples for the training and testing of TMVA classifiers.
 
-- `TMVAMulticlass.C`: Provides an example for the training and testing of a TMVA multi-class classification.
+- {% include tutorial name="TMVAMulticlass" %} Provides an example for the training and testing of a TMVA multi-class classification.
 
-- `TMVARegression.C`: Provides examples for the training and testing of TMVA classifiers.
+- {% include tutorial name="TMVARegression" %} Provides examples for the training and testing of TMVA classifiers.
 
 ### Application examples
 
-- `TMVAClassificationApplication.C`:  Provides an example on how to use the trained classifiers within an analysis module.
+- {% include tutorial name="TMVAClassificationApplication" %} Provides an example on how to use the trained classifiers within an analysis module.
 
-- `TMVAMulticlassApplication.C`: Provides an example on how to use the trained multi-class classifiers within an analysis module.
+- {% include tutorial name="TMVAMulticlassApplication" %} Provides an example on how to use the trained multi-class classifiers within an analysis module.
 
-- `TMVARegressionApplication.C`: Provides an example on how to use the trained regression MVAs within an analysis module.
+- {% include tutorial name="TMVARegressionApplication" %} Provides an example on how to use the trained regression MVAs within an analysis module.
 
 _**Example**_
 
-`TMVAClassification.C` uses an academic toy data set for training and testing. It consists of four linearly correlated, Gaussian distributed discriminating input variables, with different sample means for signal and background.
+{% include tutorial name="TMVAClassification" %} uses an academic toy data set for training and testing. It consists of four linearly correlated, Gaussian distributed discriminating input variables, with different sample means for signal and background.
 
-The training job provides a formatted output logging that contains the following information: 
+The training job provides a formatted output logging that contains the following information:
 - Linear correlation matrices for the input variables.
 - Correlation ratios and mutual information between input variables and regression targets.
 - Variable ranking.

@@ -402,7 +402,7 @@ Both classes directly inherit from {% include ref class="TPolyLine" %}.
 
 _**Example**_
 
-Refer to the `$ROOTSYS/tutorials/graphics/feynman.C` tutorial for creating a Feynman diagram.
+Refer to the {% include tutorial name="feynman" %} tutorial for creating a Feynman diagram.
 
 {% include figure_jsroot
    file="graphics.root" object="feynman"

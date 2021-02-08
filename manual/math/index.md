@@ -2018,11 +2018,11 @@ Certain features of full version of FOAM are omitted. mFOAM is intended as an ea
 
 _**Examples**_
 
-`ROOTSYS/tutorials/foam/foam_kanwa.C`: A simple example on running FOAM in interactive mode.
+{% include tutorial name="foam_kanwa" %} is a simple example on running FOAM in interactive mode.
 
-`ROOTSYS/tutorials/foam/foam_demo.C`: Shows the usage of FOAM in compiled mode, which is the preferred method.
+{% include tutorial name="foam_demo" %} shows the usage of FOAM in compiled mode, which is the preferred method.
 
-`ROOTSYS/tutorials/foam/foam_demopers.C`: Demonstrates the persistency of FOAM classes.
+{% include tutorial name="foam_demopers" %} demonstrates the persistency of FOAM classes.
 
 ## FFTW
 
@@ -2042,7 +2042,7 @@ The multilayer perceptron (MLP) is a library with the neural network class {% in
 
 _**Example**_
 
-An example of using the {% include ref class="TMultiLayerPerceptron" %} can be found in the `mlpHiggs.C` macro in the `$ROOTSYS/tutorials/legacy/mlp` directory.
+An example of using the {% include ref class="TMultiLayerPerceptron" %} can be found in the {% include tutorial name="mlpHiggs" %} macro in the `$ROOTSYS/tutorials/legacy/mlp` directory.
 
 ## Quadp
 
@@ -2050,4 +2050,4 @@ Quadp is  an optimization library with linear and quadratic programming methods.
 
 _**Example**_
 
-An example of using Quadp can be found in the `portfolio.C` macro in the `$ROOTSYS/tutorials/quadp/` directory.
+An example of using Quadp can be found in the {% include tutorial name="portfolio" %} macro in the `$ROOTSYS/tutorials/quadp/` directory.

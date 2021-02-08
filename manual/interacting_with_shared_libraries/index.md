@@ -91,7 +91,7 @@ as being the value for a successful execution.
 
 _**Example**_
 
-The example `$ROOTSYS/tutorials/tree/cernstaff.C` calls a ROOT macro to build a ROOT file, if it does not exist.
+The example {% include tutorial name="cernstaff" %} calls a ROOT macro to build a ROOT file, if it does not exist.
 
 {% highlight C++ %}
    void cernstaff() {

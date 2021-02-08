@@ -382,7 +382,7 @@ To check the source code of a ROOT macro, open it in your favorite text editor.
 
 _**Example**_
 
-`graph.C` tutorial from `$ROOTSYS/tutorials/graphs`
+{% include tutorial name="graph" %} tutorial from `$ROOTSYS/tutorials/graphs`
 
 {% highlight C++ %}
    void graph() {
