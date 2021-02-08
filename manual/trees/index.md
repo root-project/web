@@ -72,7 +72,7 @@ You can fill the tree by placing the data into the folder structure and then cal
 
 ### Example: Building a tree from an ASCII file
 
-The tutorial `$ROOTSYS/tutorials/tree/cernbuild.C` provides an example how to build a {% include ref class="TTree" %} from an ASCII file.
+The tutorial {% include tutorial name="cernbuild" %} provides an example how to build a {% include ref class="TTree" %} from an ASCII file.
 The input file is `cernstaff.dat` that contains statistics about the staff at CERN.
 
 The `cernbuild.C` ROOT macro creates a root file (`cernstaff.root`) and prints the tree `T` and its branches with [TTree::Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094){:target="_blank"}.

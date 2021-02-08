@@ -1,0 +1,2 @@
+{% assign n = {{include.name}}  %}
+<a href="https://root.cern/doc/master/{{ n | replace: "_", "__" }}_8C.html" target="_blank">{{n}}.C</a>

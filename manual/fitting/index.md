@@ -361,12 +361,12 @@ You can also specify a range in the call to `TH1::Fit()`.
    root[] hist->Fit("f1","","",-2,2)
 {% endhighlight %}
 
-See also the ROOT macros `$ROOTSYS/tutorials/fit/myfit.C` and `multifit.C` for more detailed examples.
+See also the ROOT macros {% include tutorial name="myfit" %} and {% include tutorial name="multifit" %} for more detailed examples.
 
 <p><a name="fitting-multiple-sub-ranges"></a></p>
 **Fitting multiple sub ranges**
 
-You can find a ROOT macro for fitting multiple sub ranges at `$ROOTSYS/tutorials/fit/multifit.C`. It shows how to use several Gaussian functions
+You can find a ROOT macro for fitting multiple sub ranges at {% include tutorial name="multifit" %}. It shows how to use several Gaussian functions
 with different parameters on separate sub ranges of the same histogram.
 
 _**Example**_
