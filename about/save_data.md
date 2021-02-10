@@ -74,8 +74,8 @@ an ordinary file.
 Finally, ROOT has been designed keeping in mind the requirements coming from the
 enormous amount of data produced by high-energy physics experiments. This means
 that ROOT allows to save and access terabytes of data in a highly optimized way.
-ecause the total computing time for a given task depends both on the CPU speed
-nd on the data access time (that includes accessing and caching information from
+Because the total computing time for a given task depends both on the CPU speed
+and on the data access time (that includes accessing and caching information from
 he main memory, and accessing and caching information from the disks), the quick
 data access allowed by ROOT effectively improves the performance of data analysis.
 
