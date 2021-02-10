@@ -1807,7 +1807,7 @@ You can apply one-dimensional minimization in the following ways:
 
 _**Example**_
 
-In this example a function is definded to minimize as a lambda function. The function to minimize must be given to the class implementing the algorithm as a [ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"} object.
+In this example a function is defined to minimize as a lambda function. The function to minimize must be given to the class implementing the algorithm as a [ROOT::Math::IBaseFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IBaseFunctionOneDim.html){:target="_blank"} object.
 
 {% highlight C++ %}
 ROOT::Math::Functor1D func( [](double x){ return 1 + -4*x + 1*x*x; } );
