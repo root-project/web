@@ -4,14 +4,13 @@ layout: archive
 author:
 ---
 
-{% include figure_image
-   img="/assets/images/CMSLHCb_EDfig2_1_07c6b.png"
-%}
-
-
 This figure has been extracted from [this article](https://cds.cern.ch/record/1970675). We
 will not comment the content of the write-up, but rather give some highlights of the
 technologies used to obtain this plot!
+
+{% include figure_image
+   img="/assets/images/CMSLHCb_EDfig2_1_07c6b.png"
+%}
 
   - A very rich statistical model had to be implemented for the final fit of the invariant
     mass of the B meson. [RooFit]({{ '/manual/roofit' | relative_url }}) provides all the
