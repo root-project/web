@@ -9,7 +9,7 @@ author:
 %}
 
 
-This figure has been extracted from [this article](http://cds.cern.ch/record/1970675). We
+This figure has been extracted from [this article](https://cds.cern.ch/record/1970675). We
 will not comment the content of the write-up, but rather give some highlights of the
 technologies used to obtain this plot!
 
