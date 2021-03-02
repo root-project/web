@@ -16,7 +16,7 @@ or <a href="https://indico.cern.ch/event/731951/timetable/">experiment specific 
    img="/assets/images/ROOT_2018_small_01850.jpg"
 %}
 
-Interested in a ROOT training? <a href="https://root.cern.ch/contact-us">Contact us!</a>
+Interested in a ROOT training? <a href="https://root-forum.cern.ch/c/general-chat/9">Contact us!</a>
 
 Image Copyright CERN <a href="https://cds.cern.ch/record/2629319?ln=en">click here for a
 full collection of Summet Student Programme pics.
