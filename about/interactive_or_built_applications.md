@@ -11,11 +11,14 @@ You can use the Cling C++ interpreter or Python for your interactive sessions an
 write macros, or compile your program to run at full speed. In both cases, you can also
 create a GUI.
 
-Start ROOT at the system prompt and the ROOT prompt is displayed:
-
+Start ROOT at the system prompt and the ROOT prompt is displayed and C++ code can be
+executed interactively:
 
 ```
-root[0]
+root [0] int i = 7
+(int) 7
+root [1] ++i
+(int) 8
 ```
 
 
