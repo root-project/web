@@ -8,8 +8,16 @@ toc_sticky: true
 ---
 
 You can use the Cling C++ interpreter or Python for your interactive sessions and to
-write macros, or compile your program to run at full speed.  In both cases, you can
-also create a GUI.
+write macros, or compile your program to run at full speed. In both cases, you can also
+create a GUI.
+
+Start ROOT at the system prompt and the ROOT prompt is displayed:
+
+
+```
+root[0]
+```
+
 
 ## Rapid Prototyping
 Every programmer knows that, though compiled applications run much faster, interpreted
