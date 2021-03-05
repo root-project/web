@@ -54,15 +54,17 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
   1. Get the 'green' light from all main developers
   1. Check that all the [Jenkins nightlies](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/){:target="_blank"} and [Jenkins release builds](https://lcgapp-services.cern.ch/root-jenkins/view/Releases/){:target="_blank"} builds are green
   1. Verify that no performance regressions exist in the [benchmark system](https://rootbnch-grafana-test.cern.ch/){:target="_blank"}
-  1. If this is not a development release nor a release candidate, update versions in JIRA
-      - Create the next patch ("6.22/02") or major ("6.24/00") version in the [project configuration](https://sft.its.cern.ch/jira/plugins/servlet/project-config/ROOT/versions){:target="_blank"}
-      - 'Release' the version you want to release, assigning open issues to the next patch or major release.
-  1. If this is not a development release nor a release candidate, update the release notes in `README/ReleaseNotes/vXXX/index.md`
-      - If this is a patch release, edit release notes patches section
-      - From the [list the versions in JIRA](https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released){:target="_blank"}, select the version and then 'release notes'
-      - TODO: show how to collect GitHub issues
-      - TODO: show how to create GitHub milestones and projects
-      - `git commit README/ReleaseNotes/vXXX/index.md`
+  1. If this is not a development release nor a release candidate, update the release notes in `README/ReleaseNotes/vXXX/index.md`. If this is a patch release, edit release notes patches section at the end of the document.
+      - Insert the list of fixed bugs and enhancements etc behind the general release announcement for that version. They come from both Jira and Github:
+      - Jira project management
+        * Create the next patch ("6.22/02") or major ("6.24/00") version in the [project configuration](https://sft.its.cern.ch/jira/plugins/servlet/project-config/ROOT/versions){:target="_blank"}
+        * 'Release' the version you want to release, assigning open issues to the next patch or major release.
+        * From the [list the versions in JIRA](https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released){:target="_blank"}, select the version and then 'release notes'
+      - GitHub project management
+        * TODO: show how to collect GitHub issues
+        * Go to this version's [GitHub project](https://github.com/root-project/root/projects/) (e.g. [Fixed in 6.22/08](https://github.com/root-project/root/projects/10) when releasing 6.22/08). On the right column header, click "<" until the column header reads "Menu" with a hamburger menu next to it. Below, to the right, you see "...". Click, select "Copy", and enter the name of the *next* production or patch release (don't forget to remove the leading "[COPY]"!)
+        * In "..." next to the currently to-be-released version's [GitHub project](https://github.com/root-project/root/projects/), hit "Close project". (No more bugs will be fixed in it: we are releasing it!)
+      - Commit your new release notes: `git commit README/ReleaseNotes/v622/index.md`
   1. Update version number
       - Edit `build/version_number`. For release candidates, leave the version number at the development release number corresponding to the `-rc1` candidate.
       - Run from the build directory `$ cmake . && make && make version`
