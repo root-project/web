@@ -27,7 +27,7 @@ And if you want to know more, just keep reading!
 
 ## Visual Studio Code
 
-VS Code is a free, [open source](https://github.com/Microsoft/vscode/), and very popular code editor by developed by Microsoft with TypeScript, a superset of JavaScript. It runs on any operating system, supports many languages, has built in support for Git, and much more. Moreover, its functionality can easily be extended thanks to the [Extension API](https://code.visualstudio.com/api). This is where the fun begins!
+VS Code is a free, [open source](https://github.com/Microsoft/vscode/), and very popular code editor developed by Microsoft with TypeScript, a superset of JavaScript. It runs on any operating system, supports many languages, has built-in support for Git, and much more. Moreover, its functionality can easily be extended thanks to the [Extension API](https://code.visualstudio.com/api). This is where the fun begins!
 
 In the case of the ROOT File Viewer extension, the [Custom Editor API](https://code.visualstudio.com/api/extension-guides/custom-editors) is leveraged to handle ROOT Files. The custom editor requires two parts: a view and a document model. The view of the file is implemented through the [Webview API](https://code.visualstudio.com/api/extension-guides/webview), and the document model is a custom `RootFileDocument` class which we will keep simple by implementing a `CustomReadonlyEditorProvider`, the `RootFileEditorProvider`. We could go deep into details here, but that is probably outside of the scope of this post.
 
