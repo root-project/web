@@ -40,11 +40,7 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | macOS 10.14 Xcode 10 | [root_v6.22.02.macosx64-10.14-clang100.tar.gz](https://root.cern/download/root_v6.22.02.macosx64-10.14-clang100.tar.gz) | 200M |
 | macOS 10.15 Xcode 11 | [root_v6.22.02.macosx64-10.15-clang110.pkg](https://root.cern/download/root_v6.22.02.macosx64-10.15-clang110.pkg) | 314M |
 | macOS 10.15 Xcode 11 | [root_v6.22.02.macosx64-10.15-clang110.tar.gz](https://root.cern/download/root_v6.22.02.macosx64-10.15-clang110.tar.gz) | 200M |
-| **preview** Windows Visual Studio 2019 (debug) | [root_v6.22.02.win32.vc16.debug.exe](https://root.cern/download/root_v6.22.02.win32.vc16.debug.exe) | 155M |
-| **preview** Windows Visual Studio 2019 (debug) | [root_v6.22.02.win32.vc16.debug.zip](https://root.cern/download/root_v6.22.02.win32.vc16.debug.zip) | 227M |
-| **REMOVED due to virus false positive:**|
-| **preview** Windows Visual Studio 2019 | `https://root.cern/download/root_v6.22.02.win32.vc16.exe` |  84M |
-| **preview** Windows Visual Studio 2019 | `root_v6.22.02.win32.vc16.zip` | 114M |
+
 
 ## Installations in CVMFS
 

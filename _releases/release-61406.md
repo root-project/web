@@ -41,11 +41,6 @@ The release notes for this release can be found [here](https://root.cern/doc/v61
 | OsX 10.13 clang100 | [root_v6.14.06.macosx64-10.13-clang100.tar.gz](https://root.cern/download/root_v6.14.06.macosx64-10.13-clang100.tar.gz) | 127M |
 | OsX 10.14 clang100 | [root_v6.14.06.macosx64-10.14-clang100.dmg](https://root.cern/download/root_v6.14.06.macosx64-10.14-clang100.dmg) | 128M |
 | OsX 10.14 clang100 | [root_v6.14.06.macosx64-10.14-clang100.tar.gz](https://root.cern/download/root_v6.14.06.macosx64-10.14-clang100.tar.gz) | 127M |
-| **preview** Windows Visual Studio 2017 (dbg) | [root_v6.14.06.win32.vc15.debug.exe](https://root.cern/download/root_v6.14.06.win32.vc15.debug.exe) | 182M |
-| **preview** Windows Visual Studio 2017 (dbg) | [root_v6.14.06.win32.vc15.debug.zip](https://root.cern/download/root_v6.14.06.win32.vc15.debug.zip) | 294M |
-| **preview** Windows Visual Studio 2017 | [root_v6.14.06.win32.vc15.exe](https://root.cern/download/root_v6.14.06.win32.vc15.exe) |  79M |
-| **preview** Windows Visual Studio 2017 | [root_v6.14.06.win32.vc15.zip](https://root.cern/download/root_v6.14.06.win32.vc15.zip) | 108M |
-
 
 
 ## Installations in CVMFS
