@@ -4,7 +4,7 @@ layout: archive
 author: Alberto Pérez de Rada Fiol
 ---
 
-As a heavy user of ROOT, many of the results of my data analysis are saved in ROOT Files and, honestly, I always found it a bit annoying to glance over them. The good news are that that isn't the case any longer! Let me present [ROOT File Viewer](https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer), an extension for [Visual Studio Code](https://code.visualstudio.com/) that makes use of the wonderful [JavaScript ROOT](https://github.com/root-project/jsroot) to display ROOT Files directly within VS Code, with just a click!
+As a heavy user of ROOT, many of the results of my data analysis are saved in ROOT Files and, honestly, I always found it a bit annoying to glance over them. The good news is that that isn't the case any longer! Let me present [ROOT File Viewer](https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer), an extension for [Visual Studio Code](https://code.visualstudio.com/) that makes use of the wonderful [JavaScript ROOT](https://github.com/root-project/jsroot) to display ROOT Files directly within VS Code, with just a click!
 
 Before diving into the details, let us just quickly see the extension in action. Although the saying goes like:
 
