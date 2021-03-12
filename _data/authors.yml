@@ -541,3 +541,11 @@ James Carroll:
   tag         : "blog"
   avatar      : "/assets/images/JC.jpg"
   email       : "eloquism@gmail.com"
+
+
+Alberto Pérez de Rada Fiol:
+  name        : "Alberto Pérez de Rada Fiol"
+  short_bio   : "Alberto is maintaining the ROOT File Viewer VS Code extension."
+  tag         : "blog"
+  avatar      : "/assets/images/APdRF.jpg"
+  email       : "hey@albertopdrf.com"
