@@ -43,11 +43,6 @@ The release notes for this release can be found [here](https://root.cern/doc/v61
 | Mac OS X 10.12 clang90 | [root_v6.14.00.macosx64-10.12-clang90.tar.gz](https://root.cern/download/root_v6.14.00.macosx64-10.12-clang90.tar.gz) | 124M |
 | Mac OS X 10.13 clang91 | [root_v6.14.00.macosx64-10.13-clang91.dmg](https://root.cern/download/root_v6.14.00.macosx64-10.13-clang91.dmg) | 126M |
 | Mac OS X 10.13 clang91 | [root_v6.14.00.macosx64-10.13-clang91.tar.gz](https://root.cern/download/root_v6.14.00.macosx64-10.13-clang91.tar.gz) | 125M |
-| **preview** Windows Visual Studio 2017 (dbg) | [root_v6.14.00.win32.vc15.debug.exe](https://root.cern/download/root_v6.14.00.win32.vc15.debug.exe) | 164M |
-| **preview** Windows Visual Studio 2017 (dbg) | [root_v6.14.00.win32.vc15.debug.zip](https://root.cern/download/root_v6.14.00.win32.vc15.debug.zip) | 265M |
-| **preview** Windows Visual Studio 2017 | [root_v6.14.00.win32.vc15.exe](https://root.cern/download/root_v6.14.00.win32.vc15.exe) |  70M |
-| **preview** Windows Visual Studio 2017 | [root_v6.14.00.win32.vc15.zip](https://root.cern/download/root_v6.14.00.win32.vc15.zip) |  95M |
-
 
 
 ## Installations in CVMFS

@@ -33,9 +33,6 @@ sidebar:
 | OsX 10.12 clang90 | [root_v6.13.08.macosx64-10.12-clang90.tar.gz](https://root.cern/download/root_v6.13.08.macosx64-10.12-clang90.tar.gz) | 123M |
 | OsX 10.13 clang91 | [root_v6.13.08.macosx64-10.13-clang91.dmg](https://root.cern/download/root_v6.13.08.macosx64-10.13-clang91.dmg) | 125M |
 | OsX 10.13 clang91 | [root_v6.13.08.macosx64-10.13-clang91.tar.gz](https://root.cern/download/root_v6.13.08.macosx64-10.13-clang91.tar.gz) | 125M |
-| win32.vc15 (dbg) | [root_v6.13.08.win32.vc15.debug.zip](https://root.cern/download/root_v6.13.08.win32.vc15.debug.zip) | 265M |
-| win32.vc15 | [root_v6.13.08.win32.vc15.zip](https://root.cern/download/root_v6.13.08.win32.vc15.zip) |  95M |
-
 
 
 ## Installations in CVMFS

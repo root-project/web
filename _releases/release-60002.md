@@ -29,7 +29,6 @@ The release notes for this release can be found [here](https://root.cern/root/ht
 | Scientific Linux Cern 6 gcc4.8 | [root_v6.00.02.Linux-slc6-gcc4.8.tar.gz](https://root.cern/download/root_v6.00.02.Linux-slc6-gcc4.8.tar.gz) | 101M |
 | Scientific Linux Cern 6_amd64 gcc4.8 | [root_v6.00.02.Linux-slc6_amd64-gcc4.8.tar.gz](https://root.cern/download/root_v6.00.02.Linux-slc6_amd64-gcc4.8.tar.gz) | 105M |
 | OsX 10.9 i386 | [root_v6.00.02.macosx64-10.9-i386.tar.gz](https://root.cern/download/root_v6.00.02.macosx64-10.9-i386.tar.gz) |  97M |
-| win32gcc gcc 4.8 | [root_v6.00.02.win32gcc-gcc-4.8.tar.gz](https://root.cern/download/root_v6.00.02.win32gcc-gcc-4.8.tar.gz) |  96M |
 
 
 

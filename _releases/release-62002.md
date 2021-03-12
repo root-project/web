@@ -35,12 +35,6 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | Ubuntu 19 gcc8.3 | [root_v6.20.02.Linux-ubuntu19-x86_64-gcc8.3.tar.gz](https://root.cern/download/root_v6.20.02.Linux-ubuntu19-x86_64-gcc8.3.tar.gz) | 216M |
 | macOS 10.13 clang100 | curl -O https://root.cern/download/root_v6.20.02.macosx64-10.13-clang100.tar.gz | 133M |
 | macOS 10.15 clang110 | curl -O https://root.cern/download/root_v6.20.02.macosx64-10.15-clang110.tar.gz | 134M |
-| **preview** Windows Visual Studio 2019 (dbg) | [root_v6.20.02.win32.vc16.debug.exe](https://root.cern/download/root_v6.20.02.win32.vc16.debug.exe) | 155M |
-| **preview** Windows Visual Studio 2019 (dbg) | [root_v6.20.02.win32.vc16.debug.zip](https://root.cern/download/root_v6.20.02.win32.vc16.debug.zip) | 227M |
-| **preview** Windows Visual Studio 2019 | [root_v6.20.02.win32.vc16.exe](https://root.cern/download/root_v6.20.02.win32.vc16.exe) |  85M |
-| **preview** Windows Visual Studio 2019 | [root_v6.20.02.win32.vc16.zip](https://root.cern/download/root_v6.20.02.win32.vc16.zip) | 115M |
-
-
 
 
 ## Installations in CVMFS

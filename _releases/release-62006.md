@@ -39,10 +39,6 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | OsX 10.13 clang100 | <a href="https://root.cern/download/root_v6.20.06.macosx64-10.13-clang100.tar.gz">root_v6.20.06.macosx64-10.13-clang100.tar.gz</a> | 133M |
 | OsX 10.14 clang100 | <a href="https://root.cern/download/root_v6.20.06.macosx64-10.14-clang100.tar.gz">root_v6.20.06.macosx64-10.14-clang100.tar.gz</a> | 134M |
 | OsX 10.15 clang110 | <a href="https://root.cern/download/root_v6.20.06.macosx64-10.15-clang110.tar.gz">root_v6.20.06.macosx64-10.15-clang110.tar.gz</a> | 134M |
-| Windows Visual Studio 2019 (dbg) | <a href="https://root.cern/download/root_v6.20.06.win32.vc16.debug.exe">root_v6.20.06.win32.vc16.debug.exe</a> | 155M |
-| Windows Visual Studio 2019 (dbg) | <a href="https://root.cern/download/root_v6.20.06.win32.vc16.debug.zip">root_v6.20.06.win32.vc16.debug.zip</a> | 228M |
-| Windows Visual Studio 2019 | <a href="https://root.cern/download/root_v6.20.06.win32.vc16.exe">root_v6.20.06.win32.vc16.exe</a> | 85M |
-| Windows Visual Studio 2019 | `root_v6.20.06.win32.vc16.zip` | 115M |
 
 ## Git
 

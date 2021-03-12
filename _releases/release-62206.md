@@ -45,10 +45,7 @@ The previous patch release 6.22/04 was not announced due to a fatal issue in the
 | macOS 10.15 x86_64 Xcode 12 | `curl -O https://root.cern/download/root_v6.22.06.macos-10.15-x86_64-clang120.tar.gz` | 197M |
 | macOS 11.0 x86_64 Xcode 12 | `curl -O https://root.cern/download/root_v6.22.06.macos-11.0-x86_64-clang120.pkg` | 309M |
 | macOS 11.0 x86_64 Xcode 12 | `curl -O https://root.cern/download/root_v6.22.06.macos-11.0-x86_64-clang120.tar.gz` | 197M |
-| **preview** Windows Visual Studio 2019 (debug) | [root_v6.22.06.win32.vc16.debug.exe](https://root.cern/download/root_v6.22.06.win32.vc16.debug.exe) | 154M |
-| **preview** Windows Visual Studio 2019 (debug) | [root_v6.22.06.win32.vc16.debug.zip](https://root.cern/download/root_v6.22.06.win32.vc16.debug.zip) | 226M |
-| **preview** Windows Visual Studio 2019 | [root_v6.22.06.win32.vc16.exe](https://root.cern/download/root_v6.22.06.win32.vc16.exe) |  84M |
-| **preview** Windows Visual Studio 2019 | [root_v6.22.06.win32.vc16.zip](https://root.cern/download/root_v6.22.06.win32.vc16.zip) | 113M |
+
 
 ## Installations in CVMFS
 

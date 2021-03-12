@@ -60,10 +60,7 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | macOS 10.14 clang110 | [root_v6.20.00.macosx64-10.14-clang110.pkg](https://root.cern/download/root_v6.20.00.macosx64-10.14-clang110.pkg) | 135M |
 | macOS 10.15 clang110 | curl -O https://root.cern/download/root_v6.20.00.macosx64-10.15-clang110.tar.gz | 134M |
 | macOS 10.15 clang110 | curl -O https://root.cern/download/root_v6.20.00.macosx64-10.15-clang110.pkg | 135M |
-| **preview** Windows Visual Studio 2019 (dbg) | [root_v6.20.00.win32.vc16.debug.exe](https://root.cern/download/root_v6.20.00.win32.vc16.debug.exe) | 155M |
-| **preview** Windows Visual Studio 2019 (dbg) | [root_v6.20.00.win32.vc16.debug.zip](https://root.cern/download/root_v6.20.00.win32.vc16.debug.zip) | 227M |
-| **preview** Windows Visual Studio 2019 | [root_v6.20.00.win32.vc16.exe](https://root.cern/download/root_v6.20.00.win32.vc16.exe) |  85M |
-| **preview** Windows Visual Studio 2019 | [root_v6.20.00.win32.vc16.zip](https://root.cern/download/root_v6.20.00.win32.vc16.zip) | 115M |
+
 
 For macOS 10.15, please download the binaries with `curl` in a terminal, until we have set up signing of the package. ROOT downloaded with a browser will be blocked by macOS and cannot be run.
 
