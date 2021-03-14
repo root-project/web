@@ -116,7 +116,9 @@ the script reads the data from the ASCII file into the `staff_t` structure and f
 }
 {% endhighlight %}
 
+<p><a name="example-building-a-tree-from-an-ascii-file"></a></p>
 _**Example: Building a tree from an ASCII file**_
+
 
 The tutorial {% include tutorial name="cernbuild" %} provides an example how to build a {% include ref class="TTree" %} from an ASCII file.
 The input file is `cernstaff.dat` that contains statistics about the staff at CERN.
