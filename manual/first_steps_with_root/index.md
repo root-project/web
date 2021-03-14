@@ -9,11 +9,11 @@ toc_sticky: true
 
 > **Note**
 >
-> Before using ROOT, it must be installed successfully and all environment variables must be set.
+> Before you can use ROOT, it must be successfully installed and all environment variables must be set.
 > → See [Installation Guide]({{ '/install' | relative_url }}).
 >
-> In particular it is recommended to put the following command into the `.profile` or `.login`
-> file in order to have the environment variables  properly defined at each login.
+> In particular, it is recommended to add the following command to the `.profile` or `.login`
+> file so that the environment variables are properly defined at each login.
 > ```
 > source /path/to/install-or-build/dir/bin/thisroot.sh
 > ```
@@ -44,7 +44,7 @@ The ROOT prompt is displayed.
 root [0]
 ```
 
-To see a list of ROOT commands, type:
+To display a list of ROOT commands, type:
 
 ```
 .help
@@ -127,7 +127,7 @@ ROOT special commands.
 
 ### Starting ROOT with command line options
 
-> ROOT command line tools
+> **ROOT command line tools**
 >
 > ROOT also provides many command line tools at the system prompt for simple file operations or automating common operations performed on ROOT classes. → See [ROOT command line tools]({{ '/manual/storing_root_objects/#root-command-line-tools' | relative_url }})
 
@@ -141,11 +141,11 @@ You can start ROOT with the following command line options:
 
 `-l`: Does not show the ROOT banner.
 
-`-a`: Shows the ROOT splash screen.
+`-a`: Displays the ROOT splash screen.
 
 `-x`: Exits on exception.
 
-`dir`: If `dir` is a valid directory, change to it (cd) before executing ROOT.
+`dir`: If `dir` is a valid directory, change to it (`cd`) before executing ROOT.
 
 `-?`, `-h`, `--help`: Prints usage.
 
@@ -166,7 +166,7 @@ Type at the ROOT prompt:
 
 ROOT uses the interactive C++ interpreter Cling that is built on top of the
 **L**ow **L**evel **V**irtual **M**achine ([LLVM](https://llvm.org/){:target="_blank"}) and the [Clang libraries](https://clang.llvm.org/){:target="_blank"}.
-Cling provides command line prompt and a just-in-time (JIT) compiler for compilation.<br/>
+Cling provides a command line prompt and a just-in-time (JIT) compiler for compilation.<br/>
 For more information on Cling, → see [Cling]({{ '/cling' | relative_url }}).
 
 > **Note**
@@ -176,7 +176,7 @@ For more information on Cling, → see [Cling]({{ '/cling' | relative_url }}).
 
 ### Simple commands
 
-You can use ROOT to execute simple commands on the ROOT prompt.
+You can use ROOT to execute simple commands at the ROOT prompt.
 Every command typed at the ROOT prompt is stored in the `.root_hist` file in your home directory.
 
 _**Examples**_
@@ -199,7 +199,7 @@ Relational operators:
    false
 {% endhighlight %}
 
-Calling a function from a ROOT class like `TMath::Pi`.
+Calling a function from a ROOT class like `TMath::Pi`:
 {% highlight C++ %}
    root [3] Math::Pi()
    3.1415927
@@ -207,9 +207,9 @@ Calling a function from a ROOT class like `TMath::Pi`.
 
 ### Multi-line commands
 
-You can use ROOT to execute multi-line commands on the ROOT prompt.
+You can use ROOT to execute multi-line commands at the ROOT prompt.
 
-1.  To begin a multi-line command, type at the ROOT prompt:`{`
+1.  To start a multi-line command, type at the ROOT prompt:`{`
 
 2.  Type one command per line.
 
@@ -232,7 +232,7 @@ _**Example**_
    i = 2, j = 3
 {% endhighlight %}
 
-You can also put the commands in a file, a so called a ROOT macro, and then execute and compile it. For more information on ROOT macros, → see [ROOT macros and shared libraries]({{ '/manual/interacting_with_shared_libraries' | relative_url }})
+You can also write the commands to a file, called a ROOT macro, and then execute and compile it. For more information on ROOT macros, → see [ROOT macros and shared libraries]({{ '/manual/interacting_with_shared_libraries' | relative_url }}).
 
 ## Regular expressions
 
@@ -296,7 +296,7 @@ _**Example**_
    TRegexp(const char *re, Bool_t wildcard)
 ```
 
-Regular expression and wildcards can be easily used in methods like:
+Regular expressions and wildcards can be easily used in methods like:
 
 `Ssiz_t Index(const TString& string,Ssiz_t* len,Ssiz_t i) const`
 
@@ -304,7 +304,7 @@ The method finds the first occurrence of the regular expression in the string an
 
 ## Using Cling commands to control ROOT
 
-You can pass commands directly to ROOT by placing a dot before the command.
+You can pass commands directly to ROOT by putting a dot before the command.
 
    Type at the ROOT prompt:
 ```
@@ -353,12 +353,12 @@ When you install ROOT, a `tutorials` directory is created, containing all ROOT t
 
 ### Starting with hsimple.C
 
-It is recommended to start with the `hsimple.C` macro first. It creates the ROOT file `hsimple.root`, which is used by many other macros.
-`hsimple.root` contains four histograms `hpx`, `hpx;1`, `hpxpy;1`` and ``hprof;1`.
+It is recommended to start with the {% include tutorial name="hsimple" %} macro first. It creates the ROOT file `hsimple.root`, which is used by many other macros.
+`hsimple.root` contains the four histograms `hpx`, `hpx;1`, `hpxpy;1` and `hprof;1`.
 
-For detailed information on ROOT files, see → [ROOT files]({{ '/manual/storing_root_objects' | relative_url }}).
+For more information on ROOT files, see → [ROOT files]({{ '/manual/storing_root_objects' | relative_url }}).
 
-To execute the `hsimple.C` macro at the ROOT prompt, type:
+To execute the {% include tutorial name="hsimple" %}  macro at the ROOT prompt, type:
 
 ```
 root[0] .x hsimple.C
@@ -366,9 +366,9 @@ root[0] .x hsimple.C
 
 ### Executing demos with demos.C
 
-There are a lot of demos available in the `demos.C` macro.
+There are a lot of demos available in the {% include tutorial name="demos" %} macro.
 
-To execute the `demos.C` macro at the ROOT prompt, type:
+To execute the {% include tutorial name="demos" %} macro at the ROOT prompt, type:
 
 ```
 root[0] .x demos.C
