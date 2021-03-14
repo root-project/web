@@ -19,7 +19,7 @@ A {% include ref class="TNtuple" %} is a {% include ref class="TTree" %}, which 
 
 > **RNTuple**
 >
-> [RNTuple](https://root.cern/doc/master/md_tree_ntuple_v7_doc_README.html){:target="_blank"} (for n-tuple and nested tuple) is the experimental evolution of {% include ref class="TTree" %} columnar data storage. `RNTuple` introduces new interfaces that are more robust.
+> [RNTuple](https://root.cern/doc/master/md_tree_ntuple_v7_doc_README.html){:target="_blank"} (for N-tuple and nested tuple) is the experimental evolution of {% include ref class="TTree" %} columnar data storage. `RNTuple` introduces new interfaces that are more robust.
 
 ## Tree classes
 
@@ -58,19 +58,67 @@ _**Example**_
 
 It creates a tree with the title `Example Tree`.
 
-### Creating a tree from a folder structure
+_**Example: A simple tree**_
 
-You can build a folder structure and create a tree with branches for each of the sub-folders.
+The following script builds a {% include ref class="TTree" %} from an ASCII file containing statistics about the staff at CERN. Both, `staff.C` and `staff.dat` are in available in `$ROOTSYS/tutorials/tree`.
 
-_**Example**_
+The following script declares a structure called `staff_t`. It opens the ASCII file, creates a ROOT file and a `TTree`. Then it creates one branch with the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"} method. The first parameter of the `Branch()` method is the branch name. The second parameter is the address from which the first leaf is to be read. In this example, it is the address of the structure staff. Once the branch is defined,
+the script reads the data from the ASCII file into the `staff_t` structure and fills the tree. The ASCII file is closed, and the ROOT file is written to disk saving the tree. Trees and histograms are created in the current directory, which is the ROOTfile in our example. Hence an `f->Write()saves the tree.
 
-`TTree folder_tree("MyFolderTree","/MyFolder");`
+{% highlight C++ %}
+   gROOT->Reset();
 
-`MyFolder` is the top folder. `/` indicates the {% include ref class="TTree" %} constructor that a folder is being used.
-You can fill the tree by placing the data into the folder structure and then calling the [TTree::Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067){:target="_blank"} method.
+// Create the structure to hold the variables for the branch.
+   struct staff_t {
+   Int_t cat;
+   Int_t division;
+   Int_t flag;
+   Int_t age;
+   Int_t service;
+   Int_t children;
+   Int_t grade;
+   Int_t step;
+   Int_t nation;
+   Int_t hrweek;
+   Int_t cost;
+   };
+   staff_t staff;
 
+// Open the ASCII file.
+   FILE *fp = fopen("staff.dat","r");
+   char line[81];
 
-### Example: Building a tree from an ASCII file
+// Create a new ROOT file.
+   TFile *f = new TFile("staff.root","RECREATE");
+
+// Create a TTree.
+   TTree *tree = new TTree("T","Staff data from ASCII file");
+
+// Create one branch with all information from the stucture.
+   tree->Branch("staff",&staff.cat,"cat/I:division:flag:age:service:
+   children:grade:step:nation:hrweek:cost");
+
+// Fill the tree from the values in ASCII file.
+   while (fgets(&line,80,fp)) {
+   sscanf(&line[0],"%d%d%d%d",&staff.cat,&staff.division,
+   &staff.flag,&staff.age);
+   sscanf(&line[13],"%d%d%d%d",&staff.service,&staff.children,
+   &staff.grade,&staff.step);
+   sscanf(&line[24],"%d%d%d",&staff.nation,&staff.hrweek,
+   &staff.cost);
+   tree->Fill();
+   }
+
+// Check what the tree looks like.
+   tree->Print();
+   fclose(fp);
+   f->Write();
+}
+{% endhighlight %}
+
+<p><a name="example-building-a-tree-from-an-ascii-file"></a></p>
+_**Example: Building a tree from an ASCII file**_
+
 
 The tutorial {% include tutorial name="cernbuild" %} provides an example how to build a {% include ref class="TTree" %} from an ASCII file.
 The input file is `cernstaff.dat` that contains statistics about the staff at CERN.
@@ -100,37 +148,22 @@ root [0] .x cernbuild.C
 *Entries :     3354 : Total  Size=      14067 bytes  One basket in memory    *
 *Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
 *............................................................................*
-*Br    4 :Children  : Children/I                                             *
-*Entries :     3354 : Total  Size=      14073 bytes  One basket in memory    *
-*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
-*............................................................................*
-*Br    5 :Grade     : Grade/I                                                *
-*Entries :     3354 : Total  Size=      14055 bytes  One basket in memory    *
-*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
-*............................................................................*
-*Br    6 :Step      : Step/I                                                 *
-*Entries :     3354 : Total  Size=      14049 bytes  One basket in memory    *
-*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
-*............................................................................*
-*Br    7 :Hrweek    : Hrweek/I                                               *
-*Entries :     3354 : Total  Size=      14061 bytes  One basket in memory    *
-*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
-*............................................................................*
-*Br    8 :Cost      : Cost/I                                                 *
-*Entries :     3354 : Total  Size=      14049 bytes  One basket in memory    *
-*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
-*............................................................................*
-*Br    9 :Division  : Division/C                                             *
-*Entries :     3354 : Total  Size=      25326 bytes  File Size  =       8325 *
-*Baskets :        1 : Basket Size=      32000 bytes  Compression=   2.49     *
-*............................................................................*
-*Br   10 :Nation    : Nation/C                                               *
-*Entries :     3354 : Total  Size=      24209 bytes  File Size  =       6680 *
-*Baskets :        1 : Basket Size=      32000 bytes  Compression=   3.05     *
-*............................................................................*
-(TFile *) nullptr
-root [1]
+...
+...
+...
 {% endhighlight %}
+
+### Creating a tree from a folder structure
+
+You can build a folder structure and create a tree with branches for each of the sub-folders.
+
+_**Example**_
+
+`TTree folder_tree("MyFolderTree","/MyFolder");`
+
+`MyFolder` is the top folder. `/` indicates the {% include ref class="TTree" %}  constructor that a folder is being used.
+You can fill the tree by placing the data into the folder structure and then calling the [TTree::Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067){:target="_blank"} method.
+
 
 ### Filling a tree
 
@@ -184,6 +217,7 @@ root[] T->TTree::Print()
 *Entries :     3354 : Total  Size=      13980 bytes  File Size  =       2214 *
 ...
 ...
+...
 {% endhighlight %}
 
 ### Showing an entry of a tree
@@ -214,7 +248,7 @@ Nation = CH
 
 ### Scanning trees
 
-- Use the [TTree::Scan()](https://root.cern/doc/master/classTTree.html#af8a886acab51b16d8ddbf65667c035e4){:target="_blank"} method to show all values of the list of leaves.
+- Use the [TTree::Scan()](https://root.cern/doc/master/classTTree.html#af8a886acab51b16d8ddbf65667c035e4){:target="_blank"} method to display all values of the list of leaves.
 
 _**Example**_
 
@@ -254,7 +288,39 @@ Scanning the `cernstaff.root` file (see → [Building a tree from an ASCII file]
    *    24 *     9617 *        49 *             0 *
 {% endhighlight %}
 
+### Indexing trees
 
+- Use [TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998){:target="_blank"} method to build an index table using expressions depending on the value in the leaves.
+
+The index is built in the following way:
+- A pass on all entries is made like in [TTree::Draw()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
+- `var1` = `majorname`
+- `var2` = `minorname`
+- `sel = 231` × _majorname_ + _minorname_
+- For each entry in the tree the `sel` expression is evaluated and the result array is sorted into `fIndexValues`.
+
+Once the index is calculated, an entry can be retrieved with [TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998)){:target="_blank"}.
+
+_**Example**_
+
+{% highlight C++ %}
+// To create an index using the leaves "Run" and "Event".
+   tree.BuildIndex("Run","Event");
+   
+// To read entry corresponding to Run=1234 and Event=56789.
+   tree.GetEntryWithIndex(1234,56789);
+   {% endhighlight %}
+
+Note that `majorname` and `minorname` can be expressions using original tree variables e.g., `"run-90000"` or `"event +3*xx"`.
+
+In case an expression is specified, the equivalent expression must be computed when calling [TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998)){:target="_blank"}. To build an index with only `majorname`, specify `minorname="0"` (default).
+
+Once the index is built, it can be saved with the `TTree` object with `tree.Write()`. 
+
+The most convenient place to create the index is at the end of the filling process just before saving the tree header. If a previous index was calculated, it will be redefined by this new call.
+
+Note that this function can also be applied to a {% include ref class="TChain" %}. The return value is the number of entries in the Index (< 0 indicates failure).
+   
 ## Tree Viewer
 
 With the Tree Viewer you can examine a tree in a GUI.
@@ -278,6 +344,8 @@ Open the Tree Viewer for the `cernstaff.root` file (see → [Building a tree fro
 img="tree_viewer.png"
 caption="Tree Viewer."
 %}
+
+The left panel contains the list of trees and their branches. The right panel displays the leaves or variables in the tree.
 
 ### Drawing correlating variables in a scatterplot
 
@@ -305,12 +373,12 @@ The scatterplot is drawn.
    caption="Scatterplot of the variables Age and Cost."
 %}
 
-Note, that not each (x,y) point on a scatterplot represents two values in your n−tuple. In fact, the scatterplot is a grid and each square in
+Note that not each `(x,y) point on a scatterplot represents two values in your N−tuple. In fact, the scatterplot is a grid and each square in
 the grid is randomly populated with a density of dots that’s proportional to the number of values in that grid.
 
 ## Branches
 
-You can organize columns, this is branches, of a tree with the {% include ref class="TBranch" %} class. A variable on a `TBranch` is called a leaf ({% include ref class="TLeaf" %}).
+You can organize columns, this is branches, of a tree with the {% include ref class="TBranch" %} class. A variable on a `TBranch` is called a leaf ({% include ref class="TLeaf" %}). If two variables are independent and it is certain that the variables will not be used together, they should be placed on separate branches.
 
 The branch type differs by what is stored in it. A branch can contain the following data:
 
@@ -427,15 +495,15 @@ The following methods are available for data analysis using trees:
 
 ### Using TTree:Draw()
 
-With the [TTree::Draw()](https://root.cern/doc/master/classTTree.html#ac4016b174665a086fe16695aad3356e2){:target="_blank"} method, you can easily plot variables (this is leaf).
+With the [TTree::Draw()](https://root.cern/doc/master/classTTree.html#ac4016b174665a086fe16695aad3356e2){:target="_blank"} method, you can easily plot a variable (a leaf).
 
 _**Example**_
 
 Open the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)) and lists its content.
 
 {% highlight C++ %}
-root [0] TFile f("cernstaff.root")
-root [1] f.ls()
+root [] TFile f("cernstaff.root")
+root [] f.ls()
 TFile**      cernstaff.root
  TFile*      cernstaff.root
   KEY: TTree   T;1   CERN 1988 staff data
@@ -444,28 +512,27 @@ TFile**      cernstaff.root
 The `cernstaff.root` file contains the {% include ref class="TTree" %}  `T`. A pointer is created to the tree.
 
 {% highlight C++ %}
-   root [2] TTree *MyTree = T
+   root [] TTree *MyTree = T
 {% endhighlight %}
 
 To show the different `Draw()` options, a canvas with four sub-pads is created.
 
 {% highlight C++ %}
-   root [3] TCanvas *myCanvas = new TCanvas()
-   root [4] myCanvas->Divide(2,2)
+   root [] TCanvas *myCanvas = new TCanvas()
+   root [] myCanvas->Divide(2,2)
 {% endhighlight %}
 
 The first pad with is activated with [TCanvas::cd](https://root.cern/doc/master/classTCanvas.html#ad996aa7bc34186944363b48963de4de5){:target="_blank"}.
 
 {% highlight C++ %}
-   root [5] myCanvas->cd(1)
+   root [] myCanvas->cd(1)
 {% endhighlight %}
 
 The `Cost` variable is drawn. [TTree::Draw](https://root.cern/doc/master/classTCanvas.html#a2309e37a6471e07f9dad3e5af1fe5561){:target="_blank"}
-automatically creates a histogram. The style of the histogram is inherited from the
-{% include ref class="TTree" %} attributes.
+automatically creates a histogram. The style of the histogram is inherited from the {% include ref class="TTree" %} attributes.
 
 {% highlight C++ %}
-   root [9] MyTree->Draw("Cost")
+   root [] MyTree->Draw("Cost")
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -474,12 +541,11 @@ automatically creates a histogram. The style of the histogram is inherited from 
 %}
 
 Next, the second pad is activated and scatter plot is drawn. Two dimensions (here `Cost` and `Age`) are separated by a colon ("x:y").<br>
-In general, this parameter is a string that contains
-up to three expressions, one for each dimension, separated by a colon (“e1:e2:e3”).
+In general, this parameter is a string containing up to three expressions, one for each dimension, separated by a colon (“e1:e2:e3”).
 
 {% highlight C++ %}
-   root [10] myCanvas->cd(2)
-   root [11] MyTree->Draw("Cost:Age")
+   root [] myCanvas->cd(2)
+   root [] MyTree->Draw("Cost:Age")
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -487,12 +553,12 @@ up to three expressions, one for each dimension, separated by a colon (“e1:e2:
    caption="The variable `Cost` and `Age` drawn in a histogram."
 %}
 
-Next, the third pad is activated and a selection is added. `Cost` versus `Age` for the entries where the nation is equal to `“CH”` is drawn.<br>
+Next, the third pad is activated and a selection is added. `Cost` versus `Age` for the entries where the nation is equal to `"CH"` is drawn.<br>
 You can use any C++ operator. The value of the selection is used as a weight when filling the histogram. If the expression includes only Boolean operations the result is 0 (histogram is not filled) or 1 ((histogram is filled).
 
 {% highlight C++ %}
-   root [11] myCanvas->cd(3)
-   root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"")
+   root [] myCanvas->cd(3)
+   root [] MyTree->Draw("Cost:Age","Nation == \"CH\"")
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -504,8 +570,8 @@ Next, the fourth pad is activated and the histogram is drawn with the draw optio
 Refer to the {% include ref class="THistPainter" %} class for possible draw options.
 
 {% highlight C++ %}
-   root [11] myCanvas->cd(4)
-   root [22] MyTree->Draw("Cost:Age","Nation == \"CH\"","colz")
+   root [] myCanvas->cd(4)
+   root [] MyTree->Draw("Cost:Age","Nation == \"CH\"","colz")
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -648,7 +714,7 @@ void processChain(){
 
 ## N-tuples
 
-An N-tuple {% include ref class="TNtuple" %}is a simple {% include ref class="TTree" %} restricted to a list of float variables only.
+An N-tuple {% include ref class="TNtuple" %} is a simple {% include ref class="TTree" %} restricted to a list of float variables only.
 
 ### Writing simple N-tuples
 
