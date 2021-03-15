@@ -190,8 +190,19 @@ Each build option is a boolean variable that can be turned ON or OFF. The curren
 The user can set any CMake variable or option that controls the build process from the `cmake` command line. Passing `cmake -D <var>=<value>` creates an entry in the CMake cache. The list of the ROOT-specific CMake options can be found below.
 **Note**: Some options have platform-dependent default values (e.g. cocoa is `ON` on apple)
 
+Click on one of the following dropdowns to see the full list of build options for a specific ROOT release:
+
+<details markdown="1"><summary markdown="span">build options for ROOT 6.22</summary>
+
 {% include build_options_v6-22-00-patches.md %}
 
+</details>
+
+<details markdown="1"><summary markdown="span">build options for ROOT 6.24</summary>
+
+{% include build_options_v6-24-00-patches.md %}
+
+</details>
 
 ### Relevant CMake variables
 Here are some of the CMake variables that are used often, along with a brief explanation and ROOT-specific notes. For full documentation, check the CMake docs or execute `cmake --help-variable VARIABLE_NAME`.
