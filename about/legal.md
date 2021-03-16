@@ -7,7 +7,8 @@ sidebar:
 
 ### Icons
 
-This website uses icons by Linearicons from [https://linearicons.com/](https://linearicons.com/).
+This website uses icons by Linearicons from [https://linearicons.com/](https://linearicons.com/)
+and Feathericons from [https://feathericons.com](https://feathericons.com).
 
 ### Website Generator and Theme
 
