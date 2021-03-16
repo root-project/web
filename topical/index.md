@@ -17,8 +17,8 @@ a physics analysis.
 
   - [RooFit Manual (PDF A4 format)](https://root.cern/download/doc/RooFit_Users_Manual_2.91-33.pdf){:target="_blank"}
   - [RooFit Quick Start Guide (PDF A4 format)](https://root.cern/download/doc/roofit_quickstart_3.00.pdf){:target="_blank"}
-  - Here is a link to a 200 slide [presentation on RooFit](http://indico.in2p3.fr/materialDisplay.py?contribId=15&amp;materialId=slides&amp;confId=750){:target="_blank"}
-    presented in the [French School of Statistics 2008](http://sos.in2p3.fr/){:target="_blank"} (slides are in English)
+  - Here is a link to a 200 slide [presentation on RooFit](https://indico.in2p3.fr/materialDisplay.py?contribId=15&amp;materialId=slides&amp;confId=750){:target="_blank"}
+    presented in the [French School of Statistics 2008](https://sos.in2p3.fr/){:target="_blank"} (slides are in English)
 
 ## HTTP Server
 
