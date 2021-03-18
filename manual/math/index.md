@@ -1643,7 +1643,7 @@ The following table lists the methods of the {% include ref class="TMatrixDEigen
   </tbody>
  </table>
 
- _**Example**_
+_**Example**_
 
 The usage of the eigenvalue class is shown in this example where it is checked that the square of the singular values of
 a matrix `c` are identical to the eigenvalues of c<sup>T</sup>.c:
@@ -1685,7 +1685,7 @@ Use one of the following constructors to create a vector:
 - Constructor by passing directly the elements. This is possible only for vectors up to size 10.
 - Constructor from an iterator copying the data referred by the iterator. It is possible to specify the begin and end of the iterator or the begin and the size. Note that for
 
- _**Example**_
+_**Example**_
  The namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} is used.
 
  {% highlight C++ %}
@@ -1713,7 +1713,7 @@ Use one of the following constructors to create a matrix:
 - Constructor (and assignment) from a matrix expression, like `D=A*B+C`. Due to the expression template technique, no temporary objects are created in this operation. In the case of an operation like `A=A*B+C`, a temporary object is needed and it is created automatically to store the intermediary result in order to preserve the validity of this operation.
 - Constructor from a generic STL-like iterator copying the data referred by the iterator, following its order. It is both possible, to specify the begin and end of the iterator or the begin and the size. In case of a symmetric matrix, it is required only the triangular block and the user can specify whether giving a block representing the lower (default case) or the upper diagonal part.
 
- _**Example**_
+_**Example**_
  Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix, the representation has the default value [ROOT::Math::MatRepStd](https://root.cern/doc/master/classROOT_1_1Math_1_1MatRepStd.html){:target="_blank"}. For a general square matrix, the number of columns can be omitted.
 
  {% highlight C++ %}
