@@ -60,14 +60,23 @@ It creates a tree with the title `Example Tree`.
 
 _**Example: A simple tree**_
 
-The following script builds a {% include ref class="TTree" %} from an ASCII file containing statistics about the staff at CERN. Both, `staff.C` and `staff.dat` are in available in `$ROOTSYS/tutorials/tree`.
+The following script builds a {% include ref class="TTree" %} from an ASCII file containing
+statistics about the staff at CERN. Both, `staff.C` and `staff.dat` are in available in
+`$ROOTSYS/tutorials/tree`.
 
-The following script declares a structure called `staff_t`. It opens the ASCII file, creates a ROOT file and a `TTree`. Then it creates one branch with the [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"} method. The first parameter of the `Branch()` method is the branch name. The second parameter is the address from which the first leaf is to be read. In this example, it is the address of the structure staff. Once the branch is defined,
-the script reads the data from the ASCII file into the `staff_t` structure and fills the tree. The ASCII file is closed, and the ROOT file is written to disk saving the tree. Trees and histograms are created in the current directory, which is the ROOTfile in our example. Hence an `f->Write()saves the tree.
+The following script declares a structure called `staff_t`. It opens the ASCII file, creates
+a ROOT file and a `TTree`. Then it creates one branch with the
+[TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"}
+method. The first parameter of the `Branch()` method is the branch name. The second
+parameter is the address from which the first leaf is to be read. In this example, it is
+the address of the structure staff. Once the branch is defined,
+the script reads the data from the ASCII file into the `staff_t`
+structure and fills the tree. The ASCII file is closed, and the ROOT file is written to
+disk saving the tree. Trees and histograms are created in the current directory, which is
+the ROOT file in our example. Hence an `f->Write()` saves the tree.
 
 {% highlight C++ %}
-   gROOT->Reset();
-
+{
 // Create the structure to hold the variables for the branch.
    struct staff_t {
    Int_t cat;
@@ -94,19 +103,19 @@ the script reads the data from the ASCII file into the `staff_t` structure and f
 // Create a TTree.
    TTree *tree = new TTree("T","Staff data from ASCII file");
 
-// Create one branch with all information from the stucture.
+// Create one branch with all information from the structure.
    tree->Branch("staff",&staff.cat,"cat/I:division:flag:age:service:
    children:grade:step:nation:hrweek:cost");
 
 // Fill the tree from the values in ASCII file.
    while (fgets(&line,80,fp)) {
-   sscanf(&line[0],"%d%d%d%d",&staff.cat,&staff.division,
-   &staff.flag,&staff.age);
-   sscanf(&line[13],"%d%d%d%d",&staff.service,&staff.children,
-   &staff.grade,&staff.step);
-   sscanf(&line[24],"%d%d%d",&staff.nation,&staff.hrweek,
-   &staff.cost);
-   tree->Fill();
+      sscanf(&line[0],"%d%d%d%d",&staff.cat,&staff.division,
+      &staff.flag,&staff.age);
+      sscanf(&line[13],"%d%d%d%d",&staff.service,&staff.children,
+      &staff.grade,&staff.step);
+      sscanf(&line[24],"%d%d%d",&staff.nation,&staff.hrweek,
+      &staff.cost);
+      tree->Fill();
    }
 
 // Check what the tree looks like.
@@ -299,28 +308,31 @@ The index is built in the following way:
 - `sel = 231` × _majorname_ + _minorname_
 - For each entry in the tree the `sel` expression is evaluated and the result array is sorted into `fIndexValues`.
 
-Once the index is calculated, an entry can be retrieved with [TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998)){:target="_blank"}.
+Once the index is calculated, an entry can be retrieved with
+[TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
 
 _**Example**_
 
 {% highlight C++ %}
 // To create an index using the leaves "Run" and "Event".
    tree.BuildIndex("Run","Event");
-   
+
 // To read entry corresponding to Run=1234 and Event=56789.
    tree.GetEntryWithIndex(1234,56789);
    {% endhighlight %}
 
 Note that `majorname` and `minorname` can be expressions using original tree variables e.g., `"run-90000"` or `"event +3*xx"`.
 
-In case an expression is specified, the equivalent expression must be computed when calling [TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998)){:target="_blank"}. To build an index with only `majorname`, specify `minorname="0"` (default).
+In case an expression is specified, the equivalent expression must be computed when calling
+[TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
+To build an index with only `majorname`, specify `minorname="0"` (default).
 
-Once the index is built, it can be saved with the `TTree` object with `tree.Write()`. 
+Once the index is built, it can be saved with the `TTree` object with `tree.Write()`.
 
 The most convenient place to create the index is at the end of the filling process just before saving the tree header. If a previous index was calculated, it will be redefined by this new call.
 
 Note that this function can also be applied to a {% include ref class="TChain" %}. The return value is the number of entries in the Index (< 0 indicates failure).
-   
+
 ## Tree Viewer
 
 With the Tree Viewer you can examine a tree in a GUI.
@@ -554,7 +566,9 @@ In general, this parameter is a string containing up to three expressions, one f
 %}
 
 Next, the third pad is activated and a selection is added. `Cost` versus `Age` for the entries where the nation is equal to `"CH"` is drawn.<br>
-You can use any C++ operator. The value of the selection is used as a weight when filling the histogram. If the expression includes only Boolean operations the result is 0 (histogram is not filled) or 1 ((histogram is filled).
+You can use any C++ operator. The value of the selection is used as a weight when filling
+the histogram. If the expression includes only Boolean operations the result is 0
+(histogram is not filled) or 1 (histogram is filled).
 
 {% highlight C++ %}
    root [] myCanvas->cd(3)

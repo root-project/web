@@ -266,7 +266,7 @@ You can also construct along similar lines the profile likelihood, which is the 
 {% endhighlight %}
 
 
-_**Example**
+_**Example**_
 
 A toy PDF and a data set are constructed. A likelihood scan and a profile likelihood scan are compared in one of the parameters:
 
