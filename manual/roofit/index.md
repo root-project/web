@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT provides with the RooFit library a toolkit for modeling the expected distribution of events in a physics analysis.
+ROOT provides with the RooFit library a toolkit for modeling the expected distribution of events in a physics analysis. Models can be used to perform unbinned maximum likelihood fits, create plots, and generate "toy Monte Carlo" samples for various studies.
 
 {% include tutorials name="RooFit" url="roofit" %}
 
@@ -16,20 +16,23 @@ ROOT provides with the RooFit library a toolkit for modeling the expected distri
 > For RooFit, Topical Manuals are available at [Topical Manuals - RooFit]({{ '/topical/#roofit' | relative_url }}).<br>
 > They contain in-depth information about RooFit.
 
+> **RooFit in the ROOT forum**
+>
+> Discuss RooFit and RooStats in the [ROOT forum](https://root-forum.cern.ch/c/roofit-and-roostats/12){:target="_blank"}.
+
 
 ## Mathematical model
 
-The core functionality of RooFit is to enable the modeling of ‘event data’ distributions, where each event is a discrete occurrence in time, and has one or more measured observables associated with it.
-Experiments of this nature result in data sets obeying Poisson (or binomial) statistics.
+The core functionality of RooFit is to enable the modeling of ‘event data’ distributions, where each event is a discrete occurrence in time, and has one or more measured observables associated with it. Experiments of this nature result in data sets obeying Poisson (or binomial) statistics.
 
-The natural modeling language for such distributions are probability density functions (probability density function = PDF) `F(x;p)` that describe the probability density of the distribution of the observables `x` in terms of function in parameter `p`.
-The defining properties of probability density functions, unit normalization with respect to all observables and positive definiteness, also provide important benefits for the design of a structured modeling language: PDFs are easily added with intuitive interpretation of fraction coefficients.
+The natural modeling language for such distributions are probability density functions (PDF) `F(x;p)` that describe the probability density of the distribution of the observables `x` in terms of function in parameter `p`.
+The defining properties of PDFs, unit normalization with respect to all observables and positive definiteness, also provide important benefits for the design of a structured modeling language: PDFs are easily added with intuitive interpretation of fraction coefficients.
 They allow construction of higher dimensional PDFs out of lower dimensional building block with an intuitive language to introduce and describe correlations between observables.
 And they also allow the universal implementation of toy Monte Carlo sampling techniques, and are of course an prerequisite for the use of (un-binned) maximum likelihood parameter estimation technique.
 
 ## Design
 
-RooFit introduces a granular structure in its mapping of mathematical data models components to C++ objects: rather than aiming at a monolithic entity that describes a data model, each math symbol is presented by a separate object. A feature of this design philosophy is that all RooFit models always consist of multiple objects.
+RooFit introduces a granular structure in its mapping of mathematical data models components to C++ objects: instead of aiming for a monolithic entity describing a data model, each mathimatical symbol is repesented by a separate object. A feature of this design philosophy is that all RooFit models always consist of multiple objects.
 
 <table width="100%" border="0">
   <tbody>
@@ -66,20 +69,20 @@ RooFit introduces a granular structure in its mapping of mathematical data model
 
 _**Example**_
 
-A Gaussian probability density function (PDF) consists typically of four objects:
+A Gaussian PDF consists typically of four objects:
 - three objects representing the observable, the mean and the sigma parameters,
-- one object representing a Gaussian probability density function.
+- one object representing a Gaussian PDF.
 
 {% highlight C++ %}
 // Observable with lower and upper bound:
-RooRealVar mes("mes","m_{ES} (GeV)",5.20,5.30);
+   RooRealVar mes("mes","m_{ES} (GeV)",5.20,5.30);
 
 // Parameters with starting value, lower bound, upper bound:
-RooRealVar sigmean("sigmean","B^{#pm} mass",5.28,5.20,5.30);
-RooRealVar sigwidth("sigwidth","B^{#pm} width",0.0027,0.001,1.);
+   RooRealVar sigmean("sigmean","B^{#pm} mass",5.28,5.20,5.30);
+   RooRealVar sigwidth("sigwidth","B^{#pm} width",0.0027,0.001,1.);
 
 // Build a Gaussian PDF:
-RooGaussian signal("signal","signal PDF",mes,sigmean,sigwidth);
+   RooGaussian signal("signal","signal PDF",mes,sigmean,sigwidth);
 {% endhighlight %}
 
 Model building operations such as addition, multiplication, integration are represented by separate operator objects and make the modeling language scale well to models of arbitrary complexity.
@@ -88,20 +91,20 @@ Model building operations such as addition, multiplication, integration are repr
 
 ### Signal and background model
 
-Taking a Gaussian probability density function, the following example constructs a one-dimensional probability density function with a Gaussian signal component and a `ARGUS` phase space background component.
+Taking a Gaussian PDF, the following example constructs a one-dimensional PDF with a Gaussian signal component and a `ARGUS` phase space background component.<br/>All indivdual components of the RooFit PDF (the variables, component PDFs, and the combined PDF) are all created individually by calling the constructors directly.
 
 {% highlight C++ %}
-#include "RooRealVar.h"
-#include "RooConstVar.h"
-#include "RooGaussian.h"
-#include "RooArgusBG.h"
-#include "RooAddPdf.h"
-#include "RooDataSet.h"
-#include "RooPlot.h"
+   #include "RooRealVar.h"
+   #include "RooConstVar.h"
+   #include "RooGaussian.h"
+   #include "RooArgusBG.h"
+   #include "RooAddPdf.h"
+   #include "RooDataSet.h"
+   #include "RooPlot.h"
 
-using namespace RooFit;
+   using namespace RooFit;
 
-void runArgusModel() {
+   void runArgusModel() {
 // Observable:
    RooRealVar mes("mes","m_{ES} (GeV)",5.20,5.30);
 
@@ -145,7 +148,7 @@ void runArgusModel() {
    caption="Roofit plot."
 %}
 
-It is also possible to organize all individual components of the RooFit PDF (the variables, component PDFs and combined PDF) in a container class the `myWorkspace` that has an associated factory tool to create trees of RooFit objects of arbitrary complexity using a construction language.
+It is also possible to organize all individual components of the RooFit PDF (the variables, component PDFs, and the combined PDF) in a container class  `myWorkspace` that has an associated factory tool to create trees of RooFit objects of arbitrary complexity using a construction language.
 
 {% highlight C++ %}
 {
@@ -177,6 +180,7 @@ It is also possible to organize all individual components of the RooFit PDF (the
 {% endhighlight %}
 
 After executing the ROOT macro, the objects defined in the workspace are also available in a namespace with the same name as the workspace if the second argument of the workspace constructor is set to `true`.
+
 That is, typing `myWorkspace::sum` at the root prompt yields:
 
 {% highlight C++ %}
@@ -184,10 +188,9 @@ That is, typing `myWorkspace::sum` at the root prompt yields:
    (RooAddPdf &) RooAddPdf::sum[ nsig * gauss + nbkg * argus ] = 0.369501
 {% endhighlight %}
 
-
 ### Convolution of two PDFs
 
-The [Signal and background model](#signal-and-background-model) example illustrated the use of the `RooAddPdf` addition operator. It is also  possible to construct convolutions of PDFs using the FFT convolution operator.
+The [Signal and background model](#signal-and-background-model) example illustrated the use of the `RooAddPdf` addition operator. It is also possible to construct convolutions of PDFs using the FFT convolution operator.
 
 {% highlight C++ %}
 {
@@ -207,12 +210,13 @@ The [Signal and background model](#signal-and-background-model) example illustra
 }
 {% endhighlight %}
 
+You can use PDF's `lxg` for fitting, plotting and event generation in exactly the same way as the PDF model of The [Signal and background model](#signal-and-background-model) example. 
+
 ### Multi-dimensional PDF
 
 You can construct multi-dimensional PDFs with and without correlations using the `RooProdPdf` product operator. The example below shows how to construct a 2-dimensional PDF with correlations of the form `F(x|y)*G(y)` where the conditional PDF `F(x|y)` describes the distribution in observable `x` given a value of `y`, and PDF `G(y)` describes the distribution in observable `y`.
 
 {% highlight C++ %}
-
 {
    RooWorkspace w("w");
 
@@ -238,6 +242,22 @@ The result is:
    RooProdPdf::model[ gaussy * gaussx|y ] = 0.606531
 {% endhighlight %}
 
+Fitting, plotting and event generation with multi-dimensional PDFs is very similar to that of one-dimensional PDFs. Continuing the above example, you can use:
+
+{% highlight C++ %}
+[...]
+   RooDataSet *data = model->generate(RooArgSet(*x, *w.var("y")), 10000);
+
+   model->fitTo(*data);
+
+   auto frame = x->frame();
+   data->plotOn(frame);
+   model->plotOn(frame);
+
+   frame->Draw();
+}
+{% endhighlight %}
+
 ## Working with likelihood functions and profile likelihood
 
 Given a PDF and a data set, a likelihood function can be constructed as:
@@ -246,20 +266,20 @@ Given a PDF and a data set, a likelihood function can be constructed as:
    RooAbsReal* nll = pdf.createNLL(data);
 {% endhighlight %}
 
-The likelihood function behaves like a regular RooFit function and can be plotted the same way probability density functions:
+The likelihood function behaves like a regular RooFit function and can be drawn in the same way as PDFs
 
 {% highlight C++ %}
    RooPlot* frame = myparam.frame();
    nll->plotOn(frame);
 {% endhighlight %}
 
-Since likelihood evaluations are potentially time-consuming, RooFit facilitates calculation of likelihood in parallel on multiple processes. This parallelization process is transparent to the user. To request parallel calculation on 8 processors (on the same host), construct the likelihood function as follows
+Since likelihood evaluations are potentially time-consuming, RooFit allows likelihood to be calculated in parallel on multiple processes. This parallelization process is transparent to the user. To request parallel computation on 8 processors (on the same host), construct the likelihood function as follows:
 
 {% highlight C++ %}
    RooAbsReal* nll = pdf.createNLL(data, NumCPU(8)) ;
 {% endhighlight %}
 
-You can also construct along similar lines the profile likelihood, which is the likelihood minimized w.r.t. the nuisance parameters, i.e for a likelihood `L(p,q)` where `p` is a parameter of interest and `q` is a nuisance parameter, the value of the profile likelihood `PL(p)` is the value of `L(p,q)` at the value of `q` where `L(p,q)` is lowest. A profile likelihood is construct as follows:
+You can also similarly construct the profile likelihood, which is the likelihood minimized taking into account the nuisance parameters, this is, for a likelihood `L(p,q)` where `p` is a parameter of interest and `q` is a nuisance parameter, the value of the profile likelihood `PL(p)` is the value of `L(p,q)` at the value of `q` where `L(p,q)` is lowest. A profile likelihood is construct as follows:
 
 {% highlight C++ %}
    RooAbsReal* pll = nll->createProfile(<paramOfInterest>);
@@ -310,3 +330,42 @@ A toy PDF and a data set are constructed. A likelihood scan and a profile likeli
    file="roofit.root" object="likelihood" width="600px" height="400px"
    caption="The likelihood and the profile likelihood in the frac parameter."
 %}
+
+_**Python**_
+In Python, the example above look like this:
+
+{% highlight C++ %}
+   import ROOT
+
+// Construct the model.
+   w = ROOT.RooWorkspace("w")
+   g1 = w.factory("Gaussian::g1(x[-20,20],mean[-10,10],sigma_g1[3])")
+   g2 = w.factory("Gaussian::g2(x,mean,sigma_g2[4,3,6])")
+   model = w.factory("SUM::model(frac[0.5,0,1]*g1,g2)")
+
+   x = w.var("x")
+   frac = w.var("frac")
+
+// Generate 1000 events.
+   varsForGeneration = ROOT.RooArgSet(x)
+   data = model.generate(varsForGeneration, 1000)
+
+// Create likelihood function.
+   nll = model.createNLL(data, ROOT.RooFit.NumCPU(2))
+
+// Minimize likelihood.
+   minimiser = ROOT.RooMinuit(nll)
+   minimiser.migrad()
+
+// Plot likelihood scan in parameter frac.
+   frame1 = frac.frame(ROOT.RooFit.Bins(10), ROOT.RooFit.Range(0.01,0.95))
+   nll.plotOn(frame1, ROOT.RooFit.ShiftToZero())
+
+// Plot the profile likelihood in frac.
+   profileVariables = ROOT.RooArgSet(frac)
+   pll_frac = nll.createProfile(profileVariables)
+   pll_frac.plotOn(frame1, ROOT.RooFit.LineColor(ROOT.kRed))
+
+   frame1.Draw()
+{% endhighlight %}
+

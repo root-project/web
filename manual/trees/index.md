@@ -67,7 +67,7 @@ statistics about the staff at CERN. Both, `staff.C` and `staff.dat` are in avail
 The following script declares a structure called `staff_t`. It opens the ASCII file, creates
 a ROOT file and a `TTree`. Then it creates one branch with the
 [TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"}
-method. The first parameter of the `Branch()` method is the branch name. The second
+method.<br/>The first parameter of the `Branch()` method is the branch name. <br/>The second
 parameter is the address from which the first leaf is to be read. In this example, it is
 the address of the structure staff. Once the branch is defined,
 the script reads the data from the ASCII file into the `staff_t`
@@ -188,8 +188,15 @@ The data of a tree are saved in a ROOT file (see → [ROOT files]({{ '/manual/st
 
 The `TTree::Write()` method is needed to write the ROOT file header.
 
-When writing a {% include ref class="TTree" %} to a ROOT file and if the ROOT file size reaches the value stored in the [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9){:target="_blank"}, the current
-ROOT file is closed and a new ROOT file is created. If the original ROOT file is named `myfile.root`, the subsequent ROOT files are named `myfile_1.root`, `myfile_2.root`, etc.
+When writing a {% include ref class="TTree" %} to a ROOT file and if the ROOT file size reaches the value stored in the [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9){:target="_blank"}, the current ROOT file is closed and a new ROOT file is created. If the original ROOT file is named `myfile.root`, the subsequent ROOT files are named `myfile_1.root`, `myfile_2.root`, etc.
+
+**Autosave**
+
+`Autosave` gives you the option to save all branch buffers every n byte. It is recommended to use `Autosave` for large acquisitions. If the acquisition fails to complete, you can recover the ROOT file and all the contents since the last `Autosave`. 
+
+- Use the [TTree::SetAutosave()](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8){:target="_blank"} method to set the number of bytes between `Autosave`.
+
+You can also use [TTree::SetAutosave()](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8){:target="_blank"} in the acquisition loop every n entry.
 
 ### Printing the summary of a tree
 
