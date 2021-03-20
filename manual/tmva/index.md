@@ -31,6 +31,10 @@ The package includes:
 > For TMVA, topical manuals are available at [Topical Manuals - TMVA]({{ '/topical/#tmva' | relative_url }}).<br>
 > They contain in-depth information about TMVA.
 
+> **TMVA in the ROOT forum**
+>
+> Discuss TMVA in the [ROOT forum](https://root-forum.cern.ch/c/tmva/22){:target="_blank"}.
+
 ## Using TMVA
 
 The ROOT tutorials for TMVA, available in `$ROOTSYS/tutorials/tmva`, provide example jobs for the training phase and the application of the training results in a classification or regression analysis using the TMVA Reader.
@@ -38,19 +42,19 @@ The ROOT tutorials for TMVA, available in `$ROOTSYS/tutorials/tmva`, provide exa
 
 ### Training examples
 
-- {% include tutorial name="TMVAClassification" %} Provides examples for the training and testing of TMVA classifiers.
+- {% include tutorial name="TMVAClassification" %} provides examples for the training and testing of TMVA classifiers.
 
-- {% include tutorial name="TMVAMulticlass" %} Provides an example for the training and testing of a TMVA multi-class classification.
+- {% include tutorial name="TMVAMulticlass" %} provides an example for the training and testing of a TMVA multi-class classification.
 
-- {% include tutorial name="TMVARegression" %} Provides examples for the training and testing of TMVA classifiers.
+- {% include tutorial name="TMVARegression" %} provides examples for the training and testing of TMVA classifiers.
 
 ### Application examples
 
-- {% include tutorial name="TMVAClassificationApplication" %} Provides an example on how to use the trained classifiers within an analysis module.
+- {% include tutorial name="TMVAClassificationApplication" %} provides an example on how to use the trained classifiers within an analysis module.
 
-- {% include tutorial name="TMVAMulticlassApplication" %} Provides an example on how to use the trained multi-class classifiers within an analysis module.
+- {% include tutorial name="TMVAMulticlassApplication" %} provides an example on how to use the trained multi-class classifiers within an analysis module.
 
-- {% include tutorial name="TMVARegressionApplication" %} Provides an example on how to use the trained regression MVAs within an analysis module.
+- {% include tutorial name="TMVARegressionApplication" %} provides an example on how to use the trained regression MVAs within an analysis module.
 
 _**Example**_
 

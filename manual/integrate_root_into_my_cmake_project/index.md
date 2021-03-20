@@ -28,8 +28,9 @@ ROOT_USE_FILE  | PATH   |  Path to a CMake module, which makes use of the previo
 One cmake target per ROOT library is also available, e.g. `ROOT::Core` or `ROOT::Tree`.
 
 > **Note**
-> To ensure compatibility between ROOT's C++ interpreter, Cling, and compiled code, your application *must* be compiled with the same C++ standard with which ROOT was compiled.
-> The C++ standard used for ROOT appears e.g. among the flags listed by `root-config --cflags`.
+>
+> To ensure compatibility between ROOT's C++ interpreter, Cling, and compiled code, your application *must* be compiled with the same C++ standard with which ROOT was compiled.<br/>
+> The C++ standard used for ROOT appears for example among the flags listed by `root-config --cflags`.
 
 ## Adding additional libraries to `ROOT_LIBRARIES`
 You can force additional ROOT libraries in the `ROOT_LIBRARIES` variable using the `COMPONENTS` option in the [find_package(...)](https://cmake.org/cmake/help/latest/command/find_package.html){:target="_blank"} command. For example, to add the `RooStats` library, you can specify it as an extra component (the name of the component is the name of the library without any library prefix or suffix).
@@ -37,13 +38,13 @@ You can force additional ROOT libraries in the `ROOT_LIBRARIES` variable using t
    find_package(ROOT COMPONENTS RooStats)
 {% endhighlight %}
 
-However, prefer passing libraries as cmake targets whenever possible (see the [full example](#full-example-event-project) below).
+However, prefer passing libraries as CMake targets whenever possible (see the [full example](#full-example-event-project) below).
 
 ## Useful commands
-ROOT provides a number of `CMake` macros/functions that are used internally but can also be used by projects layered on top of ROOT.
+ROOT provides a number of `CMake` macros and functions that are used internally but can also be used by projects layered on top of ROOT.
 
 ### ROOT_GENERATE_DICTIONARY
-Generate dictionary for a set of header files (convenient wrapper on top of the `rootcling` command).
+`ROOT_GENERATE_DICTIONARY` generates a dictionary for a set of header files (convenient wrapper on top of the `rootcling` command).
 
 {% highlight C++ %}
    ROOT_GENERATE_DICTIONARY( dictionary headerfiles ... [STAGE1]
@@ -52,7 +53,7 @@ Generate dictionary for a set of header files (convenient wrapper on top of the 
       [OPTIONS opt1 opt2 ...] )
 {% endhighlight %}
 
-The `${dictionary}.cxx` and `${dictionary}.pcm` files are created using the header and the `linkdef` files, calling the `rootcling` command. Optionally, you can provide `OPTIONS` and `MODULE` to customize the way the `rootcling` command is called and the name for the .pcm files.
+The `${dictionary}.cxx` and `${dictionary}.pcm` files are created using the header and the `linkdef` files, calling the `rootcling` command. Optionally, you can provide `OPTIONS` and `MODULE` to customize the way the `rootcling` command is called and the name for the `.pcm` files.
 
 As an alternative, `REFLEX_GENERATE_DICTIONARY` offers the same underlying functionality with a slightly different interface:
 
@@ -68,33 +69,33 @@ As an alternative, `REFLEX_GENERATE_DICTIONARY` offers the same underlying funct
 The following is an example of a project that creates a library including a dictionary and an executable file.
 
 {% highlight C++ %}
-# CMakeLists.txt for the "event" package. It creates a library with a dictionary and a main program.
-# If ROOT is not installed in a default system location you need to tell CMake where to find it.
-# Sourcing `thisroot.sh` already sets the required environment variables.
-# Otherwise, you'll have to tell the build system where to look for ROOT,
-# e.g. by passing `-DROOT_DIR="/path/to/root/installation` at cmake configuration time.
+// CMakeLists.txt for the "event" package. It creates a library with a dictionary and a main program.
+// If ROOT is not installed in a default system location you need to tell CMake where to find it.
+// Sourcing `thisroot.sh` already sets the required environment variables.
+// Otherwise, you must tell the build system where to look for ROOT,
+// for example by passing `-DROOT_DIR="/path/to/root/installation` at CMake configuration time.
 
-cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
-project(event)
+   cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+   project(event)
 
-# Locate the ROOT package and define a number of useful targets and variables.
-find_package(ROOT REQUIRED COMPONENTS RIO Net)
+// Locate the ROOT package and define a number of useful targets and variables.
+   find_package(ROOT REQUIRED COMPONENTS RIO Net)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
-ROOT_GENERATE_DICTIONARY(G__Event Event.h LINKDEF EventLinkDef.h)
+   include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+   ROOT_GENERATE_DICTIONARY(G__Event Event.h LINKDEF EventLinkDef.h)
 
-# Create a shared library with a generated dictionary.
-# Passing cmake targets such as `ROOT::RIO` as dependencies (rather than plain
-# library names e.g. via ${ROOT_LIBRARIES}) ensures that properties such as required
-# include directories and C++ standard are propagated to our libraries or executables.
-# Note: to ensure compatibility with Cling, targets *must* be compiled using the
-# same C++ standard as ROOT was compiled with.
-add_library(Event SHARED Event.cxx G__Event.cxx)
-target_link_libraries(Event PUBLIC ROOT::RIO ROOT::Net)
+// Create a shared library with a generated dictionary.
+// Passing cmake targets such as `ROOT::RIO` as dependencies (rather than plain
+// library names for example via ${ROOT_LIBRARIES}) ensures that properties such as required
+// include directories and C++ standard are propagated to our libraries or executables.
+// Note: To ensure compatibility with Cling, targets *must* be compiled using the
+// same C++ standard as ROOT was compiled with.
+   add_library(Event SHARED Event.cxx G__Event.cxx)
+   target_link_libraries(Event PUBLIC ROOT::RIO ROOT::Net)
 
-# Create the main program using the library.
-add_executable(Main MainEvent.cxx)
-target_link_libraries(Main Event)
+// Create the main program using the library.
+   add_executable(Main MainEvent.cxx)
+   target_link_libraries(Main Event)
 {% endhighlight %}
 
-See also [this excellent guide](https://cliutils.gitlab.io/modern-cmake/chapters/packages/ROOT.html) by Henry Schreiner for more information about building your ROOT project with modern cmake.
+See also the [An Introduction to Modern CMake Guide](https://cliutils.gitlab.io/modern-cmake/chapters/packages/ROOT.html){:target="_blank"} by Henry Schreiner for more information on building your ROOT project with modern CMake.
