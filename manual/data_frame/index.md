@@ -61,7 +61,7 @@ auto control_h = df2.Histo1D("y"); // book filling of a control plot
 df2.Snapshot("newtree", "newfile.root", {"x","y"});
 ```
 
-For more examples, including ones in Python, see [the tutorials](https://root.cern/doc/master/group__tutorial__dataframe.html).
+For more examples, including ones in Python, see [the tutorials](https://root.cern/doc/master/group__tutorial__dataframe.html){:target="_blank"}.
 
 ## Parallel execution
 
@@ -77,7 +77,7 @@ In addition to [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame
 
 - [TTree::FlushBaskets](https://root.cern/doc/master/classTTree.html#a2c67417486903b12f1149f97ca47525f){:target="_blank"}: Writes multiple baskets to disk in parallel.
 
-- {% include ref class="TTreeCacheUnzip" %}: Decompresses the baskets contained in a {% include ref class="TTreeCache" %} in parallel.
+- [TTreeCacheUnzip](https://root.cern/doc/master/classTTreeCacheUnzip.html){:target="_blank"}: Decompresses the baskets contained in a {% include ref class="TTreeCache" %} in parallel.
 
 - `THx::Fit`: Performs in parallel the evaluation of the objective function over the data.
 

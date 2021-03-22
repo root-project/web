@@ -2026,11 +2026,11 @@ _**Examples**_
 
 ## FFTW
 
-For computing Fast Fourier Transforms, ROOT uses the FFTW library (see  →  http://www.fftw.org). To use it, the fftw3 module must be enabled.
-
-{% include ref class="TVirtualFFT" %}  is the interface class for Fast Fourier Transforms.
+For computing fast Fourier transforms (FFT), ROOT uses the FFTW library (see  →  http://www.fftw.org). To use it, the fftw3 module must be enabled.
 
 With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6134bf0a5ea525c7f670f59f82a0){:target="_blank"} you can change the default library.
+
+{% include ref class="TVirtualFFT" %}  is the interface class for FFT. With [TH1::FFT()](https://root.cern/doc/master/classTH1.html#a69321e3106e4a26db3fef4d126d835ff){:target="_blank"} you can perform a FFT for a histogram.
 
 > **Tutorial**
 >
