@@ -32,7 +32,7 @@ And they also allow the universal implementation of toy Monte Carlo sampling tec
 
 ## Design
 
-RooFit introduces a granular structure in its mapping of mathematical data models components to C++ objects: instead of aiming for a monolithic entity describing a data model, each mathimatical symbol is repesented by a separate object. A feature of this design philosophy is that all RooFit models always consist of multiple objects.
+RooFit introduces a granular structure in its mapping of mathematical data models components to C++ objects: instead of aiming for a monolithic entity describing a data model, each mathematical symbol is represented by a separate object. A feature of this design philosophy is that all RooFit models always consist of multiple objects.
 
 <table width="100%" border="0">
   <tbody>
@@ -91,7 +91,7 @@ Model building operations such as addition, multiplication, integration are repr
 
 ### Signal and background model
 
-Taking a Gaussian PDF, the following example constructs a one-dimensional PDF with a Gaussian signal component and a `ARGUS` phase space background component.<br/>All indivdual components of the RooFit PDF (the variables, component PDFs, and the combined PDF) are all created individually by calling the constructors directly.
+Taking a Gaussian PDF, the following example constructs a one-dimensional PDF with a Gaussian signal component and a `ARGUS` phase space background component.<br/>All individual components of the RooFit PDF (the variables, component PDFs, and the combined PDF) are all created individually by calling the constructors directly.
 
 {% highlight C++ %}
    #include "RooRealVar.h"
@@ -210,7 +210,7 @@ The [Signal and background model](#signal-and-background-model) example illustra
 }
 {% endhighlight %}
 
-You can use PDF's `lxg` for fitting, plotting and event generation in exactly the same way as the PDF model of The [Signal and background model](#signal-and-background-model) example. 
+You can use PDF's `lxg` for fitting, plotting and event generation in exactly the same way as the PDF model of The [Signal and background model](#signal-and-background-model) example.
 
 ### Multi-dimensional PDF
 
