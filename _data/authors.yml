@@ -549,3 +549,13 @@ Alberto Pérez de Rada Fiol:
   tag         : "blog"
   avatar      : "/assets/images/APdRF.jpg"
   email       : "hey@albertopdrf.com"
+
+
+Anirudh Dagar:
+  name        : "Anirudh Dagar"
+  short_bio   : "Anirudh is a final year undergraduate student at IIT Roorkee. He has been
+                 focusing on Machine Learning and is passionate about open source software.
+                 He developed the TMVA PyTorch Interface as part of GSoC 2020."
+  tag         : "blog"
+  avatar      : "/assets/images/AD.jpg"
+  email       : "anirudhdagar6@gmail.com"
