@@ -30,7 +30,7 @@ PyTorch is widely used​ among researchers and hence has a large community arou
 * Performance: PyTorch is extremely fast due to its highly optimized C++ backend.
 
 
-Designing a simple neural net in PyTorch using a [PyTorch container][Containers] is extremely simple. Here we use [`nn.Sequential`][Sequential]:
+Designing a simple model in PyTorch using a [PyTorch container][Containers] is extremely simple. Here we use [`nn.Sequential`][Sequential]:
 
 ```python
 model = nn.Sequential()
