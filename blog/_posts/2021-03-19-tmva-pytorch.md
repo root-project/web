@@ -15,9 +15,9 @@ With the release of *ROOT v6-24-00* we are excited to launch a brand new PyTorch
 
 ## Need for a PyTorch Interface?
 
-TMVA already has a PyKeras interface which we all love, especially with Keras’ simple high-level tensorflow API. If your work involves some elementary experiments, Keras maybe the goto framework due to its plug & play spirit.
+TMVA already has a PyKeras interface which we all love, especially with Keras’ simple high-level tensorflow API. If your work involves some elementary experiments, Keras maybe the goto framework due to its plug and play spirit.
 
-But things get interesting when one requires low level control and flexibility. That’s when the argument for Keras starts losing water. PyTorch on the other hand is amazing in terms of control, flexibility and raw power that it can provide to the user. It’s lower-level approach is better suited for the more mathematically-inclined users.
+But things get interesting when one requires low level control and flexibility. That’s when the argument for Keras starts losing water. PyTorch on the other hand is amazing in terms of control, flexibility and raw power that it can provide to the user. Its lower-level approach is better suited for the more mathematically-inclined users.
 
 PyTorch is widely used​ among researchers and hence has a large community around it.
 
@@ -27,7 +27,7 @@ PyTorch is widely used​ among researchers and hence has a large community arou
 
 * Ease of Debugging: ​PyTorch models make use of dynamic computation graphs and are based on eager execution. This makes it easier to use debugging tools like pdb.
 
-* Performance: PyTorch is extremely fast due to it’s highly optimized C++ backend.
+* Performance: PyTorch is extremely fast due to its highly optimized C++ backend.
 
 
 Designing a simple neural net in PyTorch using a [PyTorch container][Containers] is extremely simple. Here we use [`nn.Sequential`][Sequential]:
