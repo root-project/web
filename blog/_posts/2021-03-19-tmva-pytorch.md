@@ -1,12 +1,12 @@
 ---
-title: "TMVA PyTorch Interface is Out!"
+title: "New PyTorch Interface in TMVA!"
 layout: archive
 author: Anirudh Dagar
 ---
 
 What if we combine [PyTorch][PyTorch] and [TMVA][TMVA]? Ever wondered how ROOT utilizes powerful external MVA libraries making them easily accessible with a direct integration into the TMVA workflow? These interfaces between TMVA and Python frameworks are powered by the PyMVA backbone. All PyMVA methods provide the same plug-and-play mechanisms as TMVA.
 
-With the release of *ROOT v6-24-00* we are excited to launch a brand new PyTorch Interface for TMVA.
+With the coming release of *ROOT v6-24-00* we are excited to launch a brand new PyTorch Interface for TMVA.
 
 [PyTorch][PyTorch] is a Python-based scientific package supporting a​utomatic differentiation.​ An ​open-source machine learning​ framework that accelerates the path from research prototyping to production deployment.
 
