@@ -495,7 +495,7 @@ void AnalyzeTree()
    TFile *f = TFile::Open("http://root.cern/files/introtutorials/eventdata.root");
    if (f == 0) {
 
-// If the file cannot be opend, print an error message and return immediately.
+// If the file cannot be opened, print an error message and return immediately.
       printf("Error: cannot open http://root.cern/files/introtutorials/eventdata.root!\n");
       return;
    }
@@ -544,9 +544,9 @@ void AnalyzeTree()
 }
 {% endhighlight %}
 
-### Normalizing histograms 
+### Normalizing histograms
 
-You can use [TH1::Scale (Double_t c1 = 1, Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#add929909dcb3745f6a52e9ae0860bfbd){:target="_blank"} and [TH1::Integral (Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#aaf053a4b487c46b9e20c0bf534b34012){:target="_blank"} to normalize histograms. 
+You can use [TH1::Scale (Double_t c1 = 1, Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#add929909dcb3745f6a52e9ae0860bfbd){:target="_blank"} and [TH1::Integral (Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#aaf053a4b487c46b9e20c0bf534b34012){:target="_blank"} to normalize histograms.
 
 The following example shows several methods to normalize a histograms. After the normalization of a histogram, it must be redrawn.
 
@@ -638,7 +638,7 @@ Shows the estimated probability density function.
    h->Scale(factor/h->Integral("width"));
 {% endhighlight %}
 
-After applying the normalization merthod, redraw the histogram with a [drawing option](#drawing-options):
+After applying the normalization method, redraw the histogram with a [drawing option](#drawing-options):
 
 {% highlight C++ %}
    myHist->Draw("HIST")
@@ -653,7 +653,7 @@ After applying the normalization merthod, redraw the histogram with a [drawing o
 
 ### Fast Fourier transforms for histograms
 
-ROOT provides with {% include ref class="TVirtualFFT" %} an interface class for fast Fourier transforms (FFT) (see → [FFTW]({{ '/manual/math/#fftw' | relative_url }}). With [TH1::FFT()](https://root.cern/doc/master/classTH1.html#a69321e3106e4a26db3fef4d126d835ff){:target="_blank"} you can perform a FFT for a histogram. 
+ROOT provides with {% include ref class="TVirtualFFT" %} an interface class for fast Fourier transforms (FFT) (see → [FFTW]({{ '/manual/math/#fftw' | relative_url }}). With [TH1::FFT()](https://root.cern/doc/master/classTH1.html#a69321e3106e4a26db3fef4d126d835ff){:target="_blank"} you can perform a FFT for a histogram.
 
 ## Profile histograms
 

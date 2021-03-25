@@ -39,14 +39,24 @@ Your changes are now in your forked repository on GitHub. We will now make the p
 
 ## Making the pull request on GitHub
 
-If you go to `https://github.com/<your GitHub username>/root`, you will see a
-notification saying "Your recently pushed branches: histogram-race-condition-fix
-(some minutes ago)":
+Two ways:
 
-![](PR_submission_view.png)
+  1. The last command,`git push --set-upstream origin histogram-race-condition-fix`, gives you the URL allowing
+     to create the pull request
+     ```
+     ...
+     remote: Create a pull request for 'histogram-race-condition-fix' on GitHub by visiting
+     remote:      https://github.com/couet/root/pull/new/histogram-race-condition-fix
+     ...
+     ```
+     Copy/Paste this URL in your favorite web browser.
 
-You can now hit the green "Compare & pull request" button which lets you create
-the pull request.
+  2. If you go to `https://github.com/<your GitHub username>/root`, you will see a
+     notification saying "Your recently pushed branches: histogram-race-condition-fix
+     (some minutes ago)":
+     ![](PR_submission_view.png)
+     You can now hit the green "Compare & pull request" button which lets you create
+     the pull request.
 
 Fill in a reasonable description of what your new feature is, and hit
 "Create pull request". A project member will later initiate a build of your pull
