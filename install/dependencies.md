@@ -55,7 +55,7 @@ libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 *   **python3-numpy:** needed for PyMVA
 *   **libxml2-devel:** for /usr/bin/xml2-config
 *   **gsl-devel:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
-*   **R:** needed for R bindings. In addition R packages **R-Rcpp** and **R-RInside** need to be installed.
+*   **R-devel:** needed for R bindings. In addition R packages **R-Rcpp-devel** and **R-RInside-devel** need to be installed.
 
 As a one-liner:
 
