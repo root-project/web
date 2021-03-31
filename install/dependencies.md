@@ -64,7 +64,7 @@ sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel \
 avahi-compat-libdns_sd-devel openldap-devel python-devel \
-python3-numpy libxml2-devel gsl-devel R R-Rcpp R-RInside
+python3-numpy libxml2-devel gsl-devel R-devel R-Rcpp-devel R-RInside-devel
 ```
 
 ## Ubuntu and other Debian-based distributions
