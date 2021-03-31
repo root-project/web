@@ -504,7 +504,7 @@ The defined classes can be classified in the following groups:
    - [ROOT::Fit::LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html){:target="_blank"}: Calls for likelihood fits.
 
 - [Fit data classes](https://root.cern/doc/master/group__FitData.html): Classes for describing the input data for fitting. These classes are, among others, [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}, for binned data sets
- (data points containing both coordinates and a corresponding value/weight with optionally an error on the value or the coordinate), and [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html)c, for un-binned data sets.
+ (data points containing both coordinates and a corresponding value or weight with optionally an error on the value or the coordinate), and [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html)c, for un-binned data sets.
 
 - [User fitting classes](https://root.cern/doc/master/group__FitMain.html){:target="_blank"}: Classes for fitting a given data set:
     - [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} for executing the fit.
@@ -518,7 +518,7 @@ In addition, the fitter classes use the generic interfaces for parametric functi
 
 There are two types of input data:
 - Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}): They are used for least square (chi-square) fits of histograms or {% include ref class="TGraph" %} objects.
-- Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"}): They are used for fitting vectors of data points, for example from a {% include ref class="TTree" %}[TTree].
+- Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"}): They are used for fitting vectors of data points, for example from a {% include ref class="TTree" %}.
 
 **Using binned data**
 
@@ -630,7 +630,7 @@ You can also provide a function object that implements the derivatives of the fu
 provide the function object as a class deriving from the [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"} interface.
 
 Note that the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b){:target="_blank"} wrapper class implements also the gradient interface, using internally [TF1::GradientPar](https://root.cern/doc/master/classTF1.html#a3fb34a1cc39b386c550827cf1e38e2dd){:target="_blank"}, which is based on numerical differentiation, apart for the case of linear functions (this is when [TF1::IsLinear()](https://root.cern/doc/master/classTF1.html#ab3fbb4f517a7589cbacd5535e630cfb6){:target="_blank"} is `true`). The parameter derivatives of the model function can be useful to some minimization
-algorithms, such as Fumili (see → [FUMILI]({{ "/manual/math/#fumili-minimization-package" | relative_url}})). However, in general is better to leave the minimization algorithm (for example TMinuit, see → [TMinuit({{ "/manual/math/#tminuit" | relative_url}})) to compute the needed derivatives using its own customised numerical differentiation algorithm. To avoid providing the parameter derivations to the fitter, explicitly set [Fitter::SetFunction](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a5f80d18031a54675a9f33670d495d0a5){:target="_blank"} to  `false`.
+algorithms, such as Fumili (see → [FUMILI]({{ "/manual/math/#fumili-minimization-package" | relative_url}})). However, in general is better to leave the minimization algorithm (for example TMinuit, see → [TMinuit]({{ "/manual/math/#tminuit" | relative_url}})) to compute the needed derivatives using its own customised numerical differentiation algorithm. To avoid providing the parameter derivations to the fitter, explicitly set [Fitter::SetFunction](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a5f80d18031a54675a9f33670d495d0a5){:target="_blank"} to  `false`.
 
 ### Configuring the fit
 
@@ -696,16 +696,16 @@ parameter values. Other optional parameter include the size of the data sets and
    bool Fitter::SetFCN(const ROOT::Math::IBaseFunctionMultiDim & f, const double * initialParameters = 0, unsigned int dataSize=0, bool isChi2Fit = false)
 {% endhighlight %}
 
-- A function object implementing the [ROOT::Math::FitMethodFunction](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a4146844bcfb2608f1dd869ffc968e6f7){:target="_blank"} interface. This is an interface class that extends [ROOT::Math::IBaseFunctionMultiDim68https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} with some additional functions which can be used when fitting is done. The extra functionality is required by some fitting algorithms like Fumili or GSLMultiFit.
+- A function object implementing the [ROOT::Math::FitMethodFunction](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a4146844bcfb2608f1dd869ffc968e6f7){:target="_blank"} interface. This is an interface class that extends [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} with some additional functions which can be used when fitting is done. The extra functionality is required by some fitting algorithms like Fumili or GSLMultiFit.
 
 {% highlight C++ %}
    bool Fitter::SetFCN(const ROOT::Math::FitMethodFunction & f, const double * initialParameters = 0, unsigned int dataSize=0)
 {% endhighlight %}
 
 - An old-Minuit like FCN interface (this is a free function with the signature `fcn(int &npar, double *gin, double &f, double *u, int flag)`.
-typedef void(* MinuitFCN)(int &npar, double *gin, double &f, double *u, int flag)
 
 {% highlight C++ %}
+   typedef void(* MinuitFCN)(int &npar, double *gin, double &f, double *u, int flag)
    bool Fitter::SetFCN(MinuitFCN fcn, int npar, const double * initialParameters = 0, unsigned int dataSize=0, bool isChi2Fit = false)
 {% endhighlight %}
 
@@ -722,8 +722,7 @@ By using [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_
 {% include ref class="TFitResult" %} is a class deriving from [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html){:target="_blank"} and providing in addition some convenient methods to return
 a covariance or correlation matrix as a `TMatrixDSym` object. Furthermore, {% include ref class="TFitResult" %} derives from {% include ref class="TNamed" %} and can be conveniently stored in a file. 
 
-When fitting an histogram (a {% include ref class="TH1" %} object) or a graph (a TGraph {% include ref class="TGraph" %} object), it is possible to return a {% include ref class="TFitResult" %} via the
-{% include ref class="TFitResultPtr" %} object, which behaves as a smart pointer to a  {% include ref class="TFitResult" %}. {% include ref class="TFitResultPtr" %} is the return object of [TH1::Fit](https://root.cern/doc/master/classTH1.html#a7e7d34c91d5ebab4fc9bba3ca47dabdd){:target="_blank"} or [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#aa978c8ee0162e661eae795f6f3a35589){:target="_blank"} . 
+When fitting an histogram (a {% include ref class="TH1" %} object) or a graph (a TGraph {% include ref class="TGraph" %} object), it is possible to return a {% include ref class="TFitResult" %} via the {% include ref class="TFitResultPtr" %} object, which behaves as a smart pointer to a  {% include ref class="TFitResult" %}. {% include ref class="TFitResultPtr" %} is the return object of [TH1::Fit](https://root.cern/doc/master/classTH1.html#a7e7d34c91d5ebab4fc9bba3ca47dabdd){:target="_blank"} or [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#aa978c8ee0162e661eae795f6f3a35589){:target="_blank"} . 
 
 By default {% include ref class="TFitResultPtr" %} contains only the status of the fit and can be obtained by an automatic conversion of `TFitResultPtr` to an integer. If the fit option `S` is used instead, `TFitResultPtr` contains {% include ref class="TFitResult" %} and behaves as a smart pointer to it. 
 
