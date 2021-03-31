@@ -32,8 +32,8 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 As a one-liner:
 
 ```bash
-sudo yum install git cmake3 gcc-c++ gcc binutils \
-libX11-devel libXpm-devel libXft-devel libXext-devel openssl-devel
+sudo yum install git make cmake3 gcc-c++ gcc binutils \
+libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 ```
 
 ### Most common optional packages
@@ -41,9 +41,9 @@ libX11-devel libXpm-devel libXft-devel libXext-devel openssl-devel
 *   **redhat-lsb-core:** needed by some tests using lsb_release
 *   **gcc-gfortran:** for /usr/bin/gfortran
 *   **pcre-devel:** for /usr/bin/pcre-config
-*   **mesa-libGL-deve**l: for /usr/include/GL/gl.h and for /usr/lib[64]/libGL.so
-*   **mesa-libGLU-devel**: for /usr/include/GL/glu.h and for /usr/lib[64]/libGLU.so
-*   **glew-devel (may need enabling of the [EPEL](https://fedoraproject.org/wiki/EPEL) additional software repository)**: for /usr/include/GL/glew.h and for /usr/lib[64]/libGLEW.so
+*   **mesa-libGL-devel:** for /usr/include/GL/gl.h and for /usr/lib[64]/libGL.so
+*   **mesa-libGLU-devel:** for /usr/include/GL/glu.h and for /usr/lib[64]/libGLU.so
+*   **glew-devel (may need enabling of the [EPEL](https://fedoraproject.org/wiki/EPEL) additional software repository):** for /usr/include/GL/glew.h and for /usr/lib[64]/libGLEW.so
 *   **ftgl-devel:** for /usr/bin/pkg-config
 *   **mysql-devel:** for /usr/bin/mysql_config
 *   **fftw-devel:** for /usr/include/fftw3.h and for /usr/lib/libfftw3.so
@@ -52,19 +52,19 @@ libX11-devel libXpm-devel libXft-devel libXext-devel openssl-devel
 *   **avahi-compat-libdns_sd-devel:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **openldap-devel:** for /usr/include/ldap.h and for /usr/lib/libldap.so
 *   **python-devel:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
-*   **python-numpy-devel:** needed for PyMVA
+*   **python3-numpy:** needed for PyMVA
 *   **libxml2-devel:** for /usr/bin/xml2-config
 *   **gsl-devel:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
-*   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
+*   **R:** needed for R bindings. In addition R packages **R-Rcpp** and **R-RInside** need to be installed.
 
 As a one-liner:
 
 ```bash
-sudo yum install gcc-gfortran pcre-devel \
+sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel \
 avahi-compat-libdns_sd-devel openldap-devel python-devel \
-libxml2-devel gsl-devel
+python3-numpy libxml2-devel gsl-devel R R-Rcpp R-RInside
 ```
 
 ## Ubuntu and other Debian-based distributions
