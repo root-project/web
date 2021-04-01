@@ -49,6 +49,7 @@ libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 *   **fftw-devel:** for /usr/include/fftw3.h and for /usr/lib/libfftw3.so
 *   **cfitsio-devel:** for /usr/include/fitsio2.h and for /usr/lib/libcfitsio.so
 *   **graphviz-devel:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
+*   **libuuid-devel** required during the build. More [info here](https://root-forum.cern.ch/t/cannot-compile-root-v6-22-08-with-debug-symbols-and-all-options/44242).
 *   **avahi-compat-libdns_sd-devel:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **openldap-devel:** for /usr/include/ldap.h and for /usr/lib/libldap.so
 *   **python-devel:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
@@ -62,7 +63,7 @@ As a one-liner:
 ```bash
 sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
-fftw-devel cfitsio-devel graphviz-devel \
+fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
 avahi-compat-libdns_sd-devel openldap-devel python-devel \
 python3-numpy libxml2-devel gsl-devel R-devel R-Rcpp-devel R-RInside-devel
 ```
