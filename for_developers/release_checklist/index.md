@@ -43,10 +43,10 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
       - `git push origin v6-22-00-rc1`
   1. Create the Jenkins procedures
       - on [New Release Job](https://lcgapp-services.cern.ch/root-jenkins/view/Releases/newJob) state `root-release-6.22` as "item name" and set (all the way at the bottom) "Copy from" to the release before (`root-release-6.20` in the v6-22 example case); "Add to current view" should be set.
-        * in "This project is parameterized" / "Validating String Parameter" / "VERSION", put "v6-22-00-patches" as "Default Value"
+        * in "This project is parametrized" / "Validating String Parameter" / "VERSION", put "v6-22-00-patches" as "Default Value"
         * in "Configuration Matrix" / "User-defined Axis" / "V", put "6-22" as "Values"
-        * adjust `Node/Label` / `Labels` as needed, update the "Matrix Combination Parameter" `COMBINATIONS` accordingly (you need to clinck "Advanced..." to actually see it)
-      - on [New Nighly Job](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/newJob) state `root-nightly-v6-22-00-patches` as "item name" and set (all the way at the bottom) "Copy from" to the release before (`root-nightly-v6-20-00-patches` in the v6-22 example case); "Add to current view" should be set.
+        * adjust `Node/Label` / `Labels` as needed, update the "Matrix Combination Parameter" `COMBINATIONS` accordingly (you need to click "Advanced..." to actually see it)
+      - on [New Nightly Job](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/newJob) state `root-nightly-v6-22-00-patches` as "item name" and set (all the way at the bottom) "Copy from" to the release before (`root-nightly-v6-20-00-patches` in the v6-22 example case); "Add to current view" should be set.
         * Update its values as for the release procedure.
 
 ### Produce a new ROOT release
@@ -83,18 +83,18 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
   1. Fix build errors!
       - Deprecations will now create build errors, fix them
       - `make` must succeed
-  1. Push to github
+  1. Push to GitHub
       - `git push origin v6-22-02`
-  1. Produce binary tarfiles (optional for development releases and release condidates)
+  1. Produce binary tar-files (optional for development releases and release candidates)
       - Start the procedure [root-release-6.22](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-6.22/){:target="_blank"} (or whichever branch) in Jenkins
-  1. Install binaries to CVMFS (optional for development releases and release condidates)
+  1. Install binaries to CVMFS (optional for development releases and release candidates)
       - Install release binaries to CVMFS with the Jenkins procedure [root-release-CVMFS](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-CVMFS/){:target="_blank"}
-  1. Update the release pages (optional for development releases and release condidates)
+  1. Update the release pages (optional for development releases and release candidates)
       - Generate the release notes with the Jenkins procedure called [root-releasenotes](https://lcgapp-services.cern.ch/root-jenkins/job/root-releasenotes/){:target="_blank"} with `v6-22-00-patches` or similar as version. They'd show up [here for master](https://root.cern/doc/master/release-notes.html); instead of `master`, put e.g. `v622`.
       - Create a new release web page with the Jenkins procedure called [root-release-webpage](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-webpage/){:target="_blank"}
       - Edit the commented 'highlights' section in the generated release page.
       - If this applies, mark the release as `state: latest` and remove the attribute to the one previously holding it (`get grep "state: latest" -- _releases/`)
   1. Announcements
       - Send mail to the following mailing lists: root-planning@cern.ch, root-dev@cern.ch, roottalk@cern.ch
-      - Write announcement in RootTalk [forum news](https://root-forum.cern.ch/c/news){:target="_blank"} (optional for development releases and release condidates)
+      - Write announcement in RootTalk [forum news](https://root-forum.cern.ch/c/news){:target="_blank"} (optional for development releases and release candidates)
       - For new major releases, consider writing a blog post for https://root.cern announcing the highlights.
