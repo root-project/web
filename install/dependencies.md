@@ -18,7 +18,7 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 ### Required packages
 
 *   **make:** for /usr/bin/make
-*   **cmake3:** for /usr/bin/cmake3
+*   **cmake:** (**cmake3** on CentOS 7) for /usr/bin/cmake
 *   **gcc-c++:** for  for /usr/bin/g++ (ROOT 6 requires g++ 4.8 or clang 3.4; for SLC5/SLC6)
 *   **gcc:** for /usr/bin/gcc
 *   **binutils:** for /usr/bin/ld
@@ -26,10 +26,22 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 *   **libXpm-devel:** for /usr/include/X11/xpm.h and for /usr/lib/libXpm.so
 *   **libXft-devel:** for /usr/include/X11/Xft/Xft.h and for /usr/lib/libXft.so
 *   **libXext-devel:** for /usr/include/X11/extensions/shape.h and for /usr/lib/libXext.so
-*   **python:**  (ROOT6 requires version >= 2.7)
+*   **python:** (**python38** on CentOS 8) ROOT6 requires version >= 2.7
 *   **openssl-devel:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
 
-As a one-liner:
+As a one-liner for Fedora 33, CentOS 8:
+
+```bash
+sudo yum install git make cmake gcc-c++ gcc binutils \
+libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
+```
+As a one-liner for CentOS 8:
+
+```bash
+sudo yum install git make cmake gcc-c++ gcc binutils \
+libX11-devel libXpm-devel libXft-devel libXext-devel python38 openssl-devel
+```
+As a one-liner for Scientific Linux 7 and CentOS 7:
 
 ```bash
 sudo yum install git make cmake3 gcc-c++ gcc binutils \
@@ -43,30 +55,55 @@ libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 *   **pcre-devel:** for /usr/bin/pcre-config
 *   **mesa-libGL-devel:** for /usr/include/GL/gl.h and for /usr/lib[64]/libGL.so
 *   **mesa-libGLU-devel:** for /usr/include/GL/glu.h and for /usr/lib[64]/libGLU.so
-*   **glew-devel (may need enabling of the [EPEL](https://fedoraproject.org/wiki/EPEL) additional software repository):** for /usr/include/GL/glew.h and for /usr/lib[64]/libGLEW.so
-*   **ftgl-devel:** for /usr/bin/pkg-config
 *   **mysql-devel:** for /usr/bin/mysql_config
 *   **fftw-devel:** for /usr/include/fftw3.h and for /usr/lib/libfftw3.so
-*   **cfitsio-devel:** for /usr/include/fitsio2.h and for /usr/lib/libcfitsio.so
-*   **graphviz-devel:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
 *   **libuuid-devel** required during the build. More [info here](https://root-forum.cern.ch/t/cannot-compile-root-v6-22-08-with-debug-symbols-and-all-options/44242).
-*   **avahi-compat-libdns_sd-devel:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **openldap-devel:** for /usr/include/ldap.h and for /usr/lib/libldap.so
-*   **python-devel:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
-*   **python3-numpy:** needed for PyMVA
+*   **python-devel:** (only on RHEL 7 based systems with default Python v.2) for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
+*   **python3-numpy:** (**numpy** on RHEL 7 based systems) needed for PyMVA
 *   **libxml2-devel:** for /usr/bin/xml2-config
 *   **gsl-devel:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
-*   **R-devel:** needed for R bindings. In addition R packages **R-Rcpp-devel** and **R-RInside-devel** need to be installed.
+*   **readline-devel:** required at the linking stage.
+*   RHEL based distributions (CentOS, Scientific Linux) will require enabling of the [EPEL](https://fedoraproject.org/wiki/EPEL) additional software repository and in order to install packages below:
+*   **ftgl-devel:** for /usr/bin/pkg-config
+*   **cfitsio-devel:** for /usr/include/fitsio2.h and for /usr/lib/libcfitsio.so
+*   **R-devel, R-Rcpp-devel, R-RInside-devel:** needed for R bindings. 
+*   RHEL 8 based distributions (CentOS 8) will require enabling of the PowerTools](https://wiki.centos.org/FAQ/CentOS8/UnshippedPackages) additional software repository and in order to install packages below:
+*   **avahi-compat-libdns_sd-devel:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
+*   **glew-devel:** for /usr/include/GL/glew.h and for /usr/lib[64]/libGLEW.so
+*   **graphviz-devel:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
 
-As a one-liner:
-
+As a one-liner for Fedora 33:
 ```bash
 sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
-avahi-compat-libdns_sd-devel openldap-devel python-devel \
-python3-numpy libxml2-devel gsl-devel R-devel R-Rcpp-devel R-RInside-devel
+avahi-compat-libdns_sd-devel openldap-devel python3-numpy \
+libxml2-devel gsl-devel readline-devel R-devel R-Rcpp-devel R-RInside-devel
 ```
+
+CentOS 8 requores adding EPEL repository. Additionally, some packages in CentOS 8 [were moved to the PowerTools repository](https://root-forum.cern.ch/t/root-dependencies-can-not-install-in-centos8/42010). Therefore it needs to be enabled as well:
+```bash
+sudo yum install epel-release
+sudo yum config-manager --set-enabled powertools
+sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
+mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
+fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
+avahi-compat-libdns_sd-devel openldap-devel python3-numpy \
+libxml2-devel gsl-devel readline-devel R-devel R-Rcpp-devel R-RInside-devel
+```
+
+For Scientific Linux 7 and CentOS 7:
+```bash
+sudo yum install epel-release
+sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
+mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
+fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
+avahi-compat-libdns_sd-devel openldap-devel python-devel numpy \
+libxml2-devel gsl-devel readline-devel R-devel R-Rcpp-devel R-RInside-devel
+```
+
+Cmake version >= 3.9 is required to build recent ROOT version. Therefore on RHEL 7 based systems it necessary to use the `cmake3` command to build ROOT. Default `cmake` command in Scientific Linux 7 and CentOS 7 refers to Cmake version 2.8.
 
 ## Ubuntu and other Debian-based distributions
 
