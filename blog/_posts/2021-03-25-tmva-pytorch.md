@@ -8,14 +8,14 @@ What if we combine [PyTorch][PyTorch] and [TMVA][TMVA]? Ever wondered how ROOT u
 
 With the coming release of *ROOT v6-24-00* we are excited to launch a brand new PyTorch Interface for TMVA.
 
-[PyTorch][PyTorch] is a Python-based scientific package supporting a​utomatic differentiation.​ An ​open-source machine learning​ framework that accelerates the path from research prototyping to production deployment.
+[PyTorch][PyTorch] is a Python-based scientific package supporting automatic differentiation.​ An ​open-source machine learning​ framework that accelerates the path from research prototyping to production deployment.
 
 [PyTorch]: https://pytorch.org/
 [TMVA]: https://root.cern/manual/tmva/
 
 ## Need for a PyTorch Interface?
 
-TMVA already has a PyKeras interface which we all love, especially with Keras’ simple high-level tensorflow API. If your work involves some elementary experiments, Keras maybe the goto framework due to its plug and play spirit.
+TMVA already has a PyKeras interface which we all love, especially with Keras’ simple high-level tensor-flow API. If your work involves some elementary experiments, Keras maybe the goto framework due to its plug and play spirit.
 
 But things get interesting when one requires low level control and flexibility. That’s when the argument for Keras starts losing water. PyTorch on the other hand is amazing in terms of control, flexibility and raw power that it can provide to the user. Its lower-level approach is better suited for the more mathematically-inclined users.
 
