@@ -87,7 +87,7 @@ manual [here](https://root.cern/root/htmldoc/guides/minuit2/Minuit2.html){:targe
 
 ## GenVector
 [This additional documentation for the GenVector package]({{ 'topical/GenVector.pdf' | relative_url }})
-is rather detailed, although it could be that is not completly up to date. Some new classes
+is rather detailed, although it could be that is not completely up to date. Some new classes
 added later might be not documented in this manual.
 Nevertheless it is still very interesting.
 
