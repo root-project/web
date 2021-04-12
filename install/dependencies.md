@@ -82,7 +82,7 @@ avahi-compat-libdns_sd-devel openldap-devel python3-numpy \
 libxml2-devel gsl-devel readline-devel R-devel R-Rcpp-devel R-RInside-devel
 ```
 
-CentOS 8 requores adding EPEL repository. Additionally, some packages in CentOS 8 [were moved to the PowerTools repository](https://root-forum.cern.ch/t/root-dependencies-can-not-install-in-centos8/42010). Therefore it needs to be enabled as well:
+CentOS 8 requires adding the EPEL repository. Additionally, some packages in CentOS 8 [were moved to the PowerTools repository](https://root-forum.cern.ch/t/root-dependencies-can-not-install-in-centos8/42010). Therefore it needs to be enabled as well:
 ```bash
 sudo yum install epel-release
 sudo yum config-manager --set-enabled powertools
