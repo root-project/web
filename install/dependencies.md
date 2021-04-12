@@ -103,7 +103,7 @@ avahi-compat-libdns_sd-devel openldap-devel python-devel numpy \
 libxml2-devel gsl-devel readline-devel R-devel R-Rcpp-devel R-RInside-devel
 ```
 
-Cmake version >= 3.9 is required to build recent ROOT version. Therefore on RHEL 7 based systems it necessary to use the `cmake3` command to build ROOT. Default `cmake` command in Scientific Linux 7 and CentOS 7 refers to Cmake version 2.8.
+CMake version >= 3.9 is required to build recent ROOT version. Therefore on RHEL 7 based systems it necessary to use the `cmake3` command to build ROOT. Default `cmake` command in Scientific Linux 7 and CentOS 7 refers to CMake version 2.8.
 
 ## Ubuntu and other Debian-based distributions
 
