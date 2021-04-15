@@ -2,7 +2,7 @@
 layout: releases
 version: 6.24/00
 release_date: 2021-04-15
-state: latest 
+state: latest
 
 toc: true
 toc_sticky: true
@@ -24,7 +24,7 @@ ROOT now offers a new portable random number generator with fantastic properties
 TMVA adds an interface to PyTorch, to make your TMVA tools also available for this backend, as a more flexible alternative to the PyKeras interface.
 
 RooFit comes with speed improvements and additional robustness (`RooStats::HypoTestInverter`).
-The main speed-up is due to RooFit's new, achitecture-specific compute libraries:
+The main speed-up is due to RooFit's new, architecture-specific compute libraries:
 those are automatically selected for the CPU currently in use, and accelerate `BatchMode` computations by up to 4x.
 Together with the RooFit acceleration since v6.20, typical RooFit analyses will now see speed-ups of 4x..16x.
 And a long-standing and highly relevant issue was fixed: binned fits are now unbiased.
