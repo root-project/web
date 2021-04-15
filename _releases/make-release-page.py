@@ -243,6 +243,23 @@ def binaryNameToTitle(filename):
         xcodeVers = int(comp[:-1])
 
         return F"macOS {macOSVers} Xcode {xcodeVers}"
+    elif platformCompiler.startswith('macos'):
+        regexMacOSVers = re.compile('^macos-([^-]+)-([^-]+)-clang([0-9]+).*$')
+        matchMacOSVers = regexMacOSVers.match(platformCompiler)
+        if not matchMacOSVers:
+            print(F'ERROR: cannot parse macOS distro for {filename}')
+            return filename
+        (macOSVers, arch, comp) = matchMacOSVers.groups()
+        if not macOSVers:
+            print(F'ERROR: cannot extract macOS version for {filename}')
+            return filename
+        if not comp:
+            print(F'ERROR: cannot extract macOS compiler for {filename}')
+            return filename
+        # see also https://gist.github.com/yamaya/2924292
+        xcodeVers = int(comp[:-1])
+
+        return F"macOS {macOSVers} {arch} Xcode {xcodeVers}"
     elif platformCompiler.startswith('win32'):
         regexWin = re.compile(r'^win32[.](vc[0-9]+)(.debug)?')
         matchWin = regexWin.match(platformCompiler)
@@ -272,7 +289,7 @@ def binaryNameToTitle(filename):
         return F"**preview** Windows Visual Studio {versYear}{debug}"
     else:
         frameinfo = getframeinfo(currentframe())
-        print(F'ERROR: unknown platform for {filename}. Please edit {frameinfo.filename}:{frameinfo.lineno}')
+        print(F'ERROR: unknown platform {platformCompiler} for {filename}. Please edit {frameinfo.filename}:{frameinfo.lineno}')
         return filename
 
 
