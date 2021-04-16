@@ -192,7 +192,7 @@ When writing a {% include ref class="TTree" %} to a ROOT file and if the ROOT fi
 
 **Autosave**
 
-`Autosave` gives you the option to save all branch buffers every n byte. It is recommended to use `Autosave` for large acquisitions. If the acquisition fails to complete, you can recover the ROOT file and all the contents since the last `Autosave`. 
+`Autosave` gives you the option to save all branch buffers every n byte. It is recommended to use `Autosave` for large acquisitions. If the acquisition fails to complete, you can recover the ROOT file and all the contents since the last `Autosave`.
 
 - Use the [TTree::SetAutosave()](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8){:target="_blank"} method to set the number of bytes between `Autosave`.
 
@@ -502,6 +502,15 @@ void tree3AddBranch() {
 `kOverwrite` in the `Write()` method causes the tree to be overwritten.
 
 
+## Adding Friends to Trees
+
+When adding a branch is not possible ROOT offers the concept of friends for trees
+via [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b).
+
+The tutorial {% include tutorial name="tree3" %} shows how to use the "Friend Tree"
+functionality.
+
+
 ## Using trees for data analysis
 
 The following methods are available for data analysis using trees:
@@ -599,6 +608,11 @@ Refer to the {% include ref class="THistPainter" %} class for possible draw opti
    file="trees.root" object="c4" width="500px" height="350px"
    caption="The variable `Cost` and `Age` with a selection and a draw option drawn in a histogram."
 %}
+
+The [TTree::Draw()](https://root.cern/doc/master/classTTree.html#ac4016b174665a086fe16695aad3356e2){:target="_blank"}
+method also accepts {% include ref class="TCut" %} objects. A {% include ref class="TCut" %} is
+a specialized string object used for{% include ref class="TTree" %} selections.
+
 
 ### Using TTree::MakeClass()
 
