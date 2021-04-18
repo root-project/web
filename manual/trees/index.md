@@ -501,14 +501,58 @@ void tree3AddBranch() {
 
 `kOverwrite` in the `Write()` method causes the tree to be overwritten.
 
+## Examples for writing and reading tress
 
-## Adding Friends to Trees
+The following sections are examples of writing and reading trees that range in complexity from a simple tree with
+a few variables to a tree with folders and complex event objects.
 
-When adding a branch is not possible ROOT offers the concept of friends for trees
-via [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b).
+### A tree with a C structure
 
-The tutorial {% include tutorial name="tree3" %} shows how to use the "Friend Tree"
-functionality.
+> Tutorial
+>
+>  {% include tutorial name="tree2" %}
+
+In this tutorial is shown:
+
+- how to build branches from a C structure
+- how to make a branch with a fixed length array
+- how to make a branch with a variable length array
+- how to read selective branches
+- how to fill a histogram from a branch
+- how to [TTree::Draw](https://root.cern/doc/master/classTTree.html#ac4016b174665a086fe16695aad3356e2){:target="_blank"} to draw a 3D plot
+
+### Adding friends to trees
+
+> Tutorial
+>
+>  {% include tutorial name="tree3" %}
+
+Adding a branch is often not possible because the tree is a read-only file and you do not have permission to save the modified tree with the new branch. Even if you do have the permission, you risk loosing the original tree with an unsuccessful attempt to save the modification. Since trees are usually large, adding a branch could extend it over the 2 GB limit. In this case, the attempt to write the tree fails, and the original data is may also be corrupted. In addition, adding a branch to a tree enlarges the tree and increases the amount of memory needed to read an entry, and therefore decreases the performance. 
+
+For these reasons ROOT offers the concept of friends for trees (and chains) by adding a branch manually with [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"}.
+
+The [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} method has two parameters, the first is the tree name and the second is the name of the ROOT file where the friend tree is saved. 
+[TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} automatically opens the friend file. 
+
+
+### Importing an ASCII file into a tree
+
+Use [TTree::ReadFile()](https://root.cern/doc/master/classTTree.html#a9c8da1fbc68221b31c21e55bddf72ce7){:target="_blank"} to automatically define the structure of the {% include ref class="TTree" %} and read the data from a formatted ASCII file.
+
+_**Example**_
+
+{% highlight C++ %}
+{
+   gROOT->Reset();
+   TFile *f = new TFile("basic2.root","RECREATE");
+   TH1F *h1 = new TH1F("h1","x distribution",100,-4,4);
+   TTree *T = new TTree("ntuple","data from ascii file");
+   Long64_t nlines = T->ReadFile("basic.dat","x:y:z");
+   printf(" found %lld pointsn",nlines);
+   T->Draw("x","z>2");
+   T->Write();
+}
+{% endhighlight %}
 
 
 ## Using trees for data analysis
@@ -609,9 +653,8 @@ Refer to the {% include ref class="THistPainter" %} class for possible draw opti
    caption="The variable `Cost` and `Age` with a selection and a draw option drawn in a histogram."
 %}
 
-The [TTree::Draw()](https://root.cern/doc/master/classTTree.html#ac4016b174665a086fe16695aad3356e2){:target="_blank"}
-method also accepts {% include ref class="TCut" %} objects. A {% include ref class="TCut" %} is
-a specialized string object used for{% include ref class="TTree" %} selections.
+The [TTree::Draw()](https://root.cern/doc/master/classTTree.html#ac4016b174665a086fe16695aad3356e2){:target="_blank"} method also accepts {% include ref class="TCut" %} objects. A {% include ref class="TCut" %} object is
+a specialized string object used for {% include ref class="TTree" %} selections.
 
 
 ### Using TTree::MakeClass()
