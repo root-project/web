@@ -35,12 +35,7 @@ As a one-liner for Fedora 33, CentOS 8:
 sudo yum install git make cmake gcc-c++ gcc binutils \
 libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 ```
-As a one-liner for CentOS 8:
 
-```bash
-sudo yum install git make cmake gcc-c++ gcc binutils \
-libX11-devel libXpm-devel libXft-devel libXext-devel python38 openssl-devel
-```
 As a one-liner for Scientific Linux 7 and CentOS 7:
 
 ```bash
