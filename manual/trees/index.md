@@ -501,7 +501,7 @@ void tree3AddBranch() {
 
 `kOverwrite` in the `Write()` method causes the tree to be overwritten.
 
-## Examples for writing and reading tress
+## Examples for writing and reading trees
 
 The following sections are examples of writing and reading trees that range in complexity from a simple tree with
 a few variables to a tree with folders and complex event objects.
@@ -527,12 +527,12 @@ In this tutorial is shown:
 >
 >  {% include tutorial name="tree3" %}
 
-Adding a branch is often not possible because the tree is a read-only file and you do not have permission to save the modified tree with the new branch. Even if you do have the permission, you risk loosing the original tree with an unsuccessful attempt to save the modification. Since trees are usually large, adding a branch could extend it over the 2 GB limit. In this case, the attempt to write the tree fails, and the original data is may also be corrupted. In addition, adding a branch to a tree enlarges the tree and increases the amount of memory needed to read an entry, and therefore decreases the performance. 
+Adding a branch is often not possible because the tree is a read-only file and you do not have permission to save the modified tree with the new branch. Even if you do have the permission, you risk loosing the original tree with an unsuccessful attempt to save the modification. Since trees are usually large, adding a branch could extend it over the 2 GB limit. In this case, the attempt to write the tree fails, and the original data is may also be corrupted. In addition, adding a branch to a tree enlarges the tree and increases the amount of memory needed to read an entry, and therefore decreases the performance.
 
 For these reasons ROOT offers the concept of friends for trees (and chains) by adding a branch manually with [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"}.
 
-The [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} method has two parameters, the first is the tree name and the second is the name of the ROOT file where the friend tree is saved. 
-[TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} automatically opens the friend file. 
+The [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} method has two parameters, the first is the tree name and the second is the name of the ROOT file where the friend tree is saved.
+[TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} automatically opens the friend file.
 
 
 ### Importing an ASCII file into a tree
