@@ -200,7 +200,11 @@ it is possible to compile ROOT from source. See [Building ROOT from source]({{'/
 As a quick summary, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}), ROOT can be compiled with these commands on most UNIX-like systems:
 
 ```bash
-# substitute `v6-22-00-patches` with the patches branch of the latest release
+# Substitute `v6-22-00-patches` with the patches branch of the latest release.
+# The latest stable version can be retrieved by cloning the `latest-stable` branch;
+# this branch gets updated automatically on each release. Your may update your
+# local copy by issuing a `git pull` command.
+
 $ git clone --branch v6-22-00-patches https://github.com/root-project/root.git root_src
 $ mkdir root_build root_install && cd root_build
 $ cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # && check cmake configuration output for warnings or errors

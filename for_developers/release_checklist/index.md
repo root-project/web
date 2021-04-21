@@ -85,6 +85,11 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
       - `make` must succeed
   1. Push to GitHub
       - `git push origin v6-22-02`
+  1. Update the stable branch. Users that have cloned this branch will receive updates as a fast-forward via `git pull`
+      - `LATEST_STABLE=v6-xx-yy    # e.g. v6-22-02`
+      - If the stable branch does not exist yet, the `-p refs/heads/latest-stable` part must be removed from the command below.
+      - `$ git update-ref refs/heads/latest-stable $(git commit-tree $LATEST_STABLE^{tree} -p refs/heads/latest-stable -m "Updated 'latest-stable' branch to $LATEST_STABLE")`
+      - `$ git push origin latest-stable`
   1. Produce binary tar-files (optional for development releases and release candidates)
       - Start the procedure [root-release-6.22](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-6.22/){:target="_blank"} (or whichever branch) in Jenkins
   1. Install binaries to CVMFS (optional for development releases and release candidates)
