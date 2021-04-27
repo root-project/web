@@ -30,7 +30,6 @@ The following are the basic instructions for UNIX-like systems. We will use the 
 # substitute `v6-22-00-patches` with the patches branch of the latest release
 $ git clone --branch v6-22-00-patches https://github.com/root-project/root.git root_src
 ```
-
 If you are interested in the latest stable (as opposed to a specific) version, you can get a copy as follows:
 ```bash
 $ git clone --branch latest-stable https://github.com/root-project/root.git root_src
@@ -39,7 +38,6 @@ This branch is expected to be updated regularly on each release. Therefore, user
 ```bash
 $ git pull
 ```
-
 In the following we will refer to the directory where ROOT sources are (e.g. `root_src` above) as `<sourcedir>`.
 1. Create a directory for the build and a directory for the installation. It is not supported to build ROOT in the source directory. Then change (`cd`) to the build directory:
 ```bash
