@@ -10,7 +10,7 @@ toc_sticky: true
 Fitting is the method for modeling the expected distribution of events in a physics data analysis. ROOT offers various options to perform the fitting of the data:
 - [Fit Panel](#using-the-fit-panel): After a histogram is drawn, the Fit Panel GUI is best used for prototyping the fit.
 - [Fit() method](#using-the-fit-method): You can fit histograms and graphs programmatically with the `Fit()` method.
-- Minimization packages: ROOT provides several minimization packages like [Minuit2]({{ "/manual/math/#minuit2-library" | relative_url }}) and [FUMILI]({{ "/manual/math/#fumili-minimization-package" | relative_url}}).
+- Minimization packages: ROOT provides [several minimization packages]({{ "/manual/math/#minimization-libraries-and-classes" | relative_url }}).
 - [RooFit]({{ "/manual/roofit" | relative_url }}): The RooFit library is a toolkit for modeling the expected distribution of events in a physics analysis.
 
 {% include tutorials name="Fit" url="fit" %}
@@ -523,8 +523,8 @@ The defined classes can be classified in the following groups:
     - [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} for configuring the fit.
     - [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} to define the properties of the fit parameters (initial values, bounds, etc.).
     - [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html){:target="_blank"} for storing the result of the fit.
-    
-In addition, the fitter classes use the generic interfaces for parametric function evaluations, [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"} to define the fitting model function, and [ROOT::Math::Minimizer](https://root.cern/doc/master/classROOT_1_1Math_1_1Minimizer.html){:target="_blank"}  interface to perform the minimization of the target function. 
+
+In addition, the fitter classes use the generic interfaces for parametric function evaluations, [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"} to define the fitting model function, and [ROOT::Math::Minimizer](https://root.cern/doc/master/classROOT_1_1Math_1_1Minimizer.html){:target="_blank"}  interface to perform the minimization of the target function.
 
 ### Creating the input fit data
 
@@ -561,7 +561,7 @@ This example shows how to specify the input option to use the integral of the fu
    opt.fIntegral = true;
    ROOT::Fit::DataRange range(xmin,xmax);
    ROOT::Fit::BinData data(opt,range);
-   
+
 // Fill the bin data using the histogram.
 // You can do this by using the following helper function from the histogram library.
    TH1 * h1 = (TH1*) gDirectory->Get("myHistogram");
@@ -636,7 +636,7 @@ _**Example**_
    fitter.SetFunction( fitFunction, false);
 {% endhighlight %}
 
-When creating a wrapper, the parameter values stored in {% include ref class="TF1" %} are copied to the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b){:target="_blank"} object. The function object representing the model function is given to the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} class using the [Fitter::SetFunction](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#ada9af6981d4212951f8120d848f729ab){:target="_blank"} method. 
+When creating a wrapper, the parameter values stored in {% include ref class="TF1" %} are copied to the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b){:target="_blank"} object. The function object representing the model function is given to the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} class using the [Fitter::SetFunction](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#ada9af6981d4212951f8120d848f729ab){:target="_blank"} method.
 
 You can also provide a function object that implements the derivatives of the function with respect to the parameters. In this case you must
 provide the function object as a class deriving from the [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"} interface.
@@ -668,7 +668,7 @@ Setting the lower and upper bounds for the first parameter and a lower bound for
 
 Note that a [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} objects exists for each fit parameter and it created by the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} class, after the model function has been set in the fitter. Only when the function is set, the number of parameter is known and automatically the `FitConfig` creates the corresponding `ParameterSetting` objects.
 
-Various minimizers can be used in the fitting process. They can be implemented in different libraries and loaded at run time. Each different minimizer (for example Minuit, Minuit2, FUMILI, etc.) consists of a different implementation of the [ROOT::Math::Minimizer](https://root.cern/doc/master/classROOT_1_1Math_1_1Minimizer.html){:target="_blank"}  interface. Within the same minimizer, thus within the same class implementing the `Minimizer` interface, different algorithms exist. 
+Various minimizers can be used in the fitting process. They can be implemented in different libraries and loaded at run time. Each different minimizer (for example Minuit, Minuit2, FUMILI, etc.) consists of a different implementation of the [ROOT::Math::Minimizer](https://root.cern/doc/master/classROOT_1_1Math_1_1Minimizer.html){:target="_blank"}  interface. Within the same minimizer, thus within the same class implementing the `Minimizer` interface, different algorithms exist.
 
 If the requested minimizer is not available in ROOT, the default one is used. The default minimizer type and algorithm can be specified by using the static function `ROOT::Math::MinimizerOptions::SetDefaultMinimizer("minimizerName")`.
 
@@ -738,36 +738,36 @@ By using [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_
 ### TFitResult
 
 {% include ref class="TFitResult" %} is a class deriving from [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html){:target="_blank"} and providing in addition some convenient methods to return
-a covariance or correlation matrix as a `TMatrixDSym` object. Furthermore, {% include ref class="TFitResult" %} derives from {% include ref class="TNamed" %} and can be conveniently stored in a file. 
+a covariance or correlation matrix as a `TMatrixDSym` object. Furthermore, {% include ref class="TFitResult" %} derives from {% include ref class="TNamed" %} and can be conveniently stored in a file.
 
-When fitting an histogram (a {% include ref class="TH1" %} object) or a graph (a {% include ref class="TGraph" %} object), it is possible to return a {% include ref class="TFitResult" %} via the {% include ref class="TFitResultPtr" %} object, which behaves as a smart pointer to a  {% include ref class="TFitResult" %}. {% include ref class="TFitResultPtr" %} is the return object of [TH1::Fit](https://root.cern/doc/master/classTH1.html#a7e7d34c91d5ebab4fc9bba3ca47dabdd){:target="_blank"} or [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#aa978c8ee0162e661eae795f6f3a35589){:target="_blank"}. 
+When fitting an histogram (a {% include ref class="TH1" %} object) or a graph (a {% include ref class="TGraph" %} object), it is possible to return a {% include ref class="TFitResult" %} via the {% include ref class="TFitResultPtr" %} object, which behaves as a smart pointer to a  {% include ref class="TFitResult" %}. {% include ref class="TFitResultPtr" %} is the return object of [TH1::Fit](https://root.cern/doc/master/classTH1.html#a7e7d34c91d5ebab4fc9bba3ca47dabdd){:target="_blank"} or [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#aa978c8ee0162e661eae795f6f3a35589){:target="_blank"}.
 
-By default {% include ref class="TFitResultPtr" %} contains only the status of the fit and can be obtained by an automatic conversion of {% include ref class="TFitResultPtr" %} to an integer. If the fit option `S` is used instead, {% include ref class="TFitResultPtr" %} contains {% include ref class="TFitResult" %} and behaves as a smart pointer to it. 
+By default {% include ref class="TFitResultPtr" %} contains only the status of the fit and can be obtained by an automatic conversion of {% include ref class="TFitResultPtr" %} to an integer. If the fit option `S` is used instead, {% include ref class="TFitResultPtr" %} contains {% include ref class="TFitResult" %} and behaves as a smart pointer to it.
 
 _**Example**_
 
 {% highlight C++ %}
 // TFitResultPtr contains only the fit status.
-   int fitStatus = hist->Fit(myFunction); 
+   int fitStatus = hist->Fit(myFunction);
 
 // TFitResultPtr contains the TFitResult.
-   TFitResultPtr r = hist->Fit(myFunction,"S"); 
+   TFitResultPtr r = hist->Fit(myFunction,"S");
 
 // Access the covariance matrix.
-   TMatrixDSym cov = r->GetCovarianceMatrix(); 
+   TMatrixDSym cov = r->GetCovarianceMatrix();
 
 // Retrieve the fit chi2.
-   Double_t chi2 = r->Chi2(); 
+   Double_t chi2 = r->Chi2();
 
 // Retrieve the value for the parameter 0.
    Double_t par0 = r->Parameter(0);
 
 // Retrieve the error for the parameter 0.
-   Double_t err0 = r->ParError(0); 
+   Double_t err0 = r->ParError(0);
 
 // Print the full information of the fit including covariance matrix.
-   r->Print("V"); 
+   r->Print("V");
 
 // Store the result in a ROOT file.
-   r->Write(); 
+   r->Write();
 {% endhighlight %}

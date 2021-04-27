@@ -30,47 +30,47 @@ The following histogram classes are available in ROOT, among others:
 
 ### 1-D histograms
 
-  - [TH1C](https://root.cern/doc/master/classTH1C.html){:target="_blank"}: One byte per channel. Maximum bin content = 127.
+  - {% include ref class="TH1C" %} has one byte per channel. Maximum bin content = 127.
 
-  - [TH1S](https://root.cern/doc/master/classTH1S.html){:target="_blank"}: One short per channel. Maximum bin content = 32767.
+  - {% include ref class="TH1S" %} has one short per channel. Maximum bin content = 32767.
 
-  - [TH1I](https://root.cern/doc/master/classTH1I.html){:target="_blank"}: One int per channel. Maximum bin content = 2147483647.
+  - {% include ref class="TH1I" %} has one int per channel. Maximum bin content = 2147483647.
 
-  - [TH1F](https://root.cern/doc/master/classTH1F.html){:target="_blank"}: One float per channel. Maximum precision 7 digits.
+  - {% include ref class="TH1F" %} has one float per channel. Maximum precision 7 digits.
 
-  - [TH1D](https://root.cern/doc/master/classTH1D.html){:target="_blank"}: One double per channel. Maximum precision 14 digits.
+  - {% include ref class="TH1D" %} has one double per channel. Maximum precision 14 digits.
 
 ### 2-D histograms
 
-  - [TH2C](https://root.cern/doc/master/classTH2C.html){:target="_blank"}: One byte per channel. Maximum bin content = 127.
+  - {% include ref class="TH2C" %} has one byte per channel. Maximum bin content = 127.
 
-  - [TH2S](https://root.cern/doc/master/classTH2S.html){:target="_blank"}: One short per channel. Maximum bin content = 32767.
+  - {% include ref class="TH2S" %} has one short per channel. Maximum bin content = 32767.
 
-  - [TH2I](https://root.cern/doc/master/classTH2I.html){:target="_blank"}: One int per channel. Maximum bin content = 2147483647.
+  - {% include ref class="TH2I" %} has one int per channel. Maximum bin content = 2147483647.
 
-  - [TH2F](https://root.cern/doc/master/classTH2F.html){:target="_blank"}: One float per channel. Maximum precision 7 digits.
+  - {% include ref class="TH2F" %} has one float per channel. Maximum precision 7 digits.
 
-  - [TH2D](https://root.cern/doc/master/classTH2D.html){:target="_blank"}: One double per channel. Maximum precision 14 digits.
+  - {% include ref class="TH2D" %} has one double per channel. Maximum precision 14 digits.
 
 ### 3-D histograms
 
-  - [TH3C](https://root.cern/doc/master/classTH3C.html){:target="_blank"}: One byte per channel. Maximum bin content = 127.
+  - {% include ref class="TH3C" %} has one byte per channel. Maximum bin content = 127.
 
-  - [TH3S](https://root.cern/doc/master/classTH3S.html){:target="_blank"}: One short per channel. Maximum bin content = 32767.
+  - {% include ref class="TH3S" %} has one short per channel. Maximum bin content = 32767.
 
-  - [TH3I](https://root.cern/doc/master/classTH3I.html){:target="_blank"}: One int per channel. Maximum bin content = 2147483647.
+  - {% include ref class="TH3I" %} has one int per channel. Maximum bin content = 2147483647.
 
-  - [TH3F](https://root.cern/doc/master/classTH3F.html){:target="_blank"}: One float per channel. Maximum precision 7 digits.
+  - {% include ref class="TH3F" %} has one float per channel. Maximum precision 7 digits.
 
-  - [TH3D](https://root.cern/doc/master/classTH3D.html){:target="_blank"}: One double per channel. Maximum precision 14 digits.
+  - {% include ref class="TH3D" %} has one double per channel. Maximum precision 14 digits.
 
 ### Profile histograms
 
-  - [TProfile](https://root.cern/doc/master/classTProfile.html){:target="_blank"}: Profile histogram to display the mean value of Y and its error for each bin in X.
+  - {% include ref class="TProfile" %} is a 1-D profile histogram to display the mean value of Y and its error for each bin in X.
 
-  - [TProfile2D](https://root.cern/doc/master/classTProfile2D.html){:target="_blank"}: Profile2D histograms are used to display the mean value of Z and its RMS for each cell in X,Y.
+  - {% include ref class="TProfile2D" %} is a 2-D profile histogram to display the mean value of Z and its RMS for each cell in X,Y.
 
-  - [TProfile3D](https://root.cern/doc/master/classTProfile3D.html){:target="_blank"}: Profile3D histograms are used to display the mean value of T and its RMS for each cell in X,Y,Z.
+  - {% include ref class="TProfile3D" %} is a 3-D profile histogram to display the mean value of T and its RMS for each cell in X,Y,Z.
 
 ### Bin numbering
 
@@ -80,15 +80,15 @@ All histogram types support fixed or variable bin sizes. 2-D histograms may have
 
 For all histogram types: `nbins`, `xlow`, `xup`:
 
--   bin# 0 contains the underflow.
+  - bin# 0 contains the underflow.
 
--   bin# 1 contains the first bin with low-edge (`xlow` INCLUDED).
+  - bin# 1 contains the first bin with low-edge (`xlow` INCLUDED).
 
--   The second to last bin (bin# nbins) contains the upper-edge (`xup` EXCLUDED).
+  - The second to last bin (bin# nbins) contains the upper-edge (`xup` EXCLUDED).
 
--   The last bin (bin# `nbins+1`) contains the overflow.
+  - The last bin (bin# `nbins+1`) contains the overflow.
 
--   In case of 2-D or 3-D histograms, a *global bin* number is defined.
+  - In case of 2-D or 3-D histograms, a *global bin* number is defined.
 
 _**Example**_
 
@@ -101,6 +101,10 @@ This *global bin* is useful to access the bin information independently of the d
 **Re-binning**
 
 You can re-bin a histogram via the [TH1::Rebin()](https://root.cern/doc/master/classTH1.html#aff6520fdae026334bf34fa1800946790){:target="_blank"} method. It returns a new histogram with the re-binned contents. If bin errors were stored, they are recomputed during the re-binning.
+
+### Stack of histograms
+
+  - {% include ref class="THStack" %} is a collection of {% include ref class="TH1" %} or {% include ref class="TH2" %} histograms.
 
 ## Working with histograms
 
@@ -199,8 +203,9 @@ Multiplying two histograms and put the result in the third one:
 ### Drawing a histogram
 
   - Use the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"} method to draw a histogram.
-
-    It creates a {% include ref class="THistPainter" %} object that specializes the drawing of the histogram. The `THistPainter` class is separated from the histogram, so that the histogram does not contain the graphics overhead.
+    It creates a {% include ref class="THistPainter" %} object that specializes the drawing of the histogram.
+    The {% include ref class="THistPainter" %} class is separated
+    from the histogram, so that the histogram does not contain the graphics overhead.
 
   - Use the [TH1::DrawCopy()](https://root.cern/doc/master/classTH1.html#aa19b24b96284284d677cd73f00d29d79){:target="_blank"} method to create a copy of the histogram when drawing it.
 
@@ -240,41 +245,12 @@ _**Example**_
 
 **Drawing options for all histogram classes**
 
-For detailed information on the drawing options for all histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01a){:target="_blank"}.
+The "drawing option" is the unique parameter of the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"}
+method. It specifies how the histogram will be graphically rendered.
+For detailed information on the drawing options for all histogram classes, refer to
+[THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01a){:target="_blank"}.
 
-`AXIS`: Draws only the axis.
-
-`HIST`: When a histogram has errors, it is visualized by default with error bars. To visualize it without errors, use `HIST` together with the required option (for example "`HIST SAME C`").
-
-`SAME`: Superimposes on previous picture in the same pad.
-
-`CYL`: Uses cylindrical coordinates.
-
-`POL`: Uses polar coordinates.
-
-`SPH`: Uses spherical coordinates.
-
-`PSR`: Uses pseudo-rapidity/phi coordinates.
-
-`LEGO`: Draws a lego plot with hidden line removal.
-
-`LEGO1`: Draws a lego plot with hidden surface removal.
-
-`LEGO2`: Draws a lego plot using colors to show the cell contents.
-
-`SURF`: Draws a surface plot with hidden line removal.
-
-`SURF1`: Draws a surface plot with hidden surface removal.
-
-`SURF2`: Draws a surface plot using colors to show the cell contents.
-
-`SURF3`: Same as SURF with a contour view on the top.
-
-`SURF4`: Draws a surface plot using Gouraud shading.
-
-`SURF5`: Same as `SURF3`, but only the colored contour is drawn. Used with option `CYL`, `SPH` or `PSR`, it allows to draw colored contours on a sphere, a cylinder or in a pseudo rapidly space. In Cartesian or polar coordinates, option `SURF3` is used.
-
-_**Example**_
+_**Examples**_
 
 {% highlight C++ %}
    TH2F h2("h2","Histogram filled with random numbers",40,-4,4,40,-20,20);
@@ -300,113 +276,14 @@ _**Example**_
    caption="Histogram drawn with Draw(\"LEGO1 POL\")."
 %}
 
-**Drawing options for 1-D histogram classes**
 
-For detailed information on the drawing options for 1-D histogram classes, refer to [THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01b){:target="_blank"}.
+{% include ref class="THistPainter" %} implements drawing options for
+ [1-D](https://root.cern/doc/master/classTHistPainter.html#HP01b){:target="_blank"},
+ [2-D](https://root.cern/doc/master/classTHistPainter.html#HP01c){:target="_blank"}, and
+ [3-D](https://root.cern/doc/master/classTHistPainter.html#HP01d){:target="_blank"} histogram classes.
+It also implements specific drawing options for
+ [THStack](https://root.cern/doc/master/classTHistPainter.html#HP01e){:target="_blank"}.
 
-`AH`: Draws the histogram, but not the axis labels and tick marks.
-
-`B`: Draws a bar chart.
-
-`C`: Draws a smooth curve through the histogram bins.
-
-`E`: Draws error bars.
-
-`E0`: Draws error bars including bins with 0 contents.
-
-`E1`: Draws error bars with perpendicular lines at the edges
-
-`E2`: Draws error bars with rectangles.
-
-`E3`: Draws a filled area through the end points of the vertical error bars.
-
-`E4`: Draws a smoothed filled area through the end points of the error bars.
-
-`L`: Draws a line through the bin contents.
-
-`P`: Draws a (poly)marker at each bin using the histogram's current marker style.
-
-`P0`: Draws current marker at each bin including empty bins.
-
-`PIE`: Draws a pie chart.
-
-`H`: Draws a histogram with a * at each bin.
-
-`LF2`: Draws a histogram with option `L` but with a filled area. `L` also draws a filled area if the histogram fill color is set but the fill area corresponds to the histogram contour.
-
-`9`: Forces a histogram to be drawn in high resolution mode. By default, the histogram is drawn in low resolution in case the number of bins is greater than the number of pixels in the current pad.
-
-`][`: Draws a histogram without the vertical lines for the first and the last bin. Use this, when superposing many histograms on the same picture.
-
-**Drawing options for 2-D histogram classes**
-
-For detailed information on the drawing options for 2-D histogram classes, refer to {% include ref class="THistPainter" %}.
-
-By default, 2-D histograms are drawn as scatter plots.
-
-`ARR`: Arrow mode. Shows gradient between adjacent cells.
-
-`BOX`: Draws a box for each cell with surface proportional to contents.
-
-`BOX1`: A sunken button is drawn for negative values, a raised one for positive values
-
-`COL`: Draws a box for each cell with a color scale varying with contents.
-
-`COLZ`: Same as `COL` with a drawn color palette.
-
-`CONT`: Draws a contour plot (same as `CONT0`).
-
-`CONTZ`: Same as `CONT` with a drawn color palette.
-
-`CONT0`: Draws a contour plot using surface colors to distinguish contours.
-
-`CONT1`: Draws a contour plot using line styles to distinguish contours.
-
-`CONT2`: Draws a contour plot using the same line style for all contours.
-
-`CONT3`: Draws a contour plot using fill area colors.
-
-`CONT4`: Draws a contour plot using surface colors (`SURF2` option at `theta = 0`).
-
-`CONT5`: Uses Delaunay triangles to compute the contours.
-
-`LIST`: Generates a list of {% include ref class="TGraph" %} objects for each contour.
-
-`FB`: To be used with `LEGO` or `SURFACE`, suppresses the front-box.
-
-`BB`: To be used with `LEGO` or `SURFACE`, suppresses the back-box.
-
-`A`: To be used with `LEGO` or `SURFACE`, suppresses the axis.
-
-`SCAT`: Draws a scatter-plot (default).
-
-`SPEC`: Uses the {% include ref class="TSpectrum2Painter" %} tool for drawing.
-
-`TEXT`: Draws bin contents as text (format set via `gStyle->SetPaintTextFormat`).
-
-`TEXTnn`: Draws bin contents as text at angle nn (0 < nn < 90).
-
-`[cutg]`: Draws only the sub-range selected by the {% include ref class="TCutG" %} name "`cutg`".
-
-`Z`: The Z option can be specified with the options: `BOX`, `COL`, `CONT`, `SURF`, and `LEGO` to display.
-
-**Drawing options for 3-D histogram classes**
-
-For detailed information on the drawing options for 3-D histogram classes, refer to {% include ref class="THistPainter" %}.
-
-By default, 3-D histograms are drawn as scatter plots.
-
-`BOX`: Draws a box for each cell with volume proportional to the contents.
-
-`LEGO`: Same as `BOX`.
-
-`ISO`: Draws an iso surface.
-
-`FB`: Suppresses the front-box.
-
-`BB`: Suppresses the back-box.
-
-`A`: Suppresses the axis.
 
 ### Drawing a histogram with error bars
 
