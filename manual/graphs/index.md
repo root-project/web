@@ -6,12 +6,14 @@ sidebar:
 toc: true
 toc_sticky: true
 ---
+
 A graph is an object made of two arrays `X` and `Y`, holding the `x`,`y` coordinates of n points.
 
 **Un-binned data**
 
 A graph or chart is a set of categorical variables, this is un-binned data.<br>
-A histogram is used for continuous data, where the bins represent ranges of data (binned data), see → [Fitting histograms]({{ "/manual/fitting" | relative_url }}).
+A histogram is used for continuous data, where the bins represent ranges of data
+(binned data), see → [Histograms]({{ "/manual/histograms" | relative_url }}).
 
 {% include tutorials name="Graph" url="graphs" %}
 
@@ -62,9 +64,8 @@ The coordinates can be arrays of doubles or floats.
 
 ### Drawing a graph
 
-- Use the `Draw()` method to draw a graph.
-
-The {% include ref class="TGraphPainter" %} class implements all drawing options.
+  - Use the [TGraph::Draw()](https://root.cern/doc/master/classTGraph.html#a7ee6d3572ef075dd4fa1a6deb939a986) method to draw a graph.
+    The {% include ref class="TGraphPainter" %} class implements all drawing options.
 
 _**Example**_
 
@@ -91,25 +92,10 @@ _**Example**_
 >
 > The drawing options are not case sensitive.
 
-For detailed information on the drawing options for graph classes, refer to {% include ref class="TGraphPainter" %}.
-
-`L`: A simple poly-line between every point is drawn.
-
-`F`: A filled area is drawn.
-
-`F1`: As F, but the filled area is no more repartee around X=0 or Y=0.
-
-`F2`: Draws a filled area poly line connecting the center of bins.
-
-`A`: Axis are drawn around the graph.
-
-`C`: A smooth curve is drawn.
-
-`*` A star is plotted at each point.
-
-`P`: The current marker of the graph is plotted at each point.
-
-`B`: A bar chart is drawn at each point.
+The "drawing option" is the unique parameter of the [TGraph::Draw()](https://root.cern/doc/master/classTGraph.html#a7ee6d3572ef075dd4fa1a6deb939a986){:target="_blank"}
+method. It specifies how the graph will be graphically rendered.
+For detailed information on the drawing options for graph classes, refer to
+[TGraphPainter](https://root.cern/doc/master/classTGraphPainter.html#GP01).
 
 _**Example**_
 
@@ -131,7 +117,7 @@ _**Example**_
 
 ### Setting titles for a graph
 
-Before giving the axis of a graph a title you need to draw the graph first. 
+Before giving the axis of a graph a title you need to draw the graph first.
 
 You can set the title by getting the axis and calling the [TGraph::SetTitle()](https://root.cern/doc/master/classTGraph.html#a56aed9b71c9ea7dc48285c8ecc285aed){:target="_blank"} method.
 
@@ -170,7 +156,7 @@ _**Example**_
    Int_t n = 10;
    Double_t x[10] = {-.22,.05,.25,.35,.5,.61,.7,.85,.89,.95};
    Double_t y[10] = {1,2.9,5.6,7.4,9,9.6,8.7,6.3,4.5,1};
-   
+
    TGraph *gr = new TGraph(n,x,y);
    gr->SetMarkerColor(4);
    gr->SetMarkerStyle(20);
@@ -290,7 +276,7 @@ The {% include ref class="TGraph2D" %} class has the following constructors:
  {% highlight C++ %}
    TGraph2D *g = new TGraph2D(n);
  {% endhighlight %}
- 
+
 - Internal arrays are filled with the `SetPoint()` method at the position `i` with the values `x`, `y`, `z`.
 
 {% highlight C++ %}
