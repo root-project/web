@@ -48,6 +48,7 @@ For any Linux distribution and MacOS, ROOT is available as a [conda package](htt
 $ conda create -c conda-forge --name <my-environment> root
 $ conda activate <my-environment>
 ```
+The conda package uses C++17.
 
 More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
 
@@ -64,7 +65,7 @@ $ snap run root-framework
 $ root # and the output of `which root` should contain `/snap`
 ```
 
-See our [dedicated blog post]({{'/blog/snap-announcement/' | relative_url}}) for more information, or visit the official [ROOT Snap package](https://snapcraft.io/root-framework){:target="\_blank"} page.
+The Snap package uses C++17. See our [dedicated blog post]({{'/blog/snap-announcement/' | relative_url}}) for more information, or visit the official [ROOT Snap package](https://snapcraft.io/root-framework){:target="\_blank"} page.
 
 ## Linux package managers
 
@@ -102,6 +103,8 @@ Arch's [ROOT package](https://www.archlinux.org/packages/community/x86_64/root){
 ```sh
 $ pacman -Syu root
 ```
+
+The Arch package uses C++17.
 
 ### Gentoo
 
