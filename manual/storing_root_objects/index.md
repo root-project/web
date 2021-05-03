@@ -805,7 +805,8 @@ You can override the default and specify that the member class `Streamer` is use
 {% highlight C++ %}
    TClonesArray *fTracks;
    fTracks->BypassStreamer(kFALSE);             // Use the member Streamer.
-{% highlight C++ %}
+{% endhighlight %}
+
 
 When the `kBypassStreamer` bit is set, the automatically generated `Streamer` can call directly the [TClass::WriteBuffer](https://root.cern/doc/master/classTClass.html#aff0609831684cbd2162ede5e4cbc3ee7){:target="_blank"} method. Bypassing the `Streamer` improves the performance when writing or reading the objects in the {% include ref class="TClonesArray" %}. 
 
