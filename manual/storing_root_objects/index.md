@@ -48,7 +48,7 @@ Check the current directory as follows:
 
 {% highlight C++ %}
    gDirectory->pwd()
-   
+
    Rint:/
 {% endhighlight %}
 
@@ -245,7 +245,7 @@ _**Example**_
 
 // Changing the current working directory.
    f->cd("dir");
-   
+
 // Listing the contents of a ROOT file.
    f->ls();
 
@@ -324,7 +324,7 @@ title. They are identified in the folder hierarchy by an “UNIX-like” naming 
 > A {% include ref class="TFolder" %} manages a hierarchy of objects in the memory. A {% include ref class="TDirectory" %} is doing that for a file.<br/>
 > You can save the {% include ref class="TFolder" %} structure to a directory in a ROOT file.
 
-The base of all folders is the `//root` folder. It is visible at the top of the left panel in the ROOT Object Browser. 
+The base of all folders is the `//root` folder. It is visible at the top of the left panel in the ROOT Object Browser.
 
    {% include figure_image
    img="root-folder.png"
@@ -350,7 +350,7 @@ _**Example**_
 
 // Add the hierarchy to the list of browsables
    gROOT->GetListOfBrowsables()->Add(aliroot,"aliroot");
-   
+
 // Create and add the constants folder.
    TFolder *constants=aliroot->AddFolder("Constants","Detector constants");
 
@@ -366,7 +366,7 @@ _**Example**_
 // Create and add the run_mc folder.
    TFolder *run_mc = aliroot->AddFolder("RunMC","MonteCarlo run dependent folders");
 
-// Create and add the configuration_mc folder to run_mc 
+// Create and add the configuration_mc folder to run_mc
    TFolder *configuration_mc = run_mc->AddFolder("Configuration","MonteCarlo run configuration");
 }
 {% endhighlight %}
@@ -378,18 +378,18 @@ _**Example**_
 
 ### Reading data from a folder
 
-- Use the [TROOT::FindObjectAny()](https://root.cern/doc/master/classTROOT.html#a9c9964aaea5c7cf333483240aa48b46f){:target="_blank"} method to search for a folder or an object in a folder. 
+- Use the [TROOT::FindObjectAny()](https://root.cern/doc/master/classTROOT.html#a9c9964aaea5c7cf333483240aa48b46f){:target="_blank"} method to search for a folder or an object in a folder.
 
-The `FindObjectAny()` method analyzes the string passed as its argument and searches in the hierarchy until it finds an object or folder matching the name. 
+The `FindObjectAny()` method analyzes the string passed as its argument and searches in the hierarchy until it finds an object or folder matching the name.
 
-With `FindObjectAny()` you can give the full path name, or the name of the folder. If only the name of the folder is given, it will return the first instance of that name. 
+With `FindObjectAny()` you can give the full path name, or the name of the folder. If only the name of the folder is given, it will return the first instance of that name.
 
-A string-based search is time consuming. If the retrieved object is used frequently or inside a loop, save a pointer to the object as a class data member. 
+A string-based search is time consuming. If the retrieved object is used frequently or inside a loop, save a pointer to the object as a class data member.
 
 By default, a folder does not own the object it contains. You can overwrite that with [TFolder::SetOwner()](https://root.cern/doc/master/classTFolder.html#aa9fb0db2a0692067380be4bb82bf0a8a){:target="_blank"}. Once
 the folder is the owner of its contents, the contents are deleted when the folder is deleted.
 
-_**Example**_ 
+_**Example**_
 
 If a file `myFile.root` is added to the list of files, you can retrieve a pointer to the corresponding {% include ref class="TFile" %} object with the following statements:
 
@@ -539,8 +539,8 @@ _**Example**_
 {% highlight C++ %}
 root[] TFile *f = new TFile("hsimple.root");
 root[] gDirectory->ls("-m")
-TFile**		hsimple.root	Demo ROOT file with histograms
- TFile*		hsimple.root	Demo ROOT file with histograms
+TFile**         hsimple.root   Demo ROOT file with histograms
+ TFile*         hsimple.root   Demo ROOT file with histograms
 {% endhighlight %}
 
 _**Example**_
@@ -549,12 +549,12 @@ This example lists the objects on disk in the current directory.
 
 {% highlight C++ %}
 root[] gDirectory->ls("-d")
-TFile**		hsimple.root	Demo ROOT file with histograms
- TFile*		hsimple.root	Demo ROOT file with histograms
-  KEY: TH1F	hpx;1	This is the px distribution
-  KEY: TH2F	hpxpy;1	py vs px
-  KEY: TProfile	hprof;1	Profile of pz versus px
-  KEY: TNtuple	ntuple;1	Demo ntuple
+TFile**         hsimple.root   Demo ROOT file with histograms
+ TFile*         hsimple.root   Demo ROOT file with histograms
+  KEY: TH1F     hpx;1   This is the px distribution
+  KEY: TH2F     hpxpy;1   py vs px
+  KEY: TProfile hprof;1   Profile of pz versus px
+  KEY: TNtuple  ntuple;1   Demo ntuple
 {% endhighlight %}
 
 To transfer an object from disk to memory, you have to use it explicitly.
@@ -577,7 +577,7 @@ KEY: TProfile hprof;1 Profile of pz versus px
 KEY: TNtuple ntuple;1 Demo ntuple
 {% endhighlight %}
 
-The line beginning with `OBJ` indicates that an {% include ref class="TProfile" %} object, called `hprof`, has been added in memory to this directory. 
+The line beginning with `OBJ` indicates that an {% include ref class="TProfile" %} object, called `hprof`, has been added in memory to this directory.
 This new `hprof` object in memory is independent from the `hprof` object on disk. If you make changes to the `hprof` object in memory, they are not propagated to the `hprof` object on disk. A new version of the `hprof` object is only saved
 if you use the `Write()` method.
 
@@ -593,7 +593,7 @@ The methods of the class are not written to the ROOT file, it contains only the 
 
 A streamer typically calls on other `Streamers`: its parent's streamers and data members. This architecture requires that all classes have `Streamers`, because eventually they will be called. To ensure that a class has a `Streamer`, `rootcling` automatically creates one in the `ClassDef` macro defined in `$ROOTSYS/include/Rtypes.h`. `ClassDef` defines several methods for each class, and one of them is the `Streamer`. The automatically generated streamer is complete and can be used as long as no customization is required.
 
-The `Event` class is defined in `$ROOTSYS/test/Event.h`.  It inherits from {% include ref class="TObject" %}. 
+The `Event` class is defined in `$ROOTSYS/test/Event.h`.  It inherits from {% include ref class="TObject" %}.
 
 _**Example**_
 
@@ -696,7 +696,7 @@ The length cannot be an expression. If a variable is used, it must be an integer
 The same notation applies to variable length arrays of objects and variable length arrays of pointers to objects.
 
 {% highlight C++ %}
-   MyObject *obj;         //[fNojbs]
+   MyObject *obj;        //[fNojbs]
    MyObject **objs;      //[fDatas]
 {% endhighlight %}
 
@@ -732,7 +732,7 @@ _**Example**_
 Usually, a `Streamer` is generated by `rootcling`. However, you can also create your own `Streamer`. There are two reasons why you should create your own streamer:
 
 1. If you have a non-persistent data item that you want to initialize to a value depending on the data items you read.
-2. If you need to handle or schema evolution yourself. 
+2. If you need to handle or schema evolution yourself.
 
 _**Example**_
 
@@ -798,7 +798,7 @@ in case you do not use the `TObject` `fBits` and `fUniqueIDdata` members. You ga
 
 ### Streaming a TClonesArray
 
-When writing a {% include ref class="TClonesArray" %}, it bypasses by default the `Streamer` of the member class and uses a more efficient internal mechanism to write the members to the file. 
+When writing a {% include ref class="TClonesArray" %}, it bypasses by default the `Streamer` of the member class and uses a more efficient internal mechanism to write the members to the file.
 
 You can override the default and specify that the member class `Streamer` is used by setting the [TClonesArray::BypassStreamer](https://root.cern/doc/master/classTClonesArray.html#a28b32cc35a81a3feac2ee38fe491f47d){:target="_blank"} bit to false:
 
@@ -808,9 +808,9 @@ You can override the default and specify that the member class `Streamer` is use
 {% endhighlight %}
 
 
-When the `kBypassStreamer` bit is set, the automatically generated `Streamer` can call directly the [TClass::WriteBuffer](https://root.cern/doc/master/classTClass.html#aff0609831684cbd2162ede5e4cbc3ee7){:target="_blank"} method. Bypassing the `Streamer` improves the performance when writing or reading the objects in the {% include ref class="TClonesArray" %}. 
+When the `kBypassStreamer` bit is set, the automatically generated `Streamer` can call directly the [TClass::WriteBuffer](https://root.cern/doc/master/classTClass.html#aff0609831684cbd2162ede5e4cbc3ee7){:target="_blank"} method. Bypassing the `Streamer` improves the performance when writing or reading the objects in the {% include ref class="TClonesArray" %}.
 
-However, the drawback is when a {% include ref class="TClonesArray" %} is written with `split=0` bypassing the `Streamer`, the `StreamerInfo` of the class in the array being optimized, one cannot later use the {% include ref class="TClonesArray" %}. with `split > 0`. 
+However, the drawback is when a {% include ref class="TClonesArray" %} is written with `split=0` bypassing the `Streamer`, the `StreamerInfo` of the class in the array being optimized, one cannot later use the {% include ref class="TClonesArray" %}. with `split > 0`.
 
 For example, there is a problem with the following scenario: a class `Foo` has a `TClonesArray` of `Bar` objects the `Foo` object is written with `split=0` to tree `T1`. In this case the `StreamerInfo` for the class `Bar` is created in optimized mode in such a way that data members of the same type are written as an array improving the I/O performance. In a new program, `T1` is read and a new tree `T2` is created with the object `Foo` in `split > 1`.
 
@@ -850,7 +850,7 @@ TDavixFile**    https://root.cern/files/hsimple.root
 You can save a canvas to an XML file, that is a `file.xml` file instead of a `file.root`. XML files have no advantages over the normal ROOT files, except that the information in these files can be edited with a normal text editor.
 
 XML files should only be used for small amounts of data, typically histogram files, images, geometries, calibrations.
-The XML file is created in memory before it is stored on disk. As for normal ROOT files, XML files use the same I/O mechanism that the ROOT/Cling dictionary uses. Any class that has a dictionary can be stored in XML format. XML files do not support subdirectories or trees. 
+The XML file is created in memory before it is stored on disk. As for normal ROOT files, XML files use the same I/O mechanism that the ROOT/Cling dictionary uses. Any class that has a dictionary can be stored in XML format. XML files do not support subdirectories or trees.
 
 To create an XML file, specify a filename with an `.xml` extension when calling [TFile::Open()](https://root.cern/doc/master/classTFile.html#ad8870806a04da2c2f4aa02bee4ec6833){:target="_blank"}. `TFile::Open()` recognizes that you are trying to open an XML file and returns a {% include ref class="TXMLFile" %} object. When a XML file is open in write mode, you can use [TObject::Write()](https://root.cern/doc/master/classTObject.html#a19782a4717dbfd4857ccd9ffa68aa06d){:target="_blank"} to write an object into the XML file.
 
