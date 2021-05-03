@@ -602,17 +602,17 @@ A simple example of a class with several data members.
 {% highlight C++ %}
    class Event : public TObject {
    private:
-   TDirectory *fTransient;           //! Current directory.
-   Float_t fPt;                            //! Transient value.
+   TDirectory *fTransient;      //! Current directory.
+   Float_t fPt;                 //! Transient value.
    char fType[20];
    Int_t fNtrack;
    Int_t fNseg;
    Int_t fNvertex;
    UInt_t fFlag;
    Float_t fTemperature;
-   EventHeader fEvtHdr;          //|| Do no split.
-   TClonesArray *fTracks; //->
-   TH1F *fH; //->
+   EventHeader fEvtHdr;         //|| Do no split.
+   TClonesArray *fTracks;       //->
+   TH1F *fH;                    //->
    Int_t fMeasures[10];
    Float_t fMatrix[4][4];
    Float_t *fClosestDistance;   //[fNvertex]
@@ -651,7 +651,7 @@ _**Example**_
    class Event : public TObject {
    private:
    TDirectory *fTransient;       //! Current directory.
-   Float_t fPt;                         //! Transient value
+   Float_t fPt;                  //! Transient value
 ...
 {% endhighlight %}
 
@@ -664,7 +664,7 @@ _**Example**_
 
 {% highlight C++ %}
    TClonesArray *fTracks;       //->
-   TH1F *fH;                           //->
+   TH1F *fH;                    //->
 {% endhighlight %}
 
 ### Variable length array
