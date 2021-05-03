@@ -52,7 +52,7 @@ Check the current directory as follows:
    Rint:/
 {% endhighlight %}
 
-In this case the current directory is the ROOT session (`Rint`).
+In this case, the current directory is the ROOT session (`Rint`).
 
 When you create a {% include ref class="TFile" %} object, the ROOT file becomes the current directory.
 
@@ -269,7 +269,7 @@ There are ROOT command line tools for:
 
 _**Example**_
 
-On the system prompt you can use the ROOT command line tool`rootls` to list the contents of a ROOT file.
+On the system prompt, you can use the ROOT command line tool `rootls` to list the contents of a ROOT file.
 
 {% highlight C++ %}
 $ rootls hsimple.root
@@ -278,7 +278,7 @@ hprof  hpx  hpxpy  ntuple
 
 **Operations on ROOT classes**
 
-- `rootbrowse`: Opens a {% include ref class="TBrowser" %} directly on the content of a ROOT file.
+- `rootbrowse`: Opens a {% include ref class="TBrowser" %} directly with the contents of a ROOT file.
 - `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another ROOT file.
 - `rootprint`: Plots objects in an image ROOT file.
 - `rootslimtree`: Copies trees with a subset of branches from source ROOT files.
@@ -407,7 +407,7 @@ If a file `myFile.root` is added to the list of files, you can retrieve a pointe
 
 {% include ref class="TFile" %} is a descendent of {% include ref class="TDirectory" %}, which means it behaves like a `TDirectory`. You can list the contents, print the
 name, and create subdirectories. In a ROOT session, you are always in a directory and the directory you are in is
-called the current directory and is stored in the global variable `gDirectory` (see → [gDirectory]({{ '/manual/root_classes_data_types_and_global_variables/#gdirectory' | relative_url }}).
+called the current directory and is stored in the global variable `gDirectory` (see → [gDirectory]({{ '/manual/root_classes_data_types_and_global_variables/#gdirectory' | relative_url }})).
 
 ### Physical layout of a ROOT file
 
@@ -475,7 +475,7 @@ TKey Name = h13,    Title = histo    nr:13,    Cycle = 1
 TKey Name = h14,    Title = histo    nr:14,    Cycle = 1
 {% endhighlight %}
 
-#### Finding TKey objects
+**Finding TKey objects**
 
 With the `TFile::Get()` method, you can find [TKey](https://root.cern/doc/master/classTKey.html){:target="_blank"} objects.
 
@@ -487,7 +487,7 @@ _**Example**_
 
 The `Get()` method finds the `TKey` object with name **h9**.
 
-#### Iterating over objects
+**Iterating over objects**
 
 Keys are available in a {% include ref class="TList" %} of {% include ref class="TKey" %}s. Therefore, you can iterate over the list of keys.
 
@@ -578,8 +578,242 @@ KEY: TNtuple ntuple;1 Demo ntuple
 {% endhighlight %}
 
 The line beginning with `OBJ` indicates that an {% include ref class="TProfile" %} object, called `hprof`, has been added in memory to this directory. 
-This new `hprof` in memory is independent from the `hprof` on disk. If you make changes to the `hprof` object in memory, they are not propagated to the `hprof` object on disk. A new version of `hprof` is only saved
+This new `hprof` object in memory is independent from the `hprof` object on disk. If you make changes to the `hprof` object in memory, they are not propagated to the `hprof` object on disk. A new version of the `hprof` object is only saved
 if you use the `Write()` method.
+
+## Streamers
+
+When talking about "writing an object to a file", what is actually meant is writing the current values of the data members.  The most common way to do this is to decompose (also called serialize) the object into its data elements and then write them to disk. This decomposition is done by a `Streamer`. Each class that is to be stored in a ROOT file requires a `Streamer`, which decomposes the class and "streams" its members into a buffer.
+
+Variables of composite data types such as classes, structures, and arrays can be decomposed in simple types such as longs, shorts, floats, and chars.
+
+The methods of the class are not written to the ROOT file, it contains only the persistent data members. To decompose the parent classes, the `Streamer` calls the `Streamer` of the parent classes. It moves up the inheritance tree until it reaches an ancestor with no parent. To serialize the object data members, it calls their `Streamers`. These in turn move up their own inheritance tree and so on. The simple data elements are written directly to the buffer. Finally, the buffer contains all the simple data members of all the classes that make up that particular object. Data members that are references are never stored, it is always the responsibility of the object's constructor to set them correctly.
+
+### Automatically generated streamers
+
+A streamer typically calls on other `Streamers`: its parent's streamers and data members. This architecture requires that all classes have `Streamers`, because eventually they will be called. To ensure that a class has a `Streamer`, `rootcling` automatically creates one in the `ClassDef` macro defined in `$ROOTSYS/include/Rtypes.h`. `ClassDef` defines several methods for each class, and one of them is the `Streamer`. The automatically generated streamer is complete and can be used as long as no customization is required.
+
+The `Event` class is defined in `$ROOTSYS/test/Event.h`.  It inherits from {% include ref class="TObject" %}. 
+
+_**Example**_
+
+A simple example of a class with several data members.
+
+{% highlight C++ %}
+   class Event : public TObject {
+   private:
+   TDirectory *fTransient;           //! Current directory.
+   Float_t fPt;                            //! Transient value.
+   char fType[20];
+   Int_t fNtrack;
+   Int_t fNseg;
+   Int_t fNvertex;
+   UInt_t fFlag;
+   Float_t fTemperature;
+   EventHeader fEvtHdr;          //|| Do no split.
+   TClonesArray *fTracks; //->
+   TH1F *fH; //->
+   Int_t fMeasures[10];
+   Float_t fMatrix[4][4];
+   Float_t *fClosestDistance;   //[fNvertex]
+{% endhighlight %}
+
+The `Event` class is added to the dictionary with `rootcling`.
+
+{% highlight C++ %}
+rootcling -f EventDict.cxx -c Event.h EventLinkDef.h
+{% endhighlight %}
+
+The `EventDict.cxx` file contains the automatically generated `Streamer` for `Event`.
+
+{% highlight C++ %}
+   void Event::Streamer(TBuffer &R__b){
+
+// Stream an object of class Event.
+   if (R__b.IsReading()) {
+      Event::Class()->ReadBuffer(R__b, this);
+      } else {
+      Event::Class()->WriteBuffer(R__b, this);
+         }
+      }
+{% endhighlight %}
+
+When writing an `Event` object, [TClass::WriteBuffer()](https://root.cern/doc/master/classTClass.html#aff0609831684cbd2162ede5e4cbc3ee7){:target="_blank"}  is called. `TClass::WriteBuffer`writes the current version number of the `Event` class, and its contents into the buffer `R__b`. The `Streamer` calls [TClass::ReadBuffer()](https://root.cern/doc/master/classTClass.html#af8641160ad76a62e62ee1271cb559347){:target="_blank"} when reading an
+`Event` object. The `TClass::ReadBufferRead()` method reads the information from buffer `R__b` into the `Event` object.
+
+### Transient data members
+
+To prevent a data item from being written to the file, insert a `!` as the first character in the comment (`//`). It tells ROOT not to store this data item in a ROOT file when saving the class.
+
+_**Example**_
+
+{% highlight C++ %}
+   class Event : public TObject {
+   private:
+   TDirectory *fTransient;       //! Current directory.
+   Float_t fPt;                         //! Transient value
+...
+{% endhighlight %}
+
+### The pointer to objects
+
+The string `->` in the comment of the members `*fH` and `*fTracks` tells the automatic `Streamer` to assume
+that these point to valid objects and that the `Streamer` of the objects can be called, instead of the more expensive `R__b << fH`. Note that there is no check for the validity of the pointer value. In particular, if the pointer points, directly or indirectly, back to the current object, this leads to an infinite recursion and the abrupt end of the process.
+
+_**Example**_
+
+{% highlight C++ %}
+   TClonesArray *fTracks;       //->
+   TH1F *fH;                           //->
+{% endhighlight %}
+
+### Variable length array
+
+When the `Streamer` finds a pointer to a simple type, it assumes it is an array. Somehow it needs to know how many elements are in the array in order to allocate enough space in the buffer and write out the appropriate number of elements. This is done in the class definition.
+
+_**Example**_
+
+{% highlight C++ %}
+   class Event : public TObject {
+   private:
+   char fType[20];
+   Int_t fNtrack;
+   Int_t fNseg;
+   Int_t fNvertex;
+   ...
+   Float_t *fClosestDistance;         //[fNvertex]
+{% endhighlight %}
+
+The `fClosestDistance` array is defined as a pointer of floating point numbers. A comment mark (`//`), and the number
+in square brackets tell the `Streamer` the length of the array for this object. In general the syntax is:
+
+{% highlight C++ %}
+<simple type> *<name>//[<length>]
+{% endhighlight %}
+
+The length cannot be an expression. If a variable is used, it must be an integer data element of the class. It must be defined before it is used or in a base class.
+
+The same notation applies to variable length arrays of objects and variable length arrays of pointers to objects.
+
+{% highlight C++ %}
+   MyObject *obj;         //[fNojbs]
+   MyObject **objs;      //[fDatas]
+{% endhighlight %}
+
+### Double32_t
+
+Mathematical operations very often require double precision, but when storing, single precision is usually sufficient. For this purpose the typedef `Double32_t` is supported, which is stored in memory as double and on disk as float or integer.  The actual size on disk (before compression) is determined by the parameter next to the data element declaration.
+
+_**Example**_
+
+{% highlight C++ %}
+   Double32_t m_data;    //[min,max<,nbits>]
+{% endhighlight %}
+
+If the comment is absent or does not contain `min`, `max`, `nbits`, the member is saved as a float.
+
+If `min` and `max` are present, they are saved with 32 bits precision. `min` and `max` can be explicit values or expressions of values known to `rootlcing` (for example `pi`).
+
+If `nbits` is present, the member is saved as integer with nbits bits precision. For more details, see the I/O-tutorials `double32.C`.
+
+### Preventing splitting
+
+If you want to prevent a data item from being split when you write it to a tree, add `||` directly after the comment. This is only useful for object data members.
+
+_**Example**_
+
+{% highlight C++ %}
+   EventHeader fEvtHdr;        //|| Do not split the header.
+{% endhighlight %}
+
+
+### Streamers with special additions
+
+Usually, a `Streamer` is generated by `rootcling`. However, you can also create your own `Streamer`. There are two reasons why you should create your own streamer:
+
+1. If you have a non-persistent data item that you want to initialize to a value depending on the data items you read.
+2. If you need to handle or schema evolution yourself. 
+
+_**Example**_
+
+First, you need to tell `rootcling` not to build a `Streamer`.  The input to the `rootcling` command (in the makefile) is a list of classes in a `LinkDef.h` file. For example, the list of classes for `Event` is listed in `$ROOTSYS/test/EventLinkDef.h`. `-` at the end of the class name indicates `rootcling` not to generate a `Streamer`.
+In this example can see that the `Event` class is the only one for which `rootcling` is instructed not to generate a `Streamer`.
+
+{% highlight C++ %}
+#ifdef __ROOTCLING__
+
+#pragma link off all globals;
+#pragma link off all classes;
+#pragma link off all functions;
+#pragma link C++ class EventHeader+;
+#pragma link C++ class Event-;
+#pragma link C++ class HistogramManager+;
+#pragma link C++ class Track+;
+#endif
+#pragma link C++ class EventHeader+;
+{% endhighlight %}
+
+
+The `+` sign indicates `rootcling` to use the `Streamer` system.
+
+The following is an example of a customized `Streamer` for `Event`. The `Streamer` takes a  {% include ref class="TBuffer" %} as a parameter, and first checks to see if this is a case of reading or writing the buffer.
+
+_**Example**_
+
+{% highlight C++ %}
+   void Event::Streamer(TBuffer &R__b) {
+   if (R__b.IsReading()) {
+   Event::Class()->ReadBuffer(R__b, this);
+   fTransient = gDirectory; //save current directory
+   fPt= TMath::Sqrt(fPx*fPx + fPy*fPy + fPz*fPz);
+   } else {
+      Event::Class()->WriteBuffer(R__b, this);
+      }
+   }
+{% endhighlight %}
+
+### Writing objects
+
+A `Streamer` breaks the objects into data members and writes them to a buffer. It does not write the buffer to a file, but simply fills a buffer with bytes representing the object. This allows, for example, to write the buffer to a file. For example, you can write it to a socket to send it over the network.
+
+A buffer is written to a file by loading the dictionary for a class before an object of that type can be stored.
+
+The [TObject::Write()](https://root.cern/doc/master/classTObject.html#a19782a4717dbfd4857ccd9ffa68aa06d){:target="_blank"} method does the following:
+
+- Creates a {% include ref class="TKey" %} object in the current directory.
+- Creates a {% include ref class="TBuffer" %} object, which is part of the newly created {% include ref class="TKey" %}.
+- Fills the {% include ref class="TBuffer" %}  with a call to the `class::Streamer` method.
+- Creates a second buffer for compression, if needed.
+- Reserves space by scanning the {% include ref class="TFree" %} list. At this point, the size of the buffer is known.
+- Writes the buffer to the file.
+- Releases the {% include ref class="TBuffer" %} part of the key.
+
+This means that the [TObject::Write()](https://root.cern/doc/master/classTObject.html#a19782a4717dbfd4857ccd9ffa68aa06d){:target="_blank"} calls the `Streamer` method of the class to build the buffer. The buffer is in the key and the key is written to disk. Once written to disk, the memory consumed by the buffer part is released. The key part of the {% include ref class="TKey" %} is kept. The key consumes about 60 bytes, whereas the buffer, since it contains the object data, can be very large.
+
+### Ignoring object Streamers
+
+A class can ignore the {% include ref class="TObject" %} `Streamer` with the `MyClass->Class::IgnoreObjectStreamer()` method. When the
+ `kIgnoreTObjectStreamerbit` class is set (by calling the `IgnoreTObjectStreamer()` method), the automatically generated `Streamer` does not call [TObject::Streamer](https://root.cern/doc/master/classTClass.html#ac1c95f1787550ebc5367590aedacbd67){:target="_blank"}, and the `TObject` part of the class is not streamed to the file. This is useful
+in case you do not use the `TObject` `fBits` and `fUniqueIDdata` members. You gain space on the file, and you do not loose functionality if you do not use the `fBits` and `fUniqueID`.
+
+### Streaming a TClonesArray
+
+When writing a {% include ref class="TClonesArray" %}, it bypasses by default the `Streamer` of the member class and uses a more efficient internal mechanism to write the members to the file. 
+
+You can override the default and specify that the member class `Streamer` is used by setting the [TClonesArray::BypassStreamer](https://root.cern/doc/master/classTClonesArray.html#a28b32cc35a81a3feac2ee38fe491f47d){:target="_blank"} bit to false:
+
+{% highlight C++ %}
+   TClonesArray *fTracks;
+   fTracks->BypassStreamer(kFALSE);             // Use the member Streamer.
+{% highlight C++ %}
+
+When the `kBypassStreamer` bit is set, the automatically generated `Streamer` can call directly the [TClass::WriteBuffer](https://root.cern/doc/master/classTClass.html#aff0609831684cbd2162ede5e4cbc3ee7){:target="_blank"} method. Bypassing the `Streamer` improves the performance when writing or reading the objects in the {% include ref class="TClonesArray" %}. 
+
+However, the drawback is when a {% include ref class="TClonesArray" %} is written with `split=0` bypassing the `Streamer`, the `StreamerInfo` of the class in the array being optimized, one cannot later use the {% include ref class="TClonesArray" %}. with `split > 0`. 
+
+For example, there is a problem with the following scenario: a class `Foo` has a `TClonesArray` of `Bar` objects the `Foo` object is written with `split=0` to tree `T1`. In this case the `StreamerInfo` for the class `Bar` is created in optimized mode in such a way that data members of the same type are written as an array improving the I/O performance. In a new program, `T1` is read and a new tree `T2` is created with the object `Foo` in `split > 1`.
+
+When the `T2branch` is created, the `StreamerInfo` for the class `Bar` is created with no optimization (mandatory for the split mode). The optimized `Bar` `StreamerInfo` is going to be used to read the {% include ref class="TClonesArray" %} in `T1`. The result are `Bar` objects with data member values not in the right sequence. The solution to this problem is to call `BypassStreamer(kFALSE)` for the % include ref class="TClonesArray" %}. In this case, the normal `Bar::Streamer` function is  called. The `Bar::Streamer` function works independently if the `Bar` `StreamerInfo` has been generated in optimized mode or not.
 
 ## Remotely accessing a ROOT file
 
@@ -597,7 +831,7 @@ root[] TFile *f2 = TFile::Open("root://my.server.org/data/file.root","new")
 root[] TFile *f3 = TFile::Open("https://root.cern/files/hsimple.root")
 {% endhighlight %}
 
-`ls ()` lists what is in the ROOT file.
+`ls()` lists what is in the ROOT file.
 
 {% highlight C++ %}
 root[] f3.ls()
@@ -608,3 +842,33 @@ TDavixFile**    https://root.cern/files/hsimple.root
   KEY: TProfile hprof;1 Profile of pz versus px
   KEY: TNtuple  ntuple;1 Demo ntuple
 {% endhighlight %}
+
+
+## XML interface
+
+You can save a canvas to an XML file, that is a `file.xml` file instead of a `file.root`. XML files have no advantages over the normal ROOT files, except that the information in these files can be edited with a normal text editor.
+
+XML files should only be used for small amounts of data, typically histogram files, images, geometries, calibrations.
+The XML file is created in memory before it is stored on disk. As for normal ROOT files, XML files use the same I/O mechanism that the ROOT/Cling dictionary uses. Any class that has a dictionary can be stored in XML format. XML files do not support subdirectories or trees. 
+
+To create an XML file, specify a filename with an `.xml` extension when calling [TFile::Open()](https://root.cern/doc/master/classTFile.html#ad8870806a04da2c2f4aa02bee4ec6833){:target="_blank"}. `TFile::Open()` recognizes that you are trying to open an XML file and returns a {% include ref class="TXMLFile" %} object. When a XML file is open in write mode, you can use [TObject::Write()](https://root.cern/doc/master/classTObject.html#a19782a4717dbfd4857ccd9ffa68aa06d){:target="_blank"} to write an object into the XML file.
+
+_**Example**_
+
+{% highlight C++ %}
+// Example of a session saving a histogram to a XML file.
+   TFile *f = TFile::Open("Example.xml","recreate");
+   TH1F *h = new TH1F("h","test",1000,-2,2)
+   h->FillRandom("gaus");
+   h->Write();
+  delete f;
+
+// Example of a session saving a histogram to a XML file.
+   TFile *f = TFile::Open("Example.xml");
+   TH1F *h = (TH1F*)f->Get("h");
+   h->Draw();
+   canvas->Print("Example.xml");
+{% endhighlight %}
+
+
+
