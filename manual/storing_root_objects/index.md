@@ -320,7 +320,7 @@ Graphical objects are displayed in the `Canvas_1` tab. Files that end with `.C` 
 A {% include ref class="TFolder" %} is a collection of objects visible and expandable in the ROOT Object Browser. Folders have a name and a
 title. They are identified in the folder hierarchy by an “UNIX-like” naming convention. New folders can be added and removed to/from a folder.
 
-> **Difference between TFolder and TDirector**<br/>
+> **Difference between TFolder and TDirectory**<br/>
 > A {% include ref class="TFolder" %} manages a hierarchy of objects in the memory. A {% include ref class="TDirectory" %} is doing that for a file.<br/>
 > You can save the {% include ref class="TFolder" %} structure to a directory in a ROOT file.
 
@@ -814,7 +814,75 @@ However, the drawback is when a {% include ref class="TClonesArray" %} is writte
 
 For example, there is a problem with the following scenario: a class `Foo` has a `TClonesArray` of `Bar` objects the `Foo` object is written with `split=0` to tree `T1`. In this case the `StreamerInfo` for the class `Bar` is created in optimized mode in such a way that data members of the same type are written as an array improving the I/O performance. In a new program, `T1` is read and a new tree `T2` is created with the object `Foo` in `split > 1`.
 
-When the `T2branch` is created, the `StreamerInfo` for the class `Bar` is created with no optimization (mandatory for the split mode). The optimized `Bar` `StreamerInfo` is going to be used to read the {% include ref class="TClonesArray" %} in `T1`. The result are `Bar` objects with data member values not in the right sequence. The solution to this problem is to call `BypassStreamer(kFALSE)` for the % include ref class="TClonesArray" %}. In this case, the normal `Bar::Streamer` function is  called. The `Bar::Streamer` function works independently if the `Bar` `StreamerInfo` has been generated in optimized mode or not.
+When the `T2branch` is created, the `StreamerInfo` for the class `Bar` is created with no optimization (mandatory for the split mode). The optimized `Bar` `StreamerInfo` is going to be used to read the {% include ref class="TClonesArray" %} in `T1`. The result are `Bar` objects with data member values not in the right sequence. The solution to this problem is to call `BypassStreamer(kFALSE)` for the {% include ref class="TClonesArray" %}. In this case, the normal `Bar::Streamer` function is  called. The `Bar::Streamer` function works independently if the `Bar` `StreamerInfo` has been generated in optimized mode or not.
+
+## Pointers and references in persistency
+
+An object pointer as a data member presents a challenge for the streaming software. If the object being pointed to is stored each time, it could create circular dependencies, consuming a large amount of memory. The network of references must be preserved on disk and recreated when the file is read. If you use independent I/O operations for pointers and their referenced objects you can use the {% include ref class="TRef" %} class.
+
+**Streaming C++ pointers**
+
+When ROOT encounters a pointer data member, it calls the object's `Streamer` and labels it with a unique object identifier, which is unique to an I/O operation. If there is another pointer to the object in the same I/O operation, the first object is referenced, that is, it is not savedagain. When reading the file, the object is rebuilt and
+the references are recalculated.
+
+In this way, the network of pointers and their objects is rebuilt and can be used as it was used before persistence.
+was persistent. If the pointer contains the address of an object embedded in another object (as opposed to being pointed to by a pointer), the object is duplicated at read time. To avoid this, make the pointer a transient data member.
+
+**TRef class**
+
+If the object is split into multiple files or multiple branches of one or more {% include ref class="TTree" %}, standard C++ pointers cannot be used because each I/O operation writes the referenced objects and multiple copies exist. In addition, if the pointer is read before the referenced object, it is null and may cause a system error at runtime. To address these limitations, ROOT provides the {% include ref class="TRef" %} class. See the Reference Guide for information on using the {% include ref class="TRef" %} class.
+
+## Compression and performance
+
+ROOT uses a compression algorithm based on the well-known gzip algorithm. It supports nine levels of compression.
+The default compression level for ROOT is 1. The compression level can be set with the [TFile::SetCompressionLevel()](https://root.cern/doc/master/classTFile.html#a39aa992efad9e7b4232124c4069d7861){:target="_blank"} method. Experience with this algorithm shows that a compression level of 1.3 is the optimum for raw data files and about 2 for most DST files. Choosing 1 as the default is a tradeoff between the time it takes to read and write the object versus the storage space savings. 
+
+To specify no compression, set the level to 0.
+
+It is recommended to use compression when the time spent on I/O operations is small compared to the total processing time. If the I/O operation is increased by a factor of 5, this is still a small percentage of the total time and can compress the data by a factor of 10. On the other hand, if the amount of time spent on I/O is large, the compression can have a large impact on the
+the performance of the program.
+
+The compression factor, that is, the saving of storage space, varies with the type of data. A buffer with an equal field of values is compressed so that the value is written only once. For example, a track has the mass of a pion, which is always the same, and the charge of the pion, which is either positive or negative. For 1000 pions, the mass is written only once and the charge is written only twice (positive and negative). If the data is sparse, that is, if there are many zeros, the compression factor is also high.
+
+The time to decompress an object is small compared to the compression time and is independent of the selected compression level. Note that the compression level can be changed at any time, but the new compression level applies only to newly written objects. Consequently, a ROOT file may contain objects with different compression levels.
+
+The following table shows four runs of the demo script, which generates 15 histograms with different compression parameters. To make the numbers more meaningful, the macro was modified to generate 1000 histograms.
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <th scope="col">Compression level</th>
+      <th scope="col">Bytes</th>
+      <th scope="col">Write time (s)</th>
+      <th scope="col">Read time (s)</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>1,004,998</td>
+      <td>4.77</td>
+      <td>0.07</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>438,366</td>
+      <td>6.67</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>429,871</td>
+      <td>7.03</td>
+      <td>0.06</td>
+    </tr>
+          <tr>
+      <td>9</td>
+      <td>426,899</td>
+      <td>8.47</td>
+      <td>0.05</td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## Remotely accessing a ROOT file
 
