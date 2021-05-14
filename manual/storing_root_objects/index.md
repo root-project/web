@@ -1117,10 +1117,10 @@ The variables in the rules have the following meaning:
 **The C++ API**
 
 The schema evolution C++ API consists of the follwing classes: 
--  {% include ref class="ROOT::TSchemaRuleSet" %}
--  {% include ref class="ROOT::TSchemaRule" %}
+-  {% include ref class="TSchemaRuleSet" %}
+-  {% include ref class="TSchemaRule" %}
 
-Objects of the {% include ref class="ROOT::TSchemaRule" %} class represent the rules and their fields have exactly the same meaning as the ones of rules specified in the dictionaries. {% include ref class="ROOT::TSchemaRuleSet" %} objects manage the sets of rules and ensure their consistency. There can be no conflicting rules in the rule sets. The rule sets are owned by the {% include ref class="ROOT::TClass" %} objects corresponding to the target classes defined in the rules and can be accessed using `TClass::{Get|Adopt}SchemaRules`.
+Objects of the {% include ref class="TSchemaRule" %} class represent the rules and their fields have exactly the same meaning as the ones of rules specified in the dictionaries. {% include ref class="TSchemaRuleSet" %} objects manage the sets of rules and ensure their consistency. There can be no conflicting rules in the rule sets. The rule sets are owned by the {% include ref class="TClass" %} objects corresponding to the target classes defined in the rules and can be accessed using `TClass::{Get|Adopt}SchemaRules`.
 
 ## Remotely accessing a ROOT file
 
