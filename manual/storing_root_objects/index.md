@@ -884,6 +884,244 @@ The following table shows four runs of the demo script, which generates 15 histo
 </table>
 
 
+## Schema evoluttion
+
+Schema evolution is a problem that occurs with long-lived data. When a schema changes, existing persistent data may no longer be accessible unless the system provides a mechanism for accessing data created with earlier versions of the schema. At
+the lifetime of the collaboration, class definitions (that is, the schema) are likely to change frequently. Not only may the class itself change, but any parent classes or data member classes may also change. This makes te support for schema evolution necessary.
+
+ROOT fully supports schema evolution. The following figure illustrates some of the scenarios.
+
+{% include figure_image
+img="schema_evolution.png"
+caption="The ROOT schema evolution."
+%}
+
+The upper half represents different versions of the shared library with the class definitions. These are the in-memory class versions. The lower half represents data files containing different versions of the classes.
+
+- An old version of a shared library and a file with new class definitions - this can be the case when someone has not updated the library and reads a new file.
+- Reading a shared library file that is missing a class definition (that is, missing class D).
+- Reading a file without any class definitions. This may be the case if the class definition is lost or unavailable.
+- The current version of a shared library and an old file with old class versions (backward compatibility). This is often the case when old data is read.
+- Reading a file with a shared library created with `MakeProject`. This is the case when someone has already read the data without shared library and used the ROOT function `MakeProject` to read the class definitions and shared library.
+
+In the case of a mismatch between the in-memory version and the persistent version of a class, ROOT maps the persistent to the one in memory. For example, you can change the class definition at will:
+
+- Change the order of data members in the class.
+- Add new data members. By default, the value of the missing member will be 0 or in case of an object it is set to null.
+- Remove data members.
+- Move a data member to a base class or vice-versa.
+- Change the type of a member if it is a simple type or a pointer to a simple type. If a loss of precision occurs, a warning is given.
+- Add or remove a base class.
+
+ROOT supports schema evolution by storing a class description of every version of the class ever written to disk. When an object is written to a file, the description of the current class version is also written.  This description is implemented in the {% include ref class="TStreamerInfo" %} class.
+
+### TStreamerInfo class
+
+Each class has a list of `StreamerInfo objects`, one for each version of the class, if that version has been written to disk at least once. When an object is read from a file, the system uses the `StreamerInfo` list to decode an object to the current version. The `StreamerInfo` is composed of {% include ref class="TStreamerElement" %}. Each {% include ref class="TStreamerElement" %} describes a persistent data member of the class. By default, all data members of a class are persistent. To exclude a data member (that is, make it non-persistent) add a `!` after the comment characters.
+
+_**Example**_
+
+The pointer  `*fPainter` of a {% include ref class="TH1" %} is not persistent.
+
+{% highlight C++ %}
+TVirtualHistPainter* fPainter     //!Pointer to histogram painter.
+{% endhighlight %}
+
+### TStreamerElement class
+
+A {% include ref class="TStreamerElement" %} describes a data element of a simple type, object, array, pointer or container. The offset in the {% include ref class="TStreamerElement" %} is the starting address of the data for this data element.
+
+_**Example**_
+
+{% highlight C++ %}
+BASE     TNamed offset= 0     type=67     The basis for a named object.
+BASE     TAttLine offset= 28    type= 0      Line attributes.
+{% endhighlight %}
+
+In this example, the  {% include ref class="TNamed" %} data starts at byte 0, and {% include ref class="TAttLine" %} starts at byte 28. The offset is machine and compiler dependent and is computed when the `StreamerInfo` is analyzed. The types are defined in the `TStreamerInfo.h` file:
+
+{% highlight C++ %}
+enum EReadWrite {
+kBase=0, kChar=1,kShort=2,kInt=3,kLong=4,
+kFloat=5, kCounter=6,kCharStar=7, kDouble=8,kUChar=11,
+kUShort=12, kUInt=13,kULong=14,kBits=15,kOffsetL=20,
+kOffsetP=40, kObject=61,kAny=62,kObjectp=63,kObjectP=64,
+kTString=65, kTObject=66,kTNamed=67,kSkip=100,kSkipL=120,
+kSkipP=140, kConv=200, kConvL=220,kConvP=240,kStreamer=500,
+kStreamLoop=501, kMissing=99999
+};
+{% endhighlight %}
+
+The  [TClass::GetStreamerInfo](https://root.cern/doc/master/classTClass.html#ab2d5b55c397ae9ccd165cf4050135e13){:target="_blank"} method analyzes the `StreamerInfo` the same way it would be analyzed by referring to the class. While analyzing the `StreamerInfo`, it computes the offsets. The type field is the type of the {% include ref class="TStreamerElement" %}. It is specific to the `StreamerInfo` definition.
+
+
+### Example: TH1 StreamerInfo
+
+In the `StreamerInfo` of the {% include ref class="TH1" %} class there are the four base classes: {% include ref class="TNamed" %}, {% include ref class="TAttLine" %}, {% include ref class="TAttFill" %}, and {% include ref class="TAttMarker" %}. These are followed by a list of the data members. Each data member is implemented by a {% include ref class="TStreamerElement" %} object.
+
+{% highlight C++ %}
+root[] TH1::Class()->GetStreamerInfo()->ls()
+StreamerInfo for class: TH1, version=3
+BASE           TNamed           offset= 0 type=67 The basis for a named object
+BASE           TAttLine            offset= 28 type= 0 Line attributes
+BASE           TAttFill              offset= 40 type= 0 Fill area attributes
+BASE          TAttMarker        offset= 48 type= 0 Marker attributes
+Int_t            fNcells               offset= 60 type= 3 number of bins(1D
+TAxis           fXaxis                offset= 64 type=61 X axis descriptor
+TAxis           fYaxis                offset=192 type=61 Y axis descriptor
+TAxis           fZaxis                offset=320 type=61 Z axis descriptor
+Short_t        fBarOffset         offset=448 type= 2(1000*offset)for bar charts or legos
+Short_t       fBarWidth          offset=450 type= 2 (1000*width)for bar charts or legos
+Stat_t         fEntries              offset=452 type= 8 Number of entries
+Stat_t         fTsumw              offset=460 type= 8 Total Sum of weights
+Stat_t         fTsumw2            offset=468 type= 8 Total Sum of squares of weights
+Stat_t         fTsumwx            offset=476 type= 8 Total Sum of weight*X
+Stat_t         fTsumwx2           offset=484 type= 8 Total Sum of weight*X*X
+Double_t    fMaximum          offset=492 type= 8 Maximum value for plotting
+Double_t    fMinimum           offset=500 type= 8 Minimum value for plotting
+Double_t    fNormFactor       offset=508 type= 8 Normalization factor
+TArrayD     fContour             offset=516 type=62 Array to display contour levels
+TArrayD     fSumw2              offset=528 type=62 Array of sum of squares of weights
+TString fOption                    offset=540 type=65 histogram options 
+TList* fFunctions                  offset=548 type=63 ->Pointer to list of functions
+i= 0, TNamed        type= 67,    offset= 0, len=1, method=0
+i= 1, TAttLine        type= 0,       offset= 28, len=1, method=142484480
+i= 2, TAttFill          type= 0,       offset= 40, len=1, method=142496992
+i= 3, TAttMarker   type= 0,       offset= 48, len=1, method=142509704
+i= 4, fNcells          type= 3,       offset= 60, len=1, method=0
+i= 5, fXaxis           type= 61,     offset= 64, len=1, method=1081287424 
+i= 6, fYaxis           type= 61,     offset=192, len=1, method=1081287548
+i= 7, fZaxis           type= 61,     offset=320, len=1, method=1081287676
+i= 8, fBarOffset    type= 22,     offset=448, len=2, method=0
+i= 9, fEntries        type= 28,     offset=452, len=8, method=0
+i=10, fContour     type= 62,     offset=516, len=1, method=1081287804
+i=11, fSumw2      type= 62,     offset=528, len=1, method=1081287924
+i=12, fOption       type= 65,     offset=540, len=1, method=1081288044
+i=13, fFunctions  type= 63,     offset=548, len=1, method=1081288164
+{% endhighlight %}
+
+**Optimized StreamerInfo**
+
+The entries starting with `i = 0` is the optimized format of the `StreamerInfo`. Consecutive data members of the same simple type and size are collapsed and read at once into an array for performance optimization.
+
+{% highlight C++ %}
+i= 0, TNamed        type= 67,  offset= 0,  len=1,  method=0
+i= 1, TAttLine        type= 0,    offset= 28, len=1, method=142484480
+i= 2, TAttFill          type= 0,    offset= 40, len=1, method=142496992
+i= 3, TAttMarker   type= 0,    offset= 48, len=1, method=142509704
+{% endhighlight %}
+
+For example, the five data members beginning with `fEnties` and the three data members beginning with `fMaximum`, are put into an array called `fEntries (i = 9)` with the length 8.
+
+{% highlight C++ %}
+i= 9, fEntries    type= 28,    offset=452, len=8, method=0
+{% endhighlight %}
+
+Only data members of simple types are combined, data members of objects are not combined. For example, the three axes data members remain separate. The "method" is a handle to the method that reads the object.
+
+### Automatic schema evolution
+
+When a class is defined in ROOT, it must include the `ClassDef` macro as the last line in the header file inside the class definition. The syntax is:
+
+{% highlight C++ %}
+ClassDef(<ClassName>,<VersionNumber>)
+{% endhighlight %}
+
+The version number identifies that particular version of the class. If a class has version 0, it is not stored in a root file, but its base class(es) are. The reason may be that this class has no data elements worth storing or all real information in the base classes. The version number is written to the file in the `Streamer` by calling [TBuffer::WriteVersion](https://root.cern/doc/master/classTBuffer.html#abefa9e3ea80451e4a4fe2d53455296ea){:target="_blank"}. The designer of the class does not need to make any manual change in the `Streamer`. The development of the ROOT scheme mechanism is automatic and handled by the `StreamerInfo`.
+
+### Manual data model evolution capabilities
+
+The automatic data model schema evolution implemented in ROOT allows reading back the serialized data object if the definition of the classes representing these objects has changed slightly (some of the data members have been removed or some new ones have been added). It is also possible to manually set the rules for more sophisticated data transformations on reading to load the serialized objects into data structures that have changed significantly.
+
+ROOT provides two interfaces for users to define the conversion rules. The first way is to define a rule in the dictionary file, and the second way is to insert it into the {% include ref class="TClass" %} object using the C++ API.
+
+There are two types of conversion rules. The first of them, the normal rules, are the ones that should be used in most cases. They provide buffered input data and an address of the in-memory target object, and allow the user to specify the conversion function that maps the read data to the output format. The second type of rule, raw rules, also provide the pointer to the target object, but the input is a raw {% include ref class="TBuffer" %} object that contains the input data item declared as input to the rule. This type of rule is mainly provided to handle the file format changes that cannot be handled otherwise, and should generally not be used if there is no other option.
+
+**The dictionaries**
+
+The easiest way to specify the conversion rules is to use a dictionary. You can do this either in a `LinkDef` file or in the selection xml file that is passed to `genreflex`. The syntax of the rules is as follows:
+
+_For dictionaries created from a LinkDef file_
+
+{% highlight C++ %}
+#pragma read     \
+sourceClass="ClassA"     \
+source="double m_a; double m_b; double m_c"     \
+version="[4-5,7,9,12-]"     \
+checksum="[12345,123456]"     \
+targetClass="ClassB"     \
+target="m_x"     \
+embed="true"     \
+include="iostream,cstdlib"     \
+code="{m_x = onfile.m_a * onfile.m_b * onfile.m_c; }"     \
+
+#pragma readraw     \
+sourceClass="TAxis"     \
+source="fXbins"     \
+targetClass="TAxis"     \
+target="fXbins"     \
+version="[-5]"      \
+include="TAxis.h"      \
+code="     \
+{     \
+Float_t * xbins=0;      \
+Int_t n = buffer.ReadArray( xbins );      \
+fXbins.Set( xbins );      \
+}"
+{% endhighlight %}
+
+_For REFLEX dictionaries_
+
+{% highlight C++ %}
+<ioread sourceClass="ClassA"
+     source="double m_a; double m_b; double m_c"
+     version="[4-5,7,9,12-]"
+     checksum="[12345,123456]"
+     targetClass="ClassB"
+     target="m_x"
+     embed="true"
+     include="iostream,cstdlib">
+<![CDATA[
+m_x = onfile.m_a * onfile.m_b * onfile.m_c;
+]] >
+</ioread>
+<ioreadraw sourceClass="TAxis"
+     source="fXbins"
+     targetClass="TAxis"
+     target="fXbins"
+     version="[-5]"
+     include="TAxis.h">
+<![CDATA[
+     Float_t *xbins = 0;
+      Int_t n = buffer.ReadArray( xbins ) ;
+     fXbins.Set( xbins );
+]] >
+</ioreadraw>
+{% endhighlight %}
+
+The variables in the rules have the following meaning:
+
+- `sourceClass`<br/>The field defines the on-disk class that is the input for the rule.
+- `source`<br/>A semicolon-separated list of values defining the source class data members that need to be cached and accessible via object proxy when the rule is executed. The values are either the names of the data members or the type-name pairs (separated by a space). If types are specified then the ondisk structure can be generated and used in the code snippet defined by the user.
+- `version`<br/>A list of versions of the source class that can be an input for this rule. The list has to be enclosed in a square bracket and be a comma-separated list of versions or version ranges. The version is an integer number, whereas the version range is one of the following:<br/>
+“a-b”: a and b are integers and the expression means all the numbers between and including a and b.<br/>
+“-a”: a is an integer and the expression means all the version numbers smaller than or equal to a.<br/>
+“a-”: a is an integer and the expression means all the version numbers greater than or equal to a.
+- `checksum`<br/>A list of checksums of the source class that can be an input for this rule. The list has to be enclosed in a square brackets and is a comma-separated list of integers.
+- `targetClass`<br/>The field is obligatory and defines the name of the in-memory class that this rule can be applied to.
+- `target`<br/>A semicolon-separated list of target class data member names that this rule is capable of calculating.
+- `embed`<br/>This property tells the system if the rule should be written in the output file is some objects of this class are serialized.
+- `include`<br/>A list of header files that should be included in order to provide the functionality used in the code snippet. The list is comma delimited.
+- `code`<br/>An user specified code snippet.
+
+**The C++ API**
+
+The schema evolution C++ API consists of the follwing classes: 
+-  [TSchemaRuleSet](https://root.cern/doc/master/classROOT_1_1Detail_1_1TSchemaRuleSet.html){:target="_blank"}
+-  [TSchemaRule"](https://root.cern/doc/master/classROOT_1_1TSchemaRule.html){:target="_blank"}
+
+Objects of the [TSchemaRule"](https://root.cern/doc/master/classROOT_1_1TSchemaRule.html){:target="_blank"}class represent the rules and their fields have exactly the same meaning as the ones of rules specified in the dictionaries. [TSchemaRuleSet](https://root.cern/doc/master/classROOT_1_1Detail_1_1TSchemaRuleSet.html){:target="_blank"} objects manage the sets of rules and ensure their consistency. There can be no conflicting rules in the rule sets. The rule sets are owned by the {% include ref class="TClass" %} objects corresponding to the target classes defined in the rules and can be accessed using `TClass::{Get|Adopt}SchemaRules`.
+
 ## Remotely accessing a ROOT file
 
 You can remotely access ROOT files on the base of the protocol URL.
