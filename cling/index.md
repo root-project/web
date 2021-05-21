@@ -15,8 +15,8 @@ just-in-time (JIT) compiler for compilation. Many of the developers (e.g. Mono i
 project called [CSharpRepl](https://www.mono-project.com/CsharpRepl)) of such
 kind of software applications name them interactive compilers.
 
-One of Cling's main goals is to provide contemporary, high-performance alternative of the
-current C++ interpreter in the ROOT project - CINT. The backward-compatibility with CINT is
+One of Cling's main goals was to provide contemporary, high-performance alternative of the
+first C++ interpreter in the ROOT project - CINT. The backward-compatibility with CINT was
 major priority during the development.
 
 ## Download
