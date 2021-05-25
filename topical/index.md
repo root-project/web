@@ -114,9 +114,8 @@ consult its manual [here](https://root.cern/root/htmldoc/guides/spectrum/Spectru
 ## TMVA
 
 TMVA is a toolkit for Multivariate Data Analysis.
-
-  - [6 Series (pdf)](https://root.cern/download/doc/tmva/TMVAUsersGuide.pdf){:target="_blank"}.
-  - [Documentation on the GitHub repository](https://github.com/root-project/root/blob/master/documentation/tmva/UsersGuide/TMVAUsersGuide.pdf){:target="_blank"} (Updated version for ROOT 6).
+The [Documentation](https://github.com/root-project/root/blob/master/documentation/tmva/UsersGuide/TMVAUsersGuide.pdf){:target="_blank"}
+(updated version for ROOT 6) can be found in the ROOT GitHub repository.
 
 ## VMC
 
