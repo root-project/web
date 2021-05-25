@@ -165,6 +165,24 @@ Jonas Hahnfeld:
   email       : "jonas.hahnfeld@cern.ch"
 
 
+Jonas Rembser:
+  name        : "Jonas Rembser"
+  bio         : "Jonas is a particle physicist with a strong interest in high-performance computing
+                 and data science. For his Ph.D. from the École polytechnique in Paris, he worked
+                 for the CMS experiment at the Large Hadron Collider on electron reconstruction
+                 and multiboson analyses. Jonas joined the ROOT team in 2021 as a senior fellow to
+                 work on RooFit support and development. He aims to speed up RooFit with modern
+                 technologies such as heterogeneous computing on GPUs and automatic differentiation.
+                 He further improves the RooFit experience with modern C++, updates to the Python
+                 bindings, and enhancements to the higher-level statistical tools such as
+                 HistFactory."
+  short_bio   : "Jonas is working on RooFit support and development."
+  tag         : "team"
+  affiliation : "CERN"
+  avatar      : "/assets/images/JonasRembser.png"
+  email       : "jonas.rembser@cern.ch"
+
+
 Lorenzo Moneta:
   name        : "Lorenzo Moneta"
   bio         : "Lorenzo started working in 1989 as an experimental physicist for the ALEPH
