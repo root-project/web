@@ -34,7 +34,7 @@ This workshop, following from a successful <a href="{{'/blog/workshops' | relati
 
 <p>Abstract submission deadline is <em>February, 11th</em>.</p>
 
-<p>For submitting an abstract please use the <a href="https://indico.cern.ch/conferenceDisplay.py?confId=217511" target="_blank">workshop Indico page</a>.</p>
+<p>For submitting an abstract please use the <a href="https://indico.cern.ch/event/217511" target="_blank">workshop Indico page</a>.</p>
 
 <h3><em>Registration</em></h3>
 
@@ -46,7 +46,7 @@ This workshop, following from a successful <a href="{{'/blog/workshops' | relati
 
 <p>Students: Sponsorship is available, please contact <a href="mailto:root-2013@cern.ch" target="_blank">organizing committee</a> for further information.</p>
 
-<p>For registration please use the&nbsp;&nbsp;<a href="https://indico.cern.ch/conferenceDisplay.py?confId=217511" target="_blank">workshop Indico page</a>.</p>
+<p>For registration please use the&nbsp;&nbsp;<a href="https://indico.cern.ch/event/217511" target="_blank">workshop Indico page</a>.</p>
 
 <h3><em>Accommodation</em></h3>
 
