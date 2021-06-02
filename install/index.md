@@ -214,3 +214,18 @@ $ cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # && check cmake conf
 $ cmake --build . -- install -j4 # if you have 4 cores available for compilation
 $ source ../root_install/bin/thisroot.sh # or thisroot.{fish,csh}
 ```
+
+And similarly, on Windows, inside a `x86 Native Tools Command Prompt for VS 2019`, ROOT can be compiled with these commands:
+
+```bat
+rem Substitute `v6-24-00-patches` with the patches branch of the latest release.
+rem The latest stable version can be retrieved by cloning the `latest-stable` branch;
+rem this branch gets updated automatically on each release. Your may update your
+rem local copy by issuing a `git pull` command.
+
+C:\Users\username>git clone --branch v6-24-00-patches https://github.com/root-project/root.git root_src
+C:\Users\username>mkdir root_build root_install && cd root_build
+C:\Users\username>cmake -G"Visual Studio 16 2019" -A Win32 -Thost=x64 -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_PREFIX=../root_install ../root_src
+C:\Users\username>cmake --build . --config Release --target install
+C:\Users\username>..\root_install\bin\thisroot.bat
+```
