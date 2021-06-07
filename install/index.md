@@ -115,6 +115,22 @@ It can be installed with
 $ emerge sci-physics/root
 ```
 
+### <a name="nixos_nix_nixpkgs" />NixOS/Nix/Nixpkgs
+
+The package name for ROOT in nixpkgs is `root`. It can be installed into the user environment using
+
+```sh
+$ nix-env -f '<nixpkgs>' -iA root
+```
+
+Running in a temporary environment can be achieved with
+
+```sh
+$ nix-shell -p root --run root
+```
+
+A `root5` package provided for legacy code support.
+
 ### Ubuntu and Debian-based distributions
 
 The ROOT team is working on the release of an official `.deb` package. More news on this topic very soon.<br>
@@ -138,6 +154,10 @@ After [installing macports](https://www.macports.org/install.php), the [ROOT por
 ```sh
 $ sudo port install root6
 ```
+
+### Nix/Nixpkgs
+
+The same instructions as [for Linux](#nixos_nix_nixpkgs) apply when running on macOS.
 
 # LCG releases on CVMFS
 
