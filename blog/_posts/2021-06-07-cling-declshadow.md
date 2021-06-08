@@ -40,7 +40,7 @@ However if you are using Cling standalone, this feature is considered optional a
 gClingOpts->AllowRedefinition = 1; // or 0 to disable
 {% endhighlight %}
 
-# The gritty details
+## The gritty details
 Formally, the ISO C++ one-definition-rule (ODR) forbids multiple definitions in order to ensure a consistent view of an entity across different translation units. The technique implemented in Cling does not, however, violate the ODR as each definition is internally enclosed in its own namespace. This ensures the uniqueness of the qualified (and mangled) name of each definition. The trick is completed by making the latest definition available in the global scope by fixing up the translation unit lookup table.
 
 For more information, you can take a look at Cling [issue #259](https://github.com/root-project/cling/issues/259), where part of the brainstorm took place. Also, you can refer to our [conference paper](https://dl.acm.org/doi/abs/10.1145/3377555.3377901) published in the Proceedings of the 29th International Conference on Compiler Construction (CC 2020).
