@@ -129,7 +129,9 @@ Running in a temporary environment can be achieved with
 $ nix-shell -p root --run root
 ```
 
-A `root5` package provided for legacy code support.
+A `root5` package is provided for the legacy software support.
+
+If you encounter any issues, feel free report them to the [nixpkgs issue tracker](https://github.com/NixOS/nixpkgs/issues).
 
 ### Ubuntu and Debian-based distributions
 
