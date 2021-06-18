@@ -163,38 +163,42 @@ The same instructions as [for Linux](#nixos_nix_nixpkgs) apply when running on m
 
 # LCG releases on CVMFS
 
-## Pre-built ROOT without dependencies
+## Standalone ROOT
 
-If your platform mounts [CVMFS](https://cernvm.cern.ch/portal/filesystem){:target="\_blank"} (as, for example, CERN LXPLUS does),
-ROOT is directly available as an [LCG release](http://lcginfo.cern.ch/){:target="\_blank"}.
+If your platform mounts [CVMFS](https://cernvm.cern.ch/portal/filesystem){:target="\_blank"}
+ROOT is directly available via [LCG releases](http://lcginfo.cern.ch/){:target="\_blank"}.
 
-ROOT installations with minimal external dependencies are available for Fedora, Ubuntu, CentOS 7 and MacOS at:
+ROOT installations with minimal external dependencies are available for Fedora, Ubuntu, CentOS7 and MacOS at:
 
 ```
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/<version>/<platform>
 ```
 
-For example, to set up ROOT 6.22/00 on a CentOS7 machine that already has all [ROOT required dependencies]({{'/install/dependencies' | relative_url}}) installed, just run:
+For example, to set up ROOT 6.24/00 on a CentOS7 machine, just run:
 
 ```
-source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.22.00/x86_64-centos7-gcc48-opt/bin/thisroot.sh
+source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.24.00/x86_64-centos7-gcc48-opt/bin/thisroot.sh
 ```
 
-## ROOT plus dependencies
+Make sure you use your system's default compiler, just like this ROOT build.
 
-On CentOS7, ROOT as well as its dependencies and many other packages are also available as an LCG _view_:
+## Complete environment
+
+ROOT, Geant4 and many other packages with all their dependencies are available as LCG _views_:
 
 ```
 /cvmfs/sft.cern.ch/lcg/views/LCG_<version>/<platform>
 ```
 
-For example, to set up a full environment with ROOT 6.20/02 on CERN LXPLUS, you can run:
+LCG views are available for CentOS7, CentOS8 and the latest MacOS and Ubuntu releases.
+For example, on CERN LXPLUS, you can set up a full environment that contains ROOT 6.24 with:
 
 ```
-source /cvmfs/sft.cern.ch/lcg/views/LCG_97/x86_64-centos7-gcc8-dbg/setup.sh
+source /cvmfs/sft.cern.ch/lcg/views/LCG_99/x86_64-centos7-gcc10-opt/setup.sh
 ```
 
-To check what ROOT version is contained in an LCG release, check [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="\_blank"}.
+To check what ROOT version is contained in an LCG release, you can visit [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="\_blank"}.
+
 
 ## Gentoo Prefix on CVMFS
 
