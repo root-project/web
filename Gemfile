@@ -10,4 +10,5 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-include-cache"
   gem "jekyll-liquify"
+  gem 'html-proofer'
 end
