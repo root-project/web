@@ -221,7 +221,6 @@ Here are some of the CMake variables that are used often, along with a brief exp
 | CMAKE_INSTALL_PREFIX | PATH | Path where ROOT will be installed if make install is invoked or the “INSTALL” target is built. |
 | CMAKE_C_FLAGS | STRING | Extra flags to use when compiling C source files. |
 | CMAKE_CXX_FLAGS | STRING | Extra flags to use when compiling C++ source files.|
-| BUILD_SHARED_LIBS | BOOL | Flag indicating if shared libraries will be built. Its default value is ON. |
 | CMAKE_Fortran_COMPILER | PATH | Full path to the Fortran compiler. Alternatively you can specify the environment variable FC before invoking cmake |
 | CMAKE_C_COMPILER | PATH | Full path to the C compiler.  Alternatively you can specify the environment variable CC before invoking cmake |
 | CMAKE_CXX_COMPILER | PATH | Full path to the C++ compiler.  Alternatively you can specify the environment variable CXX before invoking cmake |
