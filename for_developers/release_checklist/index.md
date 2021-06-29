@@ -87,7 +87,6 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
       - `git push origin v6-22-02`
   1. Update the stable branch. Users that have cloned this branch will receive updates as a fast-forward via `git pull`
       - `LATEST_STABLE=v6-xx-yy    # e.g. v6-22-02`
-      - If the stable branch does not exist yet, the `-p refs/heads/latest-stable` part must be removed from the command below.
       - `$ git update-ref refs/heads/latest-stable $(git commit-tree $LATEST_STABLE^{tree} -p refs/heads/latest-stable -p $LATEST_STABLE^{commit} -m "Updated 'latest-stable' branch to $LATEST_STABLE")`
       - `$ git push origin latest-stable`
   1. Produce binary tar-files (optional for development releases and release candidates)
@@ -95,11 +94,13 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
   1. Install binaries to CVMFS (optional for development releases and release candidates)
       - Install release binaries to CVMFS with the Jenkins procedure [root-release-CVMFS](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-CVMFS/){:target="_blank"}
   1. Update the release pages (optional for development releases and release candidates)
-      - Generate the release notes with the Jenkins procedure called [root-releasenotes](https://lcgapp-services.cern.ch/root-jenkins/job/root-releasenotes/){:target="_blank"} with `v6-22-00-patches` or similar as version. They'd show up [here for master](https://root.cern/doc/master/release-notes.html); instead of `master`, put e.g. `v622`.
-      - Create a new release web page with the Jenkins procedure called [root-release-webpage](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-webpage/){:target="_blank"}
-      - Edit the commented 'highlights' section in the generated release page.
+      - Generate the release notes with the Jenkins procedure called [root-releasenotes](https://lcgapp-services.cern.ch/root-jenkins/job/root-releasenotes/){:target="_blank"} with `v6-22-00-patches` or similar as version. They'd show up [here for v6.22](https://root.cern/doc/v622/release-notes.html).
+      - Wait until the files show up on a machine with cvmfs, e.g. lxplus, in `/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.22.02`.
+      - On that machine with cvmfs, create a new release web page with the script `python3 _releases/make-release-page.py _releases/release-62202.md` in ROOT's website repo.
+      - Add a 'highlights' section in the generated release page.
       - If this applies, mark the release as `state: latest` and remove the attribute to the one previously holding it (`get grep "state: latest" -- _releases/`)
+      - Create a PR against `root-project/web`.
   1. Announcements
-      - Send mail to the following mailing lists: root-planning@cern.ch, root-dev@cern.ch, roottalk@cern.ch
+      - Send mail to the following mailing lists: root-planning@cern.ch, root-dev@cern.ch, roottalk@cern.ch, root-ambassadors@cern.ch
       - Write announcement in RootTalk [forum news](https://root-forum.cern.ch/c/news){:target="_blank"} (optional for development releases and release candidates)
       - For new major releases, consider writing a blog post for https://root.cern announcing the highlights.
