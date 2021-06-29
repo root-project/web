@@ -48,23 +48,9 @@ In the `TLine.h` file:
    ClassDef(TLine,1);
 {% endhighlight %}
 
-### Calling the ClassImp macro
-
-Call the `ClassImp` macro to give your class run time type identification (RTTI) and full I/O capabilities. In addition, you can generate properly documentation for your class using {% include ref class="THtml" %}.
-
-Add the following line to your class header file:
-
-{% highlight C++ %}
-   ClassImp(ClassName);
-{% endhighlight %}
-
-_**Example**_
-
-In the `Tline.cxx` file:
-
-{% highlight C++ %}
-   ClassImp(TLine)
-{% endhighlight %}
+> **Note**
+>
+>  A call to the `ClassImp` macro is not needed anymore.
 
 ### Constructors
 
