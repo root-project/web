@@ -156,5 +156,6 @@ to HEP through Cling and ROOT.
 
 The author would like to thank Axel Naumann and David Lange who contributed to
 this post. You can find out more about our activities at
-https://compiler-research.org and https://root.cern/cling/
+[https://compiler-research.org](https://compiler-research.org) and
+[https://root.cern/cling/](https://root.cern/cling/)
 
