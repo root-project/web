@@ -7,82 +7,66 @@ toc: true
 toc_sticky: true
 ---
 
-You can extend ROOT with your own classes. When defining a class, it inherits from {% include ref class="TObject" %}.
+You can extenduse ROOT with your own classes, or rather: use your own classes with ROOT.
 
-## Defining a class
+## Using a class in the interpreter (cling or PyROOT)
 
-The definition of a class requires the following steps:
-
-  - Inheriting from {% include ref class="TObject" %}.
-
-  - Integrating the class to ROOT.
-
-  - Calling the `ClassImp` macro.
-
-  - Providing a constructor.
-
-### Inheriting from TObject
-
-The {% include ref class="TObject" %} class provides the default behaviour and protocols for the objects in the ROOT system. The {% include ref class="TObject" %} class is the primary interface to classes providing object I/O (writing the class into a ROOT file), error handling, inspection, introspection, and drawing.
-
-Therefore, your class should inherit from {% include ref class="TObject" %}.
-
-### Integrating the class to ROOT
-
-Add the following line to your class header file, to integrate your class to ROOT:
+To load a C++ class definition into the interpreter, simply `#include` the class's header - and probably load the relevant library.
 
 {% highlight C++ %}
-   ClassDef(ClassName,ClassVersionID)
+root [0] .L libMyKlass
+root [1] #include "MyKlass.h"
+root [2] MyKlass obj; obj.DoSomething();
 {% endhighlight %}
 
-The `ClassVersionID` is used by the ROOT I/O system. It is written on the output stream and during reading. You can check this `ClassVersionID` during reading and take appropriate action depending on the value of `ClassVersionID`.
-Every time you change the data members of a class, increase its `ClassVersionID` by 1.<br>
-Set `ClassVersionID` >= 1.<br>
-Set `ClassVersionID` = 0 in case you do not need object I/O.
+{% highlight Python %}
+import ROOT
+ROOT.gSystem.Load('libMyKlass')
+ROOT.gInterpreter.Declare('#include "MyKlass.h"')
+obj = ROOT.MyKlass()
+obj.DoSomething()
+{% endhighlight %}
 
-_**Example**_
+This will load `libMyClass.so` on Linux or macOS, while for Windows it loads `libMyKlass.dll`.
+For macOS, also `libMyKlass.dylib` will be tried.
 
-In the `TLine.h` file:
+You can simplify both the C++ and the PyROOT version by adding the line
 
 {% highlight C++ %}
-   ClassDef(TLine,1);
+R__LOAD_LIBRARY(libMyClass)
 {% endhighlight %}
 
-> **Note**
->
->  A call to the `ClassImp` macro is not needed anymore.
+to the file `MyKlass.h`; this will cause to automatically load the library, and allows you to skip the `.L` / `ROOT.gSystem.Load()` line.
+
+
+### Storing your class in ROOT Files or TTree
+
+Suppose you want to create a `TTree` branch from your class, or you want to store an object of your class into a ROOT file:
+{% highlight C++ %}
+MyKlass obj;
+auto file = TFile::Open("out.root", "RECREATE");
+file->WriteObject(&obj, "myObj");
+{% endhighlight %}
+
+For this to work, ROOT needs to know about the type `MyClass`: its data members, base classes, how to construct such an object when reading it back, etc.
+This is [provided through a dictionary]({{'/manual/interacting_with_shared_libraries/#generating-dictionaries' | relative_url }}), which can be easily [generated using CMake]({{'/manual/integrate_root_into_my_cmake_project/#root_generate_dictionary' | relative_url }}).
 
 ### Constructors
 
-ROOT requires for every class to have one of the following constructors:
+ROOT's I/O feature requires for every class to have one of the following constructors:
 
   - **Default constructor**<br>
-   A constructor with zero parameters or with one or more parameters all with default values.
+   A public constructor with zero parameters or with one or more parameters all with default values: `MyKlass(int = 42);`
 
   - **I/O constructor**<br>
-   A constructor with exactly one parameter which type is a pointer to one of the types marked as an `ioctortype`.
-
-The default constructor or I/O constructor is called whenever an object is being read from a ROOT database.
-
-_**Example for a class**_
+   A constructor with exactly one parameter of type "pointer to `ioctortype`":
 
 {% highlight C++ %}
-#include "TObject.h"
-
-// Define the ABC class and make it inherit from TObject. Then the ABC class can also be written to a ROOT file.
-   class ABC: public TObject {
-   public:
-   Float_t a, b, c, p;
-   ABC() : a(0), b(0), c(0), p(0){};
-
-//Integrating the ABC class to ROOT.
-   ClassDef (ABC,1)
-};
-
-// Call the ClassImp() macro to give the ABC class RTTI and full I/O capabilities.
-
-#if !defined(__CLING__)
-    ClassImp(ABC);
-#endif
+struct ioctortype;
+class MyKlass {
+protected:
+  MyKlass() = default; // protected: cannot be used by ROOT I/O
+public:
+  MyKlass(ioctortype*);
+...
 {% endhighlight %}
-
