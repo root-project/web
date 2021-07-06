@@ -116,10 +116,3 @@ consult its manual [here](https://root.cern/root/htmldoc/guides/spectrum/Spectru
 TMVA is a toolkit for Multivariate Data Analysis.
 The [Documentation](https://github.com/root-project/root/blob/master/documentation/tmva/UsersGuide/TMVAUsersGuide.pdf){:target="_blank"}
 (updated version for ROOT 6) can be found in the ROOT GitHub repository.
-
-## VMC
-
-Virtual Monte Carlo (VMC) defines an abstract layer between a detector simulation user code
-(MC application) and the Monte Carlo transport code (MC).
-
-[The VMC documentation](https://vmc-project.github.io){:target="_blank"}
