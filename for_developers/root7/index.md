@@ -36,8 +36,9 @@ Building from source would look similar to this:
 
 ## Examples
 
-See the [relevant tutorials](https://github.com/root-project/root/tree/master/tutorials/v7){:target="_blank"},
-for instance for [drawing and styling the new histograms](https://github.com/root-project/root/blob/master/tutorials/v7/draw_rh1.cxx){:target="_blank"}.
+See the [relevant histogram and ntuple tutorials](https://github.com/root-project/root/tree/master/tutorials/v7){:target="_blank"},
+and also the [ROOT 7 graphics ones](https://github.com/root-project/root/tree/master/tutorials/rcanvas).
+For instance for [drawing and styling the new histograms](https://github.com/root-project/root/blob/master/tutorials/rcanvas/rh1.cxx){:target="_blank"}.
 
 The new interfaces are not about shortening your code - but about robustness. Here are a few examples of what can go wrong with the ROOT6 interfaces:
 
