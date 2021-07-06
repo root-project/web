@@ -39,7 +39,7 @@ R__LOAD_LIBRARY(libMyClass)
 to the file `MyKlass.h`; this will cause to automatically load the library, and allows you to skip the `.L` / `ROOT.gSystem.Load()` line.
 
 
-### Storing your class in ROOT Files or TTree
+## Storing your class in ROOT Files or TTree
 
 Suppose you want to create a `TTree` branch from your class, or you want to store an object of your class into a ROOT file:
 {% highlight C++ %}
@@ -70,3 +70,18 @@ public:
   MyKlass(ioctortype*);
 ...
 {% endhighlight %}
+
+### Member Initialization
+
+When setting your object's values, ROOT will also set pointers.
+If a pointer is non-null, it has to assume that the object points to something, and will delete the pointed-to object.
+To prevent a crash here, make sure you initialize your pointers in the constructor used by the I/O - the default constructor or the I/O constructor:
+
+{% highlight C++ %}
+class MyKlass {
+private:
+   std::string *fStr = nullptr;
+...
+{% endhighlight %}
+
+The crucial part here is `= nullptr`, which tells ROOT I/O that it won't have to delete anything in a freshly constructed `MyKlass` object.
