@@ -17,8 +17,6 @@ The definition of a class requires the following steps:
 
   - Integrating the class to ROOT.
 
-  - Calling the `ClassImp` macro.
-
   - Providing a constructor.
 
 ### Inheriting from TObject
@@ -79,10 +77,5 @@ _**Example for a class**_
    ClassDef (ABC,1)
 };
 
-// Call the ClassImp() macro to give the ABC class RTTI and full I/O capabilities.
-
-#if !defined(__CLING__)
-    ClassImp(ABC);
-#endif
 {% endhighlight %}
 

@@ -347,7 +347,6 @@ TEvent.cxx:
 #include "TOrdCollection.h"
 #include "TEvent.h"
 #include "TTrack.h"
-ClassImp(TEvent)
 ...
 
 TTrack.cxx:
@@ -355,7 +354,6 @@ TTrack.cxx:
 #include "TMath.h"
 #include "Track.h"
 #include "Event.h"
-ClassImp(TTrack)
 ...
 {% endhighlight %}
 
