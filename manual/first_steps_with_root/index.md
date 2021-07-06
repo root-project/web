@@ -149,10 +149,7 @@ You can start ROOT with the following command line options:
 
 `-?`, `-h`, `--help`: Prints usage.
 
-`-config`: Prints the `./configure` options.
-
-`-memstat`: Runs ROOT with memory usage monitoring.
-
+`-config`: Prints the `cmake` configure options.
 
 
 ### Quitting ROOT
