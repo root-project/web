@@ -47,7 +47,7 @@ enable HTML/JavaScript user interface. Download it
 The JSROOT project intends to implement ROOT graphics for web browsers. Reading of binary
 ROOT files is supported.
 
-  - [6 series (html)](https://root.cern/root/htmldoc/guides/HttpServer/HttpServer.html){:target="_blank"}
+  - [6 series (html)](https://root.cern/root/htmldoc/guides/JSROOT/JSROOT.html){:target="_blank"}
   - [Documentation on the GitHub repository](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md){:target="_blank"}
 
 ## CERNLib
