@@ -7,8 +7,10 @@ sidebar:
 
 ### Icons
 
-This website uses icons by Linearicons from [https://linearicons.com/](https://linearicons.com/)
-and Feathericons from [https://feathericons.com](https://feathericons.com).
+This website uses icons by
+* [Linearicons](https://linearicons.com/)
+* [Feathericons](https://feathericons.com)
+* [Tim Holman](https://github.com/tholman/github-corners)
 
 ### Website Generator and Theme
 
