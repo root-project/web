@@ -1,5 +1,18 @@
 ---
-layout: empty
 ---
 
-{{ content }}
+<!doctype html>
+
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include_cached browser-upgrade.html %}
+
+    <div class="initial-content">
+      {{ content }}
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>
