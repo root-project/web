@@ -225,6 +225,8 @@ about:
    - title: Cite us
      url: https://github.com/root-project/root/#cite
      target: _blank
+   - title: Reporting Security Issues
+     url: about/security
    - title: Legal
      url: about/legal
 
