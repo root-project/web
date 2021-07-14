@@ -32,7 +32,10 @@ Often it is useful to [contact us](https://root-forum.cern.ch){:target="_blank"}
 discuss the code you want to develop or the bug you want to fix.
 
 ## Picking up an Idea
-We maintain a set of "ideas" for talented scientists and developers to pick up. An "idea" is a sketch of a development project, a functionality a missing feature we would like to see in our tool, in your ROOT! You can inspect the ideas in the following list.
+
+We maintain a set of "ideas" for talented scientists and developers to pick up.
+An "idea" is a sketch of a development project, or a missing feature we would like to see in your ROOT!
+You can inspect the ideas in the following list.
 
 {% assign sorted = site.ideas | reverse %}
 
