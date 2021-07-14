@@ -25,7 +25,7 @@ There are two ways in which you can contribute:
    become part of the repository - as it happened for RooFit, TMVA, Eve, to name a few.
 
 2. **Sending Patches** <br>
-   You can send us a pull request with [Github](https://github.com/root-project/root){:target="_blank"}.
+   You can create a pull request on [GitHub](https://github.com/root-project/root){:target="_blank"}.
    Simply follow [our guidelines](https://github.com/root-project/root/blob/master/CONTRIBUTING.md).
 
 Often it is useful to [contact us](https://root-forum.cern.ch){:target="_blank"} first to
