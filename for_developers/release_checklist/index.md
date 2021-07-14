@@ -53,6 +53,7 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
 
   1. Get the 'green' light from all main developers
   1. Check that all the [Jenkins nightlies](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/){:target="_blank"} and [Jenkins release builds](https://lcgapp-services.cern.ch/root-jenkins/view/Releases/){:target="_blank"} builds are green
+  1. Run with `valgrind` on `python tutorials/hsimple.py`, `tree/dataframe/test/dataframe_concurrency`, and `./roofit/roofit/test/testRooParamHistFunc`; make sure no memory errors are reported after applying `--suppressions=$ROOTSYS/etc/valgrind-root.supp` and `--suppressions=$ROOTSYS/etc/valgrind-root-python.supp`
   1. Verify that no performance regressions exist in the [benchmark system](https://rootbnch-grafana-test.cern.ch/){:target="_blank"}
   1. If this is not a development release nor a release candidate, update the release notes in `README/ReleaseNotes/vXXX/index.md`. If this is a patch release, edit release notes patches section at the end of the document.
       - Insert the list of fixed bugs and enhancements etc behind the general release announcement for that version. They come from both Jira and Github:
