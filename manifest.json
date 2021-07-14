@@ -1,0 +1,19 @@
+{
+  "name": "ROOT: analyzing petabytes of data, scientifically.",
+  "short_name": "ROOT",
+  "description": "ROOT Website",
+  "theme_color": "#346295",
+  "background_color": "#346295",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/626",
+  "start_url": "/626",
+  "icons": [
+    {
+      "src": "/assets/images/logo.png",
+      "type": "image/png",
+      "sizes": "342x152",
+      "purpose": "any"
+    }
+  ]
+}
