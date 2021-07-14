@@ -7,31 +7,26 @@ toc: true
 toc_sticky: true
 ---
 
-We warmly welcome external contributions to  ROOT! By providing code, you agree to
-transfer your copyright on the code to the "ROOT project". Of course you will be duly
-credited and your name will appear on the
-[contributors]({{'/contribute/contributors' | relative_url}}) page and in the
-[CREDITS](https://raw.githubusercontent.com/root-mirror/root/master/README/CREDITS){:target="_blank"}
-file shipped with every binary and source distribution. The copyright transfer is necessary
-for us to be able to effectively defend the project in case of litigation.
+We warmly welcome your contribution to ROOT!
 
-Presently, there are two ways in which you can contribute:
+By providing code, you agree to transfer your copyright on the code to the "ROOT project".
+Of course you will be duly credited: for sizable contributions your name will appear in the
+[CREDITS](https://raw.githubusercontent.com/root-mirror/root/master/README/CREDITS){:target="_blank"}
+file shipped with every binary and source distribution.
+The copyright transfer helps us with effectively defending the project in case of litigation.
+
+There are two ways in which you can contribute:
 
 1. **Via the Users' contribution section in the Forum** <br>
    The Users' Forum has a [section](https://root-forum.cern.ch/c/my-root-app-and-ideas){:target="_blank"}
-   which describes how to submit contributions. It is the
+   which describes how to advertise your feature based on ROOT. It is the
    easiest way to make your code known to the community, even if it will not be
    automatically integrated in ROOT. Of course the most successful contributions will
-   become part of the repository!
+   become part of the repository - as it happened for RooFit, TMVA, Eve, to name a few.
 
 2. **Sending Patches** <br>
-   You can send us a patch or a pull request
-   with [Github](https://github.com/root-project/root){:target="_blank"}, provided that you
-   follow these two simple rules:
-
-    - Make sure you follow the [ROOT coding conventions]({{'/contribute/coding_conventions' | relative_url }}) in your code
-    - Make sure you provide a set of tests for your feature/bug fix
-    - Make sure your git commits can be added to ROOT's master branch with a "rebase and merge", i.e. by fast-forwarding the master branch. This can be easily done by git-rebasing your branch on ROOT's master branch. ROOT tries to avoid noisy merge commits as much as possible, so that the log remains mostly linear and easy to understand at a glance.
+   You can send us a pull request with [Github](https://github.com/root-project/root){:target="_blank"}.
+   Simply follow [our guidelines](https://github.com/root-project/root/blob/master/CONTRIBUTING.md).
 
 Often it is useful to [contact us](https://root-forum.cern.ch){:target="_blank"} first to
 discuss the code you want to develop or the bug you want to fix.
