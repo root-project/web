@@ -9,12 +9,6 @@ toc_sticky: true
 
 We warmly welcome your contribution to ROOT!
 
-By providing code, you agree to transfer your copyright on the code to the "ROOT project".
-Of course you will be duly credited: for sizable contributions your name will appear in the
-[CREDITS](https://raw.githubusercontent.com/root-mirror/root/master/README/CREDITS){:target="_blank"}
-file shipped with every binary and source distribution.
-The copyright transfer helps us with effectively defending the project in case of litigation.
-
 There are two ways in which you can contribute:
 
 1. **Via the Users' contribution section in the Forum** <br>
@@ -27,6 +21,13 @@ There are two ways in which you can contribute:
 2. **Sending Patches** <br>
    You can create a pull request on [GitHub](https://github.com/root-project/root){:target="_blank"}.
    Simply follow [our guidelines](https://github.com/root-project/root/blob/master/CONTRIBUTING.md).
+   By providing code this way, you agree to transfer your copyright on the code to the "ROOT project".
+   Of course you will be duly credited: for sizable contributions your name will appear in the
+   [CREDITS](https://raw.githubusercontent.com/root-mirror/root/master/README/CREDITS){:target="_blank"}
+   file shipped with every binary and source distribution.
+   The copyright transfer helps us with effectively defending the project in case of litigation.
+
+
 
 Often it is useful to [contact us](https://root-forum.cern.ch){:target="_blank"} first to
 discuss the code you want to develop or the bug you want to fix.
