@@ -27,16 +27,9 @@ The following are the basic instructions for UNIX-like systems. We will use the 
 
 1. Download and unpack the [ROOT sources for a specific release]({{'/install/all_releases' | relative_url}}) (make sure to download the "Source distribution" and not a binary distribution) or simply clone ROOT's git repository and check out the branch you would like to build, for example:
 ```bash
-# substitute `v6-22-00-patches` with the patches branch of the latest release
-$ git clone --branch v6-22-00-patches https://github.com/root-project/root.git root_src
-```
-If you are interested in the latest stable (as opposed to a specific) version, you can get a copy as follows:
-```bash
+# The latest stable branch gets updated automatically on each release.
+# Your may update your local copy by issuing a `git pull` command.
 $ git clone --branch latest-stable https://github.com/root-project/root.git root_src
-```
-This branch is expected to be updated regularly on each release. Therefore, users who cloned this branch can upgrade to the latest release in a straightforward way:
-```bash
-$ git pull
 ```
 In the following we will refer to the directory where ROOT sources are (e.g. `root_src` above) as `<sourcedir>`.
 1. Create a directory for the build and a directory for the installation. It is not supported to build ROOT in the source directory. Then change (`cd`) to the build directory:

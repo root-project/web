@@ -24,15 +24,15 @@ The steps to install a pre-compiled binary are simple:
 1. Unpack the archive
 1. Add the ROOT libraries and executables to your environment by sourcing the appropriate `thisroot.*` script. These setup scripts can be found in the ROOT binary release, in the `bin` directory.
 
-For example, on Ubuntu 19, a user could execute the following bash commands to install ROOT v6.22/00, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}):
+For example, on Ubuntu 20, a user could execute the following bash commands to install ROOT v6.24/02, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}):
 
 ```bash
-$ wget https://root.cern/download/root_v6.22.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz
-$ tar -xzvf root_v6.22.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz
+$ wget https://root.cern/download/root_v6.24.02.Linux-ubuntu20-x86_64-gcc9.3.tar.gz
+$ tar -xzvf root_v6.24.02.Linux-ubuntu20-x86_64-gcc9.3.tar.gz
 $ source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
 ```
 
-To avoid having to `source thisroot.sh` every time one needs to use ROOT, it is typical to add the instruction to
+To avoid having to `source thisroot.sh` every time one needs to use ROOT, it is typical to add the command to
 `.bashrc`, `.profile` or analogous configuration files.
 Note, however, that sourcing `thisroot.sh` might interfere with ROOT versions installed with different methods.
 
@@ -174,10 +174,10 @@ ROOT installations with minimal external dependencies are available for Fedora, 
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/<version>/<platform>
 ```
 
-For example, to set up ROOT 6.24/00 on a CentOS7 machine, just run:
+For example, to set up ROOT 6.24/02 on a CentOS7 machine, just run:
 
 ```
-source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.24.00/x86_64-centos7-gcc48-opt/bin/thisroot.sh
+source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.24.02/x86_64-centos7-gcc48-opt/bin/thisroot.sh
 ```
 
 Make sure you use your system's default compiler, just like this ROOT build.
@@ -191,7 +191,7 @@ ROOT, Geant4 and many other packages with all their dependencies are available a
 ```
 
 LCG views are available for CentOS7, CentOS8 and the latest MacOS and Ubuntu releases.
-For example, on CERN LXPLUS, you can set up a full environment that contains ROOT 6.24 with:
+For example, on CERN LXPLUS, you can set up a full environment that contains ROOT 6.24/00 with:
 
 ```
 source /cvmfs/sft.cern.ch/lcg/views/LCG_99/x86_64-centos7-gcc10-opt/setup.sh
@@ -229,12 +229,9 @@ it is possible to compile ROOT from source. See [Building ROOT from source]({{'/
 As a quick summary, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}), ROOT can be compiled with these commands on most UNIX-like systems:
 
 ```bash
-# Substitute `v6-22-00-patches` with the patches branch of the latest release.
-# The latest stable version can be retrieved by cloning the `latest-stable` branch;
-# this branch gets updated automatically on each release. Your may update your
-# local copy by issuing a `git pull` command.
-
-$ git clone --branch v6-22-00-patches https://github.com/root-project/root.git root_src
+# The latest stable branch gets updated automatically on each release.
+# Your may update your local copy by issuing a `git pull` command.
+$ git clone --branch latest-stable https://github.com/root-project/root.git root_src
 $ mkdir root_build root_install && cd root_build
 $ cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # && check cmake configuration output for warnings or errors
 $ cmake --build . -- install -j4 # if you have 4 cores available for compilation
@@ -244,12 +241,9 @@ $ source ../root_install/bin/thisroot.sh # or thisroot.{fish,csh}
 And similarly, on Windows, inside a `x86 Native Tools Command Prompt for VS 2019`, ROOT can be compiled with these commands:
 
 ```bat
-rem Substitute `v6-24-00-patches` with the patches branch of the latest release.
-rem The latest stable version can be retrieved by cloning the `latest-stable` branch;
-rem this branch gets updated automatically on each release. Your may update your
-rem local copy by issuing a `git pull` command.
-
-C:\Users\username>git clone --branch v6-24-00-patches https://github.com/root-project/root.git root_src
+rem The `latest-stable` branch gets updated automatically on each release.
+rem Your may update your local copy by issuing a `git pull` command.
+C:\Users\username>git clone --branch latest-stable https://github.com/root-project/root.git root_src
 C:\Users\username>mkdir root_build root_install && cd root_build
 C:\Users\username>cmake -G"Visual Studio 16 2019" -A Win32 -Thost=x64 -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_PREFIX=../root_install ../root_src
 C:\Users\username>cmake --build . --config Release --target install
