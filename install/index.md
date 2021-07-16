@@ -194,7 +194,7 @@ LCG views are available for CentOS7, CentOS8 and the latest MacOS and Ubuntu rel
 For example, on CERN LXPLUS, you can set up a full environment that contains ROOT 6.24/00 with:
 
 ```
-source /cvmfs/sft.cern.ch/lcg/views/LCG_99/x86_64-centos7-gcc10-opt/setup.sh
+source /cvmfs/sft.cern.ch/lcg/views/LCG_100/x86_64-centos7-gcc10-opt/setup.sh
 ```
 
 To check what ROOT version is contained in an LCG release, you can visit [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="\_blank"}.
