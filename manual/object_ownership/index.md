@@ -62,6 +62,27 @@ Changing the default that adds the histogram to the current directory:
 
 Not all histograms created here after are added to the current directory. In this case, you own all histogram objects and you will need to delete them and clean up the references. You can still set the directory of a histogram by calling `SetDirectory()` once it has been created.
 
+_**Example**_
+
+When you create a {% include ref class="TFile" %} object, it becomes the current directory (`gDirectory`). If you subsequently create a new histogram, this histogram is now owned by this directory. Note that the histogram is deleted when the {% include ref class="TFile" %} object is out of scope of the histogram.
+
+In the following example, a canvas is drawn beause the {% include ref class="TH1D" %} histogram is owned by the current directory (`gDirectory`) created by the {% include ref class="TFile" %} object.
+{% highlight C++ %}
+   TFile *f = new TFile("file.root");
+   TH1D *h = new TH1D("h","name",100,0,100);
+   h->Fill(1.0);
+   h->Draw();
+{% endhighlight %}
+
+In the following example, no canvas is drawn beause the {% include ref class="TH1D" %} histogram is out the scope of the  {% include ref class="TFile" %} object.
+
+{% highlight C++ %}
+   TFile f("file.root");
+   TH1D *h = new TH1D("h","name",100,0,100);
+   h->Fill(1.0);
+   h->Draw();
+{% endhighlight %}
+
 > **Note**
 >
 > When a file goes out of scope or is closed all objects on its object list are deleted.
