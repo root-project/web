@@ -10,7 +10,7 @@
   "start_url": "/",
   "icons": [
     {
-      "src": "/assets/images/icon180.png",
+      "src": {{"/assets/images/icon180.png" | relative_url}},
       "type": "image/png",
       "sizes": "180x180",
       "purpose": "any"
