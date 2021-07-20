@@ -13,7 +13,7 @@
     // Register the service worker
     navigator.serviceWorker
       .register( '{{ "/serviceWorker.js" | relative_url }}', {
-        scope: "/"
+        scope: '{{ "/" | relative_url }}'
       })
       .then(function (reg) {
         console.log("Service worker has been registered for scope: " + reg.scope);
