@@ -12,7 +12,7 @@
   } else {
     // Register the service worker
     navigator.serviceWorker
-      .register("/serviceWorker.js", {
+      .register( {{ "/serviceWorker.js" | relative_url }}, {
         scope: "/"
       })
       .then(function (reg) {
