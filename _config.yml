@@ -21,7 +21,7 @@ title_separator          : "-"
 subtitle                 : "Data Analysis Framework"
 name                     : "ROOT"
 description              : "Data Analysis Framework"
-url                      : "https://root.cern/"
+url                      : "https://root.cern"
 baseurl                  : ""
 github_baseurl: "https://github.com/root-project/web"
 repository               : root-project/web # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -306,4 +306,3 @@ feed:
   collections:
     - releases
     - ideas
-
