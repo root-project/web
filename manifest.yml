@@ -9,7 +9,7 @@ permalink: manifest.json
   "theme_color": "#346295",
   "background_color": "#346295",
   "display": "standalone",
-  "scope": "/",
+  "scope": "{{"/" | relative_url }}",
   "start_url": "{{"/" | relative_url }}",
   "icons": [
     {
