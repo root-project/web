@@ -1,3 +1,7 @@
+---
+permalink: manifest.json
+---
+
 {
   "name": "ROOT: analyzing petabytes of data, scientifically.",
   "short_name": "ROOT",
@@ -5,12 +9,11 @@
   "theme_color": "#346295",
   "background_color": "#346295",
   "display": "standalone",
-  "orientation": "portrait",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "{{"/" | relative_url }}",
   "icons": [
     {
-      "src": {{"/assets/images/icon180.png" | relative_url}},
+      "src": "{{"/assets/images/icon180.png" | relative_url}}",
       "type": "image/png",
       "sizes": "180x180",
       "purpose": "any"
