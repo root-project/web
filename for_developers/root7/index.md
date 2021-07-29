@@ -22,15 +22,15 @@ The main point of the meeting and this page is to solicit *your* feedback. Most 
 
 ## Building ROOT 7
 ### Pre-requisites
-Support for the c++14 standard is required. Usage of g++ >= 5 or clang >= 3.4 is recommended.
+Support for the c++17 standard is required. Usage of g++ >= 5 or clang >= 3.4 is recommended.
 ### Relevant cmake variables
-The `CMAKE_CXX_STANDARD` cmake variables must be set to at least `14`.
+The `CMAKE_CXX_STANDARD` cmake variables must be set to at least `17`.
 
 Building from source would look similar to this:
 
     $ mkdir root7_build
     $ cd root7_build
-    $ cmake -DCMAKE_CXX_STANDARD=14 path/to/root/source
+    $ cmake -DCMAKE_CXX_STANDARD=17 path/to/root/source
     $ cmake --build . -- -j4
 
 
