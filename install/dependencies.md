@@ -145,7 +145,6 @@ libxft-dev libxext-dev python libssl-dev
 *   **libxml2-dev:** for /usr/bin/xml2-config
 *   **libkrb5-dev:** for /usr/include/krb5.h and for /usr/lib/libkrb5.so
 *   **libgsl0-dev:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
-*   **libqt4-dev:** for /usr/include/qt4/Qt/qglobal.h and for /usr/lib/libQtCore.so
 *   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 
 As a one-liner:
@@ -156,7 +155,7 @@ xlibmesa-glu-dev libglew1.5-dev libftgl-dev \
 libmysqlclient-dev libfftw3-dev libcfitsio-dev \
 graphviz-dev libavahi-compat-libdnssd-dev \
 libldap2-dev python-dev libxml2-dev libkrb5-dev \
-libgsl0-dev libqt4-dev
+libgsl0-dev
 ```
 
 On Debian, substitute `libmysqlclient-dev` with `libmariadb-dev`.
