@@ -310,6 +310,9 @@ pad-oper
 unpad-paren
 {% endhighlight %}
 
+## Using ClangFormat or Astyle in your preferred editor
+Some advanced editors/IDE can make use of `clang-format` or `Astyle`. For example `QtCreator` has a [plugin for clang-format](https://www.vikingsoftware.com/using-clang-format-with-qtcreator/){:target="_blank"} and the `Visual Studio Code Editor` has also a couple of `clang-format` and `Astyle` extensions.
+
 ## Where to go from here
 For the rest read the
 [Taligent Guide](https://root.cern/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_1.html){:target="_blank"}
