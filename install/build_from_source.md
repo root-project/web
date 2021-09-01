@@ -70,6 +70,7 @@ PyROOT, the set of Python bindings of ROOT, changed its structure and build/inst
 ### After v6.22
 
 The main feature introduced in v6.22 concerning the PyROOT build system is the possibility to build for both Python3 and Python2 (MultiPython), available only if the version of CMake used to build is >= 3.14. In the following, build and installation processes both with CMake >= 3.14 and < 3.14 are described.
+Also note that v6.24 is the last ROOT version that supports cmake <3.16.
 
 #### CMake >= 3.14
 
@@ -127,6 +128,8 @@ ROOT needs to be configured and built with the same C++ standard as the programs
 The relevant cmake flag is [`CMAKE_CXX_STANDARD`](https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html){:target="_blank"}.
 For example, from the command line, the standard can be selected by passing one of 14, 17, 20,... such as `-DCMAKE_CXX_STANDARD=17`.
 
+C++11 is supported until ROOT v6.24: subsequent versions require at least C++14.
+
 ### ROOT STL backports
 
 ROOT backports certain modern C++ standard library features to make them available in older standards like C++14, for example `std::string_view`.
@@ -137,8 +140,8 @@ The backports are disabled, falling back to the actual C++ standard library impl
 
 New and improved versions of standard ROOT components are being implemented under codename ROOT7.
 
-Turning on C++17 (see [Setting the C++ standard](#setting-the-c-standard)) or higher will automatically enable ROOT7.
-Alternatively, you can explicitly enable ROOT7 with `-Droot7=ON`, which will in turn set the standard to C++17 if a
+Turning on C++17 (or C++14 until v6.24; see [Setting the C++ standard](#setting-the-c-standard)) or higher will automatically enable ROOT7.
+Alternatively, you can explicitly enable ROOT7 with `-Droot7=ON`, which will in turn set the standard to C++17 (or C++14 until v6.24) if a
 value was not already specified by the user.
 
 ## Building ROOT with CUDA support
