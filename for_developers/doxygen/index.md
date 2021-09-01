@@ -146,7 +146,12 @@ This example shows that four new directives have been implemented:
 
  1. `\macro_image`
  The images produced by this macro are shown. A caption can be added to document
- the pictures: `\macro_image This is a picture`
+ the pictures: `\macro_image This is a picture`. When the option `(nobatch)`
+ is passed, the macro is executed without the batch option.
+ Some tutorials generate pictures (png or pdf) with `Print` or `SaveAs`.
+ Such pictures can be displayed with `\macro_image (picture_name.png[.pdf])`
+ When the option (tcanvas_js) is used the image is displayed as JavaScript.
+ For ROOT 7 tutorials, when the option (rcanvas_js) is used the image is displayed as json file.
 
  2. `\macro_code`
  The macro code is shown.  A caption can be added: `\macro_code This is code`
@@ -156,8 +161,11 @@ This example shows that four new directives have been implemented:
  `\macro_output This the macro output`
 
  4. `\notebook`
-   To generate the corresponding jupyter notebook. In case the tutorial does
-   not generate any graphics output, the option `-nodraw` should be added.
+ To generate the corresponding jupyter notebook. In case the tutorial does
+ not generate any graphics output, the option `-nodraw` should be added.
+ This directive needs [jupyter to be properly installed](https://jupyter.org/install) when
+ building the documentation of tutorials having this directive.
+
 
 Note that the doxygen directive `\authors` or `\author` must be the last one
 of the macro header.
@@ -212,6 +220,13 @@ Begin_Macro(source)
 ../../../tutorials/graphs/multipalette.C
 End_Macro
 {% endhighlight %}
+
+`Begin_Macro` also accept the image file type as option. `"png"` or `"svg"`.
+`"png"` is the default value. For example: `Begin_Macro(source, svg)` will show
+the code of the macro and the image will be is svg format. The `"width"` keyword
+can be added to define the width of the picture in pixel: `"width=400"` will
+scale a picture to 400 pixel width. This allow to define large pictures which
+can then be scaled down to have a better definition.
 
 ### Images
 Images should be placed in in directory `documentation/doxygen/images` with the name `<class>_<figurename>.png`. They are referenced in the comments with the `\image` doxygen command:
