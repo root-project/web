@@ -126,7 +126,7 @@ For ROOT <= 6.20, an older version of PyROOT (not based on Cppyy) will be built.
 
 ROOT needs to be configured and built with the same C++ standard as the programs that will make use of it.
 The relevant cmake flag is [`CMAKE_CXX_STANDARD`](https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html){:target="_blank"}.
-For example, from the command line, the standard can be selected by passing one of 14, 17, 20,... such as `-DCMAKE_CXX_STANDARD=17`.
+For example, from the command line, the standard can be selected by passing one of 11, 14, 17, 20,... such as `-DCMAKE_CXX_STANDARD=17`.
 
 C++11 is supported until ROOT v6.24: subsequent versions require at least C++14.
 
