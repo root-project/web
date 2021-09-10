@@ -21,13 +21,16 @@ $ cd <root_sources>/documentation/doxygen
 $ make
 {% endhighlight %}
 
-The results are placed by default at `${HOME}/rootdoc/html`. The file `documentation/doxygen/Doxyfile`
-can be edited to reduce the number of input files and thus reduce the time for generating
-the HTML pages. The property to be modified is: <br>`INPUT = ../../<module>`
+The results are placed by default at `${HOME}/rootdoc/html`.
+The script `$ROOTSYS/documentation/doxygen/makeinput.sh` defines the `INPUT` tag in `Doxyfile`.
+It can be edited to reduce the number of input files and thus reduce the time for generating
+the HTML pages. Typically you will keep only the folder(s) in which the documentation you are
+working on is.
 
 ## General Guidelines
 Classes and methods can be documented both in the .cxx and .h files. For the long descriptions
 of a class functionality and its methods we usually prefer the .cxx file.
+
 ### Class documentation
 The documentation for the class is in general located at the beginning of the .cxx file.
 The `\class` Doxygen command is mandatory otherwise Doxygen will not associate the comments
