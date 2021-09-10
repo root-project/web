@@ -45,12 +45,16 @@ Note, however, that sourcing `thisroot.sh` might interfere with ROOT versions in
 For any Linux distribution and MacOS, ROOT is available as a [conda package](https://anaconda.org/conda-forge/root/){:target="\_blank"}. To create a new conda environment containing ROOT and activate it, execute
 
 ```sh
+$ conda config --set channel_priority strict
 $ conda create -c conda-forge --name <my-environment> root
 $ conda activate <my-environment>
 ```
+Setting `channel_priority` to `strict` is required to avoid conflicts on some platforms,
+see [the relevant conda docs](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-channels.html#strict-channel-priority){:target="\_blank"} for more information.
+
 The conda package uses C++17.
 
-More instructions about using the conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
+More instructions about using this package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/){:target="\_blank"}.
 
 Please report any issues with the conda package [here](https://github.com/conda-forge/root-feedstock){:target="\_blank"}.
 
