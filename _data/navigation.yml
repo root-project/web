@@ -80,6 +80,8 @@ manual:
         url: manual/geometry
       - title: "Python interface: PyROOT"
         url: manual/python
+      - title: "Developers notes"
+        url: manual/developers_notes
   - title: Further information
     children:
       - title: "Tutorials"
