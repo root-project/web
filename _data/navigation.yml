@@ -35,24 +35,24 @@ manual:
     children:
       - title: First steps with ROOT
         url: manual/first_steps_with_root
-      - title: ROOT classes, data types and global variables
-        url: manual/root_classes_data_types_and_global_variables
-      - title: Adding a class to ROOT
-        url: manual/adding_a_class_to_root
-      - title: Integrating ROOT into CMake projects
-        url: manual/integrate_root_into_my_cmake_project
+      - title: ROOT architecture and components
+        url: manual/root_architecture_and_components
       - title: ROOT macros and shared libraries
         url: manual/interacting_with_shared_libraries
-      - title: ROOT collections
-        url: manual/root_collections
-      - title: Object ownership
-        url: manual/object_ownership
-      - title: Thread safety
-        url: manual/thread_safety
       - title: ROOT files
         url: manual/storing_root_objects
       - title: Creating a user application with ROOT
         url: manual/creating_a_user_application
+      - title: Integrating ROOT into CMake projects
+        url: manual/integrate_root_into_my_cmake_project
+      - title: ROOT collections
+        url: manual/root_collections
+      - title: Object ownership
+        url: manual/object_ownership
+      - title: Multi threading
+        url: manual/multi_threading
+      - title: Adding a class to ROOT (should be moved)
+        url: manual/adding_a_class_to_root
   - title: ROOT Manual - Functional parts
     url: manual/functional_parts
     children:

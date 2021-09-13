@@ -1,5 +1,5 @@
 ---
-title: ROOT classes, data types and global variables
+title: ROOT architecture and components
 layout: single
 sidebar:
   nav: "manual"
