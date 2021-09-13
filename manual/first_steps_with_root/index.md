@@ -229,7 +229,7 @@ _**Example**_
    i = 2, j = 3
 {% endhighlight %}
 
-You can also write the commands to a file, called a ROOT macro, and then execute and compile it. For more information on ROOT macros, → see [ROOT macros and shared libraries]({{ '/manual/interacting_with_shared_libraries' | relative_url }}).
+You can also write the commands to a file, called a ROOT macro, and then execute and compile it. For more information on ROOT macros, → see [ROOT macros and shared libraries]({{ '/manual/root_macros_and_shared_libraries' | relative_url }}).
 
 ## Regular expressions
 

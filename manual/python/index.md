@@ -94,7 +94,7 @@ myStyle.SetCanvasColor(ROOT.kBlue) # My canvases are blue!
 ROOT.gROOT.SetStyle('MyStyle')
 ```
 
-If PyROOT cannot find `.rootlogon.py` in the user's home directory, it looks for the equivalent in C++ (`.rootlogon.C`), first in [ROOT's etc directory](https://root.cern/doc/master/classTROOT.html#ab8e51627a12d886d6c8177b46481352a){:target="_blank"}, then in the user's home directory and finally in the current working directory. 
+If PyROOT cannot find `.rootlogon.py` in the user's home directory, it looks for the equivalent in C++ (`.rootlogon.C`), first in [ROOT's etc directory](https://root.cern/doc/master/classTROOT.html#ab8e51627a12d886d6c8177b46481352a){:target="_blank"}, then in the user's home directory and finally in the current working directory.
 
 Note that it is also possible to use both the Python and the C++ rootlogons, since the latter can be loaded from the former, for example with `ROOT.gROOT.LoadMacro('.rootlogon.C')`.
 
@@ -160,7 +160,7 @@ Moreover, you can use `addressof` in conjunction with `TTree::Branch` from Pytho
 With PyROOT you can use *any C++ library* from Python, not only the ROOT libraries. This is possible because of the automatic and dynamic bindings between Python and C++ that PyROOT provides.
 Without any prior generation of wrappers, at execution time, PyROOT can load C++ code and call into it.
 
-This enables you to write high-performance C++, compile it and use it from Python. 
+This enables you to write high-performance C++, compile it and use it from Python.
 The following options are available, ordered by complexity and performance:
 
 -  [Just-in-time compilation of small strings](#JITString): Small functions and classes to be used from Python. Especially useful for testing and debugging.
@@ -277,18 +277,18 @@ x = ROOT.f(3)  # x = 9
 For larger analysis frameworks, one may not want to compile the headers each time the Python interpreter is started. One may also
 want to read or write custom C++/C objects in ROOT files, and use them with [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"} or similar tools.
 
-A large analysis framework might further have multiple libraries. In these cases, you generate [ROOT dictionaries]({{ 'manual/interacting_with_shared_libraries' | relative_url }}), and add these to the libraries, which provides ROOT
+A large analysis framework might further have multiple libraries. In these cases, you generate [ROOT dictionaries]({{ 'manual/root_macros_and_shared_libraries' | relative_url }}), and add these to the libraries, which provides ROOT
 with the necessary information on how to generate Python bindings on the fly.
 This is what the large LHC experiments do to steer their analysis frameworks from Python.
 
 1. Create one or multiple C++ libraries. <br/>For example create a library as a CMake project that uses ROOT, see → [CMake details]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
 1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read or written from or into files.
-1. Generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files, see → [Generating dictionaries]({{ '/manual/interacting_with_shared_libraries/#generating-dictionaries' | relative_url }})
-   <br>Use a [`LinkDef.h` file]({{ '/manual/interacting_with_shared_libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
+1. Generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files, see → [Generating dictionaries]({{ '/manual/root_macros_and_shared_libraries/#generating-dictionaries' | relative_url }})
+   <br>Use a [`LinkDef.h` file]({{ '/manual/root_macros_and_shared_libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
    to select which classes or functions ROOT should be included in the dictionary.
 
    The corresponding cmake instructions would look similar to this:
-   
+
    ```cmake
    # Generate G__AnalysisLib.cxx with all the necessary class info:
    ROOT_GENERATE_DICTIONARY(G__AnalysisLib inc/classA.h inc/classB.h ...
@@ -311,10 +311,10 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
    ROOT.gSystem.Load('./libAnalysisLib.so')
    ```
 
-   > **Note** 
+   > **Note**
    > If either ROOT or the headers that were used to create the dictionaries were moved to a different location, and ROOT cannot
    > find them (it returns an error in this case), the location of the headers has to be communicated to ROOT:
-   
+
    > ```python
    > import ROOT
    > ROOT.gInterpreter.AddIncludePath('path/to/headers/')
@@ -375,7 +375,7 @@ Many ROOT tutorials are available as Jupyter notebooks. For example, most [PyROO
 
 The ROOT graphics are also available in Jupyter, both in Python and C++. Moreover, you can choose between two modes:
 - *Static* (default): The graphics are displayed as a static image in the output of the notebook cell.
-- *Interactive*: The graphics are shown as an interactive JavaScript display. In order to activate this mode, include `%jsroot on` in a cell. Once enabled, the mode stays on until it is disabled with `%jsroot off` (i.e. no need to enable it in every cell). 
+- *Interactive*: The graphics are shown as an interactive JavaScript display. In order to activate this mode, include `%jsroot on` in a cell. Once enabled, the mode stays on until it is disabled with `%jsroot off` (i.e. no need to enable it in every cell).
 
 _**Example**_
 

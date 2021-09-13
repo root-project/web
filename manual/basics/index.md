@@ -15,7 +15,7 @@ The first part of the ROOT Manual contains:
 
   - [ROOT architecture and components]({{ '/manual/root_architecture_and_components' | relative_url }})
 
-  - [ROOT macros and shared libraries]({{ '/manual/interacting_with_shared_libraries' | relative_url }})
+  - [ROOT macros and shared libraries]({{ '/manual/root_macros_and_shared_libraries' | relative_url }})
 
   - [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})
 

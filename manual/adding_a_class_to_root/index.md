@@ -50,7 +50,7 @@ You want to either create a {% include ref class="TTree" %} branch of your class
 {% endhighlight %}
 
 For this to work, ROOT needs to know about the `MyClass` type: its data members, base classes, how to construct such an object when reading it back, etc.
-This is provided through a [dictionary]({{'/manual/interacting_with_shared_libraries/#generating-dictionaries' | relative_url }}) that can be easily generated with [CMake]({{'/manual/integrate_root_into_my_cmake_project/#root_generate_dictionary' | relative_url }}).
+This is provided through a [dictionary]({{'/manual/root_macros_and_shared_libraries/#generating-dictionaries' | relative_url }}) that can be easily generated with [CMake]({{'/manual/integrate_root_into_my_cmake_project/#root_generate_dictionary' | relative_url }}).
 
 ### Constructors
 
