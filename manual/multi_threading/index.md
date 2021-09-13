@@ -1,5 +1,5 @@
 ---
-title: Thread safety
+title: Multi threading
 layout: single
 sidebar:
   nav: "manual"

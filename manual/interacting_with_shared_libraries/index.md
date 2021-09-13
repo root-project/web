@@ -9,7 +9,7 @@ toc_sticky: true
 
 
 A ROOT macro contains pure C++ code, which additionally can contain ROOT classes and other
-ROOT objects (→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables' | relative_url }})). A ROOT macro can consist of simple or multi-line commands, but also of arbitrarily complex class and function definitions.
+ROOT objects (→ see [ROOT classes, data types and global variables]({{ '/manual/root_architecture_and_components' | relative_url }})). A ROOT macro can consist of simple or multi-line commands, but also of arbitrarily complex class and function definitions.
 
 You can save a ROOT macro in a file and execute it at the ROOT prompt or the system prompt (→ see [Creating ROOT macros](#creating-root-macros)).
 

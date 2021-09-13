@@ -468,7 +468,7 @@ There are the following classes for changing the attributes of graphical objects
 
 ### Creating and modifying a style
 
-When objects are created, their default attributes (taken from {% include ref class="TAttFill" %}, {% include ref class="TAttLine" %}, {% include ref class="TAttMarker" %}, {% include ref class="TAttText" %}) are taken from the current style. The current style is an object of the {% include ref class="TStyle" %} class and can be referenced via the global variable `gStyle` (→ see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})).
+When objects are created, their default attributes (taken from {% include ref class="TAttFill" %}, {% include ref class="TAttLine" %}, {% include ref class="TAttMarker" %}, {% include ref class="TAttText" %}) are taken from the current style. The current style is an object of the {% include ref class="TStyle" %} class and can be referenced via the global variable `gStyle` (→ see [ROOT classes, data types and global variables]({{ '/manual/root_architecture_and_components#global-root-variables' | relative_url }})).
 
 ROOT provides two styles:
 
@@ -853,7 +853,7 @@ pads ({% include ref class="TPad" %}). A pad is a graphical container that conta
 
 - Use the global variable `gPad` to access the active pad.
 
-For more information on global variables, → see [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables' | relative_url }}).
+For more information on global variables, → see [ROOT classes, data types and global variables]({{ '/manual/root_architecture_and_components' | relative_url }}).
 
 _**Example**_
 

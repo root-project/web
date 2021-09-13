@@ -35,7 +35,7 @@ The following options are available:
 
 - `READ`: Opens an existing ROOT file for reading.
 
-Once a {% include ref class="TFile" %} object has been created, it becomes the default file for all I/O. This default is held in the global variable `gFile` (see → [ROOT classes, data types and global variables]({{ '/manual/root_classes_data_types_and_global_variables#global-root-variables' | relative_url }})), which can be updated at any time to change the default.
+Once a {% include ref class="TFile" %} object has been created, it becomes the default file for all I/O. This default is held in the global variable `gFile` (see → [ROOT classes, data types and global variables]({{ '/manual/root_architecture_and_components#global-root-variables' | relative_url }})), which can be updated at any time to change the default.
 
 {% highlight C++ %}
    gFile = MyFile;
@@ -407,7 +407,7 @@ If a file `myFile.root` is added to the list of files, you can retrieve a pointe
 
 {% include ref class="TFile" %} is a descendent of {% include ref class="TDirectory" %}, which means it behaves like a `TDirectory`. You can list the contents, print the
 name, and create subdirectories. In a ROOT session, you are always in a directory and the directory you are in is
-called the current directory and is stored in the global variable `gDirectory` (see → [gDirectory]({{ '/manual/root_classes_data_types_and_global_variables/#gdirectory' | relative_url }})).
+called the current directory and is stored in the global variable `gDirectory` (see → [gDirectory]({{ '/manual/root_architecture_and_components/#gdirectory' | relative_url }})).
 
 ### Physical layout of a ROOT file
 
@@ -532,7 +532,7 @@ key: h13 points to an object of class: TH1F at 4694
 
 [TFile::ls()](https://root.cern/doc/master/classTFile.html#a0b6ce84d5fecb4d34fc4fa38824320c2){:target="_blank"} lists with option `-d` the objects on disk and with option `-m` the objects in memory.<br/>
 If no option is specified, both are listed, first the objects in memory, then the objects on disk.<br/>
-The current directory is stored in the global variable [gDirectory]({{ '/manual/root_classes_data_types_and_global_variables/#gdirectory' | relative_url }}).
+The current directory is stored in the global variable [gDirectory]({{ '/manual/root_architecture_and_components/#gdirectory' | relative_url }}).
 
 _**Example**_
 
@@ -835,7 +835,7 @@ If the object is split into multiple files or multiple branches of one or more {
 ## Compression and performance
 
 ROOT uses a compression algorithm based on the well-known gzip algorithm. It supports nine levels of compression.
-The default compression level for ROOT is 1. The compression level can be set with the [TFile::SetCompressionLevel()](https://root.cern/doc/master/classTFile.html#a39aa992efad9e7b4232124c4069d7861){:target="_blank"} method. Experience with this algorithm shows that a compression level of 1.3 is the optimum for raw data files and about 2 for most DST files. Choosing 1 as the default is a tradeoff between the time it takes to read and write the object versus the storage space savings. 
+The default compression level for ROOT is 1. The compression level can be set with the [TFile::SetCompressionLevel()](https://root.cern/doc/master/classTFile.html#a39aa992efad9e7b4232124c4069d7861){:target="_blank"} method. Experience with this algorithm shows that a compression level of 1.3 is the optimum for raw data files and about 2 for most DST files. Choosing 1 as the default is a tradeoff between the time it takes to read and write the object versus the storage space savings.
 
 To specify no compression, set the level to 0.
 
@@ -982,14 +982,14 @@ Double_t    fMinimum           offset=500 type= 8 Minimum value for plotting
 Double_t    fNormFactor       offset=508 type= 8 Normalization factor
 TArrayD     fContour             offset=516 type=62 Array to display contour levels
 TArrayD     fSumw2              offset=528 type=62 Array of sum of squares of weights
-TString fOption                    offset=540 type=65 histogram options 
+TString fOption                    offset=540 type=65 histogram options
 TList* fFunctions                  offset=548 type=63 ->Pointer to list of functions
 i= 0, TNamed        type= 67,    offset= 0, len=1, method=0
 i= 1, TAttLine        type= 0,       offset= 28, len=1, method=142484480
 i= 2, TAttFill          type= 0,       offset= 40, len=1, method=142496992
 i= 3, TAttMarker   type= 0,       offset= 48, len=1, method=142509704
 i= 4, fNcells          type= 3,       offset= 60, len=1, method=0
-i= 5, fXaxis           type= 61,     offset= 64, len=1, method=1081287424 
+i= 5, fXaxis           type= 61,     offset= 64, len=1, method=1081287424
 i= 6, fYaxis           type= 61,     offset=192, len=1, method=1081287548
 i= 7, fZaxis           type= 61,     offset=320, len=1, method=1081287676
 i= 8, fBarOffset    type= 22,     offset=448, len=2, method=0
@@ -1116,7 +1116,7 @@ The variables in the rules have the following meaning:
 
 **The C++ API**
 
-The schema evolution C++ API consists of the follwing classes: 
+The schema evolution C++ API consists of the follwing classes:
 -  [TSchemaRuleSet](https://root.cern/doc/master/classROOT_1_1Detail_1_1TSchemaRuleSet.html){:target="_blank"}
 -  [TSchemaRule"](https://root.cern/doc/master/classROOT_1_1TSchemaRule.html){:target="_blank"}
 
