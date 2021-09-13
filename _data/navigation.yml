@@ -66,6 +66,8 @@ manual:
         url: manual/fitting
       - title: RooFit
         url: manual/roofit
+      - title: I/O
+        url: manual/io
       - title: Trees
         url: manual/trees
       - title: Data frames
