@@ -38,7 +38,7 @@ manual:
       - title: ROOT architecture and components
         url: manual/root_architecture_and_components
       - title: ROOT macros and shared libraries
-        url: manual/interacting_with_shared_libraries
+        url: manual/root_macros_and_shared_libraries
       - title: ROOT files
         url: manual/storing_root_objects
       - title: Creating a user application with ROOT

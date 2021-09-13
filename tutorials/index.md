@@ -19,7 +19,7 @@ be visualized in [NBViewer](https://nbviewer.jupyter.org/){:target="_blank"} or 
 
 Once you have [properly setup the ROOT environment]({{'manual/first_steps_with_root' | relative_url }}){:target="_blank"},
 all the tutorials will be available on *your* machine in the `$ROOTSYS/tutorials` folder.
-You can then [execute/read the macros]({{'manual/interacting_with_shared_libraries' | relative_url }})
+You can then [execute/read the macros]({{'manual/root_macros_and_shared_libraries' | relative_url }})
 there to learn from the examples. Do not hesitate to comment out/ add code to these tutorials
 macros to learn interactively how ROOT works.
 Among the long list of tutorials you may want to start with:
