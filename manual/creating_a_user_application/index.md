@@ -38,7 +38,7 @@ A C++ standalone program should be created with this code.
 
 > **Note**
 >
-> If you use this code in a ROOT macro (→ see [ROOT macros and shared libraries]({{ '/manual/interacting_with_shared_libraries' | relative_url }})),
+> If you use this code in a ROOT macro (→ see [ROOT macros and shared libraries]({{ '/manual/root_macros_and_shared_libraries' | relative_url }})),
 > you can only execute it with ROOT.
 
 
