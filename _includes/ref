@@ -1,2 +1,2 @@
 {% assign c = {{include.class}}  %}{% assign n = {{include.namespace}}  %}{% capture ns %}{{ n | size }}{% endcapture %}
-{% if ns == "0" %}<a href="https://root.cern/doc/master/class{{c}}.html" target="_blank">{{c}}</a>{% else %}<a href="https://root.cern/doc/master/class{{n}}_1_1{{c}}.html" target="_blank">{{c}}</a>{% endif %}
+{% if ns == "0" %}<a href="https://root.cern/doc/master/class{{ c | replace: "::", "_1_1" }}.html" target="_blank">{{c}}</a>{% else %}<a href="https://root.cern/doc/master/class{{ n | replace: "::", "_1_1" }}_1_1{{c}}.html" target="_blank">{{c}}</a>{% endif %}
