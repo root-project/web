@@ -25,7 +25,8 @@ The results are placed by default at `${HOME}/rootdoc/html`.
 The script `$ROOTSYS/documentation/doxygen/makeinput.sh` defines the `INPUT` tag in `Doxyfile`.
 It can be edited to reduce the number of input files and thus reduce the time for generating
 the HTML pages. Typically you will keep only the folder(s) in which the documentation you are
-working on is.
+working on is. To see the result of this local build you should open, in your preferred web
+browser, the file `${HOME}/rootdoc/html/index.html`.
 
 ## General Guidelines
 Classes and methods can be documented both in the .cxx and .h files. For the long descriptions
