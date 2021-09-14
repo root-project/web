@@ -17,13 +17,13 @@ $ root file.root
 or within C++
 
 {% highlight C++ %}
-   auto myFile = TFile::Open("file.root");
+std::unique_ptr<TFile> myFile( TFile::Open("file.root") );
 {% endhighlight %}
 
 or Python code
 
 {% highlight Python %}
-   myFile = ROOT.TFile.Open("file.root")
+myFile = ROOT.TFile.Open("file.root")
 {% endhighlight %}
 
 
@@ -32,7 +32,7 @@ Later on, you can read these objects back: the object is reconstructed in memory
 
 ROOT files often contain columnar data, used for instance by all LHC (Large Hadron Collider) experiments.
 
-## Storing objects in ROOT files and reading them back
+## Storing an object in a ROOT file and reading it back
 
 Here we will create a new ROOT file, store a histogram, and read it back.
 
@@ -41,10 +41,10 @@ Here we will create a new ROOT file, store a histogram, and read it back.
 Use the function `Open()` from {% include ref class="TFile" %} to create or open a ROOT file.
 
 {% highlight C++ %}
-   auto myFile = TFile::Open("file.root", "RECREATE");
+std::unique_ptr<TFile> myFile( TFile::Open("file.root", "RECREATE") );
 {% endhighlight %}
 {% highlight Python %}
-   myFile = ROOT.TFile.Open("file.root", "RECREATE")
+myFile = ROOT.TFile.Open("file.root", "RECREATE")
 {% endhighlight %}
 
 For the second argument, the following options are available:
@@ -54,7 +54,7 @@ For the second argument, the following options are available:
 - `"UPDATE"`: updates the ROOT file.
 - `"READ"`: opens an existing ROOT file for reading.
 
-### Storing objects to ROOT files
+### Storing an object in a ROOT file
 
 You can save any object, for instance canvases or histograms, into a ROOT file.
 You can even store your own types.
@@ -68,165 +68,111 @@ A copy of the object `myObject` is written to the file `myFile`.
 In the file, it can be found back under the name `"MyObject"`.
 
 {% highlight C++ %}
-   myFile->WriteObject(&myObject, "MyObject");
+myFile->WriteObject(&myObject, "MyObject");
 {% endhighlight %}
 {% highlight Python %}
-   myFile.WriteObject(myObject, "MyObject")
+myFile.WriteObject(myObject, "MyObject")
 {% endhighlight %}
-
-If `MyObject` does not inherit from {% include ref class="TClass" %}, you can use
-
-{% highlight C++ %}
-   gDirectory->WriteObject(MyObject,"MyObject_1");
-{% endhighlight %}
-
-_**Example**_
-
-This example creates 15 histograms, fills each histogram with 1000 entries from a Gaussian distribution, and writes them to a ROOT file.
-
-{% highlight C++ %}
-{
-   char name[10], title[20];
-
-// Create an array of histograms.
-   TObjArray Hlist(0);
-
-// Create a pointer to a histogram.
-   TH1F* h;
-
-// Make and fill 15 histograms and add them to the object array.
-   for (Int_t i = 0; i < 15; i++) {
-      sprintf(name,"h%d",i);
-      sprintf(title,"histo nr:%d",i);
-      h = new TH1F(name,title,100,-4,4);
-      Hlist.Add(h);
-      h->FillRandom("gaus",1000);
-   }
-
-// Open a ROOT file and write the array to the ROOT file.
-   TFile f("demo.root","RECREATE");
-   Hlist.Write();
-
-// Closing the ROOT file.
-   f.Close();
-}
-{% endhighlight %}
-
-The ROOT file is saved by default in the current working directory.
 
 ### Closing a ROOT file
 
-- Use [TFile::Close()](https://root.cern/doc/master/classTFile.html#ae312f07848b4b30679409e5e785991a6){:target="_blank"} to close a ROOT file:
+ROOT will automatically save and close any ROOT files still open when the session ends.
+The ROOT file is also saved and closed when deleting / destructing the `TFile` object.
 
 {% highlight C++ %}
-   MyFile->Close();
+void closeAtDestruct(TH1 *hist) {
+   std::unique_ptr<TFile> myFile( TFile::Open("file.root", "RECREATE") );
+   myFile->WriteObject(hist, "MyHist");
+   // At the end of the function, the unique_ptr gets destructed.
+   // It deletes the `TFile` object, which in turn saves and closes
+   // the ROOT file.
+}
 {% endhighlight %}
 
-ROOT will automatically close any ROOT files still open when the session ends.
+{% highlight Python %}
+def closeAtDestruct(hist):
+   myFile = ROOT.TFile.Open("file.root", "RECREATE")
+   myFile.WriteObject(hist, "MyHist")
+   # At the end of the function, there are no more references to `file`.
+   # The `TFile` object gets deleted, which in turn saves and closes
+   # the ROOT file.
+{% endhighlight %}
 
-- Use `delete` to delete the {% include ref class="TFile" %} object.
+
+### Displaying the content of a ROOT file
+
+Apart from [`rootls`]({{ '/manual/root_files/#root-command-line-tools' | relative_url }} ) and the [object browser]( {{ '/manual/root_files/#root-object-browser' | relative_url }} ) introduced below, `TFile::ls()` lists what is in the ROOT file.
 
 {% highlight C++ %}
-   delete MyFile;
+root [0] std::unique_ptr<TFile> myFile( TFile::Open("file.root", "RECREATE") );
+root [1] myFile->ls()
+
+TFile**    file.root
+ TFile*    file.root
+  KEY: TH1F     MyHist;1 This is a histogram
 {% endhighlight %}
 
-### Retrieving objects from a ROOT file
+
+### Reading an object from a ROOT file
 
 - Use the `GetObject()` method to retrieve the objects from a ROOT file.
 
 _**Example**_
 
-From the ROOT file `hsimple.root` (see → [First steps with ROOT]({{ '/manual/first_steps_with_root#starting-with-hsimplec' | relative_url }})), the histogram `hpx;1` is retrieved.
+From the ROOT file `file.root`, the histogram `MyHist` is retrieved.
 
 {% highlight C++ %}
-   TFile f("hsimple.root");
-   TH1F *hpx;
-   f.GetObject("hpx;1",hpx);
-
-//The retrieved histogram is drawn.
-   hpx->Draw();
+std::unique_ptr<TFile> myFile( TFile::Open("file.root") );
+std::unique_ptr<TH1> hist(myFile->Get<TH1>("MyHist"));
 {% endhighlight %}
 
-In detail, the following happens when executing `GetObject()`:
-
-- The key with name `hpx;1` is found in the list of keys.
-
-- A {% include ref class="TBuffer" %}object is created.
-
-- The buffer is read from the ROOT file.
-
-- An empty object is created by calling the default constructor for the class referenced in {% include ref class="TKey" %}.
-
-- The [Streamer()](https://root.cern/doc/master/classTClass.html#ac1c95f1787550ebc5367590aedacbd67){:target="_blank"} method is called for this new object.
-
-In case there is an object with multiple cycles, you can pick a particular cycle with a name like `hpx;` (for example `hpx;2`).
-
- You can also directly access the keys, for example when the names of the objects contained in the ROOT file are not known or when a long series of objects needs to be read sequentially.
-
- _**Example**_
-
-This example illustrates how to loop over all keys of a ROOT file.
-
-{% highlight C++ %}
-for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
-    auto key = dynamic_cast<TKey*>(keyAsObj);
-    std::cout << "Key name: " << key->GetName() << " Type: " << key->GetClassName() << std::endl;
-}
+{% highlight Python %}
+myFile = ROOT.TFile.Open("file.root")
+hist = myFile.MyHist
 {% endhighlight %}
 
-### Merging ROOT files with hadd
+## Merging ROOT files with `hadd`
 
-- Use the `hadd` utility in `$ROOTSYS/bin/hadd`, to merge ROOT files:
+Use the `hadd` utility in `$ROOTSYS/bin/hadd` to merge ROOT files:
 
-{% highlight C++ %}
-   hadd result.root file1.root file2.root ... filen.root
+{% highlight bash %}
+$ hadd output.root input1.root input2.root ...
 {% endhighlight %}
 
 ## ROOT command line tools
 
 With the ROOT command line tools you can quickly inspect and modify the contents of ROOT files.
-There are ROOT command line tools for:
-- simple file operations
-- automating common operations performed on ROOT classes
-
-**File operations**
-
+The most commonly used ones are:
 - `rootls`: Lists the content of a ROOT file.
 - `rootcp`: Copies objects stored in a ROOT file to another ROOT file.
 - `rootrm`: Deletes objects contained in a ROOT file.
 - `rootmv`: Moves objects stored in a ROOT file to another ROOT file.
 - `rootmkdir`: Creates a "directory" inside a ROOT file.
+- `rootbrowse`: Opens a {% include ref class="TBrowser" %} directly with the contents of a ROOT file.
+- `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another ROOT file.
+- `rootprint`: Plots objects in an image ROOT file.
+- `rootslimtree`: Copies trees with a subset of branches from source ROOT files.
+
+Use the `-h` option to get more information on the available options for the specific ROOT command line tool.
 
 _**Example**_
 
 On the system prompt, you can use the ROOT command line tool `rootls` to list the contents of a ROOT file.
 
-{% highlight C++ %}
+{% highlight bash %}
 $ rootls hsimple.root
 hprof  hpx  hpxpy  ntuple
 {% endhighlight %}
 
-**Operations on ROOT classes**
-
-- `rootbrowse`: Opens a {% include ref class="TBrowser" %} directly with the contents of a ROOT file.
-- `rooteventselector`: Extracts a range of events of a tree contained in a ROOT file and put them as a new tree in another ROOT file.
-- `rootprint`: Plots objects in an image ROOT file.
-- `rootslimtree`: Copies trees with a subset of branches from source ROOT files.
-- `genreflex`: Generates dictionary sources and related ROOT pcm, starting from an header.
-- `hadd`: Adds histograms from a list of ROOT files and writes them to a target ROOT file.
-
-Use the `-h` option to get more information on the available options for the specific ROOT command line tool.
-
 
 ## ROOT Object Browser
 
-With a {% include ref class="TBrowser" %}, this is the ROOT Object Browser, you can browse all ROOT objects within a ROOT file.
+With a {% include ref class="TBrowser" %} you can browse all ROOT objects within a ROOT file.
+You can create it with `rootbrowse` or for instance as part of a ROOT session:
 
-- Create a {% include ref class="TBrowser" %} object:
-
-{% highlight C++ %}
-   root[0] TFile f("demo.root")
-   root[1] TBrowser browser
+{% highlight bash %}
+   $ root file.root
+   root[0] TBrowser b
 {% endhighlight %}
 
 The ROOT Object Browser is displayed.
@@ -236,41 +182,40 @@ The ROOT Object Browser is displayed.
    caption="ROOT Object Browser."
    %}
 
-- Click the ROOT file and the content of the ROOT file.
+Double-click the ROOT file to inspect its content.
 
    {% include figure_image
    img="root_object_browser_content.png"
    caption="ROOT Object Browser displaying the content of a ROOT file."
    %}
 
-Graphical objects are displayed in the `Canvas_1` tab. Files that end with `.C` or `.root` are displayed in the `Editor 1` tab.
+Double-clicking graphical objects displays them in a canvas tab.
+Double-clicking files that end with `.C` displays them in an editor tab.
 
-## Remotely accessing a ROOT file
+## Accessing a remote ROOT file
 
-You can remotely access ROOT files on the base of the protocol URL.
+You can read and write a remote ROOT file by specifying its URL to [TFile::Open()](https://root.cern/doc/master/classTFile.html#aec5f3fae0774aabfc615ebb4b00fe5e0){:target="_blank"}.
 
-You can read and write a ROOT file over the net by using the [TFile::Open()](https://root.cern/doc/master/classTFile.html#aec5f3fae0774aabfc615ebb4b00fe5e0){:target="_blank"} method.
+Depending on the features of your ROOT installation, the following protocols will be available:
+
+|URI Scheme  |Protocol          |
+|------------|------------------|
+|`http://`   | unencrypted HTTP |
+|`https://`  | encrypted HTTP   |
+|`root://`   | [Xrootd](https://root.cern/doc/master/classTXNetFile.html) |
+|`s3://`     | [S3](https://root.cern/doc/master/classTDavixFile.html) |
+
+[Xrootd](https://xrootd.slac.stanford.edu/) is a high-performance, authenticated data transfer protocol.
+[S3](https://docs.aws.amazon.com/AmazonS3/latest/API/Welcome.html) is the standard API for object store data transfer.
 
 _**Example**_
 
 Simple session:
 
 {% highlight C++ %}
-root[] TFile *f1 = TFile::Open("local/file.root","update")
-root[] TFile *f2 = TFile::Open("root://my.server.org/data/file.root","new")
-root[] TFile *f3 = TFile::Open("https://root.cern/files/hsimple.root")
+std::unique_ptr<TFile> myFile( TFile::Open("https://root.cern/files/na49.root") );
 {% endhighlight %}
 
-`ls()` lists what is in the ROOT file.
 
-{% highlight C++ %}
-root[] f3.ls()
-TDavixFile**    https://root.cern/files/hsimple.root
- TDavixFile*    https://root.cern/files/hsimple.root
-  KEY: TH1F     hpx;1 This is the px distribution
-  KEY: TH2F     hpxpy;1 py vs px
-  KEY: TProfile hprof;1 Profile of pz versus px
-  KEY: TNtuple  ntuple;1 Demo ntuple
-{% endhighlight %}
-
+## Storing columnar data in a ROOT file and reading it back
 
