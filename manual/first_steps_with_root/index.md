@@ -237,5 +237,5 @@ The source code of ROOT tutorials is available as C++ macros or Python scripts, 
 - ROOT macro: [example](https://root.cern/doc/master/df001__introduction_8C.html)
 - Python script: [example](https://root.cern/doc/master/df001__introduction_8py.html)
 
-Moreover, some tutorials are also published in the form of Jupyter notebooks. If that is the case, below the tutorial link there are two buttons to open the notebook statically (`View notebook`) or in [SWAN](https://swan.cern.ch) (`Open in SWAN`).
+Moreover, some tutorials are also published in the form of Jupyter notebooks. If that is the case, below the tutorial link there are two buttons to open the notebook statically (`View notebook`) or in [SWAN](https://swan.cern.ch) (`Open in SWAN`). Please note that SWAN is an online notebook service that requires a CERN account.
 
