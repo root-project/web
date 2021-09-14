@@ -58,7 +58,8 @@ For the second argument, the following options are available:
 
 You can save any object, for instance canvases or histograms, into a ROOT file.
 You can even store your own types.
-For more information, see the → [I/O]({{ '/manual/io' | relative_url }}) section of the manual.
+
+<!-- For more information, see the → [I/O]({{ '/manual/io' | relative_url }}) section of the manual. -->
 
 `TFile` derives from `TDirectory`; use [TDirectory::WriteObject()](https://root.cern/doc/master/classTDirectory.html#a67b115afae97366254dfd44a7f46f66f){:target="_blank"} to write an object to a ROOT file.
 
