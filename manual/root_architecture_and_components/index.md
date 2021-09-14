@@ -7,13 +7,28 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT is modular scientific software toolkit and provides numerous ROOT classes for big data processing, statistical analysis, visualization and storage, → see [ROOT core classes](#root-core-classes).
+## Introduction
 
-ROOT uses predefined and machine independent data types to ensure the size of variables, → see [Machine independent data types](#machine-independent-data-types).
+ROOT is modular scientific software toolkit and provides [numerous tools]({{'manual/functional_parts' | relative_url}})
+for big data processing, statistical analysis, visualization and storage.
+
+The [ROOT Reference Guide](https://root.cern/doc/master/index.html) provides a complete list
+of all available ROOT classes and their documentation. It is the central source of information
+for all ROOT classes.
+
+The source code is available on [GitHub](https://github.com/root-project/root) and many
+examples are available as [tutorials](https://root.cern/doc/master/group__Tutorials.html).
+
+ROOT is implementing new interfaces following [new design style](#new-root-classes).
+
+ROOT contains several classes developed in the past which are
+following a specific naming convention and a [special inheritance scheme](#tobject---the-root-base-class).
+
 
 ROOT has a set of global ROOT variables that apply to a ROOT session, → see [Global ROOT variables](#global-root-variables).
 
-**Naming conventions**
+
+## Naming conventions
 
 The following naming conventions apply to ROOT objects:
 
@@ -47,221 +62,31 @@ The following naming conventions apply to ROOT objects:
 -   Getters and setters begin with Get and Set <br>
     Examples: `SetLast()`, `GetFirst()`
 
-## ROOT classes
 
-In addition to the ROOT core classes (→ see [ROOT core classes](#root-core-classes)), there are ROOT classes available for the following topics:
 
--   Geometry
-
--   Graphical User Interface
-
--   Graphics
-
--   Histograms
-
--   Input/Output
-
--   Math
-
--   Monte Carlo
-
--   TMVA
-
--   Multi variate analysis
-
--   Trees
-
--   and many more
-
-> **ROOT Reference Guide**
->
-> The [ROOT Reference Guide](https://root.cern/doc/master/index.html) provides a complete list of all available ROOT classes and their documentation. It is the central source of information for all ROOT classes.
-
-## ROOT core classes
-
-The ROOT core classes consist of:
-
--   **ROOT base classes** <br>
-   The ROOT base classes provide the core of the system.
-   They are available to all other ROOT classes. <br>
-   The ROOT base class {% include ref class="TObject" %} is the mother of all ROOT objects, → see [TObject - the ROOT base class](#tobject---the-root-base-class).
-
--   **Containers** <br>
-   Containers correspond to collections. A collection is a group of related objects that provide a flexible alternative to arrays, lists and trees, → see [ROOT collections]({{ '/manual/root_collections' | relative_url }}).
-
-### TObject - the ROOT base class
+## TObject - the ROOT base class
 
 In ROOT, almost all ROOT classes inherit from the common ROOT base class {% include ref class="TObject" %}.
 
-The `TObject` class provides default behavior and protocol for all objects in the ROOT system.
-
-`TObject` provides protocol, this is (abstract) member functions, for:
+The `TObject` class provides default behavior and protocol such as:
 
 -   Object I/O (`Read()`, `Write()`)
 
--   Error handling (`Warning()`, `Error()`, `SysError()`, `Fatal()`)
-
--   Sorting (`IsSortable()`, `Compare()`, `IsEqual()`, `Hash()`)
-
--   Inspection (`Dump()`,`Inspect()`)
+-   Inspection (`Dump()`,`Inspect()`, `ls()`)
 
 -   Printing (`Print()`)
 
--   Drawing (`Draw()`, `Paint()`, `ExecuteEvent()`)
-
--   Bit handling (`SetBit()`, `TestBit()`)
-
--   Memory allocation (`operatornew and delete`, `IsOnHeap()`)
+-   Drawing (`Draw()`)
 
 -   Access to meta information (`IsA()`, `InheritsFrom()`)
 
--   Object browsing (`Browse()`, `IsFolder()`)
-
-The virtual method `Draw()` is the entry point for the graphics rendering of ROOT objects, → see [Graphics]({{ '/manual/graphics' | relative_url }}).
-
-#### Introspection, reflection and run time type identification (RTTI)
-
-Introspection, which is also referred to as reflection, run time type identification (RTTI) is the ability of a class to reflect upon itself.
-
-ROOT implements reflection with the {% include ref class="TClass" %} class. It provides all information about a class, a full description of data members and methods, including the comment field and the method
-parameter types.
-
-If the class is a descendent of {% include ref class="TObject" %}, you can check if an object inherits from a specific class, you can use the
-[TObject::InheritsFrom()](https://root.cern/doc/master/classTObject.html#ab80cf94f9f66badac741633f944ae02a) method. The method returns `kTrue` if the object inherits from the specified class name or {% include ref class="TClass" %}.
-
-{% highlight C++ %}
-   Bool_t b = obj->InheritsFrom("TLine");
-   Bool_t b = obj->InheritsFrom(TLine::Class());
-{% endhighlight %}
-
-ROOT and Cling rely on reflection and the class dictionary to identify the type of a variable at run time. With the
-{% include ref class="TObject" %} inheritance are some methods available that use introspection to help you see the data in the object or class.
-
-_**Example**_
-{% highlight C++ %}
-// Lists all data members and their current values.
-   obj->Dump();
-
-// Opens a window to browse data members.
-   obj->Inspect();
-
-// Draws the class inheritance tree.
-   obj->DrawClass(); // Draws the class inheritance tree
-{% endhighlight %}
-
-#### ROOT collections
-
-To store an object in a ROOT collection, it must be a descendent of {% include ref class="TObject" %}. This is convenient if you want to store
-objects of different classes in the same Root collection and execute the method of the same name on all members of the
-ROOT collection.
-
-_**Example**_
-
-The list of graphics primitives are in a ROOT collection called {% include ref class="TList" %}. When the canvas is
-drawn, the `Paint()` method is executed on the entire ROOT collection. Each member may be a different class, and if the `Paint()`
-method is not implemented, [TObject::Paint()](https://root.cern/doc/master/classTObject.html#adb30f2d116033afa49028b43e05a7d8e) will be executed.
-
-For more information on ROOT collection, → see [ROOT collections]({{ '/manual/root_collections' | relative_url }}).
-
-#### Input and output
-
-The [TObject::Write()](https://root.cern/doc/master/classTObject.html#a19782a4717dbfd4857ccd9ffa68aa06d) method is the interface to the ROOT I/O system. It streams the object into a buffer using the
-`Streamer()` method. It supports cycle numbers and automatic schema evolution.
-
-#### Paint()/Draw()
-
-The `Paint()` and `Draw()` method are defaults. Their implementation in {% include ref class="TObject" %} does not use the graphics subsystem. The
-[TObject::Draw()](https://root.cern/doc/master/classTObject.html#adaa7be22dce34ebb73fbf22e4bdf33a2) method is simply a call to `AppendPad`. The `Paint()` method is empty. The default is provided so that
-you can call `Paint()` in a ROOT collection. The [TObject::GetDrawOption()](https://root.cern/doc/master/classTObject.html#a739367558721407a015458db50d782c4) method returns the draw option that was used when the object
-was drawn on the canvas. This is especially relevant with histograms and graphs.
-
-#### Clone()/DrawClone()
-
-Two useful methods are [TObject::Clone()](https://root.cern/doc/master/classTObject.html#a4696036d44dcbe28970a13b8f4e5d6b2) and [TObject::DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9). The `Clone()` method takes a snapshot of the object with the `Streamer`
-and creates a new object. The `DrawClone()` method does the same thing and in addition draws the clone.
-
-#### Browse()
-The [TObject::Browse()](https://root.cern/doc/master/classTObject.html#a257256699b369476a49bb17b9c1a76f4) method is called if the object is browse-able and is to be displayed in the ROOT Object Browser.
-
-_**Example**_
-
-The {% include ref class="TTree" %} implementation of `Browse()`, calls the `Browse()` method for each branch. The [TBranch::Browse()](https://root.cern/doc/master/classTBranch.html#aaaf682e213335f104f4022793772518b) method displays the name
-of each leaf. For the object its `Browse()` method to be called, the `IsFolder()` method must be overridden to return `true`. This does not mean it has to be a folder, it just means that it is browse-able.
-
-#### SavePrimitive()
-
-The [TObject::SavePrimitive()](https://root.cern/doc/master/classTObject.html#a9ee00859ee3b190759028d690e1ddf83) method is called by a canvas on its list of primitives, when the canvas is saved as a ROOT macro. The purpose of
-`SavePrimitve()` is to save a primitive as a C++ statement(s). Most ROOT classes implement the `SavePrimitive()`
-method. It is recommended that `SavePrimitive()` is implemented in user defined classes if it is to be drawn on
-a canvas. Such that the command `TCanvas::SaveAs(Canvas.C)` will preserve the user-class object in the resulting ROOT macro.
-
-#### GetObjectInfo()
-The [TObject::GetObjectInfo()](https://root.cern/doc/master/classTObject.html#a9d60cac505e7172b6d7d584b5bd563da) method is called when displaying the event status in a canvas. To show the event status window, select the
-`Options` menu and then the `EventStatus` item. The method returns a string of information about the object at position
-(x, y). Every time the cursor moves, the object under the cursor executes the `GetObjectInfo()` method. The string is
-then shown in the status bar. There is a default implementation in {% include ref class="TObject" %}, but it is typically overridden for classes
-that can report peculiarities for different cursor positions (for example the bin contents in a {% include ref class="TH1" %}).
-
-#### Bit masks and unique ID
-A {% include ref class="TObject" %} descendent inherits two data members:
-- `fBits`
-- `fUniqueID`
-
-`fBitsis`is a 32-bit data member used with a bit mask to get object information. Bits 0 - 13 are reserved as global bits, bits 14 - 23 can be used in different class
-hierarchies.
-
-{% highlight C++ %}
-   enum EObjBits {
-// If can be deleted.
-   kCanDelete = BIT(0),
-
-// If destructor must call RecursiveRemove().
-   kMustCleanup = BIT(3),
-
-// For backward compatibility only.
-   kObjInCanvas = BIT(3),
-
-// If referenced by TRef or TRefArray.
-   kIsReferenced = BIT(4),
-
-// If has a TUUID, fUniqueID=UUIDNumber.
-   kHasUUID = BIT(5),
-
-// If cannot be picked in a pad.
-   kCannotPick = BIT(6),
-
-// If does not want a context menu.
-   kNoContextMenu = BIT(8),
-
-// Object actor succeeded but the object should not be used.
-   kInvalidObject = BIT(13)
-};
-{% endhighlight %}
-
-For example, the `kMustCleanup` and `kCanDelete` bits are used in {% include ref class="TObject" %}. They can be set by any object and should not be reused. Make sure not to overlap them in any
-given hierarchy. The bit 13 (kInvalidObject) is set when an object could not be read from a ROOT file. It will check this bit and will skip to the next object on the file.
-
-
-### TROOT - entry point to ROOT
-
-The {% include ref class="TROOT" %} object is the entry point to the ROOT system. The single instance of `TROOT` is accessible via the global variable `gROOT` (→ see [gROOT](#groot)). Using the `gROOT` variable, you have access to basically every object created in a ROOT based program. The `TROOT` object is a container of several lists pointing to the main ROOT objects.
-
-## Understanding ROOT's class structure
-
-ROOT provides a set of tools to help you understand the existing class structure, the data structure in memory, and the structure of files.
+_**Examples**_
 
 - [TFile::ls](https://root.cern/doc/master/classTFile.html#a0b6ce84d5fecb4d34fc4fa38824320c2): Lists objects in a file or directory.
-	- `list->ls()`: Lists objects in a collection pointed by list.
-	- `list->Dump()`: Dumps all objects in a collection pointed by list.
+   - `list->ls()`: Lists objects in a collection pointed by list.
+   - `list->Dump()`: Dumps all objects in a collection pointed by list.
 
-- [TFile::Map](https://root.cern/doc/master/classTFile.html#aa096e9759947ec077bbdba0663d3a223): Lists the contents of a file sequentially. One line is printed for every record written to the file with the following information:
-	- Date/Time when the object was written.
-	- Position of the object (starting byte number).
-	- Number of bytes occupied by the object.
-	- Object class name.
-	- Compression factor (if the file is compressed).
 
-- [TClass::Draw](https://root.cern/doc/master/classTClass.html#ac11f715e58e6d0c360f4c80577a5484a): Draws the detailed class inheritance structure. All ROOT classes are documented with their associated inheritance tree. This tree can be generated interactively with `object->DrawClass()` or by selecting `DrawClass` item when right-clicking an object in a canvas.
 
 - [TObject::Inspect](https://root.cern/doc/master/classTObject.html#a09f1614be7c5b3c35770529cc151449d) Dumps the contents of this object in a graphics canvas. A table is displayed where, for each data member, its name, current value and its title are given. If a data member is a pointer to another object, one can click on the pointer and, in turn, inspect the pointed object,etc.
 
@@ -269,38 +94,6 @@ ROOT provides a set of tools to help you understand the existing class structure
 
 - ROOT Object Browser ({% include ref class="TBrowser" %}): Allows you to browse collections, such as the list of classes, geometries, files and {% include ref class="TTree" %}. → See also [ROOT Object Browser]({{ '/manual/storing_root_objects/#root-object-browser' | relative_url }}).
 
-
-## Machine independent data types
-
-Different machines may have different lengths for the same data type.
-
-The `int` data type for example may be 16 bits on some old machines and 32 bits on some newer ones.
-
-To ensure the size of your variables, use these predefined data types in ROOT:
-
--   `Char_t`: Signed character 1 byte.
-
--   `UChar_t`: Unsigned character 1 byte.
-
--   `Short_t`: Signed short integer 2 bytes.
-
--   `UShort_t`: Unsigned short integer 2 bytes.
-
--   `Int_t`: Signed integer 4 bytes.
-
--   `UInt_t`: Unsigned integer 4 bytes.
-
--   `Long64_t`: Portable signed long integer 8 bytes.
-
--   `ULong64_t`: Portable unsigned long integer 8 bytes.
-
--   `Float_t`: Float 4 bytes.
-
--   `Double_t`: Float 8 bytes.
-
--   `Double32_t`: Double 8 bytes in memory, written as a float 4 bytes.
-
--   `Bool_t`: Boolean (0=false, 1=true).
 
 ## Global ROOT variables
 
@@ -328,11 +121,15 @@ This returns a pointer to a {% include ref class="TObject" %}. Before you can us
 
 ### gFile
 
-`gFile` is the pointer to the current opened ROOT file in a ROOT session.
+`gFile` is the pointer to the current opened ROOT file in a ROOT session ({% include ref class="TFile" %}).
 
 ### gStyle
 
 `gStyle` holds the current style, which is the global object of class {% include ref class="TStyle" %}.
+
+### gSystem
+
+A generic interface to the [underlying Operating System](https://root.cern/doc/master/classTSystem.html).
 
 ### gDirectory
 
@@ -345,34 +142,19 @@ This returns a pointer to a {% include ref class="TObject" %}. Before you can us
 
 ### gRandom
 
-`gRandom` is a pointer to the current random number generator. By default, it points to a {% include ref class="TRandom3" %} object.
-The following basic random distributions are provided:
-
--   `Rndm()` or `Uniform(min,max)`
-
--   `Gaus(mean,sigma)`
-
--   `Exp(tau)`
-
--   `BreitWigner(mean,sigma)`
-
--   `Landau(mean,sigma)`
-
--   `Poisson(mean)`
-
--   `Binomial(ntot,prob)`
-
-You can customize your ROOT session by replacing the random number generator. You can delete `gRandom` and recreate it with your own.
+`gRandom` is a pointer to the current random number generator ({% include ref class="TRandom" %} interface).
+By default, it points to a {% include ref class="TRandom3" %} object. You can replace the current
+random number generator by deleting `gRandom` and recreating with your own desired generator.
 
 _**Example**_
 
 {% highlight C++ %}
    delete gRandom;
-   gRandom = new TRandom2(0); //seed=0
+   gRandom = new TRandomRanluxpp(0); //seed=0
 {% endhighlight %}
 
 
-{% include ref class="TRandom2" %} is another generator that uses only three words for its state.
+{% include ref class="TRandomRanluxpp" %} is another generator based on [Ranlux++]( {{ 'blog/ranluxpp' | relative_url }} ).
 
 ### gEnv
 
@@ -385,3 +167,14 @@ _**Example**_
 `gGeoManager` is used to access the geometry manager class created with {% include ref class="TGeoManager" %}.
 
 
+## New ROOT classes
+
+The new interface styles follow the
+[C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
+where reasonable in our context. Most noticeably this means
+
+- new classes are in `namespace ROOT`and their names begin with `R`; headers are in `include/ROOT/` and are included as `<ROOT/...>`;  libraries are starting with `libROOT...`
+- use of references as parameters instead of pointers,
+- massive reduction of virtual functions (and calls), no more TObject inheritance,
+- use of stdlib classes (`std::vector`, `std::string`) instead of `TList` and friends,
+- separation of concerns, including separation of internal (`ROOT::Internal::`) and user-facing functionality.
