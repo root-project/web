@@ -211,13 +211,15 @@ root [0] .x df000_simple.C
 
 A window with the plot of a histogram should appear as a result.
 
-The same tutorial is also available in Python [here](https://root.cern/doc/master/df000__simple_8C.html).
+The same tutorial is also available in Python →  [here](https://root.cern/doc/master/df000__simple_8C.html).
 
 A more thorough introduction to RDataFrame can be found → [here]({{ '/manual/data_frame' | relative_url }}).
 
-### Viewing the source code of tutorials
+### Browsing through the rest of tutorials
 
-The source code of ROOT tutorials can be viewed online at the [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"}. For example, this is a data frame tutorial available in both C++ and Python:
+The [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"} groups tutorials by topic. For example, data frame tutorials can be found [here](https://root.cern/doc/master/group__tutorial__dataframe.html).
+
+Tutorials are written in C++, Python or both. For instance, the following data frame tutorial is available in both languages:
 - C++ ROOT macro: [example](https://root.cern/doc/master/df001__introduction_8C.html)
 - Python script: [example](https://root.cern/doc/master/df001__introduction_8py.html)
 
