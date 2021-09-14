@@ -79,7 +79,7 @@ For more information on Cling, → see [Cling]({{ '/cling' | relative_url }}).
 
 > **Note**
 >
-> Cling provides a user experience that is closer to a typical interpreter, e.g. [IPython](https://ipython.org/).
+> Cling provides a user experience that is closer to a typical interpreter, e.g. [IPython](https://ipython.org/){:target="_blank"}.
 > Therefore, unlike pure C++ language, no semicolon (`;`) is required at the end of the line.
 
 #### Simple commands
@@ -176,7 +176,7 @@ root [0] .<command>
 
 ## ROOT command line tools
 
-ROOT also provides many command line tools at the system prompt for simple file operations or automating common operations performed on ROOT classes. → See [ROOT command line tools]({{ '/manual/storing_root_objects/#root-command-line-tools' | relative_url }})
+ROOT also provides many command line tools at the system prompt for simple file operations or automating common operations performed on ROOT classes. → See [ROOT command line tools]({{ '/manual/root_files/#root-command-line-tools' | relative_url }})
 
 ## Using ROOT from Python
 
@@ -211,17 +211,17 @@ root [0] .x df000_simple.C
 
 A window with the plot of a histogram should appear as a result.
 
-The same tutorial is also available in Python →  [here](https://root.cern/doc/master/df000__simple_8C.html).
+The same tutorial is also available in Python →  [here](https://root.cern/doc/master/df000__simple_8C.html){:target="_blank"}.
 
 A more thorough introduction to RDataFrame can be found → [here]({{ '/manual/data_frame' | relative_url }}).
 
 ### Browsing through the rest of tutorials
 
-The [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"} groups tutorials by topic. For example, data frame tutorials can be found [here](https://root.cern/doc/master/group__tutorial__dataframe.html).
+The [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"} groups tutorials by topic. For example, data frame tutorials can be found →  [here](https://root.cern/doc/master/group__tutorial__dataframe.html){:target="_blank"}.
 
 Tutorials are written in C++, Python or both. For instance, the following data frame tutorial is available in both languages:
-- C++ ROOT macro: [example](https://root.cern/doc/master/df001__introduction_8C.html)
-- Python script: [example](https://root.cern/doc/master/df001__introduction_8py.html)
+- C++ ROOT macro →  [example](https://root.cern/doc/master/df001__introduction_8C.html){:target="_blank"}
+- Python script →  [example](https://root.cern/doc/master/df001__introduction_8py.html){:target="_blank"}
 
-Moreover, some tutorials are also published in the form of [Jupyter](https://jupyter.org/) notebooks. If that is the case, below the tutorial link there are two buttons to open the notebook statically (`View notebook`) or in [SWAN](https://swan.cern.ch) (`Open in SWAN`). Please note that SWAN is an online notebook service that requires a CERN account.
+Moreover, some tutorials are also published in the form of [Jupyter](https://jupyter.org/){:target="_blank"} notebooks. If that is the case, below the tutorial link there are two buttons to open the notebook statically (`View notebook`) or in [SWAN](https://swan.cern.ch){:target="_blank"} (`Open in SWAN`). Please note that SWAN is an online notebook service that requires a CERN account.
 
