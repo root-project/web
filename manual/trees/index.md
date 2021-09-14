@@ -7,13 +7,22 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT provides the {% include ref class="TTree" %} and the {% include ref class="TNtuple" %} class to store large quantities of same-class objects.<br>
-A tree is a typical data container used for example by all LHC (Large Hadron Collider) experiments.<br>
-Trees are optimized to reduce disk space and enhance access speed.
+As introduced in → [Storing columnar data in a ROOT file and reading it back]({{ '/manual/root_files/#storing-columnar-data-in-a-root-file-and-reading-it-back' | relative_url }}),
+ROOT can handle large columnar datasets.
+In the aforementioned section, we made use of {% include ref class="RDataFrame" namespace="ROOT" %} to write and
+read back a simple dataset.
+However, RDataFrame does not access data by itself, but acts as a proxy for other data sources.
+Traditionally, columnar data storage in ROOT has been provided by {% include ref class="TTree" %}, used for example
+by all LHC (Large Hadron Collider) experiments.
+Trees are optimized for reduced disk space and columnar access.
 
-A tree consists of a list of independent columns, called branches. The {% include ref class="TBranch" %} class represents a branch. A branch can contain all kind of data, such as objects or arrays in addition to all the simple types.
+A tree consists of a list of independent columns, called branches. A branch can contain values of any fundamental type, C++ objects, or collections of those.
+The {% include ref class="TBranch" %} class represents a branch.
 
-A {% include ref class="TNtuple" %} is a {% include ref class="TTree" %}, which is limited to contain only floating-point numbers.
+For convenience, ROOT also provides the {% include ref class="TNtuple" %} class which is a {% include ref class="TTree" %}
+that is limited to contain floating-point numbers only.
+
+In addition to the documentation in this manual, we recommend to take a look at the TTree tutorials.
 
 {% include tutorials name="Tree" url="tree" %}
 
