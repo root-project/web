@@ -131,6 +131,69 @@ myFile = ROOT.TFile.Open("file.root")
 hist = myFile.MyHist
 {% endhighlight %}
 
+## Storing columnar data in a ROOT file and reading it back
+
+In addition to individual objects, ROOT files can also store tabular datasets,
+formed by rows and columns. Such datasets are optimized for fast reading of
+selected columns during an analysis (throughput in the order of GB/s) and
+for low memory usage by keeping only a few rows in memory.
+
+> **Note**
+>
+> Tabular datasets in ROOT are actually not just flat tables, but their columns can
+> contain complex nested collections.
+>
+> In High-Energy Physics, more than one exabyte of data is stored in ROOT's tabular
+> format.
+
+The easiest way to process ROOT columnar datasets is {% include ref class="RDataFrame" namespace="ROOT" %}.
+A more thorough introduction to RDataFrame can be found → [here]({{ '/manual/data_frame' | relative_url }}).
+
+### Writing a columnar dataset with ROOT
+
+RDataFrame provides a method called [Snapshot](https://root.cern/doc/master/classROOT_1_1RDF_1_1RInterface.html#ac5903d3acec8c52f13cbd405371f7fb7)
+to write a columnar dataset to a ROOT file.
+
+The example below creates a new dataset with 100 rows, with one column `x` that contains random numbers, and stores that dataset in a file
+called `output.root`.
+
+{% highlight C++ %}
+ROOT::RDataFrame rdf(100);
+rdf_x = rdf.Define("x", [](){ return gRandom->Rndm(); });
+rdf_x.Snapshot("my_dataset", "output.root");
+{% endhighlight %}
+
+{% highlight Python %}
+rdf = ROOT.RDataFrame(100)
+rdf_x = rdf.Define("x", "gRandom->Rndm()")
+rdf_x.Snapshot("my_dataset", "output.root")
+{% endhighlight %}
+
+### Reading a columnar dataset with ROOT
+
+Let's see now how to read and process the dataset we just wrote, creating a 1D histogram
+of column `x`.
+
+{% highlight C++ %}
+ROOT::RDataFrame rdf("my_dataset", "output.root");
+auto h = rdf.Histo1D("x");
+h->Draw();
+{% endhighlight %}
+
+{% highlight Python %}
+rdf = ROOT.RDataFrame("my_dataset", "output.root")
+h = rdf.Histo1D("x")
+h.Draw()
+{% endhighlight %}
+
+Besides ROOT files, RDataFrame can also read from other data sources, for example CSV files:
+
+{% highlight C++ %}
+auto rdf = ROOT::RDF::MakeCsvDataFrame("myfile.csv");
+auto h = rdf.Histo1D("x");
+h->Draw();
+{% endhighlight %}
+
 ## Merging ROOT files with `hadd`
 
 Use the `hadd` utility in `$ROOTSYS/bin/hadd` to merge ROOT files:
@@ -216,6 +279,4 @@ Simple session:
 std::unique_ptr<TFile> myFile( TFile::Open("https://root.cern/files/na49.root") );
 {% endhighlight %}
 
-
-## Storing columnar data in a ROOT file and reading it back
 
