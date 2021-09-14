@@ -160,7 +160,7 @@ called `output.root`.
 
 {% highlight C++ %}
 ROOT::RDataFrame rdf(100);
-rdf_x = rdf.Define("x", [](){ return gRandom->Rndm(); });
+auto rdf_x = rdf.Define("x", [](){ return gRandom->Rndm(); });
 rdf_x.Snapshot("my_dataset", "output.root");
 {% endhighlight %}
 
