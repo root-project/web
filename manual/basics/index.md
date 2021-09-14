@@ -7,7 +7,7 @@ sidebar:
 ---
 
 In the first part of the ROOT Manual, the basic concepts of ROOT and its usage are presented.<br>
-For everyone who wants to start immediately with data analysis, the [ROOT files]({{ '/manual/storing_root_objects' | relative_url }}) chapter is of interest. Here the ROOT files are presented in which the data from LHC (Large Hadron Collider) experiments are stored.
+For everyone who wants to start immediately with data analysis, the [ROOT files]({{ '/manual/root_files' | relative_url }}) chapter is of interest. Here the ROOT files are presented in which the data from LHC (Large Hadron Collider) experiments are stored.
 
 The first part of the ROOT Manual contains:
 
@@ -17,7 +17,7 @@ The first part of the ROOT Manual contains:
 
   - [ROOT macros and shared libraries]({{ '/manual/root_macros_and_shared_libraries' | relative_url }})
 
-  - [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})
+  - [ROOT files]({{ '/manual/root_files' | relative_url }})
 
   - [Creating a user application with ROOT]({{ '/manual/creating_a_user_application' | relative_url }})
 

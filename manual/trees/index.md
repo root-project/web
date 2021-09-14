@@ -182,7 +182,7 @@ A loop on all defined branches (see → [Branches](#branches)) is executed.
 
 ### Writing a tree
 
-The data of a tree are saved in a ROOT file (see → [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})).
+The data of a tree are saved in a ROOT file (see → [ROOT files]({{ '/manual/root_files' | relative_url }})).
 
 - Use the [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f){:target="_blank"} method to write the tree into a ROOT file.
 
@@ -346,7 +346,7 @@ With the Tree Viewer you can examine a tree in a GUI.
 
 > **Note**
 >
-> You can also use the ROOT Object Browser to examine a tree that is saved in a ROOT file. See → [ROOT Object Browser]({{ '/manual/storing_root_objects#root-object-browser' | relative_url }}).
+> You can also use the ROOT Object Browser to examine a tree that is saved in a ROOT file. See → [ROOT Object Browser]({{ '/manual/root_files#root-object-browser' | relative_url }}).
 
 - Use the {% include ref class="TTreeViewer" %} class to open the ROOT file (containing the tree) in the Tree Viewer.
 
