@@ -7,28 +7,41 @@ toc: true
 toc_sticky: true
 ---
 
+## Introduction
+
 As introduced in → [Storing columnar data in a ROOT file and reading it back]({{ '/manual/root_files/#storing-columnar-data-in-a-root-file-and-reading-it-back' | relative_url }}),
 ROOT can handle large columnar datasets.
 In the aforementioned section, we made use of {% include ref class="RDataFrame" namespace="ROOT" %} to write and
 read back a simple dataset.
-However, RDataFrame does not access data by itself, but acts as a proxy for other data sources.
-Traditionally, columnar data storage in ROOT has been provided by {% include ref class="TTree" %}, used for example
+RDataFrame traditionally relies on {% include ref class="TTree" %} for columnar data storage, used for example
 by all LHC (Large Hadron Collider) experiments.
-Trees are optimized for reduced disk space and columnar access.
+Trees are optimized for reduced disk space and selecting, high-throughput columnar access with reduced memory usage.
 
-A tree consists of a list of independent columns, called branches. A branch can contain values of any fundamental type, C++ objects, or collections of those.
-The {% include ref class="TBranch" %} class represents a branch.
-
-For convenience, ROOT also provides the {% include ref class="TNtuple" %} class which is a {% include ref class="TTree" %}
-that is limited to contain floating-point numbers only.
-
-In addition to the documentation in this manual, we recommend to take a look at the TTree tutorials.
+In addition to the documentation in this manual, we recommend to take a look at the TTree tutorials:
 
 {% include tutorials name="Tree" url="tree" %}
 
 > **RNTuple**
 >
-> [RNTuple](https://root.cern/doc/master/md_tree_ntuple_v7_doc_README.html){:target="_blank"} (for N-tuple and nested tuple) is the experimental evolution of {% include ref class="TTree" %} columnar data storage. `RNTuple` introduces new interfaces that are more robust.
+> [RNTuple](https://root.cern/doc/master/md_tree_ntuple_v7_doc_README.html){:target="_blank"} (for N-tuple and nested tuple) is the experimental evolution of {% include ref class="TTree" %} columnar data storage. {% include ref class="RNTuple" namespace="ROOT::Experimental" %} introduces robust interfaces, a high-performance storage layout, and an asynchronous, thread-safe scheduling.
+
+
+### Branches and Leaves
+
+A tree consists of a list of independent columns, called branches. A branch can contain values of any fundamental type, C++ objects known to ROOT's type system, or collections of those.
+Branches are represented by {% include ref class="TBranch" %} and its derived classes.
+
+TODO: [leaves](http://TRIGGER THE CI CHECKER SO WE FIX THIS!)
+
+
+### `RNTuple`, the high-performance spead-sheet
+
+For convenience, ROOT also provides the {% include ref class="TNtuple" %} class which is a {% include ref class="TTree" %}
+that is limited to contain floating-point numbers only.
+
+### Appending `TTree`s as a `TChain`
+
+TODO: [TChain](http://TRIGGER THE CI CHECKER SO WE FIX THIS!)
 
 ## Tree classes
 
