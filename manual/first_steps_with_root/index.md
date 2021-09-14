@@ -201,29 +201,19 @@ ROOT tutorials are available online on the [Reference Guide tutorial page](https
 
 Moreover, when you install ROOT, a `tutorials` directory is created, containing all ROOT tutorials.
 
-### Starting with hsimple.C
+### Starting with a simple tutorial
 
-It is recommended to start with the {% include tutorial name="hsimple" %} macro first. It creates the ROOT file `hsimple.root` with some histograms in it, which is used by many other macros.
-
-For more information on ROOT files, see → [ROOT files]({{ '/manual/root_files' | relative_url }}).
-
-To execute the {% include tutorial name="hsimple" %}  macro at the ROOT prompt, type:
+A good tutorial to start with is {% include tutorial name="df000_simple" %}, which shows a simple usage of {% include ref class="RDataFrame" namespace="ROOT" %}. To execute it, type at the ROOT prompt:
 
 ```
-root [0] .x hsimple.C
+root [0] .x df000_simple.C
 ```
 
-### Executing demos with demos.C
+A window with the plot of a histogram should appear as a result.
 
-There are a lot of demos available in the {% include tutorial name="demos" %} macro.
+The same tutorial is also available in Python [here](https://root.cern/doc/master/df000__simple_8C.html).
 
-To execute the {% include tutorial name="demos" %} macro at the ROOT prompt, type:
-
-```
-root[0] .x demos.C
-```
-
-A window is displayed. Here you can try out the different demos.
+A more thorough introduction to RDataFrame can be found → [here]({{ '/manual/data_frame' | relative_url }}).
 
 ### Viewing the source code of tutorials
 
