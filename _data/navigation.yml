@@ -51,8 +51,6 @@ manual:
         url: manual/object_ownership
       - title: Multi threading
         url: manual/multi_threading
-      - title: Adding a class to ROOT (should be moved)
-        url: manual/adding_a_class_to_root
   - title: ROOT Manual - Functional parts
     url: manual/functional_parts
     children:
@@ -80,6 +78,8 @@ manual:
         url: manual/geometry
       - title: "Python interface: PyROOT"
         url: manual/python
+      - title: Adding a class to ROOT
+        url: manual/adding_a_class_to_root
   - title: Further information
     children:
       - title: "Tutorials"
