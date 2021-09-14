@@ -44,11 +44,9 @@ ROOT offers many possibilities to work with graphics, for example:
 
 ### Drawing objects
 
-The {% include ref class="TObject" %} class has the virtual method
-`Draw()` by which objects can be "drawn".
-The object is "drawn" on a canvas ({% include ref class="TCanvas" %} class) that contain
-one or more pads ({% include ref class="TPad" %} class).
-When an object is drawn, you can interact with it.
+Most of the ROOT classes have a `Draw()` method by which they can be "drawn" on a canvas
+({% include ref class="TCanvas" %} class) that contain one or more pads
+({% include ref class="TPad" %} class). When an object is drawn, you can interact with it.
 
 - Use the `Draw()` method to draw an object.
 
@@ -75,56 +73,6 @@ The function is displayed in a canvas.
    caption="Canvas (point to the bottom left light blue square or right-click
    on the image to interact with the object)."
 %}
-
-### Drawing objects with special characters in its name
-
-In general, avoid using objects that containing special character like `\`, `/`, `#` etc. in the objects names. Also object names starting with a number might be not accessible from the ROOT command line.
-`/` is the separator for the directory level in a ROOT file therefore an object having a `/` in its name cannot be accessed from the command line.
-
-Nevertheless, some objects may be named in this way and saved in a ROOT file. The following macro shows how to access such an object in a ROOT file.
-
-{% highlight C++ %}
-#include "Riostream.h"
-#include "TFile.h"
-#include "TList.h"
-#include "TKey.h"
-
-void draw_object(const char *file_name = "myfile.root", const char *obj_name = "name")
-{
-// Open the ROOT file.
-   TFile *file = TFile::Open(file_name);
-   if (!file || file->IsZombie()) {
-      std::cout << "Cannot open " << file_name << "! Aborting..." << std::endl;
-      return;
-   }
-
-// Get the list of keys.
-   TList *list = (TList *)file->GetListOfKeys();
-   if (!list) {
-      std::cout << "Cannot get the list of TKeys! Aborting..." << std::endl;
-      return;
-   }
-
-// Try to find the proper key by its object name.
-   TKey *key = (TKey *)list->FindObject(obj_name);
-   if (!key) {
-      std::cout << "Cannot find a TKey named" << obj_name << "! Aborting..." << std::endl;
-      return;
-   }
-
-// Read the object itself.
-   TObject *obj = ((TKey *)key)->ReadObj();
-   if (!obj) {
-      std::cout << "Cannot read the object named " << obj_name << "! Aborting..." << std::endl;
-      return;
-   }
-
-// Draw the object.
-   obj->Draw();
-}
-
-{% endhighlight %}
-
 
 ### Using the context menu for manipulating objects
 
@@ -169,290 +117,22 @@ You can draw and edit basic primitives starting from an empty canvas or on top o
    caption="Toolbar providing more options."
 %}
 
-You can create the following graphical objects:
-
-- Arc of circle
-- Arrow
-- Diamond
-- Ellipse
-- Pad
-- PaveLabel
-- PaveText or PavesText
-- PolyLine
-- Text string
-
 
 ## Graphical objects
 
-The following sections introduce some of the graphical objects that ROOT provides. Usually, one defines these
-graphical objects with their constructor and draws them with their `Draw()` method.
-
-The following graphical objects are presented:
-
-- [Lines](#lines)
-- [Arrows](#arrows)
-- [Ellipses](#ellipses)
-- [Polylines](#polylines)
-- [Rectangles](#rectangles)
-- [Markers](#markers)
-- [Curly lines and arcs](#curly_lines_and_arcs)
-- [Text and Latex](#text)
-
-<p><a name="lines"></a></p>
-**Lines**
-
-- Use the {% include ref class="TLine" %} constructor to create a line.
-
-{% highlight C++ %}
-   TLine(Double_t x1,Double_t y1,Double_t x2,Double_t y2)
-{% endhighlight %}
-
-`x1`, `y1`, `x2`, `y2` are the coordinates of the first and the second point.
-
-_**Example**_
-
-{% highlight C++ %}
-   root[] l = new TLine(0.2,0.2,0.8,0.3)
-   root[] l->Draw()
-{% endhighlight %}
-
-<p><a name="arrows"></a></p>
-**Arrows**
-
-- Use the {% include ref class="TArrow" %} constructor to create an arrow.
-
-{% highlight C++ %}
-   TArrow(Double_t x1, Double_t y1, Double_t x2, Double_t y2, Float_t arrowsize, Option_t *option)
-{% endhighlight %}
-
-The arrow is defined between points `x1,y1` and `x2,y2`. `option` defines the direction of the arrow like `>`, `<`, `<>`, `><`, etc.
-
-_**Example**_
-
-{% highlight C++ %}
-   TCanvas *c1 = new TCanvas("c1");
-   c1->Range(0,0,1,1);
-
-   TArrow *ar1 = new TArrow(0.1,0.1,0.1,0.7);
-   ar1->Draw();
-
-   TArrow *ar2 = new TArrow(0.2,0.1,0.2,0.7,0.05,"|>");
-   ar2->SetAngle(40);
-   ar2->SetLineWidth(2);
-   ar2->Draw();
-
-   TArrow *ar3 = new TArrow(0.3,0.1,0.3,0.7,0.05,"<|>");
-   ar3->SetAngle(40);
-   ar3->SetLineWidth(2);
-   ar3->Draw();
-
-   TArrow *ar4 = new TArrow(0.46,0.7,0.82,0.42,0.07,"|>");
-   ar4->SetAngle(60);
-   ar4->SetLineWidth(2);
-   ar4->SetFillColor(2);
-   ar4->Draw();
-
-   TArrow *ar5 = new TArrow(0.4,0.25,0.95,0.25,0.15,"<|>");
-   ar5->SetAngle(60);
-   ar5->SetLineWidth(4);
-   ar5->SetLineColor(4);
-   ar5->SetFillStyle(3008);
-   ar5->SetFillColor(2);
-   ar5->Draw();
-{% endhighlight %}
-
-{% include figure_jsroot
-   file="graphics.root" object="arrows" width="500px" height="350px"
-   caption="Examples of various arrow formats."
-%}
-
-<p><a name="polylines"></a></p>
-**Polylines**
-
-A polyline is a set of joint segments. It is defined by a set of N points in a 2D-space.
-
-- Use the {% include ref class="TPolyLine" %} constructor to create a polyline.
-
-{% highlight C++ %}
-   TPolyLine(Int_t n,Double_t* x,Double_t* y,Option_t* option)
-{% endhighlight %}
-
-`n` is the number of points, and `x` and `y` are arrays of `n` elements with the coordinates of the points.
-
-_**Example**_
-
-{% highlight C++ %}
-   Double_t x[5] = {.3,.7,.6,.24,.2};
-   Double_t y[5] = {.6,.1,.9,.8,.7};
-   TPolyLine *pline = new TPolyLine(5,x,y);
-   pline->SetFillColor(42);
-   pline->SetLineColor(13);
-   pline->SetLineWidth(3);
-   pline->Draw("f");
-   pline->Draw();
-{% endhighlight %}
-
-{% include figure_image
-   img="polyline.png"
-   caption="Example for a polyline."
-%}
-
-<p><a name="ellipses"></a></p>
-**Ellipses**
-
-- Use the {% include ref class="TEllipse" %} constructor to create an ellipse.
-
-You can truncate and rotate an ellipse. An ellipse is defined by its center (`x1`,`y1`) and two radii `r1` and `r2`. A minimum and
-maximum angle may be specified (`phimin`, `phimax`). The ellipse may be rotated with an angle `theta` (all in degrees).
-
-_**Example**_
-
-{% highlight C++ %}
-   TCanvas *c42 = new TCanvas("c42");
-   c42->Range(0,0,1,1);
-
-   TEllipse *el1 = new TEllipse(0.25,0.25,.1,.2);
-   el1->Draw();
-
-   TEllipse *el2 = new TEllipse(0.25,0.6,.2,.1);
-   el2->SetFillColor(13);
-   el2->SetFillStyle(3008);
-   el2->Draw();
-
-   TEllipse *el3 = new TEllipse(0.75,0.6,.2,.1,45,315);
-   el3->SetFillColor(26);
-   el3->SetFillStyle(1001);
-   el3->SetLineColor(4);
-   el3->Draw();
-
-   TEllipse *el4 = new TEllipse(0.75,0.25,.2,.15,45,315,62);
-   el4->SetFillColor(56);
-   el4->SetFillStyle(1001);
-   el4->SetLineColor(4);
-   el4->SetLineWidth(6);
-   el4->Draw();
-{% endhighlight %}
-
-{% include figure_image
-   img="ellipse.png"
-   caption="Examples for a ellipses."
-%}
-
-<p><a name="rectangles"></a></p>
-**Rectangles**
-
-- Use the {% include ref class="TBox" %} constructor to create a rectangle/box.
-
-A {% include ref class="TWbox" %} is a rectangle
-({% include ref class="TBox" %}) with a border size and a border mode.<br>
-The bottom left coordinates `x1`, `y1` and the top right coordinates `x2`, `y2` define a box.
-
-_**Example**_
-
-{% highlight C++ %}
-// A TBox:
-   tb = new TBox(0.2,0.2,0.8,0.3)
-   tb->SetFillColor(5)
-   tb->Draw()
-
-// A TWbox:
-   TWbox *twb = new TWbox(.1,.1,.9,.9,kRed+2,5,1);
-   twb->Draw();
-
-{% endhighlight %}
-
-<p><a name="markers"></a></p>
-**Markers**
-
-- Use the {% include ref class="TMarker" %} constructor to create a marker.
-
-{% highlight C++ %}
-   TMarker(Double_t x,Double_t y,Int_t marker)
-{% endhighlight %}
-
-The parameters `x` and `y` are the marker coordinates and `marker` is the marker type.
-
-
-- Use the {% include ref class="TPolyMarker" %} to create an array on N points in a 2D space.
-
-At each point `x[i]`, `y[i]` a marker is drawn.
-
-- Use the {% include ref class="TAttMarker" %} class to change the attributes color, style and size of a marker.
-
-_**Example**_
-
-- Use the `TAttMarker::SetMarkerSize(size)` method to set the `size` of a marker.
-
-<p><a name="curly_lines_and_arcs"></a></p>
-**Curly lines and arcs**
-
-Curly lines and the curly arcs are special kinds of lines that are used to draw Feynman diagrams.
-
-- Use the {% include ref class="TCurlyLine" %} and the {% include ref class="TCurlyArc" %} constructors to create curly lines and arcs for Feynman diagrams.
-
-{% highlight C++ %}
-
-   TCurlyLine(Double_t x1, Double_t y1, Double_t x2, Double_t y2, Double_t wavelength, Double_t amplitude)
-
-   TCurlyArc(Double_t x1, Double_t y1, Double_t rad, Double_t phimin, Double_t phimax, Double_t wavelength, Double_t amplitude)
-
-{% endhighlight %}
-
-Both classes directly inherit from {% include ref class="TPolyLine" %}.
-
-_**Example**_
-
-Refer to the {% include tutorial name="feynman" %} tutorial for creating a Feynman diagram.
-
-{% include figure_jsroot
-   file="graphics.root" object="feynman"
-   caption="Feynman diagram."
-%}
-
-<p><a name="text"></a></p>
-**Text and Latex**
-
-Text that is displayed in a pad is embedded in a box, called pave ({% include ref class="TPaveLabel" %}, {% include ref class="TPaveText" %} and {% include ref class="TPavesText" %}) . All text displayed in ROOT graphics is an object of the {% include ref class="TText" %} class.
-
-_**Example**_
-
-{% highlight C++ %}
-   root[] pl = new TPaveLabel(-50,0,50,200,"Some text")
-   root[] pl->SetBorderSize(0)
-   root[] pl->Draw()
-{% endhighlight %}
-
-A {% include ref class="TPaveLabel" %} can contain only one line of text. A {% include ref class="TPaveText" %} can contain several lines of text. A {% include ref class="TPavesText" %} is a stack of text panels.
-
-
-**Latex**
-
-Latex ({% include ref class="TLatex" %}) can be used as text, especially to draw mathematical formulas or equations. The syntax of {% include ref class="TLatex" %} is very similar to the Latex in mathematical mode.
-
-_**Example**_
-
-{% highlight C++ %}
-   TCanvas *c1 = new TCanvas("c1","test",600,700);
-
-// Write formulas.
-   TLatex l;
-   l.SetTextAlign(12);
-   l.SetTextSize(0.04);
-   l.DrawLatex(0.1,0.9,"1)   C(x) = d #sqrt{#frac{2}{#lambdaD}}\
-   #int^{x}_{0}cos(#frac{#pi}{2}t^{2})dt");
-   l.DrawLatex(0.1,0.7,"2)   C(x) = d #sqrt{#frac{2}{#lambdaD}}\
-   #int^{x}cos(#frac{#pi}{2}t^{2})dt");
-   l.DrawLatex(0.1,0.5,"3)   R = |A|^{2} = #frac{1}{2}#left(#[]{#frac{1}{2}+\
-   C(V)}^{2}+#[]{#frac{1}{2}+S(V)}^{2}#right)");
-   l.DrawLatex(0.1,0.3, "4)   F(t) = #sum_{i=-#infty}^{#infty}A(i)cos#[]{#frac{i}{t+i}}");
-   l.DrawLatex(0.1,0.1,"5)   {}_{3}^{7}Li");
-{% endhighlight %}
-
-{% include figure_image
-   img="latex.png"
-   caption="Latex in a pad."
-%}
-
+This section lists some of the graphical objects that ROOT provides. Usually,
+one defines these graphical objects with their constructor and draws them with their `Draw()`
+method:
+
+- _Lines_: Use {% include ref class="TLine" %} to create a line.
+- _Arrows_: Use {% include ref class="TArrow" %} to create an arrow.
+- _Polylines_: Use {% include ref class="TPolyLine" %} to create a polyline.
+- _Ellipses_: Use {% include ref class="TEllipse" %} to create an ellipse.
+- _Rectangles_: Use {% include ref class="TBox" %} or {% include ref class="TWBox" %} to create a rectangle.
+- _Markers_: Use {% include ref class="TMarker" %} to create a marker.
+- _Curly lines and arcs_: Use {% include ref class="TCurlyLine" %} and {% include ref class="TCurlyArc" %} to create curly lines and arcs for Feynman diagrams.
+- _Text and Latex_: Use {% include ref class="TText" %} to draw simple text. {% include ref class="TLatex" %} for complex text like mathematical formulas. Text can be embedded in a box using {% include ref class="TPaveLabel" %}, {% include ref class="TPaveText" %} and {% include ref class="TPavesText" %}.
+- and [_more ..._](https://root.cern/doc/master/group__BasicGraphics.html)
 
 ## Graphical objects attributes and styles
 
@@ -1102,9 +782,57 @@ p->PixeltoY(py - p->GetWh());
 {% endhighlight %}
 
 
-
 ### Copying a canvas
 
 - Use the [TCanvas::DrawClonePad](https://root.cern/doc/master/classTCanvas.html#afcb8727555c9c2be024eb307fd3d295a){:target="_blank"} method to make a copy of the canvas.
 
 You can also use the [TObject:DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9){:target="_blank"} method, to draw a clone of this object in the current selected pad.
+
+## Drawing objects with special characters in its name
+
+In general, avoid using objects that containing special character like `\`, `/`, `#` etc. in the objects names. Also object names starting with a number might be not accessible from the ROOT command line.
+`/` is the separator for the directory level in a ROOT file therefore an object having a `/` in its name cannot be accessed from the command line.
+
+Nevertheless, some objects may be named in this way and saved in a ROOT file. The following macro shows how to access such an object in a ROOT file.
+
+{% highlight C++ %}
+#include "Riostream.h"
+#include "TFile.h"
+#include "TList.h"
+#include "TKey.h"
+
+void draw_object(const char *file_name = "myfile.root", const char *obj_name = "name")
+{
+// Open the ROOT file.
+   TFile *file = TFile::Open(file_name);
+   if (!file || file->IsZombie()) {
+      std::cout << "Cannot open " << file_name << "! Aborting..." << std::endl;
+      return;
+   }
+
+// Get the list of keys.
+   TList *list = (TList *)file->GetListOfKeys();
+   if (!list) {
+      std::cout << "Cannot get the list of TKeys! Aborting..." << std::endl;
+      return;
+   }
+
+// Try to find the proper key by its object name.
+   TKey *key = (TKey *)list->FindObject(obj_name);
+   if (!key) {
+      std::cout << "Cannot find a TKey named" << obj_name << "! Aborting..." << std::endl;
+      return;
+   }
+
+// Read the object itself.
+   TObject *obj = ((TKey *)key)->ReadObj();
+   if (!obj) {
+      std::cout << "Cannot read the object named " << obj_name << "! Aborting..." << std::endl;
+      return;
+   }
+
+// Draw the object.
+   obj->Draw();
+}
+
+{% endhighlight %}
