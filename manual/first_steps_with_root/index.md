@@ -18,9 +18,9 @@ toc_sticky: true
 
 ROOT can be started at the system prompt. To that end, you can type:
 
-```
+{% highlight bash %}
 $ root
-```
+{% endhighlight %}
 
 and the ROOT prompt is displayed:
 
@@ -184,16 +184,16 @@ ROOT provides Python bindings, called [PyROOT]({{ '/manual/python' | relative_ur
 
 Therefore, ROOT can be used interactively from the Python prompt. The first step consists in importing the ROOT module:
 
-```python
+{% highlight Python %}
 >>> import ROOT
-```
+{% endhighlight %}
 
 After that, we can use ROOT as we did from C++. The global C++ namespace is accessible via the ROOT module, e.g.:
 
-```python
+{% highlight Python %}
 >>> ROOT.Math.Pi()
 3.141592653589793
-```
+{% endhighlight %}
 
 ## ROOT tutorials
 
