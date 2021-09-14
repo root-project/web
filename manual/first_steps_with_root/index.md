@@ -98,19 +98,19 @@ Simple operations:
 
 {% highlight C++ %}
    root [1] sqrt(42)
-   6.4807407
+   (double) 6.4807407
 {% endhighlight %}
 
 Relational operators:
 {% highlight C++ %}
    root [2] 42 > 98
-   false
+   (bool) false
 {% endhighlight %}
 
 Calling a function from a ROOT class like `TMath::Pi`:
 {% highlight C++ %}
-   root [3] Math::Pi()
-   3.1415927
+   root [3] TMath::Pi()
+   (double) 3.1415927
 {% endhighlight %}
 
 #### Multi-line commands
@@ -191,7 +191,7 @@ Therefore, ROOT can be used interactively from the Python prompt. The first step
 After that, we can use ROOT as we did from C++. The global C++ namespace is accessible via the ROOT module, e.g.:
 
 {% highlight Python %}
->>> ROOT.Math.Pi()
+>>> ROOT.TMath.Pi()
 3.141592653589793
 {% endhighlight %}
 
