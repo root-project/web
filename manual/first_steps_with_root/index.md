@@ -197,15 +197,13 @@ After that, we can use ROOT as we did from C++. The global C++ namespace is acce
 
 ## ROOT tutorials
 
-ROOT tutorials are available in form of ROOT macros (C++), Python scripts and [Jupyter](https://jupyter.org/) notebooks.
+ROOT tutorials are available online on the [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"}.
 
-When you install ROOT, a `tutorials` directory is created, containing all ROOT tutorials listed on [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"}.
+Moreover, when you install ROOT, a `tutorials` directory is created, containing all ROOT tutorials.
 
 > **Note**
 >
 > You need write permissions to the `tutorials` directory to execute the tutorials.
-
-
 
 ### Starting with hsimple.C
 
@@ -233,9 +231,9 @@ A window is displayed. Here you can try out the different demos.
 
 ### Viewing the source code of tutorials
 
-The source code of ROOT tutorials is available as C++ macros or Python scripts, for example:
-- ROOT macro: [example](https://root.cern/doc/master/df001__introduction_8C.html)
+The source code of ROOT tutorials can be viewed online at the [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"}. For example, this is a data frame tutorial available in both C++ and Python:
+- C++ ROOT macro: [example](https://root.cern/doc/master/df001__introduction_8C.html)
 - Python script: [example](https://root.cern/doc/master/df001__introduction_8py.html)
 
-Moreover, some tutorials are also published in the form of Jupyter notebooks. If that is the case, below the tutorial link there are two buttons to open the notebook statically (`View notebook`) or in [SWAN](https://swan.cern.ch) (`Open in SWAN`). Please note that SWAN is an online notebook service that requires a CERN account.
+Moreover, some tutorials are also published in the form of [Jupyter](https://jupyter.org/) notebooks. If that is the case, below the tutorial link there are two buttons to open the notebook statically (`View notebook`) or in [SWAN](https://swan.cern.ch) (`Open in SWAN`). Please note that SWAN is an online notebook service that requires a CERN account.
 
