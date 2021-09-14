@@ -165,3 +165,32 @@ hierarchies.
 
 For example, the `kMustCleanup` and `kCanDelete` bits are used in {% include ref class="TObject" %}. They can be set by any object and should not be reused. Make sure not to overlap them in any
 given hierarchy. The bit 13 (kInvalidObject) is set when an object could not be read from a ROOT file. It will check this bit and will skip to the next object on the file.
+
+_______
+_
+## CMake and dictionary
+
+## Useful commands
+ROOT provides a number of `CMake` macros and functions that are used internally but can also be used by projects layered on top of ROOT.
+
+### ROOT_GENERATE_DICTIONARY
+`ROOT_GENERATE_DICTIONARY` generates a dictionary for a set of header files (convenient wrapper on top of the `rootcling` command).
+
+{% highlight cmake %}
+   ROOT_GENERATE_DICTIONARY( dictionary headerfiles ... [STAGE1]
+      LINKDEF linkdeffiles ...
+      [MODULE module] [DEPENDENCIES dep1 dep2 ...]
+      [OPTIONS opt1 opt2 ...] )
+{% endhighlight %}
+
+The `${dictionary}.cxx` and `${dictionary}.pcm` files are created using the header and the `linkdef` files, calling the `rootcling` command. Optionally, you can provide `OPTIONS` and `MODULE` to customize the way the `rootcling` command is called and the name for the `.pcm` files.
+
+As an alternative, `REFLEX_GENERATE_DICTIONARY` offers the same underlying functionality with a slightly different interface:
+
+{% highlight cmake %}
+   REFLEX_GENERATE_DICTIONARY( dictionary headerfiles ...
+      SELECTION selection ...
+      [DEPENDENCIES dep1 dep2 ...]
+      [OPTIONS opt1 opt2 ...] )
+{% endhighlight %}
+
