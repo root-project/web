@@ -12,7 +12,6 @@ create a standalone user application based on ROOT libraries.
 
 Three different kind of standalone user applications are presented:
 
-- [The simple ROOT macro](#the-simple-root-macro)
 - [Batch example generating a PDF file](#batch-example-generating-a-pdf-file)
 - [Interactive example displaying a canvas](#interactive-example-displaying-a-canvas)
 - [Example using ROOT prompt](#example-using-root-prompt)
