@@ -201,10 +201,6 @@ ROOT tutorials are available online on the [Reference Guide tutorial page](https
 
 Moreover, when you install ROOT, a `tutorials` directory is created, containing all ROOT tutorials.
 
-> **Note**
->
-> You need write permissions to the `tutorials` directory to execute the tutorials.
-
 ### Starting with hsimple.C
 
 It is recommended to start with the {% include tutorial name="hsimple" %} macro first. It creates the ROOT file `hsimple.root` with some histograms in it, which is used by many other macros.
