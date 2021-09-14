@@ -92,25 +92,25 @@ _**Examples**_
 Simple operations:
 
 {% highlight C++ %}
-   root [0] 21+21
-   (int) 42
+root [0] 21+21
+(int) 42
 {% endhighlight %}
 
 {% highlight C++ %}
-   root [1] sqrt(42)
-   (double) 6.4807407
+root [1] sqrt(42)
+(double) 6.4807407
 {% endhighlight %}
 
 Relational operators:
 {% highlight C++ %}
-   root [2] 42 > 98
-   (bool) false
+root [2] 42 > 98
+(bool) false
 {% endhighlight %}
 
 Calling a function from a ROOT class like `TMath::Pi`:
 {% highlight C++ %}
-   root [3] TMath::Pi()
-   (double) 3.1415927
+root [3] TMath::Pi()
+(double) 3.1415927
 {% endhighlight %}
 
 #### Multi-line commands
@@ -127,17 +127,17 @@ You can use ROOT to execute multi-line commands at the ROOT prompt.
 _**Example**_
 
 {% highlight C++ %}
-   root [0] {
-   root [1]   int j = 0;
-   root [2]   for (int i = 0; i < 3; i++)
-   root [3]   {
-   root [4]     j = j + i;
-   root [5]     std::cout << "i = " << i << ", j = " << j << std::endl;
-   root [6]   }
-   root [7] }
-   i = 0, j = 0
-   i = 1, j = 1
-   i = 2, j = 3
+root [0] {
+root [1]   int j = 0;
+root [2]   for (int i = 0; i < 3; i++)
+root [3]   {
+root [4]     j = j + i;
+root [5]     std::cout << "i = " << i << ", j = " << j << std::endl;
+root [6]   }
+root [7] }
+i = 0, j = 0
+i = 1, j = 1
+i = 2, j = 3
 {% endhighlight %}
 
 You can also write the commands to a file, called a ROOT macro, and then execute and compile it. For more information on ROOT macros, → see [ROOT macros and shared libraries]({{ '/manual/root_macros_and_shared_libraries' | relative_url }}).
@@ -147,7 +147,7 @@ You can also write the commands to a file, called a ROOT macro, and then execute
 ROOT provides a set of commands to perform special actions from the ROOT prompt. They are all prefixed by a dot:
 
 ```
-   root [0] .<command>
+root [0] .<command>
 ```
 
 `.?`: Provides a list of all commands.
