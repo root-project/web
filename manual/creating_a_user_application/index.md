@@ -12,6 +12,7 @@ create a standalone user application based on ROOT libraries.
 
 Three different kind of standalone user applications are presented:
 
+- [The simple ROOT macro](#the-simple-root-macro)
 - [Batch example generating a PDF file](#batch-example-generating-a-pdf-file)
 - [Interactive example displaying a canvas](#interactive-example-displaying-a-canvas)
 - [Example using ROOT prompt](#example-using-root-prompt)
@@ -72,10 +73,10 @@ $ ./demo1
 
 The equivalent command on Windows is:
 
-{% highlight C++ %}
+```
 > cl -nologo -MD -GR -EHsc demo1.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 > demo1
-{% endhighlight %}
+```
 
 > **Note**
 >
@@ -133,10 +134,10 @@ $ ./demo2
 
 The equivalent command on Windows is:
 
-{% highlight bash %}
+```
 > cl -nologo -MD -GR -EHsc demo2.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 > demo2
-{% endhighlight %}
+```
 
 > **Note**
 >
@@ -180,10 +181,10 @@ $ ./demo3
 
 The equivalent command on Windows is:
 
-{% highlight bash %}
+```
 > cl -nologo -MD -GR -EHsc demo3.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 > demo3
-{% endhighlight %}
+```
 
 > **Note**
 >
