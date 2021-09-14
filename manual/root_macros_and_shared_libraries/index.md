@@ -73,35 +73,33 @@ $ root 'MacroName.C("some String", 12)'
 
 In addition, you can execute a ROOT macro from a ROOT macro.
 
- - [execute a ROOT macro from the invocation of ROOT](#executing-a-root-macro-from-the-invocation-of-root)
-
 <p><a name="executing-a-ROOT-macro-from-a ROOT-macro"></a></p>
 **Executing a ROOT macro from a ROOT macro**
 
-You can execute a ROOT macro conditionally inside another ROOT macro.
+You can execute a ROOT macro conditionally inside another ROOT macro by calling directly the interpreter using
+[TROOT::ProcessLine()](https://root.cern/doc/master/classTROOT.html#a32fc66033a13d1415e0ad523994dd0e5){:target="_blank"}.
 
-- Call the interpreter [TROOT::ProcessLine()](https://root.cern/doc/master/classTROOT.html#a32fc66033a13d1415e0ad523994dd0e5){:target="_blank"}.
-
-`ProcessLine()` takes a parameter, which is a pointer to an `int` or to a
+`ProcessLine()` takes in addition to the code to be executed an optional parameter, which is a pointer to an `int` or to a
 `TInterpreter::EErrorCode` to let you access the interpreter error code after an attempt to interpret.
-This contains the error as defined in enum `TInterpreter::EErrorCode` with `TInterpreter::kSuccess`
-as being the value for a successful execution.
+It returns the return value of the called macro casted to a `Longptr_t`.
 
 _**Example**_
 
-The example {% include tutorial name="cernstaff" %} calls a ROOT macro to build a ROOT file, if it does not exist.
+The example {% include tutorial name="cernstaff" %} calls another macro `cernbuild.C` to build a ROOT file, if it does not exist.
+The function in the `cernbuild.C` macro returns an error code that we get as the return value from `ProcessLine()`.
 
 {% highlight C++ %}
    void cernstaff() {
       if (gSystem->AccessPathName("cernstaff.root")) {
-      gROOT->ProcessLine(".x cernbuild.C");
+         int errorCode = gROOT->ProcessLine(".x cernbuild.C");
+      }
    }
 {% endhighlight %}
 
 
 ## Compiling ROOT macros with ACLiC
 
-ROOT macros are by default just-in-time compiled with Cling based on the Clang compiler. Alternatively, you can use ACLiC to compile your macro from within a ROOT session to a shard library using the system compiler such as gcc.
+ROOT macros are by default just-in-time compiled with Cling based on the Clang compiler. Alternatively, you can use ACLiC to compile your macro from within a ROOT session to a shared library using the system compiler such as gcc.
 
 ACLiC is implemented in [TSystem::CompileMacro()](https://root.cern/doc/master/classTSystem.html#ac557d8f24d067a9b89d2b8fb261d7e18). When using ACLiC, ROOT checks what library really needs to be build and calls your system's C++ compiler, linker and dictionary generator.
 
@@ -113,11 +111,6 @@ ACLiC executes the following steps:
 2. Calling the system's C++ compiler to build the shared library.
 
 3. Load the shared library and optionally execute the macro.
-
-ACLiC adds the classes and functions declared in included files with the same name as the
-ROOT macro files with one of following extensions: `.h`, `.hh`, `.hpp`, `.hxx`,` .hPP`, `.hXX`.
-This means that, by default, you cannot combine ROOT macros from different files into one
-library by using `#include` statements; you will need to compile each ROOT macro separately.
 
 ### Compiling a ROOT macro with ACLiC
 
@@ -133,10 +126,6 @@ You can compile a ROOT macro with:
   - debug symbols
 
 Compilation ensures that the shared library is rebuilt.
-
-> **Note**
->
-> Do not call ACLiC with a ROOT macro that has a function called `main()`.
 
 To compile a ROOT macro and build a shared library, type:
 
@@ -173,6 +162,10 @@ To force compilation with debug symbols, type:
 root [0] .L MyScript.C+g
 ```
 
+> **Note**
+>
+> When a ROOT macro has a function called `main()` your can compile the macro with ACLiC or the Cling ROOT interpreter, but you cannot execute the `main()` function from within the ROOT session.
+
 ### Setting the include path
 
 The `$ROOTSYS/include` directory is automatically appended to the include path.
@@ -191,27 +184,27 @@ root [0] .include $HOME/mypackage/include
 
 Add the following line in the ROOT macro to append a new path to the existing include paths:
 
-```
+{% highlight C++ %}
 gSystem->AddIncludePath(" -I$HOME/mypackage/include")
-```
+{% endhighlight %}
 
 To overwrite an existing include path, type:
 
-```
+{% highlight C++ %}
 gSystem->SetIncludePath(" -I$HOME/mypackage/include")
-```
+{% endhighlight %}
 
-To add a static library that should be used during linking, type:
+To add a shared library that should be used during linking, type:
 
-```
+{% highlight C++ %}
 gSystem->AddLinkedLibs("-L/my/path -l*anylib*");
-```
+{% endhighlight %}
 
-For adding a shared library, you can load it before you compile the ROOT macros, by
+You can also add a shared library by loading it before compiling the ROOT macros, by doing:
 
-```
+{% highlight C++ %}
 gSystem->Load("mydir/mylib");
-```
+{% endhighlight %}
 
 
 ## Developing portable ROOT macros
