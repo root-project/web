@@ -257,6 +257,36 @@ _**Example**_
 
 The `Get()` method finds the `TKey` object with name **h9**.
 
+
+In detail, the following happens when executing `GetObject()`:
+
+- The key with name `hpx;1` is found in the list of keys.
+
+- A {% include ref class="TBuffer" %}object is created.
+
+- The buffer is read from the ROOT file.
+
+- An empty object is created by calling the default constructor for the class referenced in {% include ref class="TKey" %}.
+
+- The [Streamer()](https://root.cern/doc/master/classTClass.html#ac1c95f1787550ebc5367590aedacbd67){:target="_blank"} method is called for this new object.
+
+In case there is an object with multiple cycles, you can pick a particular cycle with a name like `hpx;` (for example `hpx;2`).
+
+ You can also directly access the keys, for example when the names of the objects contained in the ROOT file are not known or when a long series of objects needs to be read sequentially.
+
+ _**Example**_
+
+This example illustrates how to loop over all keys of a ROOT file.
+
+{% highlight C++ %}
+for (TObject* keyAsObj : *inputFile.GetListOfKeys()){
+    auto key = dynamic_cast<TKey*>(keyAsObj);
+    std::cout << "Key name: " << key->GetName() << " Type: " << key->GetClassName() << std::endl;
+}
+{% endhighlight %}
+
+
+
 **Iterating over objects**
 
 Keys are available in a {% include ref class="TList" %} of {% include ref class="TKey" %}s. Therefore, you can iterate over the list of keys.
