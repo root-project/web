@@ -108,7 +108,7 @@ ACLiC is implemented in [TSystem::CompileMacro()](https://root.cern/doc/master/c
 ACLiC executes the following steps:
 
 1. Calling `rootcling` to create automatically a dictionary.
-<br/>For creating a dictionary manually, → see [Using rootcling to generate dictionaries manually](#using-rootcling-to-generate-dictionaries-manually).
+<br/>For creating a dictionary manually, → see [Using rootcling to generate dictionaries manually]({{ '/manual/root_io/#using-rootcling-to-generate-dictionaries-manually' | relative_url }}).
 
 2. Calling the system's C++ compiler to build the shared library.
 

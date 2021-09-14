@@ -277,14 +277,14 @@ x = ROOT.f(3)  # x = 9
 For larger analysis frameworks, one may not want to compile the headers each time the Python interpreter is started. One may also
 want to read or write custom C++/C objects in ROOT files, and use them with [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"} or similar tools.
 
-A large analysis framework might further have multiple libraries. In these cases, you generate [ROOT dictionaries]({{ 'manual/root_macros_and_shared_libraries' | relative_url }}), and add these to the libraries, which provides ROOT
+A large analysis framework might further have multiple libraries. In these cases, you generate [ROOT dictionaries]({{ 'manual/root_io/#generating-dictionaries' | relative_url }}), and add these to the libraries, which provides ROOT
 with the necessary information on how to generate Python bindings on the fly.
 This is what the large LHC experiments do to steer their analysis frameworks from Python.
 
 1. Create one or multiple C++ libraries. <br/>For example create a library as a CMake project that uses ROOT, see → [CMake details]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
 1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read or written from or into files.
-1. Generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files, see → [Generating dictionaries]({{ '/manual/root_macros_and_shared_libraries/#generating-dictionaries' | relative_url }})
-   <br>Use a [`LinkDef.h` file]({{ '/manual/root_macros_and_shared_libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
+1. Generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files, see → [Generating dictionaries]({{ '/manual/root_io/#generating-dictionaries' | relative_url }})
+   <br>Use a [`LinkDef.h` file]({{ '/manual/root_io/#selecting-dictionary-entries-linkdefh' | relative_url }})
    to select which classes or functions ROOT should be included in the dictionary.
 
    The corresponding cmake instructions would look similar to this:

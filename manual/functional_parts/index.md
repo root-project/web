@@ -33,5 +33,7 @@ The second part of the ROOT Manual contains:
   - [Physics vectors]({{ '/manual/physics_vectors' | relative_url }})
 
   - [Geometry]({{ '/manual/geometry' | relative_url }})
+  - 
+  - [ROOT I/O]({{ '/manual/root_io' | relative_url }})
 
   - [Python interface: PyROOT]({{ '/manual/python' | relative_url }})
