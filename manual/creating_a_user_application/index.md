@@ -72,10 +72,10 @@ $ ./demo1
 
 The equivalent command on Windows is:
 
-{% highlight C++ %}
+```
 > cl -nologo -MD -GR -EHsc demo1.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 > demo1
-{% endhighlight %}
+```
 
 > **Note**
 >
@@ -133,10 +133,10 @@ $ ./demo2
 
 The equivalent command on Windows is:
 
-{% highlight bash %}
+```
 > cl -nologo -MD -GR -EHsc demo2.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 > demo2
-{% endhighlight %}
+```
 
 > **Note**
 >
@@ -180,10 +180,10 @@ $ ./demo3
 
 The equivalent command on Windows is:
 
-{% highlight bash %}
+```
 > cl -nologo -MD -GR -EHsc demo3.cxx -I %ROOTSYS%\include /link -LIBPATH:%ROOTSYS%\lib libCore.lib libGpad.lib libHist.lib
 > demo3
-{% endhighlight %}
+```
 
 > **Note**
 >
