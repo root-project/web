@@ -40,7 +40,7 @@ manual:
       - title: ROOT macros and shared libraries
         url: manual/root_macros_and_shared_libraries
       - title: ROOT files
-        url: manual/storing_root_objects
+        url: manual/root_files
       - title: Creating a user application with ROOT
         url: manual/creating_a_user_application
       - title: Integrating ROOT into CMake projects

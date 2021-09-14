@@ -129,7 +129,7 @@ ROOT special commands.
 
 > **ROOT command line tools**
 >
-> ROOT also provides many command line tools at the system prompt for simple file operations or automating common operations performed on ROOT classes. → See [ROOT command line tools]({{ '/manual/storing_root_objects/#root-command-line-tools' | relative_url }})
+> ROOT also provides many command line tools at the system prompt for simple file operations or automating common operations performed on ROOT classes. → See [ROOT command line tools]({{ '/manual/root_files/#root-command-line-tools' | relative_url }})
 
 You can start ROOT with the following command line options:
 
@@ -353,7 +353,7 @@ When you install ROOT, a `tutorials` directory is created, containing all ROOT t
 It is recommended to start with the {% include tutorial name="hsimple" %} macro first. It creates the ROOT file `hsimple.root`, which is used by many other macros.
 `hsimple.root` contains the four histograms `hpx`, `hpx;1`, `hpxpy;1` and `hprof;1`.
 
-For more information on ROOT files, see → [ROOT files]({{ '/manual/storing_root_objects' | relative_url }}).
+For more information on ROOT files, see → [ROOT files]({{ '/manual/root_files' | relative_url }}).
 
 To execute the {% include tutorial name="hsimple" %}  macro at the ROOT prompt, type:
 

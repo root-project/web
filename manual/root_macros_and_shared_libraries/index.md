@@ -237,7 +237,7 @@ For adding a shared library, you can load it before you compile the ROOT macros,
 
 A dictionary ("reflection database") contains information about the types and functions that are available in a library.
 
-With a dictionary you can call functions inside libraries. Dictionaries are also needed to write a class into a ROOT file (→ see [ROOT files]({{ '/manual/storing_root_objects' | relative_url }})).
+With a dictionary you can call functions inside libraries. Dictionaries are also needed to write a class into a ROOT file (→ see [ROOT files]({{ '/manual/root_files' | relative_url }})).
 
 A dictionary consists of a source file, which contains the type information needed by Cling and ROOT's I/O subsystem. This source file needs to be generated from the library's headers and then compiled, linked and loaded. Only then does Cling and ROOT know what is inside a library.
 
