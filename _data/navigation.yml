@@ -54,32 +54,36 @@ manual:
   - title: ROOT Manual - Functional parts
     url: manual/functional_parts
     children:
-      - title: Graphics
-        url: manual/graphics
       - title: Histograms
         url: manual/histograms
       - title: Graphs
         url: manual/graphs
-      - title: Fitting histograms
+      - title: Graphics
+        url: manual/graphics
+      - title: Fitting
         url: manual/fitting
-      - title: RooFit
-        url: manual/roofit
-      - title: Trees
-        url: manual/trees
       - title: Data frames
         url: manual/data_frame
+      - title: Trees
+        url: manual/trees
+      - title: RooFit
+        url: manual/roofit
       - title: TMVA
         url: manual/tmva
+      - title: "Python interface: PyROOT"
+        url: manual/python
       - title: Mathematical libraries
         url: manual/math
-      - title: Physics vectors
+      - title: Physics vectors (move in Math)
         url: manual/physics_vectors
       - title: Geometry
         url: manual/geometry
-      - title: "Python interface: PyROOT"
-        url: manual/python
-      - title: Adding a class to ROOT
+      - title: ROOT I/O
+      - title: Adding a class to ROOT (move in I/O)
         url: manual/adding_a_class_to_root
+      - title: Signal/Slot communication
+      - title: JSROOT
+      - title: How to embed ROOT in a GUI
   - title: Further information
     children:
       - title: "Tutorials"
