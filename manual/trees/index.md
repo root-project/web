@@ -34,7 +34,7 @@ In addition to the documentation in this manual, we recommend to take a look at 
 A `TTree` behaves like an array of a data structure that resides on storage - except for one entry (or row, in database language).
 That entry is accessible in memory: you can load any tree entry, ideally sequentially.
 You can provide your own storage for the values of the columns of the current entry, in the form of variables.
-In this case you have to tell the `TTree` about the address of these variables; either by calling [`TTree::SetBranchAddress()`](https://root.cern/doc/master/classTTree.html#a39b867210e4a77ef44917fd5e7898a1d), or by passing the variable when creating the branch for writing.
+In this case you have to tell the `TTree` about the addresses of these variables; either by calling [`TTree::SetBranchAddress()`](https://root.cern/doc/master/classTTree.html#a39b867210e4a77ef44917fd5e7898a1d), or by passing the variable when creating the branch for writing.
 When "filling" (writing) the `TTree`, it will read the values out of these variables;
 when reading back a `TTree` entry, it will write the values it read from storage into your variables.
 
