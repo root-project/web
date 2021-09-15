@@ -14,11 +14,17 @@ ROOT supports its own version of the signal/slot communication mechanism origina
 ## Basic Concepts
 
 Signals and slots are used for communication between objects.
+
 Signals are emitted by objects when they change their state in a way that may be interesting to the outside world. This is all the object does to communicate. It does not know if anything is receiving the signal at the other end.
+
 Slots can be used for receiving signals. A slot does not know if it has any signal(s) connected to it.
+
 This is true information encapsulation, and ensures that the object can be used as a true software component.
+
 Signals and slots can take any number of arguments of any type.
+
 It is possible to connect as many signals as you want to a single slot, and a signal can be connected to as many slots as you desire.
+
 It is possible to make a single connection from all objects of the same class.
 
 ## A Small Example
