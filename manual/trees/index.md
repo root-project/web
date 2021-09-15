@@ -65,7 +65,7 @@ if (chain.Add("data_*.root") != 12)
 
 {% highlight Python %}
 chain = ROOT.TChain("CommonTreeName")
-if chain.Add("data_*.root" != 12:
+if chain.Add("data_*.root") != 12:
    print("Expected to find 12 files!")
 # Use `chain` as if it was a `TTree`
 {% endhighlight %}
@@ -179,7 +179,7 @@ tree->Branch("branch0", &var, splitlevel);
 
 Both top-level branches (those created by a call to `TTree::Branch()`) and branches created by splitting data members can hold collections such as `std::vector`, `std::array`, `std::list`, or `std::map`.
 Splitting can traverse through collections:
-if a member is a `vector<X>`, the tree can split `X` into sub-branches, too.
+if a member is a `std::vector<X>`, the tree can split `X` into sub-branches, too.
 
 Such collections can also contain pointers.
 For polymorphic pointees, ROOT will not just stream the base, but determine the actual object type.
