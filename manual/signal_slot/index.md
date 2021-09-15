@@ -93,30 +93,30 @@ This example illustrates that objects can work together without knowing about ea
 
 * The ROOT implementation allows to make connections to any object known to the ROOT C++ interpreter. The following line makes a connection between signal `Pressed()` from `button` and method/slot `Draw()` from object `hist` of class (compiled or interpreted) `TH1`
 
-    {% highlight C++ %}
+    ```
     Connect(button, "Pressed()", "TH1", hist, "Draw()");
-    {% endhighlight %}
+    ```
 
     To connect to a stand-alone function (compiled or interpreted) the arguments corresponding to the name of the class and receiving object should be zero. For example
 
-    {% highlight C++ %}
+    ```
     Connect(button, "Pressed()", 0, 0, "printInfo()");
-    {% endhighlight %}
+    ```
 
 * It is also possible to make a single connection from all objects of the same class. For example:
 
-    {% highlight C++ %}
+    ```
     TQObject::Connect("Channel", "AlarmOn()", "HandlerClass", handler, "HandleAlarm()");
-    {% endhighlight %}
+    ```
 
     where the class name is specified by the first argument. Signal `"AlarmOn()"` for any object of class `"Channel"` is now connected to the `"HandleAlarm()"` method of the `"handler"` object of the `"HandlerClass"`.
 
 * It is possible to set default parameters values to a slot method while connecting to it. Such slot will be activated without passing parameters to it. To set default arguments to a slot an equal symbol '=' should be placed at the beginning of the prototype string. For example
 
-     {% highlight C++ %}
+     ```
      Connect(button, "Pressed()", "TH1", hist, "SetMaximum(=123)");
      Connect(button, "Pressed()", "TH1", hist, "Draw(=\"LEGO\")");
-     {% endhighlight %}
+     ```
 
 ## Signals
 
