@@ -240,177 +240,67 @@ _**Example**_
 
 {% highlight C++ %}
    TAxis *axis = histo->GetXaxis();
-
-   axis->SetAxisColor(Color_t color = 1);
-   axis->SetLabelColor(Color_t color = 1);
-   axis->SetLabelFont(Style_t font = 62);
-   axis->SetLabelOffset(Float_t offset = 0.005);
-   axis->SetLabelSize(Float_t size = 0.04);
-   axis->SetNdivisions(Int_t n = 510, Bool_t optim = kTRUE);
-   axis->SetNoExponent(Bool_t noExponent = kTRUE);
-   axis->SetTickLength(Float_t length = 0.03);
-   axis->SetTitleOffset(Float_t offset = 1);
-   axis->SetTitleSize(Float_t size = 0.02)
+   axis->SetLabelColor(kRed); // change the labels'color to red
 {% endhighlight %}
 
 ### Setting the number of divisions
 
-- Use the `TAxis::SetNdivisions(ndiv,optim)` method to set the number of divisions for an axis.
-
-`ndiv` and `optim` are defined as follows:
-
-- `ndiv = N1 + 100*N2 + 10000*N3`, with: `N1` = number of first division, `N2` = number of secondary divisions, `N3` = number of tertiary divisions.<br>
-- `optim` = `kTRUE (default)`: The divisions’ number will be optimized around the specified value.<br>
-- `optim` = `kFALSE`, or n < 0: The axis will be forced to use exactly n divisions.
+- Use the [`SetNdivisions`](https://root.cern/doc/master/classTAttAxis.html#ae3067b6d4218970d09418291cbd84084)
+method to set the number of divisions for an axis.
 
 _**Example**_
 
-`ndiv = 0`: no tick marks.<br>
-`ndiv = 2`: 2 divisions, one tick mark in the middle of the axis.<br>
-`ndiv = 510`: 10 primary divisions, 5 secondary divisions.<br>
-`ndiv = -10`: exactly 10 primary divisions.
+{% highlight C++ %}
+   TAxis *axis = histo->GetXaxis();
+   axis->SetNdivisions(510); // Set 10 primary divisions and 5 secondary divisions.
+{% endhighlight %}
 
-
-### Zooming the axis
+### Setting the axis range
 
 - Use [TAxis::SetRange()](https://root.cern/doc/master/classTAxis.html#aed523b084d6b3f24f6b1128d7810e199){:target="_blank"} or [TAxis::SetRangeUser()](https://root.cern/doc/master/classTAxis.html#ac85f8261dedc23bbe68f90afd196cdb8){:target="_blank"} to zoom the axis.
 
-The `SetRange()` method parameters are bin numbers. For example if a histogram plots the values from 0 to 500 and has 100 bins, `SetRange(0,10)` will cover the values 0 to 50.
+The `SetRange()` method parameters are bin numbers. For example if a histogram plots the
+values from 0 to 500 and has 100 bins, `SetRange(0,10)` will cover the values 0 to 50.
 
-The `SetRangeUser()` method parameters are user coordinates. If the start or end is in the middle of a bin the resulting range is approximation. It finds the low edge
-bin for the start and the high edge bin for the high.
+The `SetRangeUser()` method parameters are user coordinates. If the start or end is in the
+middle of a bin the resulting range is approximation. It finds the low edge bin for the
+start and the high edge bin for the high.
+
+For a general description see the ["How to set ranges on axis" FAQ](https://root-forum.cern.ch/t/how-to-set-ranges-on-axis/28254).
 
 ### Setting time units for axis
 
-- Use the `SetTimeDisplay()` method to set an axis as a time axis.
+Axis can be labeled with time and date. Such axis are called "Time axis". A detailed
+description is given in the [TGaxis reference page](https://root.cern/doc/master/classTGaxis.html#GA14).
 
-_**Example**_
+Basically three methods allow to manage such axis:
 
-For a histogram `histo`, the x-axis is set as time axis.
-
-{% highlight C++ %}
-   histo->GetXaxis()->SetTimeDisplay(1);
-{% endhighlight %}
-
-For a time axis, you can set the
-
-- [time formats](#time_formats)
-
-- [time offset](#time_offset)
-
-<p><a name="time_formats"></a></p>
-**Time formats**
-
-The time format defines the format of the labels along the time axis. It can be changed using the `TAxis::SetTimeFormat()` method. The time format used if from the C function `strftime()`.
-It is a string containing the following formatting characters, <br/>
-for date:<br>
-`%a`: abbreviated weekday name<br>
-`%b`: abbreviated month name<br>
-`%d`: day of the month (01-31)<br>
-`%m`: month (01-12)<br>
-`%y`: year without century<br>
-`%Y`: year with century<br>
-
-for time:<br>
-`%H`: hour (24-hour clock)<br>
-`%I`: hour (12-hour clock)<br>
-`%p`: local equivalent of AM or PM<br>
-`%M`: minute (00-59)<br>
-`%S`: seconds (00-61)<br>
-`%%`: %<br>
-
-The other characters are output as is. For example to have a format like `dd/mm/yyyy`, use:
-
-{% highlight C++ %}
-~~~ .cpp h->GetXaxis()->SetTimeFormat("%d/%m/%Y"); ~~~
-{% endhighlight %}
-
-<p><a name="time_offset"></a></p>
-**Time offset**
-
-The time is a time in seconds in the UNIX standard UTC format (this is an universal time, not the local time), defining the starting date of an histogram axis. This date should be greater than 01/01/95 and is given in seconds.
-<br> There are the three ways to define the time offset:
-
-- **Setting the global default time offset.**
+ 1. `SetTimeDisplay()` to set an axis as a time axis.
+ 2. `SetTimeFormat()` to define the format used for time plotting.
+ 3. `SetTimeOffset()` to change the time offset.
 
 _**Example**_
 
 {% highlight C++ %}
-   TDatime da(2003,02,28,12,00,00);
-   gStyle->SetTimeOffset(da.Convert());
-{% endhighlight %}
-
-Notice the usage of `TDateTime` to translate an explicit date into the time in seconds required by `SetTimeFormat`.
-
-If no time offset is defined for a particular axis, the default time offset will be used.
-
-- **Setting a time offset to a particular axis.**
-
-_**Example**_
-
-{% highlight C++ %}
-   TDatime dh(2001,09,23,15,00,00);
-   h->GetXaxis()->SetTimeOffset(dh.Convert());
-{% endhighlight %}
-
-- **Using `SetTimeFormat` together with the time format**
-
-The time offset can be specified using the control character `%F` after the normal time format. `%F` is followed by the date in the format: yyyy-mm-dd hh:mm:ss.
-
-_**Example**_
-
-{% highlight C++ %}
-   histo->GetXaxis()->SetTimeFormat("%d\/%m\/%y%F2000-02-28 13:00:01");
-{% endhighlight %}
-
-
-Notice that this date format is the same used by the `TDateString` function AsSQLString. If needed, this function can be used to translate a time in seconds into a character string which can be appended after `%F`. If the time format is not specified (before `%F`), the automatic one will be used.
-
-If a time axis has no specified time offset, the global time offset will be stored in the axis data structure.
-
-_**Example**_
-
-{% highlight C++ %}
-   gStyle->SetTitleH(0.08);
-   TDatime da(2003,02,28,12,00,00);
-   gStyle->SetTimeOffset(da.Convert());
-
-   auto ct = new TCanvas("ct","Time on axis",0,0,600,600);
-   ct->Divide(1,3);
-
-   auto ht1 = new TH1F("ht1","ht1",30000,0.,200000.);
-   auto ht2 = new TH1F("ht2","ht2",30000,0.,200000.);
-   auto ht3 = new TH1F("ht3","ht3",30000,0.,200000.);
+{
+   auto c = new TCanvas("c","Time on axis",0,0,600,400);
+   auto h = new TH1F("h","Time on X axis",30000,0.,20000.);
    for (Int_t i=1;i<30000;i++) {
-      auto noise = gRandom->Gaus(0,120);
-      ht1->SetBinContent(i,noise);
-      ht2->SetBinContent(i,noise*noise);
-      ht3->SetBinContent(i,noise*noise*noise);
+      Float_t noise = gRandom->Gaus(0,120);
+      h->SetBinContent(i,noise);
    }
-
-   ct->cd(1);
-   ht1->GetXaxis()->SetLabelSize(0.06);
-   ht1->GetXaxis()->SetTimeDisplay(1);
-   ht1->GetXaxis()->SetTimeFormat("%d/%m/%y%F2000-02-28 13:00:01");
-   ht1->Draw();
-
-   ct->cd(2);
-   ht2->GetXaxis()->SetLabelSize(0.06);
-   ht2->GetXaxis()->SetTimeDisplay(1);
-   ht2->GetXaxis()->SetTimeFormat("%d/%m/%y");
-   ht2->Draw();
-
-   ct->cd(3);
-   ht3->GetXaxis()->SetLabelSize(0.06);
-   TDatime dh(2019,12,4,15,00,00);
-   ht3->GetXaxis()->SetTimeDisplay(1);
-   ht3->GetXaxis()->SetTimeOffset(dh.Convert());
-   ht3->Draw();
+   TDatime dh(2001,9,23,15,00,00);
+   auto axis = h->GetXaxis();
+   axis->SetTimeDisplay(1);
+   axis->SetTimeFormat("%d %b - %Hh");
+   axis->SetTimeOffset(dh.Convert());
+   h->Draw();
+}
 {% endhighlight %}
 
 {% include figure_jsroot
-   file="graphics.root" object="ct" width="600px" height="600px"
-   caption="Time axis."
+   file="graphics.root" object="c" width="600px" height="400px"
+   caption="A simple time axis with day and hour.."
 %}
 
 
