@@ -83,6 +83,7 @@ manual:
       - title: Adding a class to ROOT (move in I/O)
         url: manual/adding_a_class_to_root
       - title: Signal/Slot communication
+        url: manual/signal_slot
       - title: JSROOT
       - title: How to embed ROOT in a GUI
   - title: Further information
