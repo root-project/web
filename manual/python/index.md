@@ -100,7 +100,7 @@ Note that it is also possible to use both the Python and the C++ rootlogons, sin
 
 If you want to disable the rootlogon functionality, set `PyConfig.DisableRootLogon` to `True`.
 
-- `IgnoreCommandLineOptions` (default `True`): If a PyROOT script is run with some command line arguments, ROOT ignores them by default, so you can process them as you wish. However, by setting `PyConfig.IgnoreCommandLineOptions` to `False`, those arguments are forwarded to ROOT for parsing, for example, to enable the batch mode from the command line.<br/>For a complete list of the arguments accepted by ROOT, → see [Starting ROOT with command line options]({{ '/manual/first_steps_with_root/#starting-root-with-command-line-options' | relative_url }}).
+- `IgnoreCommandLineOptions` (default `True`): If a PyROOT script is run with some command line arguments, ROOT ignores them by default, so you can process them as you wish. However, by setting `PyConfig.IgnoreCommandLineOptions` to `False`, those arguments are forwarded to ROOT for parsing, for example, to enable the batch mode from the command line.<br/>For a complete list of the arguments accepted by ROOT, → see [Starting ROOT with command line options]({{ '/manual/first_steps_with_root/#command-line-options' | relative_url }}).
 
 - `ShutDown` (default `True`): When the application is finished, more precisely during PyROOT's cleanup phase, the ROOT C++ interpreter is shut down by default.<br/>If PyROOT is executed as part of a longer-running application that needs the C++ interpreter, you can set `PyConfig.ShutDown` to `False` to prevent that shutdown.
 
@@ -172,7 +172,7 @@ The following options are available, ordered by complexity and performance:
 <a name="JITString"></a>
 ### Just-in-time compilation of small strings
 
-ROOT has a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}), which can process C++ code. Sometimes such a code is short, e.g. for the definition of a small function or a class or for rapid exploration or debugging. To do this, place the C++ code in a Python string, which is passed to the interpreter.
+ROOT has a [C++ interpreter]({{ '/manual/first_steps_with_root/#running-c-code' | relative_url }}), which can process C++ code. Sometimes such a code is short, e.g. for the definition of a small function or a class or for rapid exploration or debugging. To do this, place the C++ code in a Python string, which is passed to the interpreter.
 The code is just-in-time compiled (jitted) and it is immediately available for invocation, as shown in the following example. Here, the constructor of the C++ class `A` and the function `f` are called from Python after defining them via the interpreter.
 
 _**Example**_
