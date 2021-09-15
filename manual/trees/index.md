@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-## Introduction
+## Introducing `TTree`
 
 As introduced in → [Storing columnar data in a ROOT file and reading it back]({{ '/manual/root_files/#storing-columnar-data-in-a-root-file-and-reading-it-back' | relative_url }}),
 ROOT can handle large columnar datasets.
@@ -23,184 +23,171 @@ In addition to the documentation in this manual, we recommend to take a look at 
 
 > **RNTuple**
 >
-> [RNTuple](https://root.cern/doc/master/md_tree_ntuple_v7_doc_README.html){:target="_blank"} (for N-tuple and nested tuple) is the experimental evolution of {% include ref class="TTree" %} columnar data storage. {% include ref class="RNTuple" namespace="ROOT::Experimental" %} introduces robust interfaces, a high-performance storage layout, and an asynchronous, thread-safe scheduling.
+> [RNTuple](https://root.cern/doc/master/md_tree_ntuple_v7_doc_README.html){:target="_blank"} is the experimental evolution of {% include ref class="TTree" %} columnar data storage. {% include ref class="RNTuple" namespace="ROOT::Experimental" %} introduces robust interfaces, a high-performance storage layout, and an asynchronous, thread-safe scheduling.
 
+> **RDataFrame**
+>
+> TODO: tell people to use RDF, not TTree
 
-### Branches and Leaves
+### The tree and its data
+
+A `TTree` behaves like an array of a data structure that resides on storage - except for one entry (or row, in database language).
+That entry is accessible in memory: you can load any tree entry, ideally sequentially.
+You can provide your own storage for the values of the columns of the current entry, in the form of variables.
+In this case you have to tell the `TTree` about the address of these variables; either by calling [`TTree::SetBranchAddress()`](https://root.cern/doc/master/classTTree.html#a39b867210e4a77ef44917fd5e7898a1d), or by passing the variable when creating the branch for writing.
+When "filling" (writing) the `TTree`, it will read the values out of these variables;
+when reading back a `TTree` entry, it will write the values it read from storage into your variables.
+
+### Branches and leaves
 
 A tree consists of a list of independent columns, called branches. A branch can contain values of any fundamental type, C++ objects known to ROOT's type system, or collections of those.
 Branches are represented by {% include ref class="TBranch" %} and its derived classes.
 
-TODO: [leaves](http://TRIGGER THE CI CHECKER SO WE FIX THIS!)
-
-
-### `RNTuple`, the high-performance spead-sheet
-
-For convenience, ROOT also provides the {% include ref class="TNtuple" %} class which is a {% include ref class="TTree" %}
-that is limited to contain floating-point numbers only.
+While `TBranch` represent structure, objects inheriting from {% include ref class="TLeaf" %} contain the actual data.
+Originally, any columnar data was contained in a `TLeaf`; these days, some of the `TBranch`-derived classes contain data themselves, such as {% include ref class="TBranchElement" %}.
 
 ### Appending `TTree`s as a `TChain`
 
-TODO: [TChain](http://TRIGGER THE CI CHECKER SO WE FIX THIS!)
-
-## Tree classes
-
-ROOT provides numerous classes for trees and branches, of which the following are among the most used:
-
-- [TTree](https://root.cern/doc/master/classTTree.html){:target="_blank"}: Represents a columnar data set. Any C++ type can be stored in its columns.
-
-- [TNtuple](https://root.cern/doc/master/classTNtuple.html){:target="_blank"}: A simple `TTree` restricted to a list of float variables only.
-
-- [TBranch](https://root.cern/doc/master/classTBranch.html){:target="_blank"}: Organizes columns, i.e. branches, of a `TTree`.
-
-- [TChain](https://root.cern/doc/master/classTChain.html){:target="_blank"}: A list of ROOT files containing `TTree` objects.
-
-
-## Working with trees
-
-ROOT offers many possibilities to work with trees, for example:
-
-- [Creating a tree](#creating-a-tree)
-- [Creating a tree from a folder structure](#creating-a-tree-from-a-folder-structure)
-- [Filling a tree](#filling-a-tree)
-- [Writing a tree](#writing-a-tree)
-- [Printing the summary of a tree](#printing-the-summary-of-a-tree)
-- [Showing an entry of a tree](#showing-an-entry-of-a-tree)
-- [Scanning trees](#scanning-trees)
-
-### Creating a tree
-
-- Use the {% include ref class="TTree" %} constructor to create a tree.
+In high energy physics you always want as much data as possible.
+But it's not nice to deal with files of multiple terabytes.
+ROOT allows to to split data across multiple files, where you can then access the files' tree parts as one large tree.
+That's done through {% include ref class="TChain" %}, which inherits from {% include ref class="TTree" %}:
+it wants to know the name of the trees in the files (has to be the same throughout), and the file names, and will act as if it was a huge, continuous tree:
 
 _**Example**_
 
 {% highlight C++ %}
-   TTree t("MyTree","Example Tree");
+TChain chain("CommonTreeName");
+if (chain.Add("data_*.root") != 12)
+   std::cerr << "Expected to find 12 files!\n";
+// Use `chain` as if it was a `TTree`
 {% endhighlight %}
 
-It creates a tree with the title `Example Tree`.
-
-_**Example: A simple tree**_
-
-The following script builds a {% include ref class="TTree" %} from an ASCII file containing
-statistics about the staff at CERN. Both, `staff.C` and `staff.dat` are in available in
-`$ROOTSYS/tutorials/tree`.
-
-The following script declares a structure called `staff_t`. It opens the ASCII file, creates
-a ROOT file and a `TTree`. Then it creates one branch with the
-[TTree::Branch()](https://root.cern/doc/master/classTTree.html#ab47499eeb7793160b20fa950f4de716a){:target="_blank"}
-method.<br/>The first parameter of the `Branch()` method is the branch name. <br/>The second
-parameter is the address from which the first leaf is to be read. In this example, it is
-the address of the structure staff. Once the branch is defined,
-the script reads the data from the ASCII file into the `staff_t`
-structure and fills the tree. The ASCII file is closed, and the ROOT file is written to
-disk saving the tree. Trees and histograms are created in the current directory, which is
-the ROOT file in our example. Hence an `f->Write()` saves the tree.
-
-{% highlight C++ %}
-{
-// Create the structure to hold the variables for the branch.
-   struct staff_t {
-   Int_t cat;
-   Int_t division;
-   Int_t flag;
-   Int_t age;
-   Int_t service;
-   Int_t children;
-   Int_t grade;
-   Int_t step;
-   Int_t nation;
-   Int_t hrweek;
-   Int_t cost;
-   };
-   staff_t staff;
-
-// Open the ASCII file.
-   FILE *fp = fopen("staff.dat","r");
-   char line[81];
-
-// Create a new ROOT file.
-   TFile *f = new TFile("staff.root","RECREATE");
-
-// Create a TTree.
-   TTree *tree = new TTree("T","Staff data from ASCII file");
-
-// Create one branch with all information from the structure.
-   tree->Branch("staff",&staff.cat,"cat/I:division:flag:age:service:
-   children:grade:step:nation:hrweek:cost");
-
-// Fill the tree from the values in ASCII file.
-   while (fgets(&line,80,fp)) {
-      sscanf(&line[0],"%d%d%d%d",&staff.cat,&staff.division,
-      &staff.flag,&staff.age);
-      sscanf(&line[13],"%d%d%d%d",&staff.service,&staff.children,
-      &staff.grade,&staff.step);
-      sscanf(&line[24],"%d%d%d",&staff.nation,&staff.hrweek,
-      &staff.cost);
-      tree->Fill();
-   }
-
-// Check what the tree looks like.
-   tree->Print();
-   fclose(fp);
-   f->Write();
-}
+{% highlight Python %}
+chain = ROOT.TChain("CommonTreeName")
+if chain.Add("data_*.root" != 12:
+   print("Expected to find 12 files!")
+# Use `chain` as if it was a `TTree`
 {% endhighlight %}
 
-<p><a name="example-building-a-tree-from-an-ascii-file"></a></p>
-_**Example: Building a tree from an ASCII file**_
+### Widening a `TTree`s through friends
+
+[TODO](https://TRIGGER CI!)
+
+### Adding friends to trees
+
+> Tutorial
+>
+>  {% include tutorial name="tree3" %}
+
+Adding a branch is often not possible because the tree is a read-only file and you do not have permission to save the modified tree with the new branch. Even if you do have the permission, you risk loosing the original tree with an unsuccessful attempt to save the modification. Since trees are usually large, adding a branch could extend it over the 2 GB limit. In this case, the attempt to write the tree fails, and the original data is may also be corrupted. In addition, adding a branch to a tree enlarges the tree and increases the amount of memory needed to read an entry, and therefore decreases the performance.
+
+For these reasons ROOT offers the concept of friends for trees (and chains) by adding a branch manually with [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"}.
+
+The [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} method has two parameters, the first is the tree name and the second is the name of the ROOT file where the friend tree is saved.
+[TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} automatically opens the friend file.
 
 
-The tutorial {% include tutorial name="cernbuild" %} provides an example how to build a {% include ref class="TTree" %} from an ASCII file.
-The input file is `cernstaff.dat` that contains statistics about the staff at CERN.
 
-The `cernbuild.C` ROOT macro creates a root file (`cernstaff.root`) and prints the tree `T` and its branches with [TTree::Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094){:target="_blank"}.
+### `TNtuple`, the high-performance spread-sheet
 
-{% highlight C++ %}
-root [0] .x cernbuild.C
-******************************************************************************
-*Tree    :T         : CERN 1988 staff data                                   *
-*Entries :     3354 : Total =          176339 bytes  File  Size =      15005 *
-*        :          : Tree compression factor =   2.74                       *
-******************************************************************************
-*Br    0 :Category  : Category/I                                             *
-*Entries :     3354 : Total  Size=      14073 bytes  One basket in memory    *
-*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
-*............................................................................*
-*Br    1 :Flag      : Flag/i                                                 *
-*Entries :     3354 : Total  Size=      14049 bytes  One basket in memory    *
-*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
-*............................................................................*
-*Br    2 :Age       : Age/I                                                  *
-*Entries :     3354 : Total  Size=      14043 bytes  One basket in memory    *
-*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
-*............................................................................*
-*Br    3 :Service   : Service/I                                              *
-*Entries :     3354 : Total  Size=      14067 bytes  One basket in memory    *
-*Baskets :        0 : Basket Size=      32000 bytes  Compression=   1.00     *
-*............................................................................*
-...
-...
-...
-{% endhighlight %}
+For convenience, ROOT also provides the {% include ref class="TNtuple" %} class which is a {% include ref class="TTree" %} that is limited to contain floating-point numbers only.
 
-### Creating a tree from a folder structure
+## Writing a tree
 
-You can build a folder structure and create a tree with branches for each of the sub-folders.
+When writing a `TTree` you first want to create a `TFile`
+(see → [ROOT files]({{ '/manual/root_files' | relative_url }}).
+Then construct the `TTree` to be stored in the file; we will later add branches to the tree.
 
 _**Example**_
 
-`TTree folder_tree("MyFolderTree","/MyFolder");`
+{% highlight C++ %}
+std::unique_ptr<TFile> myFile( TFile::Open("file.root", "RECREATE") );
+auto tree = std::make_unique<TTree>("tree", "The Tree Title");
+{% endhighlight %}
 
-`MyFolder` is the top folder. `/` indicates the {% include ref class="TTree" %}  constructor that a folder is being used.
-You can fill the tree by placing the data into the folder structure and then calling the [TTree::Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067){:target="_blank"} method.
+{% highlight Python %}
+myFile = ROOT.TFile( ROOT.TFile.Open("file.root", "RECREATE") )
+tree = ROOT.TTree("tree", "The Tree Title")
+{% endhighlight %}
 
+### Creating branches
+
+There are multiple ways to add branches to a `TTree`; the most commonly used ones are covered here.
+More extensive documentation can be found in the [reference manual](https://root.cern.ch/doc/master/classTTree.html#creatingattreetoc).
+
+> **Note**
+>
+> Do *not* use the {% include ref class="TBranch" %} constructor to add a branch to a tree.
+
+> **Note**
+>
+> The objects / variables used to create branches must not be destroyed until the `TTree` is deleted or `TTree::ResetBranchAddress()` is called.
+
+**1. Branches holding basic types**
+
+If you have a variable of type `int`, `float`, `bool`, or any other basic type, you can create a branch (and a leaf) from it.
+For fundamental datatypes, the type can be deduced from the variable and the name of the leaf will be set to the name of the branch.
+In Python, that type information is not available and the leaf name and data type must be specified as third argument.
+Further details are explained in the [reference guide](https://root.cern.ch/doc/master/classTTree.html#addcolumnoffundamentaltypes).
+
+{% highlight C++ %}
+float var;
+tree->Branch("branch0", &var);
+{% endhighlight %}
+
+{% highlight Python %}
+# Provide a one-element array, so ROOT can read data from this memory. 
+from array import array
+var = array('f', [ 0 ])
+tree.Branch("branch0", var, "leafname/F");
+{% endhighlight %}
+<br/>
+**2. Branches holding class type**
+
+You can create a branch holding one of ROOT's classes, or your own type for which you have provided a dictionary (see → [I/O]({{ '/manual/io' | relative_url }})).
+
+_Splitting_
+
+If told, TTree will create (sub-) branches for each member of a class and its base classes.
+If such a member is a class itself, that member's type can also be split.
+The recusion level of nested splitting is called the "split level"; it can be configured during branch creation.
+
+If the split level is set to 0, there is no splitting: all data members are stored in the same branch.
+Data members can also be configured to be non-split as part of the dictionary; see → [I/O]({{ '/manual/io' | relative_url }}).
+The default split level is 1; a split level of 99 means to split all members at any recursion level.
+
+_Pointers_
+
+While references `X &` are not supported as member types, pointers are.
+If the pointer is non-null, ROOT stores the object pointed to (pointee).
+If multiple pointers point to the same object during one `TTree::Fill()` operation, that pointee will only be stored once; upon reading, all pointers will again point to the same object.
+
+_**Example**_
+
+ROOT's class {% include ref class="TNamed" %} has the data members `fName` and `fTitle`.
+The following requests the tree to create a branch for each of them.
+As `TNamed` derives from `TObject`, branches for `TObject`'s data members will also be created.
+
+{% highlight C++ %}
+TNamed var;
+const int splitLevel = 99; // "all the way"
+tree->Branch("branch0", &var, splitlevel);
+{% endhighlight %}
+<br/>
+**3. Branches holding `std::vector`, `std::array`, `std::list`, etc**
+
+Both top-level branches (those created by a call to `TTree::Branch()`) and branches created by splitting data members can hold collections such as `std::vector`, `std::array`, `std::list`, or `std::map`.
+Splitting can traverse through collections:
+if a member is a `vector<X>`, the tree can split `X` into sub-branches, too.
+
+Such collections can also contain pointers.
+For polymorphic pointees, ROOT will not just stream the base, but determine the actual object type.
+If the split level is `TTree::kSplitCollectionOfPointers` then the pointees will be written in split mode, possibly adding new branches as new polymorphic derived types are encountered.
 
 ### Filling a tree
 
-- Use the [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067){:target="_blank"} method to fill a {% include ref class="TTree" %} instance.
-
-A loop on all defined branches (see → [Branches](#branches)) is executed.
+Use [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067){:target="_blank"} to add a new entry (or "row") to the tree, and store the current values of the variables that were provided during branch creation.
 
 ### Writing a tree
 
@@ -212,13 +199,60 @@ The `TTree::Write()` method is needed to write the ROOT file header.
 
 When writing a {% include ref class="TTree" %} to a ROOT file and if the ROOT file size reaches the value stored in the [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9){:target="_blank"}, the current ROOT file is closed and a new ROOT file is created. If the original ROOT file is named `myfile.root`, the subsequent ROOT files are named `myfile_1.root`, `myfile_2.root`, etc.
 
-**Autosave**
+_Autosave_
 
-`Autosave` gives you the option to save all branch buffers every n byte. It is recommended to use `Autosave` for large acquisitions. If the acquisition fails to complete, you can recover the ROOT file and all the contents since the last `Autosave`.
+You can flush the tree data to file after the tree has collected a certain amount of data in memory (by default, 300MB).
+If your program crashes, you can recover the ROOT file and the tree entries since the last autosave.
 
-- Use the [TTree::SetAutosave()](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8){:target="_blank"} method to set the number of bytes between `Autosave`.
+You can adjust the threshold (in bytes or entries) using [TTree::SetAutosave()](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8){:target="_blank"}.
 
-You can also use [TTree::SetAutosave()](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8){:target="_blank"} in the acquisition loop every n entry.
+## Reading a tree
+
+> \note **Note**
+>
+> Please use {% include ref class="RDataFrame" namespace="ROOT" %} to read trees, unless you need to do low-level I/O!
+
+To read a tree, you need to associate your variables with the tree's branches, as when writing.
+When loading a tree entry, the tree will set the variables to the branch's value as read from the storage.
+That is done by calling [`TTree::SetBranchAddress()`](https://root.cern/doc/master/classTTree.html#a39b867210e4a77ef44917fd5e7898a1d):
+
+_**Example**_
+
+{% highlight C++ %}
+int variable;
+tree->SetBranchAddress("branchName", &variable);
+for (int iEntry = 0; tree->LoadTree(iEntry) >= 0; ++iEntry) {
+   // Load the data for the given tree entry
+   tree->GetEntry(iEntry);
+
+   // Now, `variable` is set to the value of the branch
+   // "branchName" in tree entry `iEntry`
+   printf("%d\n", variable);
+}
+{% endhighlight %}
+
+In Python you can simply use the branch name as an attribute on the tree:
+
+{% highlight Python %}
+for entry in tree:
+   print(entry.branchName)
+{% endhighlight %}
+
+
+### Selecting a subset of branches to be read
+
+You can select or deselect branches from being read by `GetEntry()` by calling [`TTree::SetBranchStatus()`](https://root.cern/doc/master/classTTree.html#aeca53bcd4482de1d883d259df6663920).
+It is vividly recommended to only read the branches actually needed:
+`TTree` is optimized for exactly this use case, and most analyses will only need a fraction of the available branches.
+
+### Selecting a subset of entries to be read
+
+To process only a selection of tree entries, you can build a {% include ref class="TEntryList" %} by inserting the tree entry numbers you want to process.
+
+
+
+
+## Examining a tree
 
 ### Printing the summary of a tree
 
@@ -444,10 +478,6 @@ If the variables are related, such as the coordinates of a point, create one bra
 `leaflist` is the concatenation of all the variable names and types separated by a colon character. The variable name and the variable type are separated by a slash (/). The variable type must be one character.
 For more information on adding a branch to tree, see → {% include ref class="TTree" %}.
 
-> **Note**
->
-> Do *not* use the {% include ref class="TBranch" %} constructor to add a branch to a tree.
-
 ### Adding a branch with a folder
 
 - Use the following syntax to add a branch with a folder:
@@ -486,19 +516,6 @@ until the {% include ref class="TTree" %} is deleted or
 [TTree::ResetBranchAddress](https://root.cern/doc/master/classTTree.html#a181eb19c03433781fde2fa94443710dc){:target="_blank"}
 is called.
 
-The following values are available for the `splitlevel`:
-
-`splitlevel=0`<br>
-The object is serialized in the branch buffer.
-
-`splitlevel=1 (default)`<br>
-This branch is automatically into sub-branches, with one sub-branch for each
-data member or object of the object itself. If the object member is a [TClonesArray](https://root.cern/doc/master/classTClonesArray.html){:target="_blank"}, it is processed as it is with `splitlevel=2`.
-
-`splitlevel=2`<br>
-This branch is automatically split into sub-branches, with one sub-branch for each
-data member or object of the object itself. If the object member is a [TClonesArray](https://root.cern/doc/master/classTClonesArray.html){:target="_blank"} it is processed as a [TObject](https://root.cern/doc/master/classTObject.html){:target="_blank"}, but only for one branch.
-
 ### Adding a branch to an existing tree
 You can add a branch to an existing tree.
 
@@ -523,6 +540,9 @@ void tree3AddBranch() {
 
 `kOverwrite` in the `Write()` method causes the tree to be overwritten.
 
+
+
+
 ## Examples for writing and reading trees
 
 The following sections are examples of writing and reading trees that range in complexity from a simple tree with
@@ -543,20 +563,6 @@ In this tutorial is shown:
 - how to fill a histogram from a branch
 - how to [TTree::Draw](https://root.cern/doc/master/classTTree.html#ac4016b174665a086fe16695aad3356e2){:target="_blank"} to draw a 3D plot
 
-### Adding friends to trees
-
-> Tutorial
->
->  {% include tutorial name="tree3" %}
-
-Adding a branch is often not possible because the tree is a read-only file and you do not have permission to save the modified tree with the new branch. Even if you do have the permission, you risk loosing the original tree with an unsuccessful attempt to save the modification. Since trees are usually large, adding a branch could extend it over the 2 GB limit. In this case, the attempt to write the tree fails, and the original data is may also be corrupted. In addition, adding a branch to a tree enlarges the tree and increases the amount of memory needed to read an entry, and therefore decreases the performance.
-
-For these reasons ROOT offers the concept of friends for trees (and chains) by adding a branch manually with [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"}.
-
-The [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} method has two parameters, the first is the tree name and the second is the name of the ROOT file where the friend tree is saved.
-[TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} automatically opens the friend file.
-
-
 ### Importing an ASCII file into a tree
 
 Use [TTree::ReadFile()](https://root.cern/doc/master/classTTree.html#a9c8da1fbc68221b31c21e55bddf72ce7){:target="_blank"} to automatically define the structure of the {% include ref class="TTree" %} and read the data from a formatted ASCII file.
@@ -575,6 +581,8 @@ _**Example**_
    T->Write();
 }
 {% endhighlight %}
+
+
 
 
 ## Using trees for data analysis
@@ -980,34 +988,3 @@ void write_ntuple_to_file_advanced(const std::string& outputFileName="ntuple.roo
 }
 {% endhighlight %}
 
-## Reading TTrees, TChains and TNtuples
-
-The {% include ref class="TTreeReader" %} class provides a simple, robust and fast interface to read values from ROOT columnar data sets such as {% include ref class="TTree" %}, {% include ref class="TChain" %} or {% include ref class="TNtuple" %}.
-
-_**Example**_
-
-A simple example using a `TTreeReader`.
-
-{% highlight C++ %}
-// Create a histogram.
-   auto myHist = new TH1F("h1","ntuple",100,-4,4);
-
-// Open the file containing the tree.
-   auto myFile = TFile::Open("hsimple.root");
-
-// Create a TTreeReader for the tree.
-   TTreeReader myReader("ntuple", myFile);
-
-// The branch "px" contains floats; access them as myPx.
-   TTreeReaderValue<Float_t> myPx(myReader, "px");
-
-// The branch "py" contains floats, too; access those as myPy.
-   TTreeReaderValue<Float_t> myPy(myReader, "py");
-
-// Loop over all entries of the TTree or TChain.
-   while (myReader.Next()) {
-      // Just access the data as if myPx and myPy were iterators (note the '*'in front of them):
-      myHist->Fill(*myPx + *myPy);
-   }
-   myHist->Draw();
- {% endhighlight %}
