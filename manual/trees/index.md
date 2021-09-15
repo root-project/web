@@ -27,7 +27,8 @@ In addition to the documentation in this manual, we recommend to take a look at 
 
 > **RDataFrame**
 >
-> TODO: tell people to use RDF, not TTree
+> To access TTree data, please use {% include ref class="RDataFrame" namespace="ROOT" %}.
+> `TTree` provides interfaces for low-level, expert usage.
 
 ### The tree and its data
 
@@ -73,8 +74,6 @@ if chain.Add("data_*.root") != 12:
 ### Widening a `TTree`s through friends
 
 [TODO](https://TRIGGER CI!)
-
-### Adding friends to trees
 
 > Tutorial
 >
@@ -244,6 +243,23 @@ for entry in tree:
 You can select or deselect branches from being read by `GetEntry()` by calling [`TTree::SetBranchStatus()`](https://root.cern/doc/master/classTTree.html#aeca53bcd4482de1d883d259df6663920).
 It is vividly recommended to only read the branches actually needed:
 `TTree` is optimized for exactly this use case, and most analyses will only need a fraction of the available branches.
+
+{% highlight C++ %}
+int variable;
+// Disable everything...
+tree->SetBranchStatus("*", false);
+// ...but the branch we need
+tree->SetBranchStatus("branchName", true);
+
+tree->SetBranchAddress("branchName", &variable);
+for (int iEntry = 0; tree->LoadTree(iEntry) >= 0; ++iEntry) {
+   // Load the data for the given tree entry
+   tree->GetEntry(iEntry);
+
+   printf("%d\n", variable);
+}
+{% endhighlight %}
+
 
 ### Selecting a subset of entries to be read
 
