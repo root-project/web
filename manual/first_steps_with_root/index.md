@@ -211,7 +211,7 @@ root [0] .x df000_simple.C
 
 A window with the plot of a histogram should appear as a result.
 
-The same tutorial is also available in Python →  [here](https://root.cern/doc/master/df000__simple_8C.html){:target="_blank"}.
+The same tutorial is also available in Python → {% include tutorial_py name="df000_simple" %}.
 
 A more thorough introduction to RDataFrame can be found → [here]({{ '/manual/data_frame' | relative_url }}).
 
