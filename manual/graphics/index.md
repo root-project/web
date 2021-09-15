@@ -185,9 +185,9 @@ You can get a pointer to an existing style with:
 - Use the {% include ref class="TStyle" %} constructor to create additional styles.
 
 {% highlight C++ %}
-TStyle *st1 = new TStyle("st1","my style");
+   auto st1 = new TStyle("st1","my style");
    st1->Set....
-   st1->cd();  This becomes now the current style.
+   st1->cd();  // This becomes now the current style.
 {% endhighlight %}
 
 #### Getting the attributes of the current style
@@ -284,113 +284,53 @@ _**Example**_
 {% highlight C++ %}
 {
    auto c = new TCanvas("c","Time on axis",0,0,600,400);
+
+   // Create and fill some example histogram
    auto h = new TH1F("h","Time on X axis",30000,0.,20000.);
    for (Int_t i=1;i<30000;i++) {
       Float_t noise = gRandom->Gaus(0,120);
       h->SetBinContent(i,noise);
    }
-   TDatime dh(2001,9,23,15,00,00);
-   auto axis = h->GetXaxis();
-   axis->SetTimeDisplay(1);
-   axis->SetTimeFormat("%d %b - %Hh");
-   axis->SetTimeOffset(dh.Convert());
+
+   // Define the X axis as a "Time axis"
+   TDatime dh(2001,9,23,15,00,00);     // Encode a date
+   auto axis = h->GetXaxis();          // Retrieve the X axis
+   axis->SetTimeDisplay(1);            // X axis will be a "Time axis"
+   axis->SetTimeFormat("%d %b - %Hh"); // Define the format of the axis labels: day and hour
+   axis->SetTimeOffset(dh.Convert());  // Set a proper offset
+
    h->Draw();
 }
 {% endhighlight %}
 
 {% include figure_jsroot
    file="graphics.root" object="c" width="600px" height="400px"
-   caption="A simple time axis with day and hour.."
+   caption="A simple time axis with day and hour."
 %}
 
 
 ### Drawing an axis independently of a graph or a histogram
 
-- Use the {% include ref class="TGaxis" %} class to draw an axis independently of a graph or a histogram.
+- Use the {% include ref class="TGaxis" %} class to draw an axis
+[independently of a graph or a histogram](https://root.cern/doc/master/xyplot_8C.html).
 
-This may be useful if you want to draw a supplementary axis for a graph.
+This may be useful if you want to draw a
+[supplementary axis](https://root.cern/doc/master/twoscales_8C.html) for a plot.
 
 
 ## Legends
+
+A legend is almost always present on a plot. ROOT provides an easy to use tool allowing
+a direct link between the legend drawn and the legended objects. Therefore, when one of the
+object attributes is changed, the legend is automatically changed also.
 
 - Use the {% include ref class="TLegend" %} class to add a legend to graph.
 
 A {% include ref class="TLegend" %} is a panel with several entries ({% include ref class="TLegendEntry" %} class).
 
-A legend is defined with default coordinates, border size and option. The legend coordinates (NDC) in the current pad are `x1`, `y1`, `x2`, `y2`. The default text attributes for the legend are:
-- Alignment = 12 left adjusted and vertically centered
-- Angle = 0 (degrees)
-- Color = 1 (black)
-- Size = calculate when number of entries is known
-- Font = helvetica-medium-r-normal scalable font = 42, and bold = 62 for title
-
-The title is a regular entry and supports {% include ref class="TLatex" %}. The default is no title (header = 0).
-
-- Use the [AddEntry()](https://root.cern/doc/master/classTLegend.html#a0fa2f13a4fea32bf9e1558a7b8df2d24){:target="_blank"} method to a add a new entry to a legend.
-
-The parameters are:
-- `*objis` a pointer to an object having a marker, a line, or a fill attributes (a histogram, or a graph).
-- `label` is the label to be associated to the object.
-- `option`:
-   - "`L`": Draws a line associated with line attributes of `obj`, if `obj` inherits from {% include ref class="TAttLine" %}.
-   - "`P`": Draw a poly-marker associated with marker attributes of `obj`, if `obj` inherits {% include ref class="TAttMarker" %}.
-   - "`F`": Draws a box with fill associated with fill attributes of `obj`, if `obj` inherits {% include ref class="TAttFill" %}.
-
-_**Example**_
-
-The following legend contains a histogram, a function and a graph. The histogram is put in the legend using its reference pointer whereas the graph and the function are added using their names. Because {% include ref class="TGraph" %} constructors do not have the {% include ref class="TGraph" %} name as parameter, the graph name should be specified using the `SetName()` method.
-
-{% highlight C++ %}
-{
-   auto c1 = new TCanvas("c1","c1",600,500);
-   gStyle->SetOptStat(0);
-
-// Histogram:
-   auto h1 = new TH1F("h1","TLegend Example",200,-10,10);
-   h1->FillRandom("gaus",30000);
-   h1->SetFillColor(kGreen);
-   h1->SetFillStyle(3003);
-   h1->Draw();
-
-// Function:
-   auto f1=new TF1("f1","1000*TMath::Abs(sin(x)/x)",-10,10);
-   f1->SetLineColor(kBlue);
-   f1->SetLineWidth(4);
-   f1->Draw("same");
-   const Int_t n = 20;
-   Double_t x[n], y[n], ex[n], ey[n];
-   for (Int_t i=0;i<n;i++) {
-      x[i]  = i*0.1;
-      y[i]  = 1000*sin(x[i]+0.2);
-      x[i]  = 17.8*x[i]-8.9;
-      ex[i] = 1.0;
-      ey[i] = 10.*i;
-   }
-
-// Graph:
-   auto gr = new TGraphErrors(n,x,y,ex,ey);
-   gr->SetName("gr");
-   gr->SetLineColor(kRed);
-   gr->SetLineWidth(2);
-   gr->SetMarkerStyle(21);
-   gr->SetMarkerSize(1.3);
-   gr->SetMarkerColor(7);
-   gr->Draw("P");
-
-// Creating a legend.
-   auto legend = new TLegend(0.1,0.7,0.48,0.9);
-   legend->SetHeader("The Legend Title","C"); // option "C" allows to center the header
-   legend->AddEntry(h1,"Histogram filled with random numbers","f");
-   legend->AddEntry("f1","Function abs(#frac{sin(x)}{x})","l");
-   legend->AddEntry("gr","Graph with error bars","lep");
-   legend->Draw();
-}
-{% endhighlight %}
-
-{% include figure_jsroot
-   file="graphics.root" object="legend" width="600px" height="500px"
-   caption="Legend containing a histogram, a function and a graph."
-%}
+The method [BuildLegend](https://root.cern/doc/master/classTPad.html#a6eebfec5f3dbdb3cd656b26114db28fb)
+automatically build a {% include ref class="TLegend" %} with all the objects present
+in a {% include ref class="TPad" %}.
 
 ## Canvas and pad
 
@@ -401,24 +341,25 @@ pads ({% include ref class="TPad" %}). A pad is a graphical container that conta
 
 - Use the global variable `gPad` to access the active pad.
 
-For more information on global variables, → see [ROOT classes, data types and global variables]({{ '/manual/root_architecture_and_components' | relative_url }}).
+For more information on global variables, → see
+[ROOT classes, data types and global variables]({{ '/manual/root_architecture_and_components/#global-root-variables' | relative_url }}).
 
 _**Example**_
 
 If you want to change the fill color of the active pad to blue, but you do not know the name of the active pad, you can use `gPad`.
 
 {% highlight C++ %}
-   gPad->SetFillColor(38)
+   gPad->SetFillColor(kBlue);
 {% endhighlight %}
 
 ### Accessing an object in an active pad
 
-- Use the [TPad::GetPrimitive(const char* name)](https://root.cern/doc/master/classTPad.html#af757a87208deb609e0b0d29e6edfaf94){:target="_blank"} method to access an object in an active pad.
+- Use the [TPad::GetPrimitive(const char* name)](https://root.cern/doc/master/classTPad.html#adb7202cb06fa935fc61659ab58c0064d){:target="_blank"} method to access an object in an active pad.
 
 _**Example**_
 
 {% highlight C++ %}
-   root[] obj = gPad->GetPrimitive("myobjectname")
+   root [0] obj = gPad->GetPrimitive("myobjectname")
    (class TObject*)0x1063cba8
 {% endhighlight %}
 
@@ -429,21 +370,21 @@ The type of the returned pointer is a `TObject*` that has a name.
 
 You can hide an object in a pad by removing it from the list of objects owned by that pad.
 
-- Use the [TPad::GetListOfPrimitives()](https://root.cern/doc/master/classTPad.html#a2bf11bfddaa3f25ae259c3d55203f0f4){:target="_blank"} method to list is accessible objects of a pad.
+- Use the [TPad::GetListOfPrimitives()](https://root.cern/doc/master/classTPad.html#a49b81164e3c006664bfefe3892077964){:target="_blank"} method to list is accessible objects of a pad.
 
 - Use the `Remove()` method to remove the object from the list.
 
 _**Example**_
 
 First, a pointer to the object is needed.<br>
-Second, a point to the list of objects owned by the pad is needed.<br>
+Second, a pointer to the list of objects owned by the pad is needed.<br>
 Then you can remove the object from the list, i.e. pad.<br>
-The object disappears as soon as the pas is updated.
+The object disappears as soon as the pad is updated.
 
 {% highlight C++ %}
-   root[1] obj = gPad->GetPrimitive("myobjectname")
-   root[2] li = gPad->GetListOfPrimitives()
-   root[3] li->Remove(obj)
+   root [1] obj = gPad->GetPrimitive("myobjectname")
+   root [2] li = gPad->GetListOfPrimitives()
+   root [3] li->Remove(obj)
 {% endhighlight %}
 
 ### Updating a pad
@@ -463,10 +404,10 @@ _**Example**_
 
 {% highlight C++ %}
 // The pad has changed.
-   root[] pad1->Modified()
+   root [0] pad1->Modified()
 
 // Recursively updating all modified pads:
-   root[] c1->Update()
+   root [1] c1->Update()
 {% endhighlight %}
 
 A subsequent call to [TCanvas::Update()](https://root.cern/doc/master/classTCanvas.html#a83bb3270c4e4cd4250730d5586ceebd6){:target="_blank"} scans the list of sub-pads and repaints the pads.
@@ -474,8 +415,7 @@ A subsequent call to [TCanvas::Update()](https://root.cern/doc/master/classTCanv
 ### Dividing a pad into sub-pads
 
 To draw multiple objects on a
-canvas ({% include ref class="TCanvas" %}), you can divide
-pad ({% include ref class="TPad" %}) into sub-pads.<br>
+canvas ({% include ref class="TCanvas" %}), you can it into sub-pads ({% include ref class="TPad" %}).<br>
 There are two ways to divide a pad into sub-pads:
 
 - [building pad objects and draw them into a parent pad](#sub-pad),
@@ -490,17 +430,17 @@ To build sub-pads in a pad, you must indicate the size and the position of the s
 _**Example**_
 
 A sub-pad is to be built into the active pad (pointed by `gPad`). First, the sub-pad is
-build the {% include ref class="TPad" %} constructor.
+build using the {% include ref class="TPad" %} constructor.
 
 {% highlight C++ %}
-   root[] spad1 = new TPad("spad1","The first subpad",.1,.1,.5,.5)
+   root [0] spad1 = new TPad("spad1","The first subpad",.1,.1,.5,.5)
 {% endhighlight %}
 
 The NDC (normalized coordinate system) coordinates are specified for the lower left point `(0.1, 0.1)` and for the upper right point `(0.5, 0.5)`.<br>
 Then the sub-pad is drawn.
 
 {% highlight C++ %}
-   root[] spad1->Draw()
+   root [0] spad1->Draw()
 {% endhighlight %}
 
 For building more sub-pads, repeat this procedure as many times as necessary.
@@ -508,7 +448,7 @@ For building more sub-pads, repeat this procedure as many times as necessary.
 <p><a name="divide"></a></p>
 **Dividing a pad into sub-pads**
 
-- Use the [TPad::Divide()](https://root.cern/doc/master/classTPad.html#a064b8ae1d12a9be393c0e22c5958cc7c){:target="_blank"} method to divide a pad into sub-pads.
+- Use the [TPad::Divide()](https://root.cern/doc/master/classTPad.html#a2714ddd7ba72d5def84edc1fbaea8658){:target="_blank"} method to divide a pad into sub-pads.
 
 ### Coordinate systems of a pad
 
@@ -525,7 +465,7 @@ You can convert from one system of coordinates to another.
 Most methods of {% include ref class="TPad" %} use the user coordinate system, and all graphic primitives have their parameters defined in terms of user coordinates. By default, when an empty pad is drawn, the
 user coordinates are set to a range from 0 to 1 starting at the lower left corner.
 
-- Use the [TPad::range(float x1,float y1,float x2,float y2)](https://root.cern/doc/master/classTPad.html#ae50a151ce00ad2414495314923f1b911){:target="_blank"} method to set the user coordinate system.<br/>
+- Use the [TPad::range(float x1,float y1,float x2,float y2)](https://root.cern/doc/master/classTPad.html#a608b9c0c673c66bb5c8946955ec11098){:target="_blank"} method to set the user coordinate system.<br/>
 The arguments `x1` and `x2` define the new range in the x direction, and `y1` and `y2` define the new range in the y direction.
 
 _**Example**_
@@ -533,9 +473,9 @@ _**Example**_
 Both coordinates go from -100 to 100, with the center of the pad at (0,0).
 
 {% highlight C++ %}
-   TCanvas MyCanvas ("MyCanvas")
-    gPad->Range(-100,-100,100,100)
-{% endhighlight %}
+   root [0] TCanvas MyCanvas ("MyCanvas")
+   root [1] gPad->Range(-100,-100,100,100)
+   {% endhighlight %}
 
 <p><a name="ndc"></a></p>
 **Normalized coordinate system (NDC)**
