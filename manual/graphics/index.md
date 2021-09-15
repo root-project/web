@@ -142,61 +142,39 @@ There are the following classes for changing the attributes of graphical objects
 
 - [TAttLine](https://root.cern/doc/master/classTAttLine.html){:target="_blank"} : Used for setting the color, width and style of a line.
 
-- [TAttMarker](https://root.cern/doc/master/classTAttMarker.html){:target="_blank"} : Used for setting the styles for a marker.
+- [TAttMarker](https://root.cern/doc/master/classTAttMarker.html){:target="_blank"} : Used for setting the color, size and style for a marker.
 
-- [TAttText](https://root.cern/doc/master/classTAttText.html){:target="_blank"} : Used for setting text attributes like alignment, color, size, font etc.
+- [TAttText](https://root.cern/doc/master/classTAttText.html){:target="_blank"} : Used for setting text attributes like alignment, angle, color, size and  font.
 
 ### Creating and modifying a style
 
-When objects are created, their default attributes (taken from {% include ref class="TAttFill" %}, {% include ref class="TAttLine" %}, {% include ref class="TAttMarker" %}, {% include ref class="TAttText" %}) are taken from the current style. The current style is an object of the {% include ref class="TStyle" %} class and can be referenced via the global variable `gStyle` (→ see [ROOT classes, data types and global variables]({{ '/manual/root_architecture_and_components#global-root-variables' | relative_url }})).
+When objects are created, their default attributes (taken from {% include ref class="TAttFill" %}, {% include ref class="TAttLine" %}, {% include ref class="TAttMarker" %}, {% include ref class="TAttText" %})
+are taken from the current style. The current style is
+an object of the {% include ref class="TStyle" %} class and can be referenced via the global
+variable `gStyle` (→ see [ROOT classes, data types and global variables]({{ '/manual/root_architecture_and_components/#global-root-variables' | relative_url }})).
 
-ROOT provides two styles:
-
-- `Default`
-
-- `Plain`
-
-**Creating the `Default` style**
-
-The `Default` style is created by:
-
-{% highlight C++ %}
-   auto default = new TStyle("Default","Default Style");
-{% endhighlight %}
-
-**Creating the `Plain` style**
-
-The `Plain` style is useful if you, for example, are working on a monochrome display.
-
-{% highlight C++ %}
-auto plain  = new TStyle("Plain","Plain Style (no colors/fill areas)");
-
-   plain->SetCanvasBorderMode(0);
-   plain->SetPadBorderMode(0);
-   plain->SetPadColor(0);
-   plain->SetCanvasColor(0);
-   plain->SetTitleColor(0);
-   plain->SetStatColor(0);
-
-{% endhighlight %}
+ROOT provides [several predefined styles](https://root.cern/doc/master/classTStyle.html#ae160d96e47e9507bbd220241f1a04602).
+Among them:  `Classic`, `Plain` or `Modern` (used when ROOT starts).
 
 #### Setting the current style
 
 - Use the `SetStyle()` method, to set the current style.
 
 {% highlight C++ %}
-   gROOT->SetStyle(style_name);
+   gROOT->SetStyle("Plain"); // Set the current style to "Plain"
 {% endhighlight %}
 
 You can get a pointer to an existing style with:
 
 {% highlight C++ %}
-   auto style = gROOT->GetStyle(style_name);
+   auto style = gROOT->GetStyle("Classic"); // Get a pointer to the "Classic" style.
 {% endhighlight %}
 
 > **Note**
 >
-> When an object is created, its attributes are taken from the current style. For example, you may have created an histogram in a previous session and saved it in a ROOT file. Meanwhile, if you have changed the style, the histogram will be drawn with the old attributes.
+> When an object is created, its attributes are taken from the current style. For example,
+> you may have created an histogram in a previous session and saved it in a ROOT file. Meanwhile,
+> if you have changed the style, the histogram will be drawn with the old attributes.
 > You can force the current style attributes to be set when you read an object from a file by:
 >
 > `gROOT->ForceStyle();`
@@ -233,12 +211,12 @@ the {% include ref class="TGaxis" %} class.
 _**Example**_
 
 {% highlight C++ %}
-   TAxis *axis = histo->GetXaxis()
+   TAxis *axis = histo->GetXaxis();
 {% endhighlight %}
 
 ### Setting the axis title
 
-- Use the `SetTitle()` method to set the tile of an axis.
+- Use the `SetTitle()` method to set the title of an axis.
 
 _**Example**_
 
@@ -254,9 +232,9 @@ _**Example**_
    histo->GetXaxis()->SetTitle("My axis title")
 {% endhighlight %}
 
-### Setting axis options and characteristics
+### Setting axis attributes
 
-The available axis options are listed in the following example.
+The axis graphical attributes are managed via the class {% include ref class="TAttAxis" %}.
 
 _**Example**_
 
