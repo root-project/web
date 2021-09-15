@@ -47,47 +47,6 @@ Branches are represented by {% include ref class="TBranch" %} and its derived cl
 While `TBranch` represent structure, objects inheriting from {% include ref class="TLeaf" %} contain the actual data.
 Originally, any columnar data was contained in a `TLeaf`; these days, some of the `TBranch`-derived classes contain data themselves, such as {% include ref class="TBranchElement" %}.
 
-### Appending `TTree`s as a `TChain`
-
-In high energy physics you always want as much data as possible.
-But it's not nice to deal with files of multiple terabytes.
-ROOT allows to to split data across multiple files, where you can then access the files' tree parts as one large tree.
-That's done through {% include ref class="TChain" %}, which inherits from {% include ref class="TTree" %}:
-it wants to know the name of the trees in the files (has to be the same throughout), and the file names, and will act as if it was a huge, continuous tree:
-
-_**Example**_
-
-{% highlight C++ %}
-TChain chain("CommonTreeName");
-if (chain.Add("data_*.root") != 12)
-   std::cerr << "Expected to find 12 files!\n";
-// Use `chain` as if it was a `TTree`
-{% endhighlight %}
-
-{% highlight Python %}
-chain = ROOT.TChain("CommonTreeName")
-if chain.Add("data_*.root") != 12:
-   print("Expected to find 12 files!")
-# Use `chain` as if it was a `TTree`
-{% endhighlight %}
-
-### Widening a `TTree`s through friends
-
-[TODO](https://TRIGGER CI!)
-
-> Tutorial
->
->  {% include tutorial name="tree3" %}
-
-Adding a branch is often not possible because the tree is a read-only file and you do not have permission to save the modified tree with the new branch. Even if you do have the permission, you risk loosing the original tree with an unsuccessful attempt to save the modification. Since trees are usually large, adding a branch could extend it over the 2 GB limit. In this case, the attempt to write the tree fails, and the original data is may also be corrupted. In addition, adding a branch to a tree enlarges the tree and increases the amount of memory needed to read an entry, and therefore decreases the performance.
-
-For these reasons ROOT offers the concept of friends for trees (and chains) by adding a branch manually with [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"}.
-
-The [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} method has two parameters, the first is the tree name and the second is the name of the ROOT file where the friend tree is saved.
-[TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a011d362261b694ee7dd780bad21f030b){:target="_blank"} automatically opens the friend file.
-
-
-
 ### `TNtuple`, the high-performance spread-sheet
 
 For convenience, ROOT also provides the {% include ref class="TNtuple" %} class which is a {% include ref class="TTree" %} that is limited to contain floating-point numbers only.
@@ -207,7 +166,7 @@ You can adjust the threshold (in bytes or entries) using [TTree::SetAutosave()](
 
 ## Reading a tree
 
-> \note **Note**
+> **Note**
 >
 > Please use {% include ref class="RDataFrame" namespace="ROOT" %} to read trees, unless you need to do low-level I/O!
 
@@ -218,8 +177,12 @@ That is done by calling [`TTree::SetBranchAddress()`](https://root.cern/doc/mast
 _**Example**_
 
 {% highlight C++ %}
+std::unique_ptr<TFile> myFile( TFile::Open("file.root") );
+auto tree = myFile->Get<TTree>("TreeName");
+
 int variable;
 tree->SetBranchAddress("branchName", &variable);
+
 for (int iEntry = 0; tree->LoadTree(iEntry) >= 0; ++iEntry) {
    // Load the data for the given tree entry
    tree->GetEntry(iEntry);
@@ -233,7 +196,9 @@ for (int iEntry = 0; tree->LoadTree(iEntry) >= 0; ++iEntry) {
 In Python you can simply use the branch name as an attribute on the tree:
 
 {% highlight Python %}
-for entry in tree:
+myFile = ROOT.TFile.Open("file.root")
+myTree = myFile.TreeName
+for entry in myTree:
    print(entry.branchName)
 {% endhighlight %}
 
@@ -245,12 +210,15 @@ It is vividly recommended to only read the branches actually needed:
 `TTree` is optimized for exactly this use case, and most analyses will only need a fraction of the available branches.
 
 {% highlight C++ %}
-int variable;
+// Extract the tree as above.
+
 // Disable everything...
 tree->SetBranchStatus("*", false);
 // ...but the branch we need
 tree->SetBranchStatus("branchName", true);
 
+// Now proceed as above.
+int variable;
 tree->SetBranchAddress("branchName", &variable);
 for (int iEntry = 0; tree->LoadTree(iEntry) >= 0; ++iEntry) {
    // Load the data for the given tree entry
@@ -263,10 +231,92 @@ for (int iEntry = 0; tree->LoadTree(iEntry) >= 0; ++iEntry) {
 
 ### Selecting a subset of entries to be read
 
-To process only a selection of tree entries, you can build a {% include ref class="TEntryList" %} by inserting the tree entry numbers you want to process.
+To process only a selection of tree entries, you can use a {% include ref class="TEntryList" %}.
+First you inserting the tree entry numbers you want to process into the `TEntryList`.
 
+{% highlight Python %}
+entryList = ROOT.TEntryList("entryListName", "Title of the entry list")
+for entry in tree:
+   if entry.missingET < 100:
+      entryList.Enter(tree.GetReadEntry())
+myFile = ROOT.TFile.Open("entrylist.root", "RECREATE")
+myFile.WriteObject(entrylist)
+{% endhighlight %}
 
+You can then re-use the `TEntryList` in subsequent processing of the tree, skipping irrelevant entries.
 
+{% highlight Python %}
+myFile = ROOT.TFile.Open("entrylist.root")
+entrylist = myFile.entryListName
+tree.SetEntryList(entrylist)
+for entry in tree:
+   # all entries will have missingET < 100
+{% endhighlight %}
+
+## Appending `TTree`s as a `TChain`
+
+In high energy physics you always want as much data as possible.
+But it's not nice to deal with files of multiple terabytes.
+ROOT allows to to split data across multiple files, where you can then access the files' tree parts as one large tree.
+That's done through {% include ref class="TChain" %}, which inherits from {% include ref class="TTree" %}:
+it wants to know the name of the trees in the files (has to be the same throughout), and the file names, and will act as if it was a huge, continuous tree:
+
+_**Example**_
+
+{% highlight C++ %}
+TChain chain("CommonTreeName");
+if (chain.Add("data_*.root") != 12)
+   std::cerr << "Expected to find 12 files!\n";
+// Use `chain` as if it was a `TTree`
+{% endhighlight %}
+
+{% highlight Python %}
+chain = ROOT.TChain("CommonTreeName")
+if chain.Add("data_*.root") != 12:
+   print("Expected to find 12 files!")
+# Use `chain` as if it was a `TTree`
+{% endhighlight %}
+
+## Widening a `TTree` through friends
+
+Trees are usually written just once.
+While updating an existing tree is non-trivial, extending it with additional branches, potentially an "improved" version of an original branch, is trivial.
+"Friend trees" are added by calling [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a321f2684de145cfcb01cabfce69ea910){:target="_blank"}.
+Adding another tree called `T1` as a friend tree will make the branch `X` of `T1` available as both `T1.X` and - if `X` does not exist in the original tree - as `X`.
+
+Friend trees are expected to have at least as many entries as the original tree.
+The order of the friend tree's entries must preserve the entry order of the original tree.
+
+> **Note**
+>
+> Especially when processing the original tree in parallel to generate the friend tree, the entries might be written out in an undefined order.
+> This can cause the entries of the friend tree to be in a different order than the entries of the original tree.
+
+{% highlight C++ %}
+void treeWithFriend() {
+   std::unique_ptr<TFile> myFile( TFile::Open("file.root") );
+   auto tree = myFile->Get<TTree>("TreeName");
+
+   std::unique_ptr<TFile> myFriendFile( TFile::Open("friend.root") );
+   auto friendTree = myFriendFile->Get<TTree>("FriendTreeName");
+
+   tree->AddFriend(friendTree);
+
+   int variable;
+   tree->SetBranchAddress("branchName", &variable);
+   int variableFriend;
+   tree->SetBranchAddress("FriendTreeName.friendBranchName", &variableFriend);
+
+   // Iteration over `tree` automatically advances its friend trees.
+   for (int iEntry = 0; tree->LoadTree(iEntry) >= 0; ++iEntry) {
+      // Load the data for the given tree entry
+      tree->GetEntry(iEntry);
+
+      printf("%d %d\n", variable, variableFriend);
+   }
+{% endhighlight %}
+
+# We still need to work on the parts below. No point in reviewing yet.
 
 ## Examining a tree
 
