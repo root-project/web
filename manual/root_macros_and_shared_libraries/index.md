@@ -38,6 +38,12 @@ The name of the ROOT macro and the file name (without file extension) in which t
 
 3. Save the file ROOT macro, using the macro name as file name: **MacroName**.C
 
+> **Note**
+>
+> It's not necessary to `#include` anything in the ROOT macros.
+> Everything in the include paths is automatically included.
+> Note that you can type `.I` in the ROOT prompt to see the include paths, and `.I [path]` to add an extra path.
+
 ### Executing ROOT macros
 
 You can execute a ROOT macro in one of three ways:
@@ -64,7 +70,7 @@ You can execute a ROOT macro in one of three ways:
 
    > **Note**
    >
-   > You can load multiple ROOT macros, as each ROOT macro has a unique name in the ROOT namespace.
+   > You can load multiple macros in the same ROOT session, as long as they don't have the same name.
 
 It is also possible to pass parameters directly to the macro function:
 ```
@@ -194,13 +200,13 @@ To overwrite an existing include path, type:
 gSystem->SetIncludePath(" -I$HOME/mypackage/include")
 {% endhighlight %}
 
-To add a shared library that should be used during linking, type:
+To add any static or shared library that should be used during linking, type:
 
 {% highlight C++ %}
 gSystem->AddLinkedLibs("-L/my/path -l*anylib*");
 {% endhighlight %}
 
-You can also add a shared library by loading it before compiling the ROOT macros, by doing:
+If the library is a shared library, you can also load it before compiling the macro:
 
 {% highlight C++ %}
 gSystem->Load("mydir/mylib");
