@@ -80,7 +80,7 @@ More extensive documentation can be found in the [reference manual](https://root
 
 > **Note**
 >
-> The objects / variables used to create branches must not be destroyed until the `TTree` is deleted or `TTree::ResetBranchAddress()` is called.
+> The objects *and* variables used to create branches must not be destroyed until the `TTree` is deleted or `TTree::ResetBranchAddress()` is called.
 
 **1. Branches holding basic types**
 
