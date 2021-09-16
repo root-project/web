@@ -37,7 +37,7 @@ Here is a couple of *interactive* examples you can also find in the [main JSROOT
 
 {% include figure_jsroot
    file="rootgeom.root" object="simple1" width="500px" height="350px"
-   caption="Roofit canvas with different plot styles"
+   caption="3D ROOT geometry"
 %}
 
 ## JSROOT & OpenUI5 GUI
