@@ -21,13 +21,13 @@ primitives of any type (graphs, histograms, shapes, tracks, etc.).
 
 Adding an element to a pad is done by the `Draw()` method of each class.
 
-Painting a pad is done by the `Paint()` method of each object in the list of primitives.
+Painting a pad is done by the automatic call to `Paint()` method of each object in the list of primitives.
 
 {% include tutorials name="Graphics" url="graphics" %}
 
 ## Graphic classes
 
-ROOT provides numerous graphic classes, of which the following are among the most used:
+ROOT provides [numerous graphic classes](https://root.cern/doc/master/group__Graphics.html), of which the following are among the most used:
 
 - {% include ref class="TCanvas" %}
 
@@ -134,6 +134,18 @@ method:
 - _Text and Latex_: Use {% include ref class="TText" %} to draw simple text. {% include ref class="TLatex" %} for complex text like mathematical formulas. Text can be embedded in a box using {% include ref class="TPaveLabel" %}, {% include ref class="TPaveText" %} and {% include ref class="TPavesText" %}.
 - and [_more ..._](https://root.cern/doc/master/group__BasicGraphics.html)
 
+
+## Colors and color palettes
+
+Colors are managed by the class {% include ref class="TColor" %}. A color is defined by its
+RGB or HLS components. It can be accessed via an
+[index](https://root.cern.ch/doc/master/classTColor.html#C00) or
+[by name ](https://root.cern/doc/master/classTColor.html#C02) for the predefined colors.
+Colors can be grouped in [palettes](https://root.cern/doc/master/classTColor.html#C05). More
+than 60 [High quality palettes](https://root.cern/doc/master/classTColor.html#C06) are predefined.
+Color can also be [transparent](https://root.cern/doc/master/classTColor.html#C07).
+
+
 ## Graphical objects attributes and styles
 
 There are the following classes for changing the attributes of graphical objects:
@@ -211,7 +223,7 @@ the {% include ref class="TGaxis" %} class.
 _**Example**_
 
 {% highlight C++ %}
-   TAxis *axis = histo->GetXaxis();
+   auto axis = histo->GetXaxis();
 {% endhighlight %}
 
 ### Setting the axis title
@@ -239,7 +251,7 @@ The axis graphical attributes are managed via the class {% include ref class="TA
 _**Example**_
 
 {% highlight C++ %}
-   TAxis *axis = histo->GetXaxis();
+   auto axis = histo->GetXaxis();
    axis->SetLabelColor(kRed); // change the labels'color to red
 {% endhighlight %}
 
@@ -251,9 +263,23 @@ method to set the number of divisions for an axis.
 _**Example**_
 
 {% highlight C++ %}
-   TAxis *axis = histo->GetXaxis();
+   auto axis = histo->GetXaxis();
    axis->SetNdivisions(510); // Set 10 primary divisions and 5 secondary divisions.
 {% endhighlight %}
+
+
+### Labels tuning
+
+Several [axis' attributes can be changed](https://root.cern/doc/master/classTGaxis.html#GA06).
+For instance the [size](https://root.cern/doc/master/classTAttAxis.html#a59684f3441f945f1b2d4e6970ad3d1b5),
+the [distance to the axis](https://root.cern/doc/master/classTAttAxis.html#a73c13dee8312d852b41f2234021e2ffc),
+the [alignment](https://root.cern/doc/master/classTAxis.html#a0abc742bbcfc963863ab3668ce810cc6) etc ...
+
+[SetMaxDigits()](https://root.cern/doc/master/classTAttAxis.html#aac05911a829616a11bb659f88a10cbad)
+set the maximum number of digits permitted for the axis labels above which the notation
+with $10^N$ is used.
+
+Labels can also be tuning individually thanks to [ChangeLabel()](https://root.cern/doc/master/classTGaxis.html#GA10a).
 
 ### Setting the axis range
 
@@ -433,7 +459,7 @@ A sub-pad is to be built into the active pad (pointed by `gPad`). First, the sub
 build using the {% include ref class="TPad" %} constructor.
 
 {% highlight C++ %}
-   root [0] spad1 = new TPad("spad1","The first subpad",.1,.1,.5,.5)
+   root [0] auto spad1 = new TPad("spad1","The first subpad",.1,.1,.5,.5)
 {% endhighlight %}
 
 The NDC (normalized coordinate system) coordinates are specified for the lower left point `(0.1, 0.1)` and for the upper right point `(0.5, 0.5)`.<br>
@@ -590,11 +616,42 @@ p->PixeltoY(py - p->GetWh());
 {% endhighlight %}
 
 
+### Setting the Log Scale
+
+Setting the scale to logarithmic or linear is a pad's attribute because you may want to
+draw the same histogram in linear scale in one pad and in log scale in another pad.
+Setting log scale does not propagate to sub-pads.
+
+[TPad defines log scale](https://root.cern/doc/master/classTPad.html#ae79fc15f5e392ba9edf59e18bb3aecd4)
+for the three directions `x`, `y` and `z`.
+
+_**Example**_
+
+{% highlight C++ %}
+   root [0] gPad->SetLogx(1); // Set the x axis to log in the current pad
+   root [1] gPad->SetLogy(0); // Set the y axis to linear in the current pad
+{% endhighlight %}
+
+
 ### Copying a canvas
 
 - Use the [TCanvas::DrawClonePad](https://root.cern/doc/master/classTCanvas.html#afcb8727555c9c2be024eb307fd3d295a){:target="_blank"} method to make a copy of the canvas.
 
 You can also use the [TObject:DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9){:target="_blank"} method, to draw a clone of this object in the current selected pad.
+
+### Printing a canvas
+
+Once a canvas is created and shows plots ready to be included in a publication as a `.png`
+or a `.pdf` image, the [Print()](https://root.cern/doc/master/classTPad.html#ae44fee7e51d69841c1dce4b899eee14d)
+method can be used. All the standard output formats are provided.
+
+_**Example**_
+
+{% highlight C++ %}
+   auto c = new TCanvas(); // Create a canvas
+   h->Draw();              // Draw an histogram in the canvas
+   c->Print("c1.pdf");     // Save the canvas in a .pdf file
+{% endhighlight %}
 
 ## Drawing objects with special characters in its name
 
@@ -644,3 +701,12 @@ void draw_object(const char *file_name = "myfile.root", const char *obj_name = "
 }
 
 {% endhighlight %}
+
+## 3D graphics
+
+[3D graphics tools](https://root.cern/doc/master/group__Graphics3D.html) for "Event Display",
+"Basic 3D" and OPen GL rendering are provided.
+
+{% include tutorials name="Geometry" url="geom" %}
+<br>
+{% include tutorials name="OpenGL" url="gl" %}
