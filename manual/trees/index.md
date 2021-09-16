@@ -169,15 +169,52 @@ If the split level is `TTree::kSplitCollectionOfPointers` then the pointees will
 
 Use [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067){:target="_blank"} to add a new entry (or "row") to the tree, and store the current values of the variables that were provided during branch creation.
 
-### Writing a tree
+### Writing the tree header
 
-The data of a tree are saved in a ROOT file (see → [ROOT files]({{ '/manual/root_files' | relative_url }})).
-
-Use [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f){:target="_blank"} to write the tree into a ROOT file.
+Use [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f){:target="_blank"} to write the tree header into a ROOT file.
 Earlier entries' data might already be written as part of `TTree::Fill()`.
 
 If due to the data written during `TTree::Fill()`, the file's size increases beyond [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9){:target="_blank"}, the current ROOT file is closed and a new ROOT file is created.
 For an original ROOT file named `myfile.root`, the subsequent ROOT files are named `myfile_1.root`, `myfile_2.root`, etc.
+
+_**Example**_
+
+{% highlight C++ %}
+std::unique_ptr<TFile> myFile( TFile::Open("file.root", "RECREATE") );
+auto tree = std::make_unique<TTree>("tree", "The Tree Title");
+
+float var;
+tree->Branch("branch0", &var);
+
+for (int iEntry = 0; iEntry < 1000; ++iEntry) {
+   var = 0.3 * iEntry;
+   // Fill the current value of `var` into `branch0`
+   tree->Fill();
+}
+
+// Now write the header
+tree->Write();
+{% endhighlight %}
+
+{% highlight Python %}
+from array import array
+import ROOT
+
+myFile = ROOT.TFile( ROOT.TFile.Open("file.root", "RECREATE") )
+tree = ROOT.TTree("tree", "The Tree Title")
+
+# Provide a one-element array, so ROOT can read data from this memory. 
+var = array('f', [ 0 ])
+tree.Branch("branch0", var, "leafname/F");
+
+for iEntry in range(1000):
+   var = 0.3 * iEntry
+   # Fill the current value of `var` into `branch0`
+   tree.Fill()
+
+# Now write the header
+tree.Write()
+{% endhighlight %}
 
 _AutoFlush_
 
@@ -348,19 +385,16 @@ void treeWithFriend() {
 
 ## Examining a tree
 
+Different ways to examine the tree structure and content exist, from text to graphics.
+
 ### Printing the summary of a tree
 
-- Use the [TTree::Print(Option_t * option = "")](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094){:target="_blank"} method to print a summary of the tree contents.
-
-- `option = "all"`: Friend trees are also printed.
-- `option = "toponly"`:  Only the top level branches are printed.
-- `option = "clusters"`: Information about the cluster of baskets is printed.
+Use [TTree::Print()](https://root.cern/doc/master/classTTree.html#a7a0006d38d5066b533e040aa16f97094){:target="_blank"} to see a summary of the tree structure.
 
 _**Example**_
 
 {% highlight C++ %}
-root[] TFile f("cernstaff.root")
-root[] T->TTree::Print()
+root [0] tree->Print()
 
 ******************************************************************************
 *Tree    :T         : CERN 1988 staff data                                   *
@@ -382,21 +416,16 @@ root[] T->TTree::Print()
 *Br    3 :Service   : Service/I                                              *
 *Entries :     3354 : Total  Size=      13980 bytes  File Size  =       2214 *
 ...
-...
-...
 {% endhighlight %}
 
-### Showing an entry of a tree
+### Showing the content of a tree entry
 
-- Use the [TTree::Show()](https://root.cern/doc/master/classTTree.html#a10e5e7424059bc7d17502331b41b0c16){:target="_blank"} method to access one entry of a tree.
+Use [TTree::Show()](https://root.cern/doc/master/classTTree.html#a10e5e7424059bc7d17502331b41b0c16){:target="_blank"} to display the values of all branches for a given tree entry.
 
 _**Example**_
 
-Showing an entry from the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)).
-
 {% highlight C++ %}
-root[] TFile f("cernstaff.root")
-root[] T->Show(42)
+root[0] tree->Show(42)
 
 ======> EVENT:42
 Category = 301
@@ -412,17 +441,14 @@ Division = EP
 Nation = CH
 {% endhighlight %}
 
-### Scanning trees
+### Showing tree data as a table
 
-- Use the [TTree::Scan()](https://root.cern/doc/master/classTTree.html#af8a886acab51b16d8ddbf65667c035e4){:target="_blank"} method to display all values of the list of leaves.
+Use [TTree::Scan()](https://root.cern/doc/master/classTTree.html#af8a886acab51b16d8ddbf65667c035e4){:target="_blank"} to display a paged table of branches' values for all or some tree entries.
 
 _**Example**_
 
-Scanning the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)).
-
 {% highlight C++ %}
-   root[] TFile f("cernstaff.root")
-   root[] T->Scan("Cost:Age:Children")
+   root [0] tree->Scan("Cost:Age:Children")
 
    ************************************************
    *    Row *    Cost *       Age *    Children   *
@@ -432,63 +458,8 @@ Scanning the `cernstaff.root` file (see → [Building a tree from an ASCII file]
    *     2 *    10730 *        56 *             2 *
    *     3 *     9311 *        61 *             0 *
    *     4 *     9966 *        52 *             2 *
-   *     5 *     7599 *        60 *             0 *
-   *     6 *     9868 *        53 *             1 *
-   *     7 *     8012 *        60 *             1 *
-   *     8 *     8813 *        51 *             0 *
-   *     9 *     7850 *        56 *             1 *
-   *    10 *     7599 *        51 *             0 *
-   *    11 *     9315 *        54 *             2 *
-   *    12 *     7599 *        54 *             0 *
-   *    13 *     7892 *        46 *             0 *
-   *    14 *     7850 *        54 *             1 *
-   *    15 *     7599 *        57 *             0 *
-   *    16 *     8137 *        55 *             0 *
-   *    17 *     7850 *        55 *             1 *
-   *    18 *     7294 *        57 *             1 *
-   *    19 *     8101 *        51 *             2 *
-   *    20 *     5720 *        54 *             0 *
-   *    21 *    15832 *        57 *             1 *
-   *    22 *    12226 *        63 *             1 *
-   *    23 *    13135 *        56 *             0 *
-   *    24 *     9617 *        49 *             0 *
+...
 {% endhighlight %}
-
-### Indexing trees
-
-- Use [TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998){:target="_blank"} method to build an index table using expressions depending on the value in the leaves.
-
-The index is built in the following way:
-- A pass on all entries is made like in [TTree::Draw()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
-- `var1` = `majorname`
-- `var2` = `minorname`
-- `sel = 231` × _majorname_ + _minorname_
-- For each entry in the tree the `sel` expression is evaluated and the result array is sorted into `fIndexValues`.
-
-Once the index is calculated, an entry can be retrieved with
-[TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
-
-_**Example**_
-
-{% highlight C++ %}
-// To create an index using the leaves "Run" and "Event".
-   tree.BuildIndex("Run","Event");
-
-// To read entry corresponding to Run=1234 and Event=56789.
-   tree.GetEntryWithIndex(1234,56789);
-   {% endhighlight %}
-
-Note that `majorname` and `minorname` can be expressions using original tree variables e.g., `"run-90000"` or `"event +3*xx"`.
-
-In case an expression is specified, the equivalent expression must be computed when calling
-[TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
-To build an index with only `majorname`, specify `minorname="0"` (default).
-
-Once the index is built, it can be saved with the `TTree` object with `tree.Write()`.
-
-The most convenient place to create the index is at the end of the filling process just before saving the tree header. If a previous index was calculated, it will be redefined by this new call.
-
-Note that this function can also be applied to a {% include ref class="TChain" %}. The return value is the number of entries in the Index (< 0 indicates failure).
 
 ## Tree Viewer
 
@@ -498,15 +469,10 @@ With the Tree Viewer you can examine a tree in a GUI.
 >
 > You can also use the ROOT Object Browser to examine a tree that is saved in a ROOT file. See → [ROOT Object Browser]({{ '/manual/root_files#root-object-browser' | relative_url }}).
 
-- Use the {% include ref class="TTreeViewer" %} class to open the ROOT file (containing the tree) in the Tree Viewer.
-
 _**Example**_
 
-Open the Tree Viewer for the `cernstaff.root` file (see → [Building a tree from an ASCII file](#example-building-a-tree-from-an-ascii-file)) that contains the tree `T`.
-
 {% highlight C++ %}
-   root[] TFile f("cernstaff.root")
-   root[] new TTreeViewer("T")
+   root [0] new TTreeViewer(tree)
 {% endhighlight %}
 
 {% include figure_image
@@ -544,6 +510,44 @@ The scatterplot is drawn.
 
 Note that not each `(x,y) point on a scatterplot represents two values in your N−tuple. In fact, the scatterplot is a grid and each square in
 the grid is randomly populated with a density of dots that’s proportional to the number of values in that grid.
+
+### Indexing trees
+
+- Use [TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998){:target="_blank"} method to build an index table using expressions depending on the value in the leaves.
+
+The index is built in the following way:
+- A pass on all entries is made like in [TTree::Draw()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
+- `var1` = `majorname`
+- `var2` = `minorname`
+- `sel = 231` × _majorname_ + _minorname_
+- For each entry in the tree the `sel` expression is evaluated and the result array is sorted into `fIndexValues`.
+
+Once the index is calculated, an entry can be retrieved with
+[TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
+
+_**Example**_
+
+{% highlight C++ %}
+// To create an index using the leaves "Run" and "Event".
+   tree.BuildIndex("Run","Event");
+
+// To read entry corresponding to Run=1234 and Event=56789.
+   tree.GetEntryWithIndex(1234,56789);
+   {% endhighlight %}
+
+Note that `majorname` and `minorname` can be expressions using original tree variables e.g., `"run-90000"` or `"event +3*xx"`.
+
+In case an expression is specified, the equivalent expression must be computed when calling
+[TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
+To build an index with only `majorname`, specify `minorname="0"` (default).
+
+Once the index is built, it can be saved with the `TTree` object with `tree.Write()`.
+
+The most convenient place to create the index is at the end of the filling process just before saving the tree header. If a previous index was calculated, it will be redefined by this new call.
+
+Note that this function can also be applied to a {% include ref class="TChain" %}. The return value is the number of entries in the Index (< 0 indicates failure).
+
+
 
 ## Branches
 
