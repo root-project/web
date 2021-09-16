@@ -232,7 +232,7 @@ for (int iEntry = 0; tree->LoadTree(iEntry) >= 0; ++iEntry) {
 ### Selecting a subset of entries to be read
 
 To process only a selection of tree entries, you can use a {% include ref class="TEntryList" %}.
-First you inserting the tree entry numbers you want to process into the `TEntryList`.
+First you insert the tree entry numbers you want to process into the `TEntryList`.
 
 {% highlight Python %}
 entryList = ROOT.TEntryList("entryListName", "Title of the entry list")
