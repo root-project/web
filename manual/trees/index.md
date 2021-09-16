@@ -44,8 +44,27 @@ when reading back a `TTree` entry, it will write the values it read from storage
 A tree consists of a list of independent columns, called branches. A branch can contain values of any fundamental type, C++ objects known to ROOT's type system, or collections of those.
 Branches are represented by {% include ref class="TBranch" %} and its derived classes.
 
-While `TBranch` represent structure, objects inheriting from {% include ref class="TLeaf" %} contain the actual data.
-Originally, any columnar data was contained in a `TLeaf`; these days, some of the `TBranch`-derived classes contain data themselves, such as {% include ref class="TBranchElement" %}.
+While `TBranch` represent structure, objects inheriting from {% include ref class="TLeaf" %} give access to the actual data.
+Originally, any columnar data was accessible through a `TLeaf`; these days, some of the `TBranch`-derived classes provide data access themselves, such as {% include ref class="TBranchElement" %}.
+
+### Baskets, clusters and the tree header
+
+Every branch or leaf stores the data for its entries in buffers of a size that can be specified during branch creation (default: 32000 bytes).
+Once the buffer is full, it gets compressed; the compressed buffer is called _basket_.
+These baskets are written into the ROOT file.
+Branches with more data per tree entry will fill more baskets than branches with less data per tree entry.
+Conversely, baskets can hold many tree entries if their branch stores only a few bytes per tree entry.
+This means that generally, all baskets - also of different branches - will contain data of different tree entry ranges.
+
+To allow more efficient pre-fetching and better chunking of tree data stored in ROOT files, TTree groups baskets into clusters, for a defined range of tree entry indices.
+Trees will close baskets that are not yet full when reaching the tree entry at a cluster boundary.
+
+TTree finds the baskets for a given entry for a given branch by means of a header stored to file.
+This header also contains other auxilliary metadata.
+When reading a `TTree` object, only this header is actually deserialized, until the tree's entries are loaded.
+Multiple updates of these headers can often be found in files (`treename;1`, `treename;2` etc, called cycles, see → [I/O]({{ '/manual/io' | relative_url }})).
+Only the last one (also accessible as `treename`) knows about all written baskets.
+
 
 ### `TNtuple`, the high-performance spread-sheet
 
@@ -113,13 +132,16 @@ The recusion level of nested splitting is called the "split level"; it can be co
 
 If the split level is set to 0, there is no splitting: all data members are stored in the same branch.
 Data members can also be configured to be non-split as part of the dictionary; see → [I/O]({{ '/manual/io' | relative_url }}).
-The default split level is 1; a split level of 99 means to split all members at any recursion level.
+The default split level of 99 means to split all members at any recursion level.
 
 _Pointers_
 
 While references `X &` are not supported as member types, pointers are.
 If the pointer is non-null, ROOT stores the object pointed to (pointee).
-If multiple pointers point to the same object during one `TTree::Fill()` operation, that pointee will only be stored once; upon reading, all pointers will again point to the same object.
+If multiple pointers within the same branch point to the same object during one `TBranch::Fill()` operation (as invoked by `TTree::Fill()`), that pointee will only be stored once; upon reading, all pointers will again point to the same object.
+
+For the general case, indices into object collections could be persistified instead of pointers.
+This way, the object is only stored once.
 
 _**Example**_
 
@@ -151,18 +173,25 @@ Use [TTree:Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6e
 
 The data of a tree are saved in a ROOT file (see → [ROOT files]({{ '/manual/root_files' | relative_url }})).
 
-- Use the [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f){:target="_blank"} method to write the tree into a ROOT file.
+Use [TTree::Write()](https://root.cern/doc/master/classTTree.html#af6f2d9ae4048ad85fcae5d2afa05100f){:target="_blank"} to write the tree into a ROOT file.
+Earlier entries' data might already be written as part of `TTree::Fill()`.
 
-The `TTree::Write()` method is needed to write the ROOT file header.
+If due to the data written during `TTree::Fill()`, the file's size increases beyond [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9){:target="_blank"}, the current ROOT file is closed and a new ROOT file is created.
+For an original ROOT file named `myfile.root`, the subsequent ROOT files are named `myfile_1.root`, `myfile_2.root`, etc.
 
-When writing a {% include ref class="TTree" %} to a ROOT file and if the ROOT file size reaches the value stored in the [TTree::GetMaxTreeSize()](https://root.cern/doc/master/classTTree.html#aca38baf017a203ddb3119a9ab7283cd9){:target="_blank"}, the current ROOT file is closed and a new ROOT file is created. If the original ROOT file is named `myfile.root`, the subsequent ROOT files are named `myfile_1.root`, `myfile_2.root`, etc.
+_AutoFlush_
 
-_Autosave_
+The tree can flush its data (i.e. its baskets) to file when reaching a given cluster size, thus closing the cluster.
+By default this happens every 30MB.
+The size can be adjusted using using [TTree::SetAutoFlush()](https://root.cern/doc/master/classTTree.html#ad4c7c7d70caf5657104832bcfbd83a9f){:target="_blank"}.
 
-You can flush the tree data to file after the tree has collected a certain amount of data in memory (by default, 300MB).
+_AutoSave_
+
+The tree can write a header update to file after it has collected a certain data size in baskets (by default, 300MB).
 If your program crashes, you can recover the ROOT file and the tree entries since the last autosave.
 
-You can adjust the threshold (in bytes or entries) using [TTree::SetAutosave()](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8){:target="_blank"}.
+You can adjust the threshold (in bytes or entries) using [TTree::SetAutoSave()](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8){:target="_blank"}.
+
 
 ## Reading a tree
 
