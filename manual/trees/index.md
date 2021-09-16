@@ -280,7 +280,7 @@ if chain.Add("data_*.root") != 12:
 ## Widening a `TTree` through friends
 
 Trees are usually written just once.
-While updating an existing tree is non-trivial, extending it with additional branches, potentially an "improved" version of an original branch, is trivial.
+While updating an existing tree is non-trivial, extending it with additional branches, potentially an "improved" version of an original branch, is straightforward.
 "Friend trees" are added by calling [TTree::AddFriend()](https://root.cern/doc/master/classTTree.html#a321f2684de145cfcb01cabfce69ea910){:target="_blank"}.
 Adding another tree called `T1` as a friend tree will make the branch `X` of `T1` available as both `T1.X` and - if `X` does not exist in the original tree - as `X`.
 
