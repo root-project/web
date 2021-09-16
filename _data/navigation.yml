@@ -87,6 +87,7 @@ manual:
       - title: JSROOT
         url: manual/jsroot
       - title: How to embed ROOT in a GUI
+        url: manual/embed_root_in_gui
   - title: Further information
     children:
       - title: "Tutorials"
