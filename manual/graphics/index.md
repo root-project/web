@@ -139,7 +139,7 @@ method:
 
 Colors are managed by the class {% include ref class="TColor" %}. A color is defined by its
 RGB or HLS components. It can be accessed via an
-[index](https://root.cern.ch/doc/master/classTColor.html#C00) or
+[index](https://root.cern/doc/master/classTColor.html#C00) or
 [by name ](https://root.cern/doc/master/classTColor.html#C02) for the predefined colors.
 Colors can be grouped in [palettes](https://root.cern/doc/master/classTColor.html#C05). More
 than 60 [High quality palettes](https://root.cern/doc/master/classTColor.html#C06) are predefined.
@@ -292,7 +292,7 @@ The `SetRangeUser()` method parameters are user coordinates. If the start or end
 middle of a bin the resulting range is approximation. It finds the low edge bin for the
 start and the high edge bin for the high.
 
-For a general description see the ["How to set ranges on axis" FAQ](https://root-forum.cern.ch/t/how-to-set-ranges-on-axis/28254).
+For a general description see the ["How to set ranges on axis" FAQ](https://root-forum.cern/t/how-to-set-ranges-on-axis/28254).
 
 ### Setting time units for axis
 
