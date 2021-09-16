@@ -85,6 +85,7 @@ manual:
       - title: Signal/Slot communication
         url: manual/signal_slot
       - title: JSROOT
+        url: manual/jsroot
       - title: How to embed ROOT in a GUI
   - title: Further information
     children:
