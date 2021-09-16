@@ -20,11 +20,10 @@ Its source code repository is [in GitHub](https://github.com/root-project/jsroot
 
 ## Users's Guide
 
-The JSROOT user's guide can be found [here](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md).
-It describes its [installation](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md#installing-jsroot),
+The [JSROOT user's guide] (https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md) describes its [installation](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md#installing-jsroot),
 how to [draw objects in JSROOT](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md#drawing-objects-in-jsroot),
 gives a list of [supported classes](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md#supported-root-classes-by-jsroot)  with many examples, and more advanced techniques like [superimposing objects](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md#superimposing-draw-objects) and displaying [TTree](https://root.cern/doc/master/classTTree.html) data using the [TTree::Draw syntax](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md#ttree-draw)
-There is also a chapter about the [Geometry viewer](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md#geometry-viewer)
+There is also a chapter about the [Geometry viewer](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md#geometry-viewer) and more.
 
 ## Interactive Graphics
 
