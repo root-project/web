@@ -49,7 +49,7 @@ manual:
         url: manual/root_collections
       - title: Object ownership
         url: manual/object_ownership
-      - title: Multi threading
+      - title: Multi-threading
         url: manual/multi_threading
   - title: ROOT Manual - Functional parts
     url: manual/functional_parts
