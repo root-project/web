@@ -289,8 +289,7 @@ The order of the friend tree's entries must preserve the entry order of the orig
 
 > **Note**
 >
-> Especially when processing the original tree in parallel to generate the friend tree, the entries might be written out in an undefined order.
-> This can cause the entries of the friend tree to be in a different order than the entries of the original tree.
+> Care must be taken to ensure that the order of entries in the primary tree matches friends' entries. This is especially relevant when processing a tree in parallel to generate a friend tree, as the entries might be written out in an undefined order (misaligned entries).
 
 {% highlight C++ %}
 void treeWithFriend() {
