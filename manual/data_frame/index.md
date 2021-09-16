@@ -69,18 +69,4 @@ For more examples, including ones in Python, see [the tutorials](https://root.ce
 
 - To enable parallel data processing, call the [ROOT::EnableImplicitMT()](https://root.cern/doc/master/namespaceROOT.html#a06f2b8b216b615e5abbc872c9feff40f){:target="_blank"} function **before** constructing a `RDataFrame` object.
 
-This enables ROOT's implicit multi-threading for all objects and methods that provide an internal parallelization mechanism.
-
-In addition to [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"}, the following objects and methods also automatically take advantage of multi-threading:
-
-- [TTree::GetEntry](https://root.cern/doc/master/classTTree.html#a9fc48df5560fce1a2d63ecd1ac5b40cb){:target="_blank"}: Reads multiple branches in parallel.
-
-- [TTree::FlushBaskets](https://root.cern/doc/master/classTTree.html#a2c67417486903b12f1149f97ca47525f){:target="_blank"}: Writes multiple baskets to disk in parallel.
-
-- [TTreeCacheUnzip](https://root.cern/doc/master/classTTreeCacheUnzip.html){:target="_blank"}: Decompresses the baskets contained in a {% include ref class="TTreeCache" %} in parallel.
-
-- `THx::Fit`: Performs in parallel the evaluation of the objective function over the data.
-
-- [TMVA::DNN](https://root.cern/doc/master/namespaceTMVA_1_1DNN.html){:target="_blank"}: Trains a deep neural networks in parallel.
-
-- [TMVA::BDT](https://root.cern/doc/master/namespaceTMVA.html#aa80d9b85c1bb794248940dd499e132b4){:target="_blank"}: Trains a classifier in parallel and multi-class BDTs are evaluated in parallel
+For more information about multi-threading in ROOT, please see → [Multi-threading]({{ '/manual/multi_threading' | relative_url }}).

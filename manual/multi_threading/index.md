@@ -40,13 +40,22 @@ h.Draw()
 
 For further information about RDataFrame, please visit → [RDataFrame manual]({{ '/manual/data_frame' | relative_url }}).
 
-Moreover, below there is a list of other IMT cases in ROOT:
-- [TTree::GetEntry()](https://root.cern.ch/doc/master/classTTree.html#a14c88179bd5fd2116228707d6addea9f){:target="_blank"}: to read the next entry of the branches in a tree.
+In addition to RDataFrame, the methods and classes below also implement IMT in ROOT:
+- [TTree::GetEntry](https://root.cern/doc/master/classTTree.html#a9fc48df5560fce1a2d63ecd1ac5b40cb){:target="_blank"}: Reads multiple branches in parallel.
+
+- [TTreeCacheUnzip](https://root.cern/doc/master/classTTreeCacheUnzip.html){:target="_blank"}: Decompresses the baskets contained in a {% include ref class="TTreeCache" %} in parallel.
+
 - [TTree::Fill()](https://root.cern.ch/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067){:target="_blank"}: to fill the branches of a tree, possibly flushing their content to disk.
-- TMVA: TODO
-- Math: TODO
-- RooFit: TODO
-- RNtuple: TODO 
+
+- [TTree::FlushBaskets](https://root.cern/doc/master/classTTree.html#a2c67417486903b12f1149f97ca47525f){:target="_blank"}: Writes multiple baskets to disk in parallel.
+
+- [TH1::Fit](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a): Performs in parallel the evaluation of the objective function over the data.
+
+- [TMVA::DNN](https://root.cern/doc/master/namespaceTMVA_1_1DNN.html){:target="_blank"}: Trains a deep neural network in parallel.
+
+- [TMVA::BDT](https://root.cern/doc/master/namespaceTMVA.html#aa80d9b85c1bb794248940dd499e132b4){:target="_blank"}: Trains a classifier in parallel and multi-class BDTs are evaluated in parallel.
+
+- RNtuple: TODO?
 
 ## Explicit multi-threading
 
