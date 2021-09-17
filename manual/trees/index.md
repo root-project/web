@@ -59,7 +59,7 @@ This means that generally, all baskets - also of different branches - will conta
 To allow more efficient pre-fetching and better chunking of tree data stored in ROOT files, TTree groups baskets into clusters, for a defined range of tree entry indices.
 Trees will close baskets that are not yet full when reaching the tree entry at a cluster boundary.
 
-TTree finds the baskets for a given entry for a given branch by means of a header stored to file.
+TTree finds the baskets for a given entry for a given branch by means of a header stored in the file.
 This header also contains other auxilliary metadata.
 When reading a `TTree` object, only this header is actually deserialized, until the tree's entries are loaded.
 Multiple updates of these headers can often be found in files (`treename;1`, `treename;2` etc, called cycles, see → [I/O]({{ '/manual/io' | relative_url }})).
@@ -219,7 +219,7 @@ tree.Write()
 _AutoFlush_
 
 The tree can flush its data (i.e. its baskets) to file when reaching a given cluster size, thus closing the cluster.
-By default this happens approximatively every 30MB of compressed data.
+By default this happens approximately every 30MB of compressed data.
 The size can be adjusted using using [TTree::SetAutoFlush()](https://root.cern/doc/master/classTTree.html#ad4c7c7d70caf5657104832bcfbd83a9f){:target="_blank"}.
 
 _AutoSave_
@@ -385,7 +385,7 @@ void treeWithFriend() {
 
 ## Examining a tree
 
-Different ways to examine the tree structure and content exist, from text to graphics.
+ROOT offers different ways to examine tree structure and its contents, from text to graphics.
 
 ### Printing the summary of a tree
 
