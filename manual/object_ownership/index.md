@@ -31,7 +31,7 @@ _**Example**_
 Changing the directory of a histogram (same applies to trees and event lists):
 
 {% highlight C++ %}
-   h->SetDirectory(newDir);
+h->SetDirectory(newDir);
 {% endhighlight %}
 
 You can remove a histogram from a directory by using `SetDirectory(nullptr)`. Once a histogram is removed from the directory, it will not be deleted when the directory is deleted. Instead, you have to delete the histogram yourself to prevent memory leaks.
@@ -41,7 +41,7 @@ You can remove a histogram from a directory by using `SetDirectory(nullptr)`. On
 To prevent histograms from being added to the current directory, call the static function
 
 {% highlight C++ %}
-   TH1::AddDirectory(kFALSE);
+TH1::AddDirectory(kFALSE);
 {% endhighlight %}
 
 Now you own all histogram objects and you will need to delete them, for instance through the use of `std::unique_ptr`.
@@ -102,7 +102,7 @@ This will be documented in the function creating the other object.
 _**Example**_
 
 {% highlight C++ %}
-   myHisto->Fit("gaus")
+myHisto->Fit("gaus")
 {% endhighlight %}
 
 The call of `Fit()` copies the global {% include ref class="TF1" %} Gaussian function and attaches the copy to the histogram. When the histogram is deleted, the copy is deleted too.
