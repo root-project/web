@@ -511,42 +511,38 @@ The scatterplot is drawn.
 Note that not each `(x,y) point on a scatterplot represents two values in your N−tuple. In fact, the scatterplot is a grid and each square in
 the grid is randomly populated with a density of dots that’s proportional to the number of values in that grid.
 
-### Indexing trees
+### Indexing a tree
 
-- Use [TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998){:target="_blank"} method to build an index table using expressions depending on the value in the leaves.
+- Use [TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998){:target="_blank"} to build an index table over expressions that depend on the value in the leaves.
+This index is similar to database indexes:
+it allows to quickly determine the tree entry number corresponding to the value of an expression.
+These expressions should be both equality comparable (that is, not use floating point numbers where precision might cause the index lookup to fail) and unique, to make sure you get the tree entry you expect.
+For high-energy physics, a common example could be a combination of run number and event number:
+while each one of them might have duplications, their combination is guaranteed to be unique. 
 
-The index is built in the following way:
-- A pass on all entries is made like in [TTree::Draw()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
-- `var1` = `majorname`
-- `var2` = `minorname`
-- `sel = 231` × _majorname_ + _minorname_
-- For each entry in the tree the `sel` expression is evaluated and the result array is sorted into `fIndexValues`.
+To build an index, define a major and optionally a minor expression, for instance above `Run` and `Event`.
+They can be expressions using original tree variables, such as `"run - 90000"`.
+[TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998){:target="_blank"} loops over all entries and builds the lookup table from the expressions to the tree entry number.
+The index can then be saved as part of the `TTree` object with `tree.Write()`.
+This is done most conveniently at the end of the filling process, just before saving the tree header.
 
-Once the index is calculated, an entry can be retrieved with
+An entry can be retrieved using the index with
 [TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
+
+Tree indexing works as well with a {% include ref class="TChain" %}.
 
 _**Example**_
 
 {% highlight C++ %}
 // To create an index using the leaves "Run" and "Event".
-   tree.BuildIndex("Run","Event");
+tree.BuildIndex("Run","Event");
 
 // To read entry corresponding to Run=1234 and Event=56789.
-   tree.GetEntryWithIndex(1234,56789);
-   {% endhighlight %}
+auto iEntry = tree.GetEntryWithIndex(1234, 56789);
 
-Note that `majorname` and `minorname` can be expressions using original tree variables e.g., `"run-90000"` or `"event +3*xx"`.
-
-In case an expression is specified, the equivalent expression must be computed when calling
-[TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
-To build an index with only `majorname`, specify `minorname="0"` (default).
-
-Once the index is built, it can be saved with the `TTree` object with `tree.Write()`.
-
-The most convenient place to create the index is at the end of the filling process just before saving the tree header. If a previous index was calculated, it will be redefined by this new call.
-
-Note that this function can also be applied to a {% include ref class="TChain" %}. The return value is the number of entries in the Index (< 0 indicates failure).
-
+// Save the tree header, together with the index
+tree.Write();
+{% endhighlight %}
 
 
 ## Branches
