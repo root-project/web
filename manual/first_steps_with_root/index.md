@@ -185,6 +185,7 @@ ROOT provides Python bindings, called [PyROOT]({{ '/manual/python' | relative_ur
 Therefore, ROOT can be used interactively from the Python prompt. The first step consists in importing the ROOT module:
 
 {% highlight Python %}
+$ python
 >>> import ROOT
 {% endhighlight %}
 
