@@ -44,9 +44,9 @@ For further information about RDataFrame, please visit → [RDataFrame manual]({
 In addition to RDataFrame, the methods and classes below also implement IMT in ROOT:
 - [TTree::GetEntry](https://root.cern/doc/master/classTTree.html#a9fc48df5560fce1a2d63ecd1ac5b40cb){:target="_blank"}: Reads and decompresses multiple branches in parallel.
 
-- [TTree::Fill()](https://root.cern.ch/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067){:target="_blank"}: to fill and compress the branches of a tree, possibly flushing their content to disk.
+- [TTree::Fill()](https://root.cern/doc/master/classTTree.html#a00e0c422f5e4f6ebcdeef57ff23e9067){:target="_blank"}: to fill and compress the branches of a tree, possibly flushing their content to disk.
 
-- [TH1::Fit](https://root.cern.ch/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a): Performs in parallel the evaluation of the objective function over the data.
+- [TH1::Fit](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a): Performs in parallel the evaluation of the objective function over the data.
 
 - [TMVA::DNN](https://root.cern/doc/master/namespaceTMVA_1_1DNN.html){:target="_blank"}: Trains a deep neural network in parallel.
 
