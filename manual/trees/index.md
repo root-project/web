@@ -219,13 +219,13 @@ tree.Write()
 _AutoFlush_
 
 The tree can flush its data (i.e. its baskets) to file when reaching a given cluster size, thus closing the cluster.
-By default this happens every 30MB.
+By default this happens approximatively every 30MB of compressed data.
 The size can be adjusted using using [TTree::SetAutoFlush()](https://root.cern/doc/master/classTTree.html#ad4c7c7d70caf5657104832bcfbd83a9f){:target="_blank"}.
 
 _AutoSave_
 
 The tree can write a header update to file after it has collected a certain data size in baskets (by default, 300MB).
-If your program crashes, you can recover the ROOT file and the tree entries since the last autosave.
+If your program crashes, you can recover the tree and its baskets written before the last autosave.
 
 You can adjust the threshold (in bytes or entries) using [TTree::SetAutoSave()](https://root.cern/doc/master/classTTree.html#a76259576b0094536ad084cde665c13a8){:target="_blank"}.
 
@@ -325,7 +325,7 @@ In high energy physics you always want as much data as possible.
 But it's not nice to deal with files of multiple terabytes.
 ROOT allows to to split data across multiple files, where you can then access the files' tree parts as one large tree.
 That's done through {% include ref class="TChain" %}, which inherits from {% include ref class="TTree" %}:
-it wants to know the name of the trees in the files (has to be the same throughout), and the file names, and will act as if it was a huge, continuous tree:
+it wants to know the name of the trees in the files (which can be overridden when adding files), and the file names, and will act as if it was a huge, continuous tree:
 
 _**Example**_
 
