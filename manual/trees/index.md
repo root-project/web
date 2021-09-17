@@ -520,14 +520,15 @@ These expressions should be both equality comparable (that is, not use floating 
 For high-energy physics, a common example could be a combination of run number and event number:
 while each one of them might have duplications, their combination is guaranteed to be unique. 
 
-To build an index, define a major and optionally a minor expression, for instance above `Run` and `Event`.
+To build an index, define a major and optionally a minor expression.
+In the example above these might simply be the leaves `Run` and `Event`.
 They can be expressions using original tree variables, such as `"run - 90000"`.
 [TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998){:target="_blank"} loops over all entries and builds the lookup table from the expressions to the tree entry number.
 The index can then be saved as part of the `TTree` object with `tree.Write()`.
 This is done most conveniently at the end of the filling process, just before saving the tree header.
 
 An entry can be retrieved using the index with
-[TTree::GetEntryWithIndex(majornumber, minornumber)](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bTTree::Draw()d0b06eea6c12b998){:target="_blank"}.
+[TTree::GetEntryWithIndex()](https://root.cern/doc/master/classTTree.html#a8c77a02a1323019375d273299a2c14b1){:target="_blank"}.
 
 Tree indexing works as well with a {% include ref class="TChain" %}.
 
