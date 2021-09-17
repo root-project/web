@@ -59,10 +59,11 @@ Branches with more data per tree entry will fill more baskets than branches with
 Conversely, baskets can hold many tree entries if their branch stores only a few bytes per tree entry.
 This means that generally, all baskets - also of different branches - will contain data of different tree entry ranges.
 
-To allow more efficient pre-fetching and better chunking of tree data stored in ROOT files, TTree groups baskets into clusters, for a defined range of tree entry indices.
+To allow more efficient pre-fetching and better chunking of tree data stored in ROOT files, TTree groups baskets into _clusters_.
+A cluster contains all the data of a given event range.
 Trees will close baskets that are not yet full when reaching the tree entry at a cluster boundary.
 
-TTree finds the baskets for a given entry for a given branch by means of a header stored in the file.
+TTree finds the baskets for a given entry for a given branch by means of a _header_ stored in the file.
 This header also contains other auxilliary metadata.
 When reading a `TTree` object, only this header is actually deserialized, until the tree's entries are loaded.
 Multiple updates of these headers can often be found in files (`treename;1`, `treename;2` etc, called cycles, see → [I/O]({{ '/manual/io' | relative_url }})).
