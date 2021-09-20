@@ -73,7 +73,7 @@ Only the last one (also accessible as `treename`) knows about all written basket
 ### `TNtuple`, the high-performance spread-sheet
 
 For convenience, ROOT also provides the {% include ref class="TNtuple" %} class which is a tree whose branches contain only numbers of type `float`, one per tree entry.
-It derives from {% include ref class="TTree" %} and is constructued with a `;` separated list of column names.
+It derives from {% include ref class="TTree" %} and is constructed with a list of column names separated by `:`.
 
 _**Example**_
 
