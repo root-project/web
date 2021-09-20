@@ -287,7 +287,7 @@ the graphs buiding it. It is also possible to [impose axis limits](https://root.
 
 ### Fitting a TMultiGraph
 
-When graphs are stored in a {% include ref class="TMultiGraph" %} they considered as
+When graphs are stored in a {% include ref class="TMultiGraph" %} they are considered as
 a single set of point by the [fitting mechanism](https://root.cern/doc/master/classTMultiGraph.html#MG02).
 
 ## Automatic coloring
