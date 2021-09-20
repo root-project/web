@@ -104,7 +104,7 @@ You can see this [tutorial](https://root.cern/doc/master/rebin_8C.html) as a re-
 
 ### Stack of histograms
 
-{% include ref class="THStack" %} is a collection of {% include ref class="TH1" %} or {% include ref class="TH2" %} histograms. The tutorial [hstack.C](https://root.cern/doc/master/hstack_8C.html) is a good example of how using the `THStack` class.
+{% include ref class="THStack" %} is a collection of {% include ref class="TH1" %} or {% include ref class="TH2" %} histograms. The tutorial {%include tutorial name="hstack" %} is a good example of how using the `THStack` class.
 
 ## Working with histograms
 
@@ -229,12 +229,12 @@ In Python you can use random numbers generated using the `numpy.random` library 
 
 ```python
    import numpy as np
-import ROOT
-  # generate an array of normal distributed data with mean=5 and stddev=2 containing 1000 values
-  x = np.random.normal(5,2,1000)
-  w = np.ones(1000)
-  h1 = ROOT.TH1D("h1","h1 title",50,0.,10.);
-  h1.Fill(1000, x, w)
+   import ROOT
+#generate an array of normal distributed data with mean=5 and stddev=2 containing 1000 values
+   x = np.random.normal(5,2,1000)
+   w = np.ones(1000)
+   h1 = ROOT.TH1D("h1","h1 title",50,0.,10.);
+   h1.Fill(1000, x, w)
 ```
 
 Use the [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232){:target="_blank"} method to get a random number distributed according the contents of a histogram.
@@ -300,9 +300,9 @@ To use the normalization methods, you can clone first the histogram to keep the 
 If you want to show just the frequency probability of each bin, you don't need to use the `width` option.
 
 {% highlight C++ %}
-TH1*h1 = (TH1*)(h->Clone("h1"));
-h1->Scale(1./h1->Integral(), "width");
-h1->Draw();
+   TH1*h1 = (TH1*)(h->Clone("h1"));
+   h1->Scale(1./h1->Integral(), "width");
+   h1->Draw();
 {% endhighlight %}
 
 
@@ -370,6 +370,7 @@ _**Examples**_
    }
    h2.DrawCopy("LEGO1");
 {% endhighlight %}
+Note that we have used here `DrawCopy` since in this case the histogram is created within a C++ scope and it will be deleted at the end.
 
 {% include figure_image
    img="histo-lego.png"
