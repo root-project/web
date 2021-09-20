@@ -74,14 +74,12 @@ manual:
         url: manual/python
       - title: Mathematical libraries
         url: manual/math
-      - title: Physics vectors (move in Math)
+      - title: Physics vectors
         url: manual/physics_vectors
       - title: Geometry
         url: manual/geometry
       - title: ROOT I/O
         url: manual/root_io
-      - title: Adding a class to ROOT (move in I/O)
-        url: manual/adding_a_class_to_root
       - title: Signal/Slot communication
         url: manual/signal_slot
       - title: JSROOT
