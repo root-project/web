@@ -56,7 +56,7 @@ the [drawing]({{ '/manual/graphs/#drawing-a-graph' | relative_url }}) and the
 
 ### Creating a graph
 
-  - Use a one of the [TGraph constructor](https://root.cern/doc/master/classTGraph.html) to
+  - Use one of the [TGraph constructor](https://root.cern/doc/master/classTGraph.html) to
 create a graph object.
 
 {% include ref class="TGraph" %}, and its derived classes, offers a wide variety of constructors.
@@ -296,84 +296,60 @@ When several graphs are drawn on the same plot, it is possible to
 [pick automatically the color](https://root.cern/doc/master/classTGraphPainter.html#GP05) of
 each graph in the current color palette.
 
+
+## TGraphQQ
+
+A {% include ref class="TGraphQQ" %} allows to draw quantile-quantile plots. Such plots can
+be drawn for two datasets, or for one dataset and a theoretical distribution function.
+
+
 ## TGraph2D
 
-A {% include ref class="TGraph2D" %} graph is a graphics object that is made of three arrays `X`, `Y` and `Z` with the same number of points each.
+A {% include ref class="TGraph2D" %} graph is a graphics object that is made of three
+arrays `X`, `Y` and `Z` with the same number of points each.
 
-The {% include ref class="TGraph2D" %} class has the following constructors:
+{% include ref class="TGraph2DErrors" %} derives from {% include ref class="TGraph2D" %}. It
+adds 3 extra vectors to define the errors.
 
-- With a dimension n of an array and three arrays `x`, `y`, and `z` (can be arrays of doubles, floats, or integers).
+### Creating a TGraph2D
 
-{% highlight C++ %}
-   TGraph2D *g = new TGraph2D(n,x,y,z);
-{% endhighlight %}
+  - Use one of the {% include ref class="TGraph2D" %} constructors to create a 2D graph.
 
-- With only the dimension n of an array.
+{% include ref class="TGraph2D" %} (and {% include ref class="TGraph2DErrors" %}) have several
+constructors. For instances from three arrays `x`, `y`, and `z` (can be arrays of doubles, floats, or integers),
+from an ASCII file, or even without parameter (in that case use the `SetPoint()` method to
+fill the internal arrays).
 
- {% highlight C++ %}
-   TGraph2D *g = new TGraph2D(n);
- {% endhighlight %}
+### Drawing a TGraph2D
 
-- Internal arrays are filled with the `SetPoint()` method at the position `i` with the values `x`, `y`, `z`.
+You can draw a {% include ref class="TGraph2D" %} with any
+[drawing option valid for 2D histogram](https://root.cern/doc/master/classTHistPainter.html#HP01c).
+In this case, an intermediate 2D histogram is filled using the [Delaunay triangles technique](https://root.cern/doc/master/classTGraphDelaunay.html) to
+interpolate the data set.
 
-{% highlight C++ %}
-   g->SetPoint(i,x,y,z);
-{% endhighlight %}
-
-- Without parameters. Use the `SetPoint()` method to fill the internal arrays.
-
-{% highlight C++ %}
-   TGraph2D *g = new TGraph2D();
-{% endhighlight %}
-
-- From a file. The arrays are read from the ASCII file, for example `graph.dat` according to a specified format. The format’s default value is
-`%lg %lg %lg`.
-
-{% highlight C++ %}
-   TGraph2D *g = new TGraph2D("graph.dat");
-{% endhighlight %}
-
-Note that in any of last three cases, you can use the `SetPoint()` method to change a data point or to add
-a new one. If the data point index `(i)` is greater than the size of the internal arrays, they are automatically extended.
-
-### Drawing options
-
-You can draw a {% include ref class="TGraph2D" %} with any drawing option valid for 2D histogram drawing. In this case, an intermediate 2D
-histogram is filled using the Delaunay triangles technique to interpolate the data set.
-
-You can also use the following specific drawing options for {% include ref class="TGraph2D" %} graphs:
-
-- `TRI`: Delaunay triangles are drawn using the filled area. A hidden surface drawing technique is used. The surface
-is painted with the current fill area color. The edges of the triangles are painted with the current line color.
-- `TRIW`: Delaunay triangles are drawn as wire frames.
-- `TRI1`: Delaunay triangles are painted with color levels. The edges of the triangles are painted with the
-current line color.
-- `TRI2`: Delaunay triangles are painted with color levels.
-- `P`: Draws a marker at each vertex.
-- `P0`: Draws a circle at each vertex. Each circle background is white.
+You can also use the specific {% include ref class="TGraph2D" %} drawing options.
 
 _**Example**_
 
 {% highlight C++ %}
 {
-   TCanvas *c = new TCanvas("c","Graph2D example",0,0,700,600);
+   auto c = new TCanvas("c","Graph2D example",0,0,700,600);
    double x, y, z, P = 6.;
    int np = 200;
-   TGraph2D *dt = new TGraph2D();
-   TRandom *r = new TRandom();
+   auto dt = new TGraph2D();
+   auto r  = new TRandom();
    for (int N=0; N<np; N++) {
       x = 2*P*(r->Rndm(N))-P;
       y = 2*P*(r->Rndm(N))-P;
       z = (sin(x)/x)*(sin(y)/y)+0.2;
       dt->SetPoint(N,x,y,z);
    }
-   gStyle->SetPalette(55);
-   dt->Draw("surf1");
+   dt->Draw("tri1 p0");
 }
 {% endhighlight %}
 
 {% include figure_image
    img="graph2d.png"
-   caption="A TGraph2D with the drawing option surf1."
+   caption="A TGraph2D with the drawing option TRI1 and P0."
 %}
 
