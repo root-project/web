@@ -60,7 +60,7 @@ Conversely, baskets can hold many tree entries if their branch stores only a few
 This means that generally, all baskets - also of different branches - will contain data of different tree entry ranges.
 
 To allow more efficient pre-fetching and better chunking of tree data stored in ROOT files, TTree groups baskets into _clusters_.
-A cluster contains all the data of a given event range.
+A cluster contains all the data of a given entry range.
 Trees will close baskets that are not yet full when reaching the tree entry at a cluster boundary.
 
 TTree finds the baskets for a given entry for a given branch by means of a _header_ stored in the file.
