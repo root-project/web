@@ -397,7 +397,6 @@ void treeWithFriend() {
    }
 {% endhighlight %}
 
-# We still need to work on the parts below. No point in reviewing yet.
 
 ## Examining a tree
 
