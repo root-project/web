@@ -23,12 +23,8 @@ The first part of the ROOT Manual contains:
 
   - [Integrating ROOT into CMake projects]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
 
-
   - [ROOT collections]({{ '/manual/root_collections' | relative_url }})
 
   - [Object ownership]({{ '/manual/object_ownership' | relative_url }})
 
   - [Multi-threading]({{ '/manual/multi_threading' | relative_url }})
-
-
-  - [Adding a class to ROOT (should be moved)]({{ '/manual/adding_a_class_to_root' | relative_url }})

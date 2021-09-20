@@ -282,8 +282,8 @@ with the necessary information on how to generate Python bindings on the fly.
 This is what the large LHC experiments do to steer their analysis frameworks from Python.
 
 1. Create one or multiple C++ libraries. <br/>For example create a library as a CMake project that uses ROOT, see → [CMake details]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
-1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read or written from or into files.
-1. Generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files, see → [Generating dictionaries]({{ '/manual/root_io/#generating-dictionaries' | relative_url }})
+2. [Optional] Add [`ClassDef` macros]({{ 'manual/root_io/#adding-a-class-to-root' | relative_url }}) for classes that should be read or written from or into files.
+3. Generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files, see → [Generating dictionaries]({{ '/manual/root_io/#generating-dictionaries' | relative_url }})
    <br>Use a [`LinkDef.h` file]({{ '/manual/root_io/#selecting-dictionary-entries-linkdefh' | relative_url }})
    to select which classes or functions ROOT should be included in the dictionary.
 
@@ -304,7 +304,7 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
     add_dependencies(AnalysisLib G__AnalysisLib)
    ```
 1. Implement the C++ side, and compile the library using CMake.
-1. On the Python side, load the libraries with high-performance C++ in one step:
+2. On the Python side, load the libraries with high-performance C++ in one step:
 
    ```python
    import ROOT
