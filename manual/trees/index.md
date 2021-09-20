@@ -66,7 +66,7 @@ Trees will close baskets that are not yet full when reaching the tree entry at a
 TTree finds the baskets for a given entry for a given branch by means of a _header_ stored in the file.
 This header also contains other auxilliary metadata.
 When reading a `TTree` object, only this header is actually deserialized, until the tree's entries are loaded.
-Multiple updates of these headers can often be found in files (`treename;1`, `treename;2` etc, called cycles, see → [I/O]({{ '/manual/io' | relative_url }})).
+Multiple updates of these headers can often be found in files (`treename;1`, `treename;2` etc, called cycles, see → [I/O]({{ '/manual/root_io' | relative_url }})).
 Only the last one (also accessible as `treename`) knows about all written baskets.
 
 
@@ -138,7 +138,7 @@ tree.Branch("branch0", var, "leafname/F");
 <br/>
 **2. Branches holding class type**
 
-You can create a branch holding one of ROOT's classes, or your own type for which you have provided a dictionary (see → [I/O]({{ '/manual/io' | relative_url }})).
+You can create a branch holding one of ROOT's classes, or your own type for which you have provided a dictionary (see → [I/O]({{ '/manual/root_io' | relative_url }})).
 
 _Splitting_
 
@@ -147,7 +147,7 @@ If such a member is a class itself, that member's type can also be split.
 The recusion level of nested splitting is called the "split level"; it can be configured during branch creation.
 
 If the split level is set to 0, there is no splitting: all data members are stored in the same branch.
-Data members can also be configured to be non-split as part of the dictionary; see → [I/O]({{ '/manual/io' | relative_url }}).
+Data members can also be configured to be non-split as part of the dictionary; see → [I/O]({{ '/manual/root_io' | relative_url }}).
 The default split level of 99 means to split all members at any recursion level.
 
 _Pointers_
