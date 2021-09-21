@@ -411,16 +411,76 @@ In the `Style` tab, you can select and change some of the drawing option and dra
 ## Fitting Histograms
 
 Histograms in ROOT can be fitted with user defined functions defined using the ROOT  {% include ref class="TF1" %} function classes.
-For fitting histograms see the [Fitting section](#fitting).
-
-## Projections of histograms
+For fitting histograms see the [Fitting section]({{ '/manual/fitting' | relative_url }}).
 
 ## Miscellaneous Operations
+
+### Projections of histograms
+
+One can perform projection from multi-dimensional histograms (`TH2` and `TH3`) to lower dimensional histograms and to profile histograms (`TProfile`). See the
+[reference guide](https://root.cern/doc/master/classTH1.html#prof-hist) for the available projection functions.
+
 
 ### Fast Fourier transforms for histograms
 
 ROOT provides with {% include ref class="TVirtualFFT" %} an interface class for fast Fourier transforms (FFT) (see → [FFTW]({{ '/manual/math/#fftw' | relative_url }}). With [TH1::FFT()](https://root.cern/doc/master/classTH1.html#a69321e3106e4a26db3fef4d126d835ff){:target="_blank"} you can perform a FFT for a histogram.
 
-### Histogram statistics
+## Histogram statistics
 
-### Statistical tests
+ROOT histograms provide functions to compute statistics on the input data such as mean, [TH1::GetMean](https://root.cern/doc/master/classTH1.html#a3e2fa7eca22330a7f6458e481e6ca0ae), standard
+deviation, [TH1::GetStdDev](https://root.cern/doc/master/classTH1.html#a31a19244776aca64aab4ee1808f14c32)and also  kurtosis,
+[TH1::GetKurtosis](https://root.cern/doc/master/classTH1.html#aff8626d5a150eab4a19bbbc258718c5d) and skewness,
+[TH1::GetSkewness](https://root.cern/doc/master/classTH1.html#a3f2e05cf408b6e69602141e6699883c5)and covariance and correlation, see for example [TH2::GetCorrelationFactor](https://root.cern/doc/master/classTH2.html#a0a319442275deed3941c0904cecddd3c) for multi-dimensional
+histograms.
+
+The function `TH1::GetRMS` is equivalent to `TH1::GetStdDev`, since historically the `RMS` has been identified as the sample standard deviation. 
+
+In addition, ROOT provides functions to compute estimations of  the error of the sample mean and standard deviations.
+See [TH1::GetMeanError](https://root.cern/doc/master/classTH1.html#aa4e6882403221cd5e38cd0716295e751) and
+[TH1::GetStdDevError](https://root.cern/doc/master/classTH1.html#ae7b4359f7eee88b7a21468308bc365aa).
+
+The histogram statistics can be displayed in the histogram statistics box. 
+
+Note that by default, the histogram statistics are computed on all the raw input data sample, but when an histogram range is selected, the statistics are computed in the user defined range and using only the
+bin center information.
+
+The function [TH1::GetQuantiles] computes, from the given histogram binned data, the quantiles, such as  median and quartiles.
+For example, to compute the quartiles (including the median), you provide as input the probability values for which you want to compute the corresponding quantiles: 
+
+{% highlight C++ %}
+   double p[3] = { 0.25, 0.50, 0.75};
+   double q[3];
+   h1.GetQuantiles(3,q,p);
+   std::cout << "first quartile (25th percentile) = " << q[0] << std::endl;
+   std::cout << "median (50th percentile) = " << q[1] << std::endl;
+   std::cout << "third quartile (75th percentile) = " << q[2] << std::endl;
+{% endhighlight %}
+
+
+### Statistical tests 
+
+The ROOT histogram class provides also functions to perform statistical comparison tests, such as goodness of fit tests, for testing compatibility of two histograms (2 sample tests) or compatibility
+of an histogram with a theoretical distribution, i.e. a function (1 sample tests).
+
+For trsts of histogram-histogram compatibility:
+- [TH1::Chi2Test](https://root.cern/doc/master/classTH1.html#a6c281eebc0c0a848e7a0d620425090a5) for performing a chi2 test between two histograms. This tests works also for multi-dimensional
+  histograms, but it requires to have non-empty bins.
+- [TH1::KolmogorovTest](https://root.cern/doc/master/classTH1.html#aeadcf087afe6ba203bcde124cfabbee4) to perform the Kolgomorov-Smironov test on the two histograms. Note that this tests works only for
+  1-D histograms and it has a
+  bias for binned data and should be used if the bin size is sufficiently small.
+- [TH1::AndersonDarlig](https://root.cern/doc/master/classTH1.html#aa395c473ea9693359a74189fbe0ee0db) working only for 1-D histograms.
+
+For histogram-function comparison tests:
+- [TH1::Chisquare](https://root.cern/doc/master/classTH1.html#ab78967d8b3ede39791a2ec4b20afbb84) using the chi2 test
+-  [TH1::Chisquare(function,"L")](https://root.cern/doc/master/classTH1.html#ab78967d8b3ede39791a2ec4b20afbb84) (note the option `L`) to use the Poisson likelihood ratio based method suggested by Baker
+and Cousins (see corresponding [paper](https://www.sciencedirect.com/science/article/pii/0167508784900164)).
+
+### Histogram bin Errors
+
+The bin error of the histograms are computed by default as following:
+-  unweighted histogram: square root of bin content 
+-  weighted histogram : square root of the bin sum of the weights square.
+
+For unweighted histograms there is also the option to compute the Poisson standard confidence intervals for each bin, by calling `TH1::SetBinErrorOption(TH1::kPoisson)`. After this, one can retrieve
+the corresponding lower and upper bin error by using `TH1::GetBinErrorLow()` and `TH1::GetBinErrorUp`. 
+
