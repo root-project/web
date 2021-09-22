@@ -316,8 +316,11 @@ adds 3 extra vectors to define the errors.
   - Use one of the {% include ref class="TGraph2D" %} constructors to create a 2D graph.
 
 {% include ref class="TGraph2D" %} (and {% include ref class="TGraph2DErrors" %}) have several
-constructors. For instances from three arrays `x`, `y`, and `z` (can be arrays of doubles, floats, or integers),
-from an ASCII file, or even without parameter (in that case use the `SetPoint()` method to
+constructors. For instances
+[from three arrays](https://root.cern/doc/master/classTGraph2D.html#a3b3571d04ab467efc3da26c60e39dd0d) `x`, `y`, and `z`
+(can be arrays of doubles, floats, or integers),
+[from an ASCII file](https://root.cern/doc/master/classTGraph2D.html#a43266b55df2d9c83fee12f587f405b25), or even
+[without parameter](https://root.cern/doc/master/classTGraph2D.html#a0ae3f73de5863f8aae3e9fe86c15cb05) (in that case use the `SetPoint()` method to
 fill the internal arrays).
 
 ### Drawing a TGraph2D
@@ -327,7 +330,7 @@ You can draw a {% include ref class="TGraph2D" %} with any
 In this case, an intermediate 2D histogram is filled using the [Delaunay triangles technique](https://root.cern/doc/master/classTGraphDelaunay.html) to
 interpolate the data set.
 
-You can also use the specific {% include ref class="TGraph2D" %} drawing options.
+You can also use [the specific TGraph2D drawing options](https://root.cern/doc/master/classTGraph2D.html#G2D01)
 
 _**Example**_
 
@@ -353,3 +356,8 @@ _**Example**_
    caption="A TGraph2D with the drawing option TRI1 and P0."
 %}
 
+
+### Fitting a TGraph2D
+Some tutorials show how to fit
+[TGraph2D](https://root.cern/doc/master/graph2dfit_8C.html) and
+[TGraph2DErrors](https://root.cern/doc/master/graph2derrorsfit_8C.html).
