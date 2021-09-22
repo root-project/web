@@ -23,7 +23,7 @@ The first step to construct an histogram is to define a range for the input data
 The histogram will count how many values fall into each interval, building a frequency distribution of the input data.
 ROOT supports histograms with bins of equal size or variable size.
 
-See the histogram tutorials for all the possible type of histograms that can be built. 
+See the histogram tutorials for all the possible type of histograms that can be built.
 
 
 {% include tutorials name="Histogram" url="hist" %}
@@ -44,8 +44,8 @@ If there are no particular needs for limiting the memory used by the histograms,
 ### Histograms for larger dimensions
 
 For the case of dimensions larger than 3, ROOT provides a generic base class for multi-dimensional histogram {% include ref class="THn" %} and the derived classes
-`THnD`, `THnF`, `THnL`, `THnI`, `THnS` and `THnC`, which are different instantiations of a generic template `THnT<Type>`. 
-The `THn` classes should be used when a large fraction of all bins are filled. 
+`THnD`, `THnF`, `THnL`, `THnI`, `THnS` and `THnC`, which are different instantiations of a generic template `THnT<Type>`.
+The `THn` classes should be used when a large fraction of all bins are filled.
 Given the large amount of memory used by `THn`, sparse multi-dimensional histogram classes exist for the use case of multi-dimensions and large number of bins.
 The base class for sparse histograms is {% include ref class="THnSparse" %} with its derived instantiation `THnSparse<type>`.
 
@@ -87,7 +87,7 @@ For all histogram types: `nbins`, `xlow`, `xup`:
 
   - The last bin (bin# `nbins+1`) contains the overflow.
 
-  - A *global bin* number is defined  to access the histogram bin information independently of the dimension. 
+  - A *global bin* number is defined  to access the histogram bin information independently of the dimension.
 
 Assuming a 3-D histogram `h` with `binx`, `biny`, `binz`, the function [TH1::GetBin(binx,bny,binz)](https://root.cern/doc/master/classTH1.html#a641262682144d465d7e2bc6101a04bf6) returns a global
 bin number and given a global bin number `bin`, the function [TH1::GetBinXYZ(bin,binx,biny,binz)](https://root.cern/doc/master/classTH1.html#a55e591270aaad37c3059a62f83566e4e) computes the
@@ -140,7 +140,7 @@ For creating a profile histograms passing the range in the profiled variable (e.
 
 
 For Clone/copy an existing histogram you can use the `Clone()` method or the copy constructor.
-Note that `Clone()` returns a pointer to a `TObject` and it requires the casting to `TH1`, while the copy constructor can be used only with the leaf histogram classes (e.g `TH1D` for a double type histogram). 
+Note that `Clone()` returns a pointer to a `TObject` and it requires the casting to `TH1`, while the copy constructor can be used only with the leaf histogram classes (e.g `TH1D` for a double type histogram).
 
 _**Example**_
 
@@ -180,20 +180,20 @@ _**Examples**_
    h2->Fill(x,y);
    p2->Fill(x,y);
    h2->Fill(x,y,w);  // with weights
-   p2->Fill(x,y,w);  
+   p2->Fill(x,y,w);
 {% endhighlight %}
 - For 3-D histograms and `TProfile2D`:
 {% highlight C++ %}
    h3->Fill(x,y,z);
    h3->Fill(x,y,z,w); // with weights
 {% endhighlight %}
-   
+
 
 The `Fill()` method computes the bin number corresponding to the given x, y or z argument and increments this bin by the given weight.<br>
 The `Fill()` method returns the bin number for 1-D histograms or *global bin* number for 2-D and 3-D histograms.
 
 Note that when filling an histogram passing a weight different than one, the histogram assumes you are dealing with a weighted data set and stores internally an additional array with the sum of weight square used to compute its error. A weighted histogram is displayed always by default showing the bin error for each bin instead of the standard histogram bar.
-See [Filling histograms](https://root.cern/doc/master/classTH1.html#filling-histograms) for more details about filling histograms, such as computation of bin errors or automatic axis extension. 
+See [Filling histograms](https://root.cern/doc/master/classTH1.html#filling-histograms) for more details about filling histograms, such as computation of bin errors or automatic axis extension.
 
 #### Filling a histogram with vector input data
 
@@ -433,19 +433,19 @@ deviation, [TH1::GetStdDev](https://root.cern/doc/master/classTH1.html#a31a19244
 [TH1::GetSkewness](https://root.cern/doc/master/classTH1.html#a3f2e05cf408b6e69602141e6699883c5)and covariance and correlation, see for example [TH2::GetCorrelationFactor](https://root.cern/doc/master/classTH2.html#a0a319442275deed3941c0904cecddd3c) for multi-dimensional
 histograms.
 
-The function `TH1::GetRMS` is equivalent to `TH1::GetStdDev`, since historically the `RMS` has been identified as the sample standard deviation. 
+The function `TH1::GetRMS` is equivalent to `TH1::GetStdDev`, since historically the `RMS` has been identified as the sample standard deviation.
 
 In addition, ROOT provides functions to compute estimations of  the error of the sample mean and standard deviations.
 See [TH1::GetMeanError](https://root.cern/doc/master/classTH1.html#aa4e6882403221cd5e38cd0716295e751) and
 [TH1::GetStdDevError](https://root.cern/doc/master/classTH1.html#ae7b4359f7eee88b7a21468308bc365aa).
 
-The histogram statistics can be displayed in the histogram statistics box. 
+The histogram statistics can be displayed in the histogram statistics box.
 
 Note that by default, the histogram statistics are computed on all the raw input data sample, but when an histogram range is selected, the statistics are computed in the user defined range and using only the
 bin center information.
 
 The function [TH1::GetQuantiles] computes, from the given histogram binned data, the quantiles, such as  median and quartiles.
-For example, to compute the quartiles (including the median), you provide as input the probability values for which you want to compute the corresponding quantiles: 
+For example, to compute the quartiles (including the median), you provide as input the probability values for which you want to compute the corresponding quantiles:
 
 {% highlight C++ %}
    double p[3] = { 0.25, 0.50, 0.75};
@@ -457,12 +457,12 @@ For example, to compute the quartiles (including the median), you provide as inp
 {% endhighlight %}
 
 
-### Statistical tests 
+### Statistical tests
 
 The ROOT histogram class provides also functions to perform statistical comparison tests, such as goodness of fit tests, for testing compatibility of two histograms (2 sample tests) or compatibility
 of an histogram with a theoretical distribution, i.e. a function (1 sample tests).
 
-For trsts of histogram-histogram compatibility:
+For tests of histogram-histogram compatibility:
 - [TH1::Chi2Test](https://root.cern/doc/master/classTH1.html#a6c281eebc0c0a848e7a0d620425090a5) for performing a chi2 test between two histograms. This tests works also for multi-dimensional
   histograms, but it requires to have non-empty bins.
 - [TH1::KolmogorovTest](https://root.cern/doc/master/classTH1.html#aeadcf087afe6ba203bcde124cfabbee4) to perform the Kolgomorov-Smironov test on the two histograms. Note that this tests works only for
@@ -478,9 +478,9 @@ and Cousins (see corresponding [paper](https://www.sciencedirect.com/science/art
 ### Histogram bin Errors
 
 The bin error of the histograms are computed by default as following:
--  unweighted histogram: square root of bin content 
+-  unweighted histogram: square root of bin content
 -  weighted histogram : square root of the bin sum of the weights square.
 
 For unweighted histograms there is also the option to compute the Poisson standard confidence intervals for each bin, by calling `TH1::SetBinErrorOption(TH1::kPoisson)`. After this, one can retrieve
-the corresponding lower and upper bin error by using `TH1::GetBinErrorLow()` and `TH1::GetBinErrorUp`. 
+the corresponding lower and upper bin error by using `TH1::GetBinErrorLow()` and `TH1::GetBinErrorUp`.
 
