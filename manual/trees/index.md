@@ -729,7 +729,7 @@ void CountEvents()
 
 {% endhighlight %}
 
-Now you can create a histogram, for example for the X position of the particles (`hPosX`). For more information on creating a histogram for this data analysis, see → [Example: Histogramming a data analysis]({{ '/manual/histograms#example-histogramming-a-data-analysis' | relative_url }})
+Now you can create a histogram, for example for the X position of the particles (`hPosX`).
 
 
 ## Using Chains
