@@ -7,171 +7,58 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT allows you to store your own classes in ROOT files.
-It offeres two main storage facilities for columnar data storage, `TTree` and `RNTuple`.
-This page explains these relevant details on ROOT's data format.
+This page explains what needs to be done to store your classes using ROOT, be it object-wise or as columnar data, see → [trees]({{ '/manual/trees/' | relative_url }}).
 
-A ROOT file, this is a {% include ref class="TFile" %} object, is like a UNIX file directory. It can contain directories and objects organized in unlimited number of levels. A ROOT file is stored in machine independent format (ASCII, IEEE floating point, Big Endian byte ordering).
+It also explains the mechanisms and concepts behind ROOT's I/O facilities, i.e. how ROOT converts your objects into a stream of bytes and back.
 
-### Checking whether a ROOT file is open
 
-- Use [TFile::IsOpen()](https://root.cern/doc/master/classTFile.html#a67dedbe56cfe4792cff78df129718c11){:target="_blank"} to check whether the ROOT file was successfully opened.
+## ROOT files, directories, and keys
 
-> **Note**
->
-> You can also check whether the ROOT file is correctly opened by:
+ROOT stores data in ROOT files ({% include ref class="TFile" %}), see → [ROOT files]({{ '/manual/root_files/' | relative_url }}).
+It does so in machine independent format (IEEE floating point, Big Endian byte ordering).
 
-{% highlight C++ %}
-   TFile f("demo.root");
-   if (f.IsZombie()) {
-      cout << "Error opening file" << endl;
-      exit(-1);
-      } else {
-      ...
-   }
-{% endhighlight %}
+Similar to a file system directory, a `TFile` can contain directories ({% include ref class="TDirectory" %}) and objects, accessible through the directory's _keys_ ({% include ref class="TKey" %})).
+A `TFile` is a directory itself: it inherits from `TDirectory`.
 
-**Current ROOT file**
-Once a {% include ref class="TFile" %} object has been created, the global variable [`gFile`]() points to it.
+Directories can be "entered" by [`TDirectory::cd()`](https://root.cern/doc/master/classTDirectory.html#af42d9b50db9b4575b13ea265ad8995fb); created by [`TDirectory::mkdir()`](https://root.cern/doc/master/classTDirectory.html#aad2cf362d9574db6538804afa9794827); removed by [`TDirectory::rmdir()`](https://root.cern/doc/master/classTDirectory.html#a528126c0a528d7f7a5888c7ee74ae41d).
+
+### Opening a ROOT file
+
+Use [TFile::Open()](https://root.cern/doc/master/classTFile.html#ad8870806a04da2c2f4aa02bee4ec6833){:target="_blank"} to open a ROOT file.
+While this operation might return a valid pointer to a `TFile` object,
+this object might not be able to access data, for instance because ROOT was unable to open the file in the filesystem.
+Use [TObject::IsZombie()](https://root.cern/doc/master/classTObject.html#aaa8418b9b6692a12d8d0e500c51911bf){:target="_blank"} to check whether the ROOT file was successfully opened.
 
 {% highlight C++ %}
-   gFile = MyFile;
-{% endhighlight %}
-
-**Current directory**
-
-When you create a {% include ref class="TFile" %} object, it becomes the current directory. Therefore, the last ROOT file to be opened is always the current directory.<br>
-Check the current directory as follows:
-
-{% highlight C++ %}
-   gDirectory->pwd()
-
-   Rint:/
-{% endhighlight %}
-
-In this case, the current directory is the ROOT session (`Rint`).
-
-When you create a {% include ref class="TFile" %} object, the ROOT file becomes the current directory.
-
-{% highlight C++ %}
-   TFile f1("my.root");
-   gDirectory->pwd()
-
-   my.root:/
-{% endhighlight %}
-
-
-
-### File system operations
-
-A {% include ref class="TFile" %}, this is ROOT file, behaves like UNIX file system. Therefore, you can perform the usual operations for a file system.
-
-_**Example**_
-
-{% highlight C++ %}
-
-// Create/open a ROOT file.
-   TFile* f = TFile::Open("file.root", "NEW");
-
-// Creating a directory.
-   f->mkdir("dir");
-
-// Changing the current working directory.
-   f->cd("dir");
-
-// Listing the contents of a ROOT file.
-   f->ls();
-
-{% endhighlight %}
-
-
-### Using folders
-
-A {% include ref class="TFolder" %} is a collection of objects visible and expandable in the ROOT Object Browser. Folders have a name and a
-title. They are identified in the folder hierarchy by an “UNIX-like” naming convention. New folders can be added and removed to/from a folder.
-
-> **Difference between TFolder and TDirectory**<br/>
-> A {% include ref class="TFolder" %} manages a hierarchy of objects in the memory. A {% include ref class="TDirectory" %} is doing that for a file.<br/>
-> You can save the {% include ref class="TFolder" %} structure to a directory in a ROOT file.
-
-The base of all folders is the `//root` folder. It is visible at the top of the left panel in the ROOT Object Browser.
-
-   {% include figure_image
-   img="root-folder.png"
-   caption="root folder in the ROOT Object Browser."
-   %}
-
-With folders you can reduce class dependencies and improve modularity. Each set of data has a producer class and one or many consumer classes. When using folders, the producer class places a pointer to the data into a
-folder, and the consumer class retrieves a reference to the folder. The consumer can access the objects in a folder by specifying the path name of the folder.
-
-### Creating a folder hierarchy
-
-To create a folder hierarchy, you add a top folder of your hierarchy to //root. Then you add a folder to an existing
-folder with the [TFolder::AddFolder()](https://root.cern/doc/master/classTFolder.html#a2d3c9ab44d8b660d5c3c42693f745d00){:target="_blank"} method. The `AddFolder()` method takes two parameters: the name and title of the folder to be added. It returns a pointer of the newly created folder.
-
-The following example creates a folder hierarchy shown in the ROOT Object Browser.
-
-_**Example**_
-
-{% highlight C++ %}
-{
-// Add the top folder of my hierarchy to //root.
-   TFolder *aliroot=gROOT->GetRootFolder()->AddFolder("aliroot","aliroot top level folders");
-
-// Add the hierarchy to the list of browsables
-   gROOT->GetListOfBrowsables()->Add(aliroot,"aliroot");
-
-// Create and add the constants folder.
-   TFolder *constants=aliroot->AddFolder("Constants","Detector constants");
-
-// Create and add the pdg folder to pdg.
-   TFolder *pdg = constants->AddFolder("DatabasePDG","PDG database");
-
-// Create and add the run folder.
-   TFolder *run = aliroot->AddFolder("Run","Run dependent folders");
-
-// Create and add the configuration folder to run.
-   TFolder *configuration = run->AddFolder("Configuration","Run configuration");
-
-// Create and add the run_mc folder.
-   TFolder *run_mc = aliroot->AddFolder("RunMC","MonteCarlo run dependent folders");
-
-// Create and add the configuration_mc folder to run_mc
-   TFolder *configuration_mc = run_mc->AddFolder("Configuration","MonteCarlo run configuration");
+std::unique_ptr<TFile> file( TFile::Open("file.root") );
+if (file->IsZombie()) {
+   std::cerr << "Error opening file" << endl;
+   exit(-1);
 }
 {% endhighlight %}
 
-   {% include figure_image
-   img="folder-hierarchy.png"
-   caption="Folder hierarchy in the ROOT Object Browser."
-   %}
+### The global "current directory"
+ROOT uses two globals (thread-local static, to be precise) that point to the most recently opened file [`gFile`](https://root.cern/doc/master/classTFile.html),
+and the "current" directory [`gDirectory`](https://root.cern/doc/master/classTDirectory.html).
+The most recently opened ROOT file is always also the current directory.
+You can change the current directory by assigning to `gDirectory`; you can see the current directory with [`TDirectory::pwd()`](https://root.cern/doc/master/classTDirectory.html#aeafd432926424a3e76c27be1cb947937)
 
-### Reading data from a folder
-
-- Use the [TROOT::FindObjectAny()](https://root.cern/doc/master/classTROOT.html#a9c9964aaea5c7cf333483240aa48b46f){:target="_blank"} method to search for a folder or an object in a folder.
-
-The `FindObjectAny()` method analyzes the string passed as its argument and searches in the hierarchy until it finds an object or folder matching the name.
-
-With `FindObjectAny()` you can give the full path name, or the name of the folder. If only the name of the folder is given, it will return the first instance of that name.
-
-A string-based search is time consuming. If the retrieved object is used frequently or inside a loop, save a pointer to the object as a class data member.
-
-By default, a folder does not own the object it contains. You can overwrite that with [TFolder::SetOwner()](https://root.cern/doc/master/classTFolder.html#aa9fb0db2a0692067380be4bb82bf0a8a){:target="_blank"}. Once
-the folder is the owner of its contents, the contents are deleted when the folder is deleted.
+Some objects operate (at least by default) on that global directory.
+An example is [`TObject::Write()`](https://root.cern/doc/master/classTObject.html#a211e8b1ab4ef54a5f2ecbe809945fee8) (unlike the preferred [`TDirectory::WriteObject()`](https://root.cern/doc/master/classTDirectory.html#a67b115afae97366254dfd44a7f46f66f)), or the `TTree` constructor if no directory is specified.
 
 _**Example**_
 
-If a file `myFile.root` is added to the list of files, you can retrieve a pointer to the corresponding {% include ref class="TFile" %} object with the following statements:
-
 {% highlight C++ %}
-   TFile *myFile = (TFile*)gROOT->FindObjectAny("/ROOTFiles/myFile.root");
+root [0] gDirectory->pwd()
 
-//or...
+Rint:/
+root [1] TFile f1("my.root");
+root [2] gDirectory->pwd()
 
-   TFile *myFile = (TFile*)gROOT->FindObjectAny("myFile.root");
-
+my.root:/
 {% endhighlight %}
 
+`Rint:/` corresponds to "ROOT's in-memory" directory, the default directory during startup.
 
 ## Viewing the contents of a ROOT file
 
