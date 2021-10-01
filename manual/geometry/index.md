@@ -7,7 +7,15 @@ toc: true
 toc_sticky: true
 ---
 
-The ROOT geometry package is a tool for building, browsing, navigating and visualizing detector geometries.
+A geometry represents a Hierarchie of constructive solid geometry primitive elements
+(shapes or solid). The main functionalities provided are ray model collision detection
+functionality, visualization, overlap checking and persistency.
+
+It is most commonly used for high energy physics in particle collision simulation and
+reconstruction.
+
+**[The ROOT geometry package](https://root.cern/doc/master/group__Geometry.html)** is a tool
+for building, browsing, navigating and visualizing detector geometries.
 
 {% include tutorials name="Geometry" url="geom" %}
 
@@ -39,6 +47,7 @@ There are the following specific rules for building a valid geometry:
 - After building the full geometry tree, the geometry must be closed (see [TGeoManager::CloseGeometry()](https://root.cern/doc/master/classTGeoManager.html#a7ea0792e9918521f8c5bd95546c3b708){:target="_blank"}).
 - Voxelization can be redone per volume after this process.
 
+
 ## Creating a simple geometry
 
 - Use the {% include ref class="TGeoManager" %} class to create an instance of the geometry manager class.
@@ -58,7 +67,7 @@ needs to have a material ({% include ref class="TGeoMaterial" %}) and a medium
    TGeoMedium *med = new TGeoMedium("Vacuum",1,mat);
 {% endhighlight %}
 
-In the next step the volume gets a shape. Boxes and tubes are the most recommended shapes. Note that the world volume (the volume containing all other volumes) can have any shape.
+In the next step the volume gets a shape.
 
 For example, you can make your volume having a box shape. The default units are in centimeters.
 
@@ -85,8 +94,6 @@ With `Draw()` you can draw the simple geometry, for example:
    gGeoManager->SetTopVisible();
    top->Draw();
 {% endhighlight %}
-
-<br>
 
 {% include figure_jsroot
    file="geometry.root" object="cube" width="500px" height="500px"
