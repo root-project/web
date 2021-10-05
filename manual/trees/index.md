@@ -372,6 +372,7 @@ The order of the friend tree's entries must preserve the entry order of the orig
 > **Note**
 >
 > Care must be taken to ensure that the order of entries in the primary tree matches friends' entries. This is especially relevant when processing a tree in parallel to generate a friend tree, as the entries might be written out in an undefined order (misaligned entries).
+> This can be mitigated by building an index on the friend tree with [TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998)), see [Indexing a Tree](#indexing-a-tree).
 
 {% highlight C++ %}
 void treeWithFriend() {
@@ -528,7 +529,7 @@ the grid is randomly populated with a density of dots that’s proportional to t
 
 ### Indexing a tree
 
-- Use [TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998){:target="_blank"} to build an index table over expressions that depend on the value in the leaves.
+Use [TTree::BuildIndex()](https://root.cern/doc/master/classTTree.html#a3f6b5bb591ff7a5bd0b06eea6c12b998){:target="_blank"} to build an index table over expressions that depend on the value in the leaves.
 This index is similar to database indexes:
 it allows to quickly determine the tree entry number corresponding to the value of an expression.
 These expressions should be both equality comparable (that is, not use floating point numbers where precision might cause the index lookup to fail) and unique, to make sure you get the tree entry you expect.
