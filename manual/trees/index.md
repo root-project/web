@@ -105,7 +105,7 @@ tree = ROOT.TTree("tree", "The Tree Title")
 ### Creating branches
 
 There are multiple ways to add branches to a `TTree`; the most commonly used ones are covered here.
-More extensive documentation can be found in the [reference manual](https://root.cern.ch/doc/master/classTTree.html#creatingattreetoc).
+More extensive documentation can be found in the [reference manual](https://root.cern/doc/master/classTTree.html#creatingattreetoc).
 
 > **Note**
 >
@@ -122,7 +122,7 @@ More extensive documentation can be found in the [reference manual](https://root
 If you have a variable of type `int`, `float`, `bool`, or any other basic type, you can create a branch (and a leaf) from it.
 For fundamental datatypes, the type can be deduced from the variable and the name of the leaf will be set to the name of the branch.
 In Python, that type information is not available and the leaf name and data type must be specified as third argument.
-Further details are explained in the [reference guide](https://root.cern.ch/doc/master/classTTree.html#addcolumnoffundamentaltypes).
+Further details are explained in the [reference guide](https://root.cern/doc/master/classTTree.html#addcolumnoffundamentaltypes).
 
 {% highlight C++ %}
 float var;
