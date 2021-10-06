@@ -4,6 +4,9 @@ layout: archive
 author: Olivier Couet
 ---
 
+During one full week all the ROOT team was involved in a big update of the
+_[Manual]({{ '/manual' | relative_url }})_ and _[Reference Guide](https://root.cern/doc/master/index.html)_.
+
 The ROOT documentation needed a big update.
 It was spread over three different main manuals:
 
@@ -17,9 +20,6 @@ _[The Manual]({{ '/manual' | relative_url }})_ acts as a "User's Guide" helping 
 provided in the _[Reference Guide](https://root.cern/doc/master/index.html)_.
 The _Old User's Guide_ is outdated and not updated but, nevertheless it contains some valuable
 information we do not want to lose.
-
-During one full week all the ROOT team was involved in a big update of the
-_[Manual]({{ '/manual' | relative_url }})_ and _[Reference Guide](https://root.cern/doc/master/index.html)_.
 
 The first task was to make sure the Manual’s table of content was complete: by
 groups of experts, we updated the existing chapters ([Histograms]({{ '/manual/Histograms' | relative_url }}),
