@@ -7,74 +7,73 @@ toc: true
 toc_sticky: true
 ---
 
-Histograms play a fundamental role in any kind of physical analysis. Histograms not only serve to visualize measurements, but also represent a powerful form of data reduction. ROOT supports histograms up to three dimensions.
+Histograms are approximate representations of the distribution of numerical data and they play a fundamental role in any kind of physical analysis.
+Histograms can be used to visualize your data, by being an approximation to the underlying data density distribution, and they can be used also as a powerful form of data reduction. For a detailed
+description of what is an histogram, see the corresponding page in [Wikipedia](https://en.wikipedia.org/wiki/Histogram).
 
-**Binned data**
+ROOT provides a rich set of functionality to work with histograms. They can be used for continuos data in one or multi dimensions, they can represent integer data and they can also be used to display categorical data, such
+as bar charts. Furthermore, ROOT supports building histograms from weighted data sets, which are very common in HEP, it provides the functionality to compute summary statistics information from the histograms input data, such as
+sample mean, standard deviation and higher momenta.
 
-A histogram is used for continuous data, where the bins represent ranges of data. ROOT supports constant and variable bin widths.<br>
-A graph or chart is a plot of categorical variables, this is un-binned data, see → [Graphs]({{ '/manual/graphs' | relative_url }}).
+ROOT provides also the functionality to perform operations on histograms such as addition, division and multiplication or transformations such as rebinning, scaling,
+including normalisations, or projections from a multi dimensional histograms to ones with lower dimensions.
+The ROOT histogram library provides also the capability or producing profile plots from multi dimensional data, see  [Profile Histograms](#profile-histograms).
+
+The first step to construct an histogram is to define a range for the input data and then bin this range of values in intervals: the histogram bins.
+The histogram will count how many values fall into each interval, building a frequency distribution of the input data.
+ROOT supports histograms with bins of equal size or variable size.
+
+See the histogram tutorials for all the possible type of histograms that can be built.
+
 
 {% include tutorials name="Histogram" url="hist" %}
 
 ## Histogram classes
 
-ROOT supports the following histogram types:
+The ROOT histogram classes derive from the base {% include ref class="TH1" %}  class, which is a common interface to interact with the ROOT histograms.
+Derived classes exist depending on the dimension, 1-D, 2-D and 3-D, and the type used to represent the bin contents:
+- one byte per channel: `TH1C`, `TH2C` or `TH3C`. Maximum bin content = 127.
+- one short per channel: `TH1S`, `TH2S` or `TH3S`. Maximum bin content = 32767.
+- one int per channel: `TH1I`, `TH2I` or `TH3I`. Maximum bin content = 2147483647.
+- one float per channel: `TH1F`, `TH2F` or `TH3F`. Maximum precision 7 digits, i.e a  maximum bin content of around 1E7 for having the precision of one count.
+- one double per channel: `TH1D`, `TH2D` or `TH3D` . Maximum precision 15 digits, corresponding to a maximum bin content of around 5E15.
 
--   Histograms up to three dimensions (1-D, 2-D, 3-D).
+If there are no particular needs for limiting the memory used by the histograms, it is recommended to use the double precision version:
+`TH1D` for the 1-D case, `TH2D` for the 2-D and `TH3D` for 3-D.
 
--   Profile histograms, which are used to display the mean value of Y and its standard deviation for each bin in X.
+### Histograms for larger dimensions
 
-All histogram classes are derived from the {% include ref class="TH1" %} base class.
+For the case of dimensions larger than 3, ROOT provides a generic base class for multi-dimensional histogram {% include ref class="THn" %} and the derived classes
+`THnD`, `THnF`, `THnL`, `THnI`, `THnS` and `THnC`, which are different instantiations of a generic template `THnT<Type>`.
+The `THn` classes should be used when a large fraction of all bins are filled.
+Given the large amount of memory used by `THn`, sparse multi-dimensional histogram classes exist for the use case of multi-dimensions and large number of bins.
+The base class for sparse histograms is {% include ref class="THnSparse" %} with its derived instantiation `THnSparse<type>`.
 
-The following histogram classes are available in ROOT, among others:
+Note that both `THn` and `THnSparse` do not inherit from `TH1` and have therefore a slightly different interface.
 
-### 1-D histograms
-
-  - {% include ref class="TH1C" %} has one byte per channel. Maximum bin content = 127.
-
-  - {% include ref class="TH1S" %} has one short per channel. Maximum bin content = 32767.
-
-  - {% include ref class="TH1I" %} has one int per channel. Maximum bin content = 2147483647.
-
-  - {% include ref class="TH1F" %} has one float per channel. Maximum precision 7 digits.
-
-  - {% include ref class="TH1D" %} has one double per channel. Maximum precision 14 digits.
-
-### 2-D histograms
-
-  - {% include ref class="TH2C" %} has one byte per channel. Maximum bin content = 127.
-
-  - {% include ref class="TH2S" %} has one short per channel. Maximum bin content = 32767.
-
-  - {% include ref class="TH2I" %} has one int per channel. Maximum bin content = 2147483647.
-
-  - {% include ref class="TH2F" %} has one float per channel. Maximum precision 7 digits.
-
-  - {% include ref class="TH2D" %} has one double per channel. Maximum precision 14 digits.
-
-### 3-D histograms
-
-  - {% include ref class="TH3C" %} has one byte per channel. Maximum bin content = 127.
-
-  - {% include ref class="TH3S" %} has one short per channel. Maximum bin content = 32767.
-
-  - {% include ref class="TH3I" %} has one int per channel. Maximum bin content = 2147483647.
-
-  - {% include ref class="TH3F" %} has one float per channel. Maximum precision 7 digits.
-
-  - {% include ref class="TH3D" %} has one double per channel. Maximum precision 14 digits.
 
 ### Profile histograms
 
-  - {% include ref class="TProfile" %} is a 1-D profile histogram to display the mean value of Y and its error for each bin in X.
+In addition to the standard histograms, ROOT provides also classes for producing profile plots, i.e plots obtained from multi-dimensional input data (e.g. X and Y), where one of the dimension
+(Y) is not grouped in bins, but the sample mean value and the corresponding error are displayed. A profile plot can be used to better visualize dependence relations in multi-dimensional data, than using
+standard multi-dimensional histogram plots such as scatter plots.
 
-  - {% include ref class="TProfile2D" %} is a 2-D profile histogram to display the mean value of Z and its RMS for each cell in X,Y.
+  - {% include ref class="TProfile" %} is a profile histogram for (X,Y) data to display the mean value of Y and its error for each bin in X.
 
-  - {% include ref class="TProfile3D" %} is a 3-D profile histogram to display the mean value of T and its RMS for each cell in X,Y,Z.
+  - {% include ref class="TProfile2D" %} is a profile histogram for (X,Y,Z) data to display the mean value of Z and its error for each cell in X,Y.
+
+- {% include ref class="TProfile3D" %} is a profile histogram for (X,Y,Z,T) data to display the mean value of T and its error for each cell in X,Y,Z.
+
+Profile plots have the option to display instead of the default sample mean error the sample standard deviation (the spread of the data). A similar plot to a profile, which shows the quantiles of the
+Y input data, is the candle plot, called also box plot,  (see [tutorial](https://root.cern/doc/master/candleplot_8C.html)), which can be obtained directly from the 2D histogram using the `candle`
+draw option.
+
 
 ### Bin numbering
 
 All histogram types support fixed or variable bin sizes. 2-D histograms may have fixed size bins along X and variable size bins along Y or vice-versa.
+The type of binning of the histogram is managed by the {% include ref class="TAxis" %} class, which defines also the minimum and maximum range of the input data that will be collected in the bins.
+The `TH1` class orders the bins using a *global bin* number for dealing with the multi-dimensional cases.
 
 **Conventions**
 
@@ -88,30 +87,31 @@ For all histogram types: `nbins`, `xlow`, `xup`:
 
   - The last bin (bin# `nbins+1`) contains the overflow.
 
-  - In case of 2-D or 3-D histograms, a *global bin* number is defined.
+  - A *global bin* number is defined  to access the histogram bin information independently of the dimension.
 
-_**Example**_
+Assuming a 3-D histogram `h` with `binx`, `biny`, `binz`, the function [TH1::GetBin(binx,bny,binz)](https://root.cern/doc/master/classTH1.html#a641262682144d465d7e2bc6101a04bf6) returns a global
+bin number and given a global bin number `bin`, the function [TH1::GetBinXYZ(bin,binx,biny,binz)](https://root.cern/doc/master/classTH1.html#a55e591270aaad37c3059a62f83566e4e) computes the
+corresponding `binx`, `biny` and `binz`.
 
-Assuming a 3-D histogram `h` with `binx`, `biny`, `binz`, the function returns a global/linear bin number.
+More details on the histogram binning are available in the TH1 [reference documentation](https://root.cern/doc/master/classTH1.html#binning).
+ROOT supports also automatic binning, see [Histograms with automatic bins](https://root.cern/doc/master/classTH1.html#auto-bin).
 
-`Int_t bin = h->GetBin(binx, biny, binz);`
-
-This *global bin* is useful to access the bin information independently of the dimension.
 
 **Re-binning**
 
 You can re-bin a histogram via the [TH1::Rebin()](https://root.cern/doc/master/classTH1.html#aff6520fdae026334bf34fa1800946790){:target="_blank"} method. It returns a new histogram with the re-binned contents. If bin errors were stored, they are recomputed during the re-binning.
+You can see this [tutorial](https://root.cern/doc/master/rebin_8C.html) as a re-binning example.
 
 ### Stack of histograms
 
-  - {% include ref class="THStack" %} is a collection of {% include ref class="TH1" %} or {% include ref class="TH2" %} histograms.
+{% include ref class="THStack" %} is a collection of {% include ref class="TH1" %} or {% include ref class="TH2" %} histograms. The tutorial {%include tutorial name="hstack" %} is a good example of how using the `THStack` class.
 
 ## Working with histograms
 
 
 ### Creating and copying a histogram
 
-- Use a histogram constructor to create a histogram object.
+- Use a constructor of the derived classes (`TH1D` instead of `TH1`)  to create a histogram object, by passing in addition to name an title strings, the number of bins, the minimum and maximum range.
 
 _**Examples**_
 
@@ -123,39 +123,98 @@ In the following examples, histograms are created for the classes {% include ref
    TH3* h3 = new TH3D("h3", "h3 title");
 {% endhighlight %}
 
--- or ­--
+For creating variable bins histograms:
 
-- Clone/copy an existing histogram with the `Clone()` method.
+{% highlight C++ %}
+   double binEdges[] = { 0.0, 0.2, 0.5, 1., 2., 4. };
+   TH1* h1 = new TH1D("h1", "h1 title", 6, binEdges );
+   TH2* h2 = new TH2D("h2", "h2 title", 6, binEdges , 30, -1.5, 3.5);
+{% endhighlight %}
+note that the array of bin edges should be of size `nbins+1` , since it contains the lower and upper range axis values.
+
+For creating a profile histograms passing the range in the profiled variable (e..g .Y for a `TProfille`) is optional:
+{% highlight C++ %}
+   TProfile* p1 = new TProfile("p1", "profile title", 40, 0.0, 2.0 );
+   TProfile* p2 = new TProfile("p2", "profile title", 40, 0.0, 2.0, -1.5, 3.5 );
+{% endhighlight %}
+
+
+For Clone/copy an existing histogram you can use the `Clone()` method or the copy constructor.
+Note that `Clone()` returns a pointer to a `TObject` and it requires the casting to `TH1`, while the copy constructor can be used only with the leaf histogram classes (e.g `TH1D` for a double type histogram).
 
 _**Example**_
 
 {% highlight C++ %}
-   TH1* hc = (TH1*)h1->Clone();
+TH1* hc = (TH1*)h1->Clone();
 {% endhighlight %}
+If the type of h1 is `TH1D` you can also do:
+{% highlight C++ %}
+TH1* hc = new TH1D(*h1);
+{% endhighlight %}
+
+#### Getting the bin width
+
+- Use the [GetBinWidth()](https://root.cern/doc/master/classTH1.html#ad69a5fa0002361fd77f37990a29d1aa3){:target="_blank"} method to get the bin width of a histogram.
+
+{% highlight C++ %}
+   TH1D h1("h1","Histogram from a Gaussian",100,-3,3);
+   h1.GetBinWidth(1)
+
+   (double) 0.060000000
+{% endhighlight %}
+
 
 ### Filling a histogram
 
-- Fill a histogram with the [TH1::Fill()](https://root.cern/doc/master/classTH1.html#a77e71290a82517d317ea8d05e96b6c4a){:target="_blank"} method.
+Fill a histogram with the [TH1::Fill()](https://root.cern/doc/master/classTH1.html#a77e71290a82517d317ea8d05e96b6c4a){:target="_blank"} method.
 
 _**Examples**_
 
+- For 1-D histograms
 {% highlight C++ %}
    h1->Fill(x);
    h1->Fill(x,w); // with weight
-   h2->Fill(x,y);
-   h2->Fill(x,y,w);
-   h3->Fill(x,y,z);
-   h3->Fill(x,y,z,w);
 {% endhighlight %}
+- For 2-D histograms and `TProfile`:
+{% highlight C++ %}
+   h2->Fill(x,y);
+   p2->Fill(x,y);
+   h2->Fill(x,y,w);  // with weights
+   p2->Fill(x,y,w);
+{% endhighlight %}
+- For 3-D histograms and `TProfile2D`:
+{% highlight C++ %}
+   h3->Fill(x,y,z);
+   h3->Fill(x,y,z,w); // with weights
+{% endhighlight %}
+
 
 The `Fill()` method computes the bin number corresponding to the given x, y or z argument and increments this bin by the given weight.<br>
 The `Fill()` method returns the bin number for 1-D histograms or *global bin* number for 2-D and 3-D histograms.
 
+Note that when filling an histogram passing a weight different than one, the histogram assumes you are dealing with a weighted data set and stores internally an additional array with the sum of weight square used to compute its error. A weighted histogram is displayed always by default showing the bin error for each bin instead of the standard histogram bar.
+See [Filling histograms](https://root.cern/doc/master/classTH1.html#filling-histograms) for more details about filling histograms, such as computation of bin errors or automatic axis extension.
+
+#### Filling a histogram with vector input data
+
+
+An histogram can also be filled directly by an array of values of type `double` and an array of weights.
+{% highlight C++ %}
+   std::vector<double> x = {0,1,2,3,4,5,6,7,8,9};
+   std::vector<double> w(x.size(),1); // weights vector
+   auto h1 = new TH1D("h1","h1 title",10,0.,10.);
+   h1.FillN(10,x,w);
+{% endhighlight %}
+
+This is useful when working in Python with `numpy` arrays, so you can fill directly an histograms. An example is provided in the next section.
+
+
 #### Filling a histogram with random numbers
 
-- Fill a histogram with random numbers with the [TH1::FillRandom()](https://root.cern/doc/master/classTH1.html#a1e9d6258ae798a0eb52aef58a72758a5){:target="_blank"} method.
+Fill a histogram with random numbers with the [TH1::FillRandom()](https://root.cern/doc/master/classTH1.html#a1e9d6258ae798a0eb52aef58a72758a5){:target="_blank"} method.
 
-The `FillRandom()` method uses the contents of an existing `TF1` function or another `TH1` histogram (for all dimensions).
+The `FillRandom()` method uses the contents of an existing `TF1` function or another `TH1` histogram (for all dimensions) and the default random number generator defined in `gRandom`. See the  {%
+include ref class="TRandom" %} class for the available generators in ROOT.
 
 _**Example**_
 
@@ -165,6 +224,18 @@ A histogram is randomly filled 10 000 times with a default Gaussian distribution
    TH1F h1("h1","Histogram from a Gaussian",100,-3,3);
    h1.FillRandom("gaus",10000);
 {% endhighlight %}
+
+In Python you can use random numbers generated using the `numpy.random` library and `FillN` for filling the histogram:
+
+```python
+   import numpy as np
+   import ROOT
+#generate an array of normal distributed data with mean=5 and stddev=2 containing 1000 values
+   x = np.random.normal(5,2,1000)
+   w = np.ones(1000)
+   h1 = ROOT.TH1D("h1","h1 title",50,0.,10.);
+   h1.Fill(1000, x, w)
+```
 
 Use the [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232){:target="_blank"} method to get a random number distributed according the contents of a histogram.
 
@@ -197,24 +268,82 @@ Creating a new histogram without changing the original one:
 Multiplying two histograms and put the result in the third one:
 
 {% highlight C++ %}
-   TH1F h3 = h1*h2;
+TH1F h3 = h1*h2;
 {% endhighlight %}
 
-### Drawing a histogram
+When performing operations, the resulting bin errors and histogram statistics are computed assuming the two histograms are independents and a normal approximation for the bin error is used.
+A special case is when histograms are divided to compute efficiency and in this case the numerator histogram is a subset of the denominator histogram. The correct handling of errors is done by using
+the {% include ref class="TEfficiency" %} class.
 
-  - Use the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"} method to draw a histogram.
-    It creates a {% include ref class="THistPainter" %} object that specializes the drawing of the histogram.
-    The {% include ref class="THistPainter" %} class is separated
-    from the histogram, so that the histogram does not contain the graphics overhead.
+### Normalizing histograms
 
-  - Use the [TH1::DrawCopy()](https://root.cern/doc/master/classTH1.html#aa19b24b96284284d677cd73f00d29d79){:target="_blank"} method to create a copy of the histogram when drawing it.
+You can use [TH1::Scale (Double_t c1 = 1, Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#add929909dcb3745f6a52e9ae0860bfbd){:target="_blank"} in combination with [TH1::Integral (Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#aaf053a4b487c46b9e20c0bf534b34012){:target="_blank"} to normalize histograms.
 
-  - Use the [TH1::DrawNormalized()](https://root.cern/doc/master/classTH1.html#a46394b325a71d59fe0009172079b4a62){:target="_blank"} method to draw a normalized copy of a histogram.
+The following example shows how to normalize a histograms, such as it represents a probability density distribution
 
 _**Example**_
 
+The following histogram is given:
+
 {% highlight C++ %}
-   TH1F h1("h1","Histogram from a Gaussian",100,-3,3);
+   TH1D *h = new TH1D("h","a trial histogram", 100, -1.5, 1.5);
+   for (Int_t i = 0; i < 10000; i++) h->Fill(gRandom->Gaus(0, 1));
+   h->Draw();
+{% endhighlight %}
+
+{% include figure_image
+   img="histo-trial.png"
+   caption="A trial histogram for normalizing."
+%}
+
+To use the normalization methods, you can clone first the histogram to keep the original one, call then `TH1::Scale` passing as scale parameter value the histogram integral. In addition, use the option `width` to divide also by the bin width in order to display the probability density in each bin.
+If you want to show just the frequency probability of each bin, you don't need to use the `width` option.
+
+{% highlight C++ %}
+   TH1*h1 = (TH1*)(h->Clone("h1"));
+   h1->Scale(1./h1->Integral(), "width");
+   h1->Draw();
+{% endhighlight %}
+
+
+After applying the normalization method, redraw the histogram with your preferred [drawing option](https://root.cern/doc/master/classTHistPainter.html#HP01):
+
+{% highlight C++ %}
+   myHist->Draw("HIST")
+{% endhighlight %}
+
+
+
+## Drawing a histogram
+
+- Use the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"} method to draw a histogram using the provided drawing option.
+    The drawing is delegated to the {% include ref class="THistPainter" %} class that specializes the drawing of the histogram. The {% include ref class="THistPainter" %} class is separated
+    from the histogram, so that the histogram class does not contain the graphics overhead.
+
+### Drawing options
+
+The "drawing option" is the unique parameter of the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"}
+method. It specifies how the histogram will be graphically rendered.
+For detailed information on the drawing options for all histogram classes, refer to
+[THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01a){:target="_blank"}.
+For all possible available options see the [Histogram plotting options](https://root.cern/doc/master/classTHistPainter.html#HP01).
+
+> **Note**
+>
+> The drawing options are *NOT* case sensitive!
+
+### Drawing an histogram copy
+
+By default when an histogram is drawn in the ROOT canvas it is not copied in order to have automatically draw updates that can happen in the histogram object.
+This means that if the histogram object is created on the stack inside a defined C++ scope (or inside a Python function when using PyROOT), it will be automatically deleted when exiting the scope and
+the final consequence will be that the drawn object will disappear. To avoid this to happen you can use:
+
+  - [TH1::DrawCopy()](https://root.cern/doc/master/classTH1.html#aa19b24b96284284d677cd73f00d29d79){:target="_blank"} or [TObject::DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9) methods to create a copy of the histogram when drawing it.
+
+_**Examples**_
+
+{% highlight C++ %}
+   TH1D h1("h1","Histogram from a Gaussian",100,-3,3);
    h1.FillRandom("gaus",10000);
    h1.Draw();
 {% endhighlight %}
@@ -222,59 +351,32 @@ _**Example**_
 {% include figure_jsroot
    file="histograms.root" object="h1" width="500px" height="350px"
    caption="Histogram drawn with Draw()."
-%}
+   %}
 
-#### Getting the bin width
-
-- Use the [GetBinWidth()](https://root.cern/doc/master/classTH1.html#ad69a5fa0002361fd77f37990a29d1aa3){:target="_blank"} method to get the bin width of a histogram.
+- draw an histogram with error bars:
 
 {% highlight C++ %}
-   TH1F h1("h1","Histogram from a Gaussian",100,-3,3);
-   h1.FillRandom("gaus",10000);
-   h1.Draw();
-   h1.GetBinWidth(0)
-
-   (double) 0.060000000
+   h1.Draw("E");
 {% endhighlight %}
 
-#### Drawing options
-
-> **Note**
->
-> The drawing options are not case sensitive.
-
-**Drawing options for all histogram classes**
-
-The "drawing option" is the unique parameter of the [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"}
-method. It specifies how the histogram will be graphically rendered.
-For detailed information on the drawing options for all histogram classes, refer to
-[THistPainter](https://root.cern/doc/master/classTHistPainter.html#HP01a){:target="_blank"}.
-
-_**Examples**_
-
+- draw a 2-D histogram as a LEGO plot:
 {% highlight C++ %}
-   TH2F h2("h2","Histogram filled with random numbers",40,-4,4,40,-20,20);
+{
+   TH2D h2("h2","Histogram filled with random numbers",40,-4,4,40,-20,20);
    float px, py;
    for (int i = 0; i < 25000; i++) {
       gRandom->Rannor(px,py);
       h2.Fill(px,5*py);
    }
-   h2.Draw("LEGO1");
+   h2.DrawCopy("LEGO1");
 {% endhighlight %}
+Note that we have used here `DrawCopy` since in this case the histogram is created within a C++ scope and it will be deleted at the end.
 
 {% include figure_image
    img="histo-lego.png"
    caption="Histogram drawn with Draw(\"LEGO1\")."
 %}
 
-{% highlight C++ %}
-   h2.Draw("LEGO1 POL");
-{% endhighlight %}
-
-{% include figure_image
-   img="histo-lego-pol.png"
-   caption="Histogram drawn with Draw(\"LEGO1 POL\")."
-%}
 
 
 {% include ref class="THistPainter" %} implements drawing options for
@@ -285,9 +387,9 @@ It also implements specific drawing options for
  [THStack](https://root.cern/doc/master/classTHistPainter.html#HP01e){:target="_blank"}.
 
 
-### Drawing a histogram with error bars
+### Using the histogram Editor
 
-The following example shows how to draw a histogram with error bars.
+The following example shows how to use the GUI Editor to modify the histogram drawing
 
 _**Example**_
 
@@ -303,280 +405,82 @@ A canvas with the histogram is displayed.
 
 - Click on the histogram.
 
-In the `Style` tab, you can select the error bars to displayed for the histogram.
-
-{% include figure_image
-   img="histogram-error-select.png"
-   caption="Selection of error bars for a histogram."
-%}
-
-- Select `Simple`.
-
-The size of the error bars is equal to the square root of the number of events in the histogram.
-
-{% include figure_image
-   img="histogram-error-bars.png"
-   caption="Error bars for a histogram."
-%}
-
-Instead of using the `Editor`, you also can simply draw the error bars by:
-
-{% highlight C++ %}
-   h1.Draw("e");
-{% endhighlight %}
+In the `Style` tab, you can select and change some of the drawing option and drawing style.
 
 
-### Example: Histogramming a data analysis
+## Fitting Histograms
 
-In [Example: Using a ROOT macro for data analysis]({{ '/manual/trees#example-using-a-root-macro-for-data-analysis' | relative_url }}) was shown how to create a ROOT macro for analyzing a tree in a ROOT file.
+Histograms in ROOT can be fitted with user defined functions defined using the ROOT  {% include ref class="TF1" %} function classes.
+For fitting histograms see the [Fitting section]({{ '/manual/fitting' | relative_url }}).
 
-Here it is shown, how to create a histogram for a variable `hPosX` for this data analysis.
+## Miscellaneous Operations
 
-_**Example**_
+### Projections of histograms
 
-A 1-D histogram {% include ref class="TH1F" %} is created for the X position of particles (`hPosX`).
+One can perform projection from multi-dimensional histograms (`TH2` and `TH3`) to lower dimensional histograms and to profile histograms (`TProfile`). See the
+[reference guide](https://root.cern/doc/master/classTH1.html#prof-hist) for the available projection functions.
 
-{% highlight C++ %}
-
-#include "TFile.h"
-#include "TTree.h"
-#include "TBranch.h"
-#include "TH1F.h"
-
-const Int_t kMaxfParticles = 1293;
-
-void AnalyzeTree()
-{
-// Variables used to store the data.
-
-// Sum of data size (in bytes) of all events.
-   Int_t totalSize = 0;
-
-// Size of the current event.
-   Int_t     eventSize = 0;
-
-// X position of the particles.
-   TH1F     *hPosX;
-
-// List of branches.
-   TBranch  *nParticlesBranch;
-   TBranch  *particlesPosXBranch;
-   TBranch  *particlesMomentumBranch;
-
-// Declaration of leaf types.
-   Int_t nParticles;
-   Double_t  particlesPosX[kMaxfParticles];
-   Double_t  particlesMomentum[kMaxfParticles];
-
-// Open the ROOT file.
-   TFile *f = TFile::Open("http://root.cern/files/introtutorials/eventdata.root");
-   if (f == 0) {
-
-// If the file cannot be opened, print an error message and return immediately.
-      printf("Error: cannot open http://root.cern/files/introtutorials/eventdata.root!\n");
-      return;
-   }
-
-// Get a pointer to the tree.
-   TTree *tree = (TTree *)f->Get("EventTree");
-
-// To use SetBranchAddress() with simple types (e.g., double, int) instead of objects (e.g., std::vector<Particle>).
-   tree->SetMakeClass(1);
-
-// Connect the branches with their member variables.
-   tree->SetBranchAddress("fParticles", &nParticles, &nParticlesBranch);
-   tree->SetBranchAddress("fParticles.fPosX", particlesPosX, &particlesPosXBranch);
-   tree->SetBranchAddress("fParticles.fMomentum", particlesMomentum, &particlesMomentumBranch);
-
-// Create the TH1F histogram.
-   hPosX = new TH1F("hPosX", "Position in X", 20, -5, 5);
-
-// Enable bin errors.
-   hPosX->Sumw2();
-
-   Long64_t nentries = tree->GetEntries();
-   for (Long64_t i=0;i<nentries;i++) {
-
-// We only need the number of particles ...
-      nParticlesBranch->GetEntry(i);
-
-// ... and their position in X...
-      particlesPosXBranch->GetEntry(i);
-
-// ... and their momentum.
-      particlesMomentumBranch->GetEntry(i);
-
-// Do the actual analysis.
-      for (int iParticle = 0; iParticle < nParticles; ++iParticle) {
-         if (particlesMomentum[iParticle] > 40.0)
-            hPosX->Fill(particlesPosX[iParticle]);
-      }
-   }
-
-// Fit the histogram.
-   hPosX->Fit("pol2");
-
-// Draw the histogram.
-   hPosX->Draw();
-}
-{% endhighlight %}
-
-### Normalizing histograms
-
-You can use [TH1::Scale (Double_t c1 = 1, Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#add929909dcb3745f6a52e9ae0860bfbd){:target="_blank"} and [TH1::Integral (Option_t* option = “”)](https://root.cern/doc/master/classTH1.html#aaf053a4b487c46b9e20c0bf534b34012){:target="_blank"} to normalize histograms.
-
-The following example shows several methods to normalize a histograms. After the normalization of a histogram, it must be redrawn.
-
-_**Example**_
-
-The following histogram is given:
-
-{% highlight C++ %}
-   TH1F *h = new TH1F("h","a trial histogram", 100, -1.5, 1.5);
-   h->Sumw2();
-   for (Int_t i = 0; i < 10000; i++) h->Fill(gRandom->Gaus(0, 1));
-   h->Draw();
-   h->GetEntries()
-   h->Integral()
-   h->Integral("width")
-{% endhighlight %}
-
-{% include figure_image
-   img="histo-trial.png"
-   caption="A trial histogram for normalizing."
-%}
-
-To test the normalization methods, you can clone the histogram, for example:
-
-{% highlight C++ %}
-   TH1F *h1 = (TH1F*)(h->Clone("h1"));
-   ...
-// One clone per method.
-   ...
-   TH1F *h7 = (TH1F*)(h->Clone("h7"));
-{% endhighlight %}
-
-**Method 1**
-
-{% highlight C++ %}
-   Double_t num = h->GetBinContent(i);
-   Double_t den = h->GetBinWidth(i);
-   Double_t value = 0;
-   if (den!=0)
-     {
-        value = num/den;
-        h->SetBinContent(i,value);
-     }
-{% endhighlight %}
-
-**Method 2**
-
-{% highlight C++ %}
-   Double_t factor = 1.;
-   h->Scale(factor/h->GetEntries());
-{% endhighlight %}
-
-**Method 3**
-
-{% highlight C++ %}
-   Double_t scale = h->GetXaxis()->GetBinWidth(1)/(h->Integral());
-   h->Scale(scale);
-{% endhighlight %}
-
-**Method 4**
-
-Shows the frequency probability in each bin.
-
-{% highlight C++ %}
-   Double_t factor = 1.;
-   h->Scale(factor/h->Integral());
-{% endhighlight %}
-
-**Method 5**
-
-{% highlight C++ %}
-   Double_t factor = 1.;
-   h->Scale(factor, "width");
-{% endhighlight %}
-
-**Method 6**
-
-Shows the estimated probability density function.
-
-{% highlight C++ %}
-   Double_t factor = 1.;
-   h->Scale(factor/h->Integral(), "width");
-{% endhighlight %}
-
-**Method 7**
-
-{% highlight C++ %}
-   Double_t factor = 1.;
-   h->Scale(factor/h->Integral("width"));
-{% endhighlight %}
-
-After applying the normalization method, redraw the histogram with a [drawing option](#drawing-options):
-
-{% highlight C++ %}
-   myHist->Draw("HIST")
-{% endhighlight %}
-
-> **Remarks**
->
-> In order to make sure that the errors are properly handled, first (i.e., before calling TH1::Scale) execute:<br/>
-> `if (h->GetSumw2N() == 0) h->Sumw2(kTRUE);`
->
->`TH1::SetBinContent` changes the bin content of a given bin and increments the number of entries of the histogram. Because of that you should use `TH1::SetBinError` as well.
 
 ### Fast Fourier transforms for histograms
 
 ROOT provides with {% include ref class="TVirtualFFT" %} an interface class for fast Fourier transforms (FFT) (see → [FFTW]({{ '/manual/math/#fftw' | relative_url }}). With [TH1::FFT()](https://root.cern/doc/master/classTH1.html#a69321e3106e4a26db3fef4d126d835ff){:target="_blank"} you can perform a FFT for a histogram.
 
-## Profile histograms
+## Histogram statistics
 
-Profile histograms are used to display the mean value of `Y` and its error for each bin in `X`.
+ROOT histograms provide functions to compute statistics on the input data such as mean, [TH1::GetMean](https://root.cern/doc/master/classTH1.html#a3e2fa7eca22330a7f6458e481e6ca0ae), standard
+deviation, [TH1::GetStdDev](https://root.cern/doc/master/classTH1.html#a31a19244776aca64aab4ee1808f14c32)and also  kurtosis,
+[TH1::GetKurtosis](https://root.cern/doc/master/classTH1.html#aff8626d5a150eab4a19bbbc258718c5d) and skewness,
+[TH1::GetSkewness](https://root.cern/doc/master/classTH1.html#a3f2e05cf408b6e69602141e6699883c5)and covariance and correlation, see for example [TH2::GetCorrelationFactor](https://root.cern/doc/master/classTH2.html#a0a319442275deed3941c0904cecddd3c) for multi-dimensional
+histograms.
 
-When you fill a profile histogram with the [TProfile.Fill()](https://root.cern/doc/master/classTProfile.html#ab851e2083286f48bee2a74ea816f6125){:target="_blank"} method:
+The function `TH1::GetRMS` is equivalent to `TH1::GetStdDev`, since historically the `RMS` has been identified as the sample standard deviation.
 
-- `H[j]` contains for each bin `j` the sum of the `y` values for this bin.
+In addition, ROOT provides functions to compute estimations of  the error of the sample mean and standard deviations.
+See [TH1::GetMeanError](https://root.cern/doc/master/classTH1.html#aa4e6882403221cd5e38cd0716295e751) and
+[TH1::GetStdDevError](https://root.cern/doc/master/classTH1.html#ae7b4359f7eee88b7a21468308bc365aa).
 
-- `L[j]` contains the number of entries in the bin `j`.
+The histogram statistics can be displayed in the histogram statistics box.
 
-- `e[j]` or `s[j]` will be the resulting error depending on the selected option.
+Note that by default, the histogram statistics are computed on all the raw input data sample, but when an histogram range is selected, the statistics are computed in the user defined range and using only the
+bin center information.
 
-The following formulae show the cumulated contents (capital letters) and the values displayed by the printing or plotting routines (small letters) of the elements for bin `J`.
-
-`E[j] = sum Y**2`<br>
-`L[j] = number of entries in bin J`<br>
-`H[j] = sum Y`<br>
-`h[j] = H[j] / L[j]`<br>
-`s[j] = sqrt[E[j] / L[j] - h[j]**2]`<br>
-`e[j] = s[j] / sqrt[L[j]]`<br>
-
-The displayed bin content for bin `J` of a {% include ref class="TProfile" %} is always [h(J)](https://root.cern/doc/master/RSha256_8hxx.html#acf9942d15f0dd0ac4fc5ca66096a3f6d){:target="_blank"}.
-The corresponding bin error is by default [e(J)](https://root.cern/doc/master/RSha256_8hxx.html#af62772e2f383ddbe93a93eff2a5f543a){:target="_blank"}.
-In case the option `s` is used (in the constructor or by calling [TProfile::BuildOptions](https://root.cern/doc/master/classTProfile.html#a1ff9340284c73ce8762ab6e7dc0e6725){:target="_blank"}), the displayed error is `s(J)`.
-
-In the special case where `s[j]` is zero, when there is only one entry per bin, `e[j]` is computed from the average of the `s[j]` for all bins. This approximation is used to keep the bin during a fit operation.
-
-_**Example**_
+The function [TH1::GetQuantiles] computes, from the given histogram binned data, the quantiles, such as  median and quartiles.
+For example, to compute the quartiles (including the median), you provide as input the probability values for which you want to compute the corresponding quantiles:
 
 {% highlight C++ %}
-{
-  auto c1 = new TCanvas("c1","Profile histogram example",200,10,700,500);
-  auto hprof  = new TProfile("hprof","Profile of pz versus px",100,-4,4,0,20);
-  Float_t px, py, pz;
-  for ( Int_t i=0; i<25000; i++) {
-    gRandom->Rannor(px,py);
-    pz = px*px + py*py;
-    hprof->Fill(px,pz,1);
-  }
-  hprof->Draw();
-}
+   double p[3] = { 0.25, 0.50, 0.75};
+   double q[3];
+   h1.GetQuantiles(3,q,p);
+   std::cout << "first quartile (25th percentile) = " << q[0] << std::endl;
+   std::cout << "median (50th percentile) = " << q[1] << std::endl;
+   std::cout << "third quartile (75th percentile) = " << q[2] << std::endl;
 {% endhighlight %}
 
-{% include figure_jsroot
-   file="histograms.root" object="hprof" width="500px" height="350px"
-   caption="A profile histogram example."
-%}
+
+### Statistical tests
+
+The ROOT histogram class provides also functions to perform statistical comparison tests, such as goodness of fit tests, for testing compatibility of two histograms (2 sample tests) or compatibility
+of an histogram with a theoretical distribution, i.e. a function (1 sample tests).
+
+For tests of histogram-histogram compatibility:
+- [TH1::Chi2Test](https://root.cern/doc/master/classTH1.html#a6c281eebc0c0a848e7a0d620425090a5) for performing a chi2 test between two histograms. This tests works also for multi-dimensional
+  histograms, but it requires to have non-empty bins.
+- [TH1::KolmogorovTest](https://root.cern/doc/master/classTH1.html#aeadcf087afe6ba203bcde124cfabbee4) to perform the Kolgomorov-Smironov test on the two histograms. Note that this tests works only for
+  1-D histograms and it has a
+  bias for binned data and should be used if the bin size is sufficiently small.
+- [TH1::AndersonDarlig](https://root.cern/doc/master/classTH1.html#aa395c473ea9693359a74189fbe0ee0db) working only for 1-D histograms.
+
+For histogram-function comparison tests:
+- [TH1::Chisquare](https://root.cern/doc/master/classTH1.html#ab78967d8b3ede39791a2ec4b20afbb84) using the chi2 test
+-  [TH1::Chisquare(function,"L")](https://root.cern/doc/master/classTH1.html#ab78967d8b3ede39791a2ec4b20afbb84) (note the option `L`) to use the Poisson likelihood ratio based method suggested by Baker
+and Cousins (see corresponding [paper](https://www.sciencedirect.com/science/article/pii/0167508784900164)).
+
+### Histogram bin Errors
+
+The bin error of the histograms are computed by default as following:
+-  unweighted histogram: square root of bin content
+-  weighted histogram : square root of the bin sum of the weights square.
+
+For unweighted histograms there is also the option to compute the Poisson standard confidence intervals for each bin, by calling `TH1::SetBinErrorOption(TH1::kPoisson)`. After this, one can retrieve
+the corresponding lower and upper bin error by using `TH1::GetBinErrorLow()` and `TH1::GetBinErrorUp`.
 

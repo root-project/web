@@ -40,7 +40,7 @@ manual:
       - title: ROOT macros and shared libraries
         url: manual/root_macros_and_shared_libraries
       - title: ROOT files
-        url: manual/storing_root_objects
+        url: manual/root_files
       - title: Creating a user application with ROOT
         url: manual/creating_a_user_application
       - title: Integrating ROOT into CMake projects
@@ -49,39 +49,43 @@ manual:
         url: manual/root_collections
       - title: Object ownership
         url: manual/object_ownership
-      - title: Multi threading
+      - title: Multi-threading
         url: manual/multi_threading
-      - title: Adding a class to ROOT (should be moved)
-        url: manual/adding_a_class_to_root
   - title: ROOT Manual - Functional parts
     url: manual/functional_parts
     children:
-      - title: Graphics
-        url: manual/graphics
       - title: Histograms
         url: manual/histograms
       - title: Graphs
         url: manual/graphs
-      - title: Fitting histograms
+      - title: Graphics
+        url: manual/graphics
+      - title: Fitting
         url: manual/fitting
-      - title: RooFit
-        url: manual/roofit
-      - title: I/O
-        url: manual/io
-      - title: Trees
-        url: manual/trees
       - title: Data frames
         url: manual/data_frame
+      - title: Trees
+        url: manual/trees
+      - title: RooFit
+        url: manual/roofit
       - title: TMVA
         url: manual/tmva
+      - title: "Python interface: PyROOT"
+        url: manual/python
       - title: Mathematical libraries
         url: manual/math
       - title: Physics vectors
         url: manual/physics_vectors
       - title: Geometry
         url: manual/geometry
-      - title: "Python interface: PyROOT"
-        url: manual/python
+      - title: ROOT I/O
+        url: manual/root_io
+      - title: Signal/Slot communication
+        url: manual/signal_slot
+      - title: JSROOT
+        url: manual/jsroot
+      - title: How to embed ROOT in a GUI
+        url: manual/embed_root_in_gui
   - title: Further information
     children:
       - title: "Tutorials"

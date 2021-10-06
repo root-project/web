@@ -12,21 +12,23 @@ In chapters like [Histograms]({{ '/manual/histograms' | relative_url }}), [Data 
 
 The second part of the ROOT Manual contains:
 
-  - [Graphics]({{ '/manual/graphics' | relative_url }})
-
   - [Histograms]({{ '/manual/histograms' | relative_url }})
 
   - [Graphs]({{ '/manual/graphs' | relative_url }})
 
-  - [Fitting histograms]({{ '/manual/fitting' | relative_url }})
+  - [Graphics]({{ '/manual/graphics' | relative_url }})
 
-  - [RooFit]({{ '/manual/roofit' | relative_url }})
-
-  - [Trees]({{ '/manual/trees' | relative_url }})
+  - [Fitting]({{ '/manual/fitting' | relative_url }})
 
   - [Data frames]({{ '/manual/data_frame' | relative_url }})
 
+  - [Trees]({{ '/manual/trees' | relative_url }})
+
+  - [RooFit]({{ '/manual/roofit' | relative_url }})
+
   - [TMVA]({{ '/manual/tmva' | relative_url }})
+
+  - [Python interface: PyROOT]({{ '/manual/python' | relative_url }})
 
   - [Mathematical libraries]({{ '/manual/math' | relative_url }})
 
@@ -34,4 +36,12 @@ The second part of the ROOT Manual contains:
 
   - [Geometry]({{ '/manual/geometry' | relative_url }})
 
-  - [Python interface: PyROOT]({{ '/manual/python' | relative_url }})
+  - [ROOT I/O]({{ '/manual/root_io' | relative_url }})
+
+  - [Geometry]({{ '/manual/geometry' | relative_url }})
+
+  - [Signal/Slot communication]({{ '/manual/signal_slot' | relative_url }})
+
+  - [JSROOT]({{ '/manual/jsroot' | relative_url }})
+
+  - [ How to embed ROOT in a GUI]({{ '/manual/embed_root_in_gui' | relative_url }})

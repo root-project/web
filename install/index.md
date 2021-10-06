@@ -36,6 +36,32 @@ To avoid having to `source thisroot.sh` every time one needs to use ROOT, it is 
 `.bashrc`, `.profile` or analogous configuration files.
 Note, however, that sourcing `thisroot.sh` might interfere with ROOT versions installed with different methods.
 
+And on Windows, for example, after the installation, open a `x86 Native Tools Command Prompt for VS 2019`, cd to your home directory (`cd %USERPROFILE%`) and call `thisroot.bat` (let's assume you installed ROOT in `C:\root`). Then you can start ROOT:
+
+```bat
+**********************************************************************
+** Visual Studio 2019 Developer Command Prompt v16.11.3
+** Copyright (c) 2021 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x86'
+
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community>cd %USERPROFILE%
+
+C:\Users\username>c:\root\bin\thisroot.bat
+
+C:\Users\username>root
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.25/01                        https://root.cern |
+  | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for win32 on Sep 20 2021, 11:34:39                         |
+  | From heads/master@v6-25-01-1903-g6928212418                      |
+  | With MSVC 19.29.30133.0                                          |
+  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+   ------------------------------------------------------------------
+
+root [0]
+```
+
 # Install via a package manager
 
 > **Supported by the community:** these packages are not maintained by the ROOT team, but by helpful members of the community. Please go through each package manager's standard channels to report any related issue. If you package ROOT and would like to be added to the list below, please contact us by clicking the letter icon at the bottom of the page.

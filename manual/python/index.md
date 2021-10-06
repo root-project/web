@@ -100,7 +100,7 @@ Note that it is also possible to use both the Python and the C++ rootlogons, sin
 
 If you want to disable the rootlogon functionality, set `PyConfig.DisableRootLogon` to `True`.
 
-- `IgnoreCommandLineOptions` (default `True`): If a PyROOT script is run with some command line arguments, ROOT ignores them by default, so you can process them as you wish. However, by setting `PyConfig.IgnoreCommandLineOptions` to `False`, those arguments are forwarded to ROOT for parsing, for example, to enable the batch mode from the command line.<br/>For a complete list of the arguments accepted by ROOT, → see [Starting ROOT with command line options]({{ '/manual/first_steps_with_root/#starting-root-with-command-line-options' | relative_url }}).
+- `IgnoreCommandLineOptions` (default `True`): If a PyROOT script is run with some command line arguments, ROOT ignores them by default, so you can process them as you wish. However, by setting `PyConfig.IgnoreCommandLineOptions` to `False`, those arguments are forwarded to ROOT for parsing, for example, to enable the batch mode from the command line.<br/>For a complete list of the arguments accepted by ROOT, → see [Starting ROOT with command line options]({{ '/manual/first_steps_with_root/#command-line-options' | relative_url }}).
 
 - `ShutDown` (default `True`): When the application is finished, more precisely during PyROOT's cleanup phase, the ROOT C++ interpreter is shut down by default.<br/>If PyROOT is executed as part of a longer-running application that needs the C++ interpreter, you can set `PyConfig.ShutDown` to `False` to prevent that shutdown.
 
@@ -172,7 +172,7 @@ The following options are available, ordered by complexity and performance:
 <a name="JITString"></a>
 ### Just-in-time compilation of small strings
 
-ROOT has a [C++ interpreter]({{ '/manual/first_steps_with_root/#using-the-interactive-c-interpreter-cling' | relative_url }}), which can process C++ code. Sometimes such a code is short, e.g. for the definition of a small function or a class or for rapid exploration or debugging. To do this, place the C++ code in a Python string, which is passed to the interpreter.
+ROOT has a [C++ interpreter]({{ '/manual/first_steps_with_root/#running-c-code' | relative_url }}), which can process C++ code. Sometimes such a code is short, e.g. for the definition of a small function or a class or for rapid exploration or debugging. To do this, place the C++ code in a Python string, which is passed to the interpreter.
 The code is just-in-time compiled (jitted) and it is immediately available for invocation, as shown in the following example. Here, the constructor of the C++ class `A` and the function `f` are called from Python after defining them via the interpreter.
 
 _**Example**_
@@ -277,14 +277,14 @@ x = ROOT.f(3)  # x = 9
 For larger analysis frameworks, one may not want to compile the headers each time the Python interpreter is started. One may also
 want to read or write custom C++/C objects in ROOT files, and use them with [RDataFrame](https://root.cern/doc/master/classROOT_1_1RDataFrame.html){:target="_blank"} or similar tools.
 
-A large analysis framework might further have multiple libraries. In these cases, you generate [ROOT dictionaries]({{ 'manual/root_macros_and_shared_libraries' | relative_url }}), and add these to the libraries, which provides ROOT
+A large analysis framework might further have multiple libraries. In these cases, you generate [ROOT dictionaries]({{ 'manual/root_io/#generating-dictionaries' | relative_url }}), and add these to the libraries, which provides ROOT
 with the necessary information on how to generate Python bindings on the fly.
 This is what the large LHC experiments do to steer their analysis frameworks from Python.
 
 1. Create one or multiple C++ libraries. <br/>For example create a library as a CMake project that uses ROOT, see → [CMake details]({{ '/manual/integrate_root_into_my_cmake_project' | relative_url }})
-1. [Optional] Add [`ClassDef` macros]({{ 'manual/adding_a_class_to_root' | relative_url }}) for classes that should be read or written from or into files.
-1. Generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files, see → [Generating dictionaries]({{ '/manual/root_macros_and_shared_libraries/#generating-dictionaries' | relative_url }})
-   <br>Use a [`LinkDef.h` file]({{ '/manual/root_macros_and_shared_libraries/#selecting-dictionary-entries-linkdefh' | relative_url }})
+2. [Optional] Add [`ClassDef` macros]({{ 'manual/root_io/#adding-a-class-to-root' | relative_url }}) for classes that should be read or written from or into files.
+3. Generate a dictionary of all classes that should receive I/O capabilities, i.e. that can be written into ROOT files, see → [Generating dictionaries]({{ '/manual/root_io/#generating-dictionaries' | relative_url }})
+   <br>Use a [`LinkDef.h` file]({{ '/manual/root_io/#selecting-dictionary-entries-linkdefh' | relative_url }})
    to select which classes or functions ROOT should be included in the dictionary.
 
    The corresponding cmake instructions would look similar to this:
@@ -304,7 +304,7 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
     add_dependencies(AnalysisLib G__AnalysisLib)
    ```
 1. Implement the C++ side, and compile the library using CMake.
-1. On the Python side, load the libraries with high-performance C++ in one step:
+2. On the Python side, load the libraries with high-performance C++ in one step:
 
    ```python
    import ROOT
