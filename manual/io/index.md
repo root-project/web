@@ -180,7 +180,7 @@ Keys are available in a {% include ref class="TList" %} of {% include ref class=
 
 _**Example**_
 
-The `TKeys` of the `demo.root` (see example → [Creating a ROOT file](#creating-a-root-file)) file are iterated.
+The `TKeys` of the `demo.root` file are iterated.
 
 {% highlight C++ %}
 {
