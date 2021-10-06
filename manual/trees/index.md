@@ -64,7 +64,7 @@ A cluster contains all the data of a given entry range.
 Trees will close baskets that are not yet full when reaching the tree entry at a cluster boundary.
 
 TTree finds the baskets for a given entry for a given branch by means of a _header_ stored in the file.
-This header also contains other auxilliary metadata.
+This header also contains other auxiliary metadata.
 When reading a `TTree` object, only this header is actually deserialized, until the tree's entries are loaded.
 Multiple updates of these headers can often be found in files (`treename;1`, `treename;2` etc, called cycles, see → [I/O]({{ '/manual/root_io' | relative_url }})).
 Only the last one (also accessible as `treename`) knows about all written baskets.
@@ -130,7 +130,7 @@ tree->Branch("branch0", &var);
 {% endhighlight %}
 
 {% highlight Python %}
-# Provide a one-element array, so ROOT can read data from this memory. 
+# Provide a one-element array, so ROOT can read data from this memory.
 from array import array
 var = array('f', [ 0 ])
 tree.Branch("branch0", var, "leafname/F");
@@ -144,7 +144,7 @@ _Splitting_
 
 If told, TTree will create (sub-) branches for each member of a class and its base classes.
 If such a member is a class itself, that member's type can also be split.
-The recusion level of nested splitting is called the "split level"; it can be configured during branch creation.
+The recursion level of nested splitting is called the "split level"; it can be configured during branch creation.
 
 If the split level is set to 0, there is no splitting: all data members are stored in the same branch.
 Data members can also be configured to be non-split as part of the dictionary; see → [I/O]({{ '/manual/root_io' | relative_url }}).
@@ -219,7 +219,7 @@ import ROOT
 myFile = ROOT.TFile( ROOT.TFile.Open("file.root", "RECREATE") )
 tree = ROOT.TTree("tree", "The Tree Title")
 
-# Provide a one-element array, so ROOT can read data from this memory. 
+# Provide a one-element array, so ROOT can read data from this memory.
 var = array('f', [ 0 ])
 tree.Branch("branch0", var, "leafname/F");
 
@@ -534,7 +534,7 @@ This index is similar to database indexes:
 it allows to quickly determine the tree entry number corresponding to the value of an expression.
 These expressions should be both equality comparable (that is, not use floating point numbers where precision might cause the index lookup to fail) and unique, to make sure you get the tree entry you expect.
 For high-energy physics, a common example could be a combination of run number and event number:
-while each one of them might have duplications, their combination is guaranteed to be unique. 
+while each one of them might have duplications, their combination is guaranteed to be unique.
 
 To build an index, define a major and optionally a minor expression.
 In the example above these might simply be the leaves `Run` and `Event`.
