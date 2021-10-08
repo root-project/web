@@ -28,7 +28,7 @@ The _Old User's Guide_ is outdated and not updated but, nevertheless it contains
 information we do not want to lose.
 
 The first task of the week was to make sure the Manual’s table of content was complete: by
-groups of experts, we updated the existing chapters ([Histograms]({{ '/manual/Histograms' | relative_url }}),
+groups of experts, we updated the existing chapters ([Histograms]({{ '/manual/histograms' | relative_url }}),
 [Graphs]({{ '/manual/graphs' | relative_url }}), [Trees]({{ '/manual/trees' | relative_url }}) ...)
 and create the new needed ones ([JSROOT]({{ '/manual/jsroot' | relative_url }}), [
 ROOT I/O]({{ '/manual/root_io' | relative_url }})...) which also
