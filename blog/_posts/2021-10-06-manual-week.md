@@ -24,8 +24,8 @@ The _[Reference Guide](https://root.cern/doc/master/index.html)_ and the
 _[Manual]({{ '/manual' | relative_url }})_ are the current valid sources of documentation.
 _[The Manual]({{ '/manual' | relative_url }})_ acts as a "User's Guide" helping users to find their way into the huge amount of documentation
 provided in the _[Reference Guide](https://root.cern/doc/master/index.html)_.
-The _Old User's Guide_ is outdated and not updated but, nevertheless it contains some valuable
-information we do not want to lose.
+The _Old User's Guide_ was outdated and not updated but nevertheless contained some valuable
+information we did not want to lose.
 
 The first task of the week was to make sure the Manual’s table of content was complete: by
 groups of experts, we updated the existing chapters ([Histograms]({{ '/manual/histograms' | relative_url }}),
