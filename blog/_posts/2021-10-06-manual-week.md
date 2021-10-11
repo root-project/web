@@ -35,8 +35,8 @@ ROOT I/O]({{ '/manual/root_io' | relative_url }})...) which also
 led to updates in the _[Reference Guide](https://root.cern/doc/master/index.html)_.
 
 We also moved everything still valuable in the _Old User’s
-Guide_ to the relevant places: outdated parts were removed or
-updated in the _[Manual]({{ '/manual' | relative_url }})_ or in the
+Guide_ to the relevant places, updating
+the _[Manual]({{ '/manual' | relative_url }})_ or the
 _[Reference Guide](https://root.cern/doc/master/index.html)_. Finally we will drop
 completely the _Old User’s Guide_ and have an accurate and complete
 _[Manual]({{ '/manual' | relative_url }})_.
