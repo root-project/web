@@ -37,8 +37,8 @@ led to updates in the _[Reference Guide](https://root.cern/doc/master/index.html
 We also moved everything still valuable in the _Old User’s
 Guide_ to the relevant places, updating
 the _[Manual]({{ '/manual' | relative_url }})_ or the
-_[Reference Guide](https://root.cern/doc/master/index.html)_. Finally we will drop
-completely the _Old User’s Guide_ and have an accurate and complete
+_[Reference Guide](https://root.cern/doc/master/index.html)_. In the end (and after another, final round at the end of the year) we will drop
+completely the _Old User’s Guide_ and instead have an accurate and complete
 _[Manual]({{ '/manual' | relative_url }})_.
 
 
