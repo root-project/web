@@ -7,7 +7,7 @@ author: Olivier Couet
 ROOT has now a brand new _[Manual]({{ '/manual' | relative_url }})_, bringing
 _"how do you read data with ROOT"_ and similar core aspects into contemporary ROOT.
 Much of the manual has been rethought and simplified, we hope and expect that concepts and
-interfaces are now easier to understand !
+interfaces are now easier to understand!
 
 
 To achieve this, all the ROOT team was involved in a big update of the
