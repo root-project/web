@@ -34,7 +34,7 @@ and create the new needed ones ([JSROOT]({{ '/manual/jsroot' | relative_url }}),
 ROOT I/O]({{ '/manual/root_io' | relative_url }})...) which also
 led to updates in the _[Reference Guide](https://root.cern/doc/master/index.html)_.
 
-Another task was be to move all the valuable information now in the _Old User’s
+We also moved everything still valuable in the _Old User’s
 Guide_ to the relevant places: outdated parts were removed or
 updated in the _[Manual]({{ '/manual' | relative_url }})_ or in the
 _[Reference Guide](https://root.cern/doc/master/index.html)_. Finally we will drop
