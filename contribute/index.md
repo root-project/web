@@ -11,14 +11,14 @@ We warmly welcome your contribution to ROOT!
 
 There are two ways in which you can contribute:
 
-1. **Via the Users' contribution section in the Forum** <br>
+1. **Via the users' contribution section in the forum** <br>
    The Users' Forum has a [section](https://root-forum.cern.ch/c/my-root-app-and-ideas){:target="_blank"}
    which describes how to advertise your feature based on ROOT. It is the
    easiest way to make your code known to the community, even if it will not be
    automatically integrated in ROOT. Of course the most successful contributions will
    become part of the repository - as it happened for RooFit, TMVA, Eve, to name a few.
 
-2. **Sending Patches** <br>
+2. **Sending patches** <br>
    You can create a pull request on [GitHub](https://github.com/root-project/root){:target="_blank"}.
    Simply follow [our guidelines](https://github.com/root-project/root/blob/master/CONTRIBUTING.md).
    By providing code this way, you agree to transfer your copyright on the code to the "ROOT project".
@@ -32,7 +32,7 @@ There are two ways in which you can contribute:
 Often it is useful to [contact us](https://root-forum.cern.ch){:target="_blank"} first to
 discuss the code you want to develop or the bug you want to fix.
 
-## Picking up an Idea
+## Picking up an idea
 
 We maintain a set of "ideas" for talented scientists and developers to pick up.
 An "idea" is a sketch of a development project, or a missing feature we would like to see in your ROOT!
