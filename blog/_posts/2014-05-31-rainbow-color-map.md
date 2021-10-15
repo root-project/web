@@ -9,7 +9,7 @@ author: Olivier Couet
 
 The aim of this article is to explain why the rainbow color map is not the best one can choose
 to represent physics data in pseudo color and to propose better solutions. It was written
-by [Bernice Rogowitz](https://sites.google.com/site/bernicerogowitz/Home) (Visual Perspectives) and Olivier Couet (CERN).
+by [Bernice Rogowitz](https://scholar.google.com/citations?user=METzusIAAAAJ&hl=en) (Visual Perspectives) and Olivier Couet (CERN).
 
 To introduce this topic, we will describe the work we did on the candidate Higgs boson data.
 In this experiment, two specially-constructed beams of particles were set to collide in
