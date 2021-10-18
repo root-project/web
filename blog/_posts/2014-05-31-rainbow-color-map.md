@@ -42,7 +42,7 @@ is the distribution of electron volts across the particle sensor.
 %}
 
 The rainbow color map is named that way because it goes through all the rainbow's colors.
-The lower values are in the beep blue range and the higher values in the reds. In between it passes
+The lower values are in the deep blue range and the higher values in the reds. In between it passes
 trough light blue green, yellow, orange ... It is used as a default in many visualization systems since
 it is easy to calculate (it is a linear interpolation between (0,0,255) and (255,0,0) in RGB color space),
 and because the bright colors are visually appealing.
@@ -87,8 +87,7 @@ very misleading
 
 ## Color maps in High Energy Physics
 
-The rainbow is used a lot in High Energy Physics. Still it is the default color map in system
-like ROOT. On 2012, July 4th physics results showing the evidence of a new boson compatible
+The rainbow is used a lot in High Energy Physics. On 2012, July 4th physics results showing the evidence of a new boson compatible
 with the Higgs boson signature were presented by the LHC experiments. Several plots using
 rainbow color maps were shown. On all of them the results were very clear, and were cross-
 checked by all kinds of other representations like bar charts or contour plots. Nevertheless
