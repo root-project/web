@@ -191,8 +191,6 @@ blog:
      url: blog
    - title: Workshops
      url: blog/workshops
-   - title: Publications
-     url: blog/publications
 
 contribute:
    - title: How To Contribute
@@ -228,6 +226,8 @@ about:
      url: about/team
    - title: Previous Developers
      url: about/previous_developers
+   - title: Publications by ROOT
+     url: about/publications
    - title: Cite us
      url: https://github.com/root-project/root/#cite
      target: _blank
