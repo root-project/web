@@ -62,7 +62,7 @@ libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 *   RHEL based distributions (CentOS, Scientific Linux) will require enabling of the [EPEL](https://fedoraproject.org/wiki/EPEL) additional software repository and in order to install packages below:
 *   **ftgl-devel:** for /usr/bin/pkg-config
 *   **cfitsio-devel:** for /usr/include/fitsio2.h and for /usr/lib/libcfitsio.so
-*   **R-devel, R-Rcpp-devel, R-RInside-devel:** needed for R bindings. 
+*   **R-devel, R-Rcpp-devel, R-RInside-devel:** needed for R bindings.
 *   RHEL 8 based distributions (CentOS 8) will require enabling of the PowerTools](https://wiki.centos.org/FAQ/CentOS8/UnshippedPackages) additional software repository and in order to install packages below:
 *   **avahi-compat-libdns_sd-devel:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **glew-devel:** for /usr/include/GL/glew.h and for /usr/lib[64]/libGLEW.so
@@ -172,7 +172,7 @@ xorg-x11-devel libXext-devel libopenssl-devel
 Most common optional packages:
 
 ```bash
-sudo zypper install gcc-fortran pcre-devel Mesa glew-devel
+sudo zypper install gcc-fortran pcre-devel Mesa glew-devel libpng16-devel
 pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel
 libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel libxml2-devel
 krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
