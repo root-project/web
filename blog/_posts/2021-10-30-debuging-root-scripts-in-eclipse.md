@@ -43,6 +43,7 @@ wget -O install-root-latest.sh https://raw.githubusercontent.com/petrstepanov/fe
 chmod +x ./install-root-latest.sh
 ./install-root-latest.sh
 ```
+
 Feel free to [reach out to me](https://petrstepanov.com/) concerning any issues with these scripts. Alternatively, open an issue in the corresponding GitHub repo. 
 
 ## Installing and Tweaking Eclipse IDE
@@ -52,6 +53,7 @@ Refer to the [original documentation](https://wiki.eclipse.org/Eclipse/Installat
 * Activate "C/C++" perspective in Window > Perspective > Open.
 * Set Eclipse environment variables. In Window > Preferences > C/C++ > Environment specify the `LD_LIBRARY_PATH` variable for shared library include path. Take variable value from Terminal's `echo $LD_LIBRARY_PATH` output. Tip: on macOS, this variable is named `DYLD_LIBRARY_PATH`.
 * Increase Eclipse initial and maximum heap limits. The screenshot below demonstrates the Eclipse heap use while indexing a ROOT and Geant4-based project. Memory use fluctuates between 1 and 2 GB. 
+
 <center>
 {% include figure_image
    img="/assets/images/eclipse-heap-use.png"
@@ -59,13 +61,14 @@ Refer to the [original documentation](https://wiki.eclipse.org/Eclipse/Installat
    caption="Eclipse IDE memory use during the source code indexing operation. Obtained with VisualVm application."
 %}
 </center>
+
 Therefore, we will limit the heap to 2 GB. Locate your `eclipse.ini` configuration file. On my Fedora machine, it is `/usr/lib/eclipse/eclipse.ini`. Sometimes `eclipse.ini` is located inside your Eclipse installation folder. With text editor set minimum and maximum heap limits respectively: `-Xms512m` and `-Xmx2048`. Alternatively one can use `sed` with `-r` REGEXP parameter (double-check your `eclipse.ini` location below):
 
-{% highlight bash %}
+```
 sudo cp /usr/lib/eclipse/eclipse.ini /usr/lib/eclipse/eclipse.ini.bak
 sudo sed -i -r "s;Xms[0-9]*m;Xms512m;" /usr/lib/eclipse/eclipse.ini
 sudo sed -i -r "s;Xmx[0-9]*m;Xmx2048m;" /usr/lib/eclipse/eclipse.ini  
-{% endhighlight %}
+```
 
 * Increase Eclipse indexer cache limits. In Eclipse menu: Window > Preferences > C/C++ > Indexer set the "Cache limits" to 75% and 2048 MB.
 * Prevent workspace refreshes. In Window > Preferences > General > Workspace. Uncheck "Refresh on access". Eclipse may randomly start refreshing the workspace upon the first run of a new Run/Debug configuration. Workspace refresh triggers restart of an indexer. Additionally, for a CMake managed project (not CDT managed) folder-specific Refresh Policy settings are unavailable. Our CMake project will refresh all the sources including ROOT sources (if attached). This is a resourceful operation, usually takes quite a time. We want to avoid this happening.
@@ -76,22 +79,24 @@ Technically it is possible to invoke a debugger directly to the ROOT Cling inter
 * Debug entry point will be outside of your program scope, namely in `rmain.cxx`.
 * Your script C++ file is never compiled. Program flow is passed to the interpreter that reads and processes your file line-by-line. Therefore, **breakpoints set in your actual source C++ file will never fire up**.
 
-A more elegant solution would be **turning our ROOT script into a standalone ROOT-based C++ program** with `main()` function. This will ensure the correct entry point and provide an **intuitive debugging flow**. A template repository containing a ROOT-based program code and `CMakeLists.txt` configuration file ready for debugging is [hosted on my GitHub](https://github.com/petrstepanov/root-eclipse). Check out the repository in the desired location on your computer. For instance, we download it into `~/Development` folder.
+A more straightforward solution would be **turning our ROOT script into a standalone ROOT-based C++ program** with `main()` function. This will ensure the correct entry point and provide an **intuitive debugging flow**. A template repository containing a ROOT-based program code and `CMakeLists.txt` configuration file ready for debugging is [hosted on my GitHub](https://github.com/petrstepanov/root-eclipse). Check out the repository in the desired location on your computer. For instance, we download it into `~/Development` folder.
 
-{% highlight bash %}
+```
 mkdir -p ~/Development && cd ~/Development
 git clone https://github.com/petrstepanov/root-eclipse
-{% endhighlight %}
+```
 
 Next, we set up an Eclipse project. Thankfully CMake offers [IDE Build Tools Generators](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#id12) that automatically create projects for various IDEs. The Eclipse project is set up with the following command: `cmake -G"Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug source/folder/path`. Here `/source/folder/path` path must be the relative or absolute path of the project source folder containing CMake configuration file `CMakeLists.txt`. There are two options to carry out the build:
 1. **In-source build**. Eclipse project files are located inside the original program folder. This is not a favorable option because Eclispe project files become a part of the Git tree. They need to be excluded in `.gitignore`. I also experienced Eclipse indexer issues using this method.
 2. **Out-of-source build**. Eclipse project is located outside of the Git repository. This is a good practice and we will use this option.
 
 First, we create a new folder located outside of the actual project Git tree. For instance, we will name it `root-eclipse-project`. Generally speaking, the project generator build is initiated via following command:
+
 ```
 mkdir root-eclipse-project && cd root-eclipse-project
 cmake -G"Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug ../root-eclipse
 ```
+
 CMake project generator will create an Eclipse project and link ROOT includes (header files) to the project. However, **extensive debugging requires access to Geant and ROOT source files**. We will discuss this process in the next section.
 
 ## Attaching ROOT Sources to the Project
@@ -113,6 +118,7 @@ cmake -G"Eclipse CDT4 - Unix Makefiles" \
       -DCMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES=OFF \
       ../root-eclipse
 ```
+
 Apparently, in the command above replace my ROOT library path with the correct one on your file system. Here `-DCMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES=OFF` [disables creation](https://gitlab.kitware.com/cmake/cmake/-/issues/19107) of the `[Subprojects]` Eclipse project folder for out-of-source Cmake build. The presence of this folder duplicates all project source files and dramatically slows down the indexer.
 
 Finally open Eclipse and go to File > Open Projects from File System... Specify the project location in the modal dialog by clicking the "Directory..." button. Locate the `~/Development/root-eclipse-project` project folder. Click "Finish". 
@@ -152,10 +158,10 @@ Luckily there is a solution. If you have an older computer with a minimum of 8 G
 
 It is reasonable to disable system swap when using RAMDISK. This prevents the RAMDISK from being moved back onto the hard drive's swap partition. Disable system swap with `sudo swapoff -a` command after fresh system startup.
 
-
 ## Summary
 
 In this post, we learned how to set up and apply Eclipse IDE software for in-depth debugging of the CERN ROOT scripts. It was a process, so let's draw a line and summarize what we learned today:
+
 * Touched basis about compiling ROOT with debug symbols.
 * Learned how to install and tweak the Eclipse IDE for the development of a ROOT-based program.
 * Downloaded a template code with a CMake configuration file that builds a standalone ROOT program. 
