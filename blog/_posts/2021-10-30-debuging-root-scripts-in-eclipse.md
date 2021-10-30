@@ -76,7 +76,7 @@ Technically it is possible to invoke a debugger directly to the ROOT Cling inter
 * Debug entry point will be outside of your program scope, namely in `rmain.cxx`.
 * Your script C++ file is never compiled. Program flow is passed to the interpreter that reads and processes your file line-by-line. Therefore, **breakpoints set in your actual source C++ file will never fire up**.
 
-A more straightforward solution would be **turning our ROOT script into a standalone ROOT-based C++ program** with `main()` function. This will ensure the correct entry point and provide an **intuitive debugging flow**. A template repository containing a ROOT-based program code and `CMakeLists.txt` configuration file ready for debugging is [hosted on my GitHub](https://github.com/petrstepanov/root-eclipse). Check out the repository in the desired location on your computer. For instance, we download it into `~/Development` folder.
+A more elegant solution would be **turning our ROOT script into a standalone ROOT-based C++ program** with `main()` function. This will ensure the correct entry point and provide an **intuitive debugging flow**. A template repository containing a ROOT-based program code and `CMakeLists.txt` configuration file ready for debugging is [hosted on my GitHub](https://github.com/petrstepanov/root-eclipse). Check out the repository in the desired location on your computer. For instance, we download it into `~/Development` folder.
 
 {% highlight bash %}
 mkdir -p ~/Development && cd ~/Development
