@@ -76,6 +76,7 @@ sudo sed -i -r "s;Xmx[0-9]*m;Xmx2048m;" /usr/lib/eclipse/eclipse.ini
 ## Generating Eclipse Project
 
 Technically it is possible to invoke a debugger directly to the ROOT Cling interpreter. In my opinion, this approach is **rather confusing**, especially for a newcomer. 
+
 * Debug entry point will be outside of your program scope, namely in `rmain.cxx`.
 * Your script C++ file is never compiled. Program flow is passed to the interpreter that reads and processes your file line-by-line. Therefore, **breakpoints set in your actual source C++ file will never fire up**.
 
@@ -143,6 +144,7 @@ Finally, we can run the project in Debug mode. In Eclipse menu select `Run → D
 Now that our template project is set up and built, we integrate your ROOT script into it. Copy your ROOT script code and place it in the `yourRootScritCode()` function in the `src/main.cpp`.
 
 For the build to succeed, we need to ensure a few more criteria:
+
 * As opposed to running your ROOT script with CLing interpreter, standalone build requires to include headers `#include <...>` to be explicitly defined in the `src/main.cpp` file for every class used in the program.
 * Depending on your script code, extra ROOT libraries may need to be specified in `CMakeLists.txt` with CMake `list(APPEND LIB_NAMES "<root-library-name>")` command. List of available extra ROOT libraries [can be found here](https://cliutils.gitlab.io/modern-cmake/chapters/packages/ROOT.html#the-right-way-targets). 
 * Some of the ROOT classes require library generation. These are GUI classes that utilize signals and slots functionality, custom RooFit PDF classes inherited from RooAbsPdf, etc. For every such class, add a corresponding line in the `src/LinkDef.h` file: `#pragma link C++ class MyClassThatRequiresLibrary`.
