@@ -1,0 +1,166 @@
+---
+title: "Debugging CERN ROOT scripts and ROOT-based programs in Eclipse IDE"
+layout: archive
+author: Petr Stepanov
+---
+
+<center>
+{% include figure_image
+   img="/assets/images/setup-eclipse-ide-with-cern-root.jpg"
+   style="width: 300px"
+%}
+</center>
+
+A question about debugging ROOT scripts now and then arises in the ROOT community. I believe, many ROOT users experienced this unpleasant feeling when your ROOT script crashes with a SEGFAULT without leaving no stack trace in the output whatsoever. CERN ROOT is a framework and it does not provide an out-of-the-box solution for debugging ROOT scripts. Therefore, a programmer may spend quite a time trying to find that piece of code that leads to a crash. Without proper development tools, we are forced to use `cout`s and `TObject::Print()` methods.
+
+In this blog post, I will share my experience with debugging CERN root scripts and ROOT-based programs. We will utilize Eclipse CDT (C/C++ Development Tooling) Integrated Desktop Environment (IDE), a free software. Eclipse coped together with a GNU Debugger (GDB) provides enhanced code development infrastructure that includes code highlighting, easy navigation between C++ sources and headers, debugging your script as well as ROOT source code, and many more.
+
+A few words about the operating system (OS). In this post, I will use Linux-based OS as a system of choice. The same process applies to macOS, but may require a code signing procedure. On Windows, a minGW installation is a prerequisite.
+
+To extensively debug a ROOT script we will need the following prerequisites:
+* **Have an extracted copy of the CERN ROOT tarball package with all ROOT C++ sources stored on a hard drive**. Once properly attached to the project, this will allow navigation between ROOT files within the Eclipse IDE. This will also allow source lookup for the debugger. 
+* **Compile ROOT with debug symbols**. This requirement allows us to set breakpoints in the ROOT code, inspect variables and object members.
+* **Install Eclipse IDE on your computer**. Eclipse provides the development user interface and automates a lot of things: performs source highlighting and formatting, invokes the CMake build, attaches the debugger to the executable, and many more.
+
+## Compiling ROOT with debug symbols
+
+ROOT binaries with debug symbols are not provided for Linux and macOS. Therefore we will manually compile ROOT from the source on a local computer. This comes with benefits. Many potential issues can be eliminated: a mismatch between the compiler versions; inconsistency between Python versions. Additionally, when compiling ROOT from source, it is possible to turn on a few optional features that are not available in the pre-compiled executable version.
+
+A process of compilation ROOT from source is [outlined here](https://root.cern/install/build_from_source/). To compile ROOT with debug symbols, pass the `-DCMAKE_BUILD_TYPE=Debug` variable to CMake. Optionally it is useful to add `-Dall=ON` to compile ROOT with all optional features and components turned on.
+
+To **simplify the install process on Ubuntu and Fedora-based systems** I created **unofficial one-liner scripts**. These scripts locate the latest ROOT version on the CERN servers, download the framework source code to the `~/Source/` folder, satisfy the dependencies, build ROOT framework with debug symbols and most common options turned on, install ROOT binaries under `~/Applications/` folder and set up necessary environment variables. Scripts can be invoked by the following commands:
+
+```
+mkdir -p ~/Downloads && cd ~/Downloads
+
+# For Ubuntu-based systems use:
+wget -O install-root-latest.sh https://raw.githubusercontent.com/petrstepanov/ubuntu-scripts/master/install-root-latest.sh
+
+# For Fedora Linux use:
+wget -O install-root-latest.sh https://raw.githubusercontent.com/petrstepanov/fedora-scripts/master/install-root-latest.sh
+
+# Execute lines below:
+chmod +x ./install-root-latest.sh
+./install-root-latest.sh
+```
+Feel free to [reach out to me](https://petrstepanov.com/) concerning any issues with these scripts. Alternatively, open an issue in the corresponding GitHub repo. 
+
+## Installing and Tweaking Eclipse IDE
+
+Refer to the [original documentation](https://wiki.eclipse.org/Eclipse/Installation) to install Eclipse IDE. On Fedora Linux, it is a one-liner `sudo dnf -y install eclipse`. After installation is complete, perform the following steps:
+* Install CDT plugin. In menu Help > Install New Software... select "All Available Sites". Under "Programming Languages" select "C/C++ Development Tools". Restart Eclipse.
+* Activate "C/C++" perspective in Window > Perspective > Open.
+* Set Eclipse environment variables. In Window > Preferences > C/C++ > Environment specify the `LD_LIBRARY_PATH` variable for shared library include path. Take variable value from Terminal's `echo $LD_LIBRARY_PATH` output. Tip: on macOS, this variable is named `DYLD_LIBRARY_PATH`.
+* Increase Eclipse initial and maximum heap limits. The screenshot below demonstrates the Eclipse heap use while indexing a ROOT and Geant4-based project. Memory use fluctuates between 1 and 2 GB. 
+<center>
+{% include figure_image
+   img="/assets/images/eclipse-heap-use.png"
+   style="width: 100%"
+   caption="Eclipse IDE memory use during the source code indexing operation. Obtained with VisualVm application."
+%}
+</center>
+Therefore, we will limit the heap to 2 GB. Locate your `eclipse.ini` configuration file. On my Fedora machine, it is `/usr/lib/eclipse/eclipse.ini`. Sometimes `eclipse.ini` is located inside your Eclipse installation folder. With text editor set minimum and maximum heap limits respectively: `-Xms512m` and `-Xmx2048`. Alternatively one can use `sed` with `-r` REGEXP parameter (double-check your `eclipse.ini` location below):
+
+{% highlight bash %}
+sudo cp /usr/lib/eclipse/eclipse.ini /usr/lib/eclipse/eclipse.ini.bak
+sudo sed -i -r "s;Xms[0-9]*m;Xms512m;" /usr/lib/eclipse/eclipse.ini
+sudo sed -i -r "s;Xmx[0-9]*m;Xmx2048m;" /usr/lib/eclipse/eclipse.ini  
+{% endhighlight %}
+
+* Increase Eclipse indexer cache limits. In Eclipse menu: Window > Preferences > C/C++ > Indexer set the "Cache limits" to 75% and 2048 MB.
+* Prevent workspace refreshes. In Window > Preferences > General > Workspace. Uncheck "Refresh on access". Eclipse may randomly start refreshing the workspace upon the first run of a new Run/Debug configuration. Workspace refresh triggers restart of an indexer. Additionally, for a CMake managed project (not CDT managed) folder-specific Refresh Policy settings are unavailable. Our CMake project will refresh all the sources including ROOT sources (if attached). This is a resourceful operation, usually takes quite a time. We want to avoid this happening.
+
+## Generating Eclipse Project
+
+Technically it is possible to invoke a debugger directly to the ROOT Cling interpreter. In my opinion, this approach is **rather confusing**, especially for a newcomer. 
+* Debug entry point will be outside of your program scope, namely in `rmain.cxx`.
+* Your script C++ file is never compiled. Program flow is passed to the interpreter that reads and processes your file line-by-line. Therefore, **breakpoints set in your actual source C++ file will never fire up**.
+
+A more straightforward solution would be **turning our ROOT script into a standalone ROOT-based C++ program** with `main()` function. This will ensure the correct entry point and provide an **intuitive debugging flow**. A template repository containing a ROOT-based program code and `CMakeLists.txt` configuration file ready for debugging is [hosted on my GitHub](https://github.com/petrstepanov/root-eclipse). Check out the repository in the desired location on your computer. For instance, we download it into `~/Development` folder.
+
+{% highlight bash %}
+mkdir -p ~/Development && cd ~/Development
+git clone https://github.com/petrstepanov/root-eclipse
+{% endhighlight %}
+
+Next, we set up an Eclipse project. Thankfully CMake offers [IDE Build Tools Generators](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#id12) that automatically create projects for various IDEs. The Eclipse project is set up with the following command: `cmake -G"Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug source/folder/path`. Here `/source/folder/path` path must be the relative or absolute path of the project source folder containing CMake configuration file `CMakeLists.txt`. There are two options to carry out the build:
+1. **In-source build**. Eclipse project files are located inside the original program folder. This is not a favorable option because Eclispe project files become a part of the Git tree. They need to be excluded in `.gitignore`. I also experienced Eclipse indexer issues using this method.
+2. **Out-of-source build**. Eclipse project is located outside of the Git repository. This is a good practice and we will use this option.
+
+First, we create a new folder located outside of the actual project Git tree. For instance, we will name it `root-eclipse-project`. Generally speaking, the project generator build is initiated via following command:
+```
+mkdir root-eclipse-project && cd root-eclipse-project
+cmake -G"Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug ../root-eclipse
+```
+CMake project generator will create an Eclipse project and link ROOT includes (header files) to the project. However, **extensive debugging requires access to Geant and ROOT source files**. We will discuss this process in the next section.
+
+## Attaching ROOT Sources to the Project
+
+A legitimate way of attaching ROOT sources to the project is linking the original ROOT source folder as a library in our project's `CMakeLists.txt`. However, this will require re-building the ROOT from source for every new project we set up.
+
+I propose an alternative approach (sort of a hack) that works for me. We will scan the original ROOT source folder and symlink all the sources into the project tree, under the `root-sources` folder. However, we exclude this folder from the build-in `CMakeLists.txt`. This way source navigation and debug source lookup will work just fine without building ROOT from the source. The steps are following:
+* Locate the original ROOT source package on your local computer. I usually keep ROOT sources under `~/Source/root-#.##.##` folder. Tip: to improve indexing performance on older hardware, store ROOT sources on the RAMDISK (hard drive in memory). This is explained later.
+* Symlink all ROOT and Geant4 folders under the project's source folder. Tip: it is better if sources are arranged without nested directory structure. This greatly improves Eclipse indexing speed.
+
+I wrote a [special Makefile function](https://stackoverflow.com/a/69463832) that performs the above functionality. This function is integrated into our project `CMakeLists.txt`. Pass location of your extracted ROOT tarball to CMake via `ROOT_SOURCE_LOCATION` variable:
+
+```
+cd ~/Development
+mkdir root-eclipse-project && cd root-eclipse-project
+cmake -G"Eclipse CDT4 - Unix Makefiles" \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -DROOT_SOURCE_LOCATION="$HOME/ramdisk-persistent/current/root*/" \
+      -DCMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES=OFF \
+      ../root-eclipse
+```
+Apparently, in the command above replace my ROOT library path with the correct one on your file system. Here `-DCMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES=OFF` [disables creation](https://gitlab.kitware.com/cmake/cmake/-/issues/19107) of the `[Subprojects]` Eclipse project folder for out-of-source Cmake build. The presence of this folder duplicates all project source files and dramatically slows down the indexer.
+
+Finally open Eclipse and go to File > Open Projects from File System... Specify the project location in the modal dialog by clicking the "Directory..." button. Locate the `~/Development/root-eclipse-project` project folder. Click "Finish". 
+
+Tip: Eclipse will automatically start indexing the project. Please kill this process because Eclipse will refresh the workspace and re-index all projects again after the first launch of a Debug configuration.
+
+## Setting up Eclipse Debug and Run Configurations
+
+We will start by setting up the main Debug configuration for Geant4 `root-eclipse` program.
+
+1. Expand 🎯 Build Targets under the main project node in the Project Explorer window. Double-click "All" to compile the executable.
+2. In the menu "Run" open "Debug configurations". Right-click "C/C++ Application" and select "New Configuration".
+3. Click "Browse" next to the "Project" field. Select "root-eclipse-Debug@eclipse"
+4. Click "Search Project" next to the "C/C++ Application" field. Specify the "root-eclipse" executable built earlier.
+5. Select "Enable Auto Build"
+6. Go to the "Debugger" tab. Uncheck "Stop on startup at:".
+
+Finally, we can run the project in Debug mode. In Eclipse menu select `Run → Debug`. Eclipse will run the project and simultaneously start indexing all ROOT source files. Depending on the speed of your hard drive and memory indexing will require from several minutes to about one hour.
+
+## Debugging Your Personal Script
+
+Now that our template project is set up and built, we integrate your ROOT script into it. Copy your ROOT script code and place it in the `yourRootScritCode()` function in the `src/main.cpp`.
+
+For the build to succeed, we need to ensure a few more criteria:
+* As opposed to running your ROOT script with CLing interpreter, standalone build requires to include headers `#include <...>` to be explicitly defined in the `src/main.cpp` file for every class used in the program.
+* Depending on your script code, extra ROOT libraries may need to be specified in `CMakeLists.txt` with CMake `list(APPEND LIB_NAMES "<root-library-name>")` command. List of available extra ROOT libraries [can be found here](https://cliutils.gitlab.io/modern-cmake/chapters/packages/ROOT.html#the-right-way-targets). 
+* Some of the ROOT classes require library generation. These are GUI classes that utilize signals and slots functionality, custom RooFit PDF classes inherited from RooAbsPdf, etc. For every such class, add a corresponding line in the `src/LinkDef.h` file: `#pragma link C++ class MyClassThatRequiresLibrary`.
+* If you want to add more C++ and header files to the project, place them under the `src/` folder. Every time a new file is added, `rebuild_cache` target needs to be invoked from the Project Explorer > Build Targets window.
+
+Now we are ready to debug your ROOT script. Save changes in all modified source files. In Eclipse menu select Project > Build All (or run the `all` target under the Build Targets in the "Project Explorer" window). Finally, to start debugging run the previously created debug configuration in Run > Debug menu item.
+
+## RAMDISK for Older Computers 
+
+On modern computers with NVMe hard drives Eclipse indexer will crawl ROOT sources fairly quickly. However, the indexing process can take about one hour on older computers SATA3 interface or magnetic disk drives (HDD). 
+
+Luckily there is a solution. If you have an older computer with a minimum of 8 GB of Random Access Memory (RAM) I recommend setting up RAMDISK - a virtual drive partition in the computer's RAM. Eclipse indexer speed will increase 2-4 times. Refer to [this GitHub repository](https://github.com/patrikx3/ramdisk) to set up RAMDISK on your Linux computer. Store your Eclipse workspace folder as well as ROOT sources on the RAMDISK.
+
+It is reasonable to disable system swap when using RAMDISK. This prevents the RAMDISK from being moved back onto the hard drive's swap partition. Disable system swap with `sudo swapoff -a` command after fresh system startup.
+
+
+## Summary
+
+In this post, we learned how to set up and apply Eclipse IDE software for in-depth debugging of the CERN ROOT scripts. It was a process, so let's draw a line and summarize what we learned today:
+* Touched basis about compiling ROOT with debug symbols.
+* Learned how to install and tweak the Eclipse IDE for the development of a ROOT-based program.
+* Downloaded a template code with a CMake configuration file that builds a standalone ROOT program. 
+* Used CMake Eclipse project generator to create Eclipse project files.
+* Got a little familiar with Eclipse IDE user interface. We built the project, created and run the Debug configuration.
+* Learned a few discrepancies between a basic ROOT script and a standalone ROOT-based application, such as linking details and library generation.
+
+I hope you enjoyed this technical note. Feel free to [reach out to me](https://petrstepanov.com/) if you have any questions or recommendations.

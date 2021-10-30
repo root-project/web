@@ -577,3 +577,12 @@ Anirudh Dagar:
   tag         : "blog"
   avatar      : "/assets/images/AnirudhDagar.jpg"
   email       : "anirudhdagar6@gmail.com"
+
+
+Petr Stepanov:
+  name        : "Petr Stepanov"
+  short_bio   : "Computer science inclined Ph.D. graduate in Photochemical Sciences from Bowling Green State University. Collaborator at the Thomas Jefferson National Accelerator Facility. ROOT and Geant4 user."
+  tag         : "blog"
+  avatar      : "/assets/images/avatar-petr-stepanov.jpg"
+  email       : "stepanovps@gmail.com"
+  affiliation : "Catholic University of America"
