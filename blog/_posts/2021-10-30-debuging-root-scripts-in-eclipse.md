@@ -122,6 +122,14 @@ cmake -G"Eclipse CDT4 - Unix Makefiles" \
 
 Apparently, in the command above replace my ROOT library path with the correct one on your file system. Here `-DCMAKE_ECLIPSE_GENERATE_LINKED_RESOURCES=OFF` [disables creation](https://gitlab.kitware.com/cmake/cmake/-/issues/19107) of the `[Subprojects]` Eclipse project folder for out-of-source Cmake build. The presence of this folder duplicates all project source files and dramatically slows down the indexer.
 
+<center>
+{% include figure_image
+   img="/assets/images/eclipse-folder-structure.png"
+   style="width: 100%"
+   caption="Project structure outlined graphically."
+%}
+</center>
+
 Finally open Eclipse and go to File > Open Projects from File System... Specify the project location in the modal dialog by clicking the "Directory..." button. Locate the `~/Development/root-eclipse-project` project folder. Click "Finish".
 
 <center>
@@ -161,7 +169,7 @@ We will start by setting up the main Debug configuration for Geant4 `root-eclips
 
 <center>
 {% include figure_image
-   img="/assets/images/eclipse-4-debug-configuration.png"
+   img="/assets/images/eclipse-04-debug-configuration.png"
    style="width: 100%"
    caption="Set up a new Debug configuration."
 %}
