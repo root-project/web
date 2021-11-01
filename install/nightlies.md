@@ -32,7 +32,7 @@ ROOT nightly builds are available as conda packages hosted on our website.
 To create a new conda environment with the latest ROOT build, you can use:
 
 ```
-conda create -n root-nightly -c conda-forge -c https://root.cern/download/conda-nightly/latest root-nightly
+conda create -n root-nightly -c https://root.cern/download/conda-nightly/latest -c conda-forge root-nightly
 ```
 
 You can then activate this environment with
