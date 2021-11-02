@@ -31,13 +31,11 @@ as you do not need to create a new web site but instead
 get it from GitHub. So the steps are:
 
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/){:target="_blank"}.
-
 There might be compatibility issues with Ruby 3. If that is the version that comes with your system pacakge manager,
 you can install Ruby 2.7 next to it using tools like `rbenv`.
 
 2. Install Jekyll and [bundler](https://jekyllrb.com/docs/ruby-101/#bundler){:target="_blank"}
-   [gems](https://jekyllrb.com/docs/ruby-101/#gems){:target="_blank"}. This command
-   might need to be run in `sudo` mode.
+   [gems](https://jekyllrb.com/docs/ruby-101/#gems){:target="_blank"}.
 ```
 gem install jekyll bundler
 ```
