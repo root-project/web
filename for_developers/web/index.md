@@ -66,7 +66,13 @@ new branch with your work, which you can use to create a pull request to update
    in the `web` directory, does it:
 ```
 bundle install
-```  
+```
+If you'd rather install the packages in a local directory, configure `bundle` to do so
+before running `bundle install`. This can be done with:
+```
+bundle config set --local path 'vendor/bundle'
+```
+
 7. Build the site and make it available on a local server.
 ```
 bundle exec jekyll serve --baseurl="/base"
