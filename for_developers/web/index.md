@@ -28,7 +28,7 @@ The prerequisites/requirements are the same presented on the
 The install instructions differ a bit from the ones you can find on the
 [Jekyll web site](https://jekyllrb.com/docs/){:target="_blank"}
 as you do not need to create a new web site but instead
-get it from github. So the steps are:
+get it from GitHub. So the steps are:
 
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/){:target="_blank"}.
 
@@ -39,11 +39,11 @@ get it from github. So the steps are:
 gem install jekyll bundler
 ```
 
-3. Get the ROOT web site source from github.
+3. Get the ROOT web site source from GitHub.
 ```
 git clone https://github.com/root-project/web.git web
 ```
-You can also clone a forked copy from you own github as explained in the
+You can also clone a forked copy from you own GitHub as explained in the
 [section on getting the sources](#get-the-root-web-site-sources)
 
 4. Change into your new directory.
@@ -116,7 +116,7 @@ Once you are happy with your modifications, you can publish them via a
 can either push a branch to your fork of the website repository, and create the pull
 request from your fork to [https://github.com/root-project/web](https://github.com/root-project/web), or
 if you have write access to the `root-project/web` repository, you can directly push a new branch.
-If you create a pull request "inside" `root-project/web`, github can create a preview website, which
+If you create a pull request "inside" `root-project/web`, GitHub can create a preview website, which
 will be served at `https://root.cern/<PRNumber>` (after the build step completes).
 
 When a pull request is merged, [`https://root.cern/`](https://root.cern/) will be updated automatically
