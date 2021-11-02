@@ -12,33 +12,11 @@ the ROOT web site. The ROOT web site uses [a forked copy of the
 "Minimal-Mistakes" theme](https://github.com/root-project/minimal-mistakes){:target="_blank"}.
 Many scripts and functionalities have been added compared to this original theme.
 
-This page gives you the instructions to:
-
-1. Get the sources of the ROOT web site and edit them
-2. Generate a local running version of this web site.
-
-## Get the ROOT web site sources
-
-You need to follow the following steps:
-
-1. Make sure have set up git on our system
-2. You should have registered a GitHub account and [forked the ROOT web site repository](https://github.com/root-project/web/fork){:target="_blank"}.
-3. Clone your forked ROOT web repository locally on your machine using:
-```
-git clone https://github.com/<your GitHub username>/web
-```
-
-You now have a copy of the ROOT web site sources from github. You can
-work on them, play with a locally served website (next section), and finally
-create ["Pull Requests"]({{ 'for_developers/creating_pr' | relative_url}})
-to get changes upstream.
-
+This page provides instructions to generate a local running version of this web site.
+The informations presented here are largely inspired from the
+[quick start page of the Jekyll web site](https://jekyllrb.com/docs/){:target="_blank"}.
 
 ## Generate a local running version of the ROOT web site
-
-This section gives you the instructions to generate a local running version
-of the ROOT web site. The informations presented here are largely inspired from the
-[quick start page of the Jekyll web site](https://jekyllrb.com/docs/){:target="_blank"}.
 
 ### Prerequisites
 
