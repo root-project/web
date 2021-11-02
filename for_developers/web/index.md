@@ -41,7 +41,7 @@ gem install jekyll bundler
 
 3. Get the ROOT web site source from GitHub.
 ```
-git clone https://github.com/root-project/web.git web
+git clone https://github.com/root-project/web.git
 ```
 You can also clone a forked copy from you own GitHub as explained in the
 [section on getting the sources](#get-the-root-web-site-sources)
