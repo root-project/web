@@ -10,7 +10,7 @@ sidebar:
 The ROOT team has adopted [Jekyll](https://jekyllrb.com/){:target="_blank"} for generating
 the ROOT web site. The ROOT web site uses [a forked copy of the
 "Minimal-Mistakes" theme](https://github.com/root-project/minimal-mistakes){:target="_blank"}.
-Many scripts and functionalities have been added compare to this original theme.
+Many scripts and functionalities have been added compared to this original theme.
 
 This page gives you the instructions to:
 
@@ -81,7 +81,7 @@ This branch is the one from which the official web site is built. You can create
 new branch with your work, which you can use to create a pull request to update
 `root-project/web/main`.
 
-6. Some missing gems might need to be installed. The following command, ran
+6. Some missing gems might need to be installed. The following command, run
    in the `web` directory, does it:
 ```
 bundle install
