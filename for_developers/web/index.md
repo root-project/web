@@ -1,5 +1,5 @@
 ---
-title: Editing the ROOT web site
+title: Editing the ROOT website
 layout: single
 toc: true
 toc_sticky: true
@@ -8,15 +8,15 @@ sidebar:
 ---
 
 The ROOT team has adopted [Jekyll](https://jekyllrb.com/){:target="_blank"} for generating
-the ROOT web site. The ROOT web site uses [a forked copy of the
+the ROOT website. The ROOT website uses [a forked copy of the
 "Minimal-Mistakes" theme](https://github.com/root-project/minimal-mistakes){:target="_blank"}.
 Many scripts and functionalities have been added compared to this original theme.
 
-This page provides instructions to generate a local running version of this web site.
+This page provides instructions to generate a local running version of this website.
 The informations presented here are largely inspired from the
-[quick start page of the Jekyll web site](https://jekyllrb.com/docs/){:target="_blank"}.
+[quick start page of the Jekyll website](https://jekyllrb.com/docs/){:target="_blank"}.
 
-## Generate a local running version of the ROOT web site
+## Generate a local running version of the ROOT website
 
 ### Prerequisites
 
@@ -26,8 +26,8 @@ The prerequisites/requirements are the same presented on the
 ### Install instructions
 
 The install instructions differ a bit from the ones you can find on the
-[Jekyll web site](https://jekyllrb.com/docs/){:target="_blank"}
-as you do not need to create a new web site but instead
+[Jekyll website](https://jekyllrb.com/docs/){:target="_blank"}
+as you do not need to create a new website but instead
 get it from GitHub. So the steps are:
 
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/){:target="_blank"}.
@@ -40,7 +40,7 @@ you can install Ruby 2.7 next to it using tools like `rbenv`.
 gem install jekyll bundler
 ```
 
-3. Get the ROOT web site source from GitHub.
+3. Get the ROOT website source from GitHub.
 ```
 git clone https://github.com/root-project/web.git
 ```
@@ -56,7 +56,7 @@ You will notice that the current git branch is `main`
 % git checkout
 Your branch is up to date with 'origin/main'.
 ```
-This branch is the one from which the official web site is built. You can create a
+This branch is the one from which the official website is built. You can create a
 new branch with your work, which you can use to create a pull request to update
 `root-project/web/main`.
 
@@ -97,7 +97,7 @@ similar to `https://127.0.0.1:4000/`.
 
 9. Work on the website.
    Each time you create a new file or save a modified version of a file
-   the server will notice it and will regenerate the web site. You will get an output
+   the server will notice it and will regenerate the website. You will get an output
    similar to:
 ```
 Regenerating: 1 file(s) changed at 2020-02-19 10:40:02
@@ -105,14 +105,14 @@ Regenerating: 1 file(s) changed at 2020-02-19 10:40:02
  Jekyll Feed: Generating feed for posts
               ...done in 9.877795 seconds.
 ```
-once "`... done`" is displayed you can reload the web site from your browser to see your
+once "`... done`" is displayed you can reload the website from your browser to see your
 changes. Remember the `--incremental` can speed up serving times considerably.
 
 It is not necessary to restart the server each time you do a modification except if you
 modify the file `web/_config.yml`
 
 You may notice that the command `bundle exec jekyll serve --baseurl="/base"` generates a folder `_site` in
-the `/path/to/the/directory/web/` folder. This is the html version of the web site. Do not
+the `/path/to/the/directory/web/` folder. This is the html version of the website. Do not
 modify or create files in that folder. This folder is ignored by git.
 
 
