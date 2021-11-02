@@ -29,7 +29,6 @@ I will outline a more extensive approach of debugging a ROOT script, that contai
 * **Compile ROOT with debug symbols**. This provides us ability to inspect variables, access data types and object members in the ROOT source code.
 * **Install Eclipse IDE on your computer**. Eclipse is an all-in-one development solution that automates a lot of things: performs source highlighting and formatting, invokes the CMake build, lets user easily set breakpoints, attaches the debugger to the executable, and many more.
 
-
 ## Compiling ROOT with Debug Symbols
 
 ROOT binaries with debug symbols are not provided for Linux and macOS. Therefore we will manually compile ROOT from the source on a local computer. This comes with benefits. Many potential issues can be eliminated: a mismatch between the compiler versions; inconsistency between Python versions. Additionally, when compiling ROOT from source, it is possible to turn on a few optional features that are not available in the pre-compiled executable version.
