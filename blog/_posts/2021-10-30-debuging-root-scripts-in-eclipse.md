@@ -73,6 +73,8 @@ sudo sed -i -r "s;Xmx[0-9]*m;Xmx2048m;" /usr/lib/eclipse/eclipse.ini
 * Increase Eclipse indexer cache limits. In Eclipse menu: Window > Preferences > C/C++ > Indexer set the "Cache limits" to 75% and 2048 MB.
 * Prevent workspace refreshes. In Window > Preferences > General > Workspace. Uncheck "Refresh on access". Eclipse may randomly start refreshing the workspace upon the first run of a new Run/Debug configuration. Workspace refresh triggers restart of an indexer. Additionally, for a CMake managed project (not CDT managed) folder-specific Refresh Policy settings are unavailable. Our CMake project will refresh all the sources including ROOT sources (if attached). This is a resourceful operation, usually takes quite a time. We want to avoid this happening.
 
+Last but not least. For a reference it is useful to turn on indication of the current heap size used by Eclipse. In Window > Preferences > General > Show heap status. Heap size will be displayed in the status bar. If heap use tops, increase it accordingly and restart Eclispe.
+
 ## Generating Eclipse Project
 
 Technically it is possible to invoke a debugger directly to the ROOT Cling interpreter. In my opinion, this approach is **rather confusing**, especially for a newcomer. 
