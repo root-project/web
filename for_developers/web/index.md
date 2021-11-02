@@ -46,8 +46,8 @@ gem install jekyll bundler
 ```
 git clone https://github.com/root-project/web.git
 ```
-You can also clone a forked copy from you own GitHub as explained in the
-[section on getting the sources](#get-the-root-web-site-sources)
+You can also use your own fork, of course, but see
+[Get modifications upstream](https://github.com/root-project/web/#get-modifications-upstream) below.
 
 4. Change into your new directory.
 ```
@@ -118,9 +118,12 @@ Once you are happy with your modifications, you can publish them via a
 ["Pull Request"]({{ 'for_developers/creating_pr' | relative_url}}). You
 can either push a branch to your fork of the website repository, and create the pull
 request from your fork to [https://github.com/root-project/web](https://github.com/root-project/web), or
-if you have write access to the `root-project/web` repository, you can directly push a new branch.
-If you create a pull request "inside" `root-project/web`, GitHub can create a preview website, which
-will be served at `https://root.cern/<PRNumber>` (after the build step completes).
+if you have write access to the `root-project/web` repository, you can directly push a new branch upstream.
 
-When a pull request is merged, [`https://root.cern/`](https://root.cern/) will be updated automatically
+Note that only pull requests that originate from branches that belong to the upstream repo (not forks) benefit from the
+[test deployment of pull requests](https://github.com/root-project/web/#test-deployment-of-pull-requests): a preview
+website with the changes contained in the PR is served from `https://root.cern/<PRNumber>` after the CI job for the PR
+completes.
+
+When a pull request is merged, [`https://root.cern`](https://root.cern/) will be updated automatically
 after a short while.
