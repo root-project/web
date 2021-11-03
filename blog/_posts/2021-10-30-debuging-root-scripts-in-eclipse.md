@@ -198,12 +198,10 @@ For the build to succeed, we need to ensure a few more criteria:
 
 * As opposed to running your ROOT script with Cling interpreter, standalone build requires to include headers `#include <...>` to be explicitly defined in the `src/main.cpp` file for every class used in the program.
 * Depending on your script code, extra ROOT libraries may need to be specified in `CMakeLists.txt` with CMake `list(APPEND LIB_NAMES "<root-library-name>")` command. List of available extra ROOT libraries [can be found here](https://cliutils.gitlab.io/modern-cmake/chapters/packages/ROOT.html#the-right-way-targets).
-* Some of the ROOT classes require library generation. These are: GUI classes that utilize signals and slots functionality; classes with implemented ClassDef and ClassImp directives (using functions ClassName(), InheritsFrom() etc...);custom RooFit PDF classes inherited from RooAbsPdf, etc. For every such class, add a corresponding line in the `src/LinkDef.h` file: `#pragma link C++ class MyClassThatRequiresLibrary`.
+* Some of the ROOT classes require library generation. These are: GUI classes that utilize signals and slots functionality; classes with implemented ClassDef and ClassImp directives (that use functions like ClassName(), InheritsFrom() etc...); custom RooFit PDF classes inherited from RooAbsPdf, etc. For every such class, add a corresponding line in the `src/LinkDef.h` file: `#pragma link C++ class MyClassThatRequiresLibrary+`.
 * If you want to add more C++ and header files to the project, place them under the `src/` folder. Every time a new file is added, `rebuild_cache` target needs to be invoked from the Project Explorer > Build Targets window.
 
 Now we are ready to debug your ROOT script. Save changes in all modified source files. In Eclipse menu select Project > Build All (or run the `all` target under the Build Targets in the "Project Explorer" window). Finally, to start debugging run the previously created debug configuration in Run > Debug menu item.
-
-If not yet familiar, you can learning fundamental Eclipse CDT hotkeys and debugging capabilities [on YouTube](https://www.youtube.com/results?search_query=eclispe+cdt+debug). Good luck with your projects!
 
 ## RAMDISK for Older Computers
 
@@ -215,9 +213,10 @@ In this post, we learned how to set up and apply Eclipse IDE software for in-dep
 
 * Touched base about compiling ROOT with debug symbols.
 * Learned how to install and tweak the Eclipse IDE for the development of a ROOT-based program.
-* Downloaded a template code with a CMake configuration file that builds a standalone ROOT program.
-* Used CMake Eclipse project generator to create Eclipse project files.
-* Got a little familiar with Eclipse IDE user interface. We built the project, created and run the Debug configuration.
-* Learned a few discrepancies between a basic ROOT script and a standalone ROOT-based application, such as linking details and library generation.
+* Investigated how to convert a ROOT script into an standalone ROOT-based program with CMake configuration file ().
+* Used a CMake generator to set up Eclipse project. A one-liner command automatically discovers ROOT headers, shared libraries, attaches ROOT sources and creates ready to go project.
+* Got familiar with Eclipse IDE user interface. We built the project, created and run the Debug configurations.
 
-I hope you enjoyed this technical note. Feel free to [reach out to me](https://petrstepanov.com/) if you have any questions or recommendations.
+I hope you enjoyed this technical note. If not yet familiar, you can now continue learning fundamental Eclipse CDT hotkeys and debugging capabilities [on YouTube](https://www.youtube.com/results?search_query=eclispe+cdt+debug). 
+
+Good luck with your projects! Feel free to [reach out to me](https://petrstepanov.com/) if you have any questions or recommendations.
