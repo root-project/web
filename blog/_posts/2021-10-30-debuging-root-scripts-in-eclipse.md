@@ -17,6 +17,8 @@ In this blog post, I will share my experience with debugging CERN ROOT scripts a
 
 A few words about the operating system (OS). In this post, I will use Linux-based OS as a system of choice. The same process applies to macOS, but may require a code signing procedure. On Windows, a minGW installation is a prerequisite.
 
+Eventually we will convert a ROOT script into a standalone ROOT-based project. Therefore, this blog post also applies to debugging a standalone ROOT-based program in Eclipse IDE.
+
 In principle one does not need any of these to invoke a debugger on a ROOT script. One can simply debug the `root.exe` binary with `gdb`:
 
 ```
