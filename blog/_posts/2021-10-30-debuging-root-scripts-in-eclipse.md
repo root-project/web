@@ -11,7 +11,7 @@ author: Petr Stepanov
 %}
 </center>
 
-A question about debugging ROOT scripts now and then arises in the ROOT community. I believe, many ROOT users experienced this unpleasant feeling when your ROOT script crashes with a SEGFAULT without leaving no stack trace in the output whatsoever. CERN ROOT is a framework and it does not provide an out-of-the-box solution for debugging ROOT scripts. Therefore, a programmer may spend quite a time trying to find that piece of code that leads to a crash. Without proper development tools, we are forced to use `cout`s and `TObject::Print()` methods.
+CERN ROOT is a rather complex object-oriented framework. It is written in C++, a language with complete manual control over the memory. Therefore, execution of your your ROOT script may sometimes lead to a crash providing minimal information in the stack trace. CERN ROOT is just a framework and it does not provide any out-of-the-box solutions for debugging ROOT scripts. Hence, a question about debugging ROOT scripts now and then arises in the ROOT community. 
 
 In this blog post, I will share my experience with debugging CERN ROOT scripts and ROOT-based programs. We will utilize Eclipse CDT (C/C++ Development Tooling) Integrated Desktop Environment (IDE), a free software. Eclipse coupled with the GNU Debugger (GDB) provides enhanced code development infrastructure that includes code highlighting, easy navigation between C++ sources and headers, debugging your script as well as ROOT source code, and many more.
 
@@ -92,7 +92,7 @@ Technically it is possible to attach a debugger directly to the ROOT Cling inter
 
 A more straightforward solution would be **turning our ROOT script into a standalone ROOT-based C++ program** with `main()` function. This will ensure the correct entry point and provide an **intuitive debugging flow**.
 
-If you are already taking advantage of CMake to build your ROOT-based project, feel free to skip to the next section. If not, you can refer to a template repository [hosted on my GitHub](https://github.com/petrstepanov/root-eclipse). This repository contains a trivial ROOT-based program code and `CMakeLists.txt` configuration file ready for debugging. Check out the repository in the desired location on your computer. For instance, we download it into `~/Development` folder.
+If you are already taking advantage of CMake to build your ROOT-based project, feel free to **skip to the next section**. If not, you can refer to a template repository [hosted on my GitHub](https://github.com/petrstepanov/root-eclipse). This repository contains a trivial ROOT-based program code and `CMakeLists.txt` configuration file ready for debugging. Check out the repository in the desired location on your computer. For instance, we download it into `~/Development` folder.
 
 ```
 mkdir -p ~/Development && cd ~/Development
@@ -100,6 +100,7 @@ git clone https://github.com/petrstepanov/root-eclipse
 ```
 
 Next, we set up an Eclipse project. Thankfully CMake offers [IDE Build Tools Generators](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#id12) that automatically create projects for various IDEs. The Eclipse project is set up with the following command: `cmake -G"Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug source/folder/path`. Here `/source/folder/path` path must be the relative or absolute path of the project source folder containing CMake configuration file `CMakeLists.txt`. There are two options to carry out the build:
+
 1. **In-source build**. Eclipse project files are located inside the original program folder. This is not a favorable option because Eclipse project files become a part of the Git tree. They need to be excluded in `.gitignore`. I also experienced Eclipse indexer issues using this method.
 2. **Out-of-source build**. Eclipse project is located outside of the Git repository. This is a good practice and we will use this option.
 
@@ -191,13 +192,13 @@ Finally, we can run the project in Debug mode. In Eclipse menu select `Run → D
 
 ## Debugging Your Personal Script
 
-Now that our template project is set up and built, we integrate your ROOT script into it. Copy your ROOT script code and place it in the `yourRootScritCode()` function in the `src/main.cpp`.
+Now that our template project is set up and built, we integrate your ROOT script into it. Copy your ROOT script(s) and place them in next in the `src/` project folder. Include your ROOT script in the `src/main.cpp` file: `#include <yourRootScript.C>`. Call your script entry point function from `main()` in `src/main.cpp`. 
 
 For the build to succeed, we need to ensure a few more criteria:
 
 * As opposed to running your ROOT script with Cling interpreter, standalone build requires to include headers `#include <...>` to be explicitly defined in the `src/main.cpp` file for every class used in the program.
 * Depending on your script code, extra ROOT libraries may need to be specified in `CMakeLists.txt` with CMake `list(APPEND LIB_NAMES "<root-library-name>")` command. List of available extra ROOT libraries [can be found here](https://cliutils.gitlab.io/modern-cmake/chapters/packages/ROOT.html#the-right-way-targets).
-* Some of the ROOT classes require library generation. These are GUI classes that utilize signals and slots functionality, custom RooFit PDF classes inherited from RooAbsPdf, etc. For every such class, add a corresponding line in the `src/LinkDef.h` file: `#pragma link C++ class MyClassThatRequiresLibrary`.
+* Some of the ROOT classes require library generation. These are: GUI classes that utilize signals and slots functionality; classes with implemented ClassDef and ClassImp directives (using functions ClassName(), InheritsFrom() etc...);custom RooFit PDF classes inherited from RooAbsPdf, etc. For every such class, add a corresponding line in the `src/LinkDef.h` file: `#pragma link C++ class MyClassThatRequiresLibrary`.
 * If you want to add more C++ and header files to the project, place them under the `src/` folder. Every time a new file is added, `rebuild_cache` target needs to be invoked from the Project Explorer > Build Targets window.
 
 Now we are ready to debug your ROOT script. Save changes in all modified source files. In Eclipse menu select Project > Build All (or run the `all` target under the Build Targets in the "Project Explorer" window). Finally, to start debugging run the previously created debug configuration in Run > Debug menu item.
