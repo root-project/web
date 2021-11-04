@@ -215,7 +215,7 @@ Here are some of the CMake variables that are used often, along with a brief exp
 
 | Variable | Type | Explanation |
 |----------|-------|---------------|
-| CMAKE_BUILD_TYPE | STRING | Sets the build type for make based generators. Possible values are Release, MinSizeRel, Debug, RelWithDebInfo and Optimized. On systems like Visual Studio the user sets the build type with the IDE settings. Default is  RelWithDebInfo |
+| CMAKE_BUILD_TYPE | STRING | Sets the build type for make based generators. Possible values are Release, MinSizeRel, Debug, RelWithDebInfo and Optimized. On systems like Visual Studio the user sets the build type with the IDE settings. Default is Release |
 | CMAKE_INSTALL_PREFIX | PATH | Path where ROOT will be installed if make install is invoked or the “INSTALL” target is built. |
 | CMAKE_C_FLAGS | STRING | Extra flags to use when compiling C source files. |
 | CMAKE_CXX_FLAGS | STRING | Extra flags to use when compiling C++ source files.|
