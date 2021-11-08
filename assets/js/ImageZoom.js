@@ -180,8 +180,8 @@ function initialize(masterID) {
       const lens = document.getElementById(masterID + 'Lens');
 
       // Center the lense area.
-      lens.style.left = Math.round((9*imgPosition.height/20)) + 'px';
-      lens.style.top = Math.round((9*imgPosition.width)/20) + 'px';
+      lens.style.left = Math.round((9*imgPosition.width)/20) + 'px';
+      lens.style.top = Math.round((9*imgPosition.height/20)) + 'px';
       lens.style.height = Math.round(imgPosition.height/10) + 'px';
       lens.style.width = Math.round(imgPosition.width/10) + 'px';
       lens.title = "Lens area: focus and scroll to resize";
