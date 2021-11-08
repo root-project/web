@@ -138,6 +138,7 @@ function createControls(masterID) {
          document.getElementById(masterID+ 'Lens').style.display = 'initial';
 
          lensButton.style.opacity = '1';
+         update(masterID);
       } else {
          document.getElementById(masterID+ 'Zoom').style.display = 'none';
          document.getElementById(masterID+ 'Lens').style.display = 'none';
