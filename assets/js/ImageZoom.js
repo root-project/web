@@ -172,6 +172,7 @@ function initialize(masterID) {
       zoom.style.top = 0 + 'px';
       zoom.style.height = Math.round(imgPosition.height/3) + 'px';
       zoom.style.width = Math.round(imgPosition.width/3) + 'px';
+      zoom.title = "Zoom area: focus and scroll to resize";
    }
 
    // Start position and size of the lens
@@ -183,6 +184,7 @@ function initialize(masterID) {
       lens.style.top = Math.round((9*imgPosition.width)/20) + 'px';
       lens.style.height = Math.round(imgPosition.height/10) + 'px';
       lens.style.width = Math.round(imgPosition.width/10) + 'px';
+      lens.title = "Lens area: focus and scroll to resize";
    }
 }
 
