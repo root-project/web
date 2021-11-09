@@ -138,6 +138,7 @@ function createControls(masterID) {
          document.getElementById(masterID+ 'Lens').style.display = 'initial';
 
          lensButton.style.opacity = '1';
+         update(masterID);
       } else {
          document.getElementById(masterID+ 'Zoom').style.display = 'none';
          document.getElementById(masterID+ 'Lens').style.display = 'none';
@@ -167,20 +168,24 @@ function initialize(masterID) {
       const zoom = document.getElementById(masterID + 'Zoom');
 
       zoom.style.backgroundImage = "url('" + img.src + "')";
+      // Move the zoom area to the upper left, initially 3x larger than the lense.
       zoom.style.left = 0 + 'px';
       zoom.style.top = 0 + 'px';
-      zoom.style.height = Math.round(imgPosition.height/10) + 'px';
-      zoom.style.width = Math.round(imgPosition.width/10) + 'px';
+      zoom.style.height = Math.round(imgPosition.height/3) + 'px';
+      zoom.style.width = Math.round(imgPosition.width/3) + 'px';
+      zoom.title = "Zoom area: focus and scroll to resize";
    }
 
    // Start position and size of the lens
    function initLens() {
       const lens = document.getElementById(masterID + 'Lens');
 
-      lens.style.left = 0 + 'px';
-      lens.style.top = 0 + 'px';
+      // Center the lense area.
+      lens.style.left = Math.round((9*imgPosition.width)/20) + 'px';
+      lens.style.top = Math.round((9*imgPosition.height/20)) + 'px';
       lens.style.height = Math.round(imgPosition.height/10) + 'px';
       lens.style.width = Math.round(imgPosition.width/10) + 'px';
+      lens.title = "Lens area: focus and scroll to resize";
    }
 }
 

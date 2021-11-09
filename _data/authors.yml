@@ -194,7 +194,7 @@ Lorenzo Moneta:
                  CERN, and since 2005 he joined the ROOT team with the responsibility of
                  the Math work package, which provides development and support for the ROOT
                  mathematical and statistical libraries."
-  short_bio   : "Lorenzo is responsible of the Math work package."
+  short_bio   : "Lorenzo is responsible for ROOT's statistics and math libraries, and the machine learning packages."
   tag         : "team"
   avatar      : "/assets/images/LM.jpg"
   affiliation : "CERN"
@@ -233,7 +233,7 @@ Olivier Couet:
                  in High Energy Physics for years and is still being used. He was
                  responsible for the PAW system from 1995 until he joined the ROOT team
                  in 2002 and took responsibility of the graphics work package."
-  short_bio   : "Olivier is responsible of the ROOT's graphics work package."
+  short_bio   : "Olivier is responsible for ROOT's graphics library."
   tag         : "team"
   avatar      : "/assets/images/OC.png"
   affiliation : "CERN"
