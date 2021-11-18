@@ -11,11 +11,11 @@ author: Petr Stepanov
 %}
 </center>
 
-CERN ROOT is a rather complex object-oriented framework. It is written in C++, a language with complete manual control over the memory. Therefore, execution of your your ROOT script may sometimes lead to a crash providing minimal information in the stack trace. CERN ROOT is just a framework and it does not provide any out-of-the-box solutions for debugging ROOT scripts. Hence, a question about debugging ROOT scripts now and then arises in the ROOT community. 
+ROOT is written in C++, a language with complete manual control over the memory. Therefore, execution of your your ROOT script may sometimes lead to a crash providing minimal information in the stack trace. ROOT does not provide any out-of-the-box solutions for debugging ROOT scripts. Hence, a question about debugging ROOT scripts now and then arises in the ROOT community. 
 
 In this blog post, I will share my experience with debugging CERN ROOT scripts and ROOT-based programs. We will utilize Eclipse CDT (C/C++ Development Tooling) Integrated Desktop Environment (IDE), a free software. Eclipse coupled with the GNU Debugger (GDB) provides enhanced code development infrastructure that includes code highlighting, easy navigation between C++ sources and headers, debugging your script as well as ROOT source code, and many more.
 
-A few words about the operating system (OS). In this post, I will use Linux-based OS as a system of choice. The same process applies to macOS, but may require a code signing procedure. On Windows, a minGW installation is a prerequisite.
+A few words about the operating system (OS). In this post, I will use Linux-based OS as a system of choice. The same process applies to macOS, but may require a code signing procedure. Windows is a different story.
 
 Eventually we will convert a ROOT script into a standalone ROOT-based project. Therefore, this blog post also applies to debugging a standalone ROOT-based program in Eclipse IDE.
 
@@ -90,9 +90,9 @@ Last but not least, it is useful to turn on the indication of the current heap s
 Technically it is possible to attach a debugger directly to the ROOT Cling interpreter `root.exe`. In my opinion, this approach is **rather confusing**, especially for a newcomer:
 
 * Debug entry point will be outside of your program scope, namely in `rmain.cxx`.
-* Your script C++ file is never compiled. Program flow is passed to the interpreter that reads and processes your file line-by-line. Therefore, **breakpoints set in your actual source C++ file will never fire up**.
+* * Your script C++ file is just-in-time compiled. Work is currently [ongoing](https://github.com/root-project/root/pull/7714) to support the debugging scripts.Currently, the program flow is passed to the interpreter that processes your ROOT script line-by-line. Therefore, **breakpoints set in your actual source C++ file will not fire up**.
 
-A more straightforward solution would be **turning our ROOT script into a standalone ROOT-based C++ program** with `main()` function. This will ensure the correct entry point and provide an **intuitive debugging flow**.
+A alternative and robust solution is to **turn our ROOT script into a standalone ROOT-based C++ program** with `main()` function. This will ensure the correct entry point and provide an **intuitive debugging flow**.
 
 If you are already taking advantage of CMake to build your ROOT-based project, feel free to **skip to the next section**. If not, you can refer to a template repository [hosted on my GitHub](https://github.com/petrstepanov/root-eclipse). This repository contains a trivial ROOT-based program code and `CMakeLists.txt` configuration file ready for debugging. Check out the repository in the desired location on your computer. For instance, we download it into `~/Development` folder.
 
