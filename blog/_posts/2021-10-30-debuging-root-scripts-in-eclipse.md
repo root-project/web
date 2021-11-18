@@ -218,10 +218,10 @@ In this post, we learned how to set up and apply Eclipse IDE software for in-dep
 
 * Touched base about compiling ROOT with debug symbols.
 * Learned how to install and tweak the Eclipse IDE for the development of a ROOT-based program.
-* Investigated how to convert a ROOT script into an standalone ROOT-based program with CMake configuration file ().
+* Investigated how to convert a ROOT script into an standalone ROOT-based program with CMake configuration file.
 * Used a CMake generator to set up Eclipse project. A one-liner command automatically discovers ROOT headers, shared libraries, attaches ROOT sources and creates ready to go project.
 * Got familiar with Eclipse IDE user interface. We built the project, created and run the Debug configurations.
 
 I hope you enjoyed this technical note. If not yet familiar, you can now continue learning fundamental Eclipse CDT hotkeys and debugging capabilities [on YouTube](https://www.youtube.com/results?search_query=eclispe+cdt+debug). 
 
-Good luck with your projects! Feel free to [reach out to me](https://petrstepanov.com/) if you have any questions or recommendations.
+Good luck with your projects! Feel free to leave comments below if you have any questions or recommendations.
