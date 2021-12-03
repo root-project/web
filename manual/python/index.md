@@ -324,6 +324,24 @@ This is what the large LHC experiments do to steer their analysis frameworks fro
    The loading of C++ libraries can even be automated using the `__init__.py` of the Python package.
 
 
+## Pythonizing C++ user classes
+
+PyROOT allows to inject new behaviour in C++ user classes that are used from Python - this is known as "pythonizing" those C++ classes. The aim here is to make C++ classes more "pythonic" or easier to use from Python, for example by making a C++ class iterable in Python or by defining how its objects should be represented as strings in Python.
+
+Pythonizations for C++ classes can be registered by providing a function, the "pythonizor", which is decorated with the `@pythonization` decorator. The decorator specifies to which class or classes the pythonization should be applied, and the pythonizor function contains the code that performs the pythonization. For instance, the following code snippet registers a pythonization for class `C` that adds a new attribute to that class:
+
+```python
+from ROOT import pythonization
+
+@pythonization("C")
+def pythonizor_for_C(klass):
+    klass.new_attr = 'New attribute' # injects a new attribute in the class
+```
+
+The very same mechanism is used internally in ROOT to pythonize ROOT classes, and it can be applied to user classes too since ROOT v6.26.
+
+A more thorough explanation of the `@pythonization` decorator, its parameters and more examples of usage can be found in this tutorial → {% include tutorial_py name="pyroot002_pythonizationDecorator" %}
+
 
 ## TPython: running Python from C++
 
