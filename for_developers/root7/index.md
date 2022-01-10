@@ -34,7 +34,7 @@ Building from source would look similar to this:
 ## ROOT 7 Features
 
 ROOT's new interface personality is already in production with [`ROOT::RDataFrame`](https://root.cern/doc/master/classROOT_1_1RDataFrame.html).
-Next up are the `TTree` successor [`ROOT::Experimental::RNTuple`](https://root.cern/doc/master/structROOT_1_1Experimental_1_1RNTuple.html).
+Next up is the `TTree` successor [`ROOT::Experimental::RNTuple`](https://root.cern/doc/master/structROOT_1_1Experimental_1_1RNTuple.html).
 
 Still in the design phase are ROOT's new graphics and histogram packages, with tutorials such as 
 for [ROOT 7 graphics](https://github.com/root-project/root/tree/master/tutorials/rcanvas),
