@@ -28,6 +28,11 @@ the HTML pages. Typically you will keep only the folder(s) in which the document
 working on is. To see the result of this local build you should open, in your preferred web
 browser, the file `${HOME}/rootdoc/html/index.html`.
 
+### Compilation prerequisites on Ubuntu
+- apt install doxygen make jupyter-nbconvert 
+- pip install scandir nbformat
+- Optional: apt install qhelpgenerator-qt5. In case of older Ubuntu versions, use qt4-dev-tools instead, and modify in the Doxyfile QHG_LOCATION to /usr/lib/x86_64-linux-gnu/qt4/bin/qhelpgenerator
+
 ## General Guidelines
 Classes and methods can be documented both in the .cxx and .h files. For the long descriptions
 of a class functionality and its methods we usually prefer the .cxx file.
