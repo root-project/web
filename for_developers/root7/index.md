@@ -43,9 +43,9 @@ and specifically for [drawing and styling the new histograms](https://github.com
 
 ## RBrowser
 
-This is first web-based component from ROOT7 which now used by default when ROOT compiled with `root7`.
+Starting from ROOT version `6.26.00` this is first web-based component which now used by default when ROOT compiled with `root7`.
 It automatically invoked when `new TBrowser` is typed in ROOT session.
-It is recommended to use `chrome/chromium` web browser with it, but all other web browsers should do the job.
+It is recommended to use with `chrome/chromium` web browser, but all other web browsers should do the job.
 On some platforms like `MacOS` or `Windows` it could be required to allow incoming network connections
 while `THttpServer` is used to drive communication between C++ application and browser-based UI.
 
@@ -53,5 +53,3 @@ If for any reasons `RBrowser` now working or does not provide required functiona
 Either by specifying `root --web=off` when starting ROOT or by setting `Browser.Name: TRootBrowser` in rootrc file.
 
 We will be highly appreciate for your feedback!
-
-
