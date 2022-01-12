@@ -36,7 +36,22 @@ Building from source would look similar to this:
 ROOT's new interface personality is already in production with [`ROOT::RDataFrame`](https://root.cern/doc/master/classROOT_1_1RDataFrame.html).
 Next up is the `TTree` successor [`ROOT::Experimental::RNTuple`](https://root.cern/doc/master/structROOT_1_1Experimental_1_1RNTuple.html).
 
-Still in the design phase are ROOT's new graphics and histogram packages, with tutorials such as 
+Still in the design phase are ROOT's new graphics and histogram packages, with tutorials such as
 for [ROOT 7 graphics](https://github.com/root-project/root/tree/master/tutorials/rcanvas),
 for [histograms and ntuple](https://github.com/root-project/root/tree/master/tutorials/v7),
 and specifically for [drawing and styling the new histograms](https://github.com/root-project/root/blob/master/tutorials/rcanvas/rh1.cxx).
+
+## RBrowser
+
+This is first web-based component from ROOT7 which now used by default when ROOT compiled with `root7`.
+It automatically invoked when `new TBrowser` is typed in ROOT session.
+It is recommended to use `chrome/chromium` web browser with it, but all other web browsers should do the job.
+On some platforms like `MacOS` or `Windows` it could be required to allow incoming network connections
+while `THttpServer` is used to drive communication between C++ application and browser-based UI.
+
+If for any reasons `RBrowser` now working or does not provide required functionality, one always can disable it.
+Either by specifying `root --web=off` when starting ROOT or by setting `Browser.Name: TRootBrowser` in rootrc file.
+
+We will be highly appreciate for your feedback!
+
+
