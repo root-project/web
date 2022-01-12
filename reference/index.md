@@ -10,7 +10,7 @@ This page gives the list of all the past versions.
 
 | ROOT Version           | HTML link                                                                  | Download links                        | Link to the Tag file                                                | Link to the QCH file |
 |------------------------|----------------------------------------------------------------------------|---------------------------------------|---------------------------------------------------------------------|----------------------|
-| HEAD of the git master | [browse](https://root.cern/doc/master/){:target="_blank"}                  |                                       | [tag file](https://root.cern/doc/master/ROOT.tag){:target="_blank"} |
+| HEAD of the git master | [browse](https://root.cern/doc/master/){:target="_blank"}                  |                                       | [tag file](https://root.cern/doc/master/ROOT.tag){:target="_blank"} | [qch file](https://root.cern/doc/master/ROOT.qch){:target="_blank"}   |
 | 6.24                   | [browse](https://root.cern/doc/v624/){:target="_blank"}                    | {% include download name="html624" %} | [tag file](https://root.cern/doc/v624/ROOT.tag){:target="_blank"}   | [qch file](https://root.cern/doc/v624/ROOT.qch){:target="_blank"}   |
 | 6.22                   | [browse](https://root.cern/doc/v622/){:target="_blank"}                    | {% include download name="html622" %} | [tag file](https://root.cern/doc/v622/ROOT.tag){:target="_blank"}   |
 | 6.20                   | [browse](https://root.cern/doc/v620/){:target="_blank"}                    | {% include download name="html620" %} | [tag file](https://root.cern/doc/v620/ROOT.tag){:target="_blank"}   |
