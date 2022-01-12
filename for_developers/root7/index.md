@@ -49,7 +49,7 @@ It is recommended to use with `chrome/chromium` web browser, but all other web b
 On some platforms like `MacOS` or `Windows` it could be required to allow incoming network connections
 while `THttpServer` is used to drive communication between C++ application and browser-based UI.
 
-If for any reasons `RBrowser` now working or does not provide required functionality, one always can disable it.
+If for any reasons `RBrowser` not working or does not provide required functionality, one always can disable it.
 Either by specifying `root --web=off` when starting ROOT or by setting `Browser.Name: TRootBrowser` in rootrc file.
 
 We will be highly appreciate for your feedback!
