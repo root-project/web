@@ -30,7 +30,7 @@ browser, the file `${HOME}/rootdoc/html/index.html`.
 
 ### Compilation prerequisites on Ubuntu
 - apt install doxygen make jupyter-nbconvert 
-- pip install scandir nbformat
+- pip install scandir nbformat metakernel
 - Optional: apt install qhelpgenerator-qt5. In case of older Ubuntu versions, use qt4-dev-tools instead, and modify in the Doxyfile QHG_LOCATION to /usr/lib/x86_64-linux-gnu/qt4/bin/qhelpgenerator
 
 ## General Guidelines
