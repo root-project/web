@@ -62,7 +62,7 @@ manual:
         url: manual/graphics
       - title: Fitting
         url: manual/fitting
-      - title: Data frames
+      - title: Dataframes
         url: manual/data_frame
       - title: Trees
         url: manual/trees
