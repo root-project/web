@@ -8,12 +8,539 @@ toc_sticky: true
 ---
 
 Fitting is the method for modeling the expected distribution of events in a physics data analysis. ROOT offers various options to perform the fitting of the data:
-- [Fit Panel](#using-the-fit-panel): After a histogram is drawn, the Fit Panel GUI is best used for prototyping the fit.
 - [Fit() method](#using-the-fit-method): You can fit histograms and graphs programmatically with the `Fit()` method.
 - Minimization packages: ROOT provides [several minimization packages]({{ "/manual/math/#minimization-libraries-and-classes" | relative_url }}).
+- [Using the ROOT::Fit classes](#using-rootfit-classes)
+- [Fit Panel](#using-the-fit-panel): After a histogram is drawn, the Fit Panel GUI is best used for prototyping the fit.
 - [RooFit]({{ "/manual/roofit" | relative_url }}): The RooFit library is a toolkit for modeling the expected distribution of events in a physics analysis.
 
 {% include tutorials name="Fit" url="fit" %}
+
+## Using the Fit() method
+
+The `Fit()` method is implemented for:
+- the histogram classes {% include ref class="TH1" %}
+- the sparse histogram classes {% include ref class="THnSparse" %}
+- the graph classes {% include ref class="TGraph" %}, {% include ref class="TGraph2D" %} and {% include ref class="TMultiGraph" %} (for fitting a collection of graphs with the same function)
+
+### Using TH1::Fit() and TGraph::Fit()
+
+You can fit a [TF1](https://root.cern/doc/master/classTF1.html) function `f1` to a histogram with the [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method, which has the following signature:
+
+{% highlight C++ %}
+TFitResultPtr Fit(
+   TF1 *f1, const char *option="", const char *goption="", double xxmin=0.0, double xxmax=0.0)
+{% endhighlight %}
+
+By default, the fitted function object is added to the histogram and is drawn on the current pad.
+
+For a detailed explanation of the `option` and `goption` strings, see [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"}.
+
+The `xmin` and `xmax` parameters optionally specify the fit range.
+
+The signature of [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#aa978c8ee0162e661eae795f6f3a35589){:target="_blank"} is the same, but the supported options are slightly different: `L`, `WL`, and `I` are exclusive to [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"}, while `EX0` and `ROB` only apply to [TGraph::Fit()](https://root.cern/doc/master/classTGraph.html#aa978c8ee0162e661eae795f6f3a35589){:target="_blank"} (these options are explained in the linked function documentations).
+
+## Defining the TF1 function to fit
+
+In the following section is described how to use the {% include ref class="TF1" %} class that is used for fitting histograms and graphs.
+
+### Fitting 1-D histograms with pre-defined functions
+
+Use the [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a 1-D histogram with a pre-defined function. The name of the pre-defined function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
+
+_**Example**_
+
+A histogram object `hist` is fit with a Gaussian:
+
+{% highlight C++ %}
+hist.Fit("gaus");
+{% endhighlight %}
+
+The following pre-defined functions are available:
+
+- `gaus`: Gaussian function with three parameters: `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)`
+
+- `expo`: Exponential function with two parameters: `f(x) = exp(p0+p1*x)`
+
+- `polN`: Polynomial of degree `N`, where `N` is a number between 0 and 9: `f(x) = p0 + p1*x + p2*x2 +...`
+
+- `chebyshevN`: Chebyshev polynomial of degree `N`, where `N` is a number between 0 and 9: `f(x) = p0 + p1*x + p2*(2*x2-1) +...`
+
+- `landau`: Landau function with mean and sigma. This function has been adapted from the `CERNLIB` routine `G110 denlan` (see → [TMath::Landau](https://root.cern/doc/master/namespaceTMath.html#a656690875991a17d35e8a514f37f35d9){:target="_blank"}).
+
+- `gausn`: Normalized form of the Gaussian function with three parameters `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)/(p2*sqrt(2PI))`
+
+
+### Fitting 1-D histograms with user-defined functions
+
+You can also fit any {% include ref class="TF1" %} function that you defined yourself in one of the ways listed in the [class documentation](https://root.cern/doc/master/classTF1.html) to a 1-D histogram.
+
+_**Example**_
+
+In this example, we create a TF1 `func` from a general C++ function with parameters:
+
+{% highlight C++ %}
+// Define a function with three parameters.
+double fitf(double *x,double *par) {
+   double arg = 0;
+   if (par[2]!=0) arg = (x[0] - par[1])/par[2];
+   double fitval = par[0]*TMath::Exp(-0.5*arg*arg);
+   return fitval;
+}
+
+// Create a TF1 object using the fitf function. The last three parameters
+// specify the range and the number of parameters for the function.
+TF1 *func = new TF1("fit",fitf,-3,3,3);
+{% endhighlight %}
+
+Now the `fitf` function is fitted to the histogram.
+
+{% highlight C++ %}
+// Open a ROOT file and get a histogram.
+TFile *f = new TFile("hsimple.root");
+TH1F *hpx = (TH1F*)f->Get("hpx");
+
+// Set the initial parameters to the mean and RMS of the histogram.
+func->SetParameters(500,hpx->GetMean(),hpx->GetRMS());
+
+// Give the parameters names.
+func->SetParNames("Constant","Mean_value","Sigma");
+
+// Call TH1::Fit with the name of the TF1 object.
+hpx->Fit("fit");
+{% endhighlight %}
+
+### Accessing the fitted function parameters and results
+
+- Use the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c){:target="_blank"} method to access the fitted function parameters.
+
+_**Examples**_
+
+{% highlight C++ %}
+TF1 *fit = hist->GetFunction(function_name);
+double chi2 = fit->GetChisquare();
+
+// Value of the first parameter:
+double p1 = fit->GetParameter(0);
+
+// Error of the first parameter:
+double e1 = fit->GetParError(0);
+{% endhighlight %}
+
+### Configuring the fit
+
+The following configuration actions are available when fitting a histogram or graph using the `Fit()` method (relevant tutorials linked in parathesis):
+
+- [Fixing and setting parameter bounds](#fixing-and-setting-parameter-bounds)
+- **Fitting subranges** and  **multiple subranges** ([multifit.C](https://root.cern/doc/master/multifit_8C.html) / [multifit.py](https://root.cern/doc/master/multifit_8py.html)).
+  The tutorial shows how to fit several Gaussian functions with different parameters to separate subranges of the same histogram.
+- **Fitting the convolution of two functions** ([fitConvolution.C](https://root.cern/doc/master/fitConvolution_8C.html) / [fitConvolution.py](https://root.cern/doc/master/fitConvolution_8py.html))
+- [Adding functions to the list](#adding-functions-to-the-list)
+
+
+<p><a name="fixing-and-setting-parameter-bounds"></a></p>
+**Fixing and setting parameter bounds**
+
+For pre-defined functions like `poln`, `exp`, `gaus`, and `landau`, the parameter initial values are set automatically.
+
+For not pre-defined functions, the fit parameters must be initialized before invoking the `Fit()` method.
+
+- Use the [TF1::SetParLimits()](https://root.cern/doc/master/group__tutorial__fit.html){:target="_blank"} method to set the bounds for one parameter.
+
+{% highlight C++ %}
+func->SetParLimits(0,-1,1);
+{% endhighlight %}
+
+When the lower and upper limits are equal, the parameter is fixed.
+
+_**Example**_
+
+The parameter is fixed 4 at 10.
+
+{% highlight C++ %}
+func->SetParameter(4,10);
+func->SetParLimits(4,10,10);
+{% endhighlight %}
+
+- Use the [TF1::FixParameter()](https://root.cern/doc/master/classTF1.html#ae8869189ca9a2affe690fe26dcaa6c8c){:target="_blank"} method to fix a parameter to 0.
+
+_**Example**_
+
+{% highlight C++ %}
+func->SetParameter(4,0);
+func->FixParameter(4,0);
+{% endhighlight %}
+
+You do not need to set the limits for all parameters.
+
+_**Example**_
+
+There is function with 6 parameters. Then a setup like the following is possible: Parameters 0 to 2 can vary freely, parameter 3 has boundaries [-10, 4] with the initial value -1.5, and parameter 4 is fixed to 0.
+
+{% highlight C++ %}
+func->SetParameters(0,3.1,1.e-6,-1.5,0,100);
+func->SetParLimits(3,-10,4);
+func->FixParameter(4,0);
+{% endhighlight %}
+
+<p><a name="adding-functions-to-the-list"></a></p>
+**Adding functions to the list**
+
+The example `$ROOTSYS/tutorials/fit/multifit.C`  illustrates how to fit several functions on the same histogram.
+By default a fit command deletes the previously fitted function in the histogram object. You can specify the option
+`+` in the second parameter to add the newly fitted function to the existing list of functions for the histogram.
+
+{% highlight C++ %}
+hist->Fit("f1","+","",-2,2)
+{% endhighlight %}
+
+Note that the fitted function(s) are saved with the histogram when it is written to a ROOT file.
+
+### Result of the fit
+
+You can obtain the following results of a fit:
+
+- [associated function](#associated-function)
+- [parameter values](#accessing-the-fit-parameters-and-results)
+- [errors](#associated-errors)
+- [covariance and correlation matrix](#fit-statistics)
+
+<p><a name="associated-function"></a></p>
+**Associated function**
+
+One or more objects (typically a `TF1\*`) can be added to the list of functions (`fFunctions`) associated to each histogram.
+[TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} adds the fitted function to this list.
+
+Given a histogram `h`, you can retrieve the associated function with:
+
+{% highlight C++ %}
+TF1 *myfunc = h->GetFunction("myfunc");
+{% endhighlight %}
+
+<p><a name="accessing-the-fit-parameters-and-results"></a></p>
+**Accessing the fit parameters and results**
+
+If the histogram or graph is made persistent, the list of associated functions is also persistent.
+
+Retrieve a pointer to the function with the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c){:target="_blank"} method. Then you can retrieve the fit parameters from the function.
+
+_**Example**_
+
+{% highlight C++ %}
+TF1 *fit = hist->GetFunction(function_name);
+double chi2 = fit->GetChisquare();
+
+// Value of the first parameter.
+double p1 = fit->GetParameter(0);
+
+// Error of the first parameter.
+double e1 = fit->GetParError(0);
+{% endhighlight %}
+
+With the fit option `S`,  you can access the full result of the fit including the covariance and correlation matrix.
+
+<p><a name="associated-errors"></a></p>
+**Associated errors**
+
+By default, for each bin, the sum of weights is computed at fill time. You can also call [TH1::Sumw2()](https://root.cern/doc/master/classTH1.html#aefa4ee94f053ec3d217f3223b01fa014){:target="_blank"} to force the storage
+and computation of the sum of the square of weights per bin. If `Sumw2()` has been called, the error per bin is computed
+as the `sqrt(sum of squares of weights)`. Otherwise, the error is set equal to the `sqrt(bin content).
+
+To return the error for a given bin number, use:
+
+{% highlight C++ %}
+double error = h->GetBinError(bin);
+{% endhighlight %}
+
+Empty bins are excluded in the fit when using the Chi-square fit method. When fitting an histogram representing
+counts (that is with Poisson statistics) it is recommended to use the Log-Likelihood method (option `L` or `WL`), particularly
+in case of low statistics.
+
+<p><a name="fit-statistics"></a></p>
+**Fit statistics**
+
+You can change the statistics box to display the fit parameters with the [TStyle::SetOptFit()](https://root.cern/doc/master/classTStyle.html#aedeb1d117d9f16af9f8ad430bf956d64){:target="_blank"} method. This parameter has four digits: `mode = pcev (default = 0111)`
+
+- `p = 1`: Print probability.
+- `c = 1`: Print Chi-square/number of degrees of freedom.
+- `e = 1`: Print errors (if e=1, v must be 1).
+- `v = 1`: Print name/values of parameters.
+
+_**Example**_
+
+To print the fit probability, parameter names, values, and errors, use:
+
+{% highlight C++ %}
+gStyle->SetOptFit(1011);
+{% endhighlight %}
+
+
+## Using ROOT::Fit classes
+
+[ROOT::Fit](https://root.cern/doc/master/namespaceROOT_1_1Fit.html) is the namespace for fitting classes (regression analysis). The fitting classes are part of the [MathCore library]({{ '/manual/math#mathcore-library' | relative_url }}).<br>
+The defined classes can be classified in the following groups:
+
+- [Fit method classes](https://root.cern/doc/master/group__FitMethodFunc.html){:target="_blank"}: Classes describing fit method functions like:
+   - [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html){:target="_blank"}: Class for binned fits using the least square methods.
+   - [ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html){:target="_blank"}: Class for evaluating the log likelihood for binned Poisson likelihood fits.
+   - [ROOT::Fit::LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html){:target="_blank"}: Calls for likelihood fits.
+
+- [Fit data classes](https://root.cern/doc/master/group__FitData.html): Classes for describing the input data for fitting. These classes are, among others, [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}, for binned data sets
+ (data points containing both coordinates and a corresponding value or weight with optionally an error on the value or the coordinate), and [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html)c, for un-binned data sets.
+
+- [User fitting classes](https://root.cern/doc/master/group__FitMain.html){:target="_blank"}: Classes for fitting a given data set:
+    - [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} for executing the fit.
+    - [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} for configuring the fit.
+    - [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} to define the properties of the fit parameters (initial values, bounds, etc.).
+    - [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html){:target="_blank"} for storing the result of the fit.
+
+In addition, the fitter classes use the generic interfaces for parametric function evaluations, [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"} to define the fitting model function, and [ROOT::Math::Minimizer](https://root.cern/doc/master/classROOT_1_1Math_1_1Minimizer.html){:target="_blank"}  interface to perform the minimization of the target function.
+
+### Creating the input fit data
+
+There are two types of input data:
+- Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}): They are used for least square (chi-square) fits of histograms or {% include ref class="TGraph" %} objects.
+- Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"}): They are used for fitting vectors of data points, for example from a {% include ref class="TTree" %}.
+
+**Using binned data**
+
+- Use the [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"} class for binned data.
+
+_**Example**_
+
+There is histogram, represented as a {% include ref class="TH1" %} type object. Now a `ROOT:Fit::BinData` object is created and filled.
+
+{% highlight C++ %}
+ROOT::Fit::DataOptions opt;
+opt.fIntegral = true;
+ROOT::Fit::BinData data(opt);
+
+// Fill the bin data by using the histogram.
+TH1 * h1 = (TH1*) gDirectory->Get("myHistogram");
+ROOT::Fit::FillData(data, h1);
+{% endhighlight %}
+
+By using [ROOT::Fit::DataOptions](https://root.cern/doc/master/structROOT_1_1Fit_1_1DataOptions.html){:target="_blank"} some fitting options are controlled and by using [ROOT::Fit::DataRange](https://root.cern/doc/master/classROOT_1_1Fit_1_1DataRange.html){:target="_blank"} you can specify the data range.
+
+_**Example**_
+
+This example shows how to specify the input option to use the integral of the function value in the bin instead of using that of the function value in the bin center when performing the fit, and to use a range between the `xmin` and `xmax` values.
+
+{% highlight C++ %}
+ROOT::Fit::DataOptions opt;
+opt.fIntegral = true;
+ROOT::Fit::DataRange range(xmin,xmax);
+ROOT::Fit::BinData data(opt,range);
+
+// Fill the bin data using the histogram.
+// You can do this by using the following helper function from the histogram library.
+TH1 * h1 = (TH1*) gDirectory->Get("myHistogram");
+ROOT::Fit::FillData(data, h1);
+{% endhighlight %}
+
+**Using un-binned data**
+
+- Use the [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"} class for un-binned data.
+
+For creating un-binned data sets, there are two possibilities:
+1. Copy the data inside a `ROOT::Fit::UnBinData` object.<br>
+Create an empty `ROOT::Fit::UnBinData` object, iterate on the data and add the data point one by one. An input `ROOT::Fit::DataRange` object is passed in order to copy
+the data according to the given range.
+2. Use `ROOT::Fit::UnBinData` as a wrapper to an external data storage.<br>
+In this case the `ROOT::Fit::UnBinData` object is created from an iterator or pointers to the data and the data are not copied inside.
+The data cannot be selected according to a specified range. All the data points will be included in the fit.
+
+`ROOT::Fit::UnBinData` supports also weighted data. In addition to the data points (coordinates), which
+can be of arbitrary `k` dimensions, the class can be constructed from a vector of weights.
+
+_**Example**_
+
+Data are taken from a histogram ({% include ref class="TH1" %} object).
+
+{% highlight C++ %}
+double * buffer = histogram->GetBuffer();
+
+// Number of entry is first entry in the buffer.
+int n = buffer[0];
+
+// When creating the data object, it is important to create it with the size of the data.
+ROOT::Fit::UnBinData data(n);
+for (int i = 0; i < n; ++i)
+   data.add(buffer[2*i+1]);
+{% endhighlight %}
+
+_**Example**_
+
+In this example a two-dimensional `UnBinData` object is created with the contents from a tree.
+
+{% highlight C++ %}
+TFile * file = TFile::Open("hsimple.root");
+TTree *ntuple = 0; file->GetObject("ntuple",ntuple);
+
+// Select from the tree the data that should be used for fitting.
+// Use TTree::Draw.
+int nevt = ntuple->Draw("px:py","","goff");
+double * x = ntuple->GetV1();
+double * y = ntuple->GetV2();
+ROOT::Fit::UnBinData data(nevt, x, y );
+{% endhighlight %}
+
+### Creating a fit model
+
+To fit a data set, a model is needed to describe the data, such as a probability density function (PDF) describing the observed data or a hypothetical function describing the relationship between the independent variables `X` and the single dependent variable `Y`. The model can have any number of k independent variables. For example, in fitting a k-dimensional histogram, the independent variables `X` are the coordinates of the bin centers and `Y` is the bin weight.
+
+The model function needs to be expressed as function of some unknown parameters. The fitting will find the best parameter value to describe the observed data.
+
+You can for example use the {% include ref class="TF1" %} class, the parametric function class, to describe the model function.
+But the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} class takes as input a more general parametric function object, the abstract interface class [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"}. It describes a generic one-dimensional or multi-dimensional function with parameters.
+This interface extends the abstract [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} class with methods to set or retrieve parameter values and to evaluate the function given by the independent vector of values `X` and the vector of parameters `P`.
+
+You convert a {% include ref class="TF1" %} object in a [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"}, using the wrapper class [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b){:target="_blank"}.
+
+_**Example**_
+
+{% highlight C++ %}
+TF1 * f1 = new TF1("f1","gaus");
+ROOT::Math::WrappedMultiTF1 fitFunction(f1, f1->GetNdim() );
+ROOT::Fit::Fitter fitter;
+fitter.SetFunction( fitFunction, false);
+{% endhighlight %}
+
+When creating a wrapper, the parameter values stored in {% include ref class="TF1" %} are copied to the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b){:target="_blank"} object. The function object representing the model function is given to the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} class using the [Fitter::SetFunction](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#ada9af6981d4212951f8120d848f729ab){:target="_blank"} method.
+
+You can also provide a function object that implements the derivatives of the function with respect to the parameters. In this case you must
+provide the function object as a class deriving from the [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"} interface.
+
+Note that the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b){:target="_blank"} wrapper class implements also the gradient interface, using internally [TF1::GradientPar](https://root.cern/doc/master/classTF1.html#a3fb34a1cc39b386c550827cf1e38e2dd){:target="_blank"}, which is based on numerical differentiation, apart for the case of linear functions (this is when [TF1::IsLinear()](https://root.cern/doc/master/classTF1.html#ab3fbb4f517a7589cbacd5535e630cfb6){:target="_blank"} is `true`). The parameter derivatives of the model function can be useful to some minimization algorithms, such as FUMILI (see → [FUMILI]({{ "/manual/math/#fumili-minimization-package" | relative_url}})). However, in general is better to leave the minimization algorithm (for example TMinuit, see → [TMinuit]({{ "/manual/math/#tminuit" | relative_url}})) to compute the needed derivatives using its own customised numerical differentiation algorithm. To avoid providing the parameter derivations to the fitter, explicitly set [Fitter::SetFunction](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a5f80d18031a54675a9f33670d495d0a5){:target="_blank"} to  `false`.
+
+### Configuring the fit
+
+Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} class (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} class) for configuring the fit.
+
+There are the following fit configurations:
+
+- Setting the initial values of the parameters.
+- Setting the parameter step sizes.
+- Setting eventual parameter bounds.
+- Setting the minimizer library and the particular algorithm to use.
+- Setting different minimization options (print level, tolerance, max iterations, etc. . . ).
+- Setting the type of parameter errors to compute (parabolic error, minor errors, re-normalize errors using fitted chi2 values).
+
+_**Example**_
+
+Setting the lower and upper bounds for the first parameter and a lower bound for the second parameter:
+
+{% highlight C++ %}
+fitter.SetFunction( fitFunction, false);
+fitter.Config().ParSettings(0).SetLimits(0,1.E6);
+fitter.Config().ParSettings(2).SetLowerLimit(0);
+{% endhighlight %}
+
+Note that a [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} objects exists for each fit parameter and it created by the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} class, after the model function has been set in the fitter. Only when the function is set, the number of parameter is known and automatically the `FitConfig` creates the corresponding `ParameterSetting` objects.
+
+Various minimizers can be used in the fitting process. They can be implemented in different libraries and loaded at run time. Each different minimizer (for example Minuit, Minuit2, FUMILI, etc.) consists of a different implementation of the [ROOT::Math::Minimizer](https://root.cern/doc/master/classROOT_1_1Math_1_1Minimizer.html){:target="_blank"}  interface. Within the same minimizer, thus within the same class implementing the `Minimizer` interface, different algorithms exist.
+
+If the requested minimizer is not available in ROOT, the default one is used. The default minimizer type and algorithm can be specified by using the static function `ROOT::Math::MinimizerOptions::SetDefaultMinimizer("minimizerName")`.
+
+### Performing the fit
+
+Depending on the available input data and the selected function for fitting, you can use one of the methods of the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html) class to perform the fit.
+
+**Pre-defined fitting methods**
+
+The following pre-defined fitting methods are available:
+
+- Least-square fit: [Fitter::LeastSquare(const BinData &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a44dc06cfe20c1036657e78d939b34593){:target="_blank"} or [Fitter::Fit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#ae6b7c345d4e0b62ebec1a9d08afd233c){:target="_blank"}.
+Both methods should be used when the binned data values follow a Gaussian distribution. These fit methods are implemented using the [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html#af0040f12bc304dd9610daec9d0dfed70){:target="_blank"} class.
+
+- Binned likelihood fit: [Fitter::LikelihoodFit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a61a145587e2b65e90e4f05d3df2d6004){:target="_blank"}. This method should be used when the binned data values follow a Poisson or a multinomial distribution. The Poisson case (extended fit) is the default and in this case the function normalization is also fit to the data. This method is implemented by the
+[ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html) class.
+
+- Un-binned likelihood fit: [Fitter::LikelihoodFit(const UnBindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a980281c2d7ecfbf94fe584fc3da1a566){:target="_blank"}. By default the fit is not extended, this is the normalization is not fitted to the data. This method is implemented using the [LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html){:target="_blank"} class.
+
+- Linear fit: A linear fit can be chosen if the model function is linear in the parameters.
+
+**User-defined fitting methods**
+
+You can also implement your own fitting methods. You can implement your own version of the method function using on its own data set objects and functions.
+
+Use [ROOT::Fit::Fitter::SetFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a4460b05f7905ae72060b0aec2f255ad0){:target="_blank"} to set the method function and [ROOT::Fit::FitFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a3e214693aaf77708cbf96432ce4bc2d2){:target="_blank"} for fitting. <BR/>
+You can pass the method function also in `ROOT::Fit::FitFCN`, but in this case a previously defined fitting configuration is used.
+
+The possible type of method functions that are based in `ROOT::Fit::Fitter::SetFCN` are:
+
+- A generic functor object implementing `operator()(const double * p)` where `p` is the parameter vector. In this case you need to pass the number of parameters, the function object and optionally a vector of initial
+parameter values. Other optional parameter include the size of the data sets and a flag specifying if it is a `chi2` (least-square fit). If the last two parameters are given, the `chi2/ndf` can be computed after fitting the data.
+
+{% highlight C++ %}
+template <class Function>
+bool Fitter::SetFCN(unsigned int npar, Function & f, const double * initialParameters = 0, unsigned int dataSize=0, bool isChi2Fit = false)
+{% endhighlight %}
+
+- A function object implementing the [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} interface.
+
+{% highlight C++ %}
+bool Fitter::SetFCN(const ROOT::Math::IBaseFunctionMultiDim & f, const double * initialParameters = 0, unsigned int dataSize=0, bool isChi2Fit = false)
+{% endhighlight %}
+
+- A function object implementing the [ROOT::Math::FitMethodFunction](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a4146844bcfb2608f1dd869ffc968e6f7){:target="_blank"} interface. This is an interface class that extends [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} with some additional functions which can be used when fitting is done. The extra functionality is required by some fitting algorithms like [FUMILI]({{"/manual/math/#fumili-minimization-package" | relative_url}}) or `GSLMultiFit`.
+
+
+{% highlight C++ %}
+bool Fitter::SetFCN(const ROOT::Math::FitMethodFunction & f, const double * initialParameters = 0, unsigned int dataSize=0)
+{% endhighlight %}
+
+- An old-Minuit like FCN interface (this is a free function with the signature `fcn(int &npar, double *gin, double &f, double *u, int flag)`.
+
+{% highlight C++ %}
+typedef void(* MinuitFCN)(int &npar, double *gin, double &f, double *u, int flag)
+bool Fitter::SetFCN(MinuitFCN fcn, int npar, const double * initialParameters = 0, unsigned int dataSize=0, bool isChi2Fit = false)
+{% endhighlight %}
+
+### Fit result
+
+The result of the fit is contained in the [ROOT::Fit::Result](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#acb09076a64e460e493dcc74fa7b36668){:target="_blank"} object.
+
+You can print the result of the fit with the [FitResult::Print()](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html#a879917fed14db36f8d63fb0170d68d1d){:target="_blank"} method.
+
+By using [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html){:target="_blank"}, you can compute the confidence intervals after the fit [ROOT::Fit::FitResult::GetConfidenceIntervals](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html#a546a3b6ca8231e2870d1c5082374ad59){:target="_blank"}. Given an input data set (for example a `BinData` object) and a confidence level value (for example 68%), it computes the lower and upper band values of the model function at the given data points.
+
+### TFitResult
+
+{% include ref class="TFitResult" %} is a class deriving from [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html){:target="_blank"} and providing in addition some convenient methods to return
+a covariance or correlation matrix as a `TMatrixDSym` object. Furthermore, {% include ref class="TFitResult" %} derives from {% include ref class="TNamed" %} and can be conveniently stored in a file.
+
+When fitting an histogram (a {% include ref class="TH1" %} object) or a graph (a {% include ref class="TGraph" %} object), it is possible to return a {% include ref class="TFitResult" %} via the {% include ref class="TFitResultPtr" %} object, which behaves as a smart pointer to a  {% include ref class="TFitResult" %}. {% include ref class="TFitResultPtr" %} is the return object of [TH1::Fit](https://root.cern/doc/master/classTH1.html#a7e7d34c91d5ebab4fc9bba3ca47dabdd){:target="_blank"} or [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#aa978c8ee0162e661eae795f6f3a35589){:target="_blank"}.
+
+By default {% include ref class="TFitResultPtr" %} contains only the status of the fit and can be obtained by an automatic conversion of {% include ref class="TFitResultPtr" %} to an integer. If the fit option `S` is used instead, {% include ref class="TFitResultPtr" %} contains {% include ref class="TFitResult" %} and behaves as a smart pointer to it.
+
+_**Example**_
+
+{% highlight C++ %}
+// TFitResultPtr contains only the fit status.
+int fitStatus = hist->Fit(myFunction);
+
+// TFitResultPtr contains the TFitResult.
+TFitResultPtr r = hist->Fit(myFunction,"S");
+
+// Access the covariance matrix.
+TMatrixDSym cov = r->GetCovarianceMatrix();
+
+// Retrieve the fit chi2.
+double chi2 = r->Chi2();
+
+// Retrieve the value for the parameter 0.
+double par0 = r->Parameter(0);
+
+// Retrieve the error for the parameter 0.
+double err0 = r->ParError(0);
+
+// Print the full information of the fit including covariance matrix.
+r->Print("V");
+
+// Store the result in a ROOT file.
+r->Write();
+{% endhighlight %}
 
 ## Using the Fit Panel
 
@@ -24,11 +551,11 @@ The following section describes how to use the Fit Panel using an example.
 Given is a histogram following a Gaussian distribution.
 
 {% highlight C++ %}
-   TH1F *h1 = new TH1F("h1", "h1", 200, -5,5);
-   TF1 *f1 = new TF1("f1", "[2]*TMath::Gaus(x,[0],[1])");
-   f1->SetParameters(1,1,1);
-   h1->FillRandom("f1");
-   h1->Draw();
+TH1F *h1 = new TH1F("h1", "h1", 200, -5,5);
+TF1 *f1 = new TF1("f1", "[2]*TMath::Gaus(x,[0],[1])");
+f1->SetParameters(1,1,1);
+h1->FillRandom("f1");
+h1->Draw();
 {% endhighlight %}
 
 - Right-click on the object and then click `FitPanel`.<br>
@@ -79,695 +606,3 @@ This includes the method that will be used, as well as what fit options will be 
    file="histograms.root" object="fitted" width="500px" height="350px"
    caption="A fitted histogram."
 %}
-
-## Using the Fit() method
-
-The `Fit()` method is implemented for:
-- the histogram classes {% include ref class="TH1" %}
-- the sparse histogram classes {% include ref class="THnSparse" %}
-- the graph classes {% include ref class="TGraph" %}, {% include ref class="TGraph2D" %} and {% include ref class="TMultiGraph" %} (for fitting a collection of graphs with the same function)
-
-### Using TH1::Fit()
-
-- Use the [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a histogram programmatically.<br>By default, the fitted function object is added to the histogram and is drawn in the current pad.
-
-The signature is:
-
-{% highlight C++ %}
-   TFitResultPtr Fit(TF1 *function, Option_t *option, Option_t *goption,
-   Axis_t xxmin, Axis_t xxmax)
-{% endhighlight %}
-
-`function`: Pointer to the fitted function (the fit model) object.
-
-`option`: The fitting option, with the following options:
-- `W`: Sets all weights to 1 for non empty bins; ignore error bars.
-- `WW`: Sets all weights to 1 including empty bins; ignore error bars.
-- `I`: Uses integral of function in bin instead of value at bin center.
-- `L`: Uses a log likelihood method (default is chi-square method). To be used when the histogram represents counts.
-- `WL`: Weighted log likelihood method. To be used when the histogram has been filled with weights different than 1.
-- `P`: Uses Pearson chi-square method. Uses expected errors instead of the observed one given by [TH1::GetBinError()](https://root.cern/doc/master/classTH1.html#a3af6cc15ab6c2490428c9b691885d919){:target="_blank"} (default case). The expected error is instead estimated from the square-root of the bin function value.
-- `Q`: Quiet mode (minimum printing).
-- `V`: Verbose mode (default is between `Q` and `V`).
-- `S`: The result of the fit is returned in the {% include ref class="TFitResultPtr" %}.
-- `E`: Performs better errors estimation using the Minos technique.
-- `M`: Improves fit results, by using the IMPROVE algorithm of {% include ref class="TMinuit" %}.
-- `R`: Uses the range specified in the function range.
-- `N`: Does not store the graphics function, does not draw.
-- `0`: Does not plot the result of the fit. By default the fitted function is drawn unless the option `N` is specified.
-- `+`: Adds this new fitted function to the list of fitted functions (by default, the previous function is deleted and only the last one is kept).
-- `B`: Use this option when you want to fix one or more parameters and the fitting function is a predefined one, like `polN`, `expo`, `landau`, `gaus`.<br>Note that in case of pre-defined functions, some default initial values and limits are set.
-- `C`: In case of linear fitting, do no calculate the chisquare (saves time).
-- `F`: If fitting a linear function (e.g., `polN`), switch to use the default minimizer (e.g., {% include ref class="TMinuit" %}). By default, `polN` functions are fitted by the linear fitter.
-
-`goption`: The graphics option that is the same as [TH1::Draw()](https://root.cern/doc/master/classTH1.html#aa53a024a9e94d5ec91e3ef49e49563da){:target="_blank"}.
-
-`xxmin`, `xxmax`: Specifies the range over which to apply the fit.
-
-### Using TGraph::Fit()
-
-The signature for fitting {% include ref class="TGraph" %} is the same as for the {% include ref class="TH1" %}.
-
-Only the following options only apply for fitting histograms:
-- `L`: Uses a log likelihood method (default is chi-square method). To be used when the histogram represents counts.
-- `WL`: Weighted log likelihood method. To be used when the histogram has been filled with weights different than 1.
-- `I`: Uses integral of function in bin instead of value at bin center.
-
-The following options only apply for [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#a61269bcd47a57296f0f1d57ceff8feeb){:target="_blank"}:
-- `EX0`: When fitting a {% include ref class="TGraphErrors" %} or a {% include ref class="TGraphAsymmErrors" %}, the errors on the coordinates are not used in the fit.
-- `ROB`: Use the Robust fitting in case of linear fitting . Computes the least trimmed squares (LTS) regression coefficients (robust (resistant) regression), using the default fraction of good points.
-- `ROB=0.x`: As above, but compute the LTS regression coefficients, using 0.x as a fraction of good points.
-
-## Using the TF1 function class
-
-In the following section is described how to use the {% include ref class="TF1" %} class that is used for fitting histograms and graphs.
-
-### Fitting 1-D histograms with pre-defined functions
-
-- Use the [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method to fit a 1-D histogram with a pre-defined function. The name of the pre-defined function is the first parameter. For pre-defined functions, you do not need to set initial values for the parameters.
-
-_**Example**_
-
-A histogram object `hist` is fit with a Gaussian:
-
-{% highlight C++ %}
-   root[] hist.Fit("gaus");
-{% endhighlight %}
-
-The following pre-defined functions are available:
-
-- `gaus`: Gaussian function with three parameters: `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)`
-
-- `expo`: Exponential function with two parameters: `f(x) = exp(p0+p1*x)`
-
-- `polN`: Polynomial of degree `N`, where `N` is a number between 0 and 9: `f(x) = p0 + p1*x + p2*x2 +...`
-
-- `chebyshevN`: Chebyshev polynomial of degree `N`, where `N` is a number between 0 and 9: `f(x) = p0 + p1*x + p2*(2*x2-1) +...`
-
-- `landau`: Landau function with mean and sigma. This function has been adapted from the `CERNLIB` routine `G110 denlan` (see → [TMath::Landau](https://root.cern/doc/master/namespaceTMath.html#a656690875991a17d35e8a514f37f35d9){:target="_blank"}).
-
-- `gausn`: Normalized form of the Gaussian function with three parameters `f(x) = p0*exp(-0.5*((x-p1)/p2)ˆ2)/(p2*sqrt(2PI))`
-
-
-### Fitting 1-D histograms with user-defined functions
-
-First you create a {% include ref class="TF1" %} object, then you use the name of the `TF1` fitting function in the [Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} method.
-
-You can create the `TF1` fitting function as follows:
-
-- from an existing expressions defined in {% include ref class="TFormula" %} (with and without parameters),
-
-- by defining your own function.
-
-**Creating a TF1 fitting function with a TFormula expression**
-
-_**Example**_
-
-The {% include ref class="TF1" %} constructor is used with the formula `sin(x)/x`.
-
-{% highlight C++ %}
-   root[] TF1 *f1 = new TF1("f1","sin(x)/x",0,10)
-{% endhighlight %}
-
-You can also use a {% include ref class="TF1" %} object in the constructor of another {% include ref class="TF1" %} object.
-
-{% highlight C++ %}
-   root[] TF1 *f2 = new TF1("f2","f1*2",0,10)
-{% endhighlight %}
-
-_**Example**_
-
-The {% include ref class="TF1" %} constructor is used with the formula `x*sin(x)` and two parameters.<br>
-The parameter index is enclosed in square brackets.
-
-{% highlight C++ %}
-   root[] TF1 *f1 = new TF1("f1","[0]*x*sin([1]*x)",-3,3);
-{% endhighlight %}
-
-Use `SetParameter()` to set the initial values.
-
-{% highlight C++ %}
-   root[] f1->SetParameter(0,10);
-{% endhighlight %}
-
-Use `SetParameters()` to set multiple parameters at once.
-
-{% highlight C++ %}
-   root[] f1->SetParameters(10,5);
-{% endhighlight %}
-
-
-**Creating a user TF1 fitting function**
-
-You can define your own function and then pass the function pointer to the {% include ref class="TF1" %} constructor. Your function for a {% include ref class="TF1" %} constructor must have the following signature:
-
-{% highlight C++ %}
-   Double_t fitf(Double_t *x,Double_t *par)
-{% endhighlight %}
-
-
-`Double_t *x`: Pointer to the variable array. This array must be a 1-D array with `v[0] = x` in case of a 1-D histogram, `v[0] =x`, `v[1] = y` for a 2-D histogram, etc.
-
-`Double_t *par`: Pointer to the parameter array. `par` contains the current values of parameters when it is called by the `FCN()` function.
-
-_**Example**_
-
-An 1-D histogram is fit with a user-defined function.<br>
-See also the `fitexample.C` tutorial.
-
-{% highlight C++ %}
-// Define a function with three parameters.
-   Double_t fitf(Double_t *x,Double_t *par) {
-      Double_t arg = 0;
-      if (par[2]!=0) arg = (x[0] - par[1])/par[2];
-      Double_t fitval = par[0]*TMath::Exp(-0.5*arg*arg);
-      return fitval;
-   }
-{% endhighlight %}
-
-Now the `fitf` function is used to fit the histogram.
-
-{% highlight C++ %}
-   void fitexample() {
-
-// Open a ROOT file and get a histogram.
-   TFile *f = new TFile("hsimple.root");
-   TH1F *hpx = (TH1F*)f->Get("hpx");
-
-// Create a TF1 object using the fitf function.
-// The last three parameters specify the number of parameters for the function.
-   TF1 *func = new TF1("fit",fitf,-3,3,3);
-
-// Set the parameters to the mean and RMS of the histogram.
-   func->SetParameters(500,hpx->GetMean(),hpx->GetRMS());
-
-// Give the parameters names.
-   func->SetParNames ("Constant","Mean_value","Sigma");
-
-// Call TH1::Fit with the name of the TF1 object.
-   hpx->Fit("fit");
-   }
-{% endhighlight %}
-
-### Accessing the fitted function parameters and results
-
-- Use the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c){:target="_blank"} method to access the fitted function parameters.
-
-_**Examples**_
-
-{% highlight C++ %}
-   root[] TF1 *fit = hist->GetFunction(function_name);
-   root[] Double_t chi2 = fit->GetChisquare();
-
-// Value of the first parameter:
-   root[] Double_t p1 = fit->GetParameter(0);
-
-// Error of the first parameter:
-   root[] Double_t e1 = fit->GetParError(0);
-{% endhighlight %}
-
-### Configuring the fit
-
-The following configuration actions are available when fitting a histogram or graph using the `Fit()` method:
-
-- [Fixing and setting parameter bounds](#fixing-and-setting-parameter-bounds)
-- [Fitting subranges](#fitting-subranges)
-- [Fitting multiple subranges](#fitting-multiple-sub-ranges)
-- [Adding functions to the list](#adding-functions-to-the-list)
-
-
-<p><a name="fixing-and-setting-parameter-bounds"></a></p>
-**Fixing and setting parameter bounds**
-
-For pre-defined functions like `poln`, `exp`, `gaus`, and `landau`, the parameter initial values are set automatically.
-
-For not pre-defined functions, the fit parameters must be initialized before invoking the `Fit()` method.
-
-- Use the [TF1::SetParLimits()](https://root.cern/doc/master/group__tutorial__fit.html){:target="_blank"} method to set the bounds for one parameter.
-
-{% highlight C++ %}
-   func->SetParLimits(0,-1,1);
-{% endhighlight %}
-
-When the lower and upper limits are equal, the parameter is fixed.
-
-_**Example**_
-
-The parameter is fixed 4 at 10.
-
-{% highlight C++ %}
-   func->SetParameter(4,10);
-   func->SetParLimits(4,10,10);
-{% endhighlight %}
-
-- Use the [TF1::FixParameter()](https://root.cern/doc/master/classTF1.html#ae8869189ca9a2affe690fe26dcaa6c8c){:target="_blank"} method to fix a parameter to 0.
-
-_**Example**_
-
-{% highlight C++ %}
-   func->SetParameter(4,0);
-   func->FixParameter(4,0);
-{% endhighlight %}
-
-You do not need to set the limits for all parameters.
-
-_**Example**_
-
-There is function with 6 parameters. Then a setup like the following is possible: Parameters 0 to 2 can vary freely, parameter 3 has boundaries [-10, 4] with the initial value -1.5, and parameter 4 is fixed to 0.
-
-{% highlight C++ %}
-   func->SetParameters(0,3.1,1.e-6,-1.5,0,100);
-   func->SetParLimits(3,-10,4);
-   func->FixParameter(4,0);
-{% endhighlight %}
-
-<p><a name="fitting-subranges"></a></p>
-**Fitting subranges**
-
-By default, [TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} fits the function on the defined histogram range. You can specify the `R` option in the second parameter of `TH1::Fit()` to restrict the fit to the range specified in the {% include ref class="TF1" %} constructor.
-
-_**Example**_
-
-The fit will be limited to -3 to 3, the range specified in the `TF1` constructor:
-
-{% highlight C++ %}
-   root[] TF1 *f1 = new TF1("f1","[0]*x*sin([1]*x)",-3,3);
-   root[] hist->Fit("f1","R");
-{% endhighlight %}
-
-You can also specify a range in the call to `TH1::Fit()`.
-
-{% highlight C++ %}
-   root[] hist->Fit("f1","","",-2,2)
-{% endhighlight %}
-
-See also the ROOT macros {% include tutorial name="myfit" %} and {% include tutorial name="multifit" %} for more detailed examples.
-
-<p><a name="fitting-multiple-sub-ranges"></a></p>
-**Fitting multiple subranges**
-
-You can find a ROOT macro for fitting multiple subranges at {% include tutorial name="multifit" %}. It shows how to use several Gaussian functions
-with different parameters on separate subranges of the same histogram.
-
-_**Example**_
-
-Four {% include ref class="TF1" %} objects are created, one for each subrange.
-
-{% highlight C++ %}
-   g1 = new TF1("m1","gaus",85,95);
-   g2 = new TF1("m2","gaus",98,108);
-   g3 = new TF1("m3","gaus",110,121);
-
-// The total is the sum of the three, each has three parameters.
-   total = new TF1("mstotal","gaus(0)+gaus(3)+gaus(6)",85,125);
-{% endhighlight %}
-
-The histogram are filled with bins defined in the array `x`.
-
-{% highlight C++ %}
-   h = new TH1F("g1","Example of several fits in subranges",np,85,134);
-   h->SetMaximum(7);
-   for (int i=0; i<np; i++) {
-      h->SetBinContent(i+1,x[i]);
-   }
-
-// Define the parameter array for the total function.
-   Double_t par[9];
-{% endhighlight %}
-
-When fitting simple functions, such as a Gaussian, the initial values of the parameters are automatically computed. In the more complicated case of the sum of three Gaussian functions, the initial values of parameters must be set. In this particular case, the initial values are taken from the result of the individual fits.
-
-{% highlight C++ %}
-// Fit each function and add it to the list of functions.
-   h->Fit(g1,"R");
-   h->Fit(g2,"R+");
-   h->Fit(g3,"R+");
-
-// Get the parameters from the fit
-   g1->GetParameters(&par[0]);
-   g2->GetParameters(&par[3]);
-   g3->GetParameters(&par[6]);
-
-// Use the parameters on the sum
-   total->SetParameters(par);
-   h->Fit(total,"R+");
-{% endhighlight %}
-
-<p><a name="adding-functions-to-the-list"></a></p>
-**Adding functions to the list**
-
-The example `$ROOTSYS/tutorials/fit/multifit.C`  illustrates how to fit several functions on the same histogram.
-By default a fit command deletes the previously fitted function in the histogram object. You can specify the option
-`+` in the second parameter to add the newly fitted function to the existing list of functions for the histogram.
-
-{% highlight C++ %}
-   hist->Fit("f1","+","",-2,2)
-{% endhighlight %}
-
-Note that the fitted function(s) are saved with the histogram when it is written to a ROOT file.
-
-### Result of the fit
-
-You can obtain the following results of a fit:
-
-- [associated function](#associated-function)
-- [parameter values](#accessing-the-fit-parameters-and-results)
-- [errors](#associated-errors)
-- [covariance and correlation matrix](#fit-statistics)
-
-<p><a name="associated-function"></a></p>
-**Associated function**
-
-One or more objects (typically a `TF1\*`) can be added to the list of functions (`fFunctions`) associated to each histogram.
-[TH1::Fit()](https://root.cern/doc/master/classTH1.html#a63eb028df86bc86c8e20c989eb23fb2a){:target="_blank"} adds the fitted function to this list.
-
-Given a histogram `h`, you can retrieve the associated function with:
-
-{% highlight C++ %}
-   TF1 *myfunc = h->GetFunction("myfunc");
-{% endhighlight %}
-
-<p><a name="accessing-the-fit-parameters-and-results"></a></p>
-**Accessing the fit parameters and results**
-
-If the histogram or graph is made persistent, the list of associated functions is also persistent.
-
-Retrieve a pointer to the function with the [TH1::GetFunction()](https://root.cern/doc/master/classTH1.html#a9e78dd45433c2193988c76461e8c089c){:target="_blank"} method. Then you can retrieve the fit parameters from the function.
-
-_**Example**_
-
-{% highlight C++ %}
-   TF1 *fit = hist->GetFunction(function_name);
-   Double_t chi2 = fit->GetChisquare();
-
-// Value of the first parameter.
-   Double_t p1 = fit->GetParameter(0);
-
-// Error of the first parameter.
-   Double_t e1 = fit->GetParError(0);
-{% endhighlight %}
-
-With the fit option `S`,  you can access the full result of the fit including the covariance and correlation matrix.
-
-<p><a name="associated-errors"></a></p>
-**Associated errors**
-
-By default, for each bin, the sum of weights is computed at fill time. You can also call [TH1::Sumw2()](https://root.cern/doc/master/classTH1.html#aefa4ee94f053ec3d217f3223b01fa014){:target="_blank"} to force the storage
-and computation of the sum of the square of weights per bin. If `Sumw2()` has been called, the error per bin is computed
-as the `sqrt(sum of squares of weights)`. Otherwise, the error is set equal to the `sqrt(bin content).
-
-To return the error for a given bin number, use:
-
-{% highlight C++ %}
-   Double_t error = h->GetBinError(bin);
-{% endhighlight %}
-
-Empty bins are excluded in the fit when using the Chi-square fit method. When fitting an histogram representing
-counts (that is with Poisson statistics) it is recommended to use the Log-Likelihood method (option `L` or `WL`), particularly
-in case of low statistics.
-
-<p><a name="fit-statistics"></a></p>
-**Fit statistics**
-
-You can change the statistics box to display the fit parameters with the [TStyle::SetOptFit()](https://root.cern/doc/master/classTStyle.html#aedeb1d117d9f16af9f8ad430bf956d64){:target="_blank"} method. This parameter has four digits: `mode = pcev (default = 0111)`
-
-- `p = 1`: Print probability.
-- `c = 1`: Print Chi-square/number of degrees of freedom.
-- `e = 1`: Print errors (if e=1, v must be 1).
-- `v = 1`: Print name/values of parameters.
-
-_**Example**_
-
-To print the fit probability, parameter names, values, and errors, use:
-
-{% highlight C++ %}
-   gStyle->SetOptFit(1011);
-{% endhighlight %}
-
-
-## Using ROOT::Fit classes
-
-[ROOT::Fit](https://root.cern/doc/master/namespaceROOT_1_1Fit.html) is the namespace for fitting classes (regression analysis). The fitting classes are part of the [MathCore library]({{ '/manual/math#mathcore-library' | relative_url }}).<br>
-The defined classes can be classified in the following groups:
-
-- [Fit method classes](https://root.cern/doc/master/group__FitMethodFunc.html){:target="_blank"}: Classes describing fit method functions like:
-   - [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html){:target="_blank"}: Class for binned fits using the least square methods.
-   - [ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html){:target="_blank"}: Class for evaluating the log likelihood for binned Poisson likelihood fits.
-   - [ROOT::Fit::LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html){:target="_blank"}: Calls for likelihood fits.
-
-- [Fit data classes](https://root.cern/doc/master/group__FitData.html): Classes for describing the input data for fitting. These classes are, among others, [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}, for binned data sets
- (data points containing both coordinates and a corresponding value or weight with optionally an error on the value or the coordinate), and [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html)c, for un-binned data sets.
-
-- [User fitting classes](https://root.cern/doc/master/group__FitMain.html){:target="_blank"}: Classes for fitting a given data set:
-    - [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} for executing the fit.
-    - [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} for configuring the fit.
-    - [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} to define the properties of the fit parameters (initial values, bounds, etc.).
-    - [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html){:target="_blank"} for storing the result of the fit.
-
-In addition, the fitter classes use the generic interfaces for parametric function evaluations, [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"} to define the fitting model function, and [ROOT::Math::Minimizer](https://root.cern/doc/master/classROOT_1_1Math_1_1Minimizer.html){:target="_blank"}  interface to perform the minimization of the target function.
-
-### Creating the input fit data
-
-There are two types of input data:
-- Binned data ([ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"}): They are used for least square (chi-square) fits of histograms or {% include ref class="TGraph" %} objects.
-- Un-binned data ([ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"}): They are used for fitting vectors of data points, for example from a {% include ref class="TTree" %}.
-
-**Using binned data**
-
-- Use the [ROOT::Fit::BinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1BinData.html){:target="_blank"} class for binned data.
-
-_**Example**_
-
-There is histogram, represented as a {% include ref class="TH1" %} type object. Now a `ROOT:Fit::BinData` object is created and filled.
-
-{% highlight C++ %}
-   ROOT::Fit::DataOptions opt;
-   opt.fIntegral = true;
-   ROOT::Fit::BinData data(opt);
-
-// Fill the bin data by using the histogram.
-   TH1 * h1 = (TH1*) gDirectory->Get("myHistogram");
-   ROOT::Fit::FillData(data, h1);
-{% endhighlight %}
-
-By using [ROOT::Fit::DataOptions](https://root.cern/doc/master/structROOT_1_1Fit_1_1DataOptions.html){:target="_blank"} some fitting options are controlled and by using [ROOT::Fit::DataRange](https://root.cern/doc/master/classROOT_1_1Fit_1_1DataRange.html){:target="_blank"} you can specify the data range.
-
-_**Example**_
-
-This example shows how to specify the input option to use the integral of the function value in the bin instead of using that of the function value in the bin center when performing the fit, and to use a range between the `xmin` and `xmax` values.
-
-{% highlight C++ %}
-   ROOT::Fit::DataOptions opt;
-   opt.fIntegral = true;
-   ROOT::Fit::DataRange range(xmin,xmax);
-   ROOT::Fit::BinData data(opt,range);
-
-// Fill the bin data using the histogram.
-// You can do this by using the following helper function from the histogram library.
-   TH1 * h1 = (TH1*) gDirectory->Get("myHistogram");
-   ROOT::Fit::FillData(data, h1);
-{% endhighlight %}
-
-**Using un-binned data**
-
-- Use the [ROOT::Fit::UnBinData](https://root.cern/doc/master/classROOT_1_1Fit_1_1UnBinData.html){:target="_blank"} class for un-binned data.
-
-For creating un-binned data sets, there are two possibilities:
-1. Copy the data inside a `ROOT::Fit::UnBinData` object.<br>
-Create an empty `ROOT::Fit::UnBinData` object, iterate on the data and add the data point one by one. An input `ROOT::Fit::DataRange` object is passed in order to copy
-the data according to the given range.
-2. Use `ROOT::Fit::UnBinData` as a wrapper to an external data storage.<br>
-In this case the `ROOT::Fit::UnBinData` object is created from an iterator or pointers to the data and the data are not copied inside.
-The data cannot be selected according to a specified range. All the data points will be included in the fit.
-
-`ROOT::Fit::UnBinData` supports also weighted data. In addition to the data points (coordinates), which
-can be of arbitrary `k` dimensions, the class can be constructed from a vector of weights.
-
-_**Example**_
-
-Data are taken from a histogram ({% include ref class="TH1" %} object).
-
-{% highlight C++ %}
-   double * buffer = histogram->GetBuffer();
-
-// Number of entry is first entry in the buffer.
-   int n = buffer[0];
-
-// When creating the data object, it is important to create it with the size of the data.
-   ROOT::Fit::UnBinData data(n);
-   for (int i = 0; i < n; ++i)
-      data.add(buffer[2*i+1]);
-{% endhighlight %}
-
-_**Example**_
-
-In this example a two-dimensional `UnBinData` object is created with the contents from a tree.
-
-{% highlight C++ %}
-   TFile * file = TFile::Open("hsimple.root");
-   TTree *ntuple = 0; file->GetObject("ntuple",ntuple);
-
-// Select from the tree the data that should be used for fitting.
-// Use TTree::Draw.
-   int nevt = ntuple->Draw("px:py","","goff");
-   double * x = ntuple->GetV1();
-   double * y = ntuple->GetV2();
-   ROOT::Fit::UnBinData data(nevt, x, y );
-{% endhighlight %}
-
-### Creating a fit model
-
-To fit a data set, a model is needed to describe the data, such as a probability density function (PDF) describing the observed data or a hypothetical function describing the relationship between the independent variables `X` and the single dependent variable `Y`. The model can have any number of k independent variables. For example, in fitting a k-dimensional histogram, the independent variables `X` are the coordinates of the bin centers and `Y` is the bin weight.
-
-The model function needs to be expressed as function of some unknown parameters. The fitting will find the best parameter value to describe the observed data.
-
-You can for example use the {% include ref class="TF1" %} class, the parametric function class, to describe the model function.
-But the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} class takes as input a more general parametric function object, the abstract interface class [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"}. It describes a generic one-dimensional or multi-dimensional function with parameters.
-This interface extends the abstract [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} class with methods to set or retrieve parameter values and to evaluate the function given by the independent vector of values `X` and the vector of parameters `P`.
-
-You convert a {% include ref class="TF1" %} object in a [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"}, using the wrapper class [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b){:target="_blank"}.
-
-_**Example**_
-
-{% highlight C++ %}
-   TF1 * f1 = new TF1("f1","gaus");
-   ROOT::Math::WrappedMultiTF1 fitFunction(f1, f1->GetNdim() );
-   ROOT::Fit::Fitter fitter;
-   fitter.SetFunction( fitFunction, false);
-{% endhighlight %}
-
-When creating a wrapper, the parameter values stored in {% include ref class="TF1" %} are copied to the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b){:target="_blank"} object. The function object representing the model function is given to the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html){:target="_blank"} class using the [Fitter::SetFunction](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#ada9af6981d4212951f8120d848f729ab){:target="_blank"} method.
-
-You can also provide a function object that implements the derivatives of the function with respect to the parameters. In this case you must
-provide the function object as a class deriving from the [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"} interface.
-
-Note that the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b){:target="_blank"} wrapper class implements also the gradient interface, using internally [TF1::GradientPar](https://root.cern/doc/master/classTF1.html#a3fb34a1cc39b386c550827cf1e38e2dd){:target="_blank"}, which is based on numerical differentiation, apart for the case of linear functions (this is when [TF1::IsLinear()](https://root.cern/doc/master/classTF1.html#ab3fbb4f517a7589cbacd5535e630cfb6){:target="_blank"} is `true`). The parameter derivatives of the model function can be useful to some minimization algorithms, such as FUMILI (see → [FUMILI]({{ "/manual/math/#fumili-minimization-package" | relative_url}})). However, in general is better to leave the minimization algorithm (for example TMinuit, see → [TMinuit]({{ "/manual/math/#tminuit" | relative_url}})) to compute the needed derivatives using its own customised numerical differentiation algorithm. To avoid providing the parameter derivations to the fitter, explicitly set [Fitter::SetFunction](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a5f80d18031a54675a9f33670d495d0a5){:target="_blank"} to  `false`.
-
-### Configuring the fit
-
-Use the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} class (contained in the [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} class) for configuring the fit.
-
-There are the following fit configurations:
-
-- Setting the initial values of the parameters.
-- Setting the parameter step sizes.
-- Setting eventual parameter bounds.
-- Setting the minimizer library and the particular algorithm to use.
-- Setting different minimization options (print level, tolerance, max iterations, etc. . . ).
-- Setting the type of parameter errors to compute (parabolic error, minor errors, re-normalize errors using fitted chi2 values).
-
-_**Example**_
-
-Setting the lower and upper bounds for the first parameter and a lower bound for the second parameter:
-
-{% highlight C++ %}
-   fitter.SetFunction( fitFunction, false);
-   fitter.Config().ParSettings(0).SetLimits(0,1.E6);
-   fitter.Config().ParSettings(2).SetLowerLimit(0);
-{% endhighlight %}
-
-Note that a [ROOT::Fit::ParameterSettings](https://root.cern/doc/master/classROOT_1_1Fit_1_1ParameterSettings.html){:target="_blank"} objects exists for each fit parameter and it created by the [ROOT::Fit::FitConfig](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitConfig.html){:target="_blank"} class, after the model function has been set in the fitter. Only when the function is set, the number of parameter is known and automatically the `FitConfig` creates the corresponding `ParameterSetting` objects.
-
-Various minimizers can be used in the fitting process. They can be implemented in different libraries and loaded at run time. Each different minimizer (for example Minuit, Minuit2, FUMILI, etc.) consists of a different implementation of the [ROOT::Math::Minimizer](https://root.cern/doc/master/classROOT_1_1Math_1_1Minimizer.html){:target="_blank"}  interface. Within the same minimizer, thus within the same class implementing the `Minimizer` interface, different algorithms exist.
-
-If the requested minimizer is not available in ROOT, the default one is used. The default minimizer type and algorithm can be specified by using the static function `ROOT::Math::MinimizerOptions::SetDefaultMinimizer("minimizerName")`.
-
-### Performing the fit
-
-Depending on the available input data and the selected function for fitting, you can use one of the methods of the [ROOT::Fit::Fitter](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html) class to perform the fit.
-
-**Pre-defined fitting methods**
-
-The following pre-defined fitting methods are available:
-
-- Least-square fit: [Fitter::LeastSquare(const BinData &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a44dc06cfe20c1036657e78d939b34593){:target="_blank"} or [Fitter::Fit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#ae6b7c345d4e0b62ebec1a9d08afd233c){:target="_blank"}.
-Both methods should be used when the binned data values follow a Gaussian distribution. These fit methods are implemented using the [ROOT::Fit::Chi2FCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Chi2FCN.html#af0040f12bc304dd9610daec9d0dfed70){:target="_blank"} class.
-
-- Binned likelihood fit: [Fitter::LikelihoodFit(const Bindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a61a145587e2b65e90e4f05d3df2d6004){:target="_blank"}. This method should be used when the binned data values follow a Poisson or a multinomial distribution. The Poisson case (extended fit) is the default and in this case the function normalization is also fit to the data. This method is implemented by the
-[ROOT::Fit::PoissonLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1PoissonLikelihoodFCN.html) class.
-
-- Un-binned likelihood fit: [Fitter::LikelihoodFit(const UnBindata &)](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a980281c2d7ecfbf94fe584fc3da1a566){:target="_blank"}. By default the fit is not extended, this is the normalization is not fitted to the data. This method is implemented using the [LogLikelihoodFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1LogLikelihoodFCN.html){:target="_blank"} class.
-
-- Linear fit: A linear fit can be chosen if the model function is linear in the parameters.
-
-**User-defined fitting methods**
-
-You can also implement your own fitting methods. You can implement your own version of the method function using on its own data set objects and functions.
-
-Use [ROOT::Fit::Fitter::SetFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a4460b05f7905ae72060b0aec2f255ad0){:target="_blank"} to set the method function and [ROOT::Fit::FitFCN](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#a3e214693aaf77708cbf96432ce4bc2d2){:target="_blank"} for fitting. <BR/>
-You can pass the method function also in `ROOT::Fit::FitFCN`, but in this case a previously defined fitting configuration is used.
-
-The possible type of method functions that are based in `ROOT::Fit::Fitter::SetFCN` are:
-
-- A generic functor object implementing `operator()(const double * p)` where `p` is the parameter vector. In this case you need to pass the number of parameters, the function object and optionally a vector of initial
-parameter values. Other optional parameter include the size of the data sets and a flag specifying if it is a `chi2` (least-square fit). If the last two parameters are given, the `chi2/ndf` can be computed after fitting the data.
-
-{% highlight C++ %}
-   template <class Function>
-   bool Fitter::SetFCN(unsigned int npar, Function & f, const double * initialParameters = 0, unsigned int dataSize=0, bool isChi2Fit = false)
-{% endhighlight %}
-
-- A function object implementing the [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} interface.
-
-{% highlight C++ %}
-   bool Fitter::SetFCN(const ROOT::Math::IBaseFunctionMultiDim & f, const double * initialParameters = 0, unsigned int dataSize=0, bool isChi2Fit = false)
-{% endhighlight %}
-
-- A function object implementing the [ROOT::Math::FitMethodFunction](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a4146844bcfb2608f1dd869ffc968e6f7){:target="_blank"} interface. This is an interface class that extends [ROOT::Math::IBaseFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a12ea485a599dc09eb802bd98e15228b9){:target="_blank"} with some additional functions which can be used when fitting is done. The extra functionality is required by some fitting algorithms like [FUMILI]({{"/manual/math/#fumili-minimization-package" | relative_url}}) or `GSLMultiFit`.
-
-
-{% highlight C++ %}
-   bool Fitter::SetFCN(const ROOT::Math::FitMethodFunction & f, const double * initialParameters = 0, unsigned int dataSize=0)
-{% endhighlight %}
-
-- An old-Minuit like FCN interface (this is a free function with the signature `fcn(int &npar, double *gin, double &f, double *u, int flag)`.
-
-{% highlight C++ %}
-   typedef void(* MinuitFCN)(int &npar, double *gin, double &f, double *u, int flag)
-   bool Fitter::SetFCN(MinuitFCN fcn, int npar, const double * initialParameters = 0, unsigned int dataSize=0, bool isChi2Fit = false)
-{% endhighlight %}
-
-### Fit result
-
-The result of the fit is contained in the [ROOT::Fit::Result](https://root.cern/doc/master/classROOT_1_1Fit_1_1Fitter.html#acb09076a64e460e493dcc74fa7b36668){:target="_blank"} object.
-
-You can print the result of the fit with the [FitResult::Print()](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html#a879917fed14db36f8d63fb0170d68d1d){:target="_blank"} method.
-
-By using [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html){:target="_blank"}, you can compute the confidence intervals after the fit [ROOT::Fit::FitResult::GetConfidenceIntervals](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html#a546a3b6ca8231e2870d1c5082374ad59){:target="_blank"}. Given an input data set (for example a `BinData` object) and a confidence level value (for example 68%), it computes the lower and upper band values of the model function at the given data points.
-
-### TFitResult
-
-{% include ref class="TFitResult" %} is a class deriving from [ROOT::Fit::FitResult](https://root.cern/doc/master/classROOT_1_1Fit_1_1FitResult.html){:target="_blank"} and providing in addition some convenient methods to return
-a covariance or correlation matrix as a `TMatrixDSym` object. Furthermore, {% include ref class="TFitResult" %} derives from {% include ref class="TNamed" %} and can be conveniently stored in a file.
-
-When fitting an histogram (a {% include ref class="TH1" %} object) or a graph (a {% include ref class="TGraph" %} object), it is possible to return a {% include ref class="TFitResult" %} via the {% include ref class="TFitResultPtr" %} object, which behaves as a smart pointer to a  {% include ref class="TFitResult" %}. {% include ref class="TFitResultPtr" %} is the return object of [TH1::Fit](https://root.cern/doc/master/classTH1.html#a7e7d34c91d5ebab4fc9bba3ca47dabdd){:target="_blank"} or [TGraph::Fit](https://root.cern/doc/master/classTGraph.html#aa978c8ee0162e661eae795f6f3a35589){:target="_blank"}.
-
-By default {% include ref class="TFitResultPtr" %} contains only the status of the fit and can be obtained by an automatic conversion of {% include ref class="TFitResultPtr" %} to an integer. If the fit option `S` is used instead, {% include ref class="TFitResultPtr" %} contains {% include ref class="TFitResult" %} and behaves as a smart pointer to it.
-
-_**Example**_
-
-{% highlight C++ %}
-// TFitResultPtr contains only the fit status.
-   int fitStatus = hist->Fit(myFunction);
-
-// TFitResultPtr contains the TFitResult.
-   TFitResultPtr r = hist->Fit(myFunction,"S");
-
-// Access the covariance matrix.
-   TMatrixDSym cov = r->GetCovarianceMatrix();
-
-// Retrieve the fit chi2.
-   Double_t chi2 = r->Chi2();
-
-// Retrieve the value for the parameter 0.
-   Double_t par0 = r->Parameter(0);
-
-// Retrieve the error for the parameter 0.
-   Double_t err0 = r->ParError(0);
-
-// Print the full information of the fit including covariance matrix.
-   r->Print("V");
-
-// Store the result in a ROOT file.
-   r->Write();
-{% endhighlight %}
