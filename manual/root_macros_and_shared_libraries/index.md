@@ -105,20 +105,23 @@ The function in the `cernbuild.C` macro returns an error code that we get as the
 
 ## Compiling ROOT macros with ACLiC
 
-ROOT macros are by default just-in-time compiled with Cling based on the Clang compiler. Alternatively, you can use ACLiC to compile your macro from within a ROOT session to a shared library using the system compiler such as gcc.
+ROOT macros are by default just-in-time compiled with Cling, ROOT's C++ interpreter. Alternatively, you can use ACLiC to compile your macro to a shared library from within a ROOT session. Using ACLiC, the code is compiled with the system compiler rather than Cling. This has the following advantages:
+
+- full compiler optimizations can be enabled
+- code can be compiled with debug symbols
+- compiled code is cached across ROOT sessions
+- dictionaries for C++ classes in the compiled code are automatically generated (see also [Storing data with ROOT]({{ 'manual/root_io' | relative_url }}))
 
 ACLiC is implemented in [TSystem::CompileMacro()](https://root.cern/doc/master/classTSystem.html#ac557d8f24d067a9b89d2b8fb261d7e18). When using ACLiC, ROOT checks what library really needs to be build and calls your system's C++ compiler, linker and dictionary generator.
 
 ACLiC executes the following steps:
 
 1. Calling `rootcling` to create automatically a dictionary.
-<br/>For creating a dictionary manually, → see [Using rootcling to generate dictionaries manually]({{ '/manual/root_io/#using-rootcling-to-generate-dictionaries-manually' | relative_url }}).
+<br/>For creating a dictionary manually, → see [Using rootcling to generate dictionaries manually]({{ '/manual/root_io/#using-rootcling' | relative_url }}).
 
 2. Calling the system's C++ compiler to build the shared library.
 
 3. Load the shared library and optionally execute the macro.
-
-### Compiling a ROOT macro with ACLiC
 
 Before you can compile your interpreted ROOT macro, you need to add the include statements for
 the classes used in the ROOT macro. Only then you can build and load a shared library containing your ROOT macro.
