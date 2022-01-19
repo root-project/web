@@ -105,14 +105,23 @@ def closeAtDestruct(hist):
 Apart from [`rootls`]({{ '/manual/root_files/#root-command-line-tools' | relative_url }} ) and the [object browser]( {{ '/manual/root_files/#root-object-browser' | relative_url }} ) introduced below, `TFile::ls()` lists what is in the ROOT file.
 
 {% highlight C++ %}
-root [0] std::unique_ptr<TFile> myFile( TFile::Open("file.root", "RECREATE") );
-root [1] myFile->ls()
-
-TFile**    file.root
- TFile*    file.root
-  KEY: TH1F     MyHist;1 This is a histogram
+root [] std::unique_ptr<TFile> myFile( TFile::Open("file.root") );
+...
+root [] myFile->ls()
+TFile**		file.root	
+ TFile*		file.root	
+  OBJ: TH1F	myHist	histo : 0 at: 0x5592d774c2e0
+  KEY: TH1F	myHist;2	histo [current cycle]
+  KEY: TH1F	myHist;1	histo [backup cycle]
 {% endhighlight %}
 
+By default, existing objects are not replaced when writing new objects with the same name.
+Instead, a new _namecycle_ is created, denoted by `;2`, `;3`, etc.
+When retrieving the object from the file, ROOT will automatically pick the highest namecycle.
+
+Some objects, such as histograms, automatically register themselves with the current TDirectory (e.g. the last TFile opened): these objects will appear as `OBJ` entries, without a namecycle.
+
+For the particular case of TTree, cycles only store metadata, see [Baskets, clusters and the tree header]({{ '/manual/trees/#baskets-clusters-and-the-tree-header' | relative_url }}).
 
 ### Reading an object from a ROOT file
 
