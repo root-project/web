@@ -100,7 +100,20 @@ def closeAtDestruct(hist):
 {% endhighlight %}
 
 
-### Displaying the content of a ROOT file
+### Opening and inspecting a ROOT file
+
+Use [TFile::Open()](https://root.cern/doc/master/classTFile.html#ad8870806a04da2c2f4aa02bee4ec6833){:target="_blank"} to open a ROOT file.
+While this operation might return a valid pointer to a `TFile` object,
+this object might not be able to access data, for instance because ROOT was unable to open the file in the filesystem.
+Use [TObject::IsZombie()](https://root.cern/doc/master/classTObject.html#aaa8418b9b6692a12d8d0e500c51911bf){:target="_blank"} to check whether the ROOT file was successfully opened.
+
+{% highlight C++ %}
+std::unique_ptr<TFile> file( TFile::Open("file.root") );
+if (file->IsZombie()) {
+   std::cerr << "Error opening file" << endl;
+   exit(-1);
+}
+{% endhighlight %}
 
 Apart from [`rootls`]({{ '/manual/root_files/#root-command-line-tools' | relative_url }} ) and the [object browser]( {{ '/manual/root_files/#root-object-browser' | relative_url }} ) introduced below, `TFile::ls()` lists what is in the ROOT file.
 

@@ -66,7 +66,7 @@ Trees will close baskets that are not yet full when reaching the tree entry at a
 TTree finds the baskets for a given entry for a given branch by means of a _header_ stored in the file.
 This header also contains other auxiliary metadata.
 When reading a `TTree` object, only this header is actually deserialized, until the tree's entries are loaded.
-Multiple updates of these headers can often be found in files (`treename;1`, `treename;2` etc, called cycles, see → [Displaying the content of a ROOT file]({{ '/manual/root_files/#displaying-the-content-of-a-root-file' | relative_url }})).
+Multiple updates of these headers can often be found in files (`treename;1`, `treename;2` etc, called cycles, see → [Opening and inspecting a ROOT file]({{ '/manual/root_files/#opening-and-inspecting-a-root-file' | relative_url }})).
 Only the last one (also accessible as `treename`) knows about all written baskets.
 
 
