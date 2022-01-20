@@ -112,12 +112,12 @@ ROOT macros are by default just-in-time compiled with Cling, ROOT's C++ interpre
 - compiled code is cached across ROOT sessions
 - dictionaries for C++ classes in the compiled code are automatically generated (see also [Storing data with ROOT]({{ 'manual/io_custom_classes' | relative_url }}))
 
-ACLiC is implemented in [TSystem::CompileMacro()](https://root.cern/doc/master/classTSystem.html#ac557d8f24d067a9b89d2b8fb261d7e18). When using ACLiC, ROOT checks what library really needs to be build and calls your system's C++ compiler, linker and dictionary generator.
+ACLiC is implemented in [TSystem::CompileMacro()](https://root.cern/doc/master/classTSystem.html#ac557d8f24d067a9b89d2b8fb261d7e18). When using ACLiC, ROOT checks what library really needs to be built and calls your system's C++ compiler, linker and dictionary generator.
 
 ACLiC executes the following steps:
 
 1. Calling `rootcling` to create automatically a dictionary.
-<br/>For creating a dictionary manually, → see [Using rootcling to generate dictionaries manually]({{ '/manual/io_custom_classes/#using-rootcling' | relative_url }}).
+<br/>For what a dictionary is used for, → see [I/O of custom classes]({{ '/manual/io_custom_classes' | relative_url }}).
 
 2. Calling the system's C++ compiler to build the shared library.
 
@@ -126,15 +126,9 @@ ACLiC executes the following steps:
 Before you can compile your interpreted ROOT macro, you need to add the include statements for
 the classes used in the ROOT macro. Only then you can build and load a shared library containing your ROOT macro.
 
-You can compile a ROOT macro with:
+You can tweak for instance the compilation's optimization and debug symbols; see the documentation of [TSystem::CompileMacro()](https://root.cern/doc/master/classTSystem.html#ac557d8f24d067a9b89d2b8fb261d7e18).
 
-  - default optimizations
-
-  - different optimizations
-
-  - debug symbols
-
-Compilation ensures that the shared library is rebuilt.
+_**Example**_
 
 To compile a ROOT macro and build a shared library, type:
 
@@ -142,28 +136,11 @@ To compile a ROOT macro and build a shared library, type:
 root [0] .L MyScript.C+
 ```
 
-The `+` option compiles the code and generates a shared library. The name of the shared library is the filename
-where the dot before the extension is replaced by an underscore. In addition, the shared library
-extension is added.
-
-_**Example**_
-
-On most platforms, `hsimple.cxx` will generate `hsimple_cxx.so`.
-
+The `+` option compiles the code and generates a shared library `MyScript_C.so` (`MyScript_C.dll` on Windows).
 The `+` command rebuilds the library only if the ROOT macro or any of the files it includes
 are newer than the library. To force recompiling the library in any case, use `++`:
 
-```
-root [0] .L MyScript.C++
-```
-
-By default, the library will be built with the same optimizations as your ROOT libraries.
-
-To force compilation with optimizations, type:
-
-```
-root [0] .L MyScript.C+O
-```
+_**Example**_
 
 To force compilation with debug symbols, type:
 
