@@ -138,7 +138,7 @@ tree.Branch("branch0", var, "leafname/F");
 <br/>
 **2. Branches holding class type**
 
-You can create a branch holding one of ROOT's classes, or your own type for which you have provided a dictionary (see → [I/O]({{ '/manual/root_io' | relative_url }})).
+You can create a branch holding one of ROOT's classes, or your own type for which you have provided a dictionary (see → [I/O]({{ '/manual/io_custom_classes' | relative_url }})).
 
 _Splitting_
 
@@ -147,7 +147,7 @@ If such a member is a class itself, that member's type can also be split.
 The recursion level of nested splitting is called the "split level"; it can be configured during branch creation.
 
 If the split level is set to 0, there is no splitting: all data members are stored in the same branch.
-Data members can also be configured to be non-split as part of the dictionary; see → [I/O]({{ '/manual/root_io' | relative_url }}).
+Data members can also be configured to be non-split as part of the dictionary; see → [I/O]({{ '/manual/io_custom_classes' | relative_url }}).
 The default split level of 99 means to split all members at any recursion level.
 
 _Pointers_

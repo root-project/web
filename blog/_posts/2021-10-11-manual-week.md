@@ -40,7 +40,7 @@ The first task of the week was to make sure the Manual’s table of content was 
 groups of experts, we updated the existing chapters ([Histograms]({{ '/manual/histograms' | relative_url }}),
 [Graphs]({{ '/manual/graphs' | relative_url }}), [Trees]({{ '/manual/trees' | relative_url }}) ...)
 and create the new needed ones ([JSROOT]({{ '/manual/jsroot' | relative_url }}), [
-ROOT I/O]({{ '/manual/root_io' | relative_url }})...) which also
+ROOT I/O]({{ '/manual/io_custom_classes' | relative_url }})...) which also
 led to updates in the _[Reference Guide](https://root.cern/doc/master/index.html)_.
 
 We also moved everything still valuable in the _Old User’s

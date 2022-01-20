@@ -110,14 +110,14 @@ ROOT macros are by default just-in-time compiled with Cling, ROOT's C++ interpre
 - full compiler optimizations can be enabled
 - code can be compiled with debug symbols
 - compiled code is cached across ROOT sessions
-- dictionaries for C++ classes in the compiled code are automatically generated (see also [Storing data with ROOT]({{ 'manual/root_io' | relative_url }}))
+- dictionaries for C++ classes in the compiled code are automatically generated (see also [Storing data with ROOT]({{ 'manual/io_custom_classes' | relative_url }}))
 
 ACLiC is implemented in [TSystem::CompileMacro()](https://root.cern/doc/master/classTSystem.html#ac557d8f24d067a9b89d2b8fb261d7e18). When using ACLiC, ROOT checks what library really needs to be build and calls your system's C++ compiler, linker and dictionary generator.
 
 ACLiC executes the following steps:
 
 1. Calling `rootcling` to create automatically a dictionary.
-<br/>For creating a dictionary manually, → see [Using rootcling to generate dictionaries manually]({{ '/manual/root_io/#using-rootcling' | relative_url }}).
+<br/>For creating a dictionary manually, → see [Using rootcling to generate dictionaries manually]({{ '/manual/io_custom_classes/#using-rootcling' | relative_url }}).
 
 2. Calling the system's C++ compiler to build the shared library.
 

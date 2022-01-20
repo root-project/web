@@ -48,7 +48,7 @@ The second part of the ROOT Manual contains:
   - **[Geometry]({{ '/manual/geometry' | relative_url }})** <br>
     A geometry represents a Hierarchie of constructive solid geometry primitive elements (shapes or solid).
 
-  - **[ROOT I/O]({{ '/manual/root_io' | relative_url }})** <br>
+  - **[ROOT I/O]({{ '/manual/io_custom_classes' | relative_url }})** <br>
     A dictionary (“reflection database”) contains information about the types and functions that are available in a library.
 
   - **[Signal/Slot communication]({{ '/manual/signal_slot' | relative_url }})** <br>
