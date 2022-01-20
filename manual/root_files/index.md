@@ -109,7 +109,7 @@ Use [TObject::IsZombie()](https://root.cern/doc/master/classTObject.html#aaa8418
 
 {% highlight C++ %}
 std::unique_ptr<TFile> file( TFile::Open("file.root") );
-if (file->IsZombie()) {
+if (!file || file->IsZombie()) {
    std::cerr << "Error opening file" << endl;
    exit(-1);
 }
@@ -133,6 +133,7 @@ Instead, a new _namecycle_ is created, denoted by `;2`, `;3`, etc.
 When retrieving the object from the file, ROOT will automatically pick the highest namecycle.
 
 Some objects, such as histograms, automatically register themselves with the current TDirectory (e.g. the last TFile opened): these objects will appear as `OBJ` entries, without a namecycle.
+See also → [Object ownership]({{ '/manual/object_ownership' | relative_url }}).
 
 For the particular case of TTree, cycles only store metadata, see [Baskets, clusters and the tree header]({{ '/manual/trees/#baskets-clusters-and-the-tree-header' | relative_url }}).
 

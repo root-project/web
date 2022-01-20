@@ -62,7 +62,7 @@ TFile f("myfile.root", "RECREATE"); // create a file called `f.root`
 f.WriteObjectAny(&c, "MyClass", "c"); // write object `c` as key `c` into the file
 {% endhighlight %}
 
-The compiled dictionary will be called `MyClass_cxx.so` (and, by default, the generated dictionary source file is automatically deleted).
+The library containing the compiled dictionary will be called `MyClass_cxx.so` (and, by default, the generated dictionary source file is automatically deleted).
 Extra metadata that ROOT uses to find back dictionaries at runtime is stored in files with extensions `.d` and `.pcm`.
 
 If instead our code is available as a header file and a pre-compiled shared object, we can load them in the interpreter and create dictionaries from the header like so:
@@ -208,7 +208,7 @@ For more information on TTree, see [Trees]({{ '/manual/trees' | relative_url }})
 
 For ROOT to be able to store a class, it must have a public constructor.
 
-ROOT currently does not support I/O of `std::shared_ptr`, `std::optional`, `std::variant` and classes with data members of these types.
+ROOT currently does not support I/O of `std::shared_ptr`, `std::optional`, `std::variant` and classes with data members of these types (unless they are marked as "transient").
 
 ROOT can store and retrieve data members of pointer type but not reference type.
 
