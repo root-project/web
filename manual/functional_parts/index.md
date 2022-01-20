@@ -8,7 +8,7 @@ sidebar:
 
 In the second part of the ROOT Manual, numerous application areas and special topics of ROOT are presented.<br>
 The [Trees]({{ '/manual/trees' | relative_url }}) chapter describes, how the data from LHC (Large Hadron Collider) experiments are stored in trees and ROOT files.
-In chapters like [Histograms]({{ '/manual/histograms' | relative_url }}), [Data frames]({{ '/manual/data_frame' | relative_url }}), and [RooFit]({{ '/manual/roofit' | relative_url }}) is explained, how you can visualize and analyze the data with ROOT.
+In chapters like [Histograms]({{ '/manual/histograms' | relative_url }}), [Dataframes]({{ '/manual/data_frame' | relative_url }}), and [RooFit]({{ '/manual/roofit' | relative_url }}) is explained, how you can visualize and analyze the data with ROOT.
 
 The second part of the ROOT Manual contains:
 
@@ -24,7 +24,7 @@ The second part of the ROOT Manual contains:
   - **[Fitting]({{ '/manual/fitting' | relative_url }})** <br>
     Fitting is the method for modeling the expected distribution of events in a physics data analysis.
 
-  - **[Data frames]({{ '/manual/data_frame' | relative_url }})** <br>
+  - **[Dataframes]({{ '/manual/data_frame' | relative_url }})** <br>
     With RDataFrame, ROOT offers a modern, high-level interface for analysis of data stored in TTree s, CSV files and other data formats, in C++ or Python.
 
   - **[Trees]({{ '/manual/trees' | relative_url }})** <br>

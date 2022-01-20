@@ -218,9 +218,9 @@ A more thorough introduction to RDataFrame can be found → [here]({{ '/manual/d
 
 ### Browsing through the rest of tutorials
 
-The [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"} groups tutorials by topic. For example, data frame tutorials can be found →  [here](https://root.cern/doc/master/group__tutorial__dataframe.html){:target="_blank"}.
+The [Reference Guide tutorial page](https://root.cern/doc/master/group__Tutorials.html){:target="_blank"} groups tutorials by topic. For example, dataframe tutorials can be found →  [here](https://root.cern/doc/master/group__tutorial__dataframe.html){:target="_blank"}.
 
-Tutorials are written in C++, Python or both. For instance, the following data frame tutorial is available in both languages:
+Tutorials are written in C++, Python or both. For instance, the following dataframe tutorial is available in both languages:
 - C++ ROOT macro →  [example](https://root.cern/doc/master/df001__introduction_8C.html){:target="_blank"}
 - Python script →  [example](https://root.cern/doc/master/df001__introduction_8py.html){:target="_blank"}
 
