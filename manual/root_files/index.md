@@ -138,11 +138,12 @@ For the particular case of TTree, cycles only store metadata, see [Baskets, clus
 
 ### Reading an object from a ROOT file
 
-- Use the `GetObject()` method to retrieve the objects from a ROOT file.
+In C++, use the `Get<T>()` method to retrieve the objects from a ROOT file.<br>
+In Python, objects in the file are accessible as attributes.
 
 _**Example**_
 
-From the ROOT file `file.root`, the histogram `MyHist` is retrieved.
+The histogram `MyHist` is retrieved from the ROOT file `file.root`.
 
 {% highlight C++ %}
 std::unique_ptr<TFile> myFile( TFile::Open("file.root") );
