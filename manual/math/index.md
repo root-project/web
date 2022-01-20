@@ -27,8 +27,6 @@ The ROOT mathematical libraries consist of the following components:
 
 - [FFTW](#fftw)
 
-- [MLP](#mlp)
-
 - [Quadp](#quadp)
 
 ## MathCore library
@@ -92,19 +90,18 @@ _**Examples**_
 
 {% highlight C++ %}
 // Generate a vector with 10 random numbers.
-   vector<double> v(10);
-   std::generate(v.begin(), v.end(), rand);
+vector<double> v(10);
+std::generate(v.begin(), v.end(), rand);
 
 // Find the minimum value of the vector (iterator version).
-   vector<double>::iterator it;
-   it = TMath::LocMin(v.begin(), v.end());
-   std::cout << *it << std::endl;
+vector<double>::iterator it;
+it = TMath::LocMin(v.begin(), v.end());
+std::cout << *it << std::endl;
 
 // The same with the old-style version.
-   int i;
-   i = TMath::LocMin(10, &v[0]);
-   std::cout << v[i] << std::endl;
-
+int i;
+i = TMath::LocMin(10, &v[0]);
+std::cout << v[i] << std::endl;
 {% endhighlight %}
 
 
@@ -123,19 +120,19 @@ _**Example**_
 
 {% highlight C++ %}
 // Size of the array.
-   const int n = 100;
+const int n = 100;
 
 // Vector v with random values.
-   vector<double> v(n);
-   std::generate(v.begin(), v.end(), rand);
+vector<double> v(n);
+std::generate(v.begin(), v.end(), rand);
 
 // Weight vector w.
-   vector<double> w(n);
-   std::fill(w.begin(), w.end, 1);
-   double mean;
+vector<double> w(n);
+std::fill(w.begin(), w.end, 1);
+double mean;
 
 // Calculate the mean of the vector with iterators.
-   mean = TMath::Mean(v.begin(), v.end());
+mean = TMath::Mean(v.begin(), v.end());
 {% endhighlight %}
 
 
@@ -187,23 +184,23 @@ _**Example**_
 Example for the implementation of a class that represents a mathematical function.
 
 {% highlight C++ %}
-   #include "Math/IFunction.h"
+#include "Math/IFunction.h"
 
-   class MyFunction: public ROOT::Math::IBaseFunctionOneDim
-   {
-      double DoEval(double x) const
-      {
-      return x*x;
-      }
-   ROOT::Math::IBaseFunctionOneDim* Clone() const
-      {
-      return new MyFunction();
-      }
-   };
+class MyFunction: public ROOT::Math::IBaseFunctionOneDim
+{
+    double DoEval(double x) const
+    {
+        return x*x;
+    }
+    ROOT::Math::IBaseFunctionOneDim* Clone() const
+    {
+        return new MyFunction();
+    }
+};
 {% endhighlight %}
 
 [ROOT::Math::IGradientFunctionOneDim](https://root.cern/doc/master/classROOT_1_1Math_1_1IGradientFunctionOneDim.html){:target="_blank"}<br>
-This interface is needed by some numerical algorithms to calculate the derivatives of the function. It introduces the method double `Derivative(double x)`, which returns
+This interface is needed by some numerical algorithms to calculate the derivatives of the function. It introduces the method `double Derivative(double x)`, which returns
 the derivative of the function at point x. The class from which the user inherits must implement the abstract method `double DoDerivative(double x)`, leaving the rest of the class untouched.
 
 _**Example**_
@@ -211,24 +208,24 @@ _**Example**_
 Example for the implementation of a gradient one-dimensional function.
 
 {% highlight C++ %}
-   #include "Math/IFunction.h"
+#include "Math/IFunction.h"
 
-   class MyGradientFunction: public ROOT::Math::IGradientFunctionOneDim
-   {
-   public:
-   double DoEval(double x) const
-      {
-      return sin(x);
-      }
-   ROOT::Math::IBaseFunctionOneDim* Clone() const
-      {
-      return new MyGradientFunction();
-      }
-   double DoDerivative(double x) const
-      {
-      return -cos(x);
-      }
-   };
+class MyGradientFunction: public ROOT::Math::IGradientFunctionOneDim
+{
+public:
+    double DoEval(double x) const
+    {
+        return sin(x);
+    }
+    ROOT::Math::IBaseFunctionOneDim* Clone() const
+    {
+        return new MyGradientFunction();
+    }
+    double DoDerivative(double x) const
+    {
+        return -cos(x);
+    }
+};
  {% endhighlight %}
 
 <p><a name="multi-dimensional-function-interfaces"></a></p>
@@ -245,61 +242,61 @@ _**Example**_
 Example for the implementation of a basic multi-dimensional function.
 
 {% highlight C++ %}
-   #include "Math/IFunction.h"
+#include "Math/IFunction.h"
 
-   class MyFunction: public ROOT::Math::IBaseFunctionMultiDim
-   {
-   public:
-   double DoEval(const double* x) const
-      {
-      return x[0] + sin(x[1]);
-      }
-   unsigned int NDim() const
-      {
-      return 2;
-      }
-   ROOT::Math::IBaseFunctionMultiDim* Clone() const
-      {
-      return new MyFunction();
-      }
-   };
+class MyFunction: public ROOT::Math::IBaseFunctionMultiDim
+{
+public:
+    double DoEval(const double* x) const
+    {
+       return x[0] + sin(x[1]);
+    }
+    unsigned int NDim() const
+    {
+       return 2;
+    }
+    ROOT::Math::IBaseFunctionMultiDim* Clone() const
+    {
+       return new MyFunction();
+    }
+};
 {% endhighlight %}
 
 
 [ROOT::Math::IGradientFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5ea9b643efd905580803446b000aab44){:target="_blank"}<br>
-This interface offers the same functionality as the base function and additionally the calculation of the derivative. It only adds the double `Derivative(double* x, uint ivar)` method for
-the user to implement. This method must implement the derivative of the function with respect to the variable indicated with the second parameter.
+This interface offers the same functionality as the base function and additionally the calculation of the derivative. It only adds the double `DoDerivative(double* x, uint ivar)` method for
+the user to implement. This method must implement the derivative of the function with respect to the variable in the first parameter array at the position indicated by the second parameter.
 
 _**Example**_
 
 Example for the implementation of a multi-dimensional gradient function.
 
 {% highlight C++ %}
-   #include "Math/IFunction.h"
+#include "Math/IFunction.h"
 
-   class MyGradientFunction: public ROOT::Math::IGradientFunctionMultiDim
-   {
-   public:
-   double DoEval(const double* x) const
-      {
-      return x[0] + sin(x[1]);
-      }
-   unsigned int NDim() const
-      {
-      return 2;
-      }
-   ROOT::Math::IGradientFunctionMultiDim* Clone() const
-      {
-      return new MyGradientFunction();
-      }
-   double DoDerivative(const double* x, unsigned int ipar) const
-      {
-      if ( ipar == 0 )
-      return sin(x[1]);
-      else
-      return x[0] + x[1] * cos(x[1]);
-      }
-   };
+class MyGradientFunction: public ROOT::Math::IGradientFunctionMultiDim
+{
+public:
+    double DoEval(const double* x) const
+    {
+        return x[0] + sin(x[1]);
+    }
+    unsigned int NDim() const
+    {
+        return 2;
+    }
+    ROOT::Math::IGradientFunctionMultiDim* Clone() const
+    {
+        return new MyGradientFunction();
+    }
+    double DoDerivative(const double* x, unsigned int ipar) const
+    {
+        if ( ipar == 0 )
+            return sin(x[1]);
+        else
+            return x[0] + x[1] * cos(x[1]);
+    }
+};
 {% endhighlight %}
 
 <p><a name="parametric-function-interfaces"></a></p>
@@ -308,47 +305,46 @@ Example for the implementation of a multi-dimensional gradient function.
 This interface is used for fitting after evaluating multi-dimensional functions.
 
 [ROOT::Math::IParametricFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a285ff3c0500f74e5a5c0d8999d65525a){:target="_blank"}<br>
-This interface describes a multi-dimensional parametric function. Similarly to the one dimensional version, the user needs to provide the `void SetParameters(double* p)` method as well
-as the getter methods `const double * Parameters()` and `uint NPar()`.
+This interface describes a multi-dimensional parametric function. The user needs to provide the `void SetParameters(double* p)` method as well as the getter methods `const double * Parameters()` and `uint NPar()`.
 
 _**Example**_
 
 Example for the implementation of a parametric function.
 
 {% highlight C++ %}
-   #include "Math/IFunction.h"
-   #include "Math/IParamFunction.h"
+#include "Math/IFunction.h"
+#include "Math/IParamFunction.h"
 
-   class MyParametricFunction: public ROOT::Math::IParametricFunctionMultiDim
-   {
-   private:
-   const double* pars;
-   public:
-   double DoEvalPar(const double* x, const double* p) const
-      {
-      return p[0] * x[0] + sin(x[1]) + p[1];
-      }
-   unsigned int NDim() const
-      {
-      return 2;
-      }
-   ROOT::Math::IParametricFunctionMultiDim* Clone() const
-     {
-     return new MyParametricFunction();
-     }
-   const double* Parameters() const
-      {
-      return pars;
-      }
-   void SetParameters(const double* p)
-      {
-      pars = p;
-      }
-   unsigned int NPar() const
-      {
-      return 2;
-      }
-   };
+class MyParametricFunction: public ROOT::Math::IParametricFunctionMultiDim
+{
+private:
+    const double* pars;
+public:
+    double DoEvalPar(const double* x, const double* p) const
+    {
+        return p[0] * x[0] + sin(x[1]) + p[1];
+    }
+    unsigned int NDim() const
+    {
+        return 2;
+    }
+    ROOT::Math::IParametricFunctionMultiDim* Clone() const
+    {
+        return new MyParametricFunction();
+    }
+    const double* Parameters() const
+    {
+        return pars;
+    }
+    void SetParameters(const double* p)
+    {
+        pars = p;
+    }
+    unsigned int NPar() const
+    {
+        return 2;
+    }
+};
 {% endhighlight %}
 
 [ROOT::Math::IParametricGradFunctionMultiDim](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a2e698159de0fa9c0bfb713f673464147){:target="_blank"}<br>
@@ -360,48 +356,47 @@ _**Example**_
 Example for the implementation of a parametric gradient function.
 
 {% highlight C++ %}
-   #include "Math/IFunction.h"
-   #include "Math/IParamFunction.h"
+#include "Math/IFunction.h"
+#include "Math/IParamFunction.h"
 
-   class MyParametricGradFunction:
-   public ROOT::Math::IParametricGradFunctionMultiDim
-   {
-   private:
-   const double* pars;
-   public:
-   double DoEvalPar(const double* x, const double* p) const
-      {
-      return p[0] * x[0] + sin(x[1]) + p[1];
-      }
-   unsigned int NDim() const
-      {
-      return 2;
-      }
-   ROOT::Math::IParametricGradFunctionMultiDim* Clone() const
-      {
-      return new MyParametricGradFunction();
-      }
-   const double* Parameters() const
-      {
-      return pars;
-      }
-   void SetParameters(const double* p)
-      {
-      pars = p;
-      }
-   unsigned int NPar() const
-      {
-      return 2;
-      }
-   double DoParameterDerivative(const double* x, const double* p,
-   unsigned int ipar) const
-      {
-      if ( ipar == 0 )
-      return sin(x[1]) + p[1];
-      else
-      return p[0] * x[0] + x[1] * cos(x[1]) + p[1];
-      }
-      };
+class MyParametricGradFunction: public ROOT::Math::IParametricGradFunctionMultiDim
+{
+private:
+    const double* pars;
+public:
+    double DoEvalPar(const double* x, const double* p) const
+    {
+        return p[0] * x[0] + sin(x[1]) + p[1];
+    }
+    unsigned int NDim() const
+    {
+       return 2;
+    }
+    ROOT::Math::IParametricGradFunctionMultiDim* Clone() const
+    {
+        return new MyParametricGradFunction();
+    }
+    const double* Parameters() const
+    {
+        return pars;
+    }
+    void SetParameters(const double* p)
+    {
+        pars = p;
+    }
+    unsigned int NPar() const
+    {
+        return 2;
+    }
+    double DoParameterDerivative(const double* x,
+                                 const double* p, unsigned int ipar) const
+    {
+        if ( ipar == 0 )
+            return sin(x[1]) + p[1];
+        else
+           return p[0] * x[0] + x[1] * cos(x[1]) + p[1];
+    }
+};
 {% endhighlight %}
 
 <p><a name="wrapper-functions"></a></p>
@@ -421,22 +416,22 @@ There is one possible wrapper for every interface.
     <tr>
       <td>ROOT::Math::IBaseFunctionOneDim</td>
       <td>ROOT::Math::Functor1D</td>
-      <td>See → Wrapping one-dimensional functions</td>
+      <td>See <a href="#wrapping-one-dimensional-functions">Wrapping one-dimensional functions</a></td>
     </tr>
   <tr>
       <td>ROOT::Math::IGradientFunctionOneDim</td>
       <td>ROOT::Math::GradFunctor1D</td>
-      <td>See → Wrapping one-dimensional gradient functions</td>
+      <td>See <a href="#wrapping-one-dimensional-gradient-functions">Wrapping one-dimensional gradient functions</a></td>
     </tr>
       <tr>
       <td>ROOT::Math::IBaseFunctionMultiDim</td>
       <td>ROOT::Math::Functor</td>
-      <td>See → Wrapping multi-dimensional functions</td>
+      <td>See <a href="#wrapping-multi-dimensional-functions">Wrapping multi-dimensional functions</a></td>
     </tr>
       <tr>
       <td>ROOT::Math::IGradientFunctionMultiDim</td>
       <td>ROOT::Math::GradFunctor</td>
-      <td>See → Wrapping multi-dimensional gradient functions</td>
+      <td>See <a href="#wrapping multi-dimensional-gradient-functions">Wrapping multi-dimensional gradient functions</a></td>
     </tr>
 </tbody>
 </table>
@@ -456,35 +451,40 @@ Use [ROOT::Math::Functor1D](https://root.cern/doc/master/classROOT_1_1Math_1_1Fu
 _**Example**_
 
 {% highlight C++ %}
-   #include "Math/Functor.h"
+#include "Math/Functor.h"
 
-   class MyFunction1D {
-   public:
-   double operator()(double x) const {
-   return x*x;
-   }
-   double Eval(double x) const { return x+x; }
-   };
-   double freeFunction1D(double x ) {
-   return 2*x;
-     }
-     int main()
-     {
+class MyFunction1D {
+public:
+    double operator()(double x) const
+    {
+        return x*x;
+    }
+    double Eval(double x) const
+    {
+        return x+x;
+    }
+};
 
-// Wrapping a free function.
-      ROOT::Math::Functor1D f1(&freeFunction1D);
-      MyFunction1D myf1;
+double freeFunction1D(double x ) {
+    return 2*x;
+}
 
-// Wrapping a function object implementing operator().
-      ROOT::Math::Functor1D f2(myf1);
+int main() {
 
-// Wrapping a class member function.
-      ROOT::Math::Functor1D f3(&myf1,&MyFunction1D::Eval);
-      cout << f1(2) << endl;
-      cout << f2(2) << endl;
-      cout << f3(2) << endl;
-      return 0;
-   }
+    // Wrapping a free function.
+    ROOT::Math::Functor1D f1(&freeFunction1D);
+    MyFunction1D myf1;
+
+    // Wrapping a function object implementing operator().
+    ROOT::Math::Functor1D f2(myf1);
+
+    // Wrapping a class member function.
+    ROOT::Math::Functor1D f3(&myf1,&MyFunction1D::Eval);
+    cout << f1(2) << endl;
+    cout << f2(2) << endl;
+    cout << f3(2) << endl;
+    return 0;
+}
 {% endhighlight %}
 
 <p><a name="wrapping-one-dimensional-gradient-functions"></a></p>
@@ -510,32 +510,35 @@ It can wrap all the following types:
 _**Example**_
 
 {% highlight C++ %}
-   #include "Math/Functor.h"
+#include "Math/Functor.h"
 
-   class MyFunction {
-   public:
-   double operator()(const double *x) const {
-   return x[0]+x[1];
-   }
-   double Eval(const double * x) const { return x[0]+x[1]; }
-   };
-   double freeFunction(const double * x )
-     {
-     return x[0]+x[1];
-     }
-   int main()
-      {
+class MyFunction {
+public:
+    double operator()(const double *x) const
+    {
+        return x[0]+x[1];
+    }
+    double Eval(const double * x) const
+    {
+        return x[0]+x[1];
+    }
+};
 
-// Test directly calling the function object.
+double freeFunction(const double * x ) {
+    return x[0]+x[1];
+}
+
+int main() {
+    // Test directly calling the function object.
     MyFunction myf;
 
-// Test from a free function pointer.
+    // Test from a free function pointer.
     ROOT::Math::Functor f1(&freeFunction,2);
 
-// Test from function object.
+    // Test from function object.
     ROOT::Math::Functor f2(myf,2);
 
-// Test from a member function.
+    // Test from a member function.
     ROOT::Math::Functor f3(&myf,&MyFunction::Eval,2);
     double x[] = {1,2};
     cout << f1(x) << endl;
@@ -568,16 +571,16 @@ The default constructor takes a {% include ref class="TF1" %} reference as argum
 _**Example**_
 
 {% highlight C++ %}
-   #include "TF1.h"
-   #include "Math/WrappedTF1.h"
-   int main()
-   {
-      TF1 f("Sin Function", "sin(x)+y",0,3);
-      ROOT::Math::WrappedTF1 wf1(f);
-      cout << f(1) << endl;
-      cout << wf1(1) << endl;
-      return 0;
-   }
+#include "TF1.h"
+#include "Math/WrappedTF1.h"
+int main()
+{
+    TF1 f("Sin Function", "sin(x)+y",0,3);
+    ROOT::Math::WrappedTF1 wf1(f);
+    cout << f(1) << endl;
+    cout << wf1(1) << endl;
+    return 0;
+}
 {% endhighlight %}
 
 Use the [ROOT::Math::WrappedMultiTF1](https://root.cern/doc/master/namespaceROOT_1_1Math.html#a5c8071dfd2d9d6661de283f5e363566b) class, if the interface to be wrapped is multi-dimensional.
@@ -587,17 +590,17 @@ Following the usual procedure, setting the {% include ref class="TF1" %} though 
 _**Example**_
 
 {% highlight C++ %}
-   #include "TF1.h"
-   #include "Math/WrappedMultiTF1.h"
-   int main()
-   {
-      TF2 f("Sin Function", "sin(x) + y",0,3,0,2);
-      ROOT::Math::WrappedMultiTF1 wf1(f);
-      double x[] = {1,2};
-      cout << f(x) << endl;
-      cout << wf1(x) << endl;
-      return 0;
- }
+#include "TF1.h"
+#include "Math/WrappedMultiTF1.h"
+int main()
+{
+    TF2 f("Sin Function", "sin(x) + y",0,3,0,2);
+    ROOT::Math::WrappedMultiTF1 wf1(f);
+    double x[] = {1,2};
+    cout << f(x) << endl;
+    cout << wf1(x) << endl;
+    return 0;
+}
  {% endhighlight %}
 
 ### Random numbers
@@ -611,7 +614,7 @@ The [MathCore](https://root.cern/doc/master/group__MathCore.html){:target="_blan
 
 > **Note**
 >
-> For generating non-uniform random numbers, the UNU.RAN package (see → [UNU.RAN](#unuran)) is available.
+> For generating non-uniform random numbers, the UNU.RAN package (see [UNU.RAN](#unuran)) is available.
 
 You can work with the random number generators as follows:
 - [Seeding the random number generators](#seeding-the-random-number-generators)
@@ -621,39 +624,42 @@ You can work with the random number generators as follows:
 <p><a name="seeding-the-random-number-generators"></a></p>
 **Seeding the random number generators**
 
-- Use the [SetSeed()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#ab9efcc04f4be1e7e6e49c5281abdee5b){:target="_blank"} method.
+The [SetSeed()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#ab9efcc04f4be1e7e6e49c5281abdee5b){:target="_blank"} method allows to set
+the seed of a random generator object. When no value is given, the default seed of the generator is used. In this case, an identical sequence is generated each time the application is run. Calling `SetSeed(0)` generates a unique seed using either:
 
-When no value is given, the default seed of the generator is used. In this case, an identical sequence is generated each time the application is run.<br>
-When the 0 value is used as seed, then a unique seed is generated using a TUUID, for {% include ref class="TRandom" %}, {% include ref class="TRandom1" %} and {% include ref class="TRandom3" %}.<br>
-For {% include ref class="TRandom" %} the seed is generated using only the machine clock, which has a resolution of about 1 s. Therefore, identical sequences are generated when the elapsed time is less than one second.
+- A {% include ref class="TUUID" %} class instance, for {% include ref class="TRandom1" %}, {% include ref class="TRandom2" %} and {% include ref class="TRandom3" %}.
+- The machine clock, for {% include ref class="TRandom" %}. Note that in this
+  case the resolution is about 1 s. Therefore, identical sequences are generated
+  when the elapsed time is less than one second.
 
 <p><a name="using-the-random-number-generators"></a></p>
 **Using the random number generators**
 
-- Use the [Rndm()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#af47234971a577abc33b975867fc4877d){:target="_blank"} method for generating a pseudo-random number distributed between 0 and 1.
+The [Rndm()](https://root.cern/doc/master/classROOT_1_1Math_1_1Random.html#af47234971a577abc33b975867fc4877d){:target="_blank"} method generates a
+pseudo-random number distributed between 0 and 1.
 
 _**Example**_
 
 {% highlight C++ %}
 // Use the default seed (same random numbers will be generated each time).
 // Generate a number in the interval ]0,1] (0 is excluded).
-   TRandom3 r;
-   r.Rndm();
-   double x[100];
+TRandom3 r;
+r.Rndm();
+double x[100];
 
 // Generate an array of random numbers in ]0,1].
-   r.RndmArray(100,x);
+r.RndmArray(100,x);
 
 // Construct with a user-defined seed.
-   TRandom3 rdm(111);
+TRandom3 rdm(111);
 
 // Use 0: a unique seed is automatically generated with TUUID.
-   TRandom1 r1(0);
-   TRandom2 r2(0);
-   TRandom3 r3(0);
+TRandom1 r1(0);
+TRandom2 r2(0);
+TRandom3 r3(0);
 
 // Seed generated using machine clock (different every second).
-   TRandom r0(0);
+TRandom r0(0);
 {% endhighlight %}
 
 <p><a name="random-number-distributions"></a></p>
@@ -664,16 +670,15 @@ The {% include ref class="TRandom" %} class provides functions that can be used 
 _**Example**_
 
 {% highlight C++ %}
-   TRandom3 r;
+TRandom3 r;
 // Generate a gaussian distributed number with:
 // mu=0, sigma=1 (default values)
-   double x1 = r.Gaus();
-   double x2 = r.Gaus(10,3);
+double x1 = r.Gaus();
+double x2 = r.Gaus(10,3);
 // Use mu = 10, sigma = 3;
 {% endhighlight %}
 
-The following table shows the various distributions that can be generated using methods of the {% include ref class="TRandom" %} classes.<br>
-In addition, you can use [TF1::GetRandom()](https://root.cern/doc/master/classTF1.html#ab44c5f63db88a3831d74c7c84dc6316b){:target="_blank"} or [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232){:target="_blank"} to generate random numbers distributed according to a user defined function, in a limited interval, or to a user defined histogram.
+The following table shows the various distributions that can be generated using methods of the {% include ref class="TRandom" %} classes. In addition, you can use [TF1::GetRandom()](https://root.cern/doc/master/classTF1.html#ab44c5f63db88a3831d74c7c84dc6316b){:target="_blank"} or [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232){:target="_blank"} to generate random numbers distributed according to a user defined function, in a limited interval, or to a user defined histogram.
 
 <table width="100%" border="0">
   <tbody>
@@ -756,53 +761,54 @@ In this example different instances of the class are created using some of the a
 {% highlight C++ %}
 #include "Math/Integrator.h"
 const double ERRORLIMIT = 1E-3;
+
 double f(double x) {
-return x;
+    return x;
 }
 double f2(const double * x) {
-return x[0] + x[1];
+    return x[0] + x[1];
 }
+
 int testIntegration1D() {
-   const double RESULT = 0.5;
-   int status = 0;
+    const double RESULT = 0.5;
+    int status = 0;
 
-// Set default tolerances for all integrators.
-   ROOT::Math::IntegratorOneDimOptions::SetDefaultAbsTolerance(1.E-6);
-   ROOT::Math::IntegratorOneDimOptions::SetDefaultRelTolerance(1.E-6);
+    // Set default tolerances for all integrators.
+    ROOT::Math::IntegratorOneDimOptions::SetDefaultAbsTolerance(1.E-6);
+    ROOT::Math::IntegratorOneDimOptions::SetDefaultRelTolerance(1.E-6);
 
-   ROOT::Math::Functor1D wf(&f);
-   ROOT::Math::Integrator ig(ROOT::Math::IntegrationOneDim::kADAPTIVESINGULAR);
-   ig.SetFunction(wf);
-   double val = ig.Integral(0,1);
-   std::cout << "integral result is " << val << std::endl;
-   status += std::fabs(val-RESULT) > ERRORLIMIT;
+    ROOT::Math::Functor1D wf(&f);
+    ROOT::Math::Integrator ig(ROOT::Math::IntegrationOneDim::kADAPTIVESINGULAR);
+    ig.SetFunction(wf);
+    double val = ig.Integral(0,1);
+    std::cout << "integral result is " << val << std::endl;
+    status += std::fabs(val-RESULT) > ERRORLIMIT;
 
-   ROOT::Math::Integrator ig2(ROOT::Math::IntegrationOneDim::kNONADAPTIVE);
-   ig2.SetFunction(wf);
-   val = ig2.Integral(0,1);
-   std::cout << "integral result is " << val << std::endl;
-   status += std::fabs(val-RESULT) > ERRORLIMIT;
+    ROOT::Math::Integrator ig2(ROOT::Math::IntegrationOneDim::kNONADAPTIVE);
+    ig2.SetFunction(wf);
+    val = ig2.Integral(0,1);
+    std::cout << "integral result is " << val << std::endl;
+    status += std::fabs(val-RESULT) > ERRORLIMIT;
 
-   ROOT::Math::Integrator ig3(wf, ROOT::Math::IntegrationOneDim::kADAPTIVE);
-   val = ig3.Integral(0,1);
-   std::cout << "integral result is " << val << std::endl;
-   status += std::fabs(val-RESULT) > ERRORLIMIT;
+    ROOT::Math::Integrator ig3(wf, ROOT::Math::IntegrationOneDim::kADAPTIVE);
+    val = ig3.Integral(0,1);
+    std::cout << "integral result is " << val << std::endl;
+    status += std::fabs(val-RESULT) > ERRORLIMIT;
 
-   ROOT::Math::Integrator ig4(ROOT::Math::IntegrationOneDim::kGAUSS)
-   ig4.SetFunction(wf);
-   val = ig4.Integral(0,1);
-   std::cout << "integral result is " << val << std::endl;
-   status += std::fabs(val-RESULT) > ERRORLIMIT;
+    ROOT::Math::Integrator ig4(ROOT::Math::IntegrationOneDim::kGAUSS)
+    ig4.SetFunction(wf);
+    val = ig4.Integral(0,1);
+    std::cout << "integral result is " << val << std::endl;
+    status += std::fabs(val-RESULT) > ERRORLIMIT;
 
-   ROOT::Math::Integrator ig4(ROOT::Math::IntegrationOneDim::kLEGENDRE);
-   ig4.SetFunction(wf);
-   val = ig4.Integral(0,1);
-   std::cout << "integral result is " << val << std::endl;
-   status += std::fabs(val-RESULT) > ERRORLIMIT;
+    ROOT::Math::Integrator ig4(ROOT::Math::IntegrationOneDim::kLEGENDRE);
+    ig4.SetFunction(wf);
+    val = ig4.Integral(0,1);
+    std::cout << "integral result is " << val << std::endl;
+    status += std::fabs(val-RESULT) > ERRORLIMIT;
 
-   return status;
-   }
-
+    return status;
+}
 {% endhighlight %}
 
 
@@ -819,41 +825,41 @@ In this example, different instances of the class use some of the algorithms ava
 #include "Math/Functor.h"
 
 double f2(const double * x) {
-return x[0] + x[1];
+    return x[0] + x[1];
 }
 
 int testIntegrationMultiDim() {
-   const double RESULT = 1.0;
-   const double ERRORLIMIT = 1E-3;
-   int status = 0;
+    const double RESULT = 1.0;
+    const double ERRORLIMIT = 1E-3;
+    int status = 0;
 
-   ROOT::Math::Functor wf(&f2,2);
-   double a[2] = {0,0};
-   double b[2] = {1,1};
+    ROOT::Math::Functor wf(&f2,2);
+    double a[2] = {0,0};
+    double b[2] = {1,1};
 
-   ROOT::Math::IntegratorMultiDim ig(ROOT::Math::IntegrationMultiDim::kADAPTIVE);
-   ig.SetFunction(wf);
-   double val = ig.Integral(a,b);
-   std::cout << "integral result is " << val << std::endl;
-   status += std::fabs(val-RESULT) > ERRORLIMIT;
+    ROOT::Math::IntegratorMultiDim ig(ROOT::Math::IntegrationMultiDim::kADAPTIVE);
+    ig.SetFunction(wf);
+    double val = ig.Integral(a,b);
+    std::cout << "integral result is " << val << std::endl;
+    status += std::fabs(val-RESULT) > ERRORLIMIT;
 
-   ROOT::Math::IntegratorMultiDim ig2(ROOT::Math::IntegrationMultiDim::kVEGAS);
-   ig2.SetFunction(wf);
-   val = ig2.Integral(a,b);
-   std::cout << "integral result is " << val << std::endl;
-   status += std::fabs(val-RESULT) > ERRORLIMIT;
+    ROOT::Math::IntegratorMultiDim ig2(ROOT::Math::IntegrationMultiDim::kVEGAS);
+    ig2.SetFunction(wf);
+    val = ig2.Integral(a,b);
+    std::cout << "integral result is " << val << std::endl;
+    status += std::fabs(val-RESULT) > ERRORLIMIT;
 
-   ROOT::Math::IntegratorMultiDim ig3(wf,ROOT::Math::IntegrationMultiDim::kPLAIN);
-   val = ig3.Integral(a,b);
-   std::cout << "integral result is " << val << std::endl;
-   status += std::fabs(val-RESULT) > ERRORLIMIT;
+    ROOT::Math::IntegratorMultiDim ig3(wf,ROOT::Math::IntegrationMultiDim::kPLAIN);
+    val = ig3.Integral(a,b);
+    std::cout << "integral result is " << val << std::endl;
+    status += std::fabs(val-RESULT) > ERRORLIMIT;
 
-   ROOT::Math::IntegratorMultiDim ig4(wf,ROOT::Math::IntegrationMultiDim::kMISER);
-   val = ig4.Integral(a,b);
-   std::cout << "integral result is " << val << std::endl;
-   status += std::fabs(val-RESULT) > ERRORLIMIT;
+    ROOT::Math::IntegratorMultiDim ig4(wf,ROOT::Math::IntegrationMultiDim::kMISER);
+    val = ig4.Integral(a,b);
+    std::cout << "integral result is " << val << std::endl;
+    status += std::fabs(val-RESULT) > ERRORLIMIT;
 
-   return status;
+    return status;
 }
 {% endhighlight %}
 
@@ -901,14 +907,14 @@ _**Example**_
 #include "Math/WrappedTF1.h"
 #include "Math/GaussIntegrator.h"
 
-int main()
-{
-   TF1 f("Sin Function", "sin(x)", 0, TMath::Pi());
-   ROOT::Math::WrappedTF1 wf1(f);
-   ROOT::Math::GaussIntegrator ig;
-   ig.SetFunction(wf1, false);
-   ig.SetRelTolerance(0.001);
-   cout << ig.Integral(0, TMath::PiOver2()) << endl;
+int main() {
+    TF1 f("Sin Function", "sin(x)", 0, TMath::Pi());
+    ROOT::Math::WrappedTF1 wf1(f);
+    ROOT::Math::GaussIntegrator ig;
+    ig.SetFunction(wf1, false);
+    ig.SetRelTolerance(0.001);
+    cout << ig.Integral(0, TMath::PiOver2()) << endl;
+}
 {% endhighlight %}
 
 
@@ -1018,22 +1024,14 @@ The following topics are covered for the matrix package:
 
 ROOT provides the following matrix classes, among others:
 
-- `TMatrixDBase`: Base class for matrices.
-
-- `TMatrixF`: Matrix with single precision (`float`).
-
-- `TMatrixFSym`: Symmetrical matrix with single precision (`float`).
-
-- `TVectorF`: Vector with single precision (`float`).
-
-- `TMatrixD`: Matrix with double precision (`double`).
-
-- `TMatrixDSym`: Symmetrical matrix with double precision (`double`).
-
-- `TMatrixDSparse`: Sparse matrix with double precision (`double`).
-
+- [TMatrixTBase](https://root.cern/doc/master/classTMatrixTBase.html){:target="_blank"}: base class for matrices.
+- [TMatrixT](https://root.cern/doc/master/classTMatrixT.html){:target="_blank"}: template class of a general matrix. Specialized
+  versions are available (e.g. `TMatrixF` for float precision).
+- [TMatrixTSym](https://root.cern/doc/master/classTMatrixTSym.html){:target="_blank"}: template class of a symmetric matrix. Specialized versions are available (e.g. `TMatrixFSym` for float precision).
+- [TMatrixTSparse](https://root.cern/doc/master/classTMatrixTSparse.html){:target="_blank"}: template class of a general sparse matrix in the Harwell-Boeing format. Specialized versions are available (e.g. `TMatrixFSparse` for float precision).
+- [TVectorT](https://root.cern/doc/master/classTVectorT.html){:target="_blank"}: template class for vectors in the linear
+  algebra package. Specialized versions are available (e.g. `TVectorF` for float precision).
 - [TDecompBase](https://root.cern/doc/master/classTDecompBase.html){:target="_blank"}: Decomposition base class.
-
 - [TDecompChol](https://root.cern/doc/master/classTDecompChol.html){:target="_blank"}: Cholesky decomposition class.
 
 
@@ -1057,12 +1055,6 @@ Range start of row and column index. By default these start at 0.
 - `sparse map`<br>
 Only relevant for a sparse matrix. It indicates where elements are unequal 0.
 
-You can:
-- [access the matrix properties](#accessing-matrix-properties)
-- [set the matrix properties](#setting-matrix-properties)
-
-
-<p><a name="accessing-matrix-properties"></a></p>
 **Accessing matrix properties**
 
 Use one of the following methods to access the information about the relevant matrix property:
@@ -1094,101 +1086,78 @@ also a row index `fRowIndex` and a column index `fColIndex` are stored:
 - `fRowIndex[0,..,fNrows]`: Stores for each row the index range of the elements in the data and column array.
 - `fColIndex[0,..,fNelems-1]`: Stores the column number for each data element != 0.
 
+For example, printing all non-zero elements of a matrix would look like:
 
-<p><a name="setting-matrix-properties"></a></p>
+_**Example**_
+
+{% highlight C++ %}
+TMatrixDSparse a;
+const Int_t *rIndex = a.GetRowIndexArray();
+const Int_t *cIndex = a.GetColIndexArray();
+const Double_t *pData = a.GetMatrixArray();
+
+for (Int_t irow = 0; irow < a.getNrows(); irow++) {
+    const Int_t sIndex = rIndex[irow];
+    const Int_t eIndex = rIndex[irow+1];
+
+    for (Int_t index = sIndex; index < eIndex; index++) {
+        const Int_t icol = cIndex[index];
+        const Double_t data = pData[index];
+        printf("data(%d,%d) = %.4en", irow+a.GetfRowLwb(), icol+a.GetColLwb(), data);
+    }
+}
+{% endhighlight %}
+
 **Setting matrix properties**
 
 Use one of the following methods to set a matrix property:
 
-- `SetTol (Double_t tol)`<br>
-Sets the tolerance number.
-
-- `ResizeTo (Int_t nrows,Int_t ncols, Int_t nr_nonzeros=-1)`<br>
-Changes the matrix shape to `nrows x ncols`. Index starts at 0.
-
-- `ResizeTo(Int_t row_lwb,Int_t row_upb, Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros=-1)`<br>
-Changes the matrix shape to `row_lwb:row_upb x col_lwb:col_upb`.
-
-- `SetRowIndexArray (Int_t *data)`<br>
-For sparse matrices, it sets the row index. The array data should contain at least `fNrows+1` entries column lower-bound index.
-
-- `SetColIndexArray (Int_t *data)`<br>
-For sparse matrices, it sets the column index. The array data should contain at least `fNelems` entries.
-
-- `SetSparseIndex (Int_t nelems new)`<br>
-Allocates memory for a sparse map of `nelems_new` elements and copies (if exists) at most `nelems_new` matrix elements over to the new structure.
-
-- `SetSparseIndex (const TMatrixDBase &a)`<br>
-Copies the sparse map from matrix `a`.
-
-- `SetSparseIndexAB (const TMatrixDSparse &a, const TMatrixDSparse &b)`<br>
-Sets the sparse map to the same map of matrix `a` and `b`.
+- [SetTol(Double_t tol)](https://root.cern/doc/master/classTMatrixTBase.html#ae4b99dd75bcf553ce6527de9a463b656){:target="_blank"}: sets the tolerance number.
+- [ResizeTo(Int_t nrows,Int_t ncols, Int_t nr_nonzeros=-1)](https://root.cern/doc/master/classTMatrixTBase.html#a60a9b8f4ea5d1a02be3345646c1d6e46){:target="_blank"}: changes the matrix shape to `nrows x ncols`. Index starts at 0.
+- [ResizeTo(Int_t row_lwb,Int_t row_upb, Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros=-1)](https://root.cern/doc/master/classTMatrixTBase.html#a55dea20ff26f6c820f0671c92c5620e0){:target="_blank"}: changes the matrix shape to `row_lwb:row_upb x col_lwb:col_upb`.
+- [SetRowIndexArray(Int_t *data)](https://root.cern/doc/master/classTMatrixTSparse.html#a40e4086c38a5e7d8575a485f66b00bfb){:target="_blank"}: for sparse matrices, it sets the row index. The array data should contain at least `fNrows+1` entries column lower-bound index.
+- [SetColIndexArray(Int_t *data)](https://root.cern/doc/master/classTMatrixTSparse.html#a6197bff515955c202ab73b4bd49c0f29){:target="_blank"}: for sparse matrices, it sets the column index. The array data should contain at least `fNelems` entries.
+- [SetSparseIndex(Int_t nelems new)](https://root.cern/doc/master/classTMatrixTSparse.html#a113035b542b96662344831ca2c3be763){:target="_blank"}: allocates memory for a sparse map of `nelems_new` elements and copies (if exists) at most `nelems_new` matrix elements over to the new structure.
+- [SetSparseIndex(const TMatrixDBase &a)](https://root.cern/doc/master/classTMatrixTSparse.html#ace03761744c10939a42035a0bba95363){:target="_blank"}: copies the sparse map from matrix `a`.
+- [SetSparseIndexAB(const TMatrixDSparse &a, const TMatrixDSparse &b)](https://root.cern/doc/master/classTMatrixTSparse.html#af5a25891c172bdbe61b3e7efb326f5dc){:target="_blank"}: sets the sparse map to the same map of matrix `a` and `b`.
 
 
 <p><a name="creating-and-filling-a-matrix"></a></p>
 **Creating and filling a matrix**
 
-Use one of the following constructors to create a matrix:
-
-- `TMatrixD(Int_t nrows,Int_t ncols)`
-- `TMatrixD(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb)`
-- `TMatrixD(Int_t nrows,Int_t ncols,const Double_t *data, Option_t option= "")`
-- `TMatrixD(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb, const Double_t *data,Option_t *option="")`
-- `TMatrixDSym(Int_t nrows)`
-- `TMatrixDSym(Int_t row_lwb,Int_t row_upb)`
-- `TMatrixDSym(Int_t nrows,const Double_t *data,Option_t *option="")`
-- `TMatrixDSym(Int_t row_lwb,Int_t row_upb, const Double_t *data, Option_t *opt="")`
-- `TMatrixDSparse(Int_t nrows,Int_t ncols)`
-- `TMatrixDSparse(Int_t row_lwb,Int_t row_upb,Int_t col_lwb, Int_t col_upb)`
-- `TMatrixDSparse(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb, Int_t nr_nonzeros,Int_t *row,Int_t *col,Double_t *data)`
+A full list of constructors for matrices is available on the corresponding reference
+guide pages of {% include ref class="TMatrixT" %}, {% include ref class="TMatrixTSparse" %}
+and {% include ref class="TMatrixTSym" %}.
 
 Use one of the following methods to fill a matrix:
 
-- `SetMatrixArray(const Double_t*data,Option_t*option="")`<br>
-Copies array data. If `option="F"`, the array fills the matrix column-wise else row-wise. This option is implemented for `TMatrixD` and `TMatrixDSym`. It is expected that the array data contains at least `fNelems` entries.
-
-- `SetMatrixArray(Int_t nr,Int_t *irow,Int_t *icol,Double_t *data)`<br>
-Only available for sparse matrices. The three arrays should each contain `nr` entries with row index, column index and data entry. Only the entries with non-zero data value are inserted.
-
-- `operator()`, `operator[]`<br>
-These operators provide the easiest way to fill a matrix but are in particular for a sparse matrix expensive. If no entry for slot (`i`,`j`) is found in the sparse index table, it is entered, which involves some memory management. Therefore, before invoking this method in a loop set the index table first through a call to the `SetSparseIndex()` method.
-
-- `SetSub(Int_t row_lwb,Int_t col_lwb,const TMatrixDBase &source)`<br>
-The matrix to be inserted at position (`row_lwb`,`col_lwb`) can be both, dense or sparse.
-
-- `Use()`<br>
-Allows inserting another matrix or data array without actually copying the data.<br>
-The following list shows the application of the `Use()` method:
-   - `Use(TMatrixD &a)`
-   - `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Double_t *data)`
-   - `Use(Int_t nrows,Int_t ncols,Double_t *data)`
-   - `Use(TMatrixDSym &a)`
-   - `Use(Int_t nrows,Double_t *data)`
-   - `Use(Int_t row_lwb,Int_t row_upb,Double_t *data)`
-   - `Use(TMatrixDSparse &a)`
-   - `Use(Int_t row_lwb,Int_t row_upb,Int_t col_lwb,Int_t col_upb,Int_t nr_no nzeros, Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
-   - `Use(Int_t nrows,Int_t ncols,Int_t nr_nonzeros,Int_t *pRowIndex,Int_t *pColIndex,Double_t *pData)`
+- `SetMatrixArray(const Double_t*data,Option_t*option="")`: copies array data. If `option="F"`, the array fills the matrix column-wise else row-wise. This option is implemented for `TMatrixD` and `TMatrixDSym`. It is expected that the array data contains at least `fNelems` entries.
+- `SetMatrixArray(Int_t nr,Int_t *irow,Int_t *icol,Double_t *data)`: only available for sparse matrices. The three arrays should each contain `nr` entries with row index, column index and data entry. Only the entries with non-zero data value are inserted.
+- `operator()`, `operator[]`: these operators provide the easiest way to fill a matrix but are in particular for a sparse matrix expensive. If no entry for slot (`i`,`j`) is found in the sparse index table, it is entered, which involves some memory management. Therefore, before invoking this method in a loop set the index table first through a call to the `SetSparseIndex()` method.
+- `SetSub(Int_t row_lwb,Int_t col_lwb,const TMatrixDBase &source)`: the matrix to be inserted at position (`row_lwb`,`col_lwb`) can be both, dense or sparse.
+- `Use()`: allows inserting another matrix or data array without actually copying the data.
 
 _**Example**_
 
 A Hilbert matrix is created by copying an array.
 
 {% highlight C++ %}
-   TMatrixD h(5,5);
-   TArrayD data(25);
-   for (Int_t = 0; i < 25; i++) {
-      const Int_t ir = i/5;
-      const Int_t ic = i%5;
-      data[i] = 1./(ir+ic);
-   }
-   h.SetMatrixArray(data.GetArray());
+TMatrixD h(5,5);
+TArrayD data(25);
+for (Int_t = 0; i < 25; i++) {
+    const Int_t ir = i/5;
+    const Int_t ic = i%5;
+    data[i] = 1./(ir+ic);
+}
+h.SetMatrixArray(data.GetArray());
 {% endhighlight %}
 
 You can also assign the data array to the matrix without actually copying it.
 
 {% highlight C++ %}
-   TMatrixD h; h.Use(5,5,data.GetArray());
-   h.Invert();
+TMatrixD h;
+h.Use(5,5,data.GetArray());
+h.Invert();
 {% endhighlight %}
 
 The array data now contains the inverted matrix.
@@ -1196,17 +1165,18 @@ The array data now contains the inverted matrix.
 Now a unit matrix in sparse format is created.
 
 {% highlight C++ %}
-   TMatrixDSparse unit1(5,5);
-   TArrayI row(5),col(5);
-   for (Int_t i = 0; i < 5; i++) row[i] = col[i] = i;
-   TArrayD data(5); data.Reset(1.);
-   unit1.SetMatrixArray(5,row.GetArray(),col.GetArray(),data.GetArray());
+TMatrixDSparse unit1(5,5);
+TArrayI row(5),col(5);
+for (Int_t i = 0; i < 5; i++) row[i] = col[i] = i;
+TArrayD data(5);
+data.Reset(1.);
+unit1.SetMatrixArray(5,row.GetArray(),col.GetArray(),data.GetArray());
 
-   TMatrixDSparse unit2(5,5);
-   unit2.SetSparseIndex(5);
-   unit2.SetRowIndexArray(row.GetArray());
-   unit2.SetColIndexArray(col.GetArray());
-   unit2.SetMatrixArray(data.GetArray());
+TMatrixDSparse unit2(5,5);
+unit2.SetSparseIndex(5);
+unit2.SetRowIndexArray(row.GetArray());
+unit2.SetColIndexArray(col.GetArray());
+unit2.SetMatrixArray(data.GetArray());
 {% endhighlight %}
 
 
@@ -1216,8 +1186,8 @@ Now a unit matrix in sparse format is created.
 - Use the `Invert(Double_t &det=0)` function to invert a matrix:
 
 {% highlight C++ %}
-   TMatrixD a(...);
-   a.Invert();
+TMatrixD a(...);
+a.Invert();
 {% endhighlight %}
 
 -- or --
@@ -1225,7 +1195,7 @@ Now a unit matrix in sparse format is created.
 - Use the appropriate constructor to invert a matrix:
 
 {% highlight C++ %}
-   TMatrixD b(kInvert,a);
+TMatrixD b(kInvert,a);
 {% endhighlight %}
 
 Both methods are available for general and symmetric matrices.
@@ -1234,7 +1204,7 @@ For matrices whose size is less than or equal to 6x6, the `InvertFast(Double_t &
 
 **Using decomposition classes for inverting**
 
-You can also use the following decomposition classes (see → [Matrix decompositions](#matrix-decompositions)) for inverting a matrix:
+You can also use the following decomposition classes (see [Matrix decompositions](#matrix-decompositions)) for inverting a matrix:
 
 <table width="100%" border="0">
   <tbody>
@@ -1283,14 +1253,14 @@ _**Example**_
 This example shows how to check whether the matrix is singular before attempting to invert it.
 
 {% highlight C++ %}
-   TDecompLU lu(a);
-   TMatrixD b;
-   if (!lu.Decompose()) {
-      cout << "Decomposition failed, matrix singular ?" << endl;
-      cout << "condition number = " << = a.GetCondition() << endl;
-   } else {
-      lu.Invert(b);
-   }
+TDecompLU lu(a);
+TMatrixD b;
+if (!lu.Decompose()) {
+    cout << "Decomposition failed, matrix singular ?" << endl;
+    cout << "condition number = " << = a.GetCondition() << endl;
+} else {
+    lu.Invert(b);
+}
 {% endhighlight %}
 
 
@@ -1298,12 +1268,6 @@ This example shows how to check whether the matrix is singular before attempting
 **Matrix operators and methods**
 
 The matrix/vector operations are classified according to BLAS (basic linear algebra subroutines) levels.
-
-The following operations and methods are available:
-- [arithmetic operations between matrices](#arithmetic-operations-between-matrices)
-- [arithmetic operations between matrices and real numbers](#arithmetic-operations-between-matrices-and-real-numbers)
-- [comparison between two matrices](#comparison-between-two-matrices)
-- [comparison between matrix and real number](#comparison-between-matrix-and-real-number)
 
 <p><a name="arithmetic-operations-between-matrices"></a></p>
 **Arithmetic operations between matrices**
@@ -1547,14 +1511,14 @@ C.Mult(A,B)<br>TMatrixD(A,TMatrixD::kMult,B)<br>TMatrixD(A, TMatrixD(A, TMatrixD
 
 With the following matrix view classes, you can access the matrix elements:
 
-- `TMatrixDRow`
-- `TMatrixDColumn`
-- `TMatrixDDiag`
-- `TMatrixDSub`
+- [TMatrixTRow](https://root.cern/doc/master/classTMatrixTRow.html){:target="_blank"}
+- [TMatrixTColumn](https://root.cern/doc/master/classTMatrixTColumn.html){:target="_blank"}
+- [TMatrixTDiag](https://root.cern/doc/master/classTMatrixTDiag.html){:target="_blank"}
+- [TMatrixTSub](https://root.cern/doc/master/classTMatrixTSub.html){:target="_blank"}
 
-**Matrix view operators**
+The classes are templated, the usual specializations are available (e.g. `D` instead of `T` for double precision).
 
-For the matrix view classes `TMatrixDRow`, `TMatrixDColumn` and `TMatrixDDiag`, the necessary assignment operators are available to interact with the vector class `TVectorD`.<br>The sub matrix view classes `TMatrixDSub` has links to the matrix classes `TMatrixD` and `TMatrixDSym.`
+For the matrix view classes `TMatrixDRow`, `TMatrixDColumn` and `TMatrixDDiag`, the necessary assignment operators are available to interact with the vector class `TVectorD`. The sub matrix view classes `TMatrixDSub` has links to the matrix classes `TMatrixD` and `TMatrixDSym.`
 
 The next table summarizes how to access the individual matrix elements in the matrix view classes.
 
@@ -1649,34 +1613,30 @@ The usage of the eigenvalue class is shown in this example where it is checked t
 a matrix `c` are identical to the eigenvalues of c<sup>T</sup>.c:
 
 {% highlight C++ %}
-   const TMatrixD m = THilbertMatrixD(10,10);
-   TDecompSVD svd(m);
-   TVectorD sig = svd.GetSig(); sig.Sqr();
+const TMatrixD m = THilbertMatrixD(10,10);
+TDecompSVD svd(m);
+TVectorD sig = svd.GetSig(); sig.Sqr();
 
 // Symmetric matrix EigenVector algorithm.
-   TMatrixDSym mtm(TMatrixDBase::kAtA,m);
-   const TMatrixDSymEigen eigen(mtm);
-   const TVectorD eigenVal = eigen.GetEigenValues();
-   const Bool_t ok = VerifyVectorIdentity(sig,eigenVal,1,1.-e-14);
+TMatrixDSym mtm(TMatrixDBase::kAtA,m);
+const TMatrixDSymEigen eigen(mtm);
+const TVectorD eigenVal = eigen.GetEigenValues();
+const Bool_t ok = VerifyVectorIdentity(sig,eigenVal,1,1.-e-14);
 {% endhighlight %}
 
-### SMatrix
+### The SMatrix package
 
 [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} is a C++ package for high performance vector and matrix computations. It can be used only in problems when the size of the matrices is known at compile time, like in the tracking reconstruction of HEP experiments. It is based on a C++ technique, called expression templates, to achieve an high level optimization. The C++ templates can be used to implement vector and matrix expressions in such a way that these expressions can be transformed at compile time to code equivalent to hand-optimized code in a low-level language such as FORTRAN or C.
 
 The [SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} has been developed initially by T. Glebe of the Max-Planck-Institut, Heidelberg, as part of the HeraB analysis framework. A subset of the original package has been now incorporated in the ROOT distribution, with the aim to provide to the LHC experiments a stand-alone and high performance matrix package for reconstruction. The API of the current package differs from the original one to conform to ROOT coding conventions.
 
-[SMatrix](https://root.cern/doc/master/group__SMatrixGroup.html){:target="_blank"} contains the following generic classes for describing matrices and vectors of arbitrary dimensions and of arbitrary type:
-- [SVector](#svector)
-- [SMatrix](#smatrix)
+This package contains the two following generic classes for describing matrices and vectors of arbitrary dimensions and of arbitrary type:
 
 #### SVector
 
 The template class [ROOT::Math::SVector](https://root.cern/doc/master/classROOT_1_1Math_1_1SVector.html){:target="_blank"} represents n-dimensional vectors for objects of arbitrary type. The class has two template parameters that define their properties at compile time:
 1. Type of the contained elements (for example `float` or `double`).
 2. Size of the vector.
-
-**Creating a vector**
 
 Use one of the following constructors to create a vector:
 
@@ -1686,15 +1646,36 @@ Use one of the following constructors to create a vector:
 - Constructor from an iterator copying the data referred by the iterator. It is possible to specify the begin and end of the iterator or the begin and the size. Note that for
 
 _**Example**_
- The namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} is used.
 
- {% highlight C++ %}
-// Create an empty vector of size 3 ( v[0]=v[1]=v[2]=0).
-   SVector<double,3> v;
-   double d[3] = {1,2,3};
-// Create a vector from a C array.
-   SVector<double,3> v(d,3);
-  {% endhighlight %}
+The namespace [ROOT::Math](https://root.cern/doc/master/namespaceROOT_1_1Math.html){:target="_blank"} is used.
+
+{% highlight C++ %}
+// create an empty vector of size 3 ( v[0]=v[1]=v[2]=0).
+SVector<double,3> v;
+double d[3] = {1,2,3};
+// create a vector from a C array.
+SVector<double,3> v(d,3);
+
+SVector<double,3> v;
+v[0] = 1;                 // set the first element
+v(1) = 2;                 // set the second element
+*(v.begin()+3) = 3;       // set the third element
+
+// set vector elements from a std::vector<double>::iterator
+std::vector<double> w(3);
+v.SetElements(w.begin(), w.end()); // v now contains three zeros
+
+// place a sub-vector in a vector.
+SVector<double,N>  v;
+SVector<double,M>  w;
+int ioff = 2; // offset
+// M <= N otherwise a compilation error is obtained later.
+// place a vector of size M starting from element ioff, v[ioff+i]=w[i]
+v.Place_at(w, ioff);
+// return a sub-vector of size M starting from ioff
+// v[ioff]: w[i]=v[ioff+i]
+w = v.Sub<SVector<double>, M>(ioff);
+{% endhighlight %}
 
 #### SMatrix
 
@@ -1703,8 +1684,8 @@ The template class [ROOT::Math::SMatrix](https://root.cern/doc/master/classROOT_
 - number of rows
 - number of columns
 - representation type
-
-**Creating a matrix**
+- [ROOT::Math::MatRepStd](https://root.cern/doc/master/classROOT_1_1Math_1_1MatRepStd.html){:target="_blank"} for a general nrows x ncols matrix. This class is itself a template on the contained type T, the number of rows and the number of columns. Its data member is an array T[nrows*ncols] containing the matrix data. The data are stored in the row-major C convention.
+- [ROOT::Math::MatRepSym](https://root.cern/doc/master/classROOT_1_1Math_1_1MatRepSym.html){:target="_blank"} for a symmetric matrix of size NxN. This class is a template on the contained type and on the symmetric matrix size N. It has as data member an array of type T of size N*(N+1)/2, containing the lower diagonal block of the matrix. The order follows the lower diagonal block, still in a row-major convention.
 
 Use one of the following constructors to create a matrix:
 - Default constructor for a zero matrix (all elements equal to zero).
@@ -1714,27 +1695,27 @@ Use one of the following constructors to create a matrix:
 - Constructor from a generic STL-like iterator copying the data referred by the iterator, following its order. It is both possible, to specify the begin and end of the iterator or the begin and the size. In case of a symmetric matrix, it is required only the triangular block and the user can specify whether giving a block representing the lower (default case) or the upper diagonal part.
 
 _**Example**_
- Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix, the representation has the default value [ROOT::Math::MatRepStd](https://root.cern/doc/master/classROOT_1_1Math_1_1MatRepStd.html){:target="_blank"}. For a general square matrix, the number of columns can be omitted.
+Typedef’s are used in this example to avoid the full C++ names for the matrix classes. For a general matrix, the representation has the default value [ROOT::Math::MatRepStd](https://root.cern/doc/master/classROOT_1_1Math_1_1MatRepStd.html){:target="_blank"}. For a general square matrix, the number of columns can be omitted.
 
- {% highlight C++ %}
+{% highlight C++ %}
 // Typedef definitions used in the following declarations:
-   typedef ROOT::Math::SMatrix<double,3> SMatrix33;
-   typedef ROOT::Math::SMatrix<double,2> SMatrix22;
-   typedef ROOT::Math::SMatrix<double,3,3,
-   ROOT::Math::MatRepSym<double,3>> SMatrixSym3;
-   typedef ROOT::Math::SVector>double,2> SVector2;
-   typedef ROOT::Math::SVector>double,3> SVector3;
-   typedef ROOT::Math::SVector>double,6> SVector6;
-   SMatrix33 m0; // create a zero 3x3 matrix
+typedef ROOT::Math::SMatrix<double,3> SMatrix33;
+typedef ROOT::Math::SMatrix<double,2> SMatrix22;
+typedef ROOT::Math::SMatrix<double,3,3,
+ROOT::Math::MatRepSym<double,3>> SMatrixSym3;
+typedef ROOT::Math::SVector>double,2> SVector2;
+typedef ROOT::Math::SVector>double,3> SVector3;
+typedef ROOT::Math::SVector>double,6> SVector6;
+SMatrix33 m0; // create a zero 3x3 matrix
 
 // Create a 3x3 identity matrix.
-   SMatrix33 i = ROOT::Math::SMatrixIdentity();
-   double a[9] = {1,2,3,4,5,6,7,8,9}; // input matrix data
+SMatrix33 i = ROOT::Math::SMatrixIdentity();
+double a[9] = {1,2,3,4,5,6,7,8,9}; // input matrix data
 
 // Create a matrix using the a[] data.
 // This results in the 3x3 matrix:
-    SMatrix33 m(a,9);
-  {% endhighlight %}
+SMatrix33 m(a,9);
+{% endhighlight %}
 
 
 _**Example**_
@@ -1742,14 +1723,22 @@ _**Example**_
 A symmetric matrix is filled from a `std::vector`.
 
 {% highlight C++ %}
-   std::vector<double> v(6);
-   for (int i = 0; i<6; ++i) v[i] = double(i+1);
+std::vector<double> v(6);
+for (int i = 0; i<6; ++i) v[i] = double(i+1);
 
 // This creates the symmetric matrix:
-   SMatrixSym3 s(v.begin(),v.end())
+SMatrixSym3 s(v.begin(),v.end())
 
 // Create a general matrix from a symmetric matrix (the opposite does not compile)
-   SMatrix33 m2 = s;
+SMatrix33 m2 = s;
+{% endhighlight %}
+
+`SMatrix` and `SVector` objects can be printed using the Print method or the << operator:
+
+{% highlight C++ %}
+// m is a SMatrix or a SVector object
+m.Print(std::cout);
+std::cout << m << std::endl;
 {% endhighlight %}
 
 ## Minimization libraries and classes
@@ -1772,7 +1761,7 @@ The Minuit minimization package was originally written in Fortran by Fred James 
 
 The [Minuit2](https://root.cern/doc/master/group__Minuit.html){:target="_blank"} library is a new object-oriented implementation, written in C++, of the popular MINUIT minimization package. These new version provides basically all the functionality present in the old Fortran version, with almost equivalent numerical accuracy and computational performances.
 
-Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm (see → [FUMILI minimization package](#fumili-minimization-package)), which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
+Furthermore, it contains new functionality, like the possibility to set single side parameter limits or the FUMILI algorithm (see [FUMILI minimization package](#fumili-minimization-package)), which is an optimized method for least square and log likelihood minimizations. The package has been originally developed by M. Winkler and F. James.
 
 > **Topical manuals**
 >
@@ -1785,7 +1774,7 @@ FUMILI is used to minimize Chi-square function or to search maximum of likelihoo
 
 FUMILI is based on ideas, proposed by I.N. Silin. It was converted from FORTRAN to C by Sergey Yaschenko s.yaschenko@fz-juelich.de.
 
-For detailed information on the FUMILI minimization package, see → [TFumili class reference](https://root.cern/doc/master/classTFumili.html){:target="_blank"}.
+For detailed information on the FUMILI minimization package, see [TFumili class reference](https://root.cern/doc/master/classTFumili.html){:target="_blank"}.
 
 ### Numerical minimization
 
@@ -1812,10 +1801,10 @@ In this example a function is defined to minimize as a lambda function. The func
 {% highlight C++ %}
 ROOT::Math::Functor1D func( [](double x){ return 1 + -4*x + 1*x*x; } );
 
-   ROOT::Math::BrentMinimizer1D bm;
-   bm.SetFunction(func, -10,10);
-   bm.Minimize(10,0,0);
-   cout << "Minimum: f(" << bm.XMinimum() << ") = " <<bm.FValMinimum() << endl;
+ROOT::Math::BrentMinimizer1D bm;
+bm.SetFunction(func, -10,10);
+bm.Minimize(10,0,0);
+std::cout << "Minimum: f(" << bm.XMinimum() << ") = " << bm.FValMinimum() << std::endl;
 {% endhighlight %}
 
 Note that when setting the function to minimize, you must provide the interval range to find the minimum. In the `Minimize call, the maximum number of function calls, the relative and absolute tolerance must be provided.
@@ -1831,10 +1820,10 @@ _**Example**_
 
 {% highlight C++ %}
 // This creates a class with the default BRENT algorithm.
-   ROOT::Math::GSLMinimizer1D minBrent;
+ROOT::Math::GSLMinimizer1D minBrent;
 
 // This creates a class with the GOLDENSECTION algorithm
-   ROOT::Math::GSLMinimizer1D minGold(ROOT::Math::Minim1D::kGOLDENSECTION);
+ROOT::Math::GSLMinimizer1D minGold(ROOT::Math::Minim1D::kGOLDENSECTION);
 {% endhighlight %}
 
 **Using the TF1 class**
@@ -1847,66 +1836,42 @@ The algorithms for a multi-dimensional minimization are implemented in the `ROOT
 
 ## ROOT statistics classes
 
-ROOT provides statistics classes for:
-
-- [Computing limits and confidence levels](#classes-for-computing-limits-and-confidence-levels)
-- [Fitting](#specialized-classes-for-fitting)
-- [Multi-variate analysis](#multi-variate-analysis-classes)
+ROOT provides statistics classes for computing limits and confidence levels, fitting and multi-variate analysis.
 
 ### Classes for computing limits and confidence levels
 
-[TFeldmanCousins](https://root.cern/doc/master/classTFeldmanCousins.html){:target="_blank"}: Calculates the confidence levels of the upper or lower limit for a Poisson process using the Feldman-Cousins method (as described in PRD V57 #7, p3873-3889). No treatment is provided in this method for the uncertainties in the signal or the background.
-
-[TRolke](https://root.cern/doc/master/classTRolke.html){:target="_blank"}: Computes the confidence intervals for the rate of a Poisson process in the presence of background and efficiency, using the profile likelihood technique for treating the uncertainties in the efficiency and background estimate. The signal is always assumed to be Poisson; background may be Poisson, Gaussian, or user-supplied. efficiency may be Binomial, Gaussian, or user-supplied. See publication at Nucl. Instrum. Meth. A551:493-503,2005.
-
-[TLimit](https://root.cern/doc/master/classTLimit.html){:target="_blank"}: Computes 95% of the confidence level limits using the likelihood ratio semi-Bayesian method (method; see e.g.,  T. Junk, NIM A434, p. 435-443, 1999). It takes signal background and data histograms wrapped in a {% include ref class="TLimitDataSource" %} as input, and runs a set of Monte Carlo experiments in order to compute the limits. If needed, inputs are fluctuated according to systematic.
+- [TFeldmanCousins](https://root.cern/doc/master/classTFeldmanCousins.html){:target="_blank"}: calculates the confidence levels of the upper or lower limit for a Poisson process using the Feldman-Cousins method (as described in PRD V57 #7, p3873-3889). No treatment is provided in this method for the uncertainties in the signal or the background.
+- [TRolke](https://root.cern/doc/master/classTRolke.html){:target="_blank"}: computes the confidence intervals for the rate of a Poisson process in the presence of background and efficiency, using the profile likelihood technique for treating the uncertainties in the efficiency and background estimate. The signal is always assumed to be Poisson; background may be Poisson, Gaussian, or user-supplied. efficiency may be Binomial, Gaussian, or user-supplied. See publication at Nucl. Instrum. Meth. A551:493-503,2005.
+- [TLimit](https://root.cern/doc/master/classTLimit.html){:target="_blank"}: computes 95% of the confidence level limits using the likelihood ratio semi-Bayesian method (method; see e.g.,  T. Junk, NIM A434, p. 435-443, 1999). It takes signal background and data histograms wrapped in a {% include ref class="TLimitDataSource" %} as input, and runs a set of Monte Carlo experiments in order to compute the limits. If needed, inputs are fluctuated according to systematic.
 
 ### Specialized classes for fitting
 
-[TFractionFitter](https://root.cern/doc/master/classTFractionFitter.html){:target="_blank"}: Fits Monte Carlo fractions to data histogram (à la HMCMLL, R. Barlow and C. Beeston, Comp. Phys. Comm. 77 (1993) 219-228). It accounts for the both data and the statistical Monte Carlo uncertainties through a likelihood fit using Poisson statistics. However, the template (Monte Carlo) predictions are also varied within statistics, leading to additional contributions to the overall likelihood. This leads to many more fitting parameters (one per bin per template), but minimization with respect to these additional parameters is performed analytically rather than introducing them as formal fitting parameters. Some special care needs to be taken in the case of bins with zero content.
-
-[TMultiDimFit](https://root.cern/doc/master/classTMultiDimFit.html){:target="_blank"}: Implements a multi-dimensional function parametrization for multi-dimensional data by fitting them to multi-dimensional data using polynomial or Chebyshev or Legendre polynomial.
-
-[TSpectrum](https://root.cern/doc/master/classTSpectrum.html){:target="_blank"}: Contains advanced spectra processing functions for 1- and 2-dimensional background estimation, smoothing, deconvolution, peak search and fitting, and orthogonal transformations.
-
-`RooFit`: Toolkit for fitting and data analysis modeling,  see → [RooFit]({{ '/manual/roofit' | relative_url }}).
-
-[TSPlot](https://root.cern/doc/master/classTSPlot.html){:target="_blank"}: Allows separation of the signal from the background via an extended maximum likelihood fit. Provides a tool to access the quality and validity of the fit producing distributions for the control variables. (see M. Pivk and F.R. Le Diberder, Nucl. Inst. Meth.A 555, 356-369, 2005).
+- [TFractionFitter](https://root.cern/doc/master/classTFractionFitter.html){:target="_blank"}: fits Monte Carlo fractions to data histogram (à la HMCMLL, R. Barlow and C. Beeston, Comp. Phys. Comm. 77 (1993) 219-228). It accounts for the both data and the statistical Monte Carlo uncertainties through a likelihood fit using Poisson statistics. However, the template (Monte Carlo) predictions are also varied within statistics, leading to additional contributions to the overall likelihood. This leads to many more fitting parameters (one per bin per template), but minimization with respect to these additional parameters is performed analytically rather than introducing them as formal fitting parameters. Some special care needs to be taken in the case of bins with zero content.
+- [TMultiDimFit](https://root.cern/doc/master/classTMultiDimFit.html){:target="_blank"}: implements a multi-dimensional function parametrization for multi-dimensional data by fitting them to multi-dimensional data using polynomial or Chebyshev or Legendre polynomial.
+- [RooFit]({{ '/manual/roofit' | relative_url }}): toolkit for fitting and data analysis modeling.
 
 ### Multi-variate analysis classes
 
-[TMultiLayerPerceptron](https://root.cern/doc/master/classTMultiLayerPerceptron.html){:target="_blank"}: Is a neural network class.
-
-[TPrincipal](https://root.cern/doc/master/classTPrincipal.html){:target="_blank"}: Provides the Principal Component Analysis.
-
-[TRobustEstimator](https://root.cern/doc/master/classTRobustEstimator.html){:target="_blank"}: Method for a minimum covariance determinant estimator (MCD).
-
-`TMVA`: Package for multi-variate data analysis, see →[TMVA]({{ '/manual/tmva' | relative_url }}).
-
+- [TMultiLayerPerceptron](https://root.cern/doc/master/classTMultiLayerPerceptron.html){:target="_blank"}: neural network class.
+- [TPrincipal](https://root.cern/doc/master/classTPrincipal.html){:target="_blank"}: provides the Principal Component Analysis.
+- [TRobustEstimator](https://root.cern/doc/master/classTRobustEstimator.html){:target="_blank"}: method for a minimum covariance determinant estimator (MCD).
+- [TMVA]({{ '/manual/tmva' | relative_url }}): package for multi-variate data analysis.
 
 ## UNU.RAN
 
-[UNU.RAN](https://statmath.wu-wien.ac.at/unuran){:target="_blank"} (**U**niversal **N**on **U**niform **RA**ndom **N**umber generator for generating non-uniform pseudo-random numbers) contains universal (also called automatic or black-box) algorithms that can generate random numbers from large classes of continuous (in one or multi-dimensions), discrete distributions, empirical distributions (auch as histograms), and also from practically all standard distributions.
+[UNU.RAN](https://statmath.wu.ac.at/unuran/){:target="_blank"} (**U**niversal **N**on **U**niform **RA**ndom **N**umber generator for generating non-uniform pseudo-random numbers) contains universal (also called automatic or black-box) algorithms that can generate random numbers from large classes of distributions:
+
+- continuous (in one or multi-dimensions)
+- discrete distributions
+- empirical distributions (such as histograms)
 
 UNU.RAN is an ANSI C library licensed under GPL.
 
 The {% include ref class="TUnuran" %} class is used to interface the UNURAN package.
 
-> **Tutorials**
->
-> {% include tutorials name="Unuran" url="unuran" %}
->
+{% include tutorials name="Unuran" url="unuran" %}
 
-**Working with UNU.RAN**
-
-- [Initializing TUnuran with string API](#initializing-tunuran)
-- [Using TUnuranContDist for a one-dimensional distribution](#using-tunurancontdist)
-- [Using TUnuranMultiContDist for a multi-dimensional distribution](#using-tunuranmulticontdist)
-- [Using TUnuranDiscrDist for a discrete one-dimensional distribution](#using-tunurandiscrdist)
-- [Using TUnuranEmpDist for an empirical distribution](#using-tunuranempdist)
-
-<p><a name="initializing-tunuran"></a></p>
-**Initializing TUnuran with string API**
+### Initializing TUnuran with string API
 
 You can initialize UNU.RAN with the string API via [TUnuran::Init()](https://root.cern/doc/master/classTUnuran.html#a793f7255df1e6d595fdfb6bc2f3a8256){:target="_blank"}, passing the distribution type and the method.
 
@@ -1915,38 +1880,33 @@ _**Example**_
 {% highlight C++ %}
 TUnuran unr;
 // Initialize UNU.RAN to generate normal random numbers using an "arou" method.
-   unr.Init("normal()","method=arou");
-   ...
+unr.Init("normal()","method=arou");
+...
 
 // Sample distributions N times (generate N random numbers).
-   for (int i = 0; i<N; ++i)
-   double x = unr.Sample();
+for (int i = 0; i<N; ++i) double x = unr.Sample();
 {% endhighlight %}
 
-<p><a name="using-tunurancontdist"></a></p>
-**Using TUnuranContDist for a one-dimensional distribution**
 
-Use {% include ref class="TUnuranContDist" %} for creating a continuous 1-D distribution object (for example from a {% include ref class="TF1" %} object providing the PDF (probability density function)).<br>
-You can provide additional information via [TUnuranContDist::SetDomain(min,max)](https://root.cern/doc/master/classTUnuranContDist.html#aa82c3fc018dadafc55ef3a45239ce191){:target="_blank"} like the `domain()` for generating numbers in a restricted region.
+### Using TUnuranContDist for a one-dimensional distribution
+
+Use {% include ref class="TUnuranContDist" %} for creating a continuous 1-D distribution object (for example from a {% include ref class="TF1" %} object providing the probability density function). You can provide additional information via [TUnuranContDist::SetDomain(min,max)](https://root.cern/doc/master/classTUnuranContDist.html#aa82c3fc018dadafc55ef3a45239ce191){:target="_blank"} like the `domain()` for generating numbers in a restricted region.
 
 _**Example**_
 
 {% highlight C++ %}
 // 1D case: create a distribution from two TF1 object, pointers pdfFunc.
-   TUnuranContDist dist(pdfFunc);
+TUnuranContDist dist(pdfFunc);
 
 // Initialize UNU.RAN, passing the distribution and a string.
 // Define the method.
-   unr.Init(dist, "method=hinv");
+unr.Init(dist, "method=hinv");
 
 // Sample distribution N times (generate N random numbers).
-   for (int i = 0; i < N; ++i)
-   double x = unr.Sample();
-
+for (int i = 0; i < N; ++i) double x = unr.Sample();
 {% endhighlight %}
 
-<p><a name="using-tunuranmulticontdist"></a></p>
-**Using TUnuranMultiContDist for a multi-dimensional distribution**
+### Using TUnuranMultiContDist for a multi-dimensional distribution
 
 Use {% include ref class="TUnuranMultiContDist" %} to create a multi-dimensional distribution that can be created from a multi-dimensional PDF (probability density function).
 
@@ -1954,20 +1914,17 @@ _**Example**_
 
 {% highlight C++ %}
 // Multi- dimensional case from TF1 (TF2 or TF3) objects.
-   TUnuranMultiContDist dist(pdfFuncMulti);
+TUnuranMultiContDist dist(pdfFuncMulti);
 
 // The recommended method for a multi-dimensional function is "hitro".
-   unr.Init(dist,"method=hitro");
+unr.Init(dist,"method=hitro");
 
 // Sample distribution N times (generate N random numbers).
-   double x[NDIM];
-   for (int i = 0; i<N; ++i)
-   unr.SampleMulti(x);
-
+double x[NDIM];
+for (int i = 0; i<N; ++i) unr.SampleMulti(x);
 {% endhighlight %}
 
-<p><a name="using-tunurandiscrdist"></a></p>
-**Using TUnuranDiscrDist for a discrete one-dimensional distribution**
+### Using TUnuranDiscrDist for a discrete one-dimensional distribution
 
 Use {% include ref class="TUnuranDiscrDist" %} to create a discrete one-dimensional distribution that can be initialized from a {% include ref class="TF1" %} object or from a vector of probabilities.
 
@@ -1975,46 +1932,41 @@ _**Example**_
 
 {% highlight C++ %}
 // Create a distribution from a vector of probabilities.
-   double pv[NSize] = {0.1,0.2,...};
-   TUnuranDiscrDist dist(pv,pv+NSize);
+double pv[NSize] = {0.1,0.2,...};
+TUnuranDiscrDist dist(pv,pv+NSize);
 
 // The recommended method for a discrete distribution is "dgt".
-   unr.Init(dist, "method=dgt");
+unr.Init(dist, "method=dgt");
 
 // Sample N times (generate N random numbers).
-   for (int i = 0; i < N; ++i)
-   int k = unr.SampleDiscr();
+for (int i = 0; i < N; ++i) int k = unr.SampleDiscr();
 {% endhighlight %}
 
-<p><a name="using-tunuranempdist"></a></p>
-**Using TUnuranEmpDist for an empirical distribution**
+### Using TUnuranEmpDist for an empirical distribution
 
-Use {% include ref class="TUnuranEmpDist" %} for creating an empirical distribution that can be initialized from a {% include ref class="TH1" %} object (using the bins or from its buffer for un-binned data) or from a vector of data.
+Use {% include ref class="TUnuranEmpDist" %} for creating an empirical distribution that can be initialized from a {% include ref class="TH1" %} object (using the bins or from its buffer for unbinned data) or from a vector of data.
 
 _**Example**_
 
 {% highlight C++ %}
 // Create a distribution from a set of data.
 // vdata is an std::vector containing the data.
-   TUnuranEmpDist dist(vdata.begin(),vdata.end());
-   unr.Init(dist);
+TUnuranEmpDist dist(vdata.begin(),vdata.end());
+unr.Init(dist);
 
 // Sample N times (generate N random numbers).
-   for (int i = 0; i<N; ++i)
-   double x = unr.Sample();
+for (int i = 0; i<N; ++i) double x = unr.Sample();
 {% endhighlight %}
 
 ## FOAM
 
-FOAM is a simplified version of a multi-dimensional general purpose Monte Carlo event generator (integrator) with hyper-cubical "foam of cells".
+[FOAM](https://cds.cern.ch/record/541515/files/0203033.pdf){:target="_blank"} is a simplified version of a multi-dimensional general purpose Monte Carlo event generator (integrator) with hyper-cubical "foam of cells".
 
-> **Tutorials and more information**
->
-> {% include tutorials name="FOAM" url="FOAM" %}
->
-> ["Foam: A General Purpose Cellular Monte Carlo Event Generatory" by S. Jadach](https://cds.cern.ch/record/541515/files/0203033.pdf){:target="_blank"}
 
-Certain features of full version of FOAM are omitted. mFOAM is intended as an easy to use tool for Monte Carlo simulation and integration in few dimensions. It relies on the ROOT package, borrowing persistency of classes from ROOT. You can use mFOAM from the ROOT shell.
+{% include tutorials name="FOAM" url="FOAM" %}
+
+
+Certain features of full version of FOAM are omitted. mFOAM is intended as an easy to use tool for Monte Carlo simulation and integration in few dimensions. It relies on the ROOT package, borrowing persistency of classes from ROOT. You can use mFOAM from the ROOT interpreter.
 
 _**Examples**_
 
@@ -2026,23 +1978,13 @@ _**Examples**_
 
 ## FFTW
 
-For computing fast Fourier transforms (FFT), ROOT uses the FFTW library (see  →  http://www.fftw.org). To use it, the fftw3 module must be enabled.
+For computing fast Fourier transforms (FFT), ROOT uses the [FFTW](https://fftw.org/) library. To use it, the fftw3 CMake module must be enabled.
 
 With [SetDefaultFFT()](https://root.cern/doc/master/classTVirtualFFT.html#a1c7c6134bf0a5ea525c7f670f59f82a0){:target="_blank"} you can change the default library.
 
 {% include ref class="TVirtualFFT" %}  is the interface class for FFT. With [TH1::FFT()](https://root.cern/doc/master/classTH1.html#a69321e3106e4a26db3fef4d126d835ff){:target="_blank"} you can perform a FFT for a histogram.
 
-> **Tutorial**
->
-> {% include tutorials name="fft" url="fft" %}
->
-
-## MLP
-The multilayer perceptron (MLP) is a library with the neural network class {% include ref class="TMultiLayerPerceptron" %} from the `MLPfit` package.
-
-_**Example**_
-
-An example of using the {% include ref class="TMultiLayerPerceptron" %} can be found in the {% include tutorial name="mlpHiggs" %} macro in the `$ROOTSYS/tutorials/legacy/mlp` directory.
+{% include tutorials name="fft" url="fft" %}
 
 ## Quadp
 
@@ -2050,4 +1992,4 @@ Quadp is  an optimization library with linear and quadratic programming methods.
 
 _**Example**_
 
-An example of using Quadp can be found in the {% include tutorial name="portfolio" %} macro in the `$ROOTSYS/tutorials/quadp/` directory.
+An example of using Quadp can be found in the {% include tutorial name="portfolio" %} tutorial.
