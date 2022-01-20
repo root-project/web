@@ -251,28 +251,28 @@ hprof  hpx  hpxpy  ntuple
 {% endhighlight %}
 
 
-## ROOT Object Browser
+## ROOT object browser
 
 With a {% include ref class="TBrowser" %} you can browse all ROOT objects within a ROOT file.
-You can create it with `rootbrowse` or for instance as part of a ROOT session:
+You can open it with the `rootbrowse` command or as part of a ROOT session, instantiating a `TBrowser` object:
 
 {% highlight bash %}
    $ root file.root
    root[0] TBrowser b
 {% endhighlight %}
 
-The ROOT Object Browser is displayed.
+The ROOT object browser is displayed.
 
    {% include figure_image
    img="root_object_browser.png"
-   caption="ROOT Object Browser."
+   caption="ROOT object browser."
    %}
 
 Double-click the ROOT file to inspect its content.
 
    {% include figure_image
    img="root_object_browser_content.png"
-   caption="ROOT Object Browser displaying the content of a ROOT file."
+   caption="ROOT object browser displaying the content of a ROOT file."
    %}
 
 Double-clicking graphical objects displays them in a canvas tab.
