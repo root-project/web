@@ -79,7 +79,7 @@ manual:
       - title: Geometry
         url: manual/geometry
       - title: I/O of custom classes
-        url: manual/root_io
+        url: manual/io_custom_classes
       - title: Signal/Slot communication
         url: manual/signal_slot
       - title: JSROOT
