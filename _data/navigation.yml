@@ -78,7 +78,7 @@ manual:
         url: manual/physics_vectors
       - title: Geometry
         url: manual/geometry
-      - title: Storing data with ROOT
+      - title: I/O of custom classes
         url: manual/root_io
       - title: Signal/Slot communication
         url: manual/signal_slot
