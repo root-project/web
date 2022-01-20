@@ -48,8 +48,8 @@ The second part of the ROOT Manual contains:
   - **[Geometry]({{ '/manual/geometry' | relative_url }})** <br>
     A geometry represents a Hierarchie of constructive solid geometry primitive elements (shapes or solid).
 
-  - **[ROOT I/O]({{ '/manual/io_custom_classes' | relative_url }})** <br>
-    A dictionary (“reflection database”) contains information about the types and functions that are available in a library.
+  - **[I/O of custom classes]({{ '/manual/io_custom_classes' | relative_url }})** <br>
+    Reading and writing arbitrary C++ classes.
 
   - **[Signal/Slot communication]({{ '/manual/signal_slot' | relative_url }})** <br>
     ROOT supports its own version of the signal/slot communication mechanism.
