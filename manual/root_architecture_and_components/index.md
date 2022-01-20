@@ -92,7 +92,7 @@ _**Examples**_
 
 - [TObject::Dump](https://root.cern/doc/master/classTObject.html#a2a79fcd627629cb2b19d54bf6a6935db): Same as `TObject::Inspect`, except that the output is on stdout. An object dump can be written to a file.
 
-- ROOT Object Browser ({% include ref class="TBrowser" %}): Allows you to browse collections, such as the list of classes, geometries, files and {% include ref class="TTree" %}. → See also [ROOT Object Browser]({{ '/manual/root_files/#root-object-browser' | relative_url }}).
+- ROOT object browser ({% include ref class="TBrowser" %}): Allows you to browse collections, such as the list of classes, geometries, files and {% include ref class="TTree" %}. → See also [ROOT object browser]({{ '/manual/root_files/#root-object-browser' | relative_url }}).
 
 
 ## Global ROOT variables

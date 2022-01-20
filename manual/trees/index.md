@@ -483,7 +483,7 @@ With the Tree Viewer you can examine a tree in a GUI.
 
 > **Note**
 >
-> You can also use the ROOT Object Browser to examine a tree that is saved in a ROOT file. See → [ROOT Object Browser]({{ '/manual/root_files#root-object-browser' | relative_url }}).
+> You can also use the ROOT object browser to examine a tree that is saved in a ROOT file. See → [ROOT object browser]({{ '/manual/root_files#root-object-browser' | relative_url }}).
 
 _**Example**_
 
