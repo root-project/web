@@ -140,7 +140,8 @@ tree.Branch("branch0", var, "leafname/F");
 
 You can create a branch holding one of ROOT's classes, or your own type for which you have provided a dictionary (see → [I/O]({{ '/manual/io_custom_classes' | relative_url }})).
 
-_Splitting_
+
+<a id="splitting"></a>_Splitting_
 
 If told, TTree will create (sub-) branches for each member of a class and its base classes.
 If such a member is a class itself, that member's type can also be split.
