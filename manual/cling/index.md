@@ -22,7 +22,7 @@ Start up a ROOT session by typing `root` at the system prompt.
 {% highlight C++ %}
 $ root
    -------------------------------------------------------------------------
-  | Welcome to ROOT 6.10/01                             http://root.cern.ch |
+  | Welcome to ROOT 6.10/01                                http://root.cern |
   |                                            (c) 1995-2017, The ROOT Team |
   | Built for macosx64                                                      |
   | From heads/v6-10-00-patches@v6-10-00-25-g9f78c3a, Jul 03 2017, 11:39:44 |
