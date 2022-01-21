@@ -86,6 +86,8 @@ manual:
         url: manual/jsroot
       - title: How to embed ROOT in a GUI
         url: manual/embed_root_in_gui
+      - title: The C++ interpreter Cling
+        url: manual/cling
   - title: Further information
     children:
       - title: "Tutorials"
