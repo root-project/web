@@ -204,6 +204,44 @@ For more information on ROOT files, see [ROOT files]({{ '/manual/root_files' | r
 For more information on TTree, see [Trees]({{ '/manual/trees' | relative_url }}).
 
 
+## The `ClassDef` macro
+
+The `ClassDef` macro can be inserted in a class definition to add some reflection capabilities to it. It also attaches a "version number" to the class that can be used for [schema evolution]({{ '/manual/advanced_io' | relative_url }}).
+
+Having a `ClassDef` is mandatory for classes inheriting from `TObject`, otherwise it is an optional ROOT I/O performance optimization.
+
+The syntax is:
+
+{% highlight C++ %}
+ClassDef(<ClassName>, <VersionNumber>)
+{% endhighlight %}
+
+The version number identifies this particular version of the class. A version number equal to 0 tells ROOT to not store the class in a root file, but only its base classes (if any).
+
+`ClassDef` injects some methods in the class definition useful for runtime reflection.
+Here are the most important ones:
+
+- `static const char *Class_Name()`: returns the class name as a C-string
+- `static TClass *Class()`: returns a [`TClass`](https://root.cern/doc/master/classTClass.html) instance that can be used to query information about the class
+- `MAYBE_VIRTUAL TClass *IsA() const MAYBE_OVERRIDE`: same as `Class()`, but it returns the `TClass` corresponding to the concrete type in case of a pointer to a base
+- `MAYBE_VIRTUAL void ShowMembers(TMemberInspector &insp) const MAYBE_OVERRIDE`: useful to query the list of members of a class at runtime (see [`TMemberInspector`](https://root.cern/doc/master/classTMemberInspector.html))
+
+Use `ClassDefOverride` to include the `override` keyword in the appropriate injected methods.<br>
+Use `ClassDefNV` to not mark any of the injected methods as `virtual`.
+
+_**Example**_
+
+{% highlight C++ %}
+class MyClass {
+   // A good initial version number is 3
+   ClassDef("MyClass", 3)
+};
+{% endhighlight %}
+
+> _**Note**_
+> The class version number _must_ be increased whenever the class layout changes, i.e. when
+the class data members are modified.
+
 ## Restrictions on types ROOT I/O can handle
 
 For ROOT to be able to store a class, it must have a public constructor.
