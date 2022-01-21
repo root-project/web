@@ -1,5 +1,5 @@
 ---
-title: TMVA
+title: Machine learning with ROOT
 layout: single
 sidebar:
   nav: "manual"
@@ -7,10 +7,15 @@ toc: true
 toc_sticky: true
 ---
 
-The Toolkit for Multivariate Data Analysis with ROOT (TMVA) provides a machine learning
-environment for the processing and evaluation of multivariate classification, both binary
-and multi-class, and regression techniques targeting applications in high-energy physics.
-The package includes:
+Machine learning plays an important role in a variety of HEP usecases. ROOT
+offers native support for supervised learning techniques, such as multivariate
+classification (both binary and multi class) and regression. It also allows easy
+interoperability with commonly used machine learning libraries.
+
+## TMVA
+
+TMVA is the ROOT library that provides the interfaces and implementations of the
+above mentioned machine learning techniques. The package includes:
 
 - Neural networks
 - Deep networks
@@ -26,21 +31,69 @@ The package includes:
 
 {% include tutorials name="TMVA" url="tmva" %}
 
-> **Topical manuals**
+### Ingesting a dataset for training in TMVA
+
+A ROOT dataset can be easily ingested for training using a {% include ref
+class="DataLoader" namespace="TMVA" %}. A common usecase in HEP is to have the
+information of physics events split in signal and background, as in the example
+below:
+
+_**Example**_
+
+{% highlight C++ %}
+void load_data(){
+   // open file and retrieve trees
+   auto inputfile = TFile::Open("http://root.cern/files/tmva_class_example.root");
+   auto signaltree = inputfile->Get<TTree>("TreeS");
+   auto backgroundtree = inputfile->Get<TTree>("TreeB");
+
+   // load trees into TMVA
+   TMVA::DataLoader loader{"mydataloader"};
+   loader.AddSignalTree(signaltree);
+   loader.AddBackgroundTree(backgroundtree);
+}
+{% endhighlight %}
+
+The loaded data can then be passed to the {% include ref class="Factory"
+namespace="TMVA" %} class for training, as shown in
+[this tutorial](https://root.cern/doc/master/TMVAClassification_8C.html){:target="_blank"}.
+
+## Interoperability with machine learning libraries
+
+Machine learning is a widely researched topic. Many libraries implement
+classification and regression techniques, with a broader scope or in more
+specific fields. These libraries also vary in the programming languages offered
+by their APIs, although it is true that often Python defines a common ground.
+Notable examples include [Keras](https://keras.io/){:target="_blank"},
+[PyTorch](https://pytorch.org/){:target="_blank"} and
+[scikit-learn](https://scikit-learn.org){:target="_blank"}.
+
+### Training in TMVA using a model created with an external library
+
+Each library has its own API to create a model. With TMVA, you can create the
+model that should be trained with an external library you may be already familiar
+with (e.g. Keras). Then, you can save the model to a file and load it in a TMVA
+application to train it and test it. In particular, the entire application could
+be written as a single Python script thanks to
+[PyROOT]({{ '/manual/python' | relative_url }}). A good example of this can be
+found in [this tutorial](https://root.cern/doc/master/ClassificationKeras_8py.html){:target="_blank"}.
+
+### ROOT data to Numpy arrays for further processing
+
+Most of the external machine learning libraries will accept (or expect) a
+collection of Numpy arrays as the input dataset, either for training or testing.
+It is possible to seamlessly export data stored in ROOT files (e.g. as a {%
+include ref class="TTree" %}) into Numpy arrays through {% include ref
+class="RDataFrame" namespace="ROOT" %}. The data can then be used, for example,
+to train an [XGBoost](https://xgboost.ai/){:target="_blank"} model. A recipe can
+be found [here](https://root.cern/doc/master/tmva101__Training_8py.html){:target="_blank"}.
+
+> **Where to go from here**
 >
-> For TMVA, topical manuals are available at [Topical Manuals - TMVA]({{ '/topical/#tmva' | relative_url }}).<br>
-> They contain in-depth information about TMVA.
+> An in-depth explanation of the algorithms and interfaces in the TMVA library 
+> can be found in its [topical manual]({{ '/topical/#tmva' | relative_url }}).
 
-> **TMVA in the ROOT forum**
->
-> Discuss TMVA in the [ROOT forum](https://root-forum.cern.ch/c/tmva/22){:target="_blank"}.
-
-## Using TMVA
-
-The ROOT tutorials for TMVA, available in `$ROOTSYS/tutorials/tmva`, provide example jobs for the training phase and the application of the training results in a classification or regression analysis using the TMVA Reader.
-
-
-### Training examples
+## Training examples
 
 - {% include tutorial name="TMVAClassification" %} provides examples for the training and testing of TMVA classifiers.
 
@@ -48,7 +101,7 @@ The ROOT tutorials for TMVA, available in `$ROOTSYS/tutorials/tmva`, provide exa
 
 - {% include tutorial name="TMVARegression" %} provides examples for the training and testing of TMVA classifiers.
 
-### Application examples
+## Application examples
 
 - {% include tutorial name="TMVAClassificationApplication" %} provides an example on how to use the trained classifiers within an analysis module.
 
