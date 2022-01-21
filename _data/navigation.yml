@@ -78,6 +78,8 @@ manual:
         url: manual/physics_vectors
       - title: Geometry
         url: manual/geometry
+      - title: I/O Concepts
+        url: manual/io
       - title: I/O of custom classes
         url: manual/io_custom_classes
       - title: Signal/Slot communication
