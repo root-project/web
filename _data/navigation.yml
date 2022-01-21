@@ -68,7 +68,7 @@ manual:
         url: manual/trees
       - title: RooFit
         url: manual/roofit
-      - title: TMVA
+      - title: "Machine learning with ROOT"
         url: manual/tmva
       - title: "Python interface: PyROOT"
         url: manual/python
