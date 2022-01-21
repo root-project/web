@@ -48,6 +48,9 @@ The second part of the ROOT Manual contains:
   - **[Geometry]({{ '/manual/geometry' | relative_url }})** <br>
     A geometry represents a Hierarchie of constructive solid geometry primitive elements (shapes or solid).
 
+  - **[I/O concepts]({{ '/manual/io' | relative_url }})** <br>
+    An overview of several important concepts and features related to reading and writing data.
+
   - **[I/O of custom classes]({{ '/manual/io_custom_classes' | relative_url }})** <br>
     Reading and writing arbitrary C++ classes.
 
