@@ -18,6 +18,7 @@ generate the complete set of documentation.
 
 {% highlight sh %}
 $ cd <root_sources>/documentation/doxygen
+$ source <root_sources>/bin/thisroot.sh
 $ make
 {% endhighlight %}
 
