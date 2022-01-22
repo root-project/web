@@ -70,15 +70,15 @@ void WriteHist(TH1* hist) {
 
 An object read into memory is independent from the object on disk.
 Changes of the in-memory object are not propagated to disk.
-Instead, a new version of the object needs to be saved, for instance passing `"overwrite"` as option to [ `TDirectory::WriteObject()`](https://root.cern.ch/doc/master/classTDirectory.html#a67b115afae97366254dfd44a7f46f66f), see the documentation of [`TDirectoryFile::WriteTObject()`](https://root.cern/doc/master/classTDirectoryFile.html#ae1bb32dcbb69de7f06a3b5de9d22e852).
+Instead, a new version of the object needs to be saved, for instance passing `"overwrite"` as option to [ `TDirectory::WriteObject()`](https://root.cern/doc/master/classTDirectory.html#a67b115afae97366254dfd44a7f46f66f), see the documentation of [`TDirectoryFile::WriteTObject()`](https://root.cern/doc/master/classTDirectoryFile.html#ae1bb32dcbb69de7f06a3b5de9d22e852).
 
-Removing an object from a `TDirectory` using [`TDirectory::Delete()`](https://root.cern.ch/doc/master/classTDirectory.html#a09e51150c19fd5a0aa9278a4158202ca) will generally not free the corresponding disk space.
-Instead, the storage occupied by the deleted object will be made available (as a [`TFree`](https://root.cern.ch/doc/master/classTFree.html) for subsequent objects to be written to this file.
+Removing an object from a `TDirectory` using [`TDirectory::Delete()`](https://root.cern/doc/master/classTDirectory.html#a09e51150c19fd5a0aa9278a4158202ca) will generally not free the corresponding disk space.
+Instead, the storage occupied by the deleted object will be made available (as a [`TFree`](https://root.cern/doc/master/classTFree.html) for subsequent objects to be written to this file.
 Use → [`hadd`]({{ '/manual/root_files/#merging-root-files-with-hadd' | relative_url }}) to defragment a ROOT file by rewriting it.
 
 ### Iterating over a directory's content
 
-`TFile` gives access to the list of keys through its base class, [TDirectoryFile::GetListOfKeys()](https://root.cern.ch/doc/master/classTDirectoryFile.html#a8599cbd2c3fd8004e78f1f40be6771d2).
+`TFile` gives access to the list of keys through its base class, [TDirectoryFile::GetListOfKeys()](https://root.cern/doc/master/classTDirectoryFile.html#a8599cbd2c3fd8004e78f1f40be6771d2).
 
 _**Example**_
 
@@ -297,7 +297,7 @@ If your analysis is one of the rare cases which spends most of the time in CPU w
 Most analyses on the other hand will benefit from one of the fast compression algorithms that also reduce the amount of data to be read from disk or transferred over the network.
 The compression factor, that is, the saving of storage space, varies with the type of data. A buffer containing `N` identical values is compressed better than a set of values with higher entropy.
 
-ROOT offers [several options](https://root.cern.ch/doc/master/structROOT_1_1RCompressionSetting_1_1EAlgorithm.html#ad5ed4ef81888f5406ae0f018ff45fd96), such as LZMA with very high compression ratio, or LZ4 with very high decompression throughput, or ZSTD with a good compromise in performance.
+ROOT offers [several options](https://root.cern/doc/master/structROOT_1_1RCompressionSetting_1_1EAlgorithm.html#ad5ed4ef81888f5406ae0f018ff45fd96), such as LZMA with very high compression ratio, or LZ4 with very high decompression throughput, or ZSTD with a good compromise in performance.
 The default compression for [`RNTuple`](https://root.cern/doc/master/structROOT_1_1Experimental_1_1RNTuple.html) is determined based on the data; for everything else it's zlib with compression level 1.
 
 Algorithm and compression level can be selected using [`TFile::SetCompressionAlgorithm()`](https://root.cern/doc/master/classTFile.html#a8ed2b3d3f644d739766e16cb70a49393) and [`TFile::SetCompressionLevel()`](https://root.cern/doc/master/classTFile.html#a39aa992efad9e7b4232124c4069d7861), respectively, at the time data is written. A compression level of 0 turns off compression completely. Both algorithm and level can be set an the same time using [`TFile::SetCompressionSettings()`](https://root.cern/doc/master/classTFile.html#a6eea127e5d730e6fe516840aaf995cb9).
@@ -332,9 +332,9 @@ These class description objects are versioned, as different generations of the s
 
 As long as a ROOT file that contains it has been opened, a class's `TStreamerInfo` for a given version can be retrieved through [`TClass::GetStreamerInfo(int version)`](https://root.cern/doc/master/classTClass.html#ab2d5b55c397ae9ccd165cf4050135e13).
 It contains entries for each data member and base class, in the form of `TStreamerElement` objects.
-They can be accessed through [`TStreamerInfo::GetStreamerElement()`](https://root.cern.ch/doc/master/classTStreamerInfo.html#a0d509be926937dcf20210ed1b9b8cb50).
+They can be accessed through [`TStreamerInfo::GetStreamerElement()`](https://root.cern/doc/master/classTStreamerInfo.html#a0d509be926937dcf20210ed1b9b8cb50).
 
-[`TFile::MakeProject()`](https://root.cern.ch/doc/master/classTFile.html#a5fdd58dba517dd7b70b43332295e529d) can use the information from a `TStreamerInfo` to construct a C++ header which contains the class data members and their types, but no member functions.
+[`TFile::MakeProject()`](https://root.cern/doc/master/classTFile.html#a5fdd58dba517dd7b70b43332295e529d) can use the information from a `TStreamerInfo` to construct a C++ header which contains the class data members and their types, but no member functions.
 This allows to create libraries of compiled objects simply from a data file, even if the original library is not available.
 
 ### Abstraction of I/O operations on collections: collection proxy
