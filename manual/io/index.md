@@ -154,7 +154,7 @@ Streamers are C++ functions that are usually created as part of a class's dictio
 
 To prevent a data member from being written to the file, insert a `!` as the first character in a single-line comment (`//`) following the declaration of the member.
 
-To accommodate doxygen-style documentation, this annotation can also be written as `///!`. 
+To accommodate doxygen-style documentation, this annotation can also be written as `///<!`. 
 
 _**Example**_
 
@@ -162,7 +162,7 @@ _**Example**_
 class Event {
    TDirectory *fTransient; //! This won't be stored
    Float_t fPt;            // This will be stored
-   int fMemberWithDoc;     ///! The member documentation
+   int fMemberWithDoc;     ///<! The member documentation
 };
 {% endhighlight %}
 
