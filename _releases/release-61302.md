@@ -13,7 +13,7 @@ sidebar:
 
 ## Highlights
 
-- LZ4 is now the default compression format, accelerating reading by factors; see e.g. [this presentation](https://indico.fnal.gov/event/16264/contribution/8/material/slides/0.pdf)
+- LZ4 is now the default compression format, accelerating reading by factors; see e.g. [this presentation](https://indico.fnal.gov/event/16264/contributions/36466/attachments/22610/28037/Zstd__LZ4.pdf)
 - New graphics style “ATLAS" - thanks, ATLAS!
 - Auto-coloring for TF1 (drawing options PFC, PLC and PMC)
 - New color palette “cividis” compatible with color vision deficiency
