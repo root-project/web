@@ -271,22 +271,6 @@ Sergey Linev:
   email       : "S.Linev@gsi.de"
 
 
-Stefan Wunsch:
-  name        : "Stefan Wunsch"
-  bio         : "Stefan studied physics at the Karlsruhe Institute of Technology with focus
-                 on data analysis, machine learning and software development. Previous
-                 projects have been with the Belle and CMS experiments about the integration
-                 of modern machine learning in the reconstruction and data analysis toolchain.
-                 After his first stay at CERN in 2016 as summer student with the CMS
-                 experiment, he returned to CERN in 2018 as PhD working in the ROOT team on
-                 machine learning and analysis facilities."
-  short_bio   : "Stefan is working in the ROOT team on machine learning and analysis facilities."
-  tag         : "team"
-  avatar      : "/assets/images/SW.jpeg"
-  affiliation : "CERN"
-  email       : "stefan.wunsch@cern.ch"
-
-
 Vassil Vassilev:
   name        : "Vassil Vassilev"
   bio         : "Vassil graduated from the University of Plovdiv Paisii Hilendarski,
@@ -420,9 +404,6 @@ Guilherme Amadio:
                  responsibilities in ROOT include working on the build system, performance
                  analysis and optimization, and support for SIMD vectorization."
   tag         : "previous"
-  avatar      : "/assets/images/GA.jpg"
-  affiliation : "CERN"
-  email       : ""
 
 
 Jan Iwaszkiewicz:
@@ -516,9 +497,6 @@ Stephan Hageboeck:
                  support and improve RooFit. He further looks into math and statistics, as well as into
                  questions regarding performance and programming model."
   tag         : "previous"
-  avatar      : "/assets/images/SH.jpg"
-  affiliation : "CERN"
-  email       : "Stephan.Hageboeck@cern.ch"
 
 
 Susan Panacek:
@@ -550,6 +528,19 @@ Valeri Onuchin:
                  but mostly in the GUI and graphics area. He did develop the signal/slot
                  functionality and the GUI builder. He also developed the Carrot ROOT
                  enabled web server."
+  tag         : "previous"
+
+
+Stefan Wunsch:
+  name        : "Stefan Wunsch"
+  bio         : "Stefan studied physics at the Karlsruhe Institute of Technology with focus
+                 on data analysis, machine learning and software development. Previous
+                 projects have been with the Belle and CMS experiments about the integration
+                 of modern machine learning in the reconstruction and data analysis toolchain.
+                 After his first stay at CERN in 2016 as summer student with the CMS
+                 experiment, he returned to CERN in 2018 as PhD working in the ROOT team on
+                 machine learning and analysis facilities."
+  short_bio   : "Stefan is working in the ROOT team on machine learning and analysis facilities."
   tag         : "previous"
 
 
@@ -586,4 +577,3 @@ Petr Stepanov:
   avatar      : "/assets/images/avatar-petr-stepanov.jpg"
   email       : "stepanovps@gmail.com"
   affiliation : "Catholic University of America"
-  
