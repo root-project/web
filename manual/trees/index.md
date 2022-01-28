@@ -98,7 +98,7 @@ auto tree = std::make_unique<TTree>("tree", "The Tree Title");
 {% endhighlight %}
 
 {% highlight Python %}
-myFile = ROOT.TFile( ROOT.TFile.Open("file.root", "RECREATE") )
+myFile = ROOT.TFile.Open("file.root", "RECREATE")
 tree = ROOT.TTree("tree", "The Tree Title")
 {% endhighlight %}
 
@@ -216,7 +216,7 @@ tree->Write();
 from array import array
 import ROOT
 
-myFile = ROOT.TFile( ROOT.TFile.Open("file.root", "RECREATE") )
+myFile = ROOT.TFile.Open("file.root", "RECREATE")
 tree = ROOT.TTree("tree", "The Tree Title")
 
 # Provide a one-element array, so ROOT can read data from this memory.
@@ -224,7 +224,7 @@ var = array('f', [ 0 ])
 tree.Branch("branch0", var, "leafname/F");
 
 for iEntry in range(1000):
-   var = 0.3 * iEntry
+   var[0] = 0.3 * iEntry
    # Fill the current value of `var` into `branch0`
    tree.Fill()
 
