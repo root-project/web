@@ -238,7 +238,7 @@ If the comment is absent or does not contain `min`, `max`, `nbits`, the member i
 
 The `min` and `max` values themselves, if present, are saved with 32-bits precision. `min` and `max` can be either a floating point number or one of the following trivial mathematical expressions: `pi`, `2*pi`, `pi/2`, `pi/4`.
 
-If `nbits` is present, the member is saved with nbits bits precision. For more details, see [this tutorial](https://root.cern/doc/master/double32_8C.html).
+If `nbits` is present, the member is saved with `nbits`-bits precision. For more details, see [this tutorial](https://root.cern/doc/master/double32_8C.html).
 
 ### Custom streamers
 
