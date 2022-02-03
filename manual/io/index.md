@@ -135,7 +135,7 @@ In the end, the buffer contains all the simple data members of all the classes t
 At runtime, ROOT needs to determine which streamer function to call for a given object.
 Using the `ClassDef` macro inside the class definition makes this operation more performant:
 without `ClassDef`, the object's dynamic type has to be looked up to determine which streamer to invoke.
-See also → [The `ClassDef` Macro](#the-classdef-macro)).
+See also → [The `ClassDef` Macro]({{ '/manual/io_custom_classes/#the-classdef-macro' | relative_url }})).
 
 Data members of certain types need special treatment, for instance pointers and references.
 This will be explained below.
