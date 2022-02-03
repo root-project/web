@@ -390,7 +390,7 @@ class MyClass : MyBaseClass {
 class MyClass : MyOtherClass { // base class changed
    double b; // type changed
    int a; // order changed
-   char d; // new data member added
+   char chr; // new data member added
    // removed data member MyOtherClass *c
    std::unique_ptr<Pointee> d; // raw to unique pointer
    std::vector<Thing> e; // change in collection kind
