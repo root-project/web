@@ -206,7 +206,7 @@ TYPE *MEMBER; //[LENGTH]
 `LENGTH` must be the name of a data member that is defined _before_ the array member, or in a base class.
 
 > **Note**
-> Pointer to simple types (e.g. `float*`, `int*`) are assumed to be variable-size arrays. 
+> Pointers to simple types (e.g. `float*`, `int*`) are assumed to be variable-size arrays. 
 
 ### Preventing splitting
 
