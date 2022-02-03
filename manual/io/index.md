@@ -169,7 +169,7 @@ class Event {
 ### Marking pointers as never null
 
 For a small performance benefit, pointer data members can be marked as always be pointing to valid memory (never being null):
-this is done with the annotation `//->` or `///->`.
+this is done with the annotation `//->` or `///<->`.
 
 A pointer marked as such must not point back to the current object, not even indirectly.
 
