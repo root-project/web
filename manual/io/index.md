@@ -106,7 +106,7 @@ for (TKey *key: ROOT::RangeStaticCast<TKey*>(*f.GetListOfKeys())) {
 }
 {% endhighlight %}
 
-The output is of such an `iterate.C` ROOT macro could be:
+The output of such an `iterate.C` ROOT macro could be:
 
 ```
 root[] .x iterate.C
