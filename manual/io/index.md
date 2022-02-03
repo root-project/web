@@ -180,7 +180,7 @@ TClonesArray *fTracks;
 TH1F *fH; //->
 {% endhighlight %}
 
-Pointers`fH` is marked as never null: ROOT will be able to perform additional optimizations.
+The pointer data member `fH` is marked as never null: ROOT will be able to perform additional optimizations.
 `fTracks`, instead, will always be checked for `nullptr`.
 
 ### Array data members of fixed and variable size
