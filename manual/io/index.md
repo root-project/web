@@ -54,7 +54,7 @@ root [3] hist->Draw() // for `hist` from `my.root`
 ### Adding and removing objects from a ROOT file
 
 When writing an object to a ROOT file, ROOT creates a directory "entry" ({% include ref class="TKey" %}) representing the object, which mainly consists of a name and the object's persistent data.
-You can think of a `TFile` as a collection of `TKeys`, possibly inside nested `TDirectory`-s.
+You can think of a `TFile` as a collection of `TKeys`, possibly inside nested `TDirectories`.
 
 The name of the `TKey` can be either explicitly stated when writing, or it can be determined from `TObject::GetName()` for classes inheriting from `TObject`.
 
@@ -64,7 +64,7 @@ _**Example**_
 void WriteHist(TH1* hist) {
   gDirectory->WriteObject(hist, "explicitName");
   // OR:
-  hist->Write(); // key named `TH1::GetName()` inside `gDirectory`
+  hist->Write(); // will add key `hist->GetName()` inside `gDirectory`
 }
 {% endhighlight %}
 
@@ -148,7 +148,7 @@ See also → [Restrictions on types ROOT I/O can handle]({{ '/manual/io_custom_c
 
 Streamers are C++ functions that are usually created as part of a class's dictionary, see → [I/O of custom classes]({{ 'manual/io_custom_classes/#generating-dictionaries' | relative_url }}).
 
-`rootcling` parses the class definition and determines how to stream the object in an optimal way, and which streamers need to be invoked for base classes and members.
+[`rootcling`]({{ '/manual/io_custom_classes/#using-rootcling' | relative_url }}) parses the class definition and determines how to stream the object in an optimal way, and which streamers need to be invoked for base classes and members.
 
 ### Excluding data members from I/O
 
@@ -206,7 +206,7 @@ TYPE *MEMBER; //[LENGTH]
 `LENGTH` must be the name of a data member that is defined _before_ the array member, or in a base class.
 
 > **Note**
-> Pointers to simple types (e.g. `float*`, `int*`) are assumed to be variable-size arrays. 
+> Pointers to simple types (e.g. `float*`, `int*`) are assumed to be variable-size arrays.
 
 ### Preventing splitting
 
@@ -276,7 +276,7 @@ void Event::Streamer(TBuffer &buf)
 
 Types do not have to inherit from {% include ref class="TObject" %} for ROOT to be able to read/write them: the presence of a dictionary is sufficient.
 
-Classes that do inherit from `TObject` can exclude TObject's data members from their I/O invoking `MyClass->Class::IgnoreObjectStreamer()`.
+Classes that do inherit from `TObject` can exclude TObject's data members from their I/O invoking `myObject->Class()->IgnoreTObjectStreamer()`.
 
 This is useful in case you do not use `TObject`'s `fBits` and `fUniqueID` data members and saving some space in the output file is important.
 
