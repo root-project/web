@@ -446,7 +446,7 @@ The C++ code snippet has access to the following pre-defined variables:
 
 #### Specifying I/O customization rules through the C++ API
 
-The schema evolution C++ API consists of the follwing classes:
+The schema evolution C++ API consists of the following classes:
 
 - [TSchemaRuleSet](https://root.cern/doc/master/classROOT_1_1Detail_1_1TSchemaRuleSet.html){:target="_blank"}: objects of this type manage the sets of rules and ensure their consistency. There can be no conflicting rules in the rule sets. The rule sets are owned by the {% include ref class="TClass" %} objects corresponding to the target classes defined in the rules and can be accessed using [`TClass::GetSchemaRules()`](https://root.cern/doc/master/classTClass.html#a8ffa89c0d9362cd77d957fed12ea9fca){:target="_blank"} and [`TClass::AdoptSchemaRules()`](https://root.cern/doc/master/classTClass.html#a484ed223d16ffbf0d35cee567e6f6225){:target="_blank"}.
 - [TSchemaRule](https://root.cern/doc/master/classROOT_1_1TSchemaRule.html){:target="_blank"}: it represent the rules and their fields have exactly the same meaning as the ones of rules specified in the dictionaries (see [above](#specifying-io-customization-rules-in-a-linkdef-file)).
