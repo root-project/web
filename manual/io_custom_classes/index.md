@@ -240,7 +240,7 @@ class MyClass {
 
 > _**Note**_
 > The class version number _must_ be increased whenever the class layout changes, i.e. when
-the class data members are modified.
+> the class data members are modified.
 
 ## Restrictions on types ROOT I/O can handle
 
