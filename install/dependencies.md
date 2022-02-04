@@ -67,6 +67,7 @@ libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 *   **avahi-compat-libdns_sd-devel:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **glew-devel:** for /usr/include/GL/glew.h and for /usr/lib[64]/libGLEW.so
 *   **graphviz-devel:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
+*   **qt5-qtwebengine-devel:** required for **qt5web** component
 
 As a one-liner for Fedora 33:
 ```bash
@@ -74,7 +75,8 @@ sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
 avahi-compat-libdns_sd-devel openldap-devel python3-numpy \
-libxml2-devel gsl-devel readline-devel R-devel R-Rcpp-devel R-RInside-devel
+libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
+R-devel R-Rcpp-devel R-RInside-devel
 ```
 
 CentOS 8 requires adding the EPEL repository. Additionally, some packages in CentOS 8 [were moved to the PowerTools repository](https://root-forum.cern.ch/t/root-dependencies-can-not-install-in-centos8/42010). Therefore it needs to be enabled as well:
@@ -85,7 +87,8 @@ sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
 avahi-compat-libdns_sd-devel openldap-devel python3-numpy \
-libxml2-devel gsl-devel readline-devel R-devel R-Rcpp-devel R-RInside-devel
+libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
+R-devel R-Rcpp-devel R-RInside-devel
 ```
 
 For Scientific Linux 7 and CentOS 7:
@@ -146,6 +149,7 @@ libxft-dev libxext-dev python libssl-dev
 *   **libkrb5-dev:** for /usr/include/krb5.h and for /usr/lib/libkrb5.so
 *   **libgsl0-dev:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
 *   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
+*   **qtwebengine5-dev:** required for **qt5web** component
 
 As a one-liner:
 
@@ -155,7 +159,7 @@ xlibmesa-glu-dev libglew1.5-dev libftgl-dev \
 libmysqlclient-dev libfftw3-dev libcfitsio-dev \
 graphviz-dev libavahi-compat-libdnssd-dev \
 libldap2-dev python-dev libxml2-dev libkrb5-dev \
-libgsl0-dev
+libgsl0-dev qtwebengine5-dev
 ```
 
 On Debian, substitute `libmysqlclient-dev` with `libmariadb-dev`.
