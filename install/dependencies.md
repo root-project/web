@@ -194,10 +194,6 @@ krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 *   **[Microsoft Visual C++](https://visualstudio.microsoft.com/)** (ROOT6 requires at least Visual Studio 2019 version 16.1). The **Community** version is free, fully-featured for students, open-source contributors, and individuals.
 *   **[Python](https://python.org)** (ROOT6 requires version >= 2.7)
 
-> **Note**
->
-> ROOT 6 on Windows is currently in beta, and has several known issues as well as missing features.
-> We are currently working on making ROOT on Windows production-grade.
 
 ### ROOT 5 (deprecated)
 
