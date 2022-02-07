@@ -276,7 +276,7 @@ void Event::Streamer(TBuffer &buf)
 
 Types do not have to inherit from {% include ref class="TObject" %} for ROOT to be able to read/write them: the presence of a dictionary is sufficient.
 
-Classes that do inherit from `TObject` can exclude TObject's data members from their I/O invoking `myObject->Class()->IgnoreTObjectStreamer()`.
+Classes that do inherit from `TObject` can exclude TObject's data members from their I/O invoking `myObject->Class()->IgnoreTObjectStreamer()` before any object of type `MyClass` is written to a ROOT file.
 
 This is useful in case you do not use `TObject`'s `fBits` and `fUniqueID` data members and saving some space in the output file is important.
 
