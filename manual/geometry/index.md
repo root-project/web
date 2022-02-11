@@ -30,7 +30,7 @@ geometry checking and other utilities.
 
 The basic bricks for building-up a geometrical model are called "volumes". These represent
 the un-positioned pieces of the geometry. The relationship between the pieces, this is
-volumes, is not defined by neighbors, but by "containment". Volumes are put one inside
+volumes, is not defined by neighbours, but by "containment". Volumes are put one inside
 another to create an in-depth hierarchy.
 
 There are the following general rules for building a valid geometry:

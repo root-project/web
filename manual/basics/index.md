@@ -30,7 +30,7 @@ The first part of the ROOT Manual contains:
     You can integrate ROOT into a CMake based project.
 
   - **[ROOT collections]({{ '/manual/root_collections' | relative_url }})** <br>
-    For historical reasons, some of ROOT’s interfaces use ROOT’s own collection types such as TList and TObjArray.
+    For historical reasons, some of ROOT’s interfaces use ROOT’s own collection types such as {% include ref class="TList" %} and {% include ref class="TObjArray" %}.
 
   - **[Object ownership]({{ '/manual/object_ownership' | relative_url }})** <br>
     An object ownership means the permission to delete it.

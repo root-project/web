@@ -509,7 +509,7 @@ An object pointer as a data member presents a challenge for the streaming softwa
 
 **Streaming C++ pointers**
 
-When ROOT encounters a pointer data member, it calls the object's `Streamer` and labels it with a unique object identifier, which is unique to an I/O operation. If there is another pointer to the object in the same I/O operation, the first object is referenced, that is, it is not savedagain. When reading the file, the object is rebuilt and
+When ROOT encounters a pointer data member, it calls the object's `Streamer` and labels it with a unique object identifier, which is unique to an I/O operation. If there is another pointer to the object in the same I/O operation, the first object is referenced, that is, it is not saved again. When reading the file, the object is rebuilt and
 the references are recalculated.
 
 In this way, the network of pointers and their objects is rebuilt and can be used as it was used before persistence.
@@ -571,7 +571,7 @@ The following table shows four runs of the demo script, which generates 15 histo
 </table>
 
 
-## Schema evoluttion
+## Schema evolution
 
 Schema evolution is a problem that occurs with long-lived data. When a schema changes, existing persistent data may no longer be accessible unless the system provides a mechanism for accessing data created with earlier versions of the schema. At
 the lifetime of the collaboration, class definitions (that is, the schema) are likely to change frequently. Not only may the class itself change, but any parent classes or data member classes may also change. This makes te support for schema evolution necessary.
@@ -803,7 +803,7 @@ The variables in the rules have the following meaning:
 
 **The C++ API**
 
-The schema evolution C++ API consists of the follwing classes:
+The schema evolution C++ API consists of the following classes:
 -  [TSchemaRuleSet](https://root.cern/doc/master/classROOT_1_1Detail_1_1TSchemaRuleSet.html){:target="_blank"}
 -  [TSchemaRule"](https://root.cern/doc/master/classROOT_1_1TSchemaRule.html){:target="_blank"}
 

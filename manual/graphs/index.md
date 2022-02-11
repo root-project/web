@@ -283,7 +283,7 @@ the graphs collected in a {% include ref class="TMultiGraph" %} are
 ### Zooming a TMultiGraph
 
 {% include ref class="TMultiGraph" %} limits are automatically computed from the ranges of
-the graphs buiding it. It is also possible to [impose axis limits](https://root.cern/doc/master/classTMultiGraph.html#MG03).
+the graphs building it. It is also possible to [impose axis limits](https://root.cern/doc/master/classTMultiGraph.html#MG03).
 
 ### Fitting a TMultiGraph
 
