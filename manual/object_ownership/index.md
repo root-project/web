@@ -64,7 +64,7 @@ void ownership() {
 }
 {% endhighlight %}
 
-In the following example, the canvas shows the histogram beause the {% include ref class="TH1F" %} histogram is created before the {% include ref class="TFile" %} is opened; the `TFile` does not own it.
+In the following example, the canvas shows the histogram because the {% include ref class="TH1F" %} histogram is created before the {% include ref class="TFile" %} is opened; the `TFile` does not own it.
 
 {% highlight C++ %}
 void ownership() {
@@ -92,7 +92,7 @@ void ownership() {
 
 The global [`gROOT`](https://root.cern/doc/master/classTROOT.html) object has several utility collections, for instance of all functions `gROOT->GetListOfFunction()`, canvases `gROOT->GetListOfCanvases()`, and files `gROOT->GetListOfFiles()`.
 Objects that are members of these collections and are still "alive" during program tear-down are deleted by `gROOT`.
-If they get deleted eariler, they de-register themselves from `TROOT`'s lists ("recursive remove") to prevent double deletions.
+If they get deleted earlier, they de-register themselves from `TROOT`'s lists ("recursive remove") to prevent double deletions.
 
 ## Ownership by creating objects
 

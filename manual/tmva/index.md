@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-Machine learning plays an important role in a variety of HEP usecases. ROOT
+Machine learning plays an important role in a variety of HEP use-cases. ROOT
 offers native support for supervised learning techniques, such as multivariate
 classification (both binary and multi class) and regression. It also allows easy
 interoperability with commonly used machine learning libraries.
@@ -23,7 +23,7 @@ above mentioned machine learning techniques. The package includes:
 - Boosted/Bagged decision trees
 - Function discriminant analysis (FDA)
 - Multidimensional probability density estimation (PDE - range-search approach)
-- Multidimensional k-nearest neighbor classifier
+- Multidimensional k-nearest neighbour classifier
 - Predictive learning via rule ensembles (RuleFit)
 - Projective likelihood estimation (PDE approach)
 - Rectangular cut optimisation
@@ -34,7 +34,7 @@ above mentioned machine learning techniques. The package includes:
 ### Ingesting a dataset for training in TMVA
 
 A ROOT dataset can be easily ingested for training using a {% include ref
-class="DataLoader" namespace="TMVA" %}. A common usecase in HEP is to have the
+class="DataLoader" namespace="TMVA" %}. A common use-case in HEP is to have the
 information of physics events split in signal and background, as in the example
 below:
 
@@ -90,7 +90,7 @@ be found [here](https://root.cern/doc/master/tmva101__Training_8py.html){:target
 
 > **Where to go from here**
 >
-> An in-depth explanation of the algorithms and interfaces in the TMVA library 
+> An in-depth explanation of the algorithms and interfaces in the TMVA library
 > can be found in its [topical manual]({{ '/topical/#tmva' | relative_url }}).
 
 ## Training examples

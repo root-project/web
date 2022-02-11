@@ -89,7 +89,7 @@ For all histogram types: `nbins`, `xlow`, `xup`:
 
   - A *global bin* number is defined  to access the histogram bin information independently of the dimension.
 
-Assuming a 3-D histogram `h` with `binx`, `biny`, `binz`, the function [TH1::GetBin(binx,bny,binz)](https://root.cern/doc/master/classTH1.html#a641262682144d465d7e2bc6101a04bf6) returns a global
+Assuming a 3-D histogram `h` with `binx`, `biny`, `binz`, the function [TH1::GetBin(binx,biny,binz)](https://root.cern/doc/master/classTH1.html#a641262682144d465d7e2bc6101a04bf6) returns a global
 bin number and given a global bin number `bin`, the function [TH1::GetBinXYZ(bin,binx,biny,binz)](https://root.cern/doc/master/classTH1.html#a55e591270aaad37c3059a62f83566e4e) computes the
 corresponding `binx`, `biny` and `binz`.
 
@@ -465,7 +465,7 @@ of an histogram with a theoretical distribution, i.e. a function (1 sample tests
 For tests of histogram-histogram compatibility:
 - [TH1::Chi2Test](https://root.cern/doc/master/classTH1.html#a6c281eebc0c0a848e7a0d620425090a5) for performing a chi2 test between two histograms. This tests works also for multi-dimensional
   histograms, but it requires to have non-empty bins.
-- [TH1::KolmogorovTest](https://root.cern/doc/master/classTH1.html#aeadcf087afe6ba203bcde124cfabbee4) to perform the Kolgomorov-Smironov test on the two histograms. Note that this tests works only for
+- [TH1::KolmogorovTest](https://root.cern/doc/master/classTH1.html#aeadcf087afe6ba203bcde124cfabbee4) to perform the Kolmogorov-Smirnov test on the two histograms. Note that this tests works only for
   1-D histograms and it has a
   bias for binned data and should be used if the bin size is sufficiently small.
 - [TH1::AndersonDarlig](https://root.cern/doc/master/classTH1.html#aa395c473ea9693359a74189fbe0ee0db) working only for 1-D histograms.

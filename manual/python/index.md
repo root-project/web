@@ -157,7 +157,7 @@ You can access these functions with the `ROOT.NameOfFunction` pattern as follows
 
 ## Creating C++ templated class instances
 
-You can create an instance of any C++ templated class. Remember to instatiate the template first, before creating the object instance.
+You can create an instance of any C++ templated class. Remember to instantiate the template first, before creating the object instance.
 
 Below you can find an example of instantiating an `std::vector`.
 
@@ -199,7 +199,7 @@ def print_arg(x):
 ROOT.call_with_1(print_arg)  # prints 1
 ```
 
-A common usecase is to construct objects of the `TF{1,2,3}` family of classes with Python functions as arguments, which allows to perform operations as plotting and fitting of histograms with such functions.
+A common use-case is to construct objects of the `TF{1,2,3}` family of classes with Python functions as arguments, which allows to perform operations as plotting and fitting of histograms with such functions.
 
 The signature of the Python callable must accept exactly two arrays. The first array contains the `x`, `y`, `z`, and `t` values for the call; the second array contains the values that parameterize the function. For more details, see the {% include ref class="TF1" %} documentation and the examples below.
 
@@ -367,7 +367,7 @@ want to read or write custom C++/C objects in ROOT files, and use them with {% i
 A large analysis framework might further have multiple libraries. In these cases, you generate ROOT dictionaries, and add these to the libraries, which provides ROOT with the necessary information on how to generate Python bindings on the fly.
 This is what the large LHC experiments do to steer their analysis frameworks from Python.
 
-For more information on how to generate ROOT dictionaries, please refer to [this section]({{ 'manual/io_custom_classes/#generating-dictionaries' | relative_url }}) of the manual. 
+For more information on how to generate ROOT dictionaries, please refer to [this section]({{ 'manual/io_custom_classes/#generating-dictionaries' | relative_url }}) of the manual.
 
 Once the library with dictionaries is available, load it with high-performance C++ in one step:
 

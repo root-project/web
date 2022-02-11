@@ -16,7 +16,7 @@ In the past we [described](https://root-forum.cern.ch/t/how-to-embed-a-tcanvas-i
    caption="TCanvas embedded in a Qt application."
 %}
 
-In this case we recommend to embed the new web-based widgets in [Qt](https://www.qt.io/) application using QWebEngine, as decribed in [this page](https://github.com/root-project/root/tree/master/tutorials/webgui/qt5web)
+In this case we recommend to embed the new web-based widgets in [Qt](https://www.qt.io/) application using QWebEngine, as described in [this page](https://github.com/root-project/root/tree/master/tutorials/webgui/qt5web)
 
 {% include figure_image
    img="qt_rcanvas.png"
