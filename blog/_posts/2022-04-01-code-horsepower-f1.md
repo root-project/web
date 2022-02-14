@@ -53,6 +53,19 @@ https://root-forum.cern.ch/t/using-root-gui-in-eclipse/30581
 https://twiki.cern.ch/twiki/bin/view/CMSPublic/BristolEclipseTutorial
 https://petrstepanov.wordpress.com/2015/11/15/compile-cern-root-program-with-roofit-in-eclipse/
 
+### The Power of Clang
+
+Grown over many years and standards, larger software projects have plenty of legacy code that is not as safe as the one someone would write today. Not surprisingly, there are still some bugs here and there, and instabilities that haven't been solved. Some of these bugs and potential style improvements can be detected thanks to the *Clang-analyzer*, which performs code analysis based on some settings.
+
+Qt-Creator bundles perfectly with Clang-Analyzer, see left pane, "Debug" icon, then "Debugger" dropdown menu, "Clang Tidy and Clazy". It parses its output warnings and takes you directly to where the code needs to be changed.
+In addition, it even lets you apply "fixits" by a mouse-click: if Clang knows how to correct the problem, he will change the code automatically for you.
+
+To give an example, analyzing the "core" of ROOT yields several diagnostics, and this can be quite useful for tracing in case you are seeing some memory leak when your application is deploying ROOT libraries:
+
+![clangtidy](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)
+
+If, for example, you would like to modernize your code syntax to the latest C++ standard, you can configure the Clang settings in "Tools", "Analyzer", "Default checks", and enable the modernize option. For example, with a single click, you can change NULL to nullptr across your whole codebase.
+
 ### clang-format
 astylerc, clang-format
 ...
@@ -61,10 +74,6 @@ auto-format alt-F!
 ### git
 git commit Altg-C
 ...
-
-### Clang-analyzer
-auto-fixits
-todo...
 
 ### CTests
 
