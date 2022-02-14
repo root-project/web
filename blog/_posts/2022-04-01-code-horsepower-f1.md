@@ -74,6 +74,8 @@ Whether you like 4 spaces, 2 spaces, 1 tab, braces in the beginning or in the en
 
 For example, let's suppose you want to submit a pull request of one of your functions to ROOT, which has its own formatting guidelines. The easiest is to copy the .clang-format configuration file from the [repository](https://github.com/root-project/root/blob/master/.clang-format) or the [website](https://root.cern/contribute/coding_conventions/#using-clangformat-or-astyle-in-your-preferred-editor) and then go to "Tools", "Options", "Beautifier", "Clang Format", and specify the file. (Or if you are building ROOT itself, specify "File", it will auto-detect the one in the source tree).
 
+You can also define a [keyboard shortcut](https://doc.qt.io/qtcreator/creator-keyboard-shortcuts.html) to format the file, by going to "Tools", "Environment", "Keyboard", search for "format" and assign e.g. CTRL+Alt+F.
+
 Once that is configured, you can enable to auto-format your file when saving, or apply changes manually via CTRL+Alt+F. Here a snippet before and after "CTRL+Alt+F":
 
 ```cpp
