@@ -105,6 +105,8 @@ todo....
 
 todo...
 
+and linev++ https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer
+
 ## Quick recipe Summary
 
 - [Install QtCreator](https://www.qt.io/download-open-source) deactivating all extra options
