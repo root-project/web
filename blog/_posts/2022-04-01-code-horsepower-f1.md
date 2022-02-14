@@ -68,10 +68,21 @@ To give an example, analyzing the "core" of ROOT yields several diagnostics, and
 
 If, for example, you would like to modernize your code syntax to the latest C++ standard, you can configure the Clang settings in "Tools", "Analyzer", "Default checks", and enable the modernize option. For example, with a single click, you can change NULL to nullptr across your whole codebase.
 
-### clang-format
-astylerc, clang-format
-...
-auto-format alt-F! 
+### Formatting your code
+
+Whether you like 4 spaces, 2 spaces, 1 tab, braces in the beginning or in the end... it does not matter what your taste is. What's important is that you do not spend your valuable time on formatting things by hand. QtCreator can be helpful in this regard, too, if you activate the [Beautifier plugin](https://doc.qt.io/qtcreator/creator-beautifier.html) as well as install clang-format.
+
+For example, let's suppose you want to submit a pull request of one of your functions to ROOT, which has its own formatting guidelines. The easiest is to copy the .clang-format configuration file from the [repository](https://github.com/root-project/root/blob/master/.clang-format) or the [website](https://root.cern/contribute/coding_conventions/#using-clangformat-or-astyle-in-your-preferred-editor) and then go to "Tools", "Options", "Beautifier", "Clang Format", and specify the file. (Or if you are building ROOT itself, specify "File", it will auto-detect the one in the source tree).
+
+Once that is configured, you can enable to auto-format your file when saving, or apply changes manually via CTRL+Alt+F. Here a snippet before and after "CTRL+Alt+F":
+
+```cpp
+int main(int argc, char* argv[])
+{
+
+  
+int main(int argc, char *argv[]) {
+```
 
 ### git
 git commit Altg-C
@@ -126,3 +137,6 @@ and linev++ https://marketplace.visualstudio.com/items?itemName=albertopdrf.root
 - Download Std Help Book from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or package manager (sudo apt install cppreference-doc-en-qch)
 - Download [ROOT Help Book](https://root.cern/reference/)
 - Add both ".qch" files via "Tools", "Options", "Help", "Documentation"
+- "Tools", "Options", "Analyzer", "Default checks", configure as needed.
+- Install the [Beautifier plugin](https://doc.qt.io/qtcreator/creator-beautifier.html), potentially download the [ROOT](https://github.com/root-project/root/blob/master/.clang-format) one.
+- "Tools", "Options", "Beautifier", "Clang", "Use predefined style", "File"
