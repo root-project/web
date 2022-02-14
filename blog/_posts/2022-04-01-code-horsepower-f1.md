@@ -20,8 +20,12 @@ IDEs are very powerful tools to detect errors (thanks e.g. to Clang), trace them
 
 ## QtCreator
 
-Note: while optimized for Qt applications, QtCreator is totally generic, it can compile and run any C++ program, CMake project, Makefile, etc. You don't even need to know what Qt means.
+Note: while optimized for Qt applications, QtCreator is totally generic, it can compile and run any C++ program, CMake project, Makefile, etc. You don't even need to know what Qt means. You don't need to use QMake either. Your project will be equally compilable from a terminal with Make / CMake than via QtCreator, which just acts as a non-invasive interface.
 
 ### Installation steps
 
-You can find (usually) outdated versions of QtCreator in your package manager, but I recommend to use the [online installer](https://www.qt.io/download-open-source), which then periodically checks for updates at program start. If you prefer not to open a user account with them, you can use the [offline installer](https://www.qt.io/offline-installers/?hsLang=en).
+You can find (usually) outdated versions of QtCreator in your package manager, but I recommend to use the [online installer](https://www.qt.io/download-open-source), which then periodically checks for updates at program start. If you prefer not to open a user account with them, you can use the [offline installer](https://www.qt.io/offline-installers/?hsLang=en). While installing, I recommend to deactivate all Qt library options, newer CMake versions or Ninja. You will just need QtCreator.
+
+### Open a C++ CMake project
+
+You can open any CMake project you have on your computer by clicking on "File", "Open File or Project", and double-clicking on your "CMakeLists.txt". If you rather use Makefiles, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu.
