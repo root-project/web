@@ -81,6 +81,8 @@ migrate2CMake
 tutorials pollute sources & broken Kernels
 https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator
 
+cross-check with https://github.com/root-project/web/blob/main/blog/_posts/2021-10-30-debuging-root-scripts-in-eclipse.md https://github.com/root-project/web/blob/main/blog/_posts/2021-03-31-root-on-vscode.md https://github.com/root-project/web/blob/main/blog/_posts/2021-03-11-vscode-extension-announcement.md
+
 ## Debugging tools
 
 ### Building ROOT in Debug Mode
