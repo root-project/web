@@ -8,4 +8,12 @@ There is a natural tendency to look at compilation or conceptual errors as unwan
 Yet, despite knowing the forefront impact on your workflow, scientific robustness, many of us physicist are not trained to deal with errors with the proper tools, and we still deploy inefficient and manual ways to hack them "as quickly as possible", hoping (with uncertainty and fear) that they "won't come back". Because we will encounter errors much more frequently than we might think at first place, it makes sense to invest some "initial setup time" to create a robust platform for tackling and fixing these in a systematic way. Rather than reacting with insecurity to these or keeping them in the back of the mind as a passive threat, let's assume they will be an important key player in our development, a learning tool that will appear continuously and is worth optimizing. In the same way that one does no longer use a pen if he wants to send 10000 letters, compared to only 10.
 
 ## IDEs to the rescue
-IDEs are very powerful tools to detect errors (thanks e.g. to Clang), trace them back to the right point in the source code, and even automatically suggest the solution. ROOT scripts, as well as standalone C++ programs relying on ROOT libraries, can be integrated with minimum effort into these. Examples on the steps to follow are explained in older blog posts for the [Visual Studio](https://root.cern/blog/root-on-vscode/) and [Eclipse](https://root.cern/blog/debuging-root-scripts-in-eclipse/) IDEs.
+IDEs are very powerful tools to detect errors (thanks e.g. to Clang), trace them back to the right point in the source code, and even automatically suggest the solution. ROOT scripts, as well as standalone C++ programs relying on ROOT libraries, can be integrated with minimum effort into these. Examples on the steps to follow are explained in older blog posts for the [Visual Studio](https://root.cern/blog/root-on-vscode/) and [Eclipse](https://root.cern/blog/debuging-root-scripts-in-eclipse/) IDEs. In this post, I will focus on a third option, the open-source [QtCreator IDE](https://www.qt.io/download-open-source).
+
+## QtCreator
+
+Note: while optimized for Qt applications, QtCreator is totally generic, it can compile and run any C++ program, CMake project, Makefile, etc. You don't even need to know what Qt means.
+
+### Installation steps
+
+You can find (usually) outdated versions of QtCreator in your package manager, but I recommend to use the [online installer](https://www.qt.io/download-open-source), which then periodically checks for updates at program start. If you prefer not to open a user account with them, you can use the [offline installer](https://www.qt.io/offline-installers/?hsLang=en).
