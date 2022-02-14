@@ -1,3 +1,9 @@
+---
+title: "Coding in ROOT with the horsepower of an F1"
+layout: archive
+author: Fernando Hueso-González
+---
+
 # Coding in ROOT with the horsepower of an F1
 
 If you've ever rubbed your eyes trying to decrypt C++ compilation errors from a terminal, tracing those back to the line in the ROOT script you were just typing in your text editor, then googling "CERN ROOT TTree" to fix the signature of that function you just used incorrectly, or even have barely faced the intimidating logs of valgrind output for memory detection, you should definitely keep reading.
