@@ -34,7 +34,7 @@ Let me load into QtCreator the [simplest CMake example](https://cmake.org/cmake/
 
 ### The Power of F1
 
-Let's assume now that you have forgotten what class "std::cout" has. Luckily, Qt has an in-built (offline) help support system. For a first-time configuration, you will just need to download the Help Book of your library, in this case the std library from [cppreference](https://en.cppreference.com/w/Cppreference:Archives) or via your package manager (sudo apt install cppreference-doc-en-qch). Then, in "Tools", "Options", "Help", "Documentation", you can add the downloaded (or /usr/share/ installed) ".qch" file.
+Let's assume now that you have forgotten what class "std::cout" has. Luckily, Qt has an in-built (offline) help support system. For a first-time configuration, you will just need to download the Help Book of your library, in this case the std library from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or via your package manager (sudo apt install cppreference-doc-en-qch). Then, in "Tools", "Options", "Help", "Documentation", you can add the downloaded (or /usr/share/ installed) ".qch" file.
 
 Once this is set, you can either CTRL+Click on your function to go the source code definition, or press F1, and the HTML documentation will appear on your right side without having to type / search anything online.
 
@@ -42,6 +42,9 @@ Once this is set, you can either CTRL+Click on your function to go the source co
 
 The ROOT framework also has a ".qch" Help Book available [for download](https://root.cern/reference/), thus you'll be able to quickly consult any documentation using the F1 key, rather than searching online, which can be useful in case you are traveling and have no Internet access.
 
+You can not only check the documentation with F1, but fully opening the full HTML reference on the left pane, on the Help icon.
+
+Alternatively, you can also open the Help Books and search it using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html).
 
 ### SectionXXX
 
@@ -51,12 +54,32 @@ https://twiki.cern.ch/twiki/bin/view/CMSPublic/BristolEclipseTutorial
 https://petrstepanov.wordpress.com/2015/11/15/compile-cern-root-program-with-roofit-in-eclipse/
 
 ### clang-format
-
+astylerc, clang-format
 ...
+auto-format alt-F! 
 
 ### git
-
+git commit Altg-C
 ...
+
+### Clang-analyzer
+auto-fixits
+todo...
+
+### CTests
+
+CTests
+
+... and others
+
+### Doxygen warnings finding
+
+screenshot how to quickly find doxyerrors --> WARN_NOPARAMDOC YES?  —   spellchecking!
+
+DOCSET for Apple
+migrate2CMake
+tutorials pollute sources & broken Kernels
+https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator
 
 ## Debugging tools
 
@@ -67,6 +90,10 @@ https://petrstepanov.wordpress.com/2015/11/15/compile-cern-root-program-with-roo
 todo...
 
 ### Valgrind
+
+todo...
+
+### Hellgrind
 
 todo...
 
@@ -81,6 +108,6 @@ todo...
 ## Quick recipe Summary
 
 - [Install QtCreator](https://www.qt.io/download-open-source) deactivating all extra options
-- Download Std Help Book from [cppreference](https://en.cppreference.com/w/Cppreference:Archives) or package manager (sudo apt install cppreference-doc-en-qch)
+- Download Std Help Book from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or package manager (sudo apt install cppreference-doc-en-qch)
 - Download [ROOT Help Book](https://root.cern/reference/)
 - Add both ".qch" files via "Tools", "Options", "Help", "Documentation"
