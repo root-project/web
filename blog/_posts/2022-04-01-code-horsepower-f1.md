@@ -88,9 +88,11 @@ For one of your projects, or even for the ROOT codebase, you might be using git 
 
 ### CTests
 
-CTests
+If you've built ROOT enabling the "testing" CMake flag, or if your project contains CTests, Boost Tests, etc. for ensuring that new changes you apply don't break older functionality, QtCreator has a platform to visually run and check the results of all those tests. No need to scroll in a terminal to find which one failed.
 
-... and others
+Beware: go first to "Tools", "Options", "Tests", and adapt the "Timeout" to allow running all tests at once.
+
+![ctest](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)
 
 ### Doxygen warnings finding
 
@@ -106,6 +108,10 @@ cross-check with https://github.com/root-project/web/blob/main/blog/_posts/2021-
 ## Debugging tools
 
 ### Building ROOT in Debug Mode
+
+enable debug mode
+
+potentially enable testing
 
 ### GDB
 
@@ -138,3 +144,4 @@ and linev++ https://marketplace.visualstudio.com/items?itemName=albertopdrf.root
 - "Tools", "Options", "Analyzer", "Default checks", configure as needed.
 - Install the [Beautifier plugin](https://doc.qt.io/qtcreator/creator-beautifier.html), potentially download the [ROOT](https://github.com/root-project/root/blob/master/.clang-format) one.
 - "Tools", "Options", "Beautifier", "Clang", "Use predefined style", "File"
+- If you enable "testing" flag in CMake, adapt "Timeout" in "Tools", "Options", "Tests".
