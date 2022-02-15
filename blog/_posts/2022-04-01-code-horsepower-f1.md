@@ -18,7 +18,8 @@ There is a natural tendency to look at compilation or conceptual errors as unwan
 Yet, despite knowing the forefront impact on your workflow, scientific robustness, many of us physicist are not trained to deal with errors with the proper tools, and we still deploy inefficient and manual ways to hack them "as quickly as possible", hoping (with uncertainty and fear) that they "won't come back". Because we will encounter errors much more frequently than we might think at first place, it makes sense to invest some "initial setup time" to create a robust platform for tackling and fixing these in a systematic way. Rather than reacting with insecurity to these or keeping them in the back of the mind as a passive or transient threat, let's assume they will be an important key player in our development, a learning tool that will appear continuously and is worth optimizing. In the same way that one does no longer use a pen if one wants to send 10000 letters, compared to only 10.
 
 ## IDEs to the rescue
-IDEs are very powerful tools to detect errors (thanks e.g. to Clang), trace them back to the right point in the source code, and even automatically suggest the solution. ROOT scripts, as well as standalone C++ programs relying on ROOT libraries, can be integrated with minimum effort into these. Examples on the steps to follow are explained in older blog posts for the [Visual Studio](https://root.cern/blog/root-on-vscode/) and [Eclipse](https://root.cern/blog/debuging-root-scripts-in-eclipse/) IDEs. In this post, I will focus on a third option, the open-source [QtCreator IDE](https://www.qt.io/download-open-source).
+IDEs are very powerful tools to detect errors (thanks e.g. to Clang), trace them back to the right point in the source code, and even automatically suggest the solution. ROOT scripts, as well as standalone C++ programs relying on ROOT libraries, can be integrated with minimum effort into these. Examples on the steps to follow are nicely explained in older blog posts for the [Visual Studio](https://root.cern/blog/root-on-vscode/) and [Eclipse](https://root.cern/blog/debuging-root-scripts-in-eclipse/) IDEs, as well as in the [Twiki](https://twiki.cern.ch/twiki/bin/view/CMSPublic/BristolEclipseTutorial) and [other blogs](
+https://petrstepanov.wordpress.com/2015/11/15/compile-cern-root-program-with-roofit-in-eclipse/). In this post, I will focus on a third option, the open-source [QtCreator IDE](https://www.qt.io/download-open-source).
 
 ## QtCreator
 
@@ -48,13 +49,6 @@ You can not only check the documentation with F1, but fully opening the full HTM
 
 Alternatively, you can also open the Help Books and search it using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html).
 
-### SectionXXX
-
-https://root.cern/blog/debuging-root-scripts-in-eclipse/
-https://root-forum.cern.ch/t/using-root-gui-in-eclipse/30581
-https://twiki.cern.ch/twiki/bin/view/CMSPublic/BristolEclipseTutorial
-https://petrstepanov.wordpress.com/2015/11/15/compile-cern-root-program-with-roofit-in-eclipse/
-
 ### The Power of Clang
 
 Grown over many years and standards, larger software projects have plenty of legacy code that is not as safe as the one someone would write today. Not surprisingly, there are still some bugs here and there, and instabilities that haven't been solved. Some of these bugs and potential style improvements can be detected thanks to the *Clang-analyzer*, which performs code analysis based on some settings.
@@ -81,14 +75,16 @@ Once that is configured, you can enable to auto-format your file when saving, or
 ```cpp
 int main(int argc, char* argv[])
 {
-
-  
+```
+```cpp
 int main(int argc, char *argv[]) {
 ```
 
-### git
-git commit Altg-C
-...
+### git version control
+For one of your projects, or even for the ROOT codebase, you might be using git for version control. QtCreator integrates seamlessly with the typical git commands, and can show you a visual diff of the current changes, as well as commit (Alt+G, Alt+C) and push your changes using its GUI, or pull the latest version from the remote repository.
+
+![git](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)
+
 
 ### CTests
 
