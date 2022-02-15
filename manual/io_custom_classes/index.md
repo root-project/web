@@ -233,7 +233,8 @@ _**Example**_
 
 {% highlight C++ %}
 class MyClass {
-   // A good initial version number is 3
+   // Note that the initial version number should be greater than the number of previously, unnumbered (i.e. lacking a
+   // explicit `ClassDef`) versions of the class. If unsure, `3` is typically a good compromise.
    ClassDef("MyClass", 3)
 };
 {% endhighlight %}

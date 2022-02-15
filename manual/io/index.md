@@ -456,8 +456,15 @@ The schema evolution C++ API consists of the following classes:
 If you have written your own `Streamer` as described in [Custom streamers](#custom-streamers), you will have to manually add code for each version and manage the evolution of your class. When you add or remove data members, you must modify the `Streamer` by hand. ROOT assumes that you have increased the class version number in the `ClassDef` statement and introduced the relevant test in the read part of the Streamer. For example, if a new version of the `Event` class above includes a new member: `Int_t fNew` the `ClassDef` statement should be changed to `ClassDef(Event,2)` and the following lines should be added to the read part of the `Streamer`:
 
 {% highlight C++ %}
-   if (R__v > 1) R__b >> fNew;
+   // `buf` below is the TBuffer& argument to the `Streamer` function
+   UInt_t R__s, R__c;
+   Version_t R__v = buf.ReadVersion(&R__s, &R__c);
+
+   // ... [custom streamer code to read the rest of the members]
+   if (R__v > 1) buf >> fNew;
    else fNew = 0;        // set to some default value
+
+   buf.CheckByteCount(R__s, R__c, Event::IsA());
 {% endhighlight %}
 
 If, in the same new version 2 you remove the member `fH`, you must add
