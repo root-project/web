@@ -86,6 +86,12 @@ For one of your projects, or even for the ROOT codebase, you might be using git 
 ![git](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)
 
 
+### Why bother with QtCreator when I am pro with emacs and vim?
+
+You can get the best of both worlds by using the [FakeVim mode](https://doc.qt.io/qtcreator/creator-editor-fakevim.html) or the [emacs plugin](https://machinekoder.com/running-qt-creator-in-emacs-mode/). Just give it a try ;)
+
+And if you just need column-editing, you don't need any of those, QtCreator supports that [natively](https://forum.qt.io/topic/46348/qt-creator-column-edit).
+
 ### CTests
 
 If you've built ROOT enabling the "testing" CMake flag, or if your project contains CTests, Boost Tests, etc. for ensuring that new changes you apply don't break older functionality, QtCreator has a platform to visually run and check the results of all those tests. No need to scroll in a terminal to find which one failed.
@@ -112,6 +118,8 @@ cross-check with https://github.com/root-project/web/blob/main/blog/_posts/2021-
 enable debug mode
 
 potentially enable testing
+
+specify -j38
 
 ### GDB
 
