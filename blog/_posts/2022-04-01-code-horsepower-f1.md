@@ -113,29 +113,58 @@ cross-check with https://github.com/root-project/web/blob/main/blog/_posts/2021-
 
 ## Debugging tools
 
+If you need to debug your ROOT scripts, or the ROOT library itself, I recommend building ROOT [from its sources](https://root.cern/install/build_from_source/), but using the "Debug" flag.
+
 ### Building ROOT in Debug Mode
 
-enable debug mode
+To do this:
 
-potentially enable testing
+- Clone the ROOT git repository
+- Open QtCreator
+- "File", "Open File or Project" and double click on the main "CMakeLists.txt" file.
+- In the "Configure Project" kit dialog, activate the "Debug" and deactivate "Release" and press on "Configure". The Debug mode will internally set the CMAKE_BUILD_TYPE to Debug, as you would do from a command line.
+- Specify the folder where it will be built
+- If you've already built ROOT using debug mode via your command line, then you can "import" your preexisting build, to not recompile it and save your time.
+- At the bottom of the "Key" dialog, deactivate or activate submodules of ROOT as needed. This acts as passing -Dmodule=ON via the CLI.
+- Consider enabling "testing" to run all ROOT tests.
+- In the "Build steps", click on "Details", and specify -j8 on the "CMake arguments" or whatever other number, to speed up the build.
+- On the left, click on the "Build" icon, and ROOT will be compiled.
+- Once built, on the left Kit pane, click on the "Run" line, and select which executable you want to run.
+- You can run it from the big "Play" icon on the left.
 
-specify -j38
+### Debugging your ROOT scripts or executables with GDB
 
-### GDB
+To debug your script, on the Kit-Run settings, specify your executable (your own standalone application, or root.exe) and your CLI arguments, e.g. the name of the script you want to run as well as their parameters.
 
-todo...
+Click then on the "Play-Bug" icon on the left, and your script will run in Debug mode. Breakpoints can be set interactively on your code. F5 will pause or resume your process, as well as show you a workspace of the active variables and threads.
 
-### Valgrind
+As an example, below a screenshot while debugging [a deadlock in the TThread class](https://github.com/root-project/root/issues/8365).
 
-todo...
+![debugging](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)
 
-### Helgrind
 
-todo...
+### Memory error detection
 
-### Callgrind
+To check for memory leaks and corruption, QtCreator offers a seamless integration with valgrind (or [heob on Windows](https://doc.qt.io/qtcreator/creator-analyzer.html)), making the backtrace of your errors fully interactive. To run it, press on the big "Debug button" on the left. Then, on the dropdown menu, change from "Debugger" to "Memcheck" and click on the small play button.
 
-todo....
+If you need extra arguments for valgrind, you will need to specify those under "Tools", "Options", "Analyzer", "Valgrind".
+There, I also recommend to click on "Add", "etc/valgrind-root.supp" from your cloned repository, to suppress spurious warnings.
+
+The resulting warnings can be easily clicked to bring you to the right spot in your code, or in the ROOT codebase, where the issue is arising from.
+
+![valgrind](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)
+
+Often, you will also find helpful to run the static clang-analyzer, which is able to detect many unsafe parts of your code that might be leading to memory leaks. It's in the same dropdown menu, under Clang-Tidy and Clazy. 
+
+### Data race detection
+
+First, I recommend to click on "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" from your git repository. Then, on the dropdown menu, change from "Debugger" to "Memcheck" and click on the small play button.
+
+Helgrind cannot be run yet directly from QtCreator. The background is to run root.exe or your executable from your command line, with the flags (--tool=helgrind --xml=yes --xml-file=yourfile.xml). Then, you can "load" the result using the small "open" button right from the dropdown menu. The parsing tool works great and takes you the relevant location in your code.
+
+### Performance analysis
+
+In case you want to optimize the [performance of your code](https://doc.qt.io/qtcreator/creator-cache-profiler.html), you can select from the debugger dropdown menu between Callgrind or the [Performance Analyzer](https://doc.qt.io/qtcreator/creator-cpu-usage-analyzer.html). If you use callgrind, consider installing also kcachegrind for visualization.
 
 ### GUICommandPlugin
 
@@ -145,6 +174,7 @@ and linev++ https://marketplace.visualstudio.com/items?itemName=albertopdrf.root
 
 ## Quick recipe Summary
 
+- Optional: install valgrind, kcachegrind
 - [Install QtCreator](https://www.qt.io/download-open-source) deactivating all extra options
 - Download Std Help Book from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or package manager (sudo apt install cppreference-doc-en-qch)
 - Download [ROOT Help Book](https://root.cern/reference/)
@@ -153,3 +183,9 @@ and linev++ https://marketplace.visualstudio.com/items?itemName=albertopdrf.root
 - Install the [Beautifier plugin](https://doc.qt.io/qtcreator/creator-beautifier.html), potentially download the [ROOT](https://github.com/root-project/root/blob/master/.clang-format) one.
 - "Tools", "Options", "Beautifier", "Clang", "Use predefined style", "File"
 - If you enable "testing" flag in CMake, adapt "Timeout" in "Tools", "Options", "Tests".
+- Clone the ROOT git repository and open main CMakeLists.txt with QtCreator
+- Optional: configure your default's "Kit" build directory to e.g. ~/builds/
+- Specify -j8 on your Kit build settings, and root.exe as your executable in the run settings.
+- "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" and "etc/helgrind-root.supp" from your cloned repository.
+
+Setting up all this platform requires some initial effort, but once it is running, it will smooth your development and bug hunting, and once you've get used to it, you will find it much more tiring to program without it ;) .
