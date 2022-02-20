@@ -43,6 +43,8 @@ Once this is set, you can either CTRL+Click on your function to go the source co
 
 ![tutorial](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)
 
+If you use and compile LLVM yourself, you can also get your Qt Help file file [as described here](https://reviews.llvm.org/D2967).
+
 The ROOT framework also has a ".qch" Help Book available [for download](https://root.cern/reference/), thus you'll be able to quickly consult any documentation using the F1 key, rather than searching online, which can be useful in case you are traveling and have no Internet access.
 
 You can not only check the documentation with F1, but fully opening the full HTML reference on the left pane, on the Help icon.
