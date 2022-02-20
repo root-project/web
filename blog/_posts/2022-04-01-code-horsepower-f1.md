@@ -49,6 +49,8 @@ You can not only check the documentation with F1, but fully opening the full HTM
 
 Alternatively, you can also open the Help Books and search it using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html).
 
+And if you use other IDEs or OS ? In addition to [inline HTML searching](https://www.doxygen.nl/manual/searching.html), the building of the (ROOT) doxygen documentation can be configured to output a format that is compatible with MacOS - [Xcode](https://www.doxygen.nl/manual/config.html#cfg_generate_docset), Windows - [VSstudio](https://www.doxygen.nl/manual/config.html#cfg_generate_htmlhelp), or [Eclipse](https://www.doxygen.nl/manual/config.html#cfg_generate_eclipsehelp). ROOT [only provides for download](https://root.cern/reference/) the Qt help files (.qch) for the moment, but you can [build the documentation yourself](https://root.cern/for_developers/doxygen/) adapting those flags in the Doxyfile.
+
 ### The Power of Clang
 
 Grown over many years and standards, larger software projects have plenty of legacy code that is not as safe as the one someone would write today. Not surprisingly, there are still some bugs here and there, and instabilities that haven't been solved. Some of these bugs and potential style improvements can be detected thanks to the *Clang-analyzer*, which performs code analysis based on some settings.
@@ -104,7 +106,6 @@ Beware: go first to "Tools", "Options", "Tests", and adapt the "Timeout" to allo
 
 screenshot how to quickly find doxyerrors --> WARN_NOPARAMDOC YES?  —   spellchecking!
 
-DOCSET for Apple
 migrate2CMake
 tutorials pollute sources & broken Kernels
 https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator
@@ -166,11 +167,22 @@ Helgrind cannot be run yet directly from QtCreator. The background is to run roo
 
 In case you want to optimize the [performance of your code](https://doc.qt.io/qtcreator/creator-cache-profiler.html), you can select from the debugger dropdown menu between Callgrind or the [Performance Analyzer](https://doc.qt.io/qtcreator/creator-cpu-usage-analyzer.html). If you use callgrind, consider installing also kcachegrind for visualization.
 
-### GUICommandPlugin
+### Other approaches
 
-todo...
+There are other tricks to boost your development in a way that's integrated with your IDE. For example:
 
-and linev++ https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer
+- If you use a standalone application that uses ROOT libraries and GUI, but not it's terminal, you might want to check the [TGCommandPlugin](https://root.cern/doc/master/classTGCommandPlugin.html) window. With it, you can nicely interact with your internal C++ classes while your program is executing, without having to build in Debug mode, which has sometimes downsides due to its slow performance. To make ROOT aware of your C++ object, you need to call within your program:
+gROOT->ProcessLine(
+      static_cast<TString>(
+          "MyClassType* const fMyInstance = reinterpret_cast<MyClasstype*>(") +
+      static_cast<std::ostringstream &>(std::ostringstream("") << fMyInstance)
+          .str() +
+      ");"); 
+And then, of course, creating a TGCommandPlugin window. From there, typing fMyInstance->MyMethod() will execute binary code interactively.
+  
+- [This VS Studio plugin](https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer) allows for a nice integration of a ROOT file browser. Maybe it will come [at some point](https://root-forum.cern.ch/t/rbrowser-plugin-for-qtcreator/48807) for QtCreator, too.
+  
+- Interfaces between [Cling and Qt](https://github.com/herrgahr/qling) have been attemped before.
 
 ## Quick recipe Summary
 
