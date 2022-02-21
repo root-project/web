@@ -215,4 +215,4 @@ And then, of course, creating a TGCommandPlugin window. From there, typing fMyIn
 Setting up all this platform requires some initial effort, but once it is running, it will smooth your development and bug hunting, and once you've get used to it, you will find it much more tiring to program without it ;) .
       
 Fernando Hueso-González
-IFIC - Instituto de Física Corpuscular (CSIC/UV) 
+IFIC - Instituto de Física Corpuscular (CSIC / Universitat de València) 
