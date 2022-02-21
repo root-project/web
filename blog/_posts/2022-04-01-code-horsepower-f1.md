@@ -117,7 +117,7 @@ Beware:
 
 ### To gild the lily
 
-QtCreator not only lets you find compilation errors, but also documentation errors, by interfacing with warnings issued by doxygen. This metawarning function can prove extremely useful for detecting outdated or incorrect documentation and going to the right spot in the source code in just one click, rather than diving through [thousands of line of output](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT/job/root-makedoc-master/lastBuild/consoleText) and tracing it manually.
+QtCreator not only lets you find compilation errors, but also documentation errors, by interfacing with warnings issued by doxygen. This metawarning function can prove extremely useful for detecting outdated or incorrect documentation and going to the right spot in the source code in just one click, rather than diving through [thousands of lines of output](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT/job/root-makedoc-master/lastBuild/consoleText) and tracing it manually.
 
 To give it a try, take a look at importing the [ROOT documentation project](https://root.cern/for_developers/doxygen/) into QtCreator. Then click on "Build". Below a screenshot of the errors and the points in the source code found by just clicking on those issues.
 
