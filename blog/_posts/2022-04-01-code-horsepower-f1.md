@@ -33,7 +33,9 @@ You can find (usually) outdated versions of QtCreator in your package manager, b
 
 ### Open a C++ CMake project
 
-You can open any CMake project you have on your computer by clicking on "File", "Open File or Project", and double-clicking on your "CMakeLists.txt". If you rather use Makefiles, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu.
+You can open any CMake project you have on your computer by clicking on "File", "Open File or Project", and double-clicking on your "CMakeLists.txt". Pretty simple. Or directly from the command line, run as `qtcreator my/folder/CMakeLists.txt &`.
+
+If you rather use Makefiles, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu, by clicking on "File", "New File or Project", "Import Project", "Import Existing Project", "Choose", and then select the source files you want to see in your tree (or just click on select all and deactivate those that are images, etc.). The Makefile will be automatically detected.
 
 Let me load into QtCreator the [simplest CMake example](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html). After "Open File or Project", you can specify in what folder to build your program. The option "Manage Kits" allows you to tune your compiler version. "Tools, Options, Build, Default Properties" allows you to setup a default directory. Once you "Configure Project", CMake will be run. In the "Projects" Pane, you can tune any CMake flag as needed, as well as specify command line arguments when running. The "Build" icon compiles your project, and the "Run" one executes it.
 
@@ -113,15 +115,17 @@ Beware:
 
 ![ctest](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)
 
-### Doxygen warnings finding
+### To gild the lily
 
-screenshot how to quickly find doxyerrors --> WARN_NOPARAMDOC YES?  —   spellchecking!
+QtCreator not only lets you find compilation errors, but also documentation errors, by interfacing with warnings issued by doxygen. This metawarning function can prove extremely useful for detecting outdated or incorrect documentation and going to the right spot in the source code in just one click, rather than diving through [thousands of line of output](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT/job/root-makedoc-master/lastBuild/consoleText) and tracing it manually.
 
-migrate2CMake
-tutorials pollute sources & broken Kernels
-https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator
+To give it a try, take a look at importing the [ROOT documentation project](https://root.cern/for_developers/doxygen/) into QtCreator. Then click on "Build". Below a screenshot of the errors and the points in the source code found by just clicking on those issues.
 
-cross-check with https://github.com/root-project/web/blob/main/blog/_posts/2021-10-30-debuging-root-scripts-in-eclipse.md https://github.com/root-project/web/blob/main/blog/_posts/2021-03-31-root-on-vscode.md https://github.com/root-project/web/blob/main/blog/_posts/2021-03-11-vscode-extension-announcement.md
+![doxywarnings](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)
+
+If you want even more verbose warnings about undocumented parameters, try setting `WARN_NO_PARAMDOC` to `YES` in the Doxyfile and `EXTRACT_ALL` to `NO`. This will account for many much more weak points of your documentation and let you pinpoint your efforts on the right spot. And while it can be burdensome to write all this extra missing documentation, QtCreator also simplifies the task by typing three magic characters on top a function. Then, it will [autocomplete all the skeleton](https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator) in doxygen format. Check first if "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
+
+Consider also enabling [this spell-checking plugin](https://github.com/CJCombrink/SpellChecker-Plugin) for detecting typos in your documentation.
 
 ## Debugging tools
 
@@ -207,7 +211,9 @@ And then, of course, creating a TGCommandPlugin window. From there, typing fMyIn
 - "Tools", "Options", "Beautifier", "Clang", "Use predefined style", "File"
 - If you enable "testing" flag in CMake, adapt "Timeout" in "Tools", "Options", "Testing".
 - Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
-- Clone the ROOT git repository and open main CMakeLists.txt with QtCreator
+- Optional: Check that "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
+- Optional: Consider installing [a spellchecker plugin](https://github.com/CJCombrink/SpellChecker-Plugin).
+- Clone the [ROOT git repository](https://github.com/root-project/root/) and open main CMakeLists.txt with QtCreator
 - Optional: configure your default's "Kit" build directory to e.g. ~/builds/
 - Specify -j8 on your Kit build settings, and root.exe as your executable in the run settings.
 - "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" and "etc/helgrind-root.supp" from your cloned repository.
