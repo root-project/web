@@ -39,7 +39,7 @@ Let me load into QtCreator the [simplest CMake example](https://cmake.org/cmake/
 
 Let's assume now that you have forgotten what class "std::cout" has. Luckily, Qt has an in-built (offline) help support system. For a first-time configuration, you will just need to download the Help Book of your library, in this case the std library from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or via your package manager (sudo apt install cppreference-doc-en-qch). Then, in "Tools", "Options", "Help", "Documentation", you can add the downloaded (or /usr/share/ installed) ".qch" file.
 
-Once this is set, you can either CTRL+Click on your function to go the source code definition, or press F1, and the HTML documentation will appear on your right side without having to type / search anything online.
+Once this is set, you can either CTRL+Click on your function to immediately go the source code definition (file will open in another tab), or press F1, and the HTML documentation will appear on your right side without having to type / search anything online.
 
 ![tutorial](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)
 
@@ -47,7 +47,11 @@ If you use and compile LLVM yourself, you can also get your Qt Help file file [a
 
 The ROOT framework also has a ".qch" Help Book available [for download](https://root.cern/reference/), thus you'll be able to quickly consult any documentation using the F1 key, rather than searching online, which can be useful in case you are traveling and have no Internet access.
 
-You can not only check the documentation with F1, but fully opening the full HTML reference on the left pane, on the Help icon.
+![f1root](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)
+
+You can not only check the documentation with F1, but fully opening the full HTML reference on the left pane, on the Help icon, as shown below.
+
+![roothelp](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)
 
 Alternatively, you can also open the Help Books and search it using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html). Linux apt packages are qt4-dev-tools or qt5-assistant, and the executables are assistant-qt4 and assistant, respectively. qt6 version is not yet in the package manager.
 
