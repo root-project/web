@@ -125,7 +125,7 @@ To give it a try, take a look at importing the [ROOT documentation project](http
 
 If you want even more verbose warnings about undocumented parameters, try setting `WARN_NO_PARAMDOC` to `YES` in the Doxyfile and `EXTRACT_ALL` to `NO`. This will account for many much more weak points of your documentation and let you pinpoint your efforts on the right spot. And while it can be burdensome to write all this extra missing documentation, QtCreator also simplifies the task by typing three magic characters on top a function. Then, it will [autocomplete all the skeleton](https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator) in doxygen format. Check first if "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
 
-Consider also enabling [this spell-checking plugin](https://github.com/CJCombrink/SpellChecker-Plugin) for detecting typos in your documentation.
+Consider also enabling [this spell-checking plugin](https://github.com/CJCombrink/SpellChecker-Plugin) for detecting typos in your documentation. This can be done by simply downloading the release file and unzipping into into your qtcreator folder.
 
 ## Debugging tools
 
@@ -212,7 +212,7 @@ And then, of course, creating a TGCommandPlugin window. From there, typing fMyIn
 - If you enable "testing" flag in CMake, adapt "Timeout" in "Tools", "Options", "Testing".
 - Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
 - Optional: Check that "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
-- Optional: Consider installing [a spellchecker plugin](https://github.com/CJCombrink/SpellChecker-Plugin).
+- Optional: Consider installing [a spellchecker plugin](https://github.com/CJCombrink/SpellChecker-Plugin) by unzipping the release file into your QtCreator installation folder.
 - Clone the [ROOT git repository](https://github.com/root-project/root/) and open main CMakeLists.txt with QtCreator
 - Optional: configure your default's "Kit" build directory to e.g. ~/builds/
 - Specify -j8 on your Kit build settings, and root.exe as your executable in the run settings.
