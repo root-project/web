@@ -4,6 +4,8 @@ layout: archive
 author: Fernando Hueso-González
 ---
 
+
+
 # Coding in ROOT with the horsepower of an F1
 
 If you've ever rubbed your eyes trying to decrypt C++ compilation errors from a terminal, tracing those back to the line in the ROOT script you were just typing in your text editor, then googling "CERN ROOT TTree" to fix the signature of that function you just used incorrectly, or even have barely faced the intimidating logs of valgrind output for memory detection, or manually run gdb, you should definitely keep reading.
@@ -207,3 +209,6 @@ And then, of course, creating a TGCommandPlugin window. From there, typing fMyIn
 - "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" and "etc/helgrind-root.supp" from your cloned repository.
 
 Setting up all this platform requires some initial effort, but once it is running, it will smooth your development and bug hunting, and once you've get used to it, you will find it much more tiring to program without it ;) .
+      
+Fernando Hueso-González
+IFIC - Instituto de Física Corpuscular (CSIC/UV) 
