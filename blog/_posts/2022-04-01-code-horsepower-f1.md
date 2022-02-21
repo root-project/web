@@ -53,7 +53,7 @@ You can not only check the documentation with F1, but fully opening the full HTM
 
 ![roothelp](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)
 
-Alternatively, you can also open the Help Books and search it using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html). Linux apt packages are qt4-dev-tools or qt5-assistant, and the executables are assistant-qt4 and assistant, respectively. qt6 version is not yet in the package manager.
+Alternatively, you can also open the Help Books and search it using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html). Linux apt packages are qt4-dev-tools or qt5-assistant, and the executables are assistant-qt4 and assistant, respectively. (qt6 version is not yet in the package manager.) You will have to add the .qch file to its database by going to Edit, Preferences, Documentation, Add.
 
 And if you use other IDEs or OS ? In addition to [inline HTML searching](https://www.doxygen.nl/manual/searching.html), the building of the (ROOT) doxygen documentation can be configured to output a format that is compatible with MacOS - [Xcode](https://www.doxygen.nl/manual/config.html#cfg_generate_docset), Windows - [VSstudio](https://www.doxygen.nl/manual/config.html#cfg_generate_htmlhelp), or [Eclipse](https://www.doxygen.nl/manual/config.html#cfg_generate_eclipsehelp). ROOT [only provides for download](https://root.cern/reference/) the Qt help files (.qch) for the moment, but you can [build the documentation yourself](https://root.cern/for_developers/doxygen/) adapting those flags in the Doxyfile.
 
