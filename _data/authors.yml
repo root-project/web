@@ -577,3 +577,15 @@ Petr Stepanov:
   avatar      : "/assets/images/avatar-petr-stepanov.jpg"
   email       : "stepanovps@gmail.com"
   affiliation : "Catholic University of America"
+
+
+Fernando Hueso González:
+  name        : "Fernando Hueso González"
+  short_bio   : "Experimental physicist and Ph.D. graduate in radiation medical physics from Technische Universität Dresden (Germany). 
+                 His research focuses on prompt-gamma ray measurements for in vivo range verification during proton therapy treatments.
+                 He deploys ROOT since 2011 for data processing, data analysis, as well as for the graphical interfaces of custom data
+                 acquisition software, and collaborates in the development for improving its stability, documentation and user-friendliness."
+  tag         : "blog"
+  avatar      : "/assets/images/avatar-ferhue.jpg"
+  email       : "fernando.hueso@uv.es"
+  affiliation : "IFIC - Instituto de Física Corpuscular (CSIC / Universitat de València)"
