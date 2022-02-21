@@ -39,6 +39,8 @@ If you rather use Makefiles, that's also supported via the [Import](https://doc.
 
 Let me load into QtCreator the [simplest CMake example](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html). After "Open File or Project", you can specify in what folder to build your program. The option "Manage Kits" allows you to tune your compiler version. "Tools, Options, Build, Default Properties" allows you to setup a default directory. Once you "Configure Project", CMake will be run. In the "Projects" Pane, you can tune any CMake flag as needed, as well as specify command line arguments when running. The "Build" icon compiles your project, and the "Run" one executes it.
 
+You will not need to re-do all these configuration steps later on for this project, as QtCreator will store these settings in a file called CMakeLists.txt.user and recognize it automatically the next time you open the project.
+
 ### The Power of F1
 
 Let's assume now that you have forgotten what class "std::cout" has. Luckily, Qt has an in-built (offline) help support system. For a first-time configuration, you will just need to download the Help Book of your library, in this case the std library from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or via your package manager (sudo apt install cppreference-doc-en-qch). Then, in "Tools", "Options", "Help", "Documentation", you can add the downloaded (or /usr/share/ installed) ".qch" file.
