@@ -106,7 +106,10 @@ And if you just need column-editing, you don't need any of those, QtCreator supp
 
 If you've built ROOT enabling the "testing" CMake flag, or if your project contains CTests, Boost Tests, etc. for ensuring that new changes you apply don't break older functionality, QtCreator has a platform to visually run and check the results of all those tests. No need to scroll in a terminal to find which one failed.
 
-Beware: go first to "Tools", "Options", "Tests", and adapt the "Timeout" to allow running all tests at once.
+Beware:
+
+- Go first to "Tools", "Options", "Testing", "General", and adapt the "Timeout" to allow running all tests at once.
+- Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
 
 ![ctest](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)
 
@@ -202,7 +205,8 @@ And then, of course, creating a TGCommandPlugin window. From there, typing fMyIn
 - "Tools", "Options", "Analyzer", "Default checks", configure as needed.
 - Install the [Beautifier plugin](https://doc.qt.io/qtcreator/creator-beautifier.html), potentially download the [ROOT](https://github.com/root-project/root/blob/master/.clang-format) one.
 - "Tools", "Options", "Beautifier", "Clang", "Use predefined style", "File"
-- If you enable "testing" flag in CMake, adapt "Timeout" in "Tools", "Options", "Tests".
+- If you enable "testing" flag in CMake, adapt "Timeout" in "Tools", "Options", "Testing".
+- Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
 - Clone the ROOT git repository and open main CMakeLists.txt with QtCreator
 - Optional: configure your default's "Kit" build directory to e.g. ~/builds/
 - Specify -j8 on your Kit build settings, and root.exe as your executable in the run settings.
