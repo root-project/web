@@ -150,7 +150,7 @@ To do this:
 
 ### Debugging your ROOT scripts or executables with GDB
 
-To debug your script, on the Kit-Run settings, specify your executable (your own standalone application, or root.exe) and your CLI arguments, e.g. the name of the script you want to run as well as their parameters.
+To debug your script, on the Kit-Run settings, specify your executable (your own standalone application, or root.exe) and your CLI arguments, e.g. the name of the script you want to run as well as their parameters. If you want to precompile instead of interpret with cling, consider using the debug flag `g` when passing the argument (`yourScript.C+g`)
 
 Click then on the "Play-Bug" icon on the left, and your script will run in Debug mode. Breakpoints can be set interactively on your code. F5 will pause or resume your process, as well as show you a workspace of the active variables and threads.
 
