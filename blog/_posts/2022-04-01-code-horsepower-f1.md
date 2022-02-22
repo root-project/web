@@ -4,8 +4,6 @@ layout: archive
 author: Fernando Hueso-González
 ---
 
-
-
 # Coding in ROOT with the horsepower of an F1
 
 If you've ever rubbed your eyes trying to decrypt C++ compilation errors from a terminal, tracing those back to the line in the ROOT script you were just typing in your text editor, then googling "CERN ROOT TTree" to fix the signature of that function you just used incorrectly, or even have barely faced the intimidating logs of valgrind output for memory detection, or manually run gdb, you should definitely keep reading.
@@ -47,17 +45,17 @@ Let's assume now that you have forgotten what class "std::cout" has. Luckily, Qt
 
 Once this is set, you can either CTRL+Click on your function to immediately go the source code definition (file will open in another tab), or press F1, and the HTML documentation will appear on your right side without having to type / search anything online.
 
-![tutorial](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)
+[![tutorial](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)
 
 If you use and compile LLVM yourself, you can also get your Qt Help file file [as described here](https://reviews.llvm.org/D2967).
 
 The ROOT framework also has a ".qch" Help Book available [for download](https://root.cern/reference/), thus you'll be able to quickly consult any documentation using the F1 key, rather than searching online, which can be useful in case you are traveling and have no Internet access.
 
-![f1root](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)
+[![f1root](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)
 
 You can not only check the documentation with F1, but fully opening the full HTML reference on the left pane, on the Help icon, as shown below.
 
-![roothelp](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)
+[![roothelp](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)
 
 Alternatively, you can also open the Help Books and search it using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html). Linux apt packages are qt4-dev-tools or qt5-assistant, and the executables are assistant-qt4 and assistant, respectively. (qt6 version is not yet in the package manager.) You will have to add the .qch file to its database by going to Edit, Preferences, Documentation, Add.
 
@@ -72,7 +70,7 @@ In addition, it even lets you apply "fixits" by a mouse-click: if Clang knows ho
 
 To give an example, analyzing the "core" of ROOT yields several diagnostics, and this can be quite useful for tracing in case you are seeing some memory leak when your application is deploying ROOT libraries:
 
-![clangtidy](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)
+[![clangtidy](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)
 
 If, for example, you would like to modernize your code syntax to the latest C++ standard, you can configure the Clang settings in "Tools", "Analyzer", "Default checks", and enable the modernize option. For example, with a single click, you can change NULL to nullptr across your whole codebase.
 
@@ -97,7 +95,7 @@ int main(int argc, char *argv[]) {
 ### git version control
 For one of your projects, or even for the ROOT codebase, you might be using git for version control. QtCreator integrates seamlessly with the typical git commands, and can show you a visual diff of the current changes, as well as commit (Alt+G, Alt+C) and push your changes using its GUI, or pull the latest version from the remote repository.
 
-![git](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)
+[![git](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)
 
 
 ### Why bother with QtCreator when I am pro with emacs and vim?
@@ -115,7 +113,7 @@ Beware:
 - Go first to "Tools", "Options", "Testing", "General", and adapt the "Timeout" to allow running all tests at once.
 - Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
 
-![ctest](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)
+[![ctest](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)
 
 ### To gild the lily
 
@@ -123,7 +121,7 @@ QtCreator not only lets you find compilation errors, but also documentation erro
 
 To give it a try, take a look at importing the [ROOT documentation project](https://root.cern/for_developers/doxygen/) into QtCreator. (You might need to call "source thisroot.sh" in the terminal before launching qtcreator, or manually specifying all the variables in the Build environment. Once you follow the Import steps (explained in the corresponding section above), then click on the "Build" icon. Below a screenshot of the errors and the points in the source code found by just clicking on those issues.
 
-![doxywarnings](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)
+[![doxywarnings](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)
 
 If you want even more verbose warnings about undocumented parameters, try setting `WARN_NO_PARAMDOC` to `YES` in the Doxyfile and `EXTRACT_ALL` to `NO`. This will account for many much more weak points of your documentation and let you pinpoint your efforts on the right spot. And while it can be burdensome to write all this extra missing documentation, QtCreator also simplifies the task by typing three magic characters on top a function. Then, it will [autocomplete all the skeleton](https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator) in doxygen format. Check first if "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
 
@@ -158,7 +156,7 @@ Click then on the "Play-Bug" icon on the left, and your script will run in Debug
 
 As an example, below a screenshot while debugging [a deadlock in the TThread class](https://github.com/root-project/root/issues/8365).
 
-![debugging](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)
+[![debugging](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)
 
 
 ### Memory error detection
@@ -170,7 +168,7 @@ There, I also recommend to click on "Add", "etc/valgrind-root.supp" from your cl
 
 The resulting warnings can be easily clicked to bring you to the right spot in your code, or in the ROOT codebase, where the issue is arising from.
 
-![valgrind](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)
+[![valgrind](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)
 
 Often, you will also find helpful to run the static clang-analyzer, which is able to detect many unsafe parts of your code that might be leading to memory leaks. It's in the same dropdown menu, under Clang-Tidy and Clazy. 
 
