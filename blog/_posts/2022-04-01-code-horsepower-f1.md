@@ -4,9 +4,7 @@ layout: archive
 author: Fernando Hueso-González
 ---
 
-# Coding in ROOT with the horsepower of an F1
-
-If you've ever rubbed your eyes trying to decrypt C++ compilation errors from a terminal, tracing those back to the line in the ROOT script you were just typing in your text editor, then googling "CERN ROOT TTree" to fix the signature of that function you just used incorrectly, or even have barely faced the intimidating logs of valgrind output for memory detection, or manually run gdb, you should definitely keep reading.
+If you've ever rubbed your eyes trying to decrypt C++ compilation errors from a terminal, traced those back to the line in the ROOT script you were just typing in your plain text editor, then googled "CERN ROOT TTree" to fix the signature of that function you just used incorrectly, or even have barely faced the intimidating logs of valgrind output for memory detection, or manually run gdb, you should definitely keep reading.
 
 If on top of that, your office colleague sitting next you has a fancy MATLAB installation, does everything quicker than you, and only needs to hover the mouse on a function and press F1 to access all important help, while you painfully have to google, copy-paste, rebuild project, etc, then this post is also spot on for you.
 
