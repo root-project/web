@@ -116,3 +116,9 @@ consult its manual [here](https://root.cern/root/htmldoc/guides/spectrum/Spectru
 TMVA is a toolkit for Multivariate Data Analysis.
 The [Documentation](https://github.com/root-project/root/blob/master/documentation/tmva/UsersGuide/TMVAUsersGuide.pdf){:target="_blank"}
 (updated version for ROOT 6) can be found in the ROOT GitHub repository.
+
+## PROOF
+
+[PROOF](https://root.cern/doc/master/group__proof.html) is kept for those who still need it for legacy use cases.
+The legacy documentation is now frozen. It is available
+as a [pdf document](https://root.cern/download/proof.pdf).
