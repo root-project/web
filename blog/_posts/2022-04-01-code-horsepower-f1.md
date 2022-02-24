@@ -121,6 +121,8 @@ To give it a try, take a look at importing the [ROOT documentation project](http
 
 [![doxywarnings](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)
 
+I'd suggest to define a custom output parser to catch some doxygen warnings of "potential candidates" when there is an ambiguous matching in the signatures. To do this, go to "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", and in "Warning", specify the pattern `(.*) at line (\d+) of (.*)` and order 3,2,1. "Apply", "Ok", and in the "Projects", "Build Settings", on the bottom, click on activate the newly defined Parser.
+
 If you want even more verbose warnings about undocumented parameters, try setting `WARN_NO_PARAMDOC` to `YES` in the Doxyfile and `EXTRACT_ALL` to `NO`. This will account for many much more weak points of your documentation and let you pinpoint your efforts on the right spot. And while it can be burdensome to write all this extra missing documentation, QtCreator also simplifies the task by typing three magic characters on top a function. Then, it will [autocomplete all the skeleton](https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator) in doxygen format. Check first if "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
 
 Consider also enabling [this spell-checking plugin](https://github.com/CJCombrink/SpellChecker-Plugin) for detecting typos in your documentation. This can be done by simply downloading the release file and unzipping into into your qtcreator folder. Then, under "Tools", "Options", "Spellchecker", you can configure which dictionary or language(s) to use.
@@ -210,6 +212,7 @@ And then, of course, creating a TGCommandPlugin window. From there, typing fMyIn
 - If you enable "testing" flag in CMake, adapt "Timeout" in "Tools", "Options", "Testing".
 - Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
 - Optional: Check that "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
+- Optional: Under "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", "Warning", specify the pattern `(.*) at line (\d+) of (.*)` and order 3,2,1. "Apply", "Ok". Activae it under "Projects", "Build Settings", on the bottom.
 - Optional: Install [a spellchecker plugin](https://github.com/CJCombrink/SpellChecker-Plugin) by unzipping the release file into your QtCreator installation folder. Configure then your dictionary under "Tools", "Options", "Spellchecker".
 - Clone the [ROOT git repository](https://github.com/root-project/root/) and open main CMakeLists.txt with QtCreator
 - Optional: configure your default's "Kit" build directory to e.g. ~/builds/
