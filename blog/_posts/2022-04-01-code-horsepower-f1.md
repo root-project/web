@@ -10,6 +10,27 @@ If, on top of that, your next-door work colleague has a fancy *MATLAB* installat
 
 In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard taks, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because they claim it diminishes one's productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your producitivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe, user-friendly, modern, and productive will be welcome.
 
+- [Errors are development tools, not silly mistakes](#errors-are-development-tools-not-silly-mistakes)
+  * [IDEs to the rescue](#ides-to-the-rescue)
+- [QtCreator](#qtcreator)
+  * [Installation steps](#installation-steps)
+  * [Open a CMake project](#open-a-c-cmake-project)
+  * [The Power of <kbd>F1</kbd>](#the-power-of-f1)
+  * [The Power of Clang](#the-power-of-clang)
+  * [Formatting your code](#formatting-your-code)
+  * [git version control](#git-version-control)
+  * [Why bother with QtCreator when I am pro with emacs and vim?](#why-bother-with-qtcreator-when-i-am-pro-with-emacs-and-vim)
+  * [CTests](#ctests)
+  * [To gild the lily](#to-gild-the-lily)
+- [Debugging tools](#debugging-tools)
+  * [Building ROOT in Debug Mode](#building-root-in-debug-mode)
+  * [Debugging your ROOT scripts or executables with GDB](#debugging-your-root-scripts-or-executables-with-gdb)
+  * [Memory error detection](#memory-error-detection)
+  * [Data race detection](#data-race-detection)
+  * [Performance analysis](#performance-analysis)
+  * [Other approaches](#other-approaches)
+- [Quick recipe Summary](#quick-recipe-summary)
+
 ## Errors are development tools, not silly mistakes
 
 There is a natural tendency to look at compilation or conceptual errors as unwanted accidents or mistakes that only happen rarely, because of my own inexperience, and that surely will not happen next time. As such, we are not explicitly prepared nor trained to deal with them systematically. We just tackle them as a contingency and try to solve them quickly with whatever tools at hand. Yet experience tells us that errors (in programming, in mathematics, in [jugdement biases](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow)) are not an exception, but rather the rule.
