@@ -24,7 +24,7 @@ https://petrstepanov.wordpress.com/2015/11/15/compile-cern-root-program-with-roo
 
 ## QtCreator
 
-Note: while optimized for Qt applications, QtCreator is totally generic, it can compile and run any C++ program, CMake project, Makefile, etc. You don't even need to know what Qt means. You don't need to use QMake either. Your project will be equally compilable from a terminal with Make / CMake than via QtCreator, which just acts as a non-invasive interface.
+While optimized for *Qt* applications, *QtCreator* is totally generic, [open-source](https://www.qt.io/download-open-source), and it can compile and run any *C++* program, *CMake* project, *Makefile*, etc. You don't even need to know what *Qt* means. You don't need to use *qmake* nor native *Qt* project files either (in fact, I prefer to always use *CMake* to get rid of any dependence with *Qt*). Your project will be equally compilable from a terminal with *Make* / *CMake* than via *QtCreator*, which just acts as a non-invasive interface.
 
 ### Installation steps
 
@@ -46,17 +46,17 @@ Let's assume now that you have forgotten what class "std::cout" has. Luckily, Qt
 
 Once this is set, you can either <kbd>Ctrl</kbd>+Click on your function to immediately go the source code definition (file will open in another tab), or press <kbd>F1</kbd>, and the HTML documentation will appear on your right side without having to type / search anything online.
 
-[![tutorial](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)
+[![Example of F1 with C++](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)
 
 If you use and compile LLVM yourself, you can also get your Qt Help file file [as described here](https://reviews.llvm.org/D2967).
 
 The ROOT framework also has a ".qch" Help Book available [for download](https://root.cern/reference/), thus you'll be able to quickly consult any documentation using the <kbd>F1</kbd> key, rather than searching online, which can be useful in case you are traveling and have no Internet access.
 
-[![f1root](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)
+[![Example of F1 with ROOT](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)
 
 You can not only check the documentation with <kbd>F1</kbd>, but fully opening the full HTML reference on the left pane, on the Help icon, as shown below.
 
-[![roothelp](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)
+[![ROOT Help Book](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)
 
 Alternatively, you can also open the Help Books and search it using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html). Linux apt packages are qt4-dev-tools or qt5-assistant, and the executables are assistant-qt4 and assistant, respectively. (qt6 version is not yet in the package manager.) You will have to add the .qch file to its database by going to Edit, Preferences, Documentation, Add.
 
@@ -71,7 +71,7 @@ In addition, it even lets you apply "fixits" by a mouse-click: if Clang knows ho
 
 To give an example, analyzing the "core" of ROOT yields several diagnostics, and this can be quite useful for tracing in case you are seeing some memory leak when your application is deploying ROOT libraries:
 
-[![clangtidy](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)
+[![Clang-Tidy example](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)
 
 If, for example, you would like to modernize your code syntax to the latest C++ standard, you can configure the Clang settings in "Tools", "Analyzer", "Default checks", and enable the modernize option. For example, with a single click, you can change NULL to nullptr across your whole codebase.
 
@@ -96,7 +96,7 @@ int main(int argc, char *argv[]) {
 ### git version control
 For one of your projects, or even for the ROOT codebase, you might be using git for version control. QtCreator integrates seamlessly with the typical git commands, and can show you a visual diff of the current changes, as well as commit (<kbd>Alt</kbd>+<kbd>G</kbd>, <kbd>Alt</kbd>+<kbd>C</kbd>) and push your changes using its GUI, or pull the latest version from the remote repository.
 
-[![git](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)
+[![Git dialog](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)
 
 
 ### Why bother with QtCreator when I am pro with emacs and vim?
@@ -114,7 +114,7 @@ Beware:
 - Go first to "Tools", "Options", "Testing", "General", and adapt the "Timeout" to allow running all tests at once.
 - Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
 
-[![ctest](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)
+[![CTest dialog example](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)](https://user-images.githubusercontent.com/10653970/154115506-96c9c1da-ca66-4dbc-87cf-47c1c60ef215.png)
 
 ### To gild the lily
 
@@ -122,13 +122,15 @@ QtCreator not only lets you find compilation errors, but also documentation erro
 
 To give it a try, take a look at importing the [ROOT documentation project](https://root.cern/for_developers/doxygen/) into QtCreator. (You might need to call "source thisroot.sh" in the terminal before launching qtcreator, or manually specifying all the variables in the Build environment. Once you follow the Import steps (explained in the corresponding section above), then click on the "Build" icon. Below a screenshot of the errors and the points in the source code found by just clicking on those issues.
 
-[![doxywarnings](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)
+[![Doxygen warnings visualized with QtCreator](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)
 
 I'd suggest to define a custom output parser to catch some doxygen warnings of "potential candidates" when there is an ambiguous matching in the signatures. To do this, go to "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", and in "Warning", specify the pattern `(.*) at line (\d+) of file (.*)` and order 3,2,1. "Apply", "Ok", and in the "Projects", "Build Settings", on the bottom, click on activate the newly defined Parser.
 
 If you want even more verbose warnings about undocumented parameters, try setting `WARN_NO_PARAMDOC` to `YES` in the Doxyfile and `EXTRACT_ALL` to `NO`. This will account for many much more weak points of your documentation and let you pinpoint your efforts on the right spot. And while it can be burdensome to write all this extra missing documentation, QtCreator also simplifies the task by typing three magic characters on top a function. Then, it will [autocomplete all the skeleton](https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator) in doxygen format. Check first if "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
 
 Consider also enabling [this spell-checking plugin](https://github.com/CJCombrink/SpellChecker-Plugin) for detecting typos in your documentation. This can be done by simply downloading the release file and unzipping into into your qtcreator folder. Then, under "Tools", "Options", "Spellchecker", you can configure which dictionary or language(s) to use.
+
+[![ROOT source code in the QtCreator IDE with Spell-check activated as well as Git management](https://user-images.githubusercontent.com/10653970/155712333-f3fa1748-0a58-46ef-ad54-0f9b54c59fd4.png)](https://user-images.githubusercontent.com/10653970/155712333-f3fa1748-0a58-46ef-ad54-0f9b54c59fd4.png)
 
 ## Debugging tools
 
@@ -159,7 +161,7 @@ Click then on the "Play-Bug" icon on the left, and your script will run in Debug
 
 As an example, below a screenshot while debugging [a deadlock in the TThread class](https://github.com/root-project/root/issues/8365).
 
-[![debugging](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)
+[![Debugging example with QtCreator](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)
 
 Side note: if at some point, your ROOT script gets very complex long, I recommend instead to use a standalone C++ application using CMake, and link the ROOT libraries easily to it, as explained [here](https://root.cern/manual/integrate_root_into_my_cmake_project/#full-example-event-project).
 
@@ -172,7 +174,7 @@ There, I also recommend to click on "Add", "etc/valgrind-root.supp" from your cl
 
 The resulting warnings can be easily clicked to bring you to the right spot in your code, or in the ROOT codebase, where the issue is arising from.
 
-[![valgrind](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)
+[![Valgrind example with QtCreator](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)
 
 Often, you will also find helpful to run the static clang-analyzer, which is able to detect many unsafe parts of your code that might be leading to memory leaks. It's in the same dropdown menu, under Clang-Tidy and Clazy. 
 
@@ -216,7 +218,7 @@ And then, of course, creating a TGCommandPlugin window. From there, typing fMyIn
 - If you enable "testing" flag in CMake, adapt "Timeout" in "Tools", "Options", "Testing".
 - Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
 - Optional: Check that "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
-- Optional: Under "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", "Warning", specify the pattern `(.*) at line (\d+) of file (.*)` and order 3,2,1. "Apply", "Ok". Activae it under "Projects", "Build Settings", on the bottom.
+- Optional: Under "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", "Warning", specify the pattern `(.*) at line (\d+) of file (.*)` and order 3,2,1. "Apply", "Ok". Activate it under "Projects", "Build Settings", on the bottom.
 - Optional: Install [a spellchecker plugin](https://github.com/CJCombrink/SpellChecker-Plugin) by unzipping the release file into your QtCreator installation folder. Configure then your dictionary under "Tools", "Options", "Spellchecker".
 - Clone the [ROOT git repository](https://github.com/root-project/root/) and open main CMakeLists.txt with QtCreator
 - Optional: configure your default's "Kit" build directory to e.g. ~/builds/
