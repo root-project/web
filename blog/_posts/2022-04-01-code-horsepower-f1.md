@@ -28,25 +28,25 @@ While optimized for *Qt* applications, *QtCreator* is totally generic, [open-sou
 
 ### Installation steps
 
-You can find (usually) outdated versions of QtCreator in your package manager, but I recommend to use the [online installer](https://www.qt.io/download-open-source), which then periodically checks for updates at program start. If you prefer not to open a user account with them, you can use the [offline installer](https://www.qt.io/offline-installers/?hsLang=en). While installing, I recommend to deactivate all Qt library options, newer CMake versions or Ninja. You will just need QtCreator.
+You can find (usually) outdated versions of *QtCreator* in your package manager, but I recommend to use the [online installer](https://www.qt.io/download-open-source), which then periodically checks for updates at program start. If you prefer not to open a user account with them, you can use the [offline installer](https://www.qt.io/offline-installers/?hsLang=en). While installing, I recommend to deactivate all *Qt* library options, newer *CMake* versions or *Ninja*. You will just need *QtCreator*.
 
 ### Open a C++ CMake project
 
-You can open any CMake project you have on your computer by clicking on "File", "Open File or Project", and double-clicking on your "CMakeLists.txt". Pretty simple. Or directly from the command line, run as `qtcreator my/folder/CMakeLists.txt &`.
+You can open any *CMake* project you have on your computer by clicking on "File", "Open File or Project", and double-clicking on your "CMakeLists.txt". Pretty simple. Or directly from the command line, run as `qtcreator my/folder/CMakeLists.txt &`.
 
-If you rather use Makefiles, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu, by clicking on "File", "New File or Project", "Import Project", "Import Existing Project", "Choose", and then select the source files you want to see in your tree (or just click on select all and deactivate those that are images, etc.). The Makefile will be automatically detected.
+If you rather use *Makefiles*, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu, by clicking on "File", "New File or Project", "Import Project", "Import Existing Project", "Choose", and then select the source files you want to see in your tree (or just click on select all and deactivate those that are images, etc.). The *Makefile* will be automatically detected behind the scenes. You can edit the number of threads (-j) later on the project's "Build settings".
 
-Let me load into QtCreator the [simplest CMake example](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html). After "Open File or Project", you can specify in what folder to build your program. The option "Manage Kits" allows you to tune your compiler version. "Tools, Options, Build, Default Properties" allows you to setup a default directory. Once you "Configure Project", CMake will be run. In the "Projects" Pane, you can tune any CMake flag as needed, as well as specify command line arguments when running. The "Build" icon compiles your project, and the "Run" one executes it.
+Let me load into *QtCreator* the [simplest CMake example](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html). After "Open File or Project", you can specify in what folder to build your program. The option "Manage Kits" allows you to tune your compiler version. "Tools", "Options", "Build", "Default Properties" allows you to setup a default directory. Once you "Configure Project", *CMake* will be run. In the "Projects" pane, you can tune any *CMake* flag as needed, as well as specify command line arguments when running. The "Build" icon compiles your project, and the "Run" one executes it.
 
-You will not need to re-do all these configuration steps later on for this project, as QtCreator will store these settings in a file called CMakeLists.txt.user and recognize it automatically the next time you open the project.
+You will not need to re-do all these configuration steps later on for this project, as *QtCreator* will store these settings in a file called "CMakeLists.txt.user" and recognize it automatically the next time you open the project.
 
 ### The Power of <kbd>F1</kbd>
 
-Let's assume now that you have forgotten what class "std::cout" has. Luckily, Qt has an in-built (offline) help support system. For a first-time configuration, you will just need to download the Help Book of your library, in this case the std library from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or via your package manager (sudo apt install cppreference-doc-en-qch). Then, in "Tools", "Options", "Help", "Documentation", you can add the downloaded (or /usr/share/ installed) ".qch" file.
+Let's assume now that you have forgotten what class `std::cout` corresponds to. Luckily, *Qt* has an in-built (offline) help support system. For a first-time configuration, you will just need to download the "Help Book" of your library, in this case the `std` library from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or via your package manager (`sudo apt install cppreference-doc-en-qch`). Then, in "Tools", "Options", "Help", "Documentation", you can add the downloaded (or `/usr/share/` installed) ".qch" file.
 
 Once this is set, you can either <kbd>Ctrl</kbd>+Click on your function to immediately go the source code definition (file will open in another tab), or press <kbd>F1</kbd>, and the HTML documentation will appear on your right side without having to type / search anything online.
 
-[![Example of F1 with C++](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)
+[![Example of F1 with C++](https://user-images.githubusercontent.com/10653970/155714549-9f451b59-23d8-4640-a223-6137d8840f41.png)](https://user-images.githubusercontent.com/10653970/155714549-9f451b59-23d8-4640-a223-6137d8840f41.png)
 
 If you use and compile LLVM yourself, you can also get your Qt Help file file [as described here](https://reviews.llvm.org/D2967).
 
@@ -161,7 +161,7 @@ Click then on the "Play-Bug" icon on the left, and your script will run in Debug
 
 As an example, below a screenshot while debugging [a deadlock in the TThread class](https://github.com/root-project/root/issues/8365).
 
-[![Debugging example with QtCreator](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)](https://user-images.githubusercontent.com/10653970/154860214-0afc206e-ce7b-4645-b5d8-62ac9901b0d4.png)
+[![Debugging example with QtCreator](https://user-images.githubusercontent.com/10653970/155714955-543d182a-a9e5-449d-828c-fa635625cf57.png)](https://user-images.githubusercontent.com/10653970/155714955-543d182a-a9e5-449d-828c-fa635625cf57.png)
 
 Side note: if at some point, your ROOT script gets very complex long, I recommend instead to use a standalone C++ application using CMake, and link the ROOT libraries easily to it, as explained [here](https://root.cern/manual/integrate_root_into_my_cmake_project/#full-example-event-project).
 
