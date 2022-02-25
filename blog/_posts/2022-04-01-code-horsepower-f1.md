@@ -241,7 +241,7 @@ And then, of course, creating a `TGCommandPlugin` window. From there, typing `fM
 - Optional: Under "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", "Warning", specify the pattern `(.*) at line (\d+) of file (.*)` and order 3,2,1. "Apply", "Ok". Activate it under "Projects", "Build Settings", on the bottom.
 - Optional: Install [a spellchecker plugin](https://github.com/CJCombrink/SpellChecker-Plugin) by unzipping the release file into your *QtCreator* installation folder. Configure then your dictionary under "Tools", "Options", "Spellchecker".
 - Clone the [ROOT git repository](https://github.com/root-project/root/) and open main "CMakeLists.txt" with *QtCreator*.
-- Optional: configure your default's "Kit" build directory to e.g. ~/builds/
+- Optional: configure your default's "Kit" build directory to e.g. `~/builds/`
 - Specify `-j8` on your Kit build settings, and `root.exe` as your executable in the run settings.
 - "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" and "etc/helgrind-root.supp" from your cloned repository.
 
