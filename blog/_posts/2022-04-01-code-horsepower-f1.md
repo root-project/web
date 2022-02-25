@@ -54,7 +54,7 @@ The ROOT framework also has a ".qch" *Help Book* available [for download](https:
 
 [![Example of F1 with ROOT](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)
 
-You can not only check the documentation with <kbd>F1</kbd>, but fully open the *HTML* reference guide on the left pane, on the Help icon, as shown below.
+You can not only check the documentation with <kbd>F1</kbd>, but fully open the *HTML* reference guide by clicking on the big "Help" icon (left pane), as shown below.
 
 [![ROOT Help Book](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)
 
@@ -79,7 +79,7 @@ If, for example, you would like to modernize your code syntax to the latest *C++
 
 Whether you like 4 spaces, 2 spaces, 1 tab, braces in the beginning or in the end... it does not matter what your taste is. What's important is that you do not spend your valuable time on formatting things by hand. *QtCreator* can be helpful in this regard, too, if you activate the [Beautifier plugin](https://doc.qt.io/qtcreator/creator-beautifier.html) as well as install `clang-format`.
 
-For example, let's suppose you want to submit a pull request of one of your functions to *ROOT*, which has its own formatting guidelines. The easiest is to copy to your project the `.clang-format` configuration file from the [repository](https://github.com/root-project/root/blob/master/.clang-format) or the [website](https://root.cern/contribute/coding_conventions/#using-clangformat-or-astyle-in-your-preferred-editor) and then go to "Tools", "Options", "Beautifier", "Clang Format", and specify the file. (Or if you are building ROOT itself using *QtCreator*, specify "File", it will auto-detect the one in the source tree).
+For example, let's suppose you want to submit a pull request of one of your functions to *ROOT*, which has its own formatting guidelines. The easiest is to copy to your project the `.clang-format` configuration file from the [repository](https://github.com/root-project/root/blob/master/.clang-format) or the [website](https://root.cern/contribute/coding_conventions/#using-clangformat-or-astyle-in-your-preferred-editor) and then go to "Tools", "Options", "Beautifier", "Clang Format", and specify the file location. (Or if you are building ROOT itself using *QtCreator*, specify "File" in the dropdown menu, and it will auto-detect the one in the source tree).
 
 You can also define a [keyboard shortcut](https://doc.qt.io/qtcreator/creator-keyboard-shortcuts.html) to format the file, by going to "Tools", "Environment", "Keyboard", search for "format" and assign e.g. <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd>.
 
@@ -117,13 +117,13 @@ Beware:
 
 ### To gild the lily
 
-QtCreator lets you not only find compilation errors, but also documentation errors, by interfacing with the warnings issued by doxygen. This metawarning function can prove extremely useful for detecting outdated or incorrect documentation and going to the right spot in the source code in just one click, rather than diving through [thousands of lines of output](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT/job/root-makedoc-master/lastBuild/consoleText) and tracing it manually.
+QtCreator lets you not only find compilation errors, but also documentation errors, by interfacing with the warnings issued by *doxygen*. This metawarning function can prove extremely useful for detecting outdated or incorrect documentation and going to the right spot in the source code in just one click, rather than diving through [thousands of lines of output](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT/job/root-makedoc-master/lastBuild/consoleText) and tracing it manually.
 
-To give it a try, take a look at importing the [ROOT documentation project](https://root.cern/for_developers/doxygen/) into *QtCreator*. (You might need to call "source thisroot.sh" in the terminal before launching qtcreator, or manually specifying all the variables in the Build environment. Once you follow the import steps (explained in the corresponding section above), then click on the "Build" icon. Below a screenshot of the errors and the points in the source code found by just clicking on those issues.
+To give it a try, take a look at importing the [ROOT documentation project](https://root.cern/for_developers/doxygen/) into *QtCreator*. (You might need to call `source /path/to/ROOT/bin/thisroot.sh` in the terminal before launching `qtcreator`, or manually specifying all the variables in the "Build" environment. Once you follow the import steps (explained in the corresponding section above), then click on the "Build" icon. Below a screenshot of the errors and the points in the source code found by just clicking on those issues.
 
 [![Doxygen warnings visualized with QtCreator](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)
 
-I'd suggest to define a custom output parser to catch some doxygen warnings of "potential candidates" when there is an ambiguous matching in the signatures. To do this, go to "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", and in "Warning", specify the pattern `(.*) at line (\d+) of file (.*)` and order 3,2,1. "Apply", "Ok", and in the "Projects", "Build Settings", on the bottom, click on activate the newly defined "Parser".
+I'd suggest you to define a custom output parser to catch some doxygen warnings of "potential candidates" when there is an ambiguous matching in the signatures. To do this, go to "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", and in "Warning", specify the pattern `(.*) at line (\d+) of file (.*)` and order 3,2,1. "Apply", "Ok", and in the "Projects", "Build Settings", on the bottom, click on activate the newly defined "Parser".
 
 If you want even more verbose warnings about undocumented parameters, try setting `WARN_NO_PARAMDOC` to `YES` in the *Doxyfile* and `EXTRACT_ALL` to `NO`. This will account for many much more weak points of your documentation and let you pinpoint your efforts on the right spot. And while it can be burdensome to write all this extra missing documentation, *QtCreator* also simplifies the task by typing three magic characters on top a function. Then, it will [autocomplete all the skeleton](https://stackoverflow.com/questions/17955686/using-automatic-documentation-of-my-own-function-with-qt-creator) in *doxygen* format. Check first if "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
 
@@ -142,86 +142,86 @@ To do this:
 - Clone the *ROOT* *git* repository
 - Open *QtCreator*
 - "File", "Open File or Project" and double click on the main "CMakeLists.txt" file.
-- In the "Configure Project" kit dialog, activate the "Debug" and deactivate "Release" and press on "Configure". The "Debug" mode will internally set the `CMAKE_BUILD_TYPE` to `Debug`, as you would do from a command line.
+- In the "Configure Project" kit dialog, activate the "Debug", deactivate "Release" and press on "Configure". The "Debug" mode will internally set the `CMAKE_BUILD_TYPE` to `Debug`, as you would do from a command line.
 - Specify the folder where it will be built
 - If you've already built *ROOT* using debug mode via your command line, then you can "import" your preexisting build, to not recompile it and save your time.
-- At the bottom of the "Key" dialog, deactivate or activate submodules of *ROOT* as needed. This acts as passing `-Dmodule=ON` via the *CLI*.
+- At the bottom of the "Key" dialog, deactivate or activate submodules of *ROOT* as needed. This acts as passing `-Dmodule=ON` via the command line.
 - Consider enabling "testing" to run all *ROOT* tests.
 - In the "Build steps", click on "Details", and specify `-j8` on the "CMake arguments" or whatever other number, to speed up the build.
 - On the left, click on the "Build" icon, and *ROOT* will be compiled.
-- Once built, on the left Kit pane, click on the "Run" line, and select which executable you want to run.
+- Once built, on the left "Projects", "Kit", "Run" pane, click on the "Run" line on the right, and select which executable you want to run.
 - You can run it from the big "Play" icon on the left.
 
 ### Debugging your ROOT scripts or executables with GDB
 
-To debug your script, on the Kit-Run settings, specify your executable (your own standalone application, or root.exe) and your CLI arguments, e.g. the name of the script you want to run as well as their parameters. If you want to precompile instead of interpret with cling, consider using the debug flag `g` when passing the argument (`yourScript.C+g`)
+To debug your script, on the "Projects", "Kit", "Run" settings, specify your executable (your own standalone application, or `root.exe`) and your command line arguments, e.g. the name of the script you want to run as well as their parameters. If you want to precompile instead of interpret with cling, consider using the debug flag `g` when passing the argument (`yourScript.C+g`)
 
-Click then on the "Play-Bug" icon on the left, and your script will run in Debug mode. Breakpoints can be set interactively on your code. F5 will pause or resume your process, as well as show you a workspace of the active variables and threads.
+Click then on the "Play-Bug" icon on the left, and your script will run in "Debug" mode. Breakpoints can be set interactively on your code. <kbd>F5</kbd> will pause or resume your process, as well as show you a workspace of the active variables and threads.
 
 As an example, below a screenshot while debugging [a deadlock in the TThread class](https://github.com/root-project/root/issues/8365).
 
 [![Debugging example with QtCreator](https://user-images.githubusercontent.com/10653970/155715232-c86cfd3d-2153-454f-a948-ccd9a8595363.png)](https://user-images.githubusercontent.com/10653970/155715232-c86cfd3d-2153-454f-a948-ccd9a8595363.png)
 
-Side note: if at some point, your ROOT script gets very complex long, I recommend instead to use a standalone C++ application using CMake, and link the ROOT libraries easily to it, as explained [here](https://root.cern/manual/integrate_root_into_my_cmake_project/#full-example-event-project).
+Side note: if at some point, your *ROOT* script gets very complex long, I recommend instead to use a standalone *C++* application using *CMake*, and link the *ROOT* libraries easily to it, as explained [here](https://root.cern/manual/integrate_root_into_my_cmake_project/#full-example-event-project).
 
 ### Memory error detection
 
-To check for memory leaks and corruption, QtCreator offers a seamless integration with valgrind (or [heob on Windows](https://doc.qt.io/qtcreator/creator-analyzer.html)), making the backtrace of your errors fully interactive. To run it, press on the big "Debug button" on the left. Then, on the dropdown menu, change from "Debugger" to "Memcheck" and click on the small play button.
+To check for memory leaks and corruption, *QtCreator* offers a seamless integration with valgrind (or [heob on Windows](https://doc.qt.io/qtcreator/creator-analyzer.html)), making the backtrace of your errors fully interactive. To run it, press on the big "Debug button" on the left. Then, on the dropdown menu, change from "Debugger" to "Memcheck" and click on the small play button.
 
-If you need extra arguments for valgrind, you will need to specify those under "Tools", "Options", "Analyzer", "Valgrind".
+If you need extra arguments for *valgrind*, you will need to specify those under "Tools", "Options", "Analyzer", "Valgrind".
 There, I also recommend to click on "Add", "etc/valgrind-root.supp" from your cloned repository, to suppress spurious warnings.
 
-The resulting warnings can be easily clicked to bring you to the right spot in your code, or in the ROOT codebase, where the issue is arising from.
+The resulting warnings can be easily clicked to bring you to the right spot in your code, or in the *ROOT* codebase, where the issue is arising from.
 
 [![Valgrind example with QtCreator](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)
 
-Often, you will also find helpful to run the static clang-analyzer, which is able to detect many unsafe parts of your code that might be leading to memory leaks. It's in the same dropdown menu, under Clang-Tidy and Clazy. 
+Often, you will also find helpful to run the static *Clang-analyzer*, which is able to detect many unsafe parts of your code that might be leading to memory leaks. It's in the same dropdown menu, under "Clang-Tidy and Clazy". 
 
 ### Data race detection
 
-First, I recommend to click on "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" from your git repository. Then, on the dropdown menu, change from "Debugger" to "Memcheck" and click on the small play button.
+First, I recommend to click on "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" from your *git* repository. Then, on the dropdown menu, change from "Debugger" to "Memcheck" and click on the small play button.
 
-Helgrind cannot be run yet directly from QtCreator. The background is to run root.exe or your executable from your command line, with the flags (--tool=helgrind --xml=yes --xml-file=yourfile.xml). Then, you can "load" the result using the small "open" button right from the dropdown menu. The parsing tool works great and takes you the relevant location in your code.
+*Helgrind* cannot be run yet directly from QtCreator. The workaround is to run `root.exe` or your own executable from your command line, with the flags `--tool=helgrind --xml=yes --xml-file=yourfile.xml`. Then, you can "load" the result using the small "open" button right from the dropdown menu. The parsing tool works great and takes you the relevant location in your code.
 
 ### Performance analysis
 
-In case you want to optimize the [performance of your code](https://doc.qt.io/qtcreator/creator-cache-profiler.html), you can select from the debugger dropdown menu between Callgrind or the [Performance Analyzer](https://doc.qt.io/qtcreator/creator-cpu-usage-analyzer.html). If you use callgrind, consider installing also kcachegrind for visualization.
+In case you want to optimize the [performance of your code](https://doc.qt.io/qtcreator/creator-cache-profiler.html), you can select from the debugger dropdown menu between "Callgrind" or the [Performance Analyzer](https://doc.qt.io/qtcreator/creator-cpu-usage-analyzer.html). If you install and use `callgrind`, consider installing also `kcachegrind` for visualization.
 
 ### Other approaches
 
 There are other tricks to boost your development in a way that's integrated with your IDE. For example:
 
-- If you use a standalone application that uses *ROOT* libraries and graphical interface, but not it's terminal, you might want to check the [TGCommandPlugin](https://root.cern/doc/master/classTGCommandPlugin.html) window. With it, you can nicely interact with your internal C++ classes while your program is executing, without having to build in Debug mode, which has sometimes downsides due to its slow performance. To make ROOT aware of your C++ object, you need to call within your program:
+- If you use a standalone application that uses *ROOT* libraries and graphical interface, but not it's terminal, you might want to check the [TGCommandPlugin](https://root.cern/doc/master/classTGCommandPlugin.html) window. With it, you can nicely interact with your internal *C++* classes while your program is executing, without having to build in "Debug" mode, which has sometimes downsides due to its slow performance. To make *ROOT* aware of your *C++* object, you need to call within your program:
 gROOT->ProcessLine(
       static_cast<TString>(
           "MyClassType* const fMyInstance = reinterpret_cast<MyClasstype*>(") +
       static_cast<std::ostringstream &>(std::ostringstream("") << fMyInstance)
           .str() +
       ");"); 
-And then, of course, creating a TGCommandPlugin window. From there, typing fMyInstance->MyMethod() will execute binary code interactively.
+And then, of course, creating a `TGCommandPlugin` window. From there, typing `fMyInstance->MyMethod()` will execute binary code interactively.
   
-- [This VS Studio plugin](https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer) allows for a nice integration of a ROOT file browser. Maybe it will come [at some point](https://root-forum.cern.ch/t/rbrowser-plugin-for-qtcreator/48807) for QtCreator, too.
+- [This VS Studio plugin](https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer) allows for a nice integration of a *ROOT* file browser. Maybe it will come [at some point](https://root-forum.cern.ch/t/rbrowser-plugin-for-qtcreator/48807) for *QtCreator*, too.
   
 - Interfaces between [Cling and Qt](https://github.com/herrgahr/qling) have been attempted before.
 
 ## Quick recipe Summary
 
-- Optional: install valgrind, kcachegrind
+- Optional: install `valgrind`, `callgrind`, `kcachegrind`
 - [Install QtCreator](https://www.qt.io/download-open-source) deactivating all extra options
-- Download Std Help Book from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or package manager (sudo apt install cppreference-doc-en-qch)
+- Download *std Help Book* from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or package manager (`sudo apt install cppreference-doc-en-qch`)
 - Download [ROOT Help Book](https://root.cern/reference/)
 - Add both ".qch" files via "Tools", "Options", "Help", "Documentation"
 - "Tools", "Options", "Analyzer", "Default checks", configure as needed.
-- Install the [Beautifier plugin](https://doc.qt.io/qtcreator/creator-beautifier.html), potentially download the [ROOT](https://github.com/root-project/root/blob/master/.clang-format) one.
+- Install the [Beautifier plugin](https://doc.qt.io/qtcreator/creator-beautifier.html), potentially download the [ROOT](https://github.com/root-project/root/blob/master/.clang-format) one to store in your own project.
 - "Tools", "Options", "Beautifier", "Clang", "Use predefined style", "File"
-- If you enable "testing" flag in CMake, adapt "Timeout" in "Tools", "Options", "Testing".
+- If you enable "testing" flag in *CMake*, adapt "Timeout" in "Tools", "Options", "Testing".
 - Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
 - Optional: Check that "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
 - Optional: Under "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", "Warning", specify the pattern `(.*) at line (\d+) of file (.*)` and order 3,2,1. "Apply", "Ok". Activate it under "Projects", "Build Settings", on the bottom.
-- Optional: Install [a spellchecker plugin](https://github.com/CJCombrink/SpellChecker-Plugin) by unzipping the release file into your QtCreator installation folder. Configure then your dictionary under "Tools", "Options", "Spellchecker".
-- Clone the [ROOT git repository](https://github.com/root-project/root/) and open main CMakeLists.txt with QtCreator
+- Optional: Install [a spellchecker plugin](https://github.com/CJCombrink/SpellChecker-Plugin) by unzipping the release file into your *QtCreator* installation folder. Configure then your dictionary under "Tools", "Options", "Spellchecker".
+- Clone the [ROOT git repository](https://github.com/root-project/root/) and open main "CMakeLists.txt" with *QtCreator*.
 - Optional: configure your default's "Kit" build directory to e.g. ~/builds/
-- Specify -j8 on your Kit build settings, and root.exe as your executable in the run settings.
+- Specify `-j8` on your Kit build settings, and `root.exe` as your executable in the run settings.
 - "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" and "etc/helgrind-root.supp" from your cloned repository.
 
 Setting up all this platform requires some initial effort, but once it is running, it will smooth your development and bug hunting, and once you've get used to it, you will find it much more tiring to program without it ;) .
