@@ -1,14 +1,14 @@
 ---
-title: "Coding in ROOT with the horsepower of an F1"
+title: "Coding in ROOT with the horsepower of an <kbd>F1</kbd>"
 layout: archive
 author: Fernando Hueso-González
 ---
 
-If you've ever rubbed your eyes trying to decrypt C++ compilation errors from a terminal, traced those back to the line in the ROOT script you were just typing in your plain text editor, then googled "CERN ROOT TTree" to fix the signature of that function you just used incorrectly, or even have faced with your bare eye the intimidating logs of valgrind output for memory leak detection, or manually deployed gdb, you should definitely keep reading.
+If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from a terminal, traced those back to the line in the *ROOT* script you were just typing in your plain text editor, then googled *CERN ROOT TTree* to fix the signature of that function you just used incorrectly, or even have faced with your bare eye the intimidating logs of valgrind output for memory leak detection, or manually deployed *gdb*, you should definitely keep reading.
 
-If, on top of that, your next-door work colleague has a fancy MATLAB installation, does everything quicker than you, and only needs to hover the mouse on a function and press F1 to access all important help, while you painfully have to google, copy-paste, rebuild project, etc, then this post is also spot on for you.
+If, on top of that, your next-door work colleague has a fancy *MATLAB* installation, does everything quicker than you, and only needs to hover the mouse on a function and press <kbd>F1</kbd> to access all important help, while you painfully have to google, copy-paste, rebuild project, etc, then this post is also spot on for you.
 
-In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard taks, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because it diminishes ones productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with ROOT by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your producitivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make ROOT more safe, user-friendly, modern, and productive will be welcome.
+In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard taks, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because it diminishes ones productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your producitivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe, user-friendly, modern, and productive will be welcome.
 
 ## Errors are development tools, not silly mistakes
 
@@ -37,21 +37,21 @@ Let me load into QtCreator the [simplest CMake example](https://cmake.org/cmake/
 
 You will not need to re-do all these configuration steps later on for this project, as QtCreator will store these settings in a file called CMakeLists.txt.user and recognize it automatically the next time you open the project.
 
-### The Power of F1
+### The Power of <kbd>F1</kbd>
 
 Let's assume now that you have forgotten what class "std::cout" has. Luckily, Qt has an in-built (offline) help support system. For a first-time configuration, you will just need to download the Help Book of your library, in this case the std library from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or via your package manager (sudo apt install cppreference-doc-en-qch). Then, in "Tools", "Options", "Help", "Documentation", you can add the downloaded (or /usr/share/ installed) ".qch" file.
 
-Once this is set, you can either CTRL+Click on your function to immediately go the source code definition (file will open in another tab), or press F1, and the HTML documentation will appear on your right side without having to type / search anything online.
+Once this is set, you can either CTRL+Click on your function to immediately go the source code definition (file will open in another tab), or press <kbd>F1</kbd>, and the HTML documentation will appear on your right side without having to type / search anything online.
 
 [![tutorial](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)
 
 If you use and compile LLVM yourself, you can also get your Qt Help file file [as described here](https://reviews.llvm.org/D2967).
 
-The ROOT framework also has a ".qch" Help Book available [for download](https://root.cern/reference/), thus you'll be able to quickly consult any documentation using the F1 key, rather than searching online, which can be useful in case you are traveling and have no Internet access.
+The ROOT framework also has a ".qch" Help Book available [for download](https://root.cern/reference/), thus you'll be able to quickly consult any documentation using the <kbd>F1</kbd> key, rather than searching online, which can be useful in case you are traveling and have no Internet access.
 
 [![f1root](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)
 
-You can not only check the documentation with F1, but fully opening the full HTML reference on the left pane, on the Help icon, as shown below.
+You can not only check the documentation with <kbd>F1</kbd>, but fully opening the full HTML reference on the left pane, on the Help icon, as shown below.
 
 [![roothelp](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)
 
