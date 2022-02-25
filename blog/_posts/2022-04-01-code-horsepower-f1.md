@@ -34,7 +34,7 @@ You can find (usually) outdated versions of *QtCreator* in your package manager,
 
 You can open any *CMake* project you have on your computer by clicking on "File", "Open File or Project", and double-clicking on your "CMakeLists.txt". Pretty simple. Or directly from the command line, run as `qtcreator my/folder/CMakeLists.txt &`.
 
-If you rather use *Makefiles*, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu, by clicking on "File", "New File or Project", "Import Project", "Import Existing Project", "Choose", and then select the source files you want to see in your tree (or just click on select all and deactivate those that are images, etc.). The *Makefile* will be automatically detected behind the scenes. You can edit the number of threads (-j) later on the project's "Build settings".
+If you rather use *Makefiles*, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu, by clicking on "File", "New File or Project", "Import Project", "Import Existing Project", "Choose", and then select the source files you want to see in your tree (or just click on select all and deactivate those that are images, etc.). The *Makefile* will be automatically detected behind the scenes. You can edit the number of threads (`-j`) later on the project's "Build settings".
 
 Let me load into *QtCreator* the [simplest CMake example](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html). After "Open File or Project", you can specify in what folder to build your program. The option "Manage Kits" allows you to tune your compiler version. "Tools", "Options", "Build", "Default Properties" allows you to setup a default directory. Once you "Configure Project", *CMake* will be run. In the "Projects" pane, you can tune any *CMake* flag as needed, as well as specify command line arguments when running. The "Build" icon compiles your project, and the "Run" one executes it.
 
@@ -44,36 +44,36 @@ You will not need to re-do all these configuration steps later on for this proje
 
 Let's assume now that you have forgotten what class `std::cout` corresponds to. Luckily, *Qt* has an in-built (offline) help support system. For a first-time configuration, you will just need to download the "Help Book" of your library, in this case the `std` library from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or via your package manager (`sudo apt install cppreference-doc-en-qch`). Then, in "Tools", "Options", "Help", "Documentation", you can add the downloaded (or `/usr/share/` installed) ".qch" file.
 
-Once this is set, you can either <kbd>Ctrl</kbd>+Click on your function to immediately go the source code definition (file will open in another tab), or press <kbd>F1</kbd>, and the HTML documentation will appear on your right side without having to type / search anything online.
+Once this is set, you can either <kbd>Ctrl</kbd>+Click on your function or object to immediately go to the source code definition (file will open in another tab), or press <kbd>F1</kbd>, and the HTML documentation will appear on your right side without having to type / search anything online.
 
 [![Example of F1 with C++](https://user-images.githubusercontent.com/10653970/155714549-9f451b59-23d8-4640-a223-6137d8840f41.png)](https://user-images.githubusercontent.com/10653970/155714549-9f451b59-23d8-4640-a223-6137d8840f41.png)
 
-If you use and compile LLVM yourself, you can also get your Qt Help file file [as described here](https://reviews.llvm.org/D2967).
+If you use and compile *LLVM* yourself, you can also get your *Qt Help* file [as described here](https://reviews.llvm.org/D2967).
 
-The ROOT framework also has a ".qch" Help Book available [for download](https://root.cern/reference/), thus you'll be able to quickly consult any documentation using the <kbd>F1</kbd> key, rather than searching online, which can be useful in case you are traveling and have no Internet access.
+The ROOT framework also has a ".qch" *Help Book* available [for download](https://root.cern/reference/), thus you'll be able to quickly consult any documentation using the <kbd>F1</kbd> key, rather than searching online, which can be useful in case you are traveling and have no Internet access.
 
 [![Example of F1 with ROOT](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)](https://user-images.githubusercontent.com/10653970/154870916-28e4009d-eb70-46df-a52b-da81cfe3c97f.png)
 
-You can not only check the documentation with <kbd>F1</kbd>, but fully opening the full HTML reference on the left pane, on the Help icon, as shown below.
+You can not only check the documentation with <kbd>F1</kbd>, but fully open the *HTML* reference guide on the left pane, on the Help icon, as shown below.
 
 [![ROOT Help Book](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)](https://user-images.githubusercontent.com/10653970/154870717-6f0ffdf4-084b-45d6-92d3-dc2a948f27b5.png)
 
-Alternatively, you can also open the Help Books and search it using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html). Linux apt packages are qt4-dev-tools or qt5-assistant, and the executables are assistant-qt4 and assistant, respectively. (qt6 version is not yet in the package manager.) You will have to add the .qch file to its database by going to Edit, Preferences, Documentation, Add.
+Alternatively, you can also open the *Help Books* and search them using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html). Linux *apt* packages are `qt4-dev-tools` or `qt5-assistant`, and the executables are `assistant-qt4` and `assistant`, respectively. (`qt6` version is not yet in the package manager.) You will have to add the `.qch` file to its database by going to "Edit", "Preferences", "Documentation", "Add".
 
-And if you use other IDEs or OS ? In addition to [inline HTML searching](https://www.doxygen.nl/manual/searching.html), the building of the (ROOT) doxygen documentation can be configured to output a format that is compatible with MacOS - [Xcode](https://www.doxygen.nl/manual/config.html#cfg_generate_docset), Windows - [VSstudio](https://www.doxygen.nl/manual/config.html#cfg_generate_htmlhelp), or [Eclipse](https://www.doxygen.nl/manual/config.html#cfg_generate_eclipsehelp). ROOT [only provides for download](https://root.cern/reference/) the Qt help files (.qch) for the moment, but you can [build the documentation yourself](https://root.cern/for_developers/doxygen/) adapting those flags in the Doxyfile.
+And if you already use other IDEs or operating systems ? In addition to [inline HTML searching](https://www.doxygen.nl/manual/searching.html), the building of the (*ROOT*) doxygen documentation can be configured to output a format that is compatible with *MacOS* - [Xcode](https://www.doxygen.nl/manual/config.html#cfg_generate_docset), *Windows* - [VSstudio](https://www.doxygen.nl/manual/config.html#cfg_generate_htmlhelp), or [Eclipse](https://www.doxygen.nl/manual/config.html#cfg_generate_eclipsehelp). *ROOT* [only provides for download](https://root.cern/reference/) the *Qt* help files (`.qch`) for the moment, but you can [build the documentation yourself](https://root.cern/for_developers/doxygen/) adapting those flags in the *Doxyfile*.
 
 ### The Power of Clang
 
-Grown over many years and standards, larger software projects have plenty of legacy code that is not as safe as the one someone would write today. Not surprisingly, there are still some bugs here and there, and instabilities that haven't been solved. Some of these bugs and potential style improvements can be detected thanks to the *Clang-analyzer*, which performs code analysis based on some settings.
+Grown over many years and standards, larger software projects have plenty of legacy code that is not as safe as the one someone would write today. Unsurprisingly, there are still some bugs here and there, and instabilities that haven't been solved. Some of these bugs and potential style improvements can be detected thanks to the *Clang-analyzer*, which performs code analysis based on configurable settings.
 
-Qt-Creator bundles perfectly with Clang-Analyzer, see left pane, "Debug" icon, then "Debugger" dropdown menu, "Clang Tidy and Clazy". It parses its output warnings and takes you directly to where the code needs to be changed.
-In addition, it even lets you apply "fixits" by a mouse-click: if Clang knows how to correct the problem, he will change the code automatically for you.
+*QtCreator* bundles perfectly with *Clang-Analyzer*, see left pane, "Debug" icon, then "Debugger" dropdown menu, "Clang-Tidy and Clazy". It parses its output warnings and takes you directly to where the code needs to be changed.
+In addition, it even lets you apply "fixits" by a mouse-click: if *Clang* knows how to correct the problem, he will change the code automatically for you.
 
-To give an example, analyzing the "core" of ROOT yields several diagnostics, and this can be quite useful for tracing in case you are seeing some memory leak when your application is deploying ROOT libraries:
+To give an example, analyzing the `core` of *ROOT* yields several diagnostics, and this can be quite useful for tracing in case you are seeing some memory leak when your application is deploying *ROOT* libraries:
 
 [![Clang-Tidy example](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)](https://user-images.githubusercontent.com/10653970/153959440-a2fb89c8-3459-49ae-9248-37283fefeb9a.png)
 
-If, for example, you would like to modernize your code syntax to the latest C++ standard, you can configure the Clang settings in "Tools", "Analyzer", "Default checks", and enable the modernize option. For example, with a single click, you can change NULL to nullptr across your whole codebase.
+If, for example, you would like to modernize your code syntax to the latest *C++* standard, you can configure the *Clang* settings in "Tools", "Analyzer", "Default checks", and enable the modernize option. For example, with a single click, you can change `NULL` to `nullptr` across your whole codebase.
 
 ### Formatting your code
 
