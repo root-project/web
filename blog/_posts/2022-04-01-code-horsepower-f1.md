@@ -161,7 +161,7 @@ Click then on the "Play-Bug" icon on the left, and your script will run in Debug
 
 As an example, below a screenshot while debugging [a deadlock in the TThread class](https://github.com/root-project/root/issues/8365).
 
-[![Debugging example with QtCreator](https://user-images.githubusercontent.com/10653970/155714955-543d182a-a9e5-449d-828c-fa635625cf57.png)](https://user-images.githubusercontent.com/10653970/155714955-543d182a-a9e5-449d-828c-fa635625cf57.png)
+[![Debugging example with QtCreator](https://user-images.githubusercontent.com/10653970/155715232-c86cfd3d-2153-454f-a948-ccd9a8595363.png)](https://user-images.githubusercontent.com/10653970/155715232-c86cfd3d-2153-454f-a948-ccd9a8595363.png)
 
 Side note: if at some point, your ROOT script gets very complex long, I recommend instead to use a standalone C++ application using CMake, and link the ROOT libraries easily to it, as explained [here](https://root.cern/manual/integrate_root_into_my_cmake_project/#full-example-event-project).
 
