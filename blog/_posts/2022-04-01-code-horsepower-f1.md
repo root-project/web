@@ -41,7 +41,7 @@ You will not need to re-do all these configuration steps later on for this proje
 
 Let's assume now that you have forgotten what class "std::cout" has. Luckily, Qt has an in-built (offline) help support system. For a first-time configuration, you will just need to download the Help Book of your library, in this case the std library from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or via your package manager (sudo apt install cppreference-doc-en-qch). Then, in "Tools", "Options", "Help", "Documentation", you can add the downloaded (or /usr/share/ installed) ".qch" file.
 
-Once this is set, you can either CTRL+Click on your function to immediately go the source code definition (file will open in another tab), or press <kbd>F1</kbd>, and the HTML documentation will appear on your right side without having to type / search anything online.
+Once this is set, you can either <kbd>Ctrl</kbd>+Click on your function to immediately go the source code definition (file will open in another tab), or press <kbd>F1</kbd>, and the HTML documentation will appear on your right side without having to type / search anything online.
 
 [![tutorial](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)](https://user-images.githubusercontent.com/10653970/153931729-271fbefd-c73a-4739-8ff3-39bec7c35eec.png)
 
@@ -78,9 +78,9 @@ Whether you like 4 spaces, 2 spaces, 1 tab, braces in the beginning or in the en
 
 For example, let's suppose you want to submit a pull request of one of your functions to ROOT, which has its own formatting guidelines. The easiest is to copy the .clang-format configuration file from the [repository](https://github.com/root-project/root/blob/master/.clang-format) or the [website](https://root.cern/contribute/coding_conventions/#using-clangformat-or-astyle-in-your-preferred-editor) and then go to "Tools", "Options", "Beautifier", "Clang Format", and specify the file. (Or if you are building ROOT itself, specify "File", it will auto-detect the one in the source tree).
 
-You can also define a [keyboard shortcut](https://doc.qt.io/qtcreator/creator-keyboard-shortcuts.html) to format the file, by going to "Tools", "Environment", "Keyboard", search for "format" and assign e.g. CTRL+Alt+F.
+You can also define a [keyboard shortcut](https://doc.qt.io/qtcreator/creator-keyboard-shortcuts.html) to format the file, by going to "Tools", "Environment", "Keyboard", search for "format" and assign e.g. <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd>.
 
-Once that is configured, you can enable to auto-format your file when saving, or apply changes manually via CTRL+Alt+F. Here a snippet before and after "CTRL+Alt+F":
+Once that is configured, you can enable to auto-format your file when saving, or apply changes manually via <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd>. Here a snippet before and after applying it:
 
 ```cpp
 int main(int argc, char* argv[])
@@ -91,7 +91,7 @@ int main(int argc, char *argv[]) {
 ```
 
 ### git version control
-For one of your projects, or even for the ROOT codebase, you might be using git for version control. QtCreator integrates seamlessly with the typical git commands, and can show you a visual diff of the current changes, as well as commit (Alt+G, Alt+C) and push your changes using its GUI, or pull the latest version from the remote repository.
+For one of your projects, or even for the ROOT codebase, you might be using git for version control. QtCreator integrates seamlessly with the typical git commands, and can show you a visual diff of the current changes, as well as commit (<kbd>Alt</kbd>+<kbd>G</kbd>, <kbd>Alt</kbd>+<kbd>C</kbd>) and push your changes using its GUI, or pull the latest version from the remote repository.
 
 [![git](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)](https://user-images.githubusercontent.com/10653970/154095599-849e5dcf-79a1-4b80-a44d-8ff35506e068.png)
 
