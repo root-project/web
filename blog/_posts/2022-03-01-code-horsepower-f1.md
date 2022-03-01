@@ -8,7 +8,7 @@ If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from 
 
 If, on top of that, your next-door work colleague has a fancy *MATLAB* installation, does everything quicker than you, and only needs to hover the mouse on a function and press <kbd>F1</kbd> to access all important help, while you painfully have to google, copy-paste, rebuild project, etc, then this post is also spot on for you.
 
-In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard taks, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because they claim it diminishes one's productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your productivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe, user-friendly, modern, and productive will be welcome.
+In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard task, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because they claim it diminishes one's productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your productivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe, user-friendly, modern, and productive will be welcome.
 
 - [Errors are development tools, not silly mistakes](#errors-are-development-tools-not-silly-mistakes)
   * [IDEs to the rescue](#ides-to-the-rescue)
@@ -178,7 +178,7 @@ To do this:
 - Consider enabling "testing" to run all *ROOT* tests.
 - In the "Build steps", click on "Details", and specify `-j8` on the "CMake arguments" or whatever other number, to speed up the build.
 - On the left bottom pane, click on the "Build" (the big hammer) icon, and *ROOT* will be compiled.
-- Once built, on the left, click on "Projects", "Kit", "Run" small icon on ther ight, under "Build & Run", and under "Run configuration", select which executable you want to run.
+- Once built, on the left, click on "Projects", "Kit", "Run" small icon on the right, under "Build & Run", and under "Run configuration", select which executable you want to run.
 - You can run it from the big "Play" icon on the left pane.
 
 ### Debugging your ROOT scripts or executables with GDB
