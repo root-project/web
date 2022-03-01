@@ -53,7 +53,7 @@ You can find (usually) outdated versions of *QtCreator* in your package manager,
 
 ### Open a C++ CMake project
 
-You can open any *CMake* project you have on your computer by clicking on "File", "Open File or Project", and double-clicking on your "CMakeLists.txt". Pretty simple. Or directly from the command line, run as `qtcreator my/folder/CMakeLists.txt &`.
+You can open any *CMake* project you have on your computer by clicking on "File", "Open File or Project". Find then the main folder where your project's source code is located. Usually, there will be a "CMakeLists.txt" file in the main directory. Double-click then on this one, rather than in any other "CMakeLists.txt" that might appear in the subdirectories of this same project. If you prefer the command line, you can run directly as `qtcreator my/folder/CMakeLists.txt &`. If you installed *QtCreator* in a local folder, you might need to run something like: `/opt/Qt/Tools/QtCreator/bin/qtcreator my/folder/CMakeLists.txt &`.
 
 If you rather use *Makefiles*, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu, by clicking on "File", "New File or Project", "Import Project", "Import Existing Project", "Choose", and then select the source files you want to see in your tree (or just click on select all and deactivate those that are images, etc.). The *Makefile* will be automatically detected behind the scenes. You can edit the number of threads (`-j`) later on the project's "Build settings".
 
@@ -163,15 +163,17 @@ To do this:
 - Clone the *ROOT* *git* repository
 - Open *QtCreator*
 - "File", "Open File or Project" and double click on the main "CMakeLists.txt" file.
-- In the "Configure Project" kit dialog, activate the "Debug", deactivate "Release" and press on "Configure". The "Debug" mode will internally set the `CMAKE_BUILD_TYPE` to `Debug`, as you would do from a command line.
-- Specify the folder where it will be built
+- In the "Configure Project" - "Desktop Kit" dialog, activate the "Debug", deactivate "Release" and press on "Configure". The "Debug" mode will internally set the `CMAKE_BUILD_TYPE` to `Debug`, as you would do from a command line.
+- Specify the folder where it will be built. This can be set in the text box right from the "Debug" checkbox (while you are in the "Configure Project" - "Desktop Kit" dialog).
 - If you've already built *ROOT* using debug mode via your command line, then you can "import" your preexisting build, to not recompile it and save your time.
-- At the bottom of the "Key" dialog, deactivate or activate submodules of *ROOT* as needed. This acts as passing `-Dmodule=ON` via the command line.
+- Press then on the "Configure Project" button.
+- On the left pane, press again on the "Projects" icon.
+- At the bottom of the "Key" tree viewer, deactivate or activate submodules of *ROOT* as needed. This acts as passing `-Dmodule=ON` via the command line.
 - Consider enabling "testing" to run all *ROOT* tests.
 - In the "Build steps", click on "Details", and specify `-j8` on the "CMake arguments" or whatever other number, to speed up the build.
-- On the left, click on the "Build" icon, and *ROOT* will be compiled.
-- Once built, on the left "Projects", "Kit", "Run" pane, click on the "Run" line on the right, and select which executable you want to run.
-- You can run it from the big "Play" icon on the left.
+- On the left bottom pane, click on the "Build" (the big hammer) icon, and *ROOT* will be compiled.
+- Once built, on the left, click on "Projects", "Kit", "Run" small icon on ther ight, under "Build & Run", and under "Run configuration", select which executable you want to run.
+- You can run it from the big "Play" icon on the left pane.
 
 ### Debugging your ROOT scripts or executables with GDB
 
