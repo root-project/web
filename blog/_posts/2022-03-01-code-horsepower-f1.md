@@ -1,14 +1,14 @@
 ---
 title: "Coding in ROOT with the horsepower of an <kbd>F1</kbd>"
 layout: archive
-author: Fernando Hueso-González
+author: Fernando Hueso González
 ---
 
 If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from a terminal, traced those back to the line in the *ROOT* script you were just typing in your plain text editor, then googled *CERN ROOT TTree* to fix the signature of that function you just used incorrectly, or even have faced with your bare eye the intimidating logs of valgrind output for memory leak detection, or manually deployed *gdb*, you should definitely keep reading.
 
 If, on top of that, your next-door work colleague has a fancy *MATLAB* installation, does everything quicker than you, and only needs to hover the mouse on a function and press <kbd>F1</kbd> to access all important help, while you painfully have to google, copy-paste, rebuild project, etc, then this post is also spot on for you.
 
-In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard taks, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because they claim it diminishes one's productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your producitivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe, user-friendly, modern, and productive will be welcome.
+In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard taks, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because they claim it diminishes one's productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your productivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe, user-friendly, modern, and productive will be welcome.
 
 - [Errors are development tools, not silly mistakes](#errors-are-development-tools-not-silly-mistakes)
   * [IDEs to the rescue](#ides-to-the-rescue)
@@ -33,7 +33,7 @@ In the physics predoc student circles, as well as [Wikipedia forums](https://en.
 
 ## Errors are development tools, not silly mistakes
 
-There is a natural tendency to look at compilation or conceptual errors as unwanted accidents or mistakes that only happen rarely, because of my own inexperience, and that surely will not happen next time. As such, we are not explicitly prepared nor trained to deal with them systematically. We just tackle them as a contingency and try to solve them quickly with whatever tools at hand. Yet experience tells us that errors (in programming, in mathematics, in [jugdement biases](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow)) are not an exception, but rather the rule.
+There is a natural tendency to look at compilation or conceptual errors as unwanted accidents or mistakes that only happen rarely, because of my own inexperience, and that surely will not happen next time. As such, we are not explicitly prepared nor trained to deal with them systematically. We just tackle them as a contingency and try to solve them quickly with whatever tools at hand. Yet experience tells us that errors (in programming, in mathematics, in [judgement biases](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow)) are not an exception, but rather the rule.
 
 In fact, most of the time in (robust) development is spent on debugging and troubleshooting, either passively by looking at whatever problem pops up, or actively, by creating robust software architecture from its conception that prevents them (via strong-typing, smart pointers, ordered structure and abstraction, good documentation, ...), as well as a suite of tests that prevent these in the future in as many virtual scenarios as possible. It is not uncommon that you may write an analysis software in 5 hours, but then spend 5 days tracking down why the heck it's giving wrong results, or crashing once every 100 times, or even more worryingly, leading you silently to wrong scientific conclusions or errors in other links of your analysis chain, that are far away from its original source and thus hard to trace back.
 
@@ -196,7 +196,7 @@ The resulting warnings can be easily clicked to bring you to the right spot in y
 
 [![Valgrind example with QtCreator](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)](https://user-images.githubusercontent.com/10653970/124675469-04769e80-debd-11eb-95d0-595f613c4689.png)
 
-Often, you will also find helpful to run the static *Clang-analyzer*, which is able to detect many unsafe parts of your code that might be leading to memory leaks. It's in the same dropdown menu, under "Clang-Tidy and Clazy". 
+Often, you will also find helpful to run the static *Clang-analyzer*, which is able to detect many unsafe parts of your code that might be leading to memory leaks. It's in the same dropdown menu, under "Clang-Tidy and Clazy".
 
 ### Data race detection
 
@@ -218,11 +218,11 @@ gROOT->ProcessLine(
           "MyClassType* const fMyInstance = reinterpret_cast<MyClasstype*>(") +
       static_cast<std::ostringstream &>(std::ostringstream("") << fMyInstance)
           .str() +
-      ");"); 
+      ");");
 And then, of course, creating a `TGCommandPlugin` window. From there, typing `fMyInstance->MyMethod()` will execute binary code interactively.
-  
+
 - [This VS Studio plugin](https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer) allows for a nice integration of a *ROOT* file browser. Maybe it will come [at some point](https://root-forum.cern.ch/t/rbrowser-plugin-for-qtcreator/48807) for *QtCreator*, too.
-  
+
 - Interfaces between [Cling and Qt](https://github.com/herrgahr/qling) have been attempted before.
 
 ## Quick recipe Summary
@@ -246,6 +246,6 @@ And then, of course, creating a `TGCommandPlugin` window. From there, typing `fM
 - "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" and "etc/helgrind-root.supp" from your cloned repository.
 
 Setting up all this platform requires some initial effort, but once it is running, it will smooth your development and bug hunting, and once you've get used to it, you will find it much more tiring to program without it ;) .
-      
+
 Fernando Hueso-González
-IFIC - Instituto de Física Corpuscular (CSIC / Universitat de València) 
+IFIC - Instituto de Física Corpuscular (CSIC / Universitat de València)
