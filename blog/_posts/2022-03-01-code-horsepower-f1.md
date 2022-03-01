@@ -57,7 +57,11 @@ You can open any *CMake* project you have on your computer by clicking on "File"
 
 If you rather use *Makefiles*, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu, by clicking on "File", "New File or Project", "Import Project", "Import Existing Project", "Choose", and then select the source files you want to see in your tree (or just click on select all and deactivate those that are images, etc.). The *Makefile* will be automatically detected behind the scenes. You can edit the number of threads (`-j`) later on the project's "Build settings".
 
-Let me load into *QtCreator* the [simplest CMake example](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html). After "Open File or Project", you can specify in what folder to build your program. The option "Manage Kits" allows you to tune your compiler version. "Tools", "Options", "Build", "Default Properties" allows you to setup a default directory. Once you "Configure Project", *CMake* will be run. In the "Projects" pane, you can tune any *CMake* flag as needed, as well as specify command line arguments when running. The "Build" icon compiles your project, and the "Run" one executes it.
+Let me load into *QtCreator* the [simplest CMake example](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html). After "Open File or Project", a "Kit dialog" will apear. Select the 'build kit' you prefer, and then click on "Details". There, you can specify in what folder to build your program. Under "Tools", "Options", "Build", "Default Properties" allows you to setup a default directory for your builds.
+
+The option "Manage Kits" on the top left allows you to tune your compiler version or define new kits. Click for example on one of the autodetected kits in the dialog. I recommend setting up a "Manual" kit, where "Qt version" is set to "None" (in case it was set). Click then "Ok", and select the checkbox of the newly created kit, and in "Details", verify the build directory.
+
+Once you click on "Configure Project", *CMake* will be automatically run. In the "Projects" pane, you can tune any *CMake* flag as needed, as well as specify command line arguments when running. The "Build" hammer icon on the left compiles your project (*make*), and the "Run" play icon executes it.
 
 You will not need to re-do all these configuration steps later on for this project, as *QtCreator* will store these settings in a file called "CMakeLists.txt.user" and recognize it automatically the next time you open the project.
 
@@ -163,8 +167,10 @@ To do this:
 - Clone the *ROOT* *git* repository
 - Open *QtCreator*
 - "File", "Open File or Project" and double click on the main "CMakeLists.txt" file.
-- In the "Configure Project" - "Desktop Kit" dialog, activate the "Debug", deactivate "Release" and press on "Configure". The "Debug" mode will internally set the `CMAKE_BUILD_TYPE` to `Debug`, as you would do from a command line.
-- Specify the folder where it will be built. This can be set in the text box right from the "Debug" checkbox (while you are in the "Configure Project" - "Desktop Kit" dialog).
+- In the "Configure Project" dialog that will appear, you will be prompted to select which kit (compiler) you want to use for building.
+- On the top left, you can click on "Manage Kits" to verify your different compiler choices. Click "Ok". Click on the "checkbox" of the kit of choice for this build.
+- Click then on "Details". Activate the "Debug", deactivate "Release". The "Debug" mode will internally set the `CMAKE_BUILD_TYPE` to `Debug`, as you would do from a command line.
+- Specify also the folder where it will be built if you do not like the default choice. This can be set in the text box right from the "Debug" checkbox (while you are in the "Configure Project" - "your chosen Kit" dialog, "Details" dropdown unfolded).
 - If you've already built *ROOT* using debug mode via your command line, then you can "import" your preexisting build, to not recompile it and save your time.
 - Press then on the "Configure Project" button.
 - On the left pane, press again on the "Projects" icon.
