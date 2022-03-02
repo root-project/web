@@ -152,8 +152,8 @@ QtCreator lets you not only find compilation errors, but also documentation erro
 To give it a try, take a look at building the [ROOT documentation project](https://root.cern/for_developers/doxygen/). Follow these steps:
 
 - Call first `source /path/to/ROOT/bin/thisroot.sh` in the terminal and launch `qtcreator` from there. Alternatively, you can manually specify all the variables in the "Build" environment.
-- Import the *Makefile* located in `root/documentation/doxygen` into *QtCreator*, as explained explained [above](#open-a-c-cmake-project)
-- Cick then on the "Build" icon.
+- Import the *Makefile* located in `root/documentation/doxygen` into *QtCreator*, as explained [above](#open-a-c-cmake-project)
+- Click then on the "Build" icon.
  
 Below a screenshot of the errors and the points in the source code found by just clicking on those issues.
 
