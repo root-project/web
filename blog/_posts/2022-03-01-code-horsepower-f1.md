@@ -150,7 +150,8 @@ Beware:
 QtCreator lets you not only find compilation errors, but also documentation errors, by interfacing with the warnings issued by *doxygen*. This metawarning function can prove extremely useful for detecting outdated or incorrect documentation and going to the right spot in the source code in just one click, rather than diving through [thousands of lines of output](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT/job/root-makedoc-master/lastBuild/consoleText) and tracing it manually.
 
 To give it a try, take a look at building the [ROOT documentation project](https://root.cern/for_developers/doxygen/). Follow these steps:
-- Call first `source /path/to/ROOT/bin/thisroot.sh` in the terminal and launching `qtcreator` from there. Alternatively, you can manually specify all the variables in the "Build" environment.
+
+- Call first `source /path/to/ROOT/bin/thisroot.sh` in the terminal and launch `qtcreator` from there. Alternatively, you can manually specify all the variables in the "Build" environment.
 - Import the *Makefile* located in `root/documentation/doxygen` into *QtCreator*, as explained explained [above](#open-a-c-cmake-project)
 - Cick then on the "Build" icon.
  
