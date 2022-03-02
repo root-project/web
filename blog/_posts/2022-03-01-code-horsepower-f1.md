@@ -8,12 +8,13 @@ If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from 
 
 If, on top of that, your next-door work colleague has a fancy *MATLAB* installation, does everything quicker than you, and only needs to hover the mouse on a function and press <kbd>F1</kbd> to access all important help, while you painfully have to google, copy-paste, rebuild project, etc, then this post is also spot on for you.
 
-In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard task, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because they claim it diminishes one's productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your productivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe, user-friendly, modern, and productive will be welcome.
+In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard tasks, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because they claim it diminishes one's productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your productivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe, user-friendly, modern, and productive will be welcome.
 
 - [Errors are development tools, not silly mistakes](#errors-are-development-tools-not-silly-mistakes)
   * [IDEs to the rescue](#ides-to-the-rescue)
 - [QtCreator](#qtcreator)
   * [Installation steps](#installation-steps)
+  * [Select your compiler Kit](#select-your-compiler-kit)
   * [Open a CMake project](#open-a-c-cmake-project)
   * [The Power of <kbd>F1</kbd>](#the-power-of-f1)
   * [The Power of Clang](#the-power-of-clang)
@@ -51,15 +52,19 @@ While optimized for *Qt* applications, *QtCreator* is totally generic, [open-sou
 
 You can find (usually) outdated versions of *QtCreator* in your package manager, but I recommend to use the [online installer](https://www.qt.io/download-open-source), which then periodically checks for updates at program start. If you prefer not to open a user account with them, you can use the [offline installer](https://www.qt.io/offline-installers/?hsLang=en). While installing, I recommend to deactivate all *Qt* library options, newer *CMake* versions or *Ninja*. You will just need *QtCreator*.
 
+### Select your compiler Kit
+
+Go to "Tools", "Options", "Kits". Click for example on one of the auto-detected kits in the dialog. You can define your custom one, which will appear as "Manual" in the tree view. I recommend setting up a "Manual" kit, where "Qt version" is set to "None" (in case it was set), and in "CMake generator", "Ninja" is changed to "Unix Makefiles" (if you are not in Windows). If you prefer to use the "Ninja" generator, make sure that it is installed in your system. Finally, click "Ok".
+
+Beware: in OSx, the "Tools", "Options" menu is instead under "AppName", "Preferences".
+
 ### Open a C++ CMake project
 
 You can open any *CMake* project you have on your computer by clicking on "File", "Open File or Project". Find then the main folder where your project's source code is located. Usually, there will be a "CMakeLists.txt" file in the main directory. Double-click then on this one, rather than in any other "CMakeLists.txt" that might appear in the subdirectories of this same project. If you prefer the command line, you can run directly as `qtcreator my/folder/CMakeLists.txt &`. If you installed *QtCreator* in a local folder, you might need to run something like: `/opt/Qt/Tools/QtCreator/bin/qtcreator my/folder/CMakeLists.txt &`.
 
 If you rather use *Makefiles*, that's also supported via the [Import](https://doc.qt.io/qtcreator/creator-project-generic.html#importing-a-generic-project) menu, by clicking on "File", "New File or Project", "Import Project", "Import Existing Project", "Choose", and then select the source files you want to see in your tree (or just click on select all and deactivate those that are images, etc.). The *Makefile* will be automatically detected behind the scenes. You can edit the number of threads (`-j`) later on the project's "Build settings".
 
-Let me load into *QtCreator* the [simplest CMake example](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html). After "Open File or Project", a "Kit dialog" will apear. Select the 'build kit' you prefer, and then click on "Details". There, you can specify in what folder to build your program. Under "Tools", "Options", "Build", "Default Properties" allows you to setup a default directory for your builds.
-
-The option "Manage Kits" on the top left allows you to tune your compiler version or define new kits. Click for example on one of the autodetected kits in the dialog. I recommend setting up a "Manual" kit, where "Qt version" is set to "None" (in case it was set). Click then "Ok", and select the checkbox of the newly created kit, and in "Details", verify the build directory.
+Let me load into *QtCreator* the [simplest CMake example](https://cmake.org/cmake/help/latest/guide/tutorial/A%20Basic%20Starting%20Point.html). After "Open File or Project", a "Kit dialog" will apear. The button "Manage Kits" on the top left allows you to remember what compiler was associated with each kit (as explained [above](#select-your-compiler-kit)), click "Ok" to close. Select the "build kit" you prefer, and then click on "Details". There, you can specify in what folder to build your program. Under "Tools", "Options", "Build", "Default Properties" allows you to setup a default directory for your builds.
 
 Once you click on "Configure Project", *CMake* will be automatically run. In the "Projects" pane, you can tune any *CMake* flag as needed, as well as specify command line arguments when running. The "Build" hammer icon on the left compiles your project (*make*), and the "Run" play icon executes it.
 
@@ -168,7 +173,8 @@ To do this:
 - Open *QtCreator*
 - "File", "Open File or Project" and double click on the main "CMakeLists.txt" file.
 - In the "Configure Project" dialog that will appear, you will be prompted to select which kit (compiler) you want to use for building.
-- On the top left, you can click on "Manage Kits" to verify your different compiler choices. Click "Ok". Click on the "checkbox" of the kit of choice for this build.
+- On the top left, you can click on "Manage Kits" to remember your different compiler choices. (See the kit configuration [above](#select-your-compiler-kit)).  Click "Ok" to close.
+- Click on the "checkbox" of the kit of choice for this build.
 - Click then on "Details". Activate the "Debug", deactivate "Release". The "Debug" mode will internally set the `CMAKE_BUILD_TYPE` to `Debug`, as you would do from a command line.
 - Specify also the folder where it will be built if you do not like the default choice. This can be set in the text box right from the "Debug" checkbox (while you are in the "Configure Project" - "your chosen Kit" dialog, "Details" dropdown unfolded).
 - If you've already built *ROOT* using debug mode via your command line, then you can "import" your preexisting build, to not recompile it and save your time.
@@ -176,18 +182,21 @@ To do this:
 - On the left pane, press again on the "Projects" icon.
 - At the bottom of the "Key" tree viewer, deactivate or activate submodules of *ROOT* as needed. This acts as passing `-Dmodule=ON` via the command line.
 - Consider enabling "testing" to run all *ROOT* tests.
-- In the "Build steps", click on "Details", and specify `-j8` on the "CMake arguments" or whatever other number, to speed up the build.
+- In the "Build steps" section, click on "Details", and specify `-j8` on the "CMake arguments" or whatever other number, to speed up the build.
 - On the left bottom pane, click on the "Build" (the big hammer) icon, and *ROOT* will be compiled.
-- Once built, on the left, click on "Projects", "Kit", "Run" small icon on the right, under "Build & Run", and under "Run configuration", select which executable you want to run.
-- You can run it from the big "Play" icon on the left pane.
+- Once built, on the left, click on "Projects", click on "your-Kit-name" on the left, under "Build & Run", then on the "Run" small icon just below it, and under "Run configuration" on the right, select from the dropdown which executable you want to run. (The one selected by default might be "FileCheck", click on it to change it).
+- Under "Command line arguments", specify what arguments you want to pass to this executable.
+- Specify also the "Working directory".
+- If needed, activate the "Run in terminal" checkbox.
+- You can then run it from the big "Play" icon on the left pane.
 
 ### Debugging your ROOT scripts or executables with GDB
 
-To debug your script, on the "Projects", "Kit", "Run" settings, specify your executable (your own standalone application, or `root.exe`) and your command line arguments, e.g. the name of the script you want to run as well as their parameters. If you want to precompile instead of interpret with cling, consider using the debug flag `g` when passing the argument (`yourScript.C+g`)
+To debug your script, on the "Projects", "Build & Run", "Your-Kit-Name, "Run" settings, specify your executable right of "Run configuration" by clicking on the dropdown menu (your own standalone application, or `root.exe`) and specify your "Command line arguments", e.g. `-l -b` as well as "Working directory", e.g. the name of the script you want to run as well as their parameters. If you want to precompile instead of interpret with cling, consider using the debug flag `g` when passing the command line argument (`yourScript.C+g`)
 
-Click then on the "Play-Bug" icon on the left, and your script will run in "Debug" mode. Breakpoints can be set interactively on your code. <kbd>F5</kbd> will pause or resume your process, as well as show you a workspace of the active variables and threads.
+Click then on the "Play-Bug" icon on the left, and your script will run in "Debug" mode. Breakpoints can be set interactively on your code. <kbd>F5</kbd> will pause or resume your process, as well as show you a workspace of the active variables and threads. For example, specify as "Command line arguments" `-l -b hsimple.C+ -q` and as working directory `your-root-folder/tutorials`. Open this file within QtCreator, and click on the left of the line numbers, and then click on the "Play-Bug" icon on the left, the script will execute and pause when it reaches that point.
 
-As an example, below a screenshot while debugging [a deadlock in the TThread class](https://github.com/root-project/root/issues/8365).
+Below a screenshot of another example, while debugging [a deadlock in the TThread class](https://github.com/root-project/root/issues/8365).
 
 [![Debugging example with QtCreator](https://user-images.githubusercontent.com/10653970/155715232-c86cfd3d-2153-454f-a948-ccd9a8595363.png)](https://user-images.githubusercontent.com/10653970/155715232-c86cfd3d-2153-454f-a948-ccd9a8595363.png)
 
@@ -245,12 +254,14 @@ And then, of course, creating a `TGCommandPlugin` window. From there, typing `fM
 - "Tools", "Options", "Beautifier", "Clang", "Use predefined style", "File"
 - If you enable "testing" flag in *CMake*, adapt "Timeout" in "Tools", "Options", "Testing".
 - Be sure that the option "CTest" is active under "Active Frameworks" of that same menu.
+- Optional: Check that "Tools", "Kits", you have selected the compiler you want, as well as "CMake generator". If you use *Ninja*, make sure it's installed.
 - Optional: Check that "Tools", "Text editor", "Completion", "Enable Doxygen blocks" is enabled.
-- Optional: Under "Tools", "Options", "Build&Run", "Custom Output Parsers", "Add", "Warning", specify the pattern `(.*) at line (\d+) of file (.*)` and order 3,2,1. "Apply", "Ok". Activate it under "Projects", "Build Settings", on the bottom.
+- Optional: Under "Tools", "Options", "Build & Run", "Custom Output Parsers", "Add", "Warning", specify the pattern `(.*) at line (\d+) of file (.*)` and order 3,2,1. "Apply", "Ok". Activate it under "Projects", "Build Settings", on the bottom.
 - Optional: Install [a spellchecker plugin](https://github.com/CJCombrink/SpellChecker-Plugin) by unzipping the release file into your *QtCreator* installation folder. Configure then your dictionary under "Tools", "Options", "Spellchecker".
 - Clone the [ROOT git repository](https://github.com/root-project/root/) and open main "CMakeLists.txt" with *QtCreator*.
-- Optional: configure your default's "Kit" build directory to e.g. `~/builds/`
-- Specify `-j8` on your Kit build settings, and `root.exe` as your executable in the run settings.
+- Optional: configure your default's "Kit" build directory to e.g. `~/builds/`.
+- Specify `-j8` on "Projects", "Build & Run", "Kit-name", "Build", "Build Steps", and `root.exe` as your executable in the run settings.
+- Optional: also specify the "Working directory".
 - "Tools", "Options", "Analyzer", "Valgrind", "Add", "etc/valgrind-root.supp" and "etc/helgrind-root.supp" from your cloned repository.
 
 Setting up all this platform requires some initial effort, but once it is running, it will smooth your development and bug hunting, and once you've get used to it, you will find it much more tiring to program without it ;) .
