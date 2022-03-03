@@ -17,6 +17,7 @@ The major new features of v6.26 are:
 - Try [distributed RDataFrame](https://indico.cern.ch/event/1019958/contributions/4419751/): many physicists already use it to run RDataFrame-based  analyses in parallel on clusters. It now supports Dask, which means it runs virtually anywhere you want.
 - Experimental [`RDataFrame::Vary()`](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#systematics) for systematic variations within the same event loop, with a wonderful, simple interface.
 - [SOFIE](https://root.cern/doc/v626/release-notes.html#sofie-code-generation-for-fast-inference-of-deep-learning-models) can take your trained ONNX model and generate blazingly fast C++ code from it, depending *only* on BLAS.
+- `TBrowser` is now using ROOT's new web-based graphics and GUI! You can always switch back, but we'd love to hear your feedback!
 
 ## Release Notes
 
