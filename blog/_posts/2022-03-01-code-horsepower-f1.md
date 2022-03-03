@@ -149,7 +149,13 @@ Beware:
 
 QtCreator lets you not only find compilation errors, but also documentation errors, by interfacing with the warnings issued by *doxygen*. This metawarning function can prove extremely useful for detecting outdated or incorrect documentation and going to the right spot in the source code in just one click, rather than diving through [thousands of lines of output](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT/job/root-makedoc-master/lastBuild/consoleText) and tracing it manually.
 
-To give it a try, take a look at importing the [ROOT documentation project](https://root.cern/for_developers/doxygen/) into *QtCreator*. (You might need to call `source /path/to/ROOT/bin/thisroot.sh` in the terminal before launching `qtcreator`, or manually specifying all the variables in the "Build" environment. Once you follow the import steps (explained in the corresponding section above), then click on the "Build" icon. Below a screenshot of the errors and the points in the source code found by just clicking on those issues.
+To give it a try, take a look at building the [ROOT documentation project](https://root.cern/for_developers/doxygen/). Follow these steps:
+
+- Call first `source /path/to/ROOT/bin/thisroot.sh` in the terminal and launch `qtcreator` from there. Alternatively, you can manually specify all the variables in the "Build" environment.
+- Import the *Makefile* located in `root/documentation/doxygen` into *QtCreator*, as explained [above](#open-a-c-cmake-project)
+- Click then on the "Build" icon.
+ 
+Below a screenshot of the errors and the points in the source code found by just clicking on those issues.
 
 [![Doxygen warnings visualized with QtCreator](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)](https://user-images.githubusercontent.com/10653970/155034554-ca488395-8c6d-4635-ba66-a70c06a262cd.png)
 
@@ -194,7 +200,7 @@ To do this:
 
 To debug your script, on the "Projects", "Build & Run", "Your-Kit-Name, "Run" settings, specify your executable right of "Run configuration" by clicking on the dropdown menu (your own standalone application, or `root.exe`) and specify your "Command line arguments", e.g. `-l -b` as well as "Working directory", e.g. the name of the script you want to run as well as their parameters. If you want to precompile instead of interpret with cling, consider using the debug flag `g` when passing the command line argument (`yourScript.C+g`)
 
-Click then on the "Play-Bug" icon on the left, and your script will run in "Debug" mode. Breakpoints can be set interactively on your code. <kbd>F5</kbd> will pause or resume your process, as well as show you a workspace of the active variables and threads. For example, specify as "Command line arguments" `-l -b hsimple.C+ -q` and as working directory `your-root-folder/tutorials`. Open this file within QtCreator, and click on the left of the line numbers, and then click on the "Play-Bug" icon on the left, the script will execute and pause when it reaches that point.
+Click then on the "Play-Bug" icon on the left, and your script will run in "Debug" mode. Breakpoints can be set interactively on your code. <kbd>F5</kbd> will pause or resume your process, as well as show you a workspace of the active variables and threads. For example, specify as "Command line arguments" `-l -b hsimple.C+ -q` and as working directory `your-root-folder/tutorials`. Open this file within QtCreator, and click on the left of the line numbers, and then click on the "Play-Bug" icon on the left, the script will execute and pause when it reaches that point. You can then perform step-by-step execution using the three little arrow icons right from the "Debugger" dropdown menu. You can hover your mouse over them and a tooltip will show their function.
 
 Below a screenshot of another example, while debugging [a deadlock in the TThread class](https://github.com/root-project/root/issues/8365).
 
@@ -244,11 +250,11 @@ And then, of course, creating a `TGCommandPlugin` window. From there, typing `fM
 
 ## Quick recipe Summary
 
-- Optional: install `valgrind`, `callgrind`, `kcachegrind`
-- [Install QtCreator](https://www.qt.io/download-open-source) deactivating all extra options
-- Download *std Help Book* from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or package manager (`sudo apt install cppreference-doc-en-qch`)
-- Download [ROOT Help Book](https://root.cern/reference/)
-- Add both ".qch" files via "Tools", "Options", "Help", "Documentation"
+- Optional: install `valgrind`, `callgrind`, `kcachegrind`.
+- [Install QtCreator](https://www.qt.io/download-open-source) deactivating all extra options.
+- Download *std Help Book* from [cppreference](https://en.cppreference.com/w/Cppreference:Archives#Qt_help_book) or package manager (`sudo apt install cppreference-doc-en-qch`).
+- Download [ROOT Help Book](https://root.cern/reference/).
+- Add both ".qch" files via "Tools", "Options", "Help", "Documentation".
 - "Tools", "Options", "Analyzer", "Default checks", configure as needed.
 - Install the [Beautifier plugin](https://doc.qt.io/qtcreator/creator-beautifier.html), potentially download the [ROOT](https://github.com/root-project/root/blob/master/.clang-format) one to store in your own project.
 - "Tools", "Options", "Beautifier", "Clang", "Use predefined style", "File"
