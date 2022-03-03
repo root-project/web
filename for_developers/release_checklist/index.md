@@ -87,7 +87,8 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
   1. Push to GitHub
       - `git push origin v6-22-02`
   1. Update the stable branch. Users that have cloned this branch will receive updates as a fast-forward via `git pull`
-      - `LATEST_STABLE=v6-xx-yy    # e.g. v6-22-02`
+      - `$ LATEST_STABLE=v6-xx-yy    # e.g. v6-22-02`
+      - `$ git fetch origin latest-stable:latest-stable`
       - `$ git update-ref refs/heads/latest-stable $(git commit-tree $LATEST_STABLE^{tree} -p refs/heads/latest-stable -p $LATEST_STABLE^{commit} -m "Updated 'latest-stable' branch to $LATEST_STABLE")`
       - `$ git push origin latest-stable`
   1. Produce binary tar-files (optional for development releases and release candidates)
