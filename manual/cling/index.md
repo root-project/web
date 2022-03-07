@@ -127,18 +127,16 @@ filename     line:size busy function type and name
 (compiled)     (NA):(NA) 0 public: static int ImplFileLine();
 (compiled)     (NA):(NA) 0 public: static const char *ImplFileName();
 (compiled)     (NA):(NA) 0 public: static int DeclFileLine();
+root [] TLine l;
 root [] .> test.log
-root [] l.Dump();
+ l.Dump();
 root [] .>
-root [] ?
 {% endhighlight %}
 
 Here we see:
 
 -   Use `.class` as quick help and reference
--   Unix like I/O redirection using `.> out.txt` and unredirection with `.>`
--   Use `?` to get help on all ‘‘raw'' interpreter commands
--   Use @ to abort a multi-line command
+-   Unix like I/O redirection using `.> test.log` and unredirection with `.>`
 
 Now let us execute a multi-line command:
 
