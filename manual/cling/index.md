@@ -143,20 +143,20 @@ Here we see:
 Now let us execute a multi-line command:
 
 {% highlight C++ %}
-root [] {
-root [] ? TLine l;
-root [] ? for (int i = 0; i < 5; i++) {
-root [] ?    l.SetX1(i);
-root [] ?    l.SetY1(i+1);
-root [] ?    l.Print();
-root [] ? }
-root [] ? }
+root [0] {
+root (cont'ed, cancel with .@) [1] TLine l;
+root (cont'ed, cancel with .@) [2] for (int i = 0; i < 5; i++) {
+root (cont'ed, cancel with .@) [3]    l.SetX1(i);
+root (cont'ed, cancel with .@) [4]    l.SetY1(i+1);
+root (cont'ed, cancel with .@) [5]    l.Print();
+root (cont'ed, cancel with .@) [6] }
+root (cont'ed, cancel with .@) [7] }
 TLine  X1=0.000000 Y1=1.000000 X2=0.000000 Y2=0.000000
 TLine  X1=1.000000 Y1=2.000000 X2=0.000000 Y2=0.000000
 TLine  X1=2.000000 Y1=3.000000 X2=0.000000 Y2=0.000000
 TLine  X1=3.000000 Y1=4.000000 X2=0.000000 Y2=0.000000
 TLine  X1=4.000000 Y1=5.000000 X2=0.000000 Y2=0.000000
-root [] .q
+root [8] .q
 {% endhighlight %}
 
 Here we note:
@@ -212,13 +212,13 @@ This list is also available by typing `.?` or `.help` in the ROOT prompt.
 				  'asttree [filter]'  abstract syntax tree layout
 				  'decl' dump ast declarations
 				  'undo' show undo stack
-   
+
    .R	[user@]host[:dir] [-l user] [-d dbg] [script]	- Launch process in a remote host
-   
+
    .demo			- Launch GUI demo
-   
+
    .credits			- Show credits
-   
+
    .license			- Show license
    .help			- Shows this information (also .?)
    .q				- Exit the program (also .quit or .exit)
