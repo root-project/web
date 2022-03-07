@@ -11,6 +11,18 @@ The page lists the prerequisite packages that need to be installed on the differ
 
 The table of content can be used to quickly jump to your operating system.
 
+## Supported compilers
+
+### From v6.26:
+- C++14 support is required
+- GCC 5 or later is supported
+- Clang 6 or later is supported
+
+### Until v6.24:
+- C++11 support is required
+- GCC 4.8 or later is supported
+- Clang 3.4 or later is supported
+
 ## Fedora, Scientific Linux and CentOS
 
 Use `yum install <package>` or the graphical "Add/Remove Software" program.
@@ -19,7 +31,7 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 
 *   **make:** for /usr/bin/make
 *   **cmake:** (**cmake3** on CentOS 7) for /usr/bin/cmake
-*   **gcc-c++:** for  for /usr/bin/g++ (ROOT 6 requires g++ 4.8 or clang 3.4; for SLC5/SLC6)
+*   **gcc-c++:** for  for /usr/bin/g++
 *   **gcc:** for /usr/bin/gcc
 *   **binutils:** for /usr/bin/ld
 *   **libX11-devel:** for usr/include/X11/Xlib.h and for /usr/lib/libX11.so
