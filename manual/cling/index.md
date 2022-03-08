@@ -141,7 +141,7 @@ Here we see:
 Now let us execute a multi-line command:
 
 {% highlight C++ %}
-root [0] {
+root [] {
 root (cont'ed, cancel with .@) [1] TLine l;
 root (cont'ed, cancel with .@) [2] for (int i = 0; i < 5; i++) {
 root (cont'ed, cancel with .@) [3]    l.SetX1(i);
@@ -154,7 +154,7 @@ TLine  X1=1.000000 Y1=2.000000 X2=0.000000 Y2=0.000000
 TLine  X1=2.000000 Y1=3.000000 X2=0.000000 Y2=0.000000
 TLine  X1=3.000000 Y1=4.000000 X2=0.000000 Y2=0.000000
 TLine  X1=4.000000 Y1=5.000000 X2=0.000000 Y2=0.000000
-root [8] .q
+root [] .q
 {% endhighlight %}
 
 Here we note:
