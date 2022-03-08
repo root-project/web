@@ -129,7 +129,7 @@ filename     line:size busy function type and name
 (compiled)     (NA):(NA) 0 public: static int DeclFileLine();
 root [] TLine l;
 root [] .> test.log
- l.Dump();
+root [] l.Dump();
 root [] .>
 {% endhighlight %}
 
@@ -142,13 +142,13 @@ Now let us execute a multi-line command:
 
 {% highlight C++ %}
 root [] {
-root (cont'ed, cancel with .@) [1] TLine l;
-root (cont'ed, cancel with .@) [2] for (int i = 0; i < 5; i++) {
-root (cont'ed, cancel with .@) [3]    l.SetX1(i);
-root (cont'ed, cancel with .@) [4]    l.SetY1(i+1);
-root (cont'ed, cancel with .@) [5]    l.Print();
-root (cont'ed, cancel with .@) [6] }
-root (cont'ed, cancel with .@) [7] }
+root (cont'ed, cancel with .@) [] TLine l;
+root (cont'ed, cancel with .@) [] for (int i = 0; i < 5; i++) {
+root (cont'ed, cancel with .@) []    l.SetX1(i);
+root (cont'ed, cancel with .@) []    l.SetY1(i+1);
+root (cont'ed, cancel with .@) []    l.Print();
+root (cont'ed, cancel with .@) [] }
+root (cont'ed, cancel with .@) [] }
 TLine  X1=0.000000 Y1=1.000000 X2=0.000000 Y2=0.000000
 TLine  X1=1.000000 Y1=2.000000 X2=0.000000 Y2=0.000000
 TLine  X1=2.000000 Y1=3.000000 X2=0.000000 Y2=0.000000
