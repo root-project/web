@@ -127,23 +127,21 @@ filename     line:size busy function type and name
 (compiled)     (NA):(NA) 0 public: static int ImplFileLine();
 (compiled)     (NA):(NA) 0 public: static const char *ImplFileName();
 (compiled)     (NA):(NA) 0 public: static int DeclFileLine();
+root [] TLine l;
 root [] .> test.log
-root [] l.Dump();
+ l.Dump();
 root [] .>
-root [] ?
 {% endhighlight %}
 
 Here we see:
 
 -   Use `.class` as quick help and reference
--   Unix like I/O redirection using `.> out.txt` and unredirection with `.>`
--   Use `?` to get help on all ‘‘raw'' interpreter commands
--   Use @ to abort a multi-line command
+-   Unix like I/O redirection using `.> test.log` and unredirection with `.>`
 
 Now let us execute a multi-line command:
 
 {% highlight C++ %}
-root [0] {
+root [] {
 root (cont'ed, cancel with .@) [1] TLine l;
 root (cont'ed, cancel with .@) [2] for (int i = 0; i < 5; i++) {
 root (cont'ed, cancel with .@) [3]    l.SetX1(i);
@@ -156,7 +154,7 @@ TLine  X1=1.000000 Y1=2.000000 X2=0.000000 Y2=0.000000
 TLine  X1=2.000000 Y1=3.000000 X2=0.000000 Y2=0.000000
 TLine  X1=3.000000 Y1=4.000000 X2=0.000000 Y2=0.000000
 TLine  X1=4.000000 Y1=5.000000 X2=0.000000 Y2=0.000000
-root [8] .q
+root [] .q
 {% endhighlight %}
 
 Here we note:
