@@ -1,1 +1,1 @@
-{% assign n = {{include.name}}  %}[{{n}}.tar.gz](https://root.cern/download/{{n}}.tar.gz){:target="_blank"} - [{{n}}.tar.xz](https://root.cern/download/{{n}}.tar.xz){:target="_blank"}
+{% assign n = {{include.name}}  %}[{{n}}.tar.gz](https://root.cern/download/{{n}}.tar.gz) - [{{n}}.tar.xz](https://root.cern/download/{{n}}.tar.xz)
