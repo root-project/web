@@ -150,7 +150,7 @@ ROOT provides a set of commands to perform special actions from the ROOT prompt.
 root [0] .<command>
 ```
 
-`.?`: Provides a list of all commands. (Also .help)
+`.?`: Provides a list of all commands. (Also `.help`)
 
 `.!<OS_command>`: Accesses the shell of the operating system. For example `.!ls` or `.!pwd`.
 
