@@ -36,13 +36,13 @@ and the ROOT prompt is displayed:
 root [0]
 ```
 
-To display a list of ROOT commands, type `.help`:
+To display a list of ROOT commands, type `.help` (or `.?`):
 
 ```
 root [0] .help
 ```
 
-To quit the ROOT prompt, type `.q`:
+To quit the ROOT prompt, type `.q` (or `.quit` or `.exit`):
 
 ```
 root [0] .q
@@ -150,7 +150,7 @@ ROOT provides a set of commands to perform special actions from the ROOT prompt.
 root [0] .<command>
 ```
 
-`.?`: Provides a list of all commands.
+`.?`: Provides a list of all commands. (Also `.help`)
 
 `.!<OS_command>`: Accesses the shell of the operating system. For example `.!ls` or `.!pwd`.
 
