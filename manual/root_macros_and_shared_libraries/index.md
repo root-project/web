@@ -54,6 +54,11 @@ You can execute a ROOT macro in one of three ways:
    ```
    $ root MacroName.C
    ```
+   
+   > **Note**
+   >
+   > By adding further space-separated file names to the line above, you can sequentially execute multiple
+   > macros in the same ROOT session, as long as they don't share the same name.
 
 2. Execute a macro at the ROOT prompt:
 
@@ -70,11 +75,24 @@ You can execute a ROOT macro in one of three ways:
 
    > **Note**
    >
-   > You can load multiple macros in the same ROOT session, as long as they don't have the same name.
+   > You can load multiple macros in the same ROOT session (one .L statement for each),
+   > as long as they don't have the same name.
 
 It is also possible to pass parameters directly to the macro function:
 ```
 $ root 'MacroName.C("some String", 12)'
+```
+
+The same structure applies when executing from the ROOT prompt, but single quotes are no longer necessary:
+```
+root [0] .x MacroName.C("some String", 12)
+```
+If you preload the library, specify the function arguments on the call to the macro name,
+rather than on the first line.
+
+```
+root [0] .L MacroName.C
+root [1] MacroName("some String", 12)
 ```
 
 In addition, you can execute a ROOT macro from a ROOT macro.
@@ -138,7 +156,19 @@ root [0] .L MyScript.C+
 
 The `+` option compiles the code and generates a shared library `MyScript_C.so` (`MyScript_C.dll` on Windows).
 The `+` command rebuilds the library only if the ROOT macro or any of the files it includes
-are newer than the library. To force recompiling the library in any case, use `++`:
+are newer than the library. To force recompiling the library in any case, use `++`.
+
+You can also compile, build and run with arguments in a one-liner using:
+
+```
+root [0] .x MyScript.C+("some String", 12)
+```
+or from the command line (outside the ROOT prompt):
+```
+$ root 'MyScript.C+("some String", 12)'
+```
+And variations thereof with `++`. 
+
 
 _**Example**_
 
@@ -147,6 +177,8 @@ To force compilation with debug symbols, type:
 ```
 root [0] .L MyScript.C+g
 ```
+
+To see the full list of possible flags, see the [TSystem::CompileMacro](https://root.cern/doc/master/classTSystem.html#ac557d8f24d067a9b89d2b8fb261d7e18) documentation.
 
 > **Note**
 >
