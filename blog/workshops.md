@@ -7,6 +7,7 @@ sidebar:
 
 ### Here the list with ROOT workshops:
 
+*   [ROOT 2022](https://indico.fnal.gov/event/23628/manage/){:target="_blank"}
 *   [ROOT 2018](https://cern.ch/root2018){:target="_blank"}
 *   [ROOT 2015]({{'/blog/workshop_2015' | relative_url}}){:target="_blank"}
 *   [ROOT 2013]({{'/blog/workshop_2013' | relative_url}}) ([slides](https://indico.cern.ch/event/217511){:target="_blank"})
