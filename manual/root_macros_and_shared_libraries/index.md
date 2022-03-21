@@ -156,7 +156,7 @@ root [0] .L MyScript.C+
 
 The `+` option compiles the code and generates a shared library `MyScript_C.so` (`MyScript_C.dll` on Windows).
 The `+` command rebuilds the library only if the ROOT macro or any of the files it includes
-are newer than the library. To force recompiling the library in any case, use `++`.
+are newer than the library. To force a recompilation of the library, use `++`.
 
 You can also compile, build and run with arguments in a one-liner using:
 
