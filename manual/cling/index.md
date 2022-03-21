@@ -375,11 +375,7 @@ scripts, it is best to stay away from these shortcuts. It will save
 you from having problems compiling your scripts using a real C++
 compiler.
 
-
-
 ## ACLiC: Compiling Scripts Into Libraries
-
-
 
 Instead of having Cling interpret your script there is a way to have your
 scripts compiled, linked and dynamically loaded using the C++ compiler
@@ -390,11 +386,10 @@ shortcuts (see "C++ Extensions To Ease Scripting" above) and for small scripts, 
 overhead of the compile/link cycle might be larger than just executing
 the script in the interpreter.
 
-ACLiC will build a dictionary and a shared library from your C++
-script, using the compiler and the compiler options that were used to
-compile the ROOT executable. You do not have to write a Makefile
-remembering the correct compiler options, and you do not have to exit
-ROOT.
+ACLiC (The Automatic Compiler of Libraries in Cling) will build a dictionary and a
+shared library from your C++ script, using the compiler and the compiler options
+that were used to compile the ROOT executable. You do not have to write a Makefile
+remembering the correct compiler options, and you do not have to exit ROOT.
 
 ### Usage
 
