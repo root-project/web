@@ -16,7 +16,6 @@ interacting with ROOT.
 
 ## The ROOT Prompt
 
-
 Start up a ROOT session by typing `root` at the system prompt.
 
 {% highlight C++ %}
@@ -415,7 +414,7 @@ extension by an underscore and by adding the shared library extension
 for the current platform. For example on most platforms, `hsimple.cxx`
 will generate `hsimple_cxx.so`.
 
-The + command rebuild the library only if the script or any of the
+The + command rebuilds the library only if the script or any of the
 files it includes are newer than the library. When checking the
 timestamp, ACLiC generates a dependency file which name is the same as
 the library name, just replacing the 'so' extension by the extension
@@ -482,6 +481,11 @@ root[] .L MyScript.C+O
 respectively compile `MyScript.C` with debug and optimization if the
 library does not exist yet; they will not change the debug and the
 optimization level if the library already exist and it is up to date.
+
+To see the full list of possible flags, see the
+[TSystem::CompileMacro](https://root.cern/doc/master/classTSystem.html#ac557d8f24d067a9b89d2b8fb261d7e18)
+documentation.
+
 To use ACLiC from compiled code or from inside another macro, we
 recommend using `gROOT->ProcessLine()`. For
 example, in one script you can use ACLiC to compile and load another
@@ -492,6 +496,9 @@ gROOT->ProcessLine(".L MyScript.C+")
 gROOT->ProcessLine(".L MyScript.C++")
 {% endhighlight %}
 
+To change the compilation output directory in order not to pollute your source directory,
+see [TSystem::SetBuildDir](https://root.cern/doc/master/classTSystem.html#ae8790897e77f60ff37876b944f9f0091).
+	
 ### Setting the Include Path
 
 
