@@ -26,11 +26,12 @@ and the ROOT prompt is displayed:
 
 ```
    ------------------------------------------------------------------
-  | Welcome to ROOT 6.22/02                        https://root.cern |
-  | (c) 1995-2020, The ROOT Team; conception: R. Brun, F. Rademakers |
-  | Built for macosx64 on Aug 17 2020, 12:46:52                      |
-  | From tags/v6-22-02@v6-22-02                                      |
-  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
+  | Welcome to ROOT 6.27/01                        https://root.cern |
+  | (c) 1995-2022, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Apr 07 2022, 13:00:54                 |
+  | From heads/master@v6-25-01-3805-ge505630f86                      |
+  | With c++ (Ubuntu 8.4.0-1ubuntu1~18.04) 8.4.0                     |
+  | Try '.help'/'.?', '.demo', '.license', '.credits', '.quit'/'.q'  |
    ------------------------------------------------------------------
 
 root [0]
@@ -150,7 +151,11 @@ ROOT provides a set of commands to perform special actions from the ROOT prompt.
 root [0] .<command>
 ```
 
-`.?`: Provides a list of all commands. (Also `.help`)
+Here a selection of commands:
+
+`.?`: Provides the full list of all commands. (Also `.help`)
+
+`.? edit`: Prints a list of keyboard shortcuts for editing the input text at the ROOT prompt.
 
 `.!<OS_command>`: Accesses the shell of the operating system. For example `.!ls` or `.!pwd`.
 
@@ -162,11 +167,9 @@ root [0] .<command>
 
 `.L <file_name>+`: Compiles a ROOT macro.
 
-`.help`: Provides a list of all commands.
-
 `.class`: Lists the available ROOT classes.
 
-`.class X`: Shows what cling knows about class `X`.
+`.Class X`: Shows what cling knows about class `X`.
 
 `.files`: Shows all loaded files.
 
