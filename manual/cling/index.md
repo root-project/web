@@ -279,6 +279,49 @@ This list is also available by typing `.?` or `.help` in the ROOT prompt.
    .!root -?           : print ROOT usage (CLI options)
 ```
 
+### List of terminal keyboard shortcuts
+
+This list is also available by typing `.? edit` or `.help edit` in the ROOT prompt.
+
+```
+ ROOT terminal keyboard shortcuts (GNU-readline style).
+ ==============================================================================
+   Arrow_Left       : move cursor left [Ctrl+B]
+   Arrow_Right      : move cursor right [Ctrl+F] [Ctrl+G]
+   Home             : move cursor to beginning of line [Ctrl+A]
+   End              : move cursor to end of line [Ctrl+E]
+   Ctrl+Arrow_Left  : jump to previous word [Esc,B] [Alt,B]
+   Ctrl+Arrow_Right : jump to next word [Esc,F] [Alt,F]
+   Backspace        : delete previous character [Ctrl+H]
+   Del              : delete next character [Ctrl+D]
+   Esc,Backspace    : delete previous word [Ctrl+W] [Esc,Ctrl+H] [Alt+Backspace] [Esc,Del] [Esc,Ctrl+Del]
+   Ctrl+Del         : delete next word [Esc,D] [Alt,D]
+   Ctrl+U           : cut all characters between cursor and start of line
+   Ctrl+K           : cut all characters between cursor and end of line
+   Ctrl+T           : transpose characters
+   Esc,C            : character to upper and jump to next word
+   Esc,L            : word to lower case and jump to its end
+   Esc,U            : word to upper case and jump to its end
+   Ctrl+Shift+C     : copy clipboard content
+   Ctrl+Shift+V     : paste clipboard content [Ctrl+Y] [Alt+Y]
+   Ins              : toggle overwrite mode
+   Ctrl+_           : undo last keypress action
+   Tab              : autocomplete command or print suggestions [Ctrl+I] [Esc,Tab]
+   Enter            : execute command [Ctrl+J] [Ctrl+M]
+   Ctrl+L           : clear prompt screen
+   Ctrl+D           : quit ROOT (if empty line)
+   Ctrl+C           : send kSigInt interrupt signal
+   Ctrl+Z           : send kSigStop pause job signal
+   Arrow_Down       : navigate downwards in command history [Ctrl+N]
+   Arrow_Up         : navigate upwards in command history [Ctrl+P]
+   Ctrl+R ; Ctrl+S  : search command in your history by typing a string.
+                      Use Backspace if you mistyped (but not arrows).
+                      Press Ctrl+R (Ctrl+S) repeateadly to navigate matches in reverse (forward) order
+   Arrow_Right      : after Ctrl+R (Ctrl+S), select current match of the history search
+                      [Ctrl+O] [Enter] [Ctrl+J] [Ctrl+M] [Arrow_Left] [Esc,Esc].
+                      Use Ctrl+F or Ctrl+G to cancel search and revert original line
+```
+
 ## Feeding Sources Files To ROOT: C++ Scripts
 
 
