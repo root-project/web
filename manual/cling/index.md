@@ -20,13 +20,15 @@ Start up a ROOT session by typing `root` at the system prompt.
 
 {% highlight C++ %}
 $ root
-   -------------------------------------------------------------------------
-  | Welcome to ROOT 6.10/01                                http://root.cern |
-  |                                            (c) 1995-2017, The ROOT Team |
-  | Built for macosx64                                                      |
-  | From heads/v6-10-00-patches@v6-10-00-25-g9f78c3a, Jul 03 2017, 11:39:44 |
-  | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'              |
-   -------------------------------------------------------------------------
+   ------------------------------------------------------------------
+  | Welcome to ROOT 6.27/01                        https://root.cern |
+  | (c) 1995-2022, The ROOT Team; conception: R. Brun, F. Rademakers |
+  | Built for linuxx8664gcc on Apr 07 2022, 13:00:54                 |
+  | From heads/master@v6-25-01-3805-ge505630f86                      |
+  | With c++ (Ubuntu 8.4.0-1ubuntu1~18.04) 8.4.0                     |
+  | Try '.help'/'.?', '.demo', '.license', '.credits', '.quit'/'.q'  |
+   ------------------------------------------------------------------
+
 
 root [0]
 {% endhighlight %}
@@ -60,13 +62,13 @@ interpreter information on the global called `l`.
 For the further examples we will "abbreviate" `root [0]` etc by `root []`.
 
 {% highlight C++ %}
-root [] .class TLine
+root [] .Class TLine
 ===========================================================================
 class TLine
 SIZE: 72 FILE: TLine.h LINE: 39
-Base classes: --------------------------------------------------------
+Base classes: -------------------------------------------------------------
 0x20       public TAttBBox2D
-List of member variables --------------------------------------------------
+List of member variables: -------------------------------------------------
 TLine.h          42 0x28       protected: Double_t fX1
 TLine.h          43 0x30       protected: Double_t fY1
 TLine.h          44 0x38       protected: Double_t fX2
@@ -75,7 +77,7 @@ TLine.h          50 0x0      public: enum TLine::<anonymous at /home/axel/build/
 TLine.h          51 0x0      public: enum TLine::<anonymous at /home/axel/build/root/trunk/obj/include/TLine.h:49:4> kVertical
 TLine.h          52 0x0      public: enum TLine::<anonymous at /home/axel/build/root/trunk/obj/include/TLine.h:49:4> kHorizontal
 TLine.h          94 0x0      private: static class TClass *fgIsA
-List of member functions :---------------------------------------------------
+List of member functions: -------------------------------------------------
 filename     line:size busy function type and name
 (compiled)     (NA):(NA) 0 public: TLine();
 (compiled)     (NA):(NA) 0 public: TLine(Double_t x1, Double_t y1, Double_t x2, Double_t y2);
@@ -134,7 +136,7 @@ root [] .>
 
 Here we see:
 
--   Use `.class` as quick help and reference
+-   Use `.Class` as quick help and reference
 -   Unix like I/O redirection using `.> test.log` and unredirection with `.>`
 
 Now let us execute a multi-line command:
@@ -175,57 +177,106 @@ This list is also available by typing `.?` or `.help` in the ROOT prompt.
  for the evaluation statement { }
  ==============================================================================
  Syntax: .Command [arg0 arg1 ... argN]
+
    .L <filename>		- Load the given file or library
-   .(x|X) <filename>[args]	- Same as .L and runs a function with
+
+   .(x|X) <filename>[(args)]	- Same as .L and runs a function with
 				  signature: ret_type filename(args)
+
    .> <filename>		- Redirect command to a given file
       '>' or '1>'		- Redirects the stdout stream only
       '2>'			- Redirects the stderr stream only
       '&>' (or '2>&1')		- Redirects both stdout and stderr
       '>>'			- Appends to the given file
+
    .undo [n]			- Unloads the last 'n' inputs lines
+
    .U <filename>		- Unloads the given file
-   .I [path]			- Shows the include path. If a path is given -
-				  adds the path to the include paths
+
+   .(I|include) [path]		- Shows all include paths. If a path is given,
+				  adds the path to the include paths.
+
    .O <level>			- Sets the optimization level (0-3)
-				  (not yet implemented)
-   .class <name>		- Prints out class <name> in a Cling-like style
-   .files 			- Prints out some Cling-like file statistics
-   .fileEx 			- Prints out some file statistics
-   .g 				- Prints out information about global variable
-				  'name' - if no name is given, print them all
+				  If no level is given, prints the current setting.
+
+   .class <name>		- Prints out class <name> in a CINT-like style (one-level).
+				  If no name is given, prints out list of all classes.
+
+   .Class <name>		- Prints out class <name> in a CINT-like style (all-levels).
+				  If no name is given, prints out list of all classes.
+
+   .namespace			- Prints list of all known namespaces
+
+   .typedef <name>		- Prints out typedef <name> in a CINT-like style
+				  If no name is given, prints out list of all typedefs.
+
+   .files			- Prints names of all included (parsed) files
+
+   .fileEx			- Prints out included (parsed) file statistics
+				  as well as a list of their names
+
+   .g <var>			- Prints out information about global variable
+				  'var' - if no name is given, print them all
+
    .@ 				- Cancels and ignores the multiline input
+
    .rawInput [0|1]		- Toggle wrapping and printing the
 				  execution results of the input
-   .dynamicExtensions [0|1]	- Toggles the use of the dynamic scopes and the
-				  late binding
+
+   .dynamicExtensions [0|1]	- Toggles the use of the dynamic scopes
+				  and the late binding
+
+   .debug <level>		- Generates debug symbols (level is optional, 0 to disable)
+
    .printDebug [0|1]		- Toggles the printing of input's corresponding
 				  state changes
+
    .storeState <filename>	- Store the interpreter's state to a given file
+
    .compareState <filename>	- Compare the interpreter's state with the one
 				  saved in a given file
+
    .stats [name]		- Show stats for internal data structures
 				  'ast'  abstract syntax tree stats
 				  'asttree [filter]'  abstract syntax tree layout
 				  'decl' dump ast declarations
 				  'undo' show undo stack
 
-   .R	[user@]host[:dir] [-l user] [-d dbg] [script]	- Launch process in a remote host
+   .T <filePath> <comment>	- Generate autoload map
 
-   .demo			- Launch GUI demo
+   .trace <repr> <id>		- Dump trace of requested respresentation
+				  (see .stats arguments for <repr>)
 
-   .credits			- Show credits
-
-   .license			- Show license
    .help			- Shows this information (also .?)
-   .q				- Exit the program (also .quit or .exit)
-ROOT special commands.
-=============================================================================
-   .pwd                : show current directory, pad and style
-   .ls                 : list contents of current directory
-   .which [file]       : shows path of macro file
-   .help Class         : opens the reference guide for that class (or .?)
-   .help Class::Member : opens the reference guide for function/member (or .?)
+
+   .q				- Exit the program
+
+
+ ROOT special commands.
+ ==============================================================================
+   .L <filename>[flags]: load the given file with optional flags like
+                         + to compile or ++ to force recompile.
+                         Type .? TSystem::CompileMacro for a list of all flags.
+   .(x|X) <filename>[flags](args) :
+                         same as .L <filename>[flags] and runs then a function
+                         with signature: ret_type filename(args).
+   .credits            : show credits
+   .demo               : launch GUI demo
+   .help Class::Member : open reference guide for that class member (or .?).
+                         Specifying '::Member' is optional.
+   .help edit          : show line editing shortcuts (or .?)
+   .license            : show license
+   .ls                 : list contents of current TDirectory
+   .pwd                : show current TDirectory, pad and style
+   .quit (or .exit)    : quit ROOT (long form of .q)
+   .R [user@]host[:dir] [-l user] [-d dbg] [script] :
+                         launch process in a remote host
+   .qqq                : quit ROOT - mandatory
+   .qqqqq              : exit process immediately
+   .qqqqqqq            : abort process
+   .which [file]       : show path of macro file
+   .![OS_command]      : execute OS-specific shell command
+   .!root -?           : print ROOT usage (CLI options)
 ```
 
 ## Feeding Sources Files To ROOT: C++ Scripts
