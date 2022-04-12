@@ -62,8 +62,8 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
         * 'Release' the version you want to release, assigning open issues to the next patch or major release.
         * From the [list the versions in JIRA](https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released){:target="_blank"}, select the version and then 'release notes'
       - GitHub project management
-        * TODO: show how to collect GitHub issues
-        * Go to this version's [GitHub project](https://github.com/root-project/root/projects/) (e.g. [Fixed in 6.22/08](https://github.com/root-project/root/projects/10) when releasing 6.22/08). On the right column header, click "<" until the column header reads "Menu" with a hamburger menu next to it. Below, to the right, you see "...". Click, select "Copy", and enter the name of the *next* production or patch release (don't forget to remove the leading "[COPY]"!)
+        * Run `python3 ./get_solved_issues.py --project-name 6.22/02` to copy and paste the fixed GitHub issues into the release notes.
+        * Go to this version's [GitHub project](https://github.com/root-project/root/projects/) (e.g. [Fixed in 6.22/08](https://github.com/root-project/root/projects/10) when releasing 6.22/08). On the right column header, click "<" until the column header reads "Menu" with a hamburger menu next to it. Below, to the right, you see "...". Click, select "Copy", and enter the name of the *next* production or patch release. Don't forget to remove the leading "[COPY]"! Owner is `root-project/root`.
         * In "..." next to the currently to-be-released version's [GitHub project](https://github.com/root-project/root/projects/), hit "Close project". (No more bugs will be fixed in it: we are releasing it!)
       - Commit your new release notes: `git commit README/ReleaseNotes/v622/index.md`
   1. Update version number
