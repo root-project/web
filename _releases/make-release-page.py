@@ -260,19 +260,20 @@ def binaryNameToTitle(filename):
         xcodeVers = int(comp[:-1])
 
         return F"macOS {macOSVers} {arch} Xcode {xcodeVers}"
-    elif platformCompiler.startswith('win32'):
-        regexWin = re.compile(r'^win32[.](vc[0-9]+)(.debug)?')
+    elif platformCompiler.startswith('win32') or platformCompiler.startswith('win64'):
+        regexWin = re.compile(r'^win(32|64)[.](vc[0-9]+)(.debug)?')
         matchWin = regexWin.match(platformCompiler)
         if not matchWin:
             print(F'ERROR: cannot parse Win32 MSVC version for {filename}')
             return filename
-        (vcVers, debug) = matchWin.groups()
+        (bitness, vcVers, debug) = matchWin.groups()
         if not debug:
             debug = ''
         else:
             debug = ' (debug)'
         # see https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering
         vcVersYear = {
+            'vc17': 2022,
             'vc16': 2019,
             'vc15': 2017,
             'vc14': 2015
@@ -286,7 +287,11 @@ def binaryNameToTitle(filename):
             print(F'       and add the appropriate Visual Studio year / version here: {frameinfo.filename}:{frameinfo.lineno}')
             return filename
 
-        return F"**preview** Windows Visual Studio {versYear}{debug}"
+        if bitness == "32":
+            bitArch = "x86"
+        else:
+            bitArch = "x64"
+        return F"Windows Visual Studio {versYear} {bitness}-bit {bitArch} {debug}"
     else:
         frameinfo = getframeinfo(currentframe())
         print(F'ERROR: unknown platform {platformCompiler} for {filename}. Please edit {frameinfo.filename}:{frameinfo.lineno}')
