@@ -33,12 +33,13 @@ jobs:
           # - rootbnch-grafana-test.cern.ch: Breaks due to SSO
           # - lcgapp-services.cern.ch: Breaks due to SSO
           # - indico.desy.de: Returns frequently error code 403
+          # - https://www.sciencedirect.com: frequent 403 errors
           # - nbviewer: When notebook generation fails, nbviewer returns 404 errors, and errors might even be cached in CDNs for a while
           # - lcginfo.cern.ch: does not support HTTPS, see https://sft.its.cern.ch/jira/browse/SPI-1672
           # - http://simul.iro.umontreal.ca/testu01/tu01.html does not support HTTPS
           # Reasons for file-ignore
           # - Broken links in historic ROOT v5 release notes
-          arguments:  --empty-alt-ignore --file-ignore "/.*root-version-v5.*/" --allow-hash-href --url-ignore "/(https://root.cern/[0-9]+|https://root.cern/(?!(files|download|doc))|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*|https://nbviewer.jupyter.org|http://lcginfo.cern.ch|http://simul.iro.umontreal.ca/testu01/tu01.html)/" --only-4xx --http-status-ignore "429" --enforce-https --check-favicon --url_swap '^/doc/:https\://root.cern/doc/,^/d/:https\://root.cern/d/,^/files/:https\://root.cern/files/,^/download/:https\://root.cern/download/,^/js/:https\://root.cern/js/,^/TaligentDocs/:https\://root.cern/TaligentDocs/,^/root/:https\://root.cern/root/'
+          arguments:  --empty-alt-ignore --file-ignore "/.*root-version-v5.*/" --allow-hash-href --url-ignore "/(https://root.cern/[0-9]+|https://root.cern/(?!(files|download|doc))|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*|https://nbviewer.jupyter.org|http://lcginfo.cern.ch|http://simul.iro.umontreal.ca/testu01/tu01.html|https://www.sciencedirect.com)/" --only-4xx --http-status-ignore "429" --enforce-https --check-favicon --url_swap '^/doc/:https\://root.cern/doc/,^/d/:https\://root.cern/d/,^/files/:https\://root.cern/files/,^/download/:https\://root.cern/download/,^/js/:https\://root.cern/js/,^/TaligentDocs/:https\://root.cern/TaligentDocs/,^/root/:https\://root.cern/root/'
 
       - name: Only allow links to root.cern, never root.cern.ch
         run: |
