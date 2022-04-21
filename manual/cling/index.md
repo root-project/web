@@ -16,7 +16,6 @@ interacting with ROOT.
 
 ## The ROOT Prompt
 
-
 Start up a ROOT session by typing `root` at the system prompt.
 
 {% highlight C++ %}
@@ -376,11 +375,7 @@ scripts, it is best to stay away from these shortcuts. It will save
 you from having problems compiling your scripts using a real C++
 compiler.
 
-
-
 ## ACLiC: Compiling Scripts Into Libraries
-
-
 
 Instead of having Cling interpret your script there is a way to have your
 scripts compiled, linked and dynamically loaded using the C++ compiler
@@ -391,11 +386,10 @@ shortcuts (see "C++ Extensions To Ease Scripting" above) and for small scripts, 
 overhead of the compile/link cycle might be larger than just executing
 the script in the interpreter.
 
-ACLiC will build a dictionary and a shared library from your C++
-script, using the compiler and the compiler options that were used to
-compile the ROOT executable. You do not have to write a Makefile
-remembering the correct compiler options, and you do not have to exit
-ROOT.
+ACLiC (The Automatic Compiler of Libraries in Cling) will build a dictionary and a
+shared library from your C++ script, using the compiler and the compiler options
+that were used to compile the ROOT executable. You do not have to write a Makefile
+remembering the correct compiler options, and you do not have to exit ROOT.
 
 ### Usage
 
@@ -415,7 +409,7 @@ extension by an underscore and by adding the shared library extension
 for the current platform. For example on most platforms, `hsimple.cxx`
 will generate `hsimple_cxx.so`.
 
-The + command rebuild the library only if the script or any of the
+The + command rebuilds the library only if the script or any of the
 files it includes are newer than the library. When checking the
 timestamp, ACLiC generates a dependency file which name is the same as
 the library name, just replacing the 'so' extension by the extension
@@ -482,6 +476,11 @@ root[] .L MyScript.C+O
 respectively compile `MyScript.C` with debug and optimization if the
 library does not exist yet; they will not change the debug and the
 optimization level if the library already exist and it is up to date.
+
+To see the full list of possible flags, see the
+[TSystem::CompileMacro](https://root.cern/doc/master/classTSystem.html#ac557d8f24d067a9b89d2b8fb261d7e18)
+documentation.
+
 To use ACLiC from compiled code or from inside another macro, we
 recommend using `gROOT->ProcessLine()`. For
 example, in one script you can use ACLiC to compile and load another
@@ -492,6 +491,9 @@ gROOT->ProcessLine(".L MyScript.C+")
 gROOT->ProcessLine(".L MyScript.C++")
 {% endhighlight %}
 
+To change the compilation output directory in order not to pollute your source directory,
+see [TSystem::SetBuildDir](https://root.cern/doc/master/classTSystem.html#ae8790897e77f60ff37876b944f9f0091).
+	
 ### Setting the Include Path
 
 
