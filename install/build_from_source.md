@@ -210,6 +210,13 @@ Click on one of the following dropdowns to see the full list of build options fo
 
 </details>
 
+<details markdown="1"><summary markdown="span">build options for ROOT 6.26</summary>
+
+{% include build_options_v6-26-00-patches.md %}
+
+</details>
+
+
 ### Relevant CMake variables
 Here are some of the CMake variables that are used often, along with a brief explanation and ROOT-specific notes. For full documentation, check the CMake docs or execute `cmake --help-variable VARIABLE_NAME`.
 
