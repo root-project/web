@@ -102,6 +102,11 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
       - Add a 'highlights' section in the generated release page.
       - If this applies, mark the release as `state: latest` and remove the attribute to the one previously holding it (`git grep "state: latest" -- _releases/`)
       - Create a PR against `root-project/web`.
+  1. Update the list of [build options](https://root.cern/install/build_from_source/#all-build-options)
+      - `cd` into main directory of the `root-project/web` repository.
+      - Run `bash _releases/generateBuildOptions.sh v6-22-00-patches`. This creates the file `_includes/build_options_v6-22-00-patches.md`.
+      - Modify the `install/build_from_source.md` file, appending the created file above to the list of build options dropdown items. Look for tags like `<details markdown="1"><summary markdown="span">` and add the file at the end.
+      - Run `git checkout -b build-options-v622; git add _includes/build_options_v6-22-00-patches.md install/build_from_source.md; git commit; git push` and open a PR on the `web` repository.
   1. Announcements
       - Send mail to the following mailing lists: root-planning@cern.ch, root-dev@cern.ch, roottalk@cern.ch, root-ambassadors@cern.ch
       - Write announcement in RootTalk [forum news](https://root-forum.cern.ch/c/news){:target="_blank"} (optional for development releases and release candidates)
