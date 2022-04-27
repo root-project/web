@@ -29,7 +29,9 @@ The following are the basic instructions for UNIX-like systems. We will use the 
 ```bash
 # The latest stable branch gets updated automatically on each release.
 # Your may update your local copy by issuing a `git pull` command.
-$ git clone --branch latest-stable https://github.com/root-project/root.git root_src
+# The `--depth=1` option will save some download time during clone at the cost of
+# slightly increased time for the first `git pull`.
+$ git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src
 ```
 In the following we will refer to the directory where ROOT sources are (e.g. `root_src` above) as `<sourcedir>`.
 1. Create a directory for the build and a directory for the installation. It is not supported to build ROOT in the source directory. Then change (`cd`) to the build directory:

@@ -261,7 +261,7 @@ As a quick summary, after installing all [required dependencies]({{'/install/dep
 ```bash
 # The latest stable branch gets updated automatically on each release.
 # You may update your local copy by issuing a `git pull` command from within `root_src/`.
-$ git clone --branch latest-stable https://github.com/root-project/root.git root_src
+$ git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src
 $ mkdir root_build root_install && cd root_build
 $ cmake -DCMAKE_INSTALL_PREFIX=../root_install ../root_src # && check cmake configuration output for warnings or errors
 $ cmake --build . -- install -j4 # if you have 4 cores available for compilation
@@ -273,7 +273,7 @@ And similarly, on Windows, inside a `x86 Native Tools Command Prompt for VS 2019
 ```bat
 rem The `latest-stable` branch gets updated automatically on each release.
 rem You may update your local copy by issuing a `git pull` command from within `root_src`.
-C:\Users\username>git clone --branch latest-stable https://github.com/root-project/root.git root_src
+C:\Users\username>git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src
 C:\Users\username>mkdir root_build root_install && cd root_build
 C:\Users\username>cmake -G"Visual Studio 16 2019" -A Win32 -Thost=x64 -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_PREFIX=../root_install ../root_src
 C:\Users\username>cmake --build . --config Release --target install
