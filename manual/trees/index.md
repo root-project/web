@@ -23,7 +23,7 @@ In addition to the documentation in this manual, we recommend to take a look at 
 
 > **RNTuple**
 >
-> [RNTuple](https://root.cern/doc/master/md_tree_ntuple_v7_doc_README.html){:target="_blank"} is the experimental evolution of {% include ref class="TTree" %} columnar data storage. {% include ref class="RNTuple" namespace="ROOT::Experimental" %} introduces robust interfaces, a high-performance storage layout, and an asynchronous, thread-safe scheduling.
+> [RNTuple](https://root.cern/doc/master/md_tree_ntuple_v7_doc_README.html){:target="_blank"} is the experimental evolution of {% include ref class="TTree" %} columnar data storage. {% include ref struct="RNTuple" namespace="ROOT::Experimental" %} introduces robust interfaces, a high-performance storage layout, and an asynchronous, thread-safe scheduling.
 
 > **RDataFrame**
 >
