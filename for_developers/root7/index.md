@@ -51,4 +51,25 @@ If for any reasons `RBrowser` does not provide required functionality, one alway
 Either by specifying `root --web=off` when starting ROOT or by setting `Browser.Name: TRootBrowser` in rootrc file.
 Please report your case at the [ROOT Forum](https://root-forum.cern.ch) so we can address it!
 
+## RBrowser on remote node
+
+To efficiently use RBrowser on remote node, it is advised to use ssh port forwarding and run
+user interface on localhost with default web browser. In provided example remote http port 8899
+will be mapped to local 8877 port.
+
+When logging on remote host, configure also port forwarding
+
+    [shell] ssh -L 8877:remotehost:8899 username@remotehost
+
+Configure ROOT shell environment and start root with `--web=server:8899` options
+
+    [shell] call /path/to/root/bin/thisroot.sh
+    [shell] root --web=server:8899 $ROOTSYS/tutorials/v7/browser.cxx
+
+Open provided by ROOT url on localhost, replacing port number 8899 by 8877
+
+    [shell] firefox http://localhost:8877/win1/
+
+
+
 We highly appreciate your feedback!
