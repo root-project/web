@@ -33,8 +33,9 @@ Building from source would look similar to this:
 
 ## ROOT 7 Features
 
-ROOT's new interface personality is already in production with [`ROOT::RDataFrame`](https://root.cern/doc/master/classROOT_1_1RDataFrame.html).
-Next up is the `TTree` successor [`ROOT::Experimental::RNTuple`](https://root.cern/doc/master/structROOT_1_1Experimental_1_1RNTuple.html).
+ROOT's new interface personality is already in production with {% include ref class="RDataFrame" namespace="ROOT" %}.
+Next up is the `TTree` successor {% include ref struct="RNTuple" namespace="ROOT::Experimental" %}.
+
 
 Still in the design phase are ROOT's new graphics and histogram packages, with tutorials such as
 for [ROOT 7 graphics](https://github.com/root-project/root/tree/master/tutorials/rcanvas),
@@ -43,7 +44,7 @@ and specifically for [drawing and styling the new histograms](https://github.com
 
 ## RBrowser
 
-Starting from ROOT version 6.26/00, [`RBrowser`](https://root.cern/doc/master/classROOT_1_1Experimental_1_1RBrowser.html) is the first web-based component used by default when ROOT is built with `root7`.
+Starting from ROOT version 6.26/00, {% include ref class="RBrowser" namespace="ROOT::Experimental" %} is the first web-based component used by default when ROOT is built with `root7`.
 It is automatically invoked with `new TBrowser`.
 We recommend to install the `chrome/chromium` web browser, but all other web browsers should do the job.
 
@@ -53,23 +54,25 @@ Please report your case at the [ROOT Forum](https://root-forum.cern.ch) so we ca
 
 ## RBrowser on remote node
 
-To efficiently use RBrowser on remote node, it is advised to use ssh port forwarding and run
-user interface on localhost with default web browser. In provided example remote http port 8899
-will be mapped to local 8877 port.
+To efficiently use {% include ref class="RBrowser" namespace="ROOT::Experimental" %} on a remote node,
+it is advised to use the `ssh` port forwarding and run
+the user interface on the localhost with the default web browser. In the provided example
+the remote http port 8899 will be mapped to the local 8877 port.
 
-When logging on remote host, configure also port forwarding
+When logging on the remote host, configure also the port forwarding:
 
     [shell] ssh -L 8877:remotehost:8899 username@remotehost
 
-Configure ROOT shell environment and start root with `--web=server:8899` options
+Configure ROOT the shell environment and start root with the `--web=server:8899` option:
 
     [shell] call /path/to/root/bin/thisroot.sh
     [shell] root --web=server:8899 $ROOTSYS/tutorials/v7/browser.cxx
 
-Open provided by ROOT url on localhost, replacing port number 8899 by 8877
+Open the url provided by ROOT on the localhost, replacing port number 8899 by 8877:
 
     [shell] firefox http://localhost:8877/win1/
 
 
 
 We highly appreciate your feedback!
+
