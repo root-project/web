@@ -23,7 +23,7 @@ You can think of a `TList` as a `std::list<TObject*>`.
 
 Element retrieval through `TObject*` is often not useful;
 for instance with `TTree::GetListOfBranches()` you know that the elements are of type `TBranch*`.
-For this purpose, ROOT offers a tool specific for range-based for loops: {% include ref class="TRangeDynCast" namespace="ROOT::Detail" %}
+For this purpose, ROOT offers a tool specific for range-based for loops: [TRangeDynCast](https://root.cern/doc/master/TCollection_8h.html#ab36279cd943b06d94ecec8a2a10110f7).
 
 {% highlight C++ %}
 for (auto br : TRangeDynCast<TBranch>( tree->GetListOfBranches() )) {
