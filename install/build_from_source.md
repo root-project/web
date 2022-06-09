@@ -54,7 +54,7 @@ The underlying build tool can also be invoked directly of course, but the` cmake
 On UNIX systems (with make or ninja) you can speedup the build with `cmake --build . --  -jN` where N is the number of available cores.
 1. Setup ROOT in your environment:
 ```bash
-$ source <installdir>/bin/thisroot.sh # or thisroot.{csh,fish,bat} depending on the environment
+$ source <installdir>/bin/thisroot.sh # also available for other shells: thisroot.csh, thisroot.fish, thisroot.bat
 ```
 To have ROOT setup automatically at each login, that command can be appended to a `.profile`, `.login`, `.bashrc` or equivalent configuration file.
 
