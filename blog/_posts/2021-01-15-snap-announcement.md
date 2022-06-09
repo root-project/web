@@ -6,7 +6,7 @@ author: James Carroll
 
 There is a new experimental package format for ROOT, based on the [Snap package manager](https://snapcraft.io) from Canonical. This package can be ideal for new ROOT users, new Linux users, or people whose ROOT requirements might be entirely satisfied with an immutable container image. 
 
-Take a look at the store listing at [https://snapcraft.io/root-framework](https://snapcraft.io/root-framework), where you can find installations for some common distributions, e.g. [Ubuntu](https://snapcraft.io/install/root-framework/ubuntu), [Mint](https://snapcraft.io/install/root-framework/mint), [Debian](https://snapcraft.io/install/root-framework/debian), [Fedora](https://snapcraft.io/install/root-framework/fedora), [OpenSUSE](https://snapcraft.io/install/root-framework/opensuse), [CentOS](https://snapcraft.io/install/root-framework/centos), [Arch](https://snapcraft.io/install/root-framework/arch), and more!
+Take a look at the store listing at [https://snapcraft.io/root-framework](https://snapcraft.io/root-framework), where you can find installations for some common distributions, e.g. [Ubuntu](https://snapcraft.io/install/root-framework/ubuntu), [Debian](https://snapcraft.io/install/root-framework/debian), [Fedora](https://snapcraft.io/install/root-framework/fedora), [OpenSUSE](https://snapcraft.io/install/root-framework/opensuse), [CentOS](https://snapcraft.io/install/root-framework/centos), [Arch](https://snapcraft.io/install/root-framework/arch), and more!
 
 On Ubuntu, it is as simple as:
 ```
