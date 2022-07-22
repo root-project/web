@@ -26,6 +26,7 @@ Make sure you have installed all [required dependencies]({{'/install/dependencie
 The following are the basic instructions for UNIX-like systems and Windows. We will use the command-line, non-interactive CMake interface. On Windows, open a `[x86|x64] Native Tools Command Prompt for vs 2022`.
 
 1. Download and unpack the [ROOT sources for a specific release]({{'/install/all_releases' | relative_url}}) (make sure to download the "Source distribution" and not a binary distribution) or simply clone ROOT's git repository and check out the branch you would like to build, for example:
+
    ```bash
    # The latest stable branch gets updated automatically on each release.
    # Your may update your local copy by issuing a `git pull` command.
@@ -34,12 +35,16 @@ The following are the basic instructions for UNIX-like systems and Windows. We w
    $ git clone --branch latest-stable --depth=1 https://github.com/root-project/root.git root_src
    ```
    In the following we will refer to the directory where ROOT sources are (e.g. `root_src` above) as `<sourcedir>`.
-1. Create a directory for the build and a directory for the installation. It is not supported to build ROOT in the source directory. Then change (`cd`) to the build directory:
+
+2. Create a directory for the build and a directory for the installation. It is not supported to build ROOT in the source directory. Then change (`cd`) to the build directory:
+
    ```bash
    $ mkdir <builddir> <installdir>
    $ cd <builddir>
    ```
-1. Execute the `cmake` command on the shell replacing `<sourcedir>` and `<installdir>` appropriately.
+
+3. Execute the `cmake` command on the shell replacing `<sourcedir>` and `<installdir>` appropriately.
+
    On UNIX-like systems:
    ```bash
    $ cmake -DCMAKE_INSTALL_PREFIX=<installdir> <sourcedir>
@@ -48,10 +53,14 @@ The following are the basic instructions for UNIX-like systems and Windows. We w
    ```bat
    cmake -G"Visual Studio 17 2022" -A Win32 -Thost=x64 -DCMAKE_INSTALL_PREFIX=<installdir> <sourcedir>
    ```
-   `-G"Visual Studio 17 2022"` is the generator (here Visual Studio 2022), `-A Win32` is for the architecture (here 32 bit), so replace `-A Win32` with `-A x64` to build in 64 bit mode, and `-Thost=x64` is to use the native x64 toolset (to increase the available memory for the builds)
+   `-G"Visual Studio 17 2022"` is the generator (here Visual Studio 2022), `-A Win32` is for the architecture (here 32 bit), so replace `-A Win32` with `-A x64` to build in 64 bit mode, and `-Thost=x64` is to use the native x64 toolset (to increase the available memory for the builds).
+
    CMake will detect your development environment, perform a series of test and generate the files required for building ROOT. CMake will use default values for all build parameters. See the [Build Options](#all-build-options) and [Variables](#relevant-cmake-variables) sections for fine-tuning your build.
+
    This can fail if CMake cannot detect your toolset, or if it thinks that the environment is not sane enough. In this case make sure that the toolset that you intend to use is the only one reachable from the shell and that the shell itself is the correct one for you development environment. You can force CMake to use a given build tool, see the Usage section.
-1. Proceed to use IDE project files or start the build from the build directory, after CMake has finished running:
+
+4. Proceed to use IDE project files or start the build from the build directory, after CMake has finished running:
+
    On UNIX-like systems:
    ```bash
    $ cmake --build . --target install [-- <options to the native tool>]
@@ -61,15 +70,21 @@ The following are the basic instructions for UNIX-like systems and Windows. We w
    cmake --build . --config [Release|Debug|RelWithDebInfo] --target install [-- <options to the native tool>]
    ```
    On Windows, the `--config [Release|Debug|RelWithDebInfo]` is needed at build time.
+
    The `--build` option tells cmake to invoke the underlying build tool (make, ninja, xcodebuild, msbuild, etc).
+
    The underlying build tool can also be invoked directly of course, but the` cmake --build` command is more portable.
+
    On UNIX systems (with make or ninja) you can speedup the build with `cmake --build . --  -jN` where N is the number of available cores.
-1. Setup ROOT in your environment:
+
+5. Setup ROOT in your environment:
+
    On UNIX-like systems:
    ```bash
    $ source <installdir>/bin/thisroot.sh # also available for other shells: thisroot.csh, thisroot.fish, thisroot.bat
    ```
    To have ROOT setup automatically at each login, that command can be appended to a `.profile`, `.login`, `.bashrc` or equivalent configuration file.
+
    On Windows:
    ```bat
    <installdir>/bin/thisroot.bat # also available for PowerShell: thisroot.ps1
