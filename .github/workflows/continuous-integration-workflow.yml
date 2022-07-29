@@ -23,24 +23,6 @@ jobs:
       - name: Build website
         uses: root-project/jekyll-action@HEAD
 
-      - name: Run HTML proofer
-        uses: chabad360/htmlproofer@v1.1
-        with:
-          directory: './build/'
-          # Reasons for url-ignore
-          # - https://root.cern/[0-9]+: Breaks checking local builds due to links in the metadata
-          # - https://root.cern/(?!(files|download|doc)): Checking links to the deployed website breaks appearing in the metadata of newly added webpages. Exceptions are links to files, download and doc, which are not part of the Jekyll setup.
-          # - rootbnch-grafana-test.cern.ch: Breaks due to SSO
-          # - lcgapp-services.cern.ch: Breaks due to SSO
-          # - indico.desy.de: Returns frequently error code 403
-          # - https://www.sciencedirect.com: frequent 403 errors
-          # - nbviewer: When notebook generation fails, nbviewer returns 404 errors, and errors might even be cached in CDNs for a while
-          # - lcginfo.cern.ch: does not support HTTPS, see https://sft.its.cern.ch/jira/browse/SPI-1672
-          # - http://simul.iro.umontreal.ca/testu01/tu01.html does not support HTTPS
-          # Reasons for file-ignore
-          # - Broken links in historic ROOT v5 release notes
-          arguments: --ignore-missing-alt --ignore-empty-alt --allow-missing-href --ignore-files "/.*root-version-v5.*/" --allow-hash-href --ignore-urls "/(https://root.cern/[0-9]+|https://root.cern/(?!(files|download|doc))|https://rootbnch-grafana-test.cern.ch|https://lcgapp-services.cern.ch/root-jenkins|https://indico.desy.de.*|https://nbviewer.jupyter.org|http://lcginfo.cern.ch|http://simul.iro.umontreal.ca/testu01/tu01.html|https://www.sciencedirect.com)/" --only-4xx --ignore-status-codes "429" --enforce-https --checks Links,Images,Scripts,Favicon --swap-urls '^/doc/:https\://root.cern/doc/,^/d/:https\://root.cern/d/,^/files/:https\://root.cern/files/,^/download/:https\://root.cern/download/,^/js/:https\://root.cern/js/,^/TaligentDocs/:https\://root.cern/TaligentDocs/,^/root/:https\://root.cern/root/'
-
       - name: Only allow links to root.cern, never root.cern.ch
         run: |
           grep -n -R 'root\.cern\.ch' build || exit 0  # grep returns non-zero if no match is found
