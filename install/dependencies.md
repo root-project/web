@@ -181,16 +181,16 @@ On Debian, substitute `libmysqlclient-dev` with `libmariadb-dev`.
 Minimal set:
 
 ```bash
-sudo zypper install bash cmake gcc-c++ gcc binutils python libXpm-devel
+sudo zypper install bash cmake gcc-c++ gcc binutils python libXpm-devel \
 xorg-x11-devel libXext-devel libopenssl-devel
 ```
 
 Most common optional packages:
 
 ```bash
-sudo zypper install gcc-fortran pcre-devel Mesa glew-devel libpng16-devel
-pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel
-libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel libxml2-devel
+sudo zypper install gcc-fortran pcre-devel Mesa glew-devel libpng16-devel \
+pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel \
+libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel libxml2-devel \
 krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 ```
 
