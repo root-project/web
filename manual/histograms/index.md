@@ -203,7 +203,7 @@ An histogram can also be filled directly by an array of values of type `double` 
    std::vector<double> x = {0,1,2,3,4,5,6,7,8,9};
    std::vector<double> w(x.size(),1); // weights vector
    auto h1 = new TH1D("h1","h1 title",10,0.,10.);
-   h1.FillN(10,x,w);
+   h1->FillN(10,x.data(),w.data());
 {% endhighlight %}
 
 This is useful when working in Python with `numpy` arrays, so you can fill directly an histograms. An example is provided in the next section.
