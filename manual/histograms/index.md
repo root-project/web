@@ -234,7 +234,7 @@ In Python you can use random numbers generated using the `numpy.random` library 
    x = np.random.normal(5,2,1000)
    w = np.ones(1000)
    h1 = ROOT.TH1D("h1","h1 title",50,0.,10.);
-   h1.Fill(1000, x, w)
+   h1.FillN(1000, x, w)
 ```
 
 Use the [TH1::GetRandom()](https://root.cern/doc/master/classTH1.html#a4dd1bbf1cbeea1e7da03e781d01cf232){:target="_blank"} method to get a random number distributed according the contents of a histogram.
