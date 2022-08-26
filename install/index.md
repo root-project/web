@@ -95,6 +95,19 @@ $ snap run root-framework
 $ root # and the output of `which root` should contain `/snap`
 ```
 
+To use ROOT from Python, the Snap package bundles its own Python 3.8 interpreter
+that knows where to find the ROOT libraries. This is done to avoid interference
+with other system packages. You should use `pyroot` rather than `python` to make
+use of the PyROOT features with the Snap package:
+```python
+$ pyroot
+Python 3.8.10 (default, Jun 22 2022, 20:18:18) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import ROOT
+>>> 
+```
+
 The Snap package uses C++17. See our [dedicated blog post]({{'/blog/snap-announcement/' | relative_url}}) for more information, or visit the official [ROOT Snap package](https://snapcraft.io/root-framework){:target="\_blank"} page.
 
 ## Linux package managers
