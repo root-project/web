@@ -1965,12 +1965,13 @@ treatment of the aforementioned topics.
 
 [^4]: "Monte Carlo" simulation means that random numbers play a role here
 which is as crucial as in games of pure chance in the Casino of Monte Carlo.
-# File I/O and Parallel Analysis
+
+# File I/O and Data Analysis
 
 ## Storing ROOT Objects
 
 ROOT offers the possibility to write instances of classes on
-disk, into a *ROOT-file* (see the `TFile` class for more details).
+disk, into a ROOT file (see the `TFile` class for more details).
 One says that the object is made "persistent" by storing
 it on disk. When reading the file back, the object is reconstructed
 in memory. The requirement to be satisfied to perform I/O of instances
@@ -2002,11 +2003,11 @@ void write_to_file(){
 }
 {% endhighlight %}
 
-Not bad, eh ? Especially for a language that does not foresee
-persistence natively like C++. The *RECREATE* option forces ROOT to
+Not bad, eh? Especially for a language that does not foresee
+persistence natively like C++. The "RECREATE" option forces ROOT to
 create a new file even if a file with the same name exists on disk.
 
-Now, you may use the Cling command line to access information in the file
+Now, you may use the cling command line to access information in the file
 and draw the previously written histogram:
 
 {% highlight C++ %}
@@ -2029,8 +2030,7 @@ void read_from_file(){
     TFile in_file("my_rootfile.root");
 
     // Get the Histogram out
-    TH1F* h;
-    in_file.GetObject("my_histogram",h);
+    auto h = in_file.Get<TH1F>("my_histogram");
 
     // Draw it
     auto myCanvas = new TCanvas();
@@ -2038,552 +2038,189 @@ void read_from_file(){
 }
 {% endhighlight %}
 
-## N-tuples in ROOT
-
-***Storing simple N-tuples***
-
-Up to now we have seen how to manipulate input read from ASCII files.
-ROOT offers the possibility to do much better than that, with its own
-n-tuple classes. Among the many advantages provided by these classes one
-could cite
-
--   Optimised disk I/O.
-
--   Possibility to store many n-tuple rows.
-
--   Write the n-tuples in ROOT files.
-
--   Interactive inspection with `TBrowser`.
-
--   Store not only numbers, but also *objects* in the columns.
-
-In this section we will discuss briefly the `TNtuple` class, which is a
-simplified version of the `TTree` class. A ROOT `TNtuple` object can
-store rows of float entries. Let's tackle the problem according to the
-usual strategy commenting a minimal example
-
-{% highlight C++ %}
-// Fill an n-tuple and write it to a file simulating measurement of
-// conductivity of a material in different conditions of pressure
-// and temperature.
-
-void write_ntuple_to_file(){
-
-   TFile ofile("conductivity_experiment.root","RECREATE");
-
-   // Initialise the TNtuple
-   TNtuple cond_data("cond_data",
-                     "Example N-Tuple",
-                     "Potential:Current:Temperature:Pressure");
-
-   // Fill it randomly to fake the acquired data
-   TRandom3 rndm;
-   float pot,cur,temp,pres;
-   for (int i=0;i<10000;++i){
-      pot=rndm.Uniform(0.,10.);      // get voltage
-      temp=rndm.Uniform(250.,350.);  // get temperature
-      pres=rndm.Uniform(0.5,1.5);    // get pressure
-      cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.)); // current
-                                                    // add some random smearing (measurement errors)
-      pot*=rndm.Gaus(1.,0.01); // 1% error on voltage
-      temp+=rndm.Gaus(0.,0.3); // 0.3 abs. error on temp.
-      pres*=rndm.Gaus(1.,0.02);// 1% error on pressure
-      cur*=rndm.Gaus(1.,0.01); // 1% error on current
-                               // write to ntuple
-      cond_data.Fill(pot,cur,temp,pres);
-   }
-
-   // Save the ntuple and close the file
-   cond_data.Write();
-   ofile.Close();
-}
-{% endhighlight %}
-
-This data written to this example n-tuple represents, in the statistical
-sense, three independent variables (Potential or Voltage, Pressure and
-Temperature), and one variable (Current) which depends on the others
-according to very simple laws, and an additional Gaussian smearing. This
-set of variables mimics a measurement of an electrical resistance while
-varying pressure and temperature.
-
-Imagine your task now consists in finding the relations among the
-variables -- of course without knowing the code used to generate them.
-You will see that the possibilities of the `NTuple` class enable you to
-perform this analysis task. Open the ROOT file (`cond_data.root`)
-written by the macro above in an interactive session and use a
-`TBrowser` to interactively inspect it:
-
-{% highlight C++ %}
-root[0] TBrowser b
-{% endhighlight %}
-You find the columns of your n-tuple written as *leafs*. Simply clicking
-on them you can obtain histograms of the variables!
-
-Next, try the following commands at the shell prompt and in the
-interactive ROOT shell, respectively:
-
-{% highlight C++ %}
-> root conductivity_experiment.root
-Attaching file conductivity_experiment.root as _file0...
-root [0] cond_data->Draw("Current:Potential")
-{% endhighlight %}
-
-You just produced a correlation plot with one single line of code!
-
-Try to extend the syntax typing for example
-
-{% highlight C++ %}
-root [1] cond_data->Draw("Current:Potential","Temperature<270")
-{% endhighlight %}
-
-What do you obtain ?
-
-Now try
-
-{% highlight C++ %}
-root [2] cond_data->Draw("Current/Potential:Temperature")
-{% endhighlight %}
-
-It should have become clear from these examples how to navigate in such
-a multi-dimensional space of variables and unveil relations between
-variables using n-tuples.
-
-***Reading N-tuples***
-
-For completeness, you find here a small macro to read the data back from
-a ROOT n-tuple
-
-{% highlight C++ %}
-// Read the previously produced N-Tuple and print on screen
-// its content
-
-void read_ntuple_from_file(){
-
-    // Open a file, save the ntuple and close the file
-    TFile in_file("conductivity_experiment.root");
-    TNtuple* my_tuple;in_file.GetObject("cond_data",my_tuple);
-    float pot,cur,temp,pres; float* row_content;
-
-    cout << "Potential\tCurrent\tTemperature\tPressure\n";
-    for (int irow=0;irow<my_tuple->GetEntries();++irow){
-        my_tuple->GetEntry(irow);
-        row_content = my_tuple->GetArgs();
-        pot = row_content[0];
-        cur = row_content[1];
-        temp = row_content[2];
-        pres = row_content[3];
-        cout << pot << "\t" << cur << "\t" << temp
-             << "\t" << pres << endl;
-        }
-
-    }
-{% endhighlight %}
-
-The macro shows the easiest way of accessing the content of a n-tuple:
-after loading the n-tuple, its branches are assigned to variables and
-`GetEntry(long)` automatically fills them with the content for a
-specific row. By doing so, the logic for reading the n-tuple and the
-code to process it can be split and the source code remains clear.
-
-***Storing Arbitrary N-tuples***
-
-It is also possible to write n-tuples of arbitrary type by using ROOT's
-`TBranch` class. This is especially important as `TNtuple::Fill()`
-accepts only floats. The following macro creates the same n-tuple as
-before but the branches are booked directly. The `Fill()` function then
-fills the current values of the connected variables to the tree.
-
-{% highlight C++ %}
-// Fill an n-tuple and write it to a file simulating measurement of
-// conductivity of a material in different conditions of pressure
-// and temperature using branches.
-
-void write_ntuple_to_file_advanced(
-   const std::string& outputFileName="conductivity_experiment.root"
-   ,unsigned int numDataPoints=1000000){
-
-   TFile ofile(outputFileName.c_str(),"RECREATE");
-
-   // Initialise the TNtuple
-   TTree cond_data("cond_data", "Example N-Tuple");
-
-   // define the variables and book them for the ntuple
-   float pot,cur,temp,pres;
-   cond_data.Branch("Potential", &pot, "Potential/F");
-   cond_data.Branch("Current", &cur, "Current/F");
-   cond_data.Branch("Temperature", &temp, "Temperature/F");
-   cond_data.Branch("Pressure", &pres, "Pressure/F");
-
-   for (int i=0;i<numDataPoints;++i){
-      // Fill it randomly to fake the acquired data
-      pot=gRandom->Uniform(0.,10.)*gRandom->Gaus(1.,0.01);
-      temp=gRandom->Uniform(250.,350.)+gRandom->Gaus(0.,0.3);
-      pres=gRandom->Uniform(0.5,1.5)*gRandom->Gaus(1.,0.02);
-      cur=pot/(10.+0.05*(temp-300.)-0.2*(pres-1.))*
-                    gRandom->Gaus(1.,0.01);
-      // write to ntuple
-      cond_data.Fill();}
-
-   // Save the ntuple and close the file
-   cond_data.Write();
-   ofile.Close();
-}
-{% endhighlight %}
-
-The `Branch()` function requires a pointer to a variable and a
-definition of the variable type. The following table lists some of the possible
-values.
-Please note that ROOT is not checking the input and mistakes are likely
-to result in serious problems. This holds especially if values are read
-as another type than they have been written, e.g. when storing a
-variable as float and reading it as double.
-
-List of variable types that can be used to define the type of a branch in ROOT:
-
-```
-  type               size     C++             identifier
-  ------------------ -------- --------------- ------------
-  signed integer     32 bit   int             I
-                     64 bit   long            L
-  unsigned integer   32 bit   unsigned int    i
-                     64 bit   unsigned long   l
-  floating point     32 bit   float           F
-                     64 bit   double          D
-  boolean            -        bool            O
-```
-
-***Processing N-tuples Spanning over Several Files***
-
-Usually n-tuples or trees span over many files and it would be difficult
-to add them manually. ROOT thus kindly provides a helper class in the
-form of `TChain`. Its usage is shown in the following macro which is
-very similar to the previous example. The constructor of a `TChain`
-takes the name of the `TTree` (or `TNuple`) as an argument. The files
-are added with the function `Add(fileName)`, where one can also use
-wild-cards as shown in the example.
-
-{% highlight C++ %}
-// Read several previously produced N-Tuples and print on screen its
-// content.
-//
-// you can easily create some files with the following statement:
-//
-// for i in 0 1 2 3 4 5; \\
-// do root -l -x -b -q \\
-// "write_ntuple_to_file.cxx \\
-// (\"conductivity_experiment_${i}.root\", 100)"; \\
-//  done
-
-void read_ntuple_with_chain(){
-   // initiate a TChain with the name of the TTree to be processed
-   TChain in_chain("cond_data");
-   in_chain.Add("conductivity_experiment*.root"); // add files,
-                                                  // wildcards work
-
-   // define variables and assign them to the corresponding branches
-   float pot, cur, temp, pres;
-   in_chain.SetBranchAddress("Potential", &pot);
-   in_chain.SetBranchAddress("Current", &cur);
-   in_chain.SetBranchAddress("Temperature", &temp);
-   in_chain.SetBranchAddress("Pressure", &pres);
-
-   cout << "Potential\tCurrent\tTemperature\tPressure\n";
-   for (size_t irow=0; irow<in_chain.GetEntries(); ++irow){
-      in_chain.GetEntry(irow); // loads all variables that have
-                                    // been connected to branches
-      cout << pot << "\t" << cur << "\t" << temp <<
-                          "\t" << pres << endl;
-   }
-}
-{% endhighlight %}
-
-***For the advanced user: Processing trees with a selector script***
-
-
-Another very general and powerful way of processing a `TChain` is
-provided via the method `TChain::Process()`. This method takes as
-arguments an instance of a -- user-implemented-- class of type
-`TSelector`, and -- optionally -- the number of entries and the first
-entry to be processed. A template for the class `TSelector` is provided
-by the method `TTree::MakeSelector`, as is shown in the little macro
-`makeSelector.C` below.
-
-It opens the n-tuple `conductivity_experiment.root` from the example
-above and creates from it the header file `MySelector.h` and a template
-to insert your own analysis code, `MySelector.C`.
-
-
-{% highlight C++ %}
-{
-// create template class for Selector to run on a tree
-//////////////////////////////////////////////////////
-//
-// open root file containing the Tree
-    TFile f("conductivity_experiment.root");
-// create TTree object from it
-    TTree *t; f.GetObject("cond_data",t);
-// this generates the files MySelector.h and MySelector.C
-    t->MakeSelector("MySelector");
-}
-{% endhighlight %}
-
-The template contains the entry points `Begin()` and `SlaveBegin()`
-called before processing of the `TChain` starts, `Process()` called for
-every entry of the chain, and `SlaveTerminate()` and `Terminate()`
-called after the last entry has been processed. Typically,
-initialization like booking of histograms is performed in
-`SlaveBegin()`, the analysis, i.e. the selection of entries,
-calculations and filling of histograms, is done in `Process()`, and
-final operations like plotting and storing of results happen in
-`SlaveTerminate()` or `Terminate()`.
-
-The entry points `SlaveBegin()` and `SlaveTerminate()` are called on
-so-called slave nodes only if parallel processing via `PROOF` or
-`PROOF lite` is enabled, as will be explained below.
-
-A simple example of a selector class is shown in the macro
-`MySelector.C`. The example is executed with the following sequence of
-commands:
-
-{% highlight C++ %}
-> TChain *ch=new TChain("cond_data", "Chain for Example N-Tuple");
-> ch->Add("conductivity_experiment*.root");
-> ch->Process("MySelector.C+");
-{% endhighlight %}
-
-As usual, the "`+`" appended to the name of the macro to be executed
-initiates the compilation of the `MySelector.C` with the system compiler
-in order to improve performance.
-
-The code in `MySelector.C`, shown in the listing below, books some
-histograms in `SlaveBegin()` and adds them to the instance `fOutput`,
-which is of the class `TList` [^5]. The final processing in
-`Terminate()` allows to access histograms and store, display or save
-them as pictures. This is shown in the example via the `TList`
-`fOutput`. See the commented listing below for more details; most of the
-text is actually comments generated automatically by
-`TTree::MakeSelector`.
-
-{% highlight C++ %}
-#define MySelector_cxx
-// The class definition in MySelector.h has been generated automatically
-// by the ROOT utility TTree::MakeSelector(). This class is derived
-// from the ROOT class TSelector. For more information on the TSelector
-// framework see $ROOTSYS/README/README.SELECTOR or the ROOT User Manual.
-
-// The following methods are defined in this file:
-//    Begin():        called every time a loop on the tree starts,
-//                    a convenient place to create your histograms.
-//    SlaveBegin():   called after Begin(), when on PROOF called only on the
-//                    slave servers.
-//    Process():      called for each event, in this function you decide what
-//                    to read and fill your histograms.
-//    SlaveTerminate: called at the end of the loop on the tree, when on PROOF
-//                    called only on the slave servers.
-//    Terminate():    called at the end of the loop on the tree,
-//                    a convenient place to draw/fit your histograms.
-//
-// To use this file, try the following session on your Tree T:
-//
-// root> T->Process("MySelector.C")
-// root> T->Process("MySelector.C","some options")
-// root> T->Process("MySelector.C+")
-//
-
-#include "MySelector.h"
-#include <TH2.h>
-#include <TStyle.h>
-
-
-void MySelector::Begin(TTree * /*tree*/)
-{
-   // The Begin() function is called at the start of the query.
-   // When running with PROOF Begin() is only called on the client.
-   // The tree argument is deprecated (on PROOF 0 is passed).
-
-   TString option = GetOption();
-
-}
-
-void MySelector::SlaveBegin(TTree * /*tree*/)
-{
-   // The SlaveBegin() function is called after the Begin() function.
-   // When running with PROOF SlaveBegin() is called on each slave server.
-   // The tree argument is deprecated (on PROOF 0 is passed).
-
-   TString option = GetOption();
-
-}
-
-Bool_t MySelector::Process(Long64_t entry)
-{
-   // The Process() function is called for each entry in the tree (or possibly
-   // keyed object in the case of PROOF) to be processed. The entry argument
-   // specifies which entry in the currently loaded tree is to be processed.
-   // It can be passed to either MySelector::GetEntry() or TBranch::GetEntry()
-   // to read either all or the required parts of the data. When processing
-   // keyed objects with PROOF, the object is already loaded and is available
-   // via the fObject pointer.
-   //
-   // This function should contain the "body" of the analysis. It can contain
-   // simple or elaborate selection criteria, run algorithms on the data
-   // of the event and typically fill histograms.
-   //
-   // The processing can be stopped by calling Abort().
-   //
-   // Use fStatus to set the return value of TTree::Process().
-   //
-   // The return value is currently not used.
-
-   return kTRUE;
-}
-
-void MySelector::SlaveTerminate()
-{
-   // The SlaveTerminate() function is called after all entries or objects
-   // have been processed. When running with PROOF SlaveTerminate() is called
-   // on each slave server.
-
-}
-
-void MySelector::Terminate()
-{
-   // The Terminate() function is the last function to be called during
-   // a query. It always runs on the client, it can be used to present
-   // the results graphically or save the results to file.
-
-}
-{% endhighlight %}
-
-***For power-users: Multi-core processing with `PROOF lite`***
-
-
-The processing of n-tuples via a selector function of type `TSelector`
-through `TChain::Process()`, as described at the end of the previous
-section, offers an additional advantage in particular for very large
-data sets: on distributed systems or multi-core architectures, portions
-of data can be processed in parallel, thus significantly reducing the
-execution time. On modern computers with multi-core CPUs or
-hardware-threading enabled, this allows a much faster turnaround of
-analyses, since all the available CPU power is used.
-
-On distributed systems, a PROOF server and worker nodes have to be set
-up, as described in detail in the ROOT documentation. On a single
-computer with multiple cores, `PROOF lite` can be used instead. Try the
-following little macro, `RunMySelector.C`, which contains two extra
-lines compared to the example above (adjust the number of workers
-according to the number of CPU cores):
-
-{% highlight C++ %}
-{// set up a TChain
-TChain *ch=new TChain("cond_data", "My Chain for Example N-Tuple");
- ch->Add("conductivity_experiment*.root");
-// eventually, start Proof Lite on cores
-TProof::Open("workers=4");
-ch->SetProof();
-ch->Process("MySelector.C+");}
-{% endhighlight %}
-
-The first command, `TProof::Open(const char*)` starts a local PROOF
-server (if no arguments are specified, all cores will be used), and the
-command `ch->SetProof();` enables processing of the chain using PROOF.
-Now, when issuing the command `ch->Process("MySelector.C+);`, the code
-in `MySelector.C` is compiled and executed on each slave node. The
-methods `Begin()` and `Terminate()` are executed on the master only. The
-list of n-tuple files is analysed, and portions of the data are assigned
-to the available slave processes. Histograms booked in `SlaveBegin()`
-exist in the processes on the slave nodes, and are filled accordingly.
-Upon termination, the PROOF master collects the histograms from the
-slaves and merges them. In `Terminate()` all merged histograms are
-available and can be inspected, analysed or stored. The histograms are
-handled via the instances `fOutput` of class `TList` in each slave
-process, and can be retrieved from this list after merging in
-`Terminate`.
-
-To explore the power of this mechanism, generate some very large
-n-tuples using the script from the section
-Storing Arbitrary N-tuples -
-you could try 10 000 000 events (this
-results in a large n-tuple of about 160 MByte in size). You could also
-generate a large number of files and use wildcards to add the to the
-`TChain`. Now execute: `> root -l RunMySelector.C` and watch what
-happens:
-
-{% highlight C++ %}
-Processing RunMySelector.C...
- +++ Starting PROOF-Lite with 4 workers +++
-Opening connections to workers: OK (4 workers)
-Setting up worker servers: OK (4 workers)
-PROOF set to parallel mode (4 workers)
-
-Info in <TProofLite::SetQueryRunning>: starting query: 1
-Info in <TProofQueryResult::SetRunning>: nwrks: 4
-Info in <TUnixSystem::ACLiC>: creating shared library
-                             ~/DivingROOT/macros/MySelector_C.so
-*==* ----- Begin of Job ----- Date/Time = Wed Feb 15 23:00:04 2012
-Looking up for exact location of files: OK (4 files)
-Looking up for exact location of files: OK (4 files)
-Info in <TPacketizerAdaptive::TPacketizerAdaptive>:
-                      Setting max number of workers per node to 4
-Validating files: OK (4 files)
-Info in <TPacketizerAdaptive::InitStats>:
-                      fraction of remote files 1.000000
-Info in <TCanvas::Print>:
-       file ResistanceDistribution.png has been created
-*==* ----- End of Job ----- Date/Time = Wed Feb 15 23:00:08 2012
-Lite-0: all output objects have been merged
-{% endhighlight %}
-
-Log files of the whole processing chain are kept in the directory
-`~.proof` for each worker node. This is very helpful for debugging or if
-something goes wrong. As the method described here also works without
-using PROOF, the development work on an analysis script can be done in
-the standard way on a small subset of the data, and only for the full
-processing one would use parallelism via PROOF.
-
-It is worth to remind the reader that the speed of typical data analysis
-programs limited by the I/O speed (for example the latencies implied by
-reading data from a hard drive). It is therefore expected that this
-limitation cannot be eliminated with the usage of any parallel analysis
-toolkit.
-
-***Optimisation Regarding N-tuples***
-
-ROOT automatically applies compression algorithms on n-tuples to reduce
+## The ROOT dataset
+ROOT can handle storage/retrieval of large datasets through the {% include ref class="TTree" %} class. These are some of its advantages:
+
+- Optimised disk I/O.
+- Data layout organized in a columnar fashion: read different columns independently.
+- Writing to and reading from ROOT files (through the TFile class).
+- Interactive inspection of the dataset with TBrowser.
+- Store any type of C++ object in the columns.
+
+ROOT automatically applies compression algorithms on TTree to reduce
 the memory consumption. A value that is in most cases the same will
 consume only small space on your disk (but it has to be decompressed on
 reading). Nevertheless, you should think about the design of your
-n-tuples and your analyses as soon as the processing time exceeds some
+dataset and your analyses as soon as the processing time exceeds some
 minutes.
 
--   Try to keep your n-tuples simple and use appropriate variable types.
-    If your measurement has only a limited precision, it is needless to
-    store it with double precision.
+- Try to keep a TTree simple and use appropriate variable types.
+  If your measurement has only a limited precision, it is needless to
+  store it with double precision.
+- Experimental conditions that do not change with every single
+  measurement should be stored in a separate tree. Although the
+  compression can handle redundant values, the processing time
+  increases with every variable that has to be filled.
+- The function SetCacheSize(long) specifies the size of the cache
+  for reading a TTree object from a file. The default value is 30MB.
+  A manual increase may help in certain situations. Please note that
+  the caching mechanism can cover only one TTree object per TFile
+  object.
+- If you would like to measure I/O performance when reading a dataset you could
+  use the {% include ref class="TTreePerfStats" %} class. The ROOT documentation
+  on this class also includes an introductory example. For example, TTreePerfStats
+  can show you that it is beneficial to store meta data and payload data
+  separately, i.e. write the meta data tree in bulk to a file at the end of your
+  job instead of writing both trees interleaved.
 
--   Experimental conditions that do not change with every single
-    measurement should be stored in a separate tree. Although the
-    compression can handle redundant values, the processing time
-    increase with every variable that has to be filled.
+## Data analysis in ROOT with RDataFrame
 
--   The function `SetCacheSize(long)` specifies the size of the cache
-    for reading a `TTree` object from a file. The default value is 30MB.
-    A manual increase may help in certain situations. Please note that
-    the caching mechanism can cover only one `TTree` object per `TFile`
-    object.
+ROOT offers an ergonomic, high-level interface for all your data analysis needs
+through the RDataFrame class. Among its many advantages, the following can be
+cited:
 
--   You can select the branches to be covered by the caching algorithm
-    with `AddBranchToCache` and deactivate unneeded branches with
-    `SetBranchStatus`. This mechanism can result in a significant
-    speed-up for simple operations on trees with many branches.
+- Support for reading TTree, CSV and many other data formats
+- Lazy processing of columnar data
+- Scaling to all cores of a single machine with multi-threading and to multiple
+  machines with a distributed execution layer.
 
--   You can measure the performance easily with `TTreePerfStats`. The
-    ROOT documentation on this class also includes an introductory
-    example. For example, `TTreePerfStats` can show you that it is
-    beneficial to store meta data and payload data separately, i.e.
-    write the meta data tree in a bulk to a file at the end of your job
-    instead of writing both trees interleaved.
+Every RDataFrame program follows this workflow:
 
-[^5]: The usage of `fOutput` is not really needed for this simple example, but it allows re-usage of the exact code in parallel processing with `PROOF` (see next section).
+1. Construct a dataframe object by specifying a dataset. RDataFrame supports single TTrees as well as multiple TTrees (i.e., {% include ref class="TChain" %}), [CSV files](https://root.cern/doc/master/df014__CSVDataSource_8C.html), [SQLite files](https://root.cern/doc/master/df027__SQliteDependencyOverVersion_8C.html), [RNTuples](https://root.cern/doc/master/structROOT_1_1Experimental_1_1RNTuple.html), and it can be extended to custom data formats. From Python, [NumPy arrays can be imported into RDataFrame](https://root.cern/doc/master/df032__MakeNumpyDataFrame_8py.html) as well.
+
+2. Transform the dataframe by:
+
+   - [Applying filters](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations){:target="_blank"}. This selects only specific rows of the dataset.
+
+   - [Creating custom columns](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#transformations){:target="_blank"}. Custom columns can, for example, contain the results of a computation that must be performed for every row of the dataset.
+
+3. [Produce results](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#actions){:target="_blank"}. _Actions_ are used to aggregate data into results. Most actions are _lazy_, i.e. they are not executed on the spot, but registered with RDataFrame and executed only when a result is accessed for the first time. The most typical result produced by ROOT analyses is a histogram, but RDataFrame supports any kind of data aggregation operation, including [writing out new ROOT files](https://root.cern/doc/master/classROOT_1_1RDF_1_1RInterface.html#ac5903d3acec8c52f13cbd405371f7fb7).
+
+Here is a simple example of how to create a dataset with RDataFrame and saving
+it to a TTree stored in a TFile.
+
+{% highlight C++ %}
+void write_ttree_to_tfile_with_rdataframe() {
+  ROOT::RDataFrame df{10000};
+
+  // Define dataset columns
+  auto df_cols = df.Define("potential", "gRandom->Uniform(0.,10.)")
+                   .Define("temperature", "gRandom->Uniform(250.,350.)")
+                   .Define("pressure", "gRandom->Uniform(0.5,1.5)")
+                   .Define("current", "potential/(10.+0.05*(temperature-300.)-0.2*(pressure-1.))");
+  // Add measurement errors to columns
+  auto df_with_errors = df_cols.Redefine("potential", "potential * gRandom->Gaus(1.,0.01)")
+                               .Redefine("temperature", "temperature + gRandom->Gaus(0.,0.3)")
+                               .Redefine("pressure", "pressure * gRandom->Gaus(1.,0.02)")
+                               .Redefine("current", "current * gRandom->Gaus(1.,0.01)");
+
+  auto snapdf = df_with_errors.Snapshot("cond_data", "conductivity_experiment.root");
+
+  // The "snapdf" variable is another RDataFrame wrapping the same dataset
+  // that can be used for further processing.
+  auto nentries = snapdf->Count();
+  // Print the entries in the dataset
+  std::cout << *nentries << "\n";
+}
+{% endhighlight %}
+
+The dataset you created is now stored on disk. You can easily inspect its contents
+by opening a TBrowser object in an interactive ROOT session:
+
+{% highlight C++ %}
+root[0] TBrowser b;
+{% endhighlight %}
+
+You find the columns of your tree written as *leafs*. Simply by clicking
+on them you can obtain histograms of the variables!
+
+For more complex analysis tasks, you can instruct RDataFrame to perform cuts
+on your columns, create new ones, and aggregate their values into histograms or
+other useful statistics. As an example, imagine your task now consists in
+finding the relations among the variables, without knowing the code used to
+generate them. You can read back the stored dataset with RDataFrame as follows:
+
+{% highlight C++ %}
+root[0] ROOT::RDataFrame df{"cond_data","conductivity_experiment.root"};
+{% endhighlight %}
+
+Next, try to type the following at the prompt:
+
+{% highlight C++ %}
+root[1] auto g1 = df.Graph("current","potential");
+root[2] g1->Draw("ap");
+{% endhighlight %}
+
+You just produced a correlation plot with RDataFrame! From this point, try to
+produce a plot after having filtered some events out of the dataset:
+
+{% highlight C++ %}
+root [3] auto g2 = df.Filter("temperature<270").Graph("current","potential");
+root [4] g2->Draw("ap");
+{% endhighlight %}
+
+Or maybe you can try producing a plot out of a newly defined variable starting
+from the available columns:
+
+{% highlight C++ %}
+root [5] auto g3 = df.Define("curoverpot", "current/potential").Graph("curoverpot","temperature");
+root [6] g3->Draw("ap");
+{% endhighlight %}
+
+## Working with columns that hold collections
+
+RDataFrame reads collections as the special type
+[ROOT::RVec](https://root.cern/doc/master/classROOT_1_1VecOps_1_1RVec.html).
+This is a templated vector class, with short aliases available for common
+element types (e.g. a `ROOT::RVec<float>` can be declared as `ROOT::RVecF`). In
+RDataFrame, a column where each element is an array of floating point numbers
+can thus be read as a ROOT::RVecF. C-style arrays (with variable or static size)
+, STL vectors and most other collection types can be read this way.
+
+`RVec` is a container similar to `std::vector` (and can be used just like a
+`std::vector`) but it also offers a rich interface to operate on the array
+elements in a vectorised fashion, similarly to Python's NumPy arrays.
+
+For example, to fill a histogram with the "pt" of selected particles for each
+event, `Define()` can be used to create a column that contains the desired array
+elements as follows:
+
+{% highlight C++ %}
+// h is filled with all the elements of `good_pts`, for each event
+auto h = df.Define("good_pts", [](const ROOT::RVecF &pt) { return pt[pt > 0]; })
+           .Histo1D("good_pts");
+{% endhighlight %}
+
+## Parallel analysis with RDataFrame
+
+RDataFrame offers the possibility to exploit multicore machines by parallelizing
+the computations thanks to implicit multi-threading. Each thread will get a
+different part of the entries in the original dataset, divided fairly among all
+threads. The only modification required to your code is the addition of the
+following line *before* constructing the RDataFrame object:
+
+{% highlight C++ %}
+ROOT::EnableImplicitMT();
+{% endhighlight %}
+
+Simple as that. More details are given
+[in the RDataFrame documentation](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#parallel-execution).
+
+## Using RDataFrame in a Python application
+
+The RDataFrame class can be just as well used in a Python script, thanks to the
+dynamic C++/Python translation offered by PyROOT. The interface is in general
+the same as when writing C++ applications:
+
+{% highlight Python %}
+import ROOT
+df = ROOT.RDataFrame("myTree", "myFile.root")
+sum = df.Filter("x > 10").Sum("y")
+print(sum.GetValue())
+{% endhighlight %}
+
+The differences as well as features specific to this language are highlighted
+[in the RDataFrame documentation](https://root.cern/doc/master/classROOT_1_1RDataFrame.html#python).
 
 # ROOT in Python
 
