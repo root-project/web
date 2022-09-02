@@ -21,16 +21,7 @@ This introductory guide illustrates the main features of ROOT which are
 relevant for the typical problems of data analysis: input and plotting of data
 from measurements and fitting of analytical functions.
 
-*Original Authors: D. Piparo, G. Quast, M. Zeise*
-
-An interactive version of the ROOT Primer is available.
-It was translated to Notebooks by *Nefeli Kousi* and *Danilo Piparo*.
-
-[<img src="https://camo.githubusercontent.com/a0db7c6116d8655b46232cb0db4463620b1936ae/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4f70656e253230696e2d5357414e2d6f72616e67652e737667">](https://cern.ch/swanserver/cgi-bin/go/?projurl=https://github.com/root-project/NotebookPrimer.git)
-
 # Motivation and Introduction
-
-***Welcome to data analysis!***
 
 Comparison of measurements to theoretical models is one of the standard
 tasks in experimental physics. In the most simple case, a "model" is
@@ -124,7 +115,6 @@ You will find precompiled versions for the different architectures, or
 the ROOT source code to compile yourself. Just pick up the flavour you
 need and follow the installation instructions.
 
-**Let's dive into ROOT!**
 
 > **Note**
 >
@@ -176,7 +166,7 @@ root [5] TMath::Erf(.2)
 
 Not bad. You can see that ROOT offers you the possibility not only to
 type in `C++` statements, but also advanced mathematical functions,
-which live in the `TMath` namespace.
+which live in the {% include ref class="TMath" %} namespace.
 
 Now let's do something more elaborated. A numerical example with the
 well known geometrical series:
@@ -247,10 +237,9 @@ root [4] distribution(generator)
 (std::normal_distribution<double>::result_type) 6.842899e-01
 {% endhighlight %}
 
-Impressive isn't it?
 
 ## ROOT as function plotter
-Using one of ROOT's powerful classes, here `TF1` [^1], will allow us to
+Using one of ROOT's powerful classes, here {% include ref class="TF1" %} [^1], will allow us to
 display a function of one variable, *x*. Try the following:
 
 {% highlight C++ %}
@@ -270,7 +259,7 @@ A slightly extended version of this example is the definition of a
 function with parameters, called `[0]`, `[1]` and so on in the ROOT
 formula syntax. We now need a way to assign values to these parameters;
 this is achieved with the method
-`SetParameter(<parameter_number>,<parameter_value>)` of class `TF1`.
+`SetParameter(<parameter_number>,<parameter_value>)` of class {% include ref class="TF1" %}.
 Here is an example:
 
 {% highlight C++ %}
@@ -281,12 +270,12 @@ root [16] f2.Draw();
 {% endhighlight %}
 
 Of course, this version shows the same results as the initial one. Try
-playing with the parameters and plot the function again. The class `TF1`
+playing with the parameters and plot the function again. The class {% include ref class="TF1" %}
 has a large number of very useful methods, including integration and
 differentiation. To make full use of this and other ROOT classes, visit
 the documentation on the Internet under
 <https://root.cern/doc/master/>. Formulae in ROOT
-are evaluated using the class `TFormula`, so also look up the relevant
+are evaluated using the class {% include ref class="TFormula" %}, so also look up the relevant
 class documentation for examples, implemented functions and syntax.
 
 You should definitely download this guide to your own system to have it
@@ -371,18 +360,18 @@ full interference pattern is given by the product of a function
 depending on the ratio of the width and distance of the slits, and a
 second one depending on the number of slits. More important for us here
 is the definition of the interface of these functions to make them
-usable for the ROOT class `TF1`: the first argument is the pointer to
+usable for the ROOT class {% include ref class="TF1" %}: the first argument is the pointer to
 *x*, the second one points to the array of parameters.
 
 The main program starts at line 21 with the definition of a function
 `slits()` of type `void`. After asking for user input, a ROOT function
 is defined using the C-type function given in the beginning. We can now
-use all methods of the `TF1` class to control the behaviour of our
+use all methods of the {% include ref class="TF1" %} class to control the behaviour of our
 function -- nice, isn't it ?
 
 If you like, you can easily extend the example to also plot the
 interference pattern of a single slit, using function `double single`,
-or of a grid with narrow slits, function `double nslit0`, in `TF1`
+or of a grid with narrow slits, function `double nslit0`, in {% include ref class="TF1" %}
 instances.
 
 Here, we used a macro, some sort of lightweight program, that the
@@ -431,7 +420,7 @@ Use `.help` at the prompt to inspect the full list.
 ## Plotting Measurements
 
 To display measurements in ROOT, including errors, there exists a
-powerful class `TGraphErrors` with different types of constructors. In
+powerful class {% include ref class="TGraphErrors" %} with different types of constructors. In
 the example here, we use data from the file `ExampleData.txt` in text
 format:
 
@@ -458,20 +447,20 @@ four real numbers each, representing the x- and y- coordinates and their
 errors of each data point.
 
 The argument of the method `Draw("AP")` is important here. Behind the scenes,
-it tells the `TGraphPainter` class to show the axes and to plot markers at the
+it tells the {% include ref class="TGraphPainter" %} class to show the axes and to plot markers at the
 *x* and *y* positions of the specified data points. Note that this simple
 example relies on the default settings of ROOT, concerning the size of
 the canvas holding the plot, the marker type and the line colors and
 thickness used and so on. In a well-written, complete example, all this
 would need to be specified explicitly in order to obtain nice and well
 readable results. A full chapter on graphs will explain many
-more of the features of the class `TGraphErrors` and its relation to
+more of the features of the class {% include ref class="TGraphErrors" %} and its relation to
 other ROOT classes in much more detail.
 
 ## Histograms in ROOT
 
 Frequency distributions in ROOT are handled by a set of classes derived
-from the histogram class `TH1`, in our case `TH1F`. The letter `F`
+from the histogram class {% include ref class="TH1" %}, in our case {% include ref class="TH1F" %}. The letter `F`
 stands for "float", meaning that the data type `float` is used to store
 the entries in one histogram bin.
 
@@ -497,7 +486,7 @@ caption="Visualisation of a histogram filled with exponentially distributed, ran
 
 We use yet another new feature of ROOT to fill this histogram with data,
 namely pseudo-random numbers generated with the method `TF1::GetRandom`,
-which in turn uses an instance of the ROOT class `TRandom` created when
+which in turn uses an instance of the ROOT class {% include ref class="TRandom" %} created when
 ROOT is started. Data is entered in the histogram at line *4* using the
 method `TH1F::Fill` in a loop construct. As a result, the histogram is
 filled with 1000 random numbers distributed according to the defined
@@ -510,7 +499,7 @@ The plot is shown in Figure [2.3](#f23).
 Note that you will not obtain an identical plot when executing the lines
 above, depending on how the random number generator is initialised.
 
-The class `TH1F` does not contain a convenient input format from plain
+The class {% include ref class="TH1F" %} does not contain a convenient input format from plain
 text files. The following lines of `C++` code do the job. One number per
 line stored in the text file "expo.dat" is read in via an input stream
 and filled in the histogram until end of file is reached.
@@ -534,14 +523,14 @@ notice that this is much more than a static picture, as the mouse
 pointer changes its shape when touching objects on the plot. When the
 mouse is over an object, a right-click opens a pull-down menu displaying
 in the top line the name of the ROOT class you are dealing with, e.g.
-`TCanvas` for the display window itself, `TFrame` for the frame of the
-plot, `TAxis` for the axes, `TPaveText` for the plot name. Depending on
-which plot you are investigating, menus for the ROOT classes `TF1`,
-`TGraphErrors` or `TH1F` will show up when a right-click is performed on
+{% include ref class="TCanvas" %} for the display window itself, {% include ref class="TFrame" %} for the frame of the
+plot, {% include ref class="TAxis" %} for the axes, {% include ref class="TPaveText" %} for the plot name. Depending on
+which plot you are investigating, menus for the ROOT classes {% include ref class="TF1" %},
+{% include ref class="TGraphErrors" %} or {% include ref class="TH1F" %} will show up when a right-click is performed on
 the respective graphical representations. The menu items allow direct
 access to the members of the various classes, and you can even modify
 them, e.g. change color and size of the axis ticks or labels, the
-function lines, marker types and so on. Try it!
+function lines, marker types and so on.
 
 {% include figure_image sect=2 fig=4
 img="ROOTPanel_SetParameters.png"
@@ -565,7 +554,7 @@ caption="Fit Panel."
 
 
 Another very useful interactive tool is the `FitPanel`, available for the
-classes `TGraphErrors` and `TH1F`. Predefined fit functions can be selected
+classes {% include ref class="TGraphErrors" %} and {% include ref class="TH1F" %}. Predefined fit functions can be selected
 from a pull-down menu, including "`gaus`", "`expo`" and "`pol0`" - "`pol9`"
 for Gaussian and exponential functions or polynomials of degree 0 to 9,
 respectively. In addition, user-defined functions using the same syntax as
@@ -585,7 +574,7 @@ close all selector boxes you opened previously and select the menu item
 `Save as...` from the menu line of the window. It will pop up a file
 selector box to allow you to choose the format, file name and target
 directory to store the image. There is one very noticeable feature here:
-you can store a plot as a root macro! In this macro, you find the C++
+you can store a plot as a root macro. In this macro, you find the C++
 representation of all methods and classes involved in generating the
 plot. This is a valuable source of information for your own macros,
 which you will hopefully write after having worked through this
@@ -635,7 +624,7 @@ in the following order:
 
 If more than one `.rootrc` files are found in the search paths above,
 the options are merged, with precedence local, user, global. The parsing
-and interpretation of this file is handled by the ROOT class `TEnv`.
+and interpretation of this file is handled by the ROOT class {% include ref class="TEnv" %}.
 Have a look to its documentation if you need such rather advanced
 features. The file `.rootrc` defines the location of two rather
 important files inspected at start-up: `rootalias.C` and `rootlogon.C`.
@@ -644,7 +633,7 @@ startup. `rootalias.C` is only loaded and best used to define some often
 used functions. `rootlogon.C` contains code that will be executed at
 startup: this file is extremely useful for example to pre-load a custom
 style for the plots created with ROOT. This is done most easily by
-creating a new `TStyle` object with your preferred settings, as
+creating a new {% include ref class="TStyle" %} object with your preferred settings, as
 described in the class reference guide, and then use the command
 `gROOT->SetStyle("MyStyleName");` to make this new style definition the
 default one. As an example, have a look in the file `rootlogon.C` coming
@@ -668,9 +657,9 @@ The most important among them are presented in the following:
 
 -   **[gROOT](https://root.cern/doc/master/classTROOT.html)**: the `gROOT`
     variable is the entry point to the ROOT system. Technically it is an
-    instance of the `TROOT` class. Using the `gROOT` pointer one has
+    instance of the {% include ref class="TROOT" %} class. Using the `gROOT` pointer one has
     access to basically every object created in a ROOT based program.
-    The `TROOT` object is essentially a container of several lists
+    The {% include ref class="TROOT" %} object is essentially a container of several lists
     pointing to the main `ROOT` objects.
 
 -   **[gStyle](https://root.cern/doc/master/classTStyle.html)**: By default
@@ -691,19 +680,17 @@ The most important among them are presented in the following:
 
 -   **[gSystem](https://root.cern/doc/master/classTSystem.html)**: An
     instance of a base class defining a generic interface to the
-    underlying Operating System, in our case `TUnixSystem`.
+    underlying Operating System, in our case {% include ref class="TUnixSystem" %}.
 
 -   **[gInterpreter](https://root.cern/doc/master/classTInterpreter.html)**: The
     entry point for the ROOT interpreter. Technically an abstraction level
-    over a singleton instance of `TCling`.
+    over a singleton instance of {% include ref class="TCling" %}.
 
 At this point you have already learned quite a bit about some basic
-features of ROOT.
+features of ROOT. The rest of this manual presents more advance features.
 
-***Please move on to become an expert!***
+[^1]: All ROOT classes' names start with the letter T. A notable exception is RooFit. In this context all classes' names are of the form Roo*.
 
-[^1]: All ROOT classes' names start with the letter T. A notable exception is
-RooFit. In this context all classes' names are of the form Roo*.
 # ROOT Macros
 
 You know how other books go on and on about programming fundamentals and
@@ -769,7 +756,7 @@ gStyle->SetOptTitle(0);     // suppress title box
 
 Next, you should create a canvas for graphical output, with size,
 subdivisions and format suitable to your needs, see documentation of
-class `TCanvas`:
+class {% include ref class="TCanvas" %}:
 
 {% highlight C++ %}
 TCanvas c1("c1","<Title>",0,0,400,300); // create a canvas, specify position and size in pixels
@@ -797,11 +784,11 @@ the shell:
  > root macro1.C
 {% endhighlight %}
 
-The code is built around the ROOT class `TGraphErrors`, which was
+The code is built around the ROOT class {% include ref class="TGraphErrors" %}, which was
 already introduced previously. Have a look at it in the class reference
 guide, where you will also find further examples. The macro shown below
-uses additional classes, `TF1` to define a function, `TCanvas` to define
-size and properties of the window used for our plot, and `TLegend` to
+uses additional classes, {% include ref class="TF1" %} to define a function, {% include ref class="TCanvas" %} to define
+size and properties of the window used for our plot, and {% include ref class="TLegend" %} to
 add a nice legend. For the moment, ignore the commented include
 statements for header files, they will only become important at the end
 in section [Interpretation and Compilation](#interpretation-and-compilation).
@@ -883,7 +870,7 @@ Let's comment it in detail:
     the "main" function in compiled programs) in the macro file. It has
     to be the same as the file name without extension.
 
--   Line *24-25*: instance of the `TGraphErrors` class. The constructor
+-   Line *24-25*: instance of the {% include ref class="TGraphErrors" %} class. The constructor
     takes the number of points and the pointers to the arrays of
     x values, y values, x errors (in this case none,
     represented by the NULL pointer) and y errors. The second line
@@ -892,7 +879,7 @@ Let's comment it in detail:
 
 -   Line *28-30*:  These three lines are rather intuitive right ? To understand
     better the enumerators for colors and styles see the reference for
-    the `TColor` and `TMarker` classes.
+    the {% include ref class="TColor" %} and {% include ref class="TMarker" %} classes.
 
 -   Line *33*: the canvas object that will host the drawn objects. The
     "memory leak" is intentional, to make the object existing also out
@@ -914,7 +901,7 @@ Let's comment it in detail:
     of the function, the formula, and the function range.
 
 -   Line *41*: maquillage. Try to give a look to the line styles at your
-    disposal visiting the documentation of the `TLine` class.
+    disposal visiting the documentation of the {% include ref class="TLine" %} class.
 
 -   Line *43*: fits the *f* function to the graph, observe that the
     pointer is passed. It is more interesting to look at the output on
@@ -927,7 +914,7 @@ Let's comment it in detail:
     system defined by the previously drawn graph.
 
 -   Line *47-52*: completes the plot with a legend, represented by a
-    `TLegend` instance. The constructor takes as parameters the lower
+    {% include ref class="TLegend" %} instance. The constructor takes as parameters the lower
     left and upper right corners coordinates with respect to the total
     size of the canvas, assumed to be 1, and the legend header string.
     You can add to the legend the objects, previously drawn or not
@@ -939,7 +926,7 @@ Let's comment it in detail:
 
 -   Line *60-61*: interpret a Latex string which has its lower left
     corner located in the specified coordinate. The `#splitline{}{}`
-    construct allows to store multiple lines in the same `TLatex`
+    construct allows to store multiple lines in the same {% include ref class="TLatex" %}
     object.
 
 -   Line *63*: save the canvas as image. The format is automatically
@@ -965,7 +952,7 @@ We have seen that to specify a color, some identifiers like kWhite,
 kRed or kBlue can be specified for markers, lines, arrows etc. The
 complete summary of colors is represented by the ROOT "[color
 wheel](https://root.cern/doc/master/classTColor.html#C02)". To know more
-about the full story, refer to the online documentation of `TColor`.
+about the full story, refer to the online documentation of {% include ref class="TColor" %}.
 
 ROOT provides several [graphics
 markers](https://root.cern/doc/master/classTAttMarker.html#M2) types. Select
@@ -975,7 +962,7 @@ stars. An alternative set of names for the markers is available.
 ***Arrows and Lines***
 
 The macro line *55* shows how to define an arrow and draw it. The class
-representing arrows is `TArrow`, which inherits from `TLine`. The
+representing arrows is {% include ref class="TArrow" %}, which inherits from {% include ref class="TLine" %}. The
 constructors of lines and arrows always contain the coordinates of the
 endpoints. Arrows also foresee parameters to [specify
 their](https://root.cern/doc/master/classTArrow.html) shapes. Do not
@@ -986,7 +973,7 @@ additional graphics primitives.
 ***Text***
 
 Also text plays a fundamental role in making the plots self-explanatory.
-A possibility to add text in your plot is provided by the `TLatex`
+A possibility to add text in your plot is provided by the {% include ref class="TLatex" %}
 class. The objects of this class are constructed with the coordinates of
 the bottom-left corner of the text and a string which contains the text
 itself. The real twist is that ordinary
@@ -1067,7 +1054,7 @@ neither control of mouse or keyboard events nor access to the graphics
 windows of ROOT is available. If you want your stand-alone application
 have display graphics output and respond to mouse and keyboard, a
 slightly more complex piece of code can be used. In the example below, a
-macro `ExampleMacro_GUI` is executed by the ROOT class `TApplication`. As
+macro `ExampleMacro_GUI` is executed by the ROOT class {% include ref class="TApplication" %}. As
 a additional feature, this code example offers access to parameters
 eventually passed to the program when started from the command line.
 Here is the code fragment:
@@ -1104,7 +1091,7 @@ and execute the program with
 # Graphs
 
 In this Chapter we will learn how to exploit some of the functionalities
-ROOT provides to display data exploiting the class `TGraphErrors`,
+ROOT provides to display data exploiting the class {% include ref class="TGraphErrors" %},
 which you already got to know previously.
 
 ## Read Graph Points from File
@@ -1194,7 +1181,7 @@ theoretical prediction.
 ## Polar Graphs
 
 With ROOT you can profit from rather advanced plotting routines, like
-the ones implemented in the `TPolarGraph`, a class to draw graphs in
+the ones implemented in the {% include ref class="TPolarGraph" %}, a class to draw graphs in
 polar coordinates. You can see the example macro in the following and the
 resulting Figure is [4.2](#f42):
 
@@ -1234,13 +1221,13 @@ caption="The graph of a fan obtained with ROOT."
 
 Under specific circumstances, it might be useful to plot some quantities
 versus two variables, therefore creating a bi-dimensional graph. Of
-course ROOT can help you in this task, with the `TGraph2DErrors` class.
+course ROOT can help you in this task, with the {% include ref class="TGraph2DErrors" %} class.
 The following macro produces a bi-dimensional graph representing a
 hypothetical measurement, fits a bi-dimensional function to it and draws
 it together with its x and y projections. Some points of the code will
 be explained in detail. This time, the graph is populated with data
 points using random numbers, introducing a new and very important
-ingredient, the ROOT `TRandom3` random number generator using the
+ingredient, the ROOT {% include ref class="TRandom3" %} random number generator using the
 [Mersenne Twister algorithm](https://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html).
 
 {% highlight C++ linenos %}
@@ -1308,16 +1295,16 @@ Let's go through the code, step by step to understand what is going on:
     lines *27-29*. See the on-line documentation to appreciate the full
     power of this ROOT feature.
 
--   Line *8*: You are already familiar with the `TF1` class. This is
+-   Line *8*: You are already familiar with the {% include ref class="TF1" %} class. This is
     its two-dimensional version. At line *16* two random numbers
-    distributed according to the `TF2` formula are drawn with the method
+    distributed according to the {% include ref class="TF2" %} formula are drawn with the method
     `TF2::GetRandom2(double& a, double&b)`.
 
 -   Line *27-29*: Fitting a 2-dimensional function just works like in
     the one-dimensional case, i.e. initialisation of parameters and
     calling of the `Fit()` method.
 
--   Line *34*: The *Surf1* option draws the `TF2` objects (but also
+-   Line *34*: The *Surf1* option draws the {% include ref class="TF2" %} objects (but also
     bi-dimensional histograms) as colored surfaces with a wire-frame on
     three-dimensional canvases. See Figure [4.3](#f43).
 
@@ -1338,8 +1325,8 @@ surface."
 
 ## Multiple graphs
 
-The class `TMultigraph` allows to manipulate a set of graphs as a single entity.
-It is a collection of `TGraph` (or derived) objects. When drawn, the X and Y axis
+The class {% include ref class="TMultigraph" %} allows to manipulate a set of graphs as a single entity.
+It is a collection of {% include ref class="TGraph" %} (or derived) objects. When drawn, the X and Y axis
 ranges are automatically computed such as all the graphs will be visible.
 
 {% highlight C++ linenos %}
@@ -1400,9 +1387,9 @@ caption="A set of graphs grouped in a multigraph."
 Histograms play a fundamental role in any type of physics analysis, not
 only to visualise measurements but being a powerful form of data
 reduction. ROOT offers many classes that represent histograms, all
-inheriting from the `TH1` class. We will focus in this chapter on uni-
+inheriting from the {% include ref class="TH1" %} class. We will focus in this chapter on uni-
 and bi- dimensional histograms the bin contents of which are represented by
-floating point numbers [^3], the `TH1F` and `TH2F` classes respectively.
+floating point numbers [^3], the {% include ref class="TH1F" %} and {% include ref class="TH2F" %} classes respectively.
 
 ## Your First Histogram
 
@@ -1649,8 +1636,8 @@ Correlations between the variables are quantified by the methods
 
 ## Multiple histograms
 
-The class `THStack` allows to manipulate a set of histograms as a single entity.
-It is a collection of `TH1` (or derived) objects. When drawn, the X and Y axis
+The class {% include ref class="THStack" %} allows to manipulate a set of histograms as a single entity.
+It is a collection of {% include ref class="TH1" %} (or derived) objects. When drawn, the X and Y axis
 ranges are automatically computed such as all the histograms will be visible.
 Several drawing option are available for both 1D and 2D histograms. The next
 macros shows how it looks for 2D histograms:
@@ -1697,16 +1684,17 @@ caption="Two 2D histograms stack on top of each other."
 
 
 [^3]: To optimise the memory usage you might go for one byte (TH1C), short (TH1S), integer (TH1I) or double-precision (TH1D) bin-content.
+
 # Functions and Parameter Estimation
 
 After going through the previous chapters, you already know how to use
-analytical functions (class `TF1`), and you got some insight into the
-graph (`TGraphErrors`) and histogram classes (`TH1F`) for data
+analytical functions (class {% include ref class="TF1" %}), and you got some insight into the
+graph ({% include ref class="TGraphErrors" %}) and histogram classes ({% include ref class="TH1F" %}) for data
 visualisation. In this chapter we will add more detail to the previous
 approximate explanations to face the fundamental topic of parameter
 estimation by fitting functions to data. For graphs and histograms, ROOT
 offers an easy-to-use interface to perform fits - either the fit panel
-of the graphical interface, or the `Fit` method. The class `TFitResult`
+of the graphical interface, or the `Fit` method. The class {% include ref class="TFitResult" %}
 allows access to the detailed results.
 
 Very often it is necessary to study the statistical properties of
@@ -1810,7 +1798,7 @@ int macro8(){
 Some step by step explanation is at this point necessary:
 
 -   Lines *1-3*: A simple function to ease the make-up of lines.
-    Remember that the class `TF1` inherits from `TAttLine`.
+    Remember that the class {% include ref class="TF1" %} inherits from {% include ref class="TAttLine" %}.
 
 -   Lines *5-7* : Definition of a customised function, namely a Gaussian
     (the "signal") plus a parabolic function, the "background".
@@ -1819,7 +1807,7 @@ Some step by step explanation is at this point necessary:
     that the parameters of the fit appear very clearly and nicely on the
     plot.
 
--   Lines *20-25*: Define and initialise an instance of `TF1`.
+-   Lines *20-25*: Define and initialise an instance of {% include ref class="TF1" %}.
 
 -   Lines *27-31*: Define and fill a histogram.
 
@@ -1963,15 +1951,14 @@ The answers to these questions are well beyond the scope of this guide.
 Basically all books about statistical methods provide a complete
 treatment of the aforementioned topics.
 
-[^4]: "Monte Carlo" simulation means that random numbers play a role here
-which is as crucial as in games of pure chance in the Casino of Monte Carlo.
+[^4]: "Monte Carlo" simulation means that random numbers play a role here which is as crucial as in games of pure chance in the Casino of Monte Carlo.
 
 # File I/O and Data Analysis
 
 ## Storing ROOT Objects
 
 ROOT offers the possibility to write instances of classes on
-disk, into a ROOT file (see the `TFile` class for more details).
+disk, into a ROOT file (see the {% include ref class="TFile" %} class for more details).
 One says that the object is made "persistent" by storing
 it on disk. When reading the file back, the object is reconstructed
 in memory. The requirement to be satisfied to perform I/O of instances
@@ -2257,7 +2244,7 @@ f1.Draw();
 {% endhighlight %}
 
 A slightly more advanced example hands over data defined in the macro to the ROOT
-class `TGraphErrors`. Note that a Python array can be used to pass data between
+class {% include ref class="TGraphErrors" %}. Note that a Python array can be used to pass data between
 Python and ROOT. The first line in the Python script allows it to be executed
 directly from the operating system, without the need to start the script from
 python or the highly recommended powerful interactive shell ipython. The last line
@@ -2323,7 +2310,7 @@ Comparing the C++ and Python versions in these two examples, it now should be
 clear how easy it is to convert any ROOT Macro in C++ to a Python version.
 
 As another example, let us revisit macro3 from Chapter 4. A straight-forward
-Python version relying on the ROOT class `TMath`:
+Python version relying on the ROOT class {% include ref class="TMath" %}:
 
 {% highlight python %}
 # Builds a polar graph in a square Canvas.
@@ -2446,19 +2433,6 @@ framework for model building, fitting and statistical analysis. The ROOT
 namespace `TMVA` offers multi-variate analysis tools including an artificial
 neural network and many other advanced tools for classification
 problems. The remarkable ability of ROOT to handle large data volumes
-was already mentioned in this guide, implemented through the class
-`TTree`. But there is still much more for you to explore!
-
-**End of this guide ... but hopefully not of your interaction with ROOT !**
-
-# Downloadable versions
-
-This guide can be downloaded in various formats. They are listed here:
-
- -  [PDF A4 format](https://root.cern/root/htmldoc/guides/primer/ROOTPrimer.pdf){:target="_blank"}
- -  [PDF Letter format](https://root.cern/root/htmldoc/guides/primer/ROOTPrimerLetter.pdf){:target="_blank"}
- -  [HTML version](https://root.cern/root/htmldoc/guides/primer/ROOTPrimer.html){:target="_blank"}
- -  [epub version for iPad and iPhone](https://root.cern/root/htmldoc/guides/primer/ROOTPrimer.epub){:target="_blank"}
- -  [GitHub/SWAN version](https://github.com/root-project/NotebookPrimer){:target="_blank"}
+was already mentioned in this guide, implemented through the class {% include ref class="TTree" %}.
 
 # References
