@@ -187,6 +187,8 @@ git checkout -b <your-feature-branch>
 
    **Tip 2**: Indexer usually takes couple hours to parse all of the ROOT framework source files. Computers with fast NVMe hard drives will perform this task the best. For computers with SATA drives and older I recommend keeping ROOT sources on the RAMDisk. Feel free to find my RAMDisk implementation [on GitHub](https://github.com/petrstepanov/tiny-ramdisk).
 
+7. **Turn off false positive errors**. Even though the ROOT compilation succeeds, Eclipse code analysis tool displays semantic errors in ROOT sources. To turn them off, right-click "root" project and open Preferences → C/C++ General → Code Analysis. Select "Use Project Settings" option. Uncheck "Syntax and Semantic Errors" group. Maybe someone has a better idea how to fix that?
+
 Eclipse carries out the in-source build, meaning that the "_build" folder is located inside the ROOT project tree. Apparently, if users want to issue pull requests to the ROOT GitHub repository, the "_build" folder needs to be added to the ".gitignore" of the local ROOT Git branch.
 
 At this point ROOT libraries are compiled with debug symbols and Eclipse has indexed all the framework source files.
