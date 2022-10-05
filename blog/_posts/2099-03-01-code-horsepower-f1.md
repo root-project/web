@@ -8,7 +8,7 @@ If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from 
 
 If, on top of that, your next-door work colleague has a fancy *MATLAB* installation, does everything quicker than you, and only needs to hover the mouse on a function and press <kbd>F1</kbd> to access all important help, while you painfully have to google, copy-paste, rebuild project, etc, then this post is also spot on for you.
 
-Many physics students get frustrated with the learning curve of ROOT and the difficulty of achieving simple tasks as [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph), compared to other software they are used to. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it. Improving the way you troubleshoot will improve your productivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe and user-friendly will be welcome.
+Many physics students get frustrated with the learning curve of ROOT and the difficulty of achieving simple tasks like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph), compared to other software they are used to. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it. Improving the way you troubleshoot will improve your productivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe and user-friendly will be welcome.
 
 - [Errors are development tools, not silly mistakes](#errors-are-development-tools-not-silly-mistakes)
   * [IDEs to the rescue](#ides-to-the-rescue)
