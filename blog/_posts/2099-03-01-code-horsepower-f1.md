@@ -4,11 +4,7 @@ layout: archive
 author: Fernando Hueso González
 ---
 
-If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from a terminal, traced those back to the line in the *ROOT* script you were just typing in your plain text editor, then googled *CERN ROOT TTree* to fix the signature of that function you just used incorrectly, or even have faced with your bare eye the intimidating logs of valgrind output for memory leak detection, or manually deployed *gdb*, you should definitely keep reading.
-
-If, on top of that, your next-door work colleague has a fancy *MATLAB* installation, does everything quicker than you, and only needs to hover the mouse on a function and press <kbd>F1</kbd> to access all important help, while you painfully have to google, copy-paste, rebuild project, etc, then this post is also spot on for you.
-
-In the physics predoc student circles, as well as [Wikipedia forums](https://en.wikipedia.org/wiki/Talk:ROOT), many tend to repeat that *ROOT* is not your friend, as it is full of tiny hacks, cumbersome conventions, recipes and rules. It makes really easy for you very hard tasks, and really complicated the most easy ones, like [zooming a graph](https://root.cern/manual/graphs/#zooming-a-graph). And it always surprises you with one or the other bug or instability. Many tend to avoid it because they claim it diminishes one's productivity, while others learn to cope with its cumbersomeness. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it and even start liking it. Improving the way you troubleshoot will improve your productivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe, user-friendly, modern, and productive will be welcome.
+If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from a terminal, or even have faced with your bare eye the intimidating logs of valgrind output for memory leak detection, or manually deployed *gdb*, you should definitely keep reading. With this post, I believe you'll improve your productivity and experience with *ROOT* by using QtCreator as a development and troubleshooting environment.
 
 - [Errors are development tools, not silly mistakes](#errors-are-development-tools-not-silly-mistakes)
   * [IDEs to the rescue](#ides-to-the-rescue)
