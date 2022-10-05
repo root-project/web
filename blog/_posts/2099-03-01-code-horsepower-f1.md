@@ -4,6 +4,8 @@ layout: archive
 author: Fernando Hueso González
 ---
 
+If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from a terminal, or even have faced with your bare eye the intimidating logs of valgrind output for memory leak detection, or manually deployed *gdb*, you should definitely keep reading. With this post, I believe you'll improve your productivity and experience with *ROOT* by using QtCreator as a development and troubleshooting environment.
+
 - [Errors are development tools, not silly mistakes](#errors-are-development-tools-not-silly-mistakes)
   * [IDEs to the rescue](#ides-to-the-rescue)
 - [QtCreator](#qtcreator)
