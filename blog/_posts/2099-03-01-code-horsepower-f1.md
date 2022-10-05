@@ -4,12 +4,6 @@ layout: archive
 author: Fernando Hueso González
 ---
 
-If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from a terminal, traced those back to the line in the *ROOT* script you were just typing in your plain text editor, then googled *CERN ROOT TTree* to fix the signature of that function you just used incorrectly, or even have faced with your bare eye the intimidating logs of valgrind output for memory leak detection, or manually deployed *gdb*, you should definitely keep reading.
-
-If, on top of that, your next-door work colleague has a fancy *MATLAB* installation, does everything quicker than you, and only needs to hover the mouse on a function and press <kbd>F1</kbd> to access all important help, while you painfully have to google, copy-paste, rebuild project, etc, then this post is also spot on for you.
-
-Many physics students get frustrated with the learning curve of ROOT and the difficulty of achieving simple tasks like [zooming a graph within a macro](https://root.cern/manual/graphs/#zooming-a-graph), compared to other software they are used to. With this post, I believe you'll get more acquainted with *ROOT* by learning how to efficiently deal with it. Improving the way you troubleshoot will improve your productivity and experience, and your [feedback to the developers](https://github.com/root-project/root/issues/) to make *ROOT* more safe and user-friendly will be welcome.
-
 - [Errors are development tools, not silly mistakes](#errors-are-development-tools-not-silly-mistakes)
   * [IDEs to the rescue](#ides-to-the-rescue)
 - [QtCreator](#qtcreator)
