@@ -3,3 +3,8 @@
 	RewriteCond %{REQUEST_URI} /+[^\.]+$ 
 	RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
 </IfModule>
+# Force download for gz, pkg, exe and zip
+<FilesMatch "\.(gz|pkg|exe|zip)$">
+   ForceType application/octet-stream
+   Header set Content-Disposition attachment
+</FilesMatch>
