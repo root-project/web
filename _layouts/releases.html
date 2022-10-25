@@ -1,5 +1,5 @@
 ---
-layout: single-no-title
+layout: single-release
 ---
 
 <h1> Release {{page.version}} - {{page.release_date}} </h1>
@@ -7,5 +7,5 @@ layout: single-no-title
 {{ content }}
 
 {% if page.state == "latest" %}
-State: <a href="{{ '/install/all_releases/latest' | relative_url }}"> {{ page.state | capitalize }}</a>
+<b>State:</b> <a href="{{ '/install/all_releases/latest' | relative_url }}"> {{ page.state | capitalize }}</a>
 {% endif %}

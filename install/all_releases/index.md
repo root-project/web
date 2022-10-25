@@ -1,6 +1,6 @@
 ---
 title: Releases
-layout: single-no-title
+layout: single-release
 toc: true
 toc_sticky: true
 sidebar:
