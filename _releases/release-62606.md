@@ -44,10 +44,10 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | macOS 12.5 x86_64 Xcode 13 | [root_v6.26.06.macos-12.5-x86_64-clang131.tar.gz](https://root.cern/download/root_v6.26.06.macos-12.5-x86_64-clang131.tar.gz) | 219M |
 | Windows Visual Studio 2022 32-bit x86  (debug) | [root_v6.26.06.win32.vc17.debug.exe](https://root.cern/download/root_v6.26.06.win32.vc17.debug.exe) | 208M |
 | Windows Visual Studio 2022 32-bit x86  (debug) | [root_v6.26.06.win32.vc17.debug.zip](https://root.cern/download/root_v6.26.06.win32.vc17.debug.zip) | 317M |
-| Windows Visual Studio 2022 32-bit x86  | [root_v6.26.06.win32.vc17.exe](https://root.cern/download/root_v6.26.06.win32.vc17.exe) | 106M |
-| Windows Visual Studio 2022 32-bit x86  | [root_v6.26.06.win32.vc17.zip](https://root.cern/download/root_v6.26.06.win32.vc17.zip) | 145M |
-| Windows Visual Studio 2022 64-bit x64  | [root_v6.26.06.win64.vc17.exe](https://root.cern/download/root_v6.26.06.win64.vc17.exe) | 111M |
-| Windows Visual Studio 2022 64-bit x64  | [root_v6.26.06.win64.vc17.zip](https://root.cern/download/root_v6.26.06.win64.vc17.zip) | 152M |
+| Windows Visual Studio 2022 32-bit x86  | removed due to virus false positives, stay tuned | N/A |
+| Windows Visual Studio 2022 32-bit x86  | removed due to virus false positives, stay tuned | N/A |
+| Windows Visual Studio 2022 64-bit x64  | removed due to virus false positives, stay tuned | N/A |
+| Windows Visual Studio 2022 64-bit x64  | removed due to virus false positives, stay tuned | N/A |
 
 ## Installations in CVMFS
 
