@@ -232,12 +232,14 @@ In case you want to optimize the [performance of your code](https://doc.qt.io/qt
 There are other tricks to boost your development in a way that's integrated with your IDE. For example:
 
 - If you use a standalone application that uses *ROOT* libraries and graphical interface, but not it's terminal, you might want to check the [TGCommandPlugin](https://root.cern/doc/master/classTGCommandPlugin.html) window. With it, you can nicely interact with your internal *C++* classes while your program is executing, without having to build in "Debug" mode, which has sometimes downsides due to its slow performance. To make *ROOT* aware of your *C++* object, you need to call within your program:
+```cpp
 gROOT->ProcessLine(
       static_cast<TString>(
           "MyClassType* const fMyInstance = reinterpret_cast<MyClasstype*>(") +
-      static_cast<std::ostringstream &>(std::ostringstream("") << fMyInstance)
+      dynamic_cast<std::ostringstream &&>(std::ostringstream("") << fMyInstance)
           .str() +
       ");");
+```
 And then, of course, creating a `TGCommandPlugin` window. From there, typing `fMyInstance->MyMethod()` will execute binary code interactively.
 
 - [This VS Studio plugin](https://marketplace.visualstudio.com/items?itemName=albertopdrf.root-file-viewer) allows for a nice integration of a *ROOT* file browser. Maybe it will come [at some point](https://root-forum.cern.ch/t/rbrowser-plugin-for-qtcreator/48807) for *QtCreator*, too.
