@@ -188,7 +188,7 @@ You can install it either by following the official slackbuilds
 [HOWTO](https://slackbuilds.org/howto/), or via `sbopkg` (need to be installed in advance):
 ```sh
 sqg -p root -o root­queue   # Create a queue for ROOT with dependencies
-sbopkg -i root-queue       # Install ROOT with it's dependencies
+sbopkg -i rootqueue        # Install ROOT with it's dependencies
 ```
 Remember, that the official recommendation for all slackbuilds (including ROOT) is that your
 chose the FULL INSTALL for Slackware.
