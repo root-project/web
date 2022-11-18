@@ -101,11 +101,11 @@ with other system packages. You should use `pyroot` rather than `python` to make
 use of the PyROOT features with the Snap package:
 ```python
 $ pyroot
-Python 3.8.10 (default, Jun 22 2022, 20:18:18) 
+Python 3.8.10 (default, Jun 22 2022, 20:18:18)
 [GCC 9.4.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> import ROOT
->>> 
+>>>
 ```
 
 The Snap package uses C++17. See our [dedicated blog post]({{'/blog/snap-announcement/' | relative_url}}) for more information, or visit the official [ROOT Snap package](https://snapcraft.io/root-framework){:target="\_blank"} page.
@@ -180,6 +180,19 @@ If you encounter any issues, feel free report them to the [nixpkgs issue tracker
 
 The ROOT team is working on the release of an official `.deb` package. More news on this topic very soon.<br>
 In the meanwhile, ROOT is available on Ubuntu via [conda](#conda) or our [pre-compiled binaries](#download-a-pre-compiled-binary-distribution).
+
+### Slackware
+
+ROOT is available for Slackware 15.0 via [slackbuilds](https://slackbuilds.org/repository/15.0/academic/root/).
+You can install it either by following the official slackbuilds
+[HOWTO](https://slackbuilds.org/howto/), or via `sbopkg` (need to be installed in advance):
+```sh
+sqg -p root -o root­queue   # Create a queue for ROOT with dependencies
+sbopkg -i root-queue       # Install ROOT with it's dependencies
+```
+Remember, that the official recommendation for all slackbuilds (including ROOT) is that your
+chose the FULL INSTALL for Slackware.
+
 
 ## MacOS package managers
 
