@@ -190,7 +190,7 @@ You can install it either by following the official slackbuilds
 sqg -p root -o root­queue   # Create a queue for ROOT with dependencies
 sbopkg -i rootqueue        # Install ROOT with it's dependencies
 ```
-Remember, that the official recommendation for all slackbuilds (including ROOT) is that your
+Remember, that the official recommendation for all slackbuilds (including ROOT) is that you
 chose the FULL INSTALL for Slackware.
 
 
