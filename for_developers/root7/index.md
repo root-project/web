@@ -74,5 +74,39 @@ Open the url provided by ROOT on the localhost, replacing port number 8899 by 88
 
 
 
+## Use of `rootssh` script to run ROOT web widgets on remote nodes
+
+Starting from ROOT 6.28 version, one can use `rootssh` script for automatic configuration of ssh tunnel,
+necessary for web widgets. It can be used instead of normal `ssh` like:
+
+    [localhost] rootssh username@remotenode
+
+As with regular `ssh`, one can specify command which should be run on remote node:
+
+    [localhost] rootssh username@remotenode "root --web -e 'new TBrowser'"
+
+Script automatically creates tunnel and configures several shell variables in remote session. These are:
+
+- `ROOT_WEBGUI_SOCKET` - unix socket which will be used by ROOT `THttpServer` in webgui
+- `ROOT_LISTENER_SOCKET` - unix socket which gets messages from ROOT when new web widgets are started
+
+When in ROOT session new web widget is created, default web browser will be started on the local node.
+
+It is highly recommended to use `rootssh` script on public nodes like `lxplus`. Unix sockets, which are created on
+the remote session, are configured with `0700` file mode - means only user allowed to access them.
+
+One can provide `--port number` parameter to configure port number on local node and `--browser <name>` to specify
+web browser executable to display web widgets. Like:
+
+   [localhost] rootssh --port 8877 --browser chromium username@remotenode
+
+Also any kind of normal `ssh` arguments can be specified:
+
+   [localhost] rootssh -Y -E file.log username@remotenode
+
+`rootssh` script can be [download](https://raw.githubusercontent.com/root-project/root/master/config/rootssh)
+and used independently from ROOT installation - it is only required that supported ROOT version installed on remote node.
+
+
 We highly appreciate your feedback!
 
