@@ -98,11 +98,11 @@ the remote session, are configured with `0700` file mode - means only user allow
 One can provide `--port number` parameter to configure port number on local node and `--browser <name>` to specify
 web browser executable to display web widgets. Like:
 
-   [localhost] rootssh --port 8877 --browser chromium username@remotenode
+    [localhost] rootssh --port 8877 --browser chromium username@remotenode
 
 Also any kind of normal `ssh` arguments can be specified:
 
-   [localhost] rootssh -Y -E file.log username@remotenode
+    [localhost] rootssh -Y -E file.log username@remotenode
 
 `rootssh` script can be [download](https://raw.githubusercontent.com/root-project/root/master/config/rootssh)
 and used independently from ROOT installation - it is only required that supported ROOT version installed on remote node.
