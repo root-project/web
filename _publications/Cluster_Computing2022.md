@@ -1,0 +1,10 @@
+---
+layout: default
+title: A caching mechanism to exploit object store speed in High Energy Physics analysis
+authors: Vincenzo Eduardo Padulano, Enric Tejedor Saavedra, Pedro Alonso-Jordá, Javier López Gómez and Jakob Blomer
+publication: Cluster Computing
+year: 2022
+type: RDF
+doi: 10.1007/s10586-022-03757-2
+abstract:
+---
