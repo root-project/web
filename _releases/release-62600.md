@@ -68,6 +68,7 @@ Standalone installations with minimal external dependencies are available at:
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.00/x86_64-mac122-clang130-opt
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.00/x86_64-ubuntu18-gcc75-opt
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.00/x86_64-ubuntu20-gcc93-opt
+~~~
 
 ## Git
 
