@@ -353,7 +353,13 @@ Standalone installations with minimal external dependencies are available at:
 . {path}/{artifact}/bin/thisroot.sh
 ~~~
 """)
+            centos7Artifact = True
             break
+    if centos7Artifact is None:
+        outfile.write(F"""\
+~~~
+
+""")
 
 def generateFooter(outfile, version):
     """
