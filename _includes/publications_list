@@ -7,6 +7,7 @@
 {% if type == pub.type %}
 <p style="margin-left:5%;">
 <em><b>{{ pub.title }}</b></em><br>
+{% if pub.status %} Status: {{ pub.status }}<br>{% endif %}
 {% if pub.author %} Author: {{ pub.author }}<br>{% endif %}
 {% if pub.authors %} Authors: {{ pub.authors }}<br>{% endif %}
 {% if pub.publication %}{{ pub.publication }}, {{ pub.year }}<br>{% endif %}

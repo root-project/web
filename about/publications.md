@@ -24,8 +24,8 @@ toc_sticky: true
 ### Cling
 {% include publications_list type="CLING" %}
 
-### Graphics
-{% include publications_list type="GRAPHICS" %}
+### Visualization
+{% include publications_list type="VIS" %}
 
 ### Other topics
 {% include publications_list type="ROOT" %}
