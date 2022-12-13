@@ -9,7 +9,8 @@
 {% if pub.author %} Author: {{ pub.author }}<br>{% endif %}
 {% if pub.authors %} Authors: {{ pub.authors }}<br>{% endif %}
 {% if pub.publication %}{{ pub.publication }}, {{ pub.year }}<br>{% endif %}
-{% if pub.doi %}{% assign number = pub.doi | split: "." %}{% if number.first == "10" %}doi: <a href="https://doi.org/{{ pub.doi }}">{{ pub.doi }}</a><br>{% else %}url: <a href="{{ pub.doi }}">{{ pub.doi }}</a><br>{% endif %}{% endif %}
+{% if pub.doi %}{% assign number = pub.doi | split: "." %}{% if number.first == "10" %}doi: <a href="https://doi.org/{{ pub.doi }}">{{ pub.doi }}</a><br>{% endif %}{% endif %}
+{% if pub.www %}www: <a href="{{ pub.wwww }}">{{ pub.www }}</a><br>{% endif %}
 {% if pub.abstract %} Abstract: {{ pub.abstract }}{% endif %}
 </p>
 {% endif %}

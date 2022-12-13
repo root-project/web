@@ -6,5 +6,4 @@ publication: Cluster Computing
 year: 2022
 type: RDF
 doi: 10.1007/s10586-022-03757-2
-abstract:
 ---

@@ -6,5 +6,4 @@ publication: Journal of Physics - Conference Series, Volume 608, 16th Internatio
 year: 2014
 type: ROOT
 doi: 10.1088/1742-6596/608/1/012055
-abstract:
 ---

@@ -6,5 +6,4 @@ publication: Journal of Physics - Conference Series, Volume 1525, 19th Internati
 year: 2020
 type: CLING
 doi: 10.1088/1742-6596/1525/1/012051
-abstract:
 ---

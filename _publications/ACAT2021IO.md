@@ -6,5 +6,4 @@ publication: 20th International Workshop on Advanced Computing and Analysis Tech
 year: 2022
 type: IO
 doi: 10.48550/arXiv.2204.09043
-abstract:
 ---

@@ -1,10 +1,9 @@
 ---
 layout: default
 title: ROOT - An Object-Oriented Data Analysis Framework.
-authors:
-publication:
+authors: Fons Rademakers and René Brun
 year: 1998
 type: HISTORICAL
-doi: https://root.cern/download/lj.ps.gz
+www: https://root.cern/download/lj.ps.gz
 abstract: Paper published in the Linux Journal, Issue 51, July 1998.
 ---

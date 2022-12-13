@@ -6,5 +6,4 @@ publication: Journal of Physics - Conference Series, Volume 898, Track 5 - Softw
 year: 2017
 type: ROOT
 doi: 10.1088/1742-6596/898/7/072022
-abstract:
 ---

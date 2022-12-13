@@ -6,5 +6,4 @@ publication: EPJ Web of Conferences (Online)
 year: 2019
 type: IO
 doi: 10.1051/epjconf/201921405037
-abstract:
 ---

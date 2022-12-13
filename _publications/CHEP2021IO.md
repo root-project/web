@@ -6,5 +6,4 @@ publication: 25th International Conference on Computing in High Energy and Nucle
 year: 2021
 type: IO
 doi: 10.1051/epjconf/202125102066
-abstract:
 ---

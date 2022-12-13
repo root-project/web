@@ -6,5 +6,4 @@ publication: 23rd International Conference on Computing in High Energy and Nucle
 year: 2019
 type: RDF
 doi: 10.1051/epjconf/201921406029
-abstract:
 ---

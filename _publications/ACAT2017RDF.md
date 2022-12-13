@@ -6,5 +6,4 @@ publication: Journal of Physics, Conference Series, Volume 1085, Issue 4
 year: 2017
 type: RDF
 doi: 10.1088/1742-6596/1085/4/042008
-abstract:
 ---

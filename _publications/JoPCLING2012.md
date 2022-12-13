@@ -6,5 +6,4 @@ publication: Journal of Physics - Conference Series, Volume 396, Software Engine
 year: 2012
 type: CLING
 doi: 10.1088/1742-6596/396/5/052071
-abstract:
 ---

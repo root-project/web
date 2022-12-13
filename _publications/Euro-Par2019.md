@@ -6,5 +6,4 @@ publication: Euro-Par 2019, Parallel Processing pp 241–255
 year: 2019
 type: RDF
 doi: 10.1007/978-3-030-29400-7_18
-abstract:
 ---

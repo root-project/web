@@ -6,5 +6,4 @@ publication: 24th International Conference on Computing in High Energy and Nucle
 year: 2020
 type: CLING
 doi: 10.48550/arXiv.2004.06507
-abstract:
 ---

@@ -6,5 +6,4 @@ publication: 24th International Conference on Computing in High Energy and Nucle
 year: 2020
 type: ROOFIT
 doi: 10.1051/epjconf/202024506027
-abstract:
 ---
