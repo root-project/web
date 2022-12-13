@@ -1,7 +1,8 @@
 {% assign type = {{include.type}}  %}
 
+{% assign sorted = site.publications | sort: 'date' | reverse %}
 
-{% for pub in site.publications %}
+{% for pub in sorted %}
 
 {% if type == pub.type %}
 <p style="margin-left:5%;">
