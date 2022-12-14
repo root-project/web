@@ -79,27 +79,6 @@ Bertrand Bellenot:
   email       : "Bertrand.Bellenot@cern.ch"
 
 
-Enric Tejedor:
-  name        : "Enric Tejedor"
-  bio         : "Enric Tejedor received his Ph.D. from the Technical University of Catalonia
-                 (UPC, Spain) in 2013. He conducted his doctorate research as a member of
-                 the Grid Computing and Clusters group of the Barcelona Supercomputing
-                 Center, where his researched focused on parallel programming models for
-                 distributed infrastructures and where he participated in several EU
-                 research projects. As part of his Ph.D., he also carried out two
-                 nternships at the IBM T.J. Watson Research Center (NY, USA).  In 2015 he
-                 joined the CERN EP-SFT group as a senior fellow and later became a staff
-                 member. He is currently working on ROOT parallelization, the ROOT Python
-                 bindings and the SWAN service. He is also one of the administrators of the
-                 Google Summer of Code student program (GSoC) at CERN-HEP Software Foundation."
-  short_bio   : "Enric is currently working on ROOT parallelization, the ROOT Python
-                 bindings and the SWAN service."
-  tag         : "team"
-  avatar      : "/assets/images/ET.jpg"
-  affiliation : "CERN"
-  email       : "Enric.Tejedor.Saavedra@cern.ch"
-
-
 Enrico Guiraud:
   name        : "Enrico Guiraud"
   bio         : "Enrico is a physicist turned computer scientist. His first experience at
@@ -199,25 +178,6 @@ Lorenzo Moneta:
   avatar      : "/assets/images/LM.jpg"
   affiliation : "CERN"
   email       : "Lorenzo.Moneta@cern.ch"
-
-
-Oksana Shadura:
-  name        : "Oksana Shadura"
-  bio         : "Currently, I am employed as a software developer from the University of
-                 Nebraska-Lincoln (CMS), based at CERN and working as a core developer in
-                 the ROOT framework. My area of research is a various improvement for ROOT
-                 I/O, particularly ROOT compression algorithms. Another area of
-                 investigation is work on improved ROOT modularity for the build system. I
-                 was involved in support of C++ modules in ROOT and performance
-                 benchmarking of ROOT. I did my doctoral studies in Simulation group at
-                 CERN, working in GeantV project (EP-SFT, CERN). Previous work experience
-                 was a long term work in Ukrainian Grid Initiative on various positions,
-                 including responsibilities on grid sites management and experiment
-                 support, administration, and security management."
-  tag         : "team"
-  avatar      : "/assets/images/OS.png"
-  affiliation : "Nebraska-Lincoln"
-  email       : "Oksana.Shadura@cern.ch"
 
 
 Olivier Couet:
@@ -488,6 +448,24 @@ Richard Maunder:
   tag         : "previous"
 
 
+Oksana Shadura:
+  name        : "Oksana Shadura"
+  bio         : "Currently, I am employed as a software developer from the University of
+                 Nebraska-Lincoln (CMS), based at CERN and working as a core developer in
+                 the ROOT framework. My area of research is a various improvement for ROOT
+                 I/O, particularly ROOT compression algorithms. Another area of
+                 investigation is work on improved ROOT modularity for the build system. I
+                 was involved in support of C++ modules in ROOT and performance
+                 benchmarking of ROOT. I did my doctoral studies in Simulation group at
+                 CERN, working in GeantV project (EP-SFT, CERN). Previous work experience
+                 was a long term work in Ukrainian Grid Initiative on various positions,
+                 including responsibilities on grid sites management and experiment
+                 support, administration, and security management."
+  tag         : "previous"
+  affiliation : "Nebraska-Lincoln"
+  email       : "Oksana.Shadura@cern.ch"
+
+
 Stephan Hageboeck:
   name        : "Stephan Hageboeck"
   bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the university of Bonn in
@@ -504,6 +482,24 @@ Susan Panacek:
   bio         : "Susan wrote the first ROOT User's Guide and developed a number of ROOT
                  tutorials."
   tag         : "previous"
+
+
+Enric Tejedor:
+  name        : "Enric Tejedor"
+  bio         : "Enric Tejedor received his Ph.D. from the Technical University of Catalonia
+                 (UPC, Spain) in 2013. He conducted his doctorate research as a member of
+                 the Grid Computing and Clusters group of the Barcelona Supercomputing
+                 Center, where his researched focused on parallel programming models for
+                 distributed infrastructures and where he participated in several EU
+                 research projects. As part of his Ph.D., he also carried out two
+                 nternships at the IBM T.J. Watson Research Center (NY, USA).  In 2015 he
+                 joined the CERN EP-SFT group as a senior fellow and later became a staff
+                 member. He is currently working on ROOT parallelization, the ROOT Python
+                 bindings and the SWAN service. He is also one of the administrators of the
+                 Google Summer of Code student program (GSoC) at CERN-HEP Software Foundation."
+  tag         : "previous"
+  affiliation : "CERN"
+  email       : "Enric.Tejedor.Saavedra@cern.ch"
 
 
 Timur Pocheptsov:
