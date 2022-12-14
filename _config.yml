@@ -298,6 +298,8 @@ collections:
     output: true
   ideas:
     output: true
+  publications:
+    output: true
 
 github: [metadata]
 
