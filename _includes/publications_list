@@ -1,10 +1,11 @@
 {% assign type = {{include.type}}  %}
+{% assign status = {{include.status}}  %}
 
 {% assign sorted = site.publications | sort: 'date' | reverse %}
 
 {% for pub in sorted %}
 
-{% if type == pub.type or pub.status == "CITE" %}
+{% if type == pub.type or (pub.status == "CITE" and status == "CITE") %}
 <p style="margin-left:5%;">
 <em><b>{{ pub.title }}</b></em><br>
 {% if pub.status and pub.status != "CITE" %} Status: {{ pub.status }}<br>{% endif %}

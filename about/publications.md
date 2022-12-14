@@ -9,7 +9,7 @@ toc_sticky: true
 
 In case you want to cite ROOT in your own publications, this is the preferred reference:
 
-{% include publications_list %}
+{% include publications_list status="CITE" %}
 
 ## ROOT papers by topics
 
