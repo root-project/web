@@ -37,12 +37,9 @@ A mostly historically interesting list of ROOT talks and publications
 ### Overview papers on ROOT
 {% include publications_list type="HISTORICAL" %}
 
-### CHEP 2012
-{% include publications_list type="CHEP2012" %}
-
 ### CINT
 
-In case you want to cite CINT, use the following references
+CINT was the C++ interpretor until ROOT version 5. In case you want to cite CINT, use the following references
 
 {% include publications_list type="CINT" %}
 
