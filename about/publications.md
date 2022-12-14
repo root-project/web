@@ -7,6 +7,10 @@ toc: true
 toc_sticky: true
 ---
 
+In case you want to cite ROOT in your own publications, this is the preferred reference:
+
+{% include publications_list %}
+
 ## ROOT papers by topics
 
 ### I/O
@@ -21,27 +25,21 @@ toc_sticky: true
 ### RooFit
 {% include publications_list type="ROOFIT" %}
 
-### Cling
+### Cling / C++
 {% include publications_list type="CLING" %}
 
 ### Visualization
 {% include publications_list type="VIS" %}
 
-### Other topics
-{% include publications_list type="ROOT" %}
-
-## ROOT talks and publications archive
-
-A mostly historically interesting list of ROOT talks and publications
-
-### Overview papers on ROOT
-{% include publications_list type="HISTORICAL" %}
+### Parallelism
+{% include publications_list type="PARA" %}
 
 ### CINT
-
-CINT was the C++ interpretor until ROOT version 5. In case you want to cite CINT, use the following references
-
+CINT was the C++ interpretor until ROOT version 5. In case you want to cite CINT, use the following references:
 {% include publications_list type="CINT" %}
 
-## Not by the ROOT team, but related
+## Overview papers on ROOT
+{% include publications_list type="ROOT" %}
+
+## Not ROOT papers, but related
 {% include publications_list type="NotROOT" %}
