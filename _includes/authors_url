@@ -1,0 +1,17 @@
+{% assign list = {{include.list}}  %}
+
+{% for author in site.data.authors %}
+{% if author[1].tag == "founder" %}{% assign dir = "project_founders" %}{% endif %}
+{% if author[1].tag == "team" %}{% assign dir = "team" %}{% endif %}
+{% if author[1].tag == "previous" %}{% assign dir = "previous_developers" %}{% endif %}
+
+{% capture author_url %}about/{{dir}}/#{{author[1].name}}{% endcapture %}
+{% capture url %}<a href="{{ author_url | relative_url }}">{{author[1].name}}</a>{% endcapture %}
+
+{% capture list_url %}{{ list | replace: author[1].name , url }}{% endcapture %}
+
+{% assign list = {{list_url}}  %}
+
+{% endfor %}
+
+{{list_url}}

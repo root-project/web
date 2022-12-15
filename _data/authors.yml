@@ -114,8 +114,8 @@ Jakob Blomer:
   email       : ""
 
 
-Javier Lopez Gomez:
-  name        : "Javier Lopez Gomez"
+Javier López-Gómez:
+  name        : "Javier López-Gómez"
   bio         : "Javier is a computer scientist from University Carlos III of Madrid.  During the
                  last few years, his focus has been on low-level software (e.g. operating
                  systems, embedded software and electronics, and compilers).  He will finish his
@@ -433,9 +433,9 @@ Paul Russo:
   tag         : "previous"
 
 
-Pere Mato:
-  name        : "Pere Mato"
-  bio         : "Pere Mato was the project leader from 2014 to 2017. He was the driving
+Pere Mato Vila:
+  name        : "Pere Mato Vila"
+  bio         : "Pere Mato Vila was the project leader from 2014 to 2017. He was the driving
                  force behind ROOT's migration to CMake and has contributed to PyROOT."
   tag         : "previous"
   affiliation : "CERN"
@@ -484,9 +484,9 @@ Susan Panacek:
   tag         : "previous"
 
 
-Enric Tejedor:
-  name        : "Enric Tejedor"
-  bio         : "Enric Tejedor received his Ph.D. from the Technical University of Catalonia
+Enric Tejedor Saavedra:
+  name        : "Enric Tejedor Saavedra"
+  bio         : "Enric Tejedor Saavedra received his Ph.D. from the Technical University of Catalonia
                  (UPC, Spain) in 2013. He conducted his doctorate research as a member of
                  the Grid Computing and Clusters group of the Barcelona Supercomputing
                  Center, where his researched focused on parallel programming models for
