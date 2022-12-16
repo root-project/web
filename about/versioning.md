@@ -2,6 +2,8 @@
 title: ROOT versioning scheme 
 layout: single
 toc: false
+sidebar:
+  nav: "about"
 ---
 
 The naming convention for ROOT versions is `v<MAJOR>.<MINOR>/<PATCH>` (e.g. `v6.20/04`).
