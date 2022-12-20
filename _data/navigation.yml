@@ -142,8 +142,6 @@ for_developers:
      url: for_developers/root7
    - title: Run the Tests
      url: for_developers/run_the_tests
-   - title: Setup externals from AFS/CVMFS
-     url: for_developers/setup_externals_from_afs-cvmfs
    - title: Continuous Integration / Testing
      children:
       - title: Jenkins Service
