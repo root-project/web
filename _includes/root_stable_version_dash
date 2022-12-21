@@ -1,6 +1,6 @@
 {%- assign sorted = site.releases | reverse -%}
 {%- for release in sorted -%}
    {%- if release.state == "latest" -%}
-      {{release.version}}
+      {{ release.version | replace: ".","-" | replace: "/","-" }}
    {%- endif -%}
 {%- endfor -%}

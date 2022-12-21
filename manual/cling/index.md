@@ -21,10 +21,10 @@ Start up a ROOT session by typing `root` at the system prompt.
 {% highlight C++ %}
 $ root
    ------------------------------------------------------------------
-  | Welcome to ROOT 6.27/01                        https://root.cern |
+  | Welcome to ROOT {% include root_stable_version %}                        https://root.cern |
   | (c) 1995-2022, The ROOT Team; conception: R. Brun, F. Rademakers |
-  | Built for linuxx8664gcc on Apr 07 2022, 13:00:54                 |
-  | From heads/master@v6-25-01-3805-ge505630f86                      |
+  | Built for linuxx8664gcc on {% include root_stable_version_date %}, 13:00:54                 |
+  | From tags/{% include root_stable_version_dash %}@{% include root_stable_version_dash %}                                        |
   | With c++ (Ubuntu 8.4.0-1ubuntu1~18.04) 8.4.0                     |
   | Try '.help'/'.?', '.demo', '.license', '.credits', '.quit'/'.q'  |
    ------------------------------------------------------------------
@@ -587,7 +587,7 @@ gROOT->ProcessLine(".L MyScript.C++")
 
 To change the compilation output directory in order not to pollute your source directory,
 see [TSystem::SetBuildDir](https://root.cern/doc/master/classTSystem.html#ae8790897e77f60ff37876b944f9f0091).
-	
+
 ### Setting the Include Path
 
 

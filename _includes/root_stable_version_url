@@ -1,1 +1,0 @@
-{% assign sorted = site.releases | reverse %}{% for release in sorted %}{% if release.state == "latest" %}{{ release.url }}{% endif %}{% endfor %}

@@ -24,11 +24,11 @@ The steps to install a pre-compiled binary are simple:
 1. Unpack the archive
 1. Add the ROOT libraries and executables to your environment by sourcing the appropriate `thisroot.*` script. These setup scripts can be found in the ROOT binary release, in the `bin` directory.
 
-For example, on Ubuntu 20, a user could execute the following bash commands to install ROOT v6.24/02, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}):
+For example, on {% include root_stable_os %}, a user could execute the following bash commands to install ROOT v{% include root_stable_version %}, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}):
 
 ```bash
-$ wget https://root.cern/download/root_v6.24.02.Linux-ubuntu20-x86_64-gcc9.3.tar.gz
-$ tar -xzvf root_v6.24.02.Linux-ubuntu20-x86_64-gcc9.3.tar.gz
+$ wget https://root.cern/download/{% include root_stable_sample %}
+$ tar -xzvf {% include root_stable_sample %}
 $ source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
 ```
 
@@ -51,10 +51,10 @@ C:\Users\username>c:\root\bin\thisroot.bat
 
 C:\Users\username>root
    ------------------------------------------------------------------
-  | Welcome to ROOT 6.25/01                        https://root.cern |
+  | Welcome to ROOT {% include root_stable_version %}                        https://root.cern |
   | (c) 1995-2021, The ROOT Team; conception: R. Brun, F. Rademakers |
-  | Built for win32 on Sep 20 2021, 11:34:39                         |
-  | From heads/master@v6-25-01-1903-g6928212418                      |
+  | Built for win32 on {% include root_stable_version_date %}, 11:34:39                         |
+  | From tags/{% include root_stable_version_dash %}@{% include root_stable_version_dash %}                                        |
   | With MSVC 19.29.30133.0                                          |
   | Try '.help', '.demo', '.license', '.credits', '.quit'/'.q'       |
    ------------------------------------------------------------------
@@ -230,10 +230,10 @@ ROOT installations with minimal external dependencies are available for Fedora, 
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/<version>/<platform>
 ```
 
-For example, to set up ROOT 6.24/02 on a CentOS7 machine, just run:
+For example, to set up ROOT {% include root_stable_version %} on a {% include root_stable_os %} machine, just run:
 
 ```
-source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.24.02/x86_64-centos7-gcc48-opt/bin/thisroot.sh
+source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/{% include root_stable_version_dot %}/{% include root_stable_dir %}/bin/thisroot.sh
 ```
 
 Make sure you use your system's default compiler, just like this ROOT build.
@@ -247,10 +247,10 @@ ROOT, Geant4 and many other packages with all their dependencies are available a
 ```
 
 LCG views are available for CentOS7, CentOS8 and the latest MacOS and Ubuntu releases.
-For example, on CERN LXPLUS, you can set up a full environment that contains ROOT 6.24/00 with:
+For example, on CERN LXPLUS, you can set up a full environment that contains ROOT {% include root_stable_version %} with:
 
 ```
-source /cvmfs/sft.cern.ch/lcg/views/LCG_100/x86_64-centos7-gcc10-opt/setup.sh
+source /cvmfs/sft.cern.ch/lcg/views/LCG_100/{% include root_stable_dir %}/setup.sh
 ```
 
 To check what ROOT version is contained in an LCG release, you can visit [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="\_blank"}.
