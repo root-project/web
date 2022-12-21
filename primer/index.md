@@ -345,7 +345,6 @@ file="canvases.root" object="TF1_DoubleSlit"
 caption="Output of slits.C with parameters 0.2 and 2."
 %}
 
-
 The example first asks for user input, namely the ratio of slit width
 over slit distance, and the number of slits. After entering this
 information, you should see the graphical output as is shown in Figure [2.1](#f21).
@@ -360,19 +359,18 @@ full interference pattern is given by the product of a function
 depending on the ratio of the width and distance of the slits, and a
 second one depending on the number of slits. More important for us here
 is the definition of the interface of these functions to make them
-usable for the ROOT class {% include ref class="TF1" %}: the first argument is the pointer to
-*x*, the second one points to the array of parameters.
+usable for the ROOT class {% include ref class="TF1" %}:
+the first argument is the pointer to *x*, the second one points to the
+array of parameters.
 
 The main program starts at line 21 with the definition of a function
 `slits()` of type `void`. After asking for user input, a ROOT function
 is defined using the C-type function given in the beginning. We can now
-use all methods of the {% include ref class="TF1" %} class to control the behaviour of our
-function -- nice, isn't it ?
+use all methods of the {% include ref class="TF1" %} class to control the behaviour of our function -- nice, isn't it ?
 
 If you like, you can easily extend the example to also plot the
 interference pattern of a single slit, using function `double single`,
-or of a grid with narrow slits, function `double nslit0`, in {% include ref class="TF1" %}
-instances.
+or of a grid with narrow slits, function `double nslit0`, in {% include ref class="TF1" %} instances.
 
 Here, we used a macro, some sort of lightweight program, that the
 interpreter distributed with ROOT, Cling, is able to execute. This is a

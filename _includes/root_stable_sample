@@ -1,0 +1,11 @@
+{%- assign sorted = site.releases | reverse -%}
+{%- for release in sorted -%}
+   {%- if release.state == "latest" -%}
+      {%- assign content = release.content -%}
+      {%- assign pieces = content | split: '| [' -%}
+      {%- assign str = content -%}
+      {%- assign a = str | split: '.tar.gz">' -%}
+      {%- assign b = a[2] | split: '</a></td>' -%}
+      {{ b[0] }}
+   {%- endif -%}
+{%- endfor -%}

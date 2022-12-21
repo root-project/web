@@ -1,1 +1,6 @@
-{% assign sorted = site.releases | reverse %}{% for release in sorted %}{% if release.state == "latest" %}{{release.version | replace:".","" | truncate: 3, "" }}{% endif %}{% endfor %}
+{%- assign sorted = site.releases | reverse -%}
+   {%- for release in sorted -%}
+      {%- if release.state == "latest" -%}
+         {{release.version | replace:".","" | truncate: 3, "" }}
+   {%- endif -%}
+{%- endfor -%}
