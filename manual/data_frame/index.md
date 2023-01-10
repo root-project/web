@@ -20,7 +20,7 @@ RDataFrame provides the necessary methods to perform all operations required by 
 
 Every RDataFrame program follows this workflow:
 
-1. Construct a dataframe object by specifying a dataset. RDataFrame supports single TTrees as well as multiple TTrees (i.e., {% include ref class="TChain" %}), [CSV files](https://root.cern/doc/master/df014__CSVDataSource_8C.html), [SQLite files](https://root.cern/doc/master/df027__SQliteDependencyOverVersion_8C.html), [RNTuples](https://root.cern/doc/master/structROOT_1_1Experimental_1_1RNTuple.html), and it can be extended to custom data formats. From Python, [NumPy arrays can be imported into RDataFrame](https://root.cern/doc/master/df032__MakeNumpyDataFrame_8py.html) as well.
+1. Construct a dataframe object by specifying a dataset. RDataFrame supports single TTrees as well as multiple TTrees (i.e., {% include ref class="TChain" %}), [CSV files](https://root.cern/doc/master/df014__CSVDataSource_8C.html), [SQLite files](https://root.cern/doc/master/df027__SQliteDependencyOverVersion_8C.html), [RNTuples](https://root.cern/doc/master/structROOT_1_1Experimental_1_1RNTuple.html), and it can be extended to custom data formats. From Python, [NumPy arrays can be imported into RDataFrame](https://root.cern/doc/master/df032__RDFFromNumpy_8py.html) as well.
 
 2. Transform the dataframe by:
 

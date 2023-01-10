@@ -214,7 +214,7 @@ h.Draw()
 Besides ROOT files, RDataFrame can also read from other data sources, for example CSV files:
 
 {% highlight C++ %}
-auto rdf = ROOT::RDF::MakeCsvDataFrame("myfile.csv");
+auto rdf = ROOT::RDF::FromCSV("myfile.csv");
 auto h = rdf.Histo1D("x");
 h->Draw();
 {% endhighlight %}
