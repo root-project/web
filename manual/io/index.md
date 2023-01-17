@@ -431,7 +431,7 @@ The arguments in the rules have the following meaning:
 
 - `checksum`: A comma-separated list of checksums of the source class that that this rule is applied to. The list has to be enclosed in square brackets. One of `checksum` or `version` must be present.
 - `targetClass` (mandatory): Defines the name of the in-memory class that this rule is applied to.
-- `target` (mandatory): A semicolon-separated list of target class data member names that this rule is potentially updating.
+- `target` (mandatory): A comma-separated list of target class data member names that this rule is potentially updating.
 - `embed`: if `true` (the default), the rule is written to the output file if an object of this class is serialized.
 - `include`: A comma-separated list of header files that need to be included for the code snippet.
 - `code`: The C++ code snippet implementing the rule's actions.
