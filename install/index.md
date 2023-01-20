@@ -119,7 +119,7 @@ ROOT can be directly installed from the operating system's package manager in th
 Fedora's [ROOT package](https://src.fedoraproject.org/rpms/root){:target="\_blank"} can be installed with
 
 ```sh
-$ yum install root
+$ dnf install root
 ```
 
 More typically, however, users will want more than just the base package. The full list of components can be seen at
@@ -127,7 +127,7 @@ More typically, however, users will want more than just the base package. The fu
 To install ROOT with support for python and notebooks, for example, run
 
 ```sh
-$ yum install root python3-root root-notebook
+$ dnf install root python3-root root-notebook
 ```
 
 ### CentOS
