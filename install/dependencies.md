@@ -147,7 +147,7 @@ libxft-dev libxext-dev python libssl-dev
 *   **gfortran:** for /usr/bin/gfortran
 *   **libpcre3-dev:** for /usr/bin/pcre-config
 *   **xlibmesa-glu-dev:** for /usr/include/GL/gl.h and for /usr/lib/libGL.so
-*   **libglew1.5-dev:** for /usr/include/GL/glew.h and for /usr/lib/libGLEW.so
+*   **libglew-dev:** for /usr/include/GL/glew.h and for /usr/lib/libGLEW.so
 *   **libftgl-dev:** for /usr/bin/pkg-config
 *   **libmysqlclient-dev:** for /usr/bin/mysql_config
 *   **libfftw3-dev:** for /usr/include/fftw3.h and for /usr/lib/libfftw3.so
@@ -167,7 +167,7 @@ As a one-liner:
 
 ```bash
 sudo apt-get install gfortran libpcre3-dev \
-xlibmesa-glu-dev libglew1.5-dev libftgl-dev \
+xlibmesa-glu-dev libglew-dev libftgl-dev \
 libmysqlclient-dev libfftw3-dev libcfitsio-dev \
 graphviz-dev libavahi-compat-libdnssd-dev \
 libldap2-dev python-dev libxml2-dev libkrb5-dev \
