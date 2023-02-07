@@ -18,7 +18,7 @@ it allows you to find reading bottlenecks for analyses, whether using multiple f
 [`RDatasetSpec`](https://root.cern/doc/v628/classROOT_1_1RDF_1_1Experimental_1_1RDatasetSpec.html) allows you to associate meta data with files, and pass that to `RDataFrame`:
 cross-section, weights, sample name ("H2bb", "MC"), and virtually anything else are then available as "columns".
 The new, accelerating [batch mode of RooFit](https://root.cern/doc/v628/classRooAbsPdf.html#autotoc_md564) is now passing all tests: we recommend to try it out!
-SOFIE model evaluation is now [integrated with RDataFrame](https://root.cern/doc/master/TMVA__SOFIE__RDataFrame__JIT_8C.html), allowing fast inference without extra dependencies, seemlessly integrated in your analysis.
+SOFIE model evaluation is now [integrated with RDataFrame](https://root.cern/doc/master/TMVA__SOFIE__RDataFrame__JIT_8C.html), allowing fast inference without extra dependencies, seamlessly integrated in your analysis.
 
 If you are interested to see what the near future will bring to ROOT, consider [having a look at `RNTuple`](https://root.cern/doc/v628/ntpl004__dimuon_8C.html):
 its features are growing; once the key features are available it will become the successor to `TTree`.
