@@ -33,6 +33,11 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
       - for roottest.git:
         * check out master
         * create the branch: `git checkout -b v6-22-00-patches`
+  1. Update the reference guide build procedure
+      - in `documentation/doxygen/Doxyfile` set `GENERATE_QHP          = NO`
+      - in `documentation/doxygen/Doxyfile` set `QCH_FILE              =`
+      - in the web site repository, in the file [`reference/index.md`]({{'reference' | relative_url }}),
+        add the line corresponding to this release.
   1. Update version number
       - Change `build/version_number` to `6.21/99` in preparation of `v6.22/00`.
       - Run from the build directory `$ cmake .; make version`
