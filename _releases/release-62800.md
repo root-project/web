@@ -13,6 +13,9 @@ sidebar:
 ## Highlights
 
 With this release, cling was upgraded to use LLVM/clang 13; a future patch release will bring support for C++20.
+
+We now offer `rootssh user@remote-computer`: it allows you to work on a remote computer (such as `lxplus` at CERN) and have e.g. `TBrowser` display locally, without X forwarding, automatically! Try it out with the new `TBrowser` and let us know if you see any issues.
+
 A new binary `rootreadspeed` was added to measure realistic analysis I/O throughput:
 it allows you to find reading bottlenecks for analyses, whether using multiple files, multiple threads, or even only selected branches of some or multiple trees.
 [`RDatasetSpec`](https://root.cern/doc/v628/classROOT_1_1RDF_1_1Experimental_1_1RDatasetSpec.html) allows you to associate meta data with files, and pass that to `RDataFrame`:
