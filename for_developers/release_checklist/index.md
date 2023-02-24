@@ -36,6 +36,8 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
   1. Update the reference guide build procedure
       - in `documentation/doxygen/Doxyfile` set `GENERATE_QHP          = NO`
       - in `documentation/doxygen/Doxyfile` set `QCH_FILE              =`
+      - in `documentation/doxygen/Doxyfile` set `QHG_LOCATION          =`
+      - in `documentation/doxygen/Makefile` remove the line `gzip $(DOXYGEN_IMAGE_PATH)/ROOT.qch`
       - in the web site repository, in the file [`reference/index.md`]({{'reference' | relative_url }}),
         add the line corresponding to this release.
   1. Update version number
