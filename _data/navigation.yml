@@ -169,8 +169,7 @@ for_developers:
    - title: Benchmarks
      url: https://rootbnch-grafana-test.cern.ch
      target: _blank
-   - title: ROOT Logos
-     url: for_developers/logos
+
 
 releases:
    - title: Useful links
@@ -233,6 +232,8 @@ about:
    - title: Cite us
      url: https://github.com/root-project/root/#cite
      target: _blank
+   - title: ROOT Logos
+     url: about/logos
    - title: Reporting Security Issues
      url: about/security
    - title: Legal
