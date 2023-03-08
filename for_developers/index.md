@@ -54,4 +54,3 @@ the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
 Jekyll is used for generating the ROOT web site.
 
 ### [Benchmarks](https://rootbnch-grafana-test.cern.ch)
-### [ROOT Logos](https://root.cern/img/logos/ROOT_Logo/)
