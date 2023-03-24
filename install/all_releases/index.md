@@ -12,7 +12,7 @@ sidebar:
 <td style="border: 0px"><a href="{{ 'feed/releases.xml' | relative_url }}"><img style="width:auto; height:2.0em;" src="{{'/assets/images/feed.svg' | relative_url}}"></a></td>
 </tr></table>
 <br>
-{% include releases_list state="latest" label="LATEST" single_column="yes" %}
+{% include releases_list state="latest" label="LATEST STABLE" single_column="yes" %}
 
 ### Version 6
 
