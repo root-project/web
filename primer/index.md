@@ -1681,7 +1681,7 @@ caption="Two 2D histograms stack on top of each other."
 %}
 
 
-[^3]: To optimise the memory usage you might go for one byte (TH1C), short (TH1S), integer (TH1I), long64 (TH1L64) or double-precision (TH1D) bin-content.
+[^3]: To optimise the memory usage you might go for one byte (TH1C), short (TH1S), integer (TH1I) or double-precision (TH1D) bin-content.
 
 # Functions and Parameter Estimation
 
@@ -2002,7 +2002,7 @@ Attaching file my_rootfile.root as _file0...
 root [1] _file0->ls()
 TFile**     my_rootfile.root
  TFile*     my_rootfile.root
-  KEY: TH1F my_histogram;1 My Title
+  KEY: TH1F	my_histogram;1 My Title
 root [2] my_histogram->Draw()
 {% endhighlight %}
 
