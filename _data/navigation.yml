@@ -144,6 +144,8 @@ for_developers:
      url: for_developers/run_the_tests
    - title: Continuous Integration / Testing
      children:
+      - title: GitHub Actions
+        url: for_developers/continuous_integration-testing/githubactions
       - title: Jenkins Service
         url: https://lcgapp-services.cern.ch/root-jenkins/
         target: _blank
