@@ -38,7 +38,8 @@ Instructions for setting up an environment with all the required
 ROOT externals coming from the central installations in AFS or CVMFS.
 
 ### Continuous Integration / Testing
-   - [GitHub Actions](continuous_integration-testing/githubactions)
+   - [GitHub Actions Users](continuous_integration-testing/githubactions)
+   - [GitHub Actions Config](continuous_integration-testing/githubactions_usage)
    - [Jenkins Service](https://lcgapp-services.cern.ch/root-jenkins/)
    - [Jenkins How To](continuous_integration-testing/jenkins_how_to)
    - [CDash](https://cdash.cern.ch/index.php?project=ROOT)
