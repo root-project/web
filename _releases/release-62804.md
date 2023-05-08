@@ -37,10 +37,10 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | CentOS 8 | [root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz](https://root.cern/download/root_v6.28.04.Linux-centos8-x86_64-gcc8.5.tar.gz) | 225M |
-| Fedoraversion_id= 36 | [root_v6.28.04.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz](https://root.cern/download/root_v6.28.04.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz) | 301M |
-| Ubuntu 18 | [root_v6.28.04.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.28.04.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 243M |
-| Ubuntu 20 | [root_v6.28.04.Linux-ubuntu20-x86_64-gcc9.4.tar.gz](https://root.cern/download/root_v6.28.04.Linux-ubuntu20-x86_64-gcc9.4.tar.gz) | 244M |
-| Ubuntu 22 | [root_v6.28.04.Linux-ubuntu22-x86_64-gcc11.3.tar.gz](https://root.cern/download/root_v6.28.04.Linux-ubuntu22-x86_64-gcc11.3.tar.gz) | 291M |
+| Fedora 36 | [root_v6.28.04.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz](https://root.cern/download/root_v6.28.04.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz) | 301M |
+| Ubuntu 18.04 | [root_v6.28.04.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.28.04.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 243M |
+| Ubuntu 20.04 | [root_v6.28.04.Linux-ubuntu20-x86_64-gcc9.4.tar.gz](https://root.cern/download/root_v6.28.04.Linux-ubuntu20-x86_64-gcc9.4.tar.gz) | 244M |
+| Ubuntu 22.04 | [root_v6.28.04.Linux-ubuntu22-x86_64-gcc11.3.tar.gz](https://root.cern/download/root_v6.28.04.Linux-ubuntu22-x86_64-gcc11.3.tar.gz) | 291M |
 | macOS 11.7 arm64 Xcode 12 | [root_v6.28.04.macos-11.7-arm64-clang120.pkg](https://root.cern/download/root_v6.28.04.macos-11.7-arm64-clang120.pkg) | 344M |
 | macOS 11.7 arm64 Xcode 12 | [root_v6.28.04.macos-11.7-arm64-clang120.tar.gz](https://root.cern/download/root_v6.28.04.macos-11.7-arm64-clang120.tar.gz) | 223M |
 | macOS 11.7 x86_64 Xcode 12 | [root_v6.28.04.macos-11.7-x86_64-clang120.pkg](https://root.cern/download/root_v6.28.04.macos-11.7-x86_64-clang120.pkg) | 359M |
