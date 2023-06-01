@@ -33,7 +33,7 @@ the fourth one on the marker size.
 
 Note that it is recommended to use a transparent color map as markers will, most of the time, overlap.
 
-The code to produce a scatter plot with the new class is as simple as:
+The code to produce a scatter plot with the new class {% include ref class="TScatter" %} is as simple as:
 
 {% highlight C++ %}
 void scatter()
