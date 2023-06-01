@@ -75,14 +75,14 @@ A Gaussian PDF consists typically of four objects:
 
 {% highlight C++ %}
 // Observable with lower and upper bound:
-   RooRealVar mes("mes","m_{ES} (GeV)",5.20,5.30);
+RooRealVar mes{"mes", "m_{ES} (GeV)", 5.20, 5.30};
 
 // Parameters with starting value, lower bound, upper bound:
-   RooRealVar sigmean("sigmean","B^{#pm} mass",5.28,5.20,5.30);
-   RooRealVar sigwidth("sigwidth","B^{#pm} width",0.0027,0.001,1.);
+RooRealVar sigmean{"sigmean", "B^{#pm} mass", 5.28, 5.20, 5.30};
+RooRealVar sigwidth{"sigwidth", "B^{#pm} width", 0.0027, 0.001, 1.};
 
 // Build a Gaussian PDF:
-   RooGaussian signal("signal","signal PDF",mes,sigmean,sigwidth);
+RooGaussian signal{"signal", "signal PDF", mes, sigmean, sigwidth};
 {% endhighlight %}
 
 Model building operations such as addition, multiplication, integration are represented by separate operator objects and make the modeling language scale well to models of arbitrary complexity.
@@ -91,50 +91,50 @@ Model building operations such as addition, multiplication, integration are repr
 
 ### Signal and background model
 
-Taking a Gaussian PDF, the following example constructs a one-dimensional PDF with a Gaussian signal component and a `ARGUS` phase space background component.<br/>All individual components of the RooFit PDF (the variables, component PDFs, and the combined PDF) are all created individually by calling the constructors directly.
+Taking a Gaussian PDF, the following example constructs a one-dimensional PDF with a Gaussian signal component and an [ARGUS](https://en.wikipedia.org/wiki/ARGUS_distribution) background component.<br/>All individual components of the RooFit PDF (the variables, component PDFs, and the combined PDF) are all created individually by calling the constructors directly.
 
 {% highlight C++ %}
-   #include "RooRealVar.h"
-   #include "RooConstVar.h"
-   #include "RooGaussian.h"
-   #include "RooArgusBG.h"
-   #include "RooAddPdf.h"
-   #include "RooDataSet.h"
-   #include "RooPlot.h"
+// Put this in a file called runArgusModel.C and run it with root.
 
+void runArgusModel()
+{
    using namespace RooFit;
 
-   void runArgusModel() {
-// Observable:
-   RooRealVar mes("mes","m_{ES} (GeV)",5.20,5.30);
+   // Observable:
+   RooRealVar mes("mes", "m_{ES} (GeV)", 5.20, 5.30);
 
-// Parameters:
-   RooRealVar sigmean("sigmean","B^{#pm} mass",5.28,5.20,5.30);
-   RooRealVar sigwidth("sigwidth","B^{#pm} width",0.0027,0.001,1.);
+   // Parameters:
+   RooRealVar sigmean("sigmean", "B^{#pm} mass", 5.28, 5.20, 5.30);
+   RooRealVar sigwidth("sigwidth", "B^{#pm} width", 0.0027, 0.001, 1.);
 
-// Build a Gaussian PDF:
-   RooGaussian signalModel("signal","signal PDF",mes,sigmean,sigwidth);
+   // Build a Gaussian PDF:
+   RooGaussian signalModel("signal", "signal PDF", mes, sigmean, sigwidth);
 
-// Build Argus background PDF:
-   RooRealVar argpar("argpar","argus shape parameter",-20.0,-100.,-1.);
-   RooArgusBG background("background","Argus PDF",mes,RooConst(5.291),argpar);
+   // Build Argus background PDF:
+   RooRealVar argpar("argpar", "argus shape parameter", -20.0, -100., -1.);
+   RooArgusBG background("background", "Argus PDF", mes, RooConst(5.291), argpar);
 
-// Construct a signal and background PDF:
-   RooRealVar nsig("nsig","#signal events",200,0.,10000);
-   RooRealVar nbkg("nbkg","#background events",800,0.,10000);
-   RooAddPdf model("model","g+a",RooArgList(signalModel,background),RooArgList(nsig,nbkg));
+   // Construct a signal and background PDF:
+   RooRealVar nsig("nsig", "#signal events", 200, 0., 10000);
+   RooRealVar nbkg("nbkg", "#background events", 800, 0., 10000);
+   RooAddPdf model("model", "g+a", {signalModel, background}, {nsig, nbkg});
 
-// The PDF is used to generate an un-binned toy data set, then the PDF is fit to that data set using an un-binned maximum likelihood fit.
-// Then the data are visualized with the PDF overlaid.
+   // The PDF is used to generate an un-binned toy data set, then the PDF is
+   // fit to that data set using an un-binned maximum likelihood fit.
+   // Then the data are visualized with the PDF overlaid.
 
-// Generate a toy MC sample from composite PDF:
-   RooDataSet *data = model.generate(mes, 2000);
+   // Generate a toy MC sample from composite PDF:
+   std::unique_ptr<RooDataSet> data{model.generate(mes, 2000)};
 
-// Perform extended ML fit of composite PDF to toy data:
+   // Perform extended ML fit of composite PDF to toy data:
    model.fitTo(*data);
 
-// Plot toy data and composite PDF overlaid:
-   RooPlot* mesframe = mes.frame();
+   // Create a RooPlot to draw on. We don't manage the memory of the returned
+   // pointer. Instead we let it leak such that the plot still exists at the end of
+   // the macro and we can take a look at it.
+   RooPlot *mesframe = mes.frame();
+
+   // Plot toy data and composite PDF overlaid:
    data->plotOn(mesframe);
    model.plotOn(mesframe);
    model.plotOn(mesframe, Components(background), LineStyle(ELineStyle::kDashed));
@@ -154,38 +154,29 @@ It is also possible to organize all individual components of the RooFit PDF (the
 {
    using namespace RooFit;
 
-   RooWorkspace w("myWorkspace", true);
-   w.factory("Gaussian::gauss(mes[5.20,5.30],mean[5.28,5.2,5.3],width[0.0027,0.001,1])");
-   w.factory("ArgusBG::argus(mes,5.291,argpar[-20,-100,-1])");
-   w.factory("SUM::sum(nsig[200,0,10000]*gauss,nbkg[800,0,10000]*argus)");
+   RooWorkspace ws{"myWorkspace"};
+   ws.factory("Gaussian::gauss(mes[5.20,5.30],mean[5.28,5.2,5.3],width[0.0027,0.001,1])");
+   ws.factory("ArgusBG::argus(mes,5.291,argpar[-20,-100,-1])");
+   ws.factory("SUM::sum(nsig[200,0,10000]*gauss,nbkg[800,0,10000]*argus)");
 
-// Retrieve pointers to variables and PDFs for later use.
-   auto sum = w.pdf("sum"); // Returns as RooAbsPdf*
-   auto mes = w.var("mes"); // Returns as RooRealVar*
+   // Retrieve pointers to variables and PDFs for later use.
+   RooAbsPdf *sum = ws.pdf("sum"); // Returns as RooAbsPdf*
+   RooRealVar *mes = ws.var("mes"); // Returns as RooRealVar*
 
-// Generate a toy MC sample from composite PDF.
-   RooDataSet *data = sum->generate(*mes, 2000);
+   // Generate a toy MC sample from composite PDF.
+   std::unique_ptr<RooDataSet> data{sum->generate(*mes, 2000)};
 
-// Perform extended ML fit of composite PDF to toy data.
+   // Perform extended ML fit of composite PDF to toy data.
    sum->fitTo(*data);
 
-// Plot toy data and composite PDF overlaid.
-   auto mesframe = mes->frame();
+   // Plot toy data and composite PDF overlaid.
+   RooPlot *mesframe = mes->frame();
    data->plotOn(mesframe);
    sum->plotOn(mesframe);
-   sum->plotOn(mesframe, Components(*w.pdf("argus")), LineStyle(kDashed));
+   sum->plotOn(mesframe, Components(*ws.pdf("argus")), LineStyle(kDashed));
 
    mesframe->Draw();
 }
-{% endhighlight %}
-
-After executing the ROOT macro, the objects defined in the workspace are also available in a namespace with the same name as the workspace if the second argument of the workspace constructor is set to `true`.
-
-That is, typing `myWorkspace::sum` at the root prompt yields:
-
-{% highlight C++ %}
-   root [2] myWorkspace::sum
-   (RooAddPdf &) RooAddPdf::sum[ nsig * gauss + nbkg * argus ] = 0.369501
 {% endhighlight %}
 
 ### Convolution of two PDFs
@@ -193,21 +184,19 @@ That is, typing `myWorkspace::sum` at the root prompt yields:
 The [Signal and background model](#signal-and-background-model) example illustrated the use of the `RooAddPdf` addition operator. It is also possible to construct convolutions of PDFs using the FFT convolution operator.
 
 {% highlight C++ %}
-{
-   RooWorkspace w("w");
+RooWorkspace ws{"ws"};
 
-   w.factory("Landau::landau(t[-10,30],ml[5,-20,20],sl[1,0.1,10])");
-   w.factory("Gaussian::gauss(t,mg[0],sg[2,0.1,10])");
-   auto t = w.var("t");
-   auto landau = w.pdf("landau");
-   auto gauss = w.pdf("gauss");
+ws.factory("Landau::landau(t[-10,30],ml[5,-20,20],sl[1,0.1,10])");
+ws.factory("Gaussian::gauss(t,mg[0],sg[2,0.1,10])");
+RooRealVar *t = ws.var("t");
+RooAbsPdf *landau = ws.pdf("landau");
+RooAbsPdf *gauss = ws.pdf("gauss");
 
 // Construct convoluted PDF lxg(x) = landau(x) (*) gauss(x).
-   RooFFTConvPdf lxg("lxg", "landau (X) gauss", *t, *landau, *gauss);
+RooFFTConvPdf lxg{"lxg", "landau (X) gauss", *t, *landau, *gauss};
 
- // Alternative construction method using workspace
-// w.factory("FCONV::lxg(x,landau,gauss)");
-}
+// Alternative construction method using workspace
+// ws.factory("FCONV::lxg(x,landau,gauss)");
 {% endhighlight %}
 
 You can use PDF's `lxg` for fitting, plotting and event generation in exactly the same way as the PDF model of The [Signal and background model](#signal-and-background-model) example.
@@ -217,72 +206,62 @@ You can use PDF's `lxg` for fitting, plotting and event generation in exactly th
 You can construct multi-dimensional PDFs with and without correlations using the `RooProdPdf` product operator. The example below shows how to construct a 2-dimensional PDF with correlations of the form `F(x|y)*G(y)` where the conditional PDF `F(x|y)` describes the distribution in observable `x` given a value of `y`, and PDF `G(y)` describes the distribution in observable `y`.
 
 {% highlight C++ %}
-{
-   RooWorkspace w("w");
+RooWorkspace ws{"ws"};
 
 // Construct F(x|y), a Gaussian in x with a mean that depends on y.
-   w.factory("PolyVar::meanx(y[-5,5],{a0[-0.5,-5,5],a1[-0.5,-1,1]})");
-   w.factory("Gaussian::gaussx(x[-5,5],meanx,sigmax[0.5])");
+ws.factory("PolyVar::meanx(y[-5,5],{a0[-0.5,-5,5],a1[-0.5,-1,1]})");
+ws.factory("Gaussian::gaussx(x[-5,5],meanx,sigmax[0.5])");
 
 // Construct G(y), an Exponential in y.
-   w.factory("Exponential::gaussy(y,-0.2)");
+ws.factory("Exponential::gaussy(y,-0.2)");
 
 // Construct M(x,y) = F(x|y)*G(y).
-   w.factory("PROD::model(gaussx|y,gaussy)");
+ws.factory("PROD::model(gaussx|y,gaussy)");
 
-   auto x = w.var("x");
-   auto model = w.pdf("model");
-   model->Print("");
-}
+RooRealVar *xs = ws.var("x");
+RooAbsPdf *model = ws.pdf("model");
+model->Print("");
 {% endhighlight %}
 
 The result is:
 
-{% highlight C++ %}
-   RooProdPdf::model[ gaussy * gaussx|y ] = 0.606531
-{% endhighlight %}
+```
+RooProdPdf::model[ gaussy * gaussx|y ] = 0.606531
+```
 
 Fitting, plotting and event generation with multi-dimensional PDFs is very similar to that of one-dimensional PDFs. Continuing the above example, you can use:
 
 {% highlight C++ %}
-[...]
-   RooDataSet *data = model->generate(RooArgSet(*x, *w.var("y")), 10000);
+std::unique_ptr<RooDataSet> data{model->generate({*x, *ws.var("y")}, 10000)};
 
-   model->fitTo(*data);
+model->fitTo(*data);
 
-   auto frame = x->frame();
-   data->plotOn(frame);
-   model->plotOn(frame);
+RooPlot *frame = x->frame();
+data->plotOn(frame);
+model->plotOn(frame);
 
-   frame->Draw();
-}
+frame->Draw();
 {% endhighlight %}
 
 ## Working with likelihood functions and profile likelihood
 
-Given a PDF and a data set, a likelihood function can be constructed as:
+Given a PDF and a data set, you can build a likelihood function with [RooAbsPdf::createNLL()](https://root.cern/doc/master/classRooAbsPdf.html#a4c6d7383fa64bda3a7d62beef08f4510):
 
 {% highlight C++ %}
-   RooAbsReal* nll = pdf.createNLL(data);
+std::unique_ptr<RooAbsReal> nll{pdf.createNLL(data)};
 {% endhighlight %}
 
 The likelihood function behaves like a regular RooFit function and can be drawn in the same way as PDFs
 
 {% highlight C++ %}
-   RooPlot* frame = myparam.frame();
-   nll->plotOn(frame);
-{% endhighlight %}
-
-Since likelihood evaluations are potentially time-consuming, RooFit allows likelihood to be calculated in parallel on multiple processes. This parallelization process is transparent to the user. To request parallel computation on 8 processors (on the same host), construct the likelihood function as follows:
-
-{% highlight C++ %}
-   RooAbsReal* nll = pdf.createNLL(data, NumCPU(8)) ;
+RooPlot* frame = myparam.frame();
+nll->plotOn(frame);
 {% endhighlight %}
 
 You can also similarly construct the profile likelihood, which is the likelihood minimized taking into account the nuisance parameters, this is, for a likelihood `L(p,q)` where `p` is a parameter of interest and `q` is a nuisance parameter, the value of the profile likelihood `PL(p)` is the value of `L(p,q)` at the value of `q` where `L(p,q)` is lowest. A profile likelihood is construct as follows:
 
 {% highlight C++ %}
-   RooAbsReal* pll = nll->createProfile(<paramOfInterest>);
+std::unique_ptr<RooAbsReal> pll{nll->createProfile(<paramOfInterest>)};
 {% endhighlight %}
 
 
@@ -291,39 +270,40 @@ _**Example**_
 A toy PDF and a data set are constructed. A likelihood scan and a profile likelihood scan are compared in one of the parameters:
 
 {% highlight C++ %}
-{
-   using namespace RooFit;
+using namespace RooFit; // for the command arguments like Bins(), Range(), etc.
 
-// Construct the model.
-   RooWorkspace w("w");
+// Construct the model
+RooWorkspace ws("ws");
 
-// Here, cast into appropriate type directly. Since return type overloading is impossible in C++, this has to be done manually.
-   auto g1 = (RooAbsPdf*) w.factory("Gaussian::g1(x[-20,20],mean[-10,10],sigma_g1[3])");
-   auto g2 = (RooAbsPdf*) w.factory("Gaussian::g2(x,mean,sigma_g2[4,3,6])");
-   auto model = (RooAbsPdf*) w.factory("SUM::model(frac[0.5,0,1]*g1,g2)");
+ws.factory("Gaussian::g1(x[-20,20],mean[-10,10],sigma_g1[3, 0.1, 10.0])");
+ws.factory("Gaussian::g2(x,mean,sigma_g2[4,3,6])");
+ws.factory("SUM::model(frac[0.5,0,1]*g1,g2)");
 
-   auto x = w.var("x");
-   auto frac = w.var("frac");
+RooRealVar *x = ws.var("x");
+RooRealVar *frac = ws.var("frac");
+RooAbsPdf *model = ws.pdf("model");
 
-// Generate 1000 events.
-   RooDataSet* data = model->generate(*x, 1000);
+// Generate 1000 events
+std::unique_ptr<RooDataSet> data{model->generate(*x, 1000)};
 
-// Create a likelihood function.
-   RooAbsReal* nll = model->createNLL(*data, NumCPU(2));
+// We set sigma_g1 constant to simplify the fit
+ws.var("sigma_g1")->setConstant();
 
-// Minimize the likelihood.
-   RooMinuit(*nll).migrad();
+// Create a likelihood function
+std::unique_ptr<RooAbsReal> nll{model->createNLL(*data)};
 
-// Plot a likelihood scan in parameter frac.
-   RooPlot* frame1 = frac->frame(Bins(10), Range(0.01,0.95));
-   nll->plotOn(frame1,ShiftToZero());
+// Minimize the likelihood
+RooMinimizer(*nll).minimize("Minuit2");
 
-// Plot the profile likelihood scan in parameter frac.
-   RooAbsReal* pll_frac = nll->createProfile(*frac);
-   pll_frac->plotOn(frame1, LineColor(kRed));
+// Plot a likelihood scan in parameter frac
+RooPlot *frame1 = frac->frame(Bins(10), Range(0.01, 0.95));
+nll->plotOn(frame1, ShiftToZero());
 
-   frame1->Draw();
-}
+// Plot the profile likelihood scan in parameter frac
+std::unique_ptr<RooAbsReal> pll_frac{nll->createProfile(*frac)};
+pll_frac->plotOn(frame1, LineColor(kRed));
+
+frame1->Draw();
 {% endhighlight %}
 
 {% include figure_jsroot
@@ -334,38 +314,39 @@ A toy PDF and a data set are constructed. A likelihood scan and a profile likeli
 _**Python**_
 In Python, the example above look like this:
 
-{% highlight C++ %}
-   import ROOT
+{% highlight Python %}
+import ROOT
 
-// Construct the model.
-   w = ROOT.RooWorkspace("w")
-   g1 = w.factory("Gaussian::g1(x[-20,20],mean[-10,10],sigma_g1[3])")
-   g2 = w.factory("Gaussian::g2(x,mean,sigma_g2[4,3,6])")
-   model = w.factory("SUM::model(frac[0.5,0,1]*g1,g2)")
+# Construct the model
+ws = ROOT.RooWorkspace("w")
+g1 = ws.factory("Gaussian::g1(x[-20,20],mean[-10,10],sigma_g1[3, 0.1, 10.0])")
+g2 = ws.factory("Gaussian::g2(x,mean,sigma_g2[4,3,6])")
+model = ws.factory("SUM::model(frac[0.5,0,1]*g1,g2)")
 
-   x = w.var("x")
-   frac = w.var("frac")
+x = ws["x"]
+frac = ws["frac"]
 
-// Generate 1000 events.
-   varsForGeneration = ROOT.RooArgSet(x)
-   data = model.generate(varsForGeneration, 1000)
+# Generate 1000 events
+data = model.generate([x], 1000)
 
-// Create likelihood function.
-   nll = model.createNLL(data, ROOT.RooFit.NumCPU(2))
+# We set sigma_g1 constant to simplify the fit
+ws["sigma_g1"].setConstant()
 
-// Minimize likelihood.
-   minimiser = ROOT.RooMinuit(nll)
-   minimiser.migrad()
+# Create likelihood function
+nll = model.createNLL(data)
 
-// Plot likelihood scan in parameter frac.
-   frame1 = frac.frame(ROOT.RooFit.Bins(10), ROOT.RooFit.Range(0.01,0.95))
-   nll.plotOn(frame1, ROOT.RooFit.ShiftToZero())
+# Minimize likelihood
+minimiser = ROOT.RooMinimizer(nll)
+minimiser.minimize("Minuit2")
 
-// Plot the profile likelihood in frac.
-   profileVariables = ROOT.RooArgSet(frac)
-   pll_frac = nll.createProfile(profileVariables)
-   pll_frac.plotOn(frame1, ROOT.RooFit.LineColor(ROOT.kRed))
+# Plot likelihood scan in parameter frac
+frame1 = frac.frame(Bins=10, Range=(0.01, 0.95))
+nll.plotOn(frame1, ShiftToZero=True)
 
-   frame1.Draw()
+# Plot the profile likelihood in frac
+pll_frac = nll.createProfile([frac])
+pll_frac.plotOn(frame1, LineColor="kRed")
+
+frame1.Draw()
 {% endhighlight %}
 
