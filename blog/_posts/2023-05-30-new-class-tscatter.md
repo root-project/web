@@ -13,26 +13,27 @@ packages](https://matplotlib.org/stable/gallery/shapes_and_collections/scatter.h
 have this functionality. ROOT itself offers this kind of tools via:
 
   - [The option `SCAT` to draw 2D histograms](https://root.cern/doc/master/classTHistPainter.html#HP11).
-    But that's indeed a fake scatter plot because the points drawn are random in each bins.
+    But that's indeed a fake scatter plot because the points drawn are random in each bin.
     The number of points being proportional to the cell content.
   - [The option `P` to draw TGraph](https://root.cern/doc/master/classTGraphPainter.html#GrP1).
-    A marker will be drawn at each point positions but all he marker will all have the same size and the same color.
+    A marker will be drawn at each point positions but all markers will have the same size and the same color.
   - [The 'COL' option of `TTree::Draw`](https://root.cern/doc/master/classTTree.html#a73450649dc6e54b5b94516c468523e45).
     `tree.Draw("e1:e2:e3","","col");` a 2D scatter is produced with e1 vs e2, and e3 is mapped on the current
     color palette. That's a bit better as it allows to draw three variables on a 2D plot. But
     one need to create a {% include ref class="TTree" %} or a {% include ref class="TNtuple" %} that's
     a bit heavy when the data are already stored in simple vectors.
 
-Therefore there was a need to have a new class able to produce, in a simple way, this famous
-way to visualize data.
+Therefore there was a need for a new class able to produce, in a simple way, this famous
+multi-variables way to visualize data.
 
-The new class {% include ref class="TScatter" %} answer this need: it is able to draw a four
-variables scatter plot on a single plot. The two first variables are the x and y position
-of the markers, the third is mapped on the current color map and the fourth on the marker size.
+In order to full-fill these requirements a new class, {% include ref class="TScatter" %}, has been
+implemented. It is able to draw a four variables scatter plot on a single plot. The first two variables
+are the x and y coordinates of the markers, the third one is mapped on the current color map, and
+the fourth one on the marker size.
 
 Note that it is recommended to use a transparent color map as markers will, most of the time, overlap.
 
-The code to produce a scatter plot with thi new class is as simple as this:
+The code to produce a scatter plot with the new class is as simple as:
 
 {% highlight C++ %}
 void scatter()
