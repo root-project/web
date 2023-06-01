@@ -12,9 +12,6 @@ author: Olivier Couet
 packages](https://matplotlib.org/stable/gallery/shapes_and_collections/scatter.html#sphx-glr-gallery-shapes-and-collections-scatter-py)
 have this functionality. For many years ROOT itself offers this kind of visualization via:
 
-  - [The option `SCAT` to draw 2D histograms](https://root.cern/doc/master/classTHistPainter.html#HP11):
-    That's indeed a fake scatter plot because the points drawn are random in each bin.
-    The number of points being proportional to the cell content.
   - [The option `P` to draw TGraph](https://root.cern/doc/master/classTGraphPainter.html#GrP1):
     A marker is  drawn at each point positions but all markers will have the same size and the same color.
   - [The `COL` option of `TTree::Draw()`](https://root.cern/doc/master/classTTree.html#a73450649dc6e54b5b94516c468523e45):
