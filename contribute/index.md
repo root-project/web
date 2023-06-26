@@ -30,7 +30,8 @@ There are two ways in which you can contribute:
    become part of the repository - as it happened for RooFit, TMVA, Eve, to name a few.
 
 Often it is useful to [contact us](https://root-forum.cern.ch){:target="_blank"} first to
-discuss the code you want to develop or the bug you want to fix.
+discuss the code you want to develop or the bug you want to fix. You can do this directly
+from the ROOT terminal, by typing `.forum bug`.
 
 ## Picking up an idea
 
