@@ -31,7 +31,17 @@ There are two ways in which you can contribute:
 
 Often it is useful to [contact us](https://root-forum.cern.ch){:target="_blank"} first to
 discuss the code you want to develop or the bug you want to fix. You can do this directly
-from the ROOT terminal, by typing `.forum bug`.
+from your terminal, by typing: `root -b -e '.forum bug' -q`.
+
+If you are an experienced contributor or are sure that you really found a bug, you can directly submit a
+new issue on [GitHub](https://github.com/root-project/root/issues/new/choose) using the predefined
+templates, or directly from your terminal:
+
+```
+root -b -e '.gh bug' -q
+root -b -e '.gh feature' -q
+root -b -e '.gh improvement' -q
+``
 
 ## Picking up an idea
 
