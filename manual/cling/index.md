@@ -262,6 +262,9 @@ This list is also available by typing `.?` or `.help` in the ROOT prompt.
                          with signature: ret_type filename(args).
    .credits            : show credits
    .demo               : launch GUI demo
+   .forum bug          : ask for help with a bug or crash at the ROOT forum.
+   .gh [bug|feature|improvement]
+                       : submit a bug report, feature or improvement suggestion
    .help Class::Member : open reference guide for that class member (or .?).
                          Specifying '::Member' is optional.
    .help edit          : show line editing shortcuts (or .?)
