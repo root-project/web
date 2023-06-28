@@ -108,5 +108,22 @@ Also any kind of normal `ssh` arguments can be specified:
 and used independently from ROOT installation - it is only required that supported ROOT version installed on remote node.
 
 
+## TWebCanvas
+
+It is implementation of normal ROOT graphics in the web browser.
+It uses [jsroot](https://root.cern/js/) for graphics, [openui5](https://openui5.org/) for GUI
+and RWebWindow class for server-client communication. It provides a lot of interactive features like
+zooming, context menu, GED (graphics attributes editor). Since July 2023 it is used as default
+implementation for `TCanvas` in interactive mode.
+
+It also can be used in the batch mode for image generation. In this case one should specify `--web` option to run ROOT:
+
+    [shell] root -b --web tutorials/hsimple.root -e 'hpxpy->Draw("colz"); c1->SaveAs("image.png");' -q
+
+If for any reasons `TWebCanvas` does not provide required functionality, one always can disable it.
+Either by specifying `root --web=off` when starting ROOT or by setting `Canvas.Name: TRootCanvas` in rootrc file.
+Please report your case at the [ROOT Forum](https://root-forum.cern.ch) so we can address it!
+
+
 We highly appreciate your feedback!
 
