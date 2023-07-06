@@ -5,11 +5,11 @@ author: Sergey Linev
 ---
 
 After a long period of development and testing we decided to switch to the web-based TCanvas
-implementation by default in ROOT. It has been present in the ROOT for a while (since 2017)
-and used already in the web-based TBrowser, which you have probably seen already.
+implementation by default in the ROOT master version. It has been present in the ROOT for a
+while (since 2017) and used already in the web-based TBrowser, which you have probably seen already.
 
-That has changed? Now when starting a ROOT session and displaying any object in TCanvas,
-the default system web browser will be started and an object drawn there using JavaScript
+What has changed ? Now when starting a ROOT session and displaying any object in TCanvas,
+the default system web browser will start and the object will be drawn there using the JavaScript
 ROOT functionality. The look and feel for basic objects, like histograms and graphs, will not
 change much – all the drawing options and styles are supported as in the original graphics.
 You can compare the two following screen shots made with the same macro – one is original
@@ -20,33 +20,33 @@ ROOT graphics, other is web-based one. Try to guess which one where?
 <img src="{{'/assets/images/web_canvas.png' | relative_url}}" alt="Web Canvas" style="width: 80%" width="1600" height="749" />
 </center>
 
-What are the benefits of using a web-based canvas?
- 1.  Painting fully decoupled from the main program and runs asynchronously.
- 2.  Painting is similar on all platforms supported by ROOT natively as Linux/Mac/Windows,
-     but also on many others where ROOT may not run at all – like all kinds of smartphones
-     and tablets. Display is just normal web browser
- 3.  Threads safety. Object painting and interactivity happens in the web browser and does
-     not depend on application state. With a little configuration efforts one can run different
+What are the benefits of using the web-based canvas?
+ 1.  The painting is fully decoupled from the main program and runs asynchronously.
+ 2.  As the display is just normal web browser, the painting is the same on all platforms
+     supported by ROOT natively as Linux/Mac/Windows, but also on many others where ROOT may
+     not run at all – like all kinds of smartphones and tablets.
+ 3.  Threads safety - The object painting and the interactivity happen in the web browser and don't
+     depend on the application state. With some little configuration efforts one can run different
      canvases from different threads.
- 4.  Free from gPad problematic - lots of interactivity in original ROOT graphics were built
+ 4.  Free from `gPad` problematic - lots of interactivity in original ROOT graphics were built
      around this global pointer. This made it difficult to use several canvases at the same time.
- 5.  Web is very natural way for implementing remote displays. Instead of struggling with
+ 5.  The Web is a very natural way for implementing remote displays. Instead of struggling with
      remote X11 one can just use a local web browser accessing remote applications through
-     http. To ease configuration of ssh tunnels we provide a simple `rootssh` utility which
-     fully automates configuration of such tunnels.
- 6.  One can use QWebEngine (Qt5 and Qt6) to implement fully local display without any http
+     http. To ease configuration of `ssh` tunnels, we provide a simple `rootssh` utility which
+     fully automates the configuration of such tunnels.
+ 6.  One can use QWebEngine (Qt5 and Qt6) to implement a fully local display without any http
      server in-between. This allows embedding any kind of ROOT web-based widgets into Qt
      applications on all platforms.
 
 What about image production in batch?
-For the moment we keep old functionality as is when running ROOT with ‘-b’ flag for image
+For the moment we keep old functionality, like when running ROOT with the ‘-b’ flag, for image
 production. Web-based canvas will be used for PNG/JPEG/SVG images creation by adding ‘--web'
 flag when running ROOT. While image generation involves running of web browsers in headless
 mode, it takes time – approximately 1 second per image. We plan to provide a special API to
 produce many images with one call – which should significantly improve performance.
 
 What are drawbacks?
-Probably you encounter minimal difference between drawing with native ROOT graphics and in
+Probably you'll encounter minimal differences between drawing with native ROOT graphics and in
 the web browsers. We do our best to make them similar as much as possible – and you can help
 us by reporting the problems. Probably very special usage of TExec objects (do you know about them?)
 will not work as expected in web-based canvases. With a little help from us this can be
