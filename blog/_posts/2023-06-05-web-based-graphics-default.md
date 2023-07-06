@@ -4,11 +4,11 @@ layout: archive
 author: Sergey Linev
 ---
 
-After a long period of development and testing we decided to switch to the web-based TCanvas
+After a long period of development and testing we decided to switch to the web-based `TCanvas`
 implementation by default in the ROOT master version. It has been present in the ROOT for a
 while (since 2017) and used already in the web-based TBrowser, which you have probably seen already.
 
-What has changed ? Now when starting a ROOT session and displaying any object in TCanvas,
+What has changed ? Now when starting a ROOT session and displaying any object in `TCanvas`,
 the default system web browser will start and the object will be drawn there using the JavaScript
 ROOT functionality. The look and feel for basic objects, like histograms and graphs, will not
 change much – all the drawing options and styles are supported as in the original graphics.
@@ -39,8 +39,8 @@ What are the benefits of using the web-based canvas?
      applications on all platforms.
 
 What about image production in batch?
-For the moment we keep old functionality, like when running ROOT with the ‘-b’ flag, for image
-production. Web-based canvas will be used for PNG/JPEG/SVG images creation by adding ‘--web'
+For the moment we keep old functionality, like when running ROOT with the `-b` flag, for image
+production. Web-based canvas will be used for PNG/JPEG/SVG images creation by adding `--web`
 flag when running ROOT. While image generation involves running of web browsers in headless
 mode, it takes time – approximately 1 second per image. We plan to provide a special API to
 produce many images with one call – which should significantly improve performance.
@@ -48,7 +48,9 @@ produce many images with one call – which should significantly improve perform
 What are drawbacks?
 Probably you'll encounter minimal differences between drawing with native ROOT graphics and in
 the web browsers. We do our best to make them similar as much as possible – and you can help
-us by reporting the problems. Probably very special usage of TExec objects (do you know about them?)
+us by reporting the problems. Probably some very special usages of `TExec` objects (do you know about them?)
 will not work as expected in web-based canvases. With a little help from us this can be
 fixed and adjusted. For sophisticated use-cases with complex user-defined objects one could
 consider implementing JavaScript-based painters for them.
+
+We encourage all users to try this functionality and give us the feedback!
