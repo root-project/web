@@ -13,7 +13,7 @@ the default system web browser will start and the object will be drawn there usi
 ROOT functionality. The look and feel for basic objects, like histograms and graphs, will not
 change much – all the drawing options and styles are supported as in the original graphics.
 You can compare the two following screen shots made with the same macro – one is original
-ROOT graphics, other is web-based one. Try to guess which one where?
+ROOT graphics, other is web-based one.
 
 <center>
 <img src="{{'/assets/images/plain_canvas.png' | relative_url}}" alt="Plain Canvas" style="width: 80%" width="1600" height="749" />
@@ -39,9 +39,9 @@ What are the benefits of using the web-based canvas?
      applications on all platforms.
 
 What about image production in batch?
-For the moment we keep old functionality, like when running ROOT with the `-b` flag, for image
+For the moment we keep the old functionality, like when running ROOT with the `-b` flag, for image
 production. Web-based canvas will be used for PNG/JPEG/SVG images creation by adding `--web`
-flag when running ROOT. While image generation involves running of web browsers in headless
+flag when running ROOT. While image generation involves running web browsers in headless
 mode, it takes time – approximately 1 second per image. We plan to provide a special API to
 produce many images with one call – which should significantly improve performance.
 
