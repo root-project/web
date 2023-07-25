@@ -86,7 +86,7 @@ As a one-liner for Fedora 33:
 sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
-avahi-compat-libdns_sd-devel openldap-devel python3-numpy \
+avahi-compat-libdns_sd-devel openldap-devel python-devel python3-numpy \
 libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
 R-devel R-Rcpp-devel R-RInside-devel
 ```
@@ -98,7 +98,7 @@ sudo yum config-manager --set-enabled powertools
 sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
-avahi-compat-libdns_sd-devel openldap-devel python3-numpy \
+avahi-compat-libdns_sd-devel openldap-devel python-devel python3-numpy \
 libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
 R-devel R-Rcpp-devel R-RInside-devel
 ```
@@ -156,7 +156,7 @@ libxft-dev libxext-dev python libssl-dev
 *   **libavahi-compat-libdnssd-dev:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **libldap2-dev:** for /usr/include/ldap.h and for /usr/lib/libldap.so
 *   **python-dev:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
-*   **python-numpy-dev:** needed for PyMVA
+*   **python-numpy:** needed for PyMVA
 *   **libxml2-dev:** for /usr/bin/xml2-config
 *   **libkrb5-dev:** for /usr/include/krb5.h and for /usr/lib/libkrb5.so
 *   **libgsl0-dev:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
@@ -170,7 +170,7 @@ sudo apt-get install gfortran libpcre3-dev \
 xlibmesa-glu-dev libglew-dev libftgl-dev \
 libmysqlclient-dev libfftw3-dev libcfitsio-dev \
 graphviz-dev libavahi-compat-libdnssd-dev \
-libldap2-dev python-dev libxml2-dev libkrb5-dev \
+libldap2-dev python-dev python-numpy libxml2-dev libkrb5-dev \
 libgsl0-dev qtwebengine5-dev
 ```
 
@@ -190,7 +190,7 @@ Most common optional packages:
 ```bash
 sudo zypper install gcc-fortran pcre-devel Mesa glew-devel libpng16-devel \
 pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel \
-libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel libxml2-devel \
+libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel python-numpy libxml2-devel \
 krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 ```
 
