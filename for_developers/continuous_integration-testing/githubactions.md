@@ -12,7 +12,7 @@ The ROOT project uses a GitHub Actions for continuous integration and delivery.
 
 ## About
 
-For building Docker images we use GitHub's runners.
+For building the Docker images we use GitHub's runners.
 For everything else, [runners are hosted at CERN](https://github.com/root-project/root/settings/actions/runners).
 
 
@@ -27,7 +27,7 @@ Click the "New self-hosted runner" button and follow the instructions.
 Runner requirements
  - Python 3
  - [openstacksdk](https://pypi.org/project/openstacksdk/)
- - [ROOT dependencies](/install/dependencies/)
+ - [ROOT dependencies](/install/dependencies/) - but better start from an existing `packages` file.
 
 
 ### MacOS
@@ -46,6 +46,9 @@ When asked to install the runner as a service, enter `yes`.
 
 **note** If you want to add python packages or dependencies to runners, this
 should be added to the images in <https://github.com/root-project/root-ci-images>.
+They can use a python3-venv / python3-virtualenv if set up at `/py-venv/ROOT-CI`.
+We use podman, not docker; this and a bug in GH runners requires us to use a
+[podman-docker-wrapper](https://gitlab.cern.ch/ai/it-puppet-hostgroup-lcgapp/-/blob/master/code/files/github_ci/wrapper.py?ref_type=heads) script.
 The following is for managing the machines themselves.
 
 --> [TL;DR FOR CREATING A RUNNER HERE](#creating-a-new-runner) <--
@@ -55,7 +58,7 @@ and managed with [Foreman](https://theforeman.org/). The most relevant
 documentation for configuration can be found on [ConfigDocs](https://configdocs.web.cern.ch/index.html).
 
 The Puppet configuration of the runners are stored on GitLab at:
-<https://gitlab.cern.ch/ai/it-puppet-hostgroup-lcgapp/-/tree/rootci_test>
+<https://gitlab.cern.ch/ai/it-puppet-hostgroup-lcgapp/>
 
 Although using management tools is annoying (even awful), they simplify batch
 operations and ensure uniformity. Here are some examples of common tasks to show
@@ -169,7 +172,7 @@ $EDITOR data/hostgroup/lcgapp/build/root.yaml
      repo_name: root
 ```
 
-Now it usually takes about 1 hour for the changes to show up. To immidiately
+Now it usually takes about 1 hour for the changes to show up. To immediately
 have a node pull the changes to verify that the new feature is functional, we
 can ssh into one of the nodes and run `puppet agent -t`.
 
