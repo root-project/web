@@ -70,6 +70,7 @@ before running `bundle install`. This can be done with:
 ```
 bundle config set --local path 'vendor/bundle'
 ```
+Note: to update all the gem dependencies to their latest versions you can run `bundle update`.
 
 7. Build the site and make it available on a local server.
 ```
