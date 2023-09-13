@@ -41,7 +41,7 @@ templates, or directly from your terminal:
 root -b -e '.gh bug' -q
 root -b -e '.gh feature' -q
 root -b -e '.gh improvement' -q
-``
+```
 
 ## Picking up an idea
 
