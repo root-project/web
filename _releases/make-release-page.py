@@ -302,6 +302,16 @@ def generateDownloadInfo(outfile, version, downloadInfo):
     """
     Write out source and binary download links.
     """
+    outfile.write(F"""
+## Binary distributions
+
+| Platform       | Files | Size |
+|-----------|-------|-----|
+""")
+    for binary, size in downloadInfo[2]:
+        outfile.write(F"""\
+| {binaryNameToTitle(binary)} | [{binary}]({downloadInfo[0]}{binary}) | {size} |
+""")
     if not downloadInfo[1]:
         print(F"ERROR: cannot find source tarball for version {version.forDiagnostic()}")
     else:
@@ -314,17 +324,7 @@ def generateDownloadInfo(outfile, version, downloadInfo):
 | source | [{name}]({downloadInfo[0]}{name}) | {size} |
 
 """)
-    outfile.write(F"""
-## Binary distributions
-
-| Platform       | Files | Size |
-|-----------|-------|-----|
-""")
-    for binary, size in downloadInfo[2]:
-        outfile.write(F"""\
-| {binaryNameToTitle(binary)} | [{binary}]({downloadInfo[0]}{binary}) | {size} |
-""")
-
+        
 def generateCvmfsInfo(outfile, version, cvmfsInfo):
     """
     Write out location on cvmfs.
