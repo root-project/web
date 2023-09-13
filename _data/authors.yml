@@ -299,9 +299,13 @@ Danilo Piparo:
                  to many of its areas: I/O, reflection, math and statistics. He was mainly
                  involved in the aspects of ROOT related to parallelism,
                  performance and programming model."
-  tag         : "previous"
+  short_bio   : "Axel is leading the ROOT project since 2017."
+  tag         : "team"
   affiliation : "CERN"
-  email       : "Danilo.Piparo@cern.ch"
+  avatar      : "/assets/images/DP.jpg"
+  
+  
+  
 
 
 David González Maline:
