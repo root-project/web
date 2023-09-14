@@ -4,7 +4,7 @@
 René Brun:
   name        : "René Brun"
   bio         : "René, a lifetime developer of ROOT. He joined CERN in 1973. While working
-                 with C. Rubbia at the ISR he developped the HBOOK package still in use
+                 with C. Rubbia at the ISR he developed the HBOOK package still in use
                  today. In 1975 he followed Rubbia in the NA4 deep inelastic muon
                  scattering experiment at the SPS where he was in charge of the simulation
                  and reconstruction software and where GEANT1 and GEANT2 were created. In
@@ -77,6 +77,21 @@ Bertrand Bellenot:
   avatar      : "/assets/images/BB.jpg"
   affiliation : "CERN"
   email       : "Bertrand.Bellenot@cern.ch"
+
+
+Danilo Piparo:
+  name        : "Danilo Piparo"
+  bio         : "Danilo is a particle Physicist and scientific software enthusiast,
+                 teacher and Advisory Committee member of the CERN School of Computing. He
+                 was a member of the ROOT team from 2013 to 2019 and contributed
+                 to many of its areas: I/O, core, math and statistics. He rejoined the
+                 ROOT team in 2023 after leading for four years the Offline Software and
+                 Computing group of the CMS experiment at CERN.
+                 He is mainly involved in the aspects of ROOT related to parallelism,
+                 performance and programming model."
+  tag         : "team"
+  affiliation : "CERN"
+  avatar      : "/assets/images/DP.jpg"
 
 
 Enrico Guiraud:
@@ -268,21 +283,6 @@ Vincenzo Eduardo Padulano:
   avatar      : "/assets/images/VEP.jpg"
   affiliation : "CERN"
   email       : "vincenzo.eduardo.padulano@cern.ch"
-
-
-Danilo Piparo:
-  name        : "Danilo Piparo"
-  bio         : "Danilo is a particle Physicist and scientific software enthusiast, 
-                 teacher and Advisory Committee member of the CERN School of Computing. He
-                 was a member of the ROOT team from 2013 to 2019 and contributed
-                 to many of its areas: I/O, coere, math and statistics. He rejoined the 
-                 ROOT team in 2023 after leading for four years the Offline Software and
-                 Computing group of the CMS experiment at CERN.
-                 He is mainly involved in the aspects of ROOT related to parallelism,
-                 performance and programming model."
-  tag         : "team"
-  affiliation : "CERN"
-  avatar      : "/assets/images/DP.jpg"
 
 
 Andrei Gheata:
@@ -495,7 +495,7 @@ Enric Tejedor Saavedra:
                  Center, where his researched focused on parallel programming models for
                  distributed infrastructures and where he participated in several EU
                  research projects. As part of his Ph.D., he also carried out two
-                 nternships at the IBM T.J. Watson Research Center (NY, USA).  In 2015 he
+                 internships at the IBM T.J. Watson Research Center (NY, USA).  In 2015 he
                  joined the CERN EP-SFT group as a senior fellow and later became a staff
                  member. He is currently working on ROOT parallelization, the ROOT Python
                  bindings and the SWAN service. He is also one of the administrators of the
