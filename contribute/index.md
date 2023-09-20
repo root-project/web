@@ -40,10 +40,10 @@ root -b -e '.gh feature' -q
 root -b -e '.gh improvement' -q
 ```
 
-### Fix an “easy” bug ?
+### What about fixing an "easy" bug?
 
 Several of ROOT’s bugs are actually not all that difficult to fix - we just don’t get around
 to actually do it. Maybe you can help? It’s a great way to exercise how to collaborate in a
 vivid, medium-size project, following industry best practice. Find your favorite
-[here]( https://github.com/root-project/root/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
+[here](https://github.com/root-project/root/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
 
