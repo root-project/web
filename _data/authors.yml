@@ -299,6 +299,20 @@ Vincenzo Eduardo Padulano:
   email       : "vincenzo.eduardo.padulano@cern.ch"
 
 
+Marta Czurylo:
+  name        : "Marta Czurylo"
+  bio         : "Marta obtained her M.Sc. in Physics from University College London. 
+                 She continued as a Physics PhD student in the ATLAS experiment 
+                 at the University of Heidelberg, working on the di-Higgs analysis. 
+                 Marta graduated in 2023 and joined the ROOT team as a Fellow
+                 soon after. Her main role is developing and maintaining the RDataFrame."
+  short_bio   : "Marta works on RDataFrame development and maintenance."
+  tag         : "team"
+  avatar      : "/assets/images/MC.jpg"
+  affiliation : "CERN"
+  email       : "marta.maja.czurylo@cern.ch"  
+
+
 Andrei Gheata:
   name        : "Andrei Gheata"
   bio         : "Andrei works since 2001 in the offline group of the ALICE experiment.
