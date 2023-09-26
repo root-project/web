@@ -284,15 +284,15 @@ Vassil Vassilev:
 Vincenzo Eduardo Padulano:
   name        : "Vincenzo Eduardo Padulano"
   bio         : "Vincenzo graduated with a B.Sc. in Physics and a M.Sc. in Data Science at
-                 the University of Milano-Bicocca. He started working at CERN in the summer
-                 of 2019 for the ROOT team as an intern to develop his master thesis. During
-                 that experience he focused on blending state-of-the-art software and
-                 techniques from the data science community (namely Spark and Kubernetes)
-                 with ROOT analysis. Currently member of the ROOT team as a CERN Doctoral
-                 Student and enrolled in the Computer Science PhD program at the Polytechnic
-                 University of Valencia. His area of research is in developing distributed
-                 computing solutions for the ROOT framework."
-  short_bio   : "Vincenzo is developing distributed computing solutions for the ROOT framework."
+                 the University of Milano-Bicocca (Italy). He started working at CERN in
+                 2019 in the ROOT team, where he developed his master thesis. He then
+                 continued the collaboration as a CERN Doctoral Student enrolled in the
+                 Computer Science PhD program at the Polytechnic University of Valencia
+                 (Spain). He obtained the PhD title in 2023 with a thesis on distributed
+                 computing solutions for the HEP use cases. He is currently working as a
+                 post-doc, his area of research is in optimizing distributed computations
+                 and developing the next-generation ROOT I/O."
+  short_bio   : "Vincenzo is working as a post-doc in the ROOT team."
   tag         : "team"
   avatar      : "/assets/images/VEP.jpg"
   affiliation : "CERN"
