@@ -379,7 +379,7 @@ cd root
 git checkout -b v{version.forTag()} v{version.forTag()}
 ~~~
 
-See [instructions to build from source](../install/build_from_source){:target="\_blank"}.
+See [instructions to build from source](../install/#build-from-source){:target="\_blank"}.
 
 ## Windows
 
