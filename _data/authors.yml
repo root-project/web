@@ -112,6 +112,20 @@ Enrico Guiraud:
   email       : "enrico.guiraud@cern.ch"
 
 
+Florine de Geus:
+  name        : "Florine de Geus"
+  bio         : "Florine joined CERN as a technical student in November 2022. As part of the ROOT
+                 team, she is working together with the ATLAS experiment to evaluate and further
+                 develop ROOT's new I/O subsystem, RNTuple, so it can be used as effectively as
+                 possible for the experiment's analyses. After the technical studentship, Florine
+                 is set to graduate with a master's degree in Software Engineering from the
+                 University of Amsterdam."
+  tag         : "team"
+  avatar      : "/assets/images/FdG.png"
+  affiliation : "CERN"
+  email       : "florine.de.geus@cern.ch"
+
+
 Jakob Blomer:
   name        : "Jakob Blomer"
   bio         : "Jakob joined CERN for the first time as a summer student in 2007. He
