@@ -7,7 +7,7 @@ sidebar:
   nav: "install"
 ---
 
-ROOT is available on Linux, Mac, and Windows. To install it, we highly recommend either:
+ROOT is available on Linux, Mac, and Windows. To install it, we highly recommend (ordered by priority) either:
 
 1. Use a [package manager](#install-via-a-package-manager)
 2. Download a [pre-compiled binary](#download-a-pre-compiled-binary-distribution)
