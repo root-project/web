@@ -305,6 +305,9 @@ def generateDownloadInfo(outfile, version, downloadInfo):
     outfile.write(F"""
 ## Binary distributions
 
+Instead of manually downloading this binary, please explore first whether your [package manager](../install/#install-via-a-package-manager){:target="\_blank"} already provides this version.
+This way, you will automatically keep up-to-date with the latest stable versions with no manual maintenance on your side.
+
 | Platform       | Files | Size |
 |-----------|-------|-----|
 """)
