@@ -7,12 +7,16 @@ sidebar:
   nav: "install"
 ---
 
-ROOT is available on Linux, Mac, and (as a beta release) on Windows.<br>
+ROOT is available on Linux, Mac, and Windows. To install it, we highly recommend either:
+
+1. Use a [package manager](#install-via-a-package-manager)
+2. Download a [pre-compiled binary](#download-a-pre-compiled-binary-distribution)
+
+Further ways to install ROOT on your computer are listed in the table of content on the right. Which one is best for you depends on your operating system and usage requirements.
+
+In all cases, make sure to always use the most recent ROOT release possible to get the latest bug fixes, features and quick user support.
 The latest stable ROOT release is
 [{% include root_stable_version %}]({% include root_stable_version_relative_url %}) ([about ROOT versioning scheme]({{ '/about/versioning' | relative_url }})).
-
-There are several ways to install ROOT on your computer: they are all listed in the table of content on the right. Which one is best for you depends on your operating system and usage requirements.
-In all cases, make sure to always use the most recent ROOT release possible to get the latest bug fixes, features and quick user support.
 
 # Download a pre-compiled binary distribution
 
@@ -20,9 +24,9 @@ We distribute pre-compiled ROOT for several major Linux distributions as well as
 The steps to install a pre-compiled binary are simple:
 
 1. Install all [required dependencies]({{'/install/dependencies' | relative_url}}) with the system package manager
-1. [Download the release]({{'/install/all_releases' | relative_url}}) for the desired platform and ROOT version
-1. Unpack the archive
-1. Add the ROOT libraries and executables to your environment by sourcing the appropriate `thisroot.*` script. These setup scripts can be found in the ROOT binary release, in the `bin` directory.
+2. [Download the release]({{'/install/all_releases' | relative_url}}) for the desired platform and ROOT version
+3. Unpack the archive
+4. Add the ROOT libraries and executables to your environment by sourcing the appropriate `thisroot.*` script. These setup scripts can be found in the ROOT binary release, in the `bin` directory.
 
 For example, on {% include root_stable_os %}, a user could execute the following bash commands to install ROOT v{% include root_stable_version %}, after installing all [required dependencies]({{'/install/dependencies' | relative_url}}):
 
@@ -61,6 +65,8 @@ C:\Users\username>root
 
 root [0]
 ```
+
+If you are interested in testing (unstable) development features, you can check out the [nightlies](nightlies){:target="\_blank"}.
 
 # Install via a package manager
 
