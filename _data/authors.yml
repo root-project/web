@@ -142,25 +142,6 @@ Jakob Blomer:
   affiliation : "CERN"
   email       : ""
 
-
-Javier López-Gómez:
-  name        : "Javier López-Gómez"
-  bio         : "Javier is a computer scientist from University Carlos III of Madrid.  During the
-                 last few years, his focus has been on low-level software (e.g. operating
-                 systems, embedded software and electronics, and compilers).  He will finish his
-                 PhD in October 2020. His thesis is focused on providing techniques that improve
-                 software reliability while achieving a good trade-off between reliability and
-                 performance.  During his PhD, he collaborated with the ROOT project;
-                 specifically, he worked on supporting entity redefinition on the Cling C++
-                 interpreter.  He joined EP-SFT again as a fellow in September 2020, where he will
-                 work on improving ROOT's RNtuple storage layer."
-  short_bio   : "Javier is working on improving ROOT's RNtuple storage layer."
-  tag         : "team"
-  avatar      : "/assets/images/JLG.jpg"
-  affiliation : "CERN"
-  email       : "javier.lopez.gomez@cern.ch"
-
-
 Jonas Hahnfeld:
   name        : "Jonas Hahnfeld"
   bio         : "Jonas graduated with a M.Sc. in Computer Science from RWTH Aachen University
@@ -570,6 +551,17 @@ Stefan Wunsch:
   short_bio   : "Stefan is working in the ROOT team on machine learning and analysis facilities."
   tag         : "previous"
 
+Javier López-Gómez:
+  name        : "Javier López-Gómez"
+  bio         : "Javier is a computer scientist from University Carlos III of Madrid. 
+                 His Ph.D. thesis focused on providing techniques that improve
+                 software reliability while achieving a good trade-off between reliability and
+                 performance.  During his PhD, he collaborated with the ROOT project;
+                 specifically, he worked on supporting entity redefinition on the Cling C++
+                 interpreter.  As a fellow of the EP-SFT group he improved ROOT's RNtuple 
+                 storage layer."
+  short_bio   : "Javier worked on improving ROOT's RNtuple storage layer."
+  tag         : "previous"
 
 James Carroll:
   name        : "James Carroll"
