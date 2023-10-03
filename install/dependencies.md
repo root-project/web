@@ -204,6 +204,7 @@ krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 
 *   **[CMake](https://cmake.org/download/)** (version >= 16.3)
 *   **[Microsoft Visual C++](https://visualstudio.microsoft.com/)** (ROOT6 requires at least Visual Studio 2019 version 16.1). The **Community** version is free, fully-featured for students, open-source contributors, and individuals.
+The **Desktop Development With C++** workload is also needed. You can install it directly from the **Visual Studio Installer**
 *   **[Python](https://python.org)** (ROOT6 requires version >= 2.7)
 
 
