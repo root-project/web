@@ -3,15 +3,12 @@ title: Collaborate With Us
 layout: single
 sidebar:
   nav: "contribute"
-toc: true
-toc_sticky: true
+toc: false
 ---
 
 We warmly welcome your contribution to ROOT!
 
 There are two ways in which you can contribute:
-
-
 
 1. **Submit a pull request** <br>
    You can create a pull request on [GitHub](https://github.com/root-project/root){:target="_blank"}.
@@ -43,34 +40,11 @@ root -b -e '.gh feature' -q
 root -b -e '.gh improvement' -q
 ```
 
-## Picking up an idea
+### What about fixing an "easy" bug?
 
-We maintain a set of "ideas" for talented scientists and developers to pick up.
-An "idea" is a sketch of a development project, or a missing feature we would like to see in your ROOT!
-You can inspect the ideas in the following list.
+Several of ROOT’s bugs are actually not all that difficult to fix by a C++ programmer able to
+handle large code bases - we just don’t get around to actually do it. Maybe you can help?
+It’s a great way to exercise how to collaborate in a vivid, medium-size project, following
+industry best practice. Find your favorite
+[here](https://github.com/root-project/root/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
 
-{% assign sorted = site.ideas | reverse %}
-
-### Some Ideas <a href="{{ 'feed/ideas.xml' | relative_url }}"><img style="width:auto; height:1.0em;" src="{{'/assets/images/feed.svg' | relative_url}}"></a>
-
-<ul>
-{% for idea in sorted %}
-{% if idea.state != "completed" %}
-<li> {{idea.date | date_to_string }} <a href="{{ idea.url | relative_url }}"> {{ idea.title}} </a><br>
-{{idea.summary}}
-</li>
-{% endif %}
-{% endfor %}
-</ul>
-
-### Completed ideas
-
-<ul>
-{% for idea in sorted %}
-{% if idea.state == "completed" %}
-<li> {{idea.date | date_to_string }} <a href="{{ idea.url | relative_url }}"> {{ idea.title}} </a><br>
-{{idea.summary}}
-</li>
-{% endif %}
-{% endfor %}
-</ul>
