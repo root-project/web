@@ -280,16 +280,6 @@ For example, to try out the latest ROOT release just run the following command i
 docker run --rm -it rootproject/root:latest
 ```
 
-Note that the --rm flag tells Docker to remove the container, together with its data, once it is shut down. In order to persist data, it is recommended to mount a directory on the container. For example, to mount your home directory on Linux and Mac, run:
-```cmd
-docker run --rm -it -v ~:/userhome --user $(id -u) rootproject/root
-```
-
-On Windows, you have to specify the full path to your user directory:
-```cmd
-docker run --rm -it -v C:\\Users\\Username:/userhome rootproject/root
-```
-
 For more instructions on running root's docker image, visit [ROOT's official DockerHub](https://hub.docker.com/r/rootproject){:target="\_blank"}.
 
 
