@@ -277,7 +277,7 @@ ROOT Docker containers for several linux flavours are available at [ROOT's offic
 
 For example, to try out the latest ROOT release just run the following command in your terminal (after starting docker engine):
 ```cmd
-docker run --rm -it rootproject/root:latest
+docker run -it rootproject/root:latest
 ```
 
 For more instructions on running root's docker image, visit the **Get Started** section of [ROOT's official DockerHub](https://hub.docker.com/r/rootproject/root){:target="\_blank"}.
