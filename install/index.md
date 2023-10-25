@@ -273,14 +273,14 @@ This will drop you into a new shell where all software from the prefix is availa
 
 # Run in a Docker container
 
-ROOT Docker containers for several linux flavours are available at [ROOT's official DockerHub](https://hub.docker.com/r/rootproject){:target="\_blank"}.
+ROOT Docker containers for several linux flavours are available at [ROOT's official DockerHub](https://hub.docker.com/u/rootproject){:target="\_blank"}.
 
 For example, to try out the latest ROOT release just run the following command in your terminal (after starting docker engine):
 ```cmd
 docker run --rm -it rootproject/root:latest
 ```
 
-For more instructions on running root's docker image, visit [ROOT's official DockerHub](https://hub.docker.com/r/rootproject){:target="\_blank"}.
+For more instructions on running root's docker image, visit the **Get Started** section of [ROOT's official DockerHub](https://hub.docker.com/r/rootproject/root){:target="\_blank"}.
 
 
 # Run on CERN LXPLUS
