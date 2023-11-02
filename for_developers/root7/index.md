@@ -34,7 +34,7 @@ Building from source would look similar to this:
 ## ROOT 7 Features
 
 ROOT's new interface personality is already in production with {% include ref class="RDataFrame" namespace="ROOT" %}.
-Next up is the `TTree` successor {% include ref struct="RNTuple" namespace="ROOT::Experimental" %}.
+Next up is the `TTree` successor {% include ref class="RNTuple" namespace="ROOT::Experimental" %}.
 
 
 Still in the design phase are ROOT's new graphics and histogram packages, with tutorials such as
