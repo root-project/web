@@ -302,7 +302,7 @@ def generateDownloadInfo(outfile, version, downloadInfo):
     """
     Write out source and binary download links.
     """
-    outfile.write(F"""
+    outfile.write("""
 ## Binary distributions
 
 Instead of manually downloading this binary, please explore first whether your [package manager](../install/#install-via-a-package-manager){:target="\_blank"} already provides this version.
@@ -382,7 +382,7 @@ cd root
 git checkout -b v{version.forTag()} v{version.forTag()}
 ~~~
 
-See [instructions to build from source](../install/#build-from-source){:target="\_blank"}.
+See [instructions to build from source](../install/#build-from-source){{:target="\_blank"}}.
 
 ## Windows
 
