@@ -78,8 +78,8 @@ eval $(ai-rc 'PH LCGAA')
 ai-bs --nova-flavor m2.2xlarge  \
       -g lcgapp/build/root      \
       --cs8                     \
-      --environment rootci_test \
-      githubci_lcgapp_xx
+      --foreman-environment rootci_test \
+      githubci-lcgapp-XX
 ```
 
 Note that no further setup is needed. It takes about 20-30 minutes for the new
