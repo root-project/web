@@ -18,7 +18,7 @@ For everything else, [runners are hosted at CERN](https://github.com/root-projec
 
 ## Registering a machine as a GitHub Actions Runner:
 
-_For Linux runners, see: [#Adding Linux runners](#adding-linux-runners)_
+**For Linux runners** see: [Adding Linux runners](#addingconfiguring-linux-runners)_
 
 Open <https://github.com/root-project/root/settings/actions/runners>.
 Click the "New self-hosted runner" button and follow the instructions.
@@ -44,11 +44,18 @@ When asked to install the runner as a service, enter `yes`.
 
 ## Adding/Configuring Linux runners
 
-**note** If you want to add python packages or dependencies to runners, this
-should be added to the images in <https://github.com/root-project/root-ci-images>.
+Our Linux runners just start a Docker container.
+This section documents the configuration of these Docker containers and of their underlying hosts (runners).
+
+### Configuring Docker containers
+
+Python packages or distro package dependencies are added not to runners but to the Docker images they run, see <https://github.com/root-project/root-ci-images>.
 They can use a python3-venv / python3-virtualenv if set up at `/py-venv/ROOT-CI`.
 We use podman, not docker; this and a bug in GH runners requires us to use a
 [podman-docker-wrapper](https://gitlab.cern.ch/ai/it-puppet-hostgroup-lcgapp/-/blob/master/code/files/github_ci/wrapper.py?ref_type=heads) script.
+
+### Linux runners
+
 The following is for managing the machines themselves.
 
 --> [TL;DR FOR CREATING A RUNNER HERE](#creating-a-new-runner) <--
@@ -82,40 +89,8 @@ ai-bs --nova-flavor m2.2xlarge  \
       githubci-lcgapp-XX
 ```
 
-Note that no further setup is needed. It takes about 20-30 minutes for the new
+Note that no further setup is needed. It takes **about 20-30 minutes** for the new
 runner to come online.
-
-
-### Adding 10 extra runners
-
-The following example shows how to add ten new runners starting from
-githubci-lcgapp-21 to githubci-lcgapp-30.
-
-```bash
-# note! only been tested with bash
-
-# Node management has to be done in aiadm
-ssh aiadm@cern.ch
-
-# Switch to relevant project
-eval $(ai-rc 'PH LCGAA')
-
-# Configuration (here are sensible defaults)
-flavor='m2.2xlarge' # 16 vcpus, 32 GB ram
-name_prefix='githubci-lcgapp'
-node='lcgapp/build/root' # Foreman hostgroup
-environment='rootci_test' # which branch the config is on
-
-# Create runners from 21 to 30
-for i in $(seq -f "%02g" 21 30); do
-    ai-bs --nova-flavor $flavor \
-          -g            $node   \
-          --cs8                 \
-          --foreman-environment $environment \
-          "${name_prefix}-${i}"
-done
-```
-
 
 ### Adding a script to clean old containers
 
