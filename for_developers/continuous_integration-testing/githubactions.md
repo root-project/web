@@ -82,10 +82,10 @@ ssh aiadm.cern.ch
 eval $(ai-rc 'PH LCGAA')
 
 # Create a foreman managed cs8 runner with 16 vcpus, 32 GB ram
-ai-bs --nova-flavor m2.2xlarge  \
-      -g lcgapp/build/root      \
-      --cs8                     \
-      --foreman-environment rootci_test \
+ai-bs --nova-flavor m2.2xlarge \
+      -g lcgapp/build/root \
+      --alma8 \
+      --foreman-environment production \
       githubci-lcgapp-XX
 ```
 
