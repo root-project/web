@@ -92,6 +92,8 @@ ai-bs --nova-flavor m2.2xlarge \
 Note that no further setup is needed. It takes **about 20-30 minutes** for the new
 runner to come online.
 
+To subsequently remove a runner, run `ai-kill githubci-lcgapp-XX`.
+
 ### Adding a script to clean old containers
 
 The following is intended as an example to show how to change behavior of the
