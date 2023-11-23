@@ -263,11 +263,12 @@ Here are some of the CMake variables that are used often, along with a brief exp
 |----------|-------|---------------|
 | CMAKE_BUILD_TYPE | STRING | Sets the build type for make based generators. Possible values are Release, MinSizeRel, Debug, RelWithDebInfo and Optimized. On systems like Visual Studio the user sets the build type with the IDE settings. Default is Release |
 | CMAKE_INSTALL_PREFIX | PATH | Path where ROOT will be installed if make install is invoked or the “INSTALL” target is built. |
-| CMAKE_C_FLAGS | STRING | Extra flags to use when compiling C source files. |
-| CMAKE_CXX_FLAGS | STRING | Extra flags to use when compiling C++ source files.|
-| CMAKE_Fortran_COMPILER | PATH | Full path to the Fortran compiler. Alternatively you can specify the environment variable FC before invoking cmake |
 | CMAKE_C_COMPILER | PATH | Full path to the C compiler.  Alternatively you can specify the environment variable CC before invoking cmake |
+| CMAKE_C_FLAGS | STRING | Extra flags to use when compiling C source files. |
 | CMAKE_CXX_COMPILER | PATH | Full path to the C++ compiler.  Alternatively you can specify the environment variable CXX before invoking cmake |
+| CMAKE_CXX_FLAGS | STRING | Extra flags to use when compiling C++ source files.|
+| CMAKE_CXX_STANDARD | STRING | Define the C++ standard version to use when building ROOT, and for the interpreter at runtime.|
+| CMAKE_Fortran_COMPILER | PATH | Full path to the Fortran compiler. Alternatively you can specify the environment variable FC before invoking cmake |
 | CMAKE_INSTALL_BINDIR | PATH | Install destination for user executables (bin) |
 | CMAKE_INSTALL_LIBDIR | PATH | Install destination for object code libraries (lib or lib64 or lib/<multiarch-tuple> on Debian) |
 | CMAKE_INSTALL_INCLUDEDIR | PATH | Install destination for C/C++ header files (include) |
