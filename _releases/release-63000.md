@@ -10,6 +10,23 @@ sidebar:
   nav: "releases"
 ---
 
+## Highlights
+
+`RDataFrame` now has a [ProgressBar](https://root.cern/doc/v630/classROOT_1_1RDataFrame.html#progressbar) to do the obvious
+and [RDatasetSpec](https://root.cern/doc/v630/classROOT_1_1RDF_1_1Experimental_1_1RDatasetSpec.html) to programmatically define metadata and input files.
+See that in action in the tutorial [`df106_HiggsToFourLeptons.py`](https://root.cern/doc/v630/df106__HiggsToFourLeptons_8py.html) / [`df106_HiggsToFourLeptons.C`](https://root.cern/doc/v630/df106__HiggsToFourLeptons_8C.html)).
+
+Distributed `RDataFrame` - just like many other parts of ROOT - got a performance boost!
+
+A new plot type, [`TScatter`](https://root.cern/blog/new-class-tscatter/) is now available:
+it's able to draw a scatter plot of four variables in a single plot.
+
+Minuit2 is now the default minimizer.
+
+In other news, this release adds support for GCC 12 and macOS 14.
+It requires C++17.
+Python2 support is now deprecated.
+
 
 ## Release Notes
 
