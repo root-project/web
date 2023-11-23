@@ -232,6 +232,12 @@ The user can set any CMake variable or option that controls the build process fr
 
 Click on one of the following dropdowns to see the full list of build options for a specific ROOT release:
 
+<details markdown="1"><summary markdown="span">build options for ROOT 6.30</summary>
+
+{% include build_options_v6-30-00-patches.md %}
+
+</details>
+
 <details markdown="1"><summary markdown="span">build options for ROOT 6.28</summary>
 
 {% include build_options_v6-28-00-patches.md %}
