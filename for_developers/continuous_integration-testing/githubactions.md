@@ -94,6 +94,16 @@ runner to come online.
 
 To subsequently remove a runner, run `ai-kill githubci-lcgapp-XX`.
 
+### Runner secrets
+
+The runner authenticates to GitHub using a token for adding new runners.
+The runner uses a script `configure_install_runner.sh` to do query GitHub for that "new runner" token, using the GitHub API.
+To be authorized to use that API, the script needs a token; Puppet retrieves that from Teigi (you can see it with `tbag show --hg lcgapp/build/root github_pat_root`) and stores it in `/pat.txt`.
+To define Teigi secrets, follow [the doc](https://configdocs.web.cern.ch/secrets/adding.html).
+
+The current secret is a Personal Access Token; it needs `repo` scope.
+You can just create your own and replace the original one.
+
 ### Adding a script to clean old containers
 
 The following is intended as an example to show how to change behavior of the
