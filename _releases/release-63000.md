@@ -14,7 +14,7 @@ sidebar:
 
 `RDataFrame` now has a [ProgressBar](https://root.cern/doc/v630/classROOT_1_1RDataFrame.html#progressbar) to do the obvious
 and [RDatasetSpec](https://root.cern/doc/v630/classROOT_1_1RDF_1_1Experimental_1_1RDatasetSpec.html) to programmatically define metadata and input files.
-See that in action in the tutorial [`df106_HiggsToFourLeptons.py`](https://root.cern/doc/v630/df106__HiggsToFourLeptons_8py.html) / [`df106_HiggsToFourLeptons.C`](https://root.cern/doc/v630/df106__HiggsToFourLeptons_8C.html)).
+See that in action in the tutorial [`df106_HiggsToFourLeptons.py`](https://root.cern/doc/v630/df106__HiggsToFourLeptons_8py.html) / [`df106_HiggsToFourLeptons.C`](https://root.cern/doc/v630/df106__HiggsToFourLeptons_8C.html).
 
 Distributed `RDataFrame` - just like many other parts of ROOT - got a performance boost!
 
