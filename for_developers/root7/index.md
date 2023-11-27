@@ -44,7 +44,7 @@ and specifically for [drawing and styling the new histograms](https://github.com
 
 ## RBrowser
 
-Starting from ROOT version 6.26/00, {% include ref class="RBrowser" namespace="ROOT::Experimental" %} is the first web-based component used by default when ROOT is built with `root7`.
+Starting from ROOT version 6.26/00, {% include ref class="RBrowser" namespace="ROOT" %} is the first web-based component used by default when ROOT is built with `root7`.
 It is automatically invoked with `new TBrowser`.
 We recommend to install the `chrome/chromium` web browser, but all other web browsers should do the job.
 
@@ -52,32 +52,11 @@ If for any reasons `RBrowser` does not provide required functionality, one alway
 Either by specifying `root --web=off` when starting ROOT or by setting `Browser.Name: TRootBrowser` in rootrc file.
 Please report your case at the [ROOT Forum](https://root-forum.cern.ch) so we can address it!
 
-## RBrowser on remote node
+## RBrowser on remote nodes
 
-To efficiently use {% include ref class="RBrowser" namespace="ROOT::Experimental" %} on a remote node,
-it is advised to use the `ssh` port forwarding and run
-the user interface on the localhost with the default web browser. In the provided example
-the remote http port 8899 will be mapped to the local 8877 port.
-
-When logging on the remote host, configure also the port forwarding:
-
-    [shell] ssh -L 8877:remotehost:8899 username@remotehost
-
-Configure ROOT the shell environment and start root with the `--web=server:8899` option:
-
-    [shell] call /path/to/root/bin/thisroot.sh
-    [shell] root --web=server:8899 $ROOTSYS/tutorials/v7/browser.cxx
-
-Open the url provided by ROOT on the localhost, replacing port number 8899 by 8877:
-
-    [shell] firefox http://localhost:8877/win1/
-
-
-
-## Use of `rootssh` script to run ROOT web widgets on remote nodes
-
-Starting from ROOT 6.28 version, one can use `rootssh` script for automatic configuration of ssh tunnel,
-necessary for web widgets. It can be used instead of normal `ssh` like:
+To efficiently use {% include ref class="RBrowser" namespace="ROOT" %} on a remote node,
+it is advised to use the `rootssh` script with built-in port forwarding and run
+the user interface on the local host with the default web browser. Like:
 
     [localhost] rootssh username@remotenode
 
@@ -103,6 +82,10 @@ web browser executable to display web widgets. Like:
 Also any kind of normal `ssh` arguments can be specified:
 
     [localhost] rootssh -Y -E file.log username@remotenode
+
+On remote node root session should be started with `root --web` argument to advise ROOT use web widgets. Like:
+
+    [remotehost] root --web hsimple.C
 
 `rootssh` script can be [download](https://raw.githubusercontent.com/root-project/root/master/config/rootssh)
 and used independently from ROOT installation - it is only required that supported ROOT version installed on remote node.
