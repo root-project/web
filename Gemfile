@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
-# Use the latest version.
-gem "jekyll"
+gem "github-pages", group: :jekyll_plugins
 gem "webrick"
 
 # If you have any plugins, put them here!
@@ -12,6 +11,4 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-include-cache"
   gem "jekyll-liquify"
-  gem "jekyll-archives"
-  gem "jekyll-remote-theme"
 end
