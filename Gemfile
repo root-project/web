@@ -10,4 +10,5 @@ group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-include-cache"
   gem "jekyll-liquify", "<0.0.3"
+  gem "jekyll-remote-theme"
 end
