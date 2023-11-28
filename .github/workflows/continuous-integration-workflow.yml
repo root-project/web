@@ -20,8 +20,22 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Build website
-        uses: root-project/jekyll-action@HEAD
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
+        with:
+          ruby-version: '3.1' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+
+      - name: Build with Jekyll
+        # Outputs to the './build' directory by default
+        run: bundle exec jekyll build "${PR_NUMBER:+--baseurl=${PR_NUMBER}/}" --destination "build/${PR_NUMBER:-}"
+        env:
+          JEKYLL_ENV: production
 
       - name: Only allow links to root.cern, never root.cern.ch
         run: |
@@ -33,7 +47,7 @@ jobs:
       - name: Only allow links to ref guide for master (except in release notes and when linking to release notes)
         run: |
           # grep for https://root.cern/doc/(!"master" && !"vXXX/release-notes.html"). If something is found, error out.
-          grep --exclude="index.html" --exclude-dir="releases" --exclude-dir="reference" --exclude-dir="all_releases" --exclude-dir="feed" -n -R -P 'https:\/\/root\.cern\/doc\/(?!(master|v[0-9]{3}\/release-notes\.html))' build\
+          grep --exclude="index.html" --exclude-dir="releases" --exclude-dir="reference" --exclude-dir="all_releases" --exclude-dir="feed" -n -R -P 'https:\/\/root\.cern\/doc\/(?!(master|v[0-9]{3}\/release-notes\.html))' build \
              || exit 0 # grep returns non-zero if no match is found
           echo -e "\nFound links to /doc/NOT_MASTER (see above). Please change them to link to /doc/master."
           exit 1
