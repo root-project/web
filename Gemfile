@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
 # Use the latest version.
-# gem "jekyll"
-gem "github-pages", group: :jekyll_plugins
+# gem "github-pages", group: :jekyll_plugins
+gem "jekyll"
 gem "webrick"
 
 # If you have any plugins, put them here!
