@@ -9,5 +9,5 @@ group :jekyll_plugins do
   gem "jekyll-gist"
   gem "jekyll-feed"
   gem "jekyll-include-cache"
-  gem "jekyll-liquify"
+  gem "jekyll-liquify", "<0.0.3"
 end
