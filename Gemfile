@@ -2,7 +2,8 @@ source "https://rubygems.org"
 
 # Use the latest version.
 # gem "github-pages", group: :jekyll_plugins
-gem "jekyll"
+# gem "jekyll"
+gem 'jekyll', '~> 4.3.2'
 gem "webrick"
 
 # If you have any plugins, put them here!
