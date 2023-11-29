@@ -10,6 +10,9 @@ sidebar:
   nav: "releases"
 ---
 
+## Retracted
+Due to a [security vulnerability](/about/security#known-security-issues), this version of ROOT has been retracted; please upgrade to [v6.26/14](/releases/release-62614).
+
 ## Highlights
 
 The major new features of v6.26 are:
@@ -27,32 +30,32 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.26.00.source.tar.gz](https://root.cern/download/root_v6.26.00.source.tar.gz) | 185M |
+| source | root_v6.26.00.source.tar.gz | 185M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS 8 | [root_v6.26.00.Linux-centos8-x86_64-gcc8.5.tar.gz](https://root.cern/download/root_v6.26.00.Linux-centos8-x86_64-gcc8.5.tar.gz) | 208M |
-| Fedora 32 | [root_v6.26.00.Linux-fedora32-x86_64-gcc10.3.tar.gz](https://root.cern/download/root_v6.26.00.Linux-fedora32-x86_64-gcc10.3.tar.gz) | 230M |
-| Fedora 34 | [root_v6.26.00.Linux-fedora34-x86_64-gcc11.2.tar.gz](https://root.cern/download/root_v6.26.00.Linux-fedora34-x86_64-gcc11.2.tar.gz) | 278M |
-| Ubuntu 18 | [root_v6.26.00.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.26.00.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 225M |
-| Ubuntu 20 | [root_v6.26.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.26.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz) | 225M |
-| macOS 10.15 x86_64 Xcode 12 | [root_v6.26.00.macos-10.15-x86_64-clang120.pkg](https://root.cern/download/root_v6.26.00.macos-10.15-x86_64-clang120.pkg) | 335M |
-| macOS 10.15 x86_64 Xcode 12 | [root_v6.26.00.macos-10.15-x86_64-clang120.tar.gz](https://root.cern/download/root_v6.26.00.macos-10.15-x86_64-clang120.tar.gz) | 218M |
-| macOS 11.6 arm64 Xcode 12 | [root_v6.26.00.macos-11.6-arm64-clang120.pkg](https://root.cern/download/root_v6.26.00.macos-11.6-arm64-clang120.pkg) | 318M |
-| macOS 11.6 arm64 Xcode 12 | [root_v6.26.00.macos-11.6-arm64-clang120.tar.gz](https://root.cern/download/root_v6.26.00.macos-11.6-arm64-clang120.tar.gz) | 205M |
-| macOS 11.6 x86_64 Xcode 12 | [root_v6.26.00.macos-11.6-x86_64-clang120.pkg](https://root.cern/download/root_v6.26.00.macos-11.6-x86_64-clang120.pkg) | 333M |
-| macOS 11.6 x86_64 Xcode 12 | [root_v6.26.00.macos-11.6-x86_64-clang120.tar.gz](https://root.cern/download/root_v6.26.00.macos-11.6-x86_64-clang120.tar.gz) | 217M |
-| macOS 12.2 arm64 Xcode 13 | [root_v6.26.00.macos-12.2-arm64-clang130.pkg](https://root.cern/download/root_v6.26.00.macos-12.2-arm64-clang130.pkg) | 320M |
-| macOS 12.2 arm64 Xcode 13 | [root_v6.26.00.macos-12.2-arm64-clang130.tar.gz](https://root.cern/download/root_v6.26.00.macos-12.2-arm64-clang130.tar.gz) | 206M |
-| macOS 12.2 x86_64 Xcode 13 | [root_v6.26.00.macos-12.2-x86_64-clang130.pkg](https://root.cern/download/root_v6.26.00.macos-12.2-x86_64-clang130.pkg) | 335M |
-| macOS 12.2 x86_64 Xcode 13 | [root_v6.26.00.macos-12.2-x86_64-clang130.tar.gz](https://root.cern/download/root_v6.26.00.macos-12.2-x86_64-clang130.tar.gz) | 218M |
-| **preview** Windows Visual Studio 2019 (debug) | [root_v6.26.00.win32.vc16.debug.exe](https://root.cern/download/root_v6.26.00.win32.vc16.debug.exe) | 200M |
-| **preview** Windows Visual Studio 2019 (debug) | [root_v6.26.00.win32.vc16.debug.zip](https://root.cern/download/root_v6.26.00.win32.vc16.debug.zip) | 298M |
-| **preview** Windows Visual Studio 2019 | [root_v6.26.00.win32.vc16.exe](https://root.cern/download/root_v6.26.00.win32.vc16.exe) | 105M |
-| **preview** Windows Visual Studio 2019 | [root_v6.26.00.win32.vc16.zip](https://root.cern/download/root_v6.26.00.win32.vc16.zip) | 143M |
+| CentOS 8 | root_v6.26.00.Linux-centos8-x86_64-gcc8.5.tar.gz | 208M |
+| Fedora 32 | root_v6.26.00.Linux-fedora32-x86_64-gcc10.3.tar.gz | 230M |
+| Fedora 34 | root_v6.26.00.Linux-fedora34-x86_64-gcc11.2.tar.gz | 278M |
+| Ubuntu 18 | root_v6.26.00.Linux-ubuntu18-x86_64-gcc7.5.tar.gz | 225M |
+| Ubuntu 20 | root_v6.26.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz | 225M |
+| macOS 10.15 x86_64 Xcode 12 | root_v6.26.00.macos-10.15-x86_64-clang120.pkg | 335M |
+| macOS 10.15 x86_64 Xcode 12 | root_v6.26.00.macos-10.15-x86_64-clang120.tar.gz | 218M |
+| macOS 11.6 arm64 Xcode 12 | root_v6.26.00.macos-11.6-arm64-clang120.pkg | 318M |
+| macOS 11.6 arm64 Xcode 12 | root_v6.26.00.macos-11.6-arm64-clang120.tar.gz | 205M |
+| macOS 11.6 x86_64 Xcode 12 | root_v6.26.00.macos-11.6-x86_64-clang120.pkg | 333M |
+| macOS 11.6 x86_64 Xcode 12 | root_v6.26.00.macos-11.6-x86_64-clang120.tar.gz | 217M |
+| macOS 12.2 arm64 Xcode 13 | root_v6.26.00.macos-12.2-arm64-clang130.pkg | 320M |
+| macOS 12.2 arm64 Xcode 13 | root_v6.26.00.macos-12.2-arm64-clang130.tar.gz | 206M |
+| macOS 12.2 x86_64 Xcode 13 | root_v6.26.00.macos-12.2-x86_64-clang130.pkg | 335M |
+| macOS 12.2 x86_64 Xcode 13 | root_v6.26.00.macos-12.2-x86_64-clang130.tar.gz | 218M |
+| **preview** Windows Visual Studio 2019 (debug) | root_v6.26.00.win32.vc16.debug.exe | 200M |
+| **preview** Windows Visual Studio 2019 (debug) | root_v6.26.00.win32.vc16.debug.zip | 298M |
+| **preview** Windows Visual Studio 2019 | root_v6.26.00.win32.vc16.exe | 105M |
+| **preview** Windows Visual Studio 2019 | root_v6.26.00.win32.vc16.zip | 143M |
 
 ## Installations in CVMFS
 
