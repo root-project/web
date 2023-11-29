@@ -11,6 +11,9 @@ sidebar:
 ---
 
 
+## Retracted
+Due to a [security vulnerability](/about/security#known-security-issues), this version of ROOT has been retracted; please upgrade to [v6.28/10](/releases/release-62810).
+
 ## Release Notes
 
 The release notes for this release can be found [here](https://root.cern/doc/v628/release-notes.html#release-6.2806).
@@ -20,36 +23,36 @@ This release contains several crucial bug fixes; please consider upgrading.
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.28.06.source.tar.gz](https://root.cern/download/root_v6.28.06.source.tar.gz) | 177M |
+| source | root_v6.28.06.source.tar.gz | 177M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS 8 | [root_v6.28.06.Linux-centos8-x86_64-gcc8.5.tar.gz](https://root.cern/download/root_v6.28.06.Linux-centos8-x86_64-gcc8.5.tar.gz) | 225M |
-| Fedoraversion_id= 36 | [root_v6.28.06.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz](https://root.cern/download/root_v6.28.06.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz) | 302M |
-| Ubuntu 18 | [root_v6.28.06.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.28.06.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 244M |
-| Ubuntu 20 | [root_v6.28.06.Linux-ubuntu20-x86_64-gcc9.4.tar.gz](https://root.cern/download/root_v6.28.06.Linux-ubuntu20-x86_64-gcc9.4.tar.gz) | 245M |
-| Ubuntu 22 | [root_v6.28.06.Linux-ubuntu22-x86_64-gcc11.4.tar.gz](https://root.cern/download/root_v6.28.06.Linux-ubuntu22-x86_64-gcc11.4.tar.gz) | 292M |
-| macOS 11.7 arm64 Xcode 12 | [root_v6.28.06.macos-11.7-arm64-clang120.pkg](https://root.cern/download/root_v6.28.06.macos-11.7-arm64-clang120.pkg) | 345M |
-| macOS 11.7 arm64 Xcode 12 | [root_v6.28.06.macos-11.7-arm64-clang120.tar.gz](https://root.cern/download/root_v6.28.06.macos-11.7-arm64-clang120.tar.gz) | 224M |
-| macOS 11.7 x86_64 Xcode 12 | [root_v6.28.06.macos-11.7-x86_64-clang120.pkg](https://root.cern/download/root_v6.28.06.macos-11.7-x86_64-clang120.pkg) | 360M |
-| macOS 11.7 x86_64 Xcode 12 | [root_v6.28.06.macos-11.7-x86_64-clang120.tar.gz](https://root.cern/download/root_v6.28.06.macos-11.7-x86_64-clang120.tar.gz) | 235M |
-| macOS 12.6 arm64 Xcode 14 | [root_v6.28.06.macos-12.6-arm64-clang140.pkg](https://root.cern/download/root_v6.28.06.macos-12.6-arm64-clang140.pkg) | 343M |
-| macOS 12.6 arm64 Xcode 14 | [root_v6.28.06.macos-12.6-arm64-clang140.tar.gz](https://root.cern/download/root_v6.28.06.macos-12.6-arm64-clang140.tar.gz) | 223M |
-| macOS 12.6 x86_64 Xcode 14 | [root_v6.28.06.macos-12.6-x86_64-clang140.pkg](https://root.cern/download/root_v6.28.06.macos-12.6-x86_64-clang140.pkg) | 356M |
-| macOS 12.6 x86_64 Xcode 14 | [root_v6.28.06.macos-12.6-x86_64-clang140.tar.gz](https://root.cern/download/root_v6.28.06.macos-12.6-x86_64-clang140.tar.gz) | 234M |
-| macOS 13.5 arm64 Xcode 14 | [root_v6.28.06.macos-13.5-arm64-clang140.pkg](https://root.cern/download/root_v6.28.06.macos-13.5-arm64-clang140.pkg) | 355M |
-| macOS 13.5 arm64 Xcode 14 | [root_v6.28.06.macos-13.5-arm64-clang140.tar.gz](https://root.cern/download/root_v6.28.06.macos-13.5-arm64-clang140.tar.gz) | 230M |
-| macOS 13.5 x86_64 Xcode 14 | [root_v6.28.06.macos-13.5-x86_64-clang140.pkg](https://root.cern/download/root_v6.28.06.macos-13.5-x86_64-clang140.pkg) | 369M |
-| macOS 13.5 x86_64 Xcode 14 | [root_v6.28.06.macos-13.5-x86_64-clang140.tar.gz](https://root.cern/download/root_v6.28.06.macos-13.5-x86_64-clang140.tar.gz) | 241M |
-| Windows Visual Studio 2022 32-bit x86  (debug) | [root_v6.28.06.win32.vc17.debug.exe](https://root.cern/download/root_v6.28.06.win32.vc17.debug.exe) | 234M |
-| Windows Visual Studio 2022 32-bit x86  (debug) | [root_v6.28.06.win32.vc17.debug.zip](https://root.cern/download/root_v6.28.06.win32.vc17.debug.zip) | 354M |
-| Windows Visual Studio 2022 32-bit x86  | [root_v6.28.06.win32.vc17.exe](https://root.cern/download/root_v6.28.06.win32.vc17.exe) | 120M |
-| Windows Visual Studio 2022 32-bit x86  | [root_v6.28.06.win32.vc17.zip](https://root.cern/download/root_v6.28.06.win32.vc17.zip) | 165M |
-| Windows Visual Studio 2022 64-bit x64  | [root_v6.28.06.win64.vc17.exe](https://root.cern/download/root_v6.28.06.win64.vc17.exe) | 126M |
-| Windows Visual Studio 2022 64-bit x64  | [root_v6.28.06.win64.vc17.zip](https://root.cern/download/root_v6.28.06.win64.vc17.zip) | 173M |
+| CentOS 8 | root_v6.28.06.Linux-centos8-x86_64-gcc8.5.tar.gz | 225M |
+| Fedoraversion_id= 36 | root_v6.28.06.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz | 302M |
+| Ubuntu 18 | root_v6.28.06.Linux-ubuntu18-x86_64-gcc7.5.tar.gz | 244M |
+| Ubuntu 20 | root_v6.28.06.Linux-ubuntu20-x86_64-gcc9.4.tar.gz | 245M |
+| Ubuntu 22 | root_v6.28.06.Linux-ubuntu22-x86_64-gcc11.4.tar.gz | 292M |
+| macOS 11.7 arm64 Xcode 12 | root_v6.28.06.macos-11.7-arm64-clang120.pkg | 345M |
+| macOS 11.7 arm64 Xcode 12 | root_v6.28.06.macos-11.7-arm64-clang120.tar.gz | 224M |
+| macOS 11.7 x86_64 Xcode 12 | root_v6.28.06.macos-11.7-x86_64-clang120.pkg | 360M |
+| macOS 11.7 x86_64 Xcode 12 | root_v6.28.06.macos-11.7-x86_64-clang120.tar.gz | 235M |
+| macOS 12.6 arm64 Xcode 14 | root_v6.28.06.macos-12.6-arm64-clang140.pkg | 343M |
+| macOS 12.6 arm64 Xcode 14 | root_v6.28.06.macos-12.6-arm64-clang140.tar.gz | 223M |
+| macOS 12.6 x86_64 Xcode 14 | root_v6.28.06.macos-12.6-x86_64-clang140.pkg | 356M |
+| macOS 12.6 x86_64 Xcode 14 | root_v6.28.06.macos-12.6-x86_64-clang140.tar.gz | 234M |
+| macOS 13.5 arm64 Xcode 14 | root_v6.28.06.macos-13.5-arm64-clang140.pkg | 355M |
+| macOS 13.5 arm64 Xcode 14 | root_v6.28.06.macos-13.5-arm64-clang140.tar.gz | 230M |
+| macOS 13.5 x86_64 Xcode 14 | root_v6.28.06.macos-13.5-x86_64-clang140.pkg | 369M |
+| macOS 13.5 x86_64 Xcode 14 | root_v6.28.06.macos-13.5-x86_64-clang140.tar.gz | 241M |
+| Windows Visual Studio 2022 32-bit x86  (debug) | root_v6.28.06.win32.vc17.debug.exe | 234M |
+| Windows Visual Studio 2022 32-bit x86  (debug) | root_v6.28.06.win32.vc17.debug.zip | 354M |
+| Windows Visual Studio 2022 32-bit x86  | root_v6.28.06.win32.vc17.exe | 120M |
+| Windows Visual Studio 2022 32-bit x86  | root_v6.28.06.win32.vc17.zip | 165M |
+| Windows Visual Studio 2022 64-bit x64  | root_v6.28.06.win64.vc17.exe | 126M |
+| Windows Visual Studio 2022 64-bit x64  | root_v6.28.06.win64.vc17.zip | 173M |
 
 ## Installations in CVMFS
 
