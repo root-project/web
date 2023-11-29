@@ -11,6 +11,9 @@ sidebar:
 ---
 
 
+## Retracted
+Due to a [security vulnerability](/about/security#known-security-issues), this version of ROOT has been retracted; please upgrade to [v6.26/14](/releases/release-62614).
+
 ## Release Notes
 
 The release notes for this release can be found [here](https://root.cern/doc/v626/release-notes.html#release-6.2602).
@@ -19,35 +22,35 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| source | [root_v6.26.02.source.tar.gz](https://root.cern/download/root_v6.26.02.source.tar.gz) | 185M |
+| source | root_v6.26.02.source.tar.gz | 185M |
 
 
 ## Binary distributions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| CentOS 8 | [root_v6.26.02.Linux-centos8-x86_64-gcc8.5.tar.gz](https://root.cern/download/root_v6.26.02.Linux-centos8-x86_64-gcc8.5.tar.gz) | 209M |
-| Fedora 32 | [root_v6.26.02.Linux-fedora32-x86_64-gcc10.3.tar.gz](https://root.cern/download/root_v6.26.02.Linux-fedora32-x86_64-gcc10.3.tar.gz) | 231M |
-| Fedora 34 | [root_v6.26.02.Linux-fedora34-x86_64-gcc11.2.tar.gz](https://root.cern/download/root_v6.26.02.Linux-fedora34-x86_64-gcc11.2.tar.gz) | 279M |
-| Ubuntu 18 | [root_v6.26.02.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.26.02.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 225M |
-| Ubuntu 20 | [root_v6.26.02.Linux-ubuntu20-x86_64-gcc9.4.tar.gz](https://root.cern/download/root_v6.26.02.Linux-ubuntu20-x86_64-gcc9.4.tar.gz) | 227M |
-| Ubuntu 22 | [root_v6.26.02.Linux-ubuntu22-x86_64-gcc11.2.tar.gz](https://root.cern/download/root_v6.26.02.Linux-ubuntu22-x86_64-gcc11.2.tar.gz) | 268M |
-| macOS 10.15 x86_64 Xcode 12 | [root_v6.26.02.macos-10.15-x86_64-clang120.pkg](https://root.cern/download/root_v6.26.02.macos-10.15-x86_64-clang120.pkg) | 336M |
-| macOS 10.15 x86_64 Xcode 12 | [root_v6.26.02.macos-10.15-x86_64-clang120.tar.gz](https://root.cern/download/root_v6.26.02.macos-10.15-x86_64-clang120.tar.gz) | 218M |
-| macOS 11.6 arm64 Xcode 12 | [root_v6.26.02.macos-11.6-arm64-clang120.pkg](https://root.cern/download/root_v6.26.02.macos-11.6-arm64-clang120.pkg) | 319M |
-| macOS 11.6 arm64 Xcode 12 | [root_v6.26.02.macos-11.6-arm64-clang120.tar.gz](https://root.cern/download/root_v6.26.02.macos-11.6-arm64-clang120.tar.gz) | 205M |
-| macOS 11.6 x86_64 Xcode 12 | [root_v6.26.02.macos-11.6-x86_64-clang120.pkg](https://root.cern/download/root_v6.26.02.macos-11.6-x86_64-clang120.pkg) | 334M |
-| macOS 11.6 x86_64 Xcode 12 | [root_v6.26.02.macos-11.6-x86_64-clang120.tar.gz](https://root.cern/download/root_v6.26.02.macos-11.6-x86_64-clang120.tar.gz) | 218M |
-| macOS 12.3 arm64 Xcode 13 | [root_v6.26.02.macos-12.3-arm64-clang131.pkg](https://root.cern/download/root_v6.26.02.macos-12.3-arm64-clang131.pkg) | 320M |
-| macOS 12.3 arm64 Xcode 13 | [root_v6.26.02.macos-12.3-arm64-clang131.tar.gz](https://root.cern/download/root_v6.26.02.macos-12.3-arm64-clang131.tar.gz) | 206M |
-| macOS 12.3 x86_64 Xcode 13 | [root_v6.26.02.macos-12.3-x86_64-clang131.pkg](https://root.cern/download/root_v6.26.02.macos-12.3-x86_64-clang131.pkg) | 335M |
-| macOS 12.3 x86_64 Xcode 13 | [root_v6.26.02.macos-12.3-x86_64-clang131.tar.gz](https://root.cern/download/root_v6.26.02.macos-12.3-x86_64-clang131.tar.gz) | 218M |
-| Windows Visual Studio 2019 32-bit x86  (debug) | [root_v6.26.02.win32.vc16.debug.exe](https://root.cern/download/root_v6.26.02.win32.vc16.debug.exe) | 203M |
-| Windows Visual Studio 2019 32-bit x86  (debug) | [root_v6.26.02.win32.vc16.debug.zip](https://root.cern/download/root_v6.26.02.win32.vc16.debug.zip) | 303M |
-| Windows Visual Studio 2019 32-bit x86  | [root_v6.26.02.win32.vc16.exe](https://root.cern/download/root_v6.26.02.win32.vc16.exe) | 105M |
-| Windows Visual Studio 2019 32-bit x86  | [root_v6.26.02.win32.vc16.zip](https://root.cern/download/root_v6.26.02.win32.vc16.zip) | 145M |
-| Windows Visual Studio 2022 64-bit x64  | [root_v6.26.02.win64.vc17.exe](https://root.cern/download/root_v6.26.02.win64.vc17.exe) | 110M |
-| Windows Visual Studio 2022 64-bit x64  | [root_v6.26.02.win64.vc17.zip](https://root.cern/download/root_v6.26.02.win64.vc17.zip) | 152M |
+| CentOS 8 | root_v6.26.02.Linux-centos8-x86_64-gcc8.5.tar.gz | 209M |
+| Fedora 32 | root_v6.26.02.Linux-fedora32-x86_64-gcc10.3.tar.gz | 231M |
+| Fedora 34 | root_v6.26.02.Linux-fedora34-x86_64-gcc11.2.tar.gz | 279M |
+| Ubuntu 18 | root_v6.26.02.Linux-ubuntu18-x86_64-gcc7.5.tar.gz | 225M |
+| Ubuntu 20 | root_v6.26.02.Linux-ubuntu20-x86_64-gcc9.4.tar.gz | 227M |
+| Ubuntu 22 | root_v6.26.02.Linux-ubuntu22-x86_64-gcc11.2.tar.gz | 268M |
+| macOS 10.15 x86_64 Xcode 12 | root_v6.26.02.macos-10.15-x86_64-clang120.pkg | 336M |
+| macOS 10.15 x86_64 Xcode 12 | root_v6.26.02.macos-10.15-x86_64-clang120.tar.gz | 218M |
+| macOS 11.6 arm64 Xcode 12 | root_v6.26.02.macos-11.6-arm64-clang120.pkg | 319M |
+| macOS 11.6 arm64 Xcode 12 | root_v6.26.02.macos-11.6-arm64-clang120.tar.gz | 205M |
+| macOS 11.6 x86_64 Xcode 12 | root_v6.26.02.macos-11.6-x86_64-clang120.pkg | 334M |
+| macOS 11.6 x86_64 Xcode 12 | root_v6.26.02.macos-11.6-x86_64-clang120.tar.gz | 218M |
+| macOS 12.3 arm64 Xcode 13 | root_v6.26.02.macos-12.3-arm64-clang131.pkg | 320M |
+| macOS 12.3 arm64 Xcode 13 | root_v6.26.02.macos-12.3-arm64-clang131.tar.gz | 206M |
+| macOS 12.3 x86_64 Xcode 13 | root_v6.26.02.macos-12.3-x86_64-clang131.pkg | 335M |
+| macOS 12.3 x86_64 Xcode 13 | root_v6.26.02.macos-12.3-x86_64-clang131.tar.gz | 218M |
+| Windows Visual Studio 2019 32-bit x86  (debug) | root_v6.26.02.win32.vc16.debug.exe | 203M |
+| Windows Visual Studio 2019 32-bit x86  (debug) | root_v6.26.02.win32.vc16.debug.zip | 303M |
+| Windows Visual Studio 2019 32-bit x86  | root_v6.26.02.win32.vc16.exe | 105M |
+| Windows Visual Studio 2019 32-bit x86  | root_v6.26.02.win32.vc16.zip | 145M |
+| Windows Visual Studio 2022 64-bit x64  | root_v6.26.02.win64.vc17.exe | 110M |
+| Windows Visual Studio 2022 64-bit x64  | root_v6.26.02.win64.vc17.zip | 152M |
 
 ## Installations in CVMFS
 
