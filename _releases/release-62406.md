@@ -28,9 +28,9 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 |-----------|-------|-----|
 | CentOS 7 | [root_v6.24.06.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.24.06.Linux-centos7-x86_64-gcc4.8.tar.gz) | 183M |
 | Fedora 32 | [root_v6.24.06.Linux-fedora32-x86_64-gcc10.2.tar.gz](https://root.cern/download/root_v6.24.06.Linux-fedora32-x86_64-gcc10.2.tar.gz) | 265M |
-| Ubuntu 16 | [root_v6.24.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.24.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 196M |
-| Ubuntu 18 | [root_v6.24.06.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.24.06.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 256M |
-| Ubuntu 20 | [root_v6.24.06.Linux-ubuntu20-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.24.06.Linux-ubuntu20-x86_64-gcc9.3.tar.gz) | 254M |
+| Ubuntu 16.04 | [root_v6.24.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.24.06.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 196M |
+| Ubuntu 18.04 | [root_v6.24.06.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.24.06.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 256M |
+| Ubuntu 20.04 | [root_v6.24.06.Linux-ubuntu20-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.24.06.Linux-ubuntu20-x86_64-gcc9.3.tar.gz) | 254M |
 | macOS 10.14 x86_64 Xcode 11 | [root_v6.24.06.macos-10.14-x86_64-clang110.pkg](https://root.cern/download/root_v6.24.06.macos-10.14-x86_64-clang110.pkg) | 326M |
 | macOS 10.14 x86_64 Xcode 11 | [root_v6.24.06.macos-10.14-x86_64-clang110.tar.gz](https://root.cern/download/root_v6.24.06.macos-10.14-x86_64-clang110.tar.gz) | 210M |
 | macOS 10.15 x86_64 Xcode 12 | [root_v6.24.06.macos-10.15-x86_64-clang120.pkg](https://root.cern/download/root_v6.24.06.macos-10.15-x86_64-clang120.pkg) | 320M |

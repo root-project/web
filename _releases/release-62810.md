@@ -27,8 +27,8 @@ This way, you will automatically keep up-to-date with the latest stable versions
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | CentOS 8 | [root_v6.28.10.Linux-centos8-x86_64-gcc8.5.tar.gz](https://root.cern/download/root_v6.28.10.Linux-centos8-x86_64-gcc8.5.tar.gz) | 227M |
-| Ubuntu 20 | [root_v6.28.10.Linux-ubuntu20-x86_64-gcc9.4.tar.gz](https://root.cern/download/root_v6.28.10.Linux-ubuntu20-x86_64-gcc9.4.tar.gz) | 246M |
-| Ubuntu 22 | [root_v6.28.10.Linux-ubuntu22-x86_64-gcc11.4.tar.gz](https://root.cern/download/root_v6.28.10.Linux-ubuntu22-x86_64-gcc11.4.tar.gz) | 293M |
+| Ubuntu 20.04 | [root_v6.28.10.Linux-ubuntu20-x86_64-gcc9.4.tar.gz](https://root.cern/download/root_v6.28.10.Linux-ubuntu20-x86_64-gcc9.4.tar.gz) | 246M |
+| Ubuntu 22.04 | [root_v6.28.10.Linux-ubuntu22-x86_64-gcc11.4.tar.gz](https://root.cern/download/root_v6.28.10.Linux-ubuntu22-x86_64-gcc11.4.tar.gz) | 293M |
 | macOS 12.7 arm64 Xcode 14 | [root_v6.28.10.macos-12.7-arm64-clang140.pkg](https://root.cern/download/root_v6.28.10.macos-12.7-arm64-clang140.pkg) | 344M |
 | macOS 12.7 arm64 Xcode 14 | [root_v6.28.10.macos-12.7-arm64-clang140.tar.gz](https://root.cern/download/root_v6.28.10.macos-12.7-arm64-clang140.tar.gz) | 224M |
 | macOS 12.7 x86_64 Xcode 14 | [root_v6.28.10.macos-12.7-x86_64-clang140.pkg](https://root.cern/download/root_v6.28.10.macos-12.7-x86_64-clang140.pkg) | 357M |

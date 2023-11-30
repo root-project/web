@@ -50,10 +50,10 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | CentOS Cern 7 gcc4.8 | [root_v6.20.00.Linux-centos7-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.20.00.Linux-centos7-x86_64-gcc4.8.tar.gz) | 184M |
 | Linux fedora29 gcc8.3 | [root_v6.20.00.Linux-fedora29-x86_64-gcc8.3.tar.gz](https://root.cern/download/root_v6.20.00.Linux-fedora29-x86_64-gcc8.3.tar.gz) | 218M |
 | Linux fedora30 gcc9.2 | [root_v6.20.00.Linux-fedora30-x86_64-gcc9.2.tar.gz](https://root.cern/download/root_v6.20.00.Linux-fedora30-x86_64-gcc9.2.tar.gz) | 223M |
-| Ubuntu 14 gcc4.8 | [root_v6.20.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.20.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 190M |
-| Ubuntu 16 gcc5.4 | [root_v6.20.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.20.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 197M |
-| Ubuntu 18 gcc7.4 | [root_v6.20.00.Linux-ubuntu18-x86_64-gcc7.4.tar.gz](https://root.cern/download/root_v6.20.00.Linux-ubuntu18-x86_64-gcc7.4.tar.gz) | 216M |
-| Ubuntu 19 gcc8.3 | [root_v6.20.00.Linux-ubuntu19-x86_64-gcc8.3.tar.gz](https://root.cern/download/root_v6.20.00.Linux-ubuntu19-x86_64-gcc8.3.tar.gz) | 216M |
+| Ubuntu 14.04 gcc4.8 | [root_v6.20.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz](https://root.cern/download/root_v6.20.00.Linux-ubuntu14-x86_64-gcc4.8.tar.gz) | 190M |
+| Ubuntu 16.04 gcc5.4 | [root_v6.20.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.20.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 197M |
+| Ubuntu 18.04 gcc7.4 | [root_v6.20.00.Linux-ubuntu18-x86_64-gcc7.4.tar.gz](https://root.cern/download/root_v6.20.00.Linux-ubuntu18-x86_64-gcc7.4.tar.gz) | 216M |
+| Ubuntu 19.04 gcc8.3 | [root_v6.20.00.Linux-ubuntu19-x86_64-gcc8.3.tar.gz](https://root.cern/download/root_v6.20.00.Linux-ubuntu19-x86_64-gcc8.3.tar.gz) | 216M |
 | macOS 10.13 clang100 | [root_v6.20.00.macosx64-10.13-clang100.tar.gz](https://root.cern/download/root_v6.20.00.macosx64-10.13-clang100.tar.gz) | 133M |
 | macOS 10.13 clang100 | [root_v6.20.00.macosx64-10.13-clang100.pkg](https://root.cern/download/root_v6.20.00.macosx64-10.13-clang100.pkg) | 134M |
 | macOS 10.14 clang110 | [root_v6.20.00.macosx64-10.14-clang110.tar.gz](https://root.cern/download/root_v6.20.00.macosx64-10.14-clang110.tar.gz) | 134M |

@@ -34,9 +34,9 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 |-----------|-------|-----|
 | CentOS 8 | root_v6.28.02.Linux-centos8-x86_64-gcc8.5.tar.gz | 224M |
 | Fedora 36 | root_v6.28.02.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz | 300M |
-| Ubuntu 18 | root_v6.28.02.Linux-ubuntu18-x86_64-gcc7.5.tar.gz | 242M |
-| Ubuntu 20 | root_v6.28.02.Linux-ubuntu20-x86_64-gcc9.4.tar.gz | 244M |
-| Ubuntu 22 | root_v6.28.02.Linux-ubuntu22-x86_64-gcc11.3.tar.gz | 290M |
+| Ubuntu 18.04 | root_v6.28.02.Linux-ubuntu18-x86_64-gcc7.5.tar.gz | 242M |
+| Ubuntu 20.04 | root_v6.28.02.Linux-ubuntu20-x86_64-gcc9.4.tar.gz | 244M |
+| Ubuntu 22.04 | root_v6.28.02.Linux-ubuntu22-x86_64-gcc11.3.tar.gz | 290M |
 | macOS 11.7 arm64 Xcode 12 | root_v6.28.02.macos-11.7-arm64-clang120.pkg | 343M |
 | macOS 11.7 arm64 Xcode 12 | root_v6.28.02.macos-11.7-arm64-clang120.tar.gz | 223M |
 | macOS 11.7 x86_64 Xcode 12 | root_v6.28.02.macos-11.7-x86_64-clang120.pkg | 358M |
