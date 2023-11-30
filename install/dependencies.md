@@ -137,7 +137,7 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 *   **libxext-dev:** for /usr/include/X11/extensions/shape.h and for /usr/lib/libXext.so
 *   **libpng:** png library
 *   **libjpeg:** jpeg library
-*   **python:** (ROOT6 requires version >= 2.7)
+*   **python3:** (ROOT6 requires version >= 3)
 *   **libssl-dev:** for `/usr/include/openssl/pem.h`, `/usr/lib/libssl.so` and `/usr/lib/libcrypto.so` (on older systems the package might be called `openssl-dev`)
 *   **libafterimage0** for `/lib/x86_64-linux-gnu/libAfterImage.so.0` and `/lib/x86_64-linux-gnu/libAfterBase.so.0`
 
@@ -145,7 +145,7 @@ As a one-liner:
 
 ```bash
 sudo apt-get install dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
-libxft-dev libxext-dev python libssl-dev libafterimage0
+libxft-dev libxext-dev python3 libssl-dev libafterimage0
 ```
 
 ### Most common optional packages
@@ -161,8 +161,8 @@ libxft-dev libxext-dev python libssl-dev libafterimage0
 *   **graphviz-dev:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
 *   **libavahi-compat-libdnssd-dev:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **libldap2-dev:** for /usr/include/ldap.h and for /usr/lib/libldap.so
-*   **python-dev:** for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
-*   **python-numpy:** needed for PyMVA
+*   **python3-dev:** for /usr/include/python3.10/Python.h and for /usr/lib/libpython3.10.so
+*   **python3-numpy:** needed for PyMVA
 *   **libxml2-dev:** for /usr/bin/xml2-config
 *   **libkrb5-dev:** for /usr/include/krb5.h and for /usr/lib/libkrb5.so
 *   **libgsl0-dev:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
@@ -176,7 +176,7 @@ sudo apt-get install gfortran libpcre3-dev \
 xlibmesa-glu-dev libglew-dev libftgl-dev \
 libmysqlclient-dev libfftw3-dev libcfitsio-dev \
 graphviz-dev libavahi-compat-libdnssd-dev \
-libldap2-dev python-dev python-numpy libxml2-dev libkrb5-dev \
+libldap2-dev python3-dev python3-numpy libxml2-dev libkrb5-dev \
 libgsl0-dev qtwebengine5-dev
 ```
 
