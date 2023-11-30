@@ -15,7 +15,7 @@ The table of content can be used to quickly jump to your operating system.
 
 ### From v6.30:
 - C++17 support is required
-- GCC 7 or later is supported
+- GCC 8 or later is supported
 - Clang 6 or later is supported
 
 ### From v6.26:
