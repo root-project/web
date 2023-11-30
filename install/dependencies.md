@@ -134,12 +134,13 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 *   **libjpeg:** jpeg library
 *   **python:** (ROOT6 requires version >= 2.7)
 *   **libssl-dev:** for `/usr/include/openssl/pem.h`, `/usr/lib/libssl.so` and `/usr/lib/libcrypto.so` (on older systems the package might be called `openssl-dev`)
+*   **libafterimage0** for `/lib/x86_64-linux-gnu/libAfterImage.so.0` and `/lib/x86_64-linux-gnu/libAfterBase.so.0`
 
 As a one-liner:
 
 ```bash
 sudo apt-get install dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
-libxft-dev libxext-dev python libssl-dev
+libxft-dev libxext-dev python libssl-dev libafterimage0
 ```
 
 ### Most common optional packages
