@@ -33,10 +33,10 @@ This release is the only one offering Windows binaries, due to virus scanner fal
 | Fedora 30 | [root_v6.22.08.Linux-fedora30-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.22.08.Linux-fedora30-x86_64-gcc9.3.tar.gz) | 226M |
 | Fedora 31 | [root_v6.22.08.Linux-fedora31-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.22.08.Linux-fedora31-x86_64-gcc9.3.tar.gz) | 226M |
 | Fedora 32 | [root_v6.22.08.Linux-fedora32-x86_64-gcc10.2.tar.gz](https://root.cern/download/root_v6.22.08.Linux-fedora32-x86_64-gcc10.2.tar.gz) | 228M |
-| Ubuntu 16 | [root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 201M |
-| Ubuntu 18 | [root_v6.22.08.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.22.08.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 219M |
-| Ubuntu 19 | [root_v6.22.08.Linux-ubuntu19-x86_64-gcc9.2.tar.gz](https://root.cern/download/root_v6.22.08.Linux-ubuntu19-x86_64-gcc9.2.tar.gz) | 224M |
-| Ubuntu 20 | [root_v6.22.08.Linux-ubuntu20-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.22.08.Linux-ubuntu20-x86_64-gcc9.3.tar.gz) | 225M |
+| Ubuntu 16.04 | [root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 201M |
+| Ubuntu 18.04 | [root_v6.22.08.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.22.08.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 219M |
+| Ubuntu 19.04 | [root_v6.22.08.Linux-ubuntu19-x86_64-gcc9.2.tar.gz](https://root.cern/download/root_v6.22.08.Linux-ubuntu19-x86_64-gcc9.2.tar.gz) | 224M |
+| Ubuntu 20.04 | [root_v6.22.08.Linux-ubuntu20-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.22.08.Linux-ubuntu20-x86_64-gcc9.3.tar.gz) | 225M |
 | macOS 10.14 x86_64 Xcode 10 | [root_v6.22.08.macos-10.14-x86_64-clang100.pkg](https://root.cern/download/root_v6.22.08.macos-10.14-x86_64-clang100.pkg) | 315M |
 | macOS 10.14 x86_64 Xcode 10 | [root_v6.22.08.macos-10.14-x86_64-clang100.tar.gz](https://root.cern/download/root_v6.22.08.macos-10.14-x86_64-clang100.tar.gz) | 200M |
 | macOS 10.15 x86_64 Xcode 12 | [root_v6.22.08.macos-10.15-x86_64-clang120.pkg](https://root.cern/download/root_v6.22.08.macos-10.15-x86_64-clang120.pkg) | 309M |

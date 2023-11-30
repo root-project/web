@@ -30,10 +30,10 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | Fedora 29 | [root_v6.20.08.Linux-fedora29-x86_64-gcc8.3.tar.gz](https://root.cern/download/root_v6.20.08.Linux-fedora29-x86_64-gcc8.3.tar.gz) | 218M |
 | Fedora 30 | [root_v6.20.08.Linux-fedora30-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.20.08.Linux-fedora30-x86_64-gcc9.3.tar.gz) | 223M |
 | Fedora 31 | [root_v6.20.08.Linux-fedora31-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.20.08.Linux-fedora31-x86_64-gcc9.3.tar.gz) | 223M |
-| Ubuntu 16 | [root_v6.20.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.20.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 197M |
-| Ubuntu 18 | [root_v6.20.08.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.20.08.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 216M |
-| Ubuntu 19 | [root_v6.20.08.Linux-ubuntu19-x86_64-gcc9.2.tar.gz](https://root.cern/download/root_v6.20.08.Linux-ubuntu19-x86_64-gcc9.2.tar.gz) | 221M |
-| Ubuntu 20 | [root_v6.20.08.Linux-ubuntu20-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.20.08.Linux-ubuntu20-x86_64-gcc9.3.tar.gz) | 221M |
+| Ubuntu 16.04 | [root_v6.20.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.20.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 197M |
+| Ubuntu 18.04 | [root_v6.20.08.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.20.08.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 216M |
+| Ubuntu 19.04 | [root_v6.20.08.Linux-ubuntu19-x86_64-gcc9.2.tar.gz](https://root.cern/download/root_v6.20.08.Linux-ubuntu19-x86_64-gcc9.2.tar.gz) | 221M |
+| Ubuntu 20.04 | [root_v6.20.08.Linux-ubuntu20-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.20.08.Linux-ubuntu20-x86_64-gcc9.3.tar.gz) | 221M |
 | macOS 10.13 Xcode 10 | [root_v6.20.08.macosx64-10.13-clang100.pkg](https://root.cern/download/root_v6.20.08.macosx64-10.13-clang100.pkg) | 134M |
 | macOS 10.13 Xcode 10 | [root_v6.20.08.macosx64-10.13-clang100.tar.gz](https://root.cern/download/root_v6.20.08.macosx64-10.13-clang100.tar.gz) | 133M |
 | macOS 10.14 Xcode 10 | [root_v6.20.08.macosx64-10.14-clang100.pkg](https://root.cern/download/root_v6.20.08.macosx64-10.14-clang100.pkg) | 134M |

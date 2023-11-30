@@ -58,10 +58,10 @@ The release notes for this release can be found [here](https://root.cern/doc/v62
 | Fedora 30 | [root_v6.24.00.Linux-fedora30-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.24.00.Linux-fedora30-x86_64-gcc9.3.tar.gz) | 219M |
 | Fedora 31 | [root_v6.24.00.Linux-fedora31-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.24.00.Linux-fedora31-x86_64-gcc9.3.tar.gz) | 220M |
 | Fedora 32 | [root_v6.24.00.Linux-fedora32-x86_64-gcc10.2.tar.gz](https://root.cern/download/root_v6.24.00.Linux-fedora32-x86_64-gcc10.2.tar.gz) | 224M |
-| Ubuntu 16 | [root_v6.24.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.24.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 196M |
-| Ubuntu 18 | [root_v6.24.00.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.24.00.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 214M |
-| Ubuntu 19 | [root_v6.24.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz](https://root.cern/download/root_v6.24.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz) | 215M |
-| Ubuntu 20 | [root_v6.24.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.24.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz) | 216M |
+| Ubuntu 16.04 | [root_v6.24.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz](https://root.cern/download/root_v6.24.00.Linux-ubuntu16-x86_64-gcc5.4.tar.gz) | 196M |
+| Ubuntu 18.04 | [root_v6.24.00.Linux-ubuntu18-x86_64-gcc7.5.tar.gz](https://root.cern/download/root_v6.24.00.Linux-ubuntu18-x86_64-gcc7.5.tar.gz) | 214M |
+| Ubuntu 19.04 | [root_v6.24.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz](https://root.cern/download/root_v6.24.00.Linux-ubuntu19-x86_64-gcc9.2.tar.gz) | 215M |
+| Ubuntu 20.04 | [root_v6.24.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz](https://root.cern/download/root_v6.24.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz) | 216M |
 | macOS 10.14 x86_64 Xcode 11 | [root_v6.24.00.macos-10.14-x86_64-clang110.pkg](https://root.cern/download/root_v6.24.00.macos-10.14-x86_64-clang110.pkg) | 327M |
 | macOS 10.14 x86_64 Xcode 11 | [root_v6.24.00.macos-10.14-x86_64-clang110.tar.gz](https://root.cern/download/root_v6.24.00.macos-10.14-x86_64-clang110.tar.gz) | 210M |
 | macOS 10.15 x86_64 Xcode 12 | [root_v6.24.00.macos-10.15-x86_64-clang120.pkg](https://root.cern/download/root_v6.24.00.macos-10.15-x86_64-clang120.pkg) | 321M |

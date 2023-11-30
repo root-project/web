@@ -31,10 +31,10 @@ This release contains several crucial bug fixes; please consider upgrading.
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | CentOS 8 | root_v6.28.06.Linux-centos8-x86_64-gcc8.5.tar.gz | 225M |
-| Fedoraversion_id= 36 | root_v6.28.06.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz | 302M |
-| Ubuntu 18 | root_v6.28.06.Linux-ubuntu18-x86_64-gcc7.5.tar.gz | 244M |
-| Ubuntu 20 | root_v6.28.06.Linux-ubuntu20-x86_64-gcc9.4.tar.gz | 245M |
-| Ubuntu 22 | root_v6.28.06.Linux-ubuntu22-x86_64-gcc11.4.tar.gz | 292M |
+| Fedora 36 | root_v6.28.06.Linux-fedoraVERSION_ID=36-x86_64-gcc12.2.tar.gz | 302M |
+| Ubuntu 18.04 | root_v6.28.06.Linux-ubuntu18-x86_64-gcc7.5.tar.gz | 244M |
+| Ubuntu 20.04 | root_v6.28.06.Linux-ubuntu20-x86_64-gcc9.4.tar.gz | 245M |
+| Ubuntu 22.04 | root_v6.28.06.Linux-ubuntu22-x86_64-gcc11.4.tar.gz | 292M |
 | macOS 11.7 arm64 Xcode 12 | root_v6.28.06.macos-11.7-arm64-clang120.pkg | 345M |
 | macOS 11.7 arm64 Xcode 12 | root_v6.28.06.macos-11.7-arm64-clang120.tar.gz | 224M |
 | macOS 11.7 x86_64 Xcode 12 | root_v6.28.06.macos-11.7-x86_64-clang120.pkg | 360M |
