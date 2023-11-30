@@ -13,6 +13,11 @@ The table of content can be used to quickly jump to your operating system.
 
 ## Supported compilers
 
+### From v6.28:
+- C++17 support is required
+- GCC 7 or later is supported
+- Clang 6 or later is supported
+
 ### From v6.26:
 - C++14 support is required
 - GCC 5 or later is supported
