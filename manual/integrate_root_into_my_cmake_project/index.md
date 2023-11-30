@@ -19,6 +19,7 @@ ROOT_LIBRARIES   |  LIST | Libraries to link against. The actual list of librari
 ROOT_DEFINITIONS  | STRING | Compile definitions needed to use ROOT.
 ROOT_CXX_FLAGS  | STRING | C++ compiler flags used to build ROOT.
 ROOT_CC_FLAGS  | STRING | C compiler flags used to build ROOT.
+ROOT_CXX_STANDARD  | STRING | C++ standard used to build ROOT.
 ROOT\_<library\>_LIBRARY |  PATH | Full path for each of the ROOT libraries listed in COMPONENTS.
 ROOT\_<command\>_CMD | PATH | Full path for each ROOT executable (rootcling, root, hadd, etc.).
 ROOT\_<option\>_FOUND  | BOOL |  TRUE for each enabled build option (e.g. cocoa, python, xrootd, etc.).
@@ -31,7 +32,7 @@ One [CMake](https://cmake.org){:target="_blank"} target per ROOT library is also
 >
 > To ensure compatibility between ROOT's C++ interpreter, Cling, and compiled code, your
 > application *must* be compiled with the same C++ standard with which ROOT was compiled.<br/>
-> The C++ standard used for ROOT appears for example among the flags listed by
+> The C++ standard used to build ROOT is available via the ROOT_CXX_STANDARD variable and appears also among the flags listed by
 > `root-config --cflags`.
 
 ## Adding additional libraries to `ROOT_LIBRARIES`
