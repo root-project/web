@@ -18,6 +18,6 @@ Major version changes in ROOT are exceedingly rare, and indicate large backward 
 
 **Across minor versions** (e.g. between 6.28 and 6.30) ROOT does not fully guarantee **user code backward compatibility**, i.e. "your source code might not compile in some cases". You can expect that any such breakage to existing code should be called out in the release notes, and it will most commonly be preceded by deprecation warnings. If not, please [report the problem](https://github.com/root-project/root/issues/new/choose) as a bug.
 
-**Across patch releases** ROOT guarantees **user code backward compatibility**, i.e. "your source code will still compile". If not, please [report the problem](https://github.com/root-project/root/issues/new/choose) as a bug. We reserve the right to add default parameters to function signatures and make other minor changes to APIs that will not break the vast majority of client code.
+**Across patch releases** (e.g. between 6.28.04 and 6.28.08) ROOT guarantees **user code backward compatibility**, i.e. "your source code will still compile". If not, please [report the problem](https://github.com/root-project/root/issues/new/choose) as a bug. We reserve the right to add default parameters to function signatures and make other minor changes to APIs that will not break the vast majority of client code.
 
 **ROOT does not guarantee ABI backward compatibility** across versions.
