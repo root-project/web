@@ -8,9 +8,9 @@ sidebar:
 ### What this covers
 
 We use the following versioning scheme `v6.MM/PP` (text) or `v6-MM-PP` (git tag):
-  - production releases have even numbers `MM`; development releases have odd numbers `MM`
-  - releases always have even numbers `PP`; ROOT outside a tag has odd numbers `PP`
-  - release candidates have `-rcN` attached, with `N` starting with 1 and counting up, e.g. `v6-22-00-rc1` is the first release candidate for v6.22/00.
+  - `MM`: even numbers for production releases; odd for development releases
+  - `PP`: even for releases; odd for ROOT commits outside a tag
+  - release candidates are development releases.
 
 See also [ROOT versioning scheme]({{ 'about/versioning/' | relative_url }}) for a more public-facing description.
 
