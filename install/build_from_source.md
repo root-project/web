@@ -163,7 +163,9 @@ The relevant cmake flag is [`CMAKE_CXX_STANDARD`](https://cmake.org/cmake/help/l
 For example, from the command line, the standard can be selected by passing one of 11, 14, 17,... such as `-DCMAKE_CXX_STANDARD=17`.
 Generally speaking, newer standards are only supported by newer ROOT versions.
 
-C++11 is supported until ROOT v6.24: subsequent versions require at least C++14.
+### Minimal C++ standards
+- C++11 is supported until ROOT v6.24: subsequent versions require at least C++14.
+- C++14 is supported until ROOT v6.28: subsequent versions require at least C++17.
 
 
 ### ROOT STL backports
