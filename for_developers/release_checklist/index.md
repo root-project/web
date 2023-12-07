@@ -39,8 +39,11 @@ This assumes you try to create `v6-32-00-patches`, adjust accordingly.
       - in the web site repository, in the file [`reference/index.md`]({{'reference' | relative_url }}),
         add the line corresponding to this release.
   1. Update version number
-      - Change `build/version_number` to `6.31/99` in preparation of `v6.32/00`.
-      - Run from the build directory `$ cmake .; make version`
+      - Since 6.30:
+        - Change `core/foundation/inc/ROOT/RVersion.hxx` to `6.31.99` in preparation of `v6.32.00`.
+      - Before 6.30:
+        - Change `build/version_number` to `6.31/99` in preparation of `v6.32/00`.
+        - Run from the build directory `$ cmake .; make version`
   1. Tag the release candidate: `git tag -a v6-32-00-rc1`
   1. Push tags and branches
       - `git push origin v6-32-00-patches` (for root.git and roottest.git)
@@ -59,7 +62,7 @@ This assumes you try to create `v6-32-00-patches`, adjust accordingly.
   1. Check that all the [Jenkins nightlies](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/){:target="_blank"} and [Jenkins release builds](https://lcgapp-services.cern.ch/root-jenkins/view/Releases/){:target="_blank"} builds are green
   1. Run with `valgrind` on `python tutorials/pyroot/hsimple.py`, `tree/dataframe/test/dataframe_concurrency`, and `./roofit/roofit/test/testRooParamHistFunc`; make sure no memory errors are reported after applying `--suppressions=$ROOTSYS/etc/valgrind-root.supp` and `--suppressions=$ROOTSYS/etc/valgrind-root-python.supp`
   1. Verify that no performance regressions exist in the [benchmark system](https://rootbnch-grafana-test.cern.ch/){:target="_blank"}
-  1. **MUST** update the potentially security relevant builtin externals: `openssl` (see `builtins/openssl/CMakeLists.txt`), `net/http/civetweb`, xrootd (see `builtins/xrootd/CMakeLists.txt`)
+  1. **MUST** update the potentially security relevant builtin externals: `openssl` (see `builtins/openssl/CMakeLists.txt`), `net/http/civetweb`, xrootd (see `builtins/xrootd/CMakeLists.txt`), davix (see `builtins/davix/CMakeLists.txt`).
   1. Should update other builtin externals, see `builtins/`
   1. If this is not a development release nor a release candidate, update the release notes in `README/ReleaseNotes/vXXX/index.md`. If this is a patch release, edit release notes patches section at the end of the document.
       - Insert the list of fixed bugs and enhancements etc behind the general release announcement for that version. They come from both Jira and Github:
@@ -72,11 +75,13 @@ This assumes you try to create `v6-32-00-patches`, adjust accordingly.
         * Go to this version's [GitHub project](https://github.com/root-project/root/projects/) (e.g. [Fixed in 6.32/08](https://github.com/root-project/root/projects/10) when releasing 6.32/08). On the right column header, click "<" until the column header reads "Menu" with a hamburger menu next to it. Below, to the right, you see "...". Click, select "Copy", and enter the name of the *next* production or patch release. Don't forget to remove the leading "[COPY]"! Owner is `root-project/root`.
         * In "..." next to the currently to-be-released version's [GitHub project](https://github.com/root-project/root/projects/), hit "Close project". (No more bugs will be fixed in it: we are releasing it!)
       - Commit your new release notes: `git commit README/ReleaseNotes/v632/index.md`
-  1. Update version number
-      - Edit `build/version_number`. For release candidates, leave the version number at the development release number corresponding to the `-rc1` candidate.
-      - Run from the build directory `$ cmake . && make && make version`
+  1. Update the version number
+      - Since 6.30: edit `core/foundation/inc/ROOT/RVersion.hxx`.
+      - Before 6.30:
+        - Edit `build/version_number`. For release candidates, leave the version number at the development release number corresponding to the `-rc1` candidate.
+        - Run from the build directory `$ cmake . && make && make version`
   1. Tag main ROOT repository
-      - `git tag -a v6-32-02`
+        - `git tag -a v6-32-02`
   1. Git pull and git tag ROOTTEST repository
   1. Make source tar file and copy to ftp area on root.cern
       - Run from the build directory `$ make distsrc` _[not on a MacOS machine](https://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-on-os-x-give-errors-when-unt){:target="_blank"}_
@@ -85,11 +90,11 @@ This assumes you try to create `v6-32-00-patches`, adjust accordingly.
       - Copy from `README/ReleaseNotes/empty.md`, adjust version numbers.
       - `git commit README/ReleaseNotes/vXXX/index.md`
   1. Update to the next development version
-      - Edit build/version_number (odd patch number)
-      - `$ cmake . && make version`
+      - Since 6.30, edit `core/foundation/inc/ROOT/RVersion.hxx` (odd patch number)
+      - Before 6.30, edit `build/version_number` (odd patch number); `$ cmake . && make version`
   1. Fix build errors!
-      - Deprecations will now create build errors, fix them
       - `make` must succeed
+      - Deprecations will now create build errors, fix them
   1. Push to GitHub
       - `git push origin v6-32-02`
   1. Update the stable branch. The command below creates a commit that appears as a merge to git porcelain commands, but that directly points to the tree given by the `LATEST_STABLE` commit-ish. Users that have cloned this branch will receive updates as a fast-forward via `git pull`
