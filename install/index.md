@@ -318,26 +318,34 @@ C:\Users\username>cmake --build . --config Release --target install
 C:\Users\username>..\root_install\bin\thisroot.bat
 ```
 
-# Using ROOT in Gitlab CI/CD
+# ROOT in Gitlab CI/CD (CERN)
 
-Here is an example on how to add ROOT into a Gitlab CI/CD from CVMFS, provided by one of our user on the [ROOT Forum](https://root-forum.cern.ch/t/gitlab-ci-using-root/57375/9):
+Below are practical examples demonstrating how to integrate ROOT into a GitLab CI/CD instance, provided by one of our users on the ROOT Forum.
+
+## Using CVMFS
+
+```yml
+#image:
+
+your_task:
+stage: build
+script:
+- echo "CERN CVMFS repository"
+- ls -ls /cvmfs/sft.cern.ch/lcg/app/releases/
+tags:
+- cvmfs
+```
+
+## Using Docker containers
 
 ```yml
 image: rootproject/root:latest
 
-cmvfs:
-  stage: build
-  script:
-    - echo "CERN CVMFS repository"
-    - ls -ls /cvmfs/sft.cern.ch/lcg/app/releases/
-  tags:
-    - cvmfs
-
-root:
-  stage: build
-  script:
-    - echo -ne "ROOT Version "
-    - which root
-    - echo "ROOT Features"
-    - root-config --features
+your_task:
+stage: build
+script:
+- echo -ne "ROOT Version "
+- which root
+- echo "ROOT Features"
+- root-config --features
 ```
