@@ -59,6 +59,8 @@ This assumes you try to create `v6-32-00-patches`, adjust accordingly.
   1. Check that all the [Jenkins nightlies](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/){:target="_blank"} and [Jenkins release builds](https://lcgapp-services.cern.ch/root-jenkins/view/Releases/){:target="_blank"} builds are green
   1. Run with `valgrind` on `python tutorials/pyroot/hsimple.py`, `tree/dataframe/test/dataframe_concurrency`, and `./roofit/roofit/test/testRooParamHistFunc`; make sure no memory errors are reported after applying `--suppressions=$ROOTSYS/etc/valgrind-root.supp` and `--suppressions=$ROOTSYS/etc/valgrind-root-python.supp`
   1. Verify that no performance regressions exist in the [benchmark system](https://rootbnch-grafana-test.cern.ch/){:target="_blank"}
+  1. **MUST** update the potentially security relevant builtin externals: `openssl` (see `builtins/openssl/CMakeLists.txt`), `net/http/civetweb`, xrootd (see `builtins/xrootd/CMakeLists.txt`)
+  1. Should update other builtin externals, see `builtins/`
   1. If this is not a development release nor a release candidate, update the release notes in `README/ReleaseNotes/vXXX/index.md`. If this is a patch release, edit release notes patches section at the end of the document.
       - Insert the list of fixed bugs and enhancements etc behind the general release announcement for that version. They come from both Jira and Github:
       - Jira project management
