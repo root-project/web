@@ -168,6 +168,7 @@ libxft-dev libxext-dev python3 libssl-dev libafterimage0
 *   **libgsl0-dev:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
 *   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 *   **qtwebengine5-dev:** required for **qt5web** component
+*   **nlohmann-json3-dev:** required for **ROOTEve**, **RooFitJSONInterface** and **RooFitMultiProcess**
 
 As a one-liner:
 
@@ -177,7 +178,7 @@ xlibmesa-glu-dev libglew-dev libftgl-dev \
 libmysqlclient-dev libfftw3-dev libcfitsio-dev \
 graphviz-dev libavahi-compat-libdnssd-dev \
 libldap2-dev python3-dev python3-numpy libxml2-dev libkrb5-dev \
-libgsl0-dev qtwebengine5-dev
+libgsl0-dev qtwebengine5-dev nlohmann-json3-dev
 ```
 
 On Debian, substitute `libmysqlclient-dev` with `libmariadb-dev`.
