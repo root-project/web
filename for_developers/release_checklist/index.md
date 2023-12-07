@@ -15,43 +15,42 @@ We use the following versioning scheme `v6.MM/PP` (text) or `v6-MM-PP` (git tag)
 See also [ROOT versioning scheme]({{ 'about/versioning/' | relative_url }}) for a more public-facing description.
 
 This page covers the following:
-- Creation of release branches: production releases (`v6.22/06`) are always tags on a release branch (`v6-22-00-patches`).
+- Creation of release branches: production releases (`v6.32/06`) are always tags on a release branch (`v6-32-00-patches`).
 - Releases: tags and binaries.
 
 ### Create a production release branch from `master`
 
-This assumes you try to create `v6-22-00-patches`, adjust accordingly.
+This assumes you try to create `v6-32-00-patches`, adjust accordingly.
 
   1. Create the branch point
       - check out `master`
-      - this requires a new development release, follow "Produce a new ROOT release" below
-      - tag the most recent version update on `master` (`"Update ROOT version files to v6.23/01."`) as `v6-23-01` to give some context to `git describe`.
+      - this requires a new development release as release candidate, follow "Produce a new ROOT release" below
+      - tag the most recent version update on `master` (`"Update ROOT version files to v6.33/01."`) as `v6-33-01` to give some context to `git describe`.
   1. Create the release branch
       - for root.git:
-        * check out the development release tag: `git checkout v6-23-02`
-        * create the branch: `git switch -c v6-22-00-patches`
+        * check out the development release tag: `git checkout v6-33-02`
+        * create the branch: `git switch -c v6-32-00-patches`
       - for roottest.git:
         * check out master
-        * create the branch: `git checkout -b v6-22-00-patches`
+        * create the branch: `git checkout -b v6-32-00-patches`
   1. Update the reference guide build procedure
       - in `documentation/doxygen/Doxyfile` set `GENERATE_QHP          = NO`
       - in `documentation/doxygen/Makefile` remove the line `gzip $(DOXYGEN_IMAGE_PATH)/ROOT.qch`
       - in the web site repository, in the file [`reference/index.md`]({{'reference' | relative_url }}),
         add the line corresponding to this release.
   1. Update version number
-      - Change `build/version_number` to `6.21/99` in preparation of `v6.22/00`.
+      - Change `build/version_number` to `6.31/99` in preparation of `v6.32/00`.
       - Run from the build directory `$ cmake .; make version`
-  1. Tag the release candidate: `git tag -a v6-22-00-rc1`
+  1. Tag the release candidate: `git tag -a v6-32-00-rc1`
   1. Push tags and branches
-      - `git push origin v6-22-00-patches` (for root.git and roottest.git)
-      - `git push origin v6-23-01`
-      - `git push origin v6-22-00-rc1`
+      - `git push origin v6-32-00-patches` (for root.git and roottest.git)
+      - `git push origin v6-33-01`
   1. Create the Jenkins procedures
-      - on [New Release Job](https://lcgapp-services.cern.ch/root-jenkins/view/Releases/newJob) state `root-release-6.22` as "item name" and set (all the way at the bottom) "Copy from" to the release before (`root-release-6.20` in the v6-22 example case); "Add to current view" should be set.
-        * in "This project is parametrized" / "Validating String Parameter" / "VERSION", put "v6-22-00-patches" as "Default Value"
-        * in "Configuration Matrix" / "User-defined Axis" / "V", put "6-22" as "Values"
+      - on [New Release Job](https://lcgapp-services.cern.ch/root-jenkins/view/Releases/newJob) state `root-release-6.32` as "item name" and set (all the way at the bottom) "Copy from" to the release before (`root-release-6.30` in the v6-32 example case); "Add to current view" should be set.
+        * in "This project is parametrized" / "Validating String Parameter" / "VERSION", put "v6-32-00-patches" as "Default Value"
+        * in "Configuration Matrix" / "User-defined Axis" / "V", put "6-32" as "Values"
         * adjust `Node/Label` / `Labels` as needed, update the "Matrix Combination Parameter" `COMBINATIONS` accordingly (you need to click "Advanced..." to actually see it)
-      - on [New Nightly Job](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/newJob) state `root-nightly-v6-22-00-patches` as "item name" and set (all the way at the bottom) "Copy from" to the release before (`root-nightly-v6-20-00-patches` in the v6-22 example case); "Add to current view" should be set.
+      - on [New Nightly Job](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/newJob) state `root-nightly-v6-32-00-patches` as "item name" and set (all the way at the bottom) "Copy from" to the release before (`root-nightly-v6-30-00-patches` in the v6-32 example case); "Add to current view" should be set.
         * Update its values as for the release procedure.
 
 ### Produce a new ROOT release
@@ -63,19 +62,19 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
   1. If this is not a development release nor a release candidate, update the release notes in `README/ReleaseNotes/vXXX/index.md`. If this is a patch release, edit release notes patches section at the end of the document.
       - Insert the list of fixed bugs and enhancements etc behind the general release announcement for that version. They come from both Jira and Github:
       - Jira project management
-        * Create the next patch ("6.22/02") or major ("6.24/00") version in the [project configuration](https://sft.its.cern.ch/jira/plugins/servlet/project-config/ROOT/versions){:target="_blank"}
+        * Create the next patch ("6.32/02") or major ("6.24/00") version in the [project configuration](https://sft.its.cern.ch/jira/plugins/servlet/project-config/ROOT/versions){:target="_blank"}
         * 'Release' the version you want to release, assigning open issues to the next patch or major release.
         * From the [list the versions in JIRA](https://sft.its.cern.ch/jira/projects/ROOT?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&status=released){:target="_blank"}, select the version and then 'release notes'
       - GitHub project management
-        * Run `python3 ./get_solved_issues.py --project-name 6.22/02` to copy and paste the fixed GitHub issues into the release notes.
-        * Go to this version's [GitHub project](https://github.com/root-project/root/projects/) (e.g. [Fixed in 6.22/08](https://github.com/root-project/root/projects/10) when releasing 6.22/08). On the right column header, click "<" until the column header reads "Menu" with a hamburger menu next to it. Below, to the right, you see "...". Click, select "Copy", and enter the name of the *next* production or patch release. Don't forget to remove the leading "[COPY]"! Owner is `root-project/root`.
+        * Run `python3 ./get_solved_issues.py --project-name 6.32/02` to copy and paste the fixed GitHub issues into the release notes.
+        * Go to this version's [GitHub project](https://github.com/root-project/root/projects/) (e.g. [Fixed in 6.32/08](https://github.com/root-project/root/projects/10) when releasing 6.32/08). On the right column header, click "<" until the column header reads "Menu" with a hamburger menu next to it. Below, to the right, you see "...". Click, select "Copy", and enter the name of the *next* production or patch release. Don't forget to remove the leading "[COPY]"! Owner is `root-project/root`.
         * In "..." next to the currently to-be-released version's [GitHub project](https://github.com/root-project/root/projects/), hit "Close project". (No more bugs will be fixed in it: we are releasing it!)
-      - Commit your new release notes: `git commit README/ReleaseNotes/v622/index.md`
+      - Commit your new release notes: `git commit README/ReleaseNotes/v632/index.md`
   1. Update version number
       - Edit `build/version_number`. For release candidates, leave the version number at the development release number corresponding to the `-rc1` candidate.
       - Run from the build directory `$ cmake . && make && make version`
   1. Tag main ROOT repository
-      - `git tag -a v6-22-02`
+      - `git tag -a v6-32-02`
   1. Git pull and git tag ROOTTEST repository
   1. Make source tar file and copy to ftp area on root.cern
       - Run from the build directory `$ make distsrc` _[not on a MacOS machine](https://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-on-os-x-give-errors-when-unt){:target="_blank"}_
@@ -90,28 +89,28 @@ This assumes you try to create `v6-22-00-patches`, adjust accordingly.
       - Deprecations will now create build errors, fix them
       - `make` must succeed
   1. Push to GitHub
-      - `git push origin v6-22-02`
+      - `git push origin v6-32-02`
   1. Update the stable branch. The command below creates a commit that appears as a merge to git porcelain commands, but that directly points to the tree given by the `LATEST_STABLE` commit-ish. Users that have cloned this branch will receive updates as a fast-forward via `git pull`
-      - `$ LATEST_STABLE=v6-xx-yy    # e.g. v6-22-02`
+      - `$ LATEST_STABLE=v6-xx-yy    # e.g. v6-32-02`
       - `$ git fetch origin latest-stable:latest-stable`
       - `$ git update-ref refs/heads/latest-stable $(git commit-tree $LATEST_STABLE^{tree} -p refs/heads/latest-stable -p $LATEST_STABLE^{commit} -m "Updated 'latest-stable' branch to $LATEST_STABLE")`
       - `$ git push origin latest-stable`
   1. Produce binary tar-files (optional for development releases and release candidates)
-      - Start the procedure [root-release-6.22](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-6.22/){:target="_blank"} (or whichever branch) in Jenkins
+      - Start the procedure [root-release-6.32](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-6.32/){:target="_blank"} (or whichever branch) in Jenkins
   1. Install binaries to CVMFS (optional for development releases and release candidates)
       - Install release binaries to CVMFS with the Jenkins procedure [root-release-CVMFS](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-CVMFS/){:target="_blank"}
   1. Update the release pages (optional for development releases and release candidates)
-      - Generate the release notes with the Jenkins procedure called [root-releasenotes](https://lcgapp-services.cern.ch/root-jenkins/job/root-releasenotes/){:target="_blank"} with `v6-22-00-patches` or similar as version. They'd show up [here for v6.22](https://root.cern/doc/v622/release-notes.html).
-      - Wait until the files show up on a machine with cvmfs, e.g. lxplus, in `/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.22.02`.
-      - On that machine with cvmfs, create a new release web page with the script `python3 _releases/make-release-page.py _releases/release-62202.md` in ROOT's website repo.
+      - Generate the release notes with the Jenkins procedure called [root-releasenotes](https://lcgapp-services.cern.ch/root-jenkins/job/root-releasenotes/){:target="_blank"} with `v6-32-00-patches` or similar as version. They'd show up [here for v6.32](https://root.cern/doc/v632/release-notes.html).
+      - Wait until the files show up on a machine with cvmfs, e.g. lxplus, in `/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.02`.
+      - On that machine with cvmfs, create a new release web page with the script `python3 _releases/make-release-page.py _releases/release-63202.md` in ROOT's website repo.
       - Add a 'highlights' section in the generated release page.
       - If this applies, mark the release as `state: latest` and remove the attribute to the one previously holding it (`git grep "state: latest" -- _releases/`)
       - Create a PR against `root-project/web`.
   1. Update the list of [build options](https://root.cern/install/build_from_source/#all-build-options)
       - `cd` into main directory of the `root-project/web` repository.
-      - Run `bash _releases/generateBuildOptions.sh v6-22-00-patches`. This creates the file `_includes/build_options_v6-22-00-patches.md`.
+      - Run `bash _releases/generateBuildOptions.sh v6-32-00-patches`. This creates the file `_includes/build_options_v6-32-00-patches.md`.
       - Modify the `install/build_from_source.md` file, appending the created file above to the list of build options dropdown items. Look for tags like `<details markdown="1"><summary markdown="span">` and add the file at the end.
-      - Run `git checkout -b build-options-v622; git add _includes/build_options_v6-22-00-patches.md install/build_from_source.md; git commit; git push` and open a PR on the `web` repository.
+      - Run `git checkout -b build-options-v632; git add _includes/build_options_v6-32-00-patches.md install/build_from_source.md; git commit; git push` and open a PR on the `web` repository.
   1. Announcements
       - Send mail to the following mailing lists: root-planning@cern.ch, root-dev@cern.ch, roottalk@cern.ch, root-ambassadors@cern.ch
       - Write announcement in RootTalk [forum news](https://root-forum.cern.ch/c/news){:target="_blank"} (optional for development releases and release candidates)
