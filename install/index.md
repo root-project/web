@@ -252,11 +252,11 @@ ROOT, Geant4 and many other packages with all their dependencies are available a
 /cvmfs/sft.cern.ch/lcg/views/LCG_<version>/<platform>
 ```
 
-LCG views are available for CentOS7, CentOS8 and the latest MacOS and Ubuntu releases.
-For example, on CERN LXPLUS, you can set up a full environment that contains ROOT {% include root_stable_version %} with:
+LCG views are available for CentOS 7, RHEL 9 (which also covers the binary-compatible AlmaLinux 9), and the latest macOS and Ubuntu releases.
+For example, on CERN LXPLUS (AlmaLinux 9), you can set up a full environment that contains ROOT 6.30 with:
 
-```
-source /cvmfs/sft.cern.ch/lcg/views/LCG_100/{% include root_stable_dir %}/setup.sh
+```bash
+source /cvmfs/sft.cern.ch/lcg/views/LCG_104/aarch64-el9-gcc11-opt/setup.sh
 ```
 
 To check what ROOT version is contained in an LCG release, you can visit [lcginfo.cern.ch](http://lcginfo.cern.ch/){:target="\_blank"}.
