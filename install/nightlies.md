@@ -23,5 +23,4 @@ If you have access to LCG, as it is the case on LXPLUS, for example, ROOT nightl
 ```
 source /cvmfs/sft.cern.ch/lcg/views/dev3/latest/<Platform+compiler>/setup.sh
 ```
-- For python2, use `lcg/views/dev3python2/`
 - To get a ROOT version a few days old, replace `latest` with the desired day.
