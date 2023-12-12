@@ -24,3 +24,22 @@ If you have access to LCG, as it is the case on LXPLUS, for example, ROOT nightl
 source /cvmfs/sft.cern.ch/lcg/views/dev3/latest/<Platform+compiler>/setup.sh
 ```
 - To get a ROOT version a few days old, replace `latest` with the desired day.
+
+## Conda package
+
+ROOT nightly builds are available as conda packages hosted on our website.
+To create a new conda environment with the latest ROOT build, you can use:
+
+```
+conda create -n root-nightly -c https://root.cern/download/conda-nightly/latest -c conda-forge root-nightly
+```
+
+You can then activate this environment with
+
+```
+conda activate root-nightly
+```
+
+More instructions about using the ROOT conda package are available in [this blog post](https://iscinumpy.gitlab.io/post/root-conda/).
+
+Please report any issues with the conda package [here](https://github.com/conda-forge/root-feedstock){:target="\_blank"}.
