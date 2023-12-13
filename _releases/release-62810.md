@@ -84,7 +84,7 @@ cd root
 git checkout -b v6-28-10 v6-28-10
 ~~~
 
-See [instructions to build from source](../install/#build-from-source){:target="\_blank"}.
+See [instructions to build from source](../../install/#build-from-source){:target="\_blank"}.
 
 ## Windows
 

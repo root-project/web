@@ -119,7 +119,7 @@ cd root
 git checkout -b v6-30-02 v6-30-02
 ~~~
 
-See [instructions to build from source](../install/#build-from-source){:target="\_blank"}.
+See [instructions to build from source](../../install/#build-from-source){:target="\_blank"}.
 
 ## Windows
 
