@@ -37,6 +37,26 @@ jobs:
         env:
           JEKYLL_ENV: production
 
+      - name: Check validity of links
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          # Reasons for exclude
+          # - https://root.cern/[0-9]+: Breaks checking local builds due to links in the metadata
+          # - https://root.cern/(?!(files|download|doc)): Checking links to the deployed website breaks appearing in the metadata of newly added webpages. Exceptions are links to files, download and doc, which are not part of the Jekyll setup.
+          # - rootbnch-grafana-test.cern.ch: Breaks due to SSO
+          # - lcgapp-services.cern.ch: Breaks due to SSO
+          # - indico.desy.de: Returns frequently error code 403
+          # - https://www.sciencedirect.com: frequent 403 errors
+          # - nbviewer: When notebook generation fails, nbviewer returns 404 errors, and errors might even be cached in CDNs for a while
+          # - lcginfo.cern.ch: does not support HTTPS, see https://sft.its.cern.ch/jira/browse/SPI-1672
+          # - http://simul.iro.umontreal.ca/testu01/tu01.html does not support HTTPS
+          # Reasons for file-ignore
+          # - Broken links in historic ROOT v5 release notes
+          # add `--include-fragments` once released!
+          args: --base build --no-progress --exclude-mail --exclude-path 'build/install/all_releases/' --exclude https://rootbnch-grafana-test.cern.ch --exclude https://lcgapp-services.cern.ch/root-jenkins --exclude https://indico.desy.de --exclude https://nbviewer.jupyter.org --exclude https://www.sciencedirect.com --exclude https://github.com/root-project/web/tree/ --exclude https://twitter.com/ROOT_Project 'build/**/*.html'
+          # Fail action on broken links
+          fail: true
+
       - name: Only allow links to root.cern, never root.cern.ch
         run: |
           grep -n -R 'root\.cern\.ch' build || exit 0  # grep returns non-zero if no match is found
