@@ -10,6 +10,9 @@ sidebar:
   nav: "releases"
 ---
 
+BROKEN EXTERNAL LINK: [foo](https://kluhrflkghsafdlkughslkfgh.ajkhjgdskljgh)
+BROKEN INTERNAL LINK: [bar](../ThisDoesNotExist/)
+
 ## Highlights
 
 This release addresses a security issue found after the initial release of 6.30.00.
