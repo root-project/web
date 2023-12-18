@@ -168,7 +168,7 @@ libxft-dev libxext-dev python3 libssl-dev libafterimage0
 *   **libgsl0-dev:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
 *   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 *   **qtwebengine5-dev:** required for **qt5web** component
-*   **nlohmann-json3-dev:** required for **ROOTEve**, **RooFitJSONInterface** and **RooFitMultiProcess**
+*   **nlohmann-json3-dev:** required for **ROOTEve**
 
 As a one-liner:
 
