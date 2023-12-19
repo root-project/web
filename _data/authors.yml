@@ -55,11 +55,10 @@ Axel Naumann:
                  converting from a user to a developer. He contributed to whatever he
                  needed, e.g. the statistics part, the documentation engine, and porting it
                  to cygwin. After a position with the Fermilab Computing Division in 2005
-                 he ended up at CERN in the ROOT development team. Axel is leading the ROOT
-                 project since 2017."
-  short_bio   : "Axel is leading the ROOT project since 2017."
-  tag         : "team"
-  avatar      : "/assets/images/AN.jpg"
+                 he ended up at CERN in the ROOT development team. Axel led the ROOT
+                 project from 2017 to 2023."
+  short_bio   : "Axel led the ROOT project from 2017 to 2023."
+  tag         : "previous"
   affiliation : "CERN"
   email       : "Axel.Naumann@cern.ch"
 
@@ -81,14 +80,14 @@ Bertrand Bellenot:
 
 Danilo Piparo:
   name        : "Danilo Piparo"
-  bio         : "Danilo is a particle Physicist and scientific software enthusiast,
-                 teacher and Advisory Committee member of the CERN School of Computing. He
-                 was a member of the ROOT team from 2013 to 2019 and contributed
-                 to many of its areas: I/O, core, math and statistics. He rejoined the
+  bio         : "Danilo is a particle physicist and scientific software enthusiast. He 
+                 leads the ROOT project since 2023.
+                 He was a member of the ROOT team from 2013 to 2019 and contributed
+                 to many of its areas, for example I/O, core, math and statistics. He rejoined the
                  ROOT team in 2023 after leading for four years the Offline Software and
                  Computing group of the CMS experiment at CERN.
-                 He is mainly involved in the aspects of ROOT related to parallelism,
-                 performance and programming model."
+                 Danilo is also a lecturer and Advisory Committee member of the CERN School of Computing."
+  short_bio   : "Danilo leads the ROOT project since 2023."
   tag         : "team"
   affiliation : "CERN"
   avatar      : "/assets/images/DP.jpg"
