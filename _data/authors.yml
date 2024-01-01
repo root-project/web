@@ -188,6 +188,34 @@ Lorenzo Moneta:
   affiliation : "CERN"
   email       : "Lorenzo.Moneta@cern.ch"
 
+Marta Czurylo:
+  name        : "Marta Czurylo"
+  bio         : "Marta obtained her M.Sc. in Physics from University College London. 
+                 She continued as a Physics PhD student in the ATLAS experiment 
+                 at the University of Heidelberg, working on the di-Higgs analysis. 
+                 Marta graduated in 2023 and joined the ROOT team as a Fellow
+                 soon after. Her main role is developing and maintaining the RDataFrame."
+  short_bio   : "Marta works on RDataFrame development and maintenance."
+  tag         : "team"
+  avatar      : "/assets/images/MC.jpg"
+  affiliation : "CERN"
+  email       : "marta.maja.czurylo@cern.ch"  
+
+
+Monica Dessole:
+  name        : "Monica Dessole"
+  bio         : "Monica graduated from the Mathematics Department of the University of
+                 Padua, where she also received her Ph.D. in Computational Mathematics in
+                 2022 with a thesis on numerical linear algebra algorithms targeting
+                 massively parallel archirectures. She joined ROOT in 2023 as a senior
+                 fellow to speed up linear algebra computations with modern technologies
+                 such as heterogeneous computing on GPUs and performance portability with
+                 SYCL."
+  short_bio   : "Monica is accelerating linear algebra computations with SYCL."
+  tag         : "team"
+  avatar      : "/assets/images/MD.jpg"
+  affiliation : "CERN"
+  email       : "monica.dessole@cern.ch"
 
 Olivier Couet:
   name        : "Olivier Couet"
@@ -277,36 +305,6 @@ Vincenzo Eduardo Padulano:
   avatar      : "/assets/images/VEP.jpg"
   affiliation : "CERN"
   email       : "vincenzo.eduardo.padulano@cern.ch"
-
-
-Marta Czurylo:
-  name        : "Marta Czurylo"
-  bio         : "Marta obtained her M.Sc. in Physics from University College London. 
-                 She continued as a Physics PhD student in the ATLAS experiment 
-                 at the University of Heidelberg, working on the di-Higgs analysis. 
-                 Marta graduated in 2023 and joined the ROOT team as a Fellow
-                 soon after. Her main role is developing and maintaining the RDataFrame."
-  short_bio   : "Marta works on RDataFrame development and maintenance."
-  tag         : "team"
-  avatar      : "/assets/images/MC.jpg"
-  affiliation : "CERN"
-  email       : "marta.maja.czurylo@cern.ch"  
-
-
-Monica Dessole:
-  name        : "Monica Dessole"
-  bio         : "Monica graduated from the Mathematics Department of the University of
-                 Padua, where she also received her Ph.D. in Computational Mathematics in
-                 2022 with a thesis on numerical linear algebra algorithms targeting
-                 massively parallel archirectures. She joined ROOT in 2023 as a senior
-                 fellow to speed up linear algebra computations with modern technologies
-                 such as heterogeneous computing on GPUs and performance portability with
-                 SYCL."
-  short_bio   : "Monica is accelerating linear algebra computations with SYCL."
-  tag         : "team"
-  avatar      : "/assets/images/MD.jpg"
-  affiliation : "CERN"
-  email       : "monica.dessole@cern.ch"
 
 
 Andrei Gheata:
