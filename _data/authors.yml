@@ -113,12 +113,14 @@ Enrico Guiraud:
 
 Florine de Geus:
   name        : "Florine de Geus"
-  bio         : "Florine joined CERN as a technical student in November 2022. As part of the ROOT
-                 team, she is working together with the ATLAS experiment to evaluate and further
-                 develop ROOT's new I/O subsystem, RNTuple, so it can be used as effectively as
-                 possible for the experiment's analyses. After the technical studentship, Florine
-                 is set to graduate with a master's degree in Software Engineering from the
-                 University of Amsterdam."
+  bio         : "Florine joined CERN and the ROOT team as a technical student in November
+                 2022 where, as part of the ATLAS experiment, she worked to evaluate and
+                 further develop ROOT's new I/O subsystem, RNTuple, so it can be used as
+                 effectively as possible for the experiment's analyses. She graduated from
+                 the University of Amsterdam with a master's degree in Software Engineering.
+                 As of January 2024, Florine is continuing her work on RNTuple as a PhD
+                 student at CERN and the University of Twente."
+  short_bio   : "Florine is a PhD student working on RNTuple."
   tag         : "team"
   avatar      : "/assets/images/FdG.png"
   affiliation : "CERN"
