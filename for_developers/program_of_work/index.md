@@ -15,7 +15,7 @@ The program of work for the ROOT project, documented for the relevant years in t
 
 ## 2023
 
-  - [Presentation at the EP-SFT group meeting- 6th February 2023](https://indico.cern.ch/event/1233591/contributions/5189935/attachments/2588023/4465399/ROOT-2023-SFT.pdf){:target="_blank"}
+  - [Presentation at the EP-SFT group meeting - 6th February 2023](https://indico.cern.ch/event/1233591/contributions/5189935/attachments/2588023/4465399/ROOT-2023-SFT.pdf){:target="_blank"}
 
 ## 2022
 
