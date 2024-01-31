@@ -1,8 +1,8 @@
 ---
 layout: releases
-version: 6.30/04
+version: 6.30.04
 release_date: 2024-01-31
-state:
+state: latest
 
 toc: true
 toc_sticky: true
@@ -10,6 +10,12 @@ sidebar:
   nav: "releases"
 ---
 
+## Highlights
+
+This patch release of the 6.30 branch not only features a few bug fixes, but rather remarkable runtime performance optimizations.
+The memory footprint of the plugin manager has been reduced. Moreover, the mechanism by which symbols are looked up by the interpreter was improved, avoiding to open and close a large number 
+of libraries at startup, which improves considerably the user experience as well as cpu efficiency on batch jobs. More verbose output is now provided if wrong settings are used for the web-based widgets, 
+the usage of the loopback device is enforced and only one connection is allowed to RBrowser.
 
 ## Release Notes
 
