@@ -93,6 +93,19 @@ Danilo Piparo:
   avatar      : "/assets/images/DP.jpg"
 
 
+Devajith Valaparambil Sreeramaswamy:
+  name        : "Devajith Valaparambil Sreeramaswamy"
+  bio         : "Devajith (or just Dev for short) joined CERN and the ROOT team as an Early
+                 Career (Origin) Graduate in December 2023. He graduated with an MSc in
+                 Computing from Cardiff University. Currently, he works on ROOT's built-in
+                 C++ interpreter, CLING, and extending its support for SYCL execution."
+  short_bio   : "Devajith is an Early Career (Origin) Graduate working on adding SYCL support to CLING."
+  tag         : "team"
+  avatar      : "/assets/images/DVS.jpg"
+  affiliation : "CERN"
+  email       : "devajith.valaparambil.sreeramaswamy@cern.ch"
+
+
 Enrico Guiraud:
   name        : "Enrico Guiraud"
   bio         : "Enrico is a physicist turned computer scientist. His first experience at
