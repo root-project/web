@@ -32,11 +32,12 @@ See the histogram tutorials for all the possible type of histograms that can be 
 
 The ROOT histogram classes derive from the base {% include ref class="TH1" %}  class, which is a common interface to interact with the ROOT histograms.
 Derived classes exist depending on the dimension, 1-D, 2-D and 3-D, and the type used to represent the bin contents:
-- one byte per channel: `TH1C`, `TH2C` or `TH3C`. Maximum bin content = 127.
-- one short per channel: `TH1S`, `TH2S` or `TH3S`. Maximum bin content = 32767.
-- one int per channel: `TH1I`, `TH2I` or `TH3I`. Maximum bin content = 2147483647.
-- one float per channel: `TH1F`, `TH2F` or `TH3F`. Maximum precision 7 digits, i.e a  maximum bin content of around 1E7 for having the precision of one count.
-- one double per channel: `TH1D`, `TH2D` or `TH3D` . Maximum precision 15 digits, corresponding to a maximum bin content of around 5E15.
+- one char (one byte) per channel: `TH1C`, `TH2C` or `TH3C`. Maximum bin content = 127.
+- one short (two bytes) per channel: `TH1S`, `TH2S` or `TH3S`. Maximum bin content = 32767.
+- one int (four bytes) per channel: `TH1I`, `TH2I` or `TH3I`. Maximum bin content = 2147483647.
+- one long64 (eight bytes) per channel: `TH1L`, `TH2L` or `TH3L`. Maximum bin content =  = 9 223 372 036 854 775 807.
+- one float (four bytes) per channel: `TH1F`, `TH2F` or `TH3F`. Maximum precision 7 digits, i.e a  maximum bin content of around 1E7 for having the precision of one count.
+- one double (eight bytes) per channel: `TH1D`, `TH2D` or `TH3D` . Maximum precision 15 digits, corresponding to a maximum bin content of around 5E15 for having the precision of one count.
 
 If there are no particular needs for limiting the memory used by the histograms, it is recommended to use the double precision version:
 `TH1D` for the 1-D case, `TH2D` for the 2-D and `TH3D` for 3-D.

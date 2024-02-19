@@ -1681,7 +1681,7 @@ caption="Two 2D histograms stack on top of each other."
 %}
 
 
-[^3]: To optimise the memory usage you might go for one byte (TH1C), short (TH1S), integer (TH1I) or double-precision (TH1D) bin-content.
+[^3]: To optimise the memory usage you might go for one byte (TH1C), short (TH1S), integer (TH1I), long64 (TH1L) or double-precision (TH1D) bin-content.
 
 # Functions and Parameter Estimation
 
