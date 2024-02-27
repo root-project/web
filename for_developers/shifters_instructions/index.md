@@ -5,20 +5,20 @@ sidebar:
   nav: "for_developers"
 ---
 
-## These are the aspects the shifter shall keep under control
-The shifter summarises the events of the week during the ROOT meeting. The hand-over
-to the next shifter must be carefully handled.
+## Shifter's duties
+The members of the ROOT team have shift duties. A shift lasts for one week, from Monday to Monday.
+The hand-over between shifters happens at the ROOT Project meeting on Mondays, and it has to be carefully handled.
+
+### Keeping the builds green
+The primary responsibility of the shifter is to "keep builds green", all tests need to succeed, all the time.
+With top priority, the Shifter needs to fix the broken tests in the incremental and nightly builds and/or involve the relevant
+experts to make that happen.
 
 ### Forum Posts
 All forum posts have to be followed up. Some hours can be given to the community
-to discuss the questions but an answer from the ROOT team must be given within 24 hours.
+to discuss the questions but an answer from the ROOT team must be given within 24 hours or less.
 It is responsibility of the shifter to make sure this happens, either answering or
 involving the relevant expert.
-
-### Failing tests
-The shifter has the responsibility to "keep the builds green". He/she needs to fix
-the broken tests in the incremental and nightly builds and/or involve the relevant
-experts to make that happen.
 
 ### Open pull requests
 The shifter has the responsibility to follow up PRs if the relevant expert did not,
@@ -34,7 +34,8 @@ affected branches.
 
 ### Links to check daily
 
+- [Nightly builds](https://github.com/root-project/root/actions/workflows/root-ci.yml?query=event%3Aschedule)
+- [Nightly builds (old CI)](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/)
 - [Forum](https://root-forum.cern.ch/latest)
-- [Nightly builds](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT%20Nightly/)
 - [Unassigned issues](https://github.com/root-project/root/issues?q=is%3Aopen+is%3Aissue+no%3Aassignee)
 - [Unassigned pull requests](https://github.com/root-project/root/pulls?q=is%3Aopen+is%3Apr+no%3Aassignee)
