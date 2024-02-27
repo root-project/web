@@ -11,7 +11,7 @@ To answer this question the best is to quote <a href="{{ "about/project_founders
 
 _At the start of the project in January 1995, I came quickly to the name
 ROOT for our system. The intention to move towards Object Oriented
-Technology already well accepted at this time. It was clear to us
+Technology was already well accepted at this time. It was clear to us
 that a basic framework providing at least the services we had in the
 past with CERNLIB was necessary before moving to higher level applications.
 ROOT really means the "roots" for end-user applications.
