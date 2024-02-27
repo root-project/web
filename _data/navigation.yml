@@ -221,6 +221,9 @@ about:
         url: about/interactive_or_built_applications
       - title: Integration with other languages
         url: about/integration_with_other_languages
+   - title: What does ROOT stand for?
+     url: about/what_does_root_stand_for
+
    - title: License
      url: about/license
    - title: Versioning
