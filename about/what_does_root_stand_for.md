@@ -6,7 +6,7 @@ sidebar:
 ---
 
 
-To answer this question the best is to quote <a href="{{ "about/project_founders/#René Brun" | relative_url }}">René Brun</a>
+To answer this question the best is to quote {% include person_url name="René Brun" %}
 , one of the project founders of ROOT, who gave this answer in 1996 in the ROOT mailing list:
 
 _At the start of the project in January 1995, I came quickly to the name
