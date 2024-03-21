@@ -50,12 +50,12 @@ metaprocessor commands:
   * `.printAST` - shows the abstract syntax tree after each processed entity
   * `.I path` - adds an include path
 
+
 ## Resources
 
   * [Forum](https://root-forum.cern.ch/)
   * Contact the developers at [cling-dev@cern.ch](mailto:cling-dev@cern.ch)
-  * LLVM Developers' Meeting, _"Creating cling, an interactive interpreter interface for clang"_,
-    Axel Naumann, Philippe Canal, Paul Russo, Vassil Vassilev, 04.11.2010, San Jose, CA, United
+  * LLVM Developers' Meeting, _"Creating cling, an interactive interpreter interface for clang"_, {% include person_url name="Axel Naumann" %}, {% include person_url name="Philippe Canal" %}, Paul Russo, {% include person_url name="Vassil Vassilev" %}, 04.11.2010, San Jose, CA, United
     States ([slides](https://llvm.org/devmtg/2010-11/Naumann-Cling.pdf))
   * Google Tech Talk ([slides](https://github.com/root-project/cling/blob/master/www/docs/talks/AxelNaumann-cling-GoogleTech.pdf),
     [video](https://www.youtube.com/watch?v=f9Xfh8pv3Fs))
