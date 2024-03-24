@@ -106,6 +106,7 @@ This assumes you try to create `v6-32-00-patches`, adjust accordingly.
       - Start the procedure [root-release-6.32](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-6.32/){:target="_blank"} (or whichever branch) in Jenkins
   1. Install binaries to CVMFS (optional for development releases and release candidates)
       - Install release binaries to CVMFS with the Jenkins procedure [root-release-CVMFS](https://lcgapp-services.cern.ch/root-jenkins/job/root-release-CVMFS/){:target="_blank"}
+  1. Create a release page on GitHub, pointing to the release page on the website and the associated release notes, and upload all the relevant artifacts (sources and binaries).
   1. Update the release pages (optional for development releases and release candidates)
       - Generate the release notes with the Jenkins procedure called [root-releasenotes](https://lcgapp-services.cern.ch/root-jenkins/job/root-releasenotes/){:target="_blank"} with `v6-32-00-patches` or similar as version. They'd show up [here for v6.32](https://root.cern/doc/v632/release-notes.html).
       - Wait until the files show up on a machine with cvmfs, e.g. lxplus, in `/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.32.02`.
