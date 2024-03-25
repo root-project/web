@@ -60,11 +60,26 @@ img="tf1_draw.png"
 caption="Example of graphics generated with PyROOT."
 %}
 
-> **Note**
->
-> You can also write the above code in a script file and execute it with Python. In that case, the script runs to completion and the Python process is terminated, so the generated canvas disappears.
-> <br/>If you want to keep the Python process alive and thus inspect your canvas, execute the script with:<br/>
-> ``` python -i script_name.py ```
+### Graphics and scripts
+
+You can also write the above code in a script file and execute it with Python.
+In that case, the script runs to completion and the Python process is terminated, so the generated canvas disappears.
+<br/>If you want to keep the Python process alive and thus inspect your canvas, execute the script with:<br/>
+
+``` python -i script_name.py ```
+
+If you use interactive ROOT graphics within a function, use global objects in order to prevent them from disappearing when the function ends:
+
+```python
+import ROOT
+
+def plot():
+    global f
+    f = ROOT.TF1("f1", "sin(x)/x", 0., 10.)
+    f.Draw()
+
+plot()
+```
 
 ## User interface
 
