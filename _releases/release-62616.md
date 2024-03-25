@@ -23,10 +23,15 @@ This way, you will automatically keep up-to-date with the latest stable versions
 | Platform       | Files | Size |
 |-----------|-------|-----|
 | Almalinux 8.9 | [root_v6.26.16.Linux-AlmaLinux8.9-x86_64-gcc8.5.relwithdebinfo.tar.gz](https://root.cern/download/root_v6.26.16.Linux-AlmaLinux8.9-x86_64-gcc8.5.relwithdebinfo.tar.gz) | 602M |
+| Almalinux 8.9 | [root_v6.26.16.Linux-AlmaLinux8.9-x86_64-gcc8.5.tar.gz](https://root.cern/download/root_v6.26.16.Linux-AlmaLinux8.9-x86_64-gcc8.5.tar.gz) | 237M |
 | Ubuntu 20 | [root_v6.26.16.Linux-ubuntu20-x86_64-gcc9.4.relwithdebinfo.tar.gz](https://root.cern/download/root_v6.26.16.Linux-ubuntu20-x86_64-gcc9.4.relwithdebinfo.tar.gz) | 622M |
+| Ubuntu 20 | [root_v6.26.16.Linux-ubuntu20-x86_64-gcc9.4.tar.gz](https://root.cern/download/root_v6.26.16.Linux-ubuntu20-x86_64-gcc9.4.tar.gz) | 248M |
 | Ubuntu 22 | [root_v6.26.16.Linux-ubuntu22-x86_64-gcc11.4.debug.tar.gz](https://root.cern/download/root_v6.26.16.Linux-ubuntu22-x86_64-gcc11.4.debug.tar.gz) | 426M |
+| Ubuntu 22 | [root_v6.26.16.Linux-ubuntu22-x86_64-gcc11.4.tar.gz](https://root.cern/download/root_v6.26.16.Linux-ubuntu22-x86_64-gcc11.4.tar.gz) | 250M |
+| macOS 12.7 x86_64 Xcode 14 | [root_v6.26.16.macos-12.7-x86_64-clang140.pkg](https://root.cern/download/root_v6.26.16.macos-12.7-x86_64-clang140.pkg) | 395M |
 | macOS 12.7 x86_64 Xcode 14 | [root_v6.26.16.macos-12.7-x86_64-clang140.relwithdebinfo.pkg](https://root.cern/download/root_v6.26.16.macos-12.7-x86_64-clang140.relwithdebinfo.pkg) | 407M |
 | macOS 12.7 x86_64 Xcode 14 | [root_v6.26.16.macos-12.7-x86_64-clang140.relwithdebinfo.tar.gz](https://root.cern/download/root_v6.26.16.macos-12.7-x86_64-clang140.relwithdebinfo.tar.gz) | 266M |
+| macOS 12.7 x86_64 Xcode 14 | [root_v6.26.16.macos-12.7-x86_64-clang140.tar.gz](https://root.cern/download/root_v6.26.16.macos-12.7-x86_64-clang140.tar.gz) | 254M |
 
 ## Source distribution
 
@@ -39,9 +44,13 @@ This way, you will automatically keep up-to-date with the latest stable versions
 
 Standalone installations with minimal external dependencies are available at:
 ~~~
-/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.16/almalinux8.9x86_64-gcc85relwithdebinfo-opt
+/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.16/x86_64-almalinux8.9-gcc85-opt
+/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.16/x86_64-almalinux8.9-gcc85relwithdebinfo-opt
+/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.16/x86_64-mac127-clang140-opt
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.16/x86_64-mac127-clang140.relwithdebinfo-opt
+/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.16/x86_64-ubuntu20-gcc94-opt
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.16/x86_64-ubuntu20-gcc94relwithdebinfo-opt
+/cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.16/x86_64-ubuntu22-gcc114-opt
 /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.26.16/x86_64-ubuntu22-gcc114debug-opt
 ~~~
 
