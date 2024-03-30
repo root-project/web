@@ -150,32 +150,31 @@ or any derivative thereof.
 ClangFormat is a Clang tool which allows you to format your code. This is the configuration file for it:
 {% highlight C++ %}
 ---
-Language:        Cpp
 # BasedOnStyle:  LLVM
 AccessModifierOffset: -3
 AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: true
+AlignConsecutiveAssignments: None
 # This would be nice to have but seems to also (mis)align function parameters
-AlignConsecutiveDeclarations: true
-AlignEscapedNewlinesLeft: true
+AlignConsecutiveDeclarations: None
+AlignEscapedNewlines: Left
 AlignOperands:   true
 AlignTrailingComments: true
 AllowAllParametersOfDeclarationOnNextLine: true
-AllowShortBlocksOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
 AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: Inline
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
 # This option is "deprecated and is retained for backwards compatibility."
 # AlwaysBreakAfterDefinitionReturnType: None
 AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
-AlwaysBreakTemplateDeclarations: true
+AlwaysBreakTemplateDeclarations: Yes
 BinPackArguments: true
 BinPackParameters: true
 BraceWrapping:
   AfterClass:      false
-  AfterControlStatement: false
+  AfterControlStatement: Never
   AfterEnum:       false
   AfterFunction:   true
   AfterNamespace:  false
@@ -191,7 +190,7 @@ BreakBeforeTernaryOperators: true
 BreakConstructorInitializersBeforeComma: false
 ColumnLimit:     120
 CommentPragmas:  '^ IWYU pragma:'
-ConstructorInitializerAllOnOneLineOrOnePerLine: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
 ConstructorInitializerIndentWidth: 3
 ContinuationIndentWidth: 3
 Cpp11BracedListStyle: true
@@ -199,19 +198,6 @@ DerivePointerAlignment: false
 DisableFormat:   false
 ExperimentalAutoDetectBinPacking: false
 ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
-IncludeCategories:
-  - Regex:           '^("|<)T'
-    Priority:        4
-  - Regex:           '^("|<)ROOT/'
-    Priority:        5
-  - Regex:           '^<.*\.h>'
-    Priority:        1
-  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
-    Priority:        2
-  - Regex:           '^(<|"(gtest|isl|json)/)'
-    Priority:        3
-  - Regex:           '.*'
-    Priority:        6
 IndentCaseLabels: false
 IndentWidth:     3
 IndentWrappedFunctionNames: false
@@ -228,12 +214,14 @@ PenaltyBreakComment: 300
 PenaltyBreakFirstLessLess: 120
 PenaltyBreakString: 1000
 PenaltyExcessCharacter: 1000000
-PenaltyReturnTypeOnItsOwnLine: 60000
+PenaltyReturnTypeOnItsOwnLine: 10
 PointerAlignment: Right
-ReflowComments:  true
-SortIncludes: false
+ReflowComments: true
+SortIncludes: Never
 SpaceAfterCStyleCast: false
 SpaceBeforeAssignmentOperators: true
+# You want this : enable it if you have https://reviews.llvm.org/D32525
+# SpaceBeforeColon: false
 SpaceBeforeParens: ControlStatements
 SpaceInEmptyParentheses: false
 SpacesBeforeTrailingComments: 1
@@ -242,10 +230,26 @@ SpacesInContainerLiterals: true
 SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
-Standard:        Cpp11
+Standard:        c++11
 TabWidth:        3
 UseTab:          Never
-...
+
+# Order alphabetically and by generality the included header files.
+IncludeCategories:
+  - Regex:           '^"[^/]+\"'
+    Priority:        10
+  - Regex:           '^("|<)T'
+    Priority:        12
+  - Regex:           '^"ROOT/'
+    Priority:        15
+  - Regex:           '^"cling/'
+    Priority:        20
+  - Regex:           '^"clang/'
+    Priority:        30
+  - Regex:           '^"llvm/'
+    Priority:        40
+  - Regex:           '^<'
+    Priority:        50
 {% endhighlight %}
 
 ## Astyle
