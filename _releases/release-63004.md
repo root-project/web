@@ -2,7 +2,6 @@
 layout: releases
 version: 6.30.04
 release_date: 2024-01-31
-state: latest
 
 toc: true
 toc_sticky: true
