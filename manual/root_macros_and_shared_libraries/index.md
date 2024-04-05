@@ -59,12 +59,17 @@ You can execute a ROOT macro in one of three ways:
    >
    > By adding further space-separated file names to the line above, you can sequentially execute multiple
    > macros in the same ROOT session, as long as they don't share the same name.
+   > You can also replace MacroName.C with MacroName_C.so if you compiled your macro with ACLiC beforehand.
 
 2. Execute a macro at the ROOT prompt:
 
    ```
    root [0] .x MacroName.C
    ```
+
+   > **Note**
+   >
+   > You can also replace MacroName.C with MacroName_C.so if you compiled your macro with ACLiC beforehand.
 
 3. Load a macro from within a ROOT session and then call the function:
 
@@ -77,6 +82,7 @@ You can execute a ROOT macro in one of three ways:
    >
    > You can load multiple macros in the same ROOT session (one .L statement for each),
    > as long as they don't have the same name.
+   > You can also replace MacroName.C with MacroName_C.so if you compiled your macro with ACLiC beforehand.
 
 It is also possible to pass parameters directly to the macro function:
 ```
@@ -157,6 +163,7 @@ root [0] .L MyScript.C+
 The `+` option compiles the code and generates a shared library `MyScript_C.so` (`MyScript_C.dll` on Windows).
 The `+` command rebuilds the library only if the ROOT macro or any of the files it includes
 are newer than the library. To force a recompilation of the library, use `++`.
+Once compiled, the shared library name can be directly passed in place of `MyScript.C` when calling `.L` or `.x`.
 
 You can also compile, build and run with arguments in a one-liner using:
 

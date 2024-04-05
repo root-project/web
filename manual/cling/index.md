@@ -257,6 +257,7 @@ This list is also available by typing `.?` or `.help` in the ROOT prompt.
    .L <filename>[flags]: load the given file with optional flags like
                          + to compile or ++ to force recompile.
                          Type .? TSystem::CompileMacro for a list of all flags.
+                         <filename> can also be a shared library; skip flags.
    .(x|X) <filename>[flags](args) :
                          same as .L <filename>[flags] and runs then a function
                          with signature: ret_type filename(args).
