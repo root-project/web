@@ -159,7 +159,7 @@ Here a selection of commands:
 
 `.!<OS_command>`: Accesses the shell of the operating system. For example `.!ls` or `.!pwd`.
 
-`.x <file_name>`: Executes a ROOT macro. file_name can be also a precompiled macro (shared library).
+`.x <file_name>`: Executes a ROOT macro. file_name can be also a precompiled macro or a regular shared library userlib.so (or .dll) with a function userlib(args).
 
 `.U <file_name>`: Unloads a file.
 
