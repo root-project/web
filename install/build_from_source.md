@@ -251,57 +251,37 @@ ROOT requires a number of external libraries that the CMake system needs to loca
 
 The actual cached values used by CMake for the exact location of libraries and include files of the used external libraries can be inspected and modified using the `ccmake` utility.
 
-| Package Name | Variable | Type | Description |
-|-------------------|-----------|------|---------------|
-| AfterImage | AFTERIMAGE_CONFIG_EXECUTABLE | PATH | Full path to afterimage-config program |
-| Alien | ALIEN_DIR | PATH | Directory where Alien is installed (-DALIEN_DIR=$ALIEN_DIR/api)  |
-| Bonjour | BONJOUR_INCLUDE_DIR |  PATH | Directory where to find dns_sd.h |
-|         | AVAHI_INCLUDE_DIR |  PATH | Directory where avahi-client/client.h (Linux) |
-|         | AVAHI_client_LIBRARY |  PATH | Full path to libavahi-client.so library |
-| CASTOR  | CASTOR_DIR |  PATH | Environment variable to the Castor installation. |
-|         | CASTOR_INCLUDE_DIR |  PATH | Path to rfio_api.h file |
-|         | CASTOR_shift_LIBRARY |  PATH | Full path to shift library |
-| CFITSIO | CFITSIO |  PATH | Installation of CFITSIO |
-|         | CFITSIO_INCLUDE_DIR |  PATH | Directory where to find fitsio.h |
-|         | CFITSIO_LIBRARIES |  PATH | Full path to cfitsio library |
-| FFTW | FFTW_DIR |  PATH | Installation of FFTW |
-|      | FFTW_INCLUDE_DIR |  PATH | Directory where to find fftw3.h |
-|      | FFTW_LIBRARY |  PATH | Full path to fftw3 library |
-| GraphViz | GRAPHVIZ_DIR |  PATH | Installation of GraphViz |
-|          | GRAPHVIZ_INCLUDE_DIR |  PATH | Directory where to find graphviz/graph.h |
-|          | GRAPHVIZ_CDT_LIBRARY |  PATH | Full path to cdt library |
-|          | GRAPHVIZ_GVC_LIBRARY |  PATH | Full path to gvc library |
-|          | GRAPHVIZ_GRAPH_LIBRARY |  PATH | Full path to graph library |
-|          | GRAPHVIZ_PATHPLAN_LIBRARY |  PATH | Full path to pathplan library |
-| GSL  | GSL_ROOT_DIR |  PATH | Environment variable to the GSL installation. |
-|          | GSL_CONFIG_EXECUTABLE |  PATH | Full path to gsl-config program |
-| Kerberos 5 | KRB5_DIR |  PATH | Installation of Kerberos5 |
-|            | KRB5_INCLUDE_DIR |  PATH | Directory where to find krb5.h |
-|            | KRB5_MIT_LIBRARY |  PATH | Full path to k5crypto library |
-|            | KRB5_LIBRARY |  PATH | Full path to krb5 library |
-|            | KRB5_INIT |  PATH | Full path to kinit program |
-| LZMA       | LZMA_DIR |  PATH | Installation of LZMA |
-|            | LZMA_INCLUDE_DIR |  PATH | Directory where to find lzma.h |
-|            | LZMA_LIBRARY |  PATH | Full path to lzma library |
-| MySQL         | MYSQL_DIR |  PATH | Installation of MySQL |
-|               | MYSQL_CONFIG_EXECUTABLE |  PATH | Full path to mysql_config program |
-| ODBC | ODBC_DIR |  PATH | Installation of ODBC |
-|      | ODBC_INCLUDE_DIR |  PATH | Directory where to find sqlext.h |
-|      | ODBC_LIBRARY |  PATH | Full path to libodbc library |
-| Oracle | ORACLE_DIR |  ENV | Environment variable to the Oracle installation. |
-|        | ORACLE_INCLUDE_DIR |  PATH | Location where to find  oci.h     |
-|        | ORACLE_LIBRARY_OCCI |  PATH | Full path to  libocci  library  |
-|        | SQLPLUS_EXECUTABLE |  PATH | Full path to the  sqlplus  program |
-| OpenGL | OPENGL_INCLUDE_DIR |  PATH | Location where to find  GL/gl.h     |
-|        | OPENGL_gl_LIBRARY |  PATH | Full path to  GL  library  |
-| PCRE         | PCRE_CONFIG_EXECUTABLE |  PATH | Full path to pcre_config program |
-| PostgreSQL   | POSTGRESQL_INCLUDE_DIR |  PATH | Directory where to find l ibpq-fe.h |
-|              | POSTGRESQL_LIBRARY |  PATH | Full path to pq library |
-| Pythia 6 | PYTHIA6_LIBRARY |  PATH | Full path to pythia6 library |
-| Pythia 8 | PYTHIA8_DIR | ENV | Environment variable pointing to installation of Pythia8 |
-|          | PYTHIA8_INCLUDE_DIR |  PATH | Directory where to find Pythia8/Pythia.h |
-|          | PYTHIA8_LIBRARY |  PATH | Full path to Pythia8 library |
-| Python | PYTHON_EXECUTABLE |  PATH | Python interpreter executable |
-|        | PYTHON_INCLUDE_DIR |  PATH | Directory where to find  Python.h |
-|        | PYTHON_LIBRARY |  PATH | Full path to  Python  library |
-| XROOTD | XROOTD_ROOT_DIR | PATH | Directory where to find XROOTD |
+| Package Name | Variable                                             | Type | Description                                              |
+|--------------|------------------------------------------------------|------|----------------------------------------------------------|
+| CFITSIO      | CFITSIO                                              | PATH | Installation of CFITSIO                                  |
+|              | CFITSIO_INCLUDE_DIR                                  | PATH | Directory where to find fitsio.h                         |
+|              | CFITSIO_LIBRARIES                                    | PATH | Full path to cfitsio library                             |
+| FFTW         | FFTW_DIR                                             | PATH | Installation of FFTW                                     |
+|              | FFTW_INCLUDE_DIR                                     | PATH | Directory where to find fftw3.h                          |
+|              | FFTW_LIBRARY                                         | PATH | Full path to fftw3 library                               |
+| GraphViz     | GRAPHVIZ_DIR                                         | PATH | Installation of GraphViz                                 |
+|              | GRAPHVIZ_INCLUDE_DIR                                 | PATH | Directory where to find graphviz/graph.h                 |
+|              | GRAPHVIZ_CDT_LIBRARY                                 | PATH | Full path to cdt library                                 |
+|              | GRAPHVIZ_GVC_LIBRARY                                 | PATH | Full path to gvc library                                 |
+|              | GRAPHVIZ_GRAPH_LIBRARY                               | PATH | Full path to graph library                               |
+|              | GRAPHVIZ_PATHPLAN_LIBRARY                            | PATH | Full path to pathplan library                            |
+| GSL          | GSL_ROOT_DIR                                         | PATH | Environment variable to the GSL installation.            |
+|              | GSL_CONFIG_EXECUTABLE                                | PATH | Full path to gsl-config program                          |
+| LZMA         | LZMA_DIR                                             | PATH | Installation of LZMA                                     |
+|              | LZMA_INCLUDE_DIR                                     | PATH | Directory where to find lzma.h                           |
+|              | LZMA_LIBRARY                                         | PATH | Full path to lzma library                                |
+| MySQL        | MYSQL_DIR                                            | PATH | Installation of MySQL                                    |
+|              | MYSQL_CONFIG_EXECUTABLE                              | PATH | Full path to mysql_config program                        |
+| ODBC         | ODBC_DIR                                             | PATH | Installation of ODBC                                     |
+|              | ODBC_INCLUDE_DIR                                     | PATH | Directory where to find sqlext.h                         |
+|              | ODBC_LIBRARY                                         | PATH | Full path to libodbc library                             |
+| OpenGL       | OPENGL_INCLUDE_DIR                                   | PATH | Location where to find  GL/gl.h                          |
+|              | OPENGL_gl_LIBRARY                                    | PATH | Full path to  GL  library                                |
+| PCRE         | PCRE_CONFIG_EXECUTABLE                               | PATH | Full path to pcre_config program                         |
+| PostgreSQL   | POSTGRESQL_INCLUDE_DIR                               | PATH | Directory where to find l ibpq-fe.h                      |
+|              | POSTGRESQL_LIBRARY                                   | PATH | Full path to pq library                                  |
+| Pythia 8     | PYTHIA8_DIR                                          | ENV  | Environment variable pointing to installation of Pythia8 |
+|              | PYTHIA8_INCLUDE_DIR                                  | PATH | Directory where to find Pythia8/Pythia.h                 |
+|              | PYTHIA8_LIBRARY                                      | PATH | Full path to Pythia8 library                             |
+| Python 3     | <A href="#root-python-and-pyroot">More info here</A> |      |                                                          |
+| XROOTD       | XROOTD_ROOT_DIR                                      | PATH | Directory where to find XROOTD                           |
