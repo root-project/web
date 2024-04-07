@@ -7,18 +7,17 @@ sidebar:
   nav: "install"
 ---
 
-## Introduction
-
 ROOT uses the [CMake](https://www.cmake.org/){:target="\_blank"} cross-platform build-generator tool as the
 primary build system.<br> CMake does not build the project, it generates the files needed by
 your build tool (GNU make, Ninja, Visual Studio, etc) for building ROOT.
 
-If you are really anxious about getting a functional ROOT build, go to the [Quick Start](#quick-start) section.<br>
+If you want to get to a functional ROOT build as soon as possible, go to the [Quick Start](#quick-start) section.<br>
 If you are a CMake novice, start on [Basic CMake usage]({{'/install/basic_cmake' | relative_url}}) and then go back to the
 [Quick Start](#quick-start).
 <br>The [Options](#all-build-options) and the [Variables](#relevant-cmake-variables) section is a reference for customizing your build. If you already have experience with CMake, this is the recommended starting point.
 
 ## Preparation
+
 Make sure you have installed all [required dependencies]({{'/install/dependencies' | relative_url}}) before building ROOT.
 
 ## Quick start
@@ -231,9 +230,28 @@ A number of additional variables to control the way ROOT is built.
 |----------|-------|---------------|
 | LLVM_BUILD_TYPE | STRING | Build type for the bundled LLVM. It is used to set the CMAKE_BUILD_TYPE for the /interpreter/ subdirectory |
 
-### External libraries
+### External and built-in dependencies
 
-ROOT requires a number of external libraries that the CMake system needs to locate. The list of externals depends on the build options that have been enabled. CMake will look for these third party products at a number of standard places in your system but the user can influence the search by setting some environment variables before invoking the CMake command or by setting package specific CMake variables to their exact location.
+ROOT depends on several external libraries, depending on the features you enable at configuration time.
+
+Some of these external libraries can also be built together with ROOT (aka. "built-ins").
+
+At the CMake configuration step, ROOT follows the following logic to resolve dependencies:
+
+1. Look for the dependency on the system (e.g. `xrootd`)
+2. If the external dependency is not found...
+   1. ...but there is a corresponding built-in, enable it (e.g., set `builtin_xrootd=ON`)
+   2. ...and there is *no* corresponding built-in, disable the feature requiring the dependency if possible (e.g. disable `pyroot` if Python is not found)
+
+There are some build options that allow you to control this logic:
+
+  * `fail-on-missing`: instead of falling back to a built-in or disabling a feature, fail the configuration. This is useful if you want to make the outcome of the configuration more deterministic (*recommended!*). The default value is `OFF`.
+  * `builtin_<name of dependency>` (e.g. `builtin_xrootd`): enable specific built-in by default, meaning don't even check if the dependency is available on the system before falling back to the built-in. Useful in combination with `fail-on-missing` if you already know a specific dependency is not available. See the [build options](https://root.cern/install/build_from_source/#all-build-options) for the list of possible built-ins. Default value is `OFF`, except for `builtin_llvm`, `builtin_clang`, and `builtin_cling` where the default is `ON`.
+  * `builtin_all`: meta-flag to enable all built-ins by default. Default value is `OFF`.
+
+Some exceptions to the rule: LLVM, Clang, and Cling. Since these dependencies need to be patched to support ROOT, they are built-in by default.
+
+CMake will look for the external dependencies at a number of standard places in your system, but the user can influence the search by setting some environment variables before invoking the CMake command or by setting package specific CMake variables to their exact location.
 
 The actual cached values used by CMake for the exact location of libraries and include files of the used external libraries can be inspected and modified using the `ccmake` utility.
 
