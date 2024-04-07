@@ -39,9 +39,13 @@ This way, you will automatically keep up-to-date with the latest stable versions
 | macOS 14.5 arm64 Xcode 15 | [root_v6.30.06.macos-14.5-arm64-clang150.pkg](https://root.cern/download/root_v6.30.06.macos-14.5-arm64-clang150.pkg) | 470M |
 | macOS 14.5 arm64 Xcode 15 | [root_v6.30.06.macos-14.5-arm64-clang150.tar.gz](https://root.cern/download/root_v6.30.06.macos-14.5-arm64-clang150.tar.gz) | 296M |
 | Windows Visual Studio 2022 32-bit x86  (debug) | [root_v6.30.06.win32.vc17.debug.exe](https://root.cern/download/root_v6.30.06.win32.vc17.debug.exe) | 236M |
+| Windows Visual Studio 2022 32-bit x86  (debug) | [root_v6.30.06.win32.vc17.debug.zip](https://root.cern/download/root_v6.30.06.win32.vc17.debug.zip) | 361M |
 | Windows Visual Studio 2022 32-bit x86  | [root_v6.30.06.win32.vc17.exe](https://root.cern/download/root_v6.30.06.win32.vc17.exe) | 119M |
+| Windows Visual Studio 2022 32-bit x86  | [root_v6.30.06.win32.vc17.zip](https://root.cern/download/root_v6.30.06.win32.vc17.zip) | 164M |
 | Windows Visual Studio 2022 64-bit x64  (debug) | [root_v6.30.06.win64.vc17.debug.exe](https://root.cern/download/root_v6.30.06.win64.vc17.debug.exe) | 244M |
+| Windows Visual Studio 2022 64-bit x64  (debug) | [root_v6.30.06.win64.vc17.debug.zip](https://root.cern/download/root_v6.30.06.win64.vc17.debug.zip) | 372M |
 | Windows Visual Studio 2022 64-bit x64  | [root_v6.30.06.win64.vc17.exe](https://root.cern/download/root_v6.30.06.win64.vc17.exe) | 124M |
+| Windows Visual Studio 2022 64-bit x64  | [root_v6.30.06.win64.vc17.zip](https://root.cern/download/root_v6.30.06.win64.vc17.zip) | 172M |
 
 ## Source distribution
 
