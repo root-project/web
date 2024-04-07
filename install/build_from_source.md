@@ -174,14 +174,6 @@ ROOT backports certain modern C++ standard library features to make them availab
 The backports can be found [here in the reference guide](https://root.cern/doc/master/dir_7780993579c9aa6baf9598fd7cc29d54.html).
 The backports are disabled, falling back to the actual C++ standard library implementation if it provides it, depending for instance on the C++ standard ROOT is compiled with and the compiler version.
 
-## Enabling experimental features, aka ROOT7
-
-New and improved versions of standard ROOT components are being implemented under codename ROOT7.
-
-Turning on C++17 (or C++14 until v6.24; see [Setting the C++ standard](#setting-the-c-standard)) or higher will automatically enable ROOT7.
-Alternatively, you can explicitly enable ROOT7 with `-Droot7=ON`, which will in turn set the standard to C++17 (or C++14 until v6.24) if a
-value was not already specified by the user.
-
 ## Building ROOT with CUDA support
 
 To build ROOT with CUDA support, you need to have [Nvidia's CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit){:target="\_blank"} installed,
