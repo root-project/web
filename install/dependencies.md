@@ -188,7 +188,7 @@ Minimal set:
 
 ```bash
 sudo zypper install bash binutils cmake gcc gcc-c++ git libXext-devel \
-libXpm-devel libopenssl-devel python xorg-x11-devel
+libXft-devel libXpm-devel python xrootd-client-devel xrootd-libs-devel
 ```
 
 Most common optional packages:
