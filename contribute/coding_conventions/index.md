@@ -71,7 +71,7 @@ Each header file has the following layout:
 *   Module identification line
 *   Author line
 *   Copyright notice
-*   Mulitple inclusion protection macro
+*   Multiple inclusion protection macro
 *   Headers file includes
 *   Forward declarations
 *   Actual class definition
@@ -147,106 +147,9 @@ if (x == y) {
 or any derivative thereof.
 
 ## ClangFormat
-ClangFormat is a Clang tool which allows you to format your code. This is the configuration file for it:
-{% highlight C++ %}
----
-Language:        Cpp
-# BasedOnStyle:  LLVM
-AccessModifierOffset: -3
-AlignAfterOpenBracket: Align
-AlignConsecutiveAssignments: true
-# This would be nice to have but seems to also (mis)align function parameters
-AlignConsecutiveDeclarations: true
-AlignEscapedNewlinesLeft: true
-AlignOperands:   true
-AlignTrailingComments: true
-AllowAllParametersOfDeclarationOnNextLine: true
-AllowShortBlocksOnASingleLine: false
-AllowShortCaseLabelsOnASingleLine: true
-AllowShortFunctionsOnASingleLine: Inline
-AllowShortIfStatementsOnASingleLine: true
-AllowShortLoopsOnASingleLine: true
-# This option is "deprecated and is retained for backwards compatibility."
-# AlwaysBreakAfterDefinitionReturnType: None
-AlwaysBreakAfterReturnType: None
-AlwaysBreakBeforeMultilineStrings: false
-AlwaysBreakTemplateDeclarations: true
-BinPackArguments: true
-BinPackParameters: true
-BraceWrapping:
-  AfterClass:      false
-  AfterControlStatement: false
-  AfterEnum:       false
-  AfterFunction:   true
-  AfterNamespace:  false
-  AfterObjCDeclaration: false
-  AfterStruct:     false
-  AfterUnion:      false
-  BeforeCatch:     false
-  BeforeElse:      false
-  IndentBraces:    false
-BreakBeforeBinaryOperators: None
-BreakBeforeBraces: Custom
-BreakBeforeTernaryOperators: true
-BreakConstructorInitializersBeforeComma: false
-ColumnLimit:     120
-CommentPragmas:  '^ IWYU pragma:'
-ConstructorInitializerAllOnOneLineOrOnePerLine: false
-ConstructorInitializerIndentWidth: 3
-ContinuationIndentWidth: 3
-Cpp11BracedListStyle: true
-DerivePointerAlignment: false
-DisableFormat:   false
-ExperimentalAutoDetectBinPacking: false
-ForEachMacros:   [ foreach, Q_FOREACH, BOOST_FOREACH ]
-IncludeCategories:
-  - Regex:           '^("|<)T'
-    Priority:        4
-  - Regex:           '^("|<)ROOT/'
-    Priority:        5
-  - Regex:           '^<.*\.h>'
-    Priority:        1
-  - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
-    Priority:        2
-  - Regex:           '^(<|"(gtest|isl|json)/)'
-    Priority:        3
-  - Regex:           '.*'
-    Priority:        6
-IndentCaseLabels: false
-IndentWidth:     3
-IndentWrappedFunctionNames: false
-KeepEmptyLinesAtTheStartOfBlocks: true
-MacroBlockBegin: ''
-MacroBlockEnd:   ''
-MaxEmptyLinesToKeep: 1
-NamespaceIndentation: None
-ObjCBlockIndentWidth: 3
-ObjCSpaceAfterProperty: false
-ObjCSpaceBeforeProtocolList: true
-PenaltyBreakBeforeFirstCallParameter: 19
-PenaltyBreakComment: 300
-PenaltyBreakFirstLessLess: 120
-PenaltyBreakString: 1000
-PenaltyExcessCharacter: 1000000
-PenaltyReturnTypeOnItsOwnLine: 60000
-PointerAlignment: Right
-ReflowComments:  true
-SortIncludes: false
-SpaceAfterCStyleCast: false
-SpaceBeforeAssignmentOperators: true
-SpaceBeforeParens: ControlStatements
-SpaceInEmptyParentheses: false
-SpacesBeforeTrailingComments: 1
-SpacesInAngles:  false
-SpacesInContainerLiterals: true
-SpacesInCStyleCastParentheses: false
-SpacesInParentheses: false
-SpacesInSquareBrackets: false
-Standard:        Cpp11
-TabWidth:        3
-UseTab:          Never
-...
-{% endhighlight %}
+ClangFormat is a Clang tool which allows you to format your code.
+
+You can find the `.clang-format` file with the ROOT style in the [ROOT GitHub repository](https://github.com/root-project/root/blob/master/.clang-format).
 
 ## Astyle
 If you don't have access to ClangFormat, [astyle](https://astyle.sourceforge.net/){:target="_blank"} can be useful. Starting from a code like this:
