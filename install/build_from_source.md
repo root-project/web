@@ -94,6 +94,10 @@ The following are the basic instructions for UNIX-like systems and Windows. We w
 
 As it makes use of a C++ interpreter, ROOT has somewhat stricter requirements than other C++ libraries: applications that depend on ROOT
 *must* be compiled with the same C++ standard with which ROOT was compiled.
+The relevant cmake flag is [`CMAKE_CXX_STANDARD`](https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html){:target="_blank"}.
+For example, from the command line, the standard can be selected by passing one of 11, 14, 17,... such as `-DCMAKE_CXX_STANDARD=17`.
+Generally speaking, newer standards are only supported by newer ROOT versions.
+See also the [supported C++ standards in each ROOT version](https://root.cern/install/dependencies/#supported-compilers).
 
 Also note that compatibility with compilers shipped with `devtoolset`s on CentOS or Red Hat is not guaranteed.
 
@@ -106,24 +110,6 @@ ROOT uses the standard [`FindPython3`](https://cmake.org/cmake/help/latest/modul
 You can give it [some hints](https://cmake.org/cmake/help/latest/module/FindPython3.html#hints) to find the desired Python installation.
 To precisely control the Python version that PyROOT is built against, we recommend using a `virtualenv` or `conda` environment, because CMake will first look for Python in active virtual environments.
 Alternatively, you can define the `Python3_ROOT_DIR` hint in the CMake configuration step.
-
-## Setting the C++ standard
-
-ROOT needs to be configured and built with the same C++ standard as the programs that will make use of it.
-The relevant cmake flag is [`CMAKE_CXX_STANDARD`](https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html){:target="_blank"}.
-For example, from the command line, the standard can be selected by passing one of 11, 14, 17,... such as `-DCMAKE_CXX_STANDARD=17`.
-Generally speaking, newer standards are only supported by newer ROOT versions.
-
-### Minimal C++ standards
-- C++11 is supported until ROOT v6.24: subsequent versions require at least C++14.
-- C++14 is supported until ROOT v6.28: subsequent versions require at least C++17.
-
-
-### ROOT STL backports
-
-ROOT backports certain modern C++ standard library features to make them available in older standards like C++14, for example `std::string_view`.
-The backports can be found [here in the reference guide](https://root.cern/doc/master/dir_7780993579c9aa6baf9598fd7cc29d54.html).
-The backports are disabled, falling back to the actual C++ standard library implementation if it provides it, depending for instance on the C++ standard ROOT is compiled with and the compiler version.
 
 ## Building ROOT with CUDA support
 
@@ -210,33 +196,33 @@ Click on one of the following dropdowns to see the full list of build options fo
 ### Relevant CMake variables
 Here are some of the CMake variables that are used often, along with a brief explanation and ROOT-specific notes. For full documentation, check the CMake docs or execute `cmake --help-variable VARIABLE_NAME`.
 
-| Variable | Type | Explanation |
-|----------|-------|---------------|
-| CMAKE_BUILD_TYPE | STRING | Sets the build type for make based generators. Possible values are Release, MinSizeRel, Debug, RelWithDebInfo and Optimized. On systems like Visual Studio the user sets the build type with the IDE settings. Default is Release |
-| CMAKE_INSTALL_PREFIX | PATH | Path where ROOT will be installed if make install is invoked or the “INSTALL” target is built. |
-| CMAKE_C_COMPILER | PATH | Full path to the C compiler.  Alternatively you can specify the environment variable CC before invoking cmake |
-| CMAKE_C_FLAGS | STRING | Extra flags to use when compiling C source files. |
-| CMAKE_CXX_COMPILER | PATH | Full path to the C++ compiler.  Alternatively you can specify the environment variable CXX before invoking cmake |
-| CMAKE_CXX_FLAGS | STRING | Extra flags to use when compiling C++ source files.|
-| CMAKE_CXX_STANDARD | STRING | Define the C++ standard version to use when building ROOT, and for the interpreter at runtime.|
-| CMAKE_Fortran_COMPILER | PATH | Full path to the Fortran compiler. Alternatively you can specify the environment variable FC before invoking cmake |
-| CMAKE_INSTALL_BINDIR | PATH | Install destination for user executables (bin) |
-| CMAKE_INSTALL_LIBDIR | PATH | Install destination for object code libraries (lib or lib64 or lib/<multiarch-tuple> on Debian) |
-| CMAKE_INSTALL_INCLUDEDIR | PATH | Install destination for C/C++ header files (include) |
-| CMAKE_INSTALL_SYSCONFDIR | PATH | Install destination for read-only single-machine data (etc) |
-| CMAKE_INSTALL_MANDIR | PATH | Install destination for  man documentation (DATAROOTDIR/man) |
-| CMAKE_INSTALL_DATAROOTDIR | PATH | Install directory for read-only architecture-independent data (share) |
-| CMAKE_INSTALL_DATADIR | PATH | Install destination read-only architecture-independent data (DATAROOTDIR/root) |
-| CMAKE_INSTALL_MACRODIR | PATH | Install destination for ROOT macros (DATAROOTDIR/macros) |
-| CMAKE_INSTALL_ICONDIR | PATH | Install destination for icons (DATAROOTDIR/icons) |
-| CMAKE_INSTALL_FONTDIR | PATH | Install destination for fonts (DATAROOTDIR/fonts) |
-| CMAKE_INSTALL_SRCDIR | PATH | Install destination for sources (DATAROOTDIR/src) |
-| CMAKE_INSTALL_DOCDIR | PATH | Install destination for documentation root (DATAROOTDIR/doc/root) |
-| CMAKE_INSTALL_TESTDIR | PATH | Install destination for tests (DOCDIR/test) |
-| CMAKE_INSTALL_TUTDIR | PATH | Install destination for tutorials (DOCDIR/tutorials) |
-| CMAKE_INSTALL_ACLOCALDIR | PATH | Install destination for locale-dependent data (DATAROOTDIR/aclocal) |
-| CMAKE_INSTALL_ELISPDIR | PATH | Install destination for lisp files (DATAROOTDIR/emacs/site-lisp) |
-| CMAKE_INSTALL_CMAKEDIR | PATH | Install destination for cmake modules (DATAROOTDIR/cmake) |
+| Variable                  | Type   | Explanation                                                                                                                                                                                                                       |
+|---------------------------|--------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CMAKE_BUILD_TYPE          | STRING | Sets the build type for make based generators. Possible values are Release, MinSizeRel, Debug, RelWithDebInfo and Optimized. On systems like Visual Studio the user sets the build type with the IDE settings. Default is Release |
+| CMAKE_INSTALL_PREFIX      | PATH   | Path where ROOT will be installed if make install is invoked or the “INSTALL” target is built.                                                                                                                                    |
+| CMAKE_C_COMPILER          | PATH   | Full path to the C compiler.  Alternatively you can specify the environment variable CC before invoking cmake                                                                                                                     |
+| CMAKE_C_FLAGS             | STRING | Extra flags to use when compiling C source files.                                                                                                                                                                                 |
+| CMAKE_CXX_COMPILER        | PATH   | Full path to the C++ compiler.  Alternatively you can specify the environment variable CXX before invoking cmake                                                                                                                  |
+| CMAKE_CXX_FLAGS           | STRING | Extra flags to use when compiling C++ source files.                                                                                                                                                                               |
+| CMAKE_CXX_STANDARD        | STRING | Define the C++ standard version to use when building ROOT, and for the interpreter at runtime (see [supported C++ standards in each ROOT version](https://root.cern/install/dependencies/#supported-compilers))                   |
+| CMAKE_Fortran_COMPILER    | PATH   | Full path to the Fortran compiler. Alternatively you can specify the environment variable FC before invoking cmake                                                                                                                |
+| CMAKE_INSTALL_BINDIR      | PATH   | Install destination for user executables (bin)                                                                                                                                                                                    |
+| CMAKE_INSTALL_LIBDIR      | PATH   | Install destination for object code libraries (lib or lib64 or lib/<multiarch-tuple> on Debian)                                                                                                                                   |
+| CMAKE_INSTALL_INCLUDEDIR  | PATH   | Install destination for C/C++ header files (include)                                                                                                                                                                              |
+| CMAKE_INSTALL_SYSCONFDIR  | PATH   | Install destination for read-only single-machine data (etc)                                                                                                                                                                       |
+| CMAKE_INSTALL_MANDIR      | PATH   | Install destination for  man documentation (DATAROOTDIR/man)                                                                                                                                                                      |
+| CMAKE_INSTALL_DATAROOTDIR | PATH   | Install directory for read-only architecture-independent data (share)                                                                                                                                                             |
+| CMAKE_INSTALL_DATADIR     | PATH   | Install destination read-only architecture-independent data (DATAROOTDIR/root)                                                                                                                                                    |
+| CMAKE_INSTALL_MACRODIR    | PATH   | Install destination for ROOT macros (DATAROOTDIR/macros)                                                                                                                                                                          |
+| CMAKE_INSTALL_ICONDIR     | PATH   | Install destination for icons (DATAROOTDIR/icons)                                                                                                                                                                                 |
+| CMAKE_INSTALL_FONTDIR     | PATH   | Install destination for fonts (DATAROOTDIR/fonts)                                                                                                                                                                                 |
+| CMAKE_INSTALL_SRCDIR      | PATH   | Install destination for sources (DATAROOTDIR/src)                                                                                                                                                                                 |
+| CMAKE_INSTALL_DOCDIR      | PATH   | Install destination for documentation root (DATAROOTDIR/doc/root)                                                                                                                                                                 |
+| CMAKE_INSTALL_TESTDIR     | PATH   | Install destination for tests (DOCDIR/test)                                                                                                                                                                                       |
+| CMAKE_INSTALL_TUTDIR      | PATH   | Install destination for tutorials (DOCDIR/tutorials)                                                                                                                                                                              |
+| CMAKE_INSTALL_ACLOCALDIR  | PATH   | Install destination for locale-dependent data (DATAROOTDIR/aclocal)                                                                                                                                                               |
+| CMAKE_INSTALL_ELISPDIR    | PATH   | Install destination for lisp files (DATAROOTDIR/emacs/site-lisp)                                                                                                                                                                  |
+| CMAKE_INSTALL_CMAKEDIR    | PATH   | Install destination for cmake modules (DATAROOTDIR/cmake)                                                                                                                                                                         |
 
 ### Additional variables
 A number of additional variables to control the way ROOT is built.
