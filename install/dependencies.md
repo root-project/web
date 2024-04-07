@@ -143,8 +143,8 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 As a one-liner:
 
 ```bash
-sudo apt-get install dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \
-libxft-dev libxext-dev python3 libssl-dev
+sudo apt-get install binutils cmake dpkg-dev g++ gcc libssl-dev git libx11-dev \
+libxext-dev libxft-dev libxpm-dev python3
 ```
 
 ### Most common optional packages
@@ -187,8 +187,8 @@ On Debian, substitute `libmysqlclient-dev` with `libmariadb-dev`.
 Minimal set:
 
 ```bash
-sudo zypper install bash cmake gcc-c++ gcc binutils python libXpm-devel \
-xorg-x11-devel libXext-devel libopenssl-devel
+sudo zypper install bash binutils cmake gcc gcc-c++ git libXext-devel \
+libXpm-devel libopenssl-devel python xorg-x11-devel
 ```
 
 Most common optional packages:
