@@ -50,7 +50,8 @@ As a one-liner for Fedora 33, CentOS 8:
 
 ```bash
 sudo yum install git make cmake gcc-c++ gcc binutils \
-libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
+libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel \
+xrootd-client-devel xrootd-libs-devel
 ```
 
 ### Most common optional packages
