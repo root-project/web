@@ -35,7 +35,7 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 ### Required packages
 
 *   **make:** for /usr/bin/make
-*   **cmake:** (**cmake3** on CentOS 7) for /usr/bin/cmake
+*   **cmake:** for /usr/bin/cmake
 *   **gcc-c++:** for  for /usr/bin/g++
 *   **gcc:** for /usr/bin/gcc
 *   **binutils:** for /usr/bin/ld
@@ -43,7 +43,7 @@ Use `yum install <package>` or the graphical "Add/Remove Software" program.
 *   **libXpm-devel:** for /usr/include/X11/xpm.h and for /usr/lib/libXpm.so
 *   **libXft-devel:** for /usr/include/X11/Xft/Xft.h and for /usr/lib/libXft.so
 *   **libXext-devel:** for /usr/include/X11/extensions/shape.h and for /usr/lib/libXext.so
-*   **python:** (**python38** on CentOS 8) ROOT6 requires version >= 2.7
+*   **python:** (**python38** on CentOS 8)
 *   **openssl-devel:** for /usr/include/openssl/pem.h and /usr/lib/libssl.so and /usr/lib/libcrypto.so
 
 As a one-liner for Fedora 33, CentOS 8:
@@ -53,16 +53,8 @@ sudo yum install git make cmake gcc-c++ gcc binutils \
 libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 ```
 
-As a one-liner for Scientific Linux 7 and CentOS 7:
-
-```bash
-sudo yum install git make cmake3 gcc-c++ gcc binutils \
-libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
-```
-
 ### Most common optional packages
 
-*   **redhat-lsb-core:** needed by some tests using lsb_release
 *   **gcc-gfortran:** for /usr/bin/gfortran
 *   **pcre-devel:** for /usr/bin/pcre-config
 *   **mesa-libGL-devel:** for /usr/include/GL/gl.h and for /usr/lib[64]/libGL.so
@@ -71,8 +63,7 @@ libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 *   **fftw-devel:** for /usr/include/fftw3.h and for /usr/lib/libfftw3.so
 *   **libuuid-devel** required during the build. More [info here](https://root-forum.cern.ch/t/cannot-compile-root-v6-22-08-with-debug-symbols-and-all-options/44242).
 *   **openldap-devel:** for /usr/include/ldap.h and for /usr/lib/libldap.so
-*   **python-devel:** (only on RHEL 7 based systems with default Python v.2) for /usr/include/python2.7/Python.h and for /usr/lib/libpython2.7.so
-*   **python3-numpy:** (**numpy** on RHEL 7 based systems) needed for PyMVA
+*   **python3-numpy:** needed for PyMVA
 *   **libxml2-devel:** for /usr/bin/xml2-config
 *   **gsl-devel:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
 *   **readline-devel:** required at the linking stage.
@@ -88,7 +79,7 @@ libX11-devel libXpm-devel libXft-devel libXext-devel python openssl-devel
 
 As a one-liner for Fedora 33:
 ```bash
-sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
+sudo yum install gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
 avahi-compat-libdns_sd-devel openldap-devel python-devel python3-numpy \
@@ -100,25 +91,13 @@ CentOS 8 requires adding the EPEL repository. Additionally, some packages in Cen
 ```bash
 sudo yum install epel-release
 sudo yum config-manager --set-enabled powertools
-sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
+sudo yum install gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
 avahi-compat-libdns_sd-devel openldap-devel python-devel python3-numpy \
 libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
 R-devel R-Rcpp-devel R-RInside-devel
 ```
-
-For Scientific Linux 7 and CentOS 7:
-```bash
-sudo yum install epel-release
-sudo yum install redhat-lsb-core gcc-gfortran pcre-devel \
-mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
-fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
-avahi-compat-libdns_sd-devel openldap-devel python-devel numpy \
-libxml2-devel gsl-devel readline-devel R-devel R-Rcpp-devel R-RInside-devel
-```
-
-CMake version >= 3.9 is required to build recent ROOT version. Therefore on RHEL 7 based systems it necessary to use the `cmake3` command to build ROOT. Default `cmake` command in Scientific Linux 7 and CentOS 7 refers to CMake version 2.8.
 
 ## Ubuntu and other Debian-based distributions
 
@@ -137,7 +116,7 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 *   **libxext-dev:** for /usr/include/X11/extensions/shape.h and for /usr/lib/libXext.so
 *   **libpng:** png library
 *   **libjpeg:** jpeg library
-*   **python3:** (ROOT6 requires version >= 3)
+*   **python3:** (see [here](https://root.cern/install/build_from_source/#root-python-and-pyroot) for info on supported Python versions)
 *   **libssl-dev:** for `/usr/include/openssl/pem.h`, `/usr/lib/libssl.so` and `/usr/lib/libcrypto.so` (on older systems the package might be called `openssl-dev`)
 
 As a one-liner:
@@ -196,8 +175,8 @@ Most common optional packages:
 ```bash
 sudo zypper install gcc-fortran pcre-devel Mesa glew-devel libpng16-devel \
 pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel \
-libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel python-numpy libxml2-devel \
-krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
+libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel python-numpy \
+libxml2-devel krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 ```
 
 ## MacOS
@@ -211,7 +190,7 @@ krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 *   **[CMake](https://cmake.org/download/)** (version >= 16.3)
 *   **[Microsoft Visual C++](https://visualstudio.microsoft.com/)** (ROOT6 requires at least Visual Studio 2019 version 16.1). The **Community** version is free, fully-featured for students, open-source contributors, and individuals.
 The **Desktop Development With C++** workload is also needed. You can install it directly from the **Visual Studio Installer**
-*   **[Python](https://python.org)** (ROOT6 requires version >= 2.7)
+*   **[Python](https://python.org)** (see [here](https://root.cern/install/build_from_source/#root-python-and-pyroot) for info on supported Python versions)
 
 
 ### ROOT 5 (deprecated)
