@@ -53,6 +53,7 @@ metaprocessor commands:
 
 ## Resources
 
+  * [ReadTheDocs](https://cling.readthedocs.io)
   * [Forum](https://root-forum.cern.ch/)
   * Contact the developers at [cling-dev@cern.ch](mailto:cling-dev@cern.ch)
   * LLVM Developers' Meeting, _"Creating cling, an interactive interpreter interface for clang"_, {% include person_url name="Axel Naumann" %}, {% include person_url name="Philippe Canal" %}, Paul Russo, {% include person_url name="Vassil Vassilev" %}, 04.11.2010, San Jose, CA, United
