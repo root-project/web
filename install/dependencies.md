@@ -131,20 +131,20 @@ libxext-dev libxft-dev libxpm-dev python3
 
 *   **gfortran:** for /usr/bin/gfortran
 *   **libpcre3-dev:** for /usr/bin/pcre-config
-*   **xlibmesa-glu-dev:** for /usr/include/GL/gl.h and for /usr/lib/libGL.so
+*   **libglu1-mesa-dev:** for /usr/include/GL/gl.h and for /usr/lib/libGL.so
 *   **libglew-dev:** for /usr/include/GL/glew.h and for /usr/lib/libGLEW.so
 *   **libftgl-dev:** for /usr/bin/pkg-config
 *   **libmysqlclient-dev:** for /usr/bin/mysql_config
 *   **libfftw3-dev:** for /usr/include/fftw3.h and for /usr/lib/libfftw3.so
 *   **libcfitsio-dev:** for /usr/include/fitsio2.h and for /usr/lib/libcfitsio.so
-*   **graphviz-dev:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
+*   **libgraphviz-dev:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
 *   **libavahi-compat-libdnssd-dev:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
 *   **libldap2-dev:** for /usr/include/ldap.h and for /usr/lib/libldap.so
 *   **python3-dev:** for /usr/include/python3.10/Python.h and for /usr/lib/libpython3.10.so
 *   **python3-numpy:** needed for PyMVA
 *   **libxml2-dev:** for /usr/bin/xml2-config
 *   **libkrb5-dev:** for /usr/include/krb5.h and for /usr/lib/libkrb5.so
-*   **libgsl0-dev:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
+*   **libgsl-dev:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
 *   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 *   **qtwebengine5-dev:** required for **qt5web** component
 *   **nlohmann-json3-dev:** required for **ROOTEve**
@@ -153,11 +153,11 @@ As a one-liner:
 
 ```bash
 sudo apt-get install gfortran libpcre3-dev \
-xlibmesa-glu-dev libglew-dev libftgl-dev \
-libmysqlclient-dev libfftw3-dev libcfitsio-dev \
-graphviz-dev libavahi-compat-libdnssd-dev \
-libldap2-dev python3-dev python3-numpy libxml2-dev libkrb5-dev \
-libgsl0-dev qtwebengine5-dev nlohmann-json3-dev
+libglu1-mesa-dev libglew-dev libftgl-dev \
+libfftw3-dev libcfitsio-dev libgraphviz-dev \
+libavahi-compat-libdnssd-dev libldap2-dev \
+ python3-dev python3-numpy libxml2-dev libkrb5-dev \
+libgsl-dev qtwebengine5-dev nlohmann-json3-dev libmysqlclient-dev
 ```
 
 On Debian, substitute `libmysqlclient-dev` with `libmariadb-dev`.
