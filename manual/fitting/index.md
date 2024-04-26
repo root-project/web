@@ -353,18 +353,17 @@ can be of arbitrary `k` dimensions, the class can be constructed from a vector o
 
 _**Example**_
 
-Data are taken from a histogram ({% include ref class="TH1" %} object).
+Data are taken from a standard vector.
 
 {% highlight C++ %}
-double * buffer = histogram->GetBuffer();
+// The data points that we want to transfer to the ROOT::Fit::UnBinData
+std::vector<double> dataVec{1., 2., 3., 4., 5.};
 
-// Number of entry is first entry in the buffer.
-int n = buffer[0];
-
-// When creating the data object, it is important to create it with the size of the data.
-ROOT::Fit::UnBinData data(n);
-for (int i = 0; i < n; ++i)
-   data.add(buffer[2*i+1]);
+// When creating the fitData object, it is important to create it with the right size.
+ROOT::Fit::UnBinData fitData(dataVec.size());
+for (std::size_t i = 0; i < dataVec.size(); ++i) {
+   fitData.Add(dataVec[i]);
+}
 {% endhighlight %}
 
 _**Example**_
