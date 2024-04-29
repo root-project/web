@@ -393,7 +393,7 @@ Windows 10/7/... are supported. We offer two packaging types:
 
 ### Important installation notes
 
- * You must download the binary built with the exact same version of Visual Studio than the one installed on your system.
+ * You must download the binary built with the exact same version of Visual Studio than the one installed on your system. Don't forget to select the component “Desktop development with C++" when running the Visual Studio Installer.
  * Do not untar in a directory with a name containing blank characters.
  * Take the release version if performance matters.
  * If you want to debug your code you need the ROOT debug build (you cannot mix release / debug builds due to a Microsoft restriction).
