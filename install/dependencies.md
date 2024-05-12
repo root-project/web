@@ -119,12 +119,13 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 *   **libjpeg:** jpeg library
 *   **python3:** (see [here](https://root.cern/install/build_from_source/#root-python-and-pyroot) for info on supported Python versions)
 *   **libssl-dev:** for `/usr/include/openssl/pem.h`, `/usr/lib/libssl.so` and `/usr/lib/libcrypto.so` (on older systems the package might be called `openssl-dev`)
+*   **libtbb-dev:** TBB parallelism library
 
 As a one-liner:
 
 ```bash
 sudo apt-get install binutils cmake dpkg-dev g++ gcc libssl-dev git libx11-dev \
-libxext-dev libxft-dev libxpm-dev python3
+libxext-dev libxft-dev libxpm-dev python3 libtbb-dev
 ```
 
 ### Most common optional packages
