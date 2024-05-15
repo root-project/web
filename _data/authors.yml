@@ -140,6 +140,23 @@ Florine de Geus:
   email       : "florine.de.geus@cern.ch"
 
 
+Giacomo Parolini:
+  name        : "Giacomo Parolini"
+  bio         : "Giacomo's first interaction with CERN was during his bachelor degree thesis,
+                 where he developed a small framework to perform remote analysis on the data of
+                 the ATLAS 2012 run. He studied at the University of Milan, where he got his
+                 bachelor's degree in Physics (2012) and his master's degree in Computer Science (2018).
+                 He then started his professional career in videogame development, working for
+                 Ubisoft Milan as a gameplay programmer and later for Gaijin Entertainment as a
+                 graphics programmer. Since May 2024 he works as a R&D software engineer on
+                 the ROOT I/O team."
+  short_bio   : "Giacomo is a software engineer working on RNTuple"
+  tag         : "team"
+  avatar      : "/assets/images/jp.png"
+  affiliation : "CERN"
+  email       : "giacomo.parolini@cern.ch"
+
+
 Jakob Blomer:
   name        : "Jakob Blomer"
   bio         : "Jakob joined CERN for the first time as a summer student in 2007. He
