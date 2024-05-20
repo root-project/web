@@ -5,9 +5,17 @@ sidebar:
   nav: "about"
 ---
 
-ROOT is a framework for data processing, born at CERN, at the heart of the research
+ROOT is a software framework born at CERN, at the heart of the research
 on high-energy physics. Every day, thousands of physicists use ROOT applications
-to analyze their data or to perform simulations. With ROOT you can:
+to analyze their data or to perform simulations. 
+
+Our **strategic goal** is to provide a unified software package for the storage, processing, 
+visualisation and analysis of scientific data that is reliable, performant and supported, 
+that is easy to use and obtain, and that minimises the computing resources needed to 
+achieve scientific results. The success of experiments and all ROOT users at large is 
+our priority.
+
+With ROOT you can:
 
   - [Save data]({{'about/save_data' | relative_url}}) You can save your data (and any C++ object)
 in a compressed binary form in a ROOT file. The object format is also saved in the same file:
