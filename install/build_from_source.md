@@ -103,7 +103,7 @@ Also note that compatibility with compilers shipped with `devtoolset`s on CentOS
 ## ROOT, Python and PyROOT
 
 PyROOT, the set of Python bindings of ROOT, supports any Python version that is not [end-of-life](https://devguide.python.org/versions/).
-This means it supports the 5 latest major versions of Python 3 and Python 2 is not supported anymore.
+This means it supports the 5 latest major versions of Python 3.
 
 ROOT uses the standard [`FindPython3`](https://cmake.org/cmake/help/latest/module/FindPython3.html) from CMake to find Python at build time.
 You can give it [some hints](https://cmake.org/cmake/help/latest/module/FindPython3.html#hints) to find the desired Python installation.
@@ -161,6 +161,12 @@ The user can set any CMake variable or option that controls the build process fr
 **Note**: Some options have platform-dependent default values (e.g. cocoa is `ON` on apple)
 
 Click on one of the following dropdowns to see the full list of build options for a specific ROOT release:
+
+<details markdown="1"><summary markdown="span">build options for ROOT 6.32</summary>
+
+{% include build_options_v6-32-00-patches.md %}
+
+</details>
 
 <details markdown="1"><summary markdown="span">build options for ROOT 6.30</summary>
 
