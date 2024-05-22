@@ -317,3 +317,35 @@ C:\Users\username>cmake -G"Visual Studio 16 2019" -A Win32 -Thost=x64 -DCMAKE_VE
 C:\Users\username>cmake --build . --config Release --target install
 C:\Users\username>..\root_install\bin\thisroot.bat
 ```
+
+# ROOT in Gitlab CI/CD (CERN)
+
+Below are practical examples demonstrating how to integrate ROOT into a GitLab CI/CD instance, provided by one of our users on the ROOT Forum.
+
+## Using CVMFS
+
+```yml
+#image:
+
+your_task:
+stage: build
+script:
+- echo "CERN CVMFS repository"
+- ls -ls /cvmfs/sft.cern.ch/lcg/app/releases/
+tags:
+- cvmfs
+```
+
+## Using Docker containers
+
+```yml
+image: rootproject/root:latest
+
+your_task:
+stage: build
+script:
+- echo -ne "ROOT Version "
+- which root
+- echo "ROOT Features"
+- root-config --features
+```
