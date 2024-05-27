@@ -128,17 +128,20 @@ You can use ROOT to execute multi-line commands at the ROOT prompt.
 _**Example**_
 
 {% highlight C++ %}
+
 root [0] {
-root [1]   int j = 0;
-root [2]   for (int i = 0; i < 3; i++)
-root [3]   {
-root [4]     j = j + i;
-root [5]     std::cout << "i = " << i << ", j = " << j << std::endl;
-root [6]   }
-root [7] }
+root (cont'ed, cancel with .@) [1] int j = 0;
+root (cont'ed, cancel with .@) [2] for (int i = 0; i < 3; i++)
+root (cont'ed, cancel with .@) [3] {
+root (cont'ed, cancel with .@) [4] j = j + i;
+root (cont'ed, cancel with .@) [5] std::cout << "i = " << i << ", j = " << j << std::endl;
+root (cont'ed, cancel with .@) [6] }
+root (cont'ed, cancel with .@) [7] }
 i = 0, j = 0
 i = 1, j = 1
 i = 2, j = 3
+root [8]
+
 {% endhighlight %}
 
 You can also write the commands to a file, called a ROOT macro, and then execute and compile it. For more information on ROOT macros, → see [ROOT macros and shared libraries]({{ '/manual/root_macros_and_shared_libraries' | relative_url }}).
