@@ -66,7 +66,7 @@ C:\Users\username>root
 root [0]
 ```
 
-If you want to run ROOT from within Visual Studio Code, the default terminal is `powershell`, so you need to call `C:\root\bin\thisroot.ps1` instead of `C:\root\bin\thisroot.ps1` before calling `root`.
+If you want to run ROOT from within Visual Studio Code, the default terminal is `powershell`, so you need to call `C:\root\bin\thisroot.ps1` instead of `C:\root\bin\thisroot.bat` before calling `root`.
 
 If you are interested in testing (unstable) development features, you can check out the [nightlies](nightlies){:target="\_blank"}.
 
