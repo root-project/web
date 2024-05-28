@@ -47,9 +47,9 @@ class Version:
 
     def forDiagnostic(self):
         """
-        Name as shown to users: 6.22/00-rc1
+        Name as shown to users: 6.32.00-rc1
         """
-        return F'{self.major}.{self.minor}/{self.patch}{self.suff}'
+        return F'{self.major}.{self.minor}.{self.patch}{self.suff}'
 
     def forTag(self):
         """
