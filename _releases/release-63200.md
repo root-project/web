@@ -1,6 +1,6 @@
 ---
 layout: releases
-version: 6.32/00
+version: 6.32.00
 release_date: 2024-05-28
 state:
 
