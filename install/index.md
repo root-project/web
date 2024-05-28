@@ -33,7 +33,7 @@ For example, on {% include root_stable_os %}, a user could execute the following
 ```bash
 $ wget https://root.cern/download/{% include root_stable_sample %}
 $ tar -xzvf {% include root_stable_sample %}
-$ source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat}
+$ source root/bin/thisroot.sh # also available: thisroot.{csh,fish,bat,ps1}
 ```
 
 To avoid having to `source thisroot.sh` every time one needs to use ROOT, it is typical to add the command to
@@ -65,6 +65,8 @@ C:\Users\username>root
 
 root [0]
 ```
+
+If you want to run ROOT from within Visual Studio Code, the default terminal is powershell, so you need to call C:\root\bin\thisroot.ps1 instead of C:\root\bin\thisroot.ps1 before calling `root`.
 
 If you are interested in testing (unstable) development features, you can check out the [nightlies](nightlies){:target="\_blank"}.
 
@@ -317,3 +319,5 @@ C:\Users\username>cmake -G"Visual Studio 16 2019" -A Win32 -Thost=x64 -DCMAKE_VE
 C:\Users\username>cmake --build . --config Release --target install
 C:\Users\username>..\root_install\bin\thisroot.bat
 ```
+
+If running on Windows from `Powershell` (the default on Visual Studio Code), call instead thisroot.ps1
