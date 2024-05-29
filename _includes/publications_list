@@ -1,11 +1,16 @@
 {% assign type = {{include.type}}  %}
 {% assign status = {{include.status}}  %}
+{% assign year = {{include.year}}  %}
+
+Type: {{include.type}}
+Status: {{include.status}}
+Year: {{include.year}}
 
 {% assign sorted = site.publications | sort: 'date' | reverse %}
 
 {% for pub in sorted %}
-
-{% if type == pub.type or (pub.status == "CITE" and status == "CITE") %}
+{% if pub.date %} {% assign mybool =  {{type == "ALL" or type == pub.type or (pub.status == "CITE" and status == "CITE")}} %}{% endif %}
+{% if (type == "ALL" and pub.type != "NotROOT") or (type == pub.type) or (pub.status == "CITE" and status == "CITE")  %}
 <p style="margin-left:5%;">
 <em><b>{{ pub.title }}</b></em><br>
 {% if pub.status and pub.status != "CITE" %} Status: {{ pub.status }}<br>{% endif %}
@@ -16,6 +21,7 @@
 {% if pub.doi %}{% assign number = pub.doi | split: "." %}{% if number.first == "10" %}doi: <a href="https://doi.org/{{ pub.doi }}" target="_blank">{{ pub.doi }}</a><br>{% endif %}{% endif %}
 {% if pub.www %}www: <a href="{{ pub.www }}" target="_blank">{{ pub.www }}</a><br>{% endif %}
 {% if pub.note %} Note: {{ pub.note }}{% endif %}
+
 </p>
 {% endif %}
 
