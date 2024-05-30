@@ -11,11 +11,11 @@ In case you want to cite ROOT in your own publications, this is the preferred re
 
 {% include publications_list status="CITE" %}
 
-## ROOT presentations
-{% include publications_list year="2022" %}
+## ROOT selected presentations
+{% include presentations_list type="ALL" %}
 
 ## ROOT papers
-{% include publications_list type="ALL" %}
+{% include publications_list status="ANY" %}
 
 ## ROOT papers by topics
 
