@@ -12,7 +12,7 @@ In case you want to cite ROOT in your own publications, this is the preferred re
 {% include publications_list status="CITE" %}
 
 ## ROOT selected presentations
-{% include presentations_list type="ALL" %}
+{% include presentations_list status="ANY" %}
 
 ## ROOT papers
 {% include publications_list status="ANY" %}

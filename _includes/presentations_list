@@ -5,7 +5,10 @@
 
 {% for pub in sorted %}
 
-{% if (type == "ALL" and pub.type != "NotROOT") or (type == pub.type) %}
+{% if type == pub.type or status == "ANY" %}
+{% if pub.type == "NotROOT" and status == "ANY" %}
+{% continue %}
+{% endif %}
 <p style="margin-left:5%;">
 <em><b>{{ pub.title }}</b></em><br>
 {% if pub.speaker %} Speaker: {% include authors_url list=pub.speaker %}<br>{% endif %}
