@@ -1,5 +1,7 @@
 {% assign type = {{include.type}}  %}
 {% assign status = {{include.status}}  %}
+{% assign before = {{include.before | date: '%Y-%m-%d %H:%M' }}%}
+{% assign after = {{include.after | date: '%Y-%m-%d %H:%M' }}%}
 
 {% assign sorted = site.publications | sort: 'date' | reverse %}
 
@@ -8,6 +10,17 @@
 {% if (type == pub.type or status == "ANY") or (pub.status == "CITE" and status == "CITE") %}
 {% if pub.type == "NotROOT" and status == "ANY" %}
 {% continue %}
+{% endif %}
+{% assign pubdate = {{pub.date | date: '%Y-%m-%d %H:%M' }}%}
+{% if before %}
+{% if pubdate > before %}
+{% continue %}
+{% endif %}
+{% endif %}
+{% if after %}
+{% if pubdate <= after %}
+{% continue %}
+{% endif %}
 {% endif %}
 <p style="margin-left:5%;">
 <em><b>{{ pub.title }}</b></em><br>

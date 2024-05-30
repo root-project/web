@@ -15,7 +15,21 @@ In case you want to cite ROOT in your own publications, this is the preferred re
 {% include presentations_list status="ANY" %}
 
 ## ROOT papers
-{% include publications_list status="ANY" %}
+
+### 2023
+{% include publications_list status="ANY" before="2024-01-01" after="2023-01-01" %}
+
+### 2022
+{% include publications_list status="ANY" before="2023-01-01" after="2022-01-01" %}
+
+### 2021
+{% include publications_list status="ANY" before="2022-01-01" after="2021-01-01" %}
+
+### 2020
+{% include publications_list status="ANY" before="2021-01-01" after="2020-01-01" %}
+
+### Older
+{% include publications_list status="ANY" before="2020-01-01" %}
 
 ## ROOT papers by topics
 
