@@ -1,0 +1,23 @@
+{% assign type = {{include.type}}  %}
+{% assign status = {{include.status}}  %}
+
+{% assign sorted = site.presentations | sort: 'date' | reverse %}
+
+{% for pub in sorted %}
+
+{% if (type == "ALL" and pub.type != "NotROOT") or (type == pub.type) %}
+<p style="margin-left:5%;">
+<em><b>{{ pub.title }}</b></em><br>
+{% if pub.speaker %} Speaker: {% include authors_url list=pub.speaker %}<br>{% endif %}
+{% if pub.speakers %} Speakers: {% include authors_url list=pub.speakers %}<br>{% endif %}
+{% if pub.author %} Author: {% include authors_url list=pub.author %}<br>{% endif %}
+{% if pub.authors %} Authors: {% include authors_url list=pub.authors %}<br>{% endif %}
+{% if pub.publication %}{{ pub.publication }}, {{ pub.year }}<br>{% endif %}
+{% if pub.date %} Date: {{ pub.date | date_to_long_string: "ordinal" }}<br>{% endif %}
+{% if pub.doi %}{% assign number = pub.doi | split: "." %}{% if number.first == "10" %}doi: <a href="https://doi.org/{{ pub.doi }}" target="_blank">{{ pub.doi }}</a><br>{% endif %}{% endif %}
+{% if pub.www %}www: <a href="{{ pub.www }}" target="_blank">{{ pub.www }}</a><br>{% endif %}
+{% if pub.note %} Note: {{ pub.note }}{% endif %}
+</p>
+{% endif %}
+
+{% endfor %}

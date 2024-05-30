@@ -301,6 +301,8 @@ collections:
     output: true
   publications:
     output: true
+  presentations:
+    output: true
 
 github: [metadata]
 
