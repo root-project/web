@@ -7,11 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-In case you want to cite ROOT in your own publications, this is the preferred reference:
-
-{% include publications_list status="CITE" %}
-
-## ROOT papers by topics
+## All ROOT publications by topics
 
 ### I/O
 {% include publications_list type="IO" %}
@@ -35,11 +31,11 @@ In case you want to cite ROOT in your own publications, this is the preferred re
 {% include publications_list type="PARA" %}
 
 ### CINT
-CINT was the C++ interpretor until ROOT version 5. In case you want to cite CINT, use the following references:
+CINT was the C++ interpreter until ROOT version 5. In case you want to cite CINT, use the following references:
 {% include publications_list type="CINT" %}
 
-## Overview papers on ROOT
+## Overview publications on ROOT
 {% include publications_list type="ROOT" %}
 
-## Not ROOT papers, but related
+## Not ROOT publications, but related
 {% include publications_list type="NotROOT" %}

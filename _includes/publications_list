@@ -5,10 +5,9 @@
 
 {% for pub in sorted %}
 
-{% if type == pub.type or (pub.status == "CITE" and status == "CITE") %}
+{% if type == pub.type %}
 <p style="margin-left:5%;">
 <em><b>{{ pub.title }}</b></em><br>
-{% if pub.status and pub.status != "CITE" %} Status: {{ pub.status }}<br>{% endif %}
 {% if pub.author %} Author: {% include authors_url list=pub.author %}<br>{% endif %}
 {% if pub.authors %} Authors: {% include authors_url list=pub.authors %}<br>{% endif %}
 {% if pub.publication %}{{ pub.publication }}, {{ pub.year }}<br>{% endif %}
