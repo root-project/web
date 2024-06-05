@@ -7,7 +7,11 @@ toc: true
 toc_sticky: true
 ---
 
-## All ROOT publications by topics
+
+## Overview contributions on ROOT
+{% include publications_list type="ROOT" %}
+
+## ROOT contributions by topics
 
 ### I/O
 {% include publications_list type="IO" %}
@@ -34,8 +38,5 @@ toc_sticky: true
 CINT was the C++ interpreter until ROOT version 5. In case you want to cite CINT, use the following references:
 {% include publications_list type="CINT" %}
 
-## Overview publications on ROOT
-{% include publications_list type="ROOT" %}
-
-## Not ROOT publications, but related
+## Not ROOT contributions, but related
 {% include publications_list type="NotROOT" %}
