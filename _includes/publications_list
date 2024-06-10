@@ -8,9 +8,13 @@
 {% if type == pub.type %}
 <p style="margin-left:5%;">
 <em><b>{{ pub.title }}</b></em><br>
+{% if pub.publication %} <span style="color: white; background-color: blue; border-radius: 5px; padding: 5px; text-align:center; "><b>Publication</b></span> {{ pub.publication }}, {{ pub.year }}<br>{% endif %}
+{% if pub.journal %} <span style="color: white; background-color: #01579b; border-radius: 5px; padding: 5px; text-align:center; "><b>Journal</b></span> {{ pub.journal }}, {{ pub.year }}<br>{% endif %}
+{% if pub.workingpaper %} <span style="color: white; background-color: #2e7d32; border-radius: 5px; padding: 5px; text-align:center; "><b>Working-Paper</b></span> {{ pub.workingpaper }}, {{ pub.year }}<br>{% endif %}
+{% if pub.conference %} <span style="color: white; background-color: #0097a7; border-radius: 5px; padding: 5px; text-align:center; "><b>Conference</b></span> {{ pub.conference }}, {{ pub.year }}<br>{% endif %}
+{% if pub.presentation %} <span style="color: white; background-color: #616161; border-radius: 5px; padding: 5px; text-align:center; "><b>Presentation</b></span> {{ pub.presentation }}, {{ pub.year }}<br>{% endif %}
 {% if pub.author %} Author: {% include authors_url list=pub.author %}<br>{% endif %}
 {% if pub.authors %} Authors: {% include authors_url list=pub.authors %}<br>{% endif %}
-{% if pub.publication %}{{ pub.publication }}, {{ pub.year }}<br>{% endif %}
 {% if pub.date %} Date: {{ pub.date | date_to_long_string: "ordinal" }}<br>{% endif %}
 {% if pub.doi %}{% assign number = pub.doi | split: "." %}{% if number.first == "10" %}doi: <a href="https://doi.org/{{ pub.doi }}" target="_blank">{{ pub.doi }}</a><br>{% endif %}{% endif %}
 {% if pub.www %}www: <a href="{{ pub.www }}" target="_blank">{{ pub.www }}</a><br>{% endif %}
