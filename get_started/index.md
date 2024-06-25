@@ -7,21 +7,23 @@ sidebar:
 
 On behalf of the developers, contributors and user community: **welcome to ROOT!**
 
-The [ROOT beginners' guide (aka "Primer")]({{ '/primer' | relative_url }})
-is certainly the first document to read to master the power of ROOT.
+If you have never used ROOT before and don't know where to start, we recommend that you first explore: https://github.com/root-project/student-course
 
-The [Manual]({{ '/manual' | relative_url }}) introduces you to the main parts of ROOT.
+For that purpose you don't need to install ROOT on your machine, you can directly run all the examples and exercises 
+on [SWAN](https://swan.cern.ch){:target="_blank"} (if you have a CERN computing account), otherwise either using github codespaces or binder. 
 
-After this introduction,
-[tutorial presentations (and video!)](https://indico.cern.ch/event/395198){:target="_blank"} offer a
-different, more direct approach to the ROOT fundamental
-concepts as well as some hands-on exercise. In order to integrate the information present
-in the aforementioned sources, [this collection of ROOT courses](courses){:target="_blank"}
-is definitively useful. Once the fundamental concepts have been acquired, a rich set of
-[tutorials]({{ '/tutorials' | relative_url }}) are available to dive into the code.
+The course is written in python. We use jupyter notebooks as the basis to both explain the fundamental concepts and show the code examples. 
+We also provide a few exercises that you can attempt on your own. If you want to know a bit more and complete a few more exercises, 
+we added some extra material that can be found in the above repository as well. 
 
-Remember, you can always resort to the
-[ROOT Forum](https://root-forum.cern.ch){:target="_blank"}
-to find out if someone already solved the problem you are facing or to get help!
+Once you are a bit more familiar with what ROOT offers and how to use it online, you can take a look at how to install it on your machine 
+[install]({{ '/install' | relative_url }}). 
 
+Finally, if you wish to delve a bit further into ROOT functionalities, check the following: 
+* The [ROOT beginners' guide (aka "Primer")]({{ '/primer' | relative_url }})
+* The [Manual]({{ '/manual' | relative_url }}) where more in depth information can be found
+* The full [API Documentation](https://root.cern/doc/master/){:target="_blank"}
+* The [tutorials]({{ '/tutorials' | relative_url }})
+
+Lastly, in case you have a problem or a question, don't hesitate to use the [ROOT Forum](https://root-forum.cern.ch){:target="_blank"}
 
