@@ -7,7 +7,7 @@ sidebar:
   nav: "start"
 ---
 
-This page lists a number of ROOT tutorials and courses that were performed in the past. Some were designed and organized by the ROOT team and some by the third parties.
+This page lists a number of ROOT tutorials and courses that were performed in the past. Some were designed and organized by the ROOT team and some by the third parties. The courses make use of older versions of ROOT and some of the information may be outdated. We recommend following the newer courses, tutorials and documentation for the up to date information. 
 
 ## <a id="Basic" name="Basic"></a>Basic
 
