@@ -7,8 +7,8 @@ main:
   - title: "Install"
     url: install
     description: "All you need to download and install ROOT"
-  - title: "Get Started"
-    url: get_started
+  - title: "Learn"
+    url: learn
     description: "ROOT usage starting point"
   - title: "Forum & Help"
     url: https://root-forum.cern.ch/
@@ -247,10 +247,10 @@ about:
      url: about/legal
 
 start:
-   - title: Get Started
-     url: get_started
+   - title: Learn
+     url: learn
      children:
       - title: Courses
-        url: get_started/courses
+        url: learn/courses
       - title: Tutorials
         url: tutorials
