@@ -4,12 +4,12 @@ main:
   - title: "About"
     url: about
     description: "About ROOT"
+  - title: "Learn"
+    url: learn
+    description: "How to learn ROOT"
   - title: "Install"
     url: install
     description: "All you need to download and install ROOT"
-  - title: "Learn"
-    url: learn
-    description: "ROOT usage starting point"
   - title: "Forum & Help"
     url: https://root-forum.cern.ch/
     description: "Ask questions about ROOT"
