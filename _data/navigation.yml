@@ -250,7 +250,9 @@ start:
    - title: Learn
      url: learn
      children:
-      - title: Courses
-        url: learn/courses
       - title: Tutorials
         url: tutorials
+      - title: Courses
+        url: learn/courses
+      - title: Archived Courses
+        url: learn/courses_archive
