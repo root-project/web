@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## Binaries cling
 
-You can find our nightly binary snapshots <a href="https://root.cern/download/cling/">here</a>
+Our nightly binary snapshots are currently not available.
 
 ## Building from source
 
@@ -36,6 +36,8 @@ cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DLLVM_BUILD_TOOLS=Off -DLLVM_EXTERNAL
 cmake --build .
 cmake --build . --target install
 {% endhighlight %}
+
+See also README [on the repository](https://github.com/root-project/root/blob/master/interpreter/cling/README.md).
 
 ### cling patches?
 
