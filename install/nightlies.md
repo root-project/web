@@ -13,7 +13,7 @@ This page lists all the ways you can install a bleeding-edge version of ROOT, i.
 
 ## Pre-compiled binaries
 
-Pre-compiled binaries for various platforms are available [at this link](https://root.cern/download/nightly/?C=N;O=D){:target="_blank"}.
+Pre-compiled binary nightlies for various platforms are not available at the moment.
 The [usual instructions]({{ '/install/#download-a-pre-compiled-binary-distribution' | relative_url}}) for the usage of our binary distributions apply.
 
 ## LCG nightlies
