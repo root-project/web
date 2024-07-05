@@ -280,7 +280,7 @@ In Python you can simply use the branch name as an attribute on the tree:
 
 {% highlight Python %}
 myFile = ROOT.TFile.Open("file.root")
-myTree = myFile.TreeName
+myTree = myFile["TreeName"]  # myFile.TreeName before 6.32.0
 for entry in myTree:
    print(entry.branchName)
 {% endhighlight %}
