@@ -11,6 +11,9 @@ The page lists the prerequisite packages that need to be installed on the differ
 
 The table of content can be used to quickly jump to your operating system.
 
+For a more comprehensive list of dependencies depending on the operating system version,
+we recommend checking the [docker image repository](https://github.com/root-project/root-docker/tree/master), under the file `packages` of your corresponding system
+
 ## Supported compilers
 
 ### From v6.30:
