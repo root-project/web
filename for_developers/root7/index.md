@@ -44,9 +44,8 @@ and specifically for [drawing and styling the new histograms](https://github.com
 
 ## RBrowser
 
-Starting from ROOT version 6.26/00, {% include ref class="RBrowser" namespace="ROOT" %} is the first web-based component used by default when ROOT is built with `root7`.
-It is automatically invoked with `new TBrowser`.
-We recommend to install the `chrome/chromium` web browser, but all other web browsers should do the job.
+Since August 2024 and starting from ROOT version 6.34 {% include ref class="RBrowser" namespace="ROOT" %} used by default when ROOT is built with `webgui`.
+It is automatically invoked with `new TBrowser`. We recommend to install the `chrome/chromium` web browser, but all other web browsers should do the job.
 
 If for any reasons `RBrowser` does not provide required functionality, one always can disable it.
 Either by specifying `root --web=off` when starting ROOT or by setting `Browser.Name: TRootBrowser` in rootrc file.
@@ -95,9 +94,9 @@ and used independently from ROOT installation - it is only required that support
 
 It is implementation of normal ROOT graphics in the web browser.
 It uses [jsroot](https://root.cern/js/) for graphics, [openui5](https://openui5.org/) for GUI
-and RWebWindow class for server-client communication. It provides a lot of interactive features like
-zooming, context menu, GED (graphics attributes editor). Since July 2023 it is used as default
-implementation for `TCanvas` in interactive mode.
+and RWebWindow {% include ref class="RWebWindow" namespace="ROOT" %} class for server-client communication.
+It provides a lot of interactive features like zooming, context menu, GED (graphics attributes editor).
+Since August 2024 and starting from ROOT version 6.34 it is used as default implementation for `TCanvas` in interactive mode.
 
 It also can be used in the batch mode for image generation. In this case one should specify `--web` option to run ROOT:
 
@@ -106,6 +105,11 @@ It also can be used in the batch mode for image generation. In this case one sho
 If for any reasons `TWebCanvas` does not provide required functionality, one always can disable it.
 Either by specifying `root --web=off` when starting ROOT or by setting `Canvas.Name: TRootCanvas` in rootrc file.
 Please report your case at the [ROOT Forum](https://root-forum.cern.ch) so we can address it!
+
+
+## TWebCanvas on remote nodes
+
+Same as RBrowser, TWebCanvas can be used on remote nodes - using `rootssh` script.
 
 
 We highly appreciate your feedback!
