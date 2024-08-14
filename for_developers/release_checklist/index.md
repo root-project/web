@@ -86,8 +86,17 @@ This assumes you try to create `v6-32-00-patches`, adjust accordingly.
   1. Tag and push ROOTTEST repository
         - `git tag -a v6-32-02`
         - `git push upstream v6-32-02`
+  1. Produce binary tar-files (optional for development releases and release candidates)
+      - Go to the [`Actions` tab on the root repository page](https://github.com/root-project/root/actions)
+      - Select the `ROOT CI` workflow
+      - Click on the `Run workflow button`
+      - Select the branch for which the release is being made. For example select `v6-32-00-patches` if you are releasing `6.32.16`
+      - Select for the fields `rebase from` and `... to ...` the name of the tag for the release, e.g. `v6-32-16` (this information will be used for the checkout)
+      - De-select the `Do incremental build` radio button
+      - Select the `Create binary packages and upload them as artifacts` button
+      - Select for the `The CMAKE_BUILD_TYPE to use for non-Windows` radio-button the value `Release`
   1. Make source tar file and copy onto the download area _[not on a MacOS machine](https://superuser.com/questions/318809/linux-os-x-tar-incompatibility-tarballs-created-on-os-x-give-errors-when-unt){:target="_blank"}_:
-      - `git clone --depth 1 --branch v6-32-02 https://github.com/root-project/root`
+      - `git clone --depth 1 --branch v6-32-06 https://github.com/root-project/root`
       - `mkdir build && cd build && cmake -Dminimal=ON -DCMAKE_BUILD_TYPE="Debug" ../root; make distsrc` 
       - `scp ../root_vX.YY.ZZ.source.tar.gz usr@srv:/var/www/root/download/`
   1. For non-patch releases, create new release notes in `README/ReleaseNotes/vXXX+1/index.md`
@@ -96,18 +105,10 @@ This assumes you try to create `v6-32-00-patches`, adjust accordingly.
   1. Update to the next development version
       - Since 6.30, edit `core/foundation/inc/ROOT/RVersion.hxx` (odd patch number)
       - Before 6.30, edit `build/version_number` (odd patch number); `$ cmake . && make version`
+  1. Push to the the changes and unlock the branch, both in the `root` and `roottest` repositories.
   1. Fix build errors!
       - `make` must succeed
       - Deprecations will now create build errors, fix them
-  1. Produce binary tar-files (optional for development releases and release candidates)
-      - Go to the [`Actions` tab on the root repository page](https://github.com/root-project/root/actions)
-      - Select the `ROOT CI` workflow
-      - Click on the `Run workflow button`
-      - Select the branch for which the release is being made. For example select `v6-32-00-patches` if you are releasing `6.32.16`
-      - Select for the fields `rebase from` and `... to ...` the tag for the release, e.g. `6.32.16`
-      - De-select the `Do incremental build` radio button
-      - Select the `Create binary packages and upload them as artifacts` button
-      - Select for the `The CMAKE_BUILD_TYPE to use for non-Windows` radio-button the value `Release`
   1. Update the stable branch. The command below creates a commit that appears as a merge to git porcelain commands, but that directly points to the tree given by the `LATEST_STABLE` commit-ish. Users that have cloned this branch will receive updates as a fast-forward via `git pull`
       - `$ LATEST_STABLE=v6-xx-yy    # e.g. v6-32-02`
       - `$ git fetch upstream latest-stable:latest-stable`
