@@ -152,10 +152,8 @@ $ yum install root
 Arch's [ROOT package](https://www.archlinux.org/packages/community/x86_64/root){:target="\_blank"} can be installed with
 
 ```sh
-$ pacman -Syu root
+$ sudo pacman -S root
 ```
-
-The Arch package uses C++17.
 
 ### Gentoo
 
