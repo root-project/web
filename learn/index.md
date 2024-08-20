@@ -7,7 +7,7 @@ sidebar:
 
 On behalf of the developers, contributors and user community: **welcome to ROOT!**
 
-If you have never used ROOT before and don't know where to start, we recommend that you first explore [the ROOT introductory course](https://github.com/root-project/student-course){:target="_blank"}.
+If you have never used ROOT before and don't know where to start, we recommend that you first explore [the ROOT introductory course](https://github.com/root-project/student-course){:target="_blank"}. You can also watch [the recording of the course](https://videos.cern.ch/record/2300516), but you should follow the material along on your PC.
 
 For this course, you don't need to install ROOT on your machine. You can directly run all the examples and exercises on [SWAN](https://swan.cern.ch){:target="_blank"} (if you have a CERN computing account), or otherwise using GitHub Codespaces or Binder.
 
