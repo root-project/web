@@ -124,12 +124,13 @@ Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Mana
 *   **libssl-dev:** for `/usr/include/openssl/pem.h`, `/usr/lib/libssl.so` and `/usr/lib/libcrypto.so` (on older systems the package might be called `openssl-dev`)
 *   **libtbb-dev:** TBB parallelism library
 *   **libvdt-dev:** Vectorization library, available starting from Ubuntu 23.10, otherwise builtin is used.
+*   **libgif-dev:** GIF library
 
 As a one-liner:
 
 ```bash
 sudo apt-get install binutils cmake dpkg-dev g++ gcc libssl-dev git libx11-dev \
-libxext-dev libxft-dev libxpm-dev python3 libtbb-dev libvdt-dev
+libxext-dev libxft-dev libxpm-dev python3 libtbb-dev libvdt-dev libgif-dev
 ```
 
 ### Most common optional packages
