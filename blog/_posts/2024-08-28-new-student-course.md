@@ -1,13 +1,14 @@
 ---
 title: "New ROOT student course for self-study"
 layout: archive
+excerpt_separator: <!--more-->
 author: Marta Czurylo
 ---
 
 *The academic year is about to start, 
 so why not learn ROOT with us?*
 
-During the summer, the ROOT team has organized a number of ROOT Summer Student courses at CERN and two HSF/IRIS-HEP Python for Analysis Trainings online, meaning the ROOT community has expanded by around 200 new students! And that is only the beginning; we think more students should have an opportunity to acquire the course material, this time in a self-study manner.
+During the summer, the ROOT team has organized a number of ROOT Summer Student courses at CERN and two HSF/IRIS-HEP Python for Analysis Trainings online, meaning the ROOT community has expanded by around 200 new students! And that is only the beginning; we think more students should have an opportunity to acquire the course material, this time in a self-study manner.<!--more-->
 
 The course is entirely contained within Python Jupyter Notebooks; the material is available on [GitHub](https://github.com/root-project/student-course), while the video recording is [here](https://videos.cern.ch/record/2300516). 
 
