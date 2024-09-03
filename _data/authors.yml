@@ -525,13 +525,14 @@ Oksana Shadura:
 
 Stephan Hageboeck:
   name        : "Stephan Hageboeck"
-  bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the university of Bonn in
-                 Germany. He worked in ATLAS to improve the sensitivity in the search for
-                 Higgs --> bb decays. His main focus was on analysis frameworks, machine learning,
-                 systematic uncertainties and statistical models. He joined the ROOT team in 2018 to
-                 support and improve RooFit. He further looks into math and statistics, as well as into
-                 questions regarding performance and programming model."
-  tag         : "previous"
+  bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the University of Bonn in
+                 Germany. He worked in ATLAS in the search for Higgs --> bb decays, and was the maintainer
+                 of RooFit in 2019 and 2020, where he paved the way for RooFit with vectorisation and GPUs.
+                 From 2021 to 2024, he worked in CERN's IT department on GPU computing. Now, Stephan is
+                 back in the ROOT team, working on RDataFrame, GPU computing and analysis interfaces."
+  avatar      : "/assets/images/SH.jpg"
+  affiliation : "CERN"
+  tag         : "team"
 
 
 Susan Panacek:
