@@ -269,6 +269,7 @@ This list is also available by typing `.?` or `.help` in the ROOT prompt.
    .help Class::Member : open reference guide for that class member (or .?).
                          Specifying '::Member' is optional.
    .help edit          : show line editing shortcuts (or .?)
+   .libraries          : show loaded libraries
    .license            : show license
    .ls                 : list contents of current TDirectory
    .pwd                : show current TDirectory, pad and style
