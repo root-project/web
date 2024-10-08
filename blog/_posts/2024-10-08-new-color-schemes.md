@@ -78,5 +78,5 @@ void thstackcolorscheme()
 }
 {% endhighlight %}
 
-These new color schemes, now in the master version of ROOT, will be in available
+These new color schemes, now in the master version of ROOT, will be available
 in version 6.34.
