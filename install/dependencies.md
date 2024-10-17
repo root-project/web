@@ -105,66 +105,40 @@ R-devel R-Rcpp-devel R-RInside-devel
 
 ## Ubuntu and other Debian-based distributions
 
-Use `sudo apt-get install <package>` or use the graphical "Synaptic Package Manager" program.
+Use `sudo apt install <package>` or use the graphical "Synaptic Package Manager" program.
 
 ### Required packages
 
-*   **dpkg-dev**  for dpkg-architecture (needed by configure to locate system libraries)
-*   **cmake:** for /usr/bin/cmake
-*   **g++:** for /usr/bin/g++
-*   **gcc:** for /usr/bin/gcc
-*   **binutils:** for /usr/bin/ld
-*   **libx11-dev:** for usr/include/X11/Xlib.h and for /usr/lib/libX11.so
-*   **libxpm-dev:** for /usr/include/X11/xpm.h and for /usr/lib/libXpm.so
-*   **libxft-dev:** for /usr/include/X11/Xft/Xft.h and for /usr/lib/libXft.so
-*   **libxext-dev:** for /usr/include/X11/extensions/shape.h and for /usr/lib/libXext.so
-*   **libpng:** png library
-*   **libjpeg:** jpeg library
-*   **python3:** (see [here](https://root.cern/install/build_from_source/#root-python-and-pyroot) for info on supported Python versions)
-*   **libssl-dev:** for `/usr/include/openssl/pem.h`, `/usr/lib/libssl.so` and `/usr/lib/libcrypto.so` (on older systems the package might be called `openssl-dev`)
-*   **libtbb-dev:** TBB parallelism library
-*   **libvdt-dev:** Vectorization library, available starting from Ubuntu 23.10, otherwise builtin is used.
-*   **libgif-dev:** GIF library
-
-As a one-liner:
+**Installing required packages with a one-liner:**
 
 ```bash
-sudo apt-get install binutils cmake dpkg-dev g++ gcc libssl-dev git libx11-dev \
+sudo apt install binutils cmake dpkg-dev g++ gcc libssl-dev git libx11-dev \
 libxext-dev libxft-dev libxpm-dev python3 libtbb-dev libvdt-dev libgif-dev
 ```
 
-### Most common optional packages
+Some more context:
+  * **dpkg-dev**:  for dpkg-architecture (needed by configure to locate system libraries)
+  * **libvdt-dev:** vectorization library, available starting from Ubuntu 23.10, otherwise builtin is used.
+  * **python3:** see [here](https://root.cern/install/build_from_source/#root-python-and-pyroot) for info on supported Python versions
 
-*   **gfortran:** for /usr/bin/gfortran
-*   **libpcre3-dev:** for /usr/bin/pcre-config
-*   **libglu1-mesa-dev:** for /usr/include/GL/gl.h and for /usr/lib/libGL.so
-*   **libglew-dev:** for /usr/include/GL/glew.h and for /usr/lib/libGLEW.so
-*   **libftgl-dev:** for /usr/bin/pkg-config
-*   **libmysqlclient-dev:** for /usr/bin/mysql_config
-*   **libfftw3-dev:** for /usr/include/fftw3.h and for /usr/lib/libfftw3.so
-*   **libcfitsio-dev:** for /usr/include/fitsio2.h and for /usr/lib/libcfitsio.so
-*   **libgraphviz-dev:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
-*   **libavahi-compat-libdnssd-dev:** for /usr/include/dns_sd.h and for /usr/lib/libdns_sd.so
-*   **libldap2-dev:** for /usr/include/ldap.h and for /usr/lib/libldap.so
-*   **python3-dev:** for /usr/include/python3.10/Python.h and for /usr/lib/libpython3.10.so
-*   **python3-numpy:** needed for PyMVA
-*   **libxml2-dev:** for /usr/bin/xml2-config
-*   **libkrb5-dev:** for /usr/include/krb5.h and for /usr/lib/libkrb5.so
-*   **libgsl-dev:** for /usr/include/gsl/gsl_version.h and for /usr/lib/libgsl.a
-*   **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
-*   **qtwebengine5-dev:** required for **qt5web** component
-*   **nlohmann-json3-dev:** required for **ROOTEve**
-
-As a one-liner:
+**Installing most common optional packages with a one-liner:**
 
 ```bash
-sudo apt-get install gfortran libpcre3-dev \
+sudo apt install gfortran libpcre3-dev \
 libglu1-mesa-dev libglew-dev libftgl-dev \
 libfftw3-dev libcfitsio-dev libgraphviz-dev \
 libavahi-compat-libdnssd-dev libldap2-dev \
  python3-dev python3-numpy libxml2-dev libkrb5-dev \
-libgsl-dev qtwebengine5-dev nlohmann-json3-dev libmysqlclient-dev
+libgsl-dev qtwebengine5-dev nlohmann-json3-dev libmysqlclient-dev \
+libgl2ps-dev \
+liblzma-dev libxxhash-dev liblz4-dev libzstd-dev
 ```
+
+Some more context:
+  * **nlohmann-json3-dev:** required for **ROOTEve** and **RooFit**
+  * **python3-numpy:** needed for PyMVA
+  * **qtwebengine5-dev:** required for **qt5web** component
+  * **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 
 On Debian, substitute `libmysqlclient-dev` with `libmariadb-dev`.
 
