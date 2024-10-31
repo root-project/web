@@ -49,7 +49,6 @@
 | `distcc` | Enable distcc usage for speeding up builds (ccache is called first if enabled) | OFF |
 | `test_distrdf_pyspark` | Enable distributed RDataFrame tests that use pyspark | OFF |
 | `test_distrdf_dask` | Enable distributed RDataFrame tests that use dask | OFF |
-| `exceptions` | Enable compiler exception handling (deprecated, always enabled) | ON |
 | `fcgi` | Enable FastCGI support in HTTP server | OFF |
 | `fftw3` | Enable support for FFTW3 [GPL] | OFF |
 | `fitsio` | Enable support for reading FITS images | ON |
@@ -66,19 +65,14 @@
 | `memory_termination` | Free internal ROOT memory before process termination (experimental, used for leak checking) | OFF |
 | `minuit2_mpi` | Enable support for MPI in Minuit2 | OFF |
 | `minuit2_omp` | Enable support for OpenMP in Minuit2 | OFF |
-| `minuit2` | Build Minuit2 minimization library | ON |
 | `mlp` | Enable support for TMultilayerPerceptron classes' federation | ON |
 | `mpi` | Enable support for Message Passing Interface (MPI) | OFF |
 | `mysql` | Enable support for MySQL databases | ON |
 | `odbc` | Enable support for ODBC databases (requires libiodbc or libodbc) | OFF |
 | `opengl` | Enable support for OpenGL (requires libGL and libGLU) | ON |
-| `oracle` | Enable support for Oracle databases (requires Oracle Instant Client) (deprecated) | OFF |
 | `pgsql` | Enable support for PostgreSQL | ON |
 | `proof` | Enable support for PROOF | OFF |
 | `pyroot` | Enable support for automatic Python bindings (PyROOT) | ON |
-| `pyroot-python2` | Enable Python 2 support in PyROOT (deprecated) | OFF |
-| `pythia6_nolink` | Delayed linking of Pythia6 library (deprecated) | OFF |
-| `pythia6` | Enable support for Pythia 6.x [unlicensed] (deprecated) | OFF |
 | `pythia8` | Enable support for Pythia 8.x [GPL] | OFF |
 | `qt5web` | Enable support for Qt5 web-based display (requires Qt5::WebEngine and Qt5::WebEngineWidgets) | OFF |
 | `qt6web` | Enable support for Qt6 web-based display (requires Qt6::WebEngineCore and Qt6::WebEngineWidgets) | OFF |
