@@ -26,6 +26,12 @@ presented and explained.
 In the second part of the manual, the numerous application areas and special topics of ROOT
 are dealt with. Here you will receive in-depth information about the extensive possibilities
 of data analysis with ROOT.
+
+<br><br>
+
+<b><a href="https://root.cern/doc/master/">Documentation</a></b><br>
+In case you would like to know more about any of the functionalities described in the manual.
+
 </div>
 
 <br>
