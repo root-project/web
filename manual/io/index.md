@@ -298,7 +298,7 @@ Most analyses on the other hand will benefit from one of the fast compression al
 The compression factor, that is, the saving of storage space, varies with the type of data. A buffer containing `N` identical values is compressed better than a set of values with higher entropy.
 
 ROOT offers [several options](https://root.cern/doc/master/structROOT_1_1RCompressionSetting_1_1EAlgorithm.html#ad5ed4ef81888f5406ae0f018ff45fd96), such as LZMA with very high compression ratio, or LZ4 with very high decompression throughput, or ZSTD with a good compromise in performance.
-The default compression for [`RNTuple`](https://root.cern/doc/master/structROOT_1_1Experimental_1_1RNTuple.html) is ZSTD level 5; for everything else it's zlib with compression level 1.
+The default compression for [`RNTuple`](https://root.cern/doc/master/classROOT_1_1RNTuple.html) is ZSTD level 5; for everything else it's zlib with compression level 1.
 
 Algorithm and compression level can be selected using [`TFile::SetCompressionAlgorithm()`](https://root.cern/doc/master/classTFile.html#a8ed2b3d3f644d739766e16cb70a49393) and [`TFile::SetCompressionLevel()`](https://root.cern/doc/master/classTFile.html#a39aa992efad9e7b4232124c4069d7861), respectively, at the time data is written. A compression level of 0 turns off compression completely. Both algorithm and level can be set an the same time using [`TFile::SetCompressionSettings()`](https://root.cern/doc/master/classTFile.html#a6eea127e5d730e6fe516840aaf995cb9).
 The recommended algorithm for general purpose analysis data can be set with:
