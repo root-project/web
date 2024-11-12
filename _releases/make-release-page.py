@@ -261,12 +261,12 @@ def binaryNameToTitle(filename):
 
         return F"macOS {macOSVers} {arch} Xcode {xcodeVers}"
     elif platformCompiler.startswith('win32') or platformCompiler.startswith('win64'):
-        regexWin = re.compile(r'^win(32|64)[.](vc[0-9]+)(.debug)?')
+        regexWin = re.compile(r'^win(32|64)[.](python3[0-9]+)[.](vc[0-9]+)(.debug)?')
         matchWin = regexWin.match(platformCompiler)
         if not matchWin:
             print(F'ERROR: cannot parse Win32 MSVC version for {filename}')
             return filename
-        (bitness, vcVers, debug) = matchWin.groups()
+        (bitness, pythonVers, vcVers, debug) = matchWin.groups()
         if not debug:
             debug = ''
         else:
@@ -291,7 +291,7 @@ def binaryNameToTitle(filename):
             bitArch = "x86"
         else:
             bitArch = "x64"
-        return F"Windows Visual Studio {versYear} {bitness}-bit {bitArch} {debug}"
+        return F"Windows Visual Studio {versYear} {bitness}-bit {bitArch}{debug}"
     else:
         frameinfo = getframeinfo(currentframe())
         print(F'ERROR: unknown platform {platformCompiler} for {filename}. Please edit {frameinfo.filename}:{frameinfo.lineno}')
