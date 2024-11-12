@@ -11,10 +11,9 @@ The ROOT team has adopted [Doxygen](https://www.doxygen.nl){:target="_blank"} fo
 the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}. Here you will find a number of conventions
 and tips to be used in source code to generate proper documentation.
 
-## How to generate the doxygen documentation
-Developers may generate the documentation by hand to see the results of the current changes
-before committing them to the repository. The automatic daily Jenkins procedures will
-generate the complete set of documentation.
+## How to generate locally the doxygen documentation
+Developers can generate the documentation locally to review the results of their changes
+before committing them to the repository. The process is as follows:
 
 {% highlight sh %}
 $ cd <root_sources>/documentation/doxygen
@@ -22,15 +21,16 @@ $ source <root_sources>/bin/thisroot.sh
 $ make
 {% endhighlight %}
 
-The results are placed by default at `${HOME}/rootdoc/html`.
-The script `$ROOTSYS/documentation/doxygen/makeinput.sh` defines the `INPUT` tag in `Doxyfile`.
-It can be edited to reduce the number of input files and thus reduce the time for generating
-the HTML pages. Typically you will keep only the folder(s) in which the documentation you are
-working on is. To see the result of this local build you should open, in your preferred web
-browser, the file `${HOME}/rootdoc/html/index.html`.
+By default, the results are located at `${HOME}/rootdoc/html`. This process will generate
+the full documentation, which may take several hours to complete! To minimize the generation
+time and preview only the changes you’ve made locally, edit the script
+`$ROOTSYS/documentation/doxygen/makeinput.sh` to limit the number of input files being scanned.
+Typically, you should keep only the folder(s) containing the documentation you are
+currently working on. To view the results of this local build, open the file
+`{HOME}/rootdoc/html/index.html` in your preferred web browser.
 
 ### Compilation prerequisites on Ubuntu
-- apt install doxygen make jupyter-nbconvert 
+- apt install doxygen make jupyter-nbconvert
 - pip install scandir nbformat metakernel ipykernel
 - Optional: apt install qhelpgenerator-qt5. In case of older Ubuntu versions, use qt4-dev-tools instead, and modify in the Doxyfile QHG_LOCATION to /usr/lib/x86_64-linux-gnu/qt4/bin/qhelpgenerator
 
