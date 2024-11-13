@@ -3,6 +3,20 @@ title: Galleries of images produced with ROOT
 layout: single
 toc: true
 toc_sticky: true
+list1:
+  - example: thstackcolorscheme.C
+    title: This example demonstrates how to use the accessible color schemes with THStack.
+  - example: ratioplot1.C
+    title: Example creating a simple ratio plot of two histograms using the pois division option.
+  - example: fillrandom.C
+    title: Fill a 1-D histogram from a parametric function.
+list2:
+  - example: annotation3d.C
+    title: This example show how to put some annotation on a 3D plot using 3D polylines.
+  - example: exclusiongraph.C
+    title: Draw three graphs with an exclusion zone.
+  - example: graphShade.C
+    title: Show how to shade an area between two graphs
 gallery1:
   - url: /gallery/higgs_plots/Atlas_CLs_Exclusion.png
   - url: /gallery/higgs_plots/Atlas_Data_MC_Comparison.png
@@ -124,6 +138,19 @@ gallery5:
   - url: /gallery/visualisation_techniques_and_basics_graphics/Time_on_axis.gif
   - url: /gallery/visualisation_techniques_and_basics_graphics/Two_legos_plots_combined.gif
 ---
+
+## Simple examples - UNDER CONSTRUCTION
+
+Overview of various common functionalities  provided by ROOT
+
+### Histograms Examples
+
+{% include example-list id="list1" %}
+
+### Graphs Examples
+
+{% include example-list id="list2" %}
+
 
 ## Higgs Plots
 

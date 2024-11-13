@@ -1,0 +1,30 @@
+{% assign tutorials_list = page[include.id] %}
+{% assign ref_guide_url = "https://root.cern/doc/master/" %}
+
+<table id="navtable">
+  {% assign i = 0 %}
+  {% for tut in tutorials_list %}
+    {% if i==0 %}
+      <tr>
+    {% endif %}
+    <td>
+      <a href="{{ ref_guide_url }}{{ tut.example | replace: '.C', '_8C'}}.html">
+        <img src="{{ ref_guide_url }}pict1_{{ tut.example }}.png" >
+      </a>
+    <em>
+    {% if tut.title %}{{ tut.title }}{% endif %}
+    </em>
+    </td>
+    {% if i==2 %}
+      </tr>
+    {% endif %}
+    {% assign i = i | plus:1 %}
+    {% if i==3 %}
+      {% assign i = 0 %}
+    {% endif %}
+  {% endfor %}
+  {% if i!=0 %}
+    </tr>
+  {% endif %}
+</table>
+
