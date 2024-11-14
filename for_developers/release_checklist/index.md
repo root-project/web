@@ -99,9 +99,6 @@ This assumes you try to create `v6-32-00-patches`, adjust accordingly.
       - `git clone --depth 1 --branch v6-32-06 https://github.com/root-project/root`
       - `mkdir build && cd build && cmake -Dminimal=ON -DCMAKE_BUILD_TYPE="Debug" ../root; make distsrc` 
       - `scp ../root_vX.YY.ZZ.source.tar.gz usr@srv:/var/www/root/download/`
-  1. For non-patch releases, create new release notes in `README/ReleaseNotes/vXXX+1/index.md`
-      - Copy from `README/ReleaseNotes/empty.md`, adjust version numbers.
-      - `git commit README/ReleaseNotes/vXXX/index.md`
   1. Update to the next development version
       - Since 6.30, edit `core/foundation/inc/ROOT/RVersion.hxx` (odd patch number)
       - Before 6.30, edit `build/version_number` (odd patch number); `$ cmake . && make version`

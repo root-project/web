@@ -7,7 +7,13 @@ toc: true
 toc_sticky: true
 ---
 
-The program of work for the ROOT project, documented for the relevant years in the following documents:
+The program of work for the ROOT project is public and can be seen [here](https://cern.ch/root-pow){:target="_blank"}: by engaging and contributing users can and do influence the ROOT PoW, which is formed with an open and inclusive process.
+A first version of the PoW is proposed by the ROOT core developers to stakeholders: experiments core software teams, analysis tools teams, users, as well as funders, i.e. representatives of funding agencies or PIs of grants supporting ROOT. Their feedback is then integrated in the PoW, which remains public.
+It is presented in several occasions, including dedicated SFT meetings, open to everybody:
+
+## 2025
+
+  - [Presentation at the EP-SFT group meeting - 22nd January 2025](https://indico.cern.ch/event/1459548/#6-root){:target="_blank"}
 
 ## 2024
 
