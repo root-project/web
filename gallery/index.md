@@ -1,5 +1,5 @@
 ---
-title: Galleries of images produced with ROOT
+title: ROOT examples and galleries of images produced with ROOT
 layout: single
 toc: true
 toc_sticky: true
@@ -139,9 +139,15 @@ gallery5:
   - url: /gallery/visualisation_techniques_and_basics_graphics/Two_legos_plots_combined.gif
 ---
 
-## Simple examples - UNDER CONSTRUCTION
+ ** UNDER CONSTRUCTION **
 
-Overview of various common functionalities  provided by ROOT
+## Examples
+
+This page features example plots. Click on any image to view it in full size along with
+the source code.
+
+For more in-depth examples, visit the [tutorials page](https://root.cern/doc/master/group__Tutorials.html).
+Visit [this page](https://root.cern/learn/) to access a comprehensive list of all available ROOT documentation sources.
 
 ### Histograms Examples
 
