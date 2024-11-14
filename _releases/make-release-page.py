@@ -261,7 +261,7 @@ def binaryNameToTitle(filename):
 
         return F"macOS {macOSVers} {arch} Xcode {xcodeVers}"
     elif platformCompiler.startswith('win32') or platformCompiler.startswith('win64'):
-        regexWin = re.compile(r'^win(32|64)[.](python3[0-9]+)[.](vc[0-9]+)(.debug)?')
+        regexWin = re.compile(r'^win(32|64)[.](python3[0-9]+)[.](vc[0-9]+)(.debug|.relwithdebinfo)?')
         matchWin = regexWin.match(platformCompiler)
         if not matchWin:
             print(F'ERROR: cannot parse Win32 MSVC version for {filename}')
@@ -270,7 +270,8 @@ def binaryNameToTitle(filename):
         if not debug:
             debug = ''
         else:
-            debug = ' (debug)'
+            # The match is ".debug" or ".relwithdebinfo"
+            debug = ' (' + ('debug' if debug == '.debug' else 'release with debugging information') + ')'
         # see https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering
         vcVersYear = {
             'vc17': 2022,
