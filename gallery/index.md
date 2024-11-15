@@ -8,8 +8,10 @@ list1:
     title: This example demonstrates how to use the accessible color schemes with THStack.
   - example: ratioplot1.C
     title: Example creating a simple ratio plot of two histograms using the pois division option.
-  - example: fillrandom.C
-    title: Fill a 1-D histogram from a parametric function.
+  - example: ContourList.C
+    title: Getting Contours From TH2D.
+  - example: candleplotwhiskers.C
+    title: Example of candle plot showing the whiskers definition.
 list2:
   - example: annotation3d.C
     title: This example show how to put some annotation on a 3D plot using 3D polylines.
