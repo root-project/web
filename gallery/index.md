@@ -1,8 +1,24 @@
 ---
-title: Galleries of images produced with ROOT
+title: ROOT examples and galleries of images produced with ROOT
 layout: single
 toc: true
 toc_sticky: true
+list1:
+  - example: thstackcolorscheme.C
+    title: This example demonstrates how to use the accessible color schemes with THStack.
+  - example: ratioplot1.C
+    title: Example creating a simple ratio plot of two histograms using the pois division option.
+  - example: ContourList.C
+    title: Getting Contours From TH2D.
+  - example: candleplotwhiskers.C
+    title: Example of candle plot showing the whiskers definition.
+list2:
+  - example: annotation3d.C
+    title: This example show how to put some annotation on a 3D plot using 3D polylines.
+  - example: exclusiongraph.C
+    title: Draw three graphs with an exclusion zone.
+  - example: graphShade.C
+    title: Show how to shade an area between two graphs
 gallery1:
   - url: /gallery/higgs_plots/Atlas_CLs_Exclusion.png
   - url: /gallery/higgs_plots/Atlas_Data_MC_Comparison.png
@@ -124,6 +140,25 @@ gallery5:
   - url: /gallery/visualisation_techniques_and_basics_graphics/Time_on_axis.gif
   - url: /gallery/visualisation_techniques_and_basics_graphics/Two_legos_plots_combined.gif
 ---
+
+ ** UNDER CONSTRUCTION **
+
+## Examples
+
+This page features example plots. Click on any image to view it in full size along with
+the source code.
+
+For more in-depth examples, visit the [tutorials page](https://root.cern/doc/master/group__Tutorials.html).
+Visit [this page](https://root.cern/learn/) to access a comprehensive list of all available ROOT documentation sources.
+
+### Histograms Examples
+
+{% include example-list id="list1" %}
+
+### Graphs Examples
+
+{% include example-list id="list2" %}
+
 
 ## Higgs Plots
 
