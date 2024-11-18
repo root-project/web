@@ -13,7 +13,7 @@ sidebar:
 
 ## Release Notes
 
-The release notes for this release can be found [here](https://root.cern/doc/v634/release-notes.html#release-6.3400).
+The release notes for this release can be found [here](https://root.cern/doc/v634/release-notes.html#release-6.34.00).
 
 ## Binary distributions
 
