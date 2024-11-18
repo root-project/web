@@ -71,9 +71,9 @@ class Version:
 
     def forAnchor(self):
         """
-        Name as used by html anchor: 6.2200
+        Name as used by html anchor: 6.22.00
         """
-        return F'{self.major}.{self.minor}{self.patch}'
+        return F'{self.major}.{self.minor}.{self.patch}'
 
     def branchName(self):
         """
