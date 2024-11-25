@@ -8,11 +8,11 @@ sidebar:
 ---
 
 Developers can generate the documentation locally to review the results of their changes
-before committing them to the repository. The process is as follows:
+before committing them to the repository. First build (and optionally install) ROOT, then the process is as follows:
 
 {% highlight sh %}
 $ cd <root_sources>/documentation/doxygen
-$ source <root_sources>/bin/thisroot.sh
+$ source <root_install_or_build_location>/bin/thisroot.sh
 $ make
 {% endhighlight %}
 
