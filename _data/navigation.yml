@@ -158,6 +158,8 @@ for_developers:
         url: for_developers/docs/guidelines
       - title: Running Doxygen locally
         url: for_developers/docs/local_doxygen
+      - title: Documenting ROOT Pythonizations
+        url: for_developers/docs/pythonizations
       - title: Useful tips
         url: for_developers/docs/useful_tips
    - title: Editing the ROOT website
