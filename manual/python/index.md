@@ -411,33 +411,27 @@ PyROOT allows to inject new behaviour in C++ user classes that are used from Pyt
 Pythonizations for C++ classes can be registered by providing a function, the "pythonizor", which is decorated with the `@pythonization` decorator. The decorator specifies to which class or classes the pythonization should be applied, and the pythonizor function contains the code that performs the pythonization. For instance, the following code snippet registers a pythonization for class `MyContainer` that adds `len` Python method and binds it to an appropriate C++ method.
 
 ```python
->>> import ROOT
->>> ROOT.gInterpreter.Declare('''
-... class MyContainer {
-... public:
-...     size_t GetSize() const { return m_vec.size(); }
-... private:
-...     std::vector<double> m_vec;                                      
-... };
-... ''')
-True
->>>
->>> container = ROOT.MyContainer()
->>> len(container)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: object of type 'MyContainer' has no len()
->>>
->>> # pythonize MyClass by adding `__len__` and binding it to `GetSize`
->>> from ROOT import pythonization
->>> @pythonization("MyContainer")
-... def pythonize_two_classes(klass):
-...     klass.__len__ = klass.GetSize
-... 
->>> container = ROOT.MyContainer()
->>> len(container)
-0
->>> 
+import ROOT
+ROOT.gInterpreter.Declare('''
+class MyContainer {
+public:
+    size_t GetSize() const { return m_vec.size(); }
+private:
+    std::vector<double> m_vec;                                      
+};
+''')
+
+container = ROOT.MyContainer()
+len(container) # TypeError: object of type 'MyContainer' has no len()
+
+# pythonize MyClass by adding `__len__` and binding it to `GetSize`
+from ROOT import pythonization
+@pythonization("MyContainer")
+def pythonize_two_classes(klass):
+    klass.__len__ = klass.GetSize
+
+container = ROOT.MyContainer()
+len(container) # 0
 ```
 
 The very same mechanism is used internally in ROOT to pythonize ROOT classes, and it can be applied to user classes too since ROOT v6.26.
