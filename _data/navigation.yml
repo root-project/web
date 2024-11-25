@@ -151,8 +151,15 @@ for_developers:
       - title: Bug Reports
         url: https://github.com/root-project/root/issues/new
         target: _blank
-   - title: Doxygen in ROOT
-     url: for_developers/doxygen
+   - title: Documentation in ROOT
+     url: for_developers/docs
+     children:
+      - title: General documentation guidelines
+        url: for_developers/docs/guidelines
+      - title: Running Doxygen locally
+        url: for_developers/docs/local_doxygen
+      - title: Useful tips
+        url: for_developers/docs/useful_tips
    - title: Editing the ROOT website
      url: for_developers/web
    - title: Benchmarks
