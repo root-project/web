@@ -77,7 +77,7 @@ For the RNTuple format itself, similar techniques are implemented in order to ad
 optional information such as metadata in the future.
 
 Some other key features of the new format are
-  - a [format specification](https://github.com/root-project/root/blob/v6-34-00-patches/tree/ntuple/v7/doc/BinaryFormatSpecification.md),
+  - a [formal specification](https://github.com/root-project/root/blob/v6-34-00-patches/tree/ntuple/v7/doc/BinaryFormatSpecification.md),
   allowing third parties to easily write data readers and writers without reverse engineering the code;
   - strict use of 64 bit checksums both on data and metadata;
   - forward looking limits that prepare us, e.g.,
