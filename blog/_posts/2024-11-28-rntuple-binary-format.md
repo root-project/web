@@ -91,7 +91,7 @@ To do so, RNTuple comes with [a new set of APIs](https://root.cern.ch/doc/v634/g
 Modern, safe, and easy to use correctly (so we hope!).
 The API, in contrast to the on-disk format, is still evolving thanks to early adopters' feedback and is not quite ready to leave the experimental stage.
 
-An external API review—a first for the ROOT team—conducted by the
+An external API review, _a first for the ROOT team_, conducted by the
 [High Energy Physics Center for Computational Excellence](https://www.anl.gov/hep-cce) is still just about to conclude.
 Expect to see a first set of production APIs in ROOT 6.36, scheduled for the second quarter of 2025.
 Meanwhile, please feel free to try out [the current state](https://root.cern/releases/release-63400/)
