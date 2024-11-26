@@ -20,7 +20,7 @@ RNTuple can fully harness the performance of modern
 and it comes with a modern, safe, and feature rich API.
 
 After [6 years of R&D](https://indico.cern.ch/event/764726/), RNTuple reached an important milestone:
-we settled on the [first public version of the on-disk binary format](https://github.com/root-project/root/blob/v6-34-00-patches/tree/ntuple/v7/doc/BinaryFormatSpecification.md)!
+we released the [first official version of the on-disk binary format](https://github.com/root-project/root/blob/v6-34-00-patches/tree/ntuple/v7/doc/BinaryFormatSpecification.md)!
 This first version is part of the ROOT 6.34 release.
 When you now open a ROOT file and you do `.ls`, objects shown as `ROOT::RNTuple` are stored in this new on-disk layout.
 What does it mean for you, in a nutshell?
