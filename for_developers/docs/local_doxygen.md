@@ -19,7 +19,7 @@ $ make
 By default, the results are located at `${HOME}/rootdoc/html`. This process will generate
 the full documentation, which may take several hours to complete! To minimize the generation
 time and preview only the changes you’ve made locally, edit the script
-`$ROOTSYS/documentation/doxygen/makeinput.sh` to limit the number of input files being scanned.
+`<root_sources>/documentation/doxygen/makeinput.sh` to limit the number of input files being scanned.
 Typically, you should keep only the folder(s) containing the documentation you are
 currently working on. To view the results of this local build, open the file
 `{HOME}/rootdoc/html/index.html` in your preferred web browser.
