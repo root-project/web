@@ -101,7 +101,7 @@ so you may get your next RNTuple from your experiment.
 If you have analysis code in RDataFrame: job done.
 RDataFrame transparently processes TTree and RNTuple datasets interchangeably.
 
-To close this post, I'd like to show you the first RNTuple ever written.
+To close this post, I'd like to show you the first RNTuple ever written with the official specification.
 What you see is the [hex dump](https://en.wikipedia.org/wiki/Hex_dump) of https://root.cern/files/RNTuple.root,
 visualized with the [RNTuple viewer](https://codeberg.org/silverweed/rntviewer).
 You'd like to know more? Open the file in ROOT 6.34, for instance with the new RBrowser!
