@@ -86,7 +86,7 @@ You can not only check the documentation with <kbd>F1</kbd>, but fully open the 
 
 Alternatively, you can also open the *Help Books* and search them using [Qt Assistant](https://doc.qt.io/qt-5/assistant-details.html). Linux *apt* packages are `qt4-dev-tools` or `qt5-assistant`, and the executables are `assistant-qt4` and `assistant`, respectively. (`qt6` version is not yet in the package manager.) You will have to add the `.qch` file to its database by going to "Edit", "Preferences", "Documentation", "Add".
 
-And if you already use other IDEs or operating systems ? In addition to [inline HTML searching](https://www.doxygen.nl/manual/searching.html), the building of the (*ROOT*) doxygen documentation can be configured to output a format that is compatible with *MacOS* - [Xcode](https://www.doxygen.nl/manual/config.html#cfg_generate_docset), *Windows* - [VSstudio](https://www.doxygen.nl/manual/config.html#cfg_generate_htmlhelp), or [Eclipse](https://www.doxygen.nl/manual/config.html#cfg_generate_eclipsehelp). *ROOT* [only provides for download](https://root.cern/reference/) the *Qt* help files (`.qch`) for the moment, but you can [build the documentation yourself](https://root.cern/for_developers/doxygen/) adapting those flags in the *Doxyfile*.
+And if you already use other IDEs or operating systems ? In addition to [inline HTML searching](https://www.doxygen.nl/manual/searching.html), the building of the (*ROOT*) doxygen documentation can be configured to output a format that is compatible with *MacOS* - [Xcode](https://www.doxygen.nl/manual/config.html#cfg_generate_docset), *Windows* - [VSstudio](https://www.doxygen.nl/manual/config.html#cfg_generate_htmlhelp), or [Eclipse](https://www.doxygen.nl/manual/config.html#cfg_generate_eclipsehelp). *ROOT* [only provides for download](https://root.cern/reference/) the *Qt* help files (`.qch`) for the moment, but you can [build the documentation yourself](https://root.cern/for_developers/docs/) adapting those flags in the *Doxyfile*.
 
 ### The Power of Clang
 
@@ -145,7 +145,7 @@ Beware:
 
 QtCreator lets you not only find compilation errors, but also documentation errors, by interfacing with the warnings issued by *doxygen*. This metawarning function can prove extremely useful for detecting outdated or incorrect documentation and going to the right spot in the source code in just one click, rather than diving through [thousands of lines of output](https://lcgapp-services.cern.ch/root-jenkins/view/ROOT/job/root-makedoc-master/lastBuild/consoleText) and tracing it manually.
 
-To give it a try, take a look at building the [ROOT documentation project](https://root.cern/for_developers/doxygen/). Follow these steps:
+To give it a try, take a look at building the [ROOT documentation project](https://root.cern/for_developers/docs/). Follow these steps:
 
 - Call first `source /path/to/ROOT/bin/thisroot.sh` in the terminal and launch `qtcreator` from there. Alternatively, you can manually specify all the variables in the "Build" environment.
 - Import the *Makefile* located in `root/documentation/doxygen` into *QtCreator*, as explained [above](#open-a-c-cmake-project)

@@ -52,7 +52,7 @@ In ROOT 5 all classes are in the `ROOT` namespace. Some packages will be in a su
 ## Using comments
 ROOT chose [Doxygen](https://www.doxygen.nl){:target="_blank"} for its code documentation:
 please refer to
-[this page]({{'for_developers/doxygen' | relative_url}}) for all the details.
+[this page]({{'for_developers/docs' | relative_url}}) for all the details.
 
 ## Source file layout
 

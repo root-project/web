@@ -42,7 +42,7 @@ ROOT externals coming from the central installations in AFS or CVMFS.
    - [Jenkins Service](https://lcgapp-services.cern.ch/root-jenkins/)
    - [Bug Reports](https://github.com/root-project/root/issues/new)
 
-### [Doxygen in ROOT]({{'/for_developers/doxygen' | relative_url}})
+### [Documentation in ROOT]({{'/for_developers/docs' | relative_url}})
 [Doxygen](https://www.doxygen.nl/){:target="_blank"} is used for generating
 the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
 
