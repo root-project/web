@@ -8,5 +8,4 @@ sidebar:
 ---
 
 The ROOT team has adopted [Doxygen](https://www.doxygen.nl){:target="_blank"} for generating
-the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}. In this section, you will find a number of conventions
-and tips to be used in source code to generate proper documentation.
+the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}. In this section, you will find [our documentation guidelines](./guidelines.md), how to [run Doxygen locally](./local_doxygen.md), how to add [documentation for ROOT's pythonizations](./pythonizations.md) and a number of [useful tips formatting tips](./useful_tips.md).
