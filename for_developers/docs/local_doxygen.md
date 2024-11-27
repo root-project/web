@@ -30,3 +30,4 @@ currently working on. To view the results of this local build, open the file
 - Optional: `apt install qhelpgenerator-qt5`. In case of older Ubuntu versions, use `qt4-dev-tools`
 instead, and modify in the `Doxyfile` `QHG_LOCATION` to
 `/usr/lib/x86_64-linux-gnu/qt4/bin/qhelpgenerator`
+- check that `doxygen` version >= 1.9
