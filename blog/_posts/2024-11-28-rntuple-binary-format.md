@@ -87,7 +87,7 @@ Some other key features of the new format are
   and the upcoming half precision floating point `std::float16_t`.
 
 Now, you may wonder how to actually read and write RNTuples.
-To do so, RNTuple comes with [a new set of APIs](https://root.cern.ch/doc/v634/group__tutorial__ntuple.html), too!
+To do so, RNTuple comes with [a new set of APIs](https://root.cern/doc/v634/group__tutorial__ntuple.html), too!
 Modern, safe, and easy to use correctly (so we hope!).
 The API, in contrast to the on-disk format, is still evolving thanks to early adopters' feedback and is not quite ready to leave the experimental stage.
 
