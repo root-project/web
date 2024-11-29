@@ -11,9 +11,20 @@ sidebar:
 ---
 
 
-## Release Notes
+## Highlights
 
-The release notes for this release can be found [here](https://root.cern/doc/v634/release-notes.html#release-6.34.00).
+Six months after the 6.32 release, 6.34 is now available. The new ROOT comes with many new features (see the [release notes](https://root.cern/doc/v634/release-notes.html)) as well as improved stability: more than 200 items in the ROOT trackers have been addressed for this release.
+
+Some highlights:
+  - RNTuple: the first version of the RNTuple on-disk binary format was finalized. Future versions of ROOT will be able to read back RNTuple data written as of this release. Check out [this talk at the CHEP 2024 conference](https://indico.cern.ch/event/1338689/contributions/6077632/) and [this blogpost](https://root.cern/blog/rntuple-binary-format) to learn more about RNTuple, the new HEP data storage software technology!
+  - Python interface: more stability and functionality, also thanks to the latest Cling C++ interpreter version, powered by LLVM 18.
+  - Machine learning training directly from ROOT datasets much larger than the memory of the machine is now possible. Read the data with RDataFrame, apply transformations if needed and then feed your favourite ML tool. For a full description, see [the presentation at CHEP 2024](https://indico.cern.ch/event/1338689/contributions/6015940/)
+  - RDataFrame: scaling on many cores was improved, memory usage significantly reduced. Moreover, the interface for distributed execution has been expanded for a more rewarding user experience.
+  - RooFit: the power of automatic differentiation can be now transparently used thanks to CLAD - see [this talk at the ICHEP 2024 conference](https://indico.cern.ch/event/1291157/contributions/5889615/).
+  - Graphics: Javascript interactive visualisation is now the default for notebooks, moreover the web graphics functionality has been further expanded.
+  - Build infrastructure: not a functionality per se, but a boost in stability. This release was integrated and tested on more than ten Linux flavours (on x86, ARM and NVidia GPUs), four types of Windows configurations as well as four macOS versions (yes, the Apple Beta was there too!)
+
+Please note that 6.34 is a short term support release. As such, it is not meant to be used for data taking. It will be superseded by the 6.36 release, which is foreseen in May 2025. Patch releases of 6.34 will be provided until June 30th 2025.
 
 ## Binary distributions
 
