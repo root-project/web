@@ -1,8 +1,23 @@
 ---
- title: "Get ready for the 2nd ROOT Hackathon: Python, Docs, Tutorials"
+ title: "A look back at the 2nd ROOT Hackathon: Python, Docs, Tutorials"
  layout: archive
  author: Monica Dessole
 ---
+
+Brief intro: Hackathon was last week, 3 days, held at CERN, Geneva
+
+Participants: how many, from which countries, from which institution. How many coordinators.
+
+Venue: IdeaSquare
+
+Topics: Python, Docs, Tutorials
+
+Outcomes: 60 PRs, ecc ecc
+
+Extra: lunches and social dinner
+
+Conclusions/What's next?
+
 
 You may already have heard the news: the ROOT team is hosting the [2nd ROOT Hackathon](https://indico.cern.ch/event/1463778/) on November 25-27! 
 This multi-day event will focus on modernising existing ROOT tutorials, enhancing Python interfaces and their documentation. 
