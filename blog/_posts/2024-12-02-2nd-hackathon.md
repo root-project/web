@@ -14,20 +14,20 @@ You may have heard about [the second ROOT Hackathon](https://indico.cern.ch/even
     style="width: 70%" width="1600" height="749" />
 </center>
 
-### The heart: participants
-
-This second hackathon vibrated with positive energy, fuelled by a motivated group of 12 ROOT team members and 15 participants from outside the team. Many of the external participants work at CERN but a few participants came to CERN from across Europe (Italy, Czech Republic, Spain) and beyond (one participant from Qatar!) only for this event - some of them have used and contributed to ROOT since many years but for some this was the first time opening a PR - many thanks to all of you! 
-
-The attendees could join three teams with different working topics, namely, Python Interfaces, Python Documentation and Tutorial Modernisation, each guided by two coordinators from the ROOT team.
-
 ### The venue: IdeaSquare
 
 The hackathon took place at [IdeaSquare](https://ideasquare.cern), CERN's innovation space to foster cross-connectivity and to ideate new solutions. 
 IdeaSquare aligns with and supports CERN’s mission. Its specific focus is on offering a platform for early-stage collaboration with CERN scientists. IdeaSquare offers a fully equipped kitchen and a working space consisting of 700 square meters, split into five meeting rooms in glass containers and two meeting rooms in its famous double-decker London bus. This unique setting added an unparalleled charm to our coding marathon, infusing our work with inspiration and a sense of collaboration.
 
+### The heart: participants
+
+This second hackathon vibrated with positive energy, fuelled by a motivated group of 12 ROOT team members and 15 participants from outside the team. Many of the external participants work at CERN but a few participants came to CERN from across Europe (Italy, Czech Republic, Spain) and beyond (one participant from Qatar!) only for this event - some of them have used and contributed to ROOT since many years but for some this was the first time opening a PR - many thanks to all of you! 
+
 ### The core: projects
 
-The core of this hackathon lies in the projects themselves. For this edition, we identified three main topics: Python interface extention, Python documentation enhancement and Tutorial modernisation. Planning, ambitions and results are publicly visible and organised in a succinct [table on GH](https://github.com/orgs/root-project/projects/18).
+The core of this hackathon lies in the projects themselves. 
+The attendees could join three teams with different working topics, namely, Python Interfaces, Python Documentation and Tutorial Modernisation, each guided by two coordinators from the ROOT team.
+Planning, ambitions and results are publicly visible and organised in a succinct [table on GH](https://github.com/orgs/root-project/projects/18).
 
 Modernising ROOT's **Tutorials** is indeed an intense activity: it includes  reviewing 25+ years of accumulated knowledge in the form of code examples! Here
 lots of thinking was required: what's the best way to do things? The team worked on creating a new structure to make the examples more findable and to prominently present the new features, leaving the “classic” ones in the background.
@@ -66,7 +66,7 @@ In addition to the coding fun, home cooked italian lunches and unlimited coffee 
     style="width: 45%" width="1600" height="749" />
 </center>
 
-### Conclusions/What's next?
+### Conclusions: what's next?
 
 In closing, thank you to everyone who contributed their time, expertise, and passion to the 2nd ROOT Hackathon. From this event, ROOT emerges stronger, easier to use and yet more powerful! Stay tuned for updates on this website and on the [ROOT forum](https://root-forum.cern.ch) as we continue to foster the ROOT library for innovation and collaboration. Here’s to continuing this journey together in 2025!
 
