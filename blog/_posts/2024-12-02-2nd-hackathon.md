@@ -31,7 +31,7 @@ Modernising ROOT's **Tutorials** is indeed an intense activity: it includes  rev
 lots of thinking was required: what's the best way to do things? The team worked on creating a new structure to make the examples more findable and to prominently present the new features, leaving the “classic” ones in the background.
 The amount of work was massive and hard to finish in 3 days, but a new, modern, clear and beautiful way to present ROOT's code examples is coming soon!
 
-Extenting ROOT's **Python interface** requires advanced programming skills in action. The team worked to provide prototypes for numpy-style histogram computation (~50% of the UHI protocol for histograms is now available) and random number generation. In addition, RNTuples are now writeable from Python! This is enough material for a new round of tutorial mopdernization showing the new features, fostering a positive synergy between hackathon groups.
+Extending ROOT's **Python interface** requires advanced programming skills in action. The team worked to provide prototypes for numpy-style histogram computation (~50% of the UHI protocol for histograms is now available) and random number generation. In addition, RNTuples are now writeable from Python! This is enough material for a new round of tutorial modernisation campaign showing the new features and fostering a positive synergy between hackathon groups.
 
 Last but not least, **Python documentation enhancement** was focused on highlighting python documentation within doxygen and providing guidelines for developers about contributing to ROOT's Pythonic documentation. The team greatly tackled an ambitious initial set of goals, almost all achieved or in progress. ROOT has already today a much better documentation thanks to these efforts!
 
