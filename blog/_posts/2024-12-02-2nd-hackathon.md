@@ -66,7 +66,7 @@ In addition to the coding fun, home cooked italian lunches and unlimited coffee 
 
 ### Conclusions/What's next?
 
-In closing, thank you to everyone who contributed their time, expertise, and passion to the 2nd ROOT Hackathon. From this event, ROOT emerges stronger, easier to use and even more powerful! Stay tuned for updates on this website and on the [ROOT forum](https://root-forum.cern.ch) as we continue to foster the ROOT library for innovation and collaboration. Here’s to continuing this journey together in 2025!
+In closing, thank you to everyone who contributed their time, expertise, and passion to the 2nd ROOT Hackathon. From this event, ROOT emerges stronger, easier to use and yet more powerful! Stay tuned for updates on this website and on the [ROOT forum](https://root-forum.cern.ch) as we continue to foster the ROOT library for innovation and collaboration. Here’s to continuing this journey together in 2025!
 
 <center>
     <img
