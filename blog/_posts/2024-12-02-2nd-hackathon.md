@@ -5,7 +5,7 @@
 ---
 
 
-You may have heard about [the second ROOT Hackathon](https://indico.cern.ch/event/1463778/), that took place at IdeaSquare, CERN, last week! This in-person event was held on November 25-27. After a few days of recovering our energies, it's time to look back at this vibrant three days event, so let's go. 
+You may have heard about [the second ROOT Hackathon](https://indico.cern.ch/event/1463778/), that took place at IdeaSquare, CERN, last week (25-27 of November)! After a few days of recovering our energies, it's time to look back at this vibrant event, so let's go. 
 
 <center>
     <img
