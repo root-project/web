@@ -534,6 +534,24 @@ Stephan Hageboeck:
   affiliation : "CERN"
   tag         : "team"
 
+Lukas Breitwieser:
+  name        : "Lukas Breitwieser"
+  bio         : "Lukas Breitwieser is a computer scientists focusing on high-performance and
+                large-scale computing. Lukas successfully defended his Ph.D. at ETH Zurich under
+                the supervision of Onur Mutlu and Fons Rademakers. Before joining the ROOT team,
+                Lukas was the principal software engineer of BioDynaMo. This interdisciplinary
+                and open-source project brings together simulation experts and computer
+                scientists to develop an agent-based simulation platform that sets new standards
+                in terms of performance and scale. Since its inception in 2015, Lukas has been
+                driving the platform's major advancements, particularly focusing on building a
+                scalable and modular simulation engine. The Annual Symposium on Principles and
+                Practice of Parallel Programming recognized this work with the Best Artifact
+                Award. In the ROOT team, Lukas is responsible for an R&D project to accelerate
+                physics data analysis on the GPU."
+  avatar      : "/assets/images/LukasBreitwieser.jpg"
+  affiliation : "CERN"
+  tag         : "team"
+
 
 Susan Panacek:
   name        : "Susan Panacek"
