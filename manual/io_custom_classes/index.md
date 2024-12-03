@@ -245,7 +245,7 @@ class MyClass {
 
 ## Restrictions on types ROOT I/O can handle
 
-For ROOT to be able to store a class, it must have a public constructor.
+For ROOT to be able to store a class, it must have a public default constructor or a special I/O constructor (see the documentation of [`TClass::New`](https://root.cern/doc/master/classTClass.html) for more details and examples).
 
 ROOT currently does not support I/O of `std::shared_ptr`, `std::optional`, `std::variant` and classes with data members of these types (unless they are marked as "transient").
 
