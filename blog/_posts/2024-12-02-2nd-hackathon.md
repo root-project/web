@@ -50,7 +50,7 @@ Last but not least, **Python documentation enhancement** was focused on highligh
     style="width: 30%" width="1600" height="749" />
 </center>
 
-Overall, the teams made a great job: we had [65 PRs](https://github.com/root-project/root/pulls?q=is%3Aopen+is%3Apr+label%3A%222nd+Hackathon%22) submitted to the ROOT repo, [7 PRs](https://github.com/root-project/web/pulls?q=is%3Aopen+is%3Apr+label%3A%222nd+Hackathon%22) to the ROOT website repo! This impressive amount of work kept our CI (66 Linux nodes, 8 Mac Mini, 8 Windows nodes) constantly busy, night and day.
+Overall, the teams did a great job: we had [65 PRs](https://github.com/root-project/root/pulls?q=is%3Aopen+is%3Apr+label%3A%222nd+Hackathon%22) submitted to the ROOT repo and [7 PRs](https://github.com/root-project/web/pulls?q=is%3Aopen+is%3Apr+label%3A%222nd+Hackathon%22) to the ROOT website repo! This impressive amount of work kept our CI (66 Linux nodes, 8 Mac Mini, 8 Windows nodes) constantly busy, night and day.
 In addition to the coding fun, home cooked italian lunches and unlimited coffee were be available! Moreover, Tuesday evening was dedicated to our social dinner in La Meyrinoise restaurant, located close to CERN.
 
 <center>
