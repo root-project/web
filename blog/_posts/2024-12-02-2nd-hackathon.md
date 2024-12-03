@@ -16,7 +16,9 @@ You may have heard about [the second ROOT Hackathon](https://indico.cern.ch/even
 
 ### The heart: participants
 
-This second hackathon vibrated with positive energy, fueled by a motivated group of 12 ROOT team members and 25 participants, many of which from CERN (thanks!). A standout achievement was our strides towards networking and team building, resulting in participation of people from across Europe (Italy, Czech republic, Spain...) and beyond (one participant from Qatar!), regardless of their gender, age, or background. The attendees could join three teams with different working topics, namely Python interfaces, Python Documentation and Tutorial modernisation, each guided by two coordinators from the ROOT team. This event indeed required a bit of organising and planning to put participants in condition to give their best. However, definitively worth the investment, we got a lot out of this event! 
+This second hackathon vibrated with positive energy, fuelled by a motivated group of 12 ROOT team members and 15 participants from outside the team. Many of the external participants work at CERN but a few participants came to CERN from across Europe (Italy, Czech Republic, Spain) and beyond (one participant from Qatar!) only for this event - some of them have used and contributed to ROOT since many years but for some this was the first time opening a PR - many thanks to all of you! 
+
+The attendees could join three teams with different working topics, namely, Python Interfaces, Python Documentation and Tutorial Modernisation, each guided by two coordinators from the ROOT team.
 
 ### The venue: IdeaSquare
 
