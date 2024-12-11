@@ -317,6 +317,7 @@ This list is also available by typing `.? edit` or `.help edit` in the ROOT prom
    Ctrl+D           : quit ROOT (if empty line)
    Ctrl+C           : send kSigInt interrupt signal
    Ctrl+Z           : send kSigStop pause job signal
+   Ctrl+\           : send kSigQuit quit job signal
    Arrow_Down       : navigate downwards in command history [Ctrl+N]
    Arrow_Up         : navigate upwards in command history [Ctrl+P]
    Ctrl+R ; Ctrl+S  : search command in your history by typing a string.
