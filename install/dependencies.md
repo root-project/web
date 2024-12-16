@@ -162,7 +162,24 @@ libxml2-devel krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-d
 
 ## MacOS
 
-* **Xcode developer package:** Xcode is found on the Mac App store. Install command line tools through the XCode preferences and/or running in a terminal  `xcode-select --install`
+*   **Xcode developer package:** Xcode is found on the Mac App Store. Install command line tools through the XCode preferences and/or running in a terminal  `xcode-select --install`
+*   **Download and install [cmake](http://cmake.org)** To be done after installing the Xcode command line tools. Install the command line tools by starting the installed CMake, in the menu "Tools", "install for command line use"
+*   The XCode Python3 is the only Python3 needed it sits in `/usr/bin/python3`. Installing the required packages can be done with:
+```bash
+python3 -m pip install numpy numba  cffi notebook metakernel protobuf pyspark dask \
+distributed pytest pandas tensorflow-macos torch scikit-learn ipython jupyter
+```
+
+*   The minimal ROOT installation can then be done as follow:
+```bash
+git clone https://github.com/root-project/root.git
+mkdir root-build
+cd root-build
+cmake ../root
+make -j8
+```
+
+
 
 ## Windows
 
