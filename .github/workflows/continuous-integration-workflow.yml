@@ -15,7 +15,15 @@ env:
 jobs:
   build:
     name: Jekyll Build
-    runs-on: ubuntu-latest
+    # Fix to ubuntu 22.04. In 2027, at the EOL of that distro, this GH warning will have to be addressed:
+    # The current runner (ubuntu-24.04-x64) was detected as self-hosted because the platform does not match a GitHub-hosted runner image (or that image is deprecated and no longer supported).
+    # In such a case, you should install Ruby in the $RUNNER_TOOL_CACHE yourself, for example using https://github.com/rbenv/ruby-build
+    # You can take inspiration from this workflow for more details: https://github.com/ruby/ruby-builder/blob/master/.github/workflows/build.yml
+    # $ ruby-build 3.1.4 /opt/hostedtoolcache/Ruby/3.1.4/x64
+    # Once that completes successfully, mark it as complete with:
+    # $ touch /opt/hostedtoolcache/Ruby/3.1.4/x64.complete
+    # It is your responsibility to ensure installing Ruby like that is not done in parallel.
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
