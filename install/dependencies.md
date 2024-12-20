@@ -16,7 +16,7 @@ we recommend checking the [docker image repository](https://github.com/root-proj
 
 ## Supported compilers
 
-### From v6.30:
+### From v6.30 onwards:
 - C++17 support is required
 - GCC 8 or later is supported
 - Clang 6 or later is supported
@@ -170,7 +170,7 @@ python3 -m pip install numpy numba  cffi notebook metakernel protobuf pyspark da
 distributed pytest pandas tensorflow-macos torch scikit-learn ipython jupyter
 ```
 
-*   The minimal ROOT installation can then be done as follow:
+*   The standard distribution of ROOT can then be configured and built as follow:
 ```bash
 git clone https://github.com/root-project/root.git
 mkdir root-build
