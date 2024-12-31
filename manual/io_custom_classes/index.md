@@ -158,6 +158,7 @@ Here is an example linkdef file:
 #pragma link C++ nestedtypedefs;
 #pragma link C++ class MyClass+;
 #pragma link C++ namespace Some::Nested::Namespace;
+#pragma link C++ enum myEnum;
 #endif
 {% endhighlight %}
 
@@ -175,7 +176,7 @@ public:
 };
 {% endhighlight %}
 
-The namespace directive instructs `rootcling` to include every type in the selected namespace in the dictionary.
+The namespace directive instructs `rootcling` to include every type in the selected namespace in the dictionary. The enum directive includes the enumerator `myEnum`, which becomes known to ROOT's typesystem before parsing the corresponding headers, for example to for autoloading the library where it is defined.
 
 > **Note**
 >
@@ -183,7 +184,7 @@ The namespace directive instructs `rootcling` to include every type in the selec
 
 > **Note**
 >
-> In the past, linkdef files also contained directives for global variables, functions and enums: these directives are ignored since ROOT version 6.
+> In the past, linkdef files also contained directives for global variables and functions: these directives are ignored since ROOT version 6.
 
 ### Selection by file name
 
