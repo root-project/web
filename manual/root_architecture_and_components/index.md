@@ -154,7 +154,7 @@ _**Example**_
 {% endhighlight %}
 
 
-{% include ref class="TRandomRanluxpp" %} is another generator based on [Ranlux++]( {{ 'blog/ranluxpp' | relative_url }} ).
+[TRandomRanluxpp](https://root.cern/doc/master/TRandomGen_8h.html#a2ff32c3c0c95530bafbb80ca5116b679) is another generator based on [Ranlux++]( {{ 'blog/ranluxpp' | relative_url }} ).
 
 ### gEnv
 

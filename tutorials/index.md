@@ -6,7 +6,7 @@ sidebar:
 ---
 
 ROOT offers a rich set of tutorials that allow you to see ROOT's building blocks "in action",
-as part of more complex programs. They are separated in two categories: C++ or Python scripts
+as part of more complex programs. They are provided in flavours: C++ or Python scripts
 and Jupyter Notebooks.
 
 The tutorials are available for all major ROOT releases.

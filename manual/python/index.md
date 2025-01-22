@@ -18,7 +18,7 @@ PyROOT is compatible with both Python2 (>= 2.7) and Python3.
 
 Since ROOT 6.22, PyROOT has extensive support for *modern C++* (it operates on top of [cppyy](https://cppyy.readthedocs.io/){:target="_blank"}), is more *pythonic* and is able to *interoperate* with widely-used Python data-science libraries (for example, [NumPy](https://numpy.org/){:target="_blank"}, [pandas](https://pandas.pydata.org/){:target="_blank"}, [Numba](https://numba.pydata.org/){:target="_blank"}).
 
-{% include tutorials name="PyROOT" url="pyroot" %}
+Many ROOT [tutorials]({{'tutorials' | relative_url }}){:target="_blank"} are also available in Python. These tutorials are listed alongside their C++ counterparts in their respective tutorial categories, making it easy to explore both versions.
 
 ## Getting started
 
@@ -427,7 +427,7 @@ len(container) # TypeError: object of type 'MyContainer' has no len()
 # pythonize MyClass by adding `__len__` and binding it to `GetSize`
 from ROOT import pythonization
 @pythonization("MyContainer")
-def pythonize_two_classes(klass):
+def pythonize_length(klass):
     klass.__len__ = klass.GetSize
 
 container = ROOT.MyContainer()
@@ -436,7 +436,7 @@ len(container) # 0
 
 The very same mechanism is used internally in ROOT to pythonize ROOT classes, and it can be applied to user classes too since ROOT v6.26.
 
-A more thorough explanation of the `@pythonization` decorator, its parameters and more examples of usage can be found in the tutorial {% include tutorial_py name="pyroot002_pythonizationDecorator" %}.
+A more thorough explanation of the `@pythonization` decorator, its parameters and more examples of usage can be found in the [Python interface documentation](https://root.cern/doc/master/group__Pythonizations.html).
 
 
 ## TPython: running Python from C++
@@ -483,7 +483,7 @@ Two kernels (or language flavours) allow to use ROOT from Jupyter: *Python* (2 a
 
 - SWAN: CERN provides an online service to create and run Jupyter notebooks, called [SWAN](https://swan.cern.ch){:target="_blank"}. With this option no installation is required: a browser and a working Internet connection are enough. Both the Python and C++ kernels are available in SWAN.
 
-Many ROOT tutorials are available as Jupyter notebooks. For example, most [PyROOT tutorials](https://root.cern/doc/master/group__tutorial__pyroot.html){:target="_blank"} are listed with two buttons below to obtain their notebook version and to open them in SWAN, respectively.
+Many ROOT [tutorials]({{'tutorials' | relative_url }}){:target="_blank"} are available as Jupyter notebooks than can accessed with two buttons below each tutorial to download their notebook version or open them in SWAN, respectively.
 
 ### JavaScript graphics
 

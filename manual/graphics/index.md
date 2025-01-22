@@ -128,7 +128,7 @@ method:
 - _Arrows_: Use {% include ref class="TArrow" %} to create an arrow.
 - _Polylines_: Use {% include ref class="TPolyLine" %} to create a polyline.
 - _Ellipses_: Use {% include ref class="TEllipse" %} to create an ellipse.
-- _Rectangles_: Use {% include ref class="TBox" %} or {% include ref class="TWBox" %} to create a rectangle.
+- _Rectangles_: Use {% include ref class="TBox" %} or {% include ref class="TWbox" %} to create a rectangle.
 - _Markers_: Use {% include ref class="TMarker" %} to create a marker.
 - _Curly lines and arcs_: Use {% include ref class="TCurlyLine" %} and {% include ref class="TCurlyArc" %} to create curly lines and arcs for Feynman diagrams.
 - _Text and Latex_: Use {% include ref class="TText" %} to draw simple text. {% include ref class="TLatex" %} for complex text like mathematical formulas. Text can be embedded in a box using {% include ref class="TPaveLabel" %}, {% include ref class="TPaveText" %} and {% include ref class="TPavesText" %}.
@@ -338,10 +338,10 @@ _**Example**_
 ### Drawing an axis independently of a graph or a histogram
 
 - Use the {% include ref class="TGaxis" %} class to draw an axis
-[independently of a graph or a histogram](https://root.cern/doc/master/xyplot_8C.html).
+[independently of a graph or a histogram](https://root.cern/doc/master/hist055__Graphics__xyplot_8C.html).
 
 This may be useful if you want to draw a
-[supplementary axis](https://root.cern/doc/master/twoscales_8C.html) for a plot.
+[supplementary axis](https://root.cern/doc/master/hist010__TH1__two__scales_8C.html) for a plot.
 
 
 ## Legends
