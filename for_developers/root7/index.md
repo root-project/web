@@ -34,13 +34,13 @@ Building from source would look similar to this:
 ## ROOT 7 Features
 
 ROOT's new interface personality is already in production with {% include ref class="RDataFrame" namespace="ROOT" %}.
-Next up is the `TTree` successor {% include ref class="RNTuple" namespace="ROOT::Experimental" %}.
+Next up is the `TTree` successor {% include ref class="RNTuple" namespace="ROOT" %}.
 
 
 Still in the design phase are ROOT's new graphics and histogram packages, with tutorials such as
-for [ROOT 7 graphics](https://github.com/root-project/root/tree/master/tutorials/rcanvas),
-for [histograms and ntuple](https://github.com/root-project/root/tree/master/tutorials/v7),
-and specifically for [drawing and styling the new histograms](https://github.com/root-project/root/blob/master/tutorials/rcanvas/rh1.cxx).
+for [ROOT 7 graphics](https://github.com/root-project/root/tree/master/tutorials/experimental/rcanvas),
+for histograms and ntuple,
+and specifically for [drawing and styling the new histograms](https://github.com/root-project/root/blob/master/tutorials/experimental/rcanvas/rh1.cxx).
 
 ## RBrowser
 

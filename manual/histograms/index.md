@@ -66,7 +66,7 @@ standard multi-dimensional histogram plots such as scatter plots.
 - {% include ref class="TProfile3D" %} is a profile histogram for (X,Y,Z,T) data to display the mean value of T and its error for each cell in X,Y,Z.
 
 Profile plots have the option to display instead of the default sample mean error the sample standard deviation (the spread of the data). A similar plot to a profile, which shows the quantiles of the
-Y input data, is the candle plot, called also box plot,  (see [tutorial](https://root.cern/doc/master/candleplot_8C.html)), which can be obtained directly from the 2D histogram using the `candle`
+Y input data, is the candle plot, called also box plot,  (see [tutorial](https://root.cern/doc/master/hist049__Graphics__candle__plot_8C.html)), which can be obtained directly from the 2D histogram using the `candle`
 draw option.
 
 
@@ -101,11 +101,11 @@ ROOT supports also automatic binning, see [Histograms with automatic bins](https
 **Re-binning**
 
 You can re-bin a histogram via the [TH1::Rebin()](https://root.cern/doc/master/classTH1.html#aff6520fdae026334bf34fa1800946790){:target="_blank"} method. It returns a new histogram with the re-binned contents. If bin errors were stored, they are recomputed during the re-binning.
-You can see this [tutorial](https://root.cern/doc/master/rebin_8C.html) as a re-binning example.
+You can see this [tutorial](https://root.cern/doc/master/hist013__TH1__rebin_8C.html) as a re-binning example.
 
 ### Stack of histograms
 
-{% include ref class="THStack" %} is a collection of {% include ref class="TH1" %} or {% include ref class="TH2" %} histograms. The tutorial {%include tutorial name="hstack" %} is a good example of how using the `THStack` class.
+{% include ref class="THStack" %} is a collection of {% include ref class="TH1" %} or {% include ref class="TH2" %} histograms. The tutorial {%include tutorial name="hist023_THStack_simple" %} is a good example of how using the `THStack` class.
 
 ## Working with histograms
 

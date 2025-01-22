@@ -16,7 +16,7 @@ The flexible and powerful [JSROOT API](https://root.cern/js/latest/api.htm) used
 The JSROOT code, documentation, and many examples can be found on the [JSROOT website](https://root.cern/js/),
 with many [examples](https://root.cern/js/latest/examples.htm).
 Its source code repository is [in GitHub](https://github.com/root-project/jsroot/) and there is also a
-[reference guide](https://root.cern/js/latest/jsdoc/JSROOT.html).
+[reference guide](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md).
 
 ## Users's Guide
 
@@ -43,7 +43,7 @@ Here is a couple of *interactive* examples you can also find in the [main JSROOT
 
 In the [JSROOT user's guide](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md), there is also a [short introduction](https://github.com/root-project/jsroot/blob/master/docs/JSROOT.md#use-with-openui5) on using JSROOT with [OpenUI5](https://openui5.org/) to create interactive Web based GUI. [OpenUI5](https://openui5.org/) is a web toolkit for developers to ease and speed up the development of full-blown HTML5 web applications. You can find its impressive list of controls [here](https://openui5.hana.ondemand.com/controls)
 
-The association of JSROOT and OpenUI5 allowed us to create the new web based [RCanvas](https://root.cern/doc/master/classROOT_1_1Experimental_1_1RCanvas.html) and [RBrowser](https://root.cern/doc/master/classROOT_1_1Experimental_1_1RBrowser.html) classes.
+The association of JSROOT and OpenUI5 allowed us to create the new web based [RCanvas](https://root.cern/doc/master/classROOT_1_1Experimental_1_1RCanvas.html) and [RBrowser](https://root.cern/doc/master/classROOT_1_1RBrowser.html) classes.
 
 {% include figure_image
    img="rcanvas.png"

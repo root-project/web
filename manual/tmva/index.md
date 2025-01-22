@@ -29,7 +29,7 @@ above mentioned machine learning techniques. The package includes:
 - Rectangular cut optimisation
 - Support Vector Machine (SVM)
 
-{% include tutorials name="TMVA" url="tmva" %}
+{% include tutorials name="Machine learning" url="ml" %}
 
 ### Ingesting a dataset for training in TMVA
 
