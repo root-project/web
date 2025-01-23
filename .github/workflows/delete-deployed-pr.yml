@@ -18,6 +18,12 @@ jobs:
     # PRs are only deployed if the PR branch is not in a fork
     if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
     steps:
+      
+      - name: Install AWS CLI
+        run: |
+          python -m pip install --upgrade pip
+          pip install awscli==1.36.40
+
       - run: aws --endpoint-url https://s3.cern.ch s3 rm --recursive s3://root/${PR_NUMBER:?}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
