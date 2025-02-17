@@ -63,7 +63,7 @@ and to the [community-maintained version](https://cernlib.web.cern.ch/version.ht
 Minuit was a FORTRAN package conceived as a tool to find the minimum value of a multi-parameter
 function and analyze the shape of the function around the minimum. It was translated in
 C++ in the {% include ref class="TMinuit"%} class.
-[A link to the pdf version of the Minuit manual](https://root.cern.ch/download/minuit.pdf){:target="_blank"}
+[A link to the pdf version of the Minuit manual](https://root.cern/download/minuit.pdf){:target="_blank"}
 is kept here.
 
 ## Minuit 2
