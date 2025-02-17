@@ -54,9 +54,9 @@ ROOT files is supported.
 
 The CERN Program Library was a large collection of general-purpose programs written in
 FORTRAN. It is deprecated for many years but many algorithms it implemented at that time
-were back-ported to ROOT. That's why
-[a link to the pdf version of the CERNLib manual](https://root.cern/d/sites/d35c7d8c.web.cern.ch/files/cernlib.pdf){:target="_blank"}
-is kept here.
+were back-ported to ROOT. Here is 
+[a link to the pdf version of the CERNLib manual](https://indico.cern.ch/event/801649/attachments/1801273/2955935/cernlib.pdf){:target="_blank"}
+and to the [community-maintained version](https://cernlib.web.cern.ch/version.html).
 
 ## Minuit
 
