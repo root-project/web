@@ -164,6 +164,33 @@ It can be installed with
 $ emerge sci-physics/root
 ```
 
+### Guix
+
+The Guix package for ROOT is in [guix-science](https://codeberg.org/guix-science/guix-science){:target="\_blank"} channel.
+
+It can be installed into the user default profile using
+
+
+```sh
+$ guix install root
+```
+
+Building and installing older versions is possible with [package transformations](https://guix.gnu.org/manual/devel/en/html_node/Package-Transformation-Options.html)
+
+```sh
+guix install root --with-version=root="6.32.02"
+```
+
+Similarly, to obtain latest version or a precise source revision
+
+```sh
+guix install root --with-latest=root
+guix install root --with-commit=root=COMMIT
+```
+
+If you encounter any issues, feel free report them to the [guix-science issue tracker](https://codeberg.org/guix-science/guix-science/issues).
+
+
 ### <a name="nixos_nix_nixpkgs" />NixOS/Nix/Nixpkgs
 
 The package name for ROOT in nixpkgs is `root`. It can be installed into the user environment using
