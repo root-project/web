@@ -103,6 +103,9 @@ $ snap run root-framework
 $ root # and the output of `which root` should contain `/snap`
 ```
 
+Note that, when installing via Snap, you shouldn't call `thisroot.sh` as is the
+usual case when downloading the binaries, more details [here](https://root-forum.cern.ch/t/activating-the-snap-installation/63075/4).
+
 To use ROOT from Python, the Snap package bundles its own Python 3.8 interpreter
 that knows where to find the ROOT libraries. This is done to avoid interference
 with other system packages. You should use `pyroot` rather than `python` to make
