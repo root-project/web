@@ -83,3 +83,21 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "eu-west-1"
+
+      - name: Install Kerberos utilities
+        run: sudo apt-get install -y krb5-user
+
+      - name: Install XRootD client
+        run: sudo apt-get -y install xrootd-client
+
+      - name: Sync to EOS
+        env:
+          RWEBEOS_KT: ${{ secrets.RWEBEOS_KT }}
+          KT_FILE_NAME: /tmp/decoded.keytab
+          EOS_PATH: /eos/project/r/root-eos/website
+          EOS_ENDPOINT: root://eosproject-r.cern.ch
+          KRB5CCNAME: /tmp/krb5cc
+        run: |
+          echo ${RWEBEOS_KT} | base64 -d > ${KT_FILE_NAME}
+          kinit  -p ${{ secrets.KRB5USER }}@${{ secrets.KRB5REALM }} -kt ${KT_FILE_NAME}
+          xrdcp --streams 12 -rf build/${PR_NUMBER:-} ${EOS_ENDPOINT}//${EOS_PATH}/
