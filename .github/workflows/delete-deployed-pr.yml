@@ -4,6 +4,9 @@ on:
     types: [closed]
     branches: [main]
 
+env:
+  PR_NUMBER: ${{ github.event.pull_request.number }}
+
 jobs:
   delete_deployed_pr:
     # Fix to ubuntu 22.04. In 2027, at the EOL of that distro, this GH warning will have to be addressed:
@@ -24,9 +27,27 @@ jobs:
           python -m pip install --upgrade pip
           pip install awscli==1.36.40
 
-      - run: aws --endpoint-url https://s3.cern.ch s3 rm --recursive s3://root/${PR_NUMBER:?}
+      - name: Clear the PR dir on S3
+        run: aws --endpoint-url https://s3.cern.ch s3 rm --recursive s3://root/${PR_NUMBER:?}
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "eu-west-1"
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+
+      - name: Install Kerberos utilities
+        run: sudo apt-get install -y krb5-user
+
+      - name: Install XRootD client
+        run: sudo apt-get -y install xrootd-client
+
+      - name: Clear the PR dir on EOS
+        env:
+          RWEBEOS_KT: ${{ secrets.RWEBEOS_KT }}
+          KT_FILE_NAME: /tmp/decoded.keytab
+          EOS_PATH: /eos/project/r/root-eos/website
+          EOS_ENDPOINT: root://eosproject-r.cern.ch
+          KRB5CCNAME: /tmp/krb5cc
+        run: |
+          echo ${RWEBEOS_KT} | base64 -d > ${KT_FILE_NAME}
+          kinit  -p ${{ secrets.KRB5USER }}@${{ secrets.KRB5REALM }} -kt ${KT_FILE_NAME}
+          xrdfs ${EOS_ENDPOINT} mv ${EOS_PATH}/${PR_NUMBER:-?} ${EOS_PATH}/recycle/${PR_NUMBER:-?}
