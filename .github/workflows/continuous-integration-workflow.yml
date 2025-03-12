@@ -100,4 +100,5 @@ jobs:
         run: |
           echo ${RWEBEOS_KT} | base64 -d > ${KT_FILE_NAME}
           kinit  -p ${{ secrets.KRB5USER }}@${{ secrets.KRB5REALM }} -kt ${KT_FILE_NAME}
-          xrdcp --streams 12 -rf build/${PR_NUMBER:-} ${EOS_ENDPOINT}//${EOS_PATH}/
+          cd build
+          xrdcp --streams 12 -rf ./${PR_NUMBER:-} ${EOS_ENDPOINT}//${EOS_PATH}/
