@@ -4,14 +4,18 @@ layout: single
 toc: true
 toc_sticky: true
 list1:
-  - example: thstackcolorscheme.C
+  - example: hist026_THStack_color_scheme.C
     title: This example demonstrates how to use the accessible color schemes with THStack.
-  - example: ratioplot1.C
-    title: Example creating a simple ratio plot of two histograms using the pois division option.
-  - example: ContourList.C
+  - example: hist029_TRatioPlot_simple.C
+    title: Example creating a simple ratio plot of two histograms using the "pois" division option.
+  - example: hist102_TH2_contour_list.C
     title: Getting Contours From TH2D.
-  - example: candleplotwhiskers.C
+  - example: hist052_Graphics_candle_plot_whiskers.C
     title: Example of candle plot showing the whiskers definition.
+  - example: hist019_TH2_projection.C
+    title: This example demonstrates how to display a histogram and its two projections.
+  - example: hist038_TH2Poly_honeycomb.C
+    title: This tutorial illustrates how to create an histogram with hexagonal bins (TH2Poly).
 list2:
   - example: annotation3d.C
     title: This example show how to put some annotation on a 3D plot using 3D polylines.
