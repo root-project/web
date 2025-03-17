@@ -11,7 +11,7 @@
       <tr>
     {% endif %}
     <td style="vertical-align:bottom;">
-      <a href="{{ ref_guide_url }}{{ tut.example | replace: '.C', '_8C'}}.html">
+      <a href="{{ ref_guide_url }}{{ tut.example | replace: '_', '__' |replace: '.C', '_8C'}}.html">
         <img src="{{ ref_guide_url }}pict1_{{ tut.example }}.png">
       </a>
       <em> {% if tut.title %}{{ tut.title }}{% endif %} </em>

@@ -1,5 +1,5 @@
 ---
-title: ROOT examples and galleries of images produced with ROOT
+title: ROOT examples and galleries
 layout: single
 toc: true
 toc_sticky: true
@@ -19,10 +19,16 @@ list1:
 list2:
   - example: annotation3d.C
     title: This example show how to put some annotation on a 3D plot using 3D polylines.
-  - example: exclusiongraph.C
+  - example: gr106_exclusiongraph.C
     title: Draw three graphs with an exclusion zone.
-  - example: graphShade.C
+  - example: gr101_shade_area.C
     title: Show how to shade an area between two graphs
+  - example: gr107_exclusiongraph2.C
+    title: Draw several graphs with exclusion zones.
+  - example: gr013_polar2.C
+    title: Create and draw a polar graph with errors and polar axis in radians (PI fractions).
+  - example: gr007_multigraph.C
+    title: TMultiGraph is used to combine multiple graphs into one plot.
 gallery1:
   - url: /gallery/higgs_plots/Atlas_CLs_Exclusion.png
   - url: /gallery/higgs_plots/Atlas_Data_MC_Comparison.png
@@ -144,8 +150,6 @@ gallery5:
   - url: /gallery/visualisation_techniques_and_basics_graphics/Time_on_axis.gif
   - url: /gallery/visualisation_techniques_and_basics_graphics/Two_legos_plots_combined.gif
 ---
-
- ** UNDER CONSTRUCTION **
 
 ## Examples
 
