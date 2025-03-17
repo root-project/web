@@ -672,3 +672,18 @@ Fernando Hueso González:
   avatar      : "/assets/images/avatar-ferhue.jpg"
   email       : "fernando.hueso@uv.es"
   affiliation : "IFIC - Instituto de Física Corpuscular (CSIC / Universitat de València)"
+
+
+Silia Taider:
+  name        : "Silia Taider"
+  bio         : "Silia graduated with an engineering degree in Software Development and Big Data
+                 from CPE Lyon Eng. School. She joined the ROOT team as a summer student in 2023
+                 and continued as a technical student in LHCb for a year before coming back to ROOT
+                 as a junior fellow. She is currently working on improving the ergonomics of Python
+                 interfaces offered by ROOT statistics and analysis tools such as histograms, graphs
+                 or RDataFrames."
+  short_bio   : "Silia is an Early Career Graduate working on the ROOT python iterfaces."
+  tag         : "team"
+  avatar      : "/assets/images/ST.jpeg"
+  affiliation : "CERN"
+  email       : "silia.taider@cern.ch"
