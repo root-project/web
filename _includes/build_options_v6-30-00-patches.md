@@ -95,7 +95,7 @@
 | `test_distrdf_dask` | Enable distributed RDataFrame tests that use dask | OFF |
 | `test_distrdf_pyspark` | Enable distributed RDataFrame tests that use pyspark | OFF |
 | `tmva-cpu` | Build TMVA with CPU support for deep learning (requires BLAS) | ON |
-| `tmva-gpu` | Build TMVA with GPU support for deep learning (requries CUDA) | OFF |
+| `tmva-gpu` | Build TMVA with GPU support for deep learning (requires CUDA) | OFF |
 | `tmva` | Build TMVA multi variate analysis library | ON |
 | `tmva-pymva` | Enable support for Python in TMVA (requires numpy) | ON |
 | `tmva-rmva` | Enable support for R in TMVA | OFF |

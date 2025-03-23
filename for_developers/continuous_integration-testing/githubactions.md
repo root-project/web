@@ -19,7 +19,7 @@ Linux runners are Docker images; macOS and Windows are native (mac minis / OpenS
 ## Nightly builds, on-merge builds, PR builds, building releases
 
 All builds share the same infrastructure.
-Nighly builds are triggered (`schedule:`); this only works for `master` and needs a wrapper (`.github/workflows/all-branches.yml`) to then trigger nightly builds for the relevant branches (to be implemented).
+Nightly builds are triggered (`schedule:`); this only works for `master` and needs a wrapper (`.github/workflows/all-branches.yml`) to then trigger nightly builds for the relevant branches (to be implemented).
 PR builds are incremental builds that grab the last on-merge build's build artifacts (source + build dir), apply the PR's source changes, build and test.
 
 On-merge builds are full builds that update the build artifacts: before running roottest, the source and build directories are uploaded to [OpenStack's S3 storage](https://openstack.cern.ch/project/containers/container/ROOT-build-artifacts) (project `ROOT-build-artifacts`).

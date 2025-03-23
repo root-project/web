@@ -203,7 +203,7 @@ are drawn on the same plot and may hide each other.
 {% include ref class="TGraphMultiErrors" %} is an other kind of % include ref class="TGraphAsymmErrors" %} but
 multiple y error dimensions. It has a set of [specific drawing options](https://root.cern/doc/master/classTGraphPainter.html#GP03d).
 
-{% include ref class="TGraphPolar" %} is an other kind ot graph with errors. It allows
+{% include ref class="TGraphPolar" %} is an other kind of graph with errors. It allows
 to produce polar plots with several [plotting options](https://root.cern/doc/master/classTGraphPainter.html#GP04).
 
 ## Graphs with exclusion zone

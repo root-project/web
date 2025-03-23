@@ -44,7 +44,7 @@ class Particle {
 };
 ```
 
-the on-disk format decides on things like [endianess](https://en.wikipedia.org/wiki/Endianness) of the numbers,
+the on-disk format decides on things like [endianness](https://en.wikipedia.org/wiki/Endianness) of the numbers,
 if we store all particles consecutively or we first store all `pt` and then all `charge` values [[1]](#footnote1),
 how we remember the in-memory layout of Particle, the compression block size, where we put data checksums, and so forth.
 Once the format is fixed and applications write (large amounts of) data,

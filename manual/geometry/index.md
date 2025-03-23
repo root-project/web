@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-A geometry represents a Hierarchie of constructive solid geometry primitive elements
+A geometry represents a hierarchy of constructive solid geometry primitive elements
 (shapes or solid). The main functionalities provided are ray model collision detection
 functionality, visualization, overlap checking and persistency.
 

@@ -244,7 +244,7 @@ This list is also available by typing `.?` or `.help` in the ROOT prompt.
 
    .T <filePath> <comment>	- Generate autoload map
 
-   .trace <repr> <id>		- Dump trace of requested respresentation
+   .trace <repr> <id>		- Dump trace of requested representation
 				  (see .stats arguments for <repr>)
 
    .help			- Shows this information (also .?)
@@ -322,7 +322,7 @@ This list is also available by typing `.? edit` or `.help edit` in the ROOT prom
    Arrow_Up         : navigate upwards in command history [Ctrl+P]
    Ctrl+R ; Ctrl+S  : search command in your history by typing a string.
                       Use Backspace if you mistyped (but not arrows).
-                      Press Ctrl+R (Ctrl+S) repeateadly to navigate matches in reverse (forward) order
+                      Press Ctrl+R (Ctrl+S) repeatedly to navigate matches in reverse (forward) order
    Arrow_Right      : after Ctrl+R (Ctrl+S), select current match of the history search
                       [Ctrl+O] [Enter] [Ctrl+J] [Ctrl+M] [Arrow_Left] [Esc,Esc].
                       Use Ctrl+F or Ctrl+G to cancel search and revert original line
@@ -851,7 +851,7 @@ class TChild : public TMyClass {
    public:
       void Print() const;
 };
-void TChild::Print() const  // child print metod
+void TChild::Print() const  // child print method
 {
    cout << "This is TChild::Print()" << endl;
    TMyClass::Print();

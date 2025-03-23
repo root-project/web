@@ -84,7 +84,7 @@ Nuclear Research, CERN in Geneva.
 
 ROOT is very flexible and provides both a programming interface to use in own
 applications and a graphical user interface for interactive data analysis. The
-purpose of this document is to serve as a beginners guide and provides extendible
+purpose of this document is to serve as a beginners guide and provides extenable
 examples for your own use cases, based on typical problems addressed in
 student labs. This guide will hopefully lay the ground for more complex
 applications in your future scientific work building on a modern,
@@ -746,7 +746,7 @@ gROOT->SetStyle("Plain");   // set plain TStyle
 gStyle->SetOptStat(111111); // draw statistics on plots,
                             // (0) for no output
 gStyle->SetOptFit(1111);    // draw fit results on plot,
-                            // (0) for no ouput
+                            // (0) for no output
 gStyle->SetPalette(57);     // set color map
 gStyle->SetOptTitle(0);     // suppress title box
    ...
@@ -2116,7 +2116,7 @@ by opening a TBrowser object in an interactive ROOT session:
 root[0] TBrowser b;
 {% endhighlight %}
 
-You find the columns of your tree written as *leafs*. Simply by clicking
+You find the columns of your tree written as *leaves*. Simply by clicking
 on them you can obtain histograms of the variables!
 
 For more complex analysis tasks, you can instruct RDataFrame to perform cuts

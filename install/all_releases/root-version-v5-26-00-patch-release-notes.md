@@ -63,7 +63,7 @@ sidebar:
 <ul>
 	<li>IO
 	<ul>
-		<li>Avoid spurrious warning message when reading file with a TTree writen with ROOT 5.29/03 or later:<code>Warning in <tstreamerinfo::compile>: Counter fNClusterRange should not be skipped from class TTree</tstreamerinfo::compile></code></li>
+		<li>Avoid spurious warning message when reading file with a TTree written with ROOT 5.29/03 or later:<code>Warning in <tstreamerinfo::compile>: Counter fNClusterRange should not be skipped from class TTree</tstreamerinfo::compile></code></li>
 	</ul>
 	</li>
 	<li>Proof
@@ -92,7 +92,7 @@ sidebar:
 	<li>Cint
 	<ul>
 		<li>When generating code for the typedef within a class, make sure to treat bool as a built-in.</li>
-		<li>Avoid a segmentation fault when parsing a class with virtual inheratance and a using declaration.</li>
+		<li>Avoid a segmentation fault when parsing a class with virtual inheritance and a using declaration.</li>
 		<li>genreflex: fix for functions taking a template with an array template parameter (r35203, <a href="https://savannah.cern.ch/bugs/?71800" target="_blank">bug #71800</a>).</li>
 		<li>Properly set the class version for ClassDef()'ed classes with a Reflex dictionary (r35514, r35515; <a href="https://savannah.cern.ch/bugs/?72749" target="_blank">bug #72749</a>).</li>
 	</ul>
@@ -205,16 +205,16 @@ sidebar:
 		<li>Don't generate collection proxy for Windows iterators (r32637).</li>
 		<li>Fix uninitialized members reported by Coverity (r32639, r32640, r32641).</li>
 		<li>Avoid using colons in the AutoDict file names (<strong>[Bad link]</strong>).</li>
-		<li>Replace a crash by an error message in the case where stdout or stderr is already redirect when a redirection is aksed for ( r32416).</li>
+		<li>Replace a crash by an error message in the case where stdout or stderr is already redirect when a redirection is asked for ( r32416).</li>
 		<li>properly reset G__value::reftype.reftype when needed in the bytecode engine (<strong>[Bad link]</strong>)</li>
 		<li>Do not cause an overflow signal just because we cast the result of line processing to a long. Set it to LONG_MAX/MIN instead. (<strong>[Bad link]</strong>).</li>
 		<li>In shift operators, do not always promote to long, stop at int first. (<strong>[Bad link]</strong>)</li>
 		<li>Fix the cases where the wrong function's parameter was being reset (<strong>[Bad link]</strong>)</li>
-		<li>Fix random memory read in G__cattemplatearg by avoid to use a pointer into memory thay might be move (<strong>[Bad link]</strong>)</li>
+		<li>Fix random memory read in G__cattemplatearg by avoid to use a pointer into memory that might be moved (<strong>[Bad link]</strong>)</li>
 		<li>Try to load explicitly ./filename but filename as the earlier is more friendly to dlopen (<strong>[Bad link]</strong>)</li>
 		<li>make sure we are loading the dictionary information about member function before looking for a template member function instance. This fixes the report <strong>[Bad link]</strong> in Savannah.(<strong>[Bad link]</strong>)</li>
 		<li>Make sure to autoload a class before allocating any object of that type (<strong>[Bad link]</strong>)</li>
-		<li>Properly parse typedef long long* pointer when there is more than one space betweent the star and the typedef name. Generate the dictionary for vector &lt; long long &gt; and vector &lt; unsigned long long &gt; (<strong>[Bad link]</strong>)</li>
+		<li>Properly parse typedef long long* pointer when there is more than one space between the star and the typedef name. Generate the dictionary for vector &lt; long long &gt; and vector &lt; unsigned long long &gt; (<strong>[Bad link]</strong>)</li>
 		<li>Make sure the list of library is recalculated whenever G__smart_unload is used; This fixes Savannah <strong>[Bad link]</strong> (<strong>[Bad link]</strong>)</li>
 		<li>Avoid premature deletion of objects used as the default parameter of an interpreted function.</li>
 		<li>Fix a crash caused by a misplaced semicolon (<a href="https://savannah.cern.ch/bugs/index.php?68454" target="_blank">issue #68454</a>, r33860)</li>
@@ -225,7 +225,7 @@ sidebar:
 	<ul>
 		<li>Prevent DropBaskets from dropping baskets that are not stored individually (and hence potentially not recoverable).</li>
 		<li>Fix a lookup problem resulting a TTree::Draw not finding the data in some (complex) case of object nesting.</li>
-		<li>Do not core dump when called with an emtpy chain. Show the branches of a chain's underlying's tree's friend in addition to the branches of the chain and of the chain's friends (<strong>[Bad link]</strong>).</li>
+		<li>Do not core dump when called with an empty chain. Show the branches of a chain's underlying's tree's friend in addition to the branches of the chain and of the chain's friends (<strong>[Bad link]</strong>).</li>
 		<li>Add missing re-initialization in TBranchProxy (part of TTree::MakeProxy) (<strong>[Bad link]</strong>).</li>
 		<li>When drawing a polymarker make Same is the same as same (<strong>[Bad link]</strong>)</li>
 		<li>Fix a couple of internal memory leaks (<strong>[Bad link]</strong>)</li>
@@ -246,7 +246,7 @@ sidebar:
 	<li>Hist
 	<ul>
 		<li>Fix the problem with ternary operator: <a href="http://savannah.cern.ch/bugs/?67398" target="_blank">#67398</a></li>
-		<li>TForumla: unary minus could cause a wrong GetExpFormula() (<a href="https://savannah.cern.ch/bugs/?68905" target="_blank">#68905</a>, r34001).</li>
+		<li>TFormula: unary minus could cause a wrong GetExpFormula() (<a href="https://savannah.cern.ch/bugs/?68905" target="_blank">#68905</a>, r34001).</li>
 	</ul>
 	</li>
 	<li>Proof
@@ -333,7 +333,7 @@ sidebar:
 	</li>
 	<li>Proof
 	<ul>
-		<li>Import patch <a href="http://root.cern/viewvc?view=rev&amp;revision=32237" target="_blank">#32237</a> to fix a problem occuring when submergers cannot open the required sockets (output was not always sent ot the master).</li>
+		<li>Import patch <a href="http://root.cern/viewvc?view=rev&amp;revision=32237" target="_blank">#32237</a> to fix a problem occurring when submergers cannot open the required sockets (output was not always sent to the master).</li>
 	</ul>
 	</li>
 	<li>Xrootd
@@ -377,7 +377,7 @@ sidebar:
 	<li>Tree
 	<ul>
 		<li>Protect TTree::OptimizeBaskets() in case of very high compression factors (&gt; 100). TTree::Fill now calls TTree::OptimizeBaskets() with the fAutoFlush value instead of the total number of bytes written so far.</li>
-		<li>In the TTreeViewer, show the branches of a chain's underlying's tree's freind in addition to the branches of the chain and of the chain's friends.</li>
+		<li>In the TTreeViewer, show the branches of a chain's underlying's tree's friend in addition to the branches of the chain and of the chain's friends.</li>
 	</ul>
 	</li>
 	<li>Graf

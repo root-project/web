@@ -13,7 +13,7 @@ the ROOT website. The ROOT website uses [a forked copy of the
 Many scripts and functionalities have been added compared to this original theme.
 
 This page provides instructions to generate a local running version of this website.
-The informations presented here are largely inspired from the
+The information presented here are largely inspired from the
 [quick start page of the Jekyll website](https://jekyllrb.com/docs/){:target="_blank"}.
 
 ## Generate a local running version of the ROOT website

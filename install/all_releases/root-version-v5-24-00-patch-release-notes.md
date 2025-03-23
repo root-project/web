@@ -44,8 +44,8 @@ sidebar:
 		<li>Make long and long long equivalent. Make vector&lt;long&gt; and vector&lt;long long&gt; equivalent (and hence suppress: TStreamerInfo::BuildOld:0: RuntimeWarning: Cannot convert DataHeaderElement_p2::m_Hashes from type:vector&lt;unsigned long long&gt; to type:vector&lt;unsigned long&gt;, skip element )</li>
 		<li>Fix TStreamerInfo::CompareContent to properly look at only persistent members and to properly match members.</li>
 		<li>Allow streaming of base classes with an external streamer and Reflex dictionaries (r31300, issue <a href="https://savannah.cern.ch/bugs/index.php?59093" target="_blank">#59093</a>)</li>
-		<li>Avoid spurrious warning message when reading file produced by ROOT v5.27 and above.</li>
-		<li>Avoid spurrious warning message when reading file with a TTree writen with ROOT 5.29/03 or later:<code>Warning in <tstreamerinfo::compile>: Counter fNClusterRange should not be skipped from class TTree</tstreamerinfo::compile></code></li>
+		<li>Avoid spurious warning message when reading file produced by ROOT v5.27 and above.</li>
+		<li>Avoid spurious warning message when reading file with a TTree written with ROOT 5.29/03 or later:<code>Warning in <tstreamerinfo::compile>: Counter fNClusterRange should not be skipped from class TTree</tstreamerinfo::compile></code></li>
 	</ul>
 	</li>
 	<li>CINT
@@ -59,7 +59,7 @@ sidebar:
 	</li>
 	<li>net/krb5auth
 	<ul>
-		<li>Explicitely add include path for the openssl headers to avoid problems on some systems (e.g. kubuntu)</li>
+		<li>Explicitly add include path for the openssl headers to avoid problems on some systems (e.g. kubuntu)</li>
 	</ul>
 	</li>
 	<li>net/globusauth
@@ -216,7 +216,7 @@ sidebar:
 		<li>Fix for persistence of RooDataHist</li>
 		<li>Fix in RooProfileLL:&nbsp;save and restore values of profiled parameters when finding global minimum</li>
 		<li>Fix in RooDataHist in handling of weights in set()</li>
-		<li>Fix in RooRealIntegral in forwarding of normaliztion set in createIntegral()<span id="1251382838745S" style="display: none;"> </span></li>
+		<li>Fix in RooRealIntegral in forwarding of normalization set in createIntegral()<span id="1251382838745S" style="display: none;"> </span></li>
 		<li>Fix in import of multiple weighted datasets in RooDataSet</li>
 		<li>Fix for correct handling of nevt=0 cases in RooMCStudy of a p.d.f in extended mode</li>
 		<li>Fix in constructor of RooSimultaneous</li>

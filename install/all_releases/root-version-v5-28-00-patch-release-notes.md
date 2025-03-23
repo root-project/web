@@ -145,7 +145,7 @@ sidebar:
 	<ul>
 		<li>Import patch <a href="http://root.cern/viewcvs?view=rev&amp;revision=39152" target="_blank">#39152</a> improving solidity of file name matching in TPacketizerFile.</li>
 		<li>Import patch <a href="http://root.cern/viewcvs?view=rev&amp;revision=39171" target="_blank">#39171</a> fixing merging of TProofOutputFiles with submergers (see <a href="http://root.cern/phpBB3/viewtopic.php?f=13&amp;t=12598" target="_blank" title="http://root.cern/phpBB3/viewtopic.php?f=13&amp;t=12598">http://root.cern/phpBB3/viewtopic.php?f=13&amp;t=12598</a>).</li>
-		<li>Import patch <a href="http://root.cern/viewcvs?view=rev&amp;revision=39173" target="_blank">#39173</a> to include transmission of the orginal weight to TProofDraw is 'DrawSelect' operations. See <a href="http://root.cern/phpBB3/viewtopic.php?f=13&amp;t=12728" target="_blank" title="http://root.cern/phpBB3/viewtopic.php?f=13&amp;t=12728">http://root.cern/phpBB3/viewtopic.php?f=13&amp;t=12728</a> .</li>
+		<li>Import patch <a href="http://root.cern/viewcvs?view=rev&amp;revision=39173" target="_blank">#39173</a> to include transmission of the original weight to TProofDraw is 'DrawSelect' operations. See <a href="http://root.cern/phpBB3/viewtopic.php?f=13&amp;t=12728" target="_blank" title="http://root.cern/phpBB3/viewtopic.php?f=13&amp;t=12728">http://root.cern/phpBB3/viewtopic.php?f=13&amp;t=12728</a> .</li>
 		<li>Import patch <a href="http://root.cern/viewcvs?view=rev&amp;revision=39309" target="_blank">#39309</a> importing version 0.9.3 of afdsmgrd.</li>
 		<li>Import patch <a href="http://root.cern/viewcvs?view=rev&amp;revision=39579" target="_blank">#39579</a> avoid a segmentation fault when reading file where the AutoFlush mechanism has been disabled and the TTreeCache is requested nonetheless.</li>
 		<li>Import patch <a href="http://root.cern/viewcvs?view=rev&amp;revision=39580" target="_blank">#39580</a> fixing an issue with connections via a SSH tunnel.</li>
@@ -211,8 +211,8 @@ sidebar:
 	</li>
 	<li>IO
 	<ul>
-		<li>Avoid spurrious warning message when reading file with a TTree writen with ROOT 5.29/03 or later:<code>Warning in <tstreamerinfo::compile>: Counter fNClusterRange should not be skipped from class TTree</tstreamerinfo::compile></code></li>
-		<li>Avoid spurrious warning message when reading a file containing an 'empty' collection whose content has gone through schema evolution: <code>Error in <tbufferfile::readversion>: Could not find the StreamerInfo with a checksum of - 849380031 for the class "NeverWritten" in memberwise.root.</tbufferfile::readversion></code></li>
+		<li>Avoid spurious warning message when reading file with a TTree written with ROOT 5.29/03 or later:<code>Warning in <tstreamerinfo::compile>: Counter fNClusterRange should not be skipped from class TTree</tstreamerinfo::compile></code></li>
+		<li>Avoid spurious warning message when reading a file containing an 'empty' collection whose content has gone through schema evolution: <code>Error in <tbufferfile::readversion>: Could not find the StreamerInfo with a checksum of - 849380031 for the class "NeverWritten" in memberwise.root.</tbufferfile::readversion></code></li>
 	</ul>
 	</li>
 	<li>TTree
@@ -459,7 +459,7 @@ sidebar:
 
 		<ul>
 			<li>
-			<div>Added protectNegativeMean(bool) optional to gracefully handel cases when expectation is negative</div>
+			<div>Added protectNegativeMean(bool) optional to gracefully handle cases when expectation is negative</div>
 			</li>
 			<li>
 			<div>Added setNoRounding(bool) option to switch between rounding number of events</div>
@@ -473,7 +473,7 @@ sidebar:
 
 		<ul>
 			<li>
-			<div>Added handeling of a special case in analytic integral for RooRealSumPdf</div>
+			<div>Added handling of a special case in analytic integral for RooRealSumPdf</div>
 			</li>
 		</ul>
 		</li>
@@ -485,7 +485,7 @@ sidebar:
 			<div>Fixed printout in number of toy MC used in FeldmanCousins and NeymanConstruction&nbsp;</div>
 			</li>
 			<li>
-			<div>Added SetOneSided(bool) option to ProfileLiklihoodTestStat for one-sided upper limits</div>
+			<div>Added SetOneSided(bool) option to ProfileLikelihoodTestStat for one-sided upper limits</div>
 			</li>
 			<li>
 			<div>Fixed a bug in LikelihoodInterval when having constant parameter</div>

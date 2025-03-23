@@ -93,7 +93,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   bindexplib.exe support for x64
 *   I/O.
     *   Properly handle the reload/recreate of TClass for STL containers (fixes [ROOT-7239](https://sft.its.cern.ch/jira/browse/ROOT-7239))
-    *   Fix the ordering of the keys in a TFile being written; in particular fixing the result of GetKey and FindKey which were no longer returning the lastest cycle for a TFile being written since v5.34/11.
+    *   Fix the ordering of the keys in a TFile being written; in particular fixing the result of GetKey and FindKey which were no longer returning the latest cycle for a TFile being written since v5.34/11.
 *   Graphics
     *   In the animated gif it is now possible to specify the delay between the last image and the fist image in case of infinite loop ([ROOT-7263](https://sft.its.cern.ch/jira/browse/ROOT-7263)).
     *   2D stats painting now takes the stats format into account when painting Integral. This problem was mentioned [here](https://root.cern/phpBB3/viewtopic.php?f=3&t=19746).
@@ -226,7 +226,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   New tutorial showing how to use the TGTextViewostream widget
 *   Geom
     *   Restructuring TGeoBranchArray to allow allocation and copying in pre-booked memory.
-    *   New feature allowing to prioritise certain volume paths in the case where overlaps cannot be avoided. This can happen for example after mis-aligning the geometry. The typical use case is to prioritise sensor-like volumes which are defined as sensitive in the misaligned tracking geometry and which become shadowed by overlaps with nearby structures. A usage example is provided in $ROOTSYS/tutorials/geom/parallel_world.C.
+    *   New feature allowing to prioritise certain volume paths in the case where overlaps cannot be avoided. This can happen for example after misaligning the geometry. The typical use case is to prioritise sensor-like volumes which are defined as sensitive in the misaligned tracking geometry and which become shadowed by overlaps with nearby structures. A usage example is provided in $ROOTSYS/tutorials/geom/parallel_world.C.
 
 <a id='24'></a>
 ## Changes in version v5-34-24 (December 2, 2014)
@@ -398,7 +398,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Fix the computation of fit parameter errors in weighted extended maximum likelihood fits
 
 * RooStats
-    *   Improve StandardHypoTestInvDemo macro to add option (enableDetailedOutput) to save the fit result informations for every generated toy event in the output result file. Fix also the running with Proof.
+    *   Improve StandardHypoTestInvDemo macro to add option (enableDetailedOutput) to save the fit result information for every generated toy event in the output result file. Fix also the running with Proof.
 
 * HistFactory
     *   Fix initialisation of data member of some classes (e.g. ShapeSys)
@@ -557,7 +557,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 *   I/O
     *   Fix the reading of the case where the last branch/data member of a class in no longer in memory, and is the source of a rule, it was inadervently marked as not-to-be read (effectively preventing the execution of the rule). ([ROOT-5831](https://sft.its.cern.ch/jira/browse/ROOT-5831)).
 *   TTree
-    *   Prevent spurrious warning (<tt>TRefTable::Add: SetParent must be called before adding</tt>) when a TRef-ed object is stored in the TTree list of user info.
+    *   Prevent spurious warning (<tt>TRefTable::Add: SetParent must be called before adding</tt>) when a TRef-ed object is stored in the TTree list of user info.
     *   Extended TTreeIndex and TTreeFormula to support 64 integers.
 *   Graphics
     *   <tt>TPad::Print()</tt> really works on <tt>TCanvas</tt> only. A protection has been added in case it is called on a pure TPad.
@@ -643,14 +643,14 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Fix a memory issue when cloning some file with freed-up blocks. This fixes [ROOT-5616](https://sft.its.cern.ch/jira/browse/ROOT-5616)
 *   TTree
 
-    *   Fix spurrious issue when same name was twice in branch name. This fixes [ROOT-5628](https://sft.its.cern.ch/jira/browse/ROOT-5628)
+    *   Fix spurious issue when same name was twice in branch name. This fixes [ROOT-5628](https://sft.its.cern.ch/jira/browse/ROOT-5628)
 *   RooFit (with substantial contributions from M. Schiller)
 
     *   Various speedups in core code in management of expression trees (faster lookup of nodes, cloning of expression trees etc...)
     *   Make RooAbsArg::setExpensiveObjectCache() virtual so that cache association of RooRealVar objects never happens. Fixes ROOT-5502
     *   Trim verbosity of algorithms that optimize likelihood calculations prior to fit: nodes evaluated in cache-and-track mode are only reported if there are less than 20, otherwise only the number of such nodes is reported
     *   Add option to optimize calculation of likelihoods represented by stacks of RooHistFuncs stored in a RooRealSum by evaluating them as a genuine binned likelihood, rather than as a probability density function with an extended likelihood term. To activate this feature, the RooRealSumPdf must have a boolean attribute "BinnedLikelihood" set.
-    *   Modify workspace strategy for importing functions and pdfs with embbeded datasets (such a RooHistPdf). Now store datasets that were not already imported in workspace in a separate 'embedded datasets namespace' that is also visible to the user. Previously such imported datasets were inivisible.
+    *   Modify workspace strategy for importing functions and pdfs with embedded datasets (such a RooHistPdf). Now store datasets that were not already imported in workspace in a separate 'embedded datasets namespace' that is also visible to the user. Previously such imported datasets were invisible.
     *   Extend string buffer size of RooDataSet ctor with importSlices() argument
     *   Bug fix in RooRealIntegral in classification of exclusive lvalue branches
     *   Add horizontal morphing option to RooMomentMorph [ M. Baak ]
@@ -718,7 +718,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   New class <tt>TTeXDump</tt> to generate PGF/TikZ vector graphics output
     *   Allow parenthesis in PDF and PS file names.
 *   RooFit (with substantial contributions from M. Schiller)
-    *   Deprecate RooComplex, adapt rest of code to use std::complex instread
+    *   Deprecate RooComplex, adapt rest of code to use std::complex instead
     *   New faster & more precise implementation of complex error function
     *   Analytical integrals for RooChebychev
     *   In RooAbsPdf::plotOn() allow to project an asymmetry of region
@@ -743,8 +743,8 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
 *   I/O.
     *   Fix the handling of rule that specify a version range "[1-]" but applies to a classes with a specified version numbered. It now properly applies to all schemas.
     *   Prevent out-of-bounds access when switching a TBuffer from Read to Write mode.
-    *   Fix spurrious (fatal) removal of duplicate part of branch names.
-         Since v5-34-06 (specifically commit b454e81), a TTree fails to save the content of a branch that is part of a split STL collection and whose name (of the data member) match some other component of the branch name (and the two must be separted my at least one level).
+    *   Fix spurious (fatal) removal of duplicate part of branch names.
+         Since v5-34-06 (specifically commit b454e81), a TTree fails to save the content of a branch that is part of a split STL collection and whose name (of the data member) match some other component of the branch name (and the two must be separated my at least one level).
          For example out.OBJ.vec.OBJect or TH1DMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_TEST.obj.MEtoEdmObject.object. When reading the file back in **v5-34-06, 07 or 08**, this will result in the data not being written and the missing data not being noticed in any way by the I/O .. but of course, it is not being read. When reading the file back with v5-34-05 or below, this can result in error messages like:
 
         <pre>Error in <tbufferfile::readversion>: Could not find the StreamerInfo with a checksum of 0x20000 for the class "TH1F" in output.root.</tbufferfile::readversion></pre>
@@ -811,13 +811,13 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   In genreflex add support for some the I/O rule element to be optional (in particular source and target)
     *   Extent/correct the detection of renamed classes
     *   Implementation the streamerInfo actions for kBits
-    *   Improve performace of reading a vector of non-class type by 25% (i.e. std::vector<int>).</int>
+    *   Improve performance of reading a vector of non-class type by 25% (i.e. std::vector<int>).</int>
     *   Improve performance of reading a branch with an std::list<int> by 25% by migrating to using the StreamerInfoAction and by implementing the access to iterator (creation, copy, increment, delete) via template function (rather than reallying on the slow mechanism using 'At' (and its use of the fEnv) ...)
     *   Remove inadvertent match between 2 unrelated STL collection containing objects.
     *   Add the concept of implicit rules to (centrally) support automatic translation of STL collection from numeric type to other numeric type or for when the contained class has some rules. Currently enabled only when the target is an std::vector.
-    *   Fix the Conversion of a Double32 or Float16 inside a collection of object to another type (the previous implemetation was not supporting the customization of the factor nor the number of bits).
+    *   Fix the Conversion of a Double32 or Float16 inside a collection of object to another type (the previous implementation was not supporting the customization of the factor nor the number of bits).
 *   TTree
-    *   In SetBranchAddress, use the result of CheckBranchAddressType to decide whether to actually use the address or not. This avoid mis-using the user's pointer (but also might make invalid/awkward code fails). To prevent the check (and hence for the use a pointer no matter what), the user needs to cast the pointer to a void*.
+    *   In SetBranchAddress, use the result of CheckBranchAddressType to decide whether to actually use the address or not. This avoid misusing the user's pointer (but also might make invalid/awkward code fails). To prevent the check (and hence for the use a pointer no matter what), the user needs to cast the pointer to a void*.
     *   SetBranchAddress now returns an error code.
     *   In TTree::SetBranchAddress, properly reset the TargetClass when the address is changed (back) to the original type.
     *   Issue an error message if the class type of the argument to TTree::SetBranchAddress can not be determined (missing dictionary but having only a typeid).
@@ -844,24 +844,24 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
          of complex models after a couple of hours of running**
     *   Eliminated most memory leaks
     *   Support up to 9 arguments in RenameVariables() argument of RooWorkspace::import()
-    *   Introduce new generic MultiArg() named argument that can be passed to any RooFit function taking named argument with the purpose of extending the maximum number of accepted named arguments. Since MultiArg() can be nested inside RooMultiArg() there is now no technical limitation on the numer of named arguments that can be passed
-    *   In RooCategory interpert the null-range as the default range so categories behave analogous to RooAbsReals when used with ranges
+    *   Introduce new generic MultiArg() named argument that can be passed to any RooFit function taking named argument with the purpose of extending the maximum number of accepted named arguments. Since MultiArg() can be nested inside RooMultiArg() there is now no technical limitation on the number of named arguments that can be passed
+    *   In RooCategory interpret the null-range as the default range so categories behave analogous to RooAbsReals when used with ranges
     *   In RooPlot avoid drawing of stray entry in first bin when user has TH1::DefaultSumW2() set to kTRUE
     *   Improve robustness of likelihood offsetting procedure that is enable via the Offset(kTRUE)
          argument to RooAbsPdf::createNLL() or RooAbsPdf::fitTo()
     *   In RooWorkspace allow to access snapshot contents as RooArgSet [ JIRA-ROOT-178 ]
-    *   Fix bug in parallelized likelihood calculations (NumCPU(n)) for models that have extended likelihood components in one bin. With this fix likelihood parallization will work robustly for all known HistFactory-style models
+    *   Fix bug in parallelized likelihood calculations (NumCPU(n)) for models that have extended likelihood components in one bin. With this fix likelihood parallelization will work robustly for all known HistFactory-style models
     *   Add new strategies to parallelize likelihood calculations over multiple cores. New strategies allow to distribute whole pdf components over cores instead of splitting them internally. This is particularly efficient for small components (with few associated dataset entries). The new 'hybrid' parallelization option will automatically select this strategy for small components, while keeping the 'BulkPartition' internal splitting for larger components
     *   In RooMinuit improve retrieval of MINOS status code
     *   Update RooNovosibirsk with analytical integral (M. Petric -JIRA-ROOT-5013)
     *   In RooProfileLL fix crash in call to bestFitObs() prior to calling getVal() [ JIRA-ROOT-4884 ]
     *   Allow Bool_t datatypes in TTrees to be associate with RooRealVars in RooDataSets [ JIRA-ROOT-179 ]
-    *   Fix RooAbsData::addColumn() for datasets that are internally represented as a composit dataset,
+    *   Fix RooAbsData::addColumn() for datasets that are internally represented as a composite dataset,
          i.e datasets from RooSimultaneous::generate() [ JIRA-ROOT-4771 ]
     *   In RooFitResult::createHessePdf() fix variable mapping problem in info message [JIRA-ROOT-4993 ]
     *   Fix chi^2 calculation when empty bins are present in RooCurve::calculateChi2() [ JIRA-ROOT-4826 ]
     *   Fix RooAbsReal copy ctor - include plot label as well [ JIRA-ROOT-4987 ]
-    *   Fix possible hangup in NumCPU() multi-core parallization of likelihood when complex errors
+    *   Fix possible hangup in NumCPU() multi-core parallelization of likelihood when complex errors
          occur on the server-side
 *   HistFactory
     *   Fix broken schema evolution of class HistFactory::Measurement with full backward compatibility
@@ -878,7 +878,7 @@ NOTE: this release exists to backport support for LZ4 compression also to the ol
     *   Updated the class checksum calculation to be more platform independent. Notably this changes the value of checksum for classes that inherit from STL collections.
 *   I/O
     *   Enhance the performance of reading STL collection by 25%.
-    *   Enabled the implicit conversion from any colletion of a Type to any other collection of a compatible type. Compatible types includes two numerical types, two class for a explicit renaming I/O customization rule and two std::pair of compatible types.
+    *   Enabled the implicit conversion from any collection of a Type to any other collection of a compatible type. Compatible types includes two numerical types, two class for a explicit renaming I/O customization rule and two std::pair of compatible types.
     *   Fix compilation errors with castor 2.1.13-6 (DLL_DECL is not defined in Castor anymore)
     *   Remove a race condition in the asynchronous TFile prefetecher. This fixes the Savannah report
     *   Added possibility to merge only a list of objects/folders from the input files, specified by name,
@@ -1015,7 +1015,7 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
     *   Fix for reloading TClass via Cintex (This fixes Savannah issue [#97765](http://savannah.cern.ch/bugs/?97765).
 *   TTree
     *   In the case where the content of STL collection has one of its member removed, avoid mistakenly trying to read if SetAddress is called more than once on that branch.
-    *   In TTreeSQL prevent a spurrious duplicate column error (Fixes Savannah issues [#98126](http://savannah.cern.ch/bugs/?98126).
+    *   In TTreeSQL prevent a spurious duplicate column error (Fixes Savannah issues [#98126](http://savannah.cern.ch/bugs/?98126).
 *   RooFit
 
     *   Fix a bug in level-2 optimization of likelihoods involving pdfs containing products of conditional pdfs
@@ -1028,7 +1028,7 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
 
     *   Allow to import RooPlots in workspace with crashing (Savannah #94239)
 
-    *   Fix crash in reading of RooVectorDataStore of variabes with weights stored (Savannah #94908)
+    *   Fix crash in reading of RooVectorDataStore of variables with weights stored (Savannah #94908)
 
     *   RooProduct and RooAddition now accept multiple copies of the same input argument, e.g. a*a or a+a (Savannah #94925)
 
@@ -1135,12 +1135,12 @@ on top of the merging defaults: kAll | kIncremental (as in the example $ROOTSYS/
     *   Fix linking of qtcint.dll when explicitly linking is required (see [the related forum post](http://root.cern/phpBB3/viewtopic.php?t=14943)).
 *   I/O
     *   Fail gracefully instead of segfaulting on broken files in GetStreamerInfoList (Fixes Savannah [#5439](http://savannah.cern.ch/patch/?5439)).
-    *   Avoid seg fault when deleting a reseted TMemFile (revision 44749).
+    *   Avoid seg fault when deleting a reset TMemFile (revision 44749).
     *   Avoid seg in I/O operation if you change the prefetch settings after the cache is created (revision 44755).
     *   Add an explicit 'Close' for the read cache so that we can insure that all the (concurrent) outstanding connection/use of the TFile are closed before closing the file.
 *   TTree
     *   Restore support for the TTreeCache use case where the lifetime of the TTreeCache is explicitly managed by the user and detach from the TFile/TTree via a call to: file.SetCacheRead(0);
-    *   Fixes issue in TChainIndex that made reading the first entry of the 2nd and subsequent files in the TChain not beeing properly reading when using the index. (Fixes Savannah [#94910](http://savannah.cern.ch/bugs/?94910)).
+    *   Fixes issue in TChainIndex that made reading the first entry of the 2nd and subsequent files in the TChain not being properly reading when using the index. (Fixes Savannah [#94910](http://savannah.cern.ch/bugs/?94910)).
     *   Avoid an unnecessary flushing of the TTreeCache after the first time it filled (revision 44750)
 *   Proof
     *   Import patch [#44606](http://root.cern/viewvc?rev=44606&root=root&view=rev) adding support for gcc4.7 in afdsmgrd (version 1.0.3).

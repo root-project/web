@@ -11,7 +11,7 @@ Histograms are approximate representations of the distribution of numerical data
 Histograms can be used to visualize your data, by being an approximation to the underlying data density distribution, and they can be used also as a powerful form of data reduction. For a detailed
 description of what is an histogram, see the corresponding page in [Wikipedia](https://en.wikipedia.org/wiki/Histogram).
 
-ROOT provides a rich set of functionality to work with histograms. They can be used for continuos data in one or multi dimensions, they can represent integer data and they can also be used to display categorical data, such
+ROOT provides a rich set of functionality to work with histograms. They can be used for continuous data in one or multi dimensions, they can represent integer data and they can also be used to display categorical data, such
 as bar charts. Furthermore, ROOT supports building histograms from weighted data sets, which are very common in HEP, it provides the functionality to compute summary statistics information from the histograms input data, such as
 sample mean, standard deviation and higher momenta.
 

@@ -57,7 +57,7 @@ tab contains all the defined jobs for ROOT. They are organized as follow:
 ### Understanding information for a single build
 
 The Status shows a summary for the build. In case of multi-configuration jobs it it also
-show the configuration matrix that can be used to select a contrete configuration. See the
+show the configuration matrix that can be used to select a concrete configuration. See the
 following figure:
 
 <center>

@@ -43,10 +43,10 @@ The second part of the ROOT Manual contains:
     ROOT provides a rich set of mathematical libraries.
 
   - **[Physics vectors]({{ '/manual/physics_vectors' | relative_url }})** <br>
-    ROOT provides several packes for physics vectors.
+    ROOT provides several packages for physics vectors.
 
   - **[Geometry]({{ '/manual/geometry' | relative_url }})** <br>
-    A geometry represents a Hierarchie of constructive solid geometry primitive elements (shapes or solid).
+    A geometry represents a hierarchy of constructive solid geometry primitive elements (shapes or solid).
 
   - **[I/O concepts]({{ '/manual/io' | relative_url }})** <br>
     An overview of several important concepts and features related to reading and writing data.

@@ -38,7 +38,7 @@ application.
 The C++ programming language is probably the most performant language today, and C++
 compilers can produce highly optimized executable code. However, the C++ language may
 be quite complicate for newcomers or unexperienced programmers.  If you don't feel
-confortable with C++ programs, you will be happy to know that ROOT allows to have an
+comfortable with C++ programs, you will be happy to know that ROOT allows to have an
 interactive session based on the Python interpreter.
 
 ## Performant Applications
