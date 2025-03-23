@@ -92,7 +92,7 @@
 | `test_distrdf_pyspark` | Enable distributed RDataFrame tests that use pyspark | OFF |
 | `tmva` | Build TMVA multi variate analysis library | ON |
 | `tmva-cpu` | Build TMVA with CPU support for deep learning (requires BLAS) | ON |
-| `tmva-gpu` | Build TMVA with GPU support for deep learning (requries CUDA) | OFF |
+| `tmva-gpu` | Build TMVA with GPU support for deep learning (requires CUDA) | OFF |
 | `tmva-pymva` | Enable support for Python in TMVA (requires numpy) | ON |
 | `tmva-rmva` | Enable support for R in TMVA | OFF |
 | `tmva-sofie` | Build TMVA with support for sofie - fast inference code generation (requires protobuf 3) | OFF |

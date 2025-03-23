@@ -1,0 +1,38 @@
+[default.extend-identifiers]
+BaBar = "BaBar"
+XYToAbsPixel = "XYToAbsPixel"
+XYtoAbsPixel = "XYtoAbsPixel"
+XYtoPixel = "XYtoPixel"
+YtoAbsPixel = "YtoAbsPixel"
+YtoPixel = "YtoPixel"
+fChannelObservMap = "fChannelObservMap"
+fG2ndDerivative = "fG2ndDerivative"
+VectorUtill = "VectorUtill"
+
+[default]
+check-filename = false
+extend-ignore-re = [
+    "Big Sur",
+    "J. Comput. Appl. Math.",
+    "Phys. Conf. Ser.",
+    "a079afe",
+    "de Bever",
+]
+
+[default.extend-words]
+Eto = "Eto"
+Gaus = "Gaus"
+IIT = "IIT"
+Instituto = "Instituto"
+Maline = "Maline"
+ND = "ND"
+NED = "NED"
+OIS = "OIS"
+SEH = "SEH"
+SLAC = "SLAC"
+Strat = "Strat"
+UE = "UE"
+ba = "ba"
+gaus = "gaus"
+inout = "inout"
+ist = "ist"

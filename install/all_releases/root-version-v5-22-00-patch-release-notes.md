@@ -37,7 +37,7 @@ sidebar:
      std::container<data> *fDataObjects;</data> which has been streamed member-wise (see revision r33173 of the trunk).</pre>
 		</li>
 		<li>Prevent the use of an optimized StreamerInfo when reading a collection streamed member wise. The solves <a href="https://savannah.cern.ch/bugs/index.php?73642 " target="_blank">the issue 73642 reported in Atlas' Savannah.</a></li>
-		<li>Avoid spurrious warning message when reading file with a TTree writen with ROOT 5.29/03 or later:<code>Warning in <tstreamerinfo::compile>: Counter fNClusterRange should not be skipped from class TTree</tstreamerinfo::compile></code></li>
+		<li>Avoid spurious warning message when reading file with a TTree written with ROOT 5.29/03 or later:<code>Warning in <tstreamerinfo::compile>: Counter fNClusterRange should not be skipped from class TTree</tstreamerinfo::compile></code></li>
 	</ul>
 	</li>
 	<li>Xrootd
@@ -78,7 +78,7 @@ sidebar:
 	</li>
 	<li>I/O
 	<ul>
-		<li>Avoid spurrious warning message when reading file produced by ROOT v5.27 and above.</li>
+		<li>Avoid spurious warning message when reading file produced by ROOT v5.27 and above.</li>
 	</ul>
 	</li>
 </ul>
@@ -99,7 +99,7 @@ sidebar:
 	</li>
 	<li>Netx
 	<ul>
-		<li>Import the relevant parts of patch <a href="http://root.cern/viewvc?view=rev&amp;revision=30949" target="_blank">#30949</a> adding the possibility to set on the fly (via the option field of the URL) the new read-ahead policies explicitely introduced in XrdClient for ATLAS.</li>
+		<li>Import the relevant parts of patch <a href="http://root.cern/viewvc?view=rev&amp;revision=30949" target="_blank">#30949</a> adding the possibility to set on the fly (via the option field of the URL) the new read-ahead policies explicitly introduced in XrdClient for ATLAS.</li>
 	</ul>
 	</li>
 	<li>I/O

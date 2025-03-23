@@ -13,7 +13,7 @@ sidebar:
 
 ## Highlights
 
-This is a development release. We created it to expose to users part of the enourmous amount of new functionalities which have been integrated in ROOT and will be available in ROOT 6.12/00.
+This is a development release. We created it to expose to users part of the enormous amount of new functionalities which have been integrated in ROOT and will be available in ROOT 6.12/00.
 These are some of the highlights of the new features you can find in ROOT 6.11/02:
 
 - Even more endemic parallelism - Among the many things, a parallelised hadd (**hadd -j**) and a parallel enabled prompt: just try it **root -t**!

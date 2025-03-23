@@ -682,7 +682,7 @@ Silia Taider:
                  as a junior fellow. She is currently working on improving the ergonomics of Python
                  interfaces offered by ROOT statistics and analysis tools such as histograms, graphs
                  or RDataFrames."
-  short_bio   : "Silia is an Early Career Graduate working on the ROOT python iterfaces."
+  short_bio   : "Silia is an Early Career Graduate working on the ROOT python interfaces."
   tag         : "team"
   avatar      : "/assets/images/ST.jpeg"
   affiliation : "CERN"

@@ -84,7 +84,7 @@
 | `qt5web` | Enable support for Qt5 web-based display (requires Qt5::WebEngine and Qt5::WebEngineWidgets) | OFF |
 | `qt6web` | Enable support for Qt6 web-based display (requires Qt6::WebEngineCore and Qt6::WebEngineWidgets) | OFF |
 | `r` | Enable support for R bindings (requires R, Rcpp, and RInside) | OFF |
-| `roofit_hs3_ryml` | Try to find RapidYML on the system and use it for RooFit JSON/YAML convertes | OFF |
+| `roofit_hs3_ryml` | Try to find RapidYML on the system and use it for RooFit JSON/YAML converters | OFF |
 | `roofit_multiprocess` | Build RooFit::MultiProcess and multi-process RooFit::TestStatistics classes (requires ZeroMQ with zmq_ppoll and cppzmq). | OFF |
 | `roofit` | Build the advanced fitting package RooFit, and RooStats for statistical tests. If xml is available, also build HistFactory. | ON |
 | `root7` | Build ROOT 7 components of ROOT (requires C++17 standard or higher) | ON |
@@ -100,7 +100,7 @@
 | `test_distrdf_dask` | Enable distributed RDataFrame tests that use dask | OFF |
 | `test_distrdf_pyspark` | Enable distributed RDataFrame tests that use pyspark | OFF |
 | `tmva-cpu` | Build TMVA with CPU support for deep learning (requires BLAS) | ON |
-| `tmva-gpu` | Build TMVA with GPU support for deep learning (requries CUDA) | OFF |
+| `tmva-gpu` | Build TMVA with GPU support for deep learning (requires CUDA) | OFF |
 | `tmva` | Build TMVA multi variate analysis library | ON |
 | `tmva-pymva` | Enable support for Python in TMVA (requires numpy) | ON |
 | `tmva-rmva` | Enable support for R in TMVA | OFF |

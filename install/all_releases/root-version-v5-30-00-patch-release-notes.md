@@ -42,7 +42,7 @@ sidebar:
 	<ul>
 		<li>Repaired chirp plugin.</li>
 		<li>Prevent negative consequences of call SetAutoFlush with a default value (44279, bug <a href="https://savannah.cern.ch/bugs/?94669" target="_blank">#94669</a><a>).</a></li>
-		<li>In TTreeSQL prevent a spurrious duplicate column error (Fixes Savannah issues <a href="http://savannah.cern.ch/bugs/?98126" target="_blank">#98126</a>.</li>
+		<li>In TTreeSQL prevent a spurious duplicate column error (Fixes Savannah issues <a href="http://savannah.cern.ch/bugs/?98126" target="_blank">#98126</a>.</li>
 	</ul>
 	</li>
 	<li>TTree

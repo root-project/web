@@ -920,7 +920,7 @@ int main() {
 
 **ROOT::Math::GaussLegendreIntegrator**
 
-[ROOT::Math::GaussLegendreIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GaussLegendreIntegrator.html){:target="_blank"} implementes the Gauss-Legendre quadrature formulas. This sort of numerical methods requieres that you specify the number of intermediate function points used in the calculation of the integral. It automatically determines the coordinates and weights of such points before performing the integration. You can use the example above,
+[ROOT::Math::GaussLegendreIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GaussLegendreIntegrator.html){:target="_blank"} implements the Gauss-Legendre quadrature formulas. This sort of numerical methods requires that you specify the number of intermediate function points used in the calculation of the integral. It automatically determines the coordinates and weights of such points before performing the integration. You can use the example above,
 but replacing the creation of a [ROOT::Math:::GaussIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GaussIntegrator.html){:target="_blank"} object with [ROOT::Math::GaussLegendreIntegrator](https://root.cern/doc/master/classROOT_1_1Math_1_1GaussLegendreIntegrator.html){:target="_blank"}.
 
 

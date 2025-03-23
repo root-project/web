@@ -101,7 +101,7 @@ sidebar:
 	<ul>
 		<li>Properly skip the content of base class onfile that have been removed from the in-memory class layout.</li>
 		<li>Always delete the array when the array size goes down to zero. This fixes a problem seen by CMS when using TH1::Copy on histograms read from a TTree and also fixes <a href="https://sft.its.cern.ch/jira/browse/ROOT-7245" target="_blank">ROOT-7245</a></li>
-		<li>Fix the ordering of the keys in a TFile being written; in particular fixing the result of GetKey and FindKey which were no longer returning the lastest cycle for a TFile being written since v5.34/11.</li>
+		<li>Fix the ordering of the keys in a TFile being written; in particular fixing the result of GetKey and FindKey which were no longer returning the latest cycle for a TFile being written since v5.34/11.</li>
 	</ul>
 	</li>
 	<li>Interpreter.

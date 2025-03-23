@@ -40,7 +40,7 @@
 | `dcache` | Enable support for dCache (requires libdcap from DESY) | OFF |
 | `dev` | Enable recommended developer compilation flags, reduce exposed includes | OFF |
 | `exceptions` | Enable compiler exception handling | ON |
-| `fcgi` | Enable FastCGI suppport in HTTP server | OFF |
+| `fcgi` | Enable FastCGI support in HTTP server | OFF |
 | `fftw3` | Enable support for FFTW3 | ON |
 | `fitsio` | Enable support for reading FITS images | ON |
 | `fortran` | Build Fortran components of ROOT | OFF |
@@ -49,8 +49,8 @@
 | `gnuinstall` | Perform installation following the GNU guidelines | OFF |
 | `gsl_shared` | Enable linking against shared libraries for GSL (default no) | OFF |
 | `gviz` | Enable support for Graphviz (graph visualization software) | OFF |
-| `http` | Enable suppport for HTTP server | ON |
-| `imt` | Enable support for implicit multi-threading via Intel® Thread Bulding Blocks (TBB) | ON |
+| `http` | Enable support for HTTP server | ON |
+| `imt` | Enable support for implicit multi-threading via Intel® Thread Building Blocks (TBB) | ON |
 | `jemalloc` | Use jemalloc memory allocator | OFF |
 | `libcxx` | Build using libc++ | OFF |
 | `macos_native` | Disable looking for libraries, includes and binaries in locations other than a native installation (MacOS only) | OFF |
@@ -86,7 +86,7 @@
 | `tcmalloc` | Use tcmalloc memory allocator | OFF |
 | `tmva` | Build TMVA multi variate analysis library | ON |
 | `tmva-cpu` | Build TMVA with CPU support for deep learning (requires BLAS) | ON |
-| `tmva-gpu` | Build TMVA with GPU support for deep learning (requries CUDA) | OFF |
+| `tmva-gpu` | Build TMVA with GPU support for deep learning (requires CUDA) | OFF |
 | `tmva-pymva` | Enable support for Python in TMVA (requires numpy) | ON |
 | `tmva-rmva` | Enable support for R in TMVA | OFF |
 | `unuran` | Enable support for UNURAN (package for generating non-uniform random numbers) | OFF |

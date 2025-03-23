@@ -145,7 +145,7 @@ sidebar:
 	</li>
 	<li>xrootd
 	<ul>
-		<li>disable the build by default of the client Perl interface: it generates several warnigs from SWIG and it does not build on some systems</li>
+		<li>disable the build by default of the client Perl interface: it generates several warnings from SWIG and it does not build on some systems</li>
 	</ul>
 	</li>
 	<li>TFile

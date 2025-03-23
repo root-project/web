@@ -8,7 +8,7 @@ sidebar:
 ---
 
 The current ROOT logos and icons were developed by Noël Ströhmer in 2014.
-The aim was to have a serie of simple and clean logos easy to use in web-sites,
+The aim was to have a series of simple and clean logos easy to use in web-sites,
 web-sites banners, presentations, and even fav-icon.
 
 All the various logos and banners in various sizes and formats can be found [here](https://root.cern/img/logos/ROOT_Logo/)

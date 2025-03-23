@@ -79,7 +79,7 @@ sidebar:
 		<li>ReadFile() must stop at EOF (r44196, bug <a href="https://savannah.cern.ch/bugs/?94455" target="_blank">#94455</a>).</li>
 		<li>Prevent negative consequences of call SetAutoFlush with a default value (44279, bug <a href="https://savannah.cern.ch/bugs/?94669" target="_blank">#94669</a>).</li>
 		<li>Repair the plotting of string histogram by TTree::Draw</li>
-		<li>Fixes issue in TChainIndex that made reading the first entry of the 2nd and subsequent files in the TChain not beeing properly reading when using the index. (Fixes Savannah <a href="http://savannah.cern.ch/bugs/?94910" target="_blank">#94910</a>).</li>
+		<li>Fixes issue in TChainIndex that made reading the first entry of the 2nd and subsequent files in the TChain not being properly reading when using the index. (Fixes Savannah <a href="http://savannah.cern.ch/bugs/?94910" target="_blank">#94910</a>).</li>
 		<li>Avoid an unnecessary flushing of the TTreeCache after the first time it filled (revision 44750)</li>
 	</ul>
 	</li>
