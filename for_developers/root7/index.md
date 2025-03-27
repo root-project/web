@@ -18,17 +18,19 @@ We will use standard C++ types, standard interface behavior (e.g. with respect t
 
 ## Building ROOT 7
 ### Pre-requisites
-Support for the c++17 standard is required. Usage of g++ >= 7 or clang >= 5 is recommended.
+Support for the C++17 standard is required. Usage of g++ >= 7 or clang >= 5 is recommended.
+If you are building ROOT master, this is anyway the minimum allowed standard.
+
 ### Relevant cmake variables
 ROOT 7 will be built if at least one of these conditions is satisfied:
 - the `CMAKE_CXX_STANDARD` cmake variable is set to at least `17`
-- the `root7` cmake variable is set to `ON`
+- the `root7` cmake variable is set to `ON`, which is the default case in ROOT master, but not in earlier major versions.
 
 Building from source would look similar to this:
 
     $ mkdir root7_build
     $ cd root7_build
-    $ cmake -DCMAKE_CXX_STANDARD=17 path/to/root/source
+    $ cmake -DCMAKE_CXX_STANDARD=17 path/to/root/source -Droot7=ON
     $ cmake --build . -- -j4
 
 ## ROOT 7 Features
