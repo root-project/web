@@ -3,3 +3,14 @@
 	RewriteCond %{REQUEST_URI} /+[^\.]+$ 
 	RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
 </IfModule>
+
+# Redirections
+Redirect permanent /phpBB3 https://root-forum.cern.ch
+Redirect permanent /get_started /learn
+Redirect permanent /documentation /learn
+Redirect permanent /news /blog
+Redirect permanent /downloading-root https://root.cern/install
+
+# 404 page
+ErrorDocument 404 /404.html
+
