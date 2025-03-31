@@ -11,6 +11,10 @@ toc_sticky: true
 
 Our nightly binary snapshots are currently not available.
 
+### Community support
+
+You can get cling 1.2 from conda-feedstock and there is a user providing an  [external PPA](https://launchpad.net/~ppa-verse/+archive/ubuntu/cling) for debian.
+
 ## Building from source
 
 ### Build script
@@ -38,31 +42,3 @@ cmake --build . --target install
 {% endhighlight %}
 
 See also README [on the repository](https://github.com/root-project/root/blob/master/interpreter/cling/README.md).
-
-### cling patches?
-
-Cling needs a couple of patches on top of clang (but can work with an original build of llvm).
-These are the commits that above build instructions correspond to - which is mostly interesting
-to package maintainers:
-
-<table>
-   <caption>Revisions / tags of llvm and clang to build a cling release.</caption>
-   <tr>
-      <th>cling release</th>
-      <th>upstream llvm and clang</th>
-      <th>cling-patches on clang</th>
-   </tr>
-   <tr>
-      <td>0.5</td>
-      <td>5.0 release series</td>
-      <td>
-      <a href="https://root.cern/gitweb/?p=clang.git;a=commit;h=287240897208a004509a2be4525aa83acbb2ba5f">287240</a>..
-      <a href="https://root.cern/gitweb/?p=clang.git;a=commit;h=27d2d5b247e83f3ac5d6e9f36d25d168a6afc97a">27d2d5</a>
-      (aka <a href="https://root.cern/gitweb/?p=clang.git;a=shortlog;h=refs/tags/cling-patches-rrelease_50">cling-patches-rrelease_50</a>)
-      </td>
-      <td>0.7</td>
-      <td>9.0 release series</td>
-      <td>
-      </td>
-   </tr>
-</table>
