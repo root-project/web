@@ -336,7 +336,7 @@ For all possible available options see the [Histogram plotting options](https://
 ### Drawing an histogram copy
 
 By default when an histogram is drawn in the ROOT canvas it is not copied in order to have automatically draw updates that can happen in the histogram object.
-This means that if the histogram object is created on the stack inside a defined C++ scope (or inside a Python function when using PyROOT), it will be automatically deleted when exiting the scope and
+This means that if the histogram object is created on the stack inside a defined C++ scope (or inside a Python function when using ROOT's Python interface), it will be automatically deleted when exiting the scope and
 the final consequence will be that the drawn object will disappear. To avoid this to happen you can use:
 
   - [TH1::DrawCopy()](https://root.cern/doc/master/classTH1.html#aa19b24b96284284d677cd73f00d29d79){:target="_blank"} or [TObject::DrawClone()](https://root.cern/doc/master/classTObject.html#a7cd0f76ae1791c469f9472a9d4c8d6f9) methods to create a copy of the histogram when drawing it.

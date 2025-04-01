@@ -100,14 +100,14 @@ See also the [supported C++ standards in each ROOT version](https://root.cern/in
 
 Also note that compatibility with compilers shipped with `devtoolset`s on CentOS or Red Hat is not guaranteed.
 
-## ROOT, Python and PyROOT
+## ROOT and Python
 
-PyROOT, the set of Python bindings of ROOT, supports any Python version that is not [end-of-life](https://devguide.python.org/versions/).
+ROOTs Python interface and bindings, supports any Python version that is not [end-of-life](https://devguide.python.org/versions/).
 This means it supports the 5 latest major versions of Python 3.
 
 ROOT uses the standard [`FindPython3`](https://cmake.org/cmake/help/latest/module/FindPython3.html) from CMake to find Python at build time.
 You can give it [some hints](https://cmake.org/cmake/help/latest/module/FindPython3.html#hints) to find the desired Python installation.
-To precisely control the Python version that PyROOT is built against, we recommend using a `virtualenv` or `conda` environment, because CMake will first look for Python in active virtual environments.
+To precisely control the Python version that ROOT is built against, we recommend using a `virtualenv` or `conda` environment, because CMake will first look for Python in active virtual environments.
 Alternatively, you can define the `Python3_ROOT_DIR` hint in the CMake configuration step.
 
 ## Building ROOT with CUDA support
@@ -149,8 +149,8 @@ also in the list of variables below. The fixed location installation method does
 variables when ROOT is installed into default system paths (e.g. `/usr`, `/usr/local`). However, if
 `CMAKE_INSTALL_LIBDIR` is a directory that is not searched for by the linker, it is recommended to enable
 `-Drpath=ON` or to add `CMAKE_INSTALL_LIBDIR` to `/etc/ld.so.conf` in order to avoid having to set `LD_LIBRARY_PATH`
-to be able to run ROOT. Nevertheless, it may still be necessary to set `PYTHONPATH` with this method if PyROOT is not
-installed into one of the system paths searched for by Python (run `python -m site` to see this list of paths). This
+to be able to run ROOT. Nevertheless, it may still be necessary to set `PYTHONPATH` with this method if ROOT's Python package
+is not installed into one of the system paths searched for by Python (run `python -m site` to see this list of paths). This
 can be done with `export PYTHONPATH=$(root-config --libdir)` if `root-config` is already in your `PATH`.
 
 ## All build options

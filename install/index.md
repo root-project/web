@@ -109,7 +109,7 @@ usual case when downloading the binaries, more details [here](https://root-forum
 To use ROOT from Python, the Snap package bundles its own Python 3.8 interpreter
 that knows where to find the ROOT libraries. This is done to avoid interference
 with other system packages. You should use `pyroot` rather than `python` to make
-use of the PyROOT features with the Snap package:
+use of the Python package with the Snap installation:
 ```python
 $ pyroot
 Python 3.8.10 (default, Jun 22 2022, 20:18:18)

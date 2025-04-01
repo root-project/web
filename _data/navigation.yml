@@ -70,7 +70,7 @@ manual:
         url: manual/roofit
       - title: "Machine learning with ROOT"
         url: manual/tmva
-      - title: "Python interface: PyROOT"
+      - title: "Python interface"
         url: manual/python
       - title: Mathematical libraries
         url: manual/math

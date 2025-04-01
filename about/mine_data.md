@@ -57,9 +57,9 @@ Once you get data, either real or simulated events, you can start browsing them 
 ROOT browser, that allows you to quickly plot the distribution of your quantities
 (simply double click on variables).  A productive way of working is to write a C++ macro,
 testing each command step by step with the Cling interpreter - writing a Python program
-using PyROOT bindings is a very good option too.  When you are satisfied with your macro,
-you may consider converting it into a compiled library or stand-alone application, to
-achieve the maximum speed.
+using ROOT's Python bindings is a very good option too.  When you are satisfied with your
+macro, you may consider converting it into a compiled library or stand-alone application,
+to achieve the maximum speed.
 
 Incidentally, note that, because the C++ specifications do not fix the size of integer
 and floating point variables (they only provide limits), ROOT provides also

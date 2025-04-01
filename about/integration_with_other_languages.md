@@ -7,19 +7,19 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT is written in C++ but is integrated with other languages such as Python and R and.
+ROOT is written in C++ but is integrated with other languages such as Python and R.
 
 ## Python
-The Python bindings are also commonly called PyROOT. PyROOT is indeed a Python
-extension module that allows the user to interact with any ROOT class from the Python
-interpreter. This is done generically using the ROOT dictionary, therefore there is no
-need to generate any Python wrapper code to include new ROOT classes. At the same time
-PyROOT offers the possibility to execute and evaluate any Python command or start a
-Python shell from the ROOT/Cling prompt. Further details are available in the
-[PyROOT manual]({{ "/manual/python" | relative_url }}). One of the most powerful features
-of PyROOT is that bindings are created automatically for every entity present in the
-ROOT type system. In other words, even if a header is interpreted at runtime, Python
-bindings will be created automatically.
+The ROOT Python interface and bindings are provided through an extension module that
+allows the user to interact with any ROOT class from the Python interpreter. This is
+done generically using the ROOT dictionary, therefore there is no need to generate
+any Python wrapper code to include new ROOT classes. At the same time ROOT offers
+the possibility to execute and evaluate any Python command or start a Python shell
+from the ROOT/Cling prompt. Further details are available in the
+[Python interface manual]({{ "/manual/python" | relative_url }}). One of the most
+powerful features of ROOT's Python interface is that bindings are created automatically
+for every entity present in the ROOT type system. In other words, even if a header is
+interpreted at runtime, Python bindings will be created automatically.
 
 ## R
 The interface to R, ROOT R, is an interface allowing to call R functions using an R
