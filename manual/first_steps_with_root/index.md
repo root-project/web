@@ -186,7 +186,7 @@ ROOT also provides many command line tools at the system prompt for simple file 
 
 ## Using ROOT from Python
 
-ROOT provides Python bindings, called [PyROOT]({{ '/manual/python' | relative_url }}), which allow to access all the ROOT C++ functionality from Python.
+ROOT provides a [Python interface and bindings]({{ '/manual/python' | relative_url }}), which allow users to access all of ROOT's C++ functionality in Python.
 
 Therefore, ROOT can be used interactively from the Python prompt. The first step consists in importing the ROOT module:
 

@@ -75,7 +75,7 @@ model that should be trained with an external library you may be already familia
 with (e.g. Keras). Then, you can save the model to a file and load it in a TMVA
 application to train it and test it. In particular, the entire application could
 be written as a single Python script thanks to
-[PyROOT]({{ '/manual/python' | relative_url }}). A good example of this can be
+[ROOT's Python interface]({{ '/manual/python' | relative_url }}). A good example of this can be
 found in [this tutorial](https://root.cern/doc/master/ClassificationKeras_8py.html){:target="_blank"}.
 
 ### ROOT data to Numpy arrays for further processing

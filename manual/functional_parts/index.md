@@ -36,8 +36,8 @@ The second part of the ROOT Manual contains:
   - **[TMVA]({{ '/manual/tmva' | relative_url }})** <br>
     The Toolkit for Multivariate Data Analysis with ROOT (TMVA) provides a machine learning environment for the processing and evaluation of multivariate classification.
 
-  - **[Python interface: PyROOT]({{ '/manual/python' | relative_url }})** <br>
-    With PyROOT, ROOT’s Python-C++ bindings, you can use ROOT from Python.
+  - **[Python interface]({{ '/manual/python' | relative_url }})** <br>
+    With ROOT’s automatic Python-C++ bindings, you can use ROOT from Python.
 
   - **[Mathematical libraries]({{ '/manual/math' | relative_url }})** <br>
     ROOT provides a rich set of mathematical libraries.

@@ -2194,7 +2194,7 @@ Simple as that. More details are given
 ## Using RDataFrame in a Python application
 
 The RDataFrame class can be just as well used in a Python script, thanks to the
-dynamic C++/Python translation offered by PyROOT. The interface is in general
+dynamic C++/Python interoperability offered by ROOT's Python bindings. The interface is in general
 the same as when writing C++ applications:
 
 {% highlight Python %}
@@ -2209,17 +2209,16 @@ The differences as well as features specific to this language are highlighted
 
 # ROOT in Python
 
-ROOT offers the possibility to interface to Python via a set of bindings called
-PyROOT.
+ROOT offers the possibility to interface with Python via automatically generated bindings.
 Python is used in a wide variety of application areas and one of the most used
 scripting languages today.
-With the help of PyROOT it becomes possible to combine the power of a scripting
-language with ROOT tools. Introductory material to Python is available from many
+With the help of ROOT's Python interface, it becomes possible to combine the ease of a scripting
+language with the performance of ROOT tools. Introductory material to Python is available from many
 sources on the web, see e. g. https://docs.python.org.
 
-## PyROOT
+## Python interface
 
-The access to ROOT classes and their methods in PyROOT is almost identical to C++
+The access to ROOT classes and their methods in Python is almost identical to C++
 macros, except for the special language features of Python, most importantly dynamic
 type declaration at the time of assignment. Coming back to our first example, simply
 plotting a function in ROOT, the following C++ code:
@@ -2410,8 +2409,8 @@ The value of A instance is 123.
 {% endhighlight %}
 
 This example might seem trivial, but it shows a powerful ROOT feature.
-C++ code can be JITted within PyROOT and the entities defined in C++ can be
-transparently used in Python!
+C++ code can be JITted via the Python interface and the entities defined in C++ can be
+transparently used in your Python code!
 
 # Concluding Remarks
 
