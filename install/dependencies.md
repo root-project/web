@@ -86,7 +86,7 @@ As a one-liner for Fedora 33:
 sudo yum install gcc-gfortran pcre-devel \
 mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
-avahi-compat-libdns_sd-devel openldap-devel python-devel python3-numpy \
+avahi-compat-libdns_sd-devel openldap-devel python3-devel python3-numpy \
 libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
 R-devel R-Rcpp-devel R-RInside-devel
 ```
