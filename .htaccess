@@ -10,6 +10,18 @@ Redirect permanent /get_started /learn
 Redirect permanent /documentation /learn
 Redirect permanent /news /blog
 Redirect permanent /downloading-root https://root.cern/install
+Redirect permanent /drupal/content/reference-guide https://root.cern/doc/master/
+Redirect permanent /drupal/content/users-guide https://root.cern/manual/
+Redirect permanent /guides/reference-guide/ https://root.cern/doc/master/
+Redirect permanent /root-user-guides-and-manuals/ https://root.cern/get_started/
+
+RedirectMatch 301 ^/root/htmldoc/T(.*)\.html$ https://root.cern/doc/master/classT$1.html
+RedirectMatch 301 ^/root/htmldoc/T([^.]*)$ https://root.cern/doc/doc/master/classT$1.html
+RedirectMatch 301 ^/root/htmldoc/Roo(.*)\.html$ https://root.cern/doc/master/classRoo$1.html
+RedirectMatch 301 ^/root/htmldoc/Roo([^.]*)$ https://root.cern/doc/master/classRoo$1.html
+RedirectMatch 301 ^/root/html/ https://root.cern/doc/master/
+RedirectMatch 301 ^/js/dev/glexamples.htm$ https://root.cern/js/dev/examples.htm?geom
+
 
 # 404 page
 ErrorDocument 404 /404.html
