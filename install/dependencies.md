@@ -148,7 +148,8 @@ Minimal set:
 
 ```bash
 sudo zypper install bash binutils cmake gcc gcc-c++ git libXext-devel \
-libXft-devel libXpm-devel python xrootd-client-devel xrootd-libs-devel
+libXft-devel libXpm-devel python xrootd-client-devel xrootd-libs-devel \
+libuuid-devel patch
 ```
 
 Most common optional packages:
@@ -156,7 +157,7 @@ Most common optional packages:
 ```bash
 sudo zypper install gcc-fortran pcre-devel Mesa glew-devel libpng16-devel \
 pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel \
-libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel python-numpy \
+libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python-devel python3-numpy \
 libxml2-devel krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
 ```
 
