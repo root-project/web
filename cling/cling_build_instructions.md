@@ -27,7 +27,7 @@ Alternatively, you can build manually.
 Start by checking out llvm, clang and cling:
 
 {% highlight C++ %}
-git clone -b cling-llvm16 https://github.com/root-project/llvm-project.git src
+git clone -b cling-llvm18 https://github.com/root-project/llvm-project.git src
 git clone https://github.com/root-project/cling.git
 {% endhighlight %}
 
