@@ -2,7 +2,7 @@
 layout: releases
 version: 6.32.10
 release_date: 2025-02-10
-state: latest
+state:
 
 toc: true
 toc_sticky: true
