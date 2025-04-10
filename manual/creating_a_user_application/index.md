@@ -70,6 +70,19 @@ $ g++ demo1.cxx $(root-config --glibs --cflags --libs) -o demo1
 $ ./demo1
 {% endhighlight %}
 
+
+> **Note**
+>
+> --libs does not include all possible ROOT libraries, just a handful of the most common ones.
+> This means that depending on the classes you use, you might miss some and get a linker error.
+> The recommendation is that, for each class from ROOT you use, you check to which library it belongs
+> and add that manually into the command line. For example, if you use TTreeViewer, it belongs
+> to a library that is not returned by --libs. You would then go to https://root.cern.ch/doc/master/classTTreeViewer.html
+> scroll all the way down the page, look at the dependency graph, where it says "libTTreeViewer" and add -lTTreeViewer
+> (change `lib` with `-l`) to the command line, ie `g++ demo1.cxx $(root-config --glibs --cflags --libs) -lTTreeViewer -o demo1`
+> If you prefer using [CMake with targets](https://cliutils.gitlab.io/modern-cmake/chapters/packages/ROOT.html), you would just
+> do: `target_link_libraries(demo1 PUBLIC ROOT::TTreeViewer)`
+
 The equivalent command on Windows is:
 
 ```
