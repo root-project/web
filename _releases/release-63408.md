@@ -36,8 +36,8 @@ This way, you will automatically keep up-to-date with the latest stable versions
 | macOS 13.7 arm64 Xcode 15 | [root_v6.34.08.macos-13.7-arm64-clang150.tar.gz](https://root.cern/download/root_v6.34.08.macos-13.7-arm64-clang150.tar.gz) | 273M |
 | macOS 14.7 x86_64 Xcode 16 | [root_v6.34.08.macos-14.7-x86_64-clang160.pkg](https://root.cern/download/root_v6.34.08.macos-14.7-x86_64-clang160.pkg) | 447M |
 | macOS 14.7 x86_64 Xcode 16 | [root_v6.34.08.macos-14.7-x86_64-clang160.tar.gz](https://root.cern/download/root_v6.34.08.macos-14.7-x86_64-clang160.tar.gz) | 295M |
-| macOS 15.3 arm64 Xcode 16 | [root_v6.34.08.macos-15.3-arm64-clang160.pkg](https://root.cern/download/root_v6.34.08.macos-15.3-arm64-clang160.pkg) | 437M |
-| macOS 15.3 arm64 Xcode 16 | [root_v6.34.08.macos-15.3-arm64-clang160.tar.gz](https://root.cern/download/root_v6.34.08.macos-15.3-arm64-clang160.tar.gz) | 286M |
+| macOS 15.4 arm64 Xcode 16 | [root_v6.34.08.macos-15.4-arm64-clang170.pkg](https://root.cern/download/root_v6.34.08.macos-15.4-arm64-clang170.pkg) | 437M |
+| macOS 15.4 arm64 Xcode 16 | [root_v6.34.08.macos-15.4-arm64-clang170.tar.gz](https://root.cern/download/root_v6.34.08.macos-15.4-arm64-clang170.tar.gz) | 286M |
 | Windows Visual Studio 2022 32-bit x86 (release with debugging information) | [root_v6.34.08.win32.python311.vc17.relwithdebinfo.exe](https://root.cern/download/root_v6.34.08.win32.python311.vc17.relwithdebinfo.exe) | 488M |
 | Windows Visual Studio 2022 32-bit x86 (release with debugging information) | [root_v6.34.08.win32.python311.vc17.relwithdebinfo.zip](https://root.cern/download/root_v6.34.08.win32.python311.vc17.relwithdebinfo.zip) | 957M |
 | Windows Visual Studio 2022 64-bit x64 (release with debugging information) | [root_v6.34.08.win64.python311.vc17.relwithdebinfo.exe](https://root.cern/download/root_v6.34.08.win64.python311.vc17.relwithdebinfo.exe) | 499M |
