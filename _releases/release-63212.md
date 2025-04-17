@@ -14,6 +14,7 @@ sidebar:
 ## Release Notes
 
 The release notes for this release can be found [here](https://root.cern/doc/v632/release-notes.html#release-6.32.12).
+Please find this release also on GitHub [here](https://github.com/root-project/root/releases/tag/v6-32-12).
 
 ## Binary distributions
 
@@ -31,8 +32,8 @@ This way, you will automatically keep up-to-date with the latest stable versions
 | macOS 13.7 arm64 Xcode 15 | [root_v6.32.12.macos-13.7-arm64-clang150.tar.gz](https://root.cern/download/root_v6.32.12.macos-13.7-arm64-clang150.tar.gz) | 268M |
 | macOS 14.7 x86_64 Xcode 16 | [root_v6.32.12.macos-14.7-x86_64-clang160.pkg](https://root.cern/download/root_v6.32.12.macos-14.7-x86_64-clang160.pkg) | 446M |
 | macOS 14.7 x86_64 Xcode 16 | [root_v6.32.12.macos-14.7-x86_64-clang160.tar.gz](https://root.cern/download/root_v6.32.12.macos-14.7-x86_64-clang160.tar.gz) | 291M |
-| macOS 15.3 arm64 Xcode 16 | [root_v6.32.12.macos-15.3-arm64-clang160.pkg](https://root.cern/download/root_v6.32.12.macos-15.3-arm64-clang160.pkg) | 435M |
-| macOS 15.3 arm64 Xcode 16 | [root_v6.32.12.macos-15.3-arm64-clang160.tar.gz](https://root.cern/download/root_v6.32.12.macos-15.3-arm64-clang160.tar.gz) | 282M |
+| macOS 15.4 arm64 Xcode 16 | [root_v6.32.12.macos-15.4-arm64-clang170.pkg](https://root.cern/download/root_v6.32.12.macos-15.4-arm64-clang170.pkg) | 435M |
+| macOS 15.4 arm64 Xcode 16 | [root_v6.32.12.macos-15.4-arm64-clang170.tar.gz](https://root.cern/download/root_v6.32.12.macos-15.4-arm64-clang170.tar.gz) | 282M |
 | Windows Visual Studio 2022 32-bit x86  | [root_v6.32.12.win32.vc17.exe](https://root.cern/download/root_v6.32.12.win32.vc17.exe) | 117M |
 | Windows Visual Studio 2022 32-bit x86  | [root_v6.32.12.win32.vc17.zip](https://root.cern/download/root_v6.32.12.win32.vc17.zip) | 160M |
 | Windows Visual Studio 2022 64-bit | [root_v6.32.12.win64.vc17.exe](https://root.cern/download/root_v6.32.12.win64.vc17.exe) | 122M |
