@@ -16,12 +16,6 @@ ROOT consists of several loosely coupled but consistently designed parts. The "c
 of these parts are experts that review pull requests and guide these packages over a couple
 of years.
 
-### [Release Checklist]({{'/for_developers/release_checklist' | relative_url}})
-Steps to be followed to produce a new ROOT release.
-
-### [Shifter's Instructions]({{'/for_developers/shifters_instructions' | relative_url}})
-The aspects the shifter shall keep under control.
-
 ### [Meetings](meetings)
 All ROOT-related meetings can be found in [ROOT's Indico category](https://indico.cern.ch/category/526/).
 
@@ -34,7 +28,7 @@ The ROOT continuous integration infrastructure allows to automatically check the
 
 ### [Setup externals from AFS/CVMFS](setup_externals_from_afs-cvmfs)
 Instructions for setting up an environment with all the required
-ROOT externals coming from the central installations in AFS or CVMFS.
+ROOT externals coming from the central installations in CVMFS.
 
 ### Continuous Integration / Testing
    - [GitHub Actions Users](continuous_integration-testing/githubactions)
