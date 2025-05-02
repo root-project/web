@@ -123,10 +123,6 @@ cling:
 for_developers:
    - title: Program of Work
      url: for_developers/program_of_work
-   - title: Release Checklist
-     url: for_developers/release_checklist
-   - title: Shifter's Instructions
-     url: for_developers/shifters_instructions
    - title: GitHub
      url: https://github.com/root-project
      target: _blank
@@ -139,18 +135,9 @@ for_developers:
      url: for_developers/root7
    - title: Run the Tests
      url: for_developers/run_the_tests
-   - title: Continuous Integration / Testing
-     children:
-      - title: GitHub Actions Config
-        url: for_developers/continuous_integration-testing/githubactions
-      - title: GitHub Actions For Users
-        url: for_developers/continuous_integration-testing/githubactions_usage
-      - title: Jenkins How To
-        url: for_developers/continuous_integration-testing/jenkins_how_to
-        target: _blank
-      - title: Bug Reports
-        url: https://github.com/root-project/root/issues/new
-        target: _blank
+   - title: Bug Reports
+     url: https://github.com/root-project/root/issues/new
+     target: _blank
    - title: Documentation in ROOT
      url: for_developers/docs
      children:
