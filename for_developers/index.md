@@ -7,7 +7,7 @@ sidebar:
 
 The links in this section are intended for **the ROOT developers** and for people who want
 to [contribute]({{'contribute' | relative_url}}) to the ROOT system.
-
+l
 ### [Program of Work]({{'/for_developers/program_of_work' | relative_url}})
 The program of work for the ROOT project, documented for the relevant years.
 
@@ -15,12 +15,6 @@ The program of work for the ROOT project, documented for the relevant years.
 ROOT consists of several loosely coupled but consistently designed parts. The "code owners"
 of these parts are experts that review pull requests and guide these packages over a couple
 of years.
-
-### [Release Checklist]({{'/for_developers/release_checklist' | relative_url}})
-Steps to be followed to produce a new ROOT release.
-
-### [Shifter's Instructions]({{'/for_developers/shifters_instructions' | relative_url}})
-The aspects the shifter shall keep under control.
 
 ### [Meetings](meetings)
 All ROOT-related meetings can be found in [ROOT's Indico category](https://indico.cern.ch/category/526/).
