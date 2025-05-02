@@ -10,7 +10,7 @@ This page gives the list of all the past versions.
 
 | ROOT Version           | HTML link                                                                  | Download links                        | Link to the Tag file                                 | Link to the QCH file                                 |
 |------------------------|----------------------------------------------------------------------------|---------------------------------------|------------------------------------------------------|------------------------------------------------------|
-| HEAD of the git master | [browse](https://root.cern/doc/master/){:target="_blank"}                  |                                       | [tag file](https://root.cern/doc/master/ROOT.tag.gz) | [qch file](https://root.cern/doc/master/ROOT.qch.gz) |
+| HEAD of the git master | [browse](https://root.cern/doc/master/){:target="_blank"}                  | [htmlmaster.tar.gz](https://root.cern/download/htmlmaster.tar.gz) | [tag file](https://root.cern/doc/master/ROOT.tag.gz) | [qch file](https://root.cern/doc/master/ROOT.qch.gz) |
 | 6.36                   | [browse](https://root.cern/doc/v636/){:target="_blank"}                    | {% include download name="html636" %} | [tag file](https://root.cern/doc/v636/ROOT.tag.gz)   |
 | 6.34                   | [browse](https://root.cern/doc/v634/){:target="_blank"}                    | {% include download name="html634" %} | [tag file](https://root.cern/doc/v634/ROOT.tag.gz)   |
 | 6.32                   | [browse](https://root.cern/doc/v632/){:target="_blank"}                    | {% include download name="html632" %} | [tag file](https://root.cern/doc/v632/ROOT.tag.gz)   |
@@ -30,11 +30,11 @@ This page gives the list of all the past versions.
 | 6.04                   | [browse](https://root.cern/root/html604/ClassIndex.html){:target="_blank"} | {% include download name="html604" %} |                                                      |
 | 6.02                   | [browse](https://root.cern/root/html602/ClassIndex.html){:target="_blank"} | {% include download name="html602" %} |                                                      |
 | 5.34                   | [browse](https://root.cern/root/html534/ClassIndex.html){:target="_blank"} | {% include download name="html534" %} |                                                      |
-| 5.32                   | [browse](https://root.cern/root/html532/ClassIndex.html){:target="_blank"} | {% include download name="html532" %} |                                                      |
-| 5.30                   | [browse](https://root.cern/root/html530/ClassIndex.html){:target="_blank"} | {% include download name="html530" %} |                                                      |
-| 5.28                   | [browse](https://root.cern/root/html528/ClassIndex.html){:target="_blank"} | {% include download name="html528" %} |                                                      |
-| 5.26                   | [browse](https://root.cern/root/html526/ClassIndex.html){:target="_blank"} | {% include download name="html526" %} |                                                      |
-| 5.24                   | [browse](https://root.cern/root/html524/ClassIndex.html){:target="_blank"} | {% include download name="html524" %} |                                                      |
+| 5.32                   | | {% include download name="html532" %} |                                                      |
+| 5.30                   | | {% include download name="html530" %} |                                                      |
+| 5.28                   | | {% include download name="html528" %} |                                                      |
+| 5.26                   | | {% include download name="html526" %} |                                                      |
+| 5.24                   | | {% include download name="html524" %} |                                                      |
 
 If your project documentation is done via Doxygen and it depends on ROOT, you may want to
 link your project documentation to the ROOT reference guide. This can be done using ROOT
