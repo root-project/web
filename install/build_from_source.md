@@ -94,7 +94,7 @@ The following are the basic instructions for UNIX-like systems and Windows. We w
 As it makes use of a C++ interpreter, ROOT has somewhat stricter requirements than other C++ libraries: applications that depend on ROOT
 *must* be compiled with the same C++ standard with which ROOT was compiled.
 The relevant cmake flag is [`CMAKE_CXX_STANDARD`](https://cmake.org/cmake/help/latest/variable/CMAKE_CXX_STANDARD.html){:target="_blank"}.
-For example, from the command line, the standard can be selected by passing one of 11, 14, 17,... such as `-DCMAKE_CXX_STANDARD=17`.
+For example, from the command line, the standard can be selected by passing one of (11, 14,) 17, 20, 23, ... such as `-DCMAKE_CXX_STANDARD=17`.
 Generally speaking, newer standards are only supported by newer ROOT versions.
 See also the [supported C++ standards in each ROOT version](https://root.cern/install/dependencies/#supported-compilers).
 
