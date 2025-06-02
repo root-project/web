@@ -26,16 +26,6 @@ This new major version of ROOT will make ROOT much simpler and safer to use.
 Running all ROOT tests on at least a platform before sending a PR or before pushing anything to the ROOT repository is *mandatory*.
 The ROOT continuous integration infrastructure allows to automatically check the PR also on a battery of platform, for example including MacOs and linux boxes.
 
-### [Setup externals from AFS/CVMFS](setup_externals_from_afs-cvmfs)
-Instructions for setting up an environment with all the required
-ROOT externals coming from the central installations in CVMFS.
-
-### Continuous Integration / Testing
-   - [GitHub Actions Users](continuous_integration-testing/githubactions)
-   - [GitHub Actions Config](continuous_integration-testing/githubactions_usage)
-   - [Jenkins Service](https://lcgapp-services.cern.ch/root-jenkins/)
-   - [Bug Reports](https://github.com/root-project/root/issues/new)
-
 ### [Documentation in ROOT]({{'/for_developers/docs' | relative_url}})
 [Doxygen](https://www.doxygen.nl/){:target="_blank"} is used for generating
 the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
