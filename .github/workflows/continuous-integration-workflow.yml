@@ -85,7 +85,10 @@ jobs:
           AWS_REGION: "eu-west-1"
 
       - name: Install Kerberos utilities
-        run: sudo apt-get install -y krb5-user
+        run: |
+          sudo apt-add-repository http://archive.ubuntu.com/ubuntu/
+          sudo apt-get update
+          sudo apt-get install -y krb5-user
 
       - name: Install XRootD client
         run: sudo apt-get -y install xrootd-client
