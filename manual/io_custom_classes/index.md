@@ -217,7 +217,8 @@ The syntax is:
 ClassDef(<ClassName>, <VersionNumber>)
 {% endhighlight %}
 
-(In the case of classes inheriting from `TObject`, it's better to use `ClassDefOverride` instead of `ClassDef`.)
+(In the case of classes inheriting from `TObject`, or from a non-TObject base class declaring itself `ClassDef*`,
+it's then better to use `ClassDefOverride` in the child instead of `ClassDef`.)
 
 The version number identifies this particular version of the class. A version number equal to 0 tells ROOT to not store the class in a root file, but only its base classes (if any).
 
