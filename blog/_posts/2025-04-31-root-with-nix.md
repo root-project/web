@@ -24,7 +24,7 @@ Nix isolates your development environment in a pure sandbox shell, keeping your 
 Packages are only loaded when you enter a given nix shell, with no trace after you exit the shell other than cached artifacts that can be garbage collected whenever you want.
 
 Since Nix is cross platform, this post actually applies to **any** Linux distribution as well — including of course [NixOS](https://en.wikipedia.org/wiki/NixOS), where the whole system is declared in a single `configuration.nix` file.
-Still, it's marketed towards Mac users, because since there is no official package manager on macOS, building ROOT on that platform can be particularly challenging.
+Still, this post marketed towards Mac users, because since there is no official package manager on macOS, building ROOT on that platform can be particularly challenging.
 
 One downside of Nix is that it's not compliant with Linux Standard Base (LSB), so you might often have to patch code to use the paths that Nix expects.
 Fortunately, once you have figured out what the right patch is, you will never have to solve the same problem again because the solution is set in stone in your nix configuration files.
@@ -134,6 +134,7 @@ A few more explanations:
       * `nativeBuildInputs` lists the build-time dependencies
       * `buildInputs` lists the runtime dependencies
       * `propagatedBuildInputs` declares runtime dependencies that should automatically be passed to anything that depends on your package
+
     If you just use the `nix-shell` environment to build, test and use ROOT all in one, then there is not a practical difference, but it becomes important if you want to write `package.nix` files that declare individual packages that you plan to re-use.
   * The Python packages in the environment are not strictly needed for building ROOT, but these are the packages that are commonly used together with ROOT, also in the unit tests and tutorials. So it's good to have them.
   * The `shellHook` variable contains bash code that is run when opening the `nix-shell`. We use it to define aliases for configuring ROOT with the desired CMake configuration flags, and then later to build and install ROOT with the desired number of threads (12 threads in our example).
