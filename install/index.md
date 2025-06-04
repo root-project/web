@@ -188,7 +188,7 @@ guix install root --with-latest=root
 guix install root --with-commit=root=COMMIT
 ```
 
-If you encounter any issues, feel free report them to the [guix-science issue tracker](https://codeberg.org/guix-science/guix-science/issues).
+If you encounter any issues, feel free to report them to the [guix-science issue tracker](https://codeberg.org/guix-science/guix-science/issues).
 
 
 ### <a name="nixos_nix_nixpkgs" />NixOS/Nix/Nixpkgs
