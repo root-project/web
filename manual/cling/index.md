@@ -931,6 +931,8 @@ next screen.
 
 ### Static Initialization Order Fiasco
 
-When using the Cling interpreter, the lifetime of static variables is controlled, because of the lazy initialization (the variable is initialized the first time the function is called, and destroyed deterministically too). With static members, you often run into the [Static Initialization Order Fiasco] like in this issue. When multiple translation units have static variables, the order of their initialization is undefined. This can lead to runtime bugs if one static depends on another that hasn't yet been initialized.
+When using the Cling interpreter, the lifetime of static variables is controlled, because of the lazy initialization (the variable is initialized the first time the function is called, and destroyed deterministically too).
+With static members, you often run into the [Static Initialization Order Fiasco](https://en.cppreference.com/w/cpp/language/siof.html) like in this issue.
+When multiple translation units have static variables, the order of their initialization is undefined. This can lead to runtime bugs if one static depends on another that hasn't yet been initialized.
 
 Thus, in Cling, it's strongly encouraged to avoid static const member variables and prefer static member functions that return references to static objects, or static non-const variables.
