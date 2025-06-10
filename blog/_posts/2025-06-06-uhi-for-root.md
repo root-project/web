@@ -15,7 +15,7 @@ Fully implemented now in ROOT, UHI ensures that all ROOT histogram classes--deri
 
 ## How about a quick demo?
 
-Let me show you how you can fill your histograms with [NymPy](https://numpy.org/) arrays directly:
+Let me show you how you can fill your histograms with [NumPy](https://numpy.org/) arrays directly:
 
 ```python
 import matplotlib.pyplot as plt
