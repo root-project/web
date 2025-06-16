@@ -217,6 +217,9 @@ The syntax is:
 ClassDef(<ClassName>, <VersionNumber>)
 {% endhighlight %}
 
+(In the case of classes inheriting from `TObject`, or from a non-TObject base class declaring itself `ClassDef` or `ClassDefOverride` but not `ClassDefNV`,
+then it's better to use `ClassDefOverride` in the child instead of `ClassDef`. Same comment applies to `ClassDefInline` and their override variants.)
+
 The version number identifies this particular version of the class. A version number equal to 0 tells ROOT to not store the class in a root file, but only its base classes (if any).
 
 `ClassDef` injects some methods in the class definition useful for runtime reflection.
