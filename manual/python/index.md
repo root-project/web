@@ -486,8 +486,10 @@ Many ROOT [tutorials]({{'tutorials' | relative_url }}){:target="_blank"} are ava
 ### JavaScript graphics
 
 The ROOT graphics are also available in Jupyter, both in Python and C++. Moreover, you can choose between two modes:
-- *Static* (default): The graphics are displayed as a static image in the output of the notebook cell.
-- *Interactive*: The graphics are shown as an interactive JavaScript display. In order to activate this mode, include `%jsroot on` in a cell. Once enabled, the mode stays on until it is disabled with `%jsroot off` (i.e. no need to enable it in every cell).
+- *Static*: The graphics are displayed as a static image in the output of the notebook cell.
+- *Interactive* (default): The graphics are shown as an interactive JavaScript display. In order to activate this mode, include `%jsroot on` in a cell. Once enabled, the mode stays on until it is disabled with `%jsroot off` (i.e. no need to enable it in every cell).
+
+The default behavior can be configured by setting the `Jupyter.JSRoot` variable (on or off) in `.rootrc`.
 
 _**Example**_
 
