@@ -24,7 +24,7 @@ Nix isolates your development environment in a pure sandbox shell, keeping your 
 Packages are only loaded when you enter a given nix shell, with no trace after you exit the shell other than cached artifacts that can be garbage collected whenever you want.
 
 Since Nix is cross platform, this post actually applies to **any** Linux distribution as well — including of course [NixOS](https://en.wikipedia.org/wiki/NixOS), where the whole system is declared in a single `configuration.nix` file.
-Still, this post marketed towards Mac users, because since there is no official package manager on macOS, building ROOT on that platform can be particularly challenging.
+Still, this post is marketed towards Mac users, because since there is no official package manager on macOS, building ROOT on that platform can be particularly challenging.
 
 One downside of Nix is that it's not compliant with Linux Standard Base (LSB), so you might often have to patch code to use the paths that Nix expects.
 Fortunately, once you have figured out what the right patch is, you will never have to solve the same problem again because the solution is set in stone in your nix configuration files.
@@ -140,12 +140,12 @@ A few more explanations:
   * The `shellHook` variable contains bash code that is run when opening the `nix-shell`. We use it to define aliases for configuring ROOT with the desired CMake configuration flags, and then later to build and install ROOT with the desired number of threads (12 threads in our example).
   * In the CMake command, we set `-DCMAKE_INSTALL_PREFIX=../root_install` such that the install directory sits nicely next to the `root_src` and `root_build` directories.
   * See the page about [installing ROOT from source](http://127.0.0.1:4000/base/install/build_from_source/#all-build-options) for more info on the ROOT-specific CMake flags. Depending on what ROOT feature you want to develop, you have to toggle, add, or remove flags.
-  * This blog post is not updated. So if the environment doesn't work anymore, please reach out to us, optimally by opening a [GitHub issue](https://github.com/root-project/root/issues) requesing a working `shell.nix` example for ROOT development.
+  * This blog post is not updated. So if the environment doesn't work anymore, please reach out to us, optimally by opening a [GitHub issue](https://github.com/root-project/root/issues) requesting a working `shell.nix` example for ROOT development.
 
 If your `shell.nix` file is in the `root` directory and you changed to that directory in your terminal,
 you activate the environment by running:
 ```bash
-shell-nix
+nix-shell
 ```
 It will take some time to download the dependencies to the Nix cache if you enter the environment for the first time.
 To exit the environment later, run the `exit` command in the shell.
@@ -175,7 +175,7 @@ Are you still in the build directory? Then you can source the ROOT installation 
 ```bash
 source ../root_install/bin/thisroot.sh
 ```
-If you want to test the installation, you can try to start the `root` prompt, or maybe open a `python` interpreter and try to `import ROOT`. Or, if you are adventuruos, maybe run a ROOT Python tutorial:
+If you want to test the installation, you can try to start the `root` prompt, or maybe open a `python` interpreter and try to `import ROOT`. Or, if you are adventurous, maybe run a ROOT Python tutorial:
 ```bash
 python -i ../root_src/tutorials/roofit/roofit/rf101_basics.py
 ```
