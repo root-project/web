@@ -39,6 +39,12 @@ h = rdf.Filter("x > 0").Histo1D("x")
 h.Draw()
 {% endhighlight %}
 
+There are two options to limit the number of threads ROOT is going to use: using `ROOT::EnableImplicitMT(4)` or setting the environment variable ROOT_MAX_THREADS, for example:
+{% highlight Bash %}
+export ROOT_MAX_THREADS=4
+root.exe ${arguments}
+{% endhighlight %}
+
 For further information about RDataFrame, please visit → [RDataFrame manual]({{ '/manual/data_frame' | relative_url }}).
 
 In addition to RDataFrame, the methods and classes below also implement IMT in ROOT:
