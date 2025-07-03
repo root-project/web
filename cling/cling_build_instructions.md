@@ -7,11 +7,7 @@ toc: true
 toc_sticky: true
 ---
 
-## Binaries cling
-
-Our nightly binary snapshots are currently not available.
-
-### Community support
+## Community support
 
 You can get cling 1.2 from conda-feedstock and there is a user providing an  [external PPA](https://launchpad.net/~ppa-verse/+archive/ubuntu/cling) for debian.
 
@@ -36,7 +32,7 @@ Then use CMake to configure &amp; build cling:
 {% highlight shell %}
 mkdir build
 cd build
-cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DLLVM_BUILD_TOOLS=Off -DLLVM_EXTERNAL_PROJECTS=cling -DLLVM_EXTERNAL_CLING_SOURCE_DIR=../cling -DLLVM_ENABLE_PROJECTS=clang -DLLVM_TARGETS_TO_BUILD="host;NVPTX" src/llvm
+cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DLLVM_BUILD_TOOLS=Off -DLLVM_EXTERNAL_PROJECTS=cling -DLLVM_EXTERNAL_CLING_SOURCE_DIR=../cling -DLLVM_ENABLE_PROJECTS=clang -DLLVM_TARGETS_TO_BUILD="host;NVPTX" ../src/llvm
 cmake --build .
 cmake --build . --target install
 {% endhighlight %}
