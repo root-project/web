@@ -152,7 +152,7 @@ $ yum install root
 
 ### Arch Linux
 
-Arch's [ROOT package](https://www.archlinux.org/packages/community/x86_64/root){:target="\_blank"} can be installed with
+Arch's [ROOT package](https://www.archlinux.org/packages/extra/x86_64/root){:target="\_blank"} can be installed with
 
 ```sh
 $ sudo pacman -S root
