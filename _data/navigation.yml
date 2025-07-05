@@ -26,6 +26,9 @@ main:
   - title: "For Developers"
     url: for_developers
     description: "Resources for ROOT developers"
+  - title: "Source"
+    url: https://github.com/root-project/root
+    description: "ROOT source code on GitHub"
 
 # side bar menus
 
