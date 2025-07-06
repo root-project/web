@@ -105,25 +105,6 @@ Devajith Valaparambil Sreeramaswamy:
   affiliation : "CERN"
   email       : "devajith.valaparambil.sreeramaswamy@cern.ch"
 
-
-Enrico Guiraud:
-  name        : "Enrico Guiraud"
-  bio         : "Enrico is a physicist turned computer scientist. His first experience at
-                 CERN was as Openlab summer student in 2015, during which he worked on
-                 multi-process analysis interfaces for ROOT. In 2016, he graduated cum laude
-                 from the Department of Physics of the University of Milan. His master's degree
-                 focused on statistical physics and computational methods for physics.
-                 He stably joined the ROOT team in 2016, first as a computer science doctoral student,
-                 funded by the Wolfgang Gentner Scholarships programme, and then as a CERN fellow.
-                 His most relevant contributions have been in the performance and programming model of ROOT's
-                 data analysis interfaces, and he is author and current maintainer of RDataFrame."
-  short_bio   : "Enrico is the current maintainer of RDataFrame and his work revolves around parallelism and analysis interfaces."
-  tag         : "team"
-  avatar      : "/assets/images/EG.png"
-  affiliation : "CERN"
-  email       : "enrico.guiraud@cern.ch"
-
-
 Florine de Geus:
   name        : "Florine de Geus"
   bio         : "Florine joined CERN and the ROOT team as a technical student in November
@@ -382,6 +363,18 @@ Eddy Offermann:
   matrix package the fastest and most versatile in the industry."
   tag         : "previous"
 
+Enrico Guiraud:
+  name        : "Enrico Guiraud"
+  bio         : "Enrico is a physicist turned computer scientist. His first experience at
+                 CERN was as Openlab summer student in 2015, during which he worked on
+                 multi-process analysis interfaces for ROOT. In 2016, he graduated cum laude
+                 from the Department of Physics of the University of Milan. His master's degree
+                 focused on statistical physics and computational methods for physics.
+                 He stably joined the ROOT team in 2016, first as a computer science doctoral student,
+                 funded by the Wolfgang Gentner Scholarships programme, and then as a CERN fellow.
+                 His most relevant contributions have been in the performance and programming model of ROOT's
+                 data analysis interfaces, and he is author and current maintainer of RDataFrame."
+  tag         : "previous"
 
 Ilka Antcheva:
   name        : "Ilka Antcheva"
