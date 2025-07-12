@@ -98,123 +98,24 @@ Note the mandatory method separator line:
 {% endhighlight %}
 exactly 80 characters long.
 
-## Preferred Coding Style
-Here we describe our preferred coding style. Coding style is very personal and we don't want to force our views on anybody. But for any contributions to the ROOT system that we have to maintain we would like you to follow our coding style.
-
-### Indentation
-To be able to keep as much code as possible in the visible part of the editor of to avoid over abundant line wrapping we use indentation of 3 spaces. No tabs since they give the code always a different look depending on the tab settings of the original coder. If everything looks nicely lined up with a tab setting of 4 spaces, it does not look so nicely anymore when the tab setting is changed to 3, 5, etc. spaces.
-
-### Placing Braces and Spaces
-The other issue that always comes up in C/C++ styling is the placement of braces and spaces. Unlike the indent size, there are few technical reasons to choose one placement strategy over the other, but the preferred way, as shown to us by the prophets Kernighan and Ritchie, is to put the opening brace last on the line, and put the closing brace first, thus:
-{% highlight C++ %}
-if (x is true) {
-   we do y
-}
-{% endhighlight %}
-
-However, there is one special case, namely functions: they have the opening brace at the beginning of the next line, thus:
-{% highlight C++ %}
-int function (int x)
-{
-   body of function
-}
-{% endhighlight %}
-Functions are special (you can't nest them in C/C++).
-Note that the closing brace is empty on a line of its own, **except** in the cases where it is followed by a continuation of the same statement, ie a `while` in a `do`-statement or an `else` in an `if`-statement, like this:
-{% highlight C++ %}
-do {
-   body of do - loop
-} while ( condition ) ;
-{% endhighlight %}
-and
-{% highlight C++ %}
-if (x == y) {
-   ...
-} else if (x > y) {
-   ...
-} else {
-   ...
-}
-{% endhighlight %}
-
-Note that this brace-placement also minimizes the number of empty (or almost empty) lines, without any loss of readability. Thus, as the supply of new-lines on your screen is not a renewable resource (think 25-line terminal screens here), you have more empty lines to put comments on.
-
-Notice also in the above examples the usage of spaces around keywords, operators and parenthesis/braces. Avoid the following free styles:
-{% highlight C++ %}
-if (x == y) {
-{% endhighlight %}
-
-or any derivative thereof.
-
 ## ClangFormat
-ClangFormat is a Clang tool which allows you to format your code.
+ClangFormat is a Clang tool which allows you to format your code. All new contributions to the ROOT codebase **must** be formatted with the repository's clang-format style.
 
-You can find the `.clang-format` file with the ROOT style in the [ROOT GitHub repository](https://github.com/root-project/root/blob/master/.clang-format).
+Here is how to format your code with ClangFormat:
 
-## Astyle
-If you don't have access to ClangFormat, [astyle](https://astyle.sourceforge.net/){:target="_blank"} can be useful. Starting from a code like this:
+1. install `clang-format` from your package manager (or downloading the executable if you're on Windows);
+2. after you finished writing your code:
+```
+git add <my_code>
+git clang-format # formats only the new code added
+git add <my_code> # adds any modifications done by clang-format
+# ... git commit and all the usual ...
+```
 
-{% highlight C++ %}
-int aap ( int inp ) {
-   if ( inp > 0 ) {
-      return 0 ;
-      int a = 1 ;
-      if ( inp == 0 && a == 1 ) {
-         printf ( >"this is a very long line that is not yet ending" , a, inp, a, inp, a , inp ) ;
-        a + = inp ; return a ;
-     }
-   } else {
-      return 1 ;
-   }
-   if ( inp == 0 )
-      return - 1 ;
-      return 1 ;
-   }
-{% endhighlight %}
+ClangFormat should pick up the proper style to use from the `.clang-format` file in the [ROOT GitHub repository](https://github.com/root-project/root/blob/master/.clang-format).
 
-You will find back like this:
-{% highlight C++ %}
-int aap (int inp) {
-   if (inp > 0) {
-      return 0 ;
-      int a = 1 ;
-      if (inp == 0 && a == 1) {
-         printf ("this is a very long line that is not yet ending" , a, inp, a, inp, a, inp ) ;
-         a + = inp ; return a ;
-      }
-   }
-   else {
-      return 1 ;
-   }
-   if (inp == 0)
-      return - 1 ;
-   return 1 ;
-}
-{% endhighlight %}
-
- Get at least version 2.0 and use the following `~/.astylerc`:
-
-{% highlight C++ %}
-# ROOT code formatting style
-# Note that the brackets=linux option is not available starting from astyle 2.04
-#brackets=linux
-style=stroustrup
-mode=c
-align-pointer=name
-indent=spaces=3
-indent-switches
-indent-cases
-indent-namespaces
-max-instatement-indent=40
-indent-preprocessor
-convert-tabs
-pad-header
-pad-oper
-unpad-paren
-{% endhighlight %}
-
-## Using ClangFormat or Astyle in your preferred editor
-Some code editors/IDE can make use of `clang-format` or `Astyle`. For example `QtCreator` has a [plugin for clang-format](https://doc.qt.io/qtcreator/creator-beautifier.html){:target="_blank"} and the `Visual Studio Code Editor` has also a couple of `clang-format` and `Astyle` extensions.
+Most code editors allow you to integrate clang-format directly while writing code (e.g. with format on save). This is handy, but you must make sure that you don't format other previously-present code while doing so: otherwise your commit will contain a mix of formatting changes and "real" changes.
+If you want to do this, *first* format the document and make a commit with only the formatting changes, *then* add your new changes.
 
 ## Where to go from here
 For the rest read the
