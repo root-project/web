@@ -6,7 +6,7 @@ sidebar:
 toc: false
 ---
 
-We warmly welcome your contribution to ROOT!
+We warmly welcome your contribution to ROOT 🙏! Checkout our [good first issues](https://github.com/root-project/root/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22good%20first%20issue%22) and [items that could use some help](https://github.com/root-project/root/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22).
 
 There are two ways in which you can contribute:
 
@@ -27,18 +27,10 @@ There are two ways in which you can contribute:
    become part of the repository - as it happened for RooFit, TMVA, Eve, to name a few.
 
 Often it is useful to [contact us](https://root-forum.cern.ch){:target="_blank"} first to
-discuss the code you want to develop or the bug you want to fix. You can do this directly
-from your terminal, by typing: `root -b -e '.forum bug' -q`.
+discuss the code you want to develop or the bug you want to fix.
 
-If you are an experienced contributor or are sure that you really found a bug, you can directly submit a
-new issue on [GitHub](https://github.com/root-project/root/issues/new/choose) using the predefined
-templates, or directly from your terminal:
-
-```
-root -b -e '.gh bug' -q
-root -b -e '.gh feature' -q
-root -b -e '.gh improvement' -q
-```
+You can directly submit a new issue on [GitHub](https://github.com/root-project/root/issues/new/choose) 
+using the predefined templates.
 
 ### What about fixing an "easy" bug?
 
