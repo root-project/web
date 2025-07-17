@@ -117,6 +117,31 @@ ClangFormat should pick up the proper style to use from the `.clang-format` file
 Most code editors allow you to integrate clang-format directly while writing code (e.g. with format on save). This is handy, but you must make sure that you don't format other previously-present code while doing so: otherwise your commit will contain a mix of formatting changes and "real" changes.
 If you want to do this, *first* format the document and make a commit with only the formatting changes, *then* add your new changes.
 
+### About the coding style
+***NOTE**: this paragraph is for people interested in the choices over the coding style. If all you care about is having proper formatting, clang-format will automatically apply all the rules described here.*
+
+Coding style is very personal and we don't want to force our views on anybody. But for any contributions to the ROOT system that we have to maintain we would like you to follow our coding style.
+
+#### Indentation
+To be able to keep as much code as possible in the visible part of the editor of to avoid over abundant line wrapping we use indentation of 3 spaces. No tabs since they give the code always a different look depending on the tab settings of the original coder. If everything looks nicely lined up with a tab setting of 4 spaces, it does not look so nicely anymore when the tab setting is changed to 3, 5, etc. spaces.
+
+#### Braces and spaces
+The styling of braces and spaces follows the Kernighan and Ritchie rules: statements have their opening brace on the same line, whereas functions have it on the next line:
+{% highlight C++ %}
+if (x == y) {
+   doY();
+}
+
+int function(int x)
+{
+   body of function
+}
+{% endhighlight %}
+
+Rationale: it minimizes the number of empty (or almost empty) lines, without any loss of readability. Functions are special (you can't nest them in C/C++) so they get an exception to the rule.
+Also notice that all statements have a space before the opening parenthesis, but function names and function calls don't.
+There is no hard rule for placing braces around single-statement blocks (e.g. for and `if` with a body consisting of a single line). Use your judgement.
+
 ## Where to go from here
 For the rest read the
 [Taligent Guide](https://root.cern/TaligentDocs/TaligentOnline/DocumentRoot/1.0/Docs/books/WM/WM_1.html){:target="_blank"}
