@@ -4,22 +4,12 @@ main:
   - title: "About"
     url: about
     description: "About ROOT"
-  - title: "Learn"
-    url: learn
-    description: "How to learn ROOT"
   - title: "Install"
     url: install
     description: "All you need to download and install ROOT"
-  - title: "Forum & Help"
-    url: https://root-forum.cern.ch/
-    description: "Ask questions about ROOT"
-    target: _blank
   - title: "Manual"
     url: manual
     description: "High level ROOT manual"
-  - title: "Blog Posts"
-    url: blog
-    description: "Latest ROOT blog posts"
   - title: "Contribute"
     url: contribute
     description: "Contribute to ROOT!"
