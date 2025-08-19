@@ -196,16 +196,19 @@ If you encounter any issues, feel free to report them to the [guix-science issue
 
 ### <a name="nixos_nix_nixpkgs" />NixOS/Nix/Nixpkgs
 
-The package name for ROOT in nixpkgs is `root`. It can be installed into the user environment using
+The package name for ROOT in nixpkgs is `root`.
 
+You can start a temporary shell to try out ROOT as follows:
 ```sh
-$ nix-env -f '<nixpkgs>' -iA root
+$ nix-shell -p root
+$ root
 ```
 
-Running in a temporary environment can be achieved with
-
+As explained in the [NixOS Wiki](https://nixos.wiki/wiki/Python), the preferred way to use Python is to add it to your environment along with any libraries you need.
+NixOS also has a `python3.root` package for that, which you can add to a temporary Python environment in a Nix shell like this:
 ```sh
-$ nix-shell -p root --run root
+$ nix-shell -p "python3.withPackages (pkgs: with pkgs; [ root ])"
+$ python -i -c "import ROOT"
 ```
 
 A `root5` package is provided for the legacy software support.
