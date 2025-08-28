@@ -1,25 +1,21 @@
 /// (c) Axel Naumann, CERN; 2020-03-02
+'use strict';
 
 /// Configurable section.
 
 // What the master is called. Leave untouched if master has no doc.
-let master = 'master';
+const master = 'master';
 
 /// Pathname part of the URL containing the different versioned doxygen
 /// subdirectories. Must be browsable.
-let urlroot = '/doc';
+const urlroot = '/doc';
+const urlrootdirs = urlroot.split('/').length;
 
 // Convert a url directory (e.g. "v620") to a version number displayed on the
 // web page (e.g. "6.20").
 function url2label(versdir) {
    return versdir.replace(/^v(\d)/, 'v$1.');
 }
-
-///=============================================================================
-// Remove trailing '/'.
-if (urlroot[urlroot.length - 1] == '/')
-urlroot = urlroot.substring(0, urlroot.length - 1)
-let urlrootdirs = urlroot.split('/').length;
 
 function url2version(patharr) {
    // Given the directory array of a URL (i.e. without domain), extract the
@@ -30,63 +26,63 @@ function url2version(patharr) {
    return patharr[patharr.length - urlrootdirs];
 }
 
+///=============================================================================
+const LATEST_VERSION = 636; // CHANGE THIS WHEN A NEW VERSION IS RELEASED
+const FIRST_VERSION = 610;
+
+// Redirect from latest-stable to the actual latest release
 let patharr = window.location.pathname.replace(/\/+/g, '/').split('/');
+if (url2version(patharr) === 'latest-stable') {
+   patharr[patharr.length - urlrootdirs] = `v${LATEST_VERSION}`;
+   let newLocation = patharr.join('/');
+   if (window.location.hash)
+      newLocation += `#${window.location.hash}`;
+   window.location.replace(newLocation);
+}
+
+const LATEST_STABLE_IDX = 1;
+let versions = ["master", "latest-stable"];
+for (let i = LATEST_VERSION; i >= FIRST_VERSION; i -= 2) {
+   versions.push(`v${i}`);
+}
+
 let thisvers = url2version(patharr);
 $('.dropbtn').html("Version " + url2label(thisvers));
 
-// https://stackoverflow.com/questions/30622369
-$.get(urlroot + '/', (data) =>
-      {
-      let ret = parseDirectoryListing(data);
-      $('.dropdown-content').append(ret.join(''));
+let baseUrl = patharr.slice(0, urlrootdirs).join('/');
+let dropdown = document.querySelector('.dropdown-content');
+let latestStableLink;
+for (let i = 0; i < versions.length; ++i) {
+   let version = versions[i];
+   let a = document.createElement('a');
+   a.classList.add('verslink');
+   a.innerText = url2label(version);
+   dropdown.append(a);
 
-      // Now check which links actually exist, and remove the href for those
-      // that don't.
-      $('.dropdown-content')
-      .find('.verslink')
-      .each(function() {
-            var el = $(this);
-            var request = new XMLHttpRequest();
-            request.open('HEAD', el.attr('href'), true);
-            request.onreadystatechange = function(){
-               if (request.readyState === 4){
-                  if (request.status === 404) {
-                     el.removeAttr('href');
-                     el.css({'color': "gray",
-                            'text-decoration': 'line-through'});
-                  }
-               }
-            };
-            request.send();
-         });
-      });
-
-function parseDirectoryListing(text)
-{
-   let docs = text.match(/href="([^/][^"]+)"/g)
-                  .filter(line => /\/"$/.test(line)); // only directories.
-   docs = docs.map((x) =>
-                   x.replace(/\/\//g, '/')
-                   .replace(/href="/,'')
-                   .replace(/\/"$/,''))
-              .sort().reverse();
-   docs = docs.filter(function(line) {
-                      // suppress link to current version
-                      return !RegExp(thisvers).test(line)
-                         // suppress hidden dirs
-                         && !/^[.]/.test(line);
-                      });
-
-   if (docs.includes(master)) {
-      // Move "master" first.
-      docs.splice(0, 0, docs[docs.length - 1]);
-      docs.pop();
+   // latest-stable redirects to the actual latest version
+   if (i === LATEST_STABLE_IDX) {
+      // this gets checked already by the actual latest version, so don't waste
+      // an AJAX request for it.
+      latestStableLink = a;
+      continue;
    }
-   docs = docs.map((x) => '<a class="verslink" href="'
-                   + patharr.slice(0, urlrootdirs).join('/')
-                   + '/' + x + '/' + patharr[patharr.length-1] + '">'
-                   + url2label(x)
-                   + '</a>');
-   return docs;
-}
 
+   let url = `${baseUrl}/${version}/${patharr[patharr.length-1]}`;
+   let request = new XMLHttpRequest();
+   request.open('HEAD', url, true);
+   request.onreadystatechange = () => {
+      let linksToChange = [a];
+      if (i === LATEST_STABLE_IDX + 1)
+         linksToChange.push(latestStableLink);
+      for (let link of linksToChange) {
+         if (request.readyState === 4 && request.status === 404) {
+            link.style['color'] = "gray";
+            link.style['text-decoration'] = 'line-through';
+            link.href = 'javascript:void(0)';
+         } else {
+            link.href = url;
+         }
+      }
+   };
+   request.send();
+}
