@@ -52,7 +52,7 @@ for branch in ${branches}; do
     sed -n -E 's%^[[:space:]]*ROOT_BUILD_OPTION\([[:space:]]*([[:graph:]]+)[[:space:]]+(ON|OFF)[[:space:]]+\"([^\"]+[[:space:]]*)\".*$%| `\1` | \3 | \2 |%;p' >> ${outfile_new} || { rm ${outfile_new}; exit 2; }
   echo "| | **Auxiliary build options** | |" >> ${outfile_new}
   echo "$curledPage" |
-    grep -h -E '^[[:space:]]*option\([[:space:]]*[[:alnum:]]+[[:space:]]+\".*\)' |
+    grep -h -E '^[[:space:]]*option\([[:space:]]*([[:alnum:]]|-)+[[:space:]]+\".*\)' |
     sort -u |
     sed -n -E 's%^[[:space:]]*option\([[:space:]]*([[:graph:]]+)[[:space:]]+\"([^\"]+)\"[[:space:]]+(ON|OFF)[[:space:]]*\).*$%| `\1` | \2 | \3 |%;p' >> ${outfile_new}
 
