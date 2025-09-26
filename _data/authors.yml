@@ -63,21 +63,6 @@ Axel Naumann:
   email       : "Axel.Naumann@cern.ch"
 
 
-Bertrand Bellenot:
-  name        : "Bertrand Bellenot"
-  bio         : "Bertrand was primary working in Aluminum industry as process engineer,
-                 developing software for data acquisition, data analysis, statistical
-                 process control (SPC) and for X-Ray spectrometry. He has been involved in
-                 ROOT development since 2001 by porting ROOT to Windows. Bertrand is a
-                 member of the ROOT development team at CERN since August 2005. He's
-                 currently working on GUI (Graphical User Interface), core (mainly Windows
-                 support), and JavaScript Root (JSROOT)."
-  tag         : "team"
-  avatar      : "/assets/images/BB.jpg"
-  affiliation : "CERN"
-  email       : "Bertrand.Bellenot@cern.ch"
-
-
 Danilo Piparo:
   name        : "Danilo Piparo"
   bio         : "Danilo is a particle physicist and scientific software enthusiast. He 
@@ -91,6 +76,40 @@ Danilo Piparo:
   tag         : "team"
   affiliation : "CERN"
   avatar      : "/assets/images/DP.jpg"
+
+
+Aaron Jomy:
+  name        : "Aaron Jomy"
+  bio         : "Aaron is a software engineer with a background in deep learning and path planning
+                 for autonomous vehicles. He received his Bachelor's in Computer Science in 2024,
+                 with a focus on high-performance computing and GPU programming. His first
+                 interaction with CERN was a research internship with Princeton University towards
+                 his undergraduate thesis. He joined the ROOT team as a technical student, working
+                 on a novel type system and interoperability layer for ROOT. Currently, as an R&D
+                 software engineer, Aaron works on interactive C++ and language interoperability
+                 technologies based on LLVM to provide on-demand, performant Python bindings for
+                 ROOT. He also serves as an Organization Administrator for the CERN-HSF Google
+                 Summer of Code program."
+  short_bio   : "Aaron is a software engineer working on interactive C++ and language interoperability technologies."
+  tag         : "team"
+  affiliation : "CERN"
+  avatar      : "/assets/images/AJ.jpg"
+  email       : "aaron.jomy@cern.ch"
+
+
+Bertrand Bellenot:
+  name        : "Bertrand Bellenot"
+  bio         : "Bertrand was primary working in Aluminum industry as process engineer,
+                 developing software for data acquisition, data analysis, statistical
+                 process control (SPC) and for X-Ray spectrometry. He has been involved in
+                 ROOT development since 2001 by porting ROOT to Windows. Bertrand is a
+                 member of the ROOT development team at CERN since August 2005. He's
+                 currently working on GUI (Graphical User Interface), core (mainly Windows
+                 support), and JavaScript Root (JSROOT)."
+  tag         : "team"
+  avatar      : "/assets/images/BB.jpg"
+  affiliation : "CERN"
+  email       : "Bertrand.Bellenot@cern.ch"
 
 
 Devajith Valaparambil Sreeramaswamy:
@@ -201,6 +220,26 @@ Lorenzo Moneta:
   affiliation : "CERN"
   email       : "Lorenzo.Moneta@cern.ch"
 
+
+Lukas Breitwieser:
+  name        : "Lukas Breitwieser"
+  bio         : "Lukas Breitwieser is a computer scientists focusing on high-performance and
+                large-scale computing. Lukas successfully defended his Ph.D. at ETH Zurich under
+                the supervision of Onur Mutlu and Fons Rademakers. Before joining the ROOT team,
+                Lukas was the principal software engineer of BioDynaMo. This interdisciplinary
+                and open-source project brings together simulation experts and computer
+                scientists to develop an agent-based simulation platform that sets new standards
+                in terms of performance and scale. Since its inception in 2015, Lukas has been
+                driving the platform's major advancements, particularly focusing on building a
+                scalable and modular simulation engine. The Annual Symposium on Principles and
+                Practice of Parallel Programming recognized this work with the Best Artifact
+                Award. In the ROOT team, Lukas is responsible for an R&D project to accelerate
+                physics data analysis on the GPU."
+  avatar      : "/assets/images/LukasBreitwieser.jpg"
+  affiliation : "CERN"
+  tag         : "team"
+
+
 Marta Czurylo:
   name        : "Marta Czurylo"
   bio         : "Marta obtained her M.Sc. in Physics from University College London. 
@@ -279,6 +318,33 @@ Sergey Linev:
   avatar      : "/assets/images/SL.jpg"
   affiliation : "GSI"
   email       : "S.Linev@gsi.de"
+
+
+Silia Taider:
+  name        : "Silia Taider"
+  bio         : "Silia graduated with an engineering degree in Software Development and Big Data
+                 from CPE Lyon Eng. School. She joined the ROOT team as a summer student in 2023
+                 and continued as a technical student in LHCb for a year before coming back to ROOT
+                 as a junior fellow. She is currently working on improving the ergonomics of Python
+                 interfaces offered by ROOT statistics and analysis tools such as histograms, graphs
+                 or RDataFrames."
+  short_bio   : "Silia is an Early Career Graduate working on the ROOT python interfaces."
+  tag         : "team"
+  avatar      : "/assets/images/ST.jpeg"
+  affiliation : "CERN"
+  email       : "silia.taider@cern.ch"
+
+
+Stephan Hageboeck:
+  name        : "Stephan Hageboeck"
+  bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the University of Bonn in
+                 Germany. He worked in ATLAS in the search for Higgs --> bb decays, and was the maintainer
+                 of RooFit in 2019 and 2020, where he paved the way for RooFit with vectorisation and GPUs.
+                 From 2021 to 2024, he worked in CERN's IT department on GPU computing. Now, Stephan is
+                 back in the ROOT team, working on RDataFrame, GPU computing and analysis interfaces."
+  avatar      : "/assets/images/SH.jpg"
+  affiliation : "CERN"
+  tag         : "team"
 
 
 Vassil Vassilev:
@@ -516,36 +582,6 @@ Oksana Shadura:
   email       : "Oksana.Shadura@cern.ch"
 
 
-Stephan Hageboeck:
-  name        : "Stephan Hageboeck"
-  bio         : "Stephan is a particle physicist, and obtained his Ph.D. at the University of Bonn in
-                 Germany. He worked in ATLAS in the search for Higgs --> bb decays, and was the maintainer
-                 of RooFit in 2019 and 2020, where he paved the way for RooFit with vectorisation and GPUs.
-                 From 2021 to 2024, he worked in CERN's IT department on GPU computing. Now, Stephan is
-                 back in the ROOT team, working on RDataFrame, GPU computing and analysis interfaces."
-  avatar      : "/assets/images/SH.jpg"
-  affiliation : "CERN"
-  tag         : "team"
-
-Lukas Breitwieser:
-  name        : "Lukas Breitwieser"
-  bio         : "Lukas Breitwieser is a computer scientists focusing on high-performance and
-                large-scale computing. Lukas successfully defended his Ph.D. at ETH Zurich under
-                the supervision of Onur Mutlu and Fons Rademakers. Before joining the ROOT team,
-                Lukas was the principal software engineer of BioDynaMo. This interdisciplinary
-                and open-source project brings together simulation experts and computer
-                scientists to develop an agent-based simulation platform that sets new standards
-                in terms of performance and scale. Since its inception in 2015, Lukas has been
-                driving the platform's major advancements, particularly focusing on building a
-                scalable and modular simulation engine. The Annual Symposium on Principles and
-                Practice of Parallel Programming recognized this work with the Best Artifact
-                Award. In the ROOT team, Lukas is responsible for an R&D project to accelerate
-                physics data analysis on the GPU."
-  avatar      : "/assets/images/LukasBreitwieser.jpg"
-  affiliation : "CERN"
-  tag         : "team"
-
-
 Susan Panacek:
   name        : "Susan Panacek"
   bio         : "Susan wrote the first ROOT User's Guide and developed a number of ROOT
@@ -665,18 +701,3 @@ Fernando Hueso González:
   avatar      : "/assets/images/avatar-ferhue.jpg"
   email       : "fernando.hueso@uv.es"
   affiliation : "IFIC - Instituto de Física Corpuscular (CSIC / Universitat de València)"
-
-
-Silia Taider:
-  name        : "Silia Taider"
-  bio         : "Silia graduated with an engineering degree in Software Development and Big Data
-                 from CPE Lyon Eng. School. She joined the ROOT team as a summer student in 2023
-                 and continued as a technical student in LHCb for a year before coming back to ROOT
-                 as a junior fellow. She is currently working on improving the ergonomics of Python
-                 interfaces offered by ROOT statistics and analysis tools such as histograms, graphs
-                 or RDataFrames."
-  short_bio   : "Silia is an Early Career Graduate working on the ROOT python interfaces."
-  tag         : "team"
-  avatar      : "/assets/images/ST.jpeg"
-  affiliation : "CERN"
-  email       : "silia.taider@cern.ch"
