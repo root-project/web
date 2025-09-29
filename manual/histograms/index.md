@@ -131,7 +131,7 @@ For creating variable bins histograms:
    TH1* h1 = new TH1D("h1", "h1 title", 5, binEdges );
    TH2* h2 = new TH2D("h2", "h2 title", 5, binEdges , 30, -1.5, 3.5);
 {% endhighlight %}
-note that the array of bin edges should be of size `nbins+1` , since it contains the lower and upper range axis values.
+note that the array of bin edges should be of size `nbins+1`, since it contains the lower and upper range axis values.
 
 For creating a profile histograms passing the range in the profiled variable (e..g .Y for a `TProfille`) is optional:
 {% highlight C++ %}
