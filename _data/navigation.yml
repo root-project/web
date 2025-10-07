@@ -4,6 +4,9 @@ main:
   - title: "About"
     url: about
     description: "About ROOT"
+  - title: "Releases"
+    url: install/all_releases
+    description: "All ROOT releases"
   - title: "Install"
     url: install
     description: "All you need to download and install ROOT"
