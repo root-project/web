@@ -105,4 +105,4 @@ jobs:
           kinit  -p ${{ secrets.KRB5USER }}@${{ secrets.KRB5REALM }} -kt ${KT_FILE_NAME}
           cd build
           rm -rf ./${PR_NUMBER:-}/assets/fa/svgs
-          xrdcp -rf ./${PR_NUMBER:-} ${EOS_ENDPOINT}//${EOS_PATH}/
+          xrdcp -rf --parallel 4 ./${PR_NUMBER:-} ${EOS_ENDPOINT}//${EOS_PATH}/
