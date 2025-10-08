@@ -7,36 +7,28 @@ toc: true
 toc_sticky: true
 ---
 
+## ROOT papers
 
-## Overview contributions on ROOT
-{% include publications_list type="ROOT" %}
+### 2025
+{% include publications_list status="ANY" before="2026-01-01" after="2025-01-01" %}
 
-## ROOT contributions by topics
+### 2024
+{% include publications_list status="ANY" before="2025-01-01" after="2024-01-01" %}
 
-### I/O
-{% include publications_list type="IO" %}
+### 2023
+{% include publications_list status="ANY" before="2024-01-01" after="2023-01-01" %}
 
-### RDataFrame
-{% include publications_list type="RDF" %}
+### 2022
+{% include publications_list status="ANY" before="2023-01-01" after="2022-01-01" %}
 
-### TMVA, ML
-{% include publications_list type="TMVA" %}
+### 2021
+{% include publications_list status="ANY" before="2022-01-01" after="2021-01-01" %}
 
-### RooFit
-{% include publications_list type="ROOFIT" %}
+### 2020
+{% include publications_list status="ANY" before="2021-01-01" after="2020-01-01" %}
 
-### Cling / C++
-{% include publications_list type="CLING" %}
-
-### Visualization
-{% include publications_list type="VIS" %}
-
-### Parallelism
-{% include publications_list type="PARA" %}
-
-### CINT
-CINT was the C++ interpreter until ROOT version 5. In case you want to cite CINT, use the following references:
-{% include publications_list type="CINT" %}
+### Older
+{% include publications_list status="ANY" before="2020-01-01" %}
 
 ## Not ROOT contributions, but related
 {% include publications_list type="NotROOT" %}
