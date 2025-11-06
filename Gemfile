@@ -12,3 +12,7 @@ group :jekyll_plugins do
   gem "jekyll-liquify", "<0.0.3"
   gem "jekyll-remote-theme"
 end
+
+# Temporary fix for recent build failures on GitHub Actions
+gem "sass-embedded", "~> 1.68.0"
+
