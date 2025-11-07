@@ -15,7 +15,6 @@ Redirect permanent /drupal/content/users-guide https://root.cern/manual/
 Redirect permanent /guides/reference-guide/ https://root.cern/doc/master/
 Redirect permanent /root-user-guides-and-manuals/ https://root.cern/get_started/
 Redirect permanent /open_projects https://root-project.github.io/open_projects/
-Redirect permanent /releases /install/all_releases
 
 RedirectMatch 301 ^/root/htmldoc/T(.*)\.html$ https://root.cern/doc/master/classT$1.html
 RedirectMatch 301 ^/root/htmldoc/T([^.]*)$ https://root.cern/doc/doc/master/classT$1.html
