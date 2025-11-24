@@ -19,9 +19,6 @@ of years.
 ### [Meetings](meetings)
 All ROOT-related meetings can be found in [ROOT's Indico category](https://indico.cern.ch/category/526/).
 
-### [ROOT 7](root7)
-This new major version of ROOT will make ROOT much simpler and safer to use.
-
 ### [Run the Tests](run_the_tests)
 Running all ROOT tests on at least a platform before sending a PR or before pushing anything to the ROOT repository is *mandatory*.
 The ROOT continuous integration infrastructure allows to automatically check the PR also on a battery of platform, for example including MacOs and linux boxes.
