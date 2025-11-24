@@ -16,6 +16,9 @@ main:
   - title: "Contribute"
     url: contribute
     description: "Contribute to ROOT!"
+  - title: "Open Projects"
+    url: open_projects
+    description: "Open Projects"
   - title: "For Developers"
     url: for_developers
     description: "Resources for ROOT developers"
