@@ -130,8 +130,6 @@ for_developers:
         url: for_developers/creating_pr
    - title: Meetings
      url: for_developers/meetings
-   - title: ROOT 7
-     url: for_developers/root7
    - title: Run the Tests
      url: for_developers/run_the_tests
    - title: Bug Reports
