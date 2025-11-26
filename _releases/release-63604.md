@@ -2,7 +2,7 @@
 layout: releases
 version: 6.36.04
 release_date: 2025-08-25
-state: latest
+state:
 
 toc: true
 toc_sticky: true
