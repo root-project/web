@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## The Problem
 The objects from the current directory (gDirectory) are injected into a magic scope that is
-available to CINT:
+available to Cling:
 
 **Important constrain:** To not break old code we need to continue to support this. Of course
 the code is invalid C++ and thus cannot be parsed by clang. Upon clang's Sema complaining about
