@@ -207,7 +207,7 @@ For more information on TTree, see [Trees]({{ '/manual/trees' | relative_url }})
 
 ## The `ClassDef` macro
 
-The `ClassDef` macro can be inserted in a class definition to add some reflection capabilities to it. It also attaches a "version number" to the class that can be used for [schema evolution]({{ '/manual/io/#dealing-with-changes-in-class-layouts-schema-evolution' | relative_url }}).
+The `ClassDef` macro can be inserted in a class definition to add some reflection capabilities to it. It also attaches a "version number" to the class that can be used for [schema evolution]({{ '/manual/io/#dealing-with-changes-in-class-layouts-schema-evolution' | relative_url }}). A class "version number" equal to zero signals that the class cannot be written.
 
 Having a `ClassDef` is mandatory for classes inheriting from `TObject`, otherwise it is an optional ROOT I/O performance optimization.
 
