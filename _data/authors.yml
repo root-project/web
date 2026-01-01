@@ -204,25 +204,6 @@ Jonas Rembser:
   avatar      : "/assets/images/JonasRembser.png"
   email       : "jonas.rembser@cern.ch"
 
-
-Lorenzo Moneta:
-  name        : "Lorenzo Moneta"
-  bio         : "Lorenzo started working in 1989 as an experimental physicist for the ALEPH
-                 experiment working for data analysis and software event reconstruction. He
-                 graduated in Pisa in 1990 and he received his Ph.D. in particle physics in
-                 1994 at the University of Florence. Afterwards, since 1997, he was working
-                 for data analysis of the CDF experiments and online software for the ATLAS
-                 experiment. In 2002 he joined the physics application software group of
-                 CERN, and since 2005 he joined the ROOT team with the responsibility of
-                 the Math work package, which provides development and support for the ROOT
-                 mathematical and statistical libraries."
-  short_bio   : "Lorenzo is responsible for ROOT's statistics and math libraries, and the machine learning packages."
-  tag         : "team"
-  avatar      : "/assets/images/LM.jpg"
-  affiliation : "CERN"
-  email       : "Lorenzo.Moneta@cern.ch"
-
-
 Lukas Breitwieser:
   name        : "Lukas Breitwieser"
   bio         : "Lukas Breitwieser is a computer scientists focusing on high-performance and
@@ -254,22 +235,6 @@ Marta Czurylo:
   avatar      : "/assets/images/MC.jpg"
   affiliation : "CERN"
   email       : "marta.maja.czurylo@cern.ch"  
-
-
-Monica Dessole:
-  name        : "Monica Dessole"
-  bio         : "Monica graduated from the Mathematics Department of the University of
-                 Padua, where she also received her Ph.D. in Computational Mathematics in
-                 2022 with a thesis on numerical linear algebra algorithms targeting
-                 massively parallel archirectures. She joined ROOT in 2023 as a senior
-                 fellow to speed up linear algebra computations with modern technologies
-                 such as heterogeneous computing on GPUs and performance portability with
-                 SYCL."
-  short_bio   : "Monica is accelerating linear algebra computations with SYCL."
-  tag         : "team"
-  avatar      : "/assets/images/MD.jpg"
-  affiliation : "CERN"
-  email       : "monica.dessole@cern.ch"
 
 Olivier Couet:
   name        : "Olivier Couet"
@@ -428,7 +393,7 @@ Diego Marcos Segura:
 Eddy Offermann:
   name        : "Eddy Offermann"
   bio         : "Eddy joined the ROOT team during a sabbatical to work on making the ROOT
-  matrix package the fastest and most versatile in the industry."
+                 matrix package the fastest and most versatile in the industry."
   tag         : "previous"
 
 Enrico Guiraud:
@@ -703,3 +668,29 @@ Fernando Hueso González:
   avatar      : "/assets/images/avatar-ferhue.jpg"
   email       : "fernando.hueso@uv.es"
   affiliation : "IFIC - Instituto de Física Corpuscular (CSIC / Universitat de València)"
+
+  Monica Dessole:
+   name        : "Monica Dessole"
+   bio         : "Monica graduated from the Mathematics Department of the University of
+                  Padua, where she also received her Ph.D. in Computational Mathematics in
+                  2022 with a thesis on numerical linear algebra algorithms targeting
+                  massively parallel archirectures. She joined ROOT in 2023 as a senior
+                  fellow to speed up linear algebra computations with modern technologies
+                  such as heterogeneous computing on GPUs and performance portability with
+                  SYCL."
+   tag         : "previous"
+
+Lorenzo Moneta:
+  name        : "Lorenzo Moneta"
+  bio         : "Lorenzo started working in 1989 as an experimental physicist for the ALEPH
+                 experiment working for data analysis and software event reconstruction. He
+                 graduated in Pisa in 1990 and he received his Ph.D. in particle physics in
+                 1994 at the University of Florence. Afterwards, since 1997, he was working
+                 for data analysis of the CDF experiments and online software for the ATLAS
+                 experiment. In 2002 he joined the physics application software group of
+                 CERN, and in 2005 he joined the ROOT team with the responsibility of
+                 the Math work package, which provides development and support for the ROOT
+                 mathematical and statistical libraries."
+  tag         : "previous"
+  affiliation : "CERN"
+  email       : "Lorenzo.Moneta@cern.ch"
