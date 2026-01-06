@@ -67,23 +67,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install AWS CLI
-        run: |
-          python -m pip install --upgrade pip
-          pip install awscli==1.36.40
-
-      - name: Sync to S3
-        if: ${{ env.SHOULD_DEPLOY == 'true' }}
-        run: |
-          DEST="s3://root/${PR_NUMBER:-}" # if PR, upload in s3://root/<prnumber>
-          aws configure set default.s3.max_concurrent_requests 200
-          aws --endpoint-url https://s3.cern.ch s3 sync build/${PR_NUMBER:-} ${DEST} --exclude 'files-test/*' --exclude 'files/*' --exclude 'download-test/*' --exclude 'download/*' --exclude 'doc-test/*'  --exclude 'doc/*'  --exclude 'old-drupal/*'
-
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "eu-west-1"
-
       - name: Install Kerberos utilities
         run: |
           sudo apt-add-repository http://archive.ubuntu.com/ubuntu/
