@@ -1,5 +1,5 @@
 ---
-title: "Recent Common Vulnerabilities: when does ROOT need to be updated?"
+title: "Recent Common Vulnerabilities: does ROOT need to be updated?"
 layout: archive
 author: Danilo Piparo
 ---
