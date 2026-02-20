@@ -5,8 +5,9 @@ sidebar:
   nav: "blog"
 ---
 
-### Here the list with ROOT workshops:
+### Here the list of ROOT workshops:
 
+*   [ROOT 2025](https://cern.ch/root2025){:target="_blank"}
 *   [ROOT 2022](https://indico.fnal.gov/event/23628/manage/){:target="_blank"}
 *   [ROOT 2018](https://cern.ch/root2018){:target="_blank"}
 *   [ROOT 2015]({{'/blog/workshop_2015' | relative_url}}){:target="_blank"}
