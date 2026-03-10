@@ -80,6 +80,7 @@ xrootd-client-devel xrootd-libs-devel
 *   **glew-devel:** for /usr/include/GL/glew.h and for /usr/lib[64]/libGLEW.so
 *   **graphviz-devel:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
 *   **qt5-qtwebengine-devel:** required for **qt5web** component
+*   **curl-devel:** for HTTP remote access
 
 As a one-liner for Fedora 33:
 ```bash
@@ -88,7 +89,7 @@ mesa-libGL-devel mesa-libGLU-devel glew-devel ftgl-devel mysql-devel \
 fftw-devel cfitsio-devel graphviz-devel libuuid-devel \
 avahi-compat-libdns_sd-devel openldap-devel python-devel python3-numpy \
 libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
-R-devel R-Rcpp-devel R-RInside-devel
+R-devel R-Rcpp-devel R-RInside-devel curl-devel
 ```
 
 CentOS 8 requires adding the EPEL repository. Additionally, some packages in CentOS 8 [were moved to the PowerTools repository](https://root-forum.cern.ch/t/root-dependencies-can-not-install-in-centos8/42010). Therefore it needs to be enabled as well:
@@ -131,7 +132,7 @@ libavahi-compat-libdnssd-dev libldap2-dev \
  python3-dev python3-numpy libxml2-dev libkrb5-dev \
 libgsl-dev qtwebengine5-dev nlohmann-json3-dev libmysqlclient-dev \
 libgl2ps-dev \
-liblzma-dev libxxhash-dev liblz4-dev libzstd-dev
+liblzma-dev libxxhash-dev liblz4-dev libzstd-dev libcurl4-openssl-dev
 ```
 
 Some more context:
@@ -158,7 +159,8 @@ Most common optional packages:
 sudo zypper install gcc-fortran pcre-devel Mesa glew-devel libpng16-devel \
 pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel \
 libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python3-devel python3-numpy \
-libxml2-devel krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel
+libxml2-devel krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel \
+libcurl-devel
 ```
 
 ## MacOS
