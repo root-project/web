@@ -274,6 +274,7 @@ def binaryNameToTitle(filename):
             debug = ' (' + ('debug' if debug == '.debug' else 'release with debugging information') + ')'
         # see https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B#Internal_version_numbering
         vcVersYear = {
+            'vc18': 2025,
             'vc17': 2022,
             'vc16': 2019,
             'vc15': 2017,
