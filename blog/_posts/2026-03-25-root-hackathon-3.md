@@ -12,8 +12,8 @@ This edition -The Fixathon 2.0 - is a **2-day hands-on** event focused on refini
 
 ## 🔧 What will we work on?
 
-- 🐞 Small Bug Density issues: addressing well-scoped issues that improve the everyday ROOT experience
-- 📚 Documentation improvements: writing or improving tutorials, examples, and documentation pages
+- Small Bug Density issues: addressing well-scoped issues that improve the everyday ROOT experience
+- Documentation improvements: writing or improving tutorials, examples, and documentation pages
 
 
 ## 🤝 How to participate?
@@ -23,12 +23,14 @@ Do you have a small ROOT issue that has been on your mind?
 **Report it ➡️ Tag it `Small Bug Density` on GitHub ➡️ Join us to work on it!**
 
 ## 🍝 Logistics
-- 📍 In-person at CERN IdeaSquare (no remote participation)
-- ☕ Coffee and home-cooked lunches provided
-- 🍽️ Social dinner organised nearby (not covered)
-- ⚠️ Limited spots available
+- In-person at CERN IdeaSquare (no remote participation)
+- Coffee and home-cooked lunches provided
+- Social dinner organised nearby (not covered)
+- Limited spots available
 
-### 👉 More details & registration: https://indico.cern.ch/event/1663083/
+### Registration
+
+👉 [More details & registration](https://indico.cern.ch/e/root-hackathon-3)
 
 <center>
     <img
