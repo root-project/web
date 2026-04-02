@@ -7,30 +7,33 @@ toc: true
 toc_sticky: true
 ---
 
-ROOT files contain C++ objects that are stored to disk.
-You can open files when starting ROOT
+ROOT files contain data, for example in the form of objects that are instances of C++ classes, and executable code, for example through `TExec`, `TMacro`, and `TFormula` instances.
+
+> As for *all* files, do not open ROOT files from an unknown origin!
+
+You can open files when starting ROOT, specifying those as commandline arguments
 
 {% highlight bash %}
 $ root file.root
 {% endhighlight %}
 
-or within C++
+or via the C++ API
 
 {% highlight C++ %}
 std::unique_ptr<TFile> myFile( TFile::Open("file.root") );
 {% endhighlight %}
 
-or Python code
+or in Python
 
 {% highlight Python %}
 myFile = ROOT.TFile.Open("file.root")
 {% endhighlight %}
 
 
-In ROOT you can save objects in ROOT files, making these objects "persistent".
+Objects can be written in ROOT files, making these objects "persistent".
 Later on, you can read these objects back: the object is reconstructed in memory.
 
-ROOT files often contain columnar data, used for instance by all LHC (Large Hadron Collider) experiments.
+Not only individual objects can be written, in a so-called "row-wise fashion". ROOT files can contain also columnar data, used for instance by many High Energy Physics Experiments, at LHC and elsewhere. At the end of LHC Run 3, *Exabytes* of data were written in ROOT's columnar format!
 
 ## Storing an object in a ROOT file and reading it back
 
@@ -57,7 +60,7 @@ For the second argument, the following options are available:
 ### Storing an object in a ROOT file
 
 You can save any object, for instance canvases or histograms, into a ROOT file.
-You can even store your own types.
+You can even store your own types, provided that you expose to ROOT the information necessary for their serialization.
 
 <!-- For more information, see the → [I/O]({{ '/manual/io' | relative_url }}) section of the manual. -->
 
@@ -78,7 +81,7 @@ myFile.WriteObject(myObject, "MyObject")
 ### Closing a ROOT file
 
 ROOT will automatically save and close any ROOT files still open when the session ends.
-The ROOT file is also saved and closed when deleting / destructing the `TFile` object.
+The ROOT file is also saved and closed when deleting, or more in general destructing, the `TFile` object.
 
 {% highlight C++ %}
 void closeAtDestruct(TH1 *hist) {
@@ -102,10 +105,13 @@ def closeAtDestruct(hist):
 
 ### Opening and inspecting a ROOT file
 
+ROOT is not needed to inspect ROOT files! For example, those can be opened in your web browser with [JSRoot](https://root.cern/js/latest/){:target="_blank"}: no single C++ line is executed, pure JavaScript code provides all the functionality needed.
+
+Of course, ROOT files can be opened and inspected with ROOT's C++ and Python APIs.
 Use [TFile::Open()](https://root.cern/doc/master/classTFile.html#ad8870806a04da2c2f4aa02bee4ec6833){:target="_blank"} to open a ROOT file.
 While this operation might return a valid pointer to a `TFile` object,
 this object might not be able to access data, for instance because ROOT was unable to open the file in the filesystem.
-Use [TObject::IsZombie()](https://root.cern/doc/master/classTObject.html#aaa8418b9b6692a12d8d0e500c51911bf){:target="_blank"} to check whether the ROOT file was successfully opened.
+You can use [TObject::IsZombie()](https://root.cern/doc/master/classTObject.html#aaa8418b9b6692a12d8d0e500c51911bf){:target="_blank"} to check whether the ROOT file was successfully opened.
 
 {% highlight C++ %}
 std::unique_ptr<TFile> file( TFile::Open("file.root") );
@@ -136,6 +142,14 @@ Some objects, such as histograms, automatically register themselves with the cur
 See also → [Object ownership]({{ '/manual/object_ownership' | relative_url }}).
 
 For the particular case of TTree, cycles only store metadata, see [Baskets, clusters and the tree header]({{ '/manual/trees/#baskets-clusters-and-the-tree-header' | relative_url }}).
+
+Something a bit advanced now. The information ROOT relies on for serializing objects is stored in `TStreamerInfo` instances, which are stored themselves in the ROOT file. This feature offers several advantages, for example it can make the ROOT file and its content self descriptive.
+If you want to have a look to the list of `TStreamerInfo` instances in a file, you can use the following API:
+{% highlight C++ %}
+root [] std::unique_ptr<TFile> myFile( TFile::Open("file.root") );
+...
+root [] myFile->GetStreamerInfoList()->Print();
+{% endhighlight %}
 
 ### Reading an object from a ROOT file
 
@@ -279,6 +293,10 @@ Double-click the ROOT file to inspect its content.
 
 Double-clicking graphical objects displays them in a canvas tab.
 Double-clicking files that end with `.C` displays them in an editor tab.
+
+> Clicking on objects in a `TBrowser` (or `RBrowser`) instance can lead to the execution of code.
+> For example, a `TCanvas` instance may rely on `TExec` instances to obtain certain effects, a histogram or a graph may do the same with the `TExec` instances stored in their *list of functions*. The `TFormula` powering function classes such as `TF1` or its multidimensional counterparts, also executes jitted C++ code to obtain maximum runtime performance. 
+> As explained above, as for *all* files, do not open ROOT files from an unknown origin!
 
 ## Accessing a remote ROOT file
 
