@@ -61,7 +61,7 @@ The following is an example of a project that creates a library and an executabl
 # Otherwise, you must tell the build system where to look for ROOT,
 # for example by passing `-DROOT_DIR="/path/to/root/installation` at CMake configuration time.
 
-   cmake_minimum_required(VERSION 3.0 FATAL_ERROR)
+   cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
    project(event)
 
 # Locate the ROOT package and define a number of useful targets and variables.
