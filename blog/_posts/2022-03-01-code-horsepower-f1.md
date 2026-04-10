@@ -22,6 +22,7 @@ If you've ever rubbed your eyes trying to decrypt *C++* compilation errors from 
 - [Debugging tools](#debugging-tools)
   * [Building ROOT in Debug Mode](#building-root-in-debug-mode)
   * [Debugging your ROOT scripts or executables with GDB](#debugging-your-root-scripts-or-executables-with-gdb)
+  * [GDB pretty printers](#gdb-pretty-printers)
   * [Memory error detection](#memory-error-detection)
   * [Data race detection](#data-race-detection)
   * [Performance analysis](#performance-analysis)
@@ -203,6 +204,13 @@ Below a screenshot of another example, while debugging [a deadlock in the TThrea
 [![Debugging example with QtCreator](https://user-images.githubusercontent.com/10653970/155715232-c86cfd3d-2153-454f-a948-ccd9a8595363.png)](https://user-images.githubusercontent.com/10653970/155715232-c86cfd3d-2153-454f-a948-ccd9a8595363.png)
 
 Side note: if at some point, your *ROOT* script gets very complex long, I recommend instead to use a standalone *C++* application using *CMake*, and link the *ROOT* libraries easily to it, as explained [here](https://root.cern/manual/integrate_root_into_my_cmake_project/#full-example-event-project).
+
+### GDB pretty printers
+
+In the debugger, classes such as TString are complex objects where one does not immediately see the string it represents. To get a better visual overview, one can deploy the predefined GDB pretty printers embedded in the ROOT project by:
+
+- Creating a file `~/.gdbinit` with content `add-auto-load-safe-path /path/to/build-root_src-Desktop-Debug/lib/` to avoid a warning with `libCore.so-gdb.py`
+- Going to "Preferences", "Debugger", "GDB", checking "Load system GDB printers" to use the GDB and not the default Qt pretty-printers.
 
 ### Memory error detection
 
