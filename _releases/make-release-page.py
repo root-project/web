@@ -193,6 +193,8 @@ def binaryNameToTitle(filename):
         print(F'ERROR: cannot parse platform name for {filename}')
         return filename
     platformCompiler = match.groups()[1]
+    if platformCompiler.startswith("."):
+        platformCompiler = platformCompiler[1:]
     if not platformCompiler:
         print(F'ERROR: cannot extract platform name for {filename}')
         return filename
