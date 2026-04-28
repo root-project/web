@@ -17,7 +17,7 @@ René Brun:
                  a dead-end line, he created the ROOT system while working for the NA49
                  heavy ion experiment at the SPS. Rene has led the ROOT project from
                  1995-2010."
-  tag         : "founder"
+  tag         : "previous"
   avatar      : "/assets/images/RB.jpg"
   affiliation : "CERN"
   email       : "Rene.Brun@cern.ch"
@@ -39,7 +39,7 @@ Fons Rademakers:
                 to high performance parallel computing using PROOF. Fons took over from
                 Rene Brun as ROOT project leader in 2011 and has led the project till
                 2014, culminating in the release of ROOT 6."
-  tag         : "founder"
+  tag         : "previous"
   avatar      : "/assets/images/FR.png"
   affiliation : "CERN"
   email       : "Fons.Rademakers@cern.ch"
