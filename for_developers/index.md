@@ -7,7 +7,7 @@ sidebar:
 
 The links in this section are intended for **the ROOT developers** and for people who want
 to [contribute]({{'contribute' | relative_url}}) to the ROOT system.
-l
+
 ### [Program of Work]({{'/for_developers/program_of_work' | relative_url}})
 The program of work for the ROOT project, documented for the relevant years.
 
@@ -21,13 +21,13 @@ All ROOT-related meetings can be found in [ROOT's Indico category](https://indic
 
 ### [Run the Tests](run_the_tests)
 Running all ROOT tests on at least a platform before sending a PR or before pushing anything to the ROOT repository is *mandatory*.
-The ROOT continuous integration infrastructure allows to automatically check the PR also on a battery of platform, for example including MacOs and linux boxes.
+The ROOT continuous integration infrastructure can automatically check the PR on a battery of platforms, including macOS, Windows and various Linux distributions.
 
 ### [Documentation in ROOT]({{'/for_developers/docs' | relative_url}})
 [Doxygen](https://www.doxygen.nl/){:target="_blank"} is used for generating
 the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
 
 ### [Editing the ROOT web site]({{'/for_developers/web' | relative_url}})
-Jekyll is used for generating the ROOT web site.
+Jekyll is used for generating the ROOT website.
 
 ### [Benchmarks](https://rootbnch-grafana-test.cern.ch)
