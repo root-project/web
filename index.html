@@ -1,78 +1,156 @@
 ---
-layout: splash
-title: "ROOT: Analyzing petabytes of data, scientifically."
-author_profile: false
-header:
-  og_image: /assets/images/ROOT-image-share.png
+layout: default
+title: "ROOT - Analyzing petabytes of data, scientifically"
+<!--header:
   overlay_image: /assets/images/splash_optimized.jpg
+  overlay_color: "#000"
   actions:
     - label: '<i class="fas fa-info-circle"></i> Learn more'
       url: "about"
     - label: '<i class="fas fa-download"></i> Install v{% include root_stable_version %}'
-      url: /install
+      url: /install-->
 feature_row:
   - title: '<img src="assets/images/histoIcon.svg" alt="*.*" width="65" height="65">'
     excerpt: "Enables processing and scientific analysis of large amounts of data: today, more than 2 exabytes are stored in ROOT files. [The Higgs was discovered with ROOT!](gallery#higgs-plots)"
   - title: '<img src="assets/images/code.svg" alt="*.*" width="65" height="65">'
     excerpt: "[Open source](about/license), which means that you can use it freely and [modify it](install/build_from_source). It adopts an open development process, inviting [its users to contribute to it](contribute)."
-  - title: '$ _'
+  - title: "$ _"
     excerpt: "Delivered with a [C++ interpreter](primer#learn-c-at-the-root-prompt), ideal for <i>fast prototyping</i>. ROOT also offers a Python interface to all its components with [dynamic bindings](manual/python/). [Jupyter notebooks are supported too](https://nbviewer.jupyter.org/url/root.cern/doc/master/notebooks/rf301_composition.C.nbconvert.ipynb)."
+quicklinks:
+  - title: "Learn"
+    path: /learn
+    icon_path: /assets/images/start.svg
+  - title: "Reference"
+    path: /doc/latest-stable
+    icon_path: /assets/images/doc.svg
+  - title: "Forum"
+    path: https://root-forum.cern.ch
+    icon_path: /assets/images/forum.svg
+  - title: "Gallery"
+    path: /gallery
+    icon_path: /assets/images/gallery.svg
 ---
 
-
-<div style="width: 100%;">
-    <center>
-    <div style="width: 25%; display:inline-block;">
-        <div><a href="{{ '/learn' | relative_url }}"><img style="box-shadow: none;" width="128" src="{{'/assets/images/start.svg' | relative_url}}"></a></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Learn</font></div>
-    </div><!--
-    --><div style="width: 25%; display:inline-block;">
-        <div><a href="/doc/v{% include root_stable_version_short %}"><img style="box-shadow: none;" width="128" src="{{'/assets/images/doc.svg' | relative_url}}"></a></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Reference</font></div>
-    </div><!--
-    --><div style="width: 25%; display:inline-block;">
-        <div><a href="https://root-forum.cern.ch"><img style="box-shadow: none;" width="128" src="{{'/assets/images/forum.svg' | relative_url}}"></a></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Forum</font></div>
-    </div><!--
-    --><div style="width: 25%; display:inline-block;">
-        <div><a href="{{ '/gallery' | relative_url }}"><img style="box-shadow: none;" width="128" src="{{'/assets/images/gallery.svg' | relative_url}}"></a></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Gallery</font></div>
+<div class="container-mb p-5 mb-3 header">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-2">
+      <img src="https://root.cern/assets/images/logos/svg/ROOT_blue.svg" />
     </div>
-    </center>
+    <div class="col-8">
+      <h1>ROOT: Analyzing petabytes of data, scientifically</h1>
+      <div class="row">
+        <a type="button" class="btn btn-primary w-auto" href={{ "/install" | relative_url }}><i class="fas fa-download"></i> Install v{% include root_stable_version %}</a>
+      </div>
+    </div>
+  </div>
 </div>
 
-<br><br>
-{% include feature_row id="intro" type="center" %}
+<hr class="mx-5 border-2">
 
-{% include feature_row id="feature_row" %}
+<div class="d-flex justify-content-evenly py-3 quicklinks">
+  {% for quicklink in page.quicklinks %}
+  <div class="d-flex flex-column justify-content-between position-relative">
+    <div class="p-2">
+      <img
+        width="128"
+        style="box-shadow: none"
+        src="{{ quicklink.icon_path | relative_url}}"
+      />
+    </div>
+    <div class="p-2">
+      <h3 class="text-center" style="color: #346295; text-decoration: none">
+        {{ quicklink.title }}
+      </h3>
+    </div>
+    <a href="{{ quicklink.path | relative_url }}" class="stretched-link"></a>
+  </div>
+  {% endfor %}
+</div>
 
+<hr class="mx-5 border-2">
 
-<table style="width: 100%; margin-top:4px; border-spacing: 0px;">
-   <tbody>
-      <tr>
-         <td style="width:68%; border:1px solid #cedff2; padding:0; background:#f5faff; vertical-align:top">
-            <div style="padding:0.1em 0.6em;">
-               {% for post in site.posts limit:5 %}
-               <font size="4"><b><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b></font> <font size="1">({{post.date | date_to_string}})</font>
-               <font size="2">{{ post.excerpt }}</font>
-               {% endfor %}
-               <b><a href="{{'/blog' | relative_url}}"> More ...</a></b>
-            </div>
-         </td>
-         <td style="border:0px;">
-         </td>
-         <td style="width:32%; border:1px solid #cedff2; padding:0; background:#f5faff; vertical-align:top;">
-            <h1 style="margin:0.3em; background:#cedff2; font-family:inherit; font-weight:bold; border:1px solid #a3bfb1; padding:0.2em 0.4em;">Latest Releases</h1>
-            <br>
-            <div style="padding:0.1em 0.6em;">
-               <font size="2">
-               {% include releases_list number=5 single_column="yes" %}
-               <br>
-               <b><a href="{{'/install/all_releases' | relative_url}}"> More ...</a></b>
-               </font>
-            </div>
-            <br>
-         </td>
-      </tr>
-   </tbody>
+<div class="container-md py-5">
+  <div class="row gx-4">
+    <div class="col-9">
+      {% include root_showcase.html %}
+    </div>
+    <div class="col-3">
+      <h2>Latest Releases</h2>
+      <div class="px-1 py-3 fs-6">
+          {% include releases_list number=5 single_column="yes" %}
+
+          <span class="fw-bold"><a href="{{'/install/all_releases' | relative_url}}">More...</a></span>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+{% include feature_row id="intro" type="center" %} {% include feature_row
+id="feature_row" %}
+
+<table style="width: 100%; margin-top: 4px; border-spacing: 0px">
+  <tbody>
+    <tr>
+      <td
+        style="
+          width: 68%;
+          border: 1px solid #cedff2;
+          padding: 0;
+          background: #f5faff;
+          vertical-align: top;
+        "
+      >
+        <div style="padding: 0.1em 0.6em">
+          {% for post in site.posts limit:5 %}
+          <font size="4"
+            ><b
+              ><a href="{{ post.url | relative_url }}">{{ post.title }}</a></b
+            ></font
+          >
+          <font size="1">({{post.date | date_to_string}})</font>
+          <font size="2">{{ post.excerpt }}</font>
+          {% endfor %}
+          <b><a href="{{'/blog' | relative_url}}"> More ...</a></b>
+        </div>
+      </td>
+      <td style="border: 0px"></td>
+      <td
+        style="
+          width: 32%;
+          border: 1px solid #cedff2;
+          padding: 0;
+          background: #f5faff;
+          vertical-align: top;
+        "
+      >
+        <h1
+          style="
+            margin: 0.3em;
+            background: #cedff2;
+            font-family: inherit;
+            font-weight: bold;
+            border: 1px solid #a3bfb1;
+            padding: 0.2em 0.4em;
+          "
+        >
+          Latest Releases
+        </h1>
+        <br />
+        <div style="padding: 0.1em 0.6em">
+          <font size="2">
+            {% include releases_list number=5 single_column="yes" %}
+            <br />
+            <b
+              ><a href="{{'/install/all_releases' | relative_url}}">
+                More ...</a
+              ></b
+            >
+          </font>
+        </div>
+        <br />
+      </td>
+    </tr>
+  </tbody>
 </table>

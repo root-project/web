@@ -1,0 +1,61 @@
+@use "bootstrap/bootstrap" with (
+  $primary: #346295
+);
+
+:root [data-bs-theme="light"] {
+  /* --bs-blue: #346295;
+  --bs-blue-darker: #254569; */
+}
+
+.header {
+  a {
+    color: #ffffff;
+  }
+
+  img {
+    width: 80%;
+  }
+}
+
+.quicklinks {
+  /* background-color: #eeeeee; */
+}
+
+.nav-item {
+  margin-bottom: 0 !important;
+}
+
+.nav-link {
+  --bs-nav-tabs-border-width: 0px;
+  --bs-card-bg: rgba(0, 0, 0, 0);
+  --bs-nav-link-color: var(--bs-blue);
+  --bs-nav-link-hover-color: var(--bs-blue-darker);
+}
+
+.nav-link.active {
+  --bs-card-bg: #346295 !important;
+  --bs-nav-tabs-link-active-color: white;
+}
+
+.card {
+  --bs-card-bg: none;
+  --bs-card-border-width: 0px;
+}
+
+.card-header {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.card-body-code {
+  background-color: #263238;
+}
+
+.highlight {
+  height: 200px;
+  overflow: scroll;
+}
+
+/* Hide the language label in code snippets */
+.highlight [data-lang]::before {
+  display: none !important;
+}
