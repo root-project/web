@@ -406,10 +406,16 @@ Windows 10/7/... are supported. We offer two packaging types:
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print(F"USAGE: {sys.argv[0]} _releases/release-Mmmpp.md")
+        print(F"USAGE: {sys.argv[0]} [--force] _releases/release-Mmmpp.md")
         exit(1)
-    outfileName = sys.argv[1]
-    checkOutputFile(outfileName)
+    if len(sys.argv) == 3:
+        outfileName = sys.argv[2]
+        force = True
+    else:
+        outfileName = sys.argv[1]
+        force = False
+
+    if not force: checkOutputFile(outfileName)
     version = parseVersion(outfileName)
     print(F"INFO: generating release page for version {version.forDiagnostic()}")
     with open(outfileName, "w") as outfile:
