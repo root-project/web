@@ -16,10 +16,12 @@ This release represents a massive leap toward the future of ROOT 7. We’ve unlo
 But we didn't stop there. We’ve streamlined the entire codebase for peak efficiency and addressed over 160 items in our trackers to ensure rock-solid stability and cutting-edge features ([see the full list here](https://root.cern/doc/v640/release-notes.html#items-addressed-for-this-release)). Dive into the full [release notes](https://root.cern/doc/v640/release-notes.html) and explore the highlights below!
 
 🔓**Opt-out of automatic class registration** Break free from histograms and objects automatically attaching to the current (T)directory! Enable this game-changing capability invoking ROOT::Experimental::DisableObjectAutoRegistration(): unlock more control by [exploring the documentation](https://root.cern/doc/master/namespaceROOT_1_1Experimental.html#a74fae8f88965b8c79dfbd25bebbce3a4).
-Histograms More features in the new histograms! Concurrent filling is now available, also to save memory in highly multithreaded applications. This feature is even integrated into RDataFrame: [check out the tutorials](https://root.cern/doc/v640/group__tutorial__histv7.html)!
+
+📊 **Histograms** More features in the new histograms! Concurrent filling is now available, also to save memory in highly multithreaded applications. This feature is even integrated into RDataFrame: [check out the tutorials](https://root.cern/doc/v640/group__tutorial__histv7.html)!
 
 🤖 **Machine Learning** The Data Loader has been reimagined as ROOT::Experimental::ML::RDataLoader! This powerful tool now performs cluster-aligned reads with a sophisticated shuffling strategy and supports multiple RDataFrames as input. Seamlessly output to NumPy, PyTorch, or TensorFlow, while leveraging new under- and oversampling support for dual-class eager loading.
- I/O Experience a brand-new, streamlined HTTP I/O implementation powered by [libcurl](https://curl.se/libcurl/)! This update delivers modern remote read capabilities, including advanced compression, secure transport, and S3 support, all across 🐧🍎🪟.
+ 
+💾 **I/O** Experience a brand-new, streamlined HTTP I/O implementation powered by [libcurl](https://curl.se/libcurl/)! This update delivers modern remote read capabilities, including advanced compression, secure transport, and S3 support, all across 🐧🍎🪟.
 
 🔀 **RNTuple** Multiple threads can share a single reader efficiently thanks to the “active entry tokens” added to the RNTupleReader: very useful for data processing frameworks!
 
