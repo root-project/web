@@ -38,27 +38,6 @@ This way, you will automatically keep up-to-date with the latest stable versions
 
 | Platform       | Files | Size |
 |-----------|-------|-----|
-| Almalinux 8.10 | [root_v6.40.00-rc1.Linux-almalinux8.10-x86_64-gcc8.5.tar.gz](https://root.cern/download/root_v6.40.00-rc1.Linux-almalinux8.10-x86_64-gcc8.5.tar.gz) | 294M |
-| Almalinux 9.7 | [root_v6.40.00-rc1.Linux-almalinux9.7-x86_64-gcc11.5.tar.gz](https://root.cern/download/root_v6.40.00-rc1.Linux-almalinux9.7-x86_64-gcc11.5.tar.gz) | 317M |
-| Almalinux 10.1 | [root_v6.40.00-rc1.Linux-almalinux10.1-x86_64-gcc14.3.tar.gz](https://root.cern/download/root_v6.40.00-rc1.Linux-almalinux10.1-x86_64-gcc14.3.tar.gz) | 323M |
-| Debian 13 | [root_v6.40.00-rc1.Linux-debian13-x86_64-gcc14.2.tar.gz](https://root.cern/download/root_v6.40.00-rc1.Linux-debian13-x86_64-gcc14.2.tar.gz) | 325M |
-| Fedora 43 | [root_v6.40.00-rc1.Linux-fedora43-x86_64-gcc15.2.tar.gz](https://root.cern/download/root_v6.40.00-rc1.Linux-fedora43-x86_64-gcc15.2.tar.gz) | 368M |
-| Fedora 44 | [root_v6.40.00-rc1.Linux-fedora44-x86_64-gcc16.0.tar.gz](https://root.cern/download/root_v6.40.00-rc1.Linux-fedora44-x86_64-gcc16.0.tar.gz) | 372M |
-| Ubuntu 22.04 | [root_v6.40.00-rc1.Linux-ubuntu22.04-x86_64-gcc11.4.tar.gz](https://root.cern/download/root_v6.40.00-rc1.Linux-ubuntu22.04-x86_64-gcc11.4.tar.gz) | 306M |
-| Ubuntu 24.04 | [root_v6.40.00-rc1.Linux-ubuntu24.04-x86_64-gcc13.3.tar.gz](https://root.cern/download/root_v6.40.00-rc1.Linux-ubuntu24.04-x86_64-gcc13.3.tar.gz) | 323M |
-| Ubuntu 26.04 | [root_v6.40.00-rc1.Linux-ubuntu26.04-x86_64-gcc15.2.tar.gz](https://root.cern/download/root_v6.40.00-rc1.Linux-ubuntu26.04-x86_64-gcc15.2.tar.gz) | 327M |
-| macOS 14.8 x86_64 Xcode 16 | [root_v6.40.00-rc1.macos-14.8-x86_64-clang160.pkg](https://root.cern/download/root_v6.40.00-rc1.macos-14.8-x86_64-clang160.pkg) | 477M |
-| macOS 14.8 x86_64 Xcode 16 | [root_v6.40.00-rc1.macos-14.8-x86_64-clang160.tar.gz](https://root.cern/download/root_v6.40.00-rc1.macos-14.8-x86_64-clang160.tar.gz) | 312M |
-| macOS 15.7 arm64 Xcode 17 | [root_v6.40.00-rc1.macos-15.7-arm64-clang170.pkg](https://root.cern/download/root_v6.40.00-rc1.macos-15.7-arm64-clang170.pkg) | 464M |
-| macOS 15.7 arm64 Xcode 17 | [root_v6.40.00-rc1.macos-15.7-arm64-clang170.tar.gz](https://root.cern/download/root_v6.40.00-rc1.macos-15.7-arm64-clang170.tar.gz) | 308M |
-| macOS 26.4 arm64 Xcode 21 | [root_v6.40.00-rc1.macos-26.4-arm64-clang210.pkg](https://root.cern/download/root_v6.40.00-rc1.macos-26.4-arm64-clang210.pkg) | 479M |
-| macOS 26.4 arm64 Xcode 21 | [root_v6.40.00-rc1.macos-26.4-arm64-clang210.tar.gz](https://root.cern/download/root_v6.40.00-rc1.macos-26.4-arm64-clang210.tar.gz) | 320M |
-| Windows Visual Studio 2025 32-bit x86 | [root_v6.40.00-rc1.win32.python314.vc18.exe](https://root.cern/download/root_v6.40.00-rc1.win32.python314.vc18.exe) | 152M |
-| Windows Visual Studio 2025 32-bit x86 | [root_v6.40.00-rc1.win32.python314.vc18.zip](https://root.cern/download/root_v6.40.00-rc1.win32.python314.vc18.zip) | 213M |
-| Windows Visual Studio 2022 64-bit x64 | [root_v6.40.00-rc1.win64.python311.vc17.exe](https://root.cern/download/root_v6.40.00-rc1.win64.python311.vc17.exe) | 137M |
-| Windows Visual Studio 2022 64-bit x64 | [root_v6.40.00-rc1.win64.python311.vc17.zip](https://root.cern/download/root_v6.40.00-rc1.win64.python311.vc17.zip) | 188M |
-| Windows Visual Studio 2025 64-bit x64 (release with debugging information) | [root_v6.40.00-rc1.win64.python314.vc18.relwithdebinfo.exe](https://root.cern/download/root_v6.40.00-rc1.win64.python314.vc18.relwithdebinfo.exe) | 447M |
-| Windows Visual Studio 2025 64-bit x64 (release with debugging information) | [root_v6.40.00-rc1.win64.python314.vc18.relwithdebinfo.zip](https://root.cern/download/root_v6.40.00-rc1.win64.python314.vc18.relwithdebinfo.zip) | 709M |
 | Almalinux 8.10 | [root_v6.40.00.Linux-almalinux8.10-x86_64-gcc8.5.tar.gz](https://root.cern/download/root_v6.40.00.Linux-almalinux8.10-x86_64-gcc8.5.tar.gz) | 294M |
 | Almalinux 9.7 | [root_v6.40.00.Linux-almalinux9.7-x86_64-gcc11.5.tar.gz](https://root.cern/download/root_v6.40.00.Linux-almalinux9.7-x86_64-gcc11.5.tar.gz) | 317M |
 | Almalinux 10.1 | [root_v6.40.00.Linux-almalinux10.1-x86_64-gcc14.3.tar.gz](https://root.cern/download/root_v6.40.00.Linux-almalinux10.1-x86_64-gcc14.3.tar.gz) | 323M |
