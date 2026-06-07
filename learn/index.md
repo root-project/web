@@ -5,18 +5,17 @@ sidebar:
   nav: "start"
 ---
 
-On behalf of the developers, contributors and user community: **welcome to ROOT!**
+Planning to learn more about ROOT? This is the right page!
 
-If you have never used ROOT before and don't know where to start, we recommend that you first explore [the ROOT introductory course](https://github.com/root-project/student-course){:target="_blank"}. You can also watch [the recording of the course](https://videos.cern.ch/record/2301866), but you should follow the material along on your PC. If you are already somewhat familiar with ROOT but would like to know more about RNTuples, UHI, RooFit, Pythonizations or dive into some more advanced RDataFrame features, we recommend that you take a look at [the ROOT Advanced Course](https://github.com/root-project/ROOTAdvancedCourse/tree/26.04), together with the course recording which can be found [here](https://videos.cern.ch/record/3025341).
+We offer ROOT courses and exercises, in Python based on Jupyter Notebooks. For these courses, you don't need to install ROOT on your machine. You can directly run all the examples and exercises on [SWAN](https://swan.cern.ch){:target="_blank"} (if you have a CERN computing account), or otherwise using GitHub Codespaces or Binder.
 
-For these courses, you don't need to install ROOT on your machine. You can directly run all the examples and exercises on [SWAN](https://swan.cern.ch){:target="_blank"} (if you have a CERN computing account), or otherwise using GitHub Codespaces or Binder.
+Two levels are available: 
+* Beginners: [ROOT introductory course](https://github.com/root-project/student-course){:target="_blank"}, which can be accompanied by [its the video version](https://videos.cern.ch/record/2301866). This course covers the ROOT basics.
+* Intermediate: [ROOT Advanced Course](https://github.com/root-project/ROOTAdvancedCourse/tree/26.04), which can be accompanied by [its the video version](https://videos.cern.ch/record/3025341). This course is about RNTuple, UHI, RooFit, Pythonizations and some more advanced RDataFrame features
 
-The courses are written in Python. We use Jupyter Notebooks as the basis to both explain the fundamental concepts and show the code examples. 
-We also provide a few exercises that you can attempt on your own. 
+Would you like to install ROOT on your local system? Have a look to the [instructions]({{ '/install' | relative_url }}).
 
-Once you are a bit more familiar with what ROOT offers and how to use it online, you can take a look at how to [install]({{ '/install' | relative_url }}) it on your machine.
-
-Finally, if you wish to delve a bit further into ROOT functionalities, check the following: 
+Finally, if you wish to delve further into ROOT functionalities, check the following: 
 *   The [ROOT beginners' guide (aka "Primer")]({{ '/primer' | relative_url }})
 *   The [Manual]({{ '/manual' | relative_url }}) where more in depth information can be found
 *   The full [API Documentation](https://root.cern/doc/master/){:target="_blank"}
