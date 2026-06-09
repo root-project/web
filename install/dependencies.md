@@ -141,7 +141,7 @@ Some more context:
   * **qtwebengine5-dev:** required for **qt5web** component
   * **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 
-On Debian, substitute `libmysqlclient-dev` with `libmariadb-dev`.
+**NOTE**: On Debian (>=13), substitute `libmysqlclient-dev` with `libmariadb-dev` and `libpcre3-dev` with `libpcre2-dev`.
 
 ## openSUSE
 
