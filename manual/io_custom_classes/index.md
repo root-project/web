@@ -253,6 +253,8 @@ For ROOT to be able to store a class, it must have a public default constructor 
 
 ROOT currently does not support I/O of `std::shared_ptr`, `std::optional`, `std::variant` and classes with data members of these types (unless they are marked as "transient").
 
+ROOT currently does not support I/O for C++ [`Bit-fields`](https://en.cppreference.com/w/cpp/language/bit_field.html) with a class.
+
 ROOT can store and retrieve data members of pointer type but not reference type.
 
 Data members, and in particular pointer data members, _must_ be initialized by the class constructor used by ROOT I/O (most typically, the default constructor):
