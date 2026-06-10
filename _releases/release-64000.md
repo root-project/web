@@ -2,7 +2,7 @@
 layout: releases
 version: 6.40.00
 release_date: 2026-05-20
-state: latest
+state:
 toc: true
 toc_sticky: true
 sidebar:
@@ -98,7 +98,7 @@ git checkout -b v6-40-00 v6-40-00
 See [instructions to build from source](../../install/#build-from-source){:target="\_blank"}.
 
 ## Windows
-Windows 10/7/... are supported. We offer two packaging types:
+Windows 11 is supported. We offer two packaging types:
  * **exe**: a regular Windows installer package also setting up the required environment variables. With uninstall via "Control Panel" / "Add or Remove Programs". Simply download and start. You can double-click ROOT to run it; ROOT files get registered with Windows.
  * **tar**: unpack e.g. with [7zip](https://www.7-zip.org). Start ROOT in a Microsoft Visual Studio Prompt (in Start / Programs / Microsoft Visual Studio / Tools). If you installed ROOT to `C:\root` then call `C:\root\bin\thisroot.bat` before using ROOT to set up required environment variables. Call instead `thisroot.ps1` if you run from a `powershell` (the default terminal in Visual Studio Code).
 
