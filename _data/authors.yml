@@ -204,6 +204,22 @@ Jonas Rembser:
   avatar      : "/assets/images/JonasRembser.png"
   email       : "jonas.rembser@cern.ch"
 
+Koen van Walstijn:
+  name        : "Koen van Walstijn"
+  bio         : "Koen is a software engineer who joined CERN in 2026 through the QUEST programme.
+                 He studied physics for his bachelor's at Delft University of Technology and did
+                 his master's at Hong Kong University of Science & Technology, where he took
+                 physics and computer science courses. Since graduating, he has worked on
+                 simulation software in the domains of high-voltage power grids and neuroscience.
+                 Within the ROOT team, he works on the <a href=\"https://highlo.org\">HighLO</a>
+                 project, which applies particle physics methods and tools to financial market
+                 data."
+  short_bio   : "Koen is a software engineer who HighLO project"
+  tag         : "team"
+  affiliation : "CERN"
+  avatar      : "/assets/images/KvW.jpg"
+  email       : "koen.vanwalstijn@cern.ch"
+
 Lukas Breitwieser:
   name        : "Lukas Breitwieser"
   bio         : "Lukas Breitwieser is a computer scientists focusing on high-performance and
