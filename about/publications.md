@@ -9,6 +9,9 @@ toc_sticky: true
 
 ## ROOT papers
 
+### 2026
+{% include publications_list status="ANY" before="2027-01-01" after="2026-01-01" %}
+
 ### 2025
 {% include publications_list status="ANY" before="2026-01-01" after="2025-01-01" %}
 
