@@ -146,9 +146,6 @@ for_developers:
         url: for_developers/docs/pythonizations
       - title: Useful tips
         url: for_developers/docs/useful_tips
-   - title: Benchmarks
-     url: https://rootbnch-grafana-test.cern.ch
-     target: _blank
 
 
 releases:
