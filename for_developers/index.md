@@ -26,5 +26,3 @@ The ROOT continuous integration infrastructure can automatically check the PR on
 ### [Documentation in ROOT]({{'/for_developers/docs' | relative_url}})
 [Doxygen](https://www.doxygen.nl/){:target="_blank"} is used for generating
 the [Reference Guide](https://root.cern/doc/master/){:target="_blank"}.
-
-### [Benchmarks](https://rootbnch-grafana-test.cern.ch)

@@ -16,6 +16,13 @@ Monday's at 16:00 CET.
 
 - [Indico category](https://indico.cern.ch/category/526/){:target="_blank"}
 
+## <a name="developers"></a>Parallelism Performance and Programming model Meetings
+A series of informal meetings, where ideas, work in progress and complex matters are discussed. 
+PPP Meetings most of the time are not about contributions by core developers, but welcome speakers from 
+experiments or specific communities. They take place on Thursday, 16:00 CET.
+
+- [Indico category](https://indico.cern.ch/category/14122/){:target="_blank"}
+
 ## <a name="planning"></a>Experiments Planning Meetings
 Experiments and core developers meet regularly to discuss the progress of open issues and
 future plans on Wednesdays at 16:00 CET.
