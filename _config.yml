@@ -10,7 +10,6 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-# theme                  : "minimal-mistakes-jekyll"
 remote_theme             : "root-project/minimal-mistakes@root-patches"
 minimal_mistakes_skin    : "root" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
@@ -216,9 +215,10 @@ kramdown:
 
 # Sass/SCSS
 sass:
-  sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
+  load_paths:
+    - _sass
+    - ./vendor/bundle/ruby/3.4.0/gems/bootstrap-5.3.8
 
 # Outputting
 permalink: /:categories/:title/

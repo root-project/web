@@ -14,5 +14,6 @@ group :jekyll_plugins do
 end
 
 # Use a stable sass-embedded version to avoid build issues on GitHub Actions
-gem "sass-embedded", "~> 1.68.0"
-
+gem "sass-embedded", "~> 1.99"
+gem "google-protobuf", "~> 4.32"
+gem 'bootstrap', "~> 5.3"

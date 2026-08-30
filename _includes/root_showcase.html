@@ -1,0 +1,51 @@
+<div class="row mb-6">
+  <div class="col-12">
+    <p>ROOT provides all the components you need to turn data into results. See it in action below, using data from the <a href="https://cms.cern">CMS</a> experiment at <a href="https://home.cern">CERN:</a></p>
+  </div>
+</div>
+<div class="row align-items-begin mb-6">
+  <div class="col-7" >
+    <div class="card border-0">
+      <div class="card-header px-2">
+        <!--<h3>Code</h3>-->
+        <ul class="nav nav-tabs card-header-tabs">
+          <li class="nav-item">
+            <a href="#cpp" class="nav-link active" data-bs-toggle="tab"
+              >C++</a
+            >
+          </li>
+          <li class="nav-item border-0">
+            <a href="#python" class="nav-link" data-bs-toggle="tab">Python</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body card-body-code">
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="cpp">
+            {% highlight c++ %}
+{% include showcase/dimuon_jpsi.C %}
+            {% endhighlight %}
+          </div>
+          <div class="tab-pane fade" id="python">
+            {% highlight python %}
+{% include showcase/dimuon_jpsi.py %}
+            {% endhighlight %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-5">
+    <div class="card border-0">
+      <div class="card-header px-2">
+        <!--<h3>Result</h3>-->
+      </div>
+      <div class="card-body card-jsroot">
+        {% capture hist_path %}{{ "/gallery/showcase/jpsi.root" | relative_url }}{% endcapture %}
+        {% include figure_jsroot
+            file=hist_path object="Dimuon_mass" width="auto" height="250px"
+        %}
+      </div>
+    </div>
+  </div>
+</div>
