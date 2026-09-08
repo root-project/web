@@ -1,7 +1,11 @@
 /// (c) Axel Naumann, CERN; 2020-03-02
+/// Later updated by giacomo.parolini@cern.ch.
+/// IMPORTANT NOTE: this script needs `versions.js` to also be included in order to work!
 'use strict';
 
 /// Configurable section.
+/// Note that some configuration is in versions.js (notably, the latest release number). It is separate because it
+/// also needs to be included in 404.html.
 
 // What the master is called. Leave untouched if master has no doc.
 const master = 'master';
@@ -28,23 +32,8 @@ function url2version(patharr) {
 
 ///=============================================================================
 
-// The latest release. NOT necessarily equal to latest-stable, as stable releases are only
-// once every two versions.
-// >>> CHANGE THIS WHEN A NEW VERSION IS RELEASED! (stable or not) <<<
-const LATEST_VERSION = 640; 
-const LATEST_VERSION_IS_STABLE = LATEST_VERSION % 4 === 0;
-const LATEST_STABLE = LATEST_VERSION - 2 * !LATEST_VERSION_IS_STABLE;
-const FIRST_VERSION = 610;
-
 // Redirect from latest-stable to the actual latest release
 let patharr = window.location.pathname.replace(/\/+/g, '/').split('/');
-if (url2version(patharr) === 'latest-stable') {
-   patharr[patharr.length - urlrootdirs] = `v${LATEST_STABLE}`;
-   let newLocation = patharr.join('/');
-   if (window.location.hash)
-      newLocation += `#${window.location.hash}`;
-   window.location.replace(newLocation);
-}
 
 let versions = ["master", "latest-stable"];
 for (let i = LATEST_VERSION; i >= FIRST_VERSION; i -= 2) {
