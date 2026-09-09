@@ -32,63 +32,71 @@ function url2version(patharr) {
 
 ///=============================================================================
 
-// Redirect from latest-stable to the actual latest release
-let patharr = window.location.pathname.replace(/\/+/g, '/').split('/');
+// Load the shared constants from versions.js. We need to do this dynamically because
+// the HTML files that include this script cannot be modified for past releases.
+const subScript = document.createElement('script');
+subScript.src = '../versions.js';
+subScript.onload = () => {
+   // Redirect from latest-stable to the actual latest release
+   let patharr = window.location.pathname.replace(/\/+/g, '/').split('/');
 
-let versions = ["master", "latest-stable"];
-for (let i = LATEST_VERSION; i >= FIRST_VERSION; i -= 2) {
-   versions.push(`v${i}`);
-}
-
-// Index of the "latest-stable" element in `versions`. Never changes.
-const LATEST_STABLE_IDX = 1;
-// Index of the actual version that latest-stable redirects to in `versions`.
-// It's either the one immediately after latest-stable or 2 places after it (depending
-// whether the latest release is stable or not).
-const LATEST_STABLE_REDIRECT_IDX = LATEST_STABLE_IDX + 1 + !LATEST_VERSION_IS_STABLE;
-
-let thisvers = url2version(patharr);
-$('.dropbtn').html("Version " + url2label(thisvers));
-
-let baseUrl = patharr.slice(0, urlrootdirs).join('/');
-let dropdown = document.querySelector('.dropdown-content');
-let latestStableLink;
-for (let i = 0; i < versions.length; ++i) {
-   let version = versions[i];
-   let a = document.createElement('a');
-   a.classList.add('verslink');
-   a.innerText = url2label(version);
-   dropdown.append(a);
-
-   // latest-stable redirects to the actual latest stable version
-   if (i === LATEST_STABLE_IDX) {
-      // this gets checked already by the actual latest version, so don't waste
-      // an AJAX request for it.
-      latestStableLink = a;
-      continue;
+   let versions = ["master", "latest-stable"];
+   for (let i = LATEST_VERSION; i >= FIRST_VERSION; i -= 2) {
+      versions.push(`v${i}`);
    }
 
-   // Enable all links that are reachable by a HEAD request.
-   let url = `${baseUrl}/${version}/${patharr[patharr.length-1]}`;
-   let request = new XMLHttpRequest();
-   request.open('HEAD', url, true);
-   request.onreadystatechange = () => {
-      let linksToChange = [a];
+   // Index of the "latest-stable" element in `versions`. Never changes.
+   const LATEST_STABLE_IDX = 1;
+   // Index of the actual version that latest-stable redirects to in `versions`.
+   // It's either the one immediately after latest-stable or 2 places after it (depending
+   // whether the latest release is stable or not).
+   const LATEST_STABLE_REDIRECT_IDX = LATEST_STABLE_IDX + 1 + !LATEST_VERSION_IS_STABLE;
 
-      // Normally we only enable the link relative to the HEAD request we just did, but in case this is
-      // the latest stable version we also enable the "latest-stable" link.
-      if (i === LATEST_STABLE_REDIRECT_IDX)
-         linksToChange.push(latestStableLink);
+   let thisvers = url2version(patharr);
+   $('.dropbtn').html("Version " + url2label(thisvers));
 
-      for (let link of linksToChange) {
-         if (request.readyState === 4 && request.status === 404) {
-            link.style['color'] = "gray";
-            link.style['text-decoration'] = 'line-through';
-            link.href = 'javascript:void(0)';
-         } else {
-            link.href = url;
-         }
+   let baseUrl = patharr.slice(0, urlrootdirs).join('/');
+   let dropdown = document.querySelector('.dropdown-content');
+   let latestStableLink;
+   for (let i = 0; i < versions.length; ++i) {
+      let version = versions[i];
+      let a = document.createElement('a');
+      a.classList.add('verslink');
+      a.innerText = url2label(version);
+      dropdown.append(a);
+
+      // latest-stable redirects to the actual latest stable version
+      if (i === LATEST_STABLE_IDX) {
+         // this gets checked already by the actual latest version, so don't waste
+         // an AJAX request for it.
+         latestStableLink = a;
+         continue;
       }
-   };
-   request.send();
-}
+
+      // Enable all links that are reachable by a HEAD request.
+      let url = `${baseUrl}/${version}/${patharr[patharr.length-1]}`;
+      let request = new XMLHttpRequest();
+      request.open('HEAD', url, true);
+      request.onreadystatechange = () => {
+         let linksToChange = [a];
+
+         // Normally we only enable the link relative to the HEAD request we just did, but in case this is
+         // the latest stable version we also enable the "latest-stable" link.
+         if (i === LATEST_STABLE_REDIRECT_IDX)
+            linksToChange.push(latestStableLink);
+
+         for (let link of linksToChange) {
+            if (request.readyState === 4 && request.status === 404) {
+               link.style['color'] = "gray";
+               link.style['text-decoration'] = 'line-through';
+               link.href = 'javascript:void(0)';
+            } else {
+               link.href = url;
+            }
+         }
+      };
+      request.send();
+   }
+};
+document.head.appendChild(subScript);
+
