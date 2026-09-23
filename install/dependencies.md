@@ -31,10 +31,14 @@ we recommend checking the [docker image repository](https://github.com/root-proj
 - GCC 4.8 or later is supported
 - Clang 3.4 or later is supported
 
-## Fedora, Scientific Linux and CentOS
+## Fedora, Alma, Scientific Linux and CentOS
 
 Use `yum install <package>` or the graphical "Add/Remove Software" program.
 
+Check out the [packages used](https://github.com/search?q=repo%3Aroot-project%2Froot-ci-images+%28path%3Afedora*%2Fpackages.txt+OR+path%3Arawhide*%2Fpackages.txt+OR+path%3Aalma*%2Fpackages.txt%29&type=code) for the Dockerfile build.
+
+<details>
+<summary>Old instructions</summary>
 ### Required packages
 
 *   **make:** for /usr/bin/make
@@ -81,6 +85,7 @@ xrootd-client-devel xrootd-libs-devel
 *   **graphviz-devel:** for /usr/include/graphviz/gvc.h and for /usr/lib/libgvc.so
 *   **qt5-qtwebengine-devel:** required for **qt5web** component
 *   **curl-devel:** for HTTP remote access
+*   **civetweb-devel** for e.g. webgui
 
 As a one-liner for Fedora 33:
 ```bash
@@ -103,11 +108,16 @@ avahi-compat-libdns_sd-devel openldap-devel python-devel python3-numpy \
 libxml2-devel gsl-devel readline-devel qt5-qtwebengine-devel \
 R-devel R-Rcpp-devel R-RInside-devel
 ```
+</details>
 
 ## Ubuntu and other Debian-based distributions
 
 Use `sudo apt install <package>` or use the graphical "Synaptic Package Manager" program.
 
+Check out the [packages used](https://github.com/search?q=repo%3Aroot-project%2Froot-ci-images+%28path%3Aubuntu*%2Fpackages.txt+OR+path%3Adebian*%2Fpackages.txt%29&type=code) for the Dockerfile build.
+
+<details>
+<summary>Old instructions</summary>
 ### Required packages
 
 **Installing required packages with a one-liner:**
@@ -129,9 +139,9 @@ sudo apt install gfortran libpcre3-dev \
 libglu1-mesa-dev libglew-dev libftgl-dev \
 libfftw3-dev libcfitsio-dev libgraphviz-dev \
 libavahi-compat-libdnssd-dev libldap2-dev \
- python3-dev python3-numpy libxml2-dev libkrb5-dev \
+python3-dev python3-numpy libxml2-dev libkrb5-dev \
 libgsl-dev qtwebengine5-dev nlohmann-json3-dev libmysqlclient-dev \
-libgl2ps-dev \
+libgl2ps-dev libcivetweb-dev civetweb \
 liblzma-dev libxxhash-dev liblz4-dev libzstd-dev libcurl4-openssl-dev
 ```
 
@@ -142,9 +152,16 @@ Some more context:
   * **r-base:** needed for R bindings. In addition R packages **Rcpp** and **RInside** need to be installed.
 
 **NOTE**: On Debian (>=13), substitute `libmysqlclient-dev` with `libmariadb-dev` and `libpcre3-dev` with `libpcre2-dev`.
+</details>
 
 ## openSUSE
 
+Use `sudo zypper install <package>` or use the graphical software manager.
+
+Check out the [packages used](https://github.com/search?q=repo%3Aroot-project%2Froot-ci-images+path%3Aopensuse*%2Fpackages.txt&type=code) for the Dockerfile build.
+
+<details>
+<summary>Old instructions</summary>
 Minimal set:
 
 ```bash
@@ -160,8 +177,9 @@ sudo zypper install gcc-fortran pcre-devel Mesa glew-devel libpng16-devel \
 pkgconf-pkg-config libmariadb-devel fftw3-devel cfitsio-devel graphviz-devel \
 libdns_sd avahi-compat-mDNSResponder-devel openldap2-devel python3-devel python3-numpy \
 libxml2-devel krb5-devel gsl-devel chromium libQt5Gui-devel libqt5-qtwebengine-devel \
-libcurl-devel
+libcurl-devel civetweb civetweb-devel
 ```
+</details>
 
 ## MacOS
 
@@ -182,7 +200,7 @@ cmake ../root
 make -j8
 ```
 
-
+Homebrew can be used to install most dependencies. Check out all required packages in the [official formula](https://github.com/Homebrew/homebrew-core/blob/main/Formula/r/root.rb).
 
 ## Windows
 
