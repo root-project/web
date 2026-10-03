@@ -27,6 +27,9 @@ For recent releases, the release notes can be found on their respective
 
 For ancient releases:
 
+- [V0.03](https://root.cern/root/html510/examples/v03.html)
+- [V0.04](https://root.cern/root/html510/examples/v04.html)
+- [V0.05](https://root.cern/root/html510/examples/v05.html)
 - [V1.00](https://root.cern/root/html404/examples/V1.00.txt.html)
 - [V1.01](https://root.cern/root/html404/examples/V1.01.txt.html)
 - [V1.02](https://root.cern/root/html404/examples/V1.02.txt.html)
