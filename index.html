@@ -8,13 +8,13 @@ header:
   actions:
     - label: '<i class="fas fa-info-circle"></i> Learn more'
       url: "about"
-    - label: '<i class="fas fa-download"></i> Install v{% include root_stable_version %}'
-      url: /install
+    - label: '<i class="fas fa-clipboard-list"></i> {% include root_stable_version %} Release Notes'
+      url: 'https://root.cern/doc/v{% include root_stable_version_short %}/release-notes.html#release-{% include root_stable_version %}'
 feature_row:
   - title: '<img src="assets/images/histoIcon.svg" alt="*.*" width="65" height="65">'
     excerpt: "Enables processing and scientific analysis of large amounts of data: today, more than 2 exabytes are stored in ROOT files. [The Higgs was discovered with ROOT!](gallery#higgs-plots)"
   - title: '<img src="assets/images/code.svg" alt="*.*" width="65" height="65">'
-    excerpt: "[Open source](about/license), which means that you can use it freely and [modify it](install/build_from_source). It adopts an open development process, inviting [its users to contribute to it](contribute)."
+    excerpt: "[Open source](about/license), which means that you can use it freely and [modify it](getroot/build_from_source). It adopts an open development process, inviting [its users to contribute to it](contribute)."
   - title: '$ _'
     excerpt: "Delivered with a [C++ interpreter](primer#learn-c-at-the-root-prompt), ideal for <i>fast prototyping</i>. ROOT also offers a Python interface to all its components with [dynamic bindings](manual/python/). [Jupyter notebooks are supported too](https://nbviewer.jupyter.org/url/root.cern/doc/master/notebooks/rf301_composition.C.nbconvert.ipynb)."
 ---
@@ -22,21 +22,25 @@ feature_row:
 
 <div style="width: 100%;">
     <center>
-    <div style="width: 25%; display:inline-block;">
-        <div><a href="{{ '/learn' | relative_url }}"><img style="box-shadow: none;" width="128" src="{{'/assets/images/start.svg' | relative_url}}"></a></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Learn</font></div>
+    <div style="width: 20%; display:inline-block;">
+        <a href="{{ '/getroot' | relative_url }}"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/getroot.svg' | relative_url}}"></div>
+        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Get ROOT</font></div></a>
     </div><!--
-    --><div style="width: 25%; display:inline-block;">
-        <div><a href="/doc/v{% include root_stable_version_short %}"><img style="box-shadow: none;" width="128" src="{{'/assets/images/doc.svg' | relative_url}}"></a></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Reference</font></div>
+    --><div style="width: 20%; display:inline-block;">
+        <a href="{{ '/learn' | relative_url }}"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/start.svg' | relative_url}}"></div>
+        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Learn</font></div></a>
     </div><!--
-    --><div style="width: 25%; display:inline-block;">
-        <div><a href="https://root-forum.cern.ch"><img style="box-shadow: none;" width="128" src="{{'/assets/images/forum.svg' | relative_url}}"></a></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Forum</font></div>
+    --><div style="width: 20%; display:inline-block;">
+        <a href="/doc/v{% include root_stable_version_short %}"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/doc.svg' | relative_url}}"></div>
+        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Reference</font></div></a>
     </div><!--
-    --><div style="width: 25%; display:inline-block;">
-        <div><a href="{{ '/gallery' | relative_url }}"><img style="box-shadow: none;" width="128" src="{{'/assets/images/gallery.svg' | relative_url}}"></a></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Gallery</font></div>
+    --><div style="width: 20%; display:inline-block;">
+        <a href="https://root-forum.cern.ch"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/forum.svg' | relative_url}}"></div>
+        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Forum</font></div></a>
+    </div><!--
+    --><div style="width: 20%; display:inline-block;">
+        <a href="{{ '/gallery' | relative_url }}"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/gallery.svg' | relative_url}}"></div>
+        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Gallery</font></div></a>
     </div>
     </center>
 </div>
