@@ -4,7 +4,7 @@ layout: single
 toc: true
 toc_sticky: true
 sidebar:
-  nav: "install"
+  nav: "getroot"
 ---
 
 ROOT uses the [CMake](https://www.cmake.org/){:target="\_blank"} cross-platform build-generator tool as the

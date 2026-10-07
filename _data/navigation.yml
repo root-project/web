@@ -7,9 +7,6 @@ main:
   - title: "Releases"
     url: install/all_releases
     description: "All ROOT releases"
-  - title: "Install"
-    url: install
-    description: "All you need to download and install ROOT"
   - title: "Manual"
     url: manual
     description: "High level ROOT manual"
@@ -154,15 +151,14 @@ releases:
       - title: All releases
         url: install/all_releases
 
-install:
-   - title: Useful links
-     children:
+getroot:
+  - title: Get ROOT
+    url: getroot
+    children:
       - title: Dependencies
-        url: install/dependencies
-      - title: Nightlies
-        url: install/nightlies
+        url: getroot/dependencies
       - title: Building from source
-        url: install/build_from_source
+        url: getroot/build_from_source
 
 blog:
    - title: Blog Posts
