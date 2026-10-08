@@ -82,4 +82,4 @@ The following is an example of a project that creates a library and an executabl
    target_link_libraries(Main Event)
 {% endhighlight %}
 
-See also the [An Introduction to Modern CMake Guide](https://cliutils.gitlab.io/modern-cmake/chapters/packages/ROOT.html){:target="_blank"} by Henry Schreiner for more information on building your ROOT project with modern CMake.
+See also the [An Introduction to Modern CMake Guide](https://cliutils.gitlab.io/modern-cmake/root){:target="_blank"} by Henry Schreiner for more information on building your ROOT project with modern CMake.
