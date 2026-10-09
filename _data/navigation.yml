@@ -47,6 +47,8 @@ manual:
         url: manual/object_ownership
       - title: Multi-threading
         url: manual/multi_threading
+      - title: Useful Parameters 
+        url: manual/useful_parameters 
   - title: ROOT Manual - Functional parts
     url: manual/functional_parts
     children:
