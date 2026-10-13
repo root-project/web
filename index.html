@@ -19,30 +19,107 @@ feature_row:
     excerpt: "Delivered with a [C++ interpreter](primer#learn-c-at-the-root-prompt), ideal for <i>fast prototyping</i>. ROOT also offers a Python interface to all its components with [dynamic bindings](manual/python/). [Jupyter notebooks are supported too](https://nbviewer.jupyter.org/url/root.cern/doc/master/notebooks/rf301_composition.C.nbconvert.ipynb)."
 ---
 
+<style>
+.mainbuttons {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.mainbutton {
+  /* all buttons equally grow to fill the space */
+  flex-grow: 1;
+  display: flex;
+  /* horizontally center all button's children */
+  justify-content: center;
+  /* vertically center all button's children */
+  align-items: center;
+  flex-basis: 20%;
+  max-width: 20%;
+  aspect-ratio: 1;
+  flex-flow: column;
+}
+.mainbutton a {
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+.mainbutton .img-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  max-width: 80%;
+}
+.mainbutton img {
+  /* !important because we need to override the default theme */
+  box-shadow: none !important;
+  object-fit: scale-down;
+}
+.mainbutton p {
+  margin: 0;
+  padding: 20px 0;
+  color: #346295;
+  font-weight: bold;
+  text-align: center;
+}
 
-<div style="width: 100%;">
-    <center>
-    <div style="width: 20%; display:inline-block;">
-        <a href="{{ '/getroot' | relative_url }}"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/getroot.svg' | relative_url}}"></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Get ROOT</font></div></a>
-    </div><!--
-    --><div style="width: 20%; display:inline-block;">
-        <a href="{{ '/learn' | relative_url }}"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/start.svg' | relative_url}}"></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Learn</font></div></a>
-    </div><!--
-    --><div style="width: 20%; display:inline-block;">
-        <a href="/doc/v{% include root_stable_version_short %}"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/doc.svg' | relative_url}}"></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Reference</font></div></a>
-    </div><!--
-    --><div style="width: 20%; display:inline-block;">
-        <a href="https://root-forum.cern.ch"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/forum.svg' | relative_url}}"></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Forum</font></div></a>
-    </div><!--
-    --><div style="width: 20%; display:inline-block;">
-        <a href="{{ '/gallery' | relative_url }}"><div><img style="box-shadow: none;" width="128" src="{{'/assets/images/gallery.svg' | relative_url}}"></div>
-        <div style="padding: 20px 0"><font color="#346295" style="font-weight:bold;" size="3">Gallery</font></div></a>
+/* Style only applied on large screens */
+@media(min-width: 40em) {
+  .mainbutton p {
+    font-size: large;
+  }
+  .mainbutton .img-container {
+    max-width: 50%;
+  }
+  .mainbutton img {
+    max-width: 10em;
+  }
+}
+</style>
+
+<div class="mainbuttons">
+    <div class="mainbutton">
+        <a href="{{ '/getroot' | relative_url }}">
+          <div class="img-container">
+            <img src="{{'/assets/images/getroot.svg' | relative_url}}">
+          </div>
+          <p>Get ROOT</p>
+        </a>
     </div>
-    </center>
+    <div class="mainbutton">
+        <a href="{{ '/learn' | relative_url }}">
+          <div class="img-container">
+            <img src="{{'/assets/images/start.svg' | relative_url}}">
+          </div>
+          <p>Learn</p>
+        </a>
+    </div>
+    <div class="mainbutton">
+        <a href="/doc/v{% include root_stable_version_short %}">
+          <div class="img-container">
+            <img src="{{'/assets/images/doc.svg' | relative_url}}">
+          </div>
+          <p>Reference</p>
+        </a>
+    </div>
+    <div class="mainbutton">
+        <a href="https://root-forum.cern.ch">
+          <div class="img-container">
+            <img src="{{'/assets/images/forum.svg' | relative_url}}">
+          </div>
+          <p>Forum</p>
+        </a>
+    </div>
+    <div class="mainbutton">
+        <a href="{{ '/gallery' | relative_url }}">
+          <div class="img-container">
+            <img src="{{'/assets/images/gallery.svg' | relative_url}}">
+          </div>
+          <p>Gallery</p>
+        </a>
+    </div>
 </div>
 
 <br><br>
