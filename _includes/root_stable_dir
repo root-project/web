@@ -1,13 +1,14 @@
 {%- assign sorted = site.releases | reverse -%}
 {%- for release in sorted -%}
    {%- if release.state == "latest" -%}
-      {%- assign content = release.content -%}
-      {%- assign pieces = content | split: '| [' -%}
-      {%- assign str = content -%}
-      {%- assign a = str | split: '.tar.gz">' -%}
-      {%- assign b = a[2] | split: '</a></td>' -%}
-      {%- assign c = b[0] | split: '.' -%}
-      {%- assign d = c[3] | split: '-' -%}
-      {{d[2]}}-{{d[1]}}-{{d[3]}}.{{c[4]}}-opt
+      {%- assign parts = release.content | split: '/x86_64-almalinux9' -%}
+      {%- if parts.size > 1 -%}
+         x86_64-almalinux9{{ parts[1] | newline_to_br | split: '<br />' | first | strip }}
+      {%- else -%}
+         {%- assign parts = release.content | split: '/x86_64-' -%}
+         {%- if parts.size > 1 -%}
+            x86_64-{{ parts[1] | newline_to_br | split: '<br />' | first | strip }}
+         {%- endif -%}
+      {%- endif -%}
    {%- endif -%}
 {%- endfor -%}
