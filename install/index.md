@@ -275,6 +275,8 @@ For example, to set up ROOT {% include root_stable_version %} on a {% include ro
 source /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/{% include root_stable_version_dot %}/{% include root_stable_dir %}/bin/thisroot.sh
 ```
 
+You can find the list of all supported platforms for this release on the [release page]({% include root_stable_version_relative_url %}).
+
 Make sure you use your system's default compiler, just like this ROOT build.
 
 ## Complete environment
