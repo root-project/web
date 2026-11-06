@@ -2,41 +2,41 @@
 |--------------|--------|---------|
 | `arrow` | Enable support for Apache Arrow | OFF |
 | `asimage` | Enable support for image processing via libAfterImage | ON |
-| `asimage_tiff` | Support TIFF in image processing (requires libtiff) | ON |
 | `asserts` | Enable asserts (defaults to ON for CMAKE_BUILD_TYPE=Debug and/or dev=ON) | OFF |
-| `builtin_cfitsio` | Build CFITSIO internally (requires network) | OFF |
-| `builtin_civetweb` | Use civetweb distributed with ROOT | ON |
-| `builtin_clang` | Build bundled copy of Clang | ON |
-| `builtin_cling` | Build bundled copy of Cling. Only build with an external cling if you know what you are doing: associating ROOT commits with cling commits is tricky. | ON |
-| `builtin_cppzmq` | Use ZeroMQ C++ bindings installed by ROOT (requires network) | OFF |
-| `builtin_davix` | Build Davix internally (requires network) | OFF |
-| `builtin_fftw3` | Build FFTW3 internally (requires network) | OFF |
-| `builtin_freetype` | Build bundled copy of freetype | OFF |
-| `builtin_ftgl` | Build bundled copy of FTGL | OFF |
-| `builtin_gif` | Build bundled copy of libgif | OFF |
-| `builtin_gl2ps` | Build bundled copy of gl2ps | OFF |
-| `builtin_glew` | Build bundled copy of GLEW | OFF |
-| `builtin_gsl` | Build GSL internally (requires network) | OFF |
-| `builtin_gtest` | Build googletest internally (requires network) | OFF |
-| `builtin_jpeg` | Build bundled copy of libjpeg | OFF |
-| `builtin_llvm` | Build bundled copy of LLVM | ON |
-| `builtin_lz4` | Build bundled copy of lz4 | OFF |
-| `builtin_lzma` | Build bundled copy of lzma | OFF |
-| `builtin_nlohmannjson` | Use nlohmann/json.hpp file distributed with ROOT | OFF |
-| `builtin_openssl` | Build OpenSSL internally (requires network) | OFF |
-| `builtin_openui5` | Use openui5 bundle distributed with ROOT | ON |
-| `builtin_pcre` | Build bundled copy of PCRE | OFF |
-| `builtin_png` | Build bundled copy of libpng | OFF |
-| `builtin_tbb` | Build TBB internally (requires network) | OFF |
-| `builtin_unuran` | Build bundled copy of unuran | OFF |
-| `builtin_vc` | Build Vc internally (requires network) | OFF |
-| `builtin_vdt` | Build VDT internally (requires network) | OFF |
-| `builtin_veccore` | Build VecCore internally (requires network) | OFF |
-| `builtin_xrootd` | Build XRootD internally (requires network) | OFF |
-| `builtin_xxhash` | Build bundled copy of xxHash | OFF |
-| `builtin_zeromq` | Build ZeroMQ internally (requires network) | OFF |
-| `builtin_zlib` | Build bundled copy of zlib | OFF |
-| `builtin_zstd` | Build included libzstd, or use system libzstd | OFF |
+| `builtin_bvh` | Build bvh from an in-built source tarball (does not require network) | ON |
+| `builtin_cdt` | Build CDT from an in-built source tarball (does not require network) | ON |
+| `builtin_cfitsio` | Build CFITSIO from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_civetweb` | Build civetweb from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_clang` | Build bundled copy of Clang (advanced option) | ON |
+| `builtin_cling` | Build bundled copy of Cling. Only build with an external cling if you know what you are doing: associating ROOT commits with cling commits is tricky. (advanced option) | ON |
+| `builtin_fftw3` | Build FFTW3 from an automatically downloaded source tarball (requires network) [GPL] | OFF |
+| `builtin_freetype` | Build freetype from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_ftgl` | Build FTGL from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_gif` | Build libgif from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_gl2ps` | Build gl2ps from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_glu` | Build libtess-GLU from an internal source tarball (does not require network) | OFF |
+| `builtin_gsl` | Build GSL from an automatically downloaded source tarball (requires network) [GPL] | OFF |
+| `builtin_gtest` | Build googletest from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_jpeg` | Build libjpeg from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_jsroot` | Install JSROOT to run webgui widgets (requires network) | OFF |
+| `builtin_llvm` | Build bundled copy of LLVM (advanced option) | ON |
+| `builtin_lz4` | Build lz4 from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_lzma` | Build lzma from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_mathjax` | Install mathjax package for mathtext rendering in JSROOT (requires network) | OFF |
+| `builtin_mathtext` | Build mathtext from an in-built source tarball (does not require network) | ON |
+| `builtin_nlohmannjson` | Build nlohmann/json from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_openssl` | Build OpenSSL from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_openui5` | Install openui5 package to run webgui widgets (requires network) | OFF |
+| `builtin_pcre` | Build PCRE2 from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_png` | Build libpng from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_tbb` | Build TBB from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_tiff` | Build libtiff from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_unuran` | Build unuran from an automatically downloaded source tarball (requires network) [GPL] | OFF |
+| `builtin_vdt` | Build VDT from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_xrootd` | Build XRootD from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_xxhash` | Build xxHash from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_zlib` | Build zlib from an automatically downloaded source tarball (requires network) | OFF |
+| `builtin_zstd` | Build zstd from an automatically downloaded source tarball (requires network) | OFF |
 | `ccache` | Enable ccache usage for speeding up builds | OFF |
 | `cefweb` | Enable support for CEF (Chromium Embedded Framework) web-based display | OFF |
 | `check_connection` | Fail the configuration step if there is no internet connection, but it's required for the build | ON |
@@ -44,6 +44,7 @@
 | `cocoa` | Use native Cocoa/Quartz graphics backend (MacOS X only) | OFF |
 | `coverage` | Enable compile flags for coverage testing | OFF |
 | `cuda` | Enable support for CUDA (requires CUDA toolkit >= 7.5) | OFF |
+| `curl` | Enable support for HTTP(S) through libcurl | ON |
 | `daos` | Enable RNTuple support for Intel DAOS | OFF |
 | `dataframe` | Enable ROOT RDataFrame | ON |
 | `davix` | Enable support for Davix (HTTP/WebDAV access) | ON |
@@ -55,7 +56,7 @@
 | `fcgi` | Enable FastCGI support in HTTP server | OFF |
 | `fftw3` | Enable support for FFTW3 [GPL] | OFF |
 | `fitsio` | Enable support for reading FITS images | ON |
-| `fortran` | Build Fortran components of ROOT | OFF |
+| `fortran` | Build Fortran components of ROOT, stemming from cernlib | OFF |
 | `gdml` | Enable support for GDML (Geometry Description Markup Language) | ON |
 | `geom` | Enable support for the geometry library. Disabling this will also disable Eve and gviz3d. | ON |
 | `geombuilder` | Enable support for the geombuilder library | OFF |
@@ -74,13 +75,11 @@
 | `opengl` | Enable support for OpenGL (requires libGL and libGLU) | ON |
 | `pyroot` | Enable support for automatic Python bindings (PyROOT) | ON |
 | `pythia8` | Enable support for Pythia 8.x [GPL] | OFF |
+| `qt6canv` | Enable Qt6 canvas (requires Qt6::Gui) | OFF |
 | `qt6web` | Enable support for Qt6 web-based display (requires Qt6::WebEngineCore and Qt6::WebEngineWidgets) | OFF |
-| `r` | Enable support for R bindings (requires R, Rcpp, and RInside) | OFF |
 | `roofit` | Build the advanced fitting package RooFit, and RooStats for statistical tests. If xml is available, also build HistFactory. | ON |
-| `roofit_multiprocess` | Build RooFit::MultiProcess and multi-process RooFit::TestStatistics classes (requires ZeroMQ >= 3.4.5 built with -DENABLE_DRAFTS and cppzmq). | OFF |
 | `root7` | Build ROOT 7 experimental components of ROOT | ON |
 | `runtime_cxxmodules` | Enable runtime support for C++ modules | ON |
-| `shadowpw` | Enable support for shadow passwords | OFF |
 | `shared` | Use shared 3rd party libraries if possible | ON |
 | `soversion` | Set version number in sonames for shared libraries. Not recommended, as the pcm and rootmap files do not (yet) support versioning and always point to the non-versioned shared libraries. | OFF |
 | `spectrum` | Enable support for TSpectrum | ON |
@@ -95,16 +94,12 @@
 | `tmva-cudnn` | Enable support for cuDNN (default when CUDA is enabled) | ON |
 | `tmva-gpu` | Build TMVA with GPU support for deep learning (requires CUDA) | OFF |
 | `tmva-pymva` | Enable usage of Python ML libraries in TMVA (requires NumPy, works only with TensorFlow<=2.15) | OFF |
-| `tmva-rmva` | Enable support for R in TMVA | OFF |
-| `tmva-sofie` | Build TMVA with support for sofie - fast inference code generation (requires protobuf 3) | OFF |
 | `tpython` | Build the TPython class that allows you to run Python code from C++ | ON |
 | `unfold` | Enable the unfold package [GPL] | OFF |
 | `unuran` | Enable support for UNURAN (package for generating non-uniform random numbers) [GPL] | OFF |
-| `uring` | Enable support for io_uring (requires liburing and Linux kernel >= 5.1) | OFF |
-| `use_gsl_cblas` | Use the CBLAS library from GSL instead of finding a more optimized BLAS library automatically with FindBLAS (the GSL CBLAS is less performant but more portable) | ON |
-| `vc` | Enable support for Vc (SIMD Vector Classes for C++) | OFF |
+| `uring` | Enable support for io_uring (requires liburing. Actual kernel support is detected at runtime) | OFF |
+| `use_gsl_cblas` | Use the CBLAS library from GSL [GPL] instead of finding a more optimized BLAS library automatically with FindBLAS (the GSL CBLAS is less performant but more portable) | OFF |
 | `vdt` | Enable support for VDT (fast and vectorisable mathematical functions) | ON |
-| `veccore` | Enable support for VecCore SIMD abstraction library | OFF |
 | `vecgeom` | Enable support for VecGeom vectorized geometry library | OFF |
 | `webgui` | Build Web-based UI components of ROOT | ON |
 | `win_broken_tests` | Enable broken tests on Windows | OFF |
@@ -114,7 +109,7 @@
 | `xrootd` | Enable support for XRootD file server and client | ON |
 | | **Auxiliary build options** | |
 | `all` | Enable all optional components by default | OFF |
-| `asan` | Build ROOT with address sanitizer instrumentation | OFF |
+| `asan` | Build ROOT with address sanitizer instrumentation (see core/sanitizer for details) | OFF |
 | `clingtest` | Enable cling tests (Note: that this makes llvm/clang symbols visible in libCling) | OFF |
 | `fail-on-missing` | Fail at configure time if a required package cannot be found | OFF |
 | `gminimal` | Enable only required options by default, but include X11/Cocoa | OFF |
