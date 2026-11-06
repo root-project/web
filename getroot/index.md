@@ -11,7 +11,7 @@ sidebar:
 * **Binaries (Linux, macOS, Windows):** instructions per release [here](https://root.cern/install/all_releases/)
 * [**CVMFS ROOT only**](https://cvmfs.readthedocs.io/en/stable/) **(Linux, macOS):** instructions per release [here](https://root.cern/install/all_releases/)
 * [**CVMFS full LCG package suites**](https://lcginfo.cern.ch/) **(Linux, macOS):** `. /cvmfs/sft.cern.ch/lcg/views/LCG_<release number>/<platform>/setup.sh`
-* [**Sources**](https://github.com/root-project/root)**:** Instructions [here](https://root.cern/getroot/build_from_source.html)
+* [**Sources**](https://github.com/root-project/root)**:** Instructions [here](https://root.cern/getroot/build_from_source/)
 
 ### In alpha mode:
 

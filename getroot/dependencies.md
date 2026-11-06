@@ -4,7 +4,7 @@ layout: single
 toc: true
 toc_sticky: true
 sidebar:
-  nav: "install"
+  nav: "getroot"
 ---
 
 The page lists the prerequisite packages that need to be installed on the different platforms to be able to configure, build and run ROOT.
