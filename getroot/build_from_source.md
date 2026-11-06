@@ -162,27 +162,21 @@ The user can set any CMake variable or option that controls the build process fr
 
 Click on one of the following dropdowns to see the full list of build options for a specific ROOT release:
 
+<details markdown="1"><summary markdown="span">build options for ROOT 6.42</summary>
+
+{% include build_options_v6-42-00-patches.md %}
+
+</details>
+
 <details markdown="1"><summary markdown="span">build options for ROOT 6.40</summary>
 
 {% include build_options_v6-40-00-patches.md %}
 
 </details>
 
-<details markdown="1"><summary markdown="span">build options for ROOT 6.38</summary>
-
-{% include build_options_v6-38-00-patches.md %}
-
-</details>
-
 <details markdown="1"><summary markdown="span">build options for ROOT 6.36</summary>
 
 {% include build_options_v6-36-00-patches.md %}
-
-</details>
-
-<details markdown="1"><summary markdown="span">build options for ROOT 6.34</summary>
-
-{% include build_options_v6-34-00-patches.md %}
 
 </details>
 
@@ -201,24 +195,6 @@ Click on one of the following dropdowns to see the full list of build options fo
 <details markdown="1"><summary markdown="span">build options for ROOT 6.28</summary>
 
 {% include build_options_v6-28-00-patches.md %}
-
-</details>
-
-<details markdown="1"><summary markdown="span">build options for ROOT 6.26</summary>
-
-{% include build_options_v6-26-00-patches.md %}
-
-</details>
-
-<details markdown="1"><summary markdown="span">build options for ROOT 6.24</summary>
-
-{% include build_options_v6-24-00-patches.md %}
-
-</details>
-
-<details markdown="1"><summary markdown="span">build options for ROOT 6.22</summary>
-
-{% include build_options_v6-22-00-patches.md %}
 
 </details>
 
