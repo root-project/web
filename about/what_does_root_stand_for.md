@@ -21,9 +21,9 @@ Flowers can flourish. We hope that we are reaching this stage now_.
 _A possible acronym for the system could be:_
 _"Rapid Object-Oriented Technology"_
 
-To learn more on the early history of ROOT, check out the [1997 webpage]()`https://cern.ch/root1997mainpage`) and [this talk](https://indico.cern.ch/event/1505384/contributions/6733941/attachments/3175370/5646799/30%20Years%20of%20ROOT.pdf) at the [2025 ROOT Users Workshop](https://indico.cern.ch/event/1505384/timetable/#20251117.detailed), as well as [this nice map](https://cern.ch/root1997schema).
+To learn more on the early history of ROOT, check out the [1997 webpage](https://cern.ch/root1997mainpage) and [this talk](https://indico.cern.ch/event/1505384/contributions/6733941/attachments/3175370/5646799/30%20Years%20of%20ROOT.pdf) at the [2025 ROOT Users Workshop](https://indico.cern.ch/event/1505384/timetable/#20251117.detailed), as well as [this nice map](https://cern.ch/root1997schema).
 
 
 _Just like trees and plants, applications need strong roots to grow and flower. ROOT is a comprehensive object oriented framework that provides a solid foundation on which large scale data analysis applications can be built_.
 
-![ROOT initial art logo](rootart.gif)
+![ROOT initial art logo](../rootart.gif)
